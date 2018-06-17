@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/CalcCoreMainLayout">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="* 등급 설정 *"
+            android:gravity="center"
+            android:layout_marginTop="20dp" />
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            hideWheelUntilFocused="true"
+            android:id="@+id/CalcCoreDollGrade" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="* 편제 수 설정 *"
+            android:gravity="center"
+            android:layout_marginTop="10dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                hideWheelUntilFocused="true"
+                android:id="@+id/CalcCoreStartDollCount" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="=&gt;"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                hideWheelUntilFocused="true"
+                android:id="@+id/CalcCoreEndDollCount" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="* 필요한 코어 수량 *"
+            android:gravity="center"
+            android:layout_marginTop="10dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="0/0"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:id="@+id/CalcCoreResult" />
+    </LinearLayout>
+</ScrollView>

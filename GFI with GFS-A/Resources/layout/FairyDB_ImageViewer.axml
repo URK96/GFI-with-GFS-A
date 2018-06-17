@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/FairyDBImageViewerMainLayout">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="&lt;"
+                android:id="@+id/FairyDBImageViewerPreviousButton" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:gravity="center"
+                android:id="@+id/FairyDBImageViewerImageNum" />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="&gt;"
+                android:id="@+id/FairyDBImageViewerNextButton" />
+        </LinearLayout>
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/FairyDBImageViewerLoadProgress"
+            android:visibility="invisible"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressTint="@color/ProgressBarColor"
+            android:indeterminateOnly="true" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/FairyDBImageViewerImageView"
+            android:clickable="true" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/FairyDBImageViewerImageStatus"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignParentBottom="true" />
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/FairyDBImageViewerSnackbarLayout"
+        android:layout_alignTop="@id/FairyDBImageViewerMainLayout" />
+</RelativeLayout>

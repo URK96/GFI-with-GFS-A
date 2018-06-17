@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFI with GFS-A", "GFI with GFS-A\GFI with GFS-A.csproj", "{C2CE7A26-AEA8-4F20-B030-27DC15CB4EDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2CE7A26-AEA8-4F20-B030-27DC15CB4EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2CE7A26-AEA8-4F20-B030-27DC15CB4EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2CE7A26-AEA8-4F20-B030-27DC15CB4EDE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C2CE7A26-AEA8-4F20-B030-27DC15CB4EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2CE7A26-AEA8-4F20-B030-27DC15CB4EDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2CE7A26-AEA8-4F20-B030-27DC15CB4EDE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE6C0A1C-A715-443D-8E50-A04BC43D697C}
+	EndGlobalSection
+EndGlobal

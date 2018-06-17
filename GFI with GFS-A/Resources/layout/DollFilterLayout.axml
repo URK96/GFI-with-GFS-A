@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp">
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/DollFilterMainLayout">
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="제조 시간"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginRight="8dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp">
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+                    <NumberPicker
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:id="@+id/DollFilterProductHour" />
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:text="시간"
+                        android:gravity="center"
+                        android:layout_marginRight="10dp" />
+                    <NumberPicker
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:id="@+id/DollFilterProductMinute" />
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:text="분"
+                        android:gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:text="허용 범위 ±"
+                        android:gravity="center"
+                        android:layout_marginRight="10dp" />
+                    <NumberPicker
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:id="@+id/DollFilterProductNearRange" />
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:text="분"
+                        android:gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_height="5px"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/seperatebar" />
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="4dp">
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="등급"
+                    android:textStyle="bold"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_marginRight="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center" />
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+                    <Space
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+                    <CheckBox
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:text="2성"
+                        android:layout_weight="2"
+                        android:layout_gravity="center"
+                        android:id="@+id/DollFilterGrade2" />
+                    <CheckBox
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:text="3성"
+                        android:layout_weight="2"
+                        android:layout_gravity="center"
+                        android:id="@+id/DollFilterGrade3" />
+                    <CheckBox
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:text="4성"
+                        android:layout_weight="2"
+                        android:layout_marginRight="4dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/DollFilterGrade4" />
+                    <Space
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+                    <Space
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+                    <CheckBox
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:text="5성"
+                        android:layout_weight="2"
+                        android:id="@+id/DollFilterGrade5" />
+                    <CheckBox
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:text="EX"
+                        android:layout_weight="2"
+                        android:id="@+id/DollFilterGradeExtra" />
+                    <Space
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_height="5px"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/seperatebar" />
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp">
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="종류"
+                    android:textStyle="bold"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_marginRight="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center" />
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+                    <Space
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+                    <CheckBox
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:text="HG"
+                        android:layout_weight="2"
+                        android:id="@+id/DollFilterTypeHG" />
+                    <CheckBox
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:text="SMG"
+                        android:layout_weight="2"
+                        android:id="@+id/DollFilterTypeSMG" />
+                    <CheckBox
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:text="AR"
+                        android:layout_weight="2"
+                        android:id="@+id/DollFilterTypeAR" />
+                    <Space
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+                    <Space
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+                    <CheckBox
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:text="RF"
+                        android:layout_weight="2"
+                        android:id="@+id/DollFilterTypeRF" />
+                    <CheckBox
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:text="MG"
+                        android:layout_weight="2"
+                        android:id="@+id/DollFilterTypeMG" />
+                    <CheckBox
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:text="SG"
+                        android:layout_weight="2"
+                        android:id="@+id/DollFilterTypeSG" />
+                    <Space
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_height="5px"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/seperatebar" />
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp">
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="개조 가능 여부"
+                    android:textStyle="bold"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_marginRight="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center" />
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+                    <Space
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+                    <CheckBox
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:text="가능"
+                        android:layout_weight="2"
+                        android:id="@+id/DollFilterHasModYes" />
+                    <CheckBox
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:text="불가능"
+                        android:layout_weight="2"
+                        android:id="@+id/DollFilterHasModNo" />
+                    <Space
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

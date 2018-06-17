@@ -1,0 +1,10 @@
+﻿<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <PreferenceCategory
+    android:title="Nostalgia">
+    <ListPreference
+      android:key="MainActionbarIcon"
+      android:title="Nostalgia of GFD Icon"
+      android:summary="Feel the Nostalgia"/>
+  </PreferenceCategory>
+</PreferenceScreen>

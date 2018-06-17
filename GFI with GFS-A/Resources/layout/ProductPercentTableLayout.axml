@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ProductPercentTableMainLayout">
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="@id/ProductPercentTableMainLayout"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:visibility="invisible"
+        android:indeterminate="true"
+        android:id="@+id/ProductPercentTableInitLoadProgress" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ProductPercentTableControlMainLayout">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="일반제조"
+                android:id="@+id/ProductPercentTableChangeShowModeButton" />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="시도 횟수 우선"
+                android:id="@+id/ProductPercentTableChangeListModeButton" />
+        </LinearLayout>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarAlwaysDrawHorizontalTrack="false">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/ProductPercentTable_TableTopLayout">
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="인력"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_Manpower" />
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="탄약"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_Ammo" />
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="식량"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_MRE" />
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="부품"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_Parts" />
+                    <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="티어"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_ProductType" />
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="종류"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_ProductCategory" />
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="적중 횟수"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_HitCount" />
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="시도 횟수"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_TotalCount" />
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="확률"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_Percentage" />
+                </LinearLayout>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/ProductPercentTable_MainTableLayout" />
+                </ScrollView>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ProductPercentTableSnackbarLayout"
+        android:layout_alignTop="@id/ProductPercentTableMainLayout" />
+</RelativeLayout>

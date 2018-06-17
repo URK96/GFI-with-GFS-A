@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/CalcSkillTrainingMainLayout">
+      <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/CalcSkillTrainingType"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="* 레벨 설정 *"
+            android:gravity="center"
+            android:layout_marginTop="20dp" />
+     <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
+      <Space
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1" />
+      <NumberPicker
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          hideWheelUntilFocused="true"
+          android:id="@+id/CalcSkillTrainingStartLevel" />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:text="=&gt;"
+          android:gravity="center"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp" />
+      <NumberPicker
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          hideWheelUntilFocused="true"
+          android:id="@+id/CalcSkillTrainingEndLevel" />
+      <Space
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1" />
+    </LinearLayout>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="* 단계별 스킬 훈련칩 요구량 *\n(초급 / 중급 / 고급)"
+            android:gravity="center"
+            android:layout_marginTop="10dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="0 / 0 / 0"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:id="@+id/CalcSkillTrainingResultSkillChip" />
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="* 총 소요시간 *"
+            android:gravity="center"
+            android:layout_marginTop="10dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="0 시간"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:id="@+id/CalcSkillTrainingResultTime" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:local="http://schemas.android.com/apk/res-auto">
+  <item
+    android:id="@+id/RefreshFairyCropImageCache"
+    android:icon="@drawable/RefreshIcon"
+    local:showAsAction="always"
+    android:title="이미지 캐시 업데이트"/>
+</menu>
