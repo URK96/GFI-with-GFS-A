@@ -2368,26 +2368,26 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f02005d
 			public const int avd_hide_password = 2130837597;
 			
-			// aapt resource value: 0x7f0200e5
-			public const int avd_hide_password_1 = 2130837733;
-			
 			// aapt resource value: 0x7f0200e6
-			public const int avd_hide_password_2 = 2130837734;
+			public const int avd_hide_password_1 = 2130837734;
 			
 			// aapt resource value: 0x7f0200e7
-			public const int avd_hide_password_3 = 2130837735;
+			public const int avd_hide_password_2 = 2130837735;
+			
+			// aapt resource value: 0x7f0200e8
+			public const int avd_hide_password_3 = 2130837736;
 			
 			// aapt resource value: 0x7f02005e
 			public const int avd_show_password = 2130837598;
 			
-			// aapt resource value: 0x7f0200e8
-			public const int avd_show_password_1 = 2130837736;
-			
 			// aapt resource value: 0x7f0200e9
-			public const int avd_show_password_2 = 2130837737;
+			public const int avd_show_password_1 = 2130837737;
 			
 			// aapt resource value: 0x7f0200ea
-			public const int avd_show_password_3 = 2130837738;
+			public const int avd_show_password_2 = 2130837738;
+			
+			// aapt resource value: 0x7f0200eb
+			public const int avd_show_password_3 = 2130837739;
 			
 			// aapt resource value: 0x7f02005f
 			public const int Base36_Logo = 2130837599;
@@ -2731,11 +2731,11 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f0200d0
 			public const int notification_icon_background = 2130837712;
 			
-			// aapt resource value: 0x7f0200e3
-			public const int notification_template_icon_bg = 2130837731;
-			
 			// aapt resource value: 0x7f0200e4
-			public const int notification_template_icon_low_bg = 2130837732;
+			public const int notification_template_icon_bg = 2130837732;
+			
+			// aapt resource value: 0x7f0200e5
+			public const int notification_template_icon_low_bg = 2130837733;
 			
 			// aapt resource value: 0x7f0200d1
 			public const int notification_tile_bg = 2130837713;
@@ -2744,52 +2744,55 @@ namespace GFI_with_GFS_A
 			public const int notify_panel_notification_icon_bg = 2130837714;
 			
 			// aapt resource value: 0x7f0200d3
-			public const int RefreshIcon = 2130837715;
+			public const int ProductPercentTable_Icon = 2130837715;
 			
 			// aapt resource value: 0x7f0200d4
-			public const int SearchIcon = 2130837716;
+			public const int RefreshIcon = 2130837716;
 			
 			// aapt resource value: 0x7f0200d5
-			public const int SearchIcon_WhiteTheme = 2130837717;
+			public const int SearchIcon = 2130837717;
 			
 			// aapt resource value: 0x7f0200d6
-			public const int SeperateBar = 2130837718;
+			public const int SearchIcon_WhiteTheme = 2130837718;
 			
 			// aapt resource value: 0x7f0200d7
-			public const int SeperateBar_Vertical = 2130837719;
+			public const int SeperateBar = 2130837719;
 			
 			// aapt resource value: 0x7f0200d8
-			public const int SideLinkIcon = 2130837720;
+			public const int SeperateBar_Vertical = 2130837720;
 			
 			// aapt resource value: 0x7f0200d9
-			public const int Splash_DataBuild = 2130837721;
+			public const int SideLinkIcon = 2130837721;
 			
 			// aapt resource value: 0x7f0200da
-			public const int Splash_DataLoad = 2130837722;
+			public const int Splash_DataBuild = 2130837722;
 			
 			// aapt resource value: 0x7f0200db
-			public const int SplashBG2 = 2130837723;
+			public const int Splash_DataLoad = 2130837723;
 			
 			// aapt resource value: 0x7f0200dc
-			public const int test = 2130837724;
+			public const int SplashBG2 = 2130837724;
 			
 			// aapt resource value: 0x7f0200dd
-			public const int tooltip_frame_dark = 2130837725;
+			public const int test = 2130837725;
 			
 			// aapt resource value: 0x7f0200de
-			public const int tooltip_frame_light = 2130837726;
+			public const int tooltip_frame_dark = 2130837726;
 			
 			// aapt resource value: 0x7f0200df
-			public const int UseLightThemeIcon = 2130837727;
+			public const int tooltip_frame_light = 2130837727;
 			
 			// aapt resource value: 0x7f0200e0
-			public const int UseLightThemeIcon_WhiteTheme = 2130837728;
+			public const int UseLightThemeIcon = 2130837728;
 			
 			// aapt resource value: 0x7f0200e1
-			public const int Xamarin_Logo = 2130837729;
+			public const int UseLightThemeIcon_WhiteTheme = 2130837729;
 			
 			// aapt resource value: 0x7f0200e2
-			public const int ZinaOS_BootLogo = 2130837730;
+			public const int Xamarin_Logo = 2130837730;
+			
+			// aapt resource value: 0x7f0200e3
+			public const int ZinaOS_BootLogo = 2130837731;
 			
 			static Drawable()
 			{

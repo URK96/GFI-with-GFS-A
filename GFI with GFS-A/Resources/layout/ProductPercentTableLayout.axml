@@ -25,13 +25,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:enabled="false"
                 android:text="일반제조"
                 android:id="@+id/ProductPercentTableChangeShowModeButton" />
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="시도 횟수 우선"
+                android:enabled="false"
+                android:text="확률 우선"
                 android:id="@+id/ProductPercentTableChangeListModeButton" />
         </LinearLayout>
         <HorizontalScrollView

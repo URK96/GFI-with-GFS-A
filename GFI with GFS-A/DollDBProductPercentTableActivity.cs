@@ -19,7 +19,10 @@ namespace GFI_with_GFS_A
     public class DollDBProductPercentTableActivity : FragmentActivity
     {
         enum ShowMode { Normal, Advance }
+        enum ListMode { TotalCount, Percentage }
+
         private ShowMode Show_Mode = ShowMode.Normal;
+        private ListMode List_Mode = ListMode.Percentage;
 
         private int DollDicNum;
 
@@ -29,8 +32,8 @@ namespace GFI_with_GFS_A
         private Button ChangeShowMode;
         private Button ChangeListMode;
 
-        private int[,] Normal_Data;
-        private int[,] Advance_Data;
+        private double[,] Normal_Data;
+        private double[,] Advance_Data;
 
         private readonly int[] TopViewIds =
         {
@@ -58,66 +61,189 @@ namespace GFI_with_GFS_A
 
             InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.ProductPercentTableInitLoadProgress);
             ChangeShowMode = FindViewById<Button>(Resource.Id.ProductPercentTableChangeShowModeButton);
+            ChangeShowMode.Click += ChangeModeButton_Click;
             ChangeListMode = FindViewById<Button>(Resource.Id.ProductPercentTableChangeListModeButton);
+            ChangeListMode.Click += ChangeModeButton_Click;
 
             TableMainLayout = FindViewById<LinearLayout>(Resource.Id.ProductPercentTable_MainTableLayout);
 
             ProcessData();
         }
 
+        private void ChangeModeButton_Click(object sender, EventArgs e)
+        {
+            Button bt = sender as Button;
+
+            try
+            {
+                switch (bt.Id)
+                {
+                    case Resource.Id.ProductPercentTableChangeShowModeButton:
+                        if (Show_Mode == ShowMode.Normal)
+                        {
+                            Show_Mode = ShowMode.Advance;
+                            bt.Text = "중형제조";
+                        }
+                        else if (Show_Mode == ShowMode.Advance)
+                        {
+                            Show_Mode = ShowMode.Normal;
+                            bt.Text = "일반제조";
+                        }
+                        else
+                        {
+                            Show_Mode = ShowMode.Normal;
+                            bt.Text = "일반제조";
+                        }
+                        break;
+                    case Resource.Id.ProductPercentTableChangeListModeButton:
+                        if (List_Mode == ListMode.Percentage)
+                        {
+                            List_Mode = ListMode.TotalCount;
+                            bt.Text = "시도 횟수 우선";
+                        }
+                        else if (List_Mode == ListMode.TotalCount)
+                        {
+                            List_Mode = ListMode.Percentage;
+                            bt.Text = "확률 우선";
+                        }
+                        else
+                        {
+                            List_Mode = ListMode.Percentage;
+                            bt.Text = "확률 우선";
+                        }
+                        break;
+                }
+
+                LoadList();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+            }
+        }
+
         private async Task LoadList()
         {
-            int[,] list;
+            double[,] list;
 
-            switch (Show_Mode)
+            try
             {
-                case ShowMode.Normal:
-                default:
-                    list = new int[(Normal_Data.Length / 8), 8];
-                    break;
-                case ShowMode.Advance:
-                    list = new int[(Advance_Data.Length / 8), 8];
-                    break;
+                TableMainLayout.RemoveAllViews();
+
+                ChangeShowMode.Enabled = false;
+                ChangeListMode.Enabled = false;
+
+                if (InitLoadProgressBar.Visibility != ViewStates.Visible) InitLoadProgressBar.Visibility = ViewStates.Visible;
+
+                switch (Show_Mode)
+                {
+                    case ShowMode.Normal:
+                    default:
+                        list = new double[(Normal_Data.Length / 8), 8];
+                        list = Normal_Data;
+                        break;
+                    case ShowMode.Advance:
+                        list = new double[(Advance_Data.Length / 8), 8];
+                        list = Advance_Data;
+                        break;
+                }
+
+                list = await SortList(list);
+
+                if (list == null) throw new Exception();
+
+                InitLoadProgressBar.Indeterminate = false;
+                InitLoadProgressBar.Max = list.Length / TopViewIds.Length;
+                InitLoadProgressBar.Progress = 0;
+
+                await Task.Delay(100);
+
+                for (int i = 0; i < (list.Length / TopViewIds.Length); ++i)
+                {
+                    LinearLayout layout = new LinearLayout(this);
+
+                    layout.Orientation = Orientation.Horizontal;
+                    layout.LayoutParameters = TableMainLayout.LayoutParameters;
+                    layout.SetGravity(GravityFlags.Center);
+
+                    for (int j = 0; j < TopViewIds.Length; ++j)
+                    {
+                        TextView tv = new TextView(this);
+                        tv.LayoutParameters = FindViewById<TextView>(TopViewIds[j]).LayoutParameters;
+
+                        if (j == 8) tv.Text = list[i, j] + "%";
+                        else tv.Text = list[i, j].ToString();
+
+                        tv.Gravity = GravityFlags.Center;
+                        layout.AddView(tv);
+                    }
+
+                    InitLoadProgressBar.Progress += 1;
+                    await Task.Delay(1);
+                    TableMainLayout.AddView(layout);
+                }
+
+                await Task.Delay(100);
             }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+            }
+            finally
+            {
+                InitLoadProgressBar.Visibility = ViewStates.Invisible;
+                InitLoadProgressBar.Indeterminate = true;
+                ChangeListMode.Enabled = true;
+                ChangeShowMode.Enabled = true;
+            }
+        }
 
-            list = Normal_Data;
-
-
-            InitLoadProgressBar.Indeterminate = false;
-            InitLoadProgressBar.Max = list.Length;
-            InitLoadProgressBar.Progress = 0;
+        private async Task<double[,]> SortList(double[,] list)
+        {
             await Task.Delay(100);
 
-            for (int i = 0; i < (list.Length / 8); ++i)
+            try
             {
-                LinearLayout layout = new LinearLayout(this);
+                double[] temp = new double[TopViewIds.Length];
+                int index = 0;
 
-                layout.Orientation = Orientation.Horizontal;
-                layout.LayoutParameters = TableMainLayout.LayoutParameters;
-                layout.SetGravity(GravityFlags.Center);
-
-                for (int j = 0; j < TopViewIds.Length; ++j)
+                switch (List_Mode)
                 {
-                    TextView tv = new TextView(this);
-                    tv.LayoutParameters = FindViewById<TextView>(TopViewIds[j]).LayoutParameters;
-
-                    if (j == 8)
-                    {
-                        double value = (((double)list[i, 6] / list[i, 7]) * 100);
-                        tv.Text = (Math.Round(value, 3)) + "%";
-                    }
-                    else tv.Text = list[i, j].ToString();
-                    tv.Gravity = GravityFlags.Center;
-                    layout.AddView(tv);
-                    InitLoadProgressBar.Progress += 1;
+                    case ListMode.Percentage:
+                    default:
+                        index = TopViewIds.Length - 1;
+                        break;
+                    case ListMode.TotalCount:
+                        index = TopViewIds.Length - 2;
+                        break;
                 }
-                await Task.Delay(1);
-                TableMainLayout.AddView(layout);
+
+                for (int i = 0; i < (list.Length / TopViewIds.Length); ++i)
+                {
+                    int max_index = i;
+
+                    for (int j = i; j < (list.Length / TopViewIds.Length); ++j)
+                    {
+                        if (list[max_index, index] < list[j, index]) max_index = j;
+                    }
+
+                    if (max_index != i)
+                    {
+                        for (int k = 0; k < temp.Length; ++k)
+                        {
+                            temp[k] = list[i, k];
+                            list[i, k] = list[max_index, k];
+                            list[max_index, k] = temp[k];
+                        }
+                    }
+                }
+
+                return list;
             }
-
-            await Task.Delay(500);
-
-            InitLoadProgressBar.Visibility = ViewStates.Invisible;
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         private async Task ProcessData()
@@ -190,23 +316,36 @@ namespace GFI_with_GFS_A
                 normal_row.TrimToSize();
                 advance_row.TrimToSize();
 
-                Normal_Data = new int[normal_count, 8];
-                Advance_Data = new int[advance_count, 8];
+                Normal_Data = new double[normal_count, 9];
+                Advance_Data = new double[advance_count, 9];
 
-                for (int i = 0; i < (Normal_Data.Length / 8); ++i)
+                for (int i = 0; i < (Normal_Data.Length / TopViewIds.Length); ++i)
                 {
                     int row = (int)normal_row[i];
 
-                    for (int j = 0; j < (TopViewIds.Length - 1); j++) Normal_Data[i,j] = int.Parse(data[((row * 8) + j)].Split(':')[1]);
+                    if (i == 197)
+                    {
+                        await Task.Delay(1);
+                    }
+
+                    for (int j = 0; j < TopViewIds.Length; j++)
+                    {
+                        if (j == 8) Normal_Data[i, j] = Math.Round(((Normal_Data[i, 6] / Normal_Data[i, 7]) * 100), 4);
+                        else Normal_Data[i, j] = int.Parse(data[((row * 8) + j)].Split(':')[1]);
+                    }
                 }
 
                 if (advance_count != 0)
                 {
-                    for (int i = 0; i < (Advance_Data.Length / 8); ++i)
+                    for (int i = 0; i < (Advance_Data.Length / TopViewIds.Length); ++i)
                     {
                         int row = (int)advance_row[i];
 
-                        for (int j = 0; j < (TopViewIds.Length - 1); j++) Advance_Data[i, j] = int.Parse(data[((row * 8) + j)].Split(':')[1]);
+                        for (int j = 0; j < TopViewIds.Length; j++)
+                        {
+                            if (j == 8) Advance_Data[i, j] = Math.Round(((Advance_Data[i, 6] / Advance_Data[i, 7]) * 100), 4);
+                            else Advance_Data[i, j] = int.Parse(data[((row * 8) + j)].Split(':')[1]);
+                        }
                     }
                 }
 
@@ -217,6 +356,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
+                InitLoadProgressBar.Visibility = ViewStates.Invisible;
             }
         }
     }

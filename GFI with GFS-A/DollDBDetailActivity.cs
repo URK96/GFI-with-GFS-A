@@ -97,6 +97,7 @@ namespace GFI_with_GFS_A
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBDetailSnackbarLayout);
 
                 PercentTableFAB = FindViewById<FloatingActionButton>(Resource.Id.DollDBDetailProductPercentFAB);
+                if ((int)DollInfoDR["ProductTIme"] == 0) PercentTableFAB.Visibility = ViewStates.Gone;
                 MainFAB = FindViewById<FloatingActionButton>(Resource.Id.DollDBDetailSideLinkMainFAB);
                 NamuWikiFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkNamuWikiFAB);
                 InvenFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkInvenFAB);
