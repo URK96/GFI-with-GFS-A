@@ -20,9 +20,7 @@ namespace GFI_with_GFS_A
     [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class EquipDBDetailActivity : FragmentActivity
     {
-        private TableLayout AbilityTableLayout1;
-        private TableLayout AbilityTableLayout2;
-        private TableLayout AbilityTableLayout3;
+        private LinearLayout AbilityTableSubLayout;
 
         private DataRow EquipInfoDR = null;
         private string EquipName;
@@ -54,9 +52,7 @@ namespace GFI_with_GFS_A
                 IconName = (string)EquipInfoDR["Icon"];
 
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.EquipDBDetailInitLoadProgress);
-                AbilityTableLayout1 = FindViewById<TableLayout>(Resource.Id.EquipDBDetailAbilityTableLayout1);
-                AbilityTableLayout2 = FindViewById<TableLayout>(Resource.Id.EquipDBDetailAbilityTableLayout2);
-                AbilityTableLayout3 = FindViewById<TableLayout>(Resource.Id.EquipDBDetailAbilityTableLayout3);
+                AbilityTableSubLayout = FindViewById<LinearLayout>(Resource.Id.EquipDBDetailAbilitySubLayout);
 
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EquipDBDetailSnackbarLayout);
 
@@ -189,51 +185,36 @@ namespace GFI_with_GFS_A
                 string[] AbilityInitMags = ((string)EquipInfoDR["InitialMagnification"]).Split(';');
                 string[] AbilityMaxMags = ((string)EquipInfoDR["MaxMagnification"]).Split(';');
 
-                TableRow title_ability_row = new TableRow(this);
-                TableRow title_initmag_row = new TableRow(this);
-                TableRow title_maxmag_row = new TableRow(this);
-                TextView title_ability = new TextView(this);
-                TextView title_initmag = new TextView(this);
-                TextView title_maxmag = new TextView(this);
-
-                title_ability.Text = "능력";
-                title_ability.SetTextColor(Android.Graphics.Color.Aqua);
-                title_initmag.Text = "초기 능력치";
-                title_initmag.SetTextColor(Android.Graphics.Color.DarkMagenta);
-                title_maxmag.Text = "최대 능력치";
-                title_maxmag.SetTextColor(Android.Graphics.Color.Ivory);
-
-                title_ability_row.AddView(title_ability);
-                title_initmag_row.AddView(title_initmag);
-                title_maxmag_row.AddView(title_maxmag);
-
-
-                AbilityTableLayout1.AddView(title_ability_row);
-                AbilityTableLayout2.AddView(title_initmag_row);
-                AbilityTableLayout3.AddView(title_maxmag_row);
+                AbilityTableSubLayout.RemoveAllViews();
 
                 for (int i = 0; i < Abilities.Length; ++i)
                 {
-                    TableRow ability_row = new TableRow(this);
-                    TableRow initmag_row = new TableRow(this);
-                    TableRow maxmag_row = new TableRow(this);
+                    LinearLayout layout = new LinearLayout(this);
+                    layout.Orientation = Orientation.Horizontal;
+                    layout.LayoutParameters = FindViewById<LinearLayout>(Resource.Id.EquipDBDetailAbilityTopLayout).LayoutParameters;
+
                     TextView ability = new TextView(this);
                     TextView initmag = new TextView(this);
                     TextView maxmag = new TextView(this);
 
+                    ability.LayoutParameters = FindViewById<TextView>(Resource.Id.EquipDBDetailAbilityTopText1).LayoutParameters;
+                    initmag.LayoutParameters = FindViewById<TextView>(Resource.Id.EquipDBDetailAbilityTopText2).LayoutParameters;
+                    maxmag.LayoutParameters = FindViewById<TextView>(Resource.Id.EquipDBDetailAbilityTopText3).LayoutParameters;
+
                     ability.Text = Abilities[i];
                     ability.SetTextColor(Android.Graphics.Color.LimeGreen);
+                    ability.Gravity = GravityFlags.Center;
                     initmag.Text = AbilityInitMags[i];
+                    initmag.Gravity = GravityFlags.Center;
                     if (AbilityMaxMags[0] == "강화 불가") maxmag.Text = AbilityMaxMags[0];
                     else maxmag.Text = AbilityMaxMags[i];
+                    maxmag.Gravity = GravityFlags.Center;
 
-                    ability_row.AddView(ability);
-                    initmag_row.AddView(initmag);
-                    maxmag_row.AddView(maxmag);
+                    layout.AddView(ability);
+                    layout.AddView(initmag);
+                    layout.AddView(maxmag);
 
-                    AbilityTableLayout1.AddView(ability_row);
-                    AbilityTableLayout2.AddView(initmag_row);
-                    AbilityTableLayout3.AddView(maxmag_row);
+                    AbilityTableSubLayout.AddView(layout);
                 }
 
 

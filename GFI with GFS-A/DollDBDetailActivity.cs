@@ -15,16 +15,15 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Android.Gms.Ads;
 
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class DollDBDetailActivity : FragmentActivity
     {
-        private TableLayout SkillTableLayout1;
-        private TableLayout SkillTableLayout2;
-        private TableLayout ModSkillTableLayout1;
-        private TableLayout ModSkillTableLayout2;
+        private LinearLayout SkillTableSubLayout;
+        private LinearLayout ModSkillTableSubLayout;
 
         private DataRow DollInfoDR = null;
         private string DollName;
@@ -48,6 +47,8 @@ namespace GFI_with_GFS_A
         private FloatingActionButton InvenFAB;
         private FloatingActionButton BaseFAB;
 
+        private AdView adview;
+
         int[] ModButtonIds = { Resource.Id.DollDBDetailModSelect0, Resource.Id.DollDBDetailModSelect1, Resource.Id.DollDBDetailModSelect2, Resource.Id.DollDBDetailModSelect3 };
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -68,11 +69,10 @@ namespace GFI_with_GFS_A
                 DollGrade = (int)DollInfoDR["Grade"];
                 DollType = (string)DollInfoDR["Type"];
 
+                adview = FindViewById<AdView>(Resource.Id.DollDBDetail_adView);
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.DollDBDetailInitLoadProgress);
-                SkillTableLayout1 = FindViewById<TableLayout>(Resource.Id.DollDBDetailSkillAbilityTableLayout1);
-                SkillTableLayout2 = FindViewById<TableLayout>(Resource.Id.DollDBDetailSkillAbilityTableLayout2);
-                ModSkillTableLayout1 = FindViewById<TableLayout>(Resource.Id.DollDBDetailModSkillAbilityTableLayout1);
-                ModSkillTableLayout2 = FindViewById<TableLayout>(Resource.Id.DollDBDetailModSkillAbilityTableLayout2);
+                SkillTableSubLayout = FindViewById<LinearLayout>(Resource.Id.DollDBDetailSkillAbilitySubLayout);
+                ModSkillTableSubLayout = FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSkillAbilitySubLayout);
 
                 if ((bool)DollInfoDR["HasMod"] == false) FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSelectLayout).Visibility = ViewStates.Gone;
                 else
@@ -549,44 +549,29 @@ namespace GFI_with_GFS_A
                 string[] SkillAbilities = ((string)DollInfoDR["SkillEffect"]).Split(';');
                 string[] SkillMags = ((string)DollInfoDR["SkillMag"]).Split(',');
 
-                SkillTableLayout1.RemoveAllViews();
-                SkillTableLayout2.RemoveAllViews();
-
-                TableRow titlerow1 = new TableRow(this);
-                TableRow titlerow2 = new TableRow(this);
-                TextView title_ability = new TextView(this);
-                TextView title_mag = new TextView(this);
-
-                title_ability.Text = "효과";
-                title_ability.Gravity = GravityFlags.Center;
-                title_ability.SetTextColor(Android.Graphics.Color.Aqua);
-                title_mag.Text = "비율";
-                title_mag.Gravity = GravityFlags.Center;
-                title_mag.SetTextColor(Android.Graphics.Color.BlueViolet);
-
-                titlerow1.AddView(title_ability);
-                titlerow2.AddView(title_mag);
-
-                SkillTableLayout1.AddView(titlerow1);
-                SkillTableLayout2.AddView(titlerow2);
+                SkillTableSubLayout.RemoveAllViews();
 
                 for (int i = 2; i < SkillAbilities.Length; ++i)
                 {
-                    TableRow row1 = new TableRow(this);
-                    TableRow row2 = new TableRow(this);
+                    LinearLayout layout = new LinearLayout(this);
+                    layout.Orientation = Android.Widget.Orientation.Horizontal;
+                    layout.LayoutParameters = FindViewById<LinearLayout>(Resource.Id.DollDBDetailSkillAbilityTopLayout).LayoutParameters;
+
                     TextView ability = new TextView(this);
                     TextView mag = new TextView(this);
+
+                    ability.LayoutParameters = FindViewById<TextView>(Resource.Id.DollDBDetailSkillAbilityTopText1).LayoutParameters;
+                    mag.LayoutParameters = FindViewById<TextView>(Resource.Id.DollDBDetailSkillAbilityTopText2).LayoutParameters;
 
                     ability.Text = SkillAbilities[i];
                     ability.Gravity = GravityFlags.Center;
                     mag.Text = SkillMags[i];
                     mag.Gravity = GravityFlags.Center;
 
-                    row1.AddView(ability);
-                    row2.AddView(mag);
+                    layout.AddView(ability);
+                    layout.AddView(mag);
 
-                    SkillTableLayout1.AddView(row1);
-                    SkillTableLayout2.AddView(row2);
+                    SkillTableSubLayout.AddView(layout);
                 }
 
 
@@ -611,44 +596,29 @@ namespace GFI_with_GFS_A
                     string[] MSkillAbilities = ((string)DollInfoDR["ModSkillEffect"]).Split(';');
                     string[] MSkillMags = ((string)DollInfoDR["ModSkillMag"]).Split(',');
 
-                    ModSkillTableLayout1.RemoveAllViews();
-                    ModSkillTableLayout2.RemoveAllViews();
-
-                    TableRow m_titlerow1 = new TableRow(this);
-                    TableRow m_titlerow2 = new TableRow(this);
-                    TextView m_title_ability = new TextView(this);
-                    TextView m_title_mag = new TextView(this);
-
-                    m_title_ability.Text = "효과";
-                    m_title_ability.Gravity = GravityFlags.Center;
-                    m_title_ability.SetTextColor(Android.Graphics.Color.Aqua);
-                    m_title_mag.Text = "비율";
-                    m_title_mag.Gravity = GravityFlags.Center;
-                    m_title_mag.SetTextColor(Android.Graphics.Color.BlueViolet);
-
-                    m_titlerow1.AddView(m_title_ability);
-                    m_titlerow2.AddView(m_title_mag);
-
-                    ModSkillTableLayout1.AddView(m_titlerow1);
-                    ModSkillTableLayout2.AddView(m_titlerow2);
+                    ModSkillTableSubLayout.RemoveAllViews();
 
                     for (int i = 0; i < MSkillAbilities.Length; ++i)
                     {
-                        TableRow row1 = new TableRow(this);
-                        TableRow row2 = new TableRow(this);
+                        LinearLayout layout = new LinearLayout(this);
+                        layout.Orientation = Android.Widget.Orientation.Horizontal;
+                        layout.LayoutParameters = FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSkillAbilityTopLayout).LayoutParameters;
+
                         TextView ability = new TextView(this);
                         TextView mag = new TextView(this);
+
+                        ability.LayoutParameters = FindViewById<TextView>(Resource.Id.DollDBDetailModSkillAbilityTopText1).LayoutParameters;
+                        mag.LayoutParameters = FindViewById<TextView>(Resource.Id.DollDBDetailModSkillAbilityTopText2).LayoutParameters;
 
                         ability.Text = SkillAbilities[i];
                         ability.Gravity = GravityFlags.Center;
                         mag.Text = SkillMags[i];
                         mag.Gravity = GravityFlags.Center;
 
-                        row1.AddView(ability);
-                        row2.AddView(mag);
+                        layout.AddView(ability);
+                        layout.AddView(mag);
 
-                        ModSkillTableLayout1.AddView(row1);
-                        ModSkillTableLayout2.AddView(row2);
+                        ModSkillTableSubLayout.AddView(layout);
                     }
                 }
 
@@ -720,6 +690,8 @@ namespace GFI_with_GFS_A
                 if ((bool)DollInfoDR["HasMod"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSelectLayout).Visibility = ViewStates.Visible;
 
                 ShowCardViewAnimation();
+
+                LoadAD();
             }
             catch (WebException ex)
             {
@@ -738,6 +710,14 @@ namespace GFI_with_GFS_A
                 InitLoadProgressBar.Visibility = ViewStates.Invisible;
             }
         }
+
+        private async Task LoadAD()
+        {
+            await Task.Delay(100);
+
+            adview.LoadAd(new AdRequest.Builder().Build());
+        }
+
         private void SetCardTheme()
         {
             int[] CardViewIds = { Resource.Id.DollDBDetailBasicInfoCardLayout, Resource.Id.DollDBDetailBuffCardLayout, Resource.Id.DollDBDetailSkillCardLayout, Resource.Id.DollDBDetailModSkillCardLayout, Resource.Id.DollDBDetailAbilityCardLayout };
