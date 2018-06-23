@@ -17,7 +17,7 @@
             android:visibility="gone"
             android:layout_gravity="center"
             cardview:adSize="BANNER"
-            cardview:adUnitId="@string/AdMob_TestID" />
+            cardview:adUnitId="@string/AdMob_ID" />
         <ProgressBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1395,7 +1395,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/productpercenttable_icon"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="15dp"
         android:layout_marginBottom="80dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
@@ -1406,7 +1406,7 @@
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"

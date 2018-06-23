@@ -183,7 +183,7 @@ namespace GFI_with_GFS_A
         internal static async Task<bool> CheckEventVersion()
         {
             string LocalEventVerPath = Path.Combine(CachePath, "Event", "EventVer.txt");
-            string ServerEventVerPath = Path.Combine(Server, "EventVer.txt");
+            string ServerEventVerPath = Path.Combine(Server, "EventVerNew.txt");
             string TempEventVerPath = Path.Combine(tempPath, "EventVer.txt");
 
             bool HasEventUpdate = false;
@@ -300,7 +300,7 @@ namespace GFI_with_GFS_A
 
             using (WebClient wc = new WebClient())
             {
-                string url = Path.Combine(Server, "EventVer.txt");
+                string url = Path.Combine(Server, "EventVerNew.txt");
                 string target = Path.Combine(tempPath, "EventVer.txt");
                 await wc.DownloadFileTaskAsync(url, target);
                 await Task.Delay(100);

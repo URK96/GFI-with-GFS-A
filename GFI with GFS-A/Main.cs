@@ -160,6 +160,8 @@ namespace GFI_with_GFS_A
 
             try
             {
+                //Android.Gms.Ads.MobileAds.Initialize(this, "ca-app-pub-4576756770200148~7952805589");
+
                 if (ETC.sharedPreferences.GetBoolean("LowMemoryOption", false) == false)
                 {
                     for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).SetBackgroundResource(MainMenuButtonBackgroundIds[i]);
@@ -452,7 +454,7 @@ namespace GFI_with_GFS_A
                         if (ETC.HasEvent == true)
                         {
                             if ((int.Parse(Build.VERSION.Release.Split('.')[0])) >= 6) CheckPermission(Manifest.Permission.Internet);
-                            StartActivity(typeof(EventActivity));
+                            StartActivity(typeof(EventListActivity));
                             OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         }
                         break;

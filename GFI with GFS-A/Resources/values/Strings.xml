@@ -75,5 +75,5 @@
   <string name="NetworkDelay">서버 응답 대기 중...</string>
   <string name="ProductPercentTable_LoadFail">제조 정보 로드 실패</string>
   <string name="AdMob_TestID">ca-app-pub-3940256099942544/6300978111</string>
-  <string name="AdMob_ID"></string>
+  <string name="AdMob_ID">ca-app-pub-4576756770200148/5965646930</string>
 </resources>

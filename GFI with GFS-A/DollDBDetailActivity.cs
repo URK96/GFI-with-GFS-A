@@ -22,6 +22,8 @@ namespace GFI_with_GFS_A
     [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class DollDBDetailActivity : FragmentActivity
     {
+        System.Timers.Timer FABTimer = new System.Timers.Timer();
+
         private LinearLayout SkillTableSubLayout;
         private LinearLayout ModSkillTableSubLayout;
 
@@ -34,6 +36,7 @@ namespace GFI_with_GFS_A
         private string[] VoiceList;
 
         private bool IsOpenFABMenu = false;
+        private bool IsEnableFABMenu = false;
 
         private ScrollView ScrollLayout;
         private CoordinatorLayout SnackbarLayout = null;
@@ -109,6 +112,9 @@ namespace GFI_with_GFS_A
                 InvenFAB.Click += MainSubFAB_Click;
                 BaseFAB.Click += MainSubFAB_Click;
 
+                FABTimer.Interval = 3000;
+                FABTimer.Elapsed += FABTimer_Elapsed;
+
                 InitLoadProcess();
             }
             catch (Exception ex)
@@ -116,6 +122,11 @@ namespace GFI_with_GFS_A
                 ETC.LogError(this, ex.ToString());
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
+        }
+
+        private void FABTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            ShowFloatingActionButtonAnimation();
         }
 
         private void PercentTableFAB_Click(object sender, EventArgs e)
@@ -254,47 +265,61 @@ namespace GFI_with_GFS_A
 
         private void MainFAB_Click(object sender, EventArgs e)
         {
-            int[] ShowAnimationIds = { Resource.Animation.SideLinkFAB1_Show, Resource.Animation.SideLinkFAB2_Show, Resource.Animation.SideLinkFAB3_Show };
-            int[] HideAnimationIds = { Resource.Animation.SideLinkFAB1_Hide, Resource.Animation.SideLinkFAB2_Hide, Resource.Animation.SideLinkFAB3_Hide };
-            FloatingActionButton[] FABs = { NamuWikiFAB, InvenFAB, BaseFAB };
-            double[,] Mags = { { 1.80, 0.25 }, { 1.5, 1.5 }, { 0.25, 1.80 } };
-
-            try
+            if (IsEnableFABMenu == false)
             {
-                switch (IsOpenFABMenu)
-                {
-                    case false:
-                        for (int i = 0; i < FABs.Length; ++i)
-                        {
-                            FrameLayout.LayoutParams layoutparams = (FrameLayout.LayoutParams)FABs[i].LayoutParameters;
-                            layoutparams.RightMargin += (int)(FABs[i].Width * Mags[i, 0]);
-                            layoutparams.BottomMargin += (int)(FABs[i].Height * Mags[i, 1]);
-
-                            FABs[i].LayoutParameters = layoutparams;
-                            FABs[i].StartAnimation(AnimationUtils.LoadAnimation(Application, ShowAnimationIds[i]));
-                            FABs[i].Clickable = true;
-                        }
-                        IsOpenFABMenu = true;
-                        break;
-                    case true:
-                        for (int i = 0; i < FABs.Length; ++i)
-                        {
-                            FrameLayout.LayoutParams layoutparams = (FrameLayout.LayoutParams)FABs[i].LayoutParameters;
-                            layoutparams.RightMargin -= (int)(FABs[i].Width * Mags[i, 0]);
-                            layoutparams.BottomMargin -= (int)(FABs[i].Height * Mags[i, 1]);
-
-                            FABs[i].LayoutParameters = layoutparams;
-                            FABs[i].StartAnimation(AnimationUtils.LoadAnimation(Application, HideAnimationIds[i]));
-                            FABs[i].Clickable = false;
-                        }
-                        IsOpenFABMenu = false;
-                        break;
-                }
+                IsEnableFABMenu = true;
+                MainFAB.Animate().Alpha(1.0f).SetDuration(500).Start();
+                PercentTableFAB.Show();
+                FABTimer.Start();
             }
-            catch (Exception ex)
+            else
             {
-                ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "FAB 작동 실패!", Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                int[] ShowAnimationIds = { Resource.Animation.SideLinkFAB1_Show, Resource.Animation.SideLinkFAB2_Show, Resource.Animation.SideLinkFAB3_Show };
+                int[] HideAnimationIds = { Resource.Animation.SideLinkFAB1_Hide, Resource.Animation.SideLinkFAB2_Hide, Resource.Animation.SideLinkFAB3_Hide };
+                FloatingActionButton[] FABs = { NamuWikiFAB, InvenFAB, BaseFAB };
+                double[,] Mags = { { 1.80, 0.25 }, { 1.5, 1.5 }, { 0.25, 1.80 } };
+
+                try
+                {
+                    switch (IsOpenFABMenu)
+                    {
+                        case false:
+                            for (int i = 0; i < FABs.Length; ++i)
+                            {
+                                FrameLayout.LayoutParams layoutparams = (FrameLayout.LayoutParams)FABs[i].LayoutParameters;
+                                layoutparams.RightMargin += (int)(FABs[i].Width * Mags[i, 0]);
+                                layoutparams.BottomMargin += (int)(FABs[i].Height * Mags[i, 1]);
+
+                                FABs[i].LayoutParameters = layoutparams;
+                                FABs[i].StartAnimation(AnimationUtils.LoadAnimation(Application, ShowAnimationIds[i]));
+                                FABs[i].Clickable = true;
+                            }
+                            IsOpenFABMenu = true;
+                            PercentTableFAB.Hide();
+                            FABTimer.Stop();
+                            break;
+                        case true:
+                            for (int i = 0; i < FABs.Length; ++i)
+                            {
+                                FrameLayout.LayoutParams layoutparams = (FrameLayout.LayoutParams)FABs[i].LayoutParameters;
+                                layoutparams.RightMargin -= (int)(FABs[i].Width * Mags[i, 0]);
+                                layoutparams.BottomMargin -= (int)(FABs[i].Height * Mags[i, 1]);
+
+                                FABs[i].LayoutParameters = layoutparams;
+                                FABs[i].StartAnimation(AnimationUtils.LoadAnimation(Application, HideAnimationIds[i]));
+                                FABs[i].Clickable = false;
+                            }
+                            IsOpenFABMenu = false;
+                            PercentTableFAB.Show();
+                            FABTimer.Start();
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ETC.LogError(this, ex.ToString());
+                    ETC.ShowSnackbar(SnackbarLayout, "FAB 작동 실패!", Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                }
             }
         }
 
@@ -690,6 +715,7 @@ namespace GFI_with_GFS_A
                 if ((bool)DollInfoDR["HasMod"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSelectLayout).Visibility = ViewStates.Visible;
 
                 ShowCardViewAnimation();
+                ShowFloatingActionButtonAnimation();
 
                 LoadAD();
             }
@@ -709,6 +735,15 @@ namespace GFI_with_GFS_A
             {
                 InitLoadProgressBar.Visibility = ViewStates.Invisible;
             }
+        }
+
+        private void ShowFloatingActionButtonAnimation()
+        {
+            FABTimer.Stop();
+            IsEnableFABMenu = false;
+
+            PercentTableFAB.Hide();
+            MainFAB.Alpha = 0.1f;
         }
 
         private async Task LoadAD()
