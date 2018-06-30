@@ -750,6 +750,9 @@ namespace GFI_with_GFS_A
         {
             await Task.Delay(100);
 
+            adview.AdListener = new ETC.ADViewListener();
+            adview.Clickable = false;
+
             adview.LoadAd(new AdRequest.Builder().Build());
         }
 

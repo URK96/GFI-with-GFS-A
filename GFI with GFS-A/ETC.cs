@@ -397,23 +397,16 @@ namespace GFI_with_GFS_A
             return (minute / 60) + " : " + (minute % 60).ToString("D2");
         }
 
-        internal class CountDown : Android.OS.CountDownTimer
+        internal class ADViewListener : Android.Gms.Ads.AdListener
         {
-            CoordinatorLayout SnackbarLayout;
-
-            public CountDown(long millisInFuture, long countDownInterval, CoordinatorLayout layout) : base(millisInFuture, countDownInterval)
+            public override void OnAdOpened()
             {
-                SnackbarLayout = layout;
+                return;
             }
 
-            public override void OnFinish()
+            public override void OnAdLeftApplication()
             {
-                ShowSnackbar(SnackbarLayout, Resource.String.NetworkDelay, Snackbar.LengthLong, Android.Graphics.Color.DarkMagenta);
-            }
-
-            public override void OnTick(long millisUntilFinished)
-            {
-                
+                return;
             }
         }
     }
