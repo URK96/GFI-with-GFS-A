@@ -16,6 +16,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Android.Gms.Ads;
+using Com.Syncfusion.Charts;
+using System.Collections.ObjectModel;
 
 namespace GFI_with_GFS_A
 {
@@ -34,9 +36,11 @@ namespace GFI_with_GFS_A
         private string DollType;
         private int ModIndex = 0;
         private string[] VoiceList;
+        internal static int[] AbilityValues = new int[6];
 
         private bool IsOpenFABMenu = false;
         private bool IsEnableFABMenu = false;
+        private bool IsChartLoad = false;
 
         private ScrollView ScrollLayout;
         private CoordinatorLayout SnackbarLayout = null;
@@ -49,6 +53,7 @@ namespace GFI_with_GFS_A
         private FloatingActionButton NamuWikiFAB;
         private FloatingActionButton InvenFAB;
         private FloatingActionButton BaseFAB;
+        private SfChart chart;
 
         private AdView adview;
 
@@ -59,6 +64,8 @@ namespace GFI_with_GFS_A
             try
             {
                 base.OnCreate(savedInstanceState);
+
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY0NkAzMTM2MmUzMjJlMzBmNFFDVVZlU2NDRTVmYVJqQ0ZyOTVPOGhYWnFIazlQNFNPeGVEMU9WMjZnPQ==");
 
                 if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
 
@@ -105,6 +112,7 @@ namespace GFI_with_GFS_A
                 NamuWikiFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkNamuWikiFAB);
                 InvenFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkInvenFAB);
                 BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkBaseFAB);
+                chart = FindViewById<SfChart>(Resource.Id.DollDBDetailAbilityRadarChart);
 
                 PercentTableFAB.Click += PercentTableFAB_Click;
                 MainFAB.Click += MainFAB_Click;
@@ -116,6 +124,41 @@ namespace GFI_with_GFS_A
                 FABTimer.Elapsed += FABTimer_Elapsed;
 
                 InitLoadProcess();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
+            }
+        }
+
+        private async Task LoadChart()
+        {
+            chart.Series.Clear();
+
+            chart.PrimaryAxis = new CategoryAxis();
+            chart.SecondaryAxis = new NumericalAxis();
+
+            RadarSeries radar = new RadarSeries();
+
+            DataModel model = new DataModel();
+
+            radar.ItemsSource = model.MaxAbilityList;
+            radar.XBindingPath = "AbilityType";
+            radar.YBindingPath = "AbilityValue";
+            radar.DrawType = PolarChartDrawType.Line;
+
+            chart.Series.Add(radar);
+
+            IsChartLoad = true;
+        }
+
+        protected override void OnResume()
+        {
+            try
+            {
+                base.OnResume();
+                if (IsChartLoad == true) LoadChart();
             }
             catch (Exception ex)
             {
@@ -663,21 +706,35 @@ namespace GFI_with_GFS_A
                 {
                     FindViewById<TextView>(ProgressMaxTexts[i]).Text = FindViewById<ProgressBar>(Progresses[i]).Max.ToString();
 
+                    int MinValue = 0;
+
+                    string temp = (((string)DollInfoDR[abilities[i]]).Split(';')[0].Split('/'))[0];
+
+                    if (temp.Contains("?") == true) MinValue = 0;
+                    else MinValue = int.Parse(temp);
+
                     int MaxValue = 0;
 
                     switch (ModIndex)
                     {
                         case 0:
-                            MaxValue = Int32.Parse((((string)DollInfoDR[abilities[i]]).Split(';')[0].Split('/'))[1]);
+                            MaxValue = int.Parse((((string)DollInfoDR[abilities[i]]).Split(';')[0].Split('/'))[1]);
                             break;
                         case 1:
                         case 2:
                         case 3:
-                            MaxValue = Int32.Parse((((string)DollInfoDR[abilities[i]]).Split(';'))[ModIndex]);
+                            MaxValue = int.Parse((((string)DollInfoDR[abilities[i]]).Split(';'))[ModIndex]);
                             break;
                     }
 
-                    ETC.UpProgressBarProgress(FindViewById<ProgressBar>(Progresses[i]), 0, MaxValue, delay);
+                    ProgressBar pb = FindViewById<ProgressBar>(Progresses[i]);
+
+                    pb.Progress = MinValue;
+                    pb.SecondaryProgress = MaxValue;
+
+                    AbilityValues[i] = MaxValue;
+
+                    //ETC.UpProgressBarProgress(FindViewById<ProgressBar>(Progresses[i]), 0, MaxValue, delay);
                     FindViewById<TextView>(StatusTexts[i]).Text = ((string)DollInfoDR[abilities[i]]).Split('/')[0] + "/" + MaxValue + " (" + AbilityGrade[i] + ")";
                 }
 
@@ -689,7 +746,9 @@ namespace GFI_with_GFS_A
                     double ReloadTime = CalcReloadTime(DollInfoDR, DollType);
                     int Bullet = (int)DollInfoDR["Bullet"];
                     FindViewById<TextView>(Resource.Id.DollInfoBulletProgressMax).Text = FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress).Max.ToString();
-                    ETC.UpProgressBarProgress(FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress), 0, Bullet, delay);
+
+                    FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress).Progress = Bullet;
+                    //ETC.UpProgressBarProgress(FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress), 0, Bullet, delay);
                     FindViewById<TextView>(Resource.Id.DollInfoBulletStatus).Text = Bullet.ToString();
                     FindViewById<TextView>(Resource.Id.DollInfoReloadStatus).Text = ReloadTime.ToString() + " 초";
                 }
@@ -704,20 +763,39 @@ namespace GFI_with_GFS_A
                     FindViewById<LinearLayout>(Resource.Id.DollInfoAMLayout).Visibility = ViewStates.Visible;
 
                     FindViewById<TextView>(Resource.Id.DollInfoAMProgressMax).Text = FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress).Max.ToString();
-                    ETC.UpProgressBarProgress(FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress), 0, Int32.Parse((((string)DollInfoDR["Armor"]).Split('/'))[1]), delay);
+
+                    int MinValue = 0;
+                    int MaxValue = int.Parse((((string)DollInfoDR["Armor"]).Split('/'))[1]);
+
+                    string temp = (((string)DollInfoDR["Armor"]).Split('/'))[0];
+
+                    if (temp.Contains("?") == true) MinValue = 0;
+                    else MinValue = int.Parse(temp);
+
+                    FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress).Progress = MinValue;
+                    FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress).SecondaryProgress = MaxValue;
+
+                    AbilityValues[5] = MaxValue;
+                    //ETC.UpProgressBarProgress(FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress), 0, Int32.Parse((((string)DollInfoDR["Armor"]).Split('/'))[1]), delay);
                     FindViewById<TextView>(Resource.Id.DollInfoAMStatus).Text = (string)DollInfoDR["Armor"] + " (" + AbilityGrade[6] + ")";
                 }
-                else FindViewById<LinearLayout>(Resource.Id.DollInfoAMLayout).Visibility = ViewStates.Gone;
+                else
+                {
+                    AbilityValues[5] = 0;
 
+                    FindViewById<LinearLayout>(Resource.Id.DollInfoAMLayout).Visibility = ViewStates.Gone;
+                }
 
                 if (ETC.UseLightTheme == true) SetCardTheme();
                 if ((bool)DollInfoDR["HasVoice"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailVoiceLayout).Visibility = ViewStates.Visible;
                 if ((bool)DollInfoDR["HasMod"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSelectLayout).Visibility = ViewStates.Visible;
 
+                LoadChart();
+
                 ShowCardViewAnimation();
                 ShowFloatingActionButtonAnimation();
 
-                LoadAD();
+                //LoadAD();
             }
             catch (WebException ex)
             {
@@ -800,6 +878,7 @@ namespace GFI_with_GFS_A
             }
 
             if (FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1500).Start();
+            if (FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(2000).Start();
         }
 
         private void DollDBDetailModSelectButton_Click(object sender, EventArgs e)
@@ -870,6 +949,36 @@ namespace GFI_with_GFS_A
             OverridePendingTransition(Resource.Animation.Activity_SlideInLeft, Resource.Animation.Activity_SlideOutRight);
             GC.Collect();
             Finish();
+        }
+
+        internal class DollMaxAbility
+        {
+            public string AbilityType { get; set; }
+            public int AbilityValue { get; set; }
+
+            public DollMaxAbility(string type, int value)
+            {
+                AbilityType = type;
+                AbilityValue = value;
+            }
+        }
+
+        internal class DataModel
+        {
+            public ObservableCollection<DollMaxAbility> MaxAbilityList { get; set; }
+
+            public DataModel()
+            {
+                MaxAbilityList = new ObservableCollection<DollMaxAbility>()
+                {
+                    new DollMaxAbility("HP", AbilityValues[0]),
+                    new DollMaxAbility("FR", AbilityValues[1]),
+                    new DollMaxAbility("EV", AbilityValues[2]),
+                    new DollMaxAbility("AC", AbilityValues[3]),
+                    new DollMaxAbility("AS", AbilityValues[4]),
+                    new DollMaxAbility("AM", AbilityValues[5])
+                };
+            }
         }
     }
 }

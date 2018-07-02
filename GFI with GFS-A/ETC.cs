@@ -35,7 +35,123 @@ namespace GFI_with_GFS_A
         internal static DataTable SkillTrainingList = new DataTable();
         internal static DataTable MDSupportList = new DataTable();
 
+        internal static AverageAbility[] Avg_List;
+
         internal static ISharedPreferences sharedPreferences;
+
+        internal struct AverageAbility
+        {
+            public int HP { get; set; }
+            public int FR { get; set; }
+            public int EV { get; set; }
+            public int AC { get; set; }
+            public int AS { get; set; }
+            public int AM { get; set; }
+        }
+
+        internal static void InitializeAverageAbility()
+        {
+            string[] AbilityList = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
+            const int TypeCount = 6;
+            const int AbilityCount = 6;
+
+            AverageAbility Avg_HG = new AverageAbility();
+            AverageAbility Avg_SMG = new AverageAbility();
+            AverageAbility Avg_AR = new AverageAbility();
+            AverageAbility Avg_RF = new AverageAbility();
+            AverageAbility Avg_MG = new AverageAbility();
+            AverageAbility Avg_SG = new AverageAbility();
+
+            Avg_List = new AverageAbility[TypeCount]
+            {
+                Avg_HG,
+                Avg_SMG,
+                Avg_AR,
+                Avg_RF,
+                Avg_MG,
+                Avg_SG
+            };
+            
+            int[] count = { 0, 0, 0, 0, 0, 0 };
+            int[,] total = new int[TypeCount, AbilityCount];
+
+            for (int i = 0; i < TypeCount; ++i)
+            {
+                for (int j = 0; j < AbilityCount; ++j) total[i, j] = 0;
+            }
+
+            for (int i = 0; i < DollList.Rows.Count; ++i)
+            {
+                DataRow dr = DollList.Rows[i];
+
+                string type = (string)dr["Type"];
+                int index = 0;
+
+                switch (type)
+                {
+                    case "HG":
+                        index = 0;
+                        break;
+                    case "SMG":
+                        index = 1;
+                        break;
+                    case "AR":
+                        index = 2;
+                        break;
+                    case "RF":
+                        index = 3;
+                        break;
+                    case "MG":
+                        index = 4;
+                        break;
+                    case "SG":
+                        index = 5;
+                        break;
+                }
+
+                for (int j = 0; j < AbilityList.Length; ++j)
+                {
+                    int value = int.Parse((((string)dr[AbilityList[j]]).Split(';')[0].Split('/'))[1]);
+                    total[index, j] += value;
+                }
+
+                if (type == "SG")
+                {
+                    int value = int.Parse((((string)dr["Armor"]).Split('/'))[0]);
+                    total[index, 5] += value;
+                }
+            }
+
+            for (int i = 0; i < TypeCount; ++i)
+            {
+                for (int j = 0; j < AbilityCount; ++j)
+                {
+                    int value = Convert.ToInt32((double)total[i, j] / count[i]);
+
+                    switch (j)
+                    {
+                        case 0:
+                            Avg_List[i].HP = value;
+                            break;
+                        case 1:
+                            Avg_List[i].FR = value;
+                            break;
+                        case 2:
+                            Avg_List[i].EV = value;
+                            break;
+                        case 3:
+                            Avg_List[i].AC = value;
+                            break;
+                        case 4:
+                            Avg_List[i].AS = value;
+                            break;
+                        case 5:
+                            Avg_List[i].AM = value;
+                            break;
+                    }
+                }
+            }
+        }
 
         internal static async Task UpViewAlpha(View view, int rate, int delay)
         {
@@ -409,5 +525,7 @@ namespace GFI_with_GFS_A
                 return;
             }
         }
+
+        
     }
 }
