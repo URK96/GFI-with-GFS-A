@@ -187,8 +187,6 @@ namespace GFI_with_GFS_A
             switch (cb.Checked)
             {
                 case true:
-                    v.FindViewById<LinearLayout>(Resource.Id.CalcReportVowLayout).Visibility = ViewStates.Visible;
-
                     StartLevel.MaxValue = 100;
                     StartLevel.MinValue = 100;
                     StartLevel.Value = StartLevel.MinValue;
@@ -197,9 +195,6 @@ namespace GFI_with_GFS_A
                     TargetLevel.Value = TargetLevel.MinValue;
                     break;
                 case false:
-                    v.FindViewById<LinearLayout>(Resource.Id.CalcReportVowLayout).Visibility = ViewStates.Gone;
-                    ApplyVowCheckBox.Checked = false;
-
                     StartLevel.MaxValue = 1;
                     StartLevel.MinValue = 1;
                     StartLevel.Value = StartLevel.MinValue;

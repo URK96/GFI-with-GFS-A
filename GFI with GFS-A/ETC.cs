@@ -87,6 +87,11 @@ namespace GFI_with_GFS_A
                 string type = (string)dr["Type"];
                 int index = 0;
 
+                if (i == 167)
+                {
+                    index = 0;
+                }
+
                 switch (type)
                 {
                     case "HG":
@@ -109,6 +114,8 @@ namespace GFI_with_GFS_A
                         break;
                 }
 
+                count[index] += 1;
+
                 for (int j = 0; j < AbilityList.Length; ++j)
                 {
                     int value = int.Parse((((string)dr[AbilityList[j]]).Split(';')[0].Split('/'))[1]);
@@ -117,7 +124,7 @@ namespace GFI_with_GFS_A
 
                 if (type == "SG")
                 {
-                    int value = int.Parse((((string)dr["Armor"]).Split('/'))[0]);
+                    int value = int.Parse((((string)dr["Armor"]).Split('/'))[1]);
                     total[index, 5] += value;
                 }
             }
@@ -126,7 +133,7 @@ namespace GFI_with_GFS_A
             {
                 for (int j = 0; j < AbilityCount; ++j)
                 {
-                    int value = Convert.ToInt32((double)total[i, j] / count[i]);
+                    int value = Convert.ToInt32(Math.Round((double)total[i, j] / count[i]));
 
                     switch (j)
                     {

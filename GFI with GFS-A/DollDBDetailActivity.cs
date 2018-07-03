@@ -33,7 +33,7 @@ namespace GFI_with_GFS_A
         private string DollName;
         private int DollDicNum;
         private int DollGrade;
-        private string DollType;
+        internal static string DollType;
         private int ModIndex = 0;
         private string[] VoiceList;
         internal static int[] AbilityValues = new int[6];
@@ -138,6 +138,10 @@ namespace GFI_with_GFS_A
 
             chart.PrimaryAxis = new CategoryAxis();
             chart.SecondaryAxis = new NumericalAxis();
+            chart.Legend.Visibility = Visibility.Visible;
+
+            if (ETC.UseLightTheme == true) chart.Legend.LabelStyle.TextColor = Android.Graphics.Color.DarkGray;
+            else chart.Legend.LabelStyle.TextColor = Android.Graphics.Color.LightGray;
 
             RadarSeries radar = new RadarSeries();
 
@@ -147,8 +151,25 @@ namespace GFI_with_GFS_A
             radar.XBindingPath = "AbilityType";
             radar.YBindingPath = "AbilityValue";
             radar.DrawType = PolarChartDrawType.Line;
+            radar.Color = Android.Graphics.Color.LightGreen;
+
+            radar.Label = DollName;
+            radar.TooltipEnabled = true;
 
             chart.Series.Add(radar);
+
+            RadarSeries radar2 = new RadarSeries();
+
+            radar2.ItemsSource = model.AvgAbilityList;
+            radar2.XBindingPath = "AbilityType";
+            radar2.YBindingPath = "AbilityValue";
+            radar2.DrawType = PolarChartDrawType.Line;
+            radar2.Color = Android.Graphics.Color.Magenta;
+
+            radar2.Label = DollType + "평균";
+            radar2.TooltipEnabled = true;
+
+            chart.Series.Add(radar2);
 
             IsChartLoad = true;
         }
@@ -169,7 +190,7 @@ namespace GFI_with_GFS_A
 
         private void FABTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
-            ShowFloatingActionButtonAnimation();
+            HideFloatingActionButtonAnimation();
         }
 
         private void PercentTableFAB_Click(object sender, EventArgs e)
@@ -793,9 +814,9 @@ namespace GFI_with_GFS_A
                 LoadChart();
 
                 ShowCardViewAnimation();
-                ShowFloatingActionButtonAnimation();
+                HideFloatingActionButtonAnimation();
 
-                //LoadAD();
+                LoadAD();
             }
             catch (WebException ex)
             {
@@ -815,13 +836,13 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ShowFloatingActionButtonAnimation()
+        private void HideFloatingActionButtonAnimation()
         {
             FABTimer.Stop();
             IsEnableFABMenu = false;
 
             PercentTableFAB.Hide();
-            MainFAB.Alpha = 0.1f;
+            MainFAB.Alpha = 0.3f;
         }
 
         private async Task LoadAD()
@@ -836,7 +857,7 @@ namespace GFI_with_GFS_A
 
         private void SetCardTheme()
         {
-            int[] CardViewIds = { Resource.Id.DollDBDetailBasicInfoCardLayout, Resource.Id.DollDBDetailBuffCardLayout, Resource.Id.DollDBDetailSkillCardLayout, Resource.Id.DollDBDetailModSkillCardLayout, Resource.Id.DollDBDetailAbilityCardLayout };
+            int[] CardViewIds = { Resource.Id.DollDBDetailBasicInfoCardLayout, Resource.Id.DollDBDetailBuffCardLayout, Resource.Id.DollDBDetailSkillCardLayout, Resource.Id.DollDBDetailModSkillCardLayout, Resource.Id.DollDBDetailAbilityCardLayout, Resource.Id.DollDBDetailAbilityRadarChartCardLayout };
 
             foreach (int id in CardViewIds)
             {
@@ -966,17 +987,52 @@ namespace GFI_with_GFS_A
         internal class DataModel
         {
             public ObservableCollection<DollMaxAbility> MaxAbilityList { get; set; }
+            public ObservableCollection<DollMaxAbility> AvgAbilityList { get; set; }
 
             public DataModel()
             {
                 MaxAbilityList = new ObservableCollection<DollMaxAbility>()
                 {
-                    new DollMaxAbility("HP", AbilityValues[0]),
-                    new DollMaxAbility("FR", AbilityValues[1]),
-                    new DollMaxAbility("EV", AbilityValues[2]),
-                    new DollMaxAbility("AC", AbilityValues[3]),
-                    new DollMaxAbility("AS", AbilityValues[4]),
-                    new DollMaxAbility("AM", AbilityValues[5])
+                    new DollMaxAbility("체력", AbilityValues[0]),
+                    new DollMaxAbility("화력", AbilityValues[1]),
+                    new DollMaxAbility("회피", AbilityValues[2]),
+                    new DollMaxAbility("명중", AbilityValues[3]),
+                    new DollMaxAbility("공속", AbilityValues[4]),
+                    new DollMaxAbility("장갑", AbilityValues[5])
+                };
+
+                int index = 0;
+
+                switch (DollType)
+                {
+                    case "HG":
+                        index = 0;
+                        break;
+                    case "SMG":
+                        index = 1;
+                        break;
+                    case "AR":
+                        index = 2;
+                        break;
+                    case "RF":
+                        index = 3;
+                        break;
+                    case "MG":
+                        index = 4;
+                        break;
+                    case "SG":
+                        index = 5;
+                        break;
+                }
+
+                AvgAbilityList = new ObservableCollection<DollMaxAbility>()
+                {
+                    new DollMaxAbility("체력", ETC.Avg_List[index].HP),
+                    new DollMaxAbility("화력", ETC.Avg_List[index].FR),
+                    new DollMaxAbility("회피", ETC.Avg_List[index].EV),
+                    new DollMaxAbility("명중", ETC.Avg_List[index].AC),
+                    new DollMaxAbility("공속", ETC.Avg_List[index].AS),
+                    new DollMaxAbility("장갑", ETC.Avg_List[index].AM)
                 };
             }
         }

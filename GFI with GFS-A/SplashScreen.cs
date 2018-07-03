@@ -115,6 +115,8 @@ namespace GFI_with_GFS_A
                     await ETC.UpdateDB(this);
                 }
 
+                ETC.InitializeAverageAbility();
+
                 if (ETC.UseLightTheme == true)
                 {
                     ETC.DialogBG = Resource.Style.GFD_Dialog_Light;
@@ -129,6 +131,16 @@ namespace GFI_with_GFS_A
                 }
 
                 await Task.Delay(300);
+
+                using (System.Net.WebClient wc = new System.Net.WebClient())
+                {
+                    using (System.IO.StreamWriter sw = new System.IO.StreamWriter(new System.IO.FileStream(System.IO.Path.Combine(ETC.CachePath, "test.html"), System.IO.FileMode.Create, System.IO.FileAccess.ReadWrite)))
+                    {
+                        string s = await wc.DownloadStringTaskAsync("http://gfsdic.tistory.com/1");
+
+                        sw.Write(s);
+                    }   
+                }
 
                 LoadImage.Animate().Alpha(0.0f).SetDuration(300).Start();
 

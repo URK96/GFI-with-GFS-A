@@ -555,7 +555,8 @@
                             android:layout_toRightOf="@id/DollDBDetailBuffImageLayout"
                             android:id="@+id/DollDBDetailBuffDetailLayout">
                         <!--Doll Buff Part - Doll Buff Detail - Buff Icon & Detail-->
-                            <RelativeLayout
+                            <LinearLayout
+                                android:orientation="horizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
@@ -569,15 +570,13 @@
                                     android:layout_height="match_parent"
                                     android:textSize="10dp"
                                     android:gravity="center"
-                                    android:layout_below="@id/DollDBDetailBuffIcon1"
                                     android:id="@+id/DollDBDetailBuffName1" />
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:gravity="center"
-                                    android:layout_toRightOf="@id/DollDBDetailBuffIcon1"
                                     android:id="@+id/DollDBDetailBuffDetail1" />
-                            </RelativeLayout>
+                            </LinearLayout>
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
@@ -1378,6 +1377,7 @@
                         </LinearLayout>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
+            <!--Doll Ability Radar Chart Part-->
                 <android.support.v7.widget.CardView
                     android:layout_width="fill_parent"
                     android:layout_height="300dp"
@@ -1387,15 +1387,21 @@
                     cardview:cardElevation="4dp"
                     cardview:cardCornerRadius="5dp"
                     cardview:cardBackgroundColor="@color/background_material_dark">
-                    <FrameLayout
+                    <LinearLayout
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/DollDBDetailAbilityRadarChartLayout">
-                        <Com.Syncfusion.Charts.SfChart
+                        android:layout_margin="5dp">
+                        <FrameLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/DollDBDetailAbilityRadarChart" />
-                    </FrameLayout>
+                            android:id="@+id/DollDBDetailAbilityRadarChartLayout">
+                            <Com.Syncfusion.Charts.SfChart
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/DollDBDetailAbilityRadarChart" />
+                        </FrameLayout>
+                    </LinearLayout>
                 </android.support.v7.widget.CardView>
                 <com.google.android.gms.ads.AdView
                     android:id="@+id/DollDBDetail_adView"
