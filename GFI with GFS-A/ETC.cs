@@ -32,6 +32,7 @@ namespace GFI_with_GFS_A
         internal static DataTable DollList = new DataTable();
         internal static DataTable EquipmentList = new DataTable();
         internal static DataTable FairyList = new DataTable();
+        internal static DataTable EnemyList = new DataTable();
         internal static DataTable SkillTrainingList = new DataTable();
         internal static DataTable MDSupportList = new DataTable();
 
@@ -243,6 +244,10 @@ namespace GFI_with_GFS_A
             if (Directory.Exists(Path.Combine(CachePath, "Fairy", "Normal")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Fairy", "Normal"));
             if (Directory.Exists(Path.Combine(CachePath, "Fairy", "Normal_Crop")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Fairy", "Normal_Crop"));
             if (Directory.Exists(Path.Combine(CachePath, "Fairy", "Skill")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Fairy", "Skill"));
+            if (Directory.Exists(Path.Combine(CachePath, "Enemy")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Enemy"));
+            if (Directory.Exists(Path.Combine(CachePath, "Enemy", "SD")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Enemy", "SD"));
+            if (Directory.Exists(Path.Combine(CachePath, "Enemy", "Normal_Crop")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Enemy", "Normal_Crop"));
+            if (Directory.Exists(Path.Combine(CachePath, "Enemy", "Normal")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Enemy", "Normal"));
             if (Directory.Exists(Path.Combine(CachePath, "OldGFD")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "OldGFD"));
             if (Directory.Exists(Path.Combine(CachePath, "OldGFD", "Images")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "OldGFD", "Images"));
             if (Directory.Exists(Path.Combine(CachePath, "Event")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Event"));
@@ -259,6 +264,7 @@ namespace GFI_with_GFS_A
                 DollList.ReadXml(Path.Combine(DBPath, "Doll.gfs"));
                 EquipmentList.ReadXml(Path.Combine(DBPath, "Equipment.gfs"));
                 FairyList.ReadXml(Path.Combine(DBPath, "Fairy.gfs"));
+                EnemyList.ReadXml(Path.Combine(DBPath, "Enemy.gfs"));
                 SkillTrainingList.ReadXml(Path.Combine(DBPath, "SkillTraining.gfs"));
                 MDSupportList.ReadXml(Path.Combine(DBPath, "MDSupportList.gfs"));
             }

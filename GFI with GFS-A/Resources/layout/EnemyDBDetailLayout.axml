@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/EnemyDBDetailMainLayout">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="@id/EnemyDBDetailMainLayout"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:visibility="invisible"
+            android:indeterminate="true"
+            android:indeterminateOnly="true"
+            android:id="@+id/EnemyDBDetailInitLoadProgress" />
+    <!--Doll Title Layout-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/EnemyDBDetailBasicLayout">
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/EnemyDBDetailSmallImageLayout">
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:id="@+id/EnemyDBDetailSmallImage" />
+            </FrameLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_toRightOf="@id/EnemyDBDetailSmallImageLayout"
+                android:gravity="center"
+                android:id="@+id/EnemyDBDetailBasicInfoLayout">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text=""
+                    android:gravity="center"
+                    android:layout_marginBottom="2dp"
+                    android:id="@+id/EnemyDBDetailType" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:id="@+id/EnemyDBDetailEnemyName" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/EnemyDBDetailEnemyCodeName" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/EnemyDBDetailSmallImageLayout"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                android:id="@+id/EnemyDBDetailVoiceLayout">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Spinner
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:id="@+id/EnemyDBDetailVoiceSelector" />
+                    <Button
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="재생"
+                        android:id="@+id/EnemyDBDetailVoicePlayButton" />
+                </LinearLayout>
+                <ProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:progressTint="@color/ProgressBarColor"
+                    android:visibility="invisible"
+                    android:id="@+id/EnemyDBDetailVoiceDownloadProgress" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_below="@id/EnemyDBDetailVoiceLayout"
+                android:visibility="visible"
+                android:id="@+id/EnemyDBDetailEnemyTypeSelectLayout">
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/EnemyDBDetailEnemyTypeSelector" />
+            </LinearLayout>
+        </RelativeLayout>
+    <!--Scroll Part-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/EnemyDBDetailBasicLayout"
+            android:id="@+id/EnemyDBDetailScrollLayout">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <!--Enemy Basic Info Part-->
+                <android.support.v7.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:alpha="0"
+                    android:id="@+id/EnemyDBDetailBasicInfoCardLayout"
+                    cardview:cardElevation="4dp"
+                    cardview:cardCornerRadius="5dp"
+                    cardview:cardBackgroundColor="@color/background_material_dark">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/EnemyDBDetailBasicInfoLayout">
+                    <!--Enemy Basic Info - Grade Part-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="등급"
+                                android:gravity="center" />
+                            <View
+                                android:layout_width="5px"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <LinearLayout
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:orientation="horizontal">
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+                                <ImageView
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:id="@+id/EnemyDBDetailInfoGrade" />
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    <!--Enemy Basic Info - Enemy Type Part-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="철혈 타입"
+                                android:gravity="center" />
+                            <View
+                                android:layout_width="5px"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:id="@+id/EnemyDBDetailInfoEnemyType"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    <!--Enemy Basic Info - Name Part-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="이름"
+                                android:gravity="center" />
+                            <View
+                                android:layout_width="5px"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:id="@+id/EnemyDBDetailInfoName"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    <!--Enemy Basic Info - CodeName Part-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="코드명"
+                                android:gravity="center" />
+                            <View
+                                android:layout_width="5px"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:id="@+id/EnemyDBDetailInfoCodeName"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    <!--Doll Basic Info - VoiceActor Part-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="성우"
+                                android:gravity="center" />
+                            <View
+                                android:layout_width="5px"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:id="@+id/EnemyDBDetailInfoVoiceActor"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    <!--Enemy Basic Info - Appear Place Part-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="출현 지역"
+                                android:gravity="center" />
+                            <View
+                                android:layout_width="5px"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:id="@+id/EnemyDBDetailInfoAppearPlace"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+            <!--Enemy Ability Part-->
+                <android.support.v7.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:alpha="0"
+                    android:id="@+id/EnemyDBDetailAbilityCardLayout"
+                    cardview:cardElevation="4dp"
+                    cardview:cardCornerRadius="5dp"
+                    cardview:cardBackgroundColor="@color/background_material_dark">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/EnemyInfo_DetailMainLayout">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:id="@+id/EnemyInfoHPLayout">
+                            <TextView
+                                android:text="HP"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/textView1"
+                                android:gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_weight="1" />
+                            <View
+                                android:layout_height="match_parent"
+                                android:layout_width="5px"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <RelativeLayout
+                                android:orientation="vertical"
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp">
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:progressTint="@color/ProgressBarColor"
+                                    android:id="@+id/EnemyInfoHPProgress"
+                                    android:max="360000" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoHPProgressMin"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignLeft="@id/EnemyInfoHPProgress"
+                                    android:layout_alignTop="@id/EnemyInfoHPProgress"
+                                    android:gravity="left"
+                                    android:text="0" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoHPProgressMax"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignRight="@id/EnemyInfoHPProgress"
+                                    android:layout_alignTop="@id/EnemyInfoHPProgress"
+                                    android:gravity="right" />
+                            </RelativeLayout>
+                            <TextView
+                                android:text="0/0"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/EnemyInfoHPStatus"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:layout_marginRight="20dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:id="@+id/EnemyInfoFRLayout">
+                            <TextView
+                                android:text="화력"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/textView1"
+                                android:gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_weight="1" />
+                            <View
+                                android:layout_height="match_parent"
+                                android:layout_width="5px"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <RelativeLayout
+                                android:orientation="vertical"
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp">
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:progressTint="@color/ProgressBarColor"
+                                    android:id="@+id/EnemyInfoFRProgress"
+                                    android:max="1000" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoFRProgressMin"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignLeft="@id/EnemyInfoFRProgress"
+                                    android:layout_alignTop="@id/EnemyInfoFRProgress"
+                                    android:gravity="left"
+                                    android:text="0" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoFRProgressMax"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignRight="@id/EnemyInfoFRProgress"
+                                    android:layout_alignTop="@id/EnemyInfoFRProgress"
+                                    android:gravity="right" />
+                            </RelativeLayout>
+                            <TextView
+                                android:text="0/0"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/EnemyInfoFRStatus"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:layout_marginRight="20dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:id="@+id/EnemyInfoEVLayout">
+                            <TextView
+                                android:text="회피"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/textView1"
+                                android:gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_weight="1" />
+                            <View
+                                android:layout_height="match_parent"
+                                android:layout_width="5px"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <RelativeLayout
+                                android:orientation="vertical"
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp">
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:progressTint="@color/ProgressBarColor"
+                                    android:id="@+id/EnemyInfoEVProgress"
+                                    android:max="100" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoEVProgressMin"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignLeft="@id/EnemyInfoEVProgress"
+                                    android:layout_alignTop="@id/EnemyInfoEVProgress"
+                                    android:gravity="left"
+                                    android:text="0" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoEVProgressMax"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignRight="@id/EnemyInfoEVProgress"
+                                    android:layout_alignTop="@id/EnemyInfoEVProgress"
+                                    android:gravity="right" />
+                            </RelativeLayout>
+                            <TextView
+                                android:text="0/0"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/EnemyInfoEVStatus"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:layout_marginRight="20dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:id="@+id/EnemyInfoACLayout">
+                            <TextView
+                                android:text="명중"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/textView1"
+                                android:gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_weight="1" />
+                            <View
+                                android:layout_height="match_parent"
+                                android:layout_width="5px"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <RelativeLayout
+                                android:orientation="vertical"
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp">
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:progressTint="@color/ProgressBarColor"
+                                    android:id="@+id/EnemyInfoACProgress"
+                                    android:max="10000" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoACProgressMin"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignLeft="@id/EnemyInfoACProgress"
+                                    android:layout_alignTop="@id/EnemyInfoACProgress"
+                                    android:gravity="left"
+                                    android:text="0" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoACProgressMax"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignRight="@id/EnemyInfoACProgress"
+                                    android:layout_alignTop="@id/EnemyInfoACProgress"
+                                    android:gravity="right" />
+                            </RelativeLayout>
+                            <TextView
+                                android:text="0/0"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/EnemyInfoACStatus"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:layout_marginRight="20dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:id="@+id/EnemyInfoASLayout">
+                            <TextView
+                                android:text="공속"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/textView1"
+                                android:gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_weight="1" />
+                            <View
+                                android:layout_height="match_parent"
+                                android:layout_width="5px"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <RelativeLayout
+                                android:orientation="vertical"
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp">
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:progressTint="@color/ProgressBarColor"
+                                    android:id="@+id/EnemyInfoASProgress"
+                                    android:max="400" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoASProgressMin"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignLeft="@id/EnemyInfoASProgress"
+                                    android:layout_alignTop="@id/EnemyInfoASProgress"
+                                    android:gravity="left"
+                                    android:text="0" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoASProgressMax"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignRight="@id/EnemyInfoASProgress"
+                                    android:layout_alignTop="@id/EnemyInfoASProgress"
+                                    android:gravity="right" />
+                            </RelativeLayout>
+                            <TextView
+                                android:text="0/0"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/EnemyInfoASStatus"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:layout_marginRight="20dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:id="@+id/EnemyInfoMSLayout">
+                            <TextView
+                                android:text="이동속도"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_weight="1" />
+                            <View
+                                android:layout_height="match_parent"
+                                android:layout_width="5px"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <RelativeLayout
+                                android:orientation="vertical"
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp">
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:progressTint="@color/ProgressBarColor"
+                                    android:id="@+id/EnemyInfoMSProgress"
+                                    android:max="100" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoMSProgressMin"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignLeft="@id/EnemyInfoMSProgress"
+                                    android:layout_alignTop="@id/EnemyInfoMSProgress"
+                                    android:gravity="left"
+                                    android:text="0" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoMSProgressMax"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignRight="@id/EnemyInfoMSProgress"
+                                    android:layout_alignTop="@id/EnemyInfoMSProgress"
+                                    android:gravity="right" />
+                            </RelativeLayout>
+                            <TextView
+                                android:text="0"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/EnemyInfoMSStatus"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:layout_marginRight="20dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:id="@+id/EnemyInfoPTLayout">
+                            <TextView
+                                android:text="관통"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_weight="1" />
+                            <View
+                                android:layout_height="match_parent"
+                                android:layout_width="5px"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <RelativeLayout
+                                android:orientation="vertical"
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp">
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:progressTint="@color/ProgressBarColor"
+                                    android:id="@+id/EnemyInfoPTProgress"
+                                    android:max="100" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoPTProgressMin"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignLeft="@id/EnemyInfoPTProgress"
+                                    android:layout_alignTop="@id/EnemyInfoPTProgress"
+                                    android:gravity="left"
+                                    android:text="0" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoPTProgressMax"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignRight="@id/EnemyInfoPTProgress"
+                                    android:layout_alignTop="@id/EnemyInfoPTProgress"
+                                    android:gravity="right" />
+                            </RelativeLayout>
+                            <TextView
+                                android:text="0"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/EnemyInfoPTStatus"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:layout_marginRight="20dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:id="@+id/EnemyInfoAMLayout">
+                            <TextView
+                                android:text="장갑"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_weight="1" />
+                            <View
+                                android:layout_height="match_parent"
+                                android:layout_width="5px"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <RelativeLayout
+                                android:orientation="vertical"
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp">
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:progressTint="@color/ProgressBarColor"
+                                    android:id="@+id/EnemyInfoAMProgress"
+                                    android:max="100" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoAMProgressMin"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignLeft="@id/EnemyInfoAMProgress"
+                                    android:layout_alignTop="@id/EnemyInfoAMProgress"
+                                    android:gravity="left"
+                                    android:text="0" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoAMProgressMax"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignRight="@id/EnemyInfoAMProgress"
+                                    android:layout_alignTop="@id/EnemyInfoAMProgress"
+                                    android:gravity="right" />
+                            </RelativeLayout>
+                            <TextView
+                                android:text="0/0"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/EnemyInfoAMStatus"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:layout_marginRight="20dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:id="@+id/EnemyInfoRangeLayout">
+                            <TextView
+                                android:text="범위"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_weight="1" />
+                            <View
+                                android:layout_height="match_parent"
+                                android:layout_width="5px"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <RelativeLayout
+                                android:orientation="vertical"
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp">
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:progressTint="@color/ProgressBarColor"
+                                    android:id="@+id/EnemyInfoRangeProgress"
+                                    android:max="30" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoRangeProgressMin"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignLeft="@id/EnemyInfoRangeProgress"
+                                    android:layout_alignTop="@id/EnemyInfoRangeProgress"
+                                    android:gravity="left"
+                                    android:text="0" />
+                                <TextView
+                                    android:id="@+id/EnemyInfoRangeProgressMax"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignRight="@id/EnemyInfoRangeProgress"
+                                    android:layout_alignTop="@id/EnemyInfoRangeProgress"
+                                    android:gravity="right" />
+                            </RelativeLayout>
+                            <TextView
+                                android:text="0"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/EnemyInfoRangeStatus"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:layout_marginRight="20dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/EnemyDBDetailSnackbarLayout"
+        android:layout_alignTop="@id/EnemyDBDetailMainLayout" />
+</RelativeLayout>

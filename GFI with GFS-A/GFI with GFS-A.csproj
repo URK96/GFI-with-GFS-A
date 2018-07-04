@@ -150,6 +150,8 @@
     <Compile Include="DollDBImageViewer.cs" />
     <Compile Include="DollDBMainActivity.cs" />
     <Compile Include="DollDBProductPercentTableActivity.cs" />
+    <Compile Include="EnemyDBDetailActivity.cs" />
+    <Compile Include="EnemyDBMainActivity.cs" />
     <Compile Include="EquipDBDetailActivity.cs" />
     <Compile Include="EquipDBMainActivity.cs" />
     <Compile Include="ETC.cs" />
@@ -748,6 +750,30 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\EventListLayout.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\EnemyDBListLayout.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\EnemyListLayout.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\EnemyFilterLayout.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\EnemyDBDetailLayout.axml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
