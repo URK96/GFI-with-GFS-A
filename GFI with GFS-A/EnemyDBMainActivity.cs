@@ -507,11 +507,11 @@ namespace GFI_with_GFS_A
                 switch ((bool)item.EnemyDR["IsBoss"])
                 {
                     case false:
-                        GradeIconId = Resource.Drawable.Grade_2;
+                        GradeIconId = Resource.Drawable.Grade_N;
                         enemy_type = "일반";
                         break;
                     case true:
-                        GradeIconId = Resource.Drawable.Grade_3;
+                        GradeIconId = Resource.Drawable.Grade_S;
                         enemy_type = "보스";
                         break;
                     default:

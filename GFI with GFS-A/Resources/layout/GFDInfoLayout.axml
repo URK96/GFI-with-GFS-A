@@ -113,11 +113,6 @@
         android:layout_gravity="center"
         android:layout_alignParentBottom="true"
         android:layout_alignBottom="@id/GFDInfoMainLayout">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="10dp"
-            android:text="© 2018 X.D. Global Limited All Rights Reserved." />
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -135,6 +130,11 @@
                 android:textSize="10dp"
                 android:text="Powered by Xamarin (C#)" />
         </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:text="© 2018 X.D. Global Limited All Rights Reserved." />
     </LinearLayout>
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"

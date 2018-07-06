@@ -136,10 +136,10 @@ namespace GFI_with_GFS_A
                 switch (IsBoss)
                 {
                     case true:
-                        GradeIconId = Resource.Drawable.Grade_Star_EX;
+                        GradeIconId = Resource.Drawable.Type_Boss;
                         break;
                     case false:
-                        GradeIconId = Resource.Drawable.Grade_Star;
+                        GradeIconId = Resource.Drawable.Type_Normal;
                         break;
                 }
                 FindViewById<ImageView>(Resource.Id.EnemyDBDetailInfoGrade).SetImageResource(GradeIconId);

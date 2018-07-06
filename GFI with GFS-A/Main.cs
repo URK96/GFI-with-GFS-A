@@ -73,11 +73,11 @@ namespace GFI_with_GFS_A
         };
         readonly int[] ExtraMenuButtonBackgroundIds = 
         {
-            Android.Resource.Drawable.ButtonDefault,
+            Resource.Drawable.Extra_EventSelector,
             Resource.Drawable.Extra_GFNewsSelector,
             Resource.Drawable.Extra_RFBotSelector,
             Resource.Drawable.Extra_ProductSimulatorSelector,
-            Android.Resource.Drawable.ButtonDefault
+            Resource.Drawable.Extra_FormationSimulatorSelector
         };
         readonly string[] ExtraMenuButtonText =
         {
@@ -204,8 +204,8 @@ namespace GFI_with_GFS_A
             {
                 Button EventButton = FindViewById<Button>(Resource.Id.EventExtraButton);
 
-                if (ETC.HasEvent == true) EventButton.Background = Android.Graphics.Drawables.Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Event", "Images", "Event_1.png"));
-                else EventButton.Visibility = ViewStates.Gone;
+                //if (ETC.HasEvent == true) EventButton.Background = Android.Graphics.Drawables.Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Event", "Images", "Event_1.png"));
+                if (ETC.HasEvent == false) EventButton.Visibility = ViewStates.Gone;
             }
             catch (Exception ex)
             {
@@ -397,8 +397,12 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.EnemyDBMainButton:
+#if DEBUG
                         StartActivity(typeof(EnemyDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+#else
+                        ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
+#endif
                         break;
                     case Resource.Id.OldGFDMainButton:
                         StartActivity(typeof(OldGFDViewer));
@@ -445,7 +449,6 @@ namespace GFI_with_GFS_A
                         break;
                     case Resource.Id.GFNewsExtraButton:
                         string news_url = "http://www.girlsfrontline.co.kr/archives/category/news";
-                        //string news_url = "http://gfsdic.tistory.com/8";
                         var intent = new Intent(this, typeof(WebBrowserActivity));
                         intent.PutExtra("url", news_url);
                         StartActivity(intent);
@@ -461,6 +464,16 @@ namespace GFI_with_GFS_A
                         break;
                     case Resource.Id.ProductSimulatorExtraButton:
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
+                        break;
+                    case Resource.Id.FormationSimulatorExtraButton:
+                        string pack_name = "com.Cosmos.GfTileSim";
+                        Intent AppIntent = PackageManager.GetLaunchIntentForPackage(pack_name);
+                        if (AppIntent != null) StartActivity(AppIntent);
+                        else
+                        {
+                            string url = "https://play.google.com/store/apps/details?id=" + pack_name;
+                            StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse(url)));
+                        }
                         break;
                     default:
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
