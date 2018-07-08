@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <com.felipecsl.gifimageview.library.GifImageView
-        android:id="@+id/TestImageView"
-        android:layout_gravity="center"
-        android:scaleType="fitCenter"
+    android:layout_height="match_parent"
+    android:id="@+id/SDAnimationMainLayout">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/SDAnimationViewerLoadProgress"
+            android:visibility="visible"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressTint="@color/ProgressBarColor"
+            android:indeterminateOnly="false" />
+        <Spinner
+            android:id="@+id/SDAnimationListSelector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.felipecsl.gifimageview.library.GifImageView
+            android:id="@+id/SDAnimationImageView"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+<!--<android.support.design.widget.CoordinatorLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/SDAnimationSnackbarLayout"
+      android:layout_alignTop="@id/SDAnimationMainLayout" />-->
+</RelativeLayout>

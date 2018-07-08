@@ -10,6 +10,7 @@ using Android.Views;
 using Android.Widget;
 using System;
 using System.IO;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -314,7 +315,7 @@ namespace GFI_with_GFS_A
 
             try
             {
-                using (System.Net.WebClient wc = new System.Net.WebClient())
+                using (WebClient wc = new WebClient())
                 {
                     string[] temp = (await wc.DownloadStringTaskAsync(url)).Split(';');
 
@@ -328,7 +329,7 @@ namespace GFI_with_GFS_A
             }
             catch (WebException ex)
             {
-                ETC.ShowSnackbar(SnackbarLayout, "Skip Checking Server Status", Snackbar.LengthShort, Android.Graphics.Color.Gray)
+                
             }
             catch (Exception ex)
             {

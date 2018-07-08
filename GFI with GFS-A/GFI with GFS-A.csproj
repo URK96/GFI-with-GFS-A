@@ -75,6 +75,9 @@
     <Reference Include="Syncfusion.Licensing, Version=16.2.0.43, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Licensing.16.2.0.43\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.SfBusyIndicator.Android, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfBusyIndicator.Android.16.2.0.42\lib\MonoAndroid10\Syncfusion.SfBusyIndicator.Android.dll</HintPath>
+    </Reference>
     <Reference Include="Syncfusion.SfChart.Android, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Xamarin.SfChart.Android.16.2.0.42\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
     </Reference>
@@ -84,12 +87,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-    <Reference Include="Urho, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UrhoSharp.1.8.93\lib\MonoAndroid\Urho.dll</HintPath>
-    </Reference>
-    <Reference Include="Urho.Droid.SdlBinding, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UrhoSharp.1.8.93\lib\MonoAndroid\Urho.Droid.SdlBinding.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Android.Arch.Core.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Android.Arch.Core.Common.1.0.0.1\lib\MonoAndroid80\Xamarin.Android.Arch.Core.Common.dll</HintPath>
     </Reference>
@@ -826,7 +823,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\testLayout.axml">
+    <AndroidResource Include="Resources\layout\TestLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -859,7 +856,6 @@
     <Error Condition="!Exists('..\packages\Xamarin.GooglePlayServices.Ads.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.GooglePlayServices.Ads.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.targets'))" />
     <Error Condition="!Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props'))" />
     <Error Condition="!Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets'))" />
-    <Error Condition="!Exists('..\packages\UrhoSharp.1.8.93\build\MonoAndroid\UrhoSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UrhoSharp.1.8.93\build\MonoAndroid\UrhoSharp.targets'))" />
   </Target>
   <Import Project="..\packages\Xamarin.Android.Arch.Core.Common.1.0.0.1\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Core.Common.1.0.0.1\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets')" />
   <Import Project="..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.3.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.3.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets')" />
@@ -882,7 +878,6 @@
   <Import Project="..\packages\Xamarin.GooglePlayServices.Gass.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Gass.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Gass.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Gass.targets')" />
   <Import Project="..\packages\Xamarin.GooglePlayServices.Ads.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Ads.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.targets')" />
   <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />
-  <Import Project="..\packages\UrhoSharp.1.8.93\build\MonoAndroid\UrhoSharp.targets" Condition="Exists('..\packages\UrhoSharp.1.8.93\build\MonoAndroid\UrhoSharp.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 		Other similar extension points exist, see Microsoft.Common.targets.
 		<Target Name="BeforeBuild">

@@ -235,6 +235,7 @@ namespace GFI_with_GFS_A
             if (Directory.Exists(CachePath) == false) Directory.CreateDirectory(CachePath);
             if (Directory.Exists(Path.Combine(CachePath, "Doll")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll"));
             if (Directory.Exists(Path.Combine(CachePath, "Doll", "SD")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll", "SD"));
+            if (Directory.Exists(Path.Combine(CachePath, "Doll", "SD", "Animation")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll", "SD", "Animation"));
             if (Directory.Exists(Path.Combine(CachePath, "Doll", "Normal_Crop")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll", "Normal_Crop"));
             if (Directory.Exists(Path.Combine(CachePath, "Doll", "Normal")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll", "Normal"));
             if (Directory.Exists(Path.Combine(CachePath, "Doll", "Skill")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll", "Skill"));
