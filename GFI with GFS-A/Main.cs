@@ -398,7 +398,8 @@ namespace GFI_with_GFS_A
                         break;
                     case Resource.Id.EnemyDBMainButton:
 #if DEBUG
-                        StartActivity(typeof(EnemyDBMainActivity));
+                        //StartActivity(typeof(EnemyDBMainActivity));
+                        StartActivity(typeof(TestActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
 #else
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
@@ -471,6 +472,7 @@ namespace GFI_with_GFS_A
                         if (AppIntent != null) StartActivity(AppIntent);
                         else
                         {
+                            Toast.MakeText(this, "앱 설치 화면으로 이동합니다.", ToastLength.Short).Show();
                             string url = "https://play.google.com/store/apps/details?id=" + pack_name;
                             StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse(url)));
                         }

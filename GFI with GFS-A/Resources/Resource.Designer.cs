@@ -3142,14 +3142,14 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f0b028b
 			public const int CalcMainButton = 2131427979;
 			
-			// aapt resource value: 0x7f0b02f2
-			public const int CalcNavigation_Core = 2131428082;
-			
-			// aapt resource value: 0x7f0b02f1
-			public const int CalcNavigation_ExpItem = 2131428081;
-			
 			// aapt resource value: 0x7f0b02f3
-			public const int CalcNavigation_SkillTraining = 2131428083;
+			public const int CalcNavigation_Core = 2131428083;
+			
+			// aapt resource value: 0x7f0b02f2
+			public const int CalcNavigation_ExpItem = 2131428082;
+			
+			// aapt resource value: 0x7f0b02f4
+			public const int CalcNavigation_SkillTraining = 2131428084;
 			
 			// aapt resource value: 0x7f0b00a4
 			public const int CalcReportEndLevel = 2131427492;
@@ -4657,14 +4657,14 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f0b02cd
 			public const int RFBotStatusText = 2131428045;
 			
-			// aapt resource value: 0x7f0b02f4
-			public const int RefreshDollCropImageCache = 2131428084;
-			
 			// aapt resource value: 0x7f0b02f5
-			public const int RefreshEquipCropImageCache = 2131428085;
+			public const int RefreshDollCropImageCache = 2131428085;
 			
 			// aapt resource value: 0x7f0b02f6
-			public const int RefreshFairyCropImageCache = 2131428086;
+			public const int RefreshEquipCropImageCache = 2131428086;
+			
+			// aapt resource value: 0x7f0b02f7
+			public const int RefreshFairyCropImageCache = 2131428087;
 			
 			// aapt resource value: 0x7f0b0036
 			public const int SHIFT = 2131427382;
@@ -4715,7 +4715,10 @@ namespace GFI_with_GFS_A
 			public const int SplashSnackbarLayout = 2131428061;
 			
 			// aapt resource value: 0x7f0b02de
-			public const int Toolbar = 2131428062;
+			public const int TestImageView = 2131428062;
+			
+			// aapt resource value: 0x7f0b02df
+			public const int Toolbar = 2131428063;
 			
 			// aapt resource value: 0x7f0b02c5
 			public const int TotalProgressBar = 2131428037;
@@ -4726,53 +4729,53 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f0b02c6
 			public const int TotalProgressPercentage = 2131428038;
 			
-			// aapt resource value: 0x7f0b02e2
-			public const int WebBrowser = 2131428066;
-			
-			// aapt resource value: 0x7f0b02e0
-			public const int WebBrowserMainLayout = 2131428064;
+			// aapt resource value: 0x7f0b02e3
+			public const int WebBrowser = 2131428067;
 			
 			// aapt resource value: 0x7f0b02e1
-			public const int WebBrowserProgressBar = 2131428065;
+			public const int WebBrowserMainLayout = 2131428065;
 			
-			// aapt resource value: 0x7f0b02e3
-			public const int WebBrowserSnackbarLayout = 2131428067;
-			
-			// aapt resource value: 0x7f0b02e5
-			public const int ZinaOSBootTextLayout = 2131428069;
-			
-			// aapt resource value: 0x7f0b02e6
-			public const int ZinaOSBootTextView = 2131428070;
-			
-			// aapt resource value: 0x7f0b02e7
-			public const int ZinaOSBootViewLayout = 2131428071;
-			
-			// aapt resource value: 0x7f0b02ea
-			public const int ZinaOSLoadProgressBar = 2131428074;
-			
-			// aapt resource value: 0x7f0b02e9
-			public const int ZinaOSLoadProgressLayout = 2131428073;
-			
-			// aapt resource value: 0x7f0b02e8
-			public const int ZinaOSMainBootLogo = 2131428072;
+			// aapt resource value: 0x7f0b02e2
+			public const int WebBrowserProgressBar = 2131428066;
 			
 			// aapt resource value: 0x7f0b02e4
-			public const int ZinaOSMainLayout = 2131428068;
+			public const int WebBrowserSnackbarLayout = 2131428068;
 			
-			// aapt resource value: 0x7f0b02ee
-			public const int ZinaOSMainMenuHiddenEventButton = 2131428078;
+			// aapt resource value: 0x7f0b02e6
+			public const int ZinaOSBootTextLayout = 2131428070;
 			
-			// aapt resource value: 0x7f0b02ef
-			public const int ZinaOSMainMenuHiddenExtraButton = 2131428079;
+			// aapt resource value: 0x7f0b02e7
+			public const int ZinaOSBootTextView = 2131428071;
 			
-			// aapt resource value: 0x7f0b02ed
-			public const int ZinaOSMainMenuHiddenGalleryButton = 2131428077;
-			
-			// aapt resource value: 0x7f0b02ec
-			public const int ZinaOSMainMenuHiddenSettingButton = 2131428076;
+			// aapt resource value: 0x7f0b02e8
+			public const int ZinaOSBootViewLayout = 2131428072;
 			
 			// aapt resource value: 0x7f0b02eb
-			public const int ZinaOSMainMenuLayout = 2131428075;
+			public const int ZinaOSLoadProgressBar = 2131428075;
+			
+			// aapt resource value: 0x7f0b02ea
+			public const int ZinaOSLoadProgressLayout = 2131428074;
+			
+			// aapt resource value: 0x7f0b02e9
+			public const int ZinaOSMainBootLogo = 2131428073;
+			
+			// aapt resource value: 0x7f0b02e5
+			public const int ZinaOSMainLayout = 2131428069;
+			
+			// aapt resource value: 0x7f0b02ef
+			public const int ZinaOSMainMenuHiddenEventButton = 2131428079;
+			
+			// aapt resource value: 0x7f0b02f0
+			public const int ZinaOSMainMenuHiddenExtraButton = 2131428080;
+			
+			// aapt resource value: 0x7f0b02ee
+			public const int ZinaOSMainMenuHiddenGalleryButton = 2131428078;
+			
+			// aapt resource value: 0x7f0b02ed
+			public const int ZinaOSMainMenuHiddenSettingButton = 2131428077;
+			
+			// aapt resource value: 0x7f0b02ec
+			public const int ZinaOSMainMenuLayout = 2131428076;
 			
 			// aapt resource value: 0x7f0b0299
 			public const int action0 = 2131427993;
@@ -5086,14 +5089,14 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f0b005d
 			public const int logarithmic = 2131427421;
 			
-			// aapt resource value: 0x7f0b02f0
-			public const int masked = 2131428080;
+			// aapt resource value: 0x7f0b02f1
+			public const int masked = 2131428081;
 			
 			// aapt resource value: 0x7f0b029c
 			public const int media_actions = 2131427996;
 			
-			// aapt resource value: 0x7f0b02df
-			public const int message = 2131428063;
+			// aapt resource value: 0x7f0b02e0
+			public const int message = 2131428064;
 			
 			// aapt resource value: 0x7f0b0065
 			public const int metro = 2131427429;
@@ -5746,16 +5749,19 @@ namespace GFI_with_GFS_A
 			public const int support_simple_spinner_dropdown_item = 2130903137;
 			
 			// aapt resource value: 0x7f030062
-			public const int ToolbarLayout = 2130903138;
+			public const int testLayout = 2130903138;
 			
 			// aapt resource value: 0x7f030063
-			public const int tooltip = 2130903139;
+			public const int ToolbarLayout = 2130903139;
 			
 			// aapt resource value: 0x7f030064
-			public const int WebBrowserLayout = 2130903140;
+			public const int tooltip = 2130903140;
 			
 			// aapt resource value: 0x7f030065
-			public const int ZinaOS = 2130903141;
+			public const int WebBrowserLayout = 2130903141;
+			
+			// aapt resource value: 0x7f030066
+			public const int ZinaOS = 2130903142;
 			
 			static Layout()
 			{
@@ -5795,233 +5801,233 @@ namespace GFI_with_GFS_A
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f080060
-			public const int AbnormalAccess = 2131230816;
-			
-			// aapt resource value: 0x7f08005e
-			public const int Activity_LoadFail = 2131230814;
-			
-			// aapt resource value: 0x7f08005d
-			public const int Activity_OnCreateError = 2131230813;
-			
-			// aapt resource value: 0x7f080082
-			public const int AdMob_ID = 2131230850;
-			
-			// aapt resource value: 0x7f080081
-			public const int AdMob_TestID = 2131230849;
-			
-			// aapt resource value: 0x7f080037
-			public const int AleartDialog_Positive = 2131230775;
-			
-			// aapt resource value: 0x7f080079
-			public const int AlertDialog_Error = 2131230841;
-			
-			// aapt resource value: 0x7f080077
-			public const int CheckFreeStorage_CheckFail = 2131230839;
-			
-			// aapt resource value: 0x7f080076
-			public const int CheckFreeStorage_Message = 2131230838;
-			
-			// aapt resource value: 0x7f080075
-			public const int CheckFreeStorage_Title = 2131230837;
-			
-			// aapt resource value: 0x7f080038
-			public const int CheckingUpdate = 2131230776;
-			
-			// aapt resource value: 0x7f08004f
-			public const int DBDetail_LoadDetailFail = 2131230799;
-			
-			// aapt resource value: 0x7f080045
-			public const int DBList_DownloadCropImageCheckMessage = 2131230789;
-			
-			// aapt resource value: 0x7f080043
-			public const int DBList_DownloadCropImageCheckTitle = 2131230787;
-			
-			// aapt resource value: 0x7f080046
-			public const int DBList_DownloadCropImageComplete = 2131230790;
-			
-			// aapt resource value: 0x7f08004b
-			public const int DBList_DownloadCropImageFail = 2131230795;
-			
-			// aapt resource value: 0x7f080044
-			public const int DBList_DownloadCropImageTitle = 2131230788;
-			
-			// aapt resource value: 0x7f08004d
-			public const int DBList_FilterBoxApplyFail = 2131230797;
-			
-			// aapt resource value: 0x7f08004e
-			public const int DBList_FilterBoxResetFail = 2131230798;
-			
-			// aapt resource value: 0x7f08004c
-			public const int DBList_FilterBoxTitle = 2131230796;
-			
-			// aapt resource value: 0x7f080049
-			public const int DBList_Listing = 2131230793;
-			
-			// aapt resource value: 0x7f08004a
-			public const int DBList_ListingFail = 2131230794;
-			
-			// aapt resource value: 0x7f080048
-			public const int DBList_RefreshCropImageMessage = 2131230792;
-			
-			// aapt resource value: 0x7f080047
-			public const int DBList_RefreshCropImageTitle = 2131230791;
-			
-			// aapt resource value: 0x7f08007e
-			public const int DB_Recovery = 2131230846;
+			// aapt resource value: 0x7f080061
+			public const int AbnormalAccess = 2131230817;
 			
 			// aapt resource value: 0x7f08005f
-			public const int DevMode = 2131230815;
+			public const int Activity_LoadFail = 2131230815;
 			
-			// aapt resource value: 0x7f080050
-			public const int DollDBDetail_MODChangeFail = 2131230800;
+			// aapt resource value: 0x7f08005e
+			public const int Activity_OnCreateError = 2131230814;
 			
-			// aapt resource value: 0x7f08003c
-			public const int ETC1 = 2131230780;
+			// aapt resource value: 0x7f080083
+			public const int AdMob_ID = 2131230851;
 			
-			// aapt resource value: 0x7f080055
-			public const int ImageLoad_Fail = 2131230805;
+			// aapt resource value: 0x7f080082
+			public const int AdMob_TestID = 2131230850;
 			
-			// aapt resource value: 0x7f080052
-			public const int Initialize_Fail = 2131230802;
-			
-			// aapt resource value: 0x7f080054
-			public const int Initialize_List_Fail = 2131230804;
-			
-			// aapt resource value: 0x7f08003a
-			public const int LatestUpdateVersion = 2131230778;
-			
-			// aapt resource value: 0x7f080042
-			public const int Main_CheckExit = 2131230786;
-			
-			// aapt resource value: 0x7f080041
-			public const int Main_CheckExitTitle = 2131230785;
-			
-			// aapt resource value: 0x7f080040
-			public const int Main_NotificationInitializeFail = 2131230784;
-			
-			// aapt resource value: 0x7f08003f
-			public const int Main_NotificationLoadFail = 2131230783;
-			
-			// aapt resource value: 0x7f08003e
-			public const int Main_NotificationTitle = 2131230782;
-			
-			// aapt resource value: 0x7f08003d
-			public const int Main_StartUpHello = 2131230781;
-			
-			// aapt resource value: 0x7f080061
-			public const int MenuAccess_Fail = 2131230817;
-			
-			// aapt resource value: 0x7f08007f
-			public const int NetworkDelay = 2131230847;
-			
-			// aapt resource value: 0x7f080078
-			public const int NotifyCheckServer_Title = 2131230840;
-			
-			// aapt resource value: 0x7f080080
-			public const int ProductPercentTable_LoadFail = 2131230848;
-			
-			// aapt resource value: 0x7f08007c
-			public const int RFBot_DisunderstandInput = 2131230844;
-			
-			// aapt resource value: 0x7f08007d
-			public const int RFBot_TestMode = 2131230845;
-			
-			// aapt resource value: 0x7f080051
-			public const int RetryLoad_CauseNetwork = 2131230801;
-			
-			// aapt resource value: 0x7f08006b
-			public const int Setting_DeleteAllCache_CheckMessage = 2131230827;
-			
-			// aapt resource value: 0x7f08006a
-			public const int Setting_DeleteAllCache_CheckTitle = 2131230826;
-			
-			// aapt resource value: 0x7f08006e
-			public const int Setting_DeleteAllCache_Complete = 2131230830;
-			
-			// aapt resource value: 0x7f08006f
-			public const int Setting_DeleteAllCache_Fail = 2131230831;
-			
-			// aapt resource value: 0x7f08006d
-			public const int Setting_DeleteAllCache_Message = 2131230829;
-			
-			// aapt resource value: 0x7f08006c
-			public const int Setting_DeleteAllCache_Title = 2131230828;
-			
-			// aapt resource value: 0x7f080071
-			public const int Setting_DeleteAllLogFile_CheckMessage = 2131230833;
-			
-			// aapt resource value: 0x7f080073
-			public const int Setting_DeleteAllLogFile_Complete = 2131230835;
-			
-			// aapt resource value: 0x7f080074
-			public const int Setting_DeleteAllLogFile_Fail = 2131230836;
-			
-			// aapt resource value: 0x7f080072
-			public const int Setting_DeleteAllLogFile_Message = 2131230834;
-			
-			// aapt resource value: 0x7f080070
-			public const int Setting_DeleteAllLogFile_Title = 2131230832;
-			
-			// aapt resource value: 0x7f080063
-			public const int Setting_DownloadAllCache_CheckMessage = 2131230819;
-			
-			// aapt resource value: 0x7f080062
-			public const int Setting_DownloadAllCache_CheckTitle = 2131230818;
-			
-			// aapt resource value: 0x7f080069
-			public const int Setting_DownloadAllCache_CompleteMessage = 2131230825;
-			
-			// aapt resource value: 0x7f080068
-			public const int Setting_DownloadAllCache_CompleteTitle = 2131230824;
-			
-			// aapt resource value: 0x7f080067
-			public const int Setting_DownloadAllCache_FailMessage = 2131230823;
-			
-			// aapt resource value: 0x7f080066
-			public const int Setting_DownloadAllCache_FailTitle = 2131230822;
-			
-			// aapt resource value: 0x7f080065
-			public const int Setting_DownloadAllCache_Message = 2131230821;
-			
-			// aapt resource value: 0x7f080064
-			public const int Setting_DownloadAllCache_Title = 2131230820;
-			
-			// aapt resource value: 0x7f080053
-			public const int SideLinkOpen_Fail = 2131230803;
-			
-			// aapt resource value: 0x7f080039
-			public const int Splash_SkipCheckUpdate = 2131230777;
-			
-			// aapt resource value: 0x7f08003b
-			public const int UnableCheckUpdate = 2131230779;
-			
-			// aapt resource value: 0x7f080058
-			public const int UpdateCheck_Fail = 2131230808;
-			
-			// aapt resource value: 0x7f080057
-			public const int UpdateDialog_Message = 2131230807;
-			
-			// aapt resource value: 0x7f080056
-			public const int UpdateDialog_Title = 2131230806;
-			
-			// aapt resource value: 0x7f08005a
-			public const int UpdateDownloadDialog_Message = 2131230810;
-			
-			// aapt resource value: 0x7f080059
-			public const int UpdateDownloadDialog_Title = 2131230809;
-			
-			// aapt resource value: 0x7f08005b
-			public const int UpdateDownload_Complete = 2131230811;
-			
-			// aapt resource value: 0x7f08005c
-			public const int UpdateDownload_Fail = 2131230812;
+			// aapt resource value: 0x7f080038
+			public const int AleartDialog_Positive = 2131230776;
 			
 			// aapt resource value: 0x7f08007a
-			public const int VoiceStreaming_Error = 2131230842;
+			public const int AlertDialog_Error = 2131230842;
+			
+			// aapt resource value: 0x7f080078
+			public const int CheckFreeStorage_CheckFail = 2131230840;
+			
+			// aapt resource value: 0x7f080077
+			public const int CheckFreeStorage_Message = 2131230839;
+			
+			// aapt resource value: 0x7f080076
+			public const int CheckFreeStorage_Title = 2131230838;
+			
+			// aapt resource value: 0x7f080039
+			public const int CheckingUpdate = 2131230777;
+			
+			// aapt resource value: 0x7f080050
+			public const int DBDetail_LoadDetailFail = 2131230800;
+			
+			// aapt resource value: 0x7f080046
+			public const int DBList_DownloadCropImageCheckMessage = 2131230790;
+			
+			// aapt resource value: 0x7f080044
+			public const int DBList_DownloadCropImageCheckTitle = 2131230788;
+			
+			// aapt resource value: 0x7f080047
+			public const int DBList_DownloadCropImageComplete = 2131230791;
+			
+			// aapt resource value: 0x7f08004c
+			public const int DBList_DownloadCropImageFail = 2131230796;
+			
+			// aapt resource value: 0x7f080045
+			public const int DBList_DownloadCropImageTitle = 2131230789;
+			
+			// aapt resource value: 0x7f08004e
+			public const int DBList_FilterBoxApplyFail = 2131230798;
+			
+			// aapt resource value: 0x7f08004f
+			public const int DBList_FilterBoxResetFail = 2131230799;
+			
+			// aapt resource value: 0x7f08004d
+			public const int DBList_FilterBoxTitle = 2131230797;
+			
+			// aapt resource value: 0x7f08004a
+			public const int DBList_Listing = 2131230794;
+			
+			// aapt resource value: 0x7f08004b
+			public const int DBList_ListingFail = 2131230795;
+			
+			// aapt resource value: 0x7f080049
+			public const int DBList_RefreshCropImageMessage = 2131230793;
+			
+			// aapt resource value: 0x7f080048
+			public const int DBList_RefreshCropImageTitle = 2131230792;
+			
+			// aapt resource value: 0x7f08007f
+			public const int DB_Recovery = 2131230847;
+			
+			// aapt resource value: 0x7f080060
+			public const int DevMode = 2131230816;
+			
+			// aapt resource value: 0x7f080051
+			public const int DollDBDetail_MODChangeFail = 2131230801;
+			
+			// aapt resource value: 0x7f08003d
+			public const int ETC1 = 2131230781;
+			
+			// aapt resource value: 0x7f080056
+			public const int ImageLoad_Fail = 2131230806;
+			
+			// aapt resource value: 0x7f080053
+			public const int Initialize_Fail = 2131230803;
+			
+			// aapt resource value: 0x7f080055
+			public const int Initialize_List_Fail = 2131230805;
+			
+			// aapt resource value: 0x7f08003b
+			public const int LatestUpdateVersion = 2131230779;
+			
+			// aapt resource value: 0x7f080043
+			public const int Main_CheckExit = 2131230787;
+			
+			// aapt resource value: 0x7f080042
+			public const int Main_CheckExitTitle = 2131230786;
+			
+			// aapt resource value: 0x7f080041
+			public const int Main_NotificationInitializeFail = 2131230785;
+			
+			// aapt resource value: 0x7f080040
+			public const int Main_NotificationLoadFail = 2131230784;
+			
+			// aapt resource value: 0x7f08003f
+			public const int Main_NotificationTitle = 2131230783;
+			
+			// aapt resource value: 0x7f08003e
+			public const int Main_StartUpHello = 2131230782;
+			
+			// aapt resource value: 0x7f080062
+			public const int MenuAccess_Fail = 2131230818;
+			
+			// aapt resource value: 0x7f080080
+			public const int NetworkDelay = 2131230848;
+			
+			// aapt resource value: 0x7f080079
+			public const int NotifyCheckServer_Title = 2131230841;
+			
+			// aapt resource value: 0x7f080081
+			public const int ProductPercentTable_LoadFail = 2131230849;
+			
+			// aapt resource value: 0x7f08007d
+			public const int RFBot_DisunderstandInput = 2131230845;
+			
+			// aapt resource value: 0x7f08007e
+			public const int RFBot_TestMode = 2131230846;
+			
+			// aapt resource value: 0x7f080052
+			public const int RetryLoad_CauseNetwork = 2131230802;
+			
+			// aapt resource value: 0x7f08006c
+			public const int Setting_DeleteAllCache_CheckMessage = 2131230828;
+			
+			// aapt resource value: 0x7f08006b
+			public const int Setting_DeleteAllCache_CheckTitle = 2131230827;
+			
+			// aapt resource value: 0x7f08006f
+			public const int Setting_DeleteAllCache_Complete = 2131230831;
+			
+			// aapt resource value: 0x7f080070
+			public const int Setting_DeleteAllCache_Fail = 2131230832;
+			
+			// aapt resource value: 0x7f08006e
+			public const int Setting_DeleteAllCache_Message = 2131230830;
+			
+			// aapt resource value: 0x7f08006d
+			public const int Setting_DeleteAllCache_Title = 2131230829;
+			
+			// aapt resource value: 0x7f080072
+			public const int Setting_DeleteAllLogFile_CheckMessage = 2131230834;
+			
+			// aapt resource value: 0x7f080074
+			public const int Setting_DeleteAllLogFile_Complete = 2131230836;
+			
+			// aapt resource value: 0x7f080075
+			public const int Setting_DeleteAllLogFile_Fail = 2131230837;
+			
+			// aapt resource value: 0x7f080073
+			public const int Setting_DeleteAllLogFile_Message = 2131230835;
+			
+			// aapt resource value: 0x7f080071
+			public const int Setting_DeleteAllLogFile_Title = 2131230833;
+			
+			// aapt resource value: 0x7f080064
+			public const int Setting_DownloadAllCache_CheckMessage = 2131230820;
+			
+			// aapt resource value: 0x7f080063
+			public const int Setting_DownloadAllCache_CheckTitle = 2131230819;
+			
+			// aapt resource value: 0x7f08006a
+			public const int Setting_DownloadAllCache_CompleteMessage = 2131230826;
+			
+			// aapt resource value: 0x7f080069
+			public const int Setting_DownloadAllCache_CompleteTitle = 2131230825;
+			
+			// aapt resource value: 0x7f080068
+			public const int Setting_DownloadAllCache_FailMessage = 2131230824;
+			
+			// aapt resource value: 0x7f080067
+			public const int Setting_DownloadAllCache_FailTitle = 2131230823;
+			
+			// aapt resource value: 0x7f080066
+			public const int Setting_DownloadAllCache_Message = 2131230822;
+			
+			// aapt resource value: 0x7f080065
+			public const int Setting_DownloadAllCache_Title = 2131230821;
+			
+			// aapt resource value: 0x7f080054
+			public const int SideLinkOpen_Fail = 2131230804;
+			
+			// aapt resource value: 0x7f08003a
+			public const int Splash_SkipCheckUpdate = 2131230778;
+			
+			// aapt resource value: 0x7f08003c
+			public const int UnableCheckUpdate = 2131230780;
+			
+			// aapt resource value: 0x7f080059
+			public const int UpdateCheck_Fail = 2131230809;
+			
+			// aapt resource value: 0x7f080058
+			public const int UpdateDialog_Message = 2131230808;
+			
+			// aapt resource value: 0x7f080057
+			public const int UpdateDialog_Title = 2131230807;
+			
+			// aapt resource value: 0x7f08005b
+			public const int UpdateDownloadDialog_Message = 2131230811;
+			
+			// aapt resource value: 0x7f08005a
+			public const int UpdateDownloadDialog_Title = 2131230810;
+			
+			// aapt resource value: 0x7f08005c
+			public const int UpdateDownload_Complete = 2131230812;
+			
+			// aapt resource value: 0x7f08005d
+			public const int UpdateDownload_Fail = 2131230813;
 			
 			// aapt resource value: 0x7f08007b
-			public const int VoiceStreaming_PlayError = 2131230843;
+			public const int VoiceStreaming_Error = 2131230843;
+			
+			// aapt resource value: 0x7f08007c
+			public const int VoiceStreaming_PlayError = 2131230844;
 			
 			// aapt resource value: 0x7f080007
 			public const int abc_action_bar_home_description = 2131230727;
@@ -6110,6 +6116,9 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f080017
 			public const int abc_toolbar_collapse_description = 2131230743;
 			
+			// aapt resource value: 0x7f08002e
+			public const int app_name = 2131230766;
+			
 			// aapt resource value: 0x7f080025
 			public const int appbar_scrolling_view_behavior = 2131230757;
 			
@@ -6137,11 +6146,11 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f08002c
 			public const int path_password_strike_through = 2131230764;
 			
-			// aapt resource value: 0x7f08002f
-			public const int q = 2131230767;
+			// aapt resource value: 0x7f080030
+			public const int q = 2131230768;
 			
-			// aapt resource value: 0x7f08002e
-			public const int quarter = 2131230766;
+			// aapt resource value: 0x7f08002f
+			public const int quarter = 2131230767;
 			
 			// aapt resource value: 0x7f080001
 			public const int s1 = 2131230721;
@@ -6164,29 +6173,29 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f080018
 			public const int search_menu_title = 2131230744;
 			
-			// aapt resource value: 0x7f080035
-			public const int sfchart_close_label = 2131230773;
-			
-			// aapt resource value: 0x7f080032
-			public const int sfchart_high_label = 2131230770;
+			// aapt resource value: 0x7f080036
+			public const int sfchart_close_label = 2131230774;
 			
 			// aapt resource value: 0x7f080033
-			public const int sfchart_low_label = 2131230771;
+			public const int sfchart_high_label = 2131230771;
 			
 			// aapt resource value: 0x7f080034
-			public const int sfchart_open_label = 2131230772;
+			public const int sfchart_low_label = 2131230772;
 			
-			// aapt resource value: 0x7f080036
-			public const int sfchart_others_label = 2131230774;
+			// aapt resource value: 0x7f080035
+			public const int sfchart_open_label = 2131230773;
+			
+			// aapt resource value: 0x7f080037
+			public const int sfchart_others_label = 2131230775;
 			
 			// aapt resource value: 0x7f08002d
 			public const int status_bar_notification_info_overflow = 2131230765;
 			
-			// aapt resource value: 0x7f080031
-			public const int w = 2131230769;
+			// aapt resource value: 0x7f080032
+			public const int w = 2131230770;
 			
-			// aapt resource value: 0x7f080030
-			public const int week = 2131230768;
+			// aapt resource value: 0x7f080031
+			public const int week = 2131230769;
 			
 			static String()
 			{
