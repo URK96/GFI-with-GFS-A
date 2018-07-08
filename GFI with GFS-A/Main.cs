@@ -1,4 +1,4 @@
-﻿using Android;
+using Android;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
@@ -325,6 +325,10 @@ namespace GFI_with_GFS_A
                     }
                     else HasCheck = false;
                 }
+            }
+            catch (WebException ex)
+            {
+                ETC.ShowSnackbar(SnackbarLayout, "Skip Checking Server Status", Snackbar.LengthShort, Android.Graphics.Color.Gray)
             }
             catch (Exception ex)
             {
