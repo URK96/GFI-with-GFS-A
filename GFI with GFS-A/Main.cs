@@ -477,9 +477,16 @@ namespace GFI_with_GFS_A
                         if (AppIntent != null) StartActivity(AppIntent);
                         else
                         {
-                            Toast.MakeText(this, "앱 설치 화면으로 이동합니다.", ToastLength.Short).Show();
-                            string url = "https://play.google.com/store/apps/details?id=" + pack_name;
-                            StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse(url)));
+                            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
+                            ad.SetTitle("연결할 앱이 없네요 :(");
+                            ad.SetMessage("이 기능을 사용하려면 외부 앱이 설치되어야 해요. 설치 화면으로 이동할건가요?");
+                            ad.SetCancelable(true);
+                            ad.SetPositiveButton("설치", delegate 
+                            {
+                                string url = "https://play.google.com/store/apps/details?id=" + pack_name;
+                                StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse(url)));
+                            });
+                            ad.SetNegativeButton("취소", delegate { });
                         }
                         break;
                     default:
