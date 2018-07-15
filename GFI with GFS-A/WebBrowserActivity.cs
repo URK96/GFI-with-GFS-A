@@ -31,6 +31,13 @@ namespace GFI_with_GFS_A
             web.Settings.JavaScriptEnabled = true;
             web.SetWebViewClient(new WebBrowserWebClient());
             web.Settings.BuiltInZoomControls = true;
+            web.Settings.AllowContentAccess = true;
+            web.Settings.BlockNetworkImage = false;
+            web.Settings.BlockNetworkLoads = false;
+            web.Settings.LoadsImagesAutomatically = true;
+            web.Settings.DomStorageEnabled = true;
+            web.Settings.MixedContentMode = MixedContentHandling.AlwaysAllow;
+            web.Settings.SetAppCacheEnabled(true);
             
             InitProcess();
         }

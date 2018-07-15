@@ -11,10 +11,11 @@ using Android.Widget;
 using System;
 using System.Collections;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "소전사전", MainLauncher = true, Theme = "@style/GFS.Splash", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "소전사전", MainLauncher = true, Theme = "@style/GFS.Splash", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SplashScreen : AppCompatActivity
     {
         private CoordinatorLayout SnackbarLayout = null;
@@ -49,6 +50,8 @@ namespace GFI_with_GFS_A
                 LoadImage = FindViewById<ImageView>(Resource.Id.SplashLoadingStatusImage);
                 LoadImage.SetImageResource(Resource.Drawable.Splash_DataBuild);
 
+                VersionTracking.Track();
+
                 if ((int.Parse(Build.VERSION.Release.Split('.')[0])) >= 6) CheckPermission();
                 else InitProcess();
             }
@@ -74,32 +77,28 @@ namespace GFI_with_GFS_A
                 MainSplashImageView.Animate().Alpha(1.0f).SetDuration(500).Start();
                 LoadImage.Animate().Alpha(1.0f).SetDuration(300).SetStartDelay(500).Start();
 
-                await Task.Delay(1000);
+                //await Task.Delay(1000);
 
                 if (ETC.sharedPreferences.GetBoolean("CheckInitLowMemory", true) == true) CheckDeviceMemory();
                 ETC.IsLowRAM = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);
 
-                ETC.sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
+                if (VersionTracking.IsFirstLaunchForCurrentVersion == true) PreferenceEditor.PutBoolean("ShowNewFeatureDialog", true);
 
                 ETC.CheckInitFolder();
 
-                try
+                if (ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true) == true)
                 {
-                    if (await ETC.CheckDBVersion() == true)
+                    try
                     {
-                        await ETC.UpdateDB(this);
+                        if (await ETC.CheckDBVersion() == true)
+                        {
+                            await ETC.UpdateDB(this);
+                        }
                     }
-
-                    if (await ETC.CheckEventVersion() == true)
+                    catch (Exception ex)
                     {
-                        await ETC.UpdateEvent(this);
+                        ETC.ShowSnackbar(SnackbarLayout, Resource.String.Splash_SkipCheckUpdate, 1000, Android.Graphics.Color.DarkBlue);
                     }
-
-                    await ETC.CheckHasEvent();
-                }
-                catch (Exception ex)
-                {
-                    ETC.ShowSnackbar(SnackbarLayout, Resource.String.Splash_SkipCheckUpdate, 1000, Android.Graphics.Color.DarkBlue);
                 }
 
                 LoadImage.Animate().Alpha(0.0f).SetDuration(500).Start();
@@ -130,18 +129,6 @@ namespace GFI_with_GFS_A
                     ETC.DialogBG_Download = Resource.Style.GFD_Dialog_Download;
                 }
 
-                await Task.Delay(300);
-
-                using (System.Net.WebClient wc = new System.Net.WebClient())
-                {
-                    using (System.IO.StreamWriter sw = new System.IO.StreamWriter(new System.IO.FileStream(System.IO.Path.Combine(ETC.CachePath, "test.html"), System.IO.FileMode.Create, System.IO.FileAccess.ReadWrite)))
-                    {
-                        string s = await wc.DownloadStringTaskAsync("http://gfsdic.tistory.com/1");
-
-                        sw.Write(s);
-                    }   
-                }
-
                 LoadImage.Animate().Alpha(0.0f).SetDuration(300).Start();
 
                 GC.Collect();
@@ -162,7 +149,7 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                string[] check = { Manifest.Permission.WriteExternalStorage, Manifest.Permission.ReadExternalStorage };
+                string[] check = { Manifest.Permission.WriteExternalStorage, Manifest.Permission.ReadExternalStorage, Manifest.Permission.AccessNetworkState, Manifest.Permission.AccessWifiState };
                 ArrayList request = new ArrayList();
 
                 foreach (string permission in check)
@@ -213,14 +200,14 @@ namespace GFI_with_GFS_A
 
         public override void OnBackPressed()
         {
-            Android.Support.V7.App.AlertDialog.Builder ExitDialog = new Android.Support.V7.App.AlertDialog.Builder(this);
+            Android.Support.V7.App.AlertDialog.Builder ExitDialog = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.GFD_Dialog);
 
             ExitDialog.SetTitle(Resource.String.Main_CheckExitTitle);
             ExitDialog.SetMessage(Resource.String.Main_CheckExit);
             ExitDialog.SetCancelable(true);
             ExitDialog.SetPositiveButton("종료", delegate
             {
-                this.FinishAffinity();
+                FinishAffinity();
                 Process.KillProcess(Process.MyPid());
             });
             ExitDialog.SetNegativeButton("취소", delegate { });

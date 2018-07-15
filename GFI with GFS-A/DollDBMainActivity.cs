@@ -123,7 +123,6 @@ namespace GFI_with_GFS_A
             DollInfo.PutExtra("Keyword", DollName);
             StartActivity(DollInfo);
             OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
-            //ETC.ShowSnackbar(SnackbarLayout, "Dev Mode", Snackbar.LengthShort);
         }
 
 
@@ -210,7 +209,7 @@ namespace GFI_with_GFS_A
                 string FilePath = System.IO.Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", DollNum + ".gfdcache");
                 if (System.IO.File.Exists(FilePath) == false)
                 {
-                    Toast.MakeText(this, DollNum.ToString(), ToastLength.Short).Show();
+                    //Toast.MakeText(this, DollNum.ToString(), ToastLength.Short).Show();
                     return false;
                 }
             }
@@ -249,6 +248,7 @@ namespace GFI_with_GFS_A
                 nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
                 nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
 
+                p_now = 0;
                 p_total = 0;
                 p_total = ETC.DollList.Rows.Count;
                 totalProgressBar.Max = 100;
@@ -572,6 +572,7 @@ namespace GFI_with_GFS_A
         public override void OnBackPressed()
         {
             base.OnBackPressed();
+            Finish();
             OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             GC.Collect();
         }

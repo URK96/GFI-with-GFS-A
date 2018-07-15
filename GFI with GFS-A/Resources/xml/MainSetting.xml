@@ -10,6 +10,14 @@
       android:key="UseLightTheme"
       android:title="밝은 테마 사용"
       android:summary="기본값인 어두운 테마 대신 밝은 테마를 사용합니다."/>
+    <SwitchPreference
+      android:key="AutoDBUpdate"
+      android:title="자동 DB 업데이트"
+      android:summary="소전사전 기동 시 자동으로 DB 업데이트를 확인합니다. 이 설정을 비활성화하면 수동으로 DB 업데이트를 확인해야 합니다."/>
+    <Preference
+      android:key="CheckDBUpdate"
+      android:title="지금 업데이트 확인"
+      android:summary="DB 데이터의 업데이트를 확인합니다. 업데이트가 있는 경우 자동으로 업데이트가 진행됩니다."/>
   </PreferenceCategory>
   <PreferenceCategory
     android:title="DB 리스트 설정">
@@ -39,14 +47,14 @@
       android:summary="소전사전 사용 중 누적된 캐시 파일을 삭제하여 저장 공간을 확보합니다. DB 캐시가 없으면 해당 캐시를 다시 다운받기 때문에 데이터 사용량이 증가할 수 있습니다. 캐시 삭제 후에는 앱을 재시작하는 것을 권장합니다."/>
   </PreferenceCategory>
   <PreferenceCategory
-    android:title="로그 설정">
+    android:title="Log 설정">
     <!--<Preference
       android:key="OpenLogFolder"
       android:title="로그 폴더 열기"
       android:summary="로그 파일이 저장된 폴더를 볼 수 있도록 파일탐색기를 실행합니다."/>-->
     <Preference
       android:key="DeleteAllLogFile"
-      android:title="로그 파일 삭제"
-      android:summary="로그 파일을 전부 삭제합니다."/>
+      android:title="Log 파일 삭제"
+      android:summary="Log 파일을 전부 삭제합니다."/>
   </PreferenceCategory>
 </PreferenceScreen>

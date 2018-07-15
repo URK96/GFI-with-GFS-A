@@ -87,12 +87,7 @@ namespace GFI_with_GFS_A
 
                 string type = (string)dr["Type"];
                 int index = 0;
-
-                if (i == 167)
-                {
-                    index = 0;
-                }
-
+                
                 switch (type)
                 {
                     case "HG":
@@ -218,8 +213,6 @@ namespace GFI_with_GFS_A
 
         internal static void CheckInitFolder()
         {
-            DirectoryInfo AppDataDI = new DirectoryInfo(AppDataPath);
-
             if (Directory.Exists(tempPath) == false) Directory.CreateDirectory(tempPath);
             else
             {
@@ -227,13 +220,53 @@ namespace GFI_with_GFS_A
                 Directory.CreateDirectory(tempPath);
             }
 
+            DirectoryInfo AppDataDI = new DirectoryInfo(AppDataPath);
+
             if (AppDataDI.Exists == false) AppDataDI.Create();
-            if (Directory.Exists(DBPath) == false) Directory.CreateDirectory(DBPath);
+
+            string[] MainPaths =
+            {
+                DBPath,
+                SystemPath,
+                LogPath,
+                CachePath
+            };
+
+            string[] SubPaths =
+            {
+                Path.Combine(CachePath, "Doll"),
+                Path.Combine(CachePath, "Doll", "SD"),
+                Path.Combine(CachePath, "Doll", "SD", "Animation"),
+                Path.Combine(CachePath, "Doll", "Normal_Crop"),
+                Path.Combine(CachePath, "Doll", "Normal"),
+                Path.Combine(CachePath, "Doll", "Skill"),
+                Path.Combine(CachePath, "Equip"),
+                Path.Combine(CachePath, "Equip", "Normal"),
+                Path.Combine(CachePath, "Fairy"),
+                Path.Combine(CachePath, "Fairy", "Normal"),
+                Path.Combine(CachePath, "Fairy", "Normal_Crop"),
+                Path.Combine(CachePath, "Fairy", "Skill"),
+                Path.Combine(CachePath, "Enemy"),
+                Path.Combine(CachePath, "Enemy", "SD"),
+                Path.Combine(CachePath, "Enemy", "Normal_Crop"),
+                Path.Combine(CachePath, "Enemy", "Normal"),
+                Path.Combine(CachePath, "OldGFD"),
+                Path.Combine(CachePath, "OldGFD", "Images"),
+                Path.Combine(CachePath, "Event"),
+                Path.Combine(CachePath, "Event", "Images"),
+                Path.Combine(CachePath, "Voices")
+            };
+
+            /*if (Directory.Exists(DBPath) == false) Directory.CreateDirectory(DBPath);
             if (Directory.Exists(SystemPath) == false) Directory.CreateDirectory(SystemPath);
             if (Directory.Exists(LogPath) == false) Directory.CreateDirectory(LogPath);
 
-            if (Directory.Exists(CachePath) == false) Directory.CreateDirectory(CachePath);
-            if (Directory.Exists(Path.Combine(CachePath, "Doll")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll"));
+            if (Directory.Exists(CachePath) == false) Directory.CreateDirectory(CachePath);*/
+
+            foreach (string path in MainPaths) if (Directory.Exists(path) == false) Directory.CreateDirectory(path);
+            foreach (string path in SubPaths) if (Directory.Exists(path) == false) Directory.CreateDirectory(path);
+
+            /*if (Directory.Exists(Path.Combine(CachePath, "Doll")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll"));
             if (Directory.Exists(Path.Combine(CachePath, "Doll", "SD")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll", "SD"));
             if (Directory.Exists(Path.Combine(CachePath, "Doll", "SD", "Animation")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll", "SD", "Animation"));
             if (Directory.Exists(Path.Combine(CachePath, "Doll", "Normal_Crop")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll", "Normal_Crop"));
@@ -253,7 +286,7 @@ namespace GFI_with_GFS_A
             if (Directory.Exists(Path.Combine(CachePath, "OldGFD", "Images")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "OldGFD", "Images"));
             if (Directory.Exists(Path.Combine(CachePath, "Event")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Event"));
             if (Directory.Exists(Path.Combine(CachePath, "Event", "Images")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Event", "Images"));
-            if (Directory.Exists(Path.Combine(CachePath, "Voices")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Voices"));
+            if (Directory.Exists(Path.Combine(CachePath, "Voices")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Voices"));*/
         }
 
         internal static async Task<bool> LoadDB()
@@ -262,11 +295,17 @@ namespace GFI_with_GFS_A
 
             try
             {
+                DollList.Clear();
                 DollList.ReadXml(Path.Combine(DBPath, "Doll.gfs"));
+                EquipmentList.Clear();
                 EquipmentList.ReadXml(Path.Combine(DBPath, "Equipment.gfs"));
+                FairyList.Clear();
                 FairyList.ReadXml(Path.Combine(DBPath, "Fairy.gfs"));
+                EnemyList.Clear();
                 EnemyList.ReadXml(Path.Combine(DBPath, "Enemy.gfs"));
+                SkillTrainingList.Clear();
                 SkillTrainingList.ReadXml(Path.Combine(DBPath, "SkillTraining.gfs"));
+                MDSupportList.Clear();
                 MDSupportList.ReadXml(Path.Combine(DBPath, "MDSupportList.gfs"));
             }
             catch (Exception)
@@ -313,7 +352,7 @@ namespace GFI_with_GFS_A
         internal static async Task<bool> CheckEventVersion()
         {
             string LocalEventVerPath = Path.Combine(CachePath, "Event", "EventVer.txt");
-            string ServerEventVerPath = Path.Combine(Server, "EventVerNew.txt");
+            string ServerEventVerPath = Path.Combine(Server, "EventVer.txt");
             string TempEventVerPath = Path.Combine(tempPath, "EventVer.txt");
 
             bool HasEventUpdate = false;
@@ -343,33 +382,20 @@ namespace GFI_with_GFS_A
             return HasEventUpdate;
         }
 
-        internal static async Task CheckHasEvent()
-        {
-            string LocalEventVerPath = Path.Combine(CachePath, "Event", "EventVer.txt");
-
-            await Task.Delay(1);
-
-            using (StreamReader sr = new StreamReader(new FileStream(LocalEventVerPath, FileMode.Open, FileAccess.Read)))
-            {
-                string result = (sr.ReadToEnd()).Split(';')[0];
-
-                switch (result)
-                {
-                    case "Y":
-                        HasEvent = true;
-                        break;
-                    case "N":
-                    default:
-                        HasEvent = false;
-                        break;
-                }
-            }
-        }
-
         //ProgressDialog 교체
         internal static async Task UpdateDB(Activity activity)
         {
-            string[] DBFiles = { "Doll.gfs", "MDSupportList.gfs", "FreeOP.gfs", "SkillTraining.gfs", "Equipment.gfs", "Fairy.gfs", "Enemy.gfs", "FairyAttribution.gfs" };
+            string[] DBFiles = 
+            {
+                "Doll.gfs",
+                "MDSupportList.gfs",
+                "FreeOP.gfs",
+                "SkillTraining.gfs",
+                "Equipment.gfs",
+                "Fairy.gfs",
+                "Enemy.gfs",
+                "FairyAttribution.gfs"
+            };
 
             ProgressDialog pd = new ProgressDialog(activity, DialogBG_Download);
             pd.SetProgressStyle(ProgressDialogStyle.Horizontal);
@@ -430,7 +456,7 @@ namespace GFI_with_GFS_A
 
             using (WebClient wc = new WebClient())
             {
-                string url = Path.Combine(Server, "EventVerNew.txt");
+                string url = Path.Combine(Server, "EventVer.txt");
                 string target = Path.Combine(tempPath, "EventVer.txt");
                 await wc.DownloadFileTaskAsync(url, target);
                 await Task.Delay(100);
@@ -476,7 +502,7 @@ namespace GFI_with_GFS_A
             {
                 DateTime now = DateTime.Now;
 
-                string nowDateTime = now.Year.ToString() + now.Month.ToString() + now.Date.ToString() + now.Hour.ToString() + now.Minute.ToString() + now.Second.ToString();
+                string nowDateTime = now.Year.ToString() + now.Month.ToString() + now.Day.ToString() + now.Hour.ToString() + now.Minute.ToString() + now.Second.ToString();
                 string ErrorFileName = nowDateTime + "-ErrorLog.txt";
 
                 using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))

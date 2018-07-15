@@ -19,9 +19,14 @@ namespace GFI_with_GFS_A
     [Activity(Label = "진행 중인 이벤트", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class EventListActivity : AppCompatActivity
     {
+        enum EventPeriodType { Now, Scheduled, Over }
+
         private LinearLayout EventListSubLayout;
+        private LinearLayout EventListSubLayout2;
 
         private int EventCount = 0;
+        private int NowEventCount = 0;
+        private int ScheduledEventCount = 0;
         private string[] EventURLs;
         private string[] EventPeriods;
         private string EventFilePath = Path.Combine(ETC.CachePath, "Event", "EventVer.txt");
@@ -39,6 +44,7 @@ namespace GFI_with_GFS_A
             SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EventListSnackbarLayout);
 
             EventListSubLayout = FindViewById<LinearLayout>(Resource.Id.EventListButtonSubLayout);
+            EventListSubLayout2 = FindViewById<LinearLayout>(Resource.Id.EventListButtonSubLayout2);
 
             InitLoad();
         }
@@ -49,6 +55,13 @@ namespace GFI_with_GFS_A
 
             try
             {
+                if (await ETC.CheckEventVersion() == true) await ETC.UpdateEvent(this);
+
+                TextView period1 = FindViewById<TextView>(Resource.Id.EventPeriodText1);
+                Button button1 = FindViewById<Button>(Resource.Id.EventButton1);
+                TextView period2 = FindViewById<TextView>(Resource.Id.EventPeriodText2);
+                Button button2 = FindViewById<Button>(Resource.Id.EventButton2);
+
                 string[] temp;
 
                 using (StreamReader sr = new StreamReader(new FileStream(EventFilePath, FileMode.Open, FileAccess.Read)))
@@ -62,7 +75,99 @@ namespace GFI_with_GFS_A
                 EventPeriods = new string[EventCount];
                 EventPeriods = temp[5].Split(',');
 
-                TextView period1 = FindViewById<TextView>(Resource.Id.EventPeriodText1);
+                NowEventCount = 0;
+                ScheduledEventCount = 0;
+
+                EventListSubLayout.RemoveAllViews();
+                EventListSubLayout2.RemoveAllViews();
+
+                for (int i = 0; i < EventCount; ++i)
+                {
+                    EventPeriodType type;
+                    string[] EventPeriod = EventPeriods[i].Split(' ');
+
+                    type = CheckEventPeriod(EventPeriod);
+
+                    if (type == EventPeriodType.Over) continue;
+
+                    string text_period = EventPeriods[i];
+                    Android.Graphics.Drawables.Drawable event_image = Android.Graphics.Drawables.Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Event", "Images", "Event_" + (i + 1) + ".png"));
+
+                    if (type == EventPeriodType.Now)
+                    {
+                        NowEventCount += 1;
+
+                        if (NowEventCount == 1)
+                        {
+                            period1.Text = text_period;
+                            button1.Background = event_image;
+                            button1.Tag = i;
+                            button1.Click += EventButton_Click;
+                        }
+                        else
+                        {
+                            TextView period = new TextView(this);
+                            Button button = new Button(this);
+
+                            period.LayoutParameters = period1.LayoutParameters;
+                            button.LayoutParameters = button1.LayoutParameters;
+
+                            period.Text = text_period;
+                            period.Gravity = GravityFlags.Center;
+
+                            button.Background = event_image;
+                            button.Tag = i;
+                            button.Click += EventButton_Click;
+
+                            EventListSubLayout.AddView(period);
+                            EventListSubLayout.AddView(button);
+                        }
+                    }
+                    else if (type == EventPeriodType.Scheduled)
+                    {
+                        ScheduledEventCount += 1;
+
+                        if (ScheduledEventCount == 1)
+                        {
+                            period2.Text = text_period;
+                            button2.Background = event_image;
+                            button2.Tag = i;
+                            button2.Click += EventButton_Click;
+                        }
+                        else
+                        {
+                            TextView period = new TextView(this);
+                            Button button = new Button(this);
+
+                            period.LayoutParameters = period2.LayoutParameters;
+                            button.LayoutParameters = button2.LayoutParameters;
+
+                            period.Text = text_period;
+                            period.Gravity = GravityFlags.Center;
+
+                            button.Background = event_image;
+                            button.Tag = i;
+                            button.Click += EventButton_Click;
+
+                            EventListSubLayout2.AddView(period);
+                            EventListSubLayout2.AddView(button);
+                        }
+                    }
+                }
+
+                if (NowEventCount == 0)
+                {
+                    period1.Text = "이벤트 없음";
+                    button1.Visibility = ViewStates.Gone;
+                }
+
+                if (ScheduledEventCount == 0)
+                {
+                    period2.Text = "이벤트 없음";
+                    button2.Visibility = ViewStates.Gone;
+                }
+
+                /*TextView period1 = FindViewById<TextView>(Resource.Id.EventPeriodText1);
                 Button button1 = FindViewById<Button>(Resource.Id.EventButton1);
 
                 period1.Text = EventPeriods[0];
@@ -88,7 +193,7 @@ namespace GFI_with_GFS_A
 
                     EventListSubLayout.AddView(period);
                     EventListSubLayout.AddView(button);
-                }
+                }*/
 
                 FindViewById<LinearLayout>(Resource.Id.EventListButtonLayout).Animate().Alpha(1.0f).SetDuration(500).Start();
             }
@@ -99,19 +204,39 @@ namespace GFI_with_GFS_A
             }
         }
 
+        private EventPeriodType CheckEventPeriod(string[] period)
+        {
+            int start_year = int.Parse(period[0].Split('/')[0]);
+            int start_month = int.Parse(period[0].Split('/')[1]);
+            int start_day = int.Parse(period[0].Split('/')[2]);
+            int start_hour = int.Parse(period[1].Split(':')[0]);
+            int start_minute = int.Parse(period[1].Split(':')[1]);
+
+            int end_year = int.Parse(period[3].Split('/')[0]);
+            int end_month = int.Parse(period[3].Split('/')[1]);
+            int end_day = int.Parse(period[3].Split('/')[2]);
+            int end_hour = int.Parse(period[4].Split(':')[0]);
+            int end_minute = int.Parse(period[4].Split(':')[1]);
+
+            DateTime now = DateTime.Now;
+            DateTime start = new DateTime(start_year, start_month, start_day, start_hour, start_minute, 0);
+            DateTime end = new DateTime(end_year, end_month, end_day, end_hour, end_minute, 0);
+
+            if (DateTime.Compare(now, start) < 0) return EventPeriodType.Scheduled;
+            else if (DateTime.Compare(now, end) > 0) return EventPeriodType.Over;
+            else return EventPeriodType.Now;
+        }
+
         private void EventButton_Click(object sender, EventArgs e)
         {
             try
             {
                 Button bt = sender as Button;
 
-                if (ETC.HasEvent == true)
-                {
-                    var intent = new Intent(this, typeof(WebBrowserActivity));
-                    intent.PutExtra("url", EventURLs[Convert.ToInt32(bt.Tag) - 1]);
-                    StartActivity(intent);
-                    OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                }
+                var intent = new Intent(this, typeof(WebBrowserActivity));
+                intent.PutExtra("url", EventURLs[Convert.ToInt32(bt.Tag)]);
+                StartActivity(intent);
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
             catch (Exception ex)
             {

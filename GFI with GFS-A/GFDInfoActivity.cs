@@ -1,5 +1,4 @@
-﻿
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Support.Design.Widget;
@@ -24,7 +23,6 @@ namespace GFI_with_GFS_A
 
         ProgressDialog DownloadProgress;
 
-        FloatingActionButton DonateFAB;
         FloatingActionButton KakaoPlusFriendFAB;
 
         private bool IsOpenFABMenu = false;
@@ -46,8 +44,6 @@ namespace GFI_with_GFS_A
                 ServerVersion = FindViewById<TextView>(Resource.Id.GFDInfo_ServerAppVersion);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.GFDInfoSnackbarLayout);
 
-                DonateFAB = FindViewById<FloatingActionButton>(Resource.Id.DonateFAB);
-                DonateFAB.Click += DonateFAB_Click;
                 KakaoPlusFriendFAB = FindViewById<FloatingActionButton>(Resource.Id.KakaoPlusFriendFAB);
                 KakaoPlusFriendFAB.Click += KakaoPlusFriendFAB_Click;
 
@@ -65,21 +61,6 @@ namespace GFI_with_GFS_A
             try
             {
                 string url = "https://pf.kakao.com/_JEcmC/chat";
-                var intent = new Intent(Intent.ActionView, Android.Net.Uri.Parse(url));
-                StartActivity(intent);
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.SideLinkOpen_Fail, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
-            }
-        }
-
-        private void DonateFAB_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string url = "http://gfsdic.tistory.com/notice/14";
                 var intent = new Intent(Intent.ActionView, Android.Net.Uri.Parse(url));
                 StartActivity(intent);
             }
@@ -190,8 +171,8 @@ namespace GFI_with_GFS_A
             ad.SetTitle(Resource.String.UpdateDialog_Title);
             ad.SetMessage(Resource.String.UpdateDialog_Message);
             ad.SetCancelable(true);
-            ad.SetPositiveButton("업데이트", delegate { LinkAppStore(); });
-            ad.SetNegativeButton("취소", delegate { });
+            ad.SetPositiveButton("Play Store", delegate { LinkAppStore(); });
+            ad.SetNegativeButton("APK 설치", async delegate { await AppUpdate(); });
 
             ad.Show();
         }

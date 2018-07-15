@@ -103,6 +103,21 @@ namespace GFI_with_GFS_A
                 SaveSetting.Apply();
             };
 
+            SwitchPreference AutoDBUpdate = (SwitchPreference)FindPreference("AutoDBUpdate");
+            //if (ETC.UseLightTheme == true) AutoDBUpdate.SetIcon();
+            //else AutoDBUpdate.SetIcon();
+            AutoDBUpdate.Checked = ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true);
+            AutoDBUpdate.PreferenceChange += delegate
+            {
+                SaveSetting.PutBoolean("AutoDBUpdate", AutoDBUpdate.Checked);
+                SaveSetting.Apply();
+            };
+
+            Preference CheckDBUpdate = FindPreference("CheckDBUpdate");
+            /*if (ETC.UseLightTheme == true) CheckDBUpdate.SetIcon();
+            else CheckDBUpdate.SetIcon();*/
+            CheckDBUpdate.PreferenceClick += CheckDBUpdate_PreferenceClick;
+
             SwitchPreference DBListImage = (SwitchPreference)FindPreference("DBListImageShow");
             if (ETC.UseLightTheme == true) DBListImage.SetIcon(Resource.Drawable.DBListImageIcon_WhiteTheme);
             else DBListImage.SetIcon(Resource.Drawable.DBListImageIcon);
@@ -139,6 +154,45 @@ namespace GFI_with_GFS_A
             if (ETC.UseLightTheme == true) DeleteAllLogFile.SetIcon(Resource.Drawable.DeleteAllLogFileIcon_WhiteTheme);
             else DeleteAllLogFile.SetIcon(Resource.Drawable.DeleteAllLogFileIcon);
             DeleteAllLogFile.PreferenceClick += DeleteAllLogFile_PreferenceClick;
+        }
+
+        private async void CheckDBUpdate_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
+        {
+            Dialog dialog = null;
+
+            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
+            ad.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
+            ad.SetMessage(Resource.String.CheckDBUpdateDialog_Message);
+            ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
+            ad.SetCancelable(false);
+
+            try
+            {
+                dialog = ad.Show();
+
+                await Task.Delay(100);
+
+                if (await ETC.CheckDBVersion() == true)
+                {
+                    await ETC.UpdateDB(Activity);
+
+                    await Task.Delay(500);
+
+                    await ETC.LoadDB();
+
+                    Toast.MakeText(Activity, Resource.String.CheckDBUpdate_Complete, ToastLength.Short).Show();
+                }
+                else Toast.MakeText(Activity, Resource.String.CheckDBUpdate_UpToDate, ToastLength.Short).Show();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(Activity, ex.ToString());
+                Toast.MakeText(Activity, Resource.String.Setting_DeleteAllLogFile_Fail, ToastLength.Short).Show();
+            }
+            finally
+            {
+                if (dialog.IsShowing == true) dialog.Dismiss();
+            }
         }
 
         private void DeleteAllLogFile_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)

@@ -99,7 +99,7 @@ namespace GFI_with_GFS_A
 
                 // Create your application here
                 SetContentView(Resource.Layout.MainLayout);
-                
+
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.MainSnackbarLayout);
 
                 NotificationView = FindViewById<TextView>(Resource.Id.MainNotificationText);
@@ -133,7 +133,7 @@ namespace GFI_with_GFS_A
             {
                 string url = Path.Combine(ETC.Server, "Android_Notification.txt");
 
-                using (System.Net.WebClient wc = new System.Net.WebClient())
+                using (WebClient wc = new WebClient())
                 {
                     notification = wc.DownloadString(url);
                 }
@@ -141,7 +141,7 @@ namespace GFI_with_GFS_A
                 ad.SetMessage(notification);
                 ad.Show();
             }
-            catch (System.Net.WebException ex)
+            catch (WebException ex)
             {
                 ETC.LogError(this, ex.ToString());
 
@@ -161,8 +161,6 @@ namespace GFI_with_GFS_A
 
             try
             {
-                //Android.Gms.Ads.MobileAds.Initialize(this, "ca-app-pub-4576756770200148~7952805589");
-
                 if (ETC.sharedPreferences.GetBoolean("LowMemoryOption", false) == false)
                 {
                     for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).SetBackgroundResource(MainMenuButtonBackgroundIds[i]);
@@ -189,13 +187,38 @@ namespace GFI_with_GFS_A
 
                 FindViewById<LinearLayout>(Resource.Id.MainMenuButtonLayout1).BringToFront();
 
-                CheckServerChecking();
+                ShowNewVersionFeatureDialog();
+
+                ReadServerChecking();
                 LoadTopNotification();
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, "Init error", Snackbar.LengthShort);
+            }
+        }
+
+        private void ShowNewVersionFeatureDialog()
+        {
+            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG_Vertical);
+            ad.SetTitle(Resource.String.Main_NotificationTitle);
+            //ad.SetMessage(Resource.String);
+            ad.SetCancelable(true);
+            ad.SetPositiveButton("닫기", delegate { });
+
+            try
+            {
+                ad.Show();
+            }
+            catch (WebException ex)
+            {
+                ETC.LogError(this, ex.ToString());
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_NotificationInitializeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -206,7 +229,6 @@ namespace GFI_with_GFS_A
                 Button EventButton = FindViewById<Button>(Resource.Id.EventExtraButton);
 
                 //if (ETC.HasEvent == true) EventButton.Background = Android.Graphics.Drawables.Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Event", "Images", "Event_1.png"));
-                if (ETC.HasEvent == false) EventButton.Visibility = ViewStates.Gone;
             }
             catch (Exception ex)
             {
@@ -241,7 +263,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "Init error", Snackbar.LengthShort);
+                ETC.ShowSnackbar(SnackbarLayout, "Button Event Link Error", Snackbar.LengthShort);
             }
         }
 
@@ -256,7 +278,6 @@ namespace GFI_with_GFS_A
                         {
                             Button button = FindViewById<Button>(id);
                             button.Click += ExtraMenuButton_Click;
-                            if (id == Resource.Id.EventExtraButton) button.LongClick += EventExtraButton_LongClick;
                         }
                         break;
                     case 0:
@@ -265,7 +286,6 @@ namespace GFI_with_GFS_A
                         {
                             Button button = FindViewById<Button>(id);
                             if (button.HasOnClickListeners == true) button.Click -= ExtraMenuButton_Click;
-                            if (id == Resource.Id.EventExtraButton) button.LongClick -= EventExtraButton_LongClick;
                         }
                         break;
                 }
@@ -273,41 +293,11 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "Init error", Snackbar.LengthShort);
+                ETC.ShowSnackbar(SnackbarLayout, "Extra Button Event Link Error", Snackbar.LengthShort);
             }
         }
 
-        private void EventExtraButton_LongClick(object sender, View.LongClickEventArgs e)
-        {
-            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.GFD_Dialog);
-            ad.SetTitle("진행 중인 이벤트");
-            ad.SetCancelable(true);
-
-            try
-            {
-                StringBuilder sb = new StringBuilder();
-
-                string[] temp;
-
-                using (StreamReader sr = new StreamReader(new FileStream(Path.Combine(ETC.CachePath, "Event", "EventVer.txt"), FileMode.Open, FileAccess.Read)))
-                {
-                    temp = ((sr.ReadToEnd()).Split(';')[3]).Split(',');
-                }
-
-                for (int i = 0; i < temp.Length; ++i)
-                {
-                    if (i == (temp.Length - 1)) sb.Append(temp[i]);
-                    else sb.AppendLine(temp[i]);
-                }
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.AlertDialog_Error, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
-            }
-        }
-
-        private async Task CheckServerChecking()
+        private async Task ReadServerChecking()
         {
             string url = Path.Combine(ETC.Server, "ServerCheck.txt");
             bool HasCheck = false;
@@ -340,7 +330,7 @@ namespace GFI_with_GFS_A
             {
                 try
                 {
-                    Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.GFD_Dialog);
+                    Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
                     ad.SetTitle(Resource.String.NotifyCheckServer_Title);
                     ad.SetMessage(s);
                     ad.SetCancelable(false);
@@ -358,17 +348,15 @@ namespace GFI_with_GFS_A
 
         private async Task LoadTopNotification()
         {
-            await Task.Delay(2000);
+            await Task.Delay(100);
             string url = Path.Combine(ETC.Server, "Android_Notification.txt");
             string notification = "";
 
-            using (System.Net.WebClient wc = new System.Net.WebClient())
+            using (WebClient wc = new WebClient())
             {
                 try
                 {
                     notification = await wc.DownloadStringTaskAsync(url);
-
-                    string[] t_notification = notification.Split('\n');
 
                     NotificationView.Text = notification;
                     NotificationView.Selected = true;
@@ -454,19 +442,17 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.GFNewsExtraButton:
-                        string news_url = "http://www.girlsfrontline.co.kr/archives/category/news";
+                        //string news_url = "http://www.girlsfrontline.co.kr/archives/category/news";
+                        string news_url = "https://www.girlsfrontline.co.kr/archives/1880.html";
                         var intent = new Intent(this, typeof(WebBrowserActivity));
                         intent.PutExtra("url", news_url);
                         StartActivity(intent);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.EventExtraButton:
-                        if (ETC.HasEvent == true)
-                        {
-                            if ((int.Parse(Build.VERSION.Release.Split('.')[0])) >= 6) CheckPermission(Manifest.Permission.Internet);
-                            StartActivity(typeof(EventListActivity));
-                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        }
+                        if ((int.Parse(Build.VERSION.Release.Split('.')[0])) >= 6) CheckPermission(Manifest.Permission.Internet);
+                        StartActivity(typeof(EventListActivity));
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.ProductSimulatorExtraButton:
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
@@ -487,6 +473,8 @@ namespace GFI_with_GFS_A
                                 StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse(url)));
                             });
                             ad.SetNegativeButton("취소", delegate { });
+
+                            ad.Show();
                         }
                         break;
                     default:
