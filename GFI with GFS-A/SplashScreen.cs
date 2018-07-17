@@ -77,7 +77,7 @@ namespace GFI_with_GFS_A
                 MainSplashImageView.Animate().Alpha(1.0f).SetDuration(500).Start();
                 LoadImage.Animate().Alpha(1.0f).SetDuration(300).SetStartDelay(500).Start();
 
-                //await Task.Delay(1000);
+                await Task.Delay(500);
 
                 if (ETC.sharedPreferences.GetBoolean("CheckInitLowMemory", true) == true) CheckDeviceMemory();
                 ETC.IsLowRAM = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);
@@ -100,6 +100,8 @@ namespace GFI_with_GFS_A
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.Splash_SkipCheckUpdate, 1000, Android.Graphics.Color.DarkBlue);
                     }
                 }
+
+                await Task.Delay(200);
 
                 LoadImage.Animate().Alpha(0.0f).SetDuration(500).Start();
                 LoadImage.SetImageResource(Resource.Drawable.Splash_DataLoad);

@@ -187,7 +187,7 @@ namespace GFI_with_GFS_A
 
                 FindViewById<LinearLayout>(Resource.Id.MainMenuButtonLayout1).BringToFront();
 
-                ShowNewVersionFeatureDialog();
+                if(ETC.sharedPreferences.GetBoolean("ShowNewFeatureDialog", true) == true) ShowNewVersionFeatureDialog();
 
                 ReadServerChecking();
                 LoadTopNotification();
@@ -202,14 +202,17 @@ namespace GFI_with_GFS_A
         private void ShowNewVersionFeatureDialog()
         {
             Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG_Vertical);
-            ad.SetTitle(Resource.String.Main_NotificationTitle);
-            //ad.SetMessage(Resource.String);
+            ad.SetTitle(Resource.String.NewFeatureDialog_Title);
+            ad.SetMessage(Resource.String.NewFeature);
             ad.SetCancelable(true);
             ad.SetPositiveButton("닫기", delegate { });
 
             try
             {
                 ad.Show();
+                ISharedPreferencesEditor Editor = ETC.sharedPreferences.Edit();
+                Editor.PutBoolean("ShowNewFeatureDialog", false);
+                Editor.Apply();
             }
             catch (WebException ex)
             {
