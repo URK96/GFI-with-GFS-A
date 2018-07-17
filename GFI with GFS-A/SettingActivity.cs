@@ -104,8 +104,8 @@ namespace GFI_with_GFS_A
             };
 
             SwitchPreference AutoDBUpdate = (SwitchPreference)FindPreference("AutoDBUpdate");
-            //if (ETC.UseLightTheme == true) AutoDBUpdate.SetIcon();
-            //else AutoDBUpdate.SetIcon();
+            if (ETC.UseLightTheme == true) AutoDBUpdate.SetIcon(Resource.Drawable.AutoDBUpdate_WhiteTheme);
+            else AutoDBUpdate.SetIcon(Resource.Drawable.AutoDBUpdate);
             AutoDBUpdate.Checked = ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true);
             AutoDBUpdate.PreferenceChange += delegate
             {
@@ -114,8 +114,8 @@ namespace GFI_with_GFS_A
             };
 
             Preference CheckDBUpdate = FindPreference("CheckDBUpdate");
-            /*if (ETC.UseLightTheme == true) CheckDBUpdate.SetIcon();
-            else CheckDBUpdate.SetIcon();*/
+            if (ETC.UseLightTheme == true) CheckDBUpdate.SetIcon(Resource.Drawable.CheckDBUpdate_WhiteTheme);
+            else CheckDBUpdate.SetIcon(Resource.Drawable.CheckDBUpdate);
             CheckDBUpdate.PreferenceClick += CheckDBUpdate_PreferenceClick;
 
             SwitchPreference DBListImage = (SwitchPreference)FindPreference("DBListImageShow");

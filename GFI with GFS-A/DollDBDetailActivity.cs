@@ -481,7 +481,10 @@ namespace GFI_with_GFS_A
 
                 int[] BuffIds = { Resource.Id.DollDBDetailBuff1, Resource.Id.DollDBDetailBuff2, Resource.Id.DollDBDetailBuff3, Resource.Id.DollDBDetailBuff4, Resource.Id.DollDBDetailBuff5, Resource.Id.DollDBDetailBuff6, Resource.Id.DollDBDetailBuff7, Resource.Id.DollDBDetailBuff8, Resource.Id.DollDBDetailBuff9 };
 
-                string[] Buff_Data = ((string)DollInfoDR["EffectFormation"]).Split(',');
+                string[] Buff_Data = new string[9];
+
+                if (ModIndex == 0) Buff_Data = ((string)DollInfoDR["EffectFormation"]).Split(',');
+                else Buff_Data = ((string)DollInfoDR["ModEffectFormation"]).Split(',');
 
                 for (int i = 0; i < Buff_Data.Length; ++i)
                 {

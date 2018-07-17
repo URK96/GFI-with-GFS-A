@@ -445,8 +445,7 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.GFNewsExtraButton:
-                        //string news_url = "http://www.girlsfrontline.co.kr/archives/category/news";
-                        string news_url = "https://www.girlsfrontline.co.kr/archives/1880.html";
+                        string news_url = "http://www.girlsfrontline.co.kr/archives/category/news";
                         var intent = new Intent(this, typeof(WebBrowserActivity));
                         intent.PutExtra("url", news_url);
                         StartActivity(intent);
