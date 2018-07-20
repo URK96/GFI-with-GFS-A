@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Webkit;
 using Android.Widget;
 using System;
+using Android.Support.Design.Widget;
 
 namespace GFI_with_GFS_A
 {
@@ -16,6 +17,7 @@ namespace GFI_with_GFS_A
         private static ProgressBar LoadProgress;
 
         private WebView web;
+        private FloatingActionButton ExitFAB;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -28,6 +30,9 @@ namespace GFI_with_GFS_A
 
             LoadProgress = FindViewById<ProgressBar>(Resource.Id.WebBrowserProgressBar);       
             web = FindViewById<WebView>(Resource.Id.WebBrowser);
+            ExitFAB = FindViewById<FloatingActionButton>(Resource.Id.ExitWebFAB);
+            ExitFAB.Click += ExitFAB_Click;
+
             web.Settings.JavaScriptEnabled = true;
             web.SetWebViewClient(new WebBrowserWebClient());
             web.Settings.BuiltInZoomControls = true;
@@ -40,6 +45,11 @@ namespace GFI_with_GFS_A
             web.Settings.SetAppCacheEnabled(true);
             
             InitProcess();
+        }
+
+        private void ExitFAB_Click(object sender, EventArgs e)
+        {
+            Finish();
         }
 
         private void InitProcess()

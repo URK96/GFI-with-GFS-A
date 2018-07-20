@@ -9,7 +9,7 @@
   <string name="Main_StartUpHello">오, 지휘관! 헬로!</string>
   <string name="Main_NotificationTitle">공지사항</string>
   <string name="Main_NotificationLoadFail"># 공지사항 로드 실패! #</string>
-  <string name="Main_NotificationInitializeFail">공지사항 초기화 오류</string>
+  <string name="Main_NotificationInitializeFail">공지사항을 불러오지 못했어!</string>
   <string name="Main_CheckExitTitle">소전사전 종료</string>
   <string name="Main_CheckExit">여기서... 종료할거야...?</string>
   <string name="DBList_DownloadCropImageCheckTitle">리스트 이미지 다운로드</string>

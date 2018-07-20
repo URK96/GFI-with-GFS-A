@@ -82,7 +82,7 @@ namespace GFI_with_GFS_A
         };
         readonly string[] ExtraMenuButtonText =
         {
-            "",
+            "이벤트",
             "소전 공지사항",
             "라플봇",
             "제조 시뮬레이터",
