@@ -82,12 +82,12 @@
   <string name="AdMob_ID">ca-app-pub-4576756770200148/5965646930</string>
   <string name="NewFeatureDialog_Title">새로운 기능</string>
   <string name="NewFeature">
-    [2.1.5 수정사항]\n\n
-- WebView에서 이미지 로드가 안되는 현상 수정\n
-- 이벤트 기능 2차 리뉴얼\n
-- 이벤트 데이터 업데이트 방식 변경\n
-- 앱 기동시 로드 과정 최적화\n
-- APK 파일로 직접 업데이트 기능 추가\n
-- 성능 최적화
-  </string>
+    [2.1.6 수정사항]\n\n
+- 일부 기기에서 네트워크 연결이 없을 시 기동이 안되는 문제 수정\n
+- WebActivity에 Exit 플로팅 버튼 추가\n
+- 저사양 옵션 활성화 시 Event 버튼에 타이틀이 나오도록 수정\n
+- 추후 Mod 기능 추가에 대한 코드 대응\n
+- 추가 기능 - NEWS 항목의 연결 URL 수정\n
+- 일부 메세지 수정
+</string>
 </resources>
