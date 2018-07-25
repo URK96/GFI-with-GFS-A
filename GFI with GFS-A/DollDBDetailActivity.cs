@@ -18,6 +18,7 @@ using System.Threading.Tasks;
 using Android.Gms.Ads;
 using Com.Syncfusion.Charts;
 using System.Collections.ObjectModel;
+using Felipecsl.GifImageViewLibrary;
 
 namespace GFI_with_GFS_A
 {
@@ -47,6 +48,7 @@ namespace GFI_with_GFS_A
 
         private ProgressBar InitLoadProgressBar;
         private Spinner VoiceSelector;
+        private Spinner SDAnimationSelector;
         private Button VoicePlayButton;
         private FloatingActionButton PercentTableFAB;
         private FloatingActionButton MainFAB;
@@ -54,6 +56,7 @@ namespace GFI_with_GFS_A
         private FloatingActionButton InvenFAB;
         private FloatingActionButton BaseFAB;
         private SfChart chart;
+        private GifImageView SDAnimationImageView;
 
         private AdView adview;
 
@@ -113,6 +116,9 @@ namespace GFI_with_GFS_A
                 InvenFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkInvenFAB);
                 BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkBaseFAB);
                 chart = FindViewById<SfChart>(Resource.Id.DollDBDetailAbilityRadarChart);
+                SDAnimationSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailSDAnimationList);
+                SDAnimationSelector.ItemSelected += SDAnimationSelector_ItemSelected;
+                SDAnimationImageView = FindViewById<GifImageView>(Resource.Id.DollDBDetailSDAnimationImageView);
 
                 PercentTableFAB.Click += PercentTableFAB_Click;
                 MainFAB.Click += MainFAB_Click;
@@ -130,6 +136,11 @@ namespace GFI_with_GFS_A
                 ETC.LogError(this, ex.ToString());
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
+        }
+
+        private void SDAnimationSelector_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private async Task LoadChart()
