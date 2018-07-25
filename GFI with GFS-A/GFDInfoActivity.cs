@@ -171,8 +171,8 @@ namespace GFI_with_GFS_A
             ad.SetTitle(Resource.String.UpdateDialog_Title);
             ad.SetMessage(Resource.String.UpdateDialog_Message);
             ad.SetCancelable(true);
-            ad.SetPositiveButton("Play Store", delegate { LinkAppStore(); });
-            ad.SetNegativeButton("APK 설치", async delegate { await AppUpdate(); });
+            ad.SetPositiveButton("Play Store로 업데이트", delegate { LinkAppStore(); });
+            ad.SetNegativeButton("APK로 설치", async delegate { await AppUpdate(); });
 
             ad.Show();
         }
