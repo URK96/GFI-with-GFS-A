@@ -82,12 +82,8 @@
   <string name="AdMob_ID">ca-app-pub-4576756770200148/5965646930</string>
   <string name="NewFeatureDialog_Title">새로운 기능</string>
   <string name="NewFeature">
-    [2.1.6 수정사항]\n\n
-- 일부 기기에서 네트워크 연결이 없을 시 기동이 안되는 문제 수정\n
-- WebActivity에 Exit 플로팅 버튼 추가\n
-- 저사양 옵션 활성화 시 Event 버튼에 타이틀이 나오도록 수정\n
-- 추후 Mod 기능 추가에 대한 코드 대응\n
-- 추가 기능 - NEWS 항목의 연결 URL 수정\n
-- 일부 메세지 수정
+    [2.1.7 수정사항]\n\n
+- 저작권 관련 문구 삭제\n
+- 일부 레이아웃 조정
 </string>
 </resources>
