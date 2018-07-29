@@ -48,6 +48,7 @@ namespace GFI_with_GFS_A
         private ProgressBar InitLoadProgressBar;
         private Spinner VoiceSelector;
         private Button VoicePlayButton;
+        private FloatingActionButton RefreshCacheFAB;
         private FloatingActionButton PercentTableFAB;
         private FloatingActionButton MainFAB;
         private FloatingActionButton NamuWikiFAB;
@@ -106,6 +107,7 @@ namespace GFI_with_GFS_A
                 ScrollLayout = FindViewById<ScrollView>(Resource.Id.DollDBDetailScrollLayout);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBDetailSnackbarLayout);
 
+                RefreshCacheFAB = FindViewById<FloatingActionButton>(Resource.Id.DollDBDetailRefreshCacheFAB);
                 PercentTableFAB = FindViewById<FloatingActionButton>(Resource.Id.DollDBDetailProductPercentFAB);
                 if ((int)DollInfoDR["ProductTIme"] == 0) PercentTableFAB.Visibility = ViewStates.Gone;
                 MainFAB = FindViewById<FloatingActionButton>(Resource.Id.DollDBDetailSideLinkMainFAB);
@@ -114,6 +116,7 @@ namespace GFI_with_GFS_A
                 BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkBaseFAB);
                 chart = FindViewById<SfChart>(Resource.Id.DollDBDetailAbilityRadarChart);
 
+                RefreshCacheFAB.Click += RefreshCacheFAB_Click;
                 PercentTableFAB.Click += PercentTableFAB_Click;
                 MainFAB.Click += MainFAB_Click;
                 NamuWikiFAB.Click += MainSubFAB_Click;
@@ -123,13 +126,18 @@ namespace GFI_with_GFS_A
                 FABTimer.Interval = 3000;
                 FABTimer.Elapsed += FABTimer_Elapsed;
 
-                InitLoadProcess();
+                InitLoadProcess(false);
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
+        }
+
+        private void RefreshCacheFAB_Click(object sender, EventArgs e)
+        {
+            InitLoadProcess(true);
         }
 
         private async Task LoadChart()
@@ -334,6 +342,7 @@ namespace GFI_with_GFS_A
                 IsEnableFABMenu = true;
                 MainFAB.Animate().Alpha(1.0f).SetDuration(500).Start();
                 PercentTableFAB.Show();
+                RefreshCacheFAB.Show();
                 FABTimer.Start();
             }
             else
@@ -360,6 +369,7 @@ namespace GFI_with_GFS_A
                             }
                             IsOpenFABMenu = true;
                             PercentTableFAB.Hide();
+                            RefreshCacheFAB.Hide();
                             FABTimer.Stop();
                             break;
                         case true:
@@ -375,6 +385,7 @@ namespace GFI_with_GFS_A
                             }
                             IsOpenFABMenu = false;
                             PercentTableFAB.Show();
+                            RefreshCacheFAB.Show();
                             FABTimer.Start();
                             break;
                     }
@@ -403,7 +414,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task InitLoadProcess()
+        private async Task InitLoadProcess(bool IsRefresh)
         {
             InitLoadProgressBar.Visibility = ViewStates.Visible;
 
@@ -415,32 +426,46 @@ namespace GFI_with_GFS_A
 
                 if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false) == true)
                 {
-                    if (File.Exists(Path.Combine(ETC.CachePath, "Doll", "Normal", DollDicNum + ".gfdcache")) == false)
+                    try
                     {
-                        using (WebClient wc = new WebClient())
+                        if ((File.Exists(Path.Combine(ETC.CachePath, "Doll", "Normal", DollDicNum + ".gfdcache")) == false) || (IsRefresh == true))
                         {
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", DollDicNum + ".png"), Path.Combine(ETC.CachePath, "Doll", "Normal", DollDicNum + ".gfdcache"));
+                            using (WebClient wc = new WebClient())
+                            {
+                                await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", DollDicNum + ".png"), Path.Combine(ETC.CachePath, "Doll", "Normal", DollDicNum + ".gfdcache"));
+                            }
                         }
-                    }
 
-                    Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Normal", DollDicNum + ".gfdcache"));
-                    drawable.SetAlpha(40);
-                    FindViewById<RelativeLayout>(Resource.Id.DollDBDetailMainLayout).Background = drawable;
+                        Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Normal", DollDicNum + ".gfdcache"));
+                        drawable.SetAlpha(40);
+                        FindViewById<RelativeLayout>(Resource.Id.DollDBDetailMainLayout).Background = drawable;
+                    }
+                    catch (Exception ex)
+                    {
+                        ETC.LogError(this, ex.ToString());
+                    }
                 }
 
                 string FileName = DollDicNum.ToString();
                 if (ModIndex == 3) FileName += "_M";
 
-                if (File.Exists(Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", FileName + ".gfdcache")) == false)
+                try
                 {
-                    using (WebClient wc = new WebClient())
+                    if ((File.Exists(Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", FileName + ".gfdcache")) == false) || (IsRefresh == true))
                     {
-                        await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal_Crop", FileName + ".png"), Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", FileName + ".gfdcache"));
+                        using (WebClient wc = new WebClient())
+                        {
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal_Crop", FileName + ".png"), Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", FileName + ".gfdcache"));
+                        }
                     }
-                }
 
-                ImageView DollSmallImage = FindViewById<ImageView>(Resource.Id.DollDBDetailSmallImage);
-                DollSmallImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", FileName + ".gfdcache")));
+                    ImageView DollSmallImage = FindViewById<ImageView>(Resource.Id.DollDBDetailSmallImage);
+                    DollSmallImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", FileName + ".gfdcache")));
+                }
+                catch (Exception ex)
+                {
+                    ETC.LogError(this, ex.ToString());
+                }
 
                 FindViewById<TextView>(Resource.Id.DollDBDetailDollName).Text = DollName;
                 FindViewById<TextView>(Resource.Id.DollDBDetailDollDicNumber).Text = "No. " + DollDicNum;
@@ -608,15 +633,24 @@ namespace GFI_with_GFS_A
                 // 인형 스킬 정보 초기화
 
                 string SkillName = (string)DollInfoDR["Skill"];
-                if (File.Exists(Path.Combine(ETC.CachePath, "Doll", "Skill", SkillName + ".gfdcache")) == false)
-                {
-                    using (WebClient wc = new WebClient())
-                    {
-                        wc.DownloadFile(Path.Combine(ETC.Server, "Data", "Images", "SkillIcons", SkillName + ".png"), Path.Combine(ETC.CachePath, "Doll", "Skill", SkillName + ".gfdcache"));
-                    }
-                }
 
-                FindViewById<ImageView>(Resource.Id.DollDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Skill", SkillName + ".gfdcache")));
+                try
+                {
+                    if ((File.Exists(Path.Combine(ETC.CachePath, "Doll", "Skill", SkillName + ".gfdcache")) == false) || (IsRefresh == true))
+                    {
+
+                        using (WebClient wc = new WebClient())
+                        {
+                            wc.DownloadFile(Path.Combine(ETC.Server, "Data", "Images", "SkillIcons", SkillName + ".png"), Path.Combine(ETC.CachePath, "Doll", "Skill", SkillName + ".gfdcache"));
+                        }
+
+                    }
+                    FindViewById<ImageView>(Resource.Id.DollDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Skill", SkillName + ".gfdcache")));
+                }
+                catch (Exception ex)
+                {
+                    ETC.LogError(this, ex.ToString());
+                }
 
                 FindViewById<TextView>(Resource.Id.DollDBDetailSkillName).Text = SkillName;
 
@@ -626,20 +660,22 @@ namespace GFI_with_GFS_A
                     FindViewById<ImageView>(Resource.Id.DollDBDetailSkillCoolTimeIcon).SetImageResource(Resource.Drawable.CoolTime_Icon_WhiteTheme);
                 }
 
-                string[] S_Effect = ((string)DollInfoDR["SkillEffect"]).Split(';');
-                string[] S_Mag = ((string)DollInfoDR["SkillMag"]).Split(',');
+                string[] SkillAbilities = ((string)DollInfoDR["SkillEffect"]).Split(';');
+                string[] SkillMags;
+                if (ModIndex == 0 ) SkillMags = ((string)DollInfoDR["SkillMag"]).Split(',');
+                else SkillMags = ((string)DollInfoDR["SkillMagAfterMod"]).Split(',');
+
+                //string[] S_Effect = ((string)DollInfoDR["SkillEffect"]).Split(';');
+                //string[] S_Mag = ((string)DollInfoDR["SkillMag"]).Split(',');
 
                 TextView SkillInitCoolTime = FindViewById<TextView>(Resource.Id.DollDBDetailSkillInitCoolTime);
                 SkillInitCoolTime.SetTextColor(Android.Graphics.Color.Orange);
-                SkillInitCoolTime.Text = S_Mag[0];
+                SkillInitCoolTime.Text = SkillMags[0];
                 TextView SkillCoolTime = FindViewById<TextView>(Resource.Id.DollDBDetailSkillCoolTime);
                 SkillCoolTime.SetTextColor(Android.Graphics.Color.DarkOrange);
-                SkillCoolTime.Text = S_Mag[1];
+                SkillCoolTime.Text = SkillMags[1];
 
                 FindViewById<TextView>(Resource.Id.DollDBDetailSkillExplain).Text = (string)DollInfoDR["SkillExplain"];
-
-                string[] SkillAbilities = ((string)DollInfoDR["SkillEffect"]).Split(';');
-                string[] SkillMags = ((string)DollInfoDR["SkillMag"]).Split(',');
 
                 SkillTableSubLayout.RemoveAllViews();
 
@@ -672,15 +708,23 @@ namespace GFI_with_GFS_A
                 if ((bool)DollInfoDR["HasMod"] == true)
                 {
                     string MSkillName = (string)DollInfoDR["ModSkill"];
-                    if (File.Exists(Path.Combine(ETC.CachePath, "Doll", "Skill", MSkillName + ".gfdcache")) == false)
-                    {
-                        using (WebClient wc = new WebClient())
-                        {
-                            wc.DownloadFile(Path.Combine(ETC.Server, "Data", "Images", "SkillIcons", MSkillName + ".png"), Path.Combine(ETC.CachePath, "Doll", "Skill", MSkillName + ".gfdcache"));
-                        }
-                    }
 
-                    FindViewById<ImageView>(Resource.Id.DollDBDetailModSkillIcon).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Skill", MSkillName + ".gfdcache")));
+                    try
+                    {
+                        if ((File.Exists(Path.Combine(ETC.CachePath, "Doll", "Skill", MSkillName + ".gfdcache")) == false) || (IsRefresh == true))
+                        {
+                            using (WebClient wc = new WebClient())
+                            {
+                                wc.DownloadFile(Path.Combine(ETC.Server, "Data", "Images", "SkillIcons", MSkillName + ".png"), Path.Combine(ETC.CachePath, "Doll", "Skill", MSkillName + ".gfdcache"));
+                            }
+                        }
+
+                        FindViewById<ImageView>(Resource.Id.DollDBDetailModSkillIcon).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Skill", MSkillName + ".gfdcache")));
+                    }
+                    catch (Exception ex)
+                    {
+                        ETC.LogError(this, ex.ToString());
+                    }
 
                     FindViewById<TextView>(Resource.Id.DollDBDetailModSkillName).Text = MSkillName;
                     FindViewById<TextView>(Resource.Id.DollDBDetailModSkillExplain).Text = (string)DollInfoDR["ModSkillExplain"];
@@ -825,7 +869,7 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
-                InitLoadProcess();
+                InitLoadProcess(false);
                 return;
             }
             catch (Exception ex)
@@ -845,6 +889,7 @@ namespace GFI_with_GFS_A
             IsEnableFABMenu = false;
 
             PercentTableFAB.Hide();
+            RefreshCacheFAB.Hide();
             MainFAB.Alpha = 0.3f;
         }
 
@@ -937,7 +982,7 @@ namespace GFI_with_GFS_A
                 if (ModIndex > 0) DollGrade = (int)DollInfoDR["ModGrade"];
                 else DollGrade = (int)DollInfoDR["Grade"];
 
-                InitLoadProcess();
+                InitLoadProcess(false);
             }
             catch (Exception ex)
             {

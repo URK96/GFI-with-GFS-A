@@ -30,6 +30,7 @@ namespace GFI_with_GFS_A
         private string IconName;
 
         private ProgressBar InitLoadProgressBar;
+        private FloatingActionButton RefreshCacheFAB;
         private CoordinatorLayout SnackbarLayout = null;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -54,9 +55,13 @@ namespace GFI_with_GFS_A
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.EquipDBDetailInitLoadProgress);
                 AbilityTableSubLayout = FindViewById<LinearLayout>(Resource.Id.EquipDBDetailAbilitySubLayout);
 
+                RefreshCacheFAB = FindViewById<FloatingActionButton>(Resource.Id.EquipDBDetailRefreshCacheFAB);
+
+                RefreshCacheFAB.Click += RefreshCacheFAB_Click;
+
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EquipDBDetailSnackbarLayout);
 
-                InitLoadProcess();
+                InitLoadProcess(false);
             }
             catch (Exception ex)
             {
@@ -65,7 +70,12 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task InitLoadProcess()
+        private void RefreshCacheFAB_Click(object sender, EventArgs e)
+        {
+            InitLoadProcess(true);
+        }
+
+        private async Task InitLoadProcess(bool IsRefresh)
         {
             InitLoadProgressBar.Visibility = ViewStates.Visible;
 
@@ -75,23 +85,30 @@ namespace GFI_with_GFS_A
             {
                 // 장비 타이틀 바 초기화
 
-                if (File.Exists(Path.Combine(ETC.CachePath, "Equip", "Normal", IconName + ".gfdcache")) == false)
+                try
                 {
-                    using (WebClient wc = new WebClient())
+                    if ((File.Exists(Path.Combine(ETC.CachePath, "Equip", "Normal", IconName + ".gfdcache")) == false) || (IsRefresh == true))
                     {
-                        await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Equipments", IconName + ".png"), Path.Combine(ETC.CachePath, "Equip", "Normal", IconName + ".gfdcache"));
+                        using (WebClient wc = new WebClient())
+                        {
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Equipments", IconName + ".png"), Path.Combine(ETC.CachePath, "Equip", "Normal", IconName + ".gfdcache"));
+                        }
                     }
-                }
 
-                if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", true) == true)
+                    if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", true) == true)
+                    {
+                        Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Equip", "Normal", IconName + ".gfdcache"));
+                        drawable.SetAlpha(40);
+                        FindViewById<RelativeLayout>(Resource.Id.EquipDBDetailMainLayout).Background = drawable;
+                    }
+
+                    ImageView EquipImage = FindViewById<ImageView>(Resource.Id.EquipDBDetailImage);
+                    EquipImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Equip", "Normal", IconName + ".gfdcache")));
+                }
+                catch (Exception ex)
                 {
-                    Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Equip", "Normal", IconName + ".gfdcache"));
-                    drawable.SetAlpha(40);
-                    FindViewById<RelativeLayout>(Resource.Id.EquipDBDetailMainLayout).Background = drawable;
+                    ETC.LogError(this, ex.ToString());
                 }
-
-                ImageView EquipImage = FindViewById<ImageView>(Resource.Id.EquipDBDetailImage);
-                EquipImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Equip", "Normal", IconName + ".gfdcache")));
 
                 FindViewById<TextView>(Resource.Id.EquipDBDetailEquipName).Text = EquipName;
                 FindViewById<TextView>(Resource.Id.EquipDBDetailEquipType).Text = EquipType;
@@ -225,7 +242,7 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
-                InitLoadProcess();
+                InitLoadProcess(false);
                 return;
             }
             catch (Exception ex)

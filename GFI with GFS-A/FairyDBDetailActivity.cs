@@ -19,14 +19,12 @@ namespace GFI_with_GFS_A
     [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class FairyDBDetailActivity : FragmentActivity
     {
-        private TableLayout SkillTableLayout1;
-        private TableLayout SkillTableLayout2;
-
         private DataRow FairyInfoDR = null;
         private string FairyName;
         private string FairyType;
 
         private ProgressBar InitLoadProgressBar;
+        private FloatingActionButton RefreshCacheFAB;
         private CoordinatorLayout SnackbarLayout = null;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -45,21 +43,27 @@ namespace GFI_with_GFS_A
                 FairyInfoDR = ETC.FindDataRow(ETC.FairyList, "Name", FairyName);
                 FairyType = (string)FairyInfoDR["Type"];
 
-                //SkillTableLayout1 = FindViewById<TableLayout>();
-                //SkillTableLayout2 = FindViewById<TableLayout>();
-
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.FairyDBDetailInitLoadProgress);
                 FindViewById<ImageView>(Resource.Id.FairyDBDetailSmallImage).Click += FairyDBDetailSmallImage_Click;
 
+                RefreshCacheFAB = FindViewById<FloatingActionButton>(Resource.Id.FairyDBDetailRefreshCacheFAB);
+
+                RefreshCacheFAB.Click += RefreshCacheFAB_Click;
+
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FairyDBSnackbarLayout);
 
-                InitLoadProcess();
+                InitLoadProcess(false);
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
+        }
+
+        private void RefreshCacheFAB_Click(object sender, EventArgs e)
+        {
+            InitLoadProcess(true);
         }
 
         private void FairyDBDetailSmallImage_Click(object sender, EventArgs e)
@@ -79,7 +83,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task InitLoadProcess()
+        private async Task InitLoadProcess(bool IsRefresh)
         {
             InitLoadProgressBar.Visibility = ViewStates.Visible;
 
@@ -88,24 +92,30 @@ namespace GFI_with_GFS_A
             try
             {
                 // 요정 타이틀 바 초기화
-
-                if (File.Exists(Path.Combine(ETC.CachePath, "Fairy", "Normal", FairyName + "_1" + ".gfdcache")) == false)
+                try
                 {
-                    using (WebClient wc = new WebClient())
+                    if ((File.Exists(Path.Combine(ETC.CachePath, "Fairy", "Normal", FairyName + "_1" + ".gfdcache")) == false) || (IsRefresh == true))
                     {
-                        await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Fairy", FairyName + "_1" + ".png"), Path.Combine(ETC.CachePath, "Fairy", "Normal", FairyName + "_1" + ".gfdcache"));
+                        using (WebClient wc = new WebClient())
+                        {
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Fairy", FairyName + "_1" + ".png"), Path.Combine(ETC.CachePath, "Fairy", "Normal", FairyName + "_1" + ".gfdcache"));
+                        }
                     }
-                }
 
-                if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", true) == true)
+                    if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", true) == true)
+                    {
+                        Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Fairy", "Normal", FairyName + "_1" + ".gfdcache"));
+                        drawable.SetAlpha(40);
+                        FindViewById<RelativeLayout>(Resource.Id.FairyDBDetailMainLayout).Background = drawable;
+                    }
+
+                    ImageView FairySmallImage = FindViewById<ImageView>(Resource.Id.FairyDBDetailSmallImage);
+                    FairySmallImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Fairy", "Normal", FairyName + "_1" + ".gfdcache")));
+                }
+                catch (Exception ex)
                 {
-                    Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Fairy", "Normal", FairyName + "_1" + ".gfdcache"));
-                    drawable.SetAlpha(40);
-                    FindViewById<RelativeLayout>(Resource.Id.FairyDBDetailMainLayout).Background = drawable;
+                    ETC.LogError(this, ex.ToString());
                 }
-
-                ImageView FairySmallImage = FindViewById<ImageView>(Resource.Id.FairyDBDetailSmallImage);
-                FairySmallImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Fairy", "Normal", FairyName + "_1" + ".gfdcache")));
 
                 FindViewById<TextView>(Resource.Id.FairyDBDetailFairyType).Text = FairyType;
                 FindViewById<TextView>(Resource.Id.FairyDBDetailFairyName).Text = FairyName;
@@ -125,15 +135,23 @@ namespace GFI_with_GFS_A
                 // 요정 스킬 정보 초기화
 
                 string SkillName = (string)FairyInfoDR["SkillName"];
-                if (File.Exists(Path.Combine(ETC.CachePath, "Fairy", "Skill", SkillName + ".gfdcache")) == false)
-                {
-                    using (WebClient wc = new WebClient())
-                    {
-                        await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "FairySkill", SkillName + ".png"), Path.Combine(ETC.CachePath, "Fairy", "Skill", SkillName + ".gfdcache"));
-                    }
-                }
 
-                FindViewById<ImageView>(Resource.Id.FairyDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Fairy", "Skill", SkillName + ".gfdcache")));
+                try
+                {
+                    if ((File.Exists(Path.Combine(ETC.CachePath, "Fairy", "Skill", SkillName + ".gfdcache")) == false) || (IsRefresh == true))
+                    {
+                        using (WebClient wc = new WebClient())
+                        {
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "FairySkill", SkillName + ".png"), Path.Combine(ETC.CachePath, "Fairy", "Skill", SkillName + ".gfdcache"));
+                        }
+                    }
+
+                    FindViewById<ImageView>(Resource.Id.FairyDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Fairy", "Skill", SkillName + ".gfdcache")));
+                }
+                catch (Exception ex)
+                {
+                    ETC.LogError(this, ex.ToString());
+                }
 
                 FindViewById<TextView>(Resource.Id.FairyDBDetailSkillName).Text = SkillName;
 

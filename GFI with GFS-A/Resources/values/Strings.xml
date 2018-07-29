@@ -79,11 +79,13 @@
   <string name="CheckDBUpdate_UpToDate">최신버전이야! 업데이트가 필요없어!</string>
   <string name="CheckDBUpdate_Complete">DB 업데이트 완료!</string>
   <string name="AdMob_TestID">ca-app-pub-3940256099942544/6300978111</string>
-  <string name="AdMob_ID">ca-app-pub-4576756770200148/5965646930</string>
+  <string name="AdMob_ID">ca-app-pub-4576756770200148/6439609402</string>
   <string name="NewFeatureDialog_Title">새로운 기능</string>
   <string name="NewFeature">
-    [2.1.7 수정사항]\n\n
-- 저작권 관련 문구 삭제\n
-- 일부 레이아웃 조정
+    [2.1.8 수정사항]\n\n
+- 인형 정보 중 Mod 전환 시 스킬 효과치가 변경되지 않는 문제 수정\n
+- 인형, 장비, 요정 상세정보에 캐시 갱신 플로팅 버튼 추가\n
+- 오프라인에서도 이미지 없이 도감이 정상적으로 열리도록 수정\n
+- 성능 최적화
 </string>
 </resources>

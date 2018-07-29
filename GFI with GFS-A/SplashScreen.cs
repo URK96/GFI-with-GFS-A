@@ -12,6 +12,7 @@ using System;
 using System.Collections;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
+using Android.Gms.Ads;
 
 namespace GFI_with_GFS_A
 {
@@ -78,6 +79,8 @@ namespace GFI_with_GFS_A
                 LoadImage.Animate().Alpha(1.0f).SetDuration(300).SetStartDelay(500).Start();
 
                 await Task.Delay(500);
+
+                MobileAds.Initialize(this, "ca-app-pub-4576756770200148~8135834453");
 
                 if (ETC.sharedPreferences.GetBoolean("CheckInitLowMemory", true) == true) CheckDeviceMemory();
                 ETC.IsLowRAM = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);
