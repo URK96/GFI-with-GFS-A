@@ -13,6 +13,7 @@ using Felipecsl.GifImageViewLibrary;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Android.Support.Design.Widget;
+using Android;
 
 namespace GFI_with_GFS_A
 {

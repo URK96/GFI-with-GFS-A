@@ -12,6 +12,7 @@ using System;
 using System.Collections;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
+using Android.Gms.Ads;
 
 namespace GFI_with_GFS_A
 {
@@ -76,6 +77,8 @@ namespace GFI_with_GFS_A
 
                 MainSplashImageView.Animate().Alpha(1.0f).SetDuration(500).Start();
                 LoadImage.Animate().Alpha(1.0f).SetDuration(300).SetStartDelay(500).Start();
+
+                MobileAds.Initialize(this, "ca-app-pub-4576756770200148~8135834453");
 
                 await Task.Delay(500);
 

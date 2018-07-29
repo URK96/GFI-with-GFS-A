@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ProductSimulatorMainLayout">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/ProductSimulatorManPowerLayout">
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/manpower_icon" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSManPowerNumberPicker1"
+                min="0"
+                max="" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSManPowerNumberPicker2" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSManPowerNumberPicker3" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSManPowerNumberPicker4" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/ProductSimulatorAmmoLayout">
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ammo_icon" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSAmmoNumberPicker1" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSAmmoNumberPicker2" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSAmmoNumberPicker3" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSAmmoNumberPicker4" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/ProductSimulatorFoodLayout">
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/food_icon" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSFoodNumberPicker1" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSFoodNumberPicker2" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSFoodNumberPicker3" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSFoodNumberPicker4" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/ProductSimulatorPartsLayout">
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/parts_icon" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSPartsNumberPicker1" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSPartsNumberPicker2" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSPartsNumberPicker3" />
+            <NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/PSPartsNumberPicker4" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

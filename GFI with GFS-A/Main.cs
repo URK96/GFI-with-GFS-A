@@ -457,7 +457,12 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.ProductSimulatorExtraButton:
+#if RELEASE
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
+#else
+                        StartActivity(typeof(ProductSimulatorCategorySelectActivity));
+#endif
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.FormationSimulatorExtraButton:
                         string pack_name = "com.Cosmos.GfTileSim";

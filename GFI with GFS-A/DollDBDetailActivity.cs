@@ -19,6 +19,8 @@ using Android.Gms.Ads;
 using Com.Syncfusion.Charts;
 using System.Collections.ObjectModel;
 using Felipecsl.GifImageViewLibrary;
+using System.Collections;
+using System.Net.Http;
 
 namespace GFI_with_GFS_A
 {
@@ -38,6 +40,7 @@ namespace GFI_with_GFS_A
         private int ModIndex = 0;
         private string[] VoiceList;
         internal static int[] AbilityValues = new int[6];
+        private ArrayList SDAnimationList = new ArrayList();
 
         private bool IsOpenFABMenu = false;
         private bool IsEnableFABMenu = false;
@@ -140,7 +143,62 @@ namespace GFI_with_GFS_A
 
         private void SDAnimationSelector_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-            throw new NotImplementedException();
+            LoadSDAnimation(e.Position);
+        }
+
+        private async Task LoadSDAnimation(int index)
+        {
+            await Task.Delay(100);
+
+            ProgressBar LoadProgressBar = FindViewById<ProgressBar>(Resource.Id.DollDBDetailSDAnimationViewerLoadProgress);
+
+            try
+            {
+                LoadProgressBar.Indeterminate = true;
+                LoadProgressBar.Progress = 0;
+                LoadProgressBar.Visibility = ViewStates.Visible;
+
+                SDAnimationImageView.StopAnimation();
+
+                string FileName = DollName + "_" + SDAnimationList[index];
+                string filepath = Path.Combine(ETC.CachePath, "Doll", "SD", "Animation", FileName + ".gfdcache");
+                byte[] data;
+
+                if (File.Exists(filepath) == false)
+                {
+                    using (HttpClient hc = new HttpClient())
+                    {
+                        data = await hc.GetByteArrayAsync(Path.Combine(ETC.Server, "Data", "Images", "SDAnimation", "Doll", DollName, FileName + ".gif"));
+                    }
+
+                    using (BinaryWriter bw = new BinaryWriter(new FileStream(filepath, FileMode.Create, FileAccess.ReadWrite)))
+                    {
+                        bw.Write(data.Length);
+                        bw.Write(data);
+                        bw.Flush();
+                    }
+                }
+                else
+                {
+                    using (BinaryReader br = new BinaryReader(new FileStream(filepath, FileMode.Open, FileAccess.Read)))
+                    {
+                        int length = br.ReadInt32();
+                        data = br.ReadBytes(length);
+                    }
+                }
+
+                SDAnimationImageView.SetBytes(data);
+                SDAnimationImageView.StartAnimation();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, "error load animation", Snackbar.LengthShort);
+            }
+            finally
+            {
+                LoadProgressBar.Visibility = ViewStates.Invisible;
+            }
         }
 
         private async Task LoadChart()

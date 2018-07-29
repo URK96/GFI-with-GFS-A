@@ -79,7 +79,7 @@
   <string name="CheckDBUpdate_UpToDate">최신버전이야! 업데이트가 필요없어!</string>
   <string name="CheckDBUpdate_Complete">DB 업데이트 완료!</string>
   <string name="AdMob_TestID">ca-app-pub-3940256099942544/6300978111</string>
-  <string name="AdMob_ID">ca-app-pub-4576756770200148/5965646930</string>
+  <string name="AdMob_ID">ca-app-pub-4576756770200148/6439609402</string>
   <string name="NewFeatureDialog_Title">새로운 기능</string>
   <string name="NewFeature">
     [2.1.6 수정사항]\n\n
