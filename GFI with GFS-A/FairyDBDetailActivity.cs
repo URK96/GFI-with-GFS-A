@@ -7,6 +7,7 @@ using Android.Support.V4.App;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using Android;
 using System;
 using System.Data;
 using System.IO;
@@ -19,9 +20,13 @@ namespace GFI_with_GFS_A
     [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class FairyDBDetailActivity : FragmentActivity
     {
+        System.Timers.Timer FABTimer = new System.Timers.Timer();
+
         private DataRow FairyInfoDR = null;
         private string FairyName;
         private string FairyType;
+
+        private bool IsEnableFABMenu = false;
 
         private ProgressBar InitLoadProgressBar;
         private FloatingActionButton RefreshCacheFAB;
@@ -52,6 +57,9 @@ namespace GFI_with_GFS_A
 
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FairyDBSnackbarLayout);
 
+                FABTimer.Interval = 3000;
+                FABTimer.Elapsed += FABTimer_Elapsed;
+
                 InitLoadProcess(false);
             }
             catch (Exception ex)
@@ -61,9 +69,29 @@ namespace GFI_with_GFS_A
             }
         }
 
+        private void FABTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            HideFloatingActionButtonAnimation();
+        }
+
+        private void HideFloatingActionButtonAnimation()
+        {
+            FABTimer.Stop();
+            IsEnableFABMenu = false;
+
+            //RefreshCacheFAB.Hide();
+            RefreshCacheFAB.Alpha = 0.3f;
+        }
+
         private void RefreshCacheFAB_Click(object sender, EventArgs e)
         {
-            InitLoadProcess(true);
+            if (IsEnableFABMenu == false)
+            {
+                IsEnableFABMenu = true;
+                RefreshCacheFAB.Animate().Alpha(1.0f).SetDuration(500).Start();
+                FABTimer.Start();
+            }
+            else InitLoadProcess(true);
         }
 
         private void FairyDBDetailSmallImage_Click(object sender, EventArgs e)
@@ -211,6 +239,7 @@ namespace GFI_with_GFS_A
 
                 if (ETC.UseLightTheme == true) SetCardTheme();
                 ShowCardViewAnimation();
+                HideFloatingActionButtonAnimation();
             }
             catch (Exception ex)
             {
