@@ -7,7 +7,6 @@ using Android.Support.V4.App;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-using Android;
 using System;
 using System.Data;
 using System.IO;
