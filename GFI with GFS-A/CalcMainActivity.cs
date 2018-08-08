@@ -7,7 +7,7 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 
 namespace GFI_with_GFS_A
@@ -166,47 +166,61 @@ namespace GFI_with_GFS_A
         {
             NumberPicker np = sender as NumberPicker;
 
-            switch (np.Id)
+            try
             {
-                case Resource.Id.CalcReportStartLevel:
-                    TargetLevel.MinValue = e.NewVal;
-                    NowExp.Text = LevelExp[np.Value - 1].ToString();
-                    break;
-                case Resource.Id.CalcReportEndLevel:
-                    StartLevel.MaxValue = e.NewVal;
-                    break;
-            }
+                switch (np.Id)
+                {
+                    case Resource.Id.CalcReportStartLevel:
+                        TargetLevel.MinValue = e.NewVal;
+                        NowExp.Text = LevelExp[np.Value - 1].ToString();
+                        break;
+                    case Resource.Id.CalcReportEndLevel:
+                        StartLevel.MaxValue = e.NewVal;
+                        break;
+                }
 
-            CalcReport(StartLevel.Value, TargetLevel.Value);
+                CalcReport(StartLevel.Value, TargetLevel.Value);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(Activity, ex.ToString());
+            }
         }
 
         private void ApplyMODModeCheckBox_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
         {
             CheckBox cb = sender as CheckBox;
 
-            switch (cb.Checked)
+            try
             {
-                case true:
-                    StartLevel.MaxValue = 100;
-                    StartLevel.MinValue = 100;
-                    StartLevel.Value = StartLevel.MinValue;
-                    TargetLevel.MinValue = 100;
-                    TargetLevel.MaxValue = 120;
-                    TargetLevel.Value = TargetLevel.MinValue;
-                    break;
-                case false:
-                    StartLevel.MaxValue = 1;
-                    StartLevel.MinValue = 1;
-                    StartLevel.Value = StartLevel.MinValue;
-                    TargetLevel.MinValue = 1;
-                    TargetLevel.MaxValue = 100;
-                    TargetLevel.Value = TargetLevel.MinValue;
-                    break;
+                switch (cb.Checked)
+                {
+                    case true:
+                        StartLevel.MaxValue = 100;
+                        StartLevel.MinValue = 100;
+                        StartLevel.Value = StartLevel.MinValue;
+                        TargetLevel.MinValue = 100;
+                        TargetLevel.MaxValue = 120;
+                        TargetLevel.Value = TargetLevel.MinValue;
+                        break;
+                    case false:
+                        StartLevel.MaxValue = 1;
+                        StartLevel.MinValue = 1;
+                        StartLevel.Value = StartLevel.MinValue;
+                        TargetLevel.MinValue = 1;
+                        TargetLevel.MaxValue = 100;
+                        TargetLevel.Value = TargetLevel.MinValue;
+                        break;
+                }
+
+                NowExp.Text = LevelExp[StartLevel.Value - 1].ToString();
+
+                CalcReport(StartLevel.Value, TargetLevel.Value);
             }
-
-            NowExp.Text = LevelExp[StartLevel.Value - 1].ToString();
-
-            CalcReport(StartLevel.Value, TargetLevel.Value);
+            catch (Exception ex)
+            {
+                ETC.LogError(Activity, ex.ToString());
+            }
         }
 
         private void CalcReport(int start, int target)
@@ -291,17 +305,24 @@ namespace GFI_with_GFS_A
         {
             NumberPicker np = sender as NumberPicker;
 
-            switch (np.Id)
+            try
             {
-                case Resource.Id.CalcCoreStartDollCount:
-                    DollDummyTarget.MinValue = e.NewVal;
-                    break;
-                case Resource.Id.CalcCoreEndDollCount:
-                    DollDummyStart.MaxValue = e.NewVal;
-                    break;
-            }
+                switch (np.Id)
+                {
+                    case Resource.Id.CalcCoreStartDollCount:
+                        DollDummyTarget.MinValue = e.NewVal;
+                        break;
+                    case Resource.Id.CalcCoreEndDollCount:
+                        DollDummyStart.MaxValue = e.NewVal;
+                        break;
+                }
 
-            CalcCore(DollGradeSelector.Value, DollDummyStart.Value, DollDummyTarget.Value);
+                CalcCore(DollGradeSelector.Value, DollDummyStart.Value, DollDummyTarget.Value);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(Activity, ex.ToString());
+            }
         }
 
         private void CalcCore(int grade, int start, int target)
@@ -355,10 +376,10 @@ namespace GFI_with_GFS_A
 
         private void InitializeProcess()
         {
-            ArrayList list = new ArrayList(3);
+            List<string> list = new List<string>(3);
 
             foreach (DataRow dr in ETC.SkillTrainingList.Rows) list.Add((string)dr["Type"]);
-            list.TrimToSize();
+            list.TrimExcess();
 
             var adapter = new ArrayAdapter(Activity, Resource.Layout.SpinnerListLayout, list);
             adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
@@ -376,17 +397,24 @@ namespace GFI_with_GFS_A
         {
             NumberPicker np = sender as NumberPicker;
 
-            switch (np.Id)
+            try
             {
-                case Resource.Id.CalcSkillTrainingResultTime:
-                    TrainingTargetLevel.MinValue = e.NewVal;
-                    break;
-                case Resource.Id.CalcSkillTrainingEndLevel:
-                    TrainingStartLevel.MaxValue = e.NewVal;
-                    break;
-            }
+                switch (np.Id)
+                {
+                    case Resource.Id.CalcSkillTrainingResultTime:
+                        TrainingTargetLevel.MinValue = e.NewVal;
+                        break;
+                    case Resource.Id.CalcSkillTrainingEndLevel:
+                        TrainingStartLevel.MaxValue = e.NewVal;
+                        break;
+                }
 
-            CalcSkillTraining(TrainingStartLevel.Value, TrainingTargetLevel.Value);
+                CalcSkillTraining(TrainingStartLevel.Value, TrainingTargetLevel.Value);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(Activity, ex.ToString());
+            }
         }
 
         private void CalcSkillTraining(int start, int target)

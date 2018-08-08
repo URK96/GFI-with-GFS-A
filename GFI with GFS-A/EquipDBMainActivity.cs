@@ -6,7 +6,6 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Net;
@@ -218,11 +217,11 @@ namespace GFI_with_GFS_A
                 nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
                 nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
 
-                ArrayList IconList = new ArrayList();
+                List<string> IconList = new List<string>();
 
                 foreach (DataRow dr in ETC.EquipmentList.Rows)
                 {
-                    IconList.TrimToSize();
+                    IconList.TrimExcess();
                     bool IsExist = false;
                     string icon = (string)dr["Icon"];
                     foreach (string s in IconList)
@@ -237,8 +236,9 @@ namespace GFI_with_GFS_A
                     if (IsExist == true) continue;
 
                     IconList.Add(icon);
-                    IconList.TrimToSize();
                 }
+
+                IconList.TrimExcess();
 
                 p_total = 0;
                 p_total = IconList.Count;

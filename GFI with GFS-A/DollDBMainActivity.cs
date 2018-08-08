@@ -130,15 +130,47 @@ namespace GFI_with_GFS_A
         {
             DataRow dr = mDollList[e.Position].DollDR;
 
+            string[] Buffs = ((string)dr["Effect"]).Split(';')[0].Split(',');
+            StringBuilder buff_sb = new StringBuilder();
+
+            for (int i = 0; i < Buffs.Length; ++i)
+            {
+                string temp = "";
+                
+                switch (Buffs[i])
+                {
+                    case "FR":
+                        temp = "화력↑";
+                        break;
+                    case "EV":
+                        temp = "회피↑";
+                        break;
+                    case "AC":
+                        temp = "명중↑";
+                        break;
+                    case "AS":
+                        temp = "공속↑";
+                        break;
+                    case "CR":
+                        temp = "크리티컬↑";
+                        break;
+                    case "CL":
+                        temp = "쿨타임↓";
+                        break;
+                    case "AM":
+                        temp = "장갑↑";
+                        break;
+                }
+
+                buff_sb.Append(temp);
+                if (i < (Buffs.Length - 1)) buff_sb.Append(" | ");
+            }
+
             StringBuilder sb = new StringBuilder();
-            sb.Append("별명 : ");
-            sb.Append("");
-            sb.Append("\n\n");
-            sb.Append("버프 효과 : ");
-            sb.Append(((string)dr["Effect"]).Split(';')[0]);
-            sb.Append("\n\n");
-            sb.Append("스킬 : ");
-            sb.Append((string)dr["Skill"]);
+
+            sb.AppendFormat("별명 : {0}\n\n", (string)dr["NickName"]);
+            sb.AppendFormat("버프 효과 : {0}\n\n", buff_sb.ToString());
+            sb.AppendFormat("스킬 : {0}", (string)dr["Skill"]);
 
             Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this);
             ad.SetTitle("<No. " + (int)dr["DicNumber"] + "> " + (string)dr["Name"]);
@@ -628,7 +660,7 @@ namespace GFI_with_GFS_A
                 count += 1;
                 if (count == 50)
                 {
-                    GC.Collect();
+                    GC.Collect(0, GCCollectionMode.Optimized, false, true);
                     count = 0;
                 }
 
@@ -679,7 +711,7 @@ namespace GFI_with_GFS_A
             }
             catch (OutOfMemoryException)
             {
-                GC.Collect();
+                GC.Collect(0, GCCollectionMode.Forced, false, true);
                 GetView(position, convertView, parent);
             }
             catch (Exception ex)

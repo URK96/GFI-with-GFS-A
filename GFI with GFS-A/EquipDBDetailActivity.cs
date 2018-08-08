@@ -9,7 +9,7 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Net;
@@ -156,8 +156,8 @@ namespace GFI_with_GFS_A
                         FindViewById<LinearLayout>(Resource.Id.EquipDBDetailAvailableInfoUseLayout).Visibility = ViewStates.Visible;
 
                         string[] TotalAvailable = ((string)EquipInfoDR["DollType"]).Split(';');
-                        ArrayList RecommendType = new ArrayList();
-                        ArrayList UseType = new ArrayList();
+                        List<string> RecommendType = new List<string>();
+                        List<string> UseType = new List<string>();
 
                         foreach (string s in TotalAvailable)
                         {
@@ -167,8 +167,8 @@ namespace GFI_with_GFS_A
                             else if (temp[1] == "U") UseType.Add(temp[0]);
                         }
 
-                        RecommendType.TrimToSize();
-                        UseType.TrimToSize();
+                        RecommendType.TrimExcess();
+                        UseType.TrimExcess();
 
                         StringBuilder sb1 = new StringBuilder();
                         StringBuilder sb2 = new StringBuilder();
@@ -207,9 +207,11 @@ namespace GFI_with_GFS_A
 
                 for (int i = 0; i < Abilities.Length; ++i)
                 {
-                    LinearLayout layout = new LinearLayout(this);
-                    layout.Orientation = Orientation.Horizontal;
-                    layout.LayoutParameters = FindViewById<LinearLayout>(Resource.Id.EquipDBDetailAbilityTopLayout).LayoutParameters;
+                    LinearLayout layout = new LinearLayout(this)
+                    {
+                        Orientation = Orientation.Horizontal,
+                        LayoutParameters = FindViewById<LinearLayout>(Resource.Id.EquipDBDetailAbilityTopLayout).LayoutParameters
+                    };
 
                     TextView ability = new TextView(this);
                     TextView initmag = new TextView(this);

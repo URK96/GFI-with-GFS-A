@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Graphics.Drawables;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
@@ -120,6 +116,14 @@ namespace GFI_with_GFS_A
 
                 string FileName = EnemyCodeName;
 
+                if (File.Exists(Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", FileName + ".gfdcache")) == false)
+                {
+                    using (WebClient wc = new WebClient())
+                    {
+                        await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Enemy", "Normal_Crop", EnemyCodeName + ".png"), Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", FileName + ".gfdcache"));
+                    }
+                }
+
                 ImageView EnemySmallImage = FindViewById<ImageView>(Resource.Id.EnemyDBDetailSmallImage);
                 EnemySmallImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", FileName + ".gfdcache")));
 
@@ -193,8 +197,8 @@ namespace GFI_with_GFS_A
 
         private async Task InitializeTypeList()
         {
-            ArrayList TypeList = new ArrayList();
-            ArrayList row_index = new ArrayList();
+            List<string> TypeList = new List<string>();
+            List<int> row_index = new List<int>();
 
             for (int i = 0; i < ETC.EnemyList.Rows.Count; ++i)
             {
@@ -206,8 +210,8 @@ namespace GFI_with_GFS_A
                 TypeList.Add((string)dr["Type"]);
             }
 
-            row_index.TrimToSize();
-            TypeList.TrimToSize();
+            row_index.TrimExcess();
+            TypeList.TrimExcess();
 
             EnemyInfoDRs = new DataRow[row_index.Count];
 

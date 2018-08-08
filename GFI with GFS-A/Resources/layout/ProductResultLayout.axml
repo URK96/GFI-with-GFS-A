@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/PSResultMainLayout">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/PSResultDetailLayout">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="0 : 00"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/PSResultProductTime" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/PSResultGradeProgressLayout">
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <ProgressBar
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginRight="5dp"
+                android:progressTint="#3A3A3A"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:id="@+id/PSResultPB1" />
+            <ProgressBar
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginRight="5dp"
+                android:progressTint="#3A3A3A"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:id="@+id/PSResultPB2" />
+            <ProgressBar
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginRight="5dp"
+                android:progressTint="#33CBCE"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:id="@+id/PSResultPB3" />
+            <ProgressBar
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginRight="5dp"
+                android:progressTint="#8CF90E"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:id="@+id/PSResultPB4" />
+            <ProgressBar
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:progressTint="#FFAC14"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:id="@+id/PSResultPB5" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitCenter"
+            android:alpha="0"
+            android:visibility="gone"
+            android:id="@+id/PSResultGradeImageView" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:alpha="0"
+            android:visibility="gone"
+            android:id="@+id/PSResultImageView" />
+    </LinearLayout>
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/PSResultSnackbarLayout"
+        android:layout_alignTop="@id/PSResultMainLayout" />
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/DollSDAnimationViewerMainLayout">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp">
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/DollSDAnimationViewerLoadProgress"
+            android:visibility="visible"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressTint="@color/ProgressBarColor"
+            android:indeterminateOnly="true" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/DollSDAnimationCategoryList" />
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/DollSDAnimationList" />
+        </LinearLayout>
+        <com.felipecsl.gifimageview.library.GifImageView
+            android:id="@+id/DollSDAnimationImageView"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DollSDAnimationSnackbarLayout"
+        android:layout_alignTop="@id/DollSDAnimationViewerMainLayout" />
+</RelativeLayout>

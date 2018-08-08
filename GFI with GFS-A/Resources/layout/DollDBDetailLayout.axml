@@ -4,6 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/DollDBDetailMainLayout">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:id="@+id/DollDBDetailBackgroundImageView" />
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -136,6 +141,14 @@
                         android:id="@+id/DollDBDetailModSelect3" />
                 </LinearLayout>
             </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/DollDBDetailModSelectLayout"
+                android:text="SD 애니메이션 (Beta)"
+                android:id="@+id/DollDBDetailSDAnimationButton" />
         </RelativeLayout>
     <!--Scroll Part-->
         <ScrollView
