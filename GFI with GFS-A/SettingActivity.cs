@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Net;
@@ -81,6 +82,16 @@ namespace GFI_with_GFS_A
         private void InitPreferences()
         {
             SaveSetting =  ETC.sharedPreferences.Edit();
+
+            ListPreference StartAppMode = (ListPreference)FindPreference("StartAppMode");
+            StartAppMode.SetEntries(new string[] { "기본", "소전사전v1", "RFBot (라플봇)" });
+            StartAppMode.SetEntryValues(new string[] { "0", "1", "2" });
+            StartAppMode.SetValueIndex(ETC.sharedPreferences.GetInt("StartAppMode", 0));
+            StartAppMode.PreferenceChange += delegate (object sender, Preference.PreferenceChangeEventArgs e)
+            {
+                SaveSetting.PutInt("StartAppMode", Convert.ToInt32(e.NewValue));
+                SaveSetting.Apply();
+            };
 
             SwitchPreference LowMemoryOption = (SwitchPreference)FindPreference("LowMemoryOption");
             if (ETC.UseLightTheme == true) LowMemoryOption.SetIcon(Resource.Drawable.LowMemoryOptionIcon_WhiteTheme);
@@ -524,13 +535,11 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(500);
 
-                ArrayList icons = new ArrayList();
+                List<string> icons = new List<string>();
 
                 for (int i = 0; i < ETC.EquipmentList.Rows.Count; ++i)
                 {
                     DataRow dr = ETC.EquipmentList.Rows[i];
-
-                    icons.TrimToSize();
 
                     bool IsSkip = false;
                     if (icons.Count == 0)
@@ -552,7 +561,7 @@ namespace GFI_with_GFS_A
                     icons.Add((string)dr["Icon"]);
                 }
 
-                icons.TrimToSize();
+                icons.TrimExcess();
 
                 totalCount = icons.Count;
                 total = totalCount;
@@ -683,13 +692,11 @@ namespace GFI_with_GFS_A
                 // 요정별 일러스트 3장 + 스킬 아이콘 1개 + Crop 1장
                 totalCount += ETC.FairyList.Rows.Count * 5;
 
-                ArrayList icons = new ArrayList();
+                List<string> icons = new List<string>();
 
                 for (int i = 0; i < ETC.EquipmentList.Rows.Count; ++i)
                 {
                     DataRow dr = ETC.EquipmentList.Rows[i];
-
-                    icons.TrimToSize();
 
                     bool IsSkip = false;
                     if (icons.Count == 0)
@@ -711,7 +718,7 @@ namespace GFI_with_GFS_A
                     icons.Add((string)dr["Icon"]);
                 }
 
-                icons.TrimToSize();
+                icons.TrimExcess();
 
                 totalCount += icons.Count;
 

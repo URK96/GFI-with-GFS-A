@@ -13,16 +13,20 @@ using System.Collections;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Android.Gms.Ads;
+using System.Diagnostics;
 
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "소전사전", MainLauncher = true, Theme = "@style/GFS.Splash", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SplashScreen : AppCompatActivity
     {
+        System.Timers.Timer timer = new System.Timers.Timer();
+
         private CoordinatorLayout SnackbarLayout = null;
 
         private ImageView MainSplashImageView;
         private ImageView LoadImage;
+        private Stopwatch sw = new Stopwatch();
 
         private ISharedPreferencesEditor PreferenceEditor;
 
@@ -45,6 +49,10 @@ namespace GFI_with_GFS_A
                 // Set our view from the "main" layout resource
                 SetContentView(Resource.Layout.SplashLayout);
 
+                timer.Interval = 1000;
+                timer.Elapsed += Timer_Elapsed;
+                timer.Start();
+
                 MainSplashImageView = FindViewById<ImageView>(Resource.Id.SplashBackImageLayout);
                 MainSplashImageView.SetBackgroundResource(Resource.Drawable.SplashBG2);
 
@@ -63,6 +71,13 @@ namespace GFI_with_GFS_A
             }
         }
 
+        private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            System.Diagnostics.Process process = System.Diagnostics.Process.GetCurrentProcess();
+
+            System.Diagnostics.Trace.WriteLine((process.WorkingSet64 / 1024) / 1024);
+        }
+
         private async Task InitProcess()
         {
             SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.SplashSnackbarLayout);
@@ -77,6 +92,8 @@ namespace GFI_with_GFS_A
 
                 MainSplashImageView.Animate().Alpha(1.0f).SetDuration(500).Start();
                 LoadImage.Animate().Alpha(1.0f).SetDuration(300).SetStartDelay(500).Start();
+
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY0NkAzMTM2MmUzMjJlMzBmNFFDVVZlU2NDRTVmYVJqQ0ZyOTVPOGhYWnFIazlQNFNPeGVEMU9WMjZnPQ==");
 
                 MobileAds.Initialize(this, "ca-app-pub-4576756770200148~8135834453");
 
@@ -118,9 +135,11 @@ namespace GFI_with_GFS_A
 
                     await ETC.UpdateDB(this);
                 }
-
+                sw.Start();
                 ETC.InitializeAverageAbility();
+                sw.Stop();
 
+                Toast.MakeText(this, sw.Elapsed.ToString(), ToastLength.Short).Show();
                 if (ETC.UseLightTheme == true)
                 {
                     ETC.DialogBG = Resource.Style.GFD_Dialog_Light;
@@ -136,7 +155,6 @@ namespace GFI_with_GFS_A
 
                 LoadImage.Animate().Alpha(0.0f).SetDuration(300).Start();
 
-                GC.Collect();
                 await Task.Delay(500);
 
                 StartActivity(typeof(Main));
@@ -147,6 +165,10 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, "앗···! 앱 초기화 실패!", Snackbar.LengthIndefinite, Android.Graphics.Color.DarkRed);
+            }
+            finally
+            {
+                GC.Collect(GC.MaxGeneration, GCCollectionMode.Default, false, false);
             }
         }
 
@@ -197,7 +219,12 @@ namespace GFI_with_GFS_A
 
             var totalRam = ((memoryInfo.TotalMem / 1024) / 1024);
 
-            if (totalRam < 2048) PreferenceEditor.PutBoolean("LowMemoryOption", true);
+            if (totalRam <= 2048)
+            {
+                PreferenceEditor.PutBoolean("LowMemoryOption", true);
+                PreferenceEditor.PutBoolean("DBListImageShow", false);
+                PreferenceEditor.PutBoolean("DBDetailBackgroundImage", false);
+            }
 
             PreferenceEditor.PutBoolean("CheckInitLowMemory", false);
             PreferenceEditor.Apply();

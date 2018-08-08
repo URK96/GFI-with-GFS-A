@@ -6,7 +6,7 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Net;
@@ -36,7 +36,7 @@ namespace GFI_with_GFS_A
         private TextView ImageStatus;
         private FloatingActionButton ExitFAB;
 
-        private ArrayList Costumes;
+        private List<string> Costumes;
 
         private bool IsDamage = false;
         private int CostumeIndex = 0;
@@ -146,7 +146,7 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                Costumes = new ArrayList()
+                Costumes = new List<string>()
                 {
                     "기본 코스튬"
                 };
@@ -161,7 +161,7 @@ namespace GFI_with_GFS_A
                     }
                 }
 
-                Costumes.TrimToSize();
+                Costumes.TrimExcess();
 
                 var CostumeListAdapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, Costumes);
                 CostumeListAdapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
@@ -227,7 +227,7 @@ namespace GFI_with_GFS_A
                 StringBuilder sb = new StringBuilder();
                 sb.Append(DollName);
                 sb.Append(" - ");
-                sb.Append((string)Costumes[CostumeIndex]);
+                sb.Append(Costumes[CostumeIndex]);
                 sb.Append(" - ");
                 if (IsDamage == true)
                 {

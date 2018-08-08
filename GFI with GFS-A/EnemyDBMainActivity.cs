@@ -6,7 +6,6 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Net;
@@ -181,7 +180,7 @@ namespace GFI_with_GFS_A
                 nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
                 nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
 
-                ArrayList CodeName_List = new ArrayList();
+                List<string> CodeName_List = new List<string>();
 
                 for (int i = 0; i < ETC.EnemyList.Rows.Count; ++i)
                 {
@@ -192,7 +191,7 @@ namespace GFI_with_GFS_A
                     CodeName_List.Add(code_name);
                 }
 
-                CodeName_List.TrimToSize();
+                CodeName_List.TrimExcess();
 
                 p_total = 0;
                 p_total = CodeName_List.Count;

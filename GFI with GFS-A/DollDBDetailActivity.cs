@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Gms.Ads;
 using Android.Graphics.Drawables;
 using Android.Media;
 using Android.OS;
@@ -9,18 +10,14 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Views.Animations;
 using Android.Widget;
+using Com.Syncfusion.Charts;
 using System;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Android.Gms.Ads;
-using Com.Syncfusion.Charts;
-using System.Collections.ObjectModel;
-using Felipecsl.GifImageViewLibrary;
-using System.Collections;
-using System.Net.Http;
 
 namespace GFI_with_GFS_A
 {
@@ -39,8 +36,7 @@ namespace GFI_with_GFS_A
         internal static string DollType;
         private int ModIndex = 0;
         private string[] VoiceList;
-        internal static int[] AbilityValues = new int[6];
-        private ArrayList SDAnimationList = new ArrayList();
+        internal static int[] AbilityValues;
 
         private bool IsOpenFABMenu = false;
         private bool IsEnableFABMenu = false;
@@ -51,27 +47,40 @@ namespace GFI_with_GFS_A
 
         private ProgressBar InitLoadProgressBar;
         private Spinner VoiceSelector;
-        private Spinner SDAnimationSelector;
         private Button VoicePlayButton;
+        private Button SDAnimationButton;
         private FloatingActionButton PercentTableFAB;
         private FloatingActionButton MainFAB;
         private FloatingActionButton NamuWikiFAB;
         private FloatingActionButton InvenFAB;
         private FloatingActionButton BaseFAB;
         private SfChart chart;
-        private GifImageView SDAnimationImageView;
 
         private AdView adview;
 
-        int[] ModButtonIds = { Resource.Id.DollDBDetailModSelect0, Resource.Id.DollDBDetailModSelect1, Resource.Id.DollDBDetailModSelect2, Resource.Id.DollDBDetailModSelect3 };
+        private readonly int[] ModButtonIds = 
+        {
+            Resource.Id.DollDBDetailModSelect0,
+            Resource.Id.DollDBDetailModSelect1,
+            Resource.Id.DollDBDetailModSelect2,
+            Resource.Id.DollDBDetailModSelect3
+        };
+
+        private readonly int[] CardViewIds =
+        {
+            Resource.Id.DollDBDetailBasicInfoCardLayout,
+            Resource.Id.DollDBDetailBuffCardLayout,
+            Resource.Id.DollDBDetailSkillCardLayout,
+            Resource.Id.DollDBDetailModSkillCardLayout,
+            Resource.Id.DollDBDetailAbilityCardLayout,
+            Resource.Id.DollDBDetailAbilityRadarChartCardLayout
+        };
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             try
             {
                 base.OnCreate(savedInstanceState);
-
-                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY0NkAzMTM2MmUzMjJlMzBmNFFDVVZlU2NDRTVmYVJqQ0ZyOTVPOGhYWnFIazlQNFNPeGVEMU9WMjZnPQ==");
 
                 if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
 
@@ -109,6 +118,10 @@ namespace GFI_with_GFS_A
                 VoicePlayButton = FindViewById<Button>(Resource.Id.DollDBDetailVoicePlayButton);
                 VoicePlayButton.Click += VoicePlayButton_Click;
 
+                SDAnimationButton = FindViewById<Button>(Resource.Id.DollDBDetailSDAnimationButton);
+                if ((bool)DollInfoDR["HasAnimation"] == false) SDAnimationButton.Visibility = ViewStates.Gone;
+                else SDAnimationButton.Click += SDAnimationButton_Click;
+
                 ScrollLayout = FindViewById<ScrollView>(Resource.Id.DollDBDetailScrollLayout);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBDetailSnackbarLayout);
 
@@ -119,9 +132,6 @@ namespace GFI_with_GFS_A
                 InvenFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkInvenFAB);
                 BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkBaseFAB);
                 chart = FindViewById<SfChart>(Resource.Id.DollDBDetailAbilityRadarChart);
-                SDAnimationSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailSDAnimationList);
-                SDAnimationSelector.ItemSelected += SDAnimationSelector_ItemSelected;
-                SDAnimationImageView = FindViewById<GifImageView>(Resource.Id.DollDBDetailSDAnimationImageView);
 
                 PercentTableFAB.Click += PercentTableFAB_Click;
                 MainFAB.Click += MainFAB_Click;
@@ -141,63 +151,19 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void SDAnimationSelector_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        private void SDAnimationButton_Click(object sender, EventArgs e)
         {
-            LoadSDAnimation(e.Position);
-        }
-
-        private async Task LoadSDAnimation(int index)
-        {
-            await Task.Delay(100);
-
-            ProgressBar LoadProgressBar = FindViewById<ProgressBar>(Resource.Id.DollDBDetailSDAnimationViewerLoadProgress);
-
             try
             {
-                LoadProgressBar.Indeterminate = true;
-                LoadProgressBar.Progress = 0;
-                LoadProgressBar.Visibility = ViewStates.Visible;
-
-                SDAnimationImageView.StopAnimation();
-
-                string FileName = DollName + "_" + SDAnimationList[index];
-                string filepath = Path.Combine(ETC.CachePath, "Doll", "SD", "Animation", FileName + ".gfdcache");
-                byte[] data;
-
-                if (File.Exists(filepath) == false)
-                {
-                    using (HttpClient hc = new HttpClient())
-                    {
-                        data = await hc.GetByteArrayAsync(Path.Combine(ETC.Server, "Data", "Images", "SDAnimation", "Doll", DollName, FileName + ".gif"));
-                    }
-
-                    using (BinaryWriter bw = new BinaryWriter(new FileStream(filepath, FileMode.Create, FileAccess.ReadWrite)))
-                    {
-                        bw.Write(data.Length);
-                        bw.Write(data);
-                        bw.Flush();
-                    }
-                }
-                else
-                {
-                    using (BinaryReader br = new BinaryReader(new FileStream(filepath, FileMode.Open, FileAccess.Read)))
-                    {
-                        int length = br.ReadInt32();
-                        data = br.ReadBytes(length);
-                    }
-                }
-
-                SDAnimationImageView.SetBytes(data);
-                SDAnimationImageView.StartAnimation();
+                var DollSDAnimationViewer = new Intent(this, typeof(DollDBSDAnimationViewer));
+                DollSDAnimationViewer.PutExtra("Data", DollName);
+                StartActivity(DollSDAnimationViewer);
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "error load animation", Snackbar.LengthShort);
-            }
-            finally
-            {
-                LoadProgressBar.Visibility = ViewStates.Invisible;
+                ETC.ShowSnackbar(SnackbarLayout, "이미지 뷰어 실행 실패!", Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -212,31 +178,33 @@ namespace GFI_with_GFS_A
             if (ETC.UseLightTheme == true) chart.Legend.LabelStyle.TextColor = Android.Graphics.Color.DarkGray;
             else chart.Legend.LabelStyle.TextColor = Android.Graphics.Color.LightGray;
 
-            RadarSeries radar = new RadarSeries();
-
             DataModel model = new DataModel();
 
-            radar.ItemsSource = model.MaxAbilityList;
-            radar.XBindingPath = "AbilityType";
-            radar.YBindingPath = "AbilityValue";
-            radar.DrawType = PolarChartDrawType.Line;
-            radar.Color = Android.Graphics.Color.LightGreen;
+            RadarSeries radar = new RadarSeries
+            {
+                ItemsSource = model.MaxAbilityList,
+                XBindingPath = "AbilityType",
+                YBindingPath = "AbilityValue",
+                DrawType = PolarChartDrawType.Line,
+                Color = Android.Graphics.Color.LightGreen,
 
-            radar.Label = DollName;
-            radar.TooltipEnabled = true;
+                Label = DollName,
+                TooltipEnabled = true
+            };
 
             chart.Series.Add(radar);
 
-            RadarSeries radar2 = new RadarSeries();
+            RadarSeries radar2 = new RadarSeries
+            {
+                ItemsSource = model.AvgAbilityList,
+                XBindingPath = "AbilityType",
+                YBindingPath = "AbilityValue",
+                DrawType = PolarChartDrawType.Line,
+                Color = Android.Graphics.Color.Magenta,
 
-            radar2.ItemsSource = model.AvgAbilityList;
-            radar2.XBindingPath = "AbilityType";
-            radar2.YBindingPath = "AbilityValue";
-            radar2.DrawType = PolarChartDrawType.Line;
-            radar2.Color = Android.Graphics.Color.Magenta;
-
-            radar2.Label = DollType + "평균";
-            radar2.TooltipEnabled = true;
+                Label = DollType + "평균",
+                TooltipEnabled = true
+            };
 
             chart.Series.Add(radar2);
 
@@ -482,23 +450,25 @@ namespace GFI_with_GFS_A
             {
                 // 인형 타이틀 바 초기화
 
+                StringBuilder sb = new StringBuilder(DollDicNum.ToString());
+                if (ModIndex == 3) sb.Append("_M");
+                string FileName = sb.ToString();
+
                 if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false) == true)
                 {
-                    if (File.Exists(Path.Combine(ETC.CachePath, "Doll", "Normal", DollDicNum + ".gfdcache")) == false)
+
+                    if (File.Exists(Path.Combine(ETC.CachePath, "Doll", "Normal", FileName + ".gfdcache")) == false)
                     {
                         using (WebClient wc = new WebClient())
                         {
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", DollDicNum + ".png"), Path.Combine(ETC.CachePath, "Doll", "Normal", DollDicNum + ".gfdcache"));
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", FileName + ".png"), Path.Combine(ETC.CachePath, "Doll", "Normal", FileName + ".gfdcache"));
                         }
                     }
 
-                    Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Normal", DollDicNum + ".gfdcache"));
+                    Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Normal", FileName + ".gfdcache"));
                     drawable.SetAlpha(40);
-                    FindViewById<RelativeLayout>(Resource.Id.DollDBDetailMainLayout).Background = drawable;
+                    FindViewById<ImageView>(Resource.Id.DollDBDetailBackgroundImageView).SetImageDrawable(drawable);
                 }
-
-                string FileName = DollDicNum.ToString();
-                if (ModIndex == 3) FileName += "_M";
 
                 if (File.Exists(Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", FileName + ".gfdcache")) == false)
                 {
@@ -536,7 +506,7 @@ namespace GFI_with_GFS_A
 
                 FindViewById<TextView>(Resource.Id.DollDBDetailInfoType).Text = (string)DollInfoDR["Type"];
                 FindViewById<TextView>(Resource.Id.DollDBDetailInfoName).Text = DollName;
-                FindViewById<TextView>(Resource.Id.DollDBDetailInfoNickName).Text = "";
+                FindViewById<TextView>(Resource.Id.DollDBDetailInfoNickName).Text = (string)DollInfoDR["NickName"];
                 if (DollInfoDR["Illustrator"] == DBNull.Value) FindViewById<TextView>(Resource.Id.DollDBDetailInfoIllustrator).Text = "";
                 else FindViewById<TextView>(Resource.Id.DollDBDetailInfoIllustrator).Text = (string)DollInfoDR["Illustrator"];
                 if (DollInfoDR["VoiceActor"] == DBNull.Value) FindViewById<TextView>(Resource.Id.DollDBDetailInfoVoiceActor).Text = "";
@@ -714,9 +684,11 @@ namespace GFI_with_GFS_A
 
                 for (int i = 2; i < SkillAbilities.Length; ++i)
                 {
-                    LinearLayout layout = new LinearLayout(this);
-                    layout.Orientation = Android.Widget.Orientation.Horizontal;
-                    layout.LayoutParameters = FindViewById<LinearLayout>(Resource.Id.DollDBDetailSkillAbilityTopLayout).LayoutParameters;
+                    LinearLayout layout = new LinearLayout(this)
+                    {
+                        Orientation = Android.Widget.Orientation.Horizontal,
+                        LayoutParameters = FindViewById<LinearLayout>(Resource.Id.DollDBDetailSkillAbilityTopLayout).LayoutParameters
+                    };
 
                     TextView ability = new TextView(this);
                     TextView mag = new TextView(this);
@@ -761,9 +733,11 @@ namespace GFI_with_GFS_A
 
                     for (int i = 0; i < MSkillAbilities.Length; ++i)
                     {
-                        LinearLayout layout = new LinearLayout(this);
-                        layout.Orientation = Android.Widget.Orientation.Horizontal;
-                        layout.LayoutParameters = FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSkillAbilityTopLayout).LayoutParameters;
+                        LinearLayout layout = new LinearLayout(this)
+                        {
+                            Orientation = Android.Widget.Orientation.Horizontal,
+                            LayoutParameters = FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSkillAbilityTopLayout).LayoutParameters
+                        };
 
                         TextView ability = new TextView(this);
                         TextView mag = new TextView(this);
@@ -787,6 +761,8 @@ namespace GFI_with_GFS_A
                 // 인형 능력치 초기화
 
                 int delay = 1;
+
+                AbilityValues = new int[6];
 
                 string[] abilities = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
                 int[] Progresses = { Resource.Id.DollInfoHPProgress, Resource.Id.DollInfoFRProgress, Resource.Id.DollInfoEVProgress, Resource.Id.DollInfoACProgress, Resource.Id.DollInfoASProgress };
@@ -824,6 +800,7 @@ namespace GFI_with_GFS_A
 
                     pb.Progress = MinValue;
                     pb.SecondaryProgress = MaxValue;
+
 
                     AbilityValues[i] = MaxValue;
 
@@ -883,8 +860,12 @@ namespace GFI_with_GFS_A
                 if ((bool)DollInfoDR["HasVoice"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailVoiceLayout).Visibility = ViewStates.Visible;
                 if ((bool)DollInfoDR["HasMod"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSelectLayout).Visibility = ViewStates.Visible;
 
+
+                // 인형 능력치 차트 초기화
+
                 LoadChart();
 
+                // 기타 항목 초기화
                 ShowCardViewAnimation();
                 HideFloatingActionButtonAnimation();
 
@@ -942,11 +923,11 @@ namespace GFI_with_GFS_A
 
         private async Task ShowCardViewAnimation()
         {
-            if (FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout).Animate().Alpha(1.0f).SetDuration(500).Start();
-            if (FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(500).Start();
-            if (FindViewById<CardView>(Resource.Id.DollDBDetailSkillCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.DollDBDetailSkillCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1000).Start();
+            if (FindViewById<CardView>(CardViewIds[0]).Alpha == 0.0f) FindViewById<CardView>(CardViewIds[0]).Animate().Alpha(1.0f).SetDuration(500).Start();
+            if (FindViewById<CardView>(CardViewIds[1]).Alpha == 0.0f) FindViewById<CardView>(CardViewIds[1]).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(500).Start();
+            if (FindViewById<CardView>(CardViewIds[2]).Alpha == 0.0f) FindViewById<CardView>(CardViewIds[2]).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1000).Start();
 
-            CardView ModCardView = FindViewById<CardView>(Resource.Id.DollDBDetailModSkillCardLayout);
+            CardView ModCardView = FindViewById<CardView>(CardViewIds[3]);
 
             switch (ModIndex)
             {
@@ -970,8 +951,8 @@ namespace GFI_with_GFS_A
                     break;
             }
 
-            if (FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1500).Start();
-            if (FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(2000).Start();
+            if (FindViewById<CardView>(CardViewIds[4]).Alpha == 0.0f) FindViewById<CardView>(CardViewIds[4]).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1500).Start();
+            if (FindViewById<CardView>(CardViewIds[5]).Alpha == 0.0f) FindViewById<CardView>(CardViewIds[5]).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(2000).Start();
         }
 
         private void DollDBDetailModSelectButton_Click(object sender, EventArgs e)
@@ -1041,6 +1022,9 @@ namespace GFI_with_GFS_A
             base.OnBackPressed();
             OverridePendingTransition(Resource.Animation.Activity_SlideInLeft, Resource.Animation.Activity_SlideOutRight);
             GC.Collect();
+#if DEBUG
+            Toast.MakeText(this, "회수 전:" + GC.GetTotalMemory(false).ToString() + "\n회수 후:" + GC.GetTotalMemory(true), ToastLength.Short).Show();
+#endif
             Finish();
         }
 

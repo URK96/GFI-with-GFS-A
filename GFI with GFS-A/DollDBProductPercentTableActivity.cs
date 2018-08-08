@@ -5,7 +5,7 @@ using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
@@ -157,16 +157,19 @@ namespace GFI_with_GFS_A
 
                 for (int i = 0; i < (list.Length / TopViewIds.Length); ++i)
                 {
-                    LinearLayout layout = new LinearLayout(this);
-
-                    layout.Orientation = Orientation.Horizontal;
-                    layout.LayoutParameters = TableMainLayout.LayoutParameters;
+                    LinearLayout layout = new LinearLayout(this)
+                    {
+                        Orientation = Orientation.Horizontal,
+                        LayoutParameters = TableMainLayout.LayoutParameters
+                    };
                     layout.SetGravity(GravityFlags.Center);
 
                     for (int j = 0; j < TopViewIds.Length; ++j)
                     {
-                        TextView tv = new TextView(this);
-                        tv.LayoutParameters = FindViewById<TextView>(TopViewIds[j]).LayoutParameters;
+                        TextView tv = new TextView(this)
+                        {
+                            LayoutParameters = FindViewById<TextView>(TopViewIds[j]).LayoutParameters
+                        };
 
                         if (j == 8) tv.Text = list[i, j] + "%";
                         else tv.Text = list[i, j].ToString();
@@ -262,7 +265,7 @@ namespace GFI_with_GFS_A
 
                 sb.Replace("\"formula\":", " ");
 
-                ArrayList remove_list = new ArrayList();
+                List<int> remove_list = new List<int>();
 
                 for (int i = 0; i < sb.Length; ++i)
                 {
@@ -271,6 +274,8 @@ namespace GFI_with_GFS_A
                         remove_list.Add(i);
                     }
                 }
+
+                remove_list.TrimExcess();
 
                 int count = 0;
 
@@ -288,9 +293,9 @@ namespace GFI_with_GFS_A
                 string[] data = temp_data.Split(',');
 
                 int normal_count = 0;
-                ArrayList normal_row = new ArrayList();
+                List<int> normal_row = new List<int>();
                 int advance_count = 0;
-                ArrayList advance_row = new ArrayList();
+                List<int> advance_row = new List<int>();
 
                 for (int i = 0; i < (data.Length / 8); ++i)
                 {
@@ -310,15 +315,15 @@ namespace GFI_with_GFS_A
                     }
                 }
 
-                normal_row.TrimToSize();
-                advance_row.TrimToSize();
+                normal_row.TrimExcess();
+                advance_row.TrimExcess();
 
                 Normal_Data = new double[normal_count, 9];
                 Advance_Data = new double[advance_count, 9];
 
                 for (int i = 0; i < (Normal_Data.Length / TopViewIds.Length); ++i)
                 {
-                    int row = (int)normal_row[i];
+                    int row = normal_row[i];
 
                     if (i == 197)
                     {
@@ -336,7 +341,7 @@ namespace GFI_with_GFS_A
                 {
                     for (int i = 0; i < (Advance_Data.Length / TopViewIds.Length); ++i)
                     {
-                        int row = (int)advance_row[i];
+                        int row = advance_row[i];
 
                         for (int j = 0; j < TopViewIds.Length; j++)
                         {

@@ -111,12 +111,26 @@ namespace GFI_with_GFS_A
                 ExitTimer.Interval = 2000;
                 ExitTimer.Elapsed += ExitTimer_Elapsed;
 
+                RunStartMode();
                 InitializeProcess();
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
+            }
+        }
+
+        private async Task RunStartMode()
+        {
+            switch (ETC.sharedPreferences.GetInt("StartAppMode", 0))
+            {
+                case 1:
+                    MainMenuButton_Click(Resource.Id.OldGFDMainButton, new EventArgs());
+                    break;
+                case 2:
+                    ExtraMenuButton_Click(Resource.Id.RFBotExtraButton, new EventArgs());
+                    break;
             }
         }
 
@@ -155,7 +169,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async void InitializeProcess()
+        private async Task InitializeProcess()
         {
             GC.Collect();
 
@@ -250,7 +264,7 @@ namespace GFI_with_GFS_A
                         foreach (int id in MainMenuButtonIds)
                         {
                             Button button = FindViewById<Button>(id);
-                            button.Click += MainMenuButtons_Click;
+                            button.Click += MainMenuButton_Click;
                         }
                         break;
                     case 0:
@@ -258,7 +272,7 @@ namespace GFI_with_GFS_A
                         foreach (int id in MainMenuButtonIds)
                         {
                             Button button = FindViewById<Button>(id);
-                            if (button.HasOnClickListeners == true) button.Click -= MainMenuButtons_Click;
+                            if (button.HasOnClickListeners == true) button.Click -= MainMenuButton_Click;
                         }
                         break;
                 }              
@@ -372,7 +386,7 @@ namespace GFI_with_GFS_A
             } 
         }
 
-        private void MainMenuButtons_Click(object sender, EventArgs e)
+        private void MainMenuButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -395,7 +409,7 @@ namespace GFI_with_GFS_A
                     case Resource.Id.EnemyDBMainButton:
 #if DEBUG
                         //StartActivity(typeof(EnemyDBMainActivity));
-                        StartActivity(typeof(TestActivity));
+                        StartActivity(typeof(EnemyDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
 #else
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);

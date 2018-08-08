@@ -2,6 +2,10 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
   <PreferenceCategory
     android:title="일반">
+    <ListPreference
+      android:key="StartAppMode"
+      android:title="앱 기동 모드"
+      android:summary=""/>
     <SwitchPreference
       android:key="LowMemoryOption"
       android:title="저사양 옵션 활성화"

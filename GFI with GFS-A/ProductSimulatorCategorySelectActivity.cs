@@ -1,10 +1,9 @@
 ﻿using Android.App;
-using Android;
 using Android.Content;
 using Android.OS;
+using Android.Support.V7.App;
 using Android.Widget;
 using System;
-using Android.Support.V7.App;
 
 namespace GFI_with_GFS_A
 {
@@ -58,6 +57,12 @@ namespace GFI_with_GFS_A
             ProductInfo.PutExtra("Info", ProductType);
             StartActivity(ProductInfo);
             OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
+        }
+
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
         }
     }
 }

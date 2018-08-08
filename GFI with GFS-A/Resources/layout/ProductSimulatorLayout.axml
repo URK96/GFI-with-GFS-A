@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/ProductSimulatorMainLayout">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/PSResourceIn">
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -24,9 +28,8 @@
             <NumberPicker
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
-                android:id="@+id/PSManPowerNumberPicker1"
-                min="0"
-                max="" />
+                android:layout_marginLeft="20dp"
+                android:id="@+id/PSManPowerNumberPicker1" />
             <NumberPicker
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
@@ -61,6 +64,7 @@
             <NumberPicker
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
                 android:id="@+id/PSAmmoNumberPicker1" />
             <NumberPicker
                 android:layout_width="50dp"
@@ -96,6 +100,7 @@
             <NumberPicker
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
                 android:id="@+id/PSFoodNumberPicker1" />
             <NumberPicker
                 android:layout_width="50dp"
@@ -131,6 +136,7 @@
             <NumberPicker
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
                 android:id="@+id/PSPartsNumberPicker1" />
             <NumberPicker
                 android:layout_width="50dp"
@@ -149,5 +155,45 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
         </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:id="@+id/PSAdvanceProductTypeLayout">
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1형"
+                    android:id="@+id/PSAdvanceProductType1" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2형"
+                    android:id="@+id/PSAdvanceProductType2" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3형"
+                    android:id="@+id/PSAdvanceProductType3" />
+            </RadioGroup>
+        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:text="제조"
+            android:id="@+id/PSProductStart" />
     </LinearLayout>
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ProductSimulatorSnackbarLayout"
+        android:layout_alignTop="@id/ProductSimulatorMainLayout" />
 </RelativeLayout>
