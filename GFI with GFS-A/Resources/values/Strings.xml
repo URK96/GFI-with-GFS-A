@@ -52,7 +52,7 @@
   <string name="Setting_DownloadAllCache_CompleteTitle">캐시 다운로드 완료</string>
   <string name="Setting_DownloadAllCache_CompleteMessage">지휘관님! 캐시 다운로드가 완료되었어요!</string>
   <string name="Setting_DeleteAllCache_CheckTitle">캐시 삭제 확인</string>
-  <string name="Setting_DeleteAllCache_CheckMessage">정말로 모든 캐시를 삭제할 거야?</string>
+  <string name="Setting_DeleteAllCache_CheckMessage">정말로 모든 캐시를 삭제할 거야? 현재 캐시 용량은</string>
   <string name="Setting_DeleteAllCache_Title">캐시 삭제 확인</string>
   <string name="Setting_DeleteAllCache_Message">캐시 삭제 중입니다.</string>
   <string name="Setting_DeleteAllCache_Complete">캐시 삭제 성공!</string>

@@ -5,15 +5,22 @@
     <ListPreference
       android:key="StartAppMode"
       android:title="앱 기동 모드"
-      android:summary=""/>
+      android:summary="소전사전 시작 시 바로 표시될 메뉴 항목을 선택합니다. 설정 후 앱을 재시작해야 적용됩니다."/>
     <SwitchPreference
       android:key="LowMemoryOption"
       android:title="저사양 옵션 활성화"
-      android:summary="RAM이 부족한 저사양 기기를 위해 일부 효과나 커스텀 리소스를 제한합니다."/>
+      android:summary="RAM이 부족한 저사양 기기를 위해 일부 효과나 커스텀 리소스를 제한합니다. 설정 후 앱을 재시작해야 적용됩니다."/>
     <SwitchPreference
       android:key="UseLightTheme"
       android:title="밝은 테마 사용"
-      android:summary="기본값인 어두운 테마 대신 밝은 테마를 사용합니다."/>
+      android:summary="기본값인 어두운 테마 대신 밝은 테마를 사용합니다. 설정 후 앱을 재시작해야 적용됩니다."/>
+  </PreferenceCategory>
+    <PreferenceCategory
+      android:title="DB 설정">
+    <SwitchPreference
+  android:key="DynamicDBLoad"
+  android:title="동적 DB 로드"
+  android:summary="DB가 필요한 경우만에 DB를 불러옵니다. 이 기능을 활성화하면 앱 기동 시간은 짧아지지만 기능을 사용할 때 로드 시간이 증가할 수 있습니다. 설정 후 앱을 재시작해야 적용됩니다."/>
     <SwitchPreference
       android:key="AutoDBUpdate"
       android:title="자동 DB 업데이트"
@@ -44,7 +51,7 @@
     <Preference
       android:key="DownloadAllCache"
       android:title="캐시 일괄 다운로드"
-      android:summary="소전사전에서 사용하는 데이터베이스 캐쉬 파일들을 일괄적으로 미리 다운로드 합니다. 모든 캐시를 다운로드 하시면 오프라인에서도 문제없이 사용하실 수 있습니다."/>
+      android:summary="소전사전에서 사용하는 데이터베이스 캐쉬 파일들을 일괄적으로 미리 다운로드 합니다. 모든 캐시를 다운로드 하시면 오프라인에서도 일부분은 문제없이 사용하실 수 있습니다."/>
     <Preference
       android:key="CleanCache"
       android:title="캐시 삭제"

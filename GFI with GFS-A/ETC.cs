@@ -22,6 +22,8 @@ namespace GFI_with_GFS_A
         internal static string CachePath = Path.Combine(AppDataPath, "Cache");
         internal static string LogPath = Path.Combine(SystemPath, "Log");
 
+        internal static bool EnableDynamicDB = false;
+        internal static bool HasInitDollAvgAbility = false;
         internal static bool IsLowRAM = false;
         internal static bool UseLightTheme = false;
         internal static int DialogBG = 0;
@@ -154,6 +156,8 @@ namespace GFI_with_GFS_A
                     }
                 }
             }
+
+            HasInitDollAvgAbility = true;
         }
 
         internal static async Task UpViewAlpha(View view, int rate, int delay)
@@ -291,7 +295,7 @@ namespace GFI_with_GFS_A
 
         internal static async Task<bool> LoadDB()
         {
-            await Task.Delay(100);
+            await Task.Delay(1);
 
             try
             {
@@ -307,6 +311,38 @@ namespace GFI_with_GFS_A
                 SkillTrainingList.ReadXml(Path.Combine(DBPath, "SkillTraining.gfs"));
                 MDSupportList.Clear();
                 MDSupportList.ReadXml(Path.Combine(DBPath, "MDSupportList.gfs"));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        internal static async Task<bool> LoadDB(DataTable table, string DBFile, bool BeforeClear)
+        {
+            await Task.Delay(1);
+
+            try
+            {
+                if (BeforeClear == true) table.Clear();
+                table.ReadXml(Path.Combine(DBPath, DBFile));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        internal static bool LoadDBSync(DataTable table, string DBFile, bool BeforeClear)
+        {
+            try
+            {
+                if (BeforeClear == true) table.Clear();
+                table.ReadXml(Path.Combine(DBPath, DBFile));
             }
             catch (Exception)
             {

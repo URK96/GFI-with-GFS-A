@@ -44,11 +44,13 @@ namespace GFI_with_GFS_A
                     ProductType = "Doll/Advance";
                     break;
                 case Resource.Id.ProductSimulatorCategoryEquipNormalButton:
-                    ProductType = "Equip/Normal";
-                    break;
+                    return;
+                    /*ProductType = "Equip/Normal";
+                    break;*/
                 case Resource.Id.ProductSimulatorCategoryEquipAdvanceButton:
-                    ProductType = "Equip/Advance";
-                    break;
+                    return;
+                    /*ProductType = "Equip/Advance";
+                    break;*/
                 default:
                     return;
             }

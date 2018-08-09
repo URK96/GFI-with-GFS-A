@@ -14,18 +14,18 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Android.Gms.Ads;
 using System.Diagnostics;
+using Android.Graphics.Drawables;
+using Com.Syncfusion.Sfbusyindicator;
 
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "소전사전", MainLauncher = true, Theme = "@style/GFS.Splash", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SplashScreen : AppCompatActivity
     {
-        System.Timers.Timer timer = new System.Timers.Timer();
-
         private CoordinatorLayout SnackbarLayout = null;
 
         private ImageView MainSplashImageView;
-        private ImageView LoadImage;
+        private SfBusyIndicator indicator;
         private Stopwatch sw = new Stopwatch();
 
         private ISharedPreferencesEditor PreferenceEditor;
@@ -46,18 +46,17 @@ namespace GFI_with_GFS_A
                     SetTheme(Resource.Style.GFS_Splash_Light);
                 }
 
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY0NkAzMTM2MmUzMjJlMzBmNFFDVVZlU2NDRTVmYVJqQ0ZyOTVPOGhYWnFIazlQNFNPeGVEMU9WMjZnPQ==");
+
                 // Set our view from the "main" layout resource
                 SetContentView(Resource.Layout.SplashLayout);
 
-                timer.Interval = 1000;
-                timer.Elapsed += Timer_Elapsed;
-                timer.Start();
-
                 MainSplashImageView = FindViewById<ImageView>(Resource.Id.SplashBackImageLayout);
-                MainSplashImageView.SetBackgroundResource(Resource.Drawable.SplashBG2);
-
-                LoadImage = FindViewById<ImageView>(Resource.Id.SplashLoadingStatusImage);
-                LoadImage.SetImageResource(Resource.Drawable.Splash_DataBuild);
+                indicator = new SfBusyIndicator(this);
+                indicator.AnimationType = Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.GearBox;
+                indicator.TextColor = Android.Graphics.Color.White;
+                indicator.SetBackgroundResource(Resource.Drawable.SplashBG2);
+                FindViewById<FrameLayout>(Resource.Id.SplashBusyIndicatorLayout).AddView(indicator);
 
                 VersionTracking.Track();
 
@@ -71,40 +70,26 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
-        {
-            System.Diagnostics.Process process = System.Diagnostics.Process.GetCurrentProcess();
-
-            System.Diagnostics.Trace.WriteLine((process.WorkingSet64 / 1024) / 1024);
-        }
-
         private async Task InitProcess()
         {
+            
             SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.SplashSnackbarLayout);
 
             await Task.Delay(500);
 
             try
             {
-                FindViewById<LinearLayout>(Resource.Id.SplashLoadingStatusImageLayout).BringToFront();
-
-                LoadImage.BringToFront();
-
-                MainSplashImageView.Animate().Alpha(1.0f).SetDuration(500).Start();
-                LoadImage.Animate().Alpha(1.0f).SetDuration(300).SetStartDelay(500).Start();
-
-                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY0NkAzMTM2MmUzMjJlMzBmNFFDVVZlU2NDRTVmYVJqQ0ZyOTVPOGhYWnFIazlQNFNPeGVEMU9WMjZnPQ==");
+                indicator.IsBusy = true;
 
                 MobileAds.Initialize(this, "ca-app-pub-4576756770200148~8135834453");
-
-                await Task.Delay(500);
 
                 if (ETC.sharedPreferences.GetBoolean("CheckInitLowMemory", true) == true) CheckDeviceMemory();
                 ETC.IsLowRAM = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);
 
                 if (VersionTracking.IsFirstLaunchForCurrentVersion == true) PreferenceEditor.PutBoolean("ShowNewFeatureDialog", true);
-
+                
                 ETC.CheckInitFolder();
+
 
                 if (ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true) == true)
                 {
@@ -121,25 +106,20 @@ namespace GFI_with_GFS_A
                     }
                 }
 
-                await Task.Delay(200);
+                ETC.EnableDynamicDB = ETC.sharedPreferences.GetBoolean("DynamicDBLoad", false);
 
-                LoadImage.Animate().Alpha(0.0f).SetDuration(500).Start();
-                LoadImage.SetImageResource(Resource.Drawable.Splash_DataLoad);
-                LoadImage.Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(600).Start();
-
-                await Task.Delay(500);
-
-                while (await ETC.LoadDB() == false)
+                if (ETC.EnableDynamicDB == false)
                 {
-                    ETC.ShowSnackbar(SnackbarLayout, Resource.String.DB_Recovery, Snackbar.LengthShort);
+                    while (await ETC.LoadDB() == false)
+                    {
+                        ETC.ShowSnackbar(SnackbarLayout, Resource.String.DB_Recovery, Snackbar.LengthShort);
 
-                    await ETC.UpdateDB(this);
+                        await ETC.UpdateDB(this);
+                    }
+
+                    ETC.InitializeAverageAbility();
                 }
-                sw.Start();
-                ETC.InitializeAverageAbility();
-                sw.Stop();
 
-                Toast.MakeText(this, sw.Elapsed.ToString(), ToastLength.Short).Show();
                 if (ETC.UseLightTheme == true)
                 {
                     ETC.DialogBG = Resource.Style.GFD_Dialog_Light;
@@ -153,10 +133,6 @@ namespace GFI_with_GFS_A
                     ETC.DialogBG_Download = Resource.Style.GFD_Dialog_Download;
                 }
 
-                LoadImage.Animate().Alpha(0.0f).SetDuration(300).Start();
-
-                await Task.Delay(500);
-
                 StartActivity(typeof(Main));
                 OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
                 Finish();
@@ -169,6 +145,18 @@ namespace GFI_with_GFS_A
             finally
             {
                 GC.Collect(GC.MaxGeneration, GCCollectionMode.Default, false, false);
+            }
+        }
+
+        private async Task ImageAnimation()
+        {
+            ClipDrawable drawable = (ClipDrawable)MainSplashImageView.Drawable;
+
+            for (int i = 0; i <= 10000; i += 200)
+            {
+                drawable.SetLevel(i);
+                MainSplashImageView.SetImageDrawable(drawable);
+                await Task.Delay(10);
             }
         }
 
@@ -240,7 +228,7 @@ namespace GFI_with_GFS_A
             ExitDialog.SetPositiveButton("종료", delegate
             {
                 FinishAffinity();
-                Process.KillProcess(Process.MyPid());
+                Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
             });
             ExitDialog.SetNegativeButton("취소", delegate { });
             ExitDialog.Show();

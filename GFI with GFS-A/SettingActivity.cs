@@ -84,14 +84,11 @@ namespace GFI_with_GFS_A
             SaveSetting =  ETC.sharedPreferences.Edit();
 
             ListPreference StartAppMode = (ListPreference)FindPreference("StartAppMode");
+            if (ETC.UseLightTheme == true) StartAppMode.SetIcon(Resource.Drawable.AppStartModeIcon_WhiteTheme);
+            else StartAppMode.SetIcon(Resource.Drawable.AppStartModeIcon);
             StartAppMode.SetEntries(new string[] { "기본", "소전사전v1", "RFBot (라플봇)" });
             StartAppMode.SetEntryValues(new string[] { "0", "1", "2" });
-            StartAppMode.SetValueIndex(ETC.sharedPreferences.GetInt("StartAppMode", 0));
-            StartAppMode.PreferenceChange += delegate (object sender, Preference.PreferenceChangeEventArgs e)
-            {
-                SaveSetting.PutInt("StartAppMode", Convert.ToInt32(e.NewValue));
-                SaveSetting.Apply();
-            };
+            StartAppMode.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("StartAppMode", "0")));
 
             SwitchPreference LowMemoryOption = (SwitchPreference)FindPreference("LowMemoryOption");
             if (ETC.UseLightTheme == true) LowMemoryOption.SetIcon(Resource.Drawable.LowMemoryOptionIcon_WhiteTheme);
@@ -111,6 +108,16 @@ namespace GFI_with_GFS_A
             {
                 ETC.UseLightTheme = UseLightTheme.Checked;
                 SaveSetting.PutBoolean("UseLightTheme", UseLightTheme.Checked);
+                SaveSetting.Apply();
+            };
+
+            SwitchPreference DynamicDBLoad = (SwitchPreference)FindPreference("DynamicDBLoad");
+            if (ETC.UseLightTheme == true) DynamicDBLoad.SetIcon(Resource.Drawable.DynamicDBLoadIcon_WhiteTheme);
+            else DynamicDBLoad.SetIcon(Resource.Drawable.DynamicDBLoadIcon);
+            DynamicDBLoad.Checked = ETC.sharedPreferences.GetBoolean("DynamicDBLoad", false);
+            DynamicDBLoad.PreferenceChange += delegate
+            {
+                SaveSetting.PutBoolean("DynamicDBLoad", DynamicDBLoad.Checked);
                 SaveSetting.Apply();
             };
 
@@ -837,7 +844,7 @@ namespace GFI_with_GFS_A
             }
             catch (Java.Lang.Exception ex)
             {
-                ETC.LogError(this.Activity, ex.ToString());
+                ETC.LogError(Activity, ex.ToString());
 
                 ad.SetTitle(Resource.String.Setting_DownloadAllCache_FailTitle);
                 ad.SetMessage(Resource.String.Setting_DownloadAllCache_FailMessage);
@@ -847,7 +854,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this.Activity, ex.StackTrace);
+                ETC.LogError(Activity, ex.StackTrace);
 
                 ad.SetTitle(Resource.String.Setting_DownloadAllCache_FailTitle);
                 ad.SetMessage(Resource.String.Setting_DownloadAllCache_FailMessage);
@@ -891,9 +898,18 @@ namespace GFI_with_GFS_A
 
         private void CleanCache_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
         {
+            long tTotalSize = 0;
+            foreach (string s in Directory.GetFiles(ETC.CachePath, "*.*", SearchOption.AllDirectories))
+            {
+                FileInfo fi = new FileInfo(s);
+                tTotalSize += fi.Length;
+            }
+
+            int TotalSize = Convert.ToInt32((tTotalSize / 1024) / 1024);
+
             Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
             alert.SetTitle(Resource.String.Setting_DeleteAllCache_CheckTitle);
-            alert.SetMessage(Resource.String.Setting_DeleteAllCache_CheckMessage);
+            alert.SetMessage(string.Format("{0} {1}{2}", Resources.GetString(Resource.String.Setting_DeleteAllCache_CheckMessage), TotalSize, "MB"));
             alert.SetCancelable(true);
             alert.SetNegativeButton("취소", delegate { });
             alert.SetPositiveButton("삭제", delegate { CleanCacheProcess(); });
@@ -903,13 +919,10 @@ namespace GFI_with_GFS_A
 
         private async void CleanCacheProcess()
         {
-            //View v = Activity.LayoutInflater.Inflate(Resource.Layout.SpinnerProgressDialogLayout, null);
-
             Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG_Download);
             ad.SetTitle(Resource.String.Setting_DeleteAllCache_Title);
             ad.SetMessage(Resource.String.Setting_DeleteAllCache_Message);
             ad.SetCancelable(false);
-            //ad.SetView(v);
             ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
 
             var dialog = ad.Show();
