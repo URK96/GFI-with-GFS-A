@@ -1,17 +1,15 @@
-﻿using System;
+﻿using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Support.Design.Widget;
+using Android.Support.V4.App;
+using Android.Views;
+using Android.Widget;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Support.V4.App;
-using Android.Views;
-using Android.Widget;
-using Android.Support.Design.Widget;
 using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
@@ -179,166 +177,199 @@ namespace GFI_with_GFS_A
 
         private void ProductStartButton_Click(object sender, EventArgs e)
         {
-            switch (Category)
+            try
             {
-                case ProductCategory.Doll:
-                    ListProductAvailable();
-                    break;
-                case ProductCategory.Equip:
-                    break;
+                switch (Category)
+                {
+                    case ProductCategory.Doll:
+                        ListProductAvailable();
+                        break;
+                    case ProductCategory.Equip:
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, "제조 시작 실패", Snackbar.LengthShort);
             }
         }
 
         private void ResourceValueNP_ValueChanged(object sender, NumberPicker.ValueChangeEventArgs e)
         {
-            NumberPicker np = sender as NumberPicker;
-            bool IsZero = false;
-            int minValue = 0;
-
-            if (e.NewVal == 0) IsZero = true;
-
-            if (IsZero == false) minValue = 0;
-            else if (Category == ProductCategory.Doll)
+            try
             {
-                switch (Type)
+                NumberPicker np = sender as NumberPicker;
+                bool IsZero = false;
+                int minValue = 0;
+
+                if (e.NewVal == 0) IsZero = true;
+
+                if (IsZero == false) minValue = 0;
+                else if (Category == ProductCategory.Doll)
                 {
-                    case ProductType.Normal:
-                        minValue = 3;
+                    switch (Type)
+                    {
+                        case ProductType.Normal:
+                            minValue = 3;
+                            break;
+                        case ProductType.Advance:
+                            return;
+                    }
+                }
+                else if (Category == ProductCategory.Equip)
+                {
+                    switch (Type)
+                    {
+                        case ProductType.Normal:
+                            minValue = 1;
+                            break;
+                        case ProductType.Advance:
+                            minValue = 5;
+                            break;
+                    }
+                }
+
+                switch (np.Id)
+                {
+                    case Resource.Id.PSManPowerNumberPicker1:
+                        ManPower_NPs[1].MinValue = minValue;
                         break;
-                    case ProductType.Advance:
-                        return;
+                    case Resource.Id.PSAmmoNumberPicker1:
+                        Ammo_NPs[1].MinValue = minValue;
+                        break;
+                    case Resource.Id.PSFoodNumberPicker1:
+                        Food_NPs[1].MinValue = minValue;
+                        break;
+                    case Resource.Id.PSPartsNumberPicker1:
+                        Parts_NPs[1].MinValue = minValue;
+                        break;
                 }
             }
-            else if (Category == ProductCategory.Equip)
+            catch (Exception ex)
             {
-                switch (Type)
-                {
-                    case ProductType.Normal:
-                        minValue = 1;
-                        break;
-                    case ProductType.Advance:
-                        minValue = 5;
-                        break;
-                }
-            }
-
-            switch (np.Id)
-            {
-                case Resource.Id.PSManPowerNumberPicker1:
-                    ManPower_NPs[1].MinValue = minValue;
-                    break;
-                case Resource.Id.PSAmmoNumberPicker1:
-                    Ammo_NPs[1].MinValue = minValue;
-                    break;
-                case Resource.Id.PSFoodNumberPicker1:
-                    Food_NPs[1].MinValue = minValue;
-                    break;
-                case Resource.Id.PSPartsNumberPicker1:
-                    Parts_NPs[1].MinValue = minValue;
-                    break;
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, "범위 변경 실패", Snackbar.LengthShort);
             }
         }
 
         private void InitNumberPickerRange()
         {
-            int init_min = 0;
-            int init_max = 9;
-            int init_value = 0;
-
-            for (int i = 0; i < 4; ++i)
+            try
             {
-                ManPower_NPs[i].MinValue = init_min;
-                ManPower_NPs[i].MaxValue = init_max;
-                ManPower_NPs[i].Value = init_value;
+                int init_min = 0;
+                int init_max = 9;
+                int init_value = 0;
 
-                Ammo_NPs[i].MinValue = init_min;
-                Ammo_NPs[i].MaxValue = init_max;
-                Ammo_NPs[i].Value = init_value;
-
-                Food_NPs[i].MinValue = init_min;
-                Food_NPs[i].MaxValue = init_max;
-                Food_NPs[i].Value = init_value;
-
-                Parts_NPs[i].MinValue = init_min;
-                Parts_NPs[i].MaxValue = init_max;
-                Parts_NPs[i].Value = init_value;
-            }
-
-            if (Category == ProductCategory.Doll)
-            {
-                switch (Type)
+                for (int i = 0; i < 4; ++i)
                 {
-                    case ProductType.Normal:
-                        ManPower_NPs[1].MinValue = 3;
-                        Ammo_NPs[1].MinValue = 3;
-                        Food_NPs[1].MinValue = 3;
-                        Parts_NPs[1].MinValue = 3;
-                        break;
-                    case ProductType.Advance:
-                        ManPower_NPs[0].MinValue = 1;
-                        Ammo_NPs[0].MinValue = 1;
-                        Food_NPs[0].MinValue = 1;
-                        Parts_NPs[0].MinValue = 1;
-                        break;
+                    ManPower_NPs[i].MinValue = init_min;
+                    ManPower_NPs[i].MaxValue = init_max;
+                    ManPower_NPs[i].Value = init_value;
+
+                    Ammo_NPs[i].MinValue = init_min;
+                    Ammo_NPs[i].MaxValue = init_max;
+                    Ammo_NPs[i].Value = init_value;
+
+                    Food_NPs[i].MinValue = init_min;
+                    Food_NPs[i].MaxValue = init_max;
+                    Food_NPs[i].Value = init_value;
+
+                    Parts_NPs[i].MinValue = init_min;
+                    Parts_NPs[i].MaxValue = init_max;
+                    Parts_NPs[i].Value = init_value;
+                }
+
+                if (Category == ProductCategory.Doll)
+                {
+                    switch (Type)
+                    {
+                        case ProductType.Normal:
+                            ManPower_NPs[1].MinValue = 3;
+                            Ammo_NPs[1].MinValue = 3;
+                            Food_NPs[1].MinValue = 3;
+                            Parts_NPs[1].MinValue = 3;
+                            break;
+                        case ProductType.Advance:
+                            ManPower_NPs[0].MinValue = 1;
+                            Ammo_NPs[0].MinValue = 1;
+                            Food_NPs[0].MinValue = 1;
+                            Parts_NPs[0].MinValue = 1;
+                            break;
+                    }
+                }
+                else if (Category == ProductCategory.Equip)
+                {
+                    switch (Type)
+                    {
+                        case ProductType.Normal:
+                            ManPower_NPs[1].MinValue = 1;
+                            Ammo_NPs[1].MinValue = 1;
+                            Food_NPs[1].MinValue = 1;
+                            Parts_NPs[1].MinValue = 1;
+
+                            ManPower_NPs[0].MaxValue = 3;
+                            Ammo_NPs[0].MaxValue = 3;
+                            Food_NPs[0].MaxValue = 3;
+                            Parts_NPs[0].MaxValue = 3;
+                            break;
+                        case ProductType.Advance:
+                            ManPower_NPs[1].MinValue = 5;
+                            Ammo_NPs[1].MinValue = 5;
+                            Food_NPs[1].MinValue = 5;
+                            Parts_NPs[1].MinValue = 5;
+
+                            ManPower_NPs[0].MaxValue = 5;
+                            Ammo_NPs[0].MaxValue = 5;
+                            Food_NPs[0].MaxValue = 5;
+                            Parts_NPs[0].MaxValue = 5;
+                            break;
+                    }
                 }
             }
-            else if (Category == ProductCategory.Equip)
+            catch (Exception ex)
             {
-                switch (Type)
-                {
-                    case ProductType.Normal:
-                        ManPower_NPs[1].MinValue = 1;
-                        Ammo_NPs[1].MinValue = 1;
-                        Food_NPs[1].MinValue = 1;
-                        Parts_NPs[1].MinValue = 1;
-
-                        ManPower_NPs[0].MaxValue = 3;
-                        Ammo_NPs[0].MaxValue = 3;
-                        Food_NPs[0].MaxValue = 3;
-                        Parts_NPs[0].MaxValue = 3;
-                        break;
-                    case ProductType.Advance:
-                        ManPower_NPs[1].MinValue = 5;
-                        Ammo_NPs[1].MinValue = 5;
-                        Food_NPs[1].MinValue = 5;
-                        Parts_NPs[1].MinValue = 5;
-
-                        ManPower_NPs[0].MaxValue = 5;
-                        Ammo_NPs[0].MaxValue = 5;
-                        Food_NPs[0].MaxValue = 5;
-                        Parts_NPs[0].MaxValue = 5;
-                        break;
-                }
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, "초기 범위 설정 실패", Snackbar.LengthShort);
             }
         }
 
         private int CalcResource(string ResourceType)
         {
-            int[] values = null;
-            int result = 0;
-
-            if (Type == ProductType.Normal) values = new int[3];
-            else values = new int[4];
-
-            switch (ResourceType)
+            try
             {
-                case "ManPower":
-                    for (int i = 0; i < values.Length; ++i) values[i] = ManPower_NPs[i].Value;
-                    break;
-                case "Ammo":
-                    for (int i = 0; i < values.Length; ++i) values[i] = Ammo_NPs[i].Value;
-                    break;
-                case "Food":
-                    for (int i = 0; i < values.Length; ++i) values[i] = Food_NPs[i].Value;
-                    break;
-                case "Parts":
-                    for (int i = 0; i < values.Length; ++i) values[i] = Parts_NPs[i].Value;
-                    break;
+                int[] values = null;
+                int result = 0;
+
+                if (Type == ProductType.Normal) values = new int[3];
+                else values = new int[4];
+
+                switch (ResourceType)
+                {
+                    case "ManPower":
+                        for (int i = 0; i < values.Length; ++i) values[i] = ManPower_NPs[i].Value;
+                        break;
+                    case "Ammo":
+                        for (int i = 0; i < values.Length; ++i) values[i] = Ammo_NPs[i].Value;
+                        break;
+                    case "Food":
+                        for (int i = 0; i < values.Length; ++i) values[i] = Food_NPs[i].Value;
+                        break;
+                    case "Parts":
+                        for (int i = 0; i < values.Length; ++i) values[i] = Parts_NPs[i].Value;
+                        break;
+                }
+
+                for (int i = 0; i < values.Length; ++i) result += (values[i] * Convert.ToInt32(Math.Pow(10, (values.Length - (i + 1)))));
+
+                return result;
             }
-
-            for (int i = 0; i < values.Length; ++i) result += (values[i] * Convert.ToInt32(Math.Pow(10, (values.Length - (i + 1)))));
-
-            return result;
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, "자원 계산 오류", Snackbar.LengthShort);
+                return 0;
+            }
         }
 
         private void ShowResultScreen(DataRow dr)

@@ -1,0 +1,1218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/FSTDBDetailMainLayout">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="@id/FSTDBDetailMainLayout"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:visibility="invisible"
+            android:indeterminate="true"
+            android:indeterminateOnly="true"
+            android:id="@+id/FSTDBDetailInitLoadProgress" />
+    <!--FST Title Layout-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/FSTDBDetailBasicLayout">
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/FSTDBDetailSmallImageLayout">
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:id="@+id/FSTDBDetailSmallImage" />
+            </FrameLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_toRightOf="@id/FSTDBDetailSmallImageLayout"
+                android:gravity="center"
+                android:id="@+id/FSTDBDetailBasicInfoLayout">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text=""
+                    android:gravity="center"
+                    android:layout_marginBottom="2dp"
+                    android:id="@+id/FSTDBDetailFSTDicNumber" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:id="@+id/FSTDBDetailFSTName" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/FSTDBDetailFSTProductTime" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/FSTDBDetailSmallImageLayout"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:id="@+id/FSTDBDetailGradeControlLayout1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="등급" />
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:numStars="5"
+                    android:stepSize="1.0"
+                    android:id="@+id/FSTDBDetailGradeControl1" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/FSTDBDetailGradeControlLayout1"
+                android:visibility="gone"
+                android:gravity="center"
+                android:id="@+id/FSTDBDetailGradeControlLayout2">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="버전업" />
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    android:id="@+id/FSTDBDetailGradeControl2" />
+            </LinearLayout>
+        </RelativeLayout>
+    <!--Scroll Part-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/FSTDBDetailBasicLayout"
+            android:id="@+id/FSTDBDetailScrollLayout">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <!--FST Basic Info Part-->
+                <android.support.v7.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:alpha="0"
+                    android:id="@+id/FSTDBDetailBasicInfoCardLayout"
+                    cardview:cardElevation="4dp"
+                    cardview:cardCornerRadius="5dp"
+                    cardview:cardBackgroundColor="@color/background_material_dark">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/FSTDBDetailBasicInfoLayout">
+                    <!--FST Basic Info - Type Part-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="중화기 종류"
+                                android:gravity="center" />
+                            <View
+                                android:layout_width="5px"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:id="@+id/FSTDBDetailInfoType"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    <!--FST Basic Info - Name Part-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="이름"
+                                android:gravity="center" />
+                            <View
+                                android:layout_width="5px"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:id="@+id/FSTDBDetailInfoName"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    <!--FST Basic Info - NickName Part-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="별명"
+                                android:gravity="center" />
+                            <View
+                                android:layout_width="5px"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:id="@+id/FSTDBDetailInfoNickName"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    <!--FST Basic Info - RealModel Part-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="실제 중화기"
+                                android:gravity="center" />
+                            <View
+                                android:layout_width="5px"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:id="@+id/FSTDBDetailInfoRealModel"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    <!--FST Basic Info - Country Part-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="출신 국가"
+                                android:gravity="center" />
+                            <View
+                                android:layout_width="5px"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:id="@+id/FSTDBDetailInfoCountry"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    <!--FST Basic Info - Illustrator Part-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="일러스트"
+                                android:gravity="center" />
+                            <View
+                                android:layout_width="5px"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:id="@+id/FSTDBDetailInfoIllustrator"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    <!--FST Basic Info - VoiceActor Part-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="성우"
+                                android:gravity="center" />
+                            <View
+                                android:layout_width="5px"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:id="@+id/FSTDBDetailInfoVoiceActor"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    <!--FST Basic Info - Gain Part-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="획득 방법"
+                                android:gravity="center" />
+                            <View
+                                android:layout_width="5px"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:id="@+id/FSTDBDetailInfoHowToGain"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+            <!--FST Circuit Part-->
+                <android.support.v7.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:alpha="0"
+                    android:id="@+id/FSTDBDetailCircuitCardLayout"
+                    cardview:cardElevation="4dp"
+                    cardview:cardCornerRadius="5dp"
+                    cardview:cardBackgroundColor="@color/background_material_dark">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/FSTDBDetailCircuitLayout">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:id="@+id/FSTDBDetailCircuitRow1" />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:id="@+id/FSTDBDetailCircuitRow2" />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:id="@+id/FSTDBDetailCircuitRow3" />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:id="@+id/FSTDBDetailCircuitRow4" />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:id="@+id/FSTDBDetailCircuitRow5" />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:id="@+id/FSTDBDetailCircuitRow6" />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:id="@+id/FSTDBDetailCircuitRow7" />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:id="@+id/FSTDBDetailCircuitRow8" />
+                    </LinearLayout>
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_weight="1"
+                        android:layout_margin="1dp"
+                        android:visibility="gone"
+                        android:id="@+id/FSTDBDetailCircuitRowItem" />
+                </android.support.v7.widget.CardView>
+            <!--FST Skill1 Part-->
+                <android.support.v7.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:alpha="0"
+                    android:id="@+id/FSTDBDetailSkillCardLayout1"
+                    cardview:cardElevation="4dp"
+                    cardview:cardCornerRadius="5dp"
+                    cardview:cardBackgroundColor="@color/background_material_dark">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/FSTDBDetailSkillLayout1">
+                    <!--FST Skill1 Part - Basic Layout-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/FSTDBDetailSkillBasicLayout1">
+                        <!--FST Skill1 Part - Basic Layout - Skill Icon-->
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/FSTDBDetailSkillIconLayout1">
+                                <ImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:id="@+id/FSTDBDetailSkillIcon1"
+                                    android:layout_margin="5dp" />
+                            </FrameLayout>
+                        <!--FST Skill1 Part - Basic Layout - Skill Name-->
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="70dp"
+                                android:layout_toRightOf="@id/FSTDBDetailSkillIconLayout1"
+                                android:id="@+id/FSTDBDetailSkillNameLayout1">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="기습공격"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:gravity="center"
+                                    android:id="@+id/FSTDBDetailSkillName1" />
+                            </FrameLayout>
+                        <!--FST Skill1 Part - Basic Layout - Skill CoolTime-->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="70dp"
+                                android:layout_toRightOf="@id/FSTDBDetailSkillIconLayout1"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/FSTDBDetailSkillCoolTimeLayout1">
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_marginBottom="5dp"
+                                    android:id="@+id/FSTDBDetailSkillCoolTimeLayout11">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/FSTDBDetailSkillInitCoolTimeIcon1"
+                                        android:src="@drawable/firstcooltime_icon" />
+                                    <TextView
+                                        android:layout_height="match_parent"
+                                        android:layout_width="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:gravity="center"
+                                        android:id="@+id/FSTDBDetailSkillInitCoolTime1" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:id="@+id/FSTDBDetailSkillCoolTimeLayout12">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/FSTDBDetailSkillCoolTimeIcon1"
+                                        android:src="@drawable/cooltime_icon" />
+                                    <TextView
+                                        android:layout_height="match_parent"
+                                        android:layout_width="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:gravity="center"
+                                        android:id="@+id/FSTDBDetailSkillCoolTime1" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    <!--FST Skill1 Part - Skill Explain-->
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@id/FSTDBDetailSkillBasicLayout1"
+                            android:id="@+id/FSTDBDetailSkillExplainLayout1">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="예시 설명"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:gravity="center"
+                                android:id="@+id/FSTDBDetailSkillExplain1" />
+                        </FrameLayout>
+                    <!--FST Skill1 Part - Skill Ability-->
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_below="@id/FSTDBDetailSkillExplainLayout1"
+                            android:id="@+id/FSTDBDetailSkillAbilityLayout1">
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/FSTDBDetailSkillAbilityTopLayout1">
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="효과"
+                                    android:id="@+id/FSTDBDetailSkillAbilityTopText11" />
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="비율"
+                                    android:id="@+id/FSTDBDetailSkillAbilityTopText12" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:id="@+id/FSTDBDetailSkillAbilitySubLayout1" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            <!--FST Skill2 Part-->
+                <android.support.v7.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:alpha="0"
+                    android:id="@+id/FSTDBDetailSkillCardLayout2"
+                    cardview:cardElevation="4dp"
+                    cardview:cardCornerRadius="5dp"
+                    cardview:cardBackgroundColor="@color/background_material_dark">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/FSTDBDetailSkillLayout2">
+                    <!--FST Skill2 Part - Basic Layout-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/FSTDBDetailSkillBasicLayout2">
+                        <!--FST Skill2 Part - Basic Layout - Skill Icon-->
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/FSTDBDetailSkillIconLayout2">
+                                <ImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:id="@+id/FSTDBDetailSkillIcon2"
+                                    android:layout_margin="5dp" />
+                            </FrameLayout>
+                        <!--FST Skill2 Part - Basic Layout - Skill Name-->
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="70dp"
+                                android:layout_toRightOf="@id/FSTDBDetailSkillIconLayout2"
+                                android:id="@+id/FSTDBDetailSkillNameLayout2">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="기습공격"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:gravity="center"
+                                    android:id="@+id/FSTDBDetailSkillName2" />
+                            </FrameLayout>
+                        <!--FST Skill2 Part - Basic Layout - Skill CoolTime-->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="70dp"
+                                android:layout_toRightOf="@id/FSTDBDetailSkillIconLayout2"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/FSTDBDetailSkillCoolTimeLayout2">
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_marginBottom="5dp"
+                                    android:id="@+id/FSTDBDetailSkillCoolTimeLayout21">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/FSTDBDetailSkillInitCoolTimeIcon2"
+                                        android:src="@drawable/firstcooltime_icon" />
+                                    <TextView
+                                        android:layout_height="match_parent"
+                                        android:layout_width="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:gravity="center"
+                                        android:id="@+id/FSTDBDetailSkillInitCoolTime2" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:id="@+id/FSTDBDetailSkillCoolTimeLayout22">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/FSTDBDetailSkillCoolTimeIcon2"
+                                        android:src="@drawable/cooltime_icon" />
+                                    <TextView
+                                        android:layout_height="match_parent"
+                                        android:layout_width="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:gravity="center"
+                                        android:id="@+id/FSTDBDetailSkillCoolTime2" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    <!--FST Skill2 Part - Skill Explain-->
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@id/FSTDBDetailSkillBasicLayout2"
+                            android:id="@+id/FSTDBDetailSkillExplainLayout2">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="예시 설명"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:gravity="center"
+                                android:id="@+id/FSTDBDetailSkillExplain2" />
+                        </FrameLayout>
+                    <!--FST Skill2 Part - Skill Ability-->
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_below="@id/FSTDBDetailSkillExplainLayout2"
+                            android:id="@+id/FSTDBDetailSkillAbilityLayout2">
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/FSTDBDetailSkillAbilityTopLayout2">
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="효과"
+                                    android:id="@+id/FSTDBDetailSkillAbilityTopText21" />
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="비율"
+                                    android:id="@+id/FSTDBDetailSkillAbilityTopText22" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:id="@+id/FSTDBDetailSkillAbilitySubLayout2" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            <!--FST Skill3 Part-->
+                <android.support.v7.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:alpha="0"
+                    android:id="@+id/FSTDBDetailSkillCardLayout3"
+                    cardview:cardElevation="4dp"
+                    cardview:cardCornerRadius="5dp"
+                    cardview:cardBackgroundColor="@color/background_material_dark">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/FSTDBDetailSkillLayout3">
+                    <!--FST Skill3 Part - Basic Layout-->
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/FSTDBDetailSkillBasicLayout3">
+                        <!--FST Skill3 Part - Basic Layout - Skill Icon-->
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/FSTDBDetailSkillIconLayout3">
+                                <ImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:id="@+id/FSTDBDetailSkillIcon3"
+                                    android:layout_margin="5dp" />
+                            </FrameLayout>
+                        <!--FST Skill3 Part - Basic Layout - Skill Name-->
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="70dp"
+                                android:layout_toRightOf="@id/FSTDBDetailSkillIconLayout3"
+                                android:id="@+id/FSTDBDetailSkillNameLayout3">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="기습공격"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:gravity="center"
+                                    android:id="@+id/FSTDBDetailSkillName3" />
+                            </FrameLayout>
+                        <!--FST Skill3 Part - Basic Layout - Skill CoolTime-->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="70dp"
+                                android:layout_toRightOf="@id/FSTDBDetailSkillIconLayout3"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/FSTDBDetailSkillCoolTimeLayout3">
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_marginBottom="5dp"
+                                    android:id="@+id/FSTDBDetailSkillCoolTimeLayout31">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/FSTDBDetailSkillInitCoolTimeIcon3"
+                                        android:src="@drawable/firstcooltime_icon" />
+                                    <TextView
+                                        android:layout_height="match_parent"
+                                        android:layout_width="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:gravity="center"
+                                        android:id="@+id/FSTDBDetailSkillInitCoolTime3" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:id="@+id/FSTDBDetailSkillCoolTimeLayout32">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/FSTDBDetailSkillCoolTimeIcon3"
+                                        android:src="@drawable/cooltime_icon" />
+                                    <TextView
+                                        android:layout_height="match_parent"
+                                        android:layout_width="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:gravity="center"
+                                        android:id="@+id/FSTDBDetailSkillCoolTime3" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    <!--FST Skill3 Part - Skill Explain-->
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@id/FSTDBDetailSkillBasicLayout3"
+                            android:id="@+id/FSTDBDetailSkillExplainLayout3">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="예시 설명"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:gravity="center"
+                                android:id="@+id/FSTDBDetailSkillExplain3" />
+                        </FrameLayout>
+                    <!--FST Skill3 Part - Skill Ability-->
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_below="@id/FSTDBDetailSkillExplainLayout3"
+                            android:id="@+id/FSTDBDetailSkillAbilityLayout3">
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/FSTDBDetailSkillAbilityTopLayout3">
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="효과"
+                                    android:id="@+id/FSTDBDetailSkillAbilityTopText31" />
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="비율"
+                                    android:id="@+id/FSTDBDetailSkillAbilityTopText32" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:id="@+id/FSTDBDetailSkillAbilitySubLayout3" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            <!--FST Ability Part-->
+                <android.support.v7.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:alpha="0"
+                    android:id="@+id/FSTDBDetailAbilityCardLayout"
+                    cardview:cardElevation="4dp"
+                    cardview:cardCornerRadius="5dp"
+                    cardview:cardBackgroundColor="@color/background_material_dark">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/FSTInfo_DetailMainLayout">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:id="@+id/FSTDBDetailChipsetBonusLayout">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="Chipset Bonus"
+                                android:gravity="center" />
+                            <Spinner
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:id="@+id/FSTDBDetailChipsetBonusSelector" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:id="@+id/FSTInfoKillLayout">
+                            <TextView
+                                android:text="살상"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/textView1"
+                                android:gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_weight="1" />
+                            <View
+                                android:layout_height="match_parent"
+                                android:layout_width="5px"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <RelativeLayout
+                                android:orientation="vertical"
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp">
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:progressTint="@color/ProgressBarColor"
+                                    android:id="@+id/FSTInfoKillProgress"
+                                    android:max="600" />
+                                <TextView
+                                    android:id="@+id/FSTInfoKillProgressMin"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignLeft="@id/FSTInfoKillProgress"
+                                    android:layout_alignTop="@id/FSTInfoKillProgress"
+                                    android:gravity="left"
+                                    android:text="0" />
+                                <TextView
+                                    android:id="@+id/FSTInfoKillProgressMax"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignRight="@id/FSTInfoKillProgress"
+                                    android:layout_alignTop="@id/FSTInfoKillProgress"
+                                    android:gravity="right" />
+                            </RelativeLayout>
+                            <TextView
+                                android:text="0/0"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/FSTInfoKillStatus"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:layout_marginRight="20dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:id="@+id/FSTInfoCrushLayout">
+                            <TextView
+                                android:text="파쇄"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/textView1"
+                                android:gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_weight="1" />
+                            <View
+                                android:layout_height="match_parent"
+                                android:layout_width="5px"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <RelativeLayout
+                                android:orientation="vertical"
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp">
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:progressTint="@color/ProgressBarColor"
+                                    android:id="@+id/FSTInfoCrushProgress"
+                                    android:max="600" />
+                                <TextView
+                                    android:id="@+id/FSTInfoCrushProgressMin"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignLeft="@id/FSTInfoCrushProgress"
+                                    android:layout_alignTop="@id/FSTInfoCrushProgress"
+                                    android:gravity="left"
+                                    android:text="0" />
+                                <TextView
+                                    android:id="@+id/FSTInfoCrushProgressMax"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignRight="@id/FSTInfoCrushProgress"
+                                    android:layout_alignTop="@id/FSTInfoCrushProgress"
+                                    android:gravity="right" />
+                            </RelativeLayout>
+                            <TextView
+                                android:text="0/0"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/FSTInfoCrushStatus"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:layout_marginRight="20dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:id="@+id/FSTInfoACLayout">
+                            <TextView
+                                android:text="정밀"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/textView1"
+                                android:gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_weight="1" />
+                            <View
+                                android:layout_height="match_parent"
+                                android:layout_width="5px"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <RelativeLayout
+                                android:orientation="vertical"
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp">
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:progressTint="@color/ProgressBarColor"
+                                    android:id="@+id/FSTInfoACProgress"
+                                    android:max="600" />
+                                <TextView
+                                    android:id="@+id/FSTInfoACProgressMin"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignLeft="@id/FSTInfoACProgress"
+                                    android:layout_alignTop="@id/FSTInfoACProgress"
+                                    android:gravity="left"
+                                    android:text="0" />
+                                <TextView
+                                    android:id="@+id/FSTInfoACProgressMax"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignRight="@id/FSTInfoACProgress"
+                                    android:layout_alignTop="@id/FSTInfoACProgress"
+                                    android:gravity="right" />
+                            </RelativeLayout>
+                            <TextView
+                                android:text="0/0"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/FSTInfoACStatus"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:layout_marginRight="20dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:id="@+id/FSTInfoRLLayout">
+                            <TextView
+                                android:text="장전"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/textView1"
+                                android:gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_weight="1" />
+                            <View
+                                android:layout_height="match_parent"
+                                android:layout_width="5px"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/seperatebar_vertical" />
+                            <RelativeLayout
+                                android:orientation="vertical"
+                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp">
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:progressTint="@color/ProgressBarColor"
+                                    android:id="@+id/FSTInfoRLProgress"
+                                    android:max="600" />
+                                <TextView
+                                    android:id="@+id/FSTInfoRLProgressMin"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignLeft="@id/FSTInfoRLProgress"
+                                    android:layout_alignTop="@id/FSTInfoRLProgress"
+                                    android:gravity="left"
+                                    android:text="0" />
+                                <TextView
+                                    android:id="@+id/FSTInfoRLProgressMax"
+                                    android:layout_height="10dp"
+                                    android:layout_width="30dp"
+                                    android:textSize="8dp"
+                                    android:layout_alignRight="@id/FSTInfoRLProgress"
+                                    android:layout_alignTop="@id/FSTInfoRLProgress"
+                                    android:gravity="right" />
+                            </RelativeLayout>
+                            <TextView
+                                android:text="0/0"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/FSTInfoRLStatus"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:layout_marginRight="20dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/refresh"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/FSTDBDetailRefreshCacheFAB"
+        cardview:backgroundTint="@color/FABColor"
+        cardview:fabSize="auto"
+        cardview:rippleColor="#FF80AB" />
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/sidelinkicon"
+        android:id="@+id/FSTDBDetailSideLinkMainFAB"
+        cardview:backgroundTint="@color/FABColor"
+        cardview:fabSize="auto"
+        cardview:rippleColor="#FF80AB" />
+    <include
+        layout="@layout/sidelinkfablayout" />
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/FSTDBDetailSnackbarLayout"
+        android:layout_alignTop="@id/FSTDBDetailMainLayout" />
+</RelativeLayout>

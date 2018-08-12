@@ -90,6 +90,7 @@ namespace GFI_with_GFS_A
                 
                 ETC.CheckInitFolder();
 
+                if (System.IO.File.Exists(System.IO.Path.Combine(ETC.DBPath, "FST.gfs")) == false) await ETC.UpdateDB(this);
 
                 if (ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true) == true)
                 {

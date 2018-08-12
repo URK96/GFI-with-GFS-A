@@ -35,6 +35,7 @@ namespace GFI_with_GFS_A
         internal static DataTable EquipmentList = new DataTable();
         internal static DataTable FairyList = new DataTable();
         internal static DataTable EnemyList = new DataTable();
+        internal static DataTable FSTList = new DataTable();
         internal static DataTable SkillTrainingList = new DataTable();
         internal static DataTable MDSupportList = new DataTable();
 
@@ -254,6 +255,11 @@ namespace GFI_with_GFS_A
                 Path.Combine(CachePath, "Enemy", "SD"),
                 Path.Combine(CachePath, "Enemy", "Normal_Crop"),
                 Path.Combine(CachePath, "Enemy", "Normal"),
+                Path.Combine(CachePath, "FST"),
+                Path.Combine(CachePath, "FST", "SD"),
+                Path.Combine(CachePath, "FST", "Normal_Crop"),
+                Path.Combine(CachePath, "FST", "Normal"),
+                Path.Combine(CachePath, "FST", "Skill"),
                 Path.Combine(CachePath, "OldGFD"),
                 Path.Combine(CachePath, "OldGFD", "Images"),
                 Path.Combine(CachePath, "Event"),
@@ -307,6 +313,8 @@ namespace GFI_with_GFS_A
                 FairyList.ReadXml(Path.Combine(DBPath, "Fairy.gfs"));
                 EnemyList.Clear();
                 EnemyList.ReadXml(Path.Combine(DBPath, "Enemy.gfs"));
+                FSTList.Clear();
+                FSTList.ReadXml(Path.Combine(DBPath, "FST.gfs"));
                 SkillTrainingList.Clear();
                 SkillTrainingList.ReadXml(Path.Combine(DBPath, "SkillTraining.gfs"));
                 MDSupportList.Clear();
@@ -424,12 +432,13 @@ namespace GFI_with_GFS_A
             string[] DBFiles = 
             {
                 "Doll.gfs",
-                "MDSupportList.gfs",
-                "FreeOP.gfs",
-                "SkillTraining.gfs",
                 "Equipment.gfs",
                 "Fairy.gfs",
                 "Enemy.gfs",
+                "FST.gfs",
+                "MDSupportList.gfs",
+                "FreeOP.gfs",
+                "SkillTraining.gfs",
                 "FairyAttribution.gfs"
             };
 

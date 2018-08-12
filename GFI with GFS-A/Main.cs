@@ -25,14 +25,14 @@ namespace GFI_with_GFS_A
 
         private TextView NotificationView = null;
 
-        private bool SubMenuMode = false;
+        private bool ExtraSubMenuMode = false;
+        private bool DBSubMenuMode = false;
 
         readonly int[] MainMenuButtonIds =
         {
-            Resource.Id.DollDBMainButton,
-            Resource.Id.EquipmentDBMainButton,
-            Resource.Id.FairyDBMainButton,
-            Resource.Id.EnemyDBMainButton,
+            Resource.Id.DBSubMenuMainButton,
+            Resource.Id.MDSupportMainButton,
+            Resource.Id.FreeOPMainButton,
             Resource.Id.OldGFDMainButton,
             Resource.Id.CalcMainButton,
             Resource.Id.GFDInfoMainButton,
@@ -42,9 +42,8 @@ namespace GFI_with_GFS_A
         readonly int[] MainMenuButtonBackgroundIds = 
         {
             Resource.Drawable.Main_DollDBSelector,
-            Resource.Drawable.Main_EquipDBSelector,
-            Resource.Drawable.Main_FairyDBSelector,
-            Resource.Drawable.Main_EnemyDBSelector,
+            Resource.Drawable.Main_DollDBSelector,
+            Resource.Drawable.Main_DollDBSelector,
             Resource.Drawable.Main_OldGFDSelector,
             Resource.Drawable.Main_CalcSelector,
             Resource.Drawable.Main_GFDInfoSelector,
@@ -53,15 +52,39 @@ namespace GFI_with_GFS_A
         };
         readonly string[] MainMenuButtonText = 
         {
-            "인형 DB",
-            "장비 DB",
-            "요정 DB",
-            "철혈 DB",
+            "DB 메뉴",
+            "군수지원",
+            "자율작전",
             "소전사전v1 이미지",
             "계산기",
             "정보",
             "추가 기능",
             "설정"
+        };
+
+        readonly int[] DBSubMenuButtonIds =
+        {
+            Resource.Id.DollDBButton,
+            Resource.Id.EquipDBButton,
+            Resource.Id.FairyDBButton,
+            Resource.Id.EnemyDBButton,
+            Resource.Id.FSTDBButton
+        };
+        readonly int[] DBSubMenuButtonBackgroundIds =
+        {
+            Resource.Drawable.Main_DollDBSelector,
+            Resource.Drawable.Main_EquipDBSelector,
+            Resource.Drawable.Main_FairyDBSelector,
+            Resource.Drawable.Main_EnemyDBSelector,
+            Resource.Drawable.Main_ExtraSelector
+        };
+        readonly string[] DBSubMenuButtonText =
+        {
+            "인형 DB",
+            "장비 DB",
+            "요정 DB",
+            "철혈 DB",
+            "FST DB"
         };
 
         readonly int[] ExtraMenuButtonIds = 
@@ -177,11 +200,13 @@ namespace GFI_with_GFS_A
                 if (ETC.sharedPreferences.GetBoolean("LowMemoryOption", false) == false)
                 {
                     for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).SetBackgroundResource(MainMenuButtonBackgroundIds[i]);
+                    for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).SetBackgroundResource(DBSubMenuButtonBackgroundIds[i]);
                     for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).SetBackgroundResource(ExtraMenuButtonBackgroundIds[i]);
                 }
                 else
                 {
                     for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).Text = MainMenuButtonText[i];
+                    for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).Text = DBSubMenuButtonText[i];
                     for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).Text = ExtraMenuButtonText[i];
                 }
 
@@ -193,8 +218,6 @@ namespace GFI_with_GFS_A
                     button.Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(500).Start();
                     await Task.Delay(100);
                 }
-
-                SetEventImage();
 
                 //ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_StartUpHello, Snackbar.LengthShort, Android.Graphics.Color.DarkCyan);
 
@@ -239,21 +262,6 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void SetEventImage()
-        {
-            try
-            {
-                Button EventButton = FindViewById<Button>(Resource.Id.EventExtraButton);
-
-                //if (ETC.HasEvent == true) EventButton.Background = Android.Graphics.Drawables.Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Event", "Images", "Event_1.png"));
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "Init error", Snackbar.LengthShort);
-            }
-        }
-
         private void SetMainMenuEvent(int mode)
         {
             try
@@ -280,7 +288,37 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "Button Event Link Error", Snackbar.LengthShort);
+                ETC.ShowSnackbar(SnackbarLayout, "Main Button Event Link Error", Snackbar.LengthShort);
+            }
+        }
+
+        private void SetDBSubMenuEvent(int mode)
+        {
+            try
+            {
+                switch (mode)
+                {
+                    case 1:
+                        foreach (int id in DBSubMenuButtonIds)
+                        {
+                            Button button = FindViewById<Button>(id);
+                            button.Click += DBSubMenuButton_Click;
+                        }
+                        break;
+                    case 0:
+                    default:
+                        foreach (int id in DBSubMenuButtonIds)
+                        {
+                            Button button = FindViewById<Button>(id);
+                            if (button.HasOnClickListeners == true) button.Click -= DBSubMenuButton_Click;
+                        }
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, "DB Button Event Link Error", Snackbar.LengthShort);
             }
         }
 
@@ -394,33 +432,12 @@ namespace GFI_with_GFS_A
 
                 switch (id)
                 {
-                    case Resource.Id.DollDBMainButton:
-                        await Task.Run(() => 
-                        {
-                            if ((ETC.EnableDynamicDB == true) && (ETC.DollList.TableName == "")) ETC.LoadDBSync(ETC.DollList, "Doll.gfs", false);
-                            if (ETC.HasInitDollAvgAbility == false) ETC.InitializeAverageAbility();
-                        });
-                        StartActivity(typeof(DollDBMainActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                    case Resource.Id.DBSubMenuMainButton:
+                        SwitchDBSubMenu(1);
                         break;
-                    case Resource.Id.EquipmentDBMainButton:
-                        await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.EquipmentList.TableName == "")) ETC.LoadDBSync(ETC.EquipmentList, "Equipment.gfs", false); });
-                        StartActivity(typeof(EquipDBMainActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                    case Resource.Id.MDSupportMainButton:
                         break;
-                    case Resource.Id.FairyDBMainButton:
-                        await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.FairyList.TableName == "")) ETC.LoadDBSync(ETC.FairyList, "Fairy.gfs", false); });
-                        StartActivity(typeof(FairyDBMainActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case Resource.Id.EnemyDBMainButton:
-#if DEBUG
-                        await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.EnemyList.TableName == "")) ETC.LoadDBSync(ETC.EnemyList, "Enemy.gfs", false); });
-                        StartActivity(typeof(EnemyDBMainActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-#else
-                        ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
-#endif
+                    case Resource.Id.FreeOPMainButton:
                         break;
                     case Resource.Id.OldGFDMainButton:
                         StartActivity(typeof(OldGFDViewer));
@@ -441,6 +458,55 @@ namespace GFI_with_GFS_A
                     case Resource.Id.SettingMainButton:
                         StartActivity(typeof(SettingActivity));
                         OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
+                        break;
+                    default:
+                        ETC.ShowSnackbar(SnackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.MenuAccess_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+            }
+        }
+
+        private async void DBSubMenuButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = (sender as Button).Id;
+
+                switch (id)
+                {
+                    case Resource.Id.DollDBButton:
+                        await Task.Run(() =>
+                        {
+                            if ((ETC.EnableDynamicDB == true) && (ETC.DollList.TableName == "")) ETC.LoadDBSync(ETC.DollList, "Doll.gfs", false);
+                            if (ETC.HasInitDollAvgAbility == false) ETC.InitializeAverageAbility();
+                        });
+                        StartActivity(typeof(DollDBMainActivity));
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    case Resource.Id.EquipDBButton:
+                        await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.EquipmentList.TableName == "")) ETC.LoadDBSync(ETC.EquipmentList, "Equipment.gfs", false); });
+                        StartActivity(typeof(EquipDBMainActivity));
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    case Resource.Id.FairyDBButton:
+                        await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.FairyList.TableName == "")) ETC.LoadDBSync(ETC.FairyList, "Fairy.gfs", false); });
+                        StartActivity(typeof(FairyDBMainActivity));
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    case Resource.Id.EnemyDBButton:
+                        await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.EnemyList.TableName == "")) ETC.LoadDBSync(ETC.EnemyList, "Enemy.gfs", false); });
+                        StartActivity(typeof(EnemyDBMainActivity));
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    case Resource.Id.FSTDBButton:
+                        await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.FSTList.TableName == "")) ETC.LoadDBSync(ETC.FSTList, "FST.gfs", false); });
+                        StartActivity(typeof(FSTDBMainActivity));
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     default:
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
@@ -534,7 +600,7 @@ namespace GFI_with_GFS_A
                         ExtraMenuLayout.Animate().Alpha(0.0f).SetDuration(500).Start();
                         MainMenuLayout.Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(200).Start();
                         MainMenuLayout.BringToFront();
-                        SubMenuMode = false;
+                        ExtraSubMenuMode = false;
                         break;
                     case 1:
                         SetMainMenuEvent(0);
@@ -542,7 +608,42 @@ namespace GFI_with_GFS_A
                         MainMenuLayout.Animate().Alpha(0.0f).SetDuration(500).Start();
                         ExtraMenuLayout.Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(200).Start();
                         ExtraMenuLayout.BringToFront();
-                        SubMenuMode = true;
+                        ExtraSubMenuMode = true;
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.MenuAccess_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+            }
+        }
+
+        private void SwitchDBSubMenu(int mode)
+        {
+            try
+            {
+                LinearLayout MainMenuLayout = FindViewById<LinearLayout>(Resource.Id.MainMenuButtonLayout1);
+                LinearLayout DBSubMenuLayout = FindViewById<LinearLayout>(Resource.Id.DBSubMenuButtonLayout);
+
+                switch (mode)
+                {
+                    case 0:
+                    default:
+                        SetMainMenuEvent(1);
+                        SetDBSubMenuEvent(0);
+                        DBSubMenuLayout.Animate().Alpha(0.0f).SetDuration(500).Start();
+                        MainMenuLayout.Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(200).Start();
+                        MainMenuLayout.BringToFront();
+                        DBSubMenuMode = false;
+                        break;
+                    case 1:
+                        SetMainMenuEvent(0);
+                        SetDBSubMenuEvent(1);
+                        MainMenuLayout.Animate().Alpha(0.0f).SetDuration(500).Start();
+                        DBSubMenuLayout.Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(200).Start();
+                        DBSubMenuLayout.BringToFront();
+                        DBSubMenuMode = true;
                         break;
                 }
             }
@@ -560,9 +661,14 @@ namespace GFI_with_GFS_A
 
         public override void OnBackPressed()
         {
-            if (SubMenuMode == true)
+            if (ExtraSubMenuMode == true)
             {
                 SwitchExtraMenu(0);
+                return;
+            }
+            else if (DBSubMenuMode == true)
+            {
+                SwitchDBSubMenu(0);
                 return;
             }
 
