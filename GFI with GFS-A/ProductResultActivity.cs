@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data;
-
+﻿using Android.Animation;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
+using Android.Support.Design.Widget;
+using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
-using Android.Support.V4.App;
-using Android.Support.Design.Widget;
-using System.Threading.Tasks;
-using Android.Animation;
+using System;
+using System.Data;
 using System.IO;
 using System.Net;
+using System.Threading.Tasks;
+using Android.Media;
 
 namespace GFI_with_GFS_A
 {
@@ -32,6 +28,8 @@ namespace GFI_with_GFS_A
         private int ResultGrade = 0;
 
         private ProgressBar[] PBs = new ProgressBar[5];
+        private MediaPlayer[] GradeEffect = new MediaPlayer[5];
+        private MediaPlayer ResultEffect;
 
         private CoordinatorLayout SnackbarLayout;
 
@@ -114,6 +112,7 @@ namespace GFI_with_GFS_A
             await Task.Delay(500);
 
             await ProductTimeAnimation();
+            await Task.Delay(500);
             await GradeImageAnimation();
             await ResultImageAnimation();
         }
@@ -123,77 +122,44 @@ namespace GFI_with_GFS_A
             TextView ProductTimeView = FindViewById<TextView>(Resource.Id.PSResultProductTime);
 
             try
-            {            
-                int delay = 1;
-                int MaxValue = 0;
+            {
+                ResultEffect = MediaPlayer.Create(this, Resource.Raw.UI_card);
+                for(int i = 0; i < GradeEffect.Length; ++i) GradeEffect[i] = MediaPlayer.Create(this, Resource.Raw.UI_flash);
+
+                int delay = 100;
+
+                for (int i = 0; i < ResultGrade; ++i)
+                {
+                    GradeEffect[i].Start();
+
+                    for (int k = 0; k <= 10; ++k)
+                    {
+                        PBs[i].Progress += 1;
+                        await Task.Delay(delay);
+                    }
+                }
+
+                ResultEffect.Start();
 
                 if (ResultGrade == 0)
                 {
-
+                    await Task.Delay(1000);
+                    foreach (ProgressBar pb in PBs) pb.ProgressTintList = PBs[0].ProgressTintList;
                 }
-                else
-                {
-                    int count = 0;
-                    Random R = new Random(ResultTime);
-                    int ran_num = R.Next() % 10;
-                    int IsUp = 0;
-
-                    MaxValue = ResultTime / ResultGrade;
-
-                    if (ResultGrade == 2) IsUp = 0;
-                    else if (ResultGrade == 5)
-                    {
-                        //MaxValue = ResultTime / 4;
-                        IsUp = 1;
-                    }
-                    else
-                    {
-                        //MaxValue = ResultTime / ResultGrade;
-                        IsUp = R.Next() % 2;
-                    }
-
-                    foreach (ProgressBar pb in PBs)
-                    {
-                        pb.Max = MaxValue;
-                        //pb.Min = 0;
-                        pb.Progress = 0;
-                    }
-
-                    for (int i = 0; i <= (ResultTime - 1); ++i)
-                    {
-                        ProductTimeView.Text = ETC.CalcTime(i);
-
-                        if ((IsUp == 0) && (count == (ResultGrade))) PBs[ResultGrade].Progress = MaxValue / 2;
-                        else if ((IsUp == 1) && (count == (ResultGrade - 1))) PBs[ResultGrade - 1].Progress = MaxValue / 2;
-                        else PBs[count].Progress += 1;
-
-                        if (PBs[count].Progress == MaxValue) count += 1;
-                        if (i == (ResultTime - (ran_num))) delay = 100;
-                        if (i == (ResultTime - 2)) delay = 500;
-
-                        await Task.Delay(delay);
-                    }
-
-                    await Task.Delay(500);
-
-                    ProductTimeView.Text = ETC.CalcTime(ResultTime) + " " + IsUp + " " + ResultGrade;
-                    switch (IsUp)
-                    {
-                        case 0:
-                            PBs[ResultGrade].Progress = 0;
-                            break;
-                        case 1:
-                            PBs[ResultGrade - 1].Progress = MaxValue;
-                            break;
-                    }
-
-                    foreach (ProgressBar pb in PBs) pb.ProgressTintList = PBs[ResultGrade - 1].ProgressTintList;
-                }
+                else foreach (ProgressBar pb in PBs) pb.ProgressTintList = PBs[ResultGrade - 1].ProgressTintList;
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, "시간 애니메이션 오류", Snackbar.LengthShort);
+            }
+            finally
+            {
+                foreach (MediaPlayer mp in GradeEffect)
+                {
+                    mp.Stop();
+                    mp.Release();
+                }
             }
         }
 
@@ -293,6 +259,8 @@ namespace GFI_with_GFS_A
         {
             base.OnBackPressed();
 
+            ResultEffect.Stop();
+            ResultEffect.Release();
             GC.Collect();
             OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
         }

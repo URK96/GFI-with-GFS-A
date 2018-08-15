@@ -376,6 +376,12 @@ namespace GFI_with_GFS_A
         {
             try
             {
+                if (dr == null)
+                {
+                    ETC.ShowSnackbar(SnackbarLayout, "Result Null", Snackbar.LengthShort);
+                    return;
+                }
+
                 StringBuilder sb = new StringBuilder();
                 
                 switch (Category)
@@ -404,7 +410,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async void ListProductAvailable()
+        private void ListProductAvailable()
         {
             try
             {
@@ -444,19 +450,6 @@ namespace GFI_with_GFS_A
                 {
                     DataRow dr = ETC.DollList.Rows[i];
                     string d_name = (string)dr["Name"];
-                    bool Found = false;
-                    //bool TypeMatch = false;
-
-                    /*foreach (string s in AvailableType)
-                    {
-                        if ((string)dr["Type"] == s)
-                        {
-                            TypeMatch = true;
-                            break;
-                        }
-                    }
-
-                    //if (TypeMatch == false) continue;*/
 
                     if (AvailableType.Contains((string)dr["Type"]) == false) continue;
 
@@ -518,9 +511,7 @@ namespace GFI_with_GFS_A
                 }
 
                 AvailableDoll.TrimExcess();
-                DataRow ResultDR = await ProductProcess_Doll(AvailableDoll, pManPower, pAmmo, pFood, pParts);
-
-                ShowResultScreen(ResultDR);
+                ProductProcess_Doll(AvailableDoll, pManPower, pAmmo, pFood, pParts);
             }
             catch (Exception ex)
             {
@@ -529,10 +520,8 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task<DataRow> ProductProcess_Doll(List<DataRow> AvailableDoll, int num1, int num2, int num3, int num4)
+        private void ProductProcess_Doll(List<DataRow> AvailableDoll, int num1, int num2, int num3, int num4)
         {
-            await Task.Delay(100);
-
             try
             {
                 Random R = new Random();
@@ -627,7 +616,7 @@ namespace GFI_with_GFS_A
                 {
                     int count2 = count;
 
-                    if ((dr["ProductionPercent"] == DBNull.Value) || (dr["AdvanceProductionPercent"] == DBNull.Value)) count2 += 100;
+                    if (((Type == ProductType.Normal) && (dr["ProductionPercent"] == DBNull.Value)) || ((Type == ProductType.Advance) && (dr["AdvanceProductionPercent"] == DBNull.Value))) count2 += 100;
                     else
                     {
                         if (Type == ProductType.Normal) count2 += (int)dr["ProductionPercent"];
@@ -643,15 +632,13 @@ namespace GFI_with_GFS_A
                     count = count2;
                 }
 
-                return ResultDoll;
+                ShowResultScreen(ResultDoll);
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, "인형 제조 오류", Snackbar.LengthShort);
             }
-
-            return null;
         }
 
         public override void OnBackPressed()

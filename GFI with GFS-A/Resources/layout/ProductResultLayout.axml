@@ -31,7 +31,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:layout_marginRight="5dp"
-                android:progressTint="#3A3A3A"
+                android:progressTint="#8E4696"
+                android:max="10"
                 style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
                 android:id="@+id/PSResultPB1" />
             <ProgressBar
@@ -40,6 +41,7 @@
                 android:layout_weight="2"
                 android:layout_marginRight="5dp"
                 android:progressTint="#3A3A3A"
+                android:max="10"
                 style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
                 android:id="@+id/PSResultPB2" />
             <ProgressBar
@@ -48,6 +50,7 @@
                 android:layout_weight="2"
                 android:layout_marginRight="5dp"
                 android:progressTint="#33CBCE"
+                android:max="10"
                 style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
                 android:id="@+id/PSResultPB3" />
             <ProgressBar
@@ -56,6 +59,7 @@
                 android:layout_weight="2"
                 android:layout_marginRight="5dp"
                 android:progressTint="#8CF90E"
+                android:max="10"
                 style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
                 android:id="@+id/PSResultPB4" />
             <ProgressBar
@@ -63,6 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:progressTint="#FFAC14"
+                android:max="10"
                 style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
                 android:id="@+id/PSResultPB5" />
             <Space
