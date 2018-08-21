@@ -26,14 +26,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:enabled="false"
-                android:text="일반제조"
+                android:text="@string/Common_NormalProduct"
                 android:id="@+id/ProductPercentTableChangeShowModeButton" />
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:enabled="false"
-                android:text="확률 우선"
+                android:text="@string/ProductPercentTable_List_Percentage"
                 android:id="@+id/ProductPercentTableChangeListModeButton" />
         </LinearLayout>
         <HorizontalScrollView
@@ -54,63 +54,63 @@
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="인력"
+                        android:text="@string/Common_ManPower"
                         android:gravity="center"
                         android:id="@+id/ProductPercentTable_TableTop_Manpower" />
                     <TextView
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="탄약"
+                        android:text="@string/Common_Ammo"
                         android:gravity="center"
                         android:id="@+id/ProductPercentTable_TableTop_Ammo" />
                     <TextView
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="식량"
+                        android:text="@string/Common_Food"
                         android:gravity="center"
                         android:id="@+id/ProductPercentTable_TableTop_MRE" />
                     <TextView
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="부품"
+                        android:text="@string/Common_Parts"
                         android:gravity="center"
                         android:id="@+id/ProductPercentTable_TableTop_Parts" />
                     <TextView
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="티어"
+                        android:text="@string/Common_Tier"
                         android:gravity="center"
                         android:id="@+id/ProductPercentTable_TableTop_ProductType" />
                     <TextView
                         android:layout_width="60dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="종류"
+                        android:text="@string/Common_Category"
                         android:gravity="center"
                         android:id="@+id/ProductPercentTable_TableTop_ProductCategory" />
                     <TextView
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="적중 횟수"
+                        android:text="@string/Common_ProductHitCount"
                         android:gravity="center"
                         android:id="@+id/ProductPercentTable_TableTop_HitCount" />
                     <TextView
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="시도 횟수"
+                        android:text="@string/Common_ProductTotalCount"
                         android:gravity="center"
                         android:id="@+id/ProductPercentTable_TableTop_TotalCount" />
                     <TextView
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="확률"
+                        android:text="@string/Common_Probability"
                         android:gravity="center"
                         android:id="@+id/ProductPercentTable_TableTop_Percentage" />
                 </LinearLayout>

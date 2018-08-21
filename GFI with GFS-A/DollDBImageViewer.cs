@@ -148,12 +148,12 @@ namespace GFI_with_GFS_A
             {
                 Costumes = new List<string>()
                 {
-                    "기본 코스튬"
+                    Resources.GetString(Resource.String.DollDBImageViewer_DefaultCostume)
                 };
 
                 if (DollInfoDR["Costume"] != DBNull.Value)
                 {
-                    if (System.String.IsNullOrEmpty((string)DollInfoDR["Costume"]) == false)
+                    if (string.IsNullOrEmpty((string)DollInfoDR["Costume"]) == false)
                     {
                         string[] costume_list = ((string)DollInfoDR["Costume"]).Split(';');
 
@@ -231,13 +231,13 @@ namespace GFI_with_GFS_A
                 sb.Append(" - ");
                 if (IsDamage == true)
                 {
-                    sb.Append("중상");
-                    ChangeStateButton.Text = "중상";
+                    sb.Append(Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusDamage));
+                    ChangeStateButton.Text = Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusDamage);
                 }
                 else
                 {
-                    sb.Append("정상");
-                    ChangeStateButton.Text = "정상";
+                    sb.Append(Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusNormal));
+                    ChangeStateButton.Text = Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusNormal);
                 }
 
                 ImageStatus.Text = sb.ToString();

@@ -14,7 +14,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+			android:layout_weight="1"
             android:layout_margin="10dp"
             android:id="@+id/ProductSimulatorManPowerLayout">
             <Space
@@ -23,7 +24,8 @@
                 android:layout_weight="1" />
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+				android:scaleType="fitCenter"
                 android:src="@drawable/manpower_icon" />
             <NumberPicker
                 android:layout_width="50dp"
@@ -50,7 +52,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+			android:layout_weight="1"
             android:layout_margin="10dp"
             android:id="@+id/ProductSimulatorAmmoLayout">
             <Space
@@ -59,7 +62,8 @@
                 android:layout_weight="1" />
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+				android:scaleType="fitCenter"
                 android:src="@drawable/ammo_icon" />
             <NumberPicker
                 android:layout_width="50dp"
@@ -86,7 +90,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+			android:layout_weight="1"
             android:layout_margin="10dp"
             android:id="@+id/ProductSimulatorFoodLayout">
             <Space
@@ -95,7 +100,8 @@
                 android:layout_weight="1" />
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+				android:scaleType="fitCenter"
                 android:src="@drawable/food_icon" />
             <NumberPicker
                 android:layout_width="50dp"
@@ -122,7 +128,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+			android:layout_weight="1"
             android:layout_margin="10dp"
             android:id="@+id/ProductSimulatorPartsLayout">
             <Space
@@ -131,7 +138,8 @@
                 android:layout_weight="1" />
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+				android:scaleType="fitCenter"
                 android:src="@drawable/parts_icon" />
             <NumberPicker
                 android:layout_width="50dp"
@@ -169,17 +177,17 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1형"
+                    android:text="@string/Common_AdvanceProduct_Type1"
                     android:id="@+id/PSAdvanceProductType1" />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2형"
+                    android:text="@string/Common_AdvanceProduct_Type2"
                     android:id="@+id/PSAdvanceProductType2" />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3형"
+                    android:text="@string/Common_AdvanceProduct_Type3"
                     android:id="@+id/PSAdvanceProductType3" />
             </RadioGroup>
         </LinearLayout>
@@ -188,7 +196,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_gravity="center"
-            android:text="제조"
+            android:text="@string/ProductSimulatorLayout_ProductButtonText"
             android:id="@+id/PSProductStart" />
     </LinearLayout>
     <android.support.design.widget.CoordinatorLayout

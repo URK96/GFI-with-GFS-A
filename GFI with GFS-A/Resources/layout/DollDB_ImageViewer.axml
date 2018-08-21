@@ -29,13 +29,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="이미지 캐시 갱신"
+                android:text="@string/DollDB_ImageViewer_RefreshImageCacheText"
                 android:id="@+id/DollDBImageViewerRefreshImageCacheButton" />
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="정상"
+                android:text="@string/DollDB_ImageViewer_ImageStatusDefaultText"
                 android:id="@+id/DollDBImageViewerChangeStateButton" />
         </LinearLayout>
         <ImageView

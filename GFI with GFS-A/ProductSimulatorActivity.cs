@@ -166,8 +166,6 @@ namespace GFI_with_GFS_A
                         test = 3;
                         break;
                 }
-
-                Toast.MakeText(this, test.ToString(), ToastLength.Short).Show();
             }
             catch (Exception ex)
             {
@@ -191,7 +189,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "제조 시작 실패", Snackbar.LengthShort);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ProductSimulatorActivity_ProductStartError, Snackbar.LengthShort);
             }
         }
 
@@ -249,7 +247,6 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "범위 변경 실패", Snackbar.LengthShort);
             }
         }
 
@@ -330,7 +327,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "초기 범위 설정 실패", Snackbar.LengthShort);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ProductSimulatorActivity_InitRangeSetError, Snackbar.LengthShort);
             }
         }
 
@@ -367,7 +364,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "자원 계산 오류", Snackbar.LengthShort);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ProductSimulatorActivity_CalcResourceError, Snackbar.LengthShort);
                 return 0;
             }
         }
@@ -406,7 +403,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "결과 실행 실패", Snackbar.LengthShort);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ProductSimulatorActivity_StartResultError, Snackbar.LengthShort);
             }
         }
 
@@ -516,7 +513,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "인형 분류 오류", Snackbar.LengthShort);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ProductSimulatorActivity_GroupDollError, Snackbar.LengthShort);
             }
         }
 
@@ -637,7 +634,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "인형 제조 오류", Snackbar.LengthShort);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ProductSimulatorActivity_ProductDollError, Snackbar.LengthShort);
             }
         }
 

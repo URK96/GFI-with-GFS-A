@@ -83,7 +83,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "이미지 뷰어 실행 실패!", Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ImageViewer_ActivityOpenError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -127,13 +127,13 @@ namespace GFI_with_GFS_A
                 ImageView EnemySmallImage = FindViewById<ImageView>(Resource.Id.EnemyDBDetailSmallImage);
                 EnemySmallImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", FileName + ".gfdcache")));
 
-                if (IsBoss == true) FindViewById<TextView>(Resource.Id.EnemyDBDetailType).Text = "보스";
-                else FindViewById<TextView>(Resource.Id.EnemyDBDetailType).Text = "일반";
+                if (IsBoss == true) FindViewById<TextView>(Resource.Id.EnemyDBDetailType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Boss);
+                else FindViewById<TextView>(Resource.Id.EnemyDBDetailType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Normal);
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailEnemyName).Text = EnemyName;
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailEnemyCodeName).Text = EnemyCodeName;
 
 
-                // 인형 기본 정보 초기화
+                // 철혈 기본 정보 초기화
 
                 int GradeIconId = 0;
 
@@ -148,15 +148,15 @@ namespace GFI_with_GFS_A
                 }
                 FindViewById<ImageView>(Resource.Id.EnemyDBDetailInfoGrade).SetImageResource(GradeIconId);
 
-                if (IsBoss == true) FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoEnemyType).Text = "보스";
-                else FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoEnemyType).Text = "일반";
+                if (IsBoss == true) FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoEnemyType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Boss);
+                else FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoEnemyType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Normal);
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoName).Text = EnemyName;
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoCodeName).Text = EnemyCodeName;
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoVoiceActor).Text = "";
                 if (IsBoss == true) FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoAppearPlace).Text = (string)EnemyInfoDRs[EnemyTypeIndex]["Type"];
 
 
-                // 인형 능력치 초기화
+                // 철혈 능력치 초기화
 
                 string[] abilities = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed", "Penetration", "Armor", "Range" };
                 int[] Progresses = { Resource.Id.EnemyInfoHPProgress, Resource.Id.EnemyInfoFRProgress, Resource.Id.EnemyInfoEVProgress, Resource.Id.EnemyInfoACProgress, Resource.Id.EnemyInfoASProgress, Resource.Id.EnemyInfoPTProgress, Resource.Id.EnemyInfoAMProgress, Resource.Id.EnemyInfoRangeProgress };
@@ -215,7 +215,7 @@ namespace GFI_with_GFS_A
 
             EnemyInfoDRs = new DataRow[row_index.Count];
 
-            for (int i = 0; i < EnemyInfoDRs.Length; ++i) EnemyInfoDRs[i] = ETC.EnemyList.Rows[(int)row_index[i]];
+            for (int i = 0; i < EnemyInfoDRs.Length; ++i) EnemyInfoDRs[i] = ETC.EnemyList.Rows[row_index[i]];
 
             EnemyName = (string)EnemyInfoDRs[0]["Name"];
             IsBoss = (bool)EnemyInfoDRs[0]["IsBoss"];

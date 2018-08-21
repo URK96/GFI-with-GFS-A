@@ -52,14 +52,14 @@ namespace GFI_with_GFS_A
         };
         readonly string[] MainMenuButtonText = 
         {
-            "DB 메뉴",
-            "군수지원",
-            "자율작전",
-            "소전사전v1 이미지",
-            "계산기",
-            "정보",
-            "추가 기능",
-            "설정"
+            ETC.Resources.GetString(Resource.String.Main_MainMenu_DBMenu),
+            ETC.Resources.GetString(Resource.String.Main_MainMenu_MDSupport),
+            ETC.Resources.GetString(Resource.String.Main_MainMenu_FreeOP),
+            ETC.Resources.GetString(Resource.String.Main_MainMenu_OldGFD),
+            ETC.Resources.GetString(Resource.String.Main_MainMenu_Calc),
+            ETC.Resources.GetString(Resource.String.Main_MainMenu_GFDInfo),
+            ETC.Resources.GetString(Resource.String.Main_MainMenu_Extras),
+            ETC.Resources.GetString(Resource.String.Main_MainMenu_Setting)
         };
 
         readonly int[] DBSubMenuButtonIds =
@@ -122,6 +122,8 @@ namespace GFI_with_GFS_A
 
                 // Create your application here
                 SetContentView(Resource.Layout.MainLayout);
+
+                SetTitle(Resource.String.MainActivity_Title);
 
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.MainSnackbarLayout);
 

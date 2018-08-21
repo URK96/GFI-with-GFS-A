@@ -46,7 +46,7 @@
                         android:layout_marginBottom="5dp"
                         android:gravity="center"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="진행 중" />
+                        android:text="@string/EventListLayout_EventOngoing" />
                     <View
                         android:layout_height="5px"
                         android:layout_width="0dp"
@@ -95,7 +95,7 @@
                         android:layout_marginBottom="5dp"
                         android:gravity="center"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="진행 예정" />
+                        android:text="@string/EventListLayout_EventUpComing" />
                     <View
                         android:layout_height="5px"
                         android:layout_width="0dp"

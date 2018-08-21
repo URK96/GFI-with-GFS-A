@@ -40,7 +40,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text=""
                 android:gravity="center"
                 android:layout_marginBottom="2dp"
                 android:id="@+id/EquipDBDetailEquipType" />
@@ -48,7 +47,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text=""
                 android:gravity="center"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
@@ -57,7 +55,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text=""
                 android:gravity="center"
                 android:layout_marginTop="2dp"
                 android:id="@+id/EquipDBDetailEquipProductTime" />
@@ -98,7 +95,7 @@
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="등급"
+                            android:text="@string/Common_Grade"
                             android:gravity="center" />
                         <View
                             android:layout_width="5px"
@@ -150,7 +147,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="장비 분류"
+                            android:text="@string/Common_EquipCategory"
                             android:gravity="center" />
                         <View
                             android:layout_width="5px"
@@ -178,7 +175,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="장비 종류"
+                            android:text="@string/Common_EquipType"
                             android:gravity="center" />
                         <View
                             android:layout_width="5px"
@@ -206,7 +203,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="이름"
+                            android:text="@string/Common_Name"
                             android:gravity="center" />
                         <View
                             android:layout_width="5px"
@@ -234,7 +231,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="기타"
+                            android:text="@string/Common_ETC"
                             android:gravity="center" />
                         <View
                             android:layout_width="5px"
@@ -279,7 +276,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="# 장착 권장되는 총기 #"
+                            android:text="@string/EquipDBDetailLayout_RecommendGunTypeText"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:gravity="center" />
                         <TextView
@@ -300,7 +297,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="# 장착 가능한 총기 #"
+                            android:text="@string/EquipDBDetailLayout_AvailableGunTypeText"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:gravity="center" />
                         <TextView
@@ -321,7 +318,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="# 전용 장비 #"
+                            android:text="@string/EquipDBDetailLayout_OnlyUseText"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:gravity="center" />
                         <TextView
@@ -360,21 +357,21 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="능력"
+                            android:text="@string/Common_Effect"
                             android:id="@+id/EquipDBDetailAbilityTopText1" />
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="초기"
+                            android:text="@string/Common_Init"
                             android:id="@+id/EquipDBDetailAbilityTopText2" />
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="최대"
+                            android:text="@string/Common_Max"
                             android:id="@+id/EquipDBDetailAbilityTopText3" />
                     </LinearLayout>
                     <LinearLayout

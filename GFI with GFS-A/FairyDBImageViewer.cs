@@ -77,7 +77,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "초기화 오류 발생!", Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.InitLoad_Error, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -106,7 +106,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "이미지 전환 오류 발생!", Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ImageViewer_ChangeImageError, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -118,7 +118,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(100);
 
-                string ImageName = FairyName + "_" + ImageNum;
+                string ImageName = string.Format("{0}_{1}", FairyName, ImageNum);
 
                 string ImagePath = Path.Combine(ETC.CachePath, "Fairy", "Normal", ImageName + ".gfdcache");
 
@@ -130,16 +130,9 @@ namespace GFI_with_GFS_A
                     }
                 }
 
-
                 FairyImageView.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(ImagePath));
 
-                StringBuilder sb = new StringBuilder();
-                sb.Append(FairyName);
-                sb.Append(" - ");
-                sb.Append(ImageNum);
-                sb.Append("단계");
-
-                ImageStatus.Text = sb.ToString();
+                ImageStatus.Text = string.Format("{0} - {1}단계", FairyName, ImageNum);
             }
             catch (Exception ex)
             {

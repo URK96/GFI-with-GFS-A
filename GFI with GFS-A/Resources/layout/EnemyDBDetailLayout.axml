@@ -45,7 +45,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text=""
                     android:gravity="center"
                     android:layout_marginBottom="2dp"
                     android:id="@+id/EnemyDBDetailType" />
@@ -53,7 +52,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text=""
                     android:gravity="center"
                     android:layout_marginTop="2dp"
                     android:layout_marginBottom="2dp"
@@ -61,7 +59,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=""
                     android:gravity="center"
                     android:layout_marginTop="2dp"
                     android:id="@+id/EnemyDBDetailEnemyCodeName" />
@@ -87,7 +84,7 @@
                         android:layout_width="20dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="재생"
+                        android:text="@string/Common_Play"
                         android:id="@+id/EnemyDBDetailVoicePlayButton" />
                 </LinearLayout>
                 <ProgressBar
@@ -148,7 +145,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="등급"
+                                android:text="@string/Common_Grade"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -190,7 +187,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="철혈 타입"
+                                android:text="@string/Common_EnemyType"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -218,7 +215,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="이름"
+                                android:text="@string/Common_Name"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -246,7 +243,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="코드명"
+                                android:text="@string/Common_CodeName"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -274,7 +271,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="성우"
+                                android:text="@string/Common_VoiceActor"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -302,7 +299,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="출현 지역"
+                                android:text="@string/Common_AppearancePlace"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -345,11 +342,10 @@
                             android:layout_height="50dp"
                             android:id="@+id/EnemyInfoHPLayout">
                             <TextView
-                                android:text="HP"
+                                android:text="@string/Common_HP"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -409,11 +405,10 @@
                             android:layout_height="50dp"
                             android:id="@+id/EnemyInfoFRLayout">
                             <TextView
-                                android:text="화력"
+                                android:text="@string/Common_FR"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -473,11 +468,10 @@
                             android:layout_height="50dp"
                             android:id="@+id/EnemyInfoEVLayout">
                             <TextView
-                                android:text="회피"
+                                android:text="@string/Common_EV"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -537,11 +531,10 @@
                             android:layout_height="50dp"
                             android:id="@+id/EnemyInfoACLayout">
                             <TextView
-                                android:text="명중"
+                                android:text="@string/Common_AC"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -601,11 +594,10 @@
                             android:layout_height="50dp"
                             android:id="@+id/EnemyInfoASLayout">
                             <TextView
-                                android:text="공속"
+                                android:text="@string/Common_AS"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -665,7 +657,7 @@
                             android:layout_height="50dp"
                             android:id="@+id/EnemyInfoMSLayout">
                             <TextView
-                                android:text="이동속도"
+                                android:text="@string/Common_MoveSpeed"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
@@ -728,7 +720,7 @@
                             android:layout_height="50dp"
                             android:id="@+id/EnemyInfoPTLayout">
                             <TextView
-                                android:text="관통"
+                                android:text="@string/Common_Penetration"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
@@ -791,7 +783,7 @@
                             android:layout_height="50dp"
                             android:id="@+id/EnemyInfoAMLayout">
                             <TextView
-                                android:text="장갑"
+                                android:text="@string/Common_AM"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
@@ -854,7 +846,7 @@
                             android:layout_height="50dp"
                             android:id="@+id/EnemyInfoRangeLayout">
                             <TextView
-                                android:text="범위"
+                                android:text="@string/Common_Range"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"

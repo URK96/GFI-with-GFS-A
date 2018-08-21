@@ -58,6 +58,8 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.EquipDBListLayout);
 
+                SetTitle(Resource.String.EquipDBMainActivity_Title);
+
                 mEquipListView = FindViewById<ListView>(Resource.Id.EquipDBListView);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EquipDBSnackbarLayout);
 
@@ -108,7 +110,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "FAB 상태 변경 실패!", Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeStatusError, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
             }
         }
 
@@ -157,7 +159,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "정렬 오류 발생!", Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.LineUp_Error, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
             }
         }
 
@@ -192,8 +194,8 @@ namespace GFI_with_GFS_A
             ad.SetTitle(title);
             ad.SetMessage(message);
             ad.SetCancelable(true);
-            ad.SetPositiveButton("다운로드", delegate { method(); });
-            ad.SetNegativeButton("취소", delegate { });
+            ad.SetPositiveButton(Resource.String.AlertDialog_Download, delegate { method(); });
+            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
 
             ad.Show();
         }
@@ -286,13 +288,13 @@ namespace GFI_with_GFS_A
             p_now += 1;
 
             totalProgressBar.Progress = Convert.ToInt32((p_now / Convert.ToDouble(p_total)) * 100);
-            totalProgress.Text = totalProgressBar.Progress + "%";
+            totalProgress.Text = string.Format("{0}%", totalProgressBar.Progress);
         }
 
         private void Wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             nowProgressBar.Progress = e.ProgressPercentage;
-            nowProgress.Text = e.ProgressPercentage.ToString() + "%";
+            nowProgress.Text = string.Format("{0}%", e.ProgressPercentage);
         }
 
         private void SearchText_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
@@ -353,16 +355,16 @@ namespace GFI_with_GFS_A
                 Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG_Vertical);
                 FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
                 FilterBox.SetView(v);
-                FilterBox.SetPositiveButton("설정", delegate { ApplyFilter(v); });
-                FilterBox.SetNegativeButton("취소", delegate { });
-                FilterBox.SetNeutralButton("초기화", delegate { ResetFilter(v); });
+                FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
+                FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(v); });
 
                 FilterBox.Show();
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "필터 상자 초기화 오류 발생!", Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FilterBox_InitError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -464,7 +466,7 @@ namespace GFI_with_GFS_A
         private bool CheckFilter(DataRow dr)
         {
             int grade = (int)dr["Grade"];
-            string type = (string)dr["Type"];
+            string category = (string)dr["Category"];
 
             switch (grade)
             {
@@ -485,15 +487,15 @@ namespace GFI_with_GFS_A
                     break;
             }
 
-            switch (type)
+            switch (category)
             {
-                case "부속":
+                case string s when s == Resources.GetString(Resource.String.Common_Accessories):
                     if (Filter_Category[0] == false) return true;
                     break;
-                case "탄환":
+                case string s when s == Resources.GetString(Resource.String.Common_Magazine):
                     if (Filter_Category[1] == false) return true;
                     break;
-                case "인형":
+                case string s when s == Resources.GetString(Resource.String.Common_TDoll):
                     if (Filter_Category[2] == false) return true;
                     break;
             }
@@ -641,7 +643,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(mcontext, ex.ToString());
-                Toast.MakeText(mcontext, "Error create view", ToastLength.Short).Show();
+                Toast.MakeText(mcontext, "Error Create View", ToastLength.Short).Show();
             }
 
             return view;

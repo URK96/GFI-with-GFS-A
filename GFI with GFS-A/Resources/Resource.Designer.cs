@@ -183,101 +183,101 @@ namespace GFI_with_GFS_A
 		public partial class Animation
 		{
 			
-			// aapt resource value: 0x7F010000
-			public const int abc_fade_in = 2130771968;
+			// aapt resource value: 0x7f040000
+			public const int abc_fade_in = 2130968576;
 			
-			// aapt resource value: 0x7F010001
-			public const int abc_fade_out = 2130771969;
+			// aapt resource value: 0x7f040001
+			public const int abc_fade_out = 2130968577;
 			
-			// aapt resource value: 0x7F010002
-			public const int abc_grow_fade_in_from_bottom = 2130771970;
+			// aapt resource value: 0x7f040002
+			public const int abc_grow_fade_in_from_bottom = 2130968578;
 			
-			// aapt resource value: 0x7F010003
-			public const int abc_popup_enter = 2130771971;
+			// aapt resource value: 0x7f040003
+			public const int abc_popup_enter = 2130968579;
 			
-			// aapt resource value: 0x7F010004
-			public const int abc_popup_exit = 2130771972;
+			// aapt resource value: 0x7f040004
+			public const int abc_popup_exit = 2130968580;
 			
-			// aapt resource value: 0x7F010005
-			public const int abc_shrink_fade_out_from_bottom = 2130771973;
+			// aapt resource value: 0x7f040005
+			public const int abc_shrink_fade_out_from_bottom = 2130968581;
 			
-			// aapt resource value: 0x7F010006
-			public const int abc_slide_in_bottom = 2130771974;
+			// aapt resource value: 0x7f040006
+			public const int abc_slide_in_bottom = 2130968582;
 			
-			// aapt resource value: 0x7F010007
-			public const int abc_slide_in_top = 2130771975;
+			// aapt resource value: 0x7f040007
+			public const int abc_slide_in_top = 2130968583;
 			
-			// aapt resource value: 0x7F010008
-			public const int abc_slide_out_bottom = 2130771976;
+			// aapt resource value: 0x7f040008
+			public const int abc_slide_out_bottom = 2130968584;
 			
-			// aapt resource value: 0x7F010009
-			public const int abc_slide_out_top = 2130771977;
+			// aapt resource value: 0x7f040009
+			public const int abc_slide_out_top = 2130968585;
 			
-			// aapt resource value: 0x7F01000A
-			public const int Activity_SlideInLeft = 2130771978;
+			// aapt resource value: 0x7f04000a
+			public const int Activity_SlideInLeft = 2130968586;
 			
-			// aapt resource value: 0x7F01000B
-			public const int Activity_SlideInRight = 2130771979;
+			// aapt resource value: 0x7f04000b
+			public const int Activity_SlideInRight = 2130968587;
 			
-			// aapt resource value: 0x7F01000C
-			public const int Activity_SlideOutLeft = 2130771980;
+			// aapt resource value: 0x7f04000c
+			public const int Activity_SlideOutLeft = 2130968588;
 			
-			// aapt resource value: 0x7F01000D
-			public const int Activity_SlideOutRight = 2130771981;
+			// aapt resource value: 0x7f04000d
+			public const int Activity_SlideOutRight = 2130968589;
 			
-			// aapt resource value: 0x7F01000E
-			public const int design_bottom_sheet_slide_in = 2130771982;
+			// aapt resource value: 0x7f04000e
+			public const int design_bottom_sheet_slide_in = 2130968590;
 			
-			// aapt resource value: 0x7F01000F
-			public const int design_bottom_sheet_slide_out = 2130771983;
+			// aapt resource value: 0x7f04000f
+			public const int design_bottom_sheet_slide_out = 2130968591;
 			
-			// aapt resource value: 0x7F010010
-			public const int design_snackbar_in = 2130771984;
+			// aapt resource value: 0x7f040010
+			public const int design_snackbar_in = 2130968592;
 			
-			// aapt resource value: 0x7F010011
-			public const int design_snackbar_out = 2130771985;
+			// aapt resource value: 0x7f040011
+			public const int design_snackbar_out = 2130968593;
 			
-			// aapt resource value: 0x7F010012
-			public const int Fadein = 2130771986;
+			// aapt resource value: 0x7f040012
+			public const int Fadein = 2130968594;
 			
-			// aapt resource value: 0x7F010013
-			public const int Fadeout = 2130771987;
+			// aapt resource value: 0x7f040013
+			public const int Fadeout = 2130968595;
 			
-			// aapt resource value: 0x7F010014
-			public const int Scale_in = 2130771988;
+			// aapt resource value: 0x7f040014
+			public const int Scale_in = 2130968596;
 			
-			// aapt resource value: 0x7F010015
-			public const int Scale_out = 2130771989;
+			// aapt resource value: 0x7f040015
+			public const int Scale_out = 2130968597;
 			
-			// aapt resource value: 0x7F010016
-			public const int SideLinkFAB1_Hide = 2130771990;
+			// aapt resource value: 0x7f040016
+			public const int SideLinkFAB1_Hide = 2130968598;
 			
-			// aapt resource value: 0x7F010017
-			public const int SideLinkFAB1_Show = 2130771991;
+			// aapt resource value: 0x7f040017
+			public const int SideLinkFAB1_Show = 2130968599;
 			
-			// aapt resource value: 0x7F010018
-			public const int SideLinkFAB2_Hide = 2130771992;
+			// aapt resource value: 0x7f040018
+			public const int SideLinkFAB2_Hide = 2130968600;
 			
-			// aapt resource value: 0x7F010019
-			public const int SideLinkFAB2_Show = 2130771993;
+			// aapt resource value: 0x7f040019
+			public const int SideLinkFAB2_Show = 2130968601;
 			
-			// aapt resource value: 0x7F01001A
-			public const int SideLinkFAB3_Hide = 2130771994;
+			// aapt resource value: 0x7f04001a
+			public const int SideLinkFAB3_Hide = 2130968602;
 			
-			// aapt resource value: 0x7F01001B
-			public const int SideLinkFAB3_Show = 2130771995;
+			// aapt resource value: 0x7f04001b
+			public const int SideLinkFAB3_Show = 2130968603;
 			
-			// aapt resource value: 0x7F01001C
-			public const int SideLinkMainFAB_Hide = 2130771996;
+			// aapt resource value: 0x7f04001c
+			public const int SideLinkMainFAB_Hide = 2130968604;
 			
-			// aapt resource value: 0x7F01001D
-			public const int SideLinkMainFAB_Show = 2130771997;
+			// aapt resource value: 0x7f04001d
+			public const int SideLinkMainFAB_Show = 2130968605;
 			
-			// aapt resource value: 0x7F01001E
-			public const int tooltip_enter = 2130771998;
+			// aapt resource value: 0x7f04001e
+			public const int tooltip_enter = 2130968606;
 			
-			// aapt resource value: 0x7F01001F
-			public const int tooltip_exit = 2130771999;
+			// aapt resource value: 0x7f04001f
+			public const int tooltip_exit = 2130968607;
 			
 			static Animation()
 			{
@@ -292,8 +292,8 @@ namespace GFI_with_GFS_A
 		public partial class Animator
 		{
 			
-			// aapt resource value: 0x7F020000
-			public const int design_appbar_state_list_animator = 2130837504;
+			// aapt resource value: 0x7f050000
+			public const int design_appbar_state_list_animator = 2131034112;
 			
 			static Animator()
 			{
@@ -308,1202 +308,1202 @@ namespace GFI_with_GFS_A
 		public partial class Attribute
 		{
 			
-			// aapt resource value: 0x7F030000
-			public const int actionBarDivider = 2130903040;
+			// aapt resource value: 0x7f010060
+			public const int actionBarDivider = 2130772064;
 			
-			// aapt resource value: 0x7F030001
-			public const int actionBarItemBackground = 2130903041;
+			// aapt resource value: 0x7f010061
+			public const int actionBarItemBackground = 2130772065;
 			
-			// aapt resource value: 0x7F030002
-			public const int actionBarPopupTheme = 2130903042;
+			// aapt resource value: 0x7f01005a
+			public const int actionBarPopupTheme = 2130772058;
 			
-			// aapt resource value: 0x7F030003
-			public const int actionBarSize = 2130903043;
+			// aapt resource value: 0x7f01005f
+			public const int actionBarSize = 2130772063;
 			
-			// aapt resource value: 0x7F030004
-			public const int actionBarSplitStyle = 2130903044;
+			// aapt resource value: 0x7f01005c
+			public const int actionBarSplitStyle = 2130772060;
 			
-			// aapt resource value: 0x7F030005
-			public const int actionBarStyle = 2130903045;
+			// aapt resource value: 0x7f01005b
+			public const int actionBarStyle = 2130772059;
 			
-			// aapt resource value: 0x7F030006
-			public const int actionBarTabBarStyle = 2130903046;
+			// aapt resource value: 0x7f010056
+			public const int actionBarTabBarStyle = 2130772054;
 			
-			// aapt resource value: 0x7F030007
-			public const int actionBarTabStyle = 2130903047;
+			// aapt resource value: 0x7f010055
+			public const int actionBarTabStyle = 2130772053;
 			
-			// aapt resource value: 0x7F030008
-			public const int actionBarTabTextStyle = 2130903048;
+			// aapt resource value: 0x7f010057
+			public const int actionBarTabTextStyle = 2130772055;
 			
-			// aapt resource value: 0x7F030009
-			public const int actionBarTheme = 2130903049;
+			// aapt resource value: 0x7f01005d
+			public const int actionBarTheme = 2130772061;
 			
-			// aapt resource value: 0x7F03000A
-			public const int actionBarWidgetTheme = 2130903050;
+			// aapt resource value: 0x7f01005e
+			public const int actionBarWidgetTheme = 2130772062;
 			
-			// aapt resource value: 0x7F03000B
-			public const int actionButtonStyle = 2130903051;
+			// aapt resource value: 0x7f01007b
+			public const int actionButtonStyle = 2130772091;
 			
-			// aapt resource value: 0x7F03000C
-			public const int actionDropDownStyle = 2130903052;
+			// aapt resource value: 0x7f010077
+			public const int actionDropDownStyle = 2130772087;
 			
-			// aapt resource value: 0x7F03000D
-			public const int actionLayout = 2130903053;
+			// aapt resource value: 0x7f0100d2
+			public const int actionLayout = 2130772178;
 			
-			// aapt resource value: 0x7F03000E
-			public const int actionMenuTextAppearance = 2130903054;
+			// aapt resource value: 0x7f010062
+			public const int actionMenuTextAppearance = 2130772066;
 			
-			// aapt resource value: 0x7F03000F
-			public const int actionMenuTextColor = 2130903055;
+			// aapt resource value: 0x7f010063
+			public const int actionMenuTextColor = 2130772067;
 			
-			// aapt resource value: 0x7F030010
-			public const int actionModeBackground = 2130903056;
+			// aapt resource value: 0x7f010066
+			public const int actionModeBackground = 2130772070;
 			
-			// aapt resource value: 0x7F030011
-			public const int actionModeCloseButtonStyle = 2130903057;
+			// aapt resource value: 0x7f010065
+			public const int actionModeCloseButtonStyle = 2130772069;
 			
-			// aapt resource value: 0x7F030012
-			public const int actionModeCloseDrawable = 2130903058;
+			// aapt resource value: 0x7f010068
+			public const int actionModeCloseDrawable = 2130772072;
 			
-			// aapt resource value: 0x7F030013
-			public const int actionModeCopyDrawable = 2130903059;
+			// aapt resource value: 0x7f01006a
+			public const int actionModeCopyDrawable = 2130772074;
 			
-			// aapt resource value: 0x7F030014
-			public const int actionModeCutDrawable = 2130903060;
+			// aapt resource value: 0x7f010069
+			public const int actionModeCutDrawable = 2130772073;
 			
-			// aapt resource value: 0x7F030015
-			public const int actionModeFindDrawable = 2130903061;
+			// aapt resource value: 0x7f01006e
+			public const int actionModeFindDrawable = 2130772078;
 			
-			// aapt resource value: 0x7F030016
-			public const int actionModePasteDrawable = 2130903062;
+			// aapt resource value: 0x7f01006b
+			public const int actionModePasteDrawable = 2130772075;
 			
-			// aapt resource value: 0x7F030017
-			public const int actionModePopupWindowStyle = 2130903063;
+			// aapt resource value: 0x7f010070
+			public const int actionModePopupWindowStyle = 2130772080;
 			
-			// aapt resource value: 0x7F030018
-			public const int actionModeSelectAllDrawable = 2130903064;
+			// aapt resource value: 0x7f01006c
+			public const int actionModeSelectAllDrawable = 2130772076;
 			
-			// aapt resource value: 0x7F030019
-			public const int actionModeShareDrawable = 2130903065;
+			// aapt resource value: 0x7f01006d
+			public const int actionModeShareDrawable = 2130772077;
 			
-			// aapt resource value: 0x7F03001A
-			public const int actionModeSplitBackground = 2130903066;
+			// aapt resource value: 0x7f010067
+			public const int actionModeSplitBackground = 2130772071;
 			
-			// aapt resource value: 0x7F03001B
-			public const int actionModeStyle = 2130903067;
+			// aapt resource value: 0x7f010064
+			public const int actionModeStyle = 2130772068;
 			
-			// aapt resource value: 0x7F03001C
-			public const int actionModeWebSearchDrawable = 2130903068;
+			// aapt resource value: 0x7f01006f
+			public const int actionModeWebSearchDrawable = 2130772079;
 			
-			// aapt resource value: 0x7F03001D
-			public const int actionOverflowButtonStyle = 2130903069;
+			// aapt resource value: 0x7f010058
+			public const int actionOverflowButtonStyle = 2130772056;
 			
-			// aapt resource value: 0x7F03001E
-			public const int actionOverflowMenuStyle = 2130903070;
+			// aapt resource value: 0x7f010059
+			public const int actionOverflowMenuStyle = 2130772057;
 			
-			// aapt resource value: 0x7F03001F
-			public const int actionProviderClass = 2130903071;
+			// aapt resource value: 0x7f0100d4
+			public const int actionProviderClass = 2130772180;
 			
-			// aapt resource value: 0x7F030020
-			public const int actionViewClass = 2130903072;
+			// aapt resource value: 0x7f0100d3
+			public const int actionViewClass = 2130772179;
 			
-			// aapt resource value: 0x7F030021
-			public const int activityChooserViewStyle = 2130903073;
+			// aapt resource value: 0x7f010083
+			public const int activityChooserViewStyle = 2130772099;
 			
-			// aapt resource value: 0x7F030022
-			public const int adSize = 2130903074;
+			// aapt resource value: 0x7f010000
+			public const int adSize = 2130771968;
 			
-			// aapt resource value: 0x7F030023
-			public const int adSizes = 2130903075;
+			// aapt resource value: 0x7f010001
+			public const int adSizes = 2130771969;
 			
-			// aapt resource value: 0x7F030024
-			public const int adUnitId = 2130903076;
+			// aapt resource value: 0x7f010002
+			public const int adUnitId = 2130771970;
 			
-			// aapt resource value: 0x7F030025
-			public const int alertDialogButtonGroupStyle = 2130903077;
+			// aapt resource value: 0x7f0100a8
+			public const int alertDialogButtonGroupStyle = 2130772136;
 			
-			// aapt resource value: 0x7F030026
-			public const int alertDialogCenterButtons = 2130903078;
+			// aapt resource value: 0x7f0100a9
+			public const int alertDialogCenterButtons = 2130772137;
 			
-			// aapt resource value: 0x7F030027
-			public const int alertDialogStyle = 2130903079;
+			// aapt resource value: 0x7f0100a7
+			public const int alertDialogStyle = 2130772135;
 			
-			// aapt resource value: 0x7F030028
-			public const int alertDialogTheme = 2130903080;
+			// aapt resource value: 0x7f0100aa
+			public const int alertDialogTheme = 2130772138;
 			
-			// aapt resource value: 0x7F030029
-			public const int allowStacking = 2130903081;
+			// aapt resource value: 0x7f0100c0
+			public const int allowStacking = 2130772160;
 			
-			// aapt resource value: 0x7F03002A
-			public const int alpha = 2130903082;
+			// aapt resource value: 0x7f0100c1
+			public const int alpha = 2130772161;
 			
-			// aapt resource value: 0x7F03002B
-			public const int alphabeticModifiers = 2130903083;
+			// aapt resource value: 0x7f0100cf
+			public const int alphabeticModifiers = 2130772175;
 			
-			// aapt resource value: 0x7F03002C
-			public const int arrowHeadLength = 2130903084;
+			// aapt resource value: 0x7f0100c8
+			public const int arrowHeadLength = 2130772168;
 			
-			// aapt resource value: 0x7F03002D
-			public const int arrowShaftLength = 2130903085;
+			// aapt resource value: 0x7f0100c9
+			public const int arrowShaftLength = 2130772169;
 			
-			// aapt resource value: 0x7F03002E
-			public const int autoCompleteTextViewStyle = 2130903086;
+			// aapt resource value: 0x7f0100af
+			public const int autoCompleteTextViewStyle = 2130772143;
 			
-			// aapt resource value: 0x7F03002F
-			public const int autoSizeMaxTextSize = 2130903087;
+			// aapt resource value: 0x7f010049
+			public const int autoSizeMaxTextSize = 2130772041;
 			
-			// aapt resource value: 0x7F030030
-			public const int autoSizeMinTextSize = 2130903088;
+			// aapt resource value: 0x7f010048
+			public const int autoSizeMinTextSize = 2130772040;
 			
-			// aapt resource value: 0x7F030031
-			public const int autoSizePresetSizes = 2130903089;
+			// aapt resource value: 0x7f010047
+			public const int autoSizePresetSizes = 2130772039;
 			
-			// aapt resource value: 0x7F030032
-			public const int autoSizeStepGranularity = 2130903090;
+			// aapt resource value: 0x7f010046
+			public const int autoSizeStepGranularity = 2130772038;
 			
-			// aapt resource value: 0x7F030033
-			public const int autoSizeTextType = 2130903091;
+			// aapt resource value: 0x7f010045
+			public const int autoSizeTextType = 2130772037;
 			
-			// aapt resource value: 0x7F030034
-			public const int background = 2130903092;
+			// aapt resource value: 0x7f010023
+			public const int background = 2130772003;
 			
-			// aapt resource value: 0x7F030035
-			public const int backgroundSplit = 2130903093;
+			// aapt resource value: 0x7f010025
+			public const int backgroundSplit = 2130772005;
 			
-			// aapt resource value: 0x7F030036
-			public const int backgroundStacked = 2130903094;
+			// aapt resource value: 0x7f010024
+			public const int backgroundStacked = 2130772004;
 			
-			// aapt resource value: 0x7F030037
-			public const int backgroundTint = 2130903095;
+			// aapt resource value: 0x7f01010b
+			public const int backgroundTint = 2130772235;
 			
-			// aapt resource value: 0x7F030038
-			public const int backgroundTintMode = 2130903096;
+			// aapt resource value: 0x7f01010c
+			public const int backgroundTintMode = 2130772236;
 			
-			// aapt resource value: 0x7F030039
-			public const int barLength = 2130903097;
+			// aapt resource value: 0x7f0100ca
+			public const int barLength = 2130772170;
 			
-			// aapt resource value: 0x7F03003A
-			public const int behavior_autoHide = 2130903098;
+			// aapt resource value: 0x7f010136
+			public const int behavior_autoHide = 2130772278;
 			
-			// aapt resource value: 0x7F03003B
-			public const int behavior_hideable = 2130903099;
+			// aapt resource value: 0x7f010113
+			public const int behavior_hideable = 2130772243;
 			
-			// aapt resource value: 0x7F03003C
-			public const int behavior_overlapTop = 2130903100;
+			// aapt resource value: 0x7f01013f
+			public const int behavior_overlapTop = 2130772287;
 			
-			// aapt resource value: 0x7F03003D
-			public const int behavior_peekHeight = 2130903101;
+			// aapt resource value: 0x7f010112
+			public const int behavior_peekHeight = 2130772242;
 			
-			// aapt resource value: 0x7F03003E
-			public const int behavior_skipCollapsed = 2130903102;
+			// aapt resource value: 0x7f010114
+			public const int behavior_skipCollapsed = 2130772244;
 			
-			// aapt resource value: 0x7F030040
-			public const int borderlessButtonStyle = 2130903104;
+			// aapt resource value: 0x7f010134
+			public const int borderWidth = 2130772276;
 			
-			// aapt resource value: 0x7F03003F
-			public const int borderWidth = 2130903103;
+			// aapt resource value: 0x7f010080
+			public const int borderlessButtonStyle = 2130772096;
 			
-			// aapt resource value: 0x7F030041
-			public const int bottomSheetDialogTheme = 2130903105;
+			// aapt resource value: 0x7f01012e
+			public const int bottomSheetDialogTheme = 2130772270;
 			
-			// aapt resource value: 0x7F030042
-			public const int bottomSheetStyle = 2130903106;
+			// aapt resource value: 0x7f01012f
+			public const int bottomSheetStyle = 2130772271;
 			
-			// aapt resource value: 0x7F030043
-			public const int buttonBarButtonStyle = 2130903107;
+			// aapt resource value: 0x7f01007d
+			public const int buttonBarButtonStyle = 2130772093;
 			
-			// aapt resource value: 0x7F030044
-			public const int buttonBarNegativeButtonStyle = 2130903108;
+			// aapt resource value: 0x7f0100ad
+			public const int buttonBarNegativeButtonStyle = 2130772141;
 			
-			// aapt resource value: 0x7F030045
-			public const int buttonBarNeutralButtonStyle = 2130903109;
+			// aapt resource value: 0x7f0100ae
+			public const int buttonBarNeutralButtonStyle = 2130772142;
 			
-			// aapt resource value: 0x7F030046
-			public const int buttonBarPositiveButtonStyle = 2130903110;
+			// aapt resource value: 0x7f0100ac
+			public const int buttonBarPositiveButtonStyle = 2130772140;
 			
-			// aapt resource value: 0x7F030047
-			public const int buttonBarStyle = 2130903111;
+			// aapt resource value: 0x7f01007c
+			public const int buttonBarStyle = 2130772092;
 			
-			// aapt resource value: 0x7F030048
-			public const int buttonGravity = 2130903112;
+			// aapt resource value: 0x7f010100
+			public const int buttonGravity = 2130772224;
 			
-			// aapt resource value: 0x7F030049
-			public const int buttonPanelSideLayout = 2130903113;
+			// aapt resource value: 0x7f010038
+			public const int buttonPanelSideLayout = 2130772024;
 			
-			// aapt resource value: 0x7F03004A
-			public const int buttonStyle = 2130903114;
+			// aapt resource value: 0x7f0100b0
+			public const int buttonStyle = 2130772144;
 			
-			// aapt resource value: 0x7F03004B
-			public const int buttonStyleSmall = 2130903115;
+			// aapt resource value: 0x7f0100b1
+			public const int buttonStyleSmall = 2130772145;
 			
-			// aapt resource value: 0x7F03004C
-			public const int buttonTint = 2130903116;
+			// aapt resource value: 0x7f0100c2
+			public const int buttonTint = 2130772162;
 			
-			// aapt resource value: 0x7F03004D
-			public const int buttonTintMode = 2130903117;
+			// aapt resource value: 0x7f0100c3
+			public const int buttonTintMode = 2130772163;
 			
-			// aapt resource value: 0x7F03004E
-			public const int cardBackgroundColor = 2130903118;
+			// aapt resource value: 0x7f01000c
+			public const int cardBackgroundColor = 2130771980;
 			
-			// aapt resource value: 0x7F03004F
-			public const int cardCornerRadius = 2130903119;
+			// aapt resource value: 0x7f01000d
+			public const int cardCornerRadius = 2130771981;
 			
-			// aapt resource value: 0x7F030050
-			public const int cardElevation = 2130903120;
+			// aapt resource value: 0x7f01000e
+			public const int cardElevation = 2130771982;
 			
-			// aapt resource value: 0x7F030051
-			public const int cardMaxElevation = 2130903121;
+			// aapt resource value: 0x7f01000f
+			public const int cardMaxElevation = 2130771983;
 			
-			// aapt resource value: 0x7F030052
-			public const int cardPreventCornerOverlap = 2130903122;
+			// aapt resource value: 0x7f010011
+			public const int cardPreventCornerOverlap = 2130771985;
 			
-			// aapt resource value: 0x7F030053
-			public const int cardUseCompatPadding = 2130903123;
+			// aapt resource value: 0x7f010010
+			public const int cardUseCompatPadding = 2130771984;
 			
-			// aapt resource value: 0x7F030054
-			public const int checkboxStyle = 2130903124;
+			// aapt resource value: 0x7f0100b2
+			public const int checkboxStyle = 2130772146;
 			
-			// aapt resource value: 0x7F030055
-			public const int checkedTextViewStyle = 2130903125;
+			// aapt resource value: 0x7f0100b3
+			public const int checkedTextViewStyle = 2130772147;
 			
-			// aapt resource value: 0x7F030056
-			public const int closeIcon = 2130903126;
+			// aapt resource value: 0x7f0100e3
+			public const int closeIcon = 2130772195;
 			
-			// aapt resource value: 0x7F030057
-			public const int closeItemLayout = 2130903127;
+			// aapt resource value: 0x7f010035
+			public const int closeItemLayout = 2130772021;
 			
-			// aapt resource value: 0x7F030058
-			public const int collapseContentDescription = 2130903128;
+			// aapt resource value: 0x7f010102
+			public const int collapseContentDescription = 2130772226;
 			
-			// aapt resource value: 0x7F03005A
-			public const int collapsedTitleGravity = 2130903130;
+			// aapt resource value: 0x7f010101
+			public const int collapseIcon = 2130772225;
 			
-			// aapt resource value: 0x7F03005B
-			public const int collapsedTitleTextAppearance = 2130903131;
+			// aapt resource value: 0x7f010121
+			public const int collapsedTitleGravity = 2130772257;
 			
-			// aapt resource value: 0x7F030059
-			public const int collapseIcon = 2130903129;
+			// aapt resource value: 0x7f01011b
+			public const int collapsedTitleTextAppearance = 2130772251;
 			
-			// aapt resource value: 0x7F03005C
-			public const int color = 2130903132;
+			// aapt resource value: 0x7f0100c4
+			public const int color = 2130772164;
 			
-			// aapt resource value: 0x7F03005D
-			public const int colorAccent = 2130903133;
+			// aapt resource value: 0x7f01009f
+			public const int colorAccent = 2130772127;
 			
-			// aapt resource value: 0x7F03005E
-			public const int colorBackgroundFloating = 2130903134;
+			// aapt resource value: 0x7f0100a6
+			public const int colorBackgroundFloating = 2130772134;
 			
-			// aapt resource value: 0x7F03005F
-			public const int colorButtonNormal = 2130903135;
+			// aapt resource value: 0x7f0100a3
+			public const int colorButtonNormal = 2130772131;
 			
-			// aapt resource value: 0x7F030060
-			public const int colorControlActivated = 2130903136;
+			// aapt resource value: 0x7f0100a1
+			public const int colorControlActivated = 2130772129;
 			
-			// aapt resource value: 0x7F030061
-			public const int colorControlHighlight = 2130903137;
+			// aapt resource value: 0x7f0100a2
+			public const int colorControlHighlight = 2130772130;
 			
-			// aapt resource value: 0x7F030062
-			public const int colorControlNormal = 2130903138;
+			// aapt resource value: 0x7f0100a0
+			public const int colorControlNormal = 2130772128;
 			
-			// aapt resource value: 0x7F030063
-			public const int colorError = 2130903139;
+			// aapt resource value: 0x7f0100bf
+			public const int colorError = 2130772159;
 			
-			// aapt resource value: 0x7F030064
-			public const int colorPalette = 2130903140;
+			// aapt resource value: 0x7f01018c
+			public const int colorPalette = 2130772364;
 			
-			// aapt resource value: 0x7F030065
-			public const int colorPrimary = 2130903141;
+			// aapt resource value: 0x7f01009d
+			public const int colorPrimary = 2130772125;
 			
-			// aapt resource value: 0x7F030066
-			public const int colorPrimaryDark = 2130903142;
+			// aapt resource value: 0x7f01009e
+			public const int colorPrimaryDark = 2130772126;
 			
-			// aapt resource value: 0x7F030067
-			public const int colorSwitchThumbNormal = 2130903143;
+			// aapt resource value: 0x7f0100a4
+			public const int colorSwitchThumbNormal = 2130772132;
 			
-			// aapt resource value: 0x7F030068
-			public const int commitIcon = 2130903144;
+			// aapt resource value: 0x7f0100e8
+			public const int commitIcon = 2130772200;
 			
-			// aapt resource value: 0x7F030069
-			public const int contentDescription = 2130903145;
+			// aapt resource value: 0x7f0100d5
+			public const int contentDescription = 2130772181;
 			
-			// aapt resource value: 0x7F03006A
-			public const int contentInsetEnd = 2130903146;
+			// aapt resource value: 0x7f01002e
+			public const int contentInsetEnd = 2130772014;
 			
-			// aapt resource value: 0x7F03006B
-			public const int contentInsetEndWithActions = 2130903147;
+			// aapt resource value: 0x7f010032
+			public const int contentInsetEndWithActions = 2130772018;
 			
-			// aapt resource value: 0x7F03006C
-			public const int contentInsetLeft = 2130903148;
+			// aapt resource value: 0x7f01002f
+			public const int contentInsetLeft = 2130772015;
 			
-			// aapt resource value: 0x7F03006D
-			public const int contentInsetRight = 2130903149;
+			// aapt resource value: 0x7f010030
+			public const int contentInsetRight = 2130772016;
 			
-			// aapt resource value: 0x7F03006E
-			public const int contentInsetStart = 2130903150;
+			// aapt resource value: 0x7f01002d
+			public const int contentInsetStart = 2130772013;
 			
-			// aapt resource value: 0x7F03006F
-			public const int contentInsetStartWithNavigation = 2130903151;
+			// aapt resource value: 0x7f010031
+			public const int contentInsetStartWithNavigation = 2130772017;
 			
-			// aapt resource value: 0x7F030070
-			public const int contentPadding = 2130903152;
+			// aapt resource value: 0x7f010012
+			public const int contentPadding = 2130771986;
 			
-			// aapt resource value: 0x7F030071
-			public const int contentPaddingBottom = 2130903153;
+			// aapt resource value: 0x7f010016
+			public const int contentPaddingBottom = 2130771990;
 			
-			// aapt resource value: 0x7F030072
-			public const int contentPaddingLeft = 2130903154;
+			// aapt resource value: 0x7f010013
+			public const int contentPaddingLeft = 2130771987;
 			
-			// aapt resource value: 0x7F030073
-			public const int contentPaddingRight = 2130903155;
+			// aapt resource value: 0x7f010014
+			public const int contentPaddingRight = 2130771988;
 			
-			// aapt resource value: 0x7F030074
-			public const int contentPaddingTop = 2130903156;
+			// aapt resource value: 0x7f010015
+			public const int contentPaddingTop = 2130771989;
 			
-			// aapt resource value: 0x7F030075
-			public const int contentScrim = 2130903157;
+			// aapt resource value: 0x7f01011c
+			public const int contentScrim = 2130772252;
 			
-			// aapt resource value: 0x7F030076
-			public const int controlBackground = 2130903158;
+			// aapt resource value: 0x7f0100a5
+			public const int controlBackground = 2130772133;
 			
-			// aapt resource value: 0x7F030077
-			public const int counterEnabled = 2130903159;
+			// aapt resource value: 0x7f010155
+			public const int counterEnabled = 2130772309;
 			
-			// aapt resource value: 0x7F030078
-			public const int counterMaxLength = 2130903160;
+			// aapt resource value: 0x7f010156
+			public const int counterMaxLength = 2130772310;
 			
-			// aapt resource value: 0x7F030079
-			public const int counterOverflowTextAppearance = 2130903161;
+			// aapt resource value: 0x7f010158
+			public const int counterOverflowTextAppearance = 2130772312;
 			
-			// aapt resource value: 0x7F03007A
-			public const int counterTextAppearance = 2130903162;
+			// aapt resource value: 0x7f010157
+			public const int counterTextAppearance = 2130772311;
 			
-			// aapt resource value: 0x7F03007B
-			public const int customNavigationLayout = 2130903163;
+			// aapt resource value: 0x7f010026
+			public const int customNavigationLayout = 2130772006;
 			
-			// aapt resource value: 0x7F03007C
-			public const int defaultQueryHint = 2130903164;
+			// aapt resource value: 0x7f0100e2
+			public const int defaultQueryHint = 2130772194;
 			
-			// aapt resource value: 0x7F03007D
-			public const int dialogPreferredPadding = 2130903165;
+			// aapt resource value: 0x7f010075
+			public const int dialogPreferredPadding = 2130772085;
 			
-			// aapt resource value: 0x7F03007E
-			public const int dialogTheme = 2130903166;
+			// aapt resource value: 0x7f010074
+			public const int dialogTheme = 2130772084;
 			
-			// aapt resource value: 0x7F03007F
-			public const int displayOptions = 2130903167;
+			// aapt resource value: 0x7f01001c
+			public const int displayOptions = 2130771996;
 			
-			// aapt resource value: 0x7F030080
-			public const int divider = 2130903168;
+			// aapt resource value: 0x7f010022
+			public const int divider = 2130772002;
 			
-			// aapt resource value: 0x7F030081
-			public const int dividerHorizontal = 2130903169;
+			// aapt resource value: 0x7f010082
+			public const int dividerHorizontal = 2130772098;
 			
-			// aapt resource value: 0x7F030082
-			public const int dividerPadding = 2130903170;
+			// aapt resource value: 0x7f0100ce
+			public const int dividerPadding = 2130772174;
 			
-			// aapt resource value: 0x7F030083
-			public const int dividerVertical = 2130903171;
+			// aapt resource value: 0x7f010081
+			public const int dividerVertical = 2130772097;
 			
-			// aapt resource value: 0x7F030084
-			public const int drawableSize = 2130903172;
+			// aapt resource value: 0x7f0100c6
+			public const int drawableSize = 2130772166;
 			
-			// aapt resource value: 0x7F030085
-			public const int drawerArrowStyle = 2130903173;
+			// aapt resource value: 0x7f010017
+			public const int drawerArrowStyle = 2130771991;
 			
-			// aapt resource value: 0x7F030087
-			public const int dropdownListPreferredItemHeight = 2130903175;
+			// aapt resource value: 0x7f010094
+			public const int dropDownListViewStyle = 2130772116;
 			
-			// aapt resource value: 0x7F030086
-			public const int dropDownListViewStyle = 2130903174;
+			// aapt resource value: 0x7f010078
+			public const int dropdownListPreferredItemHeight = 2130772088;
 			
-			// aapt resource value: 0x7F030088
-			public const int editTextBackground = 2130903176;
+			// aapt resource value: 0x7f010089
+			public const int editTextBackground = 2130772105;
 			
-			// aapt resource value: 0x7F030089
-			public const int editTextColor = 2130903177;
+			// aapt resource value: 0x7f010088
+			public const int editTextColor = 2130772104;
 			
-			// aapt resource value: 0x7F03008A
-			public const int editTextStyle = 2130903178;
+			// aapt resource value: 0x7f0100b4
+			public const int editTextStyle = 2130772148;
 			
-			// aapt resource value: 0x7F03008B
-			public const int elevation = 2130903179;
+			// aapt resource value: 0x7f010033
+			public const int elevation = 2130772019;
 			
-			// aapt resource value: 0x7F03008C
-			public const int enableTrackball = 2130903180;
+			// aapt resource value: 0x7f01018e
+			public const int enableTrackball = 2130772366;
 			
-			// aapt resource value: 0x7F03008D
-			public const int enableZooming = 2130903181;
+			// aapt resource value: 0x7f01018d
+			public const int enableZooming = 2130772365;
 			
-			// aapt resource value: 0x7F03008E
-			public const int errorEnabled = 2130903182;
+			// aapt resource value: 0x7f010153
+			public const int errorEnabled = 2130772307;
 			
-			// aapt resource value: 0x7F03008F
-			public const int errorTextAppearance = 2130903183;
+			// aapt resource value: 0x7f010154
+			public const int errorTextAppearance = 2130772308;
 			
-			// aapt resource value: 0x7F030090
-			public const int expandActivityOverflowButtonDrawable = 2130903184;
+			// aapt resource value: 0x7f010037
+			public const int expandActivityOverflowButtonDrawable = 2130772023;
 			
-			// aapt resource value: 0x7F030091
-			public const int expanded = 2130903185;
+			// aapt resource value: 0x7f01010d
+			public const int expanded = 2130772237;
 			
-			// aapt resource value: 0x7F030092
-			public const int expandedTitleGravity = 2130903186;
+			// aapt resource value: 0x7f010122
+			public const int expandedTitleGravity = 2130772258;
 			
-			// aapt resource value: 0x7F030093
-			public const int expandedTitleMargin = 2130903187;
+			// aapt resource value: 0x7f010115
+			public const int expandedTitleMargin = 2130772245;
 			
-			// aapt resource value: 0x7F030094
-			public const int expandedTitleMarginBottom = 2130903188;
+			// aapt resource value: 0x7f010119
+			public const int expandedTitleMarginBottom = 2130772249;
 			
-			// aapt resource value: 0x7F030095
-			public const int expandedTitleMarginEnd = 2130903189;
+			// aapt resource value: 0x7f010118
+			public const int expandedTitleMarginEnd = 2130772248;
 			
-			// aapt resource value: 0x7F030096
-			public const int expandedTitleMarginStart = 2130903190;
+			// aapt resource value: 0x7f010116
+			public const int expandedTitleMarginStart = 2130772246;
 			
-			// aapt resource value: 0x7F030097
-			public const int expandedTitleMarginTop = 2130903191;
+			// aapt resource value: 0x7f010117
+			public const int expandedTitleMarginTop = 2130772247;
 			
-			// aapt resource value: 0x7F030098
-			public const int expandedTitleTextAppearance = 2130903192;
+			// aapt resource value: 0x7f01011a
+			public const int expandedTitleTextAppearance = 2130772250;
 			
-			// aapt resource value: 0x7F030099
-			public const int fabSize = 2130903193;
+			// aapt resource value: 0x7f010132
+			public const int fabSize = 2130772274;
 			
-			// aapt resource value: 0x7F03009A
-			public const int fastScrollEnabled = 2130903194;
+			// aapt resource value: 0x7f010007
+			public const int fastScrollEnabled = 2130771975;
 			
-			// aapt resource value: 0x7F03009B
-			public const int fastScrollHorizontalThumbDrawable = 2130903195;
+			// aapt resource value: 0x7f01000a
+			public const int fastScrollHorizontalThumbDrawable = 2130771978;
 			
-			// aapt resource value: 0x7F03009C
-			public const int fastScrollHorizontalTrackDrawable = 2130903196;
+			// aapt resource value: 0x7f01000b
+			public const int fastScrollHorizontalTrackDrawable = 2130771979;
 			
-			// aapt resource value: 0x7F03009D
-			public const int fastScrollVerticalThumbDrawable = 2130903197;
+			// aapt resource value: 0x7f010008
+			public const int fastScrollVerticalThumbDrawable = 2130771976;
 			
-			// aapt resource value: 0x7F03009E
-			public const int fastScrollVerticalTrackDrawable = 2130903198;
+			// aapt resource value: 0x7f010009
+			public const int fastScrollVerticalTrackDrawable = 2130771977;
 			
-			// aapt resource value: 0x7F03009F
-			public const int font = 2130903199;
+			// aapt resource value: 0x7f010166
+			public const int font = 2130772326;
 			
-			// aapt resource value: 0x7F0300A0
-			public const int fontFamily = 2130903200;
+			// aapt resource value: 0x7f01004a
+			public const int fontFamily = 2130772042;
 			
-			// aapt resource value: 0x7F0300A1
-			public const int fontProviderAuthority = 2130903201;
+			// aapt resource value: 0x7f01015f
+			public const int fontProviderAuthority = 2130772319;
 			
-			// aapt resource value: 0x7F0300A2
-			public const int fontProviderCerts = 2130903202;
+			// aapt resource value: 0x7f010162
+			public const int fontProviderCerts = 2130772322;
 			
-			// aapt resource value: 0x7F0300A3
-			public const int fontProviderFetchStrategy = 2130903203;
+			// aapt resource value: 0x7f010163
+			public const int fontProviderFetchStrategy = 2130772323;
 			
-			// aapt resource value: 0x7F0300A4
-			public const int fontProviderFetchTimeout = 2130903204;
+			// aapt resource value: 0x7f010164
+			public const int fontProviderFetchTimeout = 2130772324;
 			
-			// aapt resource value: 0x7F0300A5
-			public const int fontProviderPackage = 2130903205;
+			// aapt resource value: 0x7f010160
+			public const int fontProviderPackage = 2130772320;
 			
-			// aapt resource value: 0x7F0300A6
-			public const int fontProviderQuery = 2130903206;
+			// aapt resource value: 0x7f010161
+			public const int fontProviderQuery = 2130772321;
 			
-			// aapt resource value: 0x7F0300A7
-			public const int fontStyle = 2130903207;
+			// aapt resource value: 0x7f010165
+			public const int fontStyle = 2130772325;
 			
-			// aapt resource value: 0x7F0300A8
-			public const int fontWeight = 2130903208;
+			// aapt resource value: 0x7f010167
+			public const int fontWeight = 2130772327;
 			
-			// aapt resource value: 0x7F0300A9
-			public const int foregroundInsidePadding = 2130903209;
+			// aapt resource value: 0x7f010137
+			public const int foregroundInsidePadding = 2130772279;
 			
-			// aapt resource value: 0x7F0300AA
-			public const int gapBetweenBars = 2130903210;
+			// aapt resource value: 0x7f0100c7
+			public const int gapBetweenBars = 2130772167;
 			
-			// aapt resource value: 0x7F0300AB
-			public const int goIcon = 2130903211;
+			// aapt resource value: 0x7f0100e4
+			public const int goIcon = 2130772196;
 			
-			// aapt resource value: 0x7F0300AC
-			public const int headerLayout = 2130903212;
+			// aapt resource value: 0x7f01013d
+			public const int headerLayout = 2130772285;
 			
-			// aapt resource value: 0x7F0300AD
-			public const int height = 2130903213;
+			// aapt resource value: 0x7f010018
+			public const int height = 2130771992;
 			
-			// aapt resource value: 0x7F0300AE
-			public const int hideOnContentScroll = 2130903214;
+			// aapt resource value: 0x7f01002c
+			public const int hideOnContentScroll = 2130772012;
 			
-			// aapt resource value: 0x7F0300AF
-			public const int hintAnimationEnabled = 2130903215;
+			// aapt resource value: 0x7f010159
+			public const int hintAnimationEnabled = 2130772313;
 			
-			// aapt resource value: 0x7F0300B0
-			public const int hintEnabled = 2130903216;
+			// aapt resource value: 0x7f010152
+			public const int hintEnabled = 2130772306;
 			
-			// aapt resource value: 0x7F0300B1
-			public const int hintTextAppearance = 2130903217;
+			// aapt resource value: 0x7f010151
+			public const int hintTextAppearance = 2130772305;
 			
-			// aapt resource value: 0x7F0300B2
-			public const int homeAsUpIndicator = 2130903218;
+			// aapt resource value: 0x7f01007a
+			public const int homeAsUpIndicator = 2130772090;
 			
-			// aapt resource value: 0x7F0300B3
-			public const int homeLayout = 2130903219;
+			// aapt resource value: 0x7f010027
+			public const int homeLayout = 2130772007;
 			
-			// aapt resource value: 0x7F0300B4
-			public const int icon = 2130903220;
+			// aapt resource value: 0x7f010020
+			public const int icon = 2130772000;
 			
-			// aapt resource value: 0x7F0300B7
-			public const int iconifiedByDefault = 2130903223;
+			// aapt resource value: 0x7f0100d7
+			public const int iconTint = 2130772183;
 			
-			// aapt resource value: 0x7F0300B5
-			public const int iconTint = 2130903221;
+			// aapt resource value: 0x7f0100d8
+			public const int iconTintMode = 2130772184;
 			
-			// aapt resource value: 0x7F0300B6
-			public const int iconTintMode = 2130903222;
+			// aapt resource value: 0x7f0100e0
+			public const int iconifiedByDefault = 2130772192;
 			
-			// aapt resource value: 0x7F0300B8
-			public const int imageButtonStyle = 2130903224;
+			// aapt resource value: 0x7f01008a
+			public const int imageButtonStyle = 2130772106;
 			
-			// aapt resource value: 0x7F0300B9
-			public const int indeterminateProgressStyle = 2130903225;
+			// aapt resource value: 0x7f010029
+			public const int indeterminateProgressStyle = 2130772009;
 			
-			// aapt resource value: 0x7F0300BA
-			public const int initialActivityCount = 2130903226;
+			// aapt resource value: 0x7f010036
+			public const int initialActivityCount = 2130772022;
 			
-			// aapt resource value: 0x7F0300BB
-			public const int insetForeground = 2130903227;
+			// aapt resource value: 0x7f01013e
+			public const int insetForeground = 2130772286;
 			
-			// aapt resource value: 0x7F0300BC
-			public const int isLightTheme = 2130903228;
+			// aapt resource value: 0x7f010019
+			public const int isLightTheme = 2130771993;
 			
-			// aapt resource value: 0x7F0300BD
-			public const int itemBackground = 2130903229;
+			// aapt resource value: 0x7f01013b
+			public const int itemBackground = 2130772283;
 			
-			// aapt resource value: 0x7F0300BE
-			public const int itemIconTint = 2130903230;
+			// aapt resource value: 0x7f010139
+			public const int itemIconTint = 2130772281;
 			
-			// aapt resource value: 0x7F0300BF
-			public const int itemPadding = 2130903231;
+			// aapt resource value: 0x7f01002b
+			public const int itemPadding = 2130772011;
 			
-			// aapt resource value: 0x7F0300C0
-			public const int itemTextAppearance = 2130903232;
+			// aapt resource value: 0x7f01013c
+			public const int itemTextAppearance = 2130772284;
 			
-			// aapt resource value: 0x7F0300C1
-			public const int itemTextColor = 2130903233;
+			// aapt resource value: 0x7f01013a
+			public const int itemTextColor = 2130772282;
 			
-			// aapt resource value: 0x7F0300C2
-			public const int keylines = 2130903234;
+			// aapt resource value: 0x7f010126
+			public const int keylines = 2130772262;
 			
-			// aapt resource value: 0x7F0300C3
-			public const int layout = 2130903235;
+			// aapt resource value: 0x7f0100df
+			public const int layout = 2130772191;
 			
-			// aapt resource value: 0x7F0300C4
-			public const int layoutManager = 2130903236;
+			// aapt resource value: 0x7f010003
+			public const int layoutManager = 2130771971;
 			
-			// aapt resource value: 0x7F0300C5
-			public const int layout_anchor = 2130903237;
+			// aapt resource value: 0x7f010129
+			public const int layout_anchor = 2130772265;
 			
-			// aapt resource value: 0x7F0300C6
-			public const int layout_anchorGravity = 2130903238;
+			// aapt resource value: 0x7f01012b
+			public const int layout_anchorGravity = 2130772267;
 			
-			// aapt resource value: 0x7F0300C7
-			public const int layout_behavior = 2130903239;
+			// aapt resource value: 0x7f010128
+			public const int layout_behavior = 2130772264;
 			
-			// aapt resource value: 0x7F0300C8
-			public const int layout_collapseMode = 2130903240;
+			// aapt resource value: 0x7f010124
+			public const int layout_collapseMode = 2130772260;
 			
-			// aapt resource value: 0x7F0300C9
-			public const int layout_collapseParallaxMultiplier = 2130903241;
+			// aapt resource value: 0x7f010125
+			public const int layout_collapseParallaxMultiplier = 2130772261;
 			
-			// aapt resource value: 0x7F0300CA
-			public const int layout_dodgeInsetEdges = 2130903242;
+			// aapt resource value: 0x7f01012d
+			public const int layout_dodgeInsetEdges = 2130772269;
 			
-			// aapt resource value: 0x7F0300CB
-			public const int layout_insetEdge = 2130903243;
+			// aapt resource value: 0x7f01012c
+			public const int layout_insetEdge = 2130772268;
 			
-			// aapt resource value: 0x7F0300CC
-			public const int layout_keyline = 2130903244;
+			// aapt resource value: 0x7f01012a
+			public const int layout_keyline = 2130772266;
 			
-			// aapt resource value: 0x7F0300CD
-			public const int layout_scrollFlags = 2130903245;
+			// aapt resource value: 0x7f010110
+			public const int layout_scrollFlags = 2130772240;
 			
-			// aapt resource value: 0x7F0300CE
-			public const int layout_scrollInterpolator = 2130903246;
+			// aapt resource value: 0x7f010111
+			public const int layout_scrollInterpolator = 2130772241;
 			
-			// aapt resource value: 0x7F0300CF
-			public const int legendDockPosition = 2130903247;
+			// aapt resource value: 0x7f010182
+			public const int legendDockPosition = 2130772354;
 			
-			// aapt resource value: 0x7F0300D0
-			public const int legendIconHeight = 2130903248;
+			// aapt resource value: 0x7f01017c
+			public const int legendIconHeight = 2130772348;
 			
-			// aapt resource value: 0x7F0300D1
-			public const int legendIconWidth = 2130903249;
+			// aapt resource value: 0x7f01017d
+			public const int legendIconWidth = 2130772349;
 			
-			// aapt resource value: 0x7F0300D2
-			public const int legendItemMarginBottom = 2130903250;
+			// aapt resource value: 0x7f01017e
+			public const int legendItemMarginBottom = 2130772350;
 			
-			// aapt resource value: 0x7F0300D3
-			public const int legendItemMarginLeft = 2130903251;
+			// aapt resource value: 0x7f01017f
+			public const int legendItemMarginLeft = 2130772351;
 			
-			// aapt resource value: 0x7F0300D4
-			public const int legendItemMarginRight = 2130903252;
+			// aapt resource value: 0x7f010180
+			public const int legendItemMarginRight = 2130772352;
 			
-			// aapt resource value: 0x7F0300D5
-			public const int legendItemMarginTop = 2130903253;
+			// aapt resource value: 0x7f010181
+			public const int legendItemMarginTop = 2130772353;
 			
-			// aapt resource value: 0x7F0300D6
-			public const int legendOrientation = 2130903254;
+			// aapt resource value: 0x7f010183
+			public const int legendOrientation = 2130772355;
 			
-			// aapt resource value: 0x7F0300D7
-			public const int legendTitleText = 2130903255;
+			// aapt resource value: 0x7f01017b
+			public const int legendTitleText = 2130772347;
 			
-			// aapt resource value: 0x7F0300D8
-			public const int legendVisibility = 2130903256;
+			// aapt resource value: 0x7f01017a
+			public const int legendVisibility = 2130772346;
 			
-			// aapt resource value: 0x7F0300D9
-			public const int listChoiceBackgroundIndicator = 2130903257;
+			// aapt resource value: 0x7f01009c
+			public const int listChoiceBackgroundIndicator = 2130772124;
 			
-			// aapt resource value: 0x7F0300DA
-			public const int listDividerAlertDialog = 2130903258;
+			// aapt resource value: 0x7f010076
+			public const int listDividerAlertDialog = 2130772086;
 			
-			// aapt resource value: 0x7F0300DB
-			public const int listItemLayout = 2130903259;
+			// aapt resource value: 0x7f01003c
+			public const int listItemLayout = 2130772028;
 			
-			// aapt resource value: 0x7F0300DC
-			public const int listLayout = 2130903260;
+			// aapt resource value: 0x7f010039
+			public const int listLayout = 2130772025;
 			
-			// aapt resource value: 0x7F0300DD
-			public const int listMenuViewStyle = 2130903261;
+			// aapt resource value: 0x7f0100bc
+			public const int listMenuViewStyle = 2130772156;
 			
-			// aapt resource value: 0x7F0300DE
-			public const int listPopupWindowStyle = 2130903262;
+			// aapt resource value: 0x7f010095
+			public const int listPopupWindowStyle = 2130772117;
 			
-			// aapt resource value: 0x7F0300DF
-			public const int listPreferredItemHeight = 2130903263;
+			// aapt resource value: 0x7f01008f
+			public const int listPreferredItemHeight = 2130772111;
 			
-			// aapt resource value: 0x7F0300E0
-			public const int listPreferredItemHeightLarge = 2130903264;
+			// aapt resource value: 0x7f010091
+			public const int listPreferredItemHeightLarge = 2130772113;
 			
-			// aapt resource value: 0x7F0300E1
-			public const int listPreferredItemHeightSmall = 2130903265;
+			// aapt resource value: 0x7f010090
+			public const int listPreferredItemHeightSmall = 2130772112;
 			
-			// aapt resource value: 0x7F0300E2
-			public const int listPreferredItemPaddingLeft = 2130903266;
+			// aapt resource value: 0x7f010092
+			public const int listPreferredItemPaddingLeft = 2130772114;
 			
-			// aapt resource value: 0x7F0300E3
-			public const int listPreferredItemPaddingRight = 2130903267;
+			// aapt resource value: 0x7f010093
+			public const int listPreferredItemPaddingRight = 2130772115;
 			
-			// aapt resource value: 0x7F0300E4
-			public const int logo = 2130903268;
+			// aapt resource value: 0x7f010021
+			public const int logo = 2130772001;
 			
-			// aapt resource value: 0x7F0300E5
-			public const int logoDescription = 2130903269;
+			// aapt resource value: 0x7f010105
+			public const int logoDescription = 2130772229;
 			
-			// aapt resource value: 0x7F0300E6
-			public const int maxActionInlineWidth = 2130903270;
+			// aapt resource value: 0x7f010140
+			public const int maxActionInlineWidth = 2130772288;
 			
-			// aapt resource value: 0x7F0300E7
-			public const int maxButtonHeight = 2130903271;
+			// aapt resource value: 0x7f0100ff
+			public const int maxButtonHeight = 2130772223;
 			
-			// aapt resource value: 0x7F0300E8
-			public const int measureWithLargestChild = 2130903272;
+			// aapt resource value: 0x7f0100cc
+			public const int measureWithLargestChild = 2130772172;
 			
-			// aapt resource value: 0x7F0300E9
-			public const int menu = 2130903273;
+			// aapt resource value: 0x7f010138
+			public const int menu = 2130772280;
 			
-			// aapt resource value: 0x7F0300EA
-			public const int multiChoiceItemLayout = 2130903274;
+			// aapt resource value: 0x7f01003a
+			public const int multiChoiceItemLayout = 2130772026;
 			
-			// aapt resource value: 0x7F0300EB
-			public const int navigationContentDescription = 2130903275;
+			// aapt resource value: 0x7f010104
+			public const int navigationContentDescription = 2130772228;
 			
-			// aapt resource value: 0x7F0300EC
-			public const int navigationIcon = 2130903276;
+			// aapt resource value: 0x7f010103
+			public const int navigationIcon = 2130772227;
 			
-			// aapt resource value: 0x7F0300ED
-			public const int navigationMode = 2130903277;
+			// aapt resource value: 0x7f01001b
+			public const int navigationMode = 2130771995;
 			
-			// aapt resource value: 0x7F0300EE
-			public const int numericModifiers = 2130903278;
+			// aapt resource value: 0x7f0100d0
+			public const int numericModifiers = 2130772176;
 			
-			// aapt resource value: 0x7F0300EF
-			public const int overlapAnchor = 2130903279;
+			// aapt resource value: 0x7f0100db
+			public const int overlapAnchor = 2130772187;
 			
-			// aapt resource value: 0x7F0300F0
-			public const int paddingBottomNoButtons = 2130903280;
+			// aapt resource value: 0x7f0100dd
+			public const int paddingBottomNoButtons = 2130772189;
 			
-			// aapt resource value: 0x7F0300F1
-			public const int paddingEnd = 2130903281;
+			// aapt resource value: 0x7f010109
+			public const int paddingEnd = 2130772233;
 			
-			// aapt resource value: 0x7F0300F2
-			public const int paddingStart = 2130903282;
+			// aapt resource value: 0x7f010108
+			public const int paddingStart = 2130772232;
 			
-			// aapt resource value: 0x7F0300F3
-			public const int paddingTopNoTitle = 2130903283;
+			// aapt resource value: 0x7f0100de
+			public const int paddingTopNoTitle = 2130772190;
 			
-			// aapt resource value: 0x7F0300F4
-			public const int panelBackground = 2130903284;
+			// aapt resource value: 0x7f010099
+			public const int panelBackground = 2130772121;
 			
-			// aapt resource value: 0x7F0300F5
-			public const int panelMenuListTheme = 2130903285;
+			// aapt resource value: 0x7f01009b
+			public const int panelMenuListTheme = 2130772123;
 			
-			// aapt resource value: 0x7F0300F6
-			public const int panelMenuListWidth = 2130903286;
+			// aapt resource value: 0x7f01009a
+			public const int panelMenuListWidth = 2130772122;
 			
-			// aapt resource value: 0x7F0300F7
-			public const int passwordToggleContentDescription = 2130903287;
+			// aapt resource value: 0x7f01015c
+			public const int passwordToggleContentDescription = 2130772316;
 			
-			// aapt resource value: 0x7F0300F8
-			public const int passwordToggleDrawable = 2130903288;
+			// aapt resource value: 0x7f01015b
+			public const int passwordToggleDrawable = 2130772315;
 			
-			// aapt resource value: 0x7F0300F9
-			public const int passwordToggleEnabled = 2130903289;
+			// aapt resource value: 0x7f01015a
+			public const int passwordToggleEnabled = 2130772314;
 			
-			// aapt resource value: 0x7F0300FA
-			public const int passwordToggleTint = 2130903290;
+			// aapt resource value: 0x7f01015d
+			public const int passwordToggleTint = 2130772317;
 			
-			// aapt resource value: 0x7F0300FB
-			public const int passwordToggleTintMode = 2130903291;
+			// aapt resource value: 0x7f01015e
+			public const int passwordToggleTintMode = 2130772318;
 			
-			// aapt resource value: 0x7F0300FC
-			public const int popupMenuStyle = 2130903292;
+			// aapt resource value: 0x7f010086
+			public const int popupMenuStyle = 2130772102;
 			
-			// aapt resource value: 0x7F0300FD
-			public const int popupTheme = 2130903293;
+			// aapt resource value: 0x7f010034
+			public const int popupTheme = 2130772020;
 			
-			// aapt resource value: 0x7F0300FE
-			public const int popupWindowStyle = 2130903294;
+			// aapt resource value: 0x7f010087
+			public const int popupWindowStyle = 2130772103;
 			
-			// aapt resource value: 0x7F0300FF
-			public const int preserveIconSpacing = 2130903295;
+			// aapt resource value: 0x7f0100d9
+			public const int preserveIconSpacing = 2130772185;
 			
-			// aapt resource value: 0x7F030100
-			public const int pressedTranslationZ = 2130903296;
+			// aapt resource value: 0x7f010133
+			public const int pressedTranslationZ = 2130772275;
 			
-			// aapt resource value: 0x7F030101
-			public const int progressBarPadding = 2130903297;
+			// aapt resource value: 0x7f01002a
+			public const int progressBarPadding = 2130772010;
 			
-			// aapt resource value: 0x7F030102
-			public const int progressBarStyle = 2130903298;
+			// aapt resource value: 0x7f010028
+			public const int progressBarStyle = 2130772008;
 			
-			// aapt resource value: 0x7F030103
-			public const int queryBackground = 2130903299;
+			// aapt resource value: 0x7f0100ea
+			public const int queryBackground = 2130772202;
 			
-			// aapt resource value: 0x7F030104
-			public const int queryHint = 2130903300;
+			// aapt resource value: 0x7f0100e1
+			public const int queryHint = 2130772193;
 			
-			// aapt resource value: 0x7F030105
-			public const int radioButtonStyle = 2130903301;
+			// aapt resource value: 0x7f0100b5
+			public const int radioButtonStyle = 2130772149;
 			
-			// aapt resource value: 0x7F030106
-			public const int ratingBarStyle = 2130903302;
+			// aapt resource value: 0x7f0100b6
+			public const int ratingBarStyle = 2130772150;
 			
-			// aapt resource value: 0x7F030107
-			public const int ratingBarStyleIndicator = 2130903303;
+			// aapt resource value: 0x7f0100b7
+			public const int ratingBarStyleIndicator = 2130772151;
 			
-			// aapt resource value: 0x7F030108
-			public const int ratingBarStyleSmall = 2130903304;
+			// aapt resource value: 0x7f0100b8
+			public const int ratingBarStyleSmall = 2130772152;
 			
-			// aapt resource value: 0x7F030109
-			public const int reverseLayout = 2130903305;
+			// aapt resource value: 0x7f010005
+			public const int reverseLayout = 2130771973;
 			
-			// aapt resource value: 0x7F03010A
-			public const int rippleColor = 2130903306;
+			// aapt resource value: 0x7f010131
+			public const int rippleColor = 2130772273;
 			
-			// aapt resource value: 0x7F03010B
-			public const int scrimAnimationDuration = 2130903307;
+			// aapt resource value: 0x7f010120
+			public const int scrimAnimationDuration = 2130772256;
 			
-			// aapt resource value: 0x7F03010C
-			public const int scrimVisibleHeightTrigger = 2130903308;
+			// aapt resource value: 0x7f01011f
+			public const int scrimVisibleHeightTrigger = 2130772255;
 			
-			// aapt resource value: 0x7F03010D
-			public const int searchHintIcon = 2130903309;
+			// aapt resource value: 0x7f0100e6
+			public const int searchHintIcon = 2130772198;
 			
-			// aapt resource value: 0x7F03010E
-			public const int searchIcon = 2130903310;
+			// aapt resource value: 0x7f0100e5
+			public const int searchIcon = 2130772197;
 			
-			// aapt resource value: 0x7F03010F
-			public const int searchViewStyle = 2130903311;
+			// aapt resource value: 0x7f01008e
+			public const int searchViewStyle = 2130772110;
 			
-			// aapt resource value: 0x7F030110
-			public const int seekBarStyle = 2130903312;
+			// aapt resource value: 0x7f0100b9
+			public const int seekBarStyle = 2130772153;
 			
-			// aapt resource value: 0x7F030111
-			public const int selectableItemBackground = 2130903313;
+			// aapt resource value: 0x7f01007e
+			public const int selectableItemBackground = 2130772094;
 			
-			// aapt resource value: 0x7F030112
-			public const int selectableItemBackgroundBorderless = 2130903314;
+			// aapt resource value: 0x7f01007f
+			public const int selectableItemBackgroundBorderless = 2130772095;
 			
-			// aapt resource value: 0x7F030113
-			public const int showAsAction = 2130903315;
+			// aapt resource value: 0x7f0100d1
+			public const int showAsAction = 2130772177;
 			
-			// aapt resource value: 0x7F030114
-			public const int showDividers = 2130903316;
+			// aapt resource value: 0x7f0100cd
+			public const int showDividers = 2130772173;
 			
-			// aapt resource value: 0x7F030115
-			public const int showText = 2130903317;
+			// aapt resource value: 0x7f0100f6
+			public const int showText = 2130772214;
 			
-			// aapt resource value: 0x7F030116
-			public const int showTitle = 2130903318;
+			// aapt resource value: 0x7f01003d
+			public const int showTitle = 2130772029;
 			
-			// aapt resource value: 0x7F030117
-			public const int singleChoiceItemLayout = 2130903319;
+			// aapt resource value: 0x7f01003b
+			public const int singleChoiceItemLayout = 2130772027;
 			
-			// aapt resource value: 0x7F030118
-			public const int spanCount = 2130903320;
+			// aapt resource value: 0x7f010004
+			public const int spanCount = 2130771972;
 			
-			// aapt resource value: 0x7F030119
-			public const int spinBars = 2130903321;
+			// aapt resource value: 0x7f0100c5
+			public const int spinBars = 2130772165;
 			
-			// aapt resource value: 0x7F03011A
-			public const int spinnerDropDownItemStyle = 2130903322;
+			// aapt resource value: 0x7f010079
+			public const int spinnerDropDownItemStyle = 2130772089;
 			
-			// aapt resource value: 0x7F03011B
-			public const int spinnerStyle = 2130903323;
+			// aapt resource value: 0x7f0100ba
+			public const int spinnerStyle = 2130772154;
 			
-			// aapt resource value: 0x7F03011C
-			public const int splitTrack = 2130903324;
+			// aapt resource value: 0x7f0100f5
+			public const int splitTrack = 2130772213;
 			
-			// aapt resource value: 0x7F03011D
-			public const int srcCompat = 2130903325;
+			// aapt resource value: 0x7f01003e
+			public const int srcCompat = 2130772030;
 			
-			// aapt resource value: 0x7F03011E
-			public const int stackFromEnd = 2130903326;
+			// aapt resource value: 0x7f010006
+			public const int stackFromEnd = 2130771974;
 			
-			// aapt resource value: 0x7F03011F
-			public const int state_above_anchor = 2130903327;
+			// aapt resource value: 0x7f0100dc
+			public const int state_above_anchor = 2130772188;
 			
-			// aapt resource value: 0x7F030120
-			public const int state_collapsed = 2130903328;
+			// aapt resource value: 0x7f01010e
+			public const int state_collapsed = 2130772238;
 			
-			// aapt resource value: 0x7F030121
-			public const int state_collapsible = 2130903329;
+			// aapt resource value: 0x7f01010f
+			public const int state_collapsible = 2130772239;
 			
-			// aapt resource value: 0x7F030122
-			public const int statusBarBackground = 2130903330;
+			// aapt resource value: 0x7f010127
+			public const int statusBarBackground = 2130772263;
 			
-			// aapt resource value: 0x7F030123
-			public const int statusBarScrim = 2130903331;
+			// aapt resource value: 0x7f01011d
+			public const int statusBarScrim = 2130772253;
 			
-			// aapt resource value: 0x7F030124
-			public const int subMenuArrow = 2130903332;
+			// aapt resource value: 0x7f0100da
+			public const int subMenuArrow = 2130772186;
 			
-			// aapt resource value: 0x7F030125
-			public const int submitBackground = 2130903333;
+			// aapt resource value: 0x7f0100eb
+			public const int submitBackground = 2130772203;
 			
-			// aapt resource value: 0x7F030126
-			public const int subtitle = 2130903334;
+			// aapt resource value: 0x7f01001d
+			public const int subtitle = 2130771997;
 			
-			// aapt resource value: 0x7F030127
-			public const int subtitleTextAppearance = 2130903335;
+			// aapt resource value: 0x7f0100f8
+			public const int subtitleTextAppearance = 2130772216;
 			
-			// aapt resource value: 0x7F030128
-			public const int subtitleTextColor = 2130903336;
+			// aapt resource value: 0x7f010107
+			public const int subtitleTextColor = 2130772231;
 			
-			// aapt resource value: 0x7F030129
-			public const int subtitleTextStyle = 2130903337;
+			// aapt resource value: 0x7f01001f
+			public const int subtitleTextStyle = 2130771999;
 			
-			// aapt resource value: 0x7F03012A
-			public const int suggestionRowLayout = 2130903338;
+			// aapt resource value: 0x7f0100e9
+			public const int suggestionRowLayout = 2130772201;
 			
-			// aapt resource value: 0x7F03012B
-			public const int switchMinWidth = 2130903339;
+			// aapt resource value: 0x7f0100f3
+			public const int switchMinWidth = 2130772211;
 			
-			// aapt resource value: 0x7F03012C
-			public const int switchPadding = 2130903340;
+			// aapt resource value: 0x7f0100f4
+			public const int switchPadding = 2130772212;
 			
-			// aapt resource value: 0x7F03012D
-			public const int switchStyle = 2130903341;
+			// aapt resource value: 0x7f0100bb
+			public const int switchStyle = 2130772155;
 			
-			// aapt resource value: 0x7F03012E
-			public const int switchTextAppearance = 2130903342;
+			// aapt resource value: 0x7f0100f2
+			public const int switchTextAppearance = 2130772210;
 			
-			// aapt resource value: 0x7F03012F
-			public const int tabBackground = 2130903343;
+			// aapt resource value: 0x7f010144
+			public const int tabBackground = 2130772292;
 			
-			// aapt resource value: 0x7F030130
-			public const int tabContentStart = 2130903344;
+			// aapt resource value: 0x7f010143
+			public const int tabContentStart = 2130772291;
 			
-			// aapt resource value: 0x7F030131
-			public const int tabGravity = 2130903345;
+			// aapt resource value: 0x7f010146
+			public const int tabGravity = 2130772294;
 			
-			// aapt resource value: 0x7F030132
-			public const int tabIndicatorColor = 2130903346;
+			// aapt resource value: 0x7f010141
+			public const int tabIndicatorColor = 2130772289;
 			
-			// aapt resource value: 0x7F030133
-			public const int tabIndicatorHeight = 2130903347;
+			// aapt resource value: 0x7f010142
+			public const int tabIndicatorHeight = 2130772290;
 			
-			// aapt resource value: 0x7F030134
-			public const int tabMaxWidth = 2130903348;
+			// aapt resource value: 0x7f010148
+			public const int tabMaxWidth = 2130772296;
 			
-			// aapt resource value: 0x7F030135
-			public const int tabMinWidth = 2130903349;
+			// aapt resource value: 0x7f010147
+			public const int tabMinWidth = 2130772295;
 			
-			// aapt resource value: 0x7F030136
-			public const int tabMode = 2130903350;
+			// aapt resource value: 0x7f010145
+			public const int tabMode = 2130772293;
 			
-			// aapt resource value: 0x7F030137
-			public const int tabPadding = 2130903351;
+			// aapt resource value: 0x7f010150
+			public const int tabPadding = 2130772304;
 			
-			// aapt resource value: 0x7F030138
-			public const int tabPaddingBottom = 2130903352;
+			// aapt resource value: 0x7f01014f
+			public const int tabPaddingBottom = 2130772303;
 			
-			// aapt resource value: 0x7F030139
-			public const int tabPaddingEnd = 2130903353;
+			// aapt resource value: 0x7f01014e
+			public const int tabPaddingEnd = 2130772302;
 			
-			// aapt resource value: 0x7F03013A
-			public const int tabPaddingStart = 2130903354;
+			// aapt resource value: 0x7f01014c
+			public const int tabPaddingStart = 2130772300;
 			
-			// aapt resource value: 0x7F03013B
-			public const int tabPaddingTop = 2130903355;
+			// aapt resource value: 0x7f01014d
+			public const int tabPaddingTop = 2130772301;
 			
-			// aapt resource value: 0x7F03013C
-			public const int tabSelectedTextColor = 2130903356;
+			// aapt resource value: 0x7f01014b
+			public const int tabSelectedTextColor = 2130772299;
 			
-			// aapt resource value: 0x7F03013D
-			public const int tabTextAppearance = 2130903357;
+			// aapt resource value: 0x7f010149
+			public const int tabTextAppearance = 2130772297;
 			
-			// aapt resource value: 0x7F03013E
-			public const int tabTextColor = 2130903358;
+			// aapt resource value: 0x7f01014a
+			public const int tabTextColor = 2130772298;
 			
-			// aapt resource value: 0x7F03013F
-			public const int textAllCaps = 2130903359;
+			// aapt resource value: 0x7f010044
+			public const int textAllCaps = 2130772036;
 			
-			// aapt resource value: 0x7F030140
-			public const int textAppearanceLargePopupMenu = 2130903360;
+			// aapt resource value: 0x7f010071
+			public const int textAppearanceLargePopupMenu = 2130772081;
 			
-			// aapt resource value: 0x7F030141
-			public const int textAppearanceListItem = 2130903361;
+			// aapt resource value: 0x7f010096
+			public const int textAppearanceListItem = 2130772118;
 			
-			// aapt resource value: 0x7F030142
-			public const int textAppearanceListItemSecondary = 2130903362;
+			// aapt resource value: 0x7f010097
+			public const int textAppearanceListItemSecondary = 2130772119;
 			
-			// aapt resource value: 0x7F030143
-			public const int textAppearanceListItemSmall = 2130903363;
+			// aapt resource value: 0x7f010098
+			public const int textAppearanceListItemSmall = 2130772120;
 			
-			// aapt resource value: 0x7F030144
-			public const int textAppearancePopupMenuHeader = 2130903364;
+			// aapt resource value: 0x7f010073
+			public const int textAppearancePopupMenuHeader = 2130772083;
 			
-			// aapt resource value: 0x7F030145
-			public const int textAppearanceSearchResultSubtitle = 2130903365;
+			// aapt resource value: 0x7f01008c
+			public const int textAppearanceSearchResultSubtitle = 2130772108;
 			
-			// aapt resource value: 0x7F030146
-			public const int textAppearanceSearchResultTitle = 2130903366;
+			// aapt resource value: 0x7f01008b
+			public const int textAppearanceSearchResultTitle = 2130772107;
 			
-			// aapt resource value: 0x7F030147
-			public const int textAppearanceSmallPopupMenu = 2130903367;
+			// aapt resource value: 0x7f010072
+			public const int textAppearanceSmallPopupMenu = 2130772082;
 			
-			// aapt resource value: 0x7F030148
-			public const int textColorAlertDialogListItem = 2130903368;
+			// aapt resource value: 0x7f0100ab
+			public const int textColorAlertDialogListItem = 2130772139;
 			
-			// aapt resource value: 0x7F030149
-			public const int textColorError = 2130903369;
+			// aapt resource value: 0x7f010130
+			public const int textColorError = 2130772272;
 			
-			// aapt resource value: 0x7F03014A
-			public const int textColorSearchUrl = 2130903370;
+			// aapt resource value: 0x7f01008d
+			public const int textColorSearchUrl = 2130772109;
 			
-			// aapt resource value: 0x7F03014B
-			public const int theme = 2130903371;
+			// aapt resource value: 0x7f01010a
+			public const int theme = 2130772234;
 			
-			// aapt resource value: 0x7F03014C
-			public const int thickness = 2130903372;
+			// aapt resource value: 0x7f0100cb
+			public const int thickness = 2130772171;
 			
-			// aapt resource value: 0x7F03014D
-			public const int thumbTextPadding = 2130903373;
+			// aapt resource value: 0x7f0100f1
+			public const int thumbTextPadding = 2130772209;
 			
-			// aapt resource value: 0x7F03014E
-			public const int thumbTint = 2130903374;
+			// aapt resource value: 0x7f0100ec
+			public const int thumbTint = 2130772204;
 			
-			// aapt resource value: 0x7F03014F
-			public const int thumbTintMode = 2130903375;
+			// aapt resource value: 0x7f0100ed
+			public const int thumbTintMode = 2130772205;
 			
-			// aapt resource value: 0x7F030150
-			public const int tickMark = 2130903376;
+			// aapt resource value: 0x7f010041
+			public const int tickMark = 2130772033;
 			
-			// aapt resource value: 0x7F030151
-			public const int tickMarkTint = 2130903377;
+			// aapt resource value: 0x7f010042
+			public const int tickMarkTint = 2130772034;
 			
-			// aapt resource value: 0x7F030152
-			public const int tickMarkTintMode = 2130903378;
+			// aapt resource value: 0x7f010043
+			public const int tickMarkTintMode = 2130772035;
 			
-			// aapt resource value: 0x7F030153
-			public const int tint = 2130903379;
+			// aapt resource value: 0x7f01003f
+			public const int tint = 2130772031;
 			
-			// aapt resource value: 0x7F030154
-			public const int tintMode = 2130903380;
+			// aapt resource value: 0x7f010040
+			public const int tintMode = 2130772032;
 			
-			// aapt resource value: 0x7F030155
-			public const int title = 2130903381;
+			// aapt resource value: 0x7f01001a
+			public const int title = 2130771994;
 			
-			// aapt resource value: 0x7F030156
-			public const int titleBackgroundColor = 2130903382;
+			// aapt resource value: 0x7f010187
+			public const int titleBackgroundColor = 2130772359;
 			
-			// aapt resource value: 0x7F030157
-			public const int titleColor = 2130903383;
+			// aapt resource value: 0x7f010185
+			public const int titleColor = 2130772357;
 			
-			// aapt resource value: 0x7F030158
-			public const int titleEnabled = 2130903384;
+			// aapt resource value: 0x7f010123
+			public const int titleEnabled = 2130772259;
 			
-			// aapt resource value: 0x7F030159
-			public const int titleMargin = 2130903385;
+			// aapt resource value: 0x7f0100f9
+			public const int titleMargin = 2130772217;
 			
-			// aapt resource value: 0x7F03015A
-			public const int titleMarginBottom = 2130903386;
+			// aapt resource value: 0x7f0100fd
+			public const int titleMarginBottom = 2130772221;
 			
-			// aapt resource value: 0x7F03015B
-			public const int titleMarginEnd = 2130903387;
+			// aapt resource value: 0x7f0100fb
+			public const int titleMarginEnd = 2130772219;
 			
-			// aapt resource value: 0x7F03015E
-			public const int titleMargins = 2130903390;
+			// aapt resource value: 0x7f0100fa
+			public const int titleMarginStart = 2130772218;
 			
-			// aapt resource value: 0x7F03015C
-			public const int titleMarginStart = 2130903388;
+			// aapt resource value: 0x7f0100fc
+			public const int titleMarginTop = 2130772220;
 			
-			// aapt resource value: 0x7F03015D
-			public const int titleMarginTop = 2130903389;
+			// aapt resource value: 0x7f0100fe
+			public const int titleMargins = 2130772222;
 			
-			// aapt resource value: 0x7F03015F
-			public const int titlePaddingBottom = 2130903391;
+			// aapt resource value: 0x7f01018b
+			public const int titlePaddingBottom = 2130772363;
 			
-			// aapt resource value: 0x7F030160
-			public const int titlePaddingLeft = 2130903392;
+			// aapt resource value: 0x7f010188
+			public const int titlePaddingLeft = 2130772360;
 			
-			// aapt resource value: 0x7F030161
-			public const int titlePaddingRight = 2130903393;
+			// aapt resource value: 0x7f010189
+			public const int titlePaddingRight = 2130772361;
 			
-			// aapt resource value: 0x7F030162
-			public const int titlePaddingTop = 2130903394;
+			// aapt resource value: 0x7f01018a
+			public const int titlePaddingTop = 2130772362;
 			
-			// aapt resource value: 0x7F030163
-			public const int titleSize = 2130903395;
+			// aapt resource value: 0x7f010186
+			public const int titleSize = 2130772358;
 			
-			// aapt resource value: 0x7F030164
-			public const int titleText = 2130903396;
+			// aapt resource value: 0x7f010184
+			public const int titleText = 2130772356;
 			
-			// aapt resource value: 0x7F030165
-			public const int titleTextAppearance = 2130903397;
+			// aapt resource value: 0x7f0100f7
+			public const int titleTextAppearance = 2130772215;
 			
-			// aapt resource value: 0x7F030166
-			public const int titleTextColor = 2130903398;
+			// aapt resource value: 0x7f010106
+			public const int titleTextColor = 2130772230;
 			
-			// aapt resource value: 0x7F030167
-			public const int titleTextStyle = 2130903399;
+			// aapt resource value: 0x7f01001e
+			public const int titleTextStyle = 2130771998;
 			
-			// aapt resource value: 0x7F030168
-			public const int toolbarId = 2130903400;
+			// aapt resource value: 0x7f01011e
+			public const int toolbarId = 2130772254;
 			
-			// aapt resource value: 0x7F030169
-			public const int toolbarNavigationButtonStyle = 2130903401;
+			// aapt resource value: 0x7f010085
+			public const int toolbarNavigationButtonStyle = 2130772101;
 			
-			// aapt resource value: 0x7F03016A
-			public const int toolbarStyle = 2130903402;
+			// aapt resource value: 0x7f010084
+			public const int toolbarStyle = 2130772100;
 			
-			// aapt resource value: 0x7F03016B
-			public const int tooltipForegroundColor = 2130903403;
+			// aapt resource value: 0x7f0100be
+			public const int tooltipForegroundColor = 2130772158;
 			
-			// aapt resource value: 0x7F03016C
-			public const int tooltipFrameBackground = 2130903404;
+			// aapt resource value: 0x7f0100bd
+			public const int tooltipFrameBackground = 2130772157;
 			
-			// aapt resource value: 0x7F03016D
-			public const int tooltipText = 2130903405;
+			// aapt resource value: 0x7f0100d6
+			public const int tooltipText = 2130772182;
 			
-			// aapt resource value: 0x7F03016E
-			public const int track = 2130903406;
+			// aapt resource value: 0x7f0100ee
+			public const int track = 2130772206;
 			
-			// aapt resource value: 0x7F03016F
-			public const int trackTint = 2130903407;
+			// aapt resource value: 0x7f0100ef
+			public const int trackTint = 2130772207;
 			
-			// aapt resource value: 0x7F030170
-			public const int trackTintMode = 2130903408;
+			// aapt resource value: 0x7f0100f0
+			public const int trackTintMode = 2130772208;
 			
-			// aapt resource value: 0x7F030171
-			public const int useCompatPadding = 2130903409;
+			// aapt resource value: 0x7f010135
+			public const int useCompatPadding = 2130772277;
 			
-			// aapt resource value: 0x7F030172
-			public const int voiceIcon = 2130903410;
+			// aapt resource value: 0x7f0100e7
+			public const int voiceIcon = 2130772199;
 			
-			// aapt resource value: 0x7F030173
-			public const int windowActionBar = 2130903411;
+			// aapt resource value: 0x7f01004b
+			public const int windowActionBar = 2130772043;
 			
-			// aapt resource value: 0x7F030174
-			public const int windowActionBarOverlay = 2130903412;
+			// aapt resource value: 0x7f01004d
+			public const int windowActionBarOverlay = 2130772045;
 			
-			// aapt resource value: 0x7F030175
-			public const int windowActionModeOverlay = 2130903413;
+			// aapt resource value: 0x7f01004e
+			public const int windowActionModeOverlay = 2130772046;
 			
-			// aapt resource value: 0x7F030176
-			public const int windowFixedHeightMajor = 2130903414;
+			// aapt resource value: 0x7f010052
+			public const int windowFixedHeightMajor = 2130772050;
 			
-			// aapt resource value: 0x7F030177
-			public const int windowFixedHeightMinor = 2130903415;
+			// aapt resource value: 0x7f010050
+			public const int windowFixedHeightMinor = 2130772048;
 			
-			// aapt resource value: 0x7F030178
-			public const int windowFixedWidthMajor = 2130903416;
+			// aapt resource value: 0x7f01004f
+			public const int windowFixedWidthMajor = 2130772047;
 			
-			// aapt resource value: 0x7F030179
-			public const int windowFixedWidthMinor = 2130903417;
+			// aapt resource value: 0x7f010051
+			public const int windowFixedWidthMinor = 2130772049;
 			
-			// aapt resource value: 0x7F03017A
-			public const int windowMinWidthMajor = 2130903418;
+			// aapt resource value: 0x7f010053
+			public const int windowMinWidthMajor = 2130772051;
 			
-			// aapt resource value: 0x7F03017B
-			public const int windowMinWidthMinor = 2130903419;
+			// aapt resource value: 0x7f010054
+			public const int windowMinWidthMinor = 2130772052;
 			
-			// aapt resource value: 0x7F03017C
-			public const int windowNoTitle = 2130903420;
+			// aapt resource value: 0x7f01004c
+			public const int windowNoTitle = 2130772044;
 			
-			// aapt resource value: 0x7F03017D
-			public const int xAxis = 2130903421;
+			// aapt resource value: 0x7f010168
+			public const int xAxis = 2130772328;
 			
-			// aapt resource value: 0x7F03017E
-			public const int xAxisLineColor = 2130903422;
+			// aapt resource value: 0x7f010174
+			public const int xAxisLineColor = 2130772340;
 			
-			// aapt resource value: 0x7F03017F
-			public const int xAxisLineWidth = 2130903423;
+			// aapt resource value: 0x7f010175
+			public const int xAxisLineWidth = 2130772341;
 			
-			// aapt resource value: 0x7F030180
-			public const int xAxisMajorGridLineColor = 2130903424;
+			// aapt resource value: 0x7f010172
+			public const int xAxisMajorGridLineColor = 2130772338;
 			
-			// aapt resource value: 0x7F030181
-			public const int xAxisMajorGridLineWidth = 2130903425;
+			// aapt resource value: 0x7f010173
+			public const int xAxisMajorGridLineWidth = 2130772339;
 			
-			// aapt resource value: 0x7F030182
-			public const int xAxisTitleBackgroundColor = 2130903426;
+			// aapt resource value: 0x7f01016d
+			public const int xAxisTitleBackgroundColor = 2130772333;
 			
-			// aapt resource value: 0x7F030183
-			public const int xAxisTitleSize = 2130903427;
+			// aapt resource value: 0x7f01016c
+			public const int xAxisTitleSize = 2130772332;
 			
-			// aapt resource value: 0x7F030184
-			public const int xAxisTitleText = 2130903428;
+			// aapt resource value: 0x7f01016a
+			public const int xAxisTitleText = 2130772330;
 			
-			// aapt resource value: 0x7F030185
-			public const int xAxisTitleTextColor = 2130903429;
+			// aapt resource value: 0x7f01016b
+			public const int xAxisTitleTextColor = 2130772331;
 			
-			// aapt resource value: 0x7F030186
-			public const int yAxis = 2130903430;
+			// aapt resource value: 0x7f010169
+			public const int yAxis = 2130772329;
 			
-			// aapt resource value: 0x7F030187
-			public const int yAxisLineColor = 2130903431;
+			// aapt resource value: 0x7f010178
+			public const int yAxisLineColor = 2130772344;
 			
-			// aapt resource value: 0x7F030188
-			public const int yAxisLineWidth = 2130903432;
+			// aapt resource value: 0x7f010179
+			public const int yAxisLineWidth = 2130772345;
 			
-			// aapt resource value: 0x7F030189
-			public const int yAxisMajorGridLineColor = 2130903433;
+			// aapt resource value: 0x7f010176
+			public const int yAxisMajorGridLineColor = 2130772342;
 			
-			// aapt resource value: 0x7F03018A
-			public const int yAxisMajorGridLineWidth = 2130903434;
+			// aapt resource value: 0x7f010177
+			public const int yAxisMajorGridLineWidth = 2130772343;
 			
-			// aapt resource value: 0x7F03018B
-			public const int yAxisTitleBackgroundColor = 2130903435;
+			// aapt resource value: 0x7f010171
+			public const int yAxisTitleBackgroundColor = 2130772337;
 			
-			// aapt resource value: 0x7F03018C
-			public const int yAxisTitleSize = 2130903436;
+			// aapt resource value: 0x7f010170
+			public const int yAxisTitleSize = 2130772336;
 			
-			// aapt resource value: 0x7F03018D
-			public const int yAxisTitleText = 2130903437;
+			// aapt resource value: 0x7f01016e
+			public const int yAxisTitleText = 2130772334;
 			
-			// aapt resource value: 0x7F03018E
-			public const int yAxisTitleTextColor = 2130903438;
+			// aapt resource value: 0x7f01016f
+			public const int yAxisTitleTextColor = 2130772335;
 			
 			static Attribute()
 			{
@@ -1518,20 +1518,20 @@ namespace GFI_with_GFS_A
 		public partial class Boolean
 		{
 			
-			// aapt resource value: 0x7F040000
-			public const int abc_action_bar_embed_tabs = 2130968576;
+			// aapt resource value: 0x7f0e0000
+			public const int abc_action_bar_embed_tabs = 2131623936;
 			
-			// aapt resource value: 0x7F040001
-			public const int abc_allow_stacked_button_bar = 2130968577;
+			// aapt resource value: 0x7f0e0001
+			public const int abc_allow_stacked_button_bar = 2131623937;
 			
-			// aapt resource value: 0x7F040002
-			public const int abc_config_actionMenuItemAllCaps = 2130968578;
+			// aapt resource value: 0x7f0e0002
+			public const int abc_config_actionMenuItemAllCaps = 2131623938;
 			
-			// aapt resource value: 0x7F040003
-			public const int abc_config_closeDialogWhenTouchOutside = 2130968579;
+			// aapt resource value: 0x7f0e0003
+			public const int abc_config_closeDialogWhenTouchOutside = 2131623939;
 			
-			// aapt resource value: 0x7F040004
-			public const int abc_config_showMenuShortcutsWhenKeyboardPresent = 2130968580;
+			// aapt resource value: 0x7f0e0004
+			public const int abc_config_showMenuShortcutsWhenKeyboardPresent = 2131623940;
 			
 			static Boolean()
 			{
@@ -1546,335 +1546,335 @@ namespace GFI_with_GFS_A
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7F050003
-			public const int abc_background_cache_hint_selector_material_dark = 2131034115;
+			// aapt resource value: 0x7f0d0055
+			public const int CardViewBackground_WhiteTheme = 2131558485;
 			
-			// aapt resource value: 0x7F050004
-			public const int abc_background_cache_hint_selector_material_light = 2131034116;
+			// aapt resource value: 0x7f0d0053
+			public const int FABColor = 2131558483;
 			
-			// aapt resource value: 0x7F050005
-			public const int abc_btn_colored_borderless_text_material = 2131034117;
+			// aapt resource value: 0x7f0d0054
+			public const int ProgressBarColor = 2131558484;
 			
-			// aapt resource value: 0x7F050006
-			public const int abc_btn_colored_text_material = 2131034118;
+			// aapt resource value: 0x7f0d0056
+			public const int abc_background_cache_hint_selector_material_dark = 2131558486;
 			
-			// aapt resource value: 0x7F050007
-			public const int abc_color_highlight_material = 2131034119;
+			// aapt resource value: 0x7f0d0057
+			public const int abc_background_cache_hint_selector_material_light = 2131558487;
 			
-			// aapt resource value: 0x7F050008
-			public const int abc_hint_foreground_material_dark = 2131034120;
+			// aapt resource value: 0x7f0d0058
+			public const int abc_btn_colored_borderless_text_material = 2131558488;
 			
-			// aapt resource value: 0x7F050009
-			public const int abc_hint_foreground_material_light = 2131034121;
+			// aapt resource value: 0x7f0d0059
+			public const int abc_btn_colored_text_material = 2131558489;
 			
-			// aapt resource value: 0x7F05000A
-			public const int abc_input_method_navigation_guard = 2131034122;
+			// aapt resource value: 0x7f0d005a
+			public const int abc_color_highlight_material = 2131558490;
 			
-			// aapt resource value: 0x7F05000B
-			public const int abc_primary_text_disable_only_material_dark = 2131034123;
+			// aapt resource value: 0x7f0d005b
+			public const int abc_hint_foreground_material_dark = 2131558491;
 			
-			// aapt resource value: 0x7F05000C
-			public const int abc_primary_text_disable_only_material_light = 2131034124;
+			// aapt resource value: 0x7f0d005c
+			public const int abc_hint_foreground_material_light = 2131558492;
 			
-			// aapt resource value: 0x7F05000D
-			public const int abc_primary_text_material_dark = 2131034125;
+			// aapt resource value: 0x7f0d0004
+			public const int abc_input_method_navigation_guard = 2131558404;
 			
-			// aapt resource value: 0x7F05000E
-			public const int abc_primary_text_material_light = 2131034126;
+			// aapt resource value: 0x7f0d005d
+			public const int abc_primary_text_disable_only_material_dark = 2131558493;
 			
-			// aapt resource value: 0x7F05000F
-			public const int abc_search_url_text = 2131034127;
+			// aapt resource value: 0x7f0d005e
+			public const int abc_primary_text_disable_only_material_light = 2131558494;
 			
-			// aapt resource value: 0x7F050010
-			public const int abc_search_url_text_normal = 2131034128;
+			// aapt resource value: 0x7f0d005f
+			public const int abc_primary_text_material_dark = 2131558495;
 			
-			// aapt resource value: 0x7F050011
-			public const int abc_search_url_text_pressed = 2131034129;
+			// aapt resource value: 0x7f0d0060
+			public const int abc_primary_text_material_light = 2131558496;
 			
-			// aapt resource value: 0x7F050012
-			public const int abc_search_url_text_selected = 2131034130;
+			// aapt resource value: 0x7f0d0061
+			public const int abc_search_url_text = 2131558497;
 			
-			// aapt resource value: 0x7F050013
-			public const int abc_secondary_text_material_dark = 2131034131;
+			// aapt resource value: 0x7f0d0005
+			public const int abc_search_url_text_normal = 2131558405;
 			
-			// aapt resource value: 0x7F050014
-			public const int abc_secondary_text_material_light = 2131034132;
+			// aapt resource value: 0x7f0d0006
+			public const int abc_search_url_text_pressed = 2131558406;
 			
-			// aapt resource value: 0x7F050015
-			public const int abc_tint_btn_checkable = 2131034133;
+			// aapt resource value: 0x7f0d0007
+			public const int abc_search_url_text_selected = 2131558407;
 			
-			// aapt resource value: 0x7F050016
-			public const int abc_tint_default = 2131034134;
+			// aapt resource value: 0x7f0d0062
+			public const int abc_secondary_text_material_dark = 2131558498;
 			
-			// aapt resource value: 0x7F050017
-			public const int abc_tint_edittext = 2131034135;
+			// aapt resource value: 0x7f0d0063
+			public const int abc_secondary_text_material_light = 2131558499;
 			
-			// aapt resource value: 0x7F050018
-			public const int abc_tint_seek_thumb = 2131034136;
+			// aapt resource value: 0x7f0d0064
+			public const int abc_tint_btn_checkable = 2131558500;
 			
-			// aapt resource value: 0x7F050019
-			public const int abc_tint_spinner = 2131034137;
+			// aapt resource value: 0x7f0d0065
+			public const int abc_tint_default = 2131558501;
 			
-			// aapt resource value: 0x7F05001A
-			public const int abc_tint_switch_track = 2131034138;
+			// aapt resource value: 0x7f0d0066
+			public const int abc_tint_edittext = 2131558502;
 			
-			// aapt resource value: 0x7F05001B
-			public const int accent_material_dark = 2131034139;
+			// aapt resource value: 0x7f0d0067
+			public const int abc_tint_seek_thumb = 2131558503;
 			
-			// aapt resource value: 0x7F05001C
-			public const int accent_material_light = 2131034140;
+			// aapt resource value: 0x7f0d0068
+			public const int abc_tint_spinner = 2131558504;
 			
-			// aapt resource value: 0x7F05001D
-			public const int background_floating_material_dark = 2131034141;
+			// aapt resource value: 0x7f0d0069
+			public const int abc_tint_switch_track = 2131558505;
 			
-			// aapt resource value: 0x7F05001E
-			public const int background_floating_material_light = 2131034142;
+			// aapt resource value: 0x7f0d0008
+			public const int accent_material_dark = 2131558408;
 			
-			// aapt resource value: 0x7F05001F
-			public const int background_material_dark = 2131034143;
+			// aapt resource value: 0x7f0d0009
+			public const int accent_material_light = 2131558409;
 			
-			// aapt resource value: 0x7F050020
-			public const int background_material_light = 2131034144;
+			// aapt resource value: 0x7f0d000a
+			public const int background_floating_material_dark = 2131558410;
 			
-			// aapt resource value: 0x7F050021
-			public const int bright_foreground_disabled_material_dark = 2131034145;
+			// aapt resource value: 0x7f0d000b
+			public const int background_floating_material_light = 2131558411;
 			
-			// aapt resource value: 0x7F050022
-			public const int bright_foreground_disabled_material_light = 2131034146;
+			// aapt resource value: 0x7f0d000c
+			public const int background_material_dark = 2131558412;
 			
-			// aapt resource value: 0x7F050023
-			public const int bright_foreground_inverse_material_dark = 2131034147;
+			// aapt resource value: 0x7f0d000d
+			public const int background_material_light = 2131558413;
 			
-			// aapt resource value: 0x7F050024
-			public const int bright_foreground_inverse_material_light = 2131034148;
+			// aapt resource value: 0x7f0d000e
+			public const int bright_foreground_disabled_material_dark = 2131558414;
 			
-			// aapt resource value: 0x7F050025
-			public const int bright_foreground_material_dark = 2131034149;
+			// aapt resource value: 0x7f0d000f
+			public const int bright_foreground_disabled_material_light = 2131558415;
 			
-			// aapt resource value: 0x7F050026
-			public const int bright_foreground_material_light = 2131034150;
+			// aapt resource value: 0x7f0d0010
+			public const int bright_foreground_inverse_material_dark = 2131558416;
 			
-			// aapt resource value: 0x7F050027
-			public const int button_material_dark = 2131034151;
+			// aapt resource value: 0x7f0d0011
+			public const int bright_foreground_inverse_material_light = 2131558417;
 			
-			// aapt resource value: 0x7F050028
-			public const int button_material_light = 2131034152;
+			// aapt resource value: 0x7f0d0012
+			public const int bright_foreground_material_dark = 2131558418;
 			
-			// aapt resource value: 0x7F050000
-			public const int CardViewBackground_WhiteTheme = 2131034112;
+			// aapt resource value: 0x7f0d0013
+			public const int bright_foreground_material_light = 2131558419;
 			
-			// aapt resource value: 0x7F050029
-			public const int cardview_dark_background = 2131034153;
+			// aapt resource value: 0x7f0d0014
+			public const int button_material_dark = 2131558420;
 			
-			// aapt resource value: 0x7F05002A
-			public const int cardview_light_background = 2131034154;
+			// aapt resource value: 0x7f0d0015
+			public const int button_material_light = 2131558421;
 			
-			// aapt resource value: 0x7F05002B
-			public const int cardview_shadow_end_color = 2131034155;
+			// aapt resource value: 0x7f0d0000
+			public const int cardview_dark_background = 2131558400;
 			
-			// aapt resource value: 0x7F05002C
-			public const int cardview_shadow_start_color = 2131034156;
+			// aapt resource value: 0x7f0d0001
+			public const int cardview_light_background = 2131558401;
 			
-			// aapt resource value: 0x7F05002D
-			public const int design_bottom_navigation_shadow_color = 2131034157;
+			// aapt resource value: 0x7f0d0002
+			public const int cardview_shadow_end_color = 2131558402;
 			
-			// aapt resource value: 0x7F05002E
-			public const int design_error = 2131034158;
+			// aapt resource value: 0x7f0d0003
+			public const int cardview_shadow_start_color = 2131558403;
 			
-			// aapt resource value: 0x7F05002F
-			public const int design_fab_shadow_end_color = 2131034159;
+			// aapt resource value: 0x7f0d0040
+			public const int design_bottom_navigation_shadow_color = 2131558464;
 			
-			// aapt resource value: 0x7F050030
-			public const int design_fab_shadow_mid_color = 2131034160;
+			// aapt resource value: 0x7f0d006a
+			public const int design_error = 2131558506;
 			
-			// aapt resource value: 0x7F050031
-			public const int design_fab_shadow_start_color = 2131034161;
+			// aapt resource value: 0x7f0d0041
+			public const int design_fab_shadow_end_color = 2131558465;
 			
-			// aapt resource value: 0x7F050032
-			public const int design_fab_stroke_end_inner_color = 2131034162;
+			// aapt resource value: 0x7f0d0042
+			public const int design_fab_shadow_mid_color = 2131558466;
 			
-			// aapt resource value: 0x7F050033
-			public const int design_fab_stroke_end_outer_color = 2131034163;
+			// aapt resource value: 0x7f0d0043
+			public const int design_fab_shadow_start_color = 2131558467;
 			
-			// aapt resource value: 0x7F050034
-			public const int design_fab_stroke_top_inner_color = 2131034164;
+			// aapt resource value: 0x7f0d0044
+			public const int design_fab_stroke_end_inner_color = 2131558468;
 			
-			// aapt resource value: 0x7F050035
-			public const int design_fab_stroke_top_outer_color = 2131034165;
+			// aapt resource value: 0x7f0d0045
+			public const int design_fab_stroke_end_outer_color = 2131558469;
 			
-			// aapt resource value: 0x7F050036
-			public const int design_snackbar_background_color = 2131034166;
+			// aapt resource value: 0x7f0d0046
+			public const int design_fab_stroke_top_inner_color = 2131558470;
 			
-			// aapt resource value: 0x7F050037
-			public const int design_tint_password_toggle = 2131034167;
+			// aapt resource value: 0x7f0d0047
+			public const int design_fab_stroke_top_outer_color = 2131558471;
 			
-			// aapt resource value: 0x7F050038
-			public const int dim_foreground_disabled_material_dark = 2131034168;
+			// aapt resource value: 0x7f0d0048
+			public const int design_snackbar_background_color = 2131558472;
 			
-			// aapt resource value: 0x7F050039
-			public const int dim_foreground_disabled_material_light = 2131034169;
+			// aapt resource value: 0x7f0d006b
+			public const int design_tint_password_toggle = 2131558507;
 			
-			// aapt resource value: 0x7F05003A
-			public const int dim_foreground_material_dark = 2131034170;
+			// aapt resource value: 0x7f0d0016
+			public const int dim_foreground_disabled_material_dark = 2131558422;
 			
-			// aapt resource value: 0x7F05003B
-			public const int dim_foreground_material_light = 2131034171;
+			// aapt resource value: 0x7f0d0017
+			public const int dim_foreground_disabled_material_light = 2131558423;
 			
-			// aapt resource value: 0x7F05003C
-			public const int error_color_material = 2131034172;
+			// aapt resource value: 0x7f0d0018
+			public const int dim_foreground_material_dark = 2131558424;
 			
-			// aapt resource value: 0x7F050001
-			public const int FABColor = 2131034113;
+			// aapt resource value: 0x7f0d0019
+			public const int dim_foreground_material_light = 2131558425;
 			
-			// aapt resource value: 0x7F05003D
-			public const int foreground_material_dark = 2131034173;
+			// aapt resource value: 0x7f0d001a
+			public const int error_color_material = 2131558426;
 			
-			// aapt resource value: 0x7F05003E
-			public const int foreground_material_light = 2131034174;
+			// aapt resource value: 0x7f0d001b
+			public const int foreground_material_dark = 2131558427;
 			
-			// aapt resource value: 0x7F05003F
-			public const int highlighted_text_material_dark = 2131034175;
+			// aapt resource value: 0x7f0d001c
+			public const int foreground_material_light = 2131558428;
 			
-			// aapt resource value: 0x7F050040
-			public const int highlighted_text_material_light = 2131034176;
+			// aapt resource value: 0x7f0d001d
+			public const int highlighted_text_material_dark = 2131558429;
 			
-			// aapt resource value: 0x7F050041
-			public const int material_blue_grey_800 = 2131034177;
+			// aapt resource value: 0x7f0d001e
+			public const int highlighted_text_material_light = 2131558430;
 			
-			// aapt resource value: 0x7F050042
-			public const int material_blue_grey_900 = 2131034178;
+			// aapt resource value: 0x7f0d001f
+			public const int material_blue_grey_800 = 2131558431;
 			
-			// aapt resource value: 0x7F050043
-			public const int material_blue_grey_950 = 2131034179;
+			// aapt resource value: 0x7f0d0020
+			public const int material_blue_grey_900 = 2131558432;
 			
-			// aapt resource value: 0x7F050044
-			public const int material_deep_teal_200 = 2131034180;
+			// aapt resource value: 0x7f0d0021
+			public const int material_blue_grey_950 = 2131558433;
 			
-			// aapt resource value: 0x7F050045
-			public const int material_deep_teal_500 = 2131034181;
+			// aapt resource value: 0x7f0d0022
+			public const int material_deep_teal_200 = 2131558434;
 			
-			// aapt resource value: 0x7F050046
-			public const int material_grey_100 = 2131034182;
+			// aapt resource value: 0x7f0d0023
+			public const int material_deep_teal_500 = 2131558435;
 			
-			// aapt resource value: 0x7F050047
-			public const int material_grey_300 = 2131034183;
+			// aapt resource value: 0x7f0d0024
+			public const int material_grey_100 = 2131558436;
 			
-			// aapt resource value: 0x7F050048
-			public const int material_grey_50 = 2131034184;
+			// aapt resource value: 0x7f0d0025
+			public const int material_grey_300 = 2131558437;
 			
-			// aapt resource value: 0x7F050049
-			public const int material_grey_600 = 2131034185;
+			// aapt resource value: 0x7f0d0026
+			public const int material_grey_50 = 2131558438;
 			
-			// aapt resource value: 0x7F05004A
-			public const int material_grey_800 = 2131034186;
+			// aapt resource value: 0x7f0d0027
+			public const int material_grey_600 = 2131558439;
 			
-			// aapt resource value: 0x7F05004B
-			public const int material_grey_850 = 2131034187;
+			// aapt resource value: 0x7f0d0028
+			public const int material_grey_800 = 2131558440;
 			
-			// aapt resource value: 0x7F05004C
-			public const int material_grey_900 = 2131034188;
+			// aapt resource value: 0x7f0d0029
+			public const int material_grey_850 = 2131558441;
 			
-			// aapt resource value: 0x7F05004D
-			public const int notification_action_color_filter = 2131034189;
+			// aapt resource value: 0x7f0d002a
+			public const int material_grey_900 = 2131558442;
 			
-			// aapt resource value: 0x7F05004E
-			public const int notification_icon_bg_color = 2131034190;
+			// aapt resource value: 0x7f0d0049
+			public const int notification_action_color_filter = 2131558473;
 			
-			// aapt resource value: 0x7F05004F
-			public const int notification_material_background_media_default_color = 2131034191;
+			// aapt resource value: 0x7f0d004a
+			public const int notification_icon_bg_color = 2131558474;
 			
-			// aapt resource value: 0x7F050050
-			public const int primaryColor = 2131034192;
+			// aapt resource value: 0x7f0d003f
+			public const int notification_material_background_media_default_color = 2131558463;
 			
-			// aapt resource value: 0x7F050051
-			public const int primaryDarkColor = 2131034193;
+			// aapt resource value: 0x7f0d004b
+			public const int primaryColor = 2131558475;
 			
-			// aapt resource value: 0x7F050052
-			public const int primaryLightColor = 2131034194;
+			// aapt resource value: 0x7f0d004d
+			public const int primaryDarkColor = 2131558477;
 			
-			// aapt resource value: 0x7F050053
-			public const int primaryTextColor = 2131034195;
+			// aapt resource value: 0x7f0d004c
+			public const int primaryLightColor = 2131558476;
 			
-			// aapt resource value: 0x7F050054
-			public const int primary_dark_material_dark = 2131034196;
+			// aapt resource value: 0x7f0d0051
+			public const int primaryTextColor = 2131558481;
 			
-			// aapt resource value: 0x7F050055
-			public const int primary_dark_material_light = 2131034197;
+			// aapt resource value: 0x7f0d002b
+			public const int primary_dark_material_dark = 2131558443;
 			
-			// aapt resource value: 0x7F050056
-			public const int primary_material_dark = 2131034198;
+			// aapt resource value: 0x7f0d002c
+			public const int primary_dark_material_light = 2131558444;
 			
-			// aapt resource value: 0x7F050057
-			public const int primary_material_light = 2131034199;
+			// aapt resource value: 0x7f0d002d
+			public const int primary_material_dark = 2131558445;
 			
-			// aapt resource value: 0x7F050058
-			public const int primary_text_default_material_dark = 2131034200;
+			// aapt resource value: 0x7f0d002e
+			public const int primary_material_light = 2131558446;
 			
-			// aapt resource value: 0x7F050059
-			public const int primary_text_default_material_light = 2131034201;
+			// aapt resource value: 0x7f0d002f
+			public const int primary_text_default_material_dark = 2131558447;
 			
-			// aapt resource value: 0x7F05005A
-			public const int primary_text_disabled_material_dark = 2131034202;
+			// aapt resource value: 0x7f0d0030
+			public const int primary_text_default_material_light = 2131558448;
 			
-			// aapt resource value: 0x7F05005B
-			public const int primary_text_disabled_material_light = 2131034203;
+			// aapt resource value: 0x7f0d0031
+			public const int primary_text_disabled_material_dark = 2131558449;
 			
-			// aapt resource value: 0x7F050002
-			public const int ProgressBarColor = 2131034114;
+			// aapt resource value: 0x7f0d0032
+			public const int primary_text_disabled_material_light = 2131558450;
 			
-			// aapt resource value: 0x7F05005C
-			public const int ripple_material_dark = 2131034204;
+			// aapt resource value: 0x7f0d0033
+			public const int ripple_material_dark = 2131558451;
 			
-			// aapt resource value: 0x7F05005D
-			public const int ripple_material_light = 2131034205;
+			// aapt resource value: 0x7f0d0034
+			public const int ripple_material_light = 2131558452;
 			
-			// aapt resource value: 0x7F05005E
-			public const int secondaryColor = 2131034206;
+			// aapt resource value: 0x7f0d004e
+			public const int secondaryColor = 2131558478;
 			
-			// aapt resource value: 0x7F05005F
-			public const int secondaryDarkColor = 2131034207;
+			// aapt resource value: 0x7f0d0050
+			public const int secondaryDarkColor = 2131558480;
 			
-			// aapt resource value: 0x7F050060
-			public const int secondaryLightColor = 2131034208;
+			// aapt resource value: 0x7f0d004f
+			public const int secondaryLightColor = 2131558479;
 			
-			// aapt resource value: 0x7F050061
-			public const int secondaryTextColor = 2131034209;
+			// aapt resource value: 0x7f0d0052
+			public const int secondaryTextColor = 2131558482;
 			
-			// aapt resource value: 0x7F050062
-			public const int secondary_text_default_material_dark = 2131034210;
+			// aapt resource value: 0x7f0d0035
+			public const int secondary_text_default_material_dark = 2131558453;
 			
-			// aapt resource value: 0x7F050063
-			public const int secondary_text_default_material_light = 2131034211;
+			// aapt resource value: 0x7f0d0036
+			public const int secondary_text_default_material_light = 2131558454;
 			
-			// aapt resource value: 0x7F050064
-			public const int secondary_text_disabled_material_dark = 2131034212;
+			// aapt resource value: 0x7f0d0037
+			public const int secondary_text_disabled_material_dark = 2131558455;
 			
-			// aapt resource value: 0x7F050065
-			public const int secondary_text_disabled_material_light = 2131034213;
+			// aapt resource value: 0x7f0d0038
+			public const int secondary_text_disabled_material_light = 2131558456;
 			
-			// aapt resource value: 0x7F050066
-			public const int switch_thumb_disabled_material_dark = 2131034214;
+			// aapt resource value: 0x7f0d0039
+			public const int switch_thumb_disabled_material_dark = 2131558457;
 			
-			// aapt resource value: 0x7F050067
-			public const int switch_thumb_disabled_material_light = 2131034215;
+			// aapt resource value: 0x7f0d003a
+			public const int switch_thumb_disabled_material_light = 2131558458;
 			
-			// aapt resource value: 0x7F050068
-			public const int switch_thumb_material_dark = 2131034216;
+			// aapt resource value: 0x7f0d006c
+			public const int switch_thumb_material_dark = 2131558508;
 			
-			// aapt resource value: 0x7F050069
-			public const int switch_thumb_material_light = 2131034217;
+			// aapt resource value: 0x7f0d006d
+			public const int switch_thumb_material_light = 2131558509;
 			
-			// aapt resource value: 0x7F05006A
-			public const int switch_thumb_normal_material_dark = 2131034218;
+			// aapt resource value: 0x7f0d003b
+			public const int switch_thumb_normal_material_dark = 2131558459;
 			
-			// aapt resource value: 0x7F05006B
-			public const int switch_thumb_normal_material_light = 2131034219;
+			// aapt resource value: 0x7f0d003c
+			public const int switch_thumb_normal_material_light = 2131558460;
 			
-			// aapt resource value: 0x7F05006C
-			public const int tooltip_background_dark = 2131034220;
+			// aapt resource value: 0x7f0d003d
+			public const int tooltip_background_dark = 2131558461;
 			
-			// aapt resource value: 0x7F05006D
-			public const int tooltip_background_light = 2131034221;
+			// aapt resource value: 0x7f0d003e
+			public const int tooltip_background_light = 2131558462;
 			
 			static Color()
 			{
@@ -1889,485 +1889,485 @@ namespace GFI_with_GFS_A
 		public partial class Dimension
 		{
 			
-			// aapt resource value: 0x7F060000
-			public const int abc_action_bar_content_inset_material = 2131099648;
+			// aapt resource value: 0x7f0b0015
+			public const int abc_action_bar_content_inset_material = 2131427349;
 			
-			// aapt resource value: 0x7F060001
-			public const int abc_action_bar_content_inset_with_nav = 2131099649;
+			// aapt resource value: 0x7f0b0016
+			public const int abc_action_bar_content_inset_with_nav = 2131427350;
 			
-			// aapt resource value: 0x7F060002
-			public const int abc_action_bar_default_height_material = 2131099650;
+			// aapt resource value: 0x7f0b000a
+			public const int abc_action_bar_default_height_material = 2131427338;
 			
-			// aapt resource value: 0x7F060003
-			public const int abc_action_bar_default_padding_end_material = 2131099651;
+			// aapt resource value: 0x7f0b0017
+			public const int abc_action_bar_default_padding_end_material = 2131427351;
 			
-			// aapt resource value: 0x7F060004
-			public const int abc_action_bar_default_padding_start_material = 2131099652;
+			// aapt resource value: 0x7f0b0018
+			public const int abc_action_bar_default_padding_start_material = 2131427352;
 			
-			// aapt resource value: 0x7F060005
-			public const int abc_action_bar_elevation_material = 2131099653;
+			// aapt resource value: 0x7f0b001a
+			public const int abc_action_bar_elevation_material = 2131427354;
 			
-			// aapt resource value: 0x7F060006
-			public const int abc_action_bar_icon_vertical_padding_material = 2131099654;
+			// aapt resource value: 0x7f0b001b
+			public const int abc_action_bar_icon_vertical_padding_material = 2131427355;
 			
-			// aapt resource value: 0x7F060007
-			public const int abc_action_bar_overflow_padding_end_material = 2131099655;
+			// aapt resource value: 0x7f0b001c
+			public const int abc_action_bar_overflow_padding_end_material = 2131427356;
 			
-			// aapt resource value: 0x7F060008
-			public const int abc_action_bar_overflow_padding_start_material = 2131099656;
+			// aapt resource value: 0x7f0b001d
+			public const int abc_action_bar_overflow_padding_start_material = 2131427357;
 			
-			// aapt resource value: 0x7F060009
-			public const int abc_action_bar_progress_bar_size = 2131099657;
+			// aapt resource value: 0x7f0b000b
+			public const int abc_action_bar_progress_bar_size = 2131427339;
 			
-			// aapt resource value: 0x7F06000A
-			public const int abc_action_bar_stacked_max_height = 2131099658;
+			// aapt resource value: 0x7f0b001e
+			public const int abc_action_bar_stacked_max_height = 2131427358;
 			
-			// aapt resource value: 0x7F06000B
-			public const int abc_action_bar_stacked_tab_max_width = 2131099659;
+			// aapt resource value: 0x7f0b001f
+			public const int abc_action_bar_stacked_tab_max_width = 2131427359;
 			
-			// aapt resource value: 0x7F06000C
-			public const int abc_action_bar_subtitle_bottom_margin_material = 2131099660;
+			// aapt resource value: 0x7f0b0020
+			public const int abc_action_bar_subtitle_bottom_margin_material = 2131427360;
 			
-			// aapt resource value: 0x7F06000D
-			public const int abc_action_bar_subtitle_top_margin_material = 2131099661;
+			// aapt resource value: 0x7f0b0021
+			public const int abc_action_bar_subtitle_top_margin_material = 2131427361;
 			
-			// aapt resource value: 0x7F06000E
-			public const int abc_action_button_min_height_material = 2131099662;
+			// aapt resource value: 0x7f0b0022
+			public const int abc_action_button_min_height_material = 2131427362;
 			
-			// aapt resource value: 0x7F06000F
-			public const int abc_action_button_min_width_material = 2131099663;
+			// aapt resource value: 0x7f0b0023
+			public const int abc_action_button_min_width_material = 2131427363;
 			
-			// aapt resource value: 0x7F060010
-			public const int abc_action_button_min_width_overflow_material = 2131099664;
+			// aapt resource value: 0x7f0b0024
+			public const int abc_action_button_min_width_overflow_material = 2131427364;
 			
-			// aapt resource value: 0x7F060011
-			public const int abc_alert_dialog_button_bar_height = 2131099665;
+			// aapt resource value: 0x7f0b0009
+			public const int abc_alert_dialog_button_bar_height = 2131427337;
 			
-			// aapt resource value: 0x7F060012
-			public const int abc_button_inset_horizontal_material = 2131099666;
+			// aapt resource value: 0x7f0b0025
+			public const int abc_button_inset_horizontal_material = 2131427365;
 			
-			// aapt resource value: 0x7F060013
-			public const int abc_button_inset_vertical_material = 2131099667;
+			// aapt resource value: 0x7f0b0026
+			public const int abc_button_inset_vertical_material = 2131427366;
 			
-			// aapt resource value: 0x7F060014
-			public const int abc_button_padding_horizontal_material = 2131099668;
+			// aapt resource value: 0x7f0b0027
+			public const int abc_button_padding_horizontal_material = 2131427367;
 			
-			// aapt resource value: 0x7F060015
-			public const int abc_button_padding_vertical_material = 2131099669;
+			// aapt resource value: 0x7f0b0028
+			public const int abc_button_padding_vertical_material = 2131427368;
 			
-			// aapt resource value: 0x7F060016
-			public const int abc_cascading_menus_min_smallest_width = 2131099670;
+			// aapt resource value: 0x7f0b0029
+			public const int abc_cascading_menus_min_smallest_width = 2131427369;
 			
-			// aapt resource value: 0x7F060017
-			public const int abc_config_prefDialogWidth = 2131099671;
+			// aapt resource value: 0x7f0b000e
+			public const int abc_config_prefDialogWidth = 2131427342;
 			
-			// aapt resource value: 0x7F060018
-			public const int abc_control_corner_material = 2131099672;
+			// aapt resource value: 0x7f0b002a
+			public const int abc_control_corner_material = 2131427370;
 			
-			// aapt resource value: 0x7F060019
-			public const int abc_control_inset_material = 2131099673;
+			// aapt resource value: 0x7f0b002b
+			public const int abc_control_inset_material = 2131427371;
 			
-			// aapt resource value: 0x7F06001A
-			public const int abc_control_padding_material = 2131099674;
+			// aapt resource value: 0x7f0b002c
+			public const int abc_control_padding_material = 2131427372;
 			
-			// aapt resource value: 0x7F06001B
-			public const int abc_dialog_fixed_height_major = 2131099675;
+			// aapt resource value: 0x7f0b000f
+			public const int abc_dialog_fixed_height_major = 2131427343;
 			
-			// aapt resource value: 0x7F06001C
-			public const int abc_dialog_fixed_height_minor = 2131099676;
+			// aapt resource value: 0x7f0b0010
+			public const int abc_dialog_fixed_height_minor = 2131427344;
 			
-			// aapt resource value: 0x7F06001D
-			public const int abc_dialog_fixed_width_major = 2131099677;
+			// aapt resource value: 0x7f0b0011
+			public const int abc_dialog_fixed_width_major = 2131427345;
 			
-			// aapt resource value: 0x7F06001E
-			public const int abc_dialog_fixed_width_minor = 2131099678;
+			// aapt resource value: 0x7f0b0012
+			public const int abc_dialog_fixed_width_minor = 2131427346;
 			
-			// aapt resource value: 0x7F06001F
-			public const int abc_dialog_list_padding_bottom_no_buttons = 2131099679;
+			// aapt resource value: 0x7f0b002d
+			public const int abc_dialog_list_padding_bottom_no_buttons = 2131427373;
 			
-			// aapt resource value: 0x7F060020
-			public const int abc_dialog_list_padding_top_no_title = 2131099680;
+			// aapt resource value: 0x7f0b002e
+			public const int abc_dialog_list_padding_top_no_title = 2131427374;
 			
-			// aapt resource value: 0x7F060021
-			public const int abc_dialog_min_width_major = 2131099681;
+			// aapt resource value: 0x7f0b0013
+			public const int abc_dialog_min_width_major = 2131427347;
 			
-			// aapt resource value: 0x7F060022
-			public const int abc_dialog_min_width_minor = 2131099682;
+			// aapt resource value: 0x7f0b0014
+			public const int abc_dialog_min_width_minor = 2131427348;
 			
-			// aapt resource value: 0x7F060023
-			public const int abc_dialog_padding_material = 2131099683;
+			// aapt resource value: 0x7f0b002f
+			public const int abc_dialog_padding_material = 2131427375;
 			
-			// aapt resource value: 0x7F060024
-			public const int abc_dialog_padding_top_material = 2131099684;
+			// aapt resource value: 0x7f0b0030
+			public const int abc_dialog_padding_top_material = 2131427376;
 			
-			// aapt resource value: 0x7F060025
-			public const int abc_dialog_title_divider_material = 2131099685;
+			// aapt resource value: 0x7f0b0031
+			public const int abc_dialog_title_divider_material = 2131427377;
 			
-			// aapt resource value: 0x7F060026
-			public const int abc_disabled_alpha_material_dark = 2131099686;
+			// aapt resource value: 0x7f0b0032
+			public const int abc_disabled_alpha_material_dark = 2131427378;
 			
-			// aapt resource value: 0x7F060027
-			public const int abc_disabled_alpha_material_light = 2131099687;
+			// aapt resource value: 0x7f0b0033
+			public const int abc_disabled_alpha_material_light = 2131427379;
 			
-			// aapt resource value: 0x7F060028
-			public const int abc_dropdownitem_icon_width = 2131099688;
+			// aapt resource value: 0x7f0b0034
+			public const int abc_dropdownitem_icon_width = 2131427380;
 			
-			// aapt resource value: 0x7F060029
-			public const int abc_dropdownitem_text_padding_left = 2131099689;
+			// aapt resource value: 0x7f0b0035
+			public const int abc_dropdownitem_text_padding_left = 2131427381;
 			
-			// aapt resource value: 0x7F06002A
-			public const int abc_dropdownitem_text_padding_right = 2131099690;
+			// aapt resource value: 0x7f0b0036
+			public const int abc_dropdownitem_text_padding_right = 2131427382;
 			
-			// aapt resource value: 0x7F06002B
-			public const int abc_edit_text_inset_bottom_material = 2131099691;
+			// aapt resource value: 0x7f0b0037
+			public const int abc_edit_text_inset_bottom_material = 2131427383;
 			
-			// aapt resource value: 0x7F06002C
-			public const int abc_edit_text_inset_horizontal_material = 2131099692;
+			// aapt resource value: 0x7f0b0038
+			public const int abc_edit_text_inset_horizontal_material = 2131427384;
 			
-			// aapt resource value: 0x7F06002D
-			public const int abc_edit_text_inset_top_material = 2131099693;
+			// aapt resource value: 0x7f0b0039
+			public const int abc_edit_text_inset_top_material = 2131427385;
 			
-			// aapt resource value: 0x7F06002E
-			public const int abc_floating_window_z = 2131099694;
+			// aapt resource value: 0x7f0b003a
+			public const int abc_floating_window_z = 2131427386;
 			
-			// aapt resource value: 0x7F06002F
-			public const int abc_list_item_padding_horizontal_material = 2131099695;
+			// aapt resource value: 0x7f0b003b
+			public const int abc_list_item_padding_horizontal_material = 2131427387;
 			
-			// aapt resource value: 0x7F060030
-			public const int abc_panel_menu_list_width = 2131099696;
+			// aapt resource value: 0x7f0b003c
+			public const int abc_panel_menu_list_width = 2131427388;
 			
-			// aapt resource value: 0x7F060031
-			public const int abc_progress_bar_height_material = 2131099697;
+			// aapt resource value: 0x7f0b003d
+			public const int abc_progress_bar_height_material = 2131427389;
 			
-			// aapt resource value: 0x7F060032
-			public const int abc_search_view_preferred_height = 2131099698;
+			// aapt resource value: 0x7f0b003e
+			public const int abc_search_view_preferred_height = 2131427390;
 			
-			// aapt resource value: 0x7F060033
-			public const int abc_search_view_preferred_width = 2131099699;
+			// aapt resource value: 0x7f0b003f
+			public const int abc_search_view_preferred_width = 2131427391;
 			
-			// aapt resource value: 0x7F060034
-			public const int abc_seekbar_track_background_height_material = 2131099700;
+			// aapt resource value: 0x7f0b0040
+			public const int abc_seekbar_track_background_height_material = 2131427392;
 			
-			// aapt resource value: 0x7F060035
-			public const int abc_seekbar_track_progress_height_material = 2131099701;
+			// aapt resource value: 0x7f0b0041
+			public const int abc_seekbar_track_progress_height_material = 2131427393;
 			
-			// aapt resource value: 0x7F060036
-			public const int abc_select_dialog_padding_start_material = 2131099702;
+			// aapt resource value: 0x7f0b0042
+			public const int abc_select_dialog_padding_start_material = 2131427394;
 			
-			// aapt resource value: 0x7F060037
-			public const int abc_switch_padding = 2131099703;
+			// aapt resource value: 0x7f0b0019
+			public const int abc_switch_padding = 2131427353;
 			
-			// aapt resource value: 0x7F060038
-			public const int abc_text_size_body_1_material = 2131099704;
+			// aapt resource value: 0x7f0b0043
+			public const int abc_text_size_body_1_material = 2131427395;
 			
-			// aapt resource value: 0x7F060039
-			public const int abc_text_size_body_2_material = 2131099705;
+			// aapt resource value: 0x7f0b0044
+			public const int abc_text_size_body_2_material = 2131427396;
 			
-			// aapt resource value: 0x7F06003A
-			public const int abc_text_size_button_material = 2131099706;
+			// aapt resource value: 0x7f0b0045
+			public const int abc_text_size_button_material = 2131427397;
 			
-			// aapt resource value: 0x7F06003B
-			public const int abc_text_size_caption_material = 2131099707;
+			// aapt resource value: 0x7f0b0046
+			public const int abc_text_size_caption_material = 2131427398;
 			
-			// aapt resource value: 0x7F06003C
-			public const int abc_text_size_display_1_material = 2131099708;
+			// aapt resource value: 0x7f0b0047
+			public const int abc_text_size_display_1_material = 2131427399;
 			
-			// aapt resource value: 0x7F06003D
-			public const int abc_text_size_display_2_material = 2131099709;
+			// aapt resource value: 0x7f0b0048
+			public const int abc_text_size_display_2_material = 2131427400;
 			
-			// aapt resource value: 0x7F06003E
-			public const int abc_text_size_display_3_material = 2131099710;
+			// aapt resource value: 0x7f0b0049
+			public const int abc_text_size_display_3_material = 2131427401;
 			
-			// aapt resource value: 0x7F06003F
-			public const int abc_text_size_display_4_material = 2131099711;
+			// aapt resource value: 0x7f0b004a
+			public const int abc_text_size_display_4_material = 2131427402;
 			
-			// aapt resource value: 0x7F060040
-			public const int abc_text_size_headline_material = 2131099712;
+			// aapt resource value: 0x7f0b004b
+			public const int abc_text_size_headline_material = 2131427403;
 			
-			// aapt resource value: 0x7F060041
-			public const int abc_text_size_large_material = 2131099713;
+			// aapt resource value: 0x7f0b004c
+			public const int abc_text_size_large_material = 2131427404;
 			
-			// aapt resource value: 0x7F060042
-			public const int abc_text_size_medium_material = 2131099714;
+			// aapt resource value: 0x7f0b004d
+			public const int abc_text_size_medium_material = 2131427405;
 			
-			// aapt resource value: 0x7F060043
-			public const int abc_text_size_menu_header_material = 2131099715;
+			// aapt resource value: 0x7f0b004e
+			public const int abc_text_size_menu_header_material = 2131427406;
 			
-			// aapt resource value: 0x7F060044
-			public const int abc_text_size_menu_material = 2131099716;
+			// aapt resource value: 0x7f0b004f
+			public const int abc_text_size_menu_material = 2131427407;
 			
-			// aapt resource value: 0x7F060045
-			public const int abc_text_size_small_material = 2131099717;
+			// aapt resource value: 0x7f0b0050
+			public const int abc_text_size_small_material = 2131427408;
 			
-			// aapt resource value: 0x7F060046
-			public const int abc_text_size_subhead_material = 2131099718;
+			// aapt resource value: 0x7f0b0051
+			public const int abc_text_size_subhead_material = 2131427409;
 			
-			// aapt resource value: 0x7F060047
-			public const int abc_text_size_subtitle_material_toolbar = 2131099719;
+			// aapt resource value: 0x7f0b000c
+			public const int abc_text_size_subtitle_material_toolbar = 2131427340;
 			
-			// aapt resource value: 0x7F060048
-			public const int abc_text_size_title_material = 2131099720;
+			// aapt resource value: 0x7f0b0052
+			public const int abc_text_size_title_material = 2131427410;
 			
-			// aapt resource value: 0x7F060049
-			public const int abc_text_size_title_material_toolbar = 2131099721;
+			// aapt resource value: 0x7f0b000d
+			public const int abc_text_size_title_material_toolbar = 2131427341;
 			
-			// aapt resource value: 0x7F06004A
-			public const int cardview_compat_inset_shadow = 2131099722;
+			// aapt resource value: 0x7f0b0006
+			public const int cardview_compat_inset_shadow = 2131427334;
 			
-			// aapt resource value: 0x7F06004B
-			public const int cardview_default_elevation = 2131099723;
+			// aapt resource value: 0x7f0b0007
+			public const int cardview_default_elevation = 2131427335;
 			
-			// aapt resource value: 0x7F06004C
-			public const int cardview_default_radius = 2131099724;
+			// aapt resource value: 0x7f0b0008
+			public const int cardview_default_radius = 2131427336;
 			
-			// aapt resource value: 0x7F06004D
-			public const int compat_button_inset_horizontal_material = 2131099725;
+			// aapt resource value: 0x7f0b008e
+			public const int compat_button_inset_horizontal_material = 2131427470;
 			
-			// aapt resource value: 0x7F06004E
-			public const int compat_button_inset_vertical_material = 2131099726;
+			// aapt resource value: 0x7f0b008f
+			public const int compat_button_inset_vertical_material = 2131427471;
 			
-			// aapt resource value: 0x7F06004F
-			public const int compat_button_padding_horizontal_material = 2131099727;
+			// aapt resource value: 0x7f0b0090
+			public const int compat_button_padding_horizontal_material = 2131427472;
 			
-			// aapt resource value: 0x7F060050
-			public const int compat_button_padding_vertical_material = 2131099728;
+			// aapt resource value: 0x7f0b0091
+			public const int compat_button_padding_vertical_material = 2131427473;
 			
-			// aapt resource value: 0x7F060051
-			public const int compat_control_corner_material = 2131099729;
+			// aapt resource value: 0x7f0b0092
+			public const int compat_control_corner_material = 2131427474;
 			
-			// aapt resource value: 0x7F060052
-			public const int design_appbar_elevation = 2131099730;
+			// aapt resource value: 0x7f0b006c
+			public const int design_appbar_elevation = 2131427436;
 			
-			// aapt resource value: 0x7F060053
-			public const int design_bottom_navigation_active_item_max_width = 2131099731;
+			// aapt resource value: 0x7f0b006d
+			public const int design_bottom_navigation_active_item_max_width = 2131427437;
 			
-			// aapt resource value: 0x7F060054
-			public const int design_bottom_navigation_active_text_size = 2131099732;
+			// aapt resource value: 0x7f0b006e
+			public const int design_bottom_navigation_active_text_size = 2131427438;
 			
-			// aapt resource value: 0x7F060055
-			public const int design_bottom_navigation_elevation = 2131099733;
+			// aapt resource value: 0x7f0b006f
+			public const int design_bottom_navigation_elevation = 2131427439;
 			
-			// aapt resource value: 0x7F060056
-			public const int design_bottom_navigation_height = 2131099734;
+			// aapt resource value: 0x7f0b0070
+			public const int design_bottom_navigation_height = 2131427440;
 			
-			// aapt resource value: 0x7F060057
-			public const int design_bottom_navigation_item_max_width = 2131099735;
+			// aapt resource value: 0x7f0b0071
+			public const int design_bottom_navigation_item_max_width = 2131427441;
 			
-			// aapt resource value: 0x7F060058
-			public const int design_bottom_navigation_item_min_width = 2131099736;
+			// aapt resource value: 0x7f0b0072
+			public const int design_bottom_navigation_item_min_width = 2131427442;
 			
-			// aapt resource value: 0x7F060059
-			public const int design_bottom_navigation_margin = 2131099737;
+			// aapt resource value: 0x7f0b0073
+			public const int design_bottom_navigation_margin = 2131427443;
 			
-			// aapt resource value: 0x7F06005A
-			public const int design_bottom_navigation_shadow_height = 2131099738;
+			// aapt resource value: 0x7f0b0074
+			public const int design_bottom_navigation_shadow_height = 2131427444;
 			
-			// aapt resource value: 0x7F06005B
-			public const int design_bottom_navigation_text_size = 2131099739;
+			// aapt resource value: 0x7f0b0075
+			public const int design_bottom_navigation_text_size = 2131427445;
 			
-			// aapt resource value: 0x7F06005C
-			public const int design_bottom_sheet_modal_elevation = 2131099740;
+			// aapt resource value: 0x7f0b0076
+			public const int design_bottom_sheet_modal_elevation = 2131427446;
 			
-			// aapt resource value: 0x7F06005D
-			public const int design_bottom_sheet_peek_height_min = 2131099741;
+			// aapt resource value: 0x7f0b0077
+			public const int design_bottom_sheet_peek_height_min = 2131427447;
 			
-			// aapt resource value: 0x7F06005E
-			public const int design_fab_border_width = 2131099742;
+			// aapt resource value: 0x7f0b0078
+			public const int design_fab_border_width = 2131427448;
 			
-			// aapt resource value: 0x7F06005F
-			public const int design_fab_elevation = 2131099743;
+			// aapt resource value: 0x7f0b0079
+			public const int design_fab_elevation = 2131427449;
 			
-			// aapt resource value: 0x7F060060
-			public const int design_fab_image_size = 2131099744;
+			// aapt resource value: 0x7f0b007a
+			public const int design_fab_image_size = 2131427450;
 			
-			// aapt resource value: 0x7F060061
-			public const int design_fab_size_mini = 2131099745;
+			// aapt resource value: 0x7f0b007b
+			public const int design_fab_size_mini = 2131427451;
 			
-			// aapt resource value: 0x7F060062
-			public const int design_fab_size_normal = 2131099746;
+			// aapt resource value: 0x7f0b007c
+			public const int design_fab_size_normal = 2131427452;
 			
-			// aapt resource value: 0x7F060063
-			public const int design_fab_translation_z_pressed = 2131099747;
+			// aapt resource value: 0x7f0b007d
+			public const int design_fab_translation_z_pressed = 2131427453;
 			
-			// aapt resource value: 0x7F060064
-			public const int design_navigation_elevation = 2131099748;
+			// aapt resource value: 0x7f0b007e
+			public const int design_navigation_elevation = 2131427454;
 			
-			// aapt resource value: 0x7F060065
-			public const int design_navigation_icon_padding = 2131099749;
+			// aapt resource value: 0x7f0b007f
+			public const int design_navigation_icon_padding = 2131427455;
 			
-			// aapt resource value: 0x7F060066
-			public const int design_navigation_icon_size = 2131099750;
+			// aapt resource value: 0x7f0b0080
+			public const int design_navigation_icon_size = 2131427456;
 			
-			// aapt resource value: 0x7F060067
-			public const int design_navigation_max_width = 2131099751;
+			// aapt resource value: 0x7f0b0064
+			public const int design_navigation_max_width = 2131427428;
 			
-			// aapt resource value: 0x7F060068
-			public const int design_navigation_padding_bottom = 2131099752;
+			// aapt resource value: 0x7f0b0081
+			public const int design_navigation_padding_bottom = 2131427457;
 			
-			// aapt resource value: 0x7F060069
-			public const int design_navigation_separator_vertical_padding = 2131099753;
+			// aapt resource value: 0x7f0b0082
+			public const int design_navigation_separator_vertical_padding = 2131427458;
 			
-			// aapt resource value: 0x7F06006A
-			public const int design_snackbar_action_inline_max_width = 2131099754;
+			// aapt resource value: 0x7f0b0065
+			public const int design_snackbar_action_inline_max_width = 2131427429;
 			
-			// aapt resource value: 0x7F06006B
-			public const int design_snackbar_background_corner_radius = 2131099755;
+			// aapt resource value: 0x7f0b0066
+			public const int design_snackbar_background_corner_radius = 2131427430;
 			
-			// aapt resource value: 0x7F06006C
-			public const int design_snackbar_elevation = 2131099756;
+			// aapt resource value: 0x7f0b0083
+			public const int design_snackbar_elevation = 2131427459;
 			
-			// aapt resource value: 0x7F06006D
-			public const int design_snackbar_extra_spacing_horizontal = 2131099757;
+			// aapt resource value: 0x7f0b0067
+			public const int design_snackbar_extra_spacing_horizontal = 2131427431;
 			
-			// aapt resource value: 0x7F06006E
-			public const int design_snackbar_max_width = 2131099758;
+			// aapt resource value: 0x7f0b0068
+			public const int design_snackbar_max_width = 2131427432;
 			
-			// aapt resource value: 0x7F06006F
-			public const int design_snackbar_min_width = 2131099759;
+			// aapt resource value: 0x7f0b0069
+			public const int design_snackbar_min_width = 2131427433;
 			
-			// aapt resource value: 0x7F060070
-			public const int design_snackbar_padding_horizontal = 2131099760;
+			// aapt resource value: 0x7f0b0084
+			public const int design_snackbar_padding_horizontal = 2131427460;
 			
-			// aapt resource value: 0x7F060071
-			public const int design_snackbar_padding_vertical = 2131099761;
+			// aapt resource value: 0x7f0b0085
+			public const int design_snackbar_padding_vertical = 2131427461;
 			
-			// aapt resource value: 0x7F060072
-			public const int design_snackbar_padding_vertical_2lines = 2131099762;
+			// aapt resource value: 0x7f0b006a
+			public const int design_snackbar_padding_vertical_2lines = 2131427434;
 			
-			// aapt resource value: 0x7F060073
-			public const int design_snackbar_text_size = 2131099763;
+			// aapt resource value: 0x7f0b0086
+			public const int design_snackbar_text_size = 2131427462;
 			
-			// aapt resource value: 0x7F060074
-			public const int design_tab_max_width = 2131099764;
+			// aapt resource value: 0x7f0b0087
+			public const int design_tab_max_width = 2131427463;
 			
-			// aapt resource value: 0x7F060075
-			public const int design_tab_scrollable_min_width = 2131099765;
+			// aapt resource value: 0x7f0b006b
+			public const int design_tab_scrollable_min_width = 2131427435;
 			
-			// aapt resource value: 0x7F060076
-			public const int design_tab_text_size = 2131099766;
+			// aapt resource value: 0x7f0b0088
+			public const int design_tab_text_size = 2131427464;
 			
-			// aapt resource value: 0x7F060077
-			public const int design_tab_text_size_2line = 2131099767;
+			// aapt resource value: 0x7f0b0089
+			public const int design_tab_text_size_2line = 2131427465;
 			
-			// aapt resource value: 0x7F060078
-			public const int disabled_alpha_material_dark = 2131099768;
+			// aapt resource value: 0x7f0b0053
+			public const int disabled_alpha_material_dark = 2131427411;
 			
-			// aapt resource value: 0x7F060079
-			public const int disabled_alpha_material_light = 2131099769;
+			// aapt resource value: 0x7f0b0054
+			public const int disabled_alpha_material_light = 2131427412;
 			
-			// aapt resource value: 0x7F06007A
-			public const int fastscroll_default_thickness = 2131099770;
+			// aapt resource value: 0x7f0b0000
+			public const int fastscroll_default_thickness = 2131427328;
 			
-			// aapt resource value: 0x7F06007B
-			public const int fastscroll_margin = 2131099771;
+			// aapt resource value: 0x7f0b0001
+			public const int fastscroll_margin = 2131427329;
 			
-			// aapt resource value: 0x7F06007C
-			public const int fastscroll_minimum_range = 2131099772;
+			// aapt resource value: 0x7f0b0002
+			public const int fastscroll_minimum_range = 2131427330;
 			
-			// aapt resource value: 0x7F06007D
-			public const int highlight_alpha_material_colored = 2131099773;
+			// aapt resource value: 0x7f0b0055
+			public const int highlight_alpha_material_colored = 2131427413;
 			
-			// aapt resource value: 0x7F06007E
-			public const int highlight_alpha_material_dark = 2131099774;
+			// aapt resource value: 0x7f0b0056
+			public const int highlight_alpha_material_dark = 2131427414;
 			
-			// aapt resource value: 0x7F06007F
-			public const int highlight_alpha_material_light = 2131099775;
+			// aapt resource value: 0x7f0b0057
+			public const int highlight_alpha_material_light = 2131427415;
 			
-			// aapt resource value: 0x7F060080
-			public const int hint_alpha_material_dark = 2131099776;
+			// aapt resource value: 0x7f0b0058
+			public const int hint_alpha_material_dark = 2131427416;
 			
-			// aapt resource value: 0x7F060081
-			public const int hint_alpha_material_light = 2131099777;
+			// aapt resource value: 0x7f0b0059
+			public const int hint_alpha_material_light = 2131427417;
 			
-			// aapt resource value: 0x7F060082
-			public const int hint_pressed_alpha_material_dark = 2131099778;
+			// aapt resource value: 0x7f0b005a
+			public const int hint_pressed_alpha_material_dark = 2131427418;
 			
-			// aapt resource value: 0x7F060083
-			public const int hint_pressed_alpha_material_light = 2131099779;
+			// aapt resource value: 0x7f0b005b
+			public const int hint_pressed_alpha_material_light = 2131427419;
 			
-			// aapt resource value: 0x7F060084
-			public const int item_touch_helper_max_drag_scroll_per_frame = 2131099780;
+			// aapt resource value: 0x7f0b0003
+			public const int item_touch_helper_max_drag_scroll_per_frame = 2131427331;
 			
-			// aapt resource value: 0x7F060085
-			public const int item_touch_helper_swipe_escape_max_velocity = 2131099781;
+			// aapt resource value: 0x7f0b0004
+			public const int item_touch_helper_swipe_escape_max_velocity = 2131427332;
 			
-			// aapt resource value: 0x7F060086
-			public const int item_touch_helper_swipe_escape_velocity = 2131099782;
+			// aapt resource value: 0x7f0b0005
+			public const int item_touch_helper_swipe_escape_velocity = 2131427333;
 			
-			// aapt resource value: 0x7F060087
-			public const int notification_action_icon_size = 2131099783;
+			// aapt resource value: 0x7f0b0093
+			public const int notification_action_icon_size = 2131427475;
 			
-			// aapt resource value: 0x7F060088
-			public const int notification_action_text_size = 2131099784;
+			// aapt resource value: 0x7f0b0094
+			public const int notification_action_text_size = 2131427476;
 			
-			// aapt resource value: 0x7F060089
-			public const int notification_big_circle_margin = 2131099785;
+			// aapt resource value: 0x7f0b0095
+			public const int notification_big_circle_margin = 2131427477;
 			
-			// aapt resource value: 0x7F06008A
-			public const int notification_content_margin_start = 2131099786;
+			// aapt resource value: 0x7f0b008b
+			public const int notification_content_margin_start = 2131427467;
 			
-			// aapt resource value: 0x7F06008B
-			public const int notification_large_icon_height = 2131099787;
+			// aapt resource value: 0x7f0b0096
+			public const int notification_large_icon_height = 2131427478;
 			
-			// aapt resource value: 0x7F06008C
-			public const int notification_large_icon_width = 2131099788;
+			// aapt resource value: 0x7f0b0097
+			public const int notification_large_icon_width = 2131427479;
 			
-			// aapt resource value: 0x7F06008D
-			public const int notification_main_column_padding_top = 2131099789;
+			// aapt resource value: 0x7f0b008c
+			public const int notification_main_column_padding_top = 2131427468;
 			
-			// aapt resource value: 0x7F06008E
-			public const int notification_media_narrow_margin = 2131099790;
+			// aapt resource value: 0x7f0b008d
+			public const int notification_media_narrow_margin = 2131427469;
 			
-			// aapt resource value: 0x7F06008F
-			public const int notification_right_icon_size = 2131099791;
+			// aapt resource value: 0x7f0b0098
+			public const int notification_right_icon_size = 2131427480;
 			
-			// aapt resource value: 0x7F060090
-			public const int notification_right_side_padding_top = 2131099792;
+			// aapt resource value: 0x7f0b008a
+			public const int notification_right_side_padding_top = 2131427466;
 			
-			// aapt resource value: 0x7F060091
-			public const int notification_small_icon_background_padding = 2131099793;
+			// aapt resource value: 0x7f0b0099
+			public const int notification_small_icon_background_padding = 2131427481;
 			
-			// aapt resource value: 0x7F060092
-			public const int notification_small_icon_size_as_large = 2131099794;
+			// aapt resource value: 0x7f0b009a
+			public const int notification_small_icon_size_as_large = 2131427482;
 			
-			// aapt resource value: 0x7F060093
-			public const int notification_subtext_size = 2131099795;
+			// aapt resource value: 0x7f0b009b
+			public const int notification_subtext_size = 2131427483;
 			
-			// aapt resource value: 0x7F060094
-			public const int notification_top_pad = 2131099796;
+			// aapt resource value: 0x7f0b009c
+			public const int notification_top_pad = 2131427484;
 			
-			// aapt resource value: 0x7F060095
-			public const int notification_top_pad_large_text = 2131099797;
+			// aapt resource value: 0x7f0b009d
+			public const int notification_top_pad_large_text = 2131427485;
 			
-			// aapt resource value: 0x7F060096
-			public const int pading_bottom = 2131099798;
+			// aapt resource value: 0x7f0b009f
+			public const int pading_bottom = 2131427487;
 			
-			// aapt resource value: 0x7F060097
-			public const int pading_top = 2131099799;
+			// aapt resource value: 0x7f0b009e
+			public const int pading_top = 2131427486;
 			
-			// aapt resource value: 0x7F060098
-			public const int tooltip_corner_radius = 2131099800;
+			// aapt resource value: 0x7f0b005c
+			public const int tooltip_corner_radius = 2131427420;
 			
-			// aapt resource value: 0x7F060099
-			public const int tooltip_horizontal_padding = 2131099801;
+			// aapt resource value: 0x7f0b005d
+			public const int tooltip_horizontal_padding = 2131427421;
 			
-			// aapt resource value: 0x7F06009A
-			public const int tooltip_margin = 2131099802;
+			// aapt resource value: 0x7f0b005e
+			public const int tooltip_margin = 2131427422;
 			
-			// aapt resource value: 0x7F06009B
-			public const int tooltip_precise_anchor_extra_offset = 2131099803;
+			// aapt resource value: 0x7f0b005f
+			public const int tooltip_precise_anchor_extra_offset = 2131427423;
 			
-			// aapt resource value: 0x7F06009C
-			public const int tooltip_precise_anchor_threshold = 2131099804;
+			// aapt resource value: 0x7f0b0060
+			public const int tooltip_precise_anchor_threshold = 2131427424;
 			
-			// aapt resource value: 0x7F06009D
-			public const int tooltip_vertical_padding = 2131099805;
+			// aapt resource value: 0x7f0b0061
+			public const int tooltip_vertical_padding = 2131427425;
 			
-			// aapt resource value: 0x7F06009E
-			public const int tooltip_y_offset_non_touch = 2131099806;
+			// aapt resource value: 0x7f0b0062
+			public const int tooltip_y_offset_non_touch = 2131427426;
 			
-			// aapt resource value: 0x7F06009F
-			public const int tooltip_y_offset_touch = 2131099807;
+			// aapt resource value: 0x7f0b0063
+			public const int tooltip_y_offset_touch = 2131427427;
 			
 			static Dimension()
 			{
@@ -2382,806 +2382,824 @@ namespace GFI_with_GFS_A
 		public partial class Drawable
 		{
 			
-			// aapt resource value: 0x7F070006
-			public const int abc_ab_share_pack_mtrl_alpha = 2131165190;
+			// aapt resource value: 0x7f020000
+			public const int abc_ab_share_pack_mtrl_alpha = 2130837504;
 			
-			// aapt resource value: 0x7F070007
-			public const int abc_action_bar_item_background_material = 2131165191;
+			// aapt resource value: 0x7f020001
+			public const int abc_action_bar_item_background_material = 2130837505;
 			
-			// aapt resource value: 0x7F070008
-			public const int abc_btn_borderless_material = 2131165192;
+			// aapt resource value: 0x7f020002
+			public const int abc_btn_borderless_material = 2130837506;
 			
-			// aapt resource value: 0x7F070009
-			public const int abc_btn_check_material = 2131165193;
+			// aapt resource value: 0x7f020003
+			public const int abc_btn_check_material = 2130837507;
 			
-			// aapt resource value: 0x7F07000A
-			public const int abc_btn_check_to_on_mtrl_000 = 2131165194;
+			// aapt resource value: 0x7f020004
+			public const int abc_btn_check_to_on_mtrl_000 = 2130837508;
 			
-			// aapt resource value: 0x7F07000B
-			public const int abc_btn_check_to_on_mtrl_015 = 2131165195;
+			// aapt resource value: 0x7f020005
+			public const int abc_btn_check_to_on_mtrl_015 = 2130837509;
 			
-			// aapt resource value: 0x7F07000C
-			public const int abc_btn_colored_material = 2131165196;
+			// aapt resource value: 0x7f020006
+			public const int abc_btn_colored_material = 2130837510;
 			
-			// aapt resource value: 0x7F07000D
-			public const int abc_btn_default_mtrl_shape = 2131165197;
+			// aapt resource value: 0x7f020007
+			public const int abc_btn_default_mtrl_shape = 2130837511;
 			
-			// aapt resource value: 0x7F07000E
-			public const int abc_btn_radio_material = 2131165198;
+			// aapt resource value: 0x7f020008
+			public const int abc_btn_radio_material = 2130837512;
 			
-			// aapt resource value: 0x7F07000F
-			public const int abc_btn_radio_to_on_mtrl_000 = 2131165199;
+			// aapt resource value: 0x7f020009
+			public const int abc_btn_radio_to_on_mtrl_000 = 2130837513;
 			
-			// aapt resource value: 0x7F070010
-			public const int abc_btn_radio_to_on_mtrl_015 = 2131165200;
+			// aapt resource value: 0x7f02000a
+			public const int abc_btn_radio_to_on_mtrl_015 = 2130837514;
 			
-			// aapt resource value: 0x7F070011
-			public const int abc_btn_switch_to_on_mtrl_00001 = 2131165201;
+			// aapt resource value: 0x7f02000b
+			public const int abc_btn_switch_to_on_mtrl_00001 = 2130837515;
 			
-			// aapt resource value: 0x7F070012
-			public const int abc_btn_switch_to_on_mtrl_00012 = 2131165202;
+			// aapt resource value: 0x7f02000c
+			public const int abc_btn_switch_to_on_mtrl_00012 = 2130837516;
 			
-			// aapt resource value: 0x7F070013
-			public const int abc_cab_background_internal_bg = 2131165203;
+			// aapt resource value: 0x7f02000d
+			public const int abc_cab_background_internal_bg = 2130837517;
 			
-			// aapt resource value: 0x7F070014
-			public const int abc_cab_background_top_material = 2131165204;
+			// aapt resource value: 0x7f02000e
+			public const int abc_cab_background_top_material = 2130837518;
 			
-			// aapt resource value: 0x7F070015
-			public const int abc_cab_background_top_mtrl_alpha = 2131165205;
+			// aapt resource value: 0x7f02000f
+			public const int abc_cab_background_top_mtrl_alpha = 2130837519;
 			
-			// aapt resource value: 0x7F070016
-			public const int abc_control_background_material = 2131165206;
+			// aapt resource value: 0x7f020010
+			public const int abc_control_background_material = 2130837520;
 			
-			// aapt resource value: 0x7F070017
-			public const int abc_dialog_material_background = 2131165207;
+			// aapt resource value: 0x7f020011
+			public const int abc_dialog_material_background = 2130837521;
 			
-			// aapt resource value: 0x7F070018
-			public const int abc_edit_text_material = 2131165208;
+			// aapt resource value: 0x7f020012
+			public const int abc_edit_text_material = 2130837522;
 			
-			// aapt resource value: 0x7F070019
-			public const int abc_ic_ab_back_material = 2131165209;
+			// aapt resource value: 0x7f020013
+			public const int abc_ic_ab_back_material = 2130837523;
 			
-			// aapt resource value: 0x7F07001A
-			public const int abc_ic_arrow_drop_right_black_24dp = 2131165210;
+			// aapt resource value: 0x7f020014
+			public const int abc_ic_arrow_drop_right_black_24dp = 2130837524;
 			
-			// aapt resource value: 0x7F07001B
-			public const int abc_ic_clear_material = 2131165211;
+			// aapt resource value: 0x7f020015
+			public const int abc_ic_clear_material = 2130837525;
 			
-			// aapt resource value: 0x7F07001C
-			public const int abc_ic_commit_search_api_mtrl_alpha = 2131165212;
+			// aapt resource value: 0x7f020016
+			public const int abc_ic_commit_search_api_mtrl_alpha = 2130837526;
 			
-			// aapt resource value: 0x7F07001D
-			public const int abc_ic_go_search_api_material = 2131165213;
+			// aapt resource value: 0x7f020017
+			public const int abc_ic_go_search_api_material = 2130837527;
 			
-			// aapt resource value: 0x7F07001E
-			public const int abc_ic_menu_copy_mtrl_am_alpha = 2131165214;
+			// aapt resource value: 0x7f020018
+			public const int abc_ic_menu_copy_mtrl_am_alpha = 2130837528;
 			
-			// aapt resource value: 0x7F07001F
-			public const int abc_ic_menu_cut_mtrl_alpha = 2131165215;
+			// aapt resource value: 0x7f020019
+			public const int abc_ic_menu_cut_mtrl_alpha = 2130837529;
 			
-			// aapt resource value: 0x7F070020
-			public const int abc_ic_menu_overflow_material = 2131165216;
+			// aapt resource value: 0x7f02001a
+			public const int abc_ic_menu_overflow_material = 2130837530;
 			
-			// aapt resource value: 0x7F070021
-			public const int abc_ic_menu_paste_mtrl_am_alpha = 2131165217;
+			// aapt resource value: 0x7f02001b
+			public const int abc_ic_menu_paste_mtrl_am_alpha = 2130837531;
 			
-			// aapt resource value: 0x7F070022
-			public const int abc_ic_menu_selectall_mtrl_alpha = 2131165218;
+			// aapt resource value: 0x7f02001c
+			public const int abc_ic_menu_selectall_mtrl_alpha = 2130837532;
 			
-			// aapt resource value: 0x7F070023
-			public const int abc_ic_menu_share_mtrl_alpha = 2131165219;
+			// aapt resource value: 0x7f02001d
+			public const int abc_ic_menu_share_mtrl_alpha = 2130837533;
 			
-			// aapt resource value: 0x7F070024
-			public const int abc_ic_search_api_material = 2131165220;
+			// aapt resource value: 0x7f02001e
+			public const int abc_ic_search_api_material = 2130837534;
 			
-			// aapt resource value: 0x7F070025
-			public const int abc_ic_star_black_16dp = 2131165221;
+			// aapt resource value: 0x7f02001f
+			public const int abc_ic_star_black_16dp = 2130837535;
 			
-			// aapt resource value: 0x7F070026
-			public const int abc_ic_star_black_36dp = 2131165222;
+			// aapt resource value: 0x7f020020
+			public const int abc_ic_star_black_36dp = 2130837536;
 			
-			// aapt resource value: 0x7F070027
-			public const int abc_ic_star_black_48dp = 2131165223;
+			// aapt resource value: 0x7f020021
+			public const int abc_ic_star_black_48dp = 2130837537;
 			
-			// aapt resource value: 0x7F070028
-			public const int abc_ic_star_half_black_16dp = 2131165224;
+			// aapt resource value: 0x7f020022
+			public const int abc_ic_star_half_black_16dp = 2130837538;
 			
-			// aapt resource value: 0x7F070029
-			public const int abc_ic_star_half_black_36dp = 2131165225;
+			// aapt resource value: 0x7f020023
+			public const int abc_ic_star_half_black_36dp = 2130837539;
 			
-			// aapt resource value: 0x7F07002A
-			public const int abc_ic_star_half_black_48dp = 2131165226;
+			// aapt resource value: 0x7f020024
+			public const int abc_ic_star_half_black_48dp = 2130837540;
 			
-			// aapt resource value: 0x7F07002B
-			public const int abc_ic_voice_search_api_material = 2131165227;
+			// aapt resource value: 0x7f020025
+			public const int abc_ic_voice_search_api_material = 2130837541;
 			
-			// aapt resource value: 0x7F07002C
-			public const int abc_item_background_holo_dark = 2131165228;
+			// aapt resource value: 0x7f020026
+			public const int abc_item_background_holo_dark = 2130837542;
 			
-			// aapt resource value: 0x7F07002D
-			public const int abc_item_background_holo_light = 2131165229;
+			// aapt resource value: 0x7f020027
+			public const int abc_item_background_holo_light = 2130837543;
 			
-			// aapt resource value: 0x7F07002E
-			public const int abc_list_divider_mtrl_alpha = 2131165230;
+			// aapt resource value: 0x7f020028
+			public const int abc_list_divider_mtrl_alpha = 2130837544;
 			
-			// aapt resource value: 0x7F07002F
-			public const int abc_list_focused_holo = 2131165231;
+			// aapt resource value: 0x7f020029
+			public const int abc_list_focused_holo = 2130837545;
 			
-			// aapt resource value: 0x7F070030
-			public const int abc_list_longpressed_holo = 2131165232;
+			// aapt resource value: 0x7f02002a
+			public const int abc_list_longpressed_holo = 2130837546;
 			
-			// aapt resource value: 0x7F070031
-			public const int abc_list_pressed_holo_dark = 2131165233;
+			// aapt resource value: 0x7f02002b
+			public const int abc_list_pressed_holo_dark = 2130837547;
 			
-			// aapt resource value: 0x7F070032
-			public const int abc_list_pressed_holo_light = 2131165234;
+			// aapt resource value: 0x7f02002c
+			public const int abc_list_pressed_holo_light = 2130837548;
 			
-			// aapt resource value: 0x7F070033
-			public const int abc_list_selector_background_transition_holo_dark = 2131165235;
+			// aapt resource value: 0x7f02002d
+			public const int abc_list_selector_background_transition_holo_dark = 2130837549;
 			
-			// aapt resource value: 0x7F070034
-			public const int abc_list_selector_background_transition_holo_light = 2131165236;
+			// aapt resource value: 0x7f02002e
+			public const int abc_list_selector_background_transition_holo_light = 2130837550;
 			
-			// aapt resource value: 0x7F070035
-			public const int abc_list_selector_disabled_holo_dark = 2131165237;
+			// aapt resource value: 0x7f02002f
+			public const int abc_list_selector_disabled_holo_dark = 2130837551;
 			
-			// aapt resource value: 0x7F070036
-			public const int abc_list_selector_disabled_holo_light = 2131165238;
+			// aapt resource value: 0x7f020030
+			public const int abc_list_selector_disabled_holo_light = 2130837552;
 			
-			// aapt resource value: 0x7F070037
-			public const int abc_list_selector_holo_dark = 2131165239;
+			// aapt resource value: 0x7f020031
+			public const int abc_list_selector_holo_dark = 2130837553;
 			
-			// aapt resource value: 0x7F070038
-			public const int abc_list_selector_holo_light = 2131165240;
+			// aapt resource value: 0x7f020032
+			public const int abc_list_selector_holo_light = 2130837554;
 			
-			// aapt resource value: 0x7F070039
-			public const int abc_menu_hardkey_panel_mtrl_mult = 2131165241;
+			// aapt resource value: 0x7f020033
+			public const int abc_menu_hardkey_panel_mtrl_mult = 2130837555;
 			
-			// aapt resource value: 0x7F07003A
-			public const int abc_popup_background_mtrl_mult = 2131165242;
+			// aapt resource value: 0x7f020034
+			public const int abc_popup_background_mtrl_mult = 2130837556;
 			
-			// aapt resource value: 0x7F07003B
-			public const int abc_ratingbar_indicator_material = 2131165243;
+			// aapt resource value: 0x7f020035
+			public const int abc_ratingbar_indicator_material = 2130837557;
 			
-			// aapt resource value: 0x7F07003C
-			public const int abc_ratingbar_material = 2131165244;
+			// aapt resource value: 0x7f020036
+			public const int abc_ratingbar_material = 2130837558;
 			
-			// aapt resource value: 0x7F07003D
-			public const int abc_ratingbar_small_material = 2131165245;
+			// aapt resource value: 0x7f020037
+			public const int abc_ratingbar_small_material = 2130837559;
 			
-			// aapt resource value: 0x7F07003E
-			public const int abc_scrubber_control_off_mtrl_alpha = 2131165246;
+			// aapt resource value: 0x7f020038
+			public const int abc_scrubber_control_off_mtrl_alpha = 2130837560;
 			
-			// aapt resource value: 0x7F07003F
-			public const int abc_scrubber_control_to_pressed_mtrl_000 = 2131165247;
+			// aapt resource value: 0x7f020039
+			public const int abc_scrubber_control_to_pressed_mtrl_000 = 2130837561;
 			
-			// aapt resource value: 0x7F070040
-			public const int abc_scrubber_control_to_pressed_mtrl_005 = 2131165248;
+			// aapt resource value: 0x7f02003a
+			public const int abc_scrubber_control_to_pressed_mtrl_005 = 2130837562;
 			
-			// aapt resource value: 0x7F070041
-			public const int abc_scrubber_primary_mtrl_alpha = 2131165249;
+			// aapt resource value: 0x7f02003b
+			public const int abc_scrubber_primary_mtrl_alpha = 2130837563;
 			
-			// aapt resource value: 0x7F070042
-			public const int abc_scrubber_track_mtrl_alpha = 2131165250;
+			// aapt resource value: 0x7f02003c
+			public const int abc_scrubber_track_mtrl_alpha = 2130837564;
 			
-			// aapt resource value: 0x7F070043
-			public const int abc_seekbar_thumb_material = 2131165251;
+			// aapt resource value: 0x7f02003d
+			public const int abc_seekbar_thumb_material = 2130837565;
 			
-			// aapt resource value: 0x7F070044
-			public const int abc_seekbar_tick_mark_material = 2131165252;
+			// aapt resource value: 0x7f02003e
+			public const int abc_seekbar_tick_mark_material = 2130837566;
 			
-			// aapt resource value: 0x7F070045
-			public const int abc_seekbar_track_material = 2131165253;
+			// aapt resource value: 0x7f02003f
+			public const int abc_seekbar_track_material = 2130837567;
 			
-			// aapt resource value: 0x7F070046
-			public const int abc_spinner_mtrl_am_alpha = 2131165254;
+			// aapt resource value: 0x7f020040
+			public const int abc_spinner_mtrl_am_alpha = 2130837568;
 			
-			// aapt resource value: 0x7F070047
-			public const int abc_spinner_textfield_background_material = 2131165255;
+			// aapt resource value: 0x7f020041
+			public const int abc_spinner_textfield_background_material = 2130837569;
 			
-			// aapt resource value: 0x7F070048
-			public const int abc_switch_thumb_material = 2131165256;
+			// aapt resource value: 0x7f020042
+			public const int abc_switch_thumb_material = 2130837570;
 			
-			// aapt resource value: 0x7F070049
-			public const int abc_switch_track_mtrl_alpha = 2131165257;
+			// aapt resource value: 0x7f020043
+			public const int abc_switch_track_mtrl_alpha = 2130837571;
 			
-			// aapt resource value: 0x7F07004A
-			public const int abc_tab_indicator_material = 2131165258;
+			// aapt resource value: 0x7f020044
+			public const int abc_tab_indicator_material = 2130837572;
 			
-			// aapt resource value: 0x7F07004B
-			public const int abc_tab_indicator_mtrl_alpha = 2131165259;
+			// aapt resource value: 0x7f020045
+			public const int abc_tab_indicator_mtrl_alpha = 2130837573;
 			
-			// aapt resource value: 0x7F070053
-			public const int abc_textfield_activated_mtrl_alpha = 2131165267;
+			// aapt resource value: 0x7f020046
+			public const int abc_text_cursor_material = 2130837574;
 			
-			// aapt resource value: 0x7F070054
-			public const int abc_textfield_default_mtrl_alpha = 2131165268;
+			// aapt resource value: 0x7f020047
+			public const int abc_text_select_handle_left_mtrl_dark = 2130837575;
 			
-			// aapt resource value: 0x7F070055
-			public const int abc_textfield_search_activated_mtrl_alpha = 2131165269;
+			// aapt resource value: 0x7f020048
+			public const int abc_text_select_handle_left_mtrl_light = 2130837576;
 			
-			// aapt resource value: 0x7F070056
-			public const int abc_textfield_search_default_mtrl_alpha = 2131165270;
+			// aapt resource value: 0x7f020049
+			public const int abc_text_select_handle_middle_mtrl_dark = 2130837577;
 			
-			// aapt resource value: 0x7F070057
-			public const int abc_textfield_search_material = 2131165271;
+			// aapt resource value: 0x7f02004a
+			public const int abc_text_select_handle_middle_mtrl_light = 2130837578;
 			
-			// aapt resource value: 0x7F07004C
-			public const int abc_text_cursor_material = 2131165260;
+			// aapt resource value: 0x7f02004b
+			public const int abc_text_select_handle_right_mtrl_dark = 2130837579;
 			
-			// aapt resource value: 0x7F07004D
-			public const int abc_text_select_handle_left_mtrl_dark = 2131165261;
+			// aapt resource value: 0x7f02004c
+			public const int abc_text_select_handle_right_mtrl_light = 2130837580;
 			
-			// aapt resource value: 0x7F07004E
-			public const int abc_text_select_handle_left_mtrl_light = 2131165262;
+			// aapt resource value: 0x7f02004d
+			public const int abc_textfield_activated_mtrl_alpha = 2130837581;
 			
-			// aapt resource value: 0x7F07004F
-			public const int abc_text_select_handle_middle_mtrl_dark = 2131165263;
+			// aapt resource value: 0x7f02004e
+			public const int abc_textfield_default_mtrl_alpha = 2130837582;
 			
-			// aapt resource value: 0x7F070050
-			public const int abc_text_select_handle_middle_mtrl_light = 2131165264;
+			// aapt resource value: 0x7f02004f
+			public const int abc_textfield_search_activated_mtrl_alpha = 2130837583;
 			
-			// aapt resource value: 0x7F070051
-			public const int abc_text_select_handle_right_mtrl_dark = 2131165265;
+			// aapt resource value: 0x7f020050
+			public const int abc_textfield_search_default_mtrl_alpha = 2130837584;
 			
-			// aapt resource value: 0x7F070052
-			public const int abc_text_select_handle_right_mtrl_light = 2131165266;
+			// aapt resource value: 0x7f020051
+			public const int abc_textfield_search_material = 2130837585;
 			
-			// aapt resource value: 0x7F070058
-			public const int abc_vector_test = 2131165272;
+			// aapt resource value: 0x7f020052
+			public const int abc_vector_test = 2130837586;
 			
-			// aapt resource value: 0x7F070059
-			public const int AC_Icon = 2131165273;
+			// aapt resource value: 0x7f020053
+			public const int AC_Icon = 2130837587;
 			
-			// aapt resource value: 0x7F07005A
-			public const int AC_Icon_WhiteTheme = 2131165274;
+			// aapt resource value: 0x7f020054
+			public const int AC_Icon_WhiteTheme = 2130837588;
 			
-			// aapt resource value: 0x7F07005D
-			public const int Ammo_Icon = 2131165277;
+			// aapt resource value: 0x7f020055
+			public const int AM_Icon = 2130837589;
 			
-			// aapt resource value: 0x7F07005B
-			public const int AM_Icon = 2131165275;
+			// aapt resource value: 0x7f020056
+			public const int AM_Icon_WhiteTheme = 2130837590;
 			
-			// aapt resource value: 0x7F07005C
-			public const int AM_Icon_WhiteTheme = 2131165276;
+			// aapt resource value: 0x7f020057
+			public const int Ammo_Icon = 2130837591;
 			
-			// aapt resource value: 0x7F07005E
-			public const int AppIcon = 2131165278;
+			// aapt resource value: 0x7f020058
+			public const int AppIcon = 2130837592;
 			
-			// aapt resource value: 0x7F07005F
-			public const int AppIcon2 = 2131165279;
+			// aapt resource value: 0x7f020059
+			public const int AppIcon2 = 2130837593;
 			
-			// aapt resource value: 0x7F070060
-			public const int AppIcon_Old = 2131165280;
+			// aapt resource value: 0x7f02005a
+			public const int AppIcon_Old = 2130837594;
 			
-			// aapt resource value: 0x7F070061
-			public const int AppIcon_Old2 = 2131165281;
+			// aapt resource value: 0x7f02005b
+			public const int AppIcon_Old2 = 2130837595;
 			
-			// aapt resource value: 0x7F070062
-			public const int AppStartModeIcon = 2131165282;
+			// aapt resource value: 0x7f02005c
+			public const int AppStartModeIcon = 2130837596;
 			
-			// aapt resource value: 0x7F070063
-			public const int AppStartModeIcon_WhiteTheme = 2131165283;
+			// aapt resource value: 0x7f02005d
+			public const int AppStartModeIcon_WhiteTheme = 2130837597;
 			
-			// aapt resource value: 0x7F070064
-			public const int AS_Icon = 2131165284;
+			// aapt resource value: 0x7f02005e
+			public const int AS_Icon = 2130837598;
 			
-			// aapt resource value: 0x7F070065
-			public const int AS_Icon_WhiteTheme = 2131165285;
+			// aapt resource value: 0x7f02005f
+			public const int AS_Icon_WhiteTheme = 2130837599;
 			
-			// aapt resource value: 0x7F070066
-			public const int AutoDBUpdate = 2131165286;
+			// aapt resource value: 0x7f020060
+			public const int AutoDBUpdate = 2130837600;
 			
-			// aapt resource value: 0x7F070067
-			public const int AutoDBUpdate_WhiteTheme = 2131165287;
+			// aapt resource value: 0x7f020061
+			public const int AutoDBUpdate_WhiteTheme = 2130837601;
 			
-			// aapt resource value: 0x7F070068
-			public const int avd_hide_password = 2131165288;
+			// aapt resource value: 0x7f020062
+			public const int avd_hide_password = 2130837602;
 			
-			// aapt resource value: 0x7F070069
-			public const int avd_show_password = 2131165289;
+			// aapt resource value: 0x7f02010b
+			public const int avd_hide_password_1 = 2130837771;
 			
-			// aapt resource value: 0x7F07006A
-			public const int Base36_Logo = 2131165290;
+			// aapt resource value: 0x7f02010c
+			public const int avd_hide_password_2 = 2130837772;
 			
-			// aapt resource value: 0x7F07006B
-			public const int CalcIcon = 2131165291;
+			// aapt resource value: 0x7f02010d
+			public const int avd_hide_password_3 = 2130837773;
 			
-			// aapt resource value: 0x7F07006C
-			public const int CalcIcon_WhiteTheme = 2131165292;
+			// aapt resource value: 0x7f020063
+			public const int avd_show_password = 2130837603;
 			
-			// aapt resource value: 0x7F07006D
-			public const int CardViewBackground_WhiteTheme = 2131165293;
+			// aapt resource value: 0x7f02010e
+			public const int avd_show_password_1 = 2130837774;
 			
-			// aapt resource value: 0x7F07006E
-			public const int CheckDBUpdate = 2131165294;
+			// aapt resource value: 0x7f02010f
+			public const int avd_show_password_2 = 2130837775;
 			
-			// aapt resource value: 0x7F07006F
-			public const int CheckDBUpdate_WhiteTheme = 2131165295;
+			// aapt resource value: 0x7f020110
+			public const int avd_show_password_3 = 2130837776;
 			
-			// aapt resource value: 0x7F070072
-			public const int CleanCacheIcon = 2131165298;
+			// aapt resource value: 0x7f020064
+			public const int Base36_Logo = 2130837604;
 			
-			// aapt resource value: 0x7F070073
-			public const int CleanCacheIcon_WhiteTheme = 2131165299;
+			// aapt resource value: 0x7f020065
+			public const int CalcIcon = 2130837605;
 			
-			// aapt resource value: 0x7F070070
-			public const int CL_Icon = 2131165296;
+			// aapt resource value: 0x7f020066
+			public const int CalcIcon_WhiteTheme = 2130837606;
 			
-			// aapt resource value: 0x7F070071
-			public const int CL_Icon_WhiteTheme = 2131165297;
+			// aapt resource value: 0x7f020067
+			public const int CardViewBackground_WhiteTheme = 2130837607;
 			
-			// aapt resource value: 0x7F070074
-			public const int CoolTime_Icon = 2131165300;
+			// aapt resource value: 0x7f020068
+			public const int CheckDBUpdate = 2130837608;
 			
-			// aapt resource value: 0x7F070075
-			public const int CoolTime_Icon_WhiteTheme = 2131165301;
+			// aapt resource value: 0x7f020069
+			public const int CheckDBUpdate_WhiteTheme = 2130837609;
 			
-			// aapt resource value: 0x7F070076
-			public const int CR_Icon = 2131165302;
+			// aapt resource value: 0x7f02006a
+			public const int CL_Icon = 2130837610;
 			
-			// aapt resource value: 0x7F070077
-			public const int CR_Icon_WhiteTheme = 2131165303;
+			// aapt resource value: 0x7f02006b
+			public const int CL_Icon_WhiteTheme = 2130837611;
 			
-			// aapt resource value: 0x7F070078
-			public const int DBDetailBackgroundImageIcon = 2131165304;
+			// aapt resource value: 0x7f02006c
+			public const int CleanCacheIcon = 2130837612;
 			
-			// aapt resource value: 0x7F070079
-			public const int DBDetailBackgroundImageIcon_WhiteTheme = 2131165305;
+			// aapt resource value: 0x7f02006d
+			public const int CleanCacheIcon_WhiteTheme = 2130837613;
 			
-			// aapt resource value: 0x7F07007A
-			public const int DBListImageIcon = 2131165306;
+			// aapt resource value: 0x7f02006e
+			public const int CoolTime_Icon = 2130837614;
 			
-			// aapt resource value: 0x7F07007B
-			public const int DBListImageIcon_WhiteTheme = 2131165307;
+			// aapt resource value: 0x7f02006f
+			public const int CoolTime_Icon_WhiteTheme = 2130837615;
 			
-			// aapt resource value: 0x7F07007C
-			public const int DeleteAllLogFileIcon = 2131165308;
+			// aapt resource value: 0x7f020070
+			public const int CR_Icon = 2130837616;
 			
-			// aapt resource value: 0x7F07007D
-			public const int DeleteAllLogFileIcon_WhiteTheme = 2131165309;
+			// aapt resource value: 0x7f020071
+			public const int CR_Icon_WhiteTheme = 2130837617;
 			
-			// aapt resource value: 0x7F07007E
-			public const int design_bottom_navigation_item_background = 2131165310;
+			// aapt resource value: 0x7f020072
+			public const int DBDetailBackgroundImageIcon = 2130837618;
 			
-			// aapt resource value: 0x7F07007F
-			public const int design_fab_background = 2131165311;
+			// aapt resource value: 0x7f020073
+			public const int DBDetailBackgroundImageIcon_WhiteTheme = 2130837619;
 			
-			// aapt resource value: 0x7F070080
-			public const int design_ic_visibility = 2131165312;
+			// aapt resource value: 0x7f020074
+			public const int DBListImageIcon = 2130837620;
 			
-			// aapt resource value: 0x7F070081
-			public const int design_ic_visibility_off = 2131165313;
+			// aapt resource value: 0x7f020075
+			public const int DBListImageIcon_WhiteTheme = 2130837621;
 			
-			// aapt resource value: 0x7F070082
-			public const int design_password_eye = 2131165314;
+			// aapt resource value: 0x7f020076
+			public const int DeleteAllLogFileIcon = 2130837622;
 			
-			// aapt resource value: 0x7F070083
-			public const int design_snackbar_background = 2131165315;
+			// aapt resource value: 0x7f020077
+			public const int DeleteAllLogFileIcon_WhiteTheme = 2130837623;
 			
-			// aapt resource value: 0x7F070084
-			public const int dialogbg = 2131165316;
+			// aapt resource value: 0x7f020078
+			public const int design_bottom_navigation_item_background = 2130837624;
 			
-			// aapt resource value: 0x7F070085
-			public const int dialogbg_vertical = 2131165317;
+			// aapt resource value: 0x7f020079
+			public const int design_fab_background = 2130837625;
 			
-			// aapt resource value: 0x7F070086
-			public const int dialogbg_vertical_whitetheme = 2131165318;
+			// aapt resource value: 0x7f02007a
+			public const int design_ic_visibility = 2130837626;
 			
-			// aapt resource value: 0x7F070087
-			public const int dialogbg_whitetheme = 2131165319;
+			// aapt resource value: 0x7f02007b
+			public const int design_ic_visibility_off = 2130837627;
 			
-			// aapt resource value: 0x7F070088
-			public const int Doll_AdvanceProduct = 2131165320;
+			// aapt resource value: 0x7f02007c
+			public const int design_password_eye = 2130837628;
 			
-			// aapt resource value: 0x7F070089
-			public const int Doll_AdvanceProductBG = 2131165321;
+			// aapt resource value: 0x7f02007d
+			public const int design_snackbar_background = 2130837629;
 			
-			// aapt resource value: 0x7F07008A
-			public const int Doll_NormalProduct = 2131165322;
+			// aapt resource value: 0x7f02007e
+			public const int dialogbg = 2130837630;
 			
-			// aapt resource value: 0x7F07008B
-			public const int Doll_NormalProductBG = 2131165323;
+			// aapt resource value: 0x7f02007f
+			public const int dialogbg_vertical = 2130837631;
 			
-			// aapt resource value: 0x7F07008C
-			public const int DonateIcon = 2131165324;
+			// aapt resource value: 0x7f020080
+			public const int dialogbg_vertical_whitetheme = 2130837632;
 			
-			// aapt resource value: 0x7F07008D
-			public const int DownloadAllCacheIcon = 2131165325;
+			// aapt resource value: 0x7f020081
+			public const int dialogbg_whitetheme = 2130837633;
 			
-			// aapt resource value: 0x7F07008E
-			public const int DownloadAllCacheIcon_WhiteTheme = 2131165326;
+			// aapt resource value: 0x7f020082
+			public const int Doll_AdvanceProduct = 2130837634;
 			
-			// aapt resource value: 0x7F07008F
-			public const int downloaddialogbg = 2131165327;
+			// aapt resource value: 0x7f020083
+			public const int Doll_AdvanceProductBG = 2130837635;
 			
-			// aapt resource value: 0x7F070090
-			public const int downloaddialogbg_whitetheme = 2131165328;
+			// aapt resource value: 0x7f020084
+			public const int Doll_NormalProduct = 2130837636;
 			
-			// aapt resource value: 0x7F070091
-			public const int DrawerHomeIcon = 2131165329;
+			// aapt resource value: 0x7f020085
+			public const int Doll_NormalProductBG = 2130837637;
 			
-			// aapt resource value: 0x7F070092
-			public const int DynamicDBLoadIcon = 2131165330;
+			// aapt resource value: 0x7f020086
+			public const int DonateIcon = 2130837638;
 			
-			// aapt resource value: 0x7F070093
-			public const int DynamicDBLoadIcon_WhiteTheme = 2131165331;
+			// aapt resource value: 0x7f020087
+			public const int DownloadAllCacheIcon = 2130837639;
 			
-			// aapt resource value: 0x7F070094
-			public const int Equip_AdvanceProduct = 2131165332;
+			// aapt resource value: 0x7f020088
+			public const int DownloadAllCacheIcon_WhiteTheme = 2130837640;
 			
-			// aapt resource value: 0x7F070095
-			public const int Equip_AdvanceProductBG = 2131165333;
+			// aapt resource value: 0x7f020089
+			public const int downloaddialogbg = 2130837641;
 			
-			// aapt resource value: 0x7F070096
-			public const int Equip_NormalProduct = 2131165334;
+			// aapt resource value: 0x7f02008a
+			public const int downloaddialogbg_whitetheme = 2130837642;
 			
-			// aapt resource value: 0x7F070097
-			public const int Equip_NormalProductBG = 2131165335;
+			// aapt resource value: 0x7f02008b
+			public const int DrawerHomeIcon = 2130837643;
 			
-			// aapt resource value: 0x7F070098
-			public const int EV_Icon = 2131165336;
+			// aapt resource value: 0x7f02008c
+			public const int DynamicDBLoadIcon = 2130837644;
 			
-			// aapt resource value: 0x7F070099
-			public const int EV_Icon_WhiteTheme = 2131165337;
+			// aapt resource value: 0x7f02008d
+			public const int DynamicDBLoadIcon_WhiteTheme = 2130837645;
 			
-			// aapt resource value: 0x7F07009A
-			public const int Exit_Icon = 2131165338;
+			// aapt resource value: 0x7f02008e
+			public const int Equip_AdvanceProduct = 2130837646;
 			
-			// aapt resource value: 0x7F07009B
-			public const int Extra_Event = 2131165339;
+			// aapt resource value: 0x7f02008f
+			public const int Equip_AdvanceProductBG = 2130837647;
 			
-			// aapt resource value: 0x7F07009C
-			public const int Extra_EventClick = 2131165340;
+			// aapt resource value: 0x7f020090
+			public const int Equip_NormalProduct = 2130837648;
 			
-			// aapt resource value: 0x7F07009D
-			public const int Extra_EventSelector = 2131165341;
+			// aapt resource value: 0x7f020091
+			public const int Equip_NormalProductBG = 2130837649;
 			
-			// aapt resource value: 0x7F07009E
-			public const int Extra_FormationSimulator = 2131165342;
+			// aapt resource value: 0x7f020092
+			public const int EV_Icon = 2130837650;
 			
-			// aapt resource value: 0x7F07009F
-			public const int Extra_FormationSimulatorClick = 2131165343;
+			// aapt resource value: 0x7f020093
+			public const int EV_Icon_WhiteTheme = 2130837651;
 			
-			// aapt resource value: 0x7F0700A0
-			public const int Extra_FormationSimulatorSelector = 2131165344;
+			// aapt resource value: 0x7f020094
+			public const int Exit_Icon = 2130837652;
 			
-			// aapt resource value: 0x7F0700A1
-			public const int Extra_GFNews = 2131165345;
+			// aapt resource value: 0x7f020095
+			public const int Extra_Event = 2130837653;
 			
-			// aapt resource value: 0x7F0700A2
-			public const int Extra_GFNewsClick = 2131165346;
+			// aapt resource value: 0x7f020096
+			public const int Extra_EventClick = 2130837654;
 			
-			// aapt resource value: 0x7F0700A3
-			public const int Extra_GFNewsSelector = 2131165347;
+			// aapt resource value: 0x7f020097
+			public const int Extra_EventSelector = 2130837655;
 			
-			// aapt resource value: 0x7F0700A4
-			public const int Extra_ProductSimulator = 2131165348;
+			// aapt resource value: 0x7f020098
+			public const int Extra_FormationSimulator = 2130837656;
 			
-			// aapt resource value: 0x7F0700A5
-			public const int Extra_ProductSimulatorClick = 2131165349;
+			// aapt resource value: 0x7f020099
+			public const int Extra_FormationSimulatorClick = 2130837657;
 			
-			// aapt resource value: 0x7F0700A6
-			public const int Extra_ProductSimulatorSelector = 2131165350;
+			// aapt resource value: 0x7f02009a
+			public const int Extra_FormationSimulatorSelector = 2130837658;
 			
-			// aapt resource value: 0x7F0700A7
-			public const int Extra_RFBot = 2131165351;
+			// aapt resource value: 0x7f02009b
+			public const int Extra_GFNews = 2130837659;
 			
-			// aapt resource value: 0x7F0700A8
-			public const int Extra_RFBotClick = 2131165352;
+			// aapt resource value: 0x7f02009c
+			public const int Extra_GFNewsClick = 2130837660;
 			
-			// aapt resource value: 0x7F0700A9
-			public const int Extra_RFBotSelector = 2131165353;
+			// aapt resource value: 0x7f02009d
+			public const int Extra_GFNewsSelector = 2130837661;
 			
-			// aapt resource value: 0x7F0700AC
-			public const int FairyTicket_Icon = 2131165356;
+			// aapt resource value: 0x7f02009e
+			public const int Extra_ProductSimulator = 2130837662;
 			
-			// aapt resource value: 0x7F0700AD
-			public const int FairyTicket_Icon_WhiteTheme = 2131165357;
+			// aapt resource value: 0x7f02009f
+			public const int Extra_ProductSimulatorClick = 2130837663;
 			
-			// aapt resource value: 0x7F0700AA
-			public const int Fairy_Combat = 2131165354;
+			// aapt resource value: 0x7f0200a0
+			public const int Extra_ProductSimulatorSelector = 2130837664;
 			
-			// aapt resource value: 0x7F0700AB
-			public const int Fairy_Strategy = 2131165355;
+			// aapt resource value: 0x7f0200a1
+			public const int Extra_RFBot = 2130837665;
 			
-			// aapt resource value: 0x7F0700AE
-			public const int FilterIcon = 2131165358;
+			// aapt resource value: 0x7f0200a2
+			public const int Extra_RFBotClick = 2130837666;
 			
-			// aapt resource value: 0x7F0700AF
-			public const int FirstCoolTime_Icon = 2131165359;
+			// aapt resource value: 0x7f0200a3
+			public const int Extra_RFBotSelector = 2130837667;
 			
-			// aapt resource value: 0x7F0700B0
-			public const int FirstCoolTime_Icon_WhiteTheme = 2131165360;
+			// aapt resource value: 0x7f0200a4
+			public const int Fairy_Combat = 2130837668;
 			
-			// aapt resource value: 0x7F0700B1
-			public const int Food_Icon = 2131165361;
+			// aapt resource value: 0x7f0200a5
+			public const int Fairy_Strategy = 2130837669;
 			
-			// aapt resource value: 0x7F0700B2
-			public const int FR_Icon = 2131165362;
+			// aapt resource value: 0x7f0200a6
+			public const int FairyTicket_Icon = 2130837670;
 			
-			// aapt resource value: 0x7F0700B3
-			public const int FR_Icon_WhiteTheme = 2131165363;
+			// aapt resource value: 0x7f0200a7
+			public const int FairyTicket_Icon_WhiteTheme = 2130837671;
 			
-			// aapt resource value: 0x7F0700B4
-			public const int GFDInfoIcon = 2131165364;
+			// aapt resource value: 0x7f0200a8
+			public const int FilterIcon = 2130837672;
 			
-			// aapt resource value: 0x7F0700B5
-			public const int Grade_0 = 2131165365;
+			// aapt resource value: 0x7f0200a9
+			public const int FirstCoolTime_Icon = 2130837673;
 			
-			// aapt resource value: 0x7F0700B6
-			public const int Grade_2 = 2131165366;
+			// aapt resource value: 0x7f0200aa
+			public const int FirstCoolTime_Icon_WhiteTheme = 2130837674;
 			
-			// aapt resource value: 0x7F0700B7
-			public const int Grade_3 = 2131165367;
+			// aapt resource value: 0x7f0200ab
+			public const int Food_Icon = 2130837675;
 			
-			// aapt resource value: 0x7F0700B8
-			public const int Grade_4 = 2131165368;
+			// aapt resource value: 0x7f0200ac
+			public const int FR_Icon = 2130837676;
 			
-			// aapt resource value: 0x7F0700B9
-			public const int Grade_5 = 2131165369;
+			// aapt resource value: 0x7f0200ad
+			public const int FR_Icon_WhiteTheme = 2130837677;
 			
-			// aapt resource value: 0x7F0700BA
-			public const int Grade_N = 2131165370;
+			// aapt resource value: 0x7f0200ae
+			public const int GFDInfoIcon = 2130837678;
 			
-			// aapt resource value: 0x7F0700BB
-			public const int Grade_S = 2131165371;
+			// aapt resource value: 0x7f0200af
+			public const int Grade_0 = 2130837679;
 			
-			// aapt resource value: 0x7F0700BC
-			public const int Grade_Star = 2131165372;
+			// aapt resource value: 0x7f0200b0
+			public const int Grade_2 = 2130837680;
 			
-			// aapt resource value: 0x7F0700BD
-			public const int Grade_Star_EX = 2131165373;
+			// aapt resource value: 0x7f0200b1
+			public const int Grade_3 = 2130837681;
 			
-			// aapt resource value: 0x7F0700BE
-			public const int Inven_Logo = 2131165374;
+			// aapt resource value: 0x7f0200b2
+			public const int Grade_4 = 2130837682;
 			
-			// aapt resource value: 0x7F0700BF
-			public const int IOPLogo = 2131165375;
+			// aapt resource value: 0x7f0200b3
+			public const int Grade_5 = 2130837683;
 			
-			// aapt resource value: 0x7F0700C0
-			public const int KaKaoPlusFriendIcon = 2131165376;
+			// aapt resource value: 0x7f0200b4
+			public const int Grade_N = 2130837684;
 			
-			// aapt resource value: 0x7F0700C1
-			public const int LayoutBG = 2131165377;
+			// aapt resource value: 0x7f0200b5
+			public const int Grade_S = 2130837685;
 			
-			// aapt resource value: 0x7F0700C2
-			public const int LineUp_DicNum_Icon = 2131165378;
+			// aapt resource value: 0x7f0200b6
+			public const int Grade_Star = 2130837686;
 			
-			// aapt resource value: 0x7F0700C3
-			public const int LineUp_Name_Icon = 2131165379;
+			// aapt resource value: 0x7f0200b7
+			public const int Grade_Star_EX = 2130837687;
 			
-			// aapt resource value: 0x7F0700C4
-			public const int LineUp_ProductTime_Icon = 2131165380;
+			// aapt resource value: 0x7f0200b8
+			public const int Inven_Logo = 2130837688;
 			
-			// aapt resource value: 0x7F0700C5
-			public const int LowMemoryOptionIcon = 2131165381;
+			// aapt resource value: 0x7f0200b9
+			public const int IOPLogo = 2130837689;
 			
-			// aapt resource value: 0x7F0700C6
-			public const int LowMemoryOptionIcon_WhiteTheme = 2131165382;
+			// aapt resource value: 0x7f0200ba
+			public const int KaKaoPlusFriendIcon = 2130837690;
 			
-			// aapt resource value: 0x7F0700E2
-			public const int MainBG = 2131165410;
+			// aapt resource value: 0x7f0200bb
+			public const int LayoutBG = 2130837691;
 			
-			// aapt resource value: 0x7F0700C7
-			public const int Main_Calc = 2131165383;
+			// aapt resource value: 0x7f0200bc
+			public const int LineUp_DicNum_Icon = 2130837692;
 			
-			// aapt resource value: 0x7F0700C8
-			public const int Main_CalcClick = 2131165384;
+			// aapt resource value: 0x7f0200bd
+			public const int LineUp_Name_Icon = 2130837693;
 			
-			// aapt resource value: 0x7F0700C9
-			public const int Main_CalcSelector = 2131165385;
+			// aapt resource value: 0x7f0200be
+			public const int LineUp_ProductTime_Icon = 2130837694;
 			
-			// aapt resource value: 0x7F0700CA
-			public const int Main_DollDB = 2131165386;
+			// aapt resource value: 0x7f0200bf
+			public const int LowMemoryOptionIcon = 2130837695;
 			
-			// aapt resource value: 0x7F0700CB
-			public const int Main_DollDBClick = 2131165387;
+			// aapt resource value: 0x7f0200c0
+			public const int LowMemoryOptionIcon_WhiteTheme = 2130837696;
 			
-			// aapt resource value: 0x7F0700CC
-			public const int Main_DollDBSelector = 2131165388;
+			// aapt resource value: 0x7f0200c1
+			public const int Main_Calc = 2130837697;
 			
-			// aapt resource value: 0x7F0700CD
-			public const int Main_EnemyDB = 2131165389;
+			// aapt resource value: 0x7f0200c2
+			public const int Main_CalcClick = 2130837698;
 			
-			// aapt resource value: 0x7F0700CE
-			public const int Main_EnemyDBClick = 2131165390;
+			// aapt resource value: 0x7f0200c3
+			public const int Main_CalcSelector = 2130837699;
 			
-			// aapt resource value: 0x7F0700CF
-			public const int Main_EnemyDBSelector = 2131165391;
+			// aapt resource value: 0x7f0200c4
+			public const int Main_DollDB = 2130837700;
 			
-			// aapt resource value: 0x7F0700D0
-			public const int Main_EquipDB = 2131165392;
+			// aapt resource value: 0x7f0200c5
+			public const int Main_DollDBClick = 2130837701;
 			
-			// aapt resource value: 0x7F0700D1
-			public const int Main_EquipDBClick = 2131165393;
+			// aapt resource value: 0x7f0200c6
+			public const int Main_DollDBSelector = 2130837702;
 			
-			// aapt resource value: 0x7F0700D2
-			public const int Main_EquipDBSelector = 2131165394;
+			// aapt resource value: 0x7f0200c7
+			public const int Main_EnemyDB = 2130837703;
 			
-			// aapt resource value: 0x7F0700D3
-			public const int Main_Extra = 2131165395;
+			// aapt resource value: 0x7f0200c8
+			public const int Main_EnemyDBClick = 2130837704;
 			
-			// aapt resource value: 0x7F0700D4
-			public const int Main_ExtraClick = 2131165396;
+			// aapt resource value: 0x7f0200c9
+			public const int Main_EnemyDBSelector = 2130837705;
 			
-			// aapt resource value: 0x7F0700D5
-			public const int Main_ExtraSelector = 2131165397;
+			// aapt resource value: 0x7f0200ca
+			public const int Main_EquipDB = 2130837706;
 			
-			// aapt resource value: 0x7F0700D6
-			public const int Main_FairyDB = 2131165398;
+			// aapt resource value: 0x7f0200cb
+			public const int Main_EquipDBClick = 2130837707;
 			
-			// aapt resource value: 0x7F0700D7
-			public const int Main_FairyDBClick = 2131165399;
+			// aapt resource value: 0x7f0200cc
+			public const int Main_EquipDBSelector = 2130837708;
 			
-			// aapt resource value: 0x7F0700D8
-			public const int Main_FairyDBSelector = 2131165400;
+			// aapt resource value: 0x7f0200cd
+			public const int Main_Extra = 2130837709;
 			
-			// aapt resource value: 0x7F0700D9
-			public const int Main_GFDInfo = 2131165401;
+			// aapt resource value: 0x7f0200ce
+			public const int Main_ExtraClick = 2130837710;
 			
-			// aapt resource value: 0x7F0700DA
-			public const int Main_GFDInfoClick = 2131165402;
+			// aapt resource value: 0x7f0200cf
+			public const int Main_ExtraSelector = 2130837711;
 			
-			// aapt resource value: 0x7F0700DB
-			public const int Main_GFDInfoSelector = 2131165403;
+			// aapt resource value: 0x7f0200d0
+			public const int Main_FairyDB = 2130837712;
 			
-			// aapt resource value: 0x7F0700DC
-			public const int Main_OldGFD = 2131165404;
+			// aapt resource value: 0x7f0200d1
+			public const int Main_FairyDBClick = 2130837713;
 			
-			// aapt resource value: 0x7F0700DD
-			public const int Main_OldGFDClick = 2131165405;
+			// aapt resource value: 0x7f0200d2
+			public const int Main_FairyDBSelector = 2130837714;
 			
-			// aapt resource value: 0x7F0700DE
-			public const int Main_OldGFDSelector = 2131165406;
+			// aapt resource value: 0x7f0200d3
+			public const int Main_GFDInfo = 2130837715;
 			
-			// aapt resource value: 0x7F0700DF
-			public const int Main_Setting = 2131165407;
+			// aapt resource value: 0x7f0200d4
+			public const int Main_GFDInfoClick = 2130837716;
 			
-			// aapt resource value: 0x7F0700E0
-			public const int Main_SettingClick = 2131165408;
+			// aapt resource value: 0x7f0200d5
+			public const int Main_GFDInfoSelector = 2130837717;
 			
-			// aapt resource value: 0x7F0700E1
-			public const int Main_SettingSelector = 2131165409;
+			// aapt resource value: 0x7f0200d6
+			public const int Main_OldGFD = 2130837718;
 			
-			// aapt resource value: 0x7F0700E3
-			public const int ManPower_Icon = 2131165411;
+			// aapt resource value: 0x7f0200d7
+			public const int Main_OldGFDClick = 2130837719;
 			
-			// aapt resource value: 0x7F0700E4
-			public const int MOD_0 = 2131165412;
+			// aapt resource value: 0x7f0200d8
+			public const int Main_OldGFDSelector = 2130837720;
 			
-			// aapt resource value: 0x7F0700E5
-			public const int MOD_1 = 2131165413;
+			// aapt resource value: 0x7f0200d9
+			public const int Main_Setting = 2130837721;
 			
-			// aapt resource value: 0x7F0700E6
-			public const int MOD_2 = 2131165414;
+			// aapt resource value: 0x7f0200da
+			public const int Main_SettingClick = 2130837722;
 			
-			// aapt resource value: 0x7F0700E7
-			public const int MOD_3 = 2131165415;
+			// aapt resource value: 0x7f0200db
+			public const int Main_SettingSelector = 2130837723;
 			
-			// aapt resource value: 0x7F0700E8
-			public const int NamuWiki_Logo = 2131165416;
+			// aapt resource value: 0x7f0200dc
+			public const int MainBG = 2130837724;
 			
-			// aapt resource value: 0x7F0700E9
-			public const int navigation_empty_icon = 2131165417;
+			// aapt resource value: 0x7f0200dd
+			public const int ManPower_Icon = 2130837725;
 			
-			// aapt resource value: 0x7F0700EA
-			public const int notification_action_background = 2131165418;
+			// aapt resource value: 0x7f0200de
+			public const int MOD_0 = 2130837726;
 			
-			// aapt resource value: 0x7F0700EB
-			public const int notification_bg = 2131165419;
+			// aapt resource value: 0x7f0200df
+			public const int MOD_1 = 2130837727;
 			
-			// aapt resource value: 0x7F0700EC
-			public const int notification_bg_low = 2131165420;
+			// aapt resource value: 0x7f0200e0
+			public const int MOD_2 = 2130837728;
 			
-			// aapt resource value: 0x7F0700ED
-			public const int notification_bg_low_normal = 2131165421;
+			// aapt resource value: 0x7f0200e1
+			public const int MOD_3 = 2130837729;
 			
-			// aapt resource value: 0x7F0700EE
-			public const int notification_bg_low_pressed = 2131165422;
+			// aapt resource value: 0x7f0200e2
+			public const int NamuWiki_Logo = 2130837730;
 			
-			// aapt resource value: 0x7F0700EF
-			public const int notification_bg_normal = 2131165423;
+			// aapt resource value: 0x7f0200e3
+			public const int navigation_empty_icon = 2130837731;
 			
-			// aapt resource value: 0x7F0700F0
-			public const int notification_bg_normal_pressed = 2131165424;
+			// aapt resource value: 0x7f0200e4
+			public const int notification_action_background = 2130837732;
 			
-			// aapt resource value: 0x7F0700F1
-			public const int notification_icon_background = 2131165425;
+			// aapt resource value: 0x7f0200e5
+			public const int notification_bg = 2130837733;
 			
-			// aapt resource value: 0x7F0700F2
-			public const int notification_template_icon_bg = 2131165426;
+			// aapt resource value: 0x7f0200e6
+			public const int notification_bg_low = 2130837734;
 			
-			// aapt resource value: 0x7F0700F3
-			public const int notification_template_icon_low_bg = 2131165427;
+			// aapt resource value: 0x7f0200e7
+			public const int notification_bg_low_normal = 2130837735;
 			
-			// aapt resource value: 0x7F0700F4
-			public const int notification_tile_bg = 2131165428;
+			// aapt resource value: 0x7f0200e8
+			public const int notification_bg_low_pressed = 2130837736;
 			
-			// aapt resource value: 0x7F0700F5
-			public const int notify_panel_notification_icon_bg = 2131165429;
+			// aapt resource value: 0x7f0200e9
+			public const int notification_bg_normal = 2130837737;
 			
-			// aapt resource value: 0x7F0700F6
-			public const int Parts_Icon = 2131165430;
+			// aapt resource value: 0x7f0200ea
+			public const int notification_bg_normal_pressed = 2130837738;
 			
-			// aapt resource value: 0x7F0700F7
-			public const int ProductPercentTable_Icon = 2131165431;
+			// aapt resource value: 0x7f0200eb
+			public const int notification_icon_background = 2130837739;
 			
-			// aapt resource value: 0x7F0700F8
-			public const int PSGrade_0 = 2131165432;
+			// aapt resource value: 0x7f020109
+			public const int notification_template_icon_bg = 2130837769;
 			
-			// aapt resource value: 0x7F0700F9
-			public const int PSGrade_2 = 2131165433;
+			// aapt resource value: 0x7f02010a
+			public const int notification_template_icon_low_bg = 2130837770;
 			
-			// aapt resource value: 0x7F0700FA
-			public const int PSGrade_3 = 2131165434;
+			// aapt resource value: 0x7f0200ec
+			public const int notification_tile_bg = 2130837740;
 			
-			// aapt resource value: 0x7F0700FB
-			public const int PSGrade_4 = 2131165435;
+			// aapt resource value: 0x7f0200ed
+			public const int notify_panel_notification_icon_bg = 2130837741;
 			
-			// aapt resource value: 0x7F0700FC
-			public const int PSGrade_5 = 2131165436;
+			// aapt resource value: 0x7f0200ee
+			public const int Parts_Icon = 2130837742;
 			
-			// aapt resource value: 0x7F0700FD
-			public const int Refresh = 2131165437;
+			// aapt resource value: 0x7f0200ef
+			public const int ProductPercentTable_Icon = 2130837743;
 			
-			// aapt resource value: 0x7F0700FE
-			public const int RefreshIcon = 2131165438;
+			// aapt resource value: 0x7f0200f0
+			public const int PSGrade_0 = 2130837744;
 			
-			// aapt resource value: 0x7F0700FF
-			public const int SearchIcon = 2131165439;
+			// aapt resource value: 0x7f0200f1
+			public const int PSGrade_2 = 2130837745;
 			
-			// aapt resource value: 0x7F070100
-			public const int SearchIcon_WhiteTheme = 2131165440;
+			// aapt resource value: 0x7f0200f2
+			public const int PSGrade_3 = 2130837746;
 			
-			// aapt resource value: 0x7F070101
-			public const int SeperateBar = 2131165441;
+			// aapt resource value: 0x7f0200f3
+			public const int PSGrade_4 = 2130837747;
 			
-			// aapt resource value: 0x7F070102
-			public const int SeperateBar_Vertical = 2131165442;
+			// aapt resource value: 0x7f0200f4
+			public const int PSGrade_5 = 2130837748;
 			
-			// aapt resource value: 0x7F070103
-			public const int SideLinkIcon = 2131165443;
+			// aapt resource value: 0x7f0200f5
+			public const int Refresh = 2130837749;
 			
-			// aapt resource value: 0x7F070106
-			public const int SplashAnimation = 2131165446;
+			// aapt resource value: 0x7f0200f6
+			public const int RefreshIcon = 2130837750;
 			
-			// aapt resource value: 0x7F070107
-			public const int SplashBG2 = 2131165447;
+			// aapt resource value: 0x7f0200f7
+			public const int SearchIcon = 2130837751;
 			
-			// aapt resource value: 0x7F070104
-			public const int Splash_DataBuild = 2131165444;
+			// aapt resource value: 0x7f0200f8
+			public const int SearchIcon_WhiteTheme = 2130837752;
 			
-			// aapt resource value: 0x7F070105
-			public const int Splash_DataLoad = 2131165445;
+			// aapt resource value: 0x7f0200f9
+			public const int SeperateBar = 2130837753;
 			
-			// aapt resource value: 0x7F070108
-			public const int test = 2131165448;
+			// aapt resource value: 0x7f0200fa
+			public const int SeperateBar_Vertical = 2130837754;
 			
-			// aapt resource value: 0x7F070109
-			public const int tooltip_frame_dark = 2131165449;
+			// aapt resource value: 0x7f0200fb
+			public const int SideLinkIcon = 2130837755;
 			
-			// aapt resource value: 0x7F07010A
-			public const int tooltip_frame_light = 2131165450;
+			// aapt resource value: 0x7f0200fc
+			public const int Splash_DataBuild = 2130837756;
 			
-			// aapt resource value: 0x7F07010B
-			public const int Type_Boss = 2131165451;
+			// aapt resource value: 0x7f0200fd
+			public const int Splash_DataLoad = 2130837757;
 			
-			// aapt resource value: 0x7F07010C
-			public const int Type_Normal = 2131165452;
+			// aapt resource value: 0x7f0200fe
+			public const int SplashAnimation = 2130837758;
 			
-			// aapt resource value: 0x7F07010D
-			public const int UseLightThemeIcon = 2131165453;
+			// aapt resource value: 0x7f0200ff
+			public const int SplashBG2 = 2130837759;
 			
-			// aapt resource value: 0x7F07010E
-			public const int UseLightThemeIcon_WhiteTheme = 2131165454;
+			// aapt resource value: 0x7f020100
+			public const int test = 2130837760;
 			
-			// aapt resource value: 0x7F07010F
-			public const int Xamarin_Logo = 2131165455;
+			// aapt resource value: 0x7f020101
+			public const int tooltip_frame_dark = 2130837761;
 			
-			// aapt resource value: 0x7F070110
-			public const int ZinaOS_BootLogo = 2131165456;
+			// aapt resource value: 0x7f020102
+			public const int tooltip_frame_light = 2130837762;
+			
+			// aapt resource value: 0x7f020103
+			public const int Type_Boss = 2130837763;
+			
+			// aapt resource value: 0x7f020104
+			public const int Type_Normal = 2130837764;
+			
+			// aapt resource value: 0x7f020105
+			public const int UseLightThemeIcon = 2130837765;
+			
+			// aapt resource value: 0x7f020106
+			public const int UseLightThemeIcon_WhiteTheme = 2130837766;
+			
+			// aapt resource value: 0x7f020107
+			public const int Xamarin_Logo = 2130837767;
+			
+			// aapt resource value: 0x7f020108
+			public const int ZinaOS_BootLogo = 2130837768;
 			
 			static Drawable()
 			{
@@ -3196,2933 +3214,2933 @@ namespace GFI_with_GFS_A
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7F0802FE
-			public const int action0 = 2131231486;
+			// aapt resource value: 0x7f0c0032
+			public const int ALT = 2131492914;
 			
-			// aapt resource value: 0x7F080310
-			public const int actions = 2131231504;
+			// aapt resource value: 0x7f0c0033
+			public const int CTRL = 2131492915;
 			
-			// aapt resource value: 0x7F0802FF
-			public const int action_bar = 2131231487;
+			// aapt resource value: 0x7f0c009a
+			public const int CalcCoreDollGrade = 2131493018;
 			
-			// aapt resource value: 0x7F080300
-			public const int action_bar_activity_content = 2131231488;
+			// aapt resource value: 0x7f0c009c
+			public const int CalcCoreEndDollCount = 2131493020;
 			
-			// aapt resource value: 0x7F080301
-			public const int action_bar_container = 2131231489;
+			// aapt resource value: 0x7f0c0099
+			public const int CalcCoreMainLayout = 2131493017;
 			
-			// aapt resource value: 0x7F080302
-			public const int action_bar_root = 2131231490;
+			// aapt resource value: 0x7f0c009d
+			public const int CalcCoreResult = 2131493021;
 			
-			// aapt resource value: 0x7F080303
-			public const int action_bar_spinner = 2131231491;
+			// aapt resource value: 0x7f0c009b
+			public const int CalcCoreStartDollCount = 2131493019;
 			
-			// aapt resource value: 0x7F080304
-			public const int action_bar_subtitle = 2131231492;
+			// aapt resource value: 0x7f0c00b0
+			public const int CalcFragmentContainer = 2131493040;
 			
-			// aapt resource value: 0x7F080305
-			public const int action_bar_title = 2131231493;
+			// aapt resource value: 0x7f0c032b
+			public const int CalcMainButton = 2131493675;
 			
-			// aapt resource value: 0x7F080306
-			public const int action_container = 2131231494;
+			// aapt resource value: 0x7f0c03cb
+			public const int CalcNavigation_Core = 2131493835;
 			
-			// aapt resource value: 0x7F080307
-			public const int action_context_bar = 2131231495;
+			// aapt resource value: 0x7f0c03ca
+			public const int CalcNavigation_ExpItem = 2131493834;
 			
-			// aapt resource value: 0x7F080308
-			public const int action_divider = 2131231496;
+			// aapt resource value: 0x7f0c03cc
+			public const int CalcNavigation_SkillTraining = 2131493836;
 			
-			// aapt resource value: 0x7F080309
-			public const int action_image = 2131231497;
+			// aapt resource value: 0x7f0c00a4
+			public const int CalcReportEndLevel = 2131493028;
 			
-			// aapt resource value: 0x7F08030A
-			public const int action_menu_divider = 2131231498;
+			// aapt resource value: 0x7f0c009e
+			public const int CalcReportMainLayout = 2131493022;
 			
-			// aapt resource value: 0x7F08030B
-			public const int action_menu_presenter = 2131231499;
+			// aapt resource value: 0x7f0c009f
+			public const int CalcReportModLayout = 2131493023;
 			
-			// aapt resource value: 0x7F08030C
-			public const int action_mode_bar = 2131231500;
+			// aapt resource value: 0x7f0c00a0
+			public const int CalcReportModSelector = 2131493024;
 			
-			// aapt resource value: 0x7F08030D
-			public const int action_mode_bar_stub = 2131231501;
+			// aapt resource value: 0x7f0c00a6
+			public const int CalcReportNowExp = 2131493030;
 			
-			// aapt resource value: 0x7F08030E
-			public const int action_mode_close_button = 2131231502;
+			// aapt resource value: 0x7f0c00a5
+			public const int CalcReportNowExpLayout = 2131493029;
 			
-			// aapt resource value: 0x7F08030F
-			public const int action_text = 2131231503;
+			// aapt resource value: 0x7f0c00a7
+			public const int CalcReportResult = 2131493031;
 			
-			// aapt resource value: 0x7F080311
-			public const int activity_chooser_view_content = 2131231505;
+			// aapt resource value: 0x7f0c00a3
+			public const int CalcReportStartLevel = 2131493027;
 			
-			// aapt resource value: 0x7F080312
-			public const int add = 2131231506;
+			// aapt resource value: 0x7f0c00a1
+			public const int CalcReportVowLayout = 2131493025;
 			
-			// aapt resource value: 0x7F080313
-			public const int alertTitle = 2131231507;
+			// aapt resource value: 0x7f0c00a2
+			public const int CalcReportVowSelector = 2131493026;
 			
-			// aapt resource value: 0x7F080314
-			public const int all = 2131231508;
+			// aapt resource value: 0x7f0c00ab
+			public const int CalcSkillTrainingEndLevel = 2131493035;
 			
-			// aapt resource value: 0x7F080000
-			public const int ALT = 2131230720;
+			// aapt resource value: 0x7f0c00a8
+			public const int CalcSkillTrainingMainLayout = 2131493032;
 			
-			// aapt resource value: 0x7F080315
-			public const int always = 2131231509;
+			// aapt resource value: 0x7f0c00ac
+			public const int CalcSkillTrainingResultSkillChip = 2131493036;
 			
-			// aapt resource value: 0x7F080316
-			public const int annotationLayout = 2131231510;
+			// aapt resource value: 0x7f0c00ad
+			public const int CalcSkillTrainingResultTime = 2131493037;
 			
-			// aapt resource value: 0x7F080317
-			public const int async = 2131231511;
+			// aapt resource value: 0x7f0c00aa
+			public const int CalcSkillTrainingStartLevel = 2131493034;
 			
-			// aapt resource value: 0x7F080318
-			public const int auto = 2131231512;
+			// aapt resource value: 0x7f0c00a9
+			public const int CalcSkillTrainingType = 2131493033;
 			
-			// aapt resource value: 0x7F080319
-			public const int axisLayout = 2131231513;
+			// aapt resource value: 0x7f0c00af
+			public const int Calc_MainDrawerLayout = 2131493039;
 			
-			// aapt resource value: 0x7F08031A
-			public const int beginning = 2131231514;
+			// aapt resource value: 0x7f0c00b1
+			public const int Calc_NavigationView = 2131493041;
 			
-			// aapt resource value: 0x7F08031B
-			public const int blocking = 2131231515;
+			// aapt resource value: 0x7f0c00ae
+			public const int Calc_Toolbar = 2131493038;
 			
-			// aapt resource value: 0x7F08031C
-			public const int bottom = 2131231516;
+			// aapt resource value: 0x7f0c0335
+			public const int DBSubMenuButtonLayout = 2131493685;
 			
-			// aapt resource value: 0x7F08031D
-			public const int bottom_labels = 2131231517;
+			// aapt resource value: 0x7f0c0327
+			public const int DBSubMenuMainButton = 2131493671;
 			
-			// aapt resource value: 0x7F08031E
-			public const int buttonPanel = 2131231518;
+			// aapt resource value: 0x7f0c0171
+			public const int DollArrayFAB = 2131493233;
 			
-			// aapt resource value: 0x7F080002
-			public const int CalcCoreDollGrade = 2131230722;
+			// aapt resource value: 0x7f0c0336
+			public const int DollDBButton = 2131493686;
 			
-			// aapt resource value: 0x7F080003
-			public const int CalcCoreEndDollCount = 2131230723;
+			// aapt resource value: 0x7f0c013c
+			public const int DollDBDetailAbilityCardLayout = 2131493180;
 			
-			// aapt resource value: 0x7F080004
-			public const int CalcCoreMainLayout = 2131230724;
+			// aapt resource value: 0x7f0c0165
+			public const int DollDBDetailAbilityRadarChart = 2131493221;
 			
-			// aapt resource value: 0x7F080005
-			public const int CalcCoreResult = 2131230725;
+			// aapt resource value: 0x7f0c0163
+			public const int DollDBDetailAbilityRadarChartCardLayout = 2131493219;
 			
-			// aapt resource value: 0x7F080006
-			public const int CalcCoreStartDollCount = 2131230726;
+			// aapt resource value: 0x7f0c0164
+			public const int DollDBDetailAbilityRadarChartLayout = 2131493220;
 			
-			// aapt resource value: 0x7F080007
-			public const int CalcFragmentContainer = 2131230727;
+			// aapt resource value: 0x7f0c00e1
+			public const int DollDBDetailBackgroundImageView = 2131493089;
 			
-			// aapt resource value: 0x7F080008
-			public const int CalcMainButton = 2131230728;
+			// aapt resource value: 0x7f0c00f5
+			public const int DollDBDetailBasicInfoCardLayout = 2131493109;
 			
-			// aapt resource value: 0x7F080009
-			public const int CalcNavigation_Core = 2131230729;
+			// aapt resource value: 0x7f0c00e6
+			public const int DollDBDetailBasicInfoLayout = 2131493094;
 			
-			// aapt resource value: 0x7F08000A
-			public const int CalcNavigation_ExpItem = 2131230730;
+			// aapt resource value: 0x7f0c00e3
+			public const int DollDBDetailBasicLayout = 2131493091;
 			
-			// aapt resource value: 0x7F08000B
-			public const int CalcNavigation_SkillTraining = 2131230731;
+			// aapt resource value: 0x7f0c0106
+			public const int DollDBDetailBuff1 = 2131493126;
 			
-			// aapt resource value: 0x7F08000C
-			public const int CalcReportEndLevel = 2131230732;
+			// aapt resource value: 0x7f0c0107
+			public const int DollDBDetailBuff2 = 2131493127;
 			
-			// aapt resource value: 0x7F08000D
-			public const int CalcReportMainLayout = 2131230733;
+			// aapt resource value: 0x7f0c0108
+			public const int DollDBDetailBuff3 = 2131493128;
 			
-			// aapt resource value: 0x7F08000E
-			public const int CalcReportModLayout = 2131230734;
+			// aapt resource value: 0x7f0c0109
+			public const int DollDBDetailBuff4 = 2131493129;
 			
-			// aapt resource value: 0x7F08000F
-			public const int CalcReportModSelector = 2131230735;
+			// aapt resource value: 0x7f0c010a
+			public const int DollDBDetailBuff5 = 2131493130;
 			
-			// aapt resource value: 0x7F080010
-			public const int CalcReportNowExp = 2131230736;
+			// aapt resource value: 0x7f0c010b
+			public const int DollDBDetailBuff6 = 2131493131;
 			
-			// aapt resource value: 0x7F080011
-			public const int CalcReportNowExpLayout = 2131230737;
+			// aapt resource value: 0x7f0c010c
+			public const int DollDBDetailBuff7 = 2131493132;
 			
-			// aapt resource value: 0x7F080012
-			public const int CalcReportResult = 2131230738;
+			// aapt resource value: 0x7f0c010d
+			public const int DollDBDetailBuff8 = 2131493133;
 			
-			// aapt resource value: 0x7F080013
-			public const int CalcReportStartLevel = 2131230739;
+			// aapt resource value: 0x7f0c010e
+			public const int DollDBDetailBuff9 = 2131493134;
 			
-			// aapt resource value: 0x7F080014
-			public const int CalcReportVowLayout = 2131230740;
+			// aapt resource value: 0x7f0c0103
+			public const int DollDBDetailBuffCardLayout = 2131493123;
 			
-			// aapt resource value: 0x7F080015
-			public const int CalcReportVowSelector = 2131230741;
+			// aapt resource value: 0x7f0c0113
+			public const int DollDBDetailBuffDetail1 = 2131493139;
 			
-			// aapt resource value: 0x7F080016
-			public const int CalcSkillTrainingEndLevel = 2131230742;
+			// aapt resource value: 0x7f0c0117
+			public const int DollDBDetailBuffDetail2 = 2131493143;
 			
-			// aapt resource value: 0x7F080017
-			public const int CalcSkillTrainingMainLayout = 2131230743;
+			// aapt resource value: 0x7f0c010f
+			public const int DollDBDetailBuffDetailLayout = 2131493135;
 			
-			// aapt resource value: 0x7F080018
-			public const int CalcSkillTrainingResultSkillChip = 2131230744;
+			// aapt resource value: 0x7f0c0111
+			public const int DollDBDetailBuffIcon1 = 2131493137;
 			
-			// aapt resource value: 0x7F080019
-			public const int CalcSkillTrainingResultTime = 2131230745;
+			// aapt resource value: 0x7f0c0115
+			public const int DollDBDetailBuffIcon2 = 2131493141;
 			
-			// aapt resource value: 0x7F08001A
-			public const int CalcSkillTrainingStartLevel = 2131230746;
+			// aapt resource value: 0x7f0c0105
+			public const int DollDBDetailBuffImageLayout = 2131493125;
 			
-			// aapt resource value: 0x7F08001B
-			public const int CalcSkillTrainingType = 2131230747;
+			// aapt resource value: 0x7f0c0104
+			public const int DollDBDetailBuffLayout = 2131493124;
 			
-			// aapt resource value: 0x7F08001C
-			public const int Calc_MainDrawerLayout = 2131230748;
+			// aapt resource value: 0x7f0c0110
+			public const int DollDBDetailBuffLayout1 = 2131493136;
 			
-			// aapt resource value: 0x7F08001D
-			public const int Calc_NavigationView = 2131230749;
+			// aapt resource value: 0x7f0c0114
+			public const int DollDBDetailBuffLayout2 = 2131493140;
 			
-			// aapt resource value: 0x7F08001E
-			public const int Calc_Toolbar = 2131230750;
+			// aapt resource value: 0x7f0c0112
+			public const int DollDBDetailBuffName1 = 2131493138;
 			
-			// aapt resource value: 0x7F08031F
-			public const int cancel_action = 2131231519;
+			// aapt resource value: 0x7f0c0116
+			public const int DollDBDetailBuffName2 = 2131493142;
 			
-			// aapt resource value: 0x7F080320
-			public const int category = 2131231520;
+			// aapt resource value: 0x7f0c00e7
+			public const int DollDBDetailDollDicNumber = 2131493095;
 			
-			// aapt resource value: 0x7F080321
-			public const int center = 2131231521;
+			// aapt resource value: 0x7f0c00e8
+			public const int DollDBDetailDollName = 2131493096;
 			
-			// aapt resource value: 0x7F080322
-			public const int center_horizontal = 2131231522;
+			// aapt resource value: 0x7f0c00e9
+			public const int DollDBDetailDollProductTime = 2131493097;
 			
-			// aapt resource value: 0x7F080323
-			public const int center_vertical = 2131231523;
+			// aapt resource value: 0x7f0c0118
+			public const int DollDBDetailEffectType = 2131493144;
 			
-			// aapt resource value: 0x7F080324
-			public const int chartBehaviorLayout = 2131231524;
+			// aapt resource value: 0x7f0c00ff
+			public const int DollDBDetailInfoCountry = 2131493119;
 			
-			// aapt resource value: 0x7F080325
-			public const int chartLegendScrollView = 2131231525;
+			// aapt resource value: 0x7f0c00f6
+			public const int DollDBDetailInfoGrade1 = 2131493110;
 			
-			// aapt resource value: 0x7F080326
-			public const int checkbox = 2131231526;
+			// aapt resource value: 0x7f0c00f7
+			public const int DollDBDetailInfoGrade2 = 2131493111;
 			
-			// aapt resource value: 0x7F080327
-			public const int chronometer = 2131231527;
+			// aapt resource value: 0x7f0c00f8
+			public const int DollDBDetailInfoGrade3 = 2131493112;
 			
-			// aapt resource value: 0x7F080328
-			public const int clip_horizontal = 2131231528;
+			// aapt resource value: 0x7f0c00f9
+			public const int DollDBDetailInfoGrade4 = 2131493113;
 			
-			// aapt resource value: 0x7F080329
-			public const int clip_vertical = 2131231529;
+			// aapt resource value: 0x7f0c00fa
+			public const int DollDBDetailInfoGrade5 = 2131493114;
 			
-			// aapt resource value: 0x7F08032A
-			public const int collapseActionView = 2131231530;
+			// aapt resource value: 0x7f0c0102
+			public const int DollDBDetailInfoHowToGain = 2131493122;
 			
-			// aapt resource value: 0x7F08032B
-			public const int container = 2131231531;
+			// aapt resource value: 0x7f0c0100
+			public const int DollDBDetailInfoIllustrator = 2131493120;
 			
-			// aapt resource value: 0x7F08032C
-			public const int content = 2131231532;
+			// aapt resource value: 0x7f0c00fc
+			public const int DollDBDetailInfoName = 2131493116;
 			
-			// aapt resource value: 0x7F08032D
-			public const int contentPanel = 2131231533;
+			// aapt resource value: 0x7f0c00fd
+			public const int DollDBDetailInfoNickName = 2131493117;
 			
-			// aapt resource value: 0x7F08032E
-			public const int coordinator = 2131231534;
+			// aapt resource value: 0x7f0c00fe
+			public const int DollDBDetailInfoRealModel = 2131493118;
 			
-			// aapt resource value: 0x7F080001
-			public const int CTRL = 2131230721;
+			// aapt resource value: 0x7f0c00fb
+			public const int DollDBDetailInfoType = 2131493115;
 			
-			// aapt resource value: 0x7F08032F
-			public const int custom = 2131231535;
+			// aapt resource value: 0x7f0c0101
+			public const int DollDBDetailInfoVoiceActor = 2131493121;
 			
-			// aapt resource value: 0x7F080330
-			public const int customPanel = 2131231536;
+			// aapt resource value: 0x7f0c00e2
+			public const int DollDBDetailInitLoadProgress = 2131493090;
 			
-			// aapt resource value: 0x7F080331
-			public const int dataMarkerLayout = 2131231537;
+			// aapt resource value: 0x7f0c00e0
+			public const int DollDBDetailMainLayout = 2131493088;
 			
-			// aapt resource value: 0x7F080332
-			public const int dateTime = 2131231538;
+			// aapt resource value: 0x7f0c00ef
+			public const int DollDBDetailModSelect0 = 2131493103;
 			
-			// aapt resource value: 0x7F080333
-			public const int dateTimeCategory = 2131231539;
+			// aapt resource value: 0x7f0c00f0
+			public const int DollDBDetailModSelect1 = 2131493104;
 			
-			// aapt resource value: 0x7F08001F
-			public const int DBSubMenuButtonLayout = 2131230751;
+			// aapt resource value: 0x7f0c00f1
+			public const int DollDBDetailModSelect2 = 2131493105;
 			
-			// aapt resource value: 0x7F080020
-			public const int DBSubMenuMainButton = 2131230752;
+			// aapt resource value: 0x7f0c00f2
+			public const int DollDBDetailModSelect3 = 2131493106;
 			
-			// aapt resource value: 0x7F080334
-			public const int decor_content_parent = 2131231540;
+			// aapt resource value: 0x7f0c00ee
+			public const int DollDBDetailModSelectLayout = 2131493102;
 			
-			// aapt resource value: 0x7F080335
-			public const int default_activity_button = 2131231541;
+			// aapt resource value: 0x7f0c0137
+			public const int DollDBDetailModSkillAbilityLayout = 2131493175;
 			
-			// aapt resource value: 0x7F080336
-			public const int design_bottom_sheet = 2131231542;
+			// aapt resource value: 0x7f0c013b
+			public const int DollDBDetailModSkillAbilitySubLayout = 2131493179;
 			
-			// aapt resource value: 0x7F080337
-			public const int design_menu_item_action_area = 2131231543;
+			// aapt resource value: 0x7f0c0138
+			public const int DollDBDetailModSkillAbilityTopLayout = 2131493176;
 			
-			// aapt resource value: 0x7F080338
-			public const int design_menu_item_action_area_stub = 2131231544;
+			// aapt resource value: 0x7f0c0139
+			public const int DollDBDetailModSkillAbilityTopText1 = 2131493177;
 			
-			// aapt resource value: 0x7F080339
-			public const int design_menu_item_text = 2131231545;
+			// aapt resource value: 0x7f0c013a
+			public const int DollDBDetailModSkillAbilityTopText2 = 2131493178;
 			
-			// aapt resource value: 0x7F08033A
-			public const int design_navigation_view = 2131231546;
+			// aapt resource value: 0x7f0c0130
+			public const int DollDBDetailModSkillBasicLayout = 2131493168;
 			
-			// aapt resource value: 0x7F08033B
-			public const int disableHome = 2131231547;
+			// aapt resource value: 0x7f0c012e
+			public const int DollDBDetailModSkillCardLayout = 2131493166;
 			
-			// aapt resource value: 0x7F080021
-			public const int DollArrayFAB = 2131230753;
+			// aapt resource value: 0x7f0c0136
+			public const int DollDBDetailModSkillExplain = 2131493174;
 			
-			// aapt resource value: 0x7F080022
-			public const int DollDBButton = 2131230754;
+			// aapt resource value: 0x7f0c0135
+			public const int DollDBDetailModSkillExplainLayout = 2131493173;
 			
-			// aapt resource value: 0x7F080023
-			public const int DollDBDetailAbilityCardLayout = 2131230755;
+			// aapt resource value: 0x7f0c0132
+			public const int DollDBDetailModSkillIcon = 2131493170;
 			
-			// aapt resource value: 0x7F080024
-			public const int DollDBDetailAbilityRadarChart = 2131230756;
+			// aapt resource value: 0x7f0c0131
+			public const int DollDBDetailModSkillIconLayout = 2131493169;
 			
-			// aapt resource value: 0x7F080025
-			public const int DollDBDetailAbilityRadarChartCardLayout = 2131230757;
+			// aapt resource value: 0x7f0c012f
+			public const int DollDBDetailModSkillLayout = 2131493167;
 			
-			// aapt resource value: 0x7F080026
-			public const int DollDBDetailAbilityRadarChartLayout = 2131230758;
+			// aapt resource value: 0x7f0c0134
+			public const int DollDBDetailModSkillName = 2131493172;
 			
-			// aapt resource value: 0x7F080027
-			public const int DollDBDetailBackgroundImageView = 2131230759;
+			// aapt resource value: 0x7f0c0133
+			public const int DollDBDetailModSkillNameLayout = 2131493171;
 			
-			// aapt resource value: 0x7F080028
-			public const int DollDBDetailBasicInfoCardLayout = 2131230760;
+			// aapt resource value: 0x7f0c0168
+			public const int DollDBDetailProductPercentFAB = 2131493224;
 			
-			// aapt resource value: 0x7F080029
-			public const int DollDBDetailBasicInfoLayout = 2131230761;
+			// aapt resource value: 0x7f0c0167
+			public const int DollDBDetailRefreshCacheFAB = 2131493223;
 			
-			// aapt resource value: 0x7F08002A
-			public const int DollDBDetailBasicLayout = 2131230762;
+			// aapt resource value: 0x7f0c00f3
+			public const int DollDBDetailSDAnimationButton = 2131493107;
 			
-			// aapt resource value: 0x7F08002B
-			public const int DollDBDetailBuff1 = 2131230763;
+			// aapt resource value: 0x7f0c00f4
+			public const int DollDBDetailScrollLayout = 2131493108;
 			
-			// aapt resource value: 0x7F08002C
-			public const int DollDBDetailBuff2 = 2131230764;
+			// aapt resource value: 0x7f0c0169
+			public const int DollDBDetailSideLinkMainFAB = 2131493225;
 			
-			// aapt resource value: 0x7F08002D
-			public const int DollDBDetailBuff3 = 2131230765;
+			// aapt resource value: 0x7f0c0129
+			public const int DollDBDetailSkillAbilityLayout = 2131493161;
 			
-			// aapt resource value: 0x7F08002E
-			public const int DollDBDetailBuff4 = 2131230766;
+			// aapt resource value: 0x7f0c012d
+			public const int DollDBDetailSkillAbilitySubLayout = 2131493165;
 			
-			// aapt resource value: 0x7F08002F
-			public const int DollDBDetailBuff5 = 2131230767;
+			// aapt resource value: 0x7f0c012a
+			public const int DollDBDetailSkillAbilityTopLayout = 2131493162;
 			
-			// aapt resource value: 0x7F080030
-			public const int DollDBDetailBuff6 = 2131230768;
+			// aapt resource value: 0x7f0c012b
+			public const int DollDBDetailSkillAbilityTopText1 = 2131493163;
 			
-			// aapt resource value: 0x7F080031
-			public const int DollDBDetailBuff7 = 2131230769;
+			// aapt resource value: 0x7f0c012c
+			public const int DollDBDetailSkillAbilityTopText2 = 2131493164;
 			
-			// aapt resource value: 0x7F080032
-			public const int DollDBDetailBuff8 = 2131230770;
+			// aapt resource value: 0x7f0c011b
+			public const int DollDBDetailSkillBasicLayout = 2131493147;
 			
-			// aapt resource value: 0x7F080033
-			public const int DollDBDetailBuff9 = 2131230771;
+			// aapt resource value: 0x7f0c0119
+			public const int DollDBDetailSkillCardLayout = 2131493145;
 			
-			// aapt resource value: 0x7F080034
-			public const int DollDBDetailBuffCardLayout = 2131230772;
+			// aapt resource value: 0x7f0c0126
+			public const int DollDBDetailSkillCoolTime = 2131493158;
 			
-			// aapt resource value: 0x7F080035
-			public const int DollDBDetailBuffDetail1 = 2131230773;
+			// aapt resource value: 0x7f0c0125
+			public const int DollDBDetailSkillCoolTimeIcon = 2131493157;
 			
-			// aapt resource value: 0x7F080036
-			public const int DollDBDetailBuffDetail2 = 2131230774;
+			// aapt resource value: 0x7f0c0120
+			public const int DollDBDetailSkillCoolTimeLayout = 2131493152;
 			
-			// aapt resource value: 0x7F080037
-			public const int DollDBDetailBuffDetailLayout = 2131230775;
+			// aapt resource value: 0x7f0c0121
+			public const int DollDBDetailSkillCoolTimeLayout1 = 2131493153;
 			
-			// aapt resource value: 0x7F080038
-			public const int DollDBDetailBuffIcon1 = 2131230776;
+			// aapt resource value: 0x7f0c0124
+			public const int DollDBDetailSkillCoolTimeLayout2 = 2131493156;
 			
-			// aapt resource value: 0x7F080039
-			public const int DollDBDetailBuffIcon2 = 2131230777;
+			// aapt resource value: 0x7f0c0128
+			public const int DollDBDetailSkillExplain = 2131493160;
 			
-			// aapt resource value: 0x7F08003A
-			public const int DollDBDetailBuffImageLayout = 2131230778;
+			// aapt resource value: 0x7f0c0127
+			public const int DollDBDetailSkillExplainLayout = 2131493159;
 			
-			// aapt resource value: 0x7F08003B
-			public const int DollDBDetailBuffLayout = 2131230779;
+			// aapt resource value: 0x7f0c011d
+			public const int DollDBDetailSkillIcon = 2131493149;
 			
-			// aapt resource value: 0x7F08003C
-			public const int DollDBDetailBuffLayout1 = 2131230780;
+			// aapt resource value: 0x7f0c011c
+			public const int DollDBDetailSkillIconLayout = 2131493148;
 			
-			// aapt resource value: 0x7F08003D
-			public const int DollDBDetailBuffLayout2 = 2131230781;
+			// aapt resource value: 0x7f0c0123
+			public const int DollDBDetailSkillInitCoolTime = 2131493155;
 			
-			// aapt resource value: 0x7F08003E
-			public const int DollDBDetailBuffName1 = 2131230782;
+			// aapt resource value: 0x7f0c0122
+			public const int DollDBDetailSkillInitCoolTimeIcon = 2131493154;
 			
-			// aapt resource value: 0x7F08003F
-			public const int DollDBDetailBuffName2 = 2131230783;
+			// aapt resource value: 0x7f0c011a
+			public const int DollDBDetailSkillLayout = 2131493146;
 			
-			// aapt resource value: 0x7F080040
-			public const int DollDBDetailDollDicNumber = 2131230784;
+			// aapt resource value: 0x7f0c011f
+			public const int DollDBDetailSkillName = 2131493151;
 			
-			// aapt resource value: 0x7F080041
-			public const int DollDBDetailDollName = 2131230785;
+			// aapt resource value: 0x7f0c011e
+			public const int DollDBDetailSkillNameLayout = 2131493150;
 			
-			// aapt resource value: 0x7F080042
-			public const int DollDBDetailDollProductTime = 2131230786;
+			// aapt resource value: 0x7f0c00e5
+			public const int DollDBDetailSmallImage = 2131493093;
 			
-			// aapt resource value: 0x7F080043
-			public const int DollDBDetailEffectType = 2131230787;
+			// aapt resource value: 0x7f0c00e4
+			public const int DollDBDetailSmallImageLayout = 2131493092;
 			
-			// aapt resource value: 0x7F080044
-			public const int DollDBDetailInfoCountry = 2131230788;
+			// aapt resource value: 0x7f0c016a
+			public const int DollDBDetailSnackbarLayout = 2131493226;
 			
-			// aapt resource value: 0x7F080045
-			public const int DollDBDetailInfoGrade1 = 2131230789;
+			// aapt resource value: 0x7f0c00ed
+			public const int DollDBDetailVoiceDownloadProgress = 2131493101;
 			
-			// aapt resource value: 0x7F080046
-			public const int DollDBDetailInfoGrade2 = 2131230790;
+			// aapt resource value: 0x7f0c00ea
+			public const int DollDBDetailVoiceLayout = 2131493098;
 			
-			// aapt resource value: 0x7F080047
-			public const int DollDBDetailInfoGrade3 = 2131230791;
+			// aapt resource value: 0x7f0c00ec
+			public const int DollDBDetailVoicePlayButton = 2131493100;
 			
-			// aapt resource value: 0x7F080048
-			public const int DollDBDetailInfoGrade4 = 2131230792;
+			// aapt resource value: 0x7f0c00eb
+			public const int DollDBDetailVoiceSelector = 2131493099;
 			
-			// aapt resource value: 0x7F080049
-			public const int DollDBDetailInfoGrade5 = 2131230793;
+			// aapt resource value: 0x7f0c0166
+			public const int DollDBDetail_adView = 2131493222;
 			
-			// aapt resource value: 0x7F08004A
-			public const int DollDBDetailInfoHowToGain = 2131230794;
+			// aapt resource value: 0x7f0c00d9
+			public const int DollDBImageViewerButtonLayout = 2131493081;
 			
-			// aapt resource value: 0x7F08004B
-			public const int DollDBDetailInfoIllustrator = 2131230795;
+			// aapt resource value: 0x7f0c00db
+			public const int DollDBImageViewerChangeStateButton = 2131493083;
 			
-			// aapt resource value: 0x7F08004C
-			public const int DollDBDetailInfoName = 2131230796;
+			// aapt resource value: 0x7f0c00d7
+			public const int DollDBImageViewerCostumeList = 2131493079;
 			
-			// aapt resource value: 0x7F08004D
-			public const int DollDBDetailInfoNickName = 2131230797;
+			// aapt resource value: 0x7f0c00de
+			public const int DollDBImageViewerExitModeFAB = 2131493086;
 			
-			// aapt resource value: 0x7F08004E
-			public const int DollDBDetailInfoRealModel = 2131230798;
+			// aapt resource value: 0x7f0c00dd
+			public const int DollDBImageViewerImageStatus = 2131493085;
 			
-			// aapt resource value: 0x7F08004F
-			public const int DollDBDetailInfoType = 2131230799;
+			// aapt resource value: 0x7f0c00dc
+			public const int DollDBImageViewerImageView = 2131493084;
 			
-			// aapt resource value: 0x7F080050
-			public const int DollDBDetailInfoVoiceActor = 2131230800;
+			// aapt resource value: 0x7f0c00d8
+			public const int DollDBImageViewerLoadProgress = 2131493080;
 			
-			// aapt resource value: 0x7F080051
-			public const int DollDBDetailInitLoadProgress = 2131230801;
+			// aapt resource value: 0x7f0c00d6
+			public const int DollDBImageViewerMainLayout = 2131493078;
 			
-			// aapt resource value: 0x7F080052
-			public const int DollDBDetailMainLayout = 2131230802;
+			// aapt resource value: 0x7f0c00da
+			public const int DollDBImageViewerRefreshImageCacheButton = 2131493082;
 			
-			// aapt resource value: 0x7F080053
-			public const int DollDBDetailModSelect0 = 2131230803;
+			// aapt resource value: 0x7f0c00df
+			public const int DollDBImageViewerSnackbarLayout = 2131493087;
 			
-			// aapt resource value: 0x7F080054
-			public const int DollDBDetailModSelect1 = 2131230804;
+			// aapt resource value: 0x7f0c0170
+			public const int DollDBListView = 2131493232;
 			
-			// aapt resource value: 0x7F080055
-			public const int DollDBDetailModSelect2 = 2131230805;
+			// aapt resource value: 0x7f0c016b
+			public const int DollDBMainLayout = 2131493227;
 			
-			// aapt resource value: 0x7F080056
-			public const int DollDBDetailModSelect3 = 2131230806;
+			// aapt resource value: 0x7f0c0173
+			public const int DollDBSnackbarLayout = 2131493235;
 			
-			// aapt resource value: 0x7F080057
-			public const int DollDBDetailModSelectLayout = 2131230807;
+			// aapt resource value: 0x7f0c0172
+			public const int DollFilterFAB = 2131493234;
 			
-			// aapt resource value: 0x7F080058
-			public const int DollDBDetailModSkillAbilityLayout = 2131230808;
+			// aapt resource value: 0x7f0c017e
+			public const int DollFilterGrade2 = 2131493246;
 			
-			// aapt resource value: 0x7F080059
-			public const int DollDBDetailModSkillAbilitySubLayout = 2131230809;
+			// aapt resource value: 0x7f0c017f
+			public const int DollFilterGrade3 = 2131493247;
 			
-			// aapt resource value: 0x7F08005A
-			public const int DollDBDetailModSkillAbilityTopLayout = 2131230810;
+			// aapt resource value: 0x7f0c0180
+			public const int DollFilterGrade4 = 2131493248;
 			
-			// aapt resource value: 0x7F08005B
-			public const int DollDBDetailModSkillAbilityTopText1 = 2131230811;
+			// aapt resource value: 0x7f0c0181
+			public const int DollFilterGrade5 = 2131493249;
 			
-			// aapt resource value: 0x7F08005C
-			public const int DollDBDetailModSkillAbilityTopText2 = 2131230812;
+			// aapt resource value: 0x7f0c0182
+			public const int DollFilterGradeExtra = 2131493250;
 			
-			// aapt resource value: 0x7F08005D
-			public const int DollDBDetailModSkillBasicLayout = 2131230813;
+			// aapt resource value: 0x7f0c018a
+			public const int DollFilterHasModNo = 2131493258;
 			
-			// aapt resource value: 0x7F08005E
-			public const int DollDBDetailModSkillCardLayout = 2131230814;
+			// aapt resource value: 0x7f0c0189
+			public const int DollFilterHasModYes = 2131493257;
 			
-			// aapt resource value: 0x7F08005F
-			public const int DollDBDetailModSkillExplain = 2131230815;
+			// aapt resource value: 0x7f0c017a
+			public const int DollFilterMainLayout = 2131493242;
 			
-			// aapt resource value: 0x7F080060
-			public const int DollDBDetailModSkillExplainLayout = 2131230816;
+			// aapt resource value: 0x7f0c017b
+			public const int DollFilterProductHour = 2131493243;
 			
-			// aapt resource value: 0x7F080061
-			public const int DollDBDetailModSkillIcon = 2131230817;
+			// aapt resource value: 0x7f0c017c
+			public const int DollFilterProductMinute = 2131493244;
 			
-			// aapt resource value: 0x7F080062
-			public const int DollDBDetailModSkillIconLayout = 2131230818;
+			// aapt resource value: 0x7f0c017d
+			public const int DollFilterProductNearRange = 2131493245;
 			
-			// aapt resource value: 0x7F080063
-			public const int DollDBDetailModSkillLayout = 2131230819;
+			// aapt resource value: 0x7f0c0185
+			public const int DollFilterTypeAR = 2131493253;
 			
-			// aapt resource value: 0x7F080064
-			public const int DollDBDetailModSkillName = 2131230820;
+			// aapt resource value: 0x7f0c0183
+			public const int DollFilterTypeHG = 2131493251;
 			
-			// aapt resource value: 0x7F080065
-			public const int DollDBDetailModSkillNameLayout = 2131230821;
+			// aapt resource value: 0x7f0c0187
+			public const int DollFilterTypeMG = 2131493255;
 			
-			// aapt resource value: 0x7F080066
-			public const int DollDBDetailProductPercentFAB = 2131230822;
+			// aapt resource value: 0x7f0c0186
+			public const int DollFilterTypeRF = 2131493254;
 			
-			// aapt resource value: 0x7F080067
-			public const int DollDBDetailRefreshCacheFAB = 2131230823;
+			// aapt resource value: 0x7f0c0188
+			public const int DollFilterTypeSG = 2131493256;
 			
-			// aapt resource value: 0x7F080069
-			public const int DollDBDetailScrollLayout = 2131230825;
+			// aapt resource value: 0x7f0c0184
+			public const int DollFilterTypeSMG = 2131493252;
 			
-			// aapt resource value: 0x7F080068
-			public const int DollDBDetailSDAnimationButton = 2131230824;
+			// aapt resource value: 0x7f0c014d
+			public const int DollInfoACLayout = 2131493197;
 			
-			// aapt resource value: 0x7F08006A
-			public const int DollDBDetailSideLinkMainFAB = 2131230826;
+			// aapt resource value: 0x7f0c014e
+			public const int DollInfoACProgress = 2131493198;
 			
-			// aapt resource value: 0x7F08006B
-			public const int DollDBDetailSkillAbilityLayout = 2131230827;
+			// aapt resource value: 0x7f0c0150
+			public const int DollInfoACProgressMax = 2131493200;
 			
-			// aapt resource value: 0x7F08006C
-			public const int DollDBDetailSkillAbilitySubLayout = 2131230828;
+			// aapt resource value: 0x7f0c014f
+			public const int DollInfoACProgressMin = 2131493199;
 			
-			// aapt resource value: 0x7F08006D
-			public const int DollDBDetailSkillAbilityTopLayout = 2131230829;
+			// aapt resource value: 0x7f0c0151
+			public const int DollInfoACStatus = 2131493201;
 			
-			// aapt resource value: 0x7F08006E
-			public const int DollDBDetailSkillAbilityTopText1 = 2131230830;
+			// aapt resource value: 0x7f0c015c
+			public const int DollInfoAMLayout = 2131493212;
 			
-			// aapt resource value: 0x7F08006F
-			public const int DollDBDetailSkillAbilityTopText2 = 2131230831;
+			// aapt resource value: 0x7f0c015d
+			public const int DollInfoAMProgress = 2131493213;
 			
-			// aapt resource value: 0x7F080070
-			public const int DollDBDetailSkillBasicLayout = 2131230832;
+			// aapt resource value: 0x7f0c015f
+			public const int DollInfoAMProgressMax = 2131493215;
 			
-			// aapt resource value: 0x7F080071
-			public const int DollDBDetailSkillCardLayout = 2131230833;
+			// aapt resource value: 0x7f0c015e
+			public const int DollInfoAMProgressMin = 2131493214;
 			
-			// aapt resource value: 0x7F080072
-			public const int DollDBDetailSkillCoolTime = 2131230834;
+			// aapt resource value: 0x7f0c0160
+			public const int DollInfoAMStatus = 2131493216;
 			
-			// aapt resource value: 0x7F080073
-			public const int DollDBDetailSkillCoolTimeIcon = 2131230835;
+			// aapt resource value: 0x7f0c0152
+			public const int DollInfoASLayout = 2131493202;
 			
-			// aapt resource value: 0x7F080074
-			public const int DollDBDetailSkillCoolTimeLayout = 2131230836;
+			// aapt resource value: 0x7f0c0153
+			public const int DollInfoASProgress = 2131493203;
 			
-			// aapt resource value: 0x7F080075
-			public const int DollDBDetailSkillCoolTimeLayout1 = 2131230837;
+			// aapt resource value: 0x7f0c0155
+			public const int DollInfoASProgressMax = 2131493205;
 			
-			// aapt resource value: 0x7F080076
-			public const int DollDBDetailSkillCoolTimeLayout2 = 2131230838;
+			// aapt resource value: 0x7f0c0154
+			public const int DollInfoASProgressMin = 2131493204;
 			
-			// aapt resource value: 0x7F080077
-			public const int DollDBDetailSkillExplain = 2131230839;
+			// aapt resource value: 0x7f0c0156
+			public const int DollInfoASStatus = 2131493206;
 			
-			// aapt resource value: 0x7F080078
-			public const int DollDBDetailSkillExplainLayout = 2131230840;
+			// aapt resource value: 0x7f0c0157
+			public const int DollInfoBulletLayout = 2131493207;
 			
-			// aapt resource value: 0x7F080079
-			public const int DollDBDetailSkillIcon = 2131230841;
+			// aapt resource value: 0x7f0c0158
+			public const int DollInfoBulletProgress = 2131493208;
 			
-			// aapt resource value: 0x7F08007A
-			public const int DollDBDetailSkillIconLayout = 2131230842;
+			// aapt resource value: 0x7f0c015a
+			public const int DollInfoBulletProgressMax = 2131493210;
 			
-			// aapt resource value: 0x7F08007B
-			public const int DollDBDetailSkillInitCoolTime = 2131230843;
+			// aapt resource value: 0x7f0c0159
+			public const int DollInfoBulletProgressMin = 2131493209;
 			
-			// aapt resource value: 0x7F08007C
-			public const int DollDBDetailSkillInitCoolTimeIcon = 2131230844;
+			// aapt resource value: 0x7f0c015b
+			public const int DollInfoBulletStatus = 2131493211;
 			
-			// aapt resource value: 0x7F08007D
-			public const int DollDBDetailSkillLayout = 2131230845;
+			// aapt resource value: 0x7f0c0148
+			public const int DollInfoEVLayout = 2131493192;
 			
-			// aapt resource value: 0x7F08007E
-			public const int DollDBDetailSkillName = 2131230846;
+			// aapt resource value: 0x7f0c0149
+			public const int DollInfoEVProgress = 2131493193;
 			
-			// aapt resource value: 0x7F08007F
-			public const int DollDBDetailSkillNameLayout = 2131230847;
+			// aapt resource value: 0x7f0c014b
+			public const int DollInfoEVProgressMax = 2131493195;
 			
-			// aapt resource value: 0x7F080080
-			public const int DollDBDetailSmallImage = 2131230848;
+			// aapt resource value: 0x7f0c014a
+			public const int DollInfoEVProgressMin = 2131493194;
 			
-			// aapt resource value: 0x7F080081
-			public const int DollDBDetailSmallImageLayout = 2131230849;
+			// aapt resource value: 0x7f0c014c
+			public const int DollInfoEVStatus = 2131493196;
 			
-			// aapt resource value: 0x7F080082
-			public const int DollDBDetailSnackbarLayout = 2131230850;
+			// aapt resource value: 0x7f0c0143
+			public const int DollInfoFRLayout = 2131493187;
 			
-			// aapt resource value: 0x7F080083
-			public const int DollDBDetailVoiceDownloadProgress = 2131230851;
+			// aapt resource value: 0x7f0c0144
+			public const int DollInfoFRProgress = 2131493188;
 			
-			// aapt resource value: 0x7F080084
-			public const int DollDBDetailVoiceLayout = 2131230852;
+			// aapt resource value: 0x7f0c0146
+			public const int DollInfoFRProgressMax = 2131493190;
 			
-			// aapt resource value: 0x7F080085
-			public const int DollDBDetailVoicePlayButton = 2131230853;
+			// aapt resource value: 0x7f0c0145
+			public const int DollInfoFRProgressMin = 2131493189;
 			
-			// aapt resource value: 0x7F080086
-			public const int DollDBDetailVoiceSelector = 2131230854;
+			// aapt resource value: 0x7f0c0147
+			public const int DollInfoFRStatus = 2131493191;
 			
-			// aapt resource value: 0x7F080087
-			public const int DollDBDetail_adView = 2131230855;
+			// aapt resource value: 0x7f0c013e
+			public const int DollInfoHPLayout = 2131493182;
 			
-			// aapt resource value: 0x7F080088
-			public const int DollDBImageViewerButtonLayout = 2131230856;
+			// aapt resource value: 0x7f0c013f
+			public const int DollInfoHPProgress = 2131493183;
 			
-			// aapt resource value: 0x7F080089
-			public const int DollDBImageViewerChangeStateButton = 2131230857;
+			// aapt resource value: 0x7f0c0141
+			public const int DollInfoHPProgressMax = 2131493185;
 			
-			// aapt resource value: 0x7F08008A
-			public const int DollDBImageViewerCostumeList = 2131230858;
+			// aapt resource value: 0x7f0c0140
+			public const int DollInfoHPProgressMin = 2131493184;
 			
-			// aapt resource value: 0x7F08008B
-			public const int DollDBImageViewerExitModeFAB = 2131230859;
+			// aapt resource value: 0x7f0c0142
+			public const int DollInfoHPStatus = 2131493186;
 			
-			// aapt resource value: 0x7F08008C
-			public const int DollDBImageViewerImageStatus = 2131230860;
+			// aapt resource value: 0x7f0c0161
+			public const int DollInfoReloadLayout = 2131493217;
 			
-			// aapt resource value: 0x7F08008D
-			public const int DollDBImageViewerImageView = 2131230861;
+			// aapt resource value: 0x7f0c0162
+			public const int DollInfoReloadStatus = 2131493218;
 			
-			// aapt resource value: 0x7F08008E
-			public const int DollDBImageViewerLoadProgress = 2131230862;
+			// aapt resource value: 0x7f0c013d
+			public const int DollInfo_DetailMainLayout = 2131493181;
 			
-			// aapt resource value: 0x7F08008F
-			public const int DollDBImageViewerMainLayout = 2131230863;
+			// aapt resource value: 0x7f0c018d
+			public const int DollListGrade = 2131493261;
 			
-			// aapt resource value: 0x7F080090
-			public const int DollDBImageViewerRefreshImageCacheButton = 2131230864;
+			// aapt resource value: 0x7f0c018b
+			public const int DollListMainLayout = 2131493259;
 			
-			// aapt resource value: 0x7F080091
-			public const int DollDBImageViewerSnackbarLayout = 2131230865;
+			// aapt resource value: 0x7f0c018f
+			public const int DollListName = 2131493263;
 			
-			// aapt resource value: 0x7F080092
-			public const int DollDBListView = 2131230866;
+			// aapt resource value: 0x7f0c0190
+			public const int DollListProductTime = 2131493264;
 			
-			// aapt resource value: 0x7F080093
-			public const int DollDBMainLayout = 2131230867;
+			// aapt resource value: 0x7f0c018e
+			public const int DollListSmallImage = 2131493262;
 			
-			// aapt resource value: 0x7F080094
-			public const int DollDBSnackbarLayout = 2131230868;
+			// aapt resource value: 0x7f0c018c
+			public const int DollListType = 2131493260;
 			
-			// aapt resource value: 0x7F080095
-			public const int DollFilterFAB = 2131230869;
+			// aapt resource value: 0x7f0c0176
+			public const int DollSDAnimationCategoryList = 2131493238;
 			
-			// aapt resource value: 0x7F080096
-			public const int DollFilterGrade2 = 2131230870;
+			// aapt resource value: 0x7f0c0178
+			public const int DollSDAnimationImageView = 2131493240;
 			
-			// aapt resource value: 0x7F080097
-			public const int DollFilterGrade3 = 2131230871;
+			// aapt resource value: 0x7f0c0177
+			public const int DollSDAnimationList = 2131493239;
 			
-			// aapt resource value: 0x7F080098
-			public const int DollFilterGrade4 = 2131230872;
+			// aapt resource value: 0x7f0c0179
+			public const int DollSDAnimationSnackbarLayout = 2131493241;
 			
-			// aapt resource value: 0x7F080099
-			public const int DollFilterGrade5 = 2131230873;
+			// aapt resource value: 0x7f0c0175
+			public const int DollSDAnimationViewerLoadProgress = 2131493237;
 			
-			// aapt resource value: 0x7F08009A
-			public const int DollFilterGradeExtra = 2131230874;
+			// aapt resource value: 0x7f0c0174
+			public const int DollSDAnimationViewerMainLayout = 2131493236;
 			
-			// aapt resource value: 0x7F08009B
-			public const int DollFilterHasModNo = 2131230875;
+			// aapt resource value: 0x7f0c016c
+			public const int DollSearchLayout = 2131493228;
 			
-			// aapt resource value: 0x7F08009C
-			public const int DollFilterHasModYes = 2131230876;
+			// aapt resource value: 0x7f0c016d
+			public const int DollSearchResetButton = 2131493229;
 			
-			// aapt resource value: 0x7F08009D
-			public const int DollFilterMainLayout = 2131230877;
+			// aapt resource value: 0x7f0c016e
+			public const int DollSearchSeperateBar = 2131493230;
 			
-			// aapt resource value: 0x7F08009E
-			public const int DollFilterProductHour = 2131230878;
+			// aapt resource value: 0x7f0c016f
+			public const int DollSearchText = 2131493231;
 			
-			// aapt resource value: 0x7F08009F
-			public const int DollFilterProductMinute = 2131230879;
+			// aapt resource value: 0x7f0c0339
+			public const int EnemyDBButton = 2131493689;
 			
-			// aapt resource value: 0x7F0800A0
-			public const int DollFilterProductNearRange = 2131230880;
+			// aapt resource value: 0x7f0c01a8
+			public const int EnemyDBDetailAbilityCardLayout = 2131493288;
 			
-			// aapt resource value: 0x7F0800A1
-			public const int DollFilterTypeAR = 2131230881;
+			// aapt resource value: 0x7f0c01a1
+			public const int EnemyDBDetailBasicInfoCardLayout = 2131493281;
 			
-			// aapt resource value: 0x7F0800A2
-			public const int DollFilterTypeHG = 2131230882;
+			// aapt resource value: 0x7f0c0196
+			public const int EnemyDBDetailBasicInfoLayout = 2131493270;
 			
-			// aapt resource value: 0x7F0800A3
-			public const int DollFilterTypeMG = 2131230883;
+			// aapt resource value: 0x7f0c0193
+			public const int EnemyDBDetailBasicLayout = 2131493267;
 			
-			// aapt resource value: 0x7F0800A4
-			public const int DollFilterTypeRF = 2131230884;
+			// aapt resource value: 0x7f0c0199
+			public const int EnemyDBDetailEnemyCodeName = 2131493273;
 			
-			// aapt resource value: 0x7F0800A5
-			public const int DollFilterTypeSG = 2131230885;
+			// aapt resource value: 0x7f0c0198
+			public const int EnemyDBDetailEnemyName = 2131493272;
 			
-			// aapt resource value: 0x7F0800A6
-			public const int DollFilterTypeSMG = 2131230886;
+			// aapt resource value: 0x7f0c019e
+			public const int EnemyDBDetailEnemyTypeSelectLayout = 2131493278;
 			
-			// aapt resource value: 0x7F0800A7
-			public const int DollInfoACLayout = 2131230887;
+			// aapt resource value: 0x7f0c019f
+			public const int EnemyDBDetailEnemyTypeSelector = 2131493279;
 			
-			// aapt resource value: 0x7F0800A8
-			public const int DollInfoACProgress = 2131230888;
+			// aapt resource value: 0x7f0c01a7
+			public const int EnemyDBDetailInfoAppearPlace = 2131493287;
 			
-			// aapt resource value: 0x7F0800A9
-			public const int DollInfoACProgressMax = 2131230889;
+			// aapt resource value: 0x7f0c01a5
+			public const int EnemyDBDetailInfoCodeName = 2131493285;
 			
-			// aapt resource value: 0x7F0800AA
-			public const int DollInfoACProgressMin = 2131230890;
+			// aapt resource value: 0x7f0c01a3
+			public const int EnemyDBDetailInfoEnemyType = 2131493283;
 			
-			// aapt resource value: 0x7F0800AB
-			public const int DollInfoACStatus = 2131230891;
+			// aapt resource value: 0x7f0c01a2
+			public const int EnemyDBDetailInfoGrade = 2131493282;
 			
-			// aapt resource value: 0x7F0800AC
-			public const int DollInfoAMLayout = 2131230892;
+			// aapt resource value: 0x7f0c01a4
+			public const int EnemyDBDetailInfoName = 2131493284;
 			
-			// aapt resource value: 0x7F0800AD
-			public const int DollInfoAMProgress = 2131230893;
+			// aapt resource value: 0x7f0c01a6
+			public const int EnemyDBDetailInfoVoiceActor = 2131493286;
 			
-			// aapt resource value: 0x7F0800AE
-			public const int DollInfoAMProgressMax = 2131230894;
+			// aapt resource value: 0x7f0c0192
+			public const int EnemyDBDetailInitLoadProgress = 2131493266;
 			
-			// aapt resource value: 0x7F0800AF
-			public const int DollInfoAMProgressMin = 2131230895;
+			// aapt resource value: 0x7f0c0191
+			public const int EnemyDBDetailMainLayout = 2131493265;
 			
-			// aapt resource value: 0x7F0800B0
-			public const int DollInfoAMStatus = 2131230896;
+			// aapt resource value: 0x7f0c01a0
+			public const int EnemyDBDetailScrollLayout = 2131493280;
 			
-			// aapt resource value: 0x7F0800B1
-			public const int DollInfoASLayout = 2131230897;
+			// aapt resource value: 0x7f0c0195
+			public const int EnemyDBDetailSmallImage = 2131493269;
 			
-			// aapt resource value: 0x7F0800B2
-			public const int DollInfoASProgress = 2131230898;
+			// aapt resource value: 0x7f0c0194
+			public const int EnemyDBDetailSmallImageLayout = 2131493268;
 			
-			// aapt resource value: 0x7F0800B3
-			public const int DollInfoASProgressMax = 2131230899;
+			// aapt resource value: 0x7f0c01d7
+			public const int EnemyDBDetailSnackbarLayout = 2131493335;
 			
-			// aapt resource value: 0x7F0800B4
-			public const int DollInfoASProgressMin = 2131230900;
+			// aapt resource value: 0x7f0c0197
+			public const int EnemyDBDetailType = 2131493271;
 			
-			// aapt resource value: 0x7F0800B5
-			public const int DollInfoASStatus = 2131230901;
+			// aapt resource value: 0x7f0c019d
+			public const int EnemyDBDetailVoiceDownloadProgress = 2131493277;
 			
-			// aapt resource value: 0x7F0800B6
-			public const int DollInfoBulletLayout = 2131230902;
+			// aapt resource value: 0x7f0c019a
+			public const int EnemyDBDetailVoiceLayout = 2131493274;
 			
-			// aapt resource value: 0x7F0800B7
-			public const int DollInfoBulletProgress = 2131230903;
+			// aapt resource value: 0x7f0c019c
+			public const int EnemyDBDetailVoicePlayButton = 2131493276;
 			
-			// aapt resource value: 0x7F0800B8
-			public const int DollInfoBulletProgressMax = 2131230904;
+			// aapt resource value: 0x7f0c019b
+			public const int EnemyDBDetailVoiceSelector = 2131493275;
 			
-			// aapt resource value: 0x7F0800B9
-			public const int DollInfoBulletProgressMin = 2131230905;
+			// aapt resource value: 0x7f0c01dd
+			public const int EnemyDBListView = 2131493341;
 			
-			// aapt resource value: 0x7F0800BA
-			public const int DollInfoBulletStatus = 2131230906;
+			// aapt resource value: 0x7f0c01d8
+			public const int EnemyDBMainLayout = 2131493336;
 			
-			// aapt resource value: 0x7F0800BB
-			public const int DollInfoEVLayout = 2131230907;
+			// aapt resource value: 0x7f0c01df
+			public const int EnemyDBSnackbarLayout = 2131493343;
 			
-			// aapt resource value: 0x7F0800BC
-			public const int DollInfoEVProgress = 2131230908;
+			// aapt resource value: 0x7f0c01e2
+			public const int EnemyFilterBossEnemy = 2131493346;
 			
-			// aapt resource value: 0x7F0800BD
-			public const int DollInfoEVProgressMax = 2131230909;
+			// aapt resource value: 0x7f0c01de
+			public const int EnemyFilterFAB = 2131493342;
 			
-			// aapt resource value: 0x7F0800BE
-			public const int DollInfoEVProgressMin = 2131230910;
+			// aapt resource value: 0x7f0c01e0
+			public const int EnemyFilterMainLayout = 2131493344;
 			
-			// aapt resource value: 0x7F0800BF
-			public const int DollInfoEVStatus = 2131230911;
+			// aapt resource value: 0x7f0c01e1
+			public const int EnemyFilterNormalEnemy = 2131493345;
 			
-			// aapt resource value: 0x7F0800C0
-			public const int DollInfoFRLayout = 2131230912;
+			// aapt resource value: 0x7f0c01b9
+			public const int EnemyInfoACLayout = 2131493305;
 			
-			// aapt resource value: 0x7F0800C1
-			public const int DollInfoFRProgress = 2131230913;
+			// aapt resource value: 0x7f0c01ba
+			public const int EnemyInfoACProgress = 2131493306;
 			
-			// aapt resource value: 0x7F0800C2
-			public const int DollInfoFRProgressMax = 2131230914;
+			// aapt resource value: 0x7f0c01bc
+			public const int EnemyInfoACProgressMax = 2131493308;
 			
-			// aapt resource value: 0x7F0800C3
-			public const int DollInfoFRProgressMin = 2131230915;
+			// aapt resource value: 0x7f0c01bb
+			public const int EnemyInfoACProgressMin = 2131493307;
 			
-			// aapt resource value: 0x7F0800C4
-			public const int DollInfoFRStatus = 2131230916;
+			// aapt resource value: 0x7f0c01bd
+			public const int EnemyInfoACStatus = 2131493309;
 			
-			// aapt resource value: 0x7F0800C5
-			public const int DollInfoHPLayout = 2131230917;
+			// aapt resource value: 0x7f0c01cd
+			public const int EnemyInfoAMLayout = 2131493325;
 			
-			// aapt resource value: 0x7F0800C6
-			public const int DollInfoHPProgress = 2131230918;
+			// aapt resource value: 0x7f0c01ce
+			public const int EnemyInfoAMProgress = 2131493326;
 			
-			// aapt resource value: 0x7F0800C7
-			public const int DollInfoHPProgressMax = 2131230919;
+			// aapt resource value: 0x7f0c01d0
+			public const int EnemyInfoAMProgressMax = 2131493328;
 			
-			// aapt resource value: 0x7F0800C8
-			public const int DollInfoHPProgressMin = 2131230920;
+			// aapt resource value: 0x7f0c01cf
+			public const int EnemyInfoAMProgressMin = 2131493327;
 			
-			// aapt resource value: 0x7F0800C9
-			public const int DollInfoHPStatus = 2131230921;
+			// aapt resource value: 0x7f0c01d1
+			public const int EnemyInfoAMStatus = 2131493329;
 			
-			// aapt resource value: 0x7F0800CA
-			public const int DollInfoReloadLayout = 2131230922;
+			// aapt resource value: 0x7f0c01be
+			public const int EnemyInfoASLayout = 2131493310;
 			
-			// aapt resource value: 0x7F0800CB
-			public const int DollInfoReloadStatus = 2131230923;
+			// aapt resource value: 0x7f0c01bf
+			public const int EnemyInfoASProgress = 2131493311;
 			
-			// aapt resource value: 0x7F0800CC
-			public const int DollInfo_DetailMainLayout = 2131230924;
+			// aapt resource value: 0x7f0c01c1
+			public const int EnemyInfoASProgressMax = 2131493313;
 			
-			// aapt resource value: 0x7F0800CD
-			public const int DollListGrade = 2131230925;
+			// aapt resource value: 0x7f0c01c0
+			public const int EnemyInfoASProgressMin = 2131493312;
 			
-			// aapt resource value: 0x7F0800CE
-			public const int DollListMainLayout = 2131230926;
+			// aapt resource value: 0x7f0c01c2
+			public const int EnemyInfoASStatus = 2131493314;
 			
-			// aapt resource value: 0x7F0800CF
-			public const int DollListName = 2131230927;
+			// aapt resource value: 0x7f0c01b4
+			public const int EnemyInfoEVLayout = 2131493300;
 			
-			// aapt resource value: 0x7F0800D0
-			public const int DollListProductTime = 2131230928;
+			// aapt resource value: 0x7f0c01b5
+			public const int EnemyInfoEVProgress = 2131493301;
 			
-			// aapt resource value: 0x7F0800D1
-			public const int DollListSmallImage = 2131230929;
+			// aapt resource value: 0x7f0c01b7
+			public const int EnemyInfoEVProgressMax = 2131493303;
 			
-			// aapt resource value: 0x7F0800D2
-			public const int DollListType = 2131230930;
+			// aapt resource value: 0x7f0c01b6
+			public const int EnemyInfoEVProgressMin = 2131493302;
 			
-			// aapt resource value: 0x7F0800D3
-			public const int DollSDAnimationCategoryList = 2131230931;
+			// aapt resource value: 0x7f0c01b8
+			public const int EnemyInfoEVStatus = 2131493304;
 			
-			// aapt resource value: 0x7F0800D4
-			public const int DollSDAnimationImageView = 2131230932;
+			// aapt resource value: 0x7f0c01af
+			public const int EnemyInfoFRLayout = 2131493295;
 			
-			// aapt resource value: 0x7F0800D5
-			public const int DollSDAnimationList = 2131230933;
+			// aapt resource value: 0x7f0c01b0
+			public const int EnemyInfoFRProgress = 2131493296;
 			
-			// aapt resource value: 0x7F0800D6
-			public const int DollSDAnimationSnackbarLayout = 2131230934;
+			// aapt resource value: 0x7f0c01b2
+			public const int EnemyInfoFRProgressMax = 2131493298;
 			
-			// aapt resource value: 0x7F0800D7
-			public const int DollSDAnimationViewerLoadProgress = 2131230935;
+			// aapt resource value: 0x7f0c01b1
+			public const int EnemyInfoFRProgressMin = 2131493297;
 			
-			// aapt resource value: 0x7F0800D8
-			public const int DollSDAnimationViewerMainLayout = 2131230936;
+			// aapt resource value: 0x7f0c01b3
+			public const int EnemyInfoFRStatus = 2131493299;
 			
-			// aapt resource value: 0x7F0800D9
-			public const int DollSearchLayout = 2131230937;
+			// aapt resource value: 0x7f0c01aa
+			public const int EnemyInfoHPLayout = 2131493290;
 			
-			// aapt resource value: 0x7F0800DA
-			public const int DollSearchResetButton = 2131230938;
+			// aapt resource value: 0x7f0c01ab
+			public const int EnemyInfoHPProgress = 2131493291;
 			
-			// aapt resource value: 0x7F0800DB
-			public const int DollSearchSeperateBar = 2131230939;
+			// aapt resource value: 0x7f0c01ad
+			public const int EnemyInfoHPProgressMax = 2131493293;
 			
-			// aapt resource value: 0x7F0800DC
-			public const int DollSearchText = 2131230940;
+			// aapt resource value: 0x7f0c01ac
+			public const int EnemyInfoHPProgressMin = 2131493292;
 			
-			// aapt resource value: 0x7F08033C
-			public const int edit_query = 2131231548;
+			// aapt resource value: 0x7f0c01ae
+			public const int EnemyInfoHPStatus = 2131493294;
 			
-			// aapt resource value: 0x7F08033D
-			public const int eightsegment = 2131231549;
+			// aapt resource value: 0x7f0c01c3
+			public const int EnemyInfoMSLayout = 2131493315;
 			
-			// aapt resource value: 0x7F08033E
-			public const int end = 2131231550;
+			// aapt resource value: 0x7f0c01c4
+			public const int EnemyInfoMSProgress = 2131493316;
 			
-			// aapt resource value: 0x7F08033F
-			public const int end_padder = 2131231551;
+			// aapt resource value: 0x7f0c01c6
+			public const int EnemyInfoMSProgressMax = 2131493318;
 			
-			// aapt resource value: 0x7F0800DD
-			public const int EnemyDBButton = 2131230941;
+			// aapt resource value: 0x7f0c01c5
+			public const int EnemyInfoMSProgressMin = 2131493317;
 			
-			// aapt resource value: 0x7F0800DE
-			public const int EnemyDBDetailAbilityCardLayout = 2131230942;
+			// aapt resource value: 0x7f0c01c7
+			public const int EnemyInfoMSStatus = 2131493319;
 			
-			// aapt resource value: 0x7F0800DF
-			public const int EnemyDBDetailBasicInfoCardLayout = 2131230943;
+			// aapt resource value: 0x7f0c01c8
+			public const int EnemyInfoPTLayout = 2131493320;
 			
-			// aapt resource value: 0x7F0800E0
-			public const int EnemyDBDetailBasicInfoLayout = 2131230944;
+			// aapt resource value: 0x7f0c01c9
+			public const int EnemyInfoPTProgress = 2131493321;
 			
-			// aapt resource value: 0x7F0800E1
-			public const int EnemyDBDetailBasicLayout = 2131230945;
+			// aapt resource value: 0x7f0c01cb
+			public const int EnemyInfoPTProgressMax = 2131493323;
 			
-			// aapt resource value: 0x7F0800E2
-			public const int EnemyDBDetailEnemyCodeName = 2131230946;
+			// aapt resource value: 0x7f0c01ca
+			public const int EnemyInfoPTProgressMin = 2131493322;
 			
-			// aapt resource value: 0x7F0800E3
-			public const int EnemyDBDetailEnemyName = 2131230947;
+			// aapt resource value: 0x7f0c01cc
+			public const int EnemyInfoPTStatus = 2131493324;
 			
-			// aapt resource value: 0x7F0800E4
-			public const int EnemyDBDetailEnemyTypeSelectLayout = 2131230948;
+			// aapt resource value: 0x7f0c01d2
+			public const int EnemyInfoRangeLayout = 2131493330;
 			
-			// aapt resource value: 0x7F0800E5
-			public const int EnemyDBDetailEnemyTypeSelector = 2131230949;
+			// aapt resource value: 0x7f0c01d3
+			public const int EnemyInfoRangeProgress = 2131493331;
 			
-			// aapt resource value: 0x7F0800E6
-			public const int EnemyDBDetailInfoAppearPlace = 2131230950;
+			// aapt resource value: 0x7f0c01d5
+			public const int EnemyInfoRangeProgressMax = 2131493333;
 			
-			// aapt resource value: 0x7F0800E7
-			public const int EnemyDBDetailInfoCodeName = 2131230951;
+			// aapt resource value: 0x7f0c01d4
+			public const int EnemyInfoRangeProgressMin = 2131493332;
 			
-			// aapt resource value: 0x7F0800E8
-			public const int EnemyDBDetailInfoEnemyType = 2131230952;
+			// aapt resource value: 0x7f0c01d6
+			public const int EnemyInfoRangeStatus = 2131493334;
 			
-			// aapt resource value: 0x7F0800E9
-			public const int EnemyDBDetailInfoGrade = 2131230953;
+			// aapt resource value: 0x7f0c01a9
+			public const int EnemyInfo_DetailMainLayout = 2131493289;
 			
-			// aapt resource value: 0x7F0800EA
-			public const int EnemyDBDetailInfoName = 2131230954;
+			// aapt resource value: 0x7f0c01e8
+			public const int EnemyListCodeName = 2131493352;
 			
-			// aapt resource value: 0x7F0800EB
-			public const int EnemyDBDetailInfoVoiceActor = 2131230955;
+			// aapt resource value: 0x7f0c01e5
+			public const int EnemyListGrade = 2131493349;
 			
-			// aapt resource value: 0x7F0800EC
-			public const int EnemyDBDetailInitLoadProgress = 2131230956;
+			// aapt resource value: 0x7f0c01e3
+			public const int EnemyListMainLayout = 2131493347;
 			
-			// aapt resource value: 0x7F0800ED
-			public const int EnemyDBDetailMainLayout = 2131230957;
+			// aapt resource value: 0x7f0c01e7
+			public const int EnemyListName = 2131493351;
 			
-			// aapt resource value: 0x7F0800EE
-			public const int EnemyDBDetailScrollLayout = 2131230958;
+			// aapt resource value: 0x7f0c01e6
+			public const int EnemyListSmallImage = 2131493350;
 			
-			// aapt resource value: 0x7F0800EF
-			public const int EnemyDBDetailSmallImage = 2131230959;
+			// aapt resource value: 0x7f0c01e4
+			public const int EnemyListType = 2131493348;
 			
-			// aapt resource value: 0x7F0800F0
-			public const int EnemyDBDetailSmallImageLayout = 2131230960;
+			// aapt resource value: 0x7f0c01d9
+			public const int EnemySearchLayout = 2131493337;
 			
-			// aapt resource value: 0x7F0800F1
-			public const int EnemyDBDetailSnackbarLayout = 2131230961;
+			// aapt resource value: 0x7f0c01da
+			public const int EnemySearchResetButton = 2131493338;
 			
-			// aapt resource value: 0x7F0800F2
-			public const int EnemyDBDetailType = 2131230962;
+			// aapt resource value: 0x7f0c01db
+			public const int EnemySearchSeperateBar = 2131493339;
 			
-			// aapt resource value: 0x7F0800F3
-			public const int EnemyDBDetailVoiceDownloadProgress = 2131230963;
+			// aapt resource value: 0x7f0c01dc
+			public const int EnemySearchText = 2131493340;
 			
-			// aapt resource value: 0x7F0800F4
-			public const int EnemyDBDetailVoiceLayout = 2131230964;
+			// aapt resource value: 0x7f0c0213
+			public const int EquipArrayFAB = 2131493395;
 			
-			// aapt resource value: 0x7F0800F5
-			public const int EnemyDBDetailVoicePlayButton = 2131230965;
+			// aapt resource value: 0x7f0c0337
+			public const int EquipDBButton = 2131493687;
 			
-			// aapt resource value: 0x7F0800F6
-			public const int EnemyDBDetailVoiceSelector = 2131230966;
+			// aapt resource value: 0x7f0c0204
+			public const int EquipDBDetailAbilityCardLayout = 2131493380;
 			
-			// aapt resource value: 0x7F0800F7
-			public const int EnemyDBListView = 2131230967;
+			// aapt resource value: 0x7f0c0205
+			public const int EquipDBDetailAbilityLayout = 2131493381;
 			
-			// aapt resource value: 0x7F0800F8
-			public const int EnemyDBMainLayout = 2131230968;
+			// aapt resource value: 0x7f0c020a
+			public const int EquipDBDetailAbilitySubLayout = 2131493386;
 			
-			// aapt resource value: 0x7F0800F9
-			public const int EnemyDBSnackbarLayout = 2131230969;
+			// aapt resource value: 0x7f0c0206
+			public const int EquipDBDetailAbilityTopLayout = 2131493382;
 			
-			// aapt resource value: 0x7F0800FA
-			public const int EnemyFilterBossEnemy = 2131230970;
+			// aapt resource value: 0x7f0c0207
+			public const int EquipDBDetailAbilityTopText1 = 2131493383;
 			
-			// aapt resource value: 0x7F0800FB
-			public const int EnemyFilterFAB = 2131230971;
+			// aapt resource value: 0x7f0c0208
+			public const int EquipDBDetailAbilityTopText2 = 2131493384;
 			
-			// aapt resource value: 0x7F0800FC
-			public const int EnemyFilterMainLayout = 2131230972;
+			// aapt resource value: 0x7f0c0209
+			public const int EquipDBDetailAbilityTopText3 = 2131493385;
 			
-			// aapt resource value: 0x7F0800FD
-			public const int EnemyFilterNormalEnemy = 2131230973;
+			// aapt resource value: 0x7f0c01fc
+			public const int EquipDBDetailAvailableInfoCardLayout = 2131493372;
 			
-			// aapt resource value: 0x7F0800FE
-			public const int EnemyInfoACLayout = 2131230974;
+			// aapt resource value: 0x7f0c01fd
+			public const int EquipDBDetailAvailableInfoLayout = 2131493373;
 			
-			// aapt resource value: 0x7F0800FF
-			public const int EnemyInfoACProgress = 2131230975;
+			// aapt resource value: 0x7f0c0203
+			public const int EquipDBDetailAvailableInfoOnlyUse = 2131493379;
 			
-			// aapt resource value: 0x7F080100
-			public const int EnemyInfoACProgressMax = 2131230976;
+			// aapt resource value: 0x7f0c0202
+			public const int EquipDBDetailAvailableInfoOnlyUseLayout = 2131493378;
 			
-			// aapt resource value: 0x7F080101
-			public const int EnemyInfoACProgressMin = 2131230977;
+			// aapt resource value: 0x7f0c01ff
+			public const int EquipDBDetailAvailableInfoRecommend = 2131493375;
 			
-			// aapt resource value: 0x7F080102
-			public const int EnemyInfoACStatus = 2131230978;
+			// aapt resource value: 0x7f0c01fe
+			public const int EquipDBDetailAvailableInfoRecommendLayout = 2131493374;
 			
-			// aapt resource value: 0x7F080103
-			public const int EnemyInfoAMLayout = 2131230979;
+			// aapt resource value: 0x7f0c0201
+			public const int EquipDBDetailAvailableInfoUse = 2131493377;
 			
-			// aapt resource value: 0x7F080104
-			public const int EnemyInfoAMProgress = 2131230980;
+			// aapt resource value: 0x7f0c0200
+			public const int EquipDBDetailAvailableInfoUseLayout = 2131493376;
 			
-			// aapt resource value: 0x7F080105
-			public const int EnemyInfoAMProgressMax = 2131230981;
+			// aapt resource value: 0x7f0c01f2
+			public const int EquipDBDetailBasicInfoCardLayout = 2131493362;
 			
-			// aapt resource value: 0x7F080106
-			public const int EnemyInfoAMProgressMin = 2131230982;
+			// aapt resource value: 0x7f0c01ee
+			public const int EquipDBDetailBasicInfoLayout = 2131493358;
 			
-			// aapt resource value: 0x7F080107
-			public const int EnemyInfoAMStatus = 2131230983;
+			// aapt resource value: 0x7f0c01eb
+			public const int EquipDBDetailBasicLayout = 2131493355;
 			
-			// aapt resource value: 0x7F080108
-			public const int EnemyInfoASLayout = 2131230984;
+			// aapt resource value: 0x7f0c01f0
+			public const int EquipDBDetailEquipName = 2131493360;
 			
-			// aapt resource value: 0x7F080109
-			public const int EnemyInfoASProgress = 2131230985;
+			// aapt resource value: 0x7f0c01f1
+			public const int EquipDBDetailEquipProductTime = 2131493361;
 			
-			// aapt resource value: 0x7F08010A
-			public const int EnemyInfoASProgressMax = 2131230986;
+			// aapt resource value: 0x7f0c01ef
+			public const int EquipDBDetailEquipType = 2131493359;
 			
-			// aapt resource value: 0x7F08010B
-			public const int EnemyInfoASProgressMin = 2131230987;
+			// aapt resource value: 0x7f0c01ed
+			public const int EquipDBDetailImage = 2131493357;
 			
-			// aapt resource value: 0x7F08010C
-			public const int EnemyInfoASStatus = 2131230988;
+			// aapt resource value: 0x7f0c01ec
+			public const int EquipDBDetailImageLayout = 2131493356;
 			
-			// aapt resource value: 0x7F08010D
-			public const int EnemyInfoEVLayout = 2131230989;
+			// aapt resource value: 0x7f0c01f8
+			public const int EquipDBDetailInfoCategory = 2131493368;
 			
-			// aapt resource value: 0x7F08010E
-			public const int EnemyInfoEVProgress = 2131230990;
+			// aapt resource value: 0x7f0c01fb
+			public const int EquipDBDetailInfoETC = 2131493371;
 			
-			// aapt resource value: 0x7F08010F
-			public const int EnemyInfoEVProgressMax = 2131230991;
+			// aapt resource value: 0x7f0c01f3
+			public const int EquipDBDetailInfoGrade1 = 2131493363;
 			
-			// aapt resource value: 0x7F080110
-			public const int EnemyInfoEVProgressMin = 2131230992;
+			// aapt resource value: 0x7f0c01f4
+			public const int EquipDBDetailInfoGrade2 = 2131493364;
 			
-			// aapt resource value: 0x7F080111
-			public const int EnemyInfoEVStatus = 2131230993;
+			// aapt resource value: 0x7f0c01f5
+			public const int EquipDBDetailInfoGrade3 = 2131493365;
 			
-			// aapt resource value: 0x7F080112
-			public const int EnemyInfoFRLayout = 2131230994;
+			// aapt resource value: 0x7f0c01f6
+			public const int EquipDBDetailInfoGrade4 = 2131493366;
 			
-			// aapt resource value: 0x7F080113
-			public const int EnemyInfoFRProgress = 2131230995;
+			// aapt resource value: 0x7f0c01f7
+			public const int EquipDBDetailInfoGrade5 = 2131493367;
 			
-			// aapt resource value: 0x7F080114
-			public const int EnemyInfoFRProgressMax = 2131230996;
+			// aapt resource value: 0x7f0c01fa
+			public const int EquipDBDetailInfoName = 2131493370;
 			
-			// aapt resource value: 0x7F080115
-			public const int EnemyInfoFRProgressMin = 2131230997;
+			// aapt resource value: 0x7f0c01f9
+			public const int EquipDBDetailInfoType = 2131493369;
 			
-			// aapt resource value: 0x7F080116
-			public const int EnemyInfoFRStatus = 2131230998;
+			// aapt resource value: 0x7f0c01ea
+			public const int EquipDBDetailInitLoadProgress = 2131493354;
 			
-			// aapt resource value: 0x7F080117
-			public const int EnemyInfoHPLayout = 2131230999;
+			// aapt resource value: 0x7f0c01e9
+			public const int EquipDBDetailMainLayout = 2131493353;
 			
-			// aapt resource value: 0x7F080118
-			public const int EnemyInfoHPProgress = 2131231000;
+			// aapt resource value: 0x7f0c020b
+			public const int EquipDBDetailRefreshCacheFAB = 2131493387;
 			
-			// aapt resource value: 0x7F080119
-			public const int EnemyInfoHPProgressMax = 2131231001;
+			// aapt resource value: 0x7f0c020c
+			public const int EquipDBDetailSnackbarLayout = 2131493388;
 			
-			// aapt resource value: 0x7F08011A
-			public const int EnemyInfoHPProgressMin = 2131231002;
+			// aapt resource value: 0x7f0c0212
+			public const int EquipDBListView = 2131493394;
 			
-			// aapt resource value: 0x7F08011B
-			public const int EnemyInfoHPStatus = 2131231003;
+			// aapt resource value: 0x7f0c020d
+			public const int EquipDBMainLayout = 2131493389;
 			
-			// aapt resource value: 0x7F08011C
-			public const int EnemyInfoMSLayout = 2131231004;
+			// aapt resource value: 0x7f0c0215
+			public const int EquipDBSnackbarLayout = 2131493397;
 			
-			// aapt resource value: 0x7F08011D
-			public const int EnemyInfoMSProgress = 2131231005;
+			// aapt resource value: 0x7f0c021f
+			public const int EquipFilterCategoryAttach = 2131493407;
 			
-			// aapt resource value: 0x7F08011E
-			public const int EnemyInfoMSProgressMax = 2131231006;
+			// aapt resource value: 0x7f0c0220
+			public const int EquipFilterCategoryBullet = 2131493408;
 			
-			// aapt resource value: 0x7F08011F
-			public const int EnemyInfoMSProgressMin = 2131231007;
+			// aapt resource value: 0x7f0c0221
+			public const int EquipFilterCategoryDoll = 2131493409;
 			
-			// aapt resource value: 0x7F080120
-			public const int EnemyInfoMSStatus = 2131231008;
+			// aapt resource value: 0x7f0c0214
+			public const int EquipFilterFAB = 2131493396;
 			
-			// aapt resource value: 0x7F080121
-			public const int EnemyInfoPTLayout = 2131231009;
+			// aapt resource value: 0x7f0c021a
+			public const int EquipFilterGrade2 = 2131493402;
 			
-			// aapt resource value: 0x7F080122
-			public const int EnemyInfoPTProgress = 2131231010;
+			// aapt resource value: 0x7f0c021b
+			public const int EquipFilterGrade3 = 2131493403;
 			
-			// aapt resource value: 0x7F080123
-			public const int EnemyInfoPTProgressMax = 2131231011;
+			// aapt resource value: 0x7f0c021c
+			public const int EquipFilterGrade4 = 2131493404;
 			
-			// aapt resource value: 0x7F080124
-			public const int EnemyInfoPTProgressMin = 2131231012;
+			// aapt resource value: 0x7f0c021d
+			public const int EquipFilterGrade5 = 2131493405;
 			
-			// aapt resource value: 0x7F080125
-			public const int EnemyInfoPTStatus = 2131231013;
+			// aapt resource value: 0x7f0c021e
+			public const int EquipFilterGradeExtra = 2131493406;
 			
-			// aapt resource value: 0x7F080126
-			public const int EnemyInfoRangeLayout = 2131231014;
+			// aapt resource value: 0x7f0c0216
+			public const int EquipFilterMainLayout = 2131493398;
 			
-			// aapt resource value: 0x7F080127
-			public const int EnemyInfoRangeProgress = 2131231015;
+			// aapt resource value: 0x7f0c0217
+			public const int EquipFilterProductHour = 2131493399;
 			
-			// aapt resource value: 0x7F080128
-			public const int EnemyInfoRangeProgressMax = 2131231016;
+			// aapt resource value: 0x7f0c0218
+			public const int EquipFilterProductMinute = 2131493400;
 			
-			// aapt resource value: 0x7F080129
-			public const int EnemyInfoRangeProgressMin = 2131231017;
+			// aapt resource value: 0x7f0c0219
+			public const int EquipFilterProductNearRange = 2131493401;
 			
-			// aapt resource value: 0x7F08012A
-			public const int EnemyInfoRangeStatus = 2131231018;
+			// aapt resource value: 0x7f0c0222
+			public const int EquipListCategory = 2131493410;
 			
-			// aapt resource value: 0x7F08012B
-			public const int EnemyInfo_DetailMainLayout = 2131231019;
+			// aapt resource value: 0x7f0c0223
+			public const int EquipListGrade = 2131493411;
 			
-			// aapt resource value: 0x7F08012C
-			public const int EnemyListCodeName = 2131231020;
+			// aapt resource value: 0x7f0c0225
+			public const int EquipListName = 2131493413;
 			
-			// aapt resource value: 0x7F08012D
-			public const int EnemyListGrade = 2131231021;
+			// aapt resource value: 0x7f0c0226
+			public const int EquipListProductTime = 2131493414;
 			
-			// aapt resource value: 0x7F08012E
-			public const int EnemyListMainLayout = 2131231022;
+			// aapt resource value: 0x7f0c0224
+			public const int EquipListSmallImage = 2131493412;
 			
-			// aapt resource value: 0x7F08012F
-			public const int EnemyListName = 2131231023;
+			// aapt resource value: 0x7f0c020e
+			public const int EquipSearchLayout = 2131493390;
 			
-			// aapt resource value: 0x7F080130
-			public const int EnemyListSmallImage = 2131231024;
+			// aapt resource value: 0x7f0c020f
+			public const int EquipSearchResetButton = 2131493391;
 			
-			// aapt resource value: 0x7F080131
-			public const int EnemyListType = 2131231025;
+			// aapt resource value: 0x7f0c0210
+			public const int EquipSearchSeperateBar = 2131493392;
 			
-			// aapt resource value: 0x7F080132
-			public const int EnemySearchLayout = 2131231026;
+			// aapt resource value: 0x7f0c0211
+			public const int EquipSearchText = 2131493393;
 			
-			// aapt resource value: 0x7F080133
-			public const int EnemySearchResetButton = 2131231027;
+			// aapt resource value: 0x7f0c022b
+			public const int EventButton1 = 2131493419;
 			
-			// aapt resource value: 0x7F080134
-			public const int EnemySearchSeperateBar = 2131231028;
+			// aapt resource value: 0x7f0c022f
+			public const int EventButton2 = 2131493423;
 			
-			// aapt resource value: 0x7F080135
-			public const int EnemySearchText = 2131231029;
+			// aapt resource value: 0x7f0c0330
+			public const int EventExtraButton = 2131493680;
 			
-			// aapt resource value: 0x7F080340
-			public const int enterAlways = 2131231552;
+			// aapt resource value: 0x7f0c0228
+			public const int EventListButtonLayout = 2131493416;
 			
-			// aapt resource value: 0x7F080341
-			public const int enterAlwaysCollapsed = 2131231553;
+			// aapt resource value: 0x7f0c022c
+			public const int EventListButtonSubLayout = 2131493420;
 			
-			// aapt resource value: 0x7F080136
-			public const int EquipArrayFAB = 2131231030;
+			// aapt resource value: 0x7f0c0230
+			public const int EventListButtonSubLayout2 = 2131493424;
 			
-			// aapt resource value: 0x7F080137
-			public const int EquipDBButton = 2131231031;
+			// aapt resource value: 0x7f0c0227
+			public const int EventListMainLayout = 2131493415;
 			
-			// aapt resource value: 0x7F080138
-			public const int EquipDBDetailAbilityCardLayout = 2131231032;
+			// aapt resource value: 0x7f0c0231
+			public const int EventListSnackbarLayout = 2131493425;
 			
-			// aapt resource value: 0x7F080139
-			public const int EquipDBDetailAbilityLayout = 2131231033;
+			// aapt resource value: 0x7f0c022a
+			public const int EventPeriodText1 = 2131493418;
 			
-			// aapt resource value: 0x7F08013A
-			public const int EquipDBDetailAbilitySubLayout = 2131231034;
+			// aapt resource value: 0x7f0c022e
+			public const int EventPeriodText2 = 2131493422;
 			
-			// aapt resource value: 0x7F08013B
-			public const int EquipDBDetailAbilityTopLayout = 2131231035;
+			// aapt resource value: 0x7f0c0232
+			public const int EventViewerMainLayout = 2131493426;
 			
-			// aapt resource value: 0x7F08013C
-			public const int EquipDBDetailAbilityTopText1 = 2131231036;
+			// aapt resource value: 0x7f0c0235
+			public const int EventViewerSnackbarLayout = 2131493429;
 			
-			// aapt resource value: 0x7F08013D
-			public const int EquipDBDetailAbilityTopText2 = 2131231037;
+			// aapt resource value: 0x7f0c0234
+			public const int EventWebViewer = 2131493428;
 			
-			// aapt resource value: 0x7F08013E
-			public const int EquipDBDetailAbilityTopText3 = 2131231038;
+			// aapt resource value: 0x7f0c0233
+			public const int EventWebViewerProgressBar = 2131493427;
 			
-			// aapt resource value: 0x7F08013F
-			public const int EquipDBDetailAvailableInfoCardLayout = 2131231039;
+			// aapt resource value: 0x7f0c03bb
+			public const int ExitWebFAB = 2131493819;
 			
-			// aapt resource value: 0x7F080140
-			public const int EquipDBDetailAvailableInfoLayout = 2131231040;
+			// aapt resource value: 0x7f0c032d
+			public const int ExtraMainButton = 2131493677;
 			
-			// aapt resource value: 0x7F080141
-			public const int EquipDBDetailAvailableInfoOnlyUse = 2131231041;
+			// aapt resource value: 0x7f0c032f
+			public const int ExtraMenuButtonLayout = 2131493679;
 			
-			// aapt resource value: 0x7F080142
-			public const int EquipDBDetailAvailableInfoOnlyUseLayout = 2131231042;
+			// aapt resource value: 0x7f0c0310
+			public const int FSTArrayFAB = 2131493648;
 			
-			// aapt resource value: 0x7F080143
-			public const int EquipDBDetailAvailableInfoRecommend = 2131231043;
+			// aapt resource value: 0x7f0c033a
+			public const int FSTDBButton = 2131493690;
 			
-			// aapt resource value: 0x7F080144
-			public const int EquipDBDetailAvailableInfoRecommendLayout = 2131231044;
+			// aapt resource value: 0x7f0c02ef
+			public const int FSTDBDetailAbilityCardLayout = 2131493615;
 			
-			// aapt resource value: 0x7F080145
-			public const int EquipDBDetailAvailableInfoUse = 2131231045;
+			// aapt resource value: 0x7f0c029c
+			public const int FSTDBDetailBasicInfoCardLayout = 2131493532;
 			
-			// aapt resource value: 0x7F080146
-			public const int EquipDBDetailAvailableInfoUseLayout = 2131231046;
+			// aapt resource value: 0x7f0c0293
+			public const int FSTDBDetailBasicInfoLayout = 2131493523;
 			
-			// aapt resource value: 0x7F080147
-			public const int EquipDBDetailBasicInfoCardLayout = 2131231047;
+			// aapt resource value: 0x7f0c0290
+			public const int FSTDBDetailBasicLayout = 2131493520;
 			
-			// aapt resource value: 0x7F080148
-			public const int EquipDBDetailBasicInfoLayout = 2131231048;
+			// aapt resource value: 0x7f0c02f1
+			public const int FSTDBDetailChipsetBonusLayout = 2131493617;
 			
-			// aapt resource value: 0x7F080149
-			public const int EquipDBDetailBasicLayout = 2131231049;
+			// aapt resource value: 0x7f0c02f2
+			public const int FSTDBDetailChipsetBonusSelector = 2131493618;
 			
-			// aapt resource value: 0x7F08014A
-			public const int EquipDBDetailEquipName = 2131231050;
+			// aapt resource value: 0x7f0c02a5
+			public const int FSTDBDetailCircuitCardLayout = 2131493541;
 			
-			// aapt resource value: 0x7F08014B
-			public const int EquipDBDetailEquipProductTime = 2131231051;
+			// aapt resource value: 0x7f0c02a6
+			public const int FSTDBDetailCircuitLayout = 2131493542;
 			
-			// aapt resource value: 0x7F08014C
-			public const int EquipDBDetailEquipType = 2131231052;
+			// aapt resource value: 0x7f0c02a7
+			public const int FSTDBDetailCircuitRow1 = 2131493543;
 			
-			// aapt resource value: 0x7F08014D
-			public const int EquipDBDetailImage = 2131231053;
+			// aapt resource value: 0x7f0c02a8
+			public const int FSTDBDetailCircuitRow2 = 2131493544;
 			
-			// aapt resource value: 0x7F08014E
-			public const int EquipDBDetailImageLayout = 2131231054;
+			// aapt resource value: 0x7f0c02a9
+			public const int FSTDBDetailCircuitRow3 = 2131493545;
 			
-			// aapt resource value: 0x7F08014F
-			public const int EquipDBDetailInfoCategory = 2131231055;
+			// aapt resource value: 0x7f0c02aa
+			public const int FSTDBDetailCircuitRow4 = 2131493546;
 			
-			// aapt resource value: 0x7F080150
-			public const int EquipDBDetailInfoETC = 2131231056;
+			// aapt resource value: 0x7f0c02ab
+			public const int FSTDBDetailCircuitRow5 = 2131493547;
 			
-			// aapt resource value: 0x7F080151
-			public const int EquipDBDetailInfoGrade1 = 2131231057;
+			// aapt resource value: 0x7f0c02ac
+			public const int FSTDBDetailCircuitRow6 = 2131493548;
 			
-			// aapt resource value: 0x7F080152
-			public const int EquipDBDetailInfoGrade2 = 2131231058;
+			// aapt resource value: 0x7f0c02ad
+			public const int FSTDBDetailCircuitRow7 = 2131493549;
 			
-			// aapt resource value: 0x7F080153
-			public const int EquipDBDetailInfoGrade3 = 2131231059;
+			// aapt resource value: 0x7f0c02ae
+			public const int FSTDBDetailCircuitRow8 = 2131493550;
 			
-			// aapt resource value: 0x7F080154
-			public const int EquipDBDetailInfoGrade4 = 2131231060;
+			// aapt resource value: 0x7f0c02af
+			public const int FSTDBDetailCircuitRowItem = 2131493551;
 			
-			// aapt resource value: 0x7F080155
-			public const int EquipDBDetailInfoGrade5 = 2131231061;
+			// aapt resource value: 0x7f0c0294
+			public const int FSTDBDetailFSTDicNumber = 2131493524;
 			
-			// aapt resource value: 0x7F080156
-			public const int EquipDBDetailInfoName = 2131231062;
+			// aapt resource value: 0x7f0c0295
+			public const int FSTDBDetailFSTName = 2131493525;
 			
-			// aapt resource value: 0x7F080157
-			public const int EquipDBDetailInfoType = 2131231063;
+			// aapt resource value: 0x7f0c0296
+			public const int FSTDBDetailFSTProductTime = 2131493526;
 			
-			// aapt resource value: 0x7F080158
-			public const int EquipDBDetailInitLoadProgress = 2131231064;
+			// aapt resource value: 0x7f0c0298
+			public const int FSTDBDetailGradeControl1 = 2131493528;
 			
-			// aapt resource value: 0x7F080159
-			public const int EquipDBDetailMainLayout = 2131231065;
+			// aapt resource value: 0x7f0c029a
+			public const int FSTDBDetailGradeControl2 = 2131493530;
 			
-			// aapt resource value: 0x7F08015A
-			public const int EquipDBDetailRefreshCacheFAB = 2131231066;
+			// aapt resource value: 0x7f0c0297
+			public const int FSTDBDetailGradeControlLayout1 = 2131493527;
 			
-			// aapt resource value: 0x7F08015B
-			public const int EquipDBDetailSnackbarLayout = 2131231067;
+			// aapt resource value: 0x7f0c0299
+			public const int FSTDBDetailGradeControlLayout2 = 2131493529;
 			
-			// aapt resource value: 0x7F08015C
-			public const int EquipDBListView = 2131231068;
+			// aapt resource value: 0x7f0c02a1
+			public const int FSTDBDetailInfoCountry = 2131493537;
 			
-			// aapt resource value: 0x7F08015D
-			public const int EquipDBMainLayout = 2131231069;
+			// aapt resource value: 0x7f0c02a4
+			public const int FSTDBDetailInfoHowToGain = 2131493540;
 			
-			// aapt resource value: 0x7F08015E
-			public const int EquipDBSnackbarLayout = 2131231070;
+			// aapt resource value: 0x7f0c02a2
+			public const int FSTDBDetailInfoIllustrator = 2131493538;
 			
-			// aapt resource value: 0x7F08015F
-			public const int EquipFilterCategoryAttach = 2131231071;
+			// aapt resource value: 0x7f0c029e
+			public const int FSTDBDetailInfoName = 2131493534;
 			
-			// aapt resource value: 0x7F080160
-			public const int EquipFilterCategoryBullet = 2131231072;
+			// aapt resource value: 0x7f0c029f
+			public const int FSTDBDetailInfoNickName = 2131493535;
 			
-			// aapt resource value: 0x7F080161
-			public const int EquipFilterCategoryDoll = 2131231073;
+			// aapt resource value: 0x7f0c02a0
+			public const int FSTDBDetailInfoRealModel = 2131493536;
 			
-			// aapt resource value: 0x7F080162
-			public const int EquipFilterFAB = 2131231074;
+			// aapt resource value: 0x7f0c029d
+			public const int FSTDBDetailInfoType = 2131493533;
 			
-			// aapt resource value: 0x7F080163
-			public const int EquipFilterGrade2 = 2131231075;
+			// aapt resource value: 0x7f0c02a3
+			public const int FSTDBDetailInfoVoiceActor = 2131493539;
 			
-			// aapt resource value: 0x7F080164
-			public const int EquipFilterGrade3 = 2131231076;
+			// aapt resource value: 0x7f0c028f
+			public const int FSTDBDetailInitLoadProgress = 2131493519;
 			
-			// aapt resource value: 0x7F080165
-			public const int EquipFilterGrade4 = 2131231077;
+			// aapt resource value: 0x7f0c028e
+			public const int FSTDBDetailMainLayout = 2131493518;
 			
-			// aapt resource value: 0x7F080166
-			public const int EquipFilterGrade5 = 2131231078;
+			// aapt resource value: 0x7f0c0307
+			public const int FSTDBDetailRefreshCacheFAB = 2131493639;
 			
-			// aapt resource value: 0x7F080167
-			public const int EquipFilterGradeExtra = 2131231079;
+			// aapt resource value: 0x7f0c029b
+			public const int FSTDBDetailScrollLayout = 2131493531;
 			
-			// aapt resource value: 0x7F080168
-			public const int EquipFilterMainLayout = 2131231080;
+			// aapt resource value: 0x7f0c0308
+			public const int FSTDBDetailSideLinkMainFAB = 2131493640;
 			
-			// aapt resource value: 0x7F080169
-			public const int EquipFilterProductHour = 2131231081;
+			// aapt resource value: 0x7f0c02c0
+			public const int FSTDBDetailSkillAbilityLayout1 = 2131493568;
 			
-			// aapt resource value: 0x7F08016A
-			public const int EquipFilterProductMinute = 2131231082;
+			// aapt resource value: 0x7f0c02d5
+			public const int FSTDBDetailSkillAbilityLayout2 = 2131493589;
 			
-			// aapt resource value: 0x7F08016B
-			public const int EquipFilterProductNearRange = 2131231083;
+			// aapt resource value: 0x7f0c02ea
+			public const int FSTDBDetailSkillAbilityLayout3 = 2131493610;
 			
-			// aapt resource value: 0x7F08016C
-			public const int EquipListCategory = 2131231084;
+			// aapt resource value: 0x7f0c02c4
+			public const int FSTDBDetailSkillAbilitySubLayout1 = 2131493572;
 			
-			// aapt resource value: 0x7F08016D
-			public const int EquipListGrade = 2131231085;
+			// aapt resource value: 0x7f0c02d9
+			public const int FSTDBDetailSkillAbilitySubLayout2 = 2131493593;
 			
-			// aapt resource value: 0x7F08016E
-			public const int EquipListName = 2131231086;
+			// aapt resource value: 0x7f0c02ee
+			public const int FSTDBDetailSkillAbilitySubLayout3 = 2131493614;
 			
-			// aapt resource value: 0x7F08016F
-			public const int EquipListProductTime = 2131231087;
+			// aapt resource value: 0x7f0c02c1
+			public const int FSTDBDetailSkillAbilityTopLayout1 = 2131493569;
 			
-			// aapt resource value: 0x7F080170
-			public const int EquipListSmallImage = 2131231088;
+			// aapt resource value: 0x7f0c02d6
+			public const int FSTDBDetailSkillAbilityTopLayout2 = 2131493590;
 			
-			// aapt resource value: 0x7F080171
-			public const int EquipSearchLayout = 2131231089;
+			// aapt resource value: 0x7f0c02eb
+			public const int FSTDBDetailSkillAbilityTopLayout3 = 2131493611;
 			
-			// aapt resource value: 0x7F080172
-			public const int EquipSearchResetButton = 2131231090;
+			// aapt resource value: 0x7f0c02c2
+			public const int FSTDBDetailSkillAbilityTopText11 = 2131493570;
 			
-			// aapt resource value: 0x7F080173
-			public const int EquipSearchSeperateBar = 2131231091;
+			// aapt resource value: 0x7f0c02c3
+			public const int FSTDBDetailSkillAbilityTopText12 = 2131493571;
 			
-			// aapt resource value: 0x7F080174
-			public const int EquipSearchText = 2131231092;
+			// aapt resource value: 0x7f0c02d7
+			public const int FSTDBDetailSkillAbilityTopText21 = 2131493591;
 			
-			// aapt resource value: 0x7F080175
-			public const int EventButton1 = 2131231093;
+			// aapt resource value: 0x7f0c02d8
+			public const int FSTDBDetailSkillAbilityTopText22 = 2131493592;
 			
-			// aapt resource value: 0x7F080176
-			public const int EventButton2 = 2131231094;
+			// aapt resource value: 0x7f0c02ec
+			public const int FSTDBDetailSkillAbilityTopText31 = 2131493612;
 			
-			// aapt resource value: 0x7F080177
-			public const int EventExtraButton = 2131231095;
+			// aapt resource value: 0x7f0c02ed
+			public const int FSTDBDetailSkillAbilityTopText32 = 2131493613;
 			
-			// aapt resource value: 0x7F080178
-			public const int EventListButtonLayout = 2131231096;
+			// aapt resource value: 0x7f0c02b2
+			public const int FSTDBDetailSkillBasicLayout1 = 2131493554;
 			
-			// aapt resource value: 0x7F080179
-			public const int EventListButtonSubLayout = 2131231097;
+			// aapt resource value: 0x7f0c02c7
+			public const int FSTDBDetailSkillBasicLayout2 = 2131493575;
 			
-			// aapt resource value: 0x7F08017A
-			public const int EventListButtonSubLayout2 = 2131231098;
+			// aapt resource value: 0x7f0c02dc
+			public const int FSTDBDetailSkillBasicLayout3 = 2131493596;
 			
-			// aapt resource value: 0x7F08017B
-			public const int EventListMainLayout = 2131231099;
+			// aapt resource value: 0x7f0c02b0
+			public const int FSTDBDetailSkillCardLayout1 = 2131493552;
 			
-			// aapt resource value: 0x7F08017C
-			public const int EventListSnackbarLayout = 2131231100;
+			// aapt resource value: 0x7f0c02c5
+			public const int FSTDBDetailSkillCardLayout2 = 2131493573;
 			
-			// aapt resource value: 0x7F08017D
-			public const int EventPeriodText1 = 2131231101;
+			// aapt resource value: 0x7f0c02da
+			public const int FSTDBDetailSkillCardLayout3 = 2131493594;
 			
-			// aapt resource value: 0x7F08017E
-			public const int EventPeriodText2 = 2131231102;
+			// aapt resource value: 0x7f0c02bd
+			public const int FSTDBDetailSkillCoolTime1 = 2131493565;
 			
-			// aapt resource value: 0x7F08017F
-			public const int EventViewerMainLayout = 2131231103;
+			// aapt resource value: 0x7f0c02d2
+			public const int FSTDBDetailSkillCoolTime2 = 2131493586;
 			
-			// aapt resource value: 0x7F080180
-			public const int EventViewerSnackbarLayout = 2131231104;
+			// aapt resource value: 0x7f0c02e7
+			public const int FSTDBDetailSkillCoolTime3 = 2131493607;
 			
-			// aapt resource value: 0x7F080181
-			public const int EventWebViewer = 2131231105;
+			// aapt resource value: 0x7f0c02bc
+			public const int FSTDBDetailSkillCoolTimeIcon1 = 2131493564;
 			
-			// aapt resource value: 0x7F080182
-			public const int EventWebViewerProgressBar = 2131231106;
+			// aapt resource value: 0x7f0c02d1
+			public const int FSTDBDetailSkillCoolTimeIcon2 = 2131493585;
 			
-			// aapt resource value: 0x7F080342
-			public const int exitUntilCollapsed = 2131231554;
+			// aapt resource value: 0x7f0c02e6
+			public const int FSTDBDetailSkillCoolTimeIcon3 = 2131493606;
 			
-			// aapt resource value: 0x7F080183
-			public const int ExitWebFAB = 2131231107;
+			// aapt resource value: 0x7f0c02b7
+			public const int FSTDBDetailSkillCoolTimeLayout1 = 2131493559;
 			
-			// aapt resource value: 0x7F080344
-			public const int expanded_menu = 2131231556;
+			// aapt resource value: 0x7f0c02b8
+			public const int FSTDBDetailSkillCoolTimeLayout11 = 2131493560;
 			
-			// aapt resource value: 0x7F080343
-			public const int expand_activities_button = 2131231555;
+			// aapt resource value: 0x7f0c02bb
+			public const int FSTDBDetailSkillCoolTimeLayout12 = 2131493563;
 			
-			// aapt resource value: 0x7F080184
-			public const int ExtraMainButton = 2131231108;
+			// aapt resource value: 0x7f0c02cc
+			public const int FSTDBDetailSkillCoolTimeLayout2 = 2131493580;
 			
-			// aapt resource value: 0x7F080185
-			public const int ExtraMenuButtonLayout = 2131231109;
+			// aapt resource value: 0x7f0c02cd
+			public const int FSTDBDetailSkillCoolTimeLayout21 = 2131493581;
 			
-			// aapt resource value: 0x7F080217
-			public const int FairyArrayFAB = 2131231255;
+			// aapt resource value: 0x7f0c02d0
+			public const int FSTDBDetailSkillCoolTimeLayout22 = 2131493584;
 			
-			// aapt resource value: 0x7F080218
-			public const int FairyDBButton = 2131231256;
+			// aapt resource value: 0x7f0c02e1
+			public const int FSTDBDetailSkillCoolTimeLayout3 = 2131493601;
 			
-			// aapt resource value: 0x7F080219
-			public const int FairyDBDetailAbilityCardLayout = 2131231257;
+			// aapt resource value: 0x7f0c02e2
+			public const int FSTDBDetailSkillCoolTimeLayout31 = 2131493602;
 			
-			// aapt resource value: 0x7F08021A
-			public const int FairyDBDetailBasicInfoCardLayout = 2131231258;
+			// aapt resource value: 0x7f0c02e5
+			public const int FSTDBDetailSkillCoolTimeLayout32 = 2131493605;
 			
-			// aapt resource value: 0x7F08021B
-			public const int FairyDBDetailBasicInfoLayout = 2131231259;
+			// aapt resource value: 0x7f0c02bf
+			public const int FSTDBDetailSkillExplain1 = 2131493567;
 			
-			// aapt resource value: 0x7F08021C
-			public const int FairyDBDetailBasicLayout = 2131231260;
+			// aapt resource value: 0x7f0c02d4
+			public const int FSTDBDetailSkillExplain2 = 2131493588;
 			
-			// aapt resource value: 0x7F08021D
-			public const int FairyDBDetailFairyName = 2131231261;
+			// aapt resource value: 0x7f0c02e9
+			public const int FSTDBDetailSkillExplain3 = 2131493609;
 			
-			// aapt resource value: 0x7F08021E
-			public const int FairyDBDetailFairyProductTime = 2131231262;
+			// aapt resource value: 0x7f0c02be
+			public const int FSTDBDetailSkillExplainLayout1 = 2131493566;
 			
-			// aapt resource value: 0x7F08021F
-			public const int FairyDBDetailFairyType = 2131231263;
+			// aapt resource value: 0x7f0c02d3
+			public const int FSTDBDetailSkillExplainLayout2 = 2131493587;
 			
-			// aapt resource value: 0x7F080220
-			public const int FairyDBDetailInfoETC = 2131231264;
+			// aapt resource value: 0x7f0c02e8
+			public const int FSTDBDetailSkillExplainLayout3 = 2131493608;
 			
-			// aapt resource value: 0x7F080221
-			public const int FairyDBDetailInfoIllustrator = 2131231265;
+			// aapt resource value: 0x7f0c02b4
+			public const int FSTDBDetailSkillIcon1 = 2131493556;
 			
-			// aapt resource value: 0x7F080222
-			public const int FairyDBDetailInfoName = 2131231266;
+			// aapt resource value: 0x7f0c02c9
+			public const int FSTDBDetailSkillIcon2 = 2131493577;
 			
-			// aapt resource value: 0x7F080223
-			public const int FairyDBDetailInfoType = 2131231267;
+			// aapt resource value: 0x7f0c02de
+			public const int FSTDBDetailSkillIcon3 = 2131493598;
 			
-			// aapt resource value: 0x7F080224
-			public const int FairyDBDetailInitLoadProgress = 2131231268;
+			// aapt resource value: 0x7f0c02b3
+			public const int FSTDBDetailSkillIconLayout1 = 2131493555;
 			
-			// aapt resource value: 0x7F080225
-			public const int FairyDBDetailMainLayout = 2131231269;
+			// aapt resource value: 0x7f0c02c8
+			public const int FSTDBDetailSkillIconLayout2 = 2131493576;
 			
-			// aapt resource value: 0x7F080226
-			public const int FairyDBDetailRefreshCacheFAB = 2131231270;
+			// aapt resource value: 0x7f0c02dd
+			public const int FSTDBDetailSkillIconLayout3 = 2131493597;
 			
-			// aapt resource value: 0x7F080227
-			public const int FairyDBDetailSkillBasicLayout = 2131231271;
+			// aapt resource value: 0x7f0c02ba
+			public const int FSTDBDetailSkillInitCoolTime1 = 2131493562;
 			
-			// aapt resource value: 0x7F080228
-			public const int FairyDBDetailSkillCardLayout = 2131231272;
+			// aapt resource value: 0x7f0c02cf
+			public const int FSTDBDetailSkillInitCoolTime2 = 2131493583;
 			
-			// aapt resource value: 0x7F080229
-			public const int FairyDBDetailSkillCoolTime = 2131231273;
+			// aapt resource value: 0x7f0c02e4
+			public const int FSTDBDetailSkillInitCoolTime3 = 2131493604;
 			
-			// aapt resource value: 0x7F08022A
-			public const int FairyDBDetailSkillCoolTimeIcon = 2131231274;
+			// aapt resource value: 0x7f0c02b9
+			public const int FSTDBDetailSkillInitCoolTimeIcon1 = 2131493561;
 			
-			// aapt resource value: 0x7F08022B
-			public const int FairyDBDetailSkillCoolTimeLayout = 2131231275;
+			// aapt resource value: 0x7f0c02ce
+			public const int FSTDBDetailSkillInitCoolTimeIcon2 = 2131493582;
 			
-			// aapt resource value: 0x7F08022C
-			public const int FairyDBDetailSkillDetailLayout = 2131231276;
+			// aapt resource value: 0x7f0c02e3
+			public const int FSTDBDetailSkillInitCoolTimeIcon3 = 2131493603;
 			
-			// aapt resource value: 0x7F08022D
-			public const int FairyDBDetailSkillEffect = 2131231277;
+			// aapt resource value: 0x7f0c02b1
+			public const int FSTDBDetailSkillLayout1 = 2131493553;
 			
-			// aapt resource value: 0x7F08022E
-			public const int FairyDBDetailSkillExplain = 2131231278;
+			// aapt resource value: 0x7f0c02c6
+			public const int FSTDBDetailSkillLayout2 = 2131493574;
 			
-			// aapt resource value: 0x7F08022F
-			public const int FairyDBDetailSkillExplainLayout = 2131231279;
+			// aapt resource value: 0x7f0c02db
+			public const int FSTDBDetailSkillLayout3 = 2131493595;
 			
-			// aapt resource value: 0x7F080230
-			public const int FairyDBDetailSkillIcon = 2131231280;
+			// aapt resource value: 0x7f0c02b6
+			public const int FSTDBDetailSkillName1 = 2131493558;
 			
-			// aapt resource value: 0x7F080231
-			public const int FairyDBDetailSkillIconLayout = 2131231281;
+			// aapt resource value: 0x7f0c02cb
+			public const int FSTDBDetailSkillName2 = 2131493579;
 			
-			// aapt resource value: 0x7F080232
-			public const int FairyDBDetailSkillLayout = 2131231282;
+			// aapt resource value: 0x7f0c02e0
+			public const int FSTDBDetailSkillName3 = 2131493600;
 			
-			// aapt resource value: 0x7F080233
-			public const int FairyDBDetailSkillName = 2131231283;
+			// aapt resource value: 0x7f0c02b5
+			public const int FSTDBDetailSkillNameLayout1 = 2131493557;
 			
-			// aapt resource value: 0x7F080234
-			public const int FairyDBDetailSkillNameLayout = 2131231284;
+			// aapt resource value: 0x7f0c02ca
+			public const int FSTDBDetailSkillNameLayout2 = 2131493578;
 			
-			// aapt resource value: 0x7F080235
-			public const int FairyDBDetailSkillRate = 2131231285;
+			// aapt resource value: 0x7f0c02df
+			public const int FSTDBDetailSkillNameLayout3 = 2131493599;
 			
-			// aapt resource value: 0x7F080236
-			public const int FairyDBDetailSkillTicket = 2131231286;
+			// aapt resource value: 0x7f0c0292
+			public const int FSTDBDetailSmallImage = 2131493522;
 			
-			// aapt resource value: 0x7F080237
-			public const int FairyDBDetailSkillTicketIcon = 2131231287;
+			// aapt resource value: 0x7f0c0291
+			public const int FSTDBDetailSmallImageLayout = 2131493521;
 			
-			// aapt resource value: 0x7F080238
-			public const int FairyDBDetailSkillTicketLayout = 2131231288;
+			// aapt resource value: 0x7f0c0309
+			public const int FSTDBDetailSnackbarLayout = 2131493641;
 			
-			// aapt resource value: 0x7F080239
-			public const int FairyDBDetailSmallImage = 2131231289;
+			// aapt resource value: 0x7f0c030f
+			public const int FSTDBListView = 2131493647;
 			
-			// aapt resource value: 0x7F08023A
-			public const int FairyDBDetailSmallImageLayout = 2131231290;
+			// aapt resource value: 0x7f0c030a
+			public const int FSTDBMainLayout = 2131493642;
 			
-			// aapt resource value: 0x7F08023B
-			public const int FairyDBDetailSnackbarLayout = 2131231291;
+			// aapt resource value: 0x7f0c0312
+			public const int FSTDBSnackbarLayout = 2131493650;
 			
-			// aapt resource value: 0x7F08023C
-			public const int FairyDBImageViewerImageNum = 2131231292;
+			// aapt resource value: 0x7f0c0311
+			public const int FSTFilterFAB = 2131493649;
 			
-			// aapt resource value: 0x7F08023D
-			public const int FairyDBImageViewerImageStatus = 2131231293;
+			// aapt resource value: 0x7f0c0313
+			public const int FSTFilterMainLayout = 2131493651;
 			
-			// aapt resource value: 0x7F08023E
-			public const int FairyDBImageViewerImageView = 2131231294;
+			// aapt resource value: 0x7f0c0315
+			public const int FSTFilterTypeAGL = 2131493653;
 			
-			// aapt resource value: 0x7F08023F
-			public const int FairyDBImageViewerLoadProgress = 2131231295;
+			// aapt resource value: 0x7f0c0314
+			public const int FSTFilterTypeATW = 2131493652;
 			
-			// aapt resource value: 0x7F080240
-			public const int FairyDBImageViewerMainLayout = 2131231296;
+			// aapt resource value: 0x7f0c0316
+			public const int FSTFilterTypeMTR = 2131493654;
 			
-			// aapt resource value: 0x7F080241
-			public const int FairyDBImageViewerNextButton = 2131231297;
+			// aapt resource value: 0x7f0c02fd
+			public const int FSTInfoACLayout = 2131493629;
 			
-			// aapt resource value: 0x7F080242
-			public const int FairyDBImageViewerPreviousButton = 2131231298;
+			// aapt resource value: 0x7f0c02fe
+			public const int FSTInfoACProgress = 2131493630;
 			
-			// aapt resource value: 0x7F080243
-			public const int FairyDBImageViewerSnackbarLayout = 2131231299;
+			// aapt resource value: 0x7f0c0300
+			public const int FSTInfoACProgressMax = 2131493632;
 			
-			// aapt resource value: 0x7F080244
-			public const int FairyDBListView = 2131231300;
+			// aapt resource value: 0x7f0c02ff
+			public const int FSTInfoACProgressMin = 2131493631;
 			
-			// aapt resource value: 0x7F080245
-			public const int FairyDBMainLayout = 2131231301;
+			// aapt resource value: 0x7f0c0301
+			public const int FSTInfoACStatus = 2131493633;
 			
-			// aapt resource value: 0x7F080246
-			public const int FairyDBSnackbarLayout = 2131231302;
+			// aapt resource value: 0x7f0c02f8
+			public const int FSTInfoCrushLayout = 2131493624;
 			
-			// aapt resource value: 0x7F080247
-			public const int FairyFilterFAB = 2131231303;
+			// aapt resource value: 0x7f0c02f9
+			public const int FSTInfoCrushProgress = 2131493625;
 			
-			// aapt resource value: 0x7F080248
-			public const int FairyFilterMainLayout = 2131231304;
+			// aapt resource value: 0x7f0c02fb
+			public const int FSTInfoCrushProgressMax = 2131493627;
 			
-			// aapt resource value: 0x7F080249
-			public const int FairyFilterProductHour = 2131231305;
+			// aapt resource value: 0x7f0c02fa
+			public const int FSTInfoCrushProgressMin = 2131493626;
 			
-			// aapt resource value: 0x7F08024A
-			public const int FairyFilterProductMinute = 2131231306;
+			// aapt resource value: 0x7f0c02fc
+			public const int FSTInfoCrushStatus = 2131493628;
 			
-			// aapt resource value: 0x7F08024B
-			public const int FairyFilterTypeCombat = 2131231307;
+			// aapt resource value: 0x7f0c02f3
+			public const int FSTInfoKillLayout = 2131493619;
 			
-			// aapt resource value: 0x7F08024C
-			public const int FairyFilterTypeStrategy = 2131231308;
+			// aapt resource value: 0x7f0c02f4
+			public const int FSTInfoKillProgress = 2131493620;
 			
-			// aapt resource value: 0x7F08024D
-			public const int FairyInfoACLayout = 2131231309;
+			// aapt resource value: 0x7f0c02f6
+			public const int FSTInfoKillProgressMax = 2131493622;
 			
-			// aapt resource value: 0x7F08024E
-			public const int FairyInfoACProgress = 2131231310;
+			// aapt resource value: 0x7f0c02f5
+			public const int FSTInfoKillProgressMin = 2131493621;
 			
-			// aapt resource value: 0x7F08024F
-			public const int FairyInfoACProgressMax = 2131231311;
+			// aapt resource value: 0x7f0c02f7
+			public const int FSTInfoKillStatus = 2131493623;
 			
-			// aapt resource value: 0x7F080250
-			public const int FairyInfoACProgressMin = 2131231312;
+			// aapt resource value: 0x7f0c0302
+			public const int FSTInfoRLLayout = 2131493634;
 			
-			// aapt resource value: 0x7F080251
-			public const int FairyInfoACStatus = 2131231313;
+			// aapt resource value: 0x7f0c0303
+			public const int FSTInfoRLProgress = 2131493635;
 			
-			// aapt resource value: 0x7F080252
-			public const int FairyInfoAMLayout = 2131231314;
+			// aapt resource value: 0x7f0c0305
+			public const int FSTInfoRLProgressMax = 2131493637;
 			
-			// aapt resource value: 0x7F080253
-			public const int FairyInfoAMProgress = 2131231315;
+			// aapt resource value: 0x7f0c0304
+			public const int FSTInfoRLProgressMin = 2131493636;
 			
-			// aapt resource value: 0x7F080254
-			public const int FairyInfoAMProgressMax = 2131231316;
+			// aapt resource value: 0x7f0c0306
+			public const int FSTInfoRLStatus = 2131493638;
 			
-			// aapt resource value: 0x7F080255
-			public const int FairyInfoAMProgressMin = 2131231317;
+			// aapt resource value: 0x7f0c02f0
+			public const int FSTInfo_DetailMainLayout = 2131493616;
 			
-			// aapt resource value: 0x7F080256
-			public const int FairyInfoAMStatus = 2131231318;
+			// aapt resource value: 0x7f0c0319
+			public const int FSTListGrade = 2131493657;
 			
-			// aapt resource value: 0x7F080257
-			public const int FairyInfoCRLayout = 2131231319;
+			// aapt resource value: 0x7f0c0317
+			public const int FSTListMainLayout = 2131493655;
 			
-			// aapt resource value: 0x7F080258
-			public const int FairyInfoCRProgress = 2131231320;
+			// aapt resource value: 0x7f0c031b
+			public const int FSTListName = 2131493659;
 			
-			// aapt resource value: 0x7F080259
-			public const int FairyInfoCRProgressMax = 2131231321;
+			// aapt resource value: 0x7f0c031c
+			public const int FSTListRealModel = 2131493660;
 			
-			// aapt resource value: 0x7F08025A
-			public const int FairyInfoCRProgressMin = 2131231322;
+			// aapt resource value: 0x7f0c031a
+			public const int FSTListSmallImage = 2131493658;
 			
-			// aapt resource value: 0x7F08025B
-			public const int FairyInfoCRStatus = 2131231323;
+			// aapt resource value: 0x7f0c0318
+			public const int FSTListType = 2131493656;
 			
-			// aapt resource value: 0x7F08025C
-			public const int FairyInfoEVLayout = 2131231324;
+			// aapt resource value: 0x7f0c030b
+			public const int FSTSearchLayout = 2131493643;
 			
-			// aapt resource value: 0x7F08025D
-			public const int FairyInfoEVProgress = 2131231325;
+			// aapt resource value: 0x7f0c030c
+			public const int FSTSearchResetButton = 2131493644;
 			
-			// aapt resource value: 0x7F08025E
-			public const int FairyInfoEVProgressMax = 2131231326;
+			// aapt resource value: 0x7f0c030d
+			public const int FSTSearchSeperateBar = 2131493645;
 			
-			// aapt resource value: 0x7F08025F
-			public const int FairyInfoEVProgressMin = 2131231327;
+			// aapt resource value: 0x7f0c030e
+			public const int FSTSearchText = 2131493646;
 			
-			// aapt resource value: 0x7F080260
-			public const int FairyInfoEVStatus = 2131231328;
+			// aapt resource value: 0x7f0c0034
+			public const int FUNCTION = 2131492916;
 			
-			// aapt resource value: 0x7F080261
-			public const int FairyInfoFRLayout = 2131231329;
+			// aapt resource value: 0x7f0c0282
+			public const int FairyArrayFAB = 2131493506;
 			
-			// aapt resource value: 0x7F080262
-			public const int FairyInfoFRProgress = 2131231330;
+			// aapt resource value: 0x7f0c0338
+			public const int FairyDBButton = 2131493688;
 			
-			// aapt resource value: 0x7F080263
-			public const int FairyInfoFRProgressMax = 2131231331;
+			// aapt resource value: 0x7f0c025e
+			public const int FairyDBDetailAbilityCardLayout = 2131493470;
 			
-			// aapt resource value: 0x7F080264
-			public const int FairyInfoFRProgressMin = 2131231332;
+			// aapt resource value: 0x7f0c0247
+			public const int FairyDBDetailBasicInfoCardLayout = 2131493447;
 			
-			// aapt resource value: 0x7F080265
-			public const int FairyInfoFRStatus = 2131231333;
+			// aapt resource value: 0x7f0c0243
+			public const int FairyDBDetailBasicInfoLayout = 2131493443;
 			
-			// aapt resource value: 0x7F080266
-			public const int FairyInfo_DetailMainLayout = 2131231334;
+			// aapt resource value: 0x7f0c0240
+			public const int FairyDBDetailBasicLayout = 2131493440;
 			
-			// aapt resource value: 0x7F080267
-			public const int FairyListName = 2131231335;
+			// aapt resource value: 0x7f0c0245
+			public const int FairyDBDetailFairyName = 2131493445;
 			
-			// aapt resource value: 0x7F080268
-			public const int FairyListProductTime = 2131231336;
+			// aapt resource value: 0x7f0c0246
+			public const int FairyDBDetailFairyProductTime = 2131493446;
 			
-			// aapt resource value: 0x7F080269
-			public const int FairyListSmallImage = 2131231337;
+			// aapt resource value: 0x7f0c0244
+			public const int FairyDBDetailFairyType = 2131493444;
 			
-			// aapt resource value: 0x7F08026A
-			public const int FairyListType = 2131231338;
+			// aapt resource value: 0x7f0c024b
+			public const int FairyDBDetailInfoETC = 2131493451;
 			
-			// aapt resource value: 0x7F08026B
-			public const int FairySearchLayout = 2131231339;
+			// aapt resource value: 0x7f0c024a
+			public const int FairyDBDetailInfoIllustrator = 2131493450;
 			
-			// aapt resource value: 0x7F08026C
-			public const int FairySearchResetButton = 2131231340;
+			// aapt resource value: 0x7f0c0249
+			public const int FairyDBDetailInfoName = 2131493449;
 			
-			// aapt resource value: 0x7F08026D
-			public const int FairySearchSeperateBar = 2131231341;
+			// aapt resource value: 0x7f0c0248
+			public const int FairyDBDetailInfoType = 2131493448;
 			
-			// aapt resource value: 0x7F08026E
-			public const int FairySearchText = 2131231342;
+			// aapt resource value: 0x7f0c023f
+			public const int FairyDBDetailInitLoadProgress = 2131493439;
 			
-			// aapt resource value: 0x7F080345
-			public const int fill = 2131231557;
+			// aapt resource value: 0x7f0c023e
+			public const int FairyDBDetailMainLayout = 2131493438;
 			
-			// aapt resource value: 0x7F080346
-			public const int fill_horizontal = 2131231558;
+			// aapt resource value: 0x7f0c027a
+			public const int FairyDBDetailRefreshCacheFAB = 2131493498;
 			
-			// aapt resource value: 0x7F080347
-			public const int fill_vertical = 2131231559;
+			// aapt resource value: 0x7f0c024e
+			public const int FairyDBDetailSkillBasicLayout = 2131493454;
 			
-			// aapt resource value: 0x7F080348
-			public const int @fixed = 2131231560;
+			// aapt resource value: 0x7f0c024c
+			public const int FairyDBDetailSkillCardLayout = 2131493452;
 			
-			// aapt resource value: 0x7F080349
-			public const int floating = 2131231561;
+			// aapt resource value: 0x7f0c0258
+			public const int FairyDBDetailSkillCoolTime = 2131493464;
 			
-			// aapt resource value: 0x7F08034A
-			public const int forever = 2131231562;
+			// aapt resource value: 0x7f0c0257
+			public const int FairyDBDetailSkillCoolTimeIcon = 2131493463;
 			
-			// aapt resource value: 0x7F08026F
-			public const int FormationSimulatorExtraButton = 2131231343;
+			// aapt resource value: 0x7f0c0256
+			public const int FairyDBDetailSkillCoolTimeLayout = 2131493462;
 			
-			// aapt resource value: 0x7F08034B
-			public const int fourteensegment = 2131231563;
+			// aapt resource value: 0x7f0c025b
+			public const int FairyDBDetailSkillDetailLayout = 2131493467;
 			
-			// aapt resource value: 0x7F080270
-			public const int FreeOPMainButton = 2131231344;
+			// aapt resource value: 0x7f0c025c
+			public const int FairyDBDetailSkillEffect = 2131493468;
 			
-			// aapt resource value: 0x7F080186
-			public const int FSTArrayFAB = 2131231110;
+			// aapt resource value: 0x7f0c025a
+			public const int FairyDBDetailSkillExplain = 2131493466;
 			
-			// aapt resource value: 0x7F080187
-			public const int FSTDBButton = 2131231111;
+			// aapt resource value: 0x7f0c0259
+			public const int FairyDBDetailSkillExplainLayout = 2131493465;
 			
-			// aapt resource value: 0x7F080188
-			public const int FSTDBDetailAbilityCardLayout = 2131231112;
+			// aapt resource value: 0x7f0c0250
+			public const int FairyDBDetailSkillIcon = 2131493456;
 			
-			// aapt resource value: 0x7F080189
-			public const int FSTDBDetailBasicInfoCardLayout = 2131231113;
+			// aapt resource value: 0x7f0c024f
+			public const int FairyDBDetailSkillIconLayout = 2131493455;
 			
-			// aapt resource value: 0x7F08018A
-			public const int FSTDBDetailBasicInfoLayout = 2131231114;
+			// aapt resource value: 0x7f0c024d
+			public const int FairyDBDetailSkillLayout = 2131493453;
 			
-			// aapt resource value: 0x7F08018B
-			public const int FSTDBDetailBasicLayout = 2131231115;
+			// aapt resource value: 0x7f0c0252
+			public const int FairyDBDetailSkillName = 2131493458;
 			
-			// aapt resource value: 0x7F08018C
-			public const int FSTDBDetailChipsetBonusLayout = 2131231116;
+			// aapt resource value: 0x7f0c0251
+			public const int FairyDBDetailSkillNameLayout = 2131493457;
 			
-			// aapt resource value: 0x7F08018D
-			public const int FSTDBDetailChipsetBonusSelector = 2131231117;
+			// aapt resource value: 0x7f0c025d
+			public const int FairyDBDetailSkillRate = 2131493469;
 			
-			// aapt resource value: 0x7F08018E
-			public const int FSTDBDetailCircuitCardLayout = 2131231118;
+			// aapt resource value: 0x7f0c0255
+			public const int FairyDBDetailSkillTicket = 2131493461;
 			
-			// aapt resource value: 0x7F08018F
-			public const int FSTDBDetailCircuitLayout = 2131231119;
+			// aapt resource value: 0x7f0c0254
+			public const int FairyDBDetailSkillTicketIcon = 2131493460;
 			
-			// aapt resource value: 0x7F080190
-			public const int FSTDBDetailCircuitRow1 = 2131231120;
+			// aapt resource value: 0x7f0c0253
+			public const int FairyDBDetailSkillTicketLayout = 2131493459;
 			
-			// aapt resource value: 0x7F080191
-			public const int FSTDBDetailCircuitRow2 = 2131231121;
+			// aapt resource value: 0x7f0c0242
+			public const int FairyDBDetailSmallImage = 2131493442;
 			
-			// aapt resource value: 0x7F080192
-			public const int FSTDBDetailCircuitRow3 = 2131231122;
+			// aapt resource value: 0x7f0c0241
+			public const int FairyDBDetailSmallImageLayout = 2131493441;
 			
-			// aapt resource value: 0x7F080193
-			public const int FSTDBDetailCircuitRow4 = 2131231123;
+			// aapt resource value: 0x7f0c027b
+			public const int FairyDBDetailSnackbarLayout = 2131493499;
 			
-			// aapt resource value: 0x7F080194
-			public const int FSTDBDetailCircuitRow5 = 2131231124;
+			// aapt resource value: 0x7f0c0238
+			public const int FairyDBImageViewerImageNum = 2131493432;
 			
-			// aapt resource value: 0x7F080195
-			public const int FSTDBDetailCircuitRow6 = 2131231125;
+			// aapt resource value: 0x7f0c023c
+			public const int FairyDBImageViewerImageStatus = 2131493436;
 			
-			// aapt resource value: 0x7F080196
-			public const int FSTDBDetailCircuitRow7 = 2131231126;
+			// aapt resource value: 0x7f0c023b
+			public const int FairyDBImageViewerImageView = 2131493435;
 			
-			// aapt resource value: 0x7F080197
-			public const int FSTDBDetailCircuitRow8 = 2131231127;
+			// aapt resource value: 0x7f0c023a
+			public const int FairyDBImageViewerLoadProgress = 2131493434;
 			
-			// aapt resource value: 0x7F080198
-			public const int FSTDBDetailCircuitRowItem = 2131231128;
+			// aapt resource value: 0x7f0c0236
+			public const int FairyDBImageViewerMainLayout = 2131493430;
 			
-			// aapt resource value: 0x7F080199
-			public const int FSTDBDetailFSTDicNumber = 2131231129;
+			// aapt resource value: 0x7f0c0239
+			public const int FairyDBImageViewerNextButton = 2131493433;
 			
-			// aapt resource value: 0x7F08019A
-			public const int FSTDBDetailFSTName = 2131231130;
+			// aapt resource value: 0x7f0c0237
+			public const int FairyDBImageViewerPreviousButton = 2131493431;
 			
-			// aapt resource value: 0x7F08019B
-			public const int FSTDBDetailFSTProductTime = 2131231131;
+			// aapt resource value: 0x7f0c023d
+			public const int FairyDBImageViewerSnackbarLayout = 2131493437;
 			
-			// aapt resource value: 0x7F08019C
-			public const int FSTDBDetailGradeControl1 = 2131231132;
+			// aapt resource value: 0x7f0c0281
+			public const int FairyDBListView = 2131493505;
 			
-			// aapt resource value: 0x7F08019D
-			public const int FSTDBDetailGradeControl2 = 2131231133;
+			// aapt resource value: 0x7f0c027c
+			public const int FairyDBMainLayout = 2131493500;
 			
-			// aapt resource value: 0x7F08019E
-			public const int FSTDBDetailGradeControlLayout1 = 2131231134;
+			// aapt resource value: 0x7f0c0284
+			public const int FairyDBSnackbarLayout = 2131493508;
 			
-			// aapt resource value: 0x7F08019F
-			public const int FSTDBDetailGradeControlLayout2 = 2131231135;
+			// aapt resource value: 0x7f0c0283
+			public const int FairyFilterFAB = 2131493507;
 			
-			// aapt resource value: 0x7F0801A0
-			public const int FSTDBDetailInfoCountry = 2131231136;
+			// aapt resource value: 0x7f0c0285
+			public const int FairyFilterMainLayout = 2131493509;
 			
-			// aapt resource value: 0x7F0801A1
-			public const int FSTDBDetailInfoHowToGain = 2131231137;
+			// aapt resource value: 0x7f0c0286
+			public const int FairyFilterProductHour = 2131493510;
 			
-			// aapt resource value: 0x7F0801A2
-			public const int FSTDBDetailInfoIllustrator = 2131231138;
+			// aapt resource value: 0x7f0c0287
+			public const int FairyFilterProductMinute = 2131493511;
 			
-			// aapt resource value: 0x7F0801A3
-			public const int FSTDBDetailInfoName = 2131231139;
+			// aapt resource value: 0x7f0c0288
+			public const int FairyFilterTypeCombat = 2131493512;
 			
-			// aapt resource value: 0x7F0801A4
-			public const int FSTDBDetailInfoNickName = 2131231140;
+			// aapt resource value: 0x7f0c0289
+			public const int FairyFilterTypeStrategy = 2131493513;
 			
-			// aapt resource value: 0x7F0801A5
-			public const int FSTDBDetailInfoRealModel = 2131231141;
+			// aapt resource value: 0x7f0c0266
+			public const int FairyInfoACLayout = 2131493478;
 			
-			// aapt resource value: 0x7F0801A6
-			public const int FSTDBDetailInfoType = 2131231142;
+			// aapt resource value: 0x7f0c0267
+			public const int FairyInfoACProgress = 2131493479;
 			
-			// aapt resource value: 0x7F0801A7
-			public const int FSTDBDetailInfoVoiceActor = 2131231143;
+			// aapt resource value: 0x7f0c0269
+			public const int FairyInfoACProgressMax = 2131493481;
 			
-			// aapt resource value: 0x7F0801A8
-			public const int FSTDBDetailInitLoadProgress = 2131231144;
+			// aapt resource value: 0x7f0c0268
+			public const int FairyInfoACProgressMin = 2131493480;
 			
-			// aapt resource value: 0x7F0801A9
-			public const int FSTDBDetailMainLayout = 2131231145;
+			// aapt resource value: 0x7f0c026a
+			public const int FairyInfoACStatus = 2131493482;
 			
-			// aapt resource value: 0x7F0801AA
-			public const int FSTDBDetailRefreshCacheFAB = 2131231146;
+			// aapt resource value: 0x7f0c0270
+			public const int FairyInfoAMLayout = 2131493488;
 			
-			// aapt resource value: 0x7F0801AB
-			public const int FSTDBDetailScrollLayout = 2131231147;
+			// aapt resource value: 0x7f0c0271
+			public const int FairyInfoAMProgress = 2131493489;
 			
-			// aapt resource value: 0x7F0801AC
-			public const int FSTDBDetailSideLinkMainFAB = 2131231148;
+			// aapt resource value: 0x7f0c0273
+			public const int FairyInfoAMProgressMax = 2131493491;
 			
-			// aapt resource value: 0x7F0801AD
-			public const int FSTDBDetailSkillAbilityLayout1 = 2131231149;
+			// aapt resource value: 0x7f0c0272
+			public const int FairyInfoAMProgressMin = 2131493490;
 			
-			// aapt resource value: 0x7F0801AE
-			public const int FSTDBDetailSkillAbilityLayout2 = 2131231150;
+			// aapt resource value: 0x7f0c0274
+			public const int FairyInfoAMStatus = 2131493492;
 			
-			// aapt resource value: 0x7F0801AF
-			public const int FSTDBDetailSkillAbilityLayout3 = 2131231151;
+			// aapt resource value: 0x7f0c0275
+			public const int FairyInfoCRLayout = 2131493493;
 			
-			// aapt resource value: 0x7F0801B0
-			public const int FSTDBDetailSkillAbilitySubLayout1 = 2131231152;
+			// aapt resource value: 0x7f0c0276
+			public const int FairyInfoCRProgress = 2131493494;
 			
-			// aapt resource value: 0x7F0801B1
-			public const int FSTDBDetailSkillAbilitySubLayout2 = 2131231153;
+			// aapt resource value: 0x7f0c0278
+			public const int FairyInfoCRProgressMax = 2131493496;
 			
-			// aapt resource value: 0x7F0801B2
-			public const int FSTDBDetailSkillAbilitySubLayout3 = 2131231154;
+			// aapt resource value: 0x7f0c0277
+			public const int FairyInfoCRProgressMin = 2131493495;
 			
-			// aapt resource value: 0x7F0801B3
-			public const int FSTDBDetailSkillAbilityTopLayout1 = 2131231155;
+			// aapt resource value: 0x7f0c0279
+			public const int FairyInfoCRStatus = 2131493497;
 			
-			// aapt resource value: 0x7F0801B4
-			public const int FSTDBDetailSkillAbilityTopLayout2 = 2131231156;
+			// aapt resource value: 0x7f0c026b
+			public const int FairyInfoEVLayout = 2131493483;
 			
-			// aapt resource value: 0x7F0801B5
-			public const int FSTDBDetailSkillAbilityTopLayout3 = 2131231157;
+			// aapt resource value: 0x7f0c026c
+			public const int FairyInfoEVProgress = 2131493484;
 			
-			// aapt resource value: 0x7F0801B6
-			public const int FSTDBDetailSkillAbilityTopText11 = 2131231158;
+			// aapt resource value: 0x7f0c026e
+			public const int FairyInfoEVProgressMax = 2131493486;
 			
-			// aapt resource value: 0x7F0801B7
-			public const int FSTDBDetailSkillAbilityTopText12 = 2131231159;
+			// aapt resource value: 0x7f0c026d
+			public const int FairyInfoEVProgressMin = 2131493485;
 			
-			// aapt resource value: 0x7F0801B8
-			public const int FSTDBDetailSkillAbilityTopText21 = 2131231160;
+			// aapt resource value: 0x7f0c026f
+			public const int FairyInfoEVStatus = 2131493487;
 			
-			// aapt resource value: 0x7F0801B9
-			public const int FSTDBDetailSkillAbilityTopText22 = 2131231161;
+			// aapt resource value: 0x7f0c0260
+			public const int FairyInfoFRLayout = 2131493472;
 			
-			// aapt resource value: 0x7F0801BA
-			public const int FSTDBDetailSkillAbilityTopText31 = 2131231162;
+			// aapt resource value: 0x7f0c0262
+			public const int FairyInfoFRProgress = 2131493474;
 			
-			// aapt resource value: 0x7F0801BB
-			public const int FSTDBDetailSkillAbilityTopText32 = 2131231163;
+			// aapt resource value: 0x7f0c0264
+			public const int FairyInfoFRProgressMax = 2131493476;
 			
-			// aapt resource value: 0x7F0801BC
-			public const int FSTDBDetailSkillBasicLayout1 = 2131231164;
+			// aapt resource value: 0x7f0c0263
+			public const int FairyInfoFRProgressMin = 2131493475;
 			
-			// aapt resource value: 0x7F0801BD
-			public const int FSTDBDetailSkillBasicLayout2 = 2131231165;
+			// aapt resource value: 0x7f0c0265
+			public const int FairyInfoFRStatus = 2131493477;
 			
-			// aapt resource value: 0x7F0801BE
-			public const int FSTDBDetailSkillBasicLayout3 = 2131231166;
+			// aapt resource value: 0x7f0c025f
+			public const int FairyInfo_DetailMainLayout = 2131493471;
 			
-			// aapt resource value: 0x7F0801BF
-			public const int FSTDBDetailSkillCardLayout1 = 2131231167;
+			// aapt resource value: 0x7f0c028c
+			public const int FairyListName = 2131493516;
 			
-			// aapt resource value: 0x7F0801C0
-			public const int FSTDBDetailSkillCardLayout2 = 2131231168;
+			// aapt resource value: 0x7f0c028d
+			public const int FairyListProductTime = 2131493517;
 			
-			// aapt resource value: 0x7F0801C1
-			public const int FSTDBDetailSkillCardLayout3 = 2131231169;
+			// aapt resource value: 0x7f0c028b
+			public const int FairyListSmallImage = 2131493515;
 			
-			// aapt resource value: 0x7F0801C2
-			public const int FSTDBDetailSkillCoolTime1 = 2131231170;
+			// aapt resource value: 0x7f0c028a
+			public const int FairyListType = 2131493514;
 			
-			// aapt resource value: 0x7F0801C3
-			public const int FSTDBDetailSkillCoolTime2 = 2131231171;
+			// aapt resource value: 0x7f0c027d
+			public const int FairySearchLayout = 2131493501;
 			
-			// aapt resource value: 0x7F0801C4
-			public const int FSTDBDetailSkillCoolTime3 = 2131231172;
+			// aapt resource value: 0x7f0c027e
+			public const int FairySearchResetButton = 2131493502;
 			
-			// aapt resource value: 0x7F0801C5
-			public const int FSTDBDetailSkillCoolTimeIcon1 = 2131231173;
+			// aapt resource value: 0x7f0c027f
+			public const int FairySearchSeperateBar = 2131493503;
 			
-			// aapt resource value: 0x7F0801C6
-			public const int FSTDBDetailSkillCoolTimeIcon2 = 2131231174;
+			// aapt resource value: 0x7f0c0280
+			public const int FairySearchText = 2131493504;
 			
-			// aapt resource value: 0x7F0801C7
-			public const int FSTDBDetailSkillCoolTimeIcon3 = 2131231175;
+			// aapt resource value: 0x7f0c0334
+			public const int FormationSimulatorExtraButton = 2131493684;
 			
-			// aapt resource value: 0x7F0801C8
-			public const int FSTDBDetailSkillCoolTimeLayout1 = 2131231176;
+			// aapt resource value: 0x7f0c0329
+			public const int FreeOPMainButton = 2131493673;
 			
-			// aapt resource value: 0x7F0801C9
-			public const int FSTDBDetailSkillCoolTimeLayout11 = 2131231177;
+			// aapt resource value: 0x7f0c0321
+			public const int GFDInfoDeveloperInfo = 2131493665;
 			
-			// aapt resource value: 0x7F0801CA
-			public const int FSTDBDetailSkillCoolTimeLayout12 = 2131231178;
+			// aapt resource value: 0x7f0c032c
+			public const int GFDInfoMainButton = 2131493676;
 			
-			// aapt resource value: 0x7F0801CB
-			public const int FSTDBDetailSkillCoolTimeLayout2 = 2131231179;
+			// aapt resource value: 0x7f0c031d
+			public const int GFDInfoMainLayout = 2131493661;
 			
-			// aapt resource value: 0x7F0801CC
-			public const int FSTDBDetailSkillCoolTimeLayout21 = 2131231180;
+			// aapt resource value: 0x7f0c0323
+			public const int GFDInfoSnackbarLayout = 2131493667;
 			
-			// aapt resource value: 0x7F0801CD
-			public const int FSTDBDetailSkillCoolTimeLayout22 = 2131231181;
+			// aapt resource value: 0x7f0c0320
+			public const int GFDInfo_AppUpdateButton = 2131493664;
 			
-			// aapt resource value: 0x7F0801CE
-			public const int FSTDBDetailSkillCoolTimeLayout3 = 2131231182;
+			// aapt resource value: 0x7f0c031e
+			public const int GFDInfo_NowAppVersion = 2131493662;
 			
-			// aapt resource value: 0x7F0801CF
-			public const int FSTDBDetailSkillCoolTimeLayout31 = 2131231183;
+			// aapt resource value: 0x7f0c031f
+			public const int GFDInfo_ServerAppVersion = 2131493663;
 			
-			// aapt resource value: 0x7F0801D0
-			public const int FSTDBDetailSkillCoolTimeLayout32 = 2131231184;
+			// aapt resource value: 0x7f0c0331
+			public const int GFNewsExtraButton = 2131493681;
 			
-			// aapt resource value: 0x7F0801D1
-			public const int FSTDBDetailSkillExplain1 = 2131231185;
+			// aapt resource value: 0x7f0c0322
+			public const int KakaoPlusFriendFAB = 2131493666;
 			
-			// aapt resource value: 0x7F0801D2
-			public const int FSTDBDetailSkillExplain2 = 2131231186;
+			// aapt resource value: 0x7f0c0328
+			public const int MDSupportMainButton = 2131493672;
 			
-			// aapt resource value: 0x7F0801D3
-			public const int FSTDBDetailSkillExplain3 = 2131231187;
+			// aapt resource value: 0x7f0c0035
+			public const int META = 2131492917;
 			
-			// aapt resource value: 0x7F0801D4
-			public const int FSTDBDetailSkillExplainLayout1 = 2131231188;
+			// aapt resource value: 0x7f0c0324
+			public const int MainLayout = 2131493668;
 			
-			// aapt resource value: 0x7F0801D5
-			public const int FSTDBDetailSkillExplainLayout2 = 2131231189;
+			// aapt resource value: 0x7f0c0326
+			public const int MainMenuButtonLayout1 = 2131493670;
 			
-			// aapt resource value: 0x7F0801D6
-			public const int FSTDBDetailSkillExplainLayout3 = 2131231190;
+			// aapt resource value: 0x7f0c0325
+			public const int MainNotificationText = 2131493669;
 			
-			// aapt resource value: 0x7F0801D7
-			public const int FSTDBDetailSkillIcon1 = 2131231191;
+			// aapt resource value: 0x7f0c033b
+			public const int MainSnackbarLayout = 2131493691;
 			
-			// aapt resource value: 0x7F0801D8
-			public const int FSTDBDetailSkillIcon2 = 2131231192;
+			// aapt resource value: 0x7f0c0229
+			public const int NowEventTitle = 2131493417;
 			
-			// aapt resource value: 0x7F0801D9
-			public const int FSTDBDetailSkillIcon3 = 2131231193;
+			// aapt resource value: 0x7f0c0396
+			public const int NowProgressBar = 2131493782;
 			
-			// aapt resource value: 0x7F0801DA
-			public const int FSTDBDetailSkillIconLayout1 = 2131231194;
+			// aapt resource value: 0x7f0c0395
+			public const int NowProgressLayout = 2131493781;
 			
-			// aapt resource value: 0x7F0801DB
-			public const int FSTDBDetailSkillIconLayout2 = 2131231195;
+			// aapt resource value: 0x7f0c0397
+			public const int NowProgressPercentage = 2131493783;
 			
-			// aapt resource value: 0x7F0801DC
-			public const int FSTDBDetailSkillIconLayout3 = 2131231196;
+			// aapt resource value: 0x7f0c0350
+			public const int OldGFDImageList = 2131493712;
 			
-			// aapt resource value: 0x7F0801DD
-			public const int FSTDBDetailSkillInitCoolTime1 = 2131231197;
+			// aapt resource value: 0x7f0c0351
+			public const int OldGFDImageView = 2131493713;
 			
-			// aapt resource value: 0x7F0801DE
-			public const int FSTDBDetailSkillInitCoolTime2 = 2131231198;
+			// aapt resource value: 0x7f0c032a
+			public const int OldGFDMainButton = 2131493674;
 			
-			// aapt resource value: 0x7F0801DF
-			public const int FSTDBDetailSkillInitCoolTime3 = 2131231199;
+			// aapt resource value: 0x7f0c034f
+			public const int OldGFDViewerMainLayout = 2131493711;
 			
-			// aapt resource value: 0x7F0801E0
-			public const int FSTDBDetailSkillInitCoolTimeIcon1 = 2131231200;
+			// aapt resource value: 0x7f0c0352
+			public const int OldGFDViewerSnackbarLayout = 2131493714;
 			
-			// aapt resource value: 0x7F0801E1
-			public const int FSTDBDetailSkillInitCoolTimeIcon2 = 2131231201;
+			// aapt resource value: 0x7f0c0387
+			public const int PSAdvanceProductType1 = 2131493767;
 			
-			// aapt resource value: 0x7F0801E2
-			public const int FSTDBDetailSkillInitCoolTimeIcon3 = 2131231202;
+			// aapt resource value: 0x7f0c0388
+			public const int PSAdvanceProductType2 = 2131493768;
 			
-			// aapt resource value: 0x7F0801E3
-			public const int FSTDBDetailSkillLayout1 = 2131231203;
+			// aapt resource value: 0x7f0c0389
+			public const int PSAdvanceProductType3 = 2131493769;
 			
-			// aapt resource value: 0x7F0801E4
-			public const int FSTDBDetailSkillLayout2 = 2131231204;
+			// aapt resource value: 0x7f0c0386
+			public const int PSAdvanceProductTypeLayout = 2131493766;
 			
-			// aapt resource value: 0x7F0801E5
-			public const int FSTDBDetailSkillLayout3 = 2131231205;
+			// aapt resource value: 0x7f0c0378
+			public const int PSAmmoNumberPicker1 = 2131493752;
 			
-			// aapt resource value: 0x7F0801E6
-			public const int FSTDBDetailSkillName1 = 2131231206;
+			// aapt resource value: 0x7f0c0379
+			public const int PSAmmoNumberPicker2 = 2131493753;
 			
-			// aapt resource value: 0x7F0801E7
-			public const int FSTDBDetailSkillName2 = 2131231207;
+			// aapt resource value: 0x7f0c037a
+			public const int PSAmmoNumberPicker3 = 2131493754;
 			
-			// aapt resource value: 0x7F0801E8
-			public const int FSTDBDetailSkillName3 = 2131231208;
+			// aapt resource value: 0x7f0c037b
+			public const int PSAmmoNumberPicker4 = 2131493755;
 			
-			// aapt resource value: 0x7F0801E9
-			public const int FSTDBDetailSkillNameLayout1 = 2131231209;
+			// aapt resource value: 0x7f0c037d
+			public const int PSFoodNumberPicker1 = 2131493757;
 			
-			// aapt resource value: 0x7F0801EA
-			public const int FSTDBDetailSkillNameLayout2 = 2131231210;
+			// aapt resource value: 0x7f0c037e
+			public const int PSFoodNumberPicker2 = 2131493758;
 			
-			// aapt resource value: 0x7F0801EB
-			public const int FSTDBDetailSkillNameLayout3 = 2131231211;
+			// aapt resource value: 0x7f0c037f
+			public const int PSFoodNumberPicker3 = 2131493759;
 			
-			// aapt resource value: 0x7F0801EC
-			public const int FSTDBDetailSmallImage = 2131231212;
+			// aapt resource value: 0x7f0c0380
+			public const int PSFoodNumberPicker4 = 2131493760;
 			
-			// aapt resource value: 0x7F0801ED
-			public const int FSTDBDetailSmallImageLayout = 2131231213;
+			// aapt resource value: 0x7f0c0373
+			public const int PSManPowerNumberPicker1 = 2131493747;
 			
-			// aapt resource value: 0x7F0801EE
-			public const int FSTDBDetailSnackbarLayout = 2131231214;
+			// aapt resource value: 0x7f0c0374
+			public const int PSManPowerNumberPicker2 = 2131493748;
 			
-			// aapt resource value: 0x7F0801EF
-			public const int FSTDBListView = 2131231215;
+			// aapt resource value: 0x7f0c0375
+			public const int PSManPowerNumberPicker3 = 2131493749;
 			
-			// aapt resource value: 0x7F0801F0
-			public const int FSTDBMainLayout = 2131231216;
+			// aapt resource value: 0x7f0c0376
+			public const int PSManPowerNumberPicker4 = 2131493750;
 			
-			// aapt resource value: 0x7F0801F1
-			public const int FSTDBSnackbarLayout = 2131231217;
+			// aapt resource value: 0x7f0c0382
+			public const int PSPartsNumberPicker1 = 2131493762;
 			
-			// aapt resource value: 0x7F0801F2
-			public const int FSTFilterFAB = 2131231218;
+			// aapt resource value: 0x7f0c0383
+			public const int PSPartsNumberPicker2 = 2131493763;
 			
-			// aapt resource value: 0x7F0801F3
-			public const int FSTFilterMainLayout = 2131231219;
+			// aapt resource value: 0x7f0c0384
+			public const int PSPartsNumberPicker3 = 2131493764;
 			
-			// aapt resource value: 0x7F0801F4
-			public const int FSTFilterTypeAGL = 2131231220;
+			// aapt resource value: 0x7f0c0385
+			public const int PSPartsNumberPicker4 = 2131493765;
 			
-			// aapt resource value: 0x7F0801F5
-			public const int FSTFilterTypeATW = 2131231221;
+			// aapt resource value: 0x7f0c038a
+			public const int PSProductStart = 2131493770;
 			
-			// aapt resource value: 0x7F0801F6
-			public const int FSTFilterTypeMTR = 2131231222;
+			// aapt resource value: 0x7f0c0371
+			public const int PSResourceIn = 2131493745;
 			
-			// aapt resource value: 0x7F0801F7
-			public const int FSTInfoACLayout = 2131231223;
+			// aapt resource value: 0x7f0c0365
+			public const int PSResultDetailLayout = 2131493733;
 			
-			// aapt resource value: 0x7F0801F8
-			public const int FSTInfoACProgress = 2131231224;
+			// aapt resource value: 0x7f0c036d
+			public const int PSResultGradeImageView = 2131493741;
 			
-			// aapt resource value: 0x7F0801F9
-			public const int FSTInfoACProgressMax = 2131231225;
+			// aapt resource value: 0x7f0c0367
+			public const int PSResultGradeProgressLayout = 2131493735;
 			
-			// aapt resource value: 0x7F0801FA
-			public const int FSTInfoACProgressMin = 2131231226;
+			// aapt resource value: 0x7f0c036e
+			public const int PSResultImageView = 2131493742;
 			
-			// aapt resource value: 0x7F0801FB
-			public const int FSTInfoACStatus = 2131231227;
+			// aapt resource value: 0x7f0c0364
+			public const int PSResultMainLayout = 2131493732;
 			
-			// aapt resource value: 0x7F0801FC
-			public const int FSTInfoCrushLayout = 2131231228;
+			// aapt resource value: 0x7f0c0368
+			public const int PSResultPB1 = 2131493736;
 			
-			// aapt resource value: 0x7F0801FD
-			public const int FSTInfoCrushProgress = 2131231229;
+			// aapt resource value: 0x7f0c0369
+			public const int PSResultPB2 = 2131493737;
 			
-			// aapt resource value: 0x7F0801FE
-			public const int FSTInfoCrushProgressMax = 2131231230;
+			// aapt resource value: 0x7f0c036a
+			public const int PSResultPB3 = 2131493738;
 			
-			// aapt resource value: 0x7F0801FF
-			public const int FSTInfoCrushProgressMin = 2131231231;
+			// aapt resource value: 0x7f0c036b
+			public const int PSResultPB4 = 2131493739;
 			
-			// aapt resource value: 0x7F080200
-			public const int FSTInfoCrushStatus = 2131231232;
+			// aapt resource value: 0x7f0c036c
+			public const int PSResultPB5 = 2131493740;
 			
-			// aapt resource value: 0x7F080201
-			public const int FSTInfoKillLayout = 2131231233;
+			// aapt resource value: 0x7f0c0366
+			public const int PSResultProductTime = 2131493734;
 			
-			// aapt resource value: 0x7F080202
-			public const int FSTInfoKillProgress = 2131231234;
+			// aapt resource value: 0x7f0c036f
+			public const int PSResultSnackbarLayout = 2131493743;
 			
-			// aapt resource value: 0x7F080203
-			public const int FSTInfoKillProgressMax = 2131231235;
+			// aapt resource value: 0x7f0c0357
+			public const int ProductPercentTableChangeListModeButton = 2131493719;
 			
-			// aapt resource value: 0x7F080204
-			public const int FSTInfoKillProgressMin = 2131231236;
+			// aapt resource value: 0x7f0c0356
+			public const int ProductPercentTableChangeShowModeButton = 2131493718;
 			
-			// aapt resource value: 0x7F080205
-			public const int FSTInfoKillStatus = 2131231237;
+			// aapt resource value: 0x7f0c0355
+			public const int ProductPercentTableControlMainLayout = 2131493717;
 			
-			// aapt resource value: 0x7F080206
-			public const int FSTInfoRLLayout = 2131231238;
+			// aapt resource value: 0x7f0c0354
+			public const int ProductPercentTableInitLoadProgress = 2131493716;
 			
-			// aapt resource value: 0x7F080207
-			public const int FSTInfoRLProgress = 2131231239;
+			// aapt resource value: 0x7f0c0353
+			public const int ProductPercentTableMainLayout = 2131493715;
 			
-			// aapt resource value: 0x7F080208
-			public const int FSTInfoRLProgressMax = 2131231240;
+			// aapt resource value: 0x7f0c0363
+			public const int ProductPercentTableSnackbarLayout = 2131493731;
 			
-			// aapt resource value: 0x7F080209
-			public const int FSTInfoRLProgressMin = 2131231241;
+			// aapt resource value: 0x7f0c0362
+			public const int ProductPercentTable_MainTableLayout = 2131493730;
 			
-			// aapt resource value: 0x7F08020A
-			public const int FSTInfoRLStatus = 2131231242;
+			// aapt resource value: 0x7f0c0358
+			public const int ProductPercentTable_TableTopLayout = 2131493720;
 			
-			// aapt resource value: 0x7F08020B
-			public const int FSTInfo_DetailMainLayout = 2131231243;
+			// aapt resource value: 0x7f0c035a
+			public const int ProductPercentTable_TableTop_Ammo = 2131493722;
 			
-			// aapt resource value: 0x7F08020C
-			public const int FSTListGrade = 2131231244;
+			// aapt resource value: 0x7f0c035f
+			public const int ProductPercentTable_TableTop_HitCount = 2131493727;
 			
-			// aapt resource value: 0x7F08020D
-			public const int FSTListMainLayout = 2131231245;
+			// aapt resource value: 0x7f0c035b
+			public const int ProductPercentTable_TableTop_MRE = 2131493723;
 			
-			// aapt resource value: 0x7F08020E
-			public const int FSTListName = 2131231246;
+			// aapt resource value: 0x7f0c0359
+			public const int ProductPercentTable_TableTop_Manpower = 2131493721;
 			
-			// aapt resource value: 0x7F08020F
-			public const int FSTListRealModel = 2131231247;
+			// aapt resource value: 0x7f0c035c
+			public const int ProductPercentTable_TableTop_Parts = 2131493724;
 			
-			// aapt resource value: 0x7F080210
-			public const int FSTListSmallImage = 2131231248;
+			// aapt resource value: 0x7f0c0361
+			public const int ProductPercentTable_TableTop_Percentage = 2131493729;
 			
-			// aapt resource value: 0x7F080211
-			public const int FSTListType = 2131231249;
+			// aapt resource value: 0x7f0c035e
+			public const int ProductPercentTable_TableTop_ProductCategory = 2131493726;
 			
-			// aapt resource value: 0x7F080212
-			public const int FSTSearchLayout = 2131231250;
+			// aapt resource value: 0x7f0c035d
+			public const int ProductPercentTable_TableTop_ProductType = 2131493725;
 			
-			// aapt resource value: 0x7F080213
-			public const int FSTSearchResetButton = 2131231251;
+			// aapt resource value: 0x7f0c0360
+			public const int ProductPercentTable_TableTop_TotalCount = 2131493728;
 			
-			// aapt resource value: 0x7F080214
-			public const int FSTSearchSeperateBar = 2131231252;
+			// aapt resource value: 0x7f0c0377
+			public const int ProductSimulatorAmmoLayout = 2131493751;
 			
-			// aapt resource value: 0x7F080215
-			public const int FSTSearchText = 2131231253;
+			// aapt resource value: 0x7f0c038f
+			public const int ProductSimulatorCategoryDollAdvanceButton = 2131493775;
 			
-			// aapt resource value: 0x7F080216
-			public const int FUNCTION = 2131231254;
+			// aapt resource value: 0x7f0c038e
+			public const int ProductSimulatorCategoryDollNormalButton = 2131493774;
 			
-			// aapt resource value: 0x7F080271
-			public const int GFDInfoDeveloperInfo = 2131231345;
+			// aapt resource value: 0x7f0c0391
+			public const int ProductSimulatorCategoryEquipAdvanceButton = 2131493777;
 			
-			// aapt resource value: 0x7F080272
-			public const int GFDInfoMainButton = 2131231346;
+			// aapt resource value: 0x7f0c0390
+			public const int ProductSimulatorCategoryEquipNormalButton = 2131493776;
 			
-			// aapt resource value: 0x7F080273
-			public const int GFDInfoMainLayout = 2131231347;
+			// aapt resource value: 0x7f0c038c
+			public const int ProductSimulatorCategoryMainLayout = 2131493772;
 			
-			// aapt resource value: 0x7F080274
-			public const int GFDInfoSnackbarLayout = 2131231348;
+			// aapt resource value: 0x7f0c038d
+			public const int ProductSimulatorCategorySelectMainLayout = 2131493773;
 			
-			// aapt resource value: 0x7F080275
-			public const int GFDInfo_AppUpdateButton = 2131231349;
+			// aapt resource value: 0x7f0c0333
+			public const int ProductSimulatorExtraButton = 2131493683;
 			
-			// aapt resource value: 0x7F080276
-			public const int GFDInfo_NowAppVersion = 2131231350;
+			// aapt resource value: 0x7f0c037c
+			public const int ProductSimulatorFoodLayout = 2131493756;
 			
-			// aapt resource value: 0x7F080277
-			public const int GFDInfo_ServerAppVersion = 2131231351;
+			// aapt resource value: 0x7f0c0370
+			public const int ProductSimulatorMainLayout = 2131493744;
 			
-			// aapt resource value: 0x7F080278
-			public const int GFNewsExtraButton = 2131231352;
+			// aapt resource value: 0x7f0c0372
+			public const int ProductSimulatorManPowerLayout = 2131493746;
 			
-			// aapt resource value: 0x7F08034C
-			public const int ghost_view = 2131231564;
+			// aapt resource value: 0x7f0c0381
+			public const int ProductSimulatorPartsLayout = 2131493761;
 			
-			// aapt resource value: 0x7F08034D
-			public const int gone = 2131231565;
+			// aapt resource value: 0x7f0c038b
+			public const int ProductSimulatorSnackbarLayout = 2131493771;
 			
-			// aapt resource value: 0x7F08034E
-			public const int gridLineLayout = 2131231566;
+			// aapt resource value: 0x7f0c0392
+			public const int ProgressMainLayout = 2131493778;
 			
-			// aapt resource value: 0x7F08034F
-			public const int gridLinesLayout = 2131231567;
+			// aapt resource value: 0x7f0c0394
+			public const int ProgressNowFile = 2131493780;
 			
-			// aapt resource value: 0x7F080350
-			public const int home = 2131231568;
+			// aapt resource value: 0x7f0c0393
+			public const int ProgressStatusMessage = 2131493779;
 			
-			// aapt resource value: 0x7F080351
-			public const int homeAsUp = 2131231569;
+			// aapt resource value: 0x7f0c0332
+			public const int RFBotExtraButton = 2131493682;
 			
-			// aapt resource value: 0x7F080352
-			public const int horizontal = 2131231570;
+			// aapt resource value: 0x7f0c03a3
+			public const int RFBotInputButton = 2131493795;
 			
-			// aapt resource value: 0x7F080353
-			public const int icon = 2131231571;
+			// aapt resource value: 0x7f0c03a2
+			public const int RFBotInputText = 2131493794;
 			
-			// aapt resource value: 0x7F080354
-			public const int iconView = 2131231572;
+			// aapt resource value: 0x7f0c03a0
+			public const int RFBotMainLayout = 2131493792;
 			
-			// aapt resource value: 0x7F080355
-			public const int icon_group = 2131231573;
+			// aapt resource value: 0x7f0c03a4
+			public const int RFBotSnackbarLayout = 2131493796;
 			
-			// aapt resource value: 0x7F080356
-			public const int ifRoom = 2131231574;
+			// aapt resource value: 0x7f0c03a1
+			public const int RFBotStatusText = 2131493793;
 			
-			// aapt resource value: 0x7F080357
-			public const int image = 2131231575;
+			// aapt resource value: 0x7f0c03cd
+			public const int RefreshDollCropImageCache = 2131493837;
 			
-			// aapt resource value: 0x7F080358
-			public const int info = 2131231576;
+			// aapt resource value: 0x7f0c03ce
+			public const int RefreshEquipCropImageCache = 2131493838;
 			
-			// aapt resource value: 0x7F080359
-			public const int italic = 2131231577;
+			// aapt resource value: 0x7f0c03cf
+			public const int RefreshFairyCropImageCache = 2131493839;
 			
-			// aapt resource value: 0x7F08035A
-			public const int item_touch_helper_previous_elevation = 2131231578;
+			// aapt resource value: 0x7f0c03b5
+			public const int SDAnimationImageView = 2131493813;
 			
-			// aapt resource value: 0x7F080279
-			public const int KakaoPlusFriendFAB = 2131231353;
+			// aapt resource value: 0x7f0c03b4
+			public const int SDAnimationListSelector = 2131493812;
 			
-			// aapt resource value: 0x7F08035B
-			public const int label = 2131231579;
+			// aapt resource value: 0x7f0c03b2
+			public const int SDAnimationMainLayout = 2131493810;
 			
-			// aapt resource value: 0x7F08035C
-			public const int largeLabel = 2131231580;
+			// aapt resource value: 0x7f0c03b3
+			public const int SDAnimationViewerLoadProgress = 2131493811;
 			
-			// aapt resource value: 0x7F08035D
-			public const int left = 2131231581;
+			// aapt resource value: 0x7f0c0036
+			public const int SHIFT = 2131492918;
 			
-			// aapt resource value: 0x7F08035E
-			public const int legendHeader = 2131231582;
+			// aapt resource value: 0x7f0c0037
+			public const int SYM = 2131492919;
 			
-			// aapt resource value: 0x7F08035F
-			public const int legendItemsLayout = 2131231583;
+			// aapt resource value: 0x7f0c022d
+			public const int ScheduledEventTitle = 2131493421;
 			
-			// aapt resource value: 0x7F080360
-			public const int legendLayout = 2131231584;
+			// aapt resource value: 0x7f0c03a5
+			public const int SettingFragmentContainer = 2131493797;
 			
-			// aapt resource value: 0x7F080361
-			public const int legendScrollView = 2131231585;
+			// aapt resource value: 0x7f0c032e
+			public const int SettingMainButton = 2131493678;
 			
-			// aapt resource value: 0x7F080362
-			public const int legendViewGroup = 2131231586;
+			// aapt resource value: 0x7f0c03a6
+			public const int SettingSnackbarLayout = 2131493798;
 			
-			// aapt resource value: 0x7F080363
-			public const int line1 = 2131231587;
+			// aapt resource value: 0x7f0c03a9
+			public const int SideLinkBaseFAB = 2131493801;
 			
-			// aapt resource value: 0x7F080364
-			public const int line3 = 2131231588;
+			// aapt resource value: 0x7f0c03a8
+			public const int SideLinkInvenFAB = 2131493800;
 			
-			// aapt resource value: 0x7F080365
-			public const int listMode = 2131231589;
+			// aapt resource value: 0x7f0c03a7
+			public const int SideLinkNamuWikiFAB = 2131493799;
 			
-			// aapt resource value: 0x7F080366
-			public const int list_item = 2131231590;
+			// aapt resource value: 0x7f0c03ab
+			public const int SpinnerProgressBar = 2131493803;
 			
-			// aapt resource value: 0x7F080367
-			public const int logarithmic = 2131231591;
+			// aapt resource value: 0x7f0c03aa
+			public const int SpinnerProgressMainLayout = 2131493802;
 			
-			// aapt resource value: 0x7F08027C
-			public const int MainLayout = 2131231356;
+			// aapt resource value: 0x7f0c03ac
+			public const int SpinnerProgressStatusMessage = 2131493804;
 			
-			// aapt resource value: 0x7F08027D
-			public const int MainMenuButtonLayout1 = 2131231357;
+			// aapt resource value: 0x7f0c03af
+			public const int SplashBackImageLayout = 2131493807;
 			
-			// aapt resource value: 0x7F08027E
-			public const int MainNotificationText = 2131231358;
+			// aapt resource value: 0x7f0c03b0
+			public const int SplashBusyIndicatorLayout = 2131493808;
 			
-			// aapt resource value: 0x7F08027F
-			public const int MainSnackbarLayout = 2131231359;
+			// aapt resource value: 0x7f0c03ae
+			public const int SplashLoadingStatusImageLayout = 2131493806;
 			
-			// aapt resource value: 0x7F080368
-			public const int masked = 2131231592;
+			// aapt resource value: 0x7f0c03ad
+			public const int SplashMainLayout = 2131493805;
 			
-			// aapt resource value: 0x7F08027A
-			public const int MDSupportMainButton = 2131231354;
+			// aapt resource value: 0x7f0c03b1
+			public const int SplashSnackbarLayout = 2131493809;
 			
-			// aapt resource value: 0x7F080369
-			public const int media_actions = 2131231593;
+			// aapt resource value: 0x7f0c03b6
+			public const int Toolbar = 2131493814;
 			
-			// aapt resource value: 0x7F08036A
-			public const int message = 2131231594;
+			// aapt resource value: 0x7f0c0399
+			public const int TotalProgressBar = 2131493785;
 			
-			// aapt resource value: 0x7F08027B
-			public const int META = 2131231355;
+			// aapt resource value: 0x7f0c0398
+			public const int TotalProgressLayout = 2131493784;
 			
-			// aapt resource value: 0x7F08036B
-			public const int metro = 2131231595;
+			// aapt resource value: 0x7f0c039a
+			public const int TotalProgressPercentage = 2131493786;
 			
-			// aapt resource value: 0x7F08036C
-			public const int middle = 2131231596;
+			// aapt resource value: 0x7f0c03ba
+			public const int WebBrowser = 2131493818;
 			
-			// aapt resource value: 0x7F08036D
-			public const int mini = 2131231597;
+			// aapt resource value: 0x7f0c03b8
+			public const int WebBrowserMainLayout = 2131493816;
 			
-			// aapt resource value: 0x7F08036E
-			public const int multiply = 2131231598;
+			// aapt resource value: 0x7f0c03b9
+			public const int WebBrowserProgressBar = 2131493817;
 			
-			// aapt resource value: 0x7F08036F
-			public const int natural = 2131231599;
+			// aapt resource value: 0x7f0c03bc
+			public const int WebBrowserSnackbarLayout = 2131493820;
 			
-			// aapt resource value: 0x7F080370
-			public const int navigation_header_container = 2131231600;
+			// aapt resource value: 0x7f0c03be
+			public const int ZinaOSBootTextLayout = 2131493822;
 			
-			// aapt resource value: 0x7F080371
-			public const int never = 2131231601;
+			// aapt resource value: 0x7f0c03bf
+			public const int ZinaOSBootTextView = 2131493823;
 			
-			// aapt resource value: 0x7F080372
-			public const int none = 2131231602;
+			// aapt resource value: 0x7f0c03c0
+			public const int ZinaOSBootViewLayout = 2131493824;
 			
-			// aapt resource value: 0x7F080373
-			public const int normal = 2131231603;
+			// aapt resource value: 0x7f0c03c3
+			public const int ZinaOSLoadProgressBar = 2131493827;
 			
-			// aapt resource value: 0x7F080374
-			public const int notification_background = 2131231604;
+			// aapt resource value: 0x7f0c03c2
+			public const int ZinaOSLoadProgressLayout = 2131493826;
 			
-			// aapt resource value: 0x7F080375
-			public const int notification_main_column = 2131231605;
+			// aapt resource value: 0x7f0c03c1
+			public const int ZinaOSMainBootLogo = 2131493825;
 			
-			// aapt resource value: 0x7F080376
-			public const int notification_main_column_container = 2131231606;
+			// aapt resource value: 0x7f0c03bd
+			public const int ZinaOSMainLayout = 2131493821;
 			
-			// aapt resource value: 0x7F080280
-			public const int NowEventTitle = 2131231360;
+			// aapt resource value: 0x7f0c03c7
+			public const int ZinaOSMainMenuHiddenEventButton = 2131493831;
 			
-			// aapt resource value: 0x7F080281
-			public const int NowProgressBar = 2131231361;
+			// aapt resource value: 0x7f0c03c8
+			public const int ZinaOSMainMenuHiddenExtraButton = 2131493832;
 			
-			// aapt resource value: 0x7F080282
-			public const int NowProgressLayout = 2131231362;
+			// aapt resource value: 0x7f0c03c6
+			public const int ZinaOSMainMenuHiddenGalleryButton = 2131493830;
 			
-			// aapt resource value: 0x7F080283
-			public const int NowProgressPercentage = 2131231363;
+			// aapt resource value: 0x7f0c03c5
+			public const int ZinaOSMainMenuHiddenSettingButton = 2131493829;
 			
-			// aapt resource value: 0x7F080377
-			public const int numerical = 2131231607;
+			// aapt resource value: 0x7f0c03c4
+			public const int ZinaOSMainMenuLayout = 2131493828;
 			
-			// aapt resource value: 0x7F080284
-			public const int OldGFDImageList = 2131231364;
+			// aapt resource value: 0x7f0c033f
+			public const int action0 = 2131493695;
 			
-			// aapt resource value: 0x7F080285
-			public const int OldGFDImageView = 2131231365;
+			// aapt resource value: 0x7f0c008a
+			public const int action_bar = 2131493002;
 			
-			// aapt resource value: 0x7F080286
-			public const int OldGFDMainButton = 2131231366;
+			// aapt resource value: 0x7f0c0001
+			public const int action_bar_activity_content = 2131492865;
 			
-			// aapt resource value: 0x7F080287
-			public const int OldGFDViewerMainLayout = 2131231367;
+			// aapt resource value: 0x7f0c0089
+			public const int action_bar_container = 2131493001;
 			
-			// aapt resource value: 0x7F080288
-			public const int OldGFDViewerSnackbarLayout = 2131231368;
+			// aapt resource value: 0x7f0c0085
+			public const int action_bar_root = 2131492997;
 			
-			// aapt resource value: 0x7F080378
-			public const int parallax = 2131231608;
+			// aapt resource value: 0x7f0c0002
+			public const int action_bar_spinner = 2131492866;
 			
-			// aapt resource value: 0x7F080379
-			public const int parentPanel = 2131231609;
+			// aapt resource value: 0x7f0c006a
+			public const int action_bar_subtitle = 2131492970;
 			
-			// aapt resource value: 0x7F08037A
-			public const int parent_matrix = 2131231610;
+			// aapt resource value: 0x7f0c0069
+			public const int action_bar_title = 2131492969;
 			
-			// aapt resource value: 0x7F08037B
-			public const int pin = 2131231611;
+			// aapt resource value: 0x7f0c033c
+			public const int action_container = 2131493692;
 			
-			// aapt resource value: 0x7F08037C
-			public const int pineapple = 2131231612;
+			// aapt resource value: 0x7f0c008b
+			public const int action_context_bar = 2131493003;
 			
-			// aapt resource value: 0x7F0802AB
-			public const int ProductPercentTableChangeListModeButton = 2131231403;
+			// aapt resource value: 0x7f0c0343
+			public const int action_divider = 2131493699;
 			
-			// aapt resource value: 0x7F0802AC
-			public const int ProductPercentTableChangeShowModeButton = 2131231404;
+			// aapt resource value: 0x7f0c033d
+			public const int action_image = 2131493693;
 			
-			// aapt resource value: 0x7F0802AD
-			public const int ProductPercentTableControlMainLayout = 2131231405;
+			// aapt resource value: 0x7f0c0003
+			public const int action_menu_divider = 2131492867;
 			
-			// aapt resource value: 0x7F0802AE
-			public const int ProductPercentTableInitLoadProgress = 2131231406;
+			// aapt resource value: 0x7f0c0004
+			public const int action_menu_presenter = 2131492868;
 			
-			// aapt resource value: 0x7F0802AF
-			public const int ProductPercentTableMainLayout = 2131231407;
+			// aapt resource value: 0x7f0c0087
+			public const int action_mode_bar = 2131492999;
 			
-			// aapt resource value: 0x7F0802B0
-			public const int ProductPercentTableSnackbarLayout = 2131231408;
+			// aapt resource value: 0x7f0c0086
+			public const int action_mode_bar_stub = 2131492998;
 			
-			// aapt resource value: 0x7F0802B1
-			public const int ProductPercentTable_MainTableLayout = 2131231409;
+			// aapt resource value: 0x7f0c006b
+			public const int action_mode_close_button = 2131492971;
 			
-			// aapt resource value: 0x7F0802B2
-			public const int ProductPercentTable_TableTopLayout = 2131231410;
+			// aapt resource value: 0x7f0c033e
+			public const int action_text = 2131493694;
 			
-			// aapt resource value: 0x7F0802B3
-			public const int ProductPercentTable_TableTop_Ammo = 2131231411;
+			// aapt resource value: 0x7f0c034c
+			public const int actions = 2131493708;
 			
-			// aapt resource value: 0x7F0802B4
-			public const int ProductPercentTable_TableTop_HitCount = 2131231412;
+			// aapt resource value: 0x7f0c006c
+			public const int activity_chooser_view_content = 2131492972;
 			
-			// aapt resource value: 0x7F0802B6
-			public const int ProductPercentTable_TableTop_Manpower = 2131231414;
+			// aapt resource value: 0x7f0c0027
+			public const int add = 2131492903;
 			
-			// aapt resource value: 0x7F0802B5
-			public const int ProductPercentTable_TableTop_MRE = 2131231413;
+			// aapt resource value: 0x7f0c007e
+			public const int alertTitle = 2131492990;
 			
-			// aapt resource value: 0x7F0802B7
-			public const int ProductPercentTable_TableTop_Parts = 2131231415;
+			// aapt resource value: 0x7f0c0052
+			public const int all = 2131492946;
 			
-			// aapt resource value: 0x7F0802B8
-			public const int ProductPercentTable_TableTop_Percentage = 2131231416;
+			// aapt resource value: 0x7f0c0038
+			public const int always = 2131492920;
 			
-			// aapt resource value: 0x7F0802B9
-			public const int ProductPercentTable_TableTop_ProductCategory = 2131231417;
+			// aapt resource value: 0x7f0c00bc
+			public const int annotationLayout = 2131493052;
 			
-			// aapt resource value: 0x7F0802BA
-			public const int ProductPercentTable_TableTop_ProductType = 2131231418;
+			// aapt resource value: 0x7f0c0056
+			public const int async = 2131492950;
 			
-			// aapt resource value: 0x7F0802BB
-			public const int ProductPercentTable_TableTop_TotalCount = 2131231419;
+			// aapt resource value: 0x7f0c0044
+			public const int auto = 2131492932;
 			
-			// aapt resource value: 0x7F0802BC
-			public const int ProductSimulatorAmmoLayout = 2131231420;
+			// aapt resource value: 0x7f0c00b9
+			public const int axisLayout = 2131493049;
 			
-			// aapt resource value: 0x7F0802BD
-			public const int ProductSimulatorCategoryDollAdvanceButton = 2131231421;
+			// aapt resource value: 0x7f0c002f
+			public const int beginning = 2131492911;
 			
-			// aapt resource value: 0x7F0802BE
-			public const int ProductSimulatorCategoryDollNormalButton = 2131231422;
+			// aapt resource value: 0x7f0c0057
+			public const int blocking = 2131492951;
 			
-			// aapt resource value: 0x7F0802BF
-			public const int ProductSimulatorCategoryEquipAdvanceButton = 2131231423;
+			// aapt resource value: 0x7f0c003d
+			public const int bottom = 2131492925;
 			
-			// aapt resource value: 0x7F0802C0
-			public const int ProductSimulatorCategoryEquipNormalButton = 2131231424;
+			// aapt resource value: 0x7f0c039c
+			public const int bottom_labels = 2131493788;
 			
-			// aapt resource value: 0x7F0802C1
-			public const int ProductSimulatorCategoryMainLayout = 2131231425;
+			// aapt resource value: 0x7f0c0072
+			public const int buttonPanel = 2131492978;
 			
-			// aapt resource value: 0x7F0802C2
-			public const int ProductSimulatorCategorySelectMainLayout = 2131231426;
+			// aapt resource value: 0x7f0c0340
+			public const int cancel_action = 2131493696;
 			
-			// aapt resource value: 0x7F0802C3
-			public const int ProductSimulatorExtraButton = 2131231427;
+			// aapt resource value: 0x7f0c005a
+			public const int category = 2131492954;
 			
-			// aapt resource value: 0x7F0802C4
-			public const int ProductSimulatorFoodLayout = 2131231428;
+			// aapt resource value: 0x7f0c0045
+			public const int center = 2131492933;
 			
-			// aapt resource value: 0x7F0802C5
-			public const int ProductSimulatorMainLayout = 2131231429;
+			// aapt resource value: 0x7f0c0046
+			public const int center_horizontal = 2131492934;
 			
-			// aapt resource value: 0x7F0802C6
-			public const int ProductSimulatorManPowerLayout = 2131231430;
+			// aapt resource value: 0x7f0c0047
+			public const int center_vertical = 2131492935;
 			
-			// aapt resource value: 0x7F0802C7
-			public const int ProductSimulatorPartsLayout = 2131231431;
+			// aapt resource value: 0x7f0c00bb
+			public const int chartBehaviorLayout = 2131493051;
 			
-			// aapt resource value: 0x7F0802C8
-			public const int ProductSimulatorSnackbarLayout = 2131231432;
+			// aapt resource value: 0x7f0c00bf
+			public const int chartLegendScrollView = 2131493055;
 			
-			// aapt resource value: 0x7F0802C9
-			public const int ProgressMainLayout = 2131231433;
+			// aapt resource value: 0x7f0c0081
+			public const int checkbox = 2131492993;
 			
-			// aapt resource value: 0x7F0802CA
-			public const int ProgressNowFile = 2131231434;
+			// aapt resource value: 0x7f0c0348
+			public const int chronometer = 2131493704;
 			
-			// aapt resource value: 0x7F0802CB
-			public const int ProgressStatusMessage = 2131231435;
+			// aapt resource value: 0x7f0c004e
+			public const int clip_horizontal = 2131492942;
 			
-			// aapt resource value: 0x7F08037D
-			public const int progress_circular = 2131231613;
+			// aapt resource value: 0x7f0c004f
+			public const int clip_vertical = 2131492943;
 			
-			// aapt resource value: 0x7F08037E
-			public const int progress_horizontal = 2131231614;
+			// aapt resource value: 0x7f0c0039
+			public const int collapseActionView = 2131492921;
 			
-			// aapt resource value: 0x7F080289
-			public const int PSAdvanceProductType1 = 2131231369;
+			// aapt resource value: 0x7f0c00c6
+			public const int container = 2131493062;
 			
-			// aapt resource value: 0x7F08028A
-			public const int PSAdvanceProductType2 = 2131231370;
+			// aapt resource value: 0x7f0c039d
+			public const int content = 2131493789;
 			
-			// aapt resource value: 0x7F08028B
-			public const int PSAdvanceProductType3 = 2131231371;
+			// aapt resource value: 0x7f0c0075
+			public const int contentPanel = 2131492981;
 			
-			// aapt resource value: 0x7F08028C
-			public const int PSAdvanceProductTypeLayout = 2131231372;
+			// aapt resource value: 0x7f0c00c7
+			public const int coordinator = 2131493063;
 			
-			// aapt resource value: 0x7F08028D
-			public const int PSAmmoNumberPicker1 = 2131231373;
+			// aapt resource value: 0x7f0c0064
+			public const int custom = 2131492964;
 			
-			// aapt resource value: 0x7F08028E
-			public const int PSAmmoNumberPicker2 = 2131231374;
+			// aapt resource value: 0x7f0c007b
+			public const int customPanel = 2131492987;
 			
-			// aapt resource value: 0x7F08028F
-			public const int PSAmmoNumberPicker3 = 2131231375;
+			// aapt resource value: 0x7f0c00b7
+			public const int dataMarkerLayout = 2131493047;
 			
-			// aapt resource value: 0x7F080290
-			public const int PSAmmoNumberPicker4 = 2131231376;
+			// aapt resource value: 0x7f0c005b
+			public const int dateTime = 2131492955;
 			
-			// aapt resource value: 0x7F080291
-			public const int PSFoodNumberPicker1 = 2131231377;
+			// aapt resource value: 0x7f0c005c
+			public const int dateTimeCategory = 2131492956;
 			
-			// aapt resource value: 0x7F080292
-			public const int PSFoodNumberPicker2 = 2131231378;
+			// aapt resource value: 0x7f0c0088
+			public const int decor_content_parent = 2131493000;
 			
-			// aapt resource value: 0x7F080293
-			public const int PSFoodNumberPicker3 = 2131231379;
+			// aapt resource value: 0x7f0c006f
+			public const int default_activity_button = 2131492975;
 			
-			// aapt resource value: 0x7F080294
-			public const int PSFoodNumberPicker4 = 2131231380;
+			// aapt resource value: 0x7f0c00c9
+			public const int design_bottom_sheet = 2131493065;
 			
-			// aapt resource value: 0x7F080295
-			public const int PSManPowerNumberPicker1 = 2131231381;
+			// aapt resource value: 0x7f0c00d0
+			public const int design_menu_item_action_area = 2131493072;
 			
-			// aapt resource value: 0x7F080296
-			public const int PSManPowerNumberPicker2 = 2131231382;
+			// aapt resource value: 0x7f0c00cf
+			public const int design_menu_item_action_area_stub = 2131493071;
 			
-			// aapt resource value: 0x7F080297
-			public const int PSManPowerNumberPicker3 = 2131231383;
+			// aapt resource value: 0x7f0c00ce
+			public const int design_menu_item_text = 2131493070;
 			
-			// aapt resource value: 0x7F080298
-			public const int PSManPowerNumberPicker4 = 2131231384;
+			// aapt resource value: 0x7f0c00cd
+			public const int design_navigation_view = 2131493069;
 			
-			// aapt resource value: 0x7F080299
-			public const int PSPartsNumberPicker1 = 2131231385;
+			// aapt resource value: 0x7f0c0020
+			public const int disableHome = 2131492896;
 			
-			// aapt resource value: 0x7F08029A
-			public const int PSPartsNumberPicker2 = 2131231386;
+			// aapt resource value: 0x7f0c008c
+			public const int edit_query = 2131493004;
 			
-			// aapt resource value: 0x7F08029B
-			public const int PSPartsNumberPicker3 = 2131231387;
+			// aapt resource value: 0x7f0c00d3
+			public const int eightsegment = 2131493075;
 			
-			// aapt resource value: 0x7F08029C
-			public const int PSPartsNumberPicker4 = 2131231388;
+			// aapt resource value: 0x7f0c0030
+			public const int end = 2131492912;
 			
-			// aapt resource value: 0x7F08029D
-			public const int PSProductStart = 2131231389;
+			// aapt resource value: 0x7f0c034e
+			public const int end_padder = 2131493710;
 			
-			// aapt resource value: 0x7F08029E
-			public const int PSResourceIn = 2131231390;
+			// aapt resource value: 0x7f0c003f
+			public const int enterAlways = 2131492927;
 			
-			// aapt resource value: 0x7F08029F
-			public const int PSResultDetailLayout = 2131231391;
+			// aapt resource value: 0x7f0c0040
+			public const int enterAlwaysCollapsed = 2131492928;
 			
-			// aapt resource value: 0x7F0802A0
-			public const int PSResultGradeImageView = 2131231392;
+			// aapt resource value: 0x7f0c0041
+			public const int exitUntilCollapsed = 2131492929;
 			
-			// aapt resource value: 0x7F0802A1
-			public const int PSResultGradeProgressLayout = 2131231393;
+			// aapt resource value: 0x7f0c006d
+			public const int expand_activities_button = 2131492973;
 			
-			// aapt resource value: 0x7F0802A2
-			public const int PSResultImageView = 2131231394;
+			// aapt resource value: 0x7f0c0080
+			public const int expanded_menu = 2131492992;
 			
-			// aapt resource value: 0x7F0802A3
-			public const int PSResultMainLayout = 2131231395;
+			// aapt resource value: 0x7f0c0050
+			public const int fill = 2131492944;
 			
-			// aapt resource value: 0x7F0802A4
-			public const int PSResultPB1 = 2131231396;
+			// aapt resource value: 0x7f0c0051
+			public const int fill_horizontal = 2131492945;
 			
-			// aapt resource value: 0x7F0802A5
-			public const int PSResultPB2 = 2131231397;
+			// aapt resource value: 0x7f0c0048
+			public const int fill_vertical = 2131492936;
 			
-			// aapt resource value: 0x7F0802A6
-			public const int PSResultPB3 = 2131231398;
+			// aapt resource value: 0x7f0c0054
+			public const int @fixed = 2131492948;
 			
-			// aapt resource value: 0x7F0802A7
-			public const int PSResultPB4 = 2131231399;
+			// aapt resource value: 0x7f0c0061
+			public const int floating = 2131492961;
 			
-			// aapt resource value: 0x7F0802A8
-			public const int PSResultPB5 = 2131231400;
+			// aapt resource value: 0x7f0c0058
+			public const int forever = 2131492952;
 			
-			// aapt resource value: 0x7F0802A9
-			public const int PSResultProductTime = 2131231401;
+			// aapt resource value: 0x7f0c00d4
+			public const int fourteensegment = 2131493076;
 			
-			// aapt resource value: 0x7F0802AA
-			public const int PSResultSnackbarLayout = 2131231402;
+			// aapt resource value: 0x7f0c000a
+			public const int ghost_view = 2131492874;
 			
-			// aapt resource value: 0x7F08037F
-			public const int radio = 2131231615;
+			// aapt resource value: 0x7f0c005f
+			public const int gone = 2131492959;
 			
-			// aapt resource value: 0x7F0802D2
-			public const int RefreshDollCropImageCache = 2131231442;
+			// aapt resource value: 0x7f0c00b4
+			public const int gridLineLayout = 2131493044;
 			
-			// aapt resource value: 0x7F0802D3
-			public const int RefreshEquipCropImageCache = 2131231443;
+			// aapt resource value: 0x7f0c039e
+			public const int gridLinesLayout = 2131493790;
 			
-			// aapt resource value: 0x7F0802D4
-			public const int RefreshFairyCropImageCache = 2131231444;
+			// aapt resource value: 0x7f0c0005
+			public const int home = 2131492869;
 			
-			// aapt resource value: 0x7F0802CC
-			public const int RFBotExtraButton = 2131231436;
+			// aapt resource value: 0x7f0c0021
+			public const int homeAsUp = 2131492897;
 			
-			// aapt resource value: 0x7F0802CD
-			public const int RFBotInputButton = 2131231437;
+			// aapt resource value: 0x7f0c0062
+			public const int horizontal = 2131492962;
 			
-			// aapt resource value: 0x7F0802CE
-			public const int RFBotInputText = 2131231438;
+			// aapt resource value: 0x7f0c0071
+			public const int icon = 2131492977;
 			
-			// aapt resource value: 0x7F0802CF
-			public const int RFBotMainLayout = 2131231439;
+			// aapt resource value: 0x7f0c00c2
+			public const int iconView = 2131493058;
 			
-			// aapt resource value: 0x7F0802D0
-			public const int RFBotSnackbarLayout = 2131231440;
+			// aapt resource value: 0x7f0c034d
+			public const int icon_group = 2131493709;
 			
-			// aapt resource value: 0x7F0802D1
-			public const int RFBotStatusText = 2131231441;
+			// aapt resource value: 0x7f0c003a
+			public const int ifRoom = 2131492922;
 			
-			// aapt resource value: 0x7F080380
-			public const int right = 2131231616;
+			// aapt resource value: 0x7f0c006e
+			public const int image = 2131492974;
 			
-			// aapt resource value: 0x7F080381
-			public const int right_icon = 2131231617;
+			// aapt resource value: 0x7f0c0349
+			public const int info = 2131493705;
 			
-			// aapt resource value: 0x7F080382
-			public const int right_side = 2131231618;
+			// aapt resource value: 0x7f0c0059
+			public const int italic = 2131492953;
 			
-			// aapt resource value: 0x7F080383
-			public const int rootLayout = 2131231619;
+			// aapt resource value: 0x7f0c0000
+			public const int item_touch_helper_previous_elevation = 2131492864;
 			
-			// aapt resource value: 0x7F080384
-			public const int save_image_matrix = 2131231620;
+			// aapt resource value: 0x7f0c00c3
+			public const int label = 2131493059;
 			
-			// aapt resource value: 0x7F080385
-			public const int save_non_transition_alpha = 2131231621;
+			// aapt resource value: 0x7f0c00c5
+			public const int largeLabel = 2131493061;
 			
-			// aapt resource value: 0x7F080386
-			public const int save_scale_type = 2131231622;
+			// aapt resource value: 0x7f0c0049
+			public const int left = 2131492937;
 			
-			// aapt resource value: 0x7F0802DB
-			public const int ScheduledEventTitle = 2131231451;
+			// aapt resource value: 0x7f0c00be
+			public const int legendHeader = 2131493054;
 			
-			// aapt resource value: 0x7F080387
-			public const int screen = 2131231623;
+			// aapt resource value: 0x7f0c00c1
+			public const int legendItemsLayout = 2131493057;
 			
-			// aapt resource value: 0x7F080388
-			public const int scroll = 2131231624;
+			// aapt resource value: 0x7f0c00ba
+			public const int legendLayout = 2131493050;
 			
-			// aapt resource value: 0x7F08038C
-			public const int scrollable = 2131231628;
+			// aapt resource value: 0x7f0c00c0
+			public const int legendScrollView = 2131493056;
 			
-			// aapt resource value: 0x7F080389
-			public const int scrollIndicatorDown = 2131231625;
+			// aapt resource value: 0x7f0c00bd
+			public const int legendViewGroup = 2131493053;
 			
-			// aapt resource value: 0x7F08038A
-			public const int scrollIndicatorUp = 2131231626;
+			// aapt resource value: 0x7f0c0017
+			public const int line1 = 2131492887;
 			
-			// aapt resource value: 0x7F08038B
-			public const int scrollView = 2131231627;
+			// aapt resource value: 0x7f0c0018
+			public const int line3 = 2131492888;
 			
-			// aapt resource value: 0x7F0802D5
-			public const int SDAnimationImageView = 2131231445;
+			// aapt resource value: 0x7f0c001d
+			public const int listMode = 2131492893;
 			
-			// aapt resource value: 0x7F0802D6
-			public const int SDAnimationListSelector = 2131231446;
+			// aapt resource value: 0x7f0c0070
+			public const int list_item = 2131492976;
 			
-			// aapt resource value: 0x7F0802D7
-			public const int SDAnimationMainLayout = 2131231447;
+			// aapt resource value: 0x7f0c005d
+			public const int logarithmic = 2131492957;
 			
-			// aapt resource value: 0x7F0802D8
-			public const int SDAnimationViewerLoadProgress = 2131231448;
+			// aapt resource value: 0x7f0c03c9
+			public const int masked = 2131493833;
 			
-			// aapt resource value: 0x7F08038D
-			public const int search_badge = 2131231629;
+			// aapt resource value: 0x7f0c0342
+			public const int media_actions = 2131493698;
 			
-			// aapt resource value: 0x7F08038E
-			public const int search_bar = 2131231630;
+			// aapt resource value: 0x7f0c03b7
+			public const int message = 2131493815;
 			
-			// aapt resource value: 0x7F08038F
-			public const int search_button = 2131231631;
+			// aapt resource value: 0x7f0c0065
+			public const int metro = 2131492965;
 			
-			// aapt resource value: 0x7F080390
-			public const int search_close_btn = 2131231632;
+			// aapt resource value: 0x7f0c0031
+			public const int middle = 2131492913;
 			
-			// aapt resource value: 0x7F080391
-			public const int search_edit_frame = 2131231633;
+			// aapt resource value: 0x7f0c0053
+			public const int mini = 2131492947;
 			
-			// aapt resource value: 0x7F080392
-			public const int search_go_btn = 2131231634;
+			// aapt resource value: 0x7f0c0028
+			public const int multiply = 2131492904;
 			
-			// aapt resource value: 0x7F080393
-			public const int search_mag_icon = 2131231635;
+			// aapt resource value: 0x7f0c0066
+			public const int natural = 2131492966;
 			
-			// aapt resource value: 0x7F080394
-			public const int search_plate = 2131231636;
+			// aapt resource value: 0x7f0c00cc
+			public const int navigation_header_container = 2131493068;
 			
-			// aapt resource value: 0x7F080395
-			public const int search_src_text = 2131231637;
+			// aapt resource value: 0x7f0c003b
+			public const int never = 2131492923;
 			
-			// aapt resource value: 0x7F080396
-			public const int search_voice_btn = 2131231638;
+			// aapt resource value: 0x7f0c0022
+			public const int none = 2131492898;
 			
-			// aapt resource value: 0x7F080397
-			public const int select_dialog_listview = 2131231639;
+			// aapt resource value: 0x7f0c001e
+			public const int normal = 2131492894;
 			
-			// aapt resource value: 0x7F080398
-			public const int seriesLayout = 2131231640;
+			// aapt resource value: 0x7f0c034b
+			public const int notification_background = 2131493707;
 			
-			// aapt resource value: 0x7F0802DC
-			public const int SettingFragmentContainer = 2131231452;
+			// aapt resource value: 0x7f0c0345
+			public const int notification_main_column = 2131493701;
 			
-			// aapt resource value: 0x7F0802DD
-			public const int SettingMainButton = 2131231453;
+			// aapt resource value: 0x7f0c0344
+			public const int notification_main_column_container = 2131493700;
 			
-			// aapt resource value: 0x7F0802DE
-			public const int SettingSnackbarLayout = 2131231454;
+			// aapt resource value: 0x7f0c005e
+			public const int numerical = 2131492958;
 			
-			// aapt resource value: 0x7F080399
-			public const int sevensegment = 2131231641;
+			// aapt resource value: 0x7f0c004c
+			public const int parallax = 2131492940;
 			
-			// aapt resource value: 0x7F0802D9
-			public const int SHIFT = 2131231449;
+			// aapt resource value: 0x7f0c0074
+			public const int parentPanel = 2131492980;
 			
-			// aapt resource value: 0x7F08039A
-			public const int shortcut = 2131231642;
+			// aapt resource value: 0x7f0c000b
+			public const int parent_matrix = 2131492875;
 			
-			// aapt resource value: 0x7F08039B
-			public const int showCustom = 2131231643;
+			// aapt resource value: 0x7f0c004d
+			public const int pin = 2131492941;
 			
-			// aapt resource value: 0x7F08039C
-			public const int showHome = 2131231644;
+			// aapt resource value: 0x7f0c0067
+			public const int pineapple = 2131492967;
 			
-			// aapt resource value: 0x7F08039D
-			public const int showTitle = 2131231645;
+			// aapt resource value: 0x7f0c0006
+			public const int progress_circular = 2131492870;
 			
-			// aapt resource value: 0x7F0802DF
-			public const int SideLinkBaseFAB = 2131231455;
+			// aapt resource value: 0x7f0c0007
+			public const int progress_horizontal = 2131492871;
 			
-			// aapt resource value: 0x7F0802E0
-			public const int SideLinkInvenFAB = 2131231456;
+			// aapt resource value: 0x7f0c0083
+			public const int radio = 2131492995;
 			
-			// aapt resource value: 0x7F0802E1
-			public const int SideLinkNamuWikiFAB = 2131231457;
+			// aapt resource value: 0x7f0c004a
+			public const int right = 2131492938;
 			
-			// aapt resource value: 0x7F08039E
-			public const int sixteensegment = 2131231646;
+			// aapt resource value: 0x7f0c034a
+			public const int right_icon = 2131493706;
 			
-			// aapt resource value: 0x7F08039F
-			public const int smallLabel = 2131231647;
+			// aapt resource value: 0x7f0c0346
+			public const int right_side = 2131493702;
 			
-			// aapt resource value: 0x7F0803A0
-			public const int snackbar_action = 2131231648;
+			// aapt resource value: 0x7f0c00b2
+			public const int rootLayout = 2131493042;
 			
-			// aapt resource value: 0x7F0803A1
-			public const int snackbar_text = 2131231649;
+			// aapt resource value: 0x7f0c000c
+			public const int save_image_matrix = 2131492876;
 			
-			// aapt resource value: 0x7F0803A2
-			public const int snap = 2131231650;
+			// aapt resource value: 0x7f0c000d
+			public const int save_non_transition_alpha = 2131492877;
 			
-			// aapt resource value: 0x7F0803A3
-			public const int spacer = 2131231651;
+			// aapt resource value: 0x7f0c000e
+			public const int save_scale_type = 2131492878;
 			
-			// aapt resource value: 0x7F0802E2
-			public const int SpinnerProgressBar = 2131231458;
+			// aapt resource value: 0x7f0c0029
+			public const int screen = 2131492905;
 			
-			// aapt resource value: 0x7F0802E3
-			public const int SpinnerProgressMainLayout = 2131231459;
+			// aapt resource value: 0x7f0c0042
+			public const int scroll = 2131492930;
 			
-			// aapt resource value: 0x7F0802E4
-			public const int SpinnerProgressStatusMessage = 2131231460;
+			// aapt resource value: 0x7f0c007a
+			public const int scrollIndicatorDown = 2131492986;
 			
-			// aapt resource value: 0x7F0802E5
-			public const int SplashBackImageLayout = 2131231461;
+			// aapt resource value: 0x7f0c0076
+			public const int scrollIndicatorUp = 2131492982;
 			
-			// aapt resource value: 0x7F0802E6
-			public const int SplashBusyIndicatorLayout = 2131231462;
+			// aapt resource value: 0x7f0c0077
+			public const int scrollView = 2131492983;
 			
-			// aapt resource value: 0x7F0802E7
-			public const int SplashLoadingStatusImageLayout = 2131231463;
+			// aapt resource value: 0x7f0c0055
+			public const int scrollable = 2131492949;
 			
-			// aapt resource value: 0x7F0802E8
-			public const int SplashMainLayout = 2131231464;
+			// aapt resource value: 0x7f0c008e
+			public const int search_badge = 2131493006;
 			
-			// aapt resource value: 0x7F0802E9
-			public const int SplashSnackbarLayout = 2131231465;
+			// aapt resource value: 0x7f0c008d
+			public const int search_bar = 2131493005;
 			
-			// aapt resource value: 0x7F0803A4
-			public const int split_action_bar = 2131231652;
+			// aapt resource value: 0x7f0c008f
+			public const int search_button = 2131493007;
 			
-			// aapt resource value: 0x7F0803A5
-			public const int src_atop = 2131231653;
+			// aapt resource value: 0x7f0c0094
+			public const int search_close_btn = 2131493012;
 			
-			// aapt resource value: 0x7F0803A6
-			public const int src_in = 2131231654;
+			// aapt resource value: 0x7f0c0090
+			public const int search_edit_frame = 2131493008;
 			
-			// aapt resource value: 0x7F0803A7
-			public const int src_over = 2131231655;
+			// aapt resource value: 0x7f0c0096
+			public const int search_go_btn = 2131493014;
 			
-			// aapt resource value: 0x7F0803A8
-			public const int start = 2131231656;
+			// aapt resource value: 0x7f0c0091
+			public const int search_mag_icon = 2131493009;
 			
-			// aapt resource value: 0x7F0803A9
-			public const int status_bar_latest_event_content = 2131231657;
+			// aapt resource value: 0x7f0c0092
+			public const int search_plate = 2131493010;
 			
-			// aapt resource value: 0x7F0803AA
-			public const int stripLinesLayout = 2131231658;
+			// aapt resource value: 0x7f0c0093
+			public const int search_src_text = 2131493011;
 			
-			// aapt resource value: 0x7F0803AB
-			public const int submenuarrow = 2131231659;
+			// aapt resource value: 0x7f0c0097
+			public const int search_voice_btn = 2131493015;
 			
-			// aapt resource value: 0x7F0803AC
-			public const int submit_area = 2131231660;
+			// aapt resource value: 0x7f0c0098
+			public const int select_dialog_listview = 2131493016;
 			
-			// aapt resource value: 0x7F0802DA
-			public const int SYM = 2131231450;
+			// aapt resource value: 0x7f0c00b6
+			public const int seriesLayout = 2131493046;
 			
-			// aapt resource value: 0x7F0803AD
-			public const int tabMode = 2131231661;
+			// aapt resource value: 0x7f0c00d2
+			public const int sevensegment = 2131493074;
 			
-			// aapt resource value: 0x7F0803AE
-			public const int tag_transition_group = 2131231662;
+			// aapt resource value: 0x7f0c0082
+			public const int shortcut = 2131492994;
 			
-			// aapt resource value: 0x7F0803AF
-			public const int technicalIndicatorLayout = 2131231663;
+			// aapt resource value: 0x7f0c0023
+			public const int showCustom = 2131492899;
 			
-			// aapt resource value: 0x7F0803B0
-			public const int text = 2131231664;
+			// aapt resource value: 0x7f0c0024
+			public const int showHome = 2131492900;
 			
-			// aapt resource value: 0x7F0803B1
-			public const int text2 = 2131231665;
+			// aapt resource value: 0x7f0c0025
+			public const int showTitle = 2131492901;
 			
-			// aapt resource value: 0x7F0803B6
-			public const int textinput_counter = 2131231670;
+			// aapt resource value: 0x7f0c00d5
+			public const int sixteensegment = 2131493077;
 			
-			// aapt resource value: 0x7F0803B7
-			public const int textinput_error = 2131231671;
+			// aapt resource value: 0x7f0c00c4
+			public const int smallLabel = 2131493060;
 			
-			// aapt resource value: 0x7F0803B2
-			public const int textSpacerNoButtons = 2131231666;
+			// aapt resource value: 0x7f0c00cb
+			public const int snackbar_action = 2131493067;
 			
-			// aapt resource value: 0x7F0803B3
-			public const int textSpacerNoTitle = 2131231667;
+			// aapt resource value: 0x7f0c00ca
+			public const int snackbar_text = 2131493066;
 			
-			// aapt resource value: 0x7F0803B4
-			public const int textView1 = 2131231668;
+			// aapt resource value: 0x7f0c0043
+			public const int snap = 2131492931;
 			
-			// aapt resource value: 0x7F0803B5
-			public const int text_input_password_toggle = 2131231669;
+			// aapt resource value: 0x7f0c0073
+			public const int spacer = 2131492979;
 			
-			// aapt resource value: 0x7F0803B8
-			public const int thumbLayout = 2131231672;
+			// aapt resource value: 0x7f0c0008
+			public const int split_action_bar = 2131492872;
 			
-			// aapt resource value: 0x7F0803B9
-			public const int time = 2131231673;
+			// aapt resource value: 0x7f0c002a
+			public const int src_atop = 2131492906;
 			
-			// aapt resource value: 0x7F0803BA
-			public const int title = 2131231674;
+			// aapt resource value: 0x7f0c002b
+			public const int src_in = 2131492907;
 			
-			// aapt resource value: 0x7F0803BB
-			public const int titleDividerNoCustom = 2131231675;
+			// aapt resource value: 0x7f0c002c
+			public const int src_over = 2131492908;
 			
-			// aapt resource value: 0x7F0803BC
-			public const int titleLayout = 2131231676;
+			// aapt resource value: 0x7f0c004b
+			public const int start = 2131492939;
 			
-			// aapt resource value: 0x7F0803BD
-			public const int title_template = 2131231677;
+			// aapt resource value: 0x7f0c0341
+			public const int status_bar_latest_event_content = 2131493697;
 			
-			// aapt resource value: 0x7F0803BE
-			public const int tomatoSpectrum = 2131231678;
+			// aapt resource value: 0x7f0c00b5
+			public const int stripLinesLayout = 2131493045;
 			
-			// aapt resource value: 0x7F0802EA
-			public const int Toolbar = 2131231466;
+			// aapt resource value: 0x7f0c0084
+			public const int submenuarrow = 2131492996;
 			
-			// aapt resource value: 0x7F0803BF
-			public const int top = 2131231679;
+			// aapt resource value: 0x7f0c0095
+			public const int submit_area = 2131493013;
 			
-			// aapt resource value: 0x7F0803C0
-			public const int topPanel = 2131231680;
+			// aapt resource value: 0x7f0c001f
+			public const int tabMode = 2131492895;
 			
-			// aapt resource value: 0x7F0803C1
-			public const int top_labels = 2131231681;
+			// aapt resource value: 0x7f0c0019
+			public const int tag_transition_group = 2131492889;
 			
-			// aapt resource value: 0x7F0802EB
-			public const int TotalProgressBar = 2131231467;
+			// aapt resource value: 0x7f0c00b8
+			public const int technicalIndicatorLayout = 2131493048;
 			
-			// aapt resource value: 0x7F0802EC
-			public const int TotalProgressLayout = 2131231468;
+			// aapt resource value: 0x7f0c001a
+			public const int text = 2131492890;
 			
-			// aapt resource value: 0x7F0802ED
-			public const int TotalProgressPercentage = 2131231469;
+			// aapt resource value: 0x7f0c001b
+			public const int text2 = 2131492891;
 			
-			// aapt resource value: 0x7F0803C2
-			public const int touch_outside = 2131231682;
+			// aapt resource value: 0x7f0c0079
+			public const int textSpacerNoButtons = 2131492985;
 			
-			// aapt resource value: 0x7F0803C3
-			public const int transition_current_scene = 2131231683;
+			// aapt resource value: 0x7f0c0078
+			public const int textSpacerNoTitle = 2131492984;
 			
-			// aapt resource value: 0x7F0803C4
-			public const int transition_layout_save = 2131231684;
+			// aapt resource value: 0x7f0c0261
+			public const int textView1 = 2131493473;
 			
-			// aapt resource value: 0x7F0803C5
-			public const int transition_position = 2131231685;
+			// aapt resource value: 0x7f0c00d1
+			public const int text_input_password_toggle = 2131493073;
 			
-			// aapt resource value: 0x7F0803C6
-			public const int transition_scene_layoutid_cache = 2131231686;
+			// aapt resource value: 0x7f0c0014
+			public const int textinput_counter = 2131492884;
 			
-			// aapt resource value: 0x7F0803C7
-			public const int transition_transform = 2131231687;
+			// aapt resource value: 0x7f0c0015
+			public const int textinput_error = 2131492885;
 			
-			// aapt resource value: 0x7F0803C8
-			public const int uniform = 2131231688;
+			// aapt resource value: 0x7f0c039f
+			public const int thumbLayout = 2131493791;
 			
-			// aapt resource value: 0x7F0803C9
-			public const int up = 2131231689;
+			// aapt resource value: 0x7f0c0347
+			public const int time = 2131493703;
 			
-			// aapt resource value: 0x7F0803CA
-			public const int useLogo = 2131231690;
+			// aapt resource value: 0x7f0c001c
+			public const int title = 2131492892;
 			
-			// aapt resource value: 0x7F0803CB
-			public const int vertical = 2131231691;
+			// aapt resource value: 0x7f0c007f
+			public const int titleDividerNoCustom = 2131492991;
 			
-			// aapt resource value: 0x7F0803CC
-			public const int view_offset_helper = 2131231692;
+			// aapt resource value: 0x7f0c00b3
+			public const int titleLayout = 2131493043;
 			
-			// aapt resource value: 0x7F0803CD
-			public const int visible = 2131231693;
+			// aapt resource value: 0x7f0c007d
+			public const int title_template = 2131492989;
 			
-			// aapt resource value: 0x7F0802EE
-			public const int WebBrowser = 2131231470;
+			// aapt resource value: 0x7f0c0068
+			public const int tomatoSpectrum = 2131492968;
 			
-			// aapt resource value: 0x7F0802EF
-			public const int WebBrowserMainLayout = 2131231471;
+			// aapt resource value: 0x7f0c003e
+			public const int top = 2131492926;
 			
-			// aapt resource value: 0x7F0802F0
-			public const int WebBrowserProgressBar = 2131231472;
+			// aapt resource value: 0x7f0c007c
+			public const int topPanel = 2131492988;
 			
-			// aapt resource value: 0x7F0802F1
-			public const int WebBrowserSnackbarLayout = 2131231473;
+			// aapt resource value: 0x7f0c039b
+			public const int top_labels = 2131493787;
 			
-			// aapt resource value: 0x7F0803CE
-			public const int withText = 2131231694;
+			// aapt resource value: 0x7f0c00c8
+			public const int touch_outside = 2131493064;
 			
-			// aapt resource value: 0x7F0803CF
-			public const int wrap_content = 2131231695;
+			// aapt resource value: 0x7f0c000f
+			public const int transition_current_scene = 2131492879;
 			
-			// aapt resource value: 0x7F0802F2
-			public const int ZinaOSBootTextLayout = 2131231474;
+			// aapt resource value: 0x7f0c0010
+			public const int transition_layout_save = 2131492880;
 			
-			// aapt resource value: 0x7F0802F3
-			public const int ZinaOSBootTextView = 2131231475;
+			// aapt resource value: 0x7f0c0011
+			public const int transition_position = 2131492881;
 			
-			// aapt resource value: 0x7F0802F4
-			public const int ZinaOSBootViewLayout = 2131231476;
+			// aapt resource value: 0x7f0c0012
+			public const int transition_scene_layoutid_cache = 2131492882;
 			
-			// aapt resource value: 0x7F0802F5
-			public const int ZinaOSLoadProgressBar = 2131231477;
+			// aapt resource value: 0x7f0c0013
+			public const int transition_transform = 2131492883;
 			
-			// aapt resource value: 0x7F0802F6
-			public const int ZinaOSLoadProgressLayout = 2131231478;
+			// aapt resource value: 0x7f0c002d
+			public const int uniform = 2131492909;
 			
-			// aapt resource value: 0x7F0802F7
-			public const int ZinaOSMainBootLogo = 2131231479;
+			// aapt resource value: 0x7f0c0009
+			public const int up = 2131492873;
 			
-			// aapt resource value: 0x7F0802F8
-			public const int ZinaOSMainLayout = 2131231480;
+			// aapt resource value: 0x7f0c0026
+			public const int useLogo = 2131492902;
 			
-			// aapt resource value: 0x7F0802F9
-			public const int ZinaOSMainMenuHiddenEventButton = 2131231481;
+			// aapt resource value: 0x7f0c0063
+			public const int vertical = 2131492963;
 			
-			// aapt resource value: 0x7F0802FA
-			public const int ZinaOSMainMenuHiddenExtraButton = 2131231482;
+			// aapt resource value: 0x7f0c0016
+			public const int view_offset_helper = 2131492886;
 			
-			// aapt resource value: 0x7F0802FB
-			public const int ZinaOSMainMenuHiddenGalleryButton = 2131231483;
+			// aapt resource value: 0x7f0c0060
+			public const int visible = 2131492960;
 			
-			// aapt resource value: 0x7F0802FC
-			public const int ZinaOSMainMenuHiddenSettingButton = 2131231484;
+			// aapt resource value: 0x7f0c003c
+			public const int withText = 2131492924;
 			
-			// aapt resource value: 0x7F0802FD
-			public const int ZinaOSMainMenuLayout = 2131231485;
+			// aapt resource value: 0x7f0c002e
+			public const int wrap_content = 2131492910;
 			
 			static Id()
 			{
@@ -6137,38 +6155,38 @@ namespace GFI_with_GFS_A
 		public partial class Integer
 		{
 			
-			// aapt resource value: 0x7F090000
-			public const int abc_config_activityDefaultDur = 2131296256;
+			// aapt resource value: 0x7f080001
+			public const int abc_config_activityDefaultDur = 2131230721;
 			
-			// aapt resource value: 0x7F090001
-			public const int abc_config_activityShortDur = 2131296257;
+			// aapt resource value: 0x7f080002
+			public const int abc_config_activityShortDur = 2131230722;
 			
-			// aapt resource value: 0x7F090002
-			public const int app_bar_elevation_anim_duration = 2131296258;
+			// aapt resource value: 0x7f080006
+			public const int app_bar_elevation_anim_duration = 2131230726;
 			
-			// aapt resource value: 0x7F090003
-			public const int bottom_sheet_slide_duration = 2131296259;
+			// aapt resource value: 0x7f080007
+			public const int bottom_sheet_slide_duration = 2131230727;
 			
-			// aapt resource value: 0x7F090004
-			public const int cancel_button_image_alpha = 2131296260;
+			// aapt resource value: 0x7f080003
+			public const int cancel_button_image_alpha = 2131230723;
 			
-			// aapt resource value: 0x7F090005
-			public const int config_tooltipAnimTime = 2131296261;
+			// aapt resource value: 0x7f080004
+			public const int config_tooltipAnimTime = 2131230724;
 			
-			// aapt resource value: 0x7F090006
-			public const int design_snackbar_text_max_lines = 2131296262;
+			// aapt resource value: 0x7f080005
+			public const int design_snackbar_text_max_lines = 2131230725;
 			
-			// aapt resource value: 0x7F090007
-			public const int google_play_services_version = 2131296263;
+			// aapt resource value: 0x7f080000
+			public const int google_play_services_version = 2131230720;
 			
-			// aapt resource value: 0x7F090008
-			public const int hide_password_duration = 2131296264;
+			// aapt resource value: 0x7f080008
+			public const int hide_password_duration = 2131230728;
 			
-			// aapt resource value: 0x7F090009
-			public const int show_password_duration = 2131296265;
+			// aapt resource value: 0x7f080009
+			public const int show_password_duration = 2131230729;
 			
-			// aapt resource value: 0x7F09000A
-			public const int status_bar_notification_info_maxnum = 2131296266;
+			// aapt resource value: 0x7f08000a
+			public const int status_bar_notification_info_maxnum = 2131230730;
 			
 			static Integer()
 			{
@@ -6183,344 +6201,344 @@ namespace GFI_with_GFS_A
 		public partial class Layout
 		{
 			
-			// aapt resource value: 0x7F0A0000
-			public const int abc_action_bar_title_item = 2131361792;
+			// aapt resource value: 0x7f030000
+			public const int abc_action_bar_title_item = 2130903040;
 			
-			// aapt resource value: 0x7F0A0001
-			public const int abc_action_bar_up_container = 2131361793;
+			// aapt resource value: 0x7f030001
+			public const int abc_action_bar_up_container = 2130903041;
 			
-			// aapt resource value: 0x7F0A0002
-			public const int abc_action_menu_item_layout = 2131361794;
+			// aapt resource value: 0x7f030002
+			public const int abc_action_menu_item_layout = 2130903042;
 			
-			// aapt resource value: 0x7F0A0003
-			public const int abc_action_menu_layout = 2131361795;
+			// aapt resource value: 0x7f030003
+			public const int abc_action_menu_layout = 2130903043;
 			
-			// aapt resource value: 0x7F0A0004
-			public const int abc_action_mode_bar = 2131361796;
+			// aapt resource value: 0x7f030004
+			public const int abc_action_mode_bar = 2130903044;
 			
-			// aapt resource value: 0x7F0A0005
-			public const int abc_action_mode_close_item_material = 2131361797;
+			// aapt resource value: 0x7f030005
+			public const int abc_action_mode_close_item_material = 2130903045;
 			
-			// aapt resource value: 0x7F0A0006
-			public const int abc_activity_chooser_view = 2131361798;
+			// aapt resource value: 0x7f030006
+			public const int abc_activity_chooser_view = 2130903046;
 			
-			// aapt resource value: 0x7F0A0007
-			public const int abc_activity_chooser_view_list_item = 2131361799;
+			// aapt resource value: 0x7f030007
+			public const int abc_activity_chooser_view_list_item = 2130903047;
 			
-			// aapt resource value: 0x7F0A0008
-			public const int abc_alert_dialog_button_bar_material = 2131361800;
+			// aapt resource value: 0x7f030008
+			public const int abc_alert_dialog_button_bar_material = 2130903048;
 			
-			// aapt resource value: 0x7F0A0009
-			public const int abc_alert_dialog_material = 2131361801;
+			// aapt resource value: 0x7f030009
+			public const int abc_alert_dialog_material = 2130903049;
 			
-			// aapt resource value: 0x7F0A000A
-			public const int abc_alert_dialog_title_material = 2131361802;
+			// aapt resource value: 0x7f03000a
+			public const int abc_alert_dialog_title_material = 2130903050;
 			
-			// aapt resource value: 0x7F0A000B
-			public const int abc_dialog_title_material = 2131361803;
+			// aapt resource value: 0x7f03000b
+			public const int abc_dialog_title_material = 2130903051;
 			
-			// aapt resource value: 0x7F0A000C
-			public const int abc_expanded_menu_layout = 2131361804;
+			// aapt resource value: 0x7f03000c
+			public const int abc_expanded_menu_layout = 2130903052;
 			
-			// aapt resource value: 0x7F0A000D
-			public const int abc_list_menu_item_checkbox = 2131361805;
+			// aapt resource value: 0x7f03000d
+			public const int abc_list_menu_item_checkbox = 2130903053;
 			
-			// aapt resource value: 0x7F0A000E
-			public const int abc_list_menu_item_icon = 2131361806;
+			// aapt resource value: 0x7f03000e
+			public const int abc_list_menu_item_icon = 2130903054;
 			
-			// aapt resource value: 0x7F0A000F
-			public const int abc_list_menu_item_layout = 2131361807;
+			// aapt resource value: 0x7f03000f
+			public const int abc_list_menu_item_layout = 2130903055;
 			
-			// aapt resource value: 0x7F0A0010
-			public const int abc_list_menu_item_radio = 2131361808;
+			// aapt resource value: 0x7f030010
+			public const int abc_list_menu_item_radio = 2130903056;
 			
-			// aapt resource value: 0x7F0A0011
-			public const int abc_popup_menu_header_item_layout = 2131361809;
+			// aapt resource value: 0x7f030011
+			public const int abc_popup_menu_header_item_layout = 2130903057;
 			
-			// aapt resource value: 0x7F0A0012
-			public const int abc_popup_menu_item_layout = 2131361810;
+			// aapt resource value: 0x7f030012
+			public const int abc_popup_menu_item_layout = 2130903058;
 			
-			// aapt resource value: 0x7F0A0013
-			public const int abc_screen_content_include = 2131361811;
+			// aapt resource value: 0x7f030013
+			public const int abc_screen_content_include = 2130903059;
 			
-			// aapt resource value: 0x7F0A0014
-			public const int abc_screen_simple = 2131361812;
+			// aapt resource value: 0x7f030014
+			public const int abc_screen_simple = 2130903060;
 			
-			// aapt resource value: 0x7F0A0015
-			public const int abc_screen_simple_overlay_action_mode = 2131361813;
+			// aapt resource value: 0x7f030015
+			public const int abc_screen_simple_overlay_action_mode = 2130903061;
 			
-			// aapt resource value: 0x7F0A0016
-			public const int abc_screen_toolbar = 2131361814;
+			// aapt resource value: 0x7f030016
+			public const int abc_screen_toolbar = 2130903062;
 			
-			// aapt resource value: 0x7F0A0017
-			public const int abc_search_dropdown_item_icons_2line = 2131361815;
+			// aapt resource value: 0x7f030017
+			public const int abc_search_dropdown_item_icons_2line = 2130903063;
 			
-			// aapt resource value: 0x7F0A0018
-			public const int abc_search_view = 2131361816;
+			// aapt resource value: 0x7f030018
+			public const int abc_search_view = 2130903064;
 			
-			// aapt resource value: 0x7F0A0019
-			public const int abc_select_dialog_material = 2131361817;
+			// aapt resource value: 0x7f030019
+			public const int abc_select_dialog_material = 2130903065;
 			
-			// aapt resource value: 0x7F0A001D
-			public const int CalcMainLayout = 2131361821;
+			// aapt resource value: 0x7f03001a
+			public const int Calc_Core = 2130903066;
 			
-			// aapt resource value: 0x7F0A001A
-			public const int Calc_Core = 2131361818;
+			// aapt resource value: 0x7f03001b
+			public const int Calc_ExpItem = 2130903067;
 			
-			// aapt resource value: 0x7F0A001B
-			public const int Calc_ExpItem = 2131361819;
+			// aapt resource value: 0x7f03001c
+			public const int Calc_SkillTraining = 2130903068;
 			
-			// aapt resource value: 0x7F0A001C
-			public const int Calc_SkillTraining = 2131361820;
+			// aapt resource value: 0x7f03001d
+			public const int CalcMainLayout = 2130903069;
 			
-			// aapt resource value: 0x7F0A001E
-			public const int chart_layout = 2131361822;
+			// aapt resource value: 0x7f03001e
+			public const int chart_layout = 2130903070;
 			
-			// aapt resource value: 0x7F0A001F
-			public const int chart_legend = 2131361823;
+			// aapt resource value: 0x7f03001f
+			public const int chart_legend = 2130903071;
 			
-			// aapt resource value: 0x7F0A0020
-			public const int chart_legend_item = 2131361824;
+			// aapt resource value: 0x7f030020
+			public const int chart_legend_item = 2130903072;
 			
-			// aapt resource value: 0x7F0A0021
-			public const int circulargauge_layout = 2131361825;
+			// aapt resource value: 0x7f030021
+			public const int circulargauge_layout = 2130903073;
 			
-			// aapt resource value: 0x7F0A0022
-			public const int design_bottom_navigation_item = 2131361826;
+			// aapt resource value: 0x7f030022
+			public const int design_bottom_navigation_item = 2130903074;
 			
-			// aapt resource value: 0x7F0A0023
-			public const int design_bottom_sheet_dialog = 2131361827;
+			// aapt resource value: 0x7f030023
+			public const int design_bottom_sheet_dialog = 2130903075;
 			
-			// aapt resource value: 0x7F0A0024
-			public const int design_layout_snackbar = 2131361828;
+			// aapt resource value: 0x7f030024
+			public const int design_layout_snackbar = 2130903076;
 			
-			// aapt resource value: 0x7F0A0025
-			public const int design_layout_snackbar_include = 2131361829;
+			// aapt resource value: 0x7f030025
+			public const int design_layout_snackbar_include = 2130903077;
 			
-			// aapt resource value: 0x7F0A0026
-			public const int design_layout_tab_icon = 2131361830;
+			// aapt resource value: 0x7f030026
+			public const int design_layout_tab_icon = 2130903078;
 			
-			// aapt resource value: 0x7F0A0027
-			public const int design_layout_tab_text = 2131361831;
+			// aapt resource value: 0x7f030027
+			public const int design_layout_tab_text = 2130903079;
 			
-			// aapt resource value: 0x7F0A0028
-			public const int design_menu_item_action_area = 2131361832;
+			// aapt resource value: 0x7f030028
+			public const int design_menu_item_action_area = 2130903080;
 			
-			// aapt resource value: 0x7F0A0029
-			public const int design_navigation_item = 2131361833;
+			// aapt resource value: 0x7f030029
+			public const int design_navigation_item = 2130903081;
 			
-			// aapt resource value: 0x7F0A002A
-			public const int design_navigation_item_header = 2131361834;
+			// aapt resource value: 0x7f03002a
+			public const int design_navigation_item_header = 2130903082;
 			
-			// aapt resource value: 0x7F0A002B
-			public const int design_navigation_item_separator = 2131361835;
+			// aapt resource value: 0x7f03002b
+			public const int design_navigation_item_separator = 2130903083;
 			
-			// aapt resource value: 0x7F0A002C
-			public const int design_navigation_item_subheader = 2131361836;
+			// aapt resource value: 0x7f03002c
+			public const int design_navigation_item_subheader = 2130903084;
 			
-			// aapt resource value: 0x7F0A002D
-			public const int design_navigation_menu = 2131361837;
+			// aapt resource value: 0x7f03002d
+			public const int design_navigation_menu = 2130903085;
 			
-			// aapt resource value: 0x7F0A002E
-			public const int design_navigation_menu_item = 2131361838;
+			// aapt resource value: 0x7f03002e
+			public const int design_navigation_menu_item = 2130903086;
 			
-			// aapt resource value: 0x7F0A002F
-			public const int design_text_input_password_icon = 2131361839;
+			// aapt resource value: 0x7f03002f
+			public const int design_text_input_password_icon = 2130903087;
 			
-			// aapt resource value: 0x7F0A0030
-			public const int digitalgauge_layout = 2131361840;
+			// aapt resource value: 0x7f030030
+			public const int digitalgauge_layout = 2130903088;
 			
-			// aapt resource value: 0x7F0A0032
-			public const int DollDBDetailLayout = 2131361842;
+			// aapt resource value: 0x7f030031
+			public const int DollDB_ImageViewer = 2130903089;
 			
-			// aapt resource value: 0x7F0A0033
-			public const int DollDBListLayout = 2131361843;
+			// aapt resource value: 0x7f030032
+			public const int DollDBDetailLayout = 2130903090;
 			
-			// aapt resource value: 0x7F0A0034
-			public const int DollDBSDAnimationLayout = 2131361844;
+			// aapt resource value: 0x7f030033
+			public const int DollDBListLayout = 2130903091;
 			
-			// aapt resource value: 0x7F0A0031
-			public const int DollDB_ImageViewer = 2131361841;
+			// aapt resource value: 0x7f030034
+			public const int DollDBSDAnimationLayout = 2130903092;
 			
-			// aapt resource value: 0x7F0A0035
-			public const int DollFilterLayout = 2131361845;
+			// aapt resource value: 0x7f030035
+			public const int DollFilterLayout = 2130903093;
 			
-			// aapt resource value: 0x7F0A0036
-			public const int DollListLayout = 2131361846;
+			// aapt resource value: 0x7f030036
+			public const int DollListLayout = 2130903094;
 			
-			// aapt resource value: 0x7F0A0037
-			public const int EnemyDBDetailLayout = 2131361847;
+			// aapt resource value: 0x7f030037
+			public const int EnemyDBDetailLayout = 2130903095;
 			
-			// aapt resource value: 0x7F0A0038
-			public const int EnemyDBListLayout = 2131361848;
+			// aapt resource value: 0x7f030038
+			public const int EnemyDBListLayout = 2130903096;
 			
-			// aapt resource value: 0x7F0A0039
-			public const int EnemyFilterLayout = 2131361849;
+			// aapt resource value: 0x7f030039
+			public const int EnemyFilterLayout = 2130903097;
 			
-			// aapt resource value: 0x7F0A003A
-			public const int EnemyListLayout = 2131361850;
+			// aapt resource value: 0x7f03003a
+			public const int EnemyListLayout = 2130903098;
 			
-			// aapt resource value: 0x7F0A003B
-			public const int EquipDBDetailLayout = 2131361851;
+			// aapt resource value: 0x7f03003b
+			public const int EquipDBDetailLayout = 2130903099;
 			
-			// aapt resource value: 0x7F0A003C
-			public const int EquipDBListLayout = 2131361852;
+			// aapt resource value: 0x7f03003c
+			public const int EquipDBListLayout = 2130903100;
 			
-			// aapt resource value: 0x7F0A003D
-			public const int EquipFilterLayout = 2131361853;
+			// aapt resource value: 0x7f03003d
+			public const int EquipFilterLayout = 2130903101;
 			
-			// aapt resource value: 0x7F0A003E
-			public const int EquipListLayout = 2131361854;
+			// aapt resource value: 0x7f03003e
+			public const int EquipListLayout = 2130903102;
 			
-			// aapt resource value: 0x7F0A003F
-			public const int EventListLayout = 2131361855;
+			// aapt resource value: 0x7f03003f
+			public const int EventListLayout = 2130903103;
 			
-			// aapt resource value: 0x7F0A0040
-			public const int EventWebLayout = 2131361856;
+			// aapt resource value: 0x7f030040
+			public const int EventWebLayout = 2130903104;
 			
-			// aapt resource value: 0x7F0A0042
-			public const int FairyDBDetailLayout = 2131361858;
+			// aapt resource value: 0x7f030041
+			public const int FairyDB_ImageViewer = 2130903105;
 			
-			// aapt resource value: 0x7F0A0043
-			public const int FairyDBListLayout = 2131361859;
+			// aapt resource value: 0x7f030042
+			public const int FairyDBDetailLayout = 2130903106;
 			
-			// aapt resource value: 0x7F0A0041
-			public const int FairyDB_ImageViewer = 2131361857;
+			// aapt resource value: 0x7f030043
+			public const int FairyDBListLayout = 2130903107;
 			
-			// aapt resource value: 0x7F0A0044
-			public const int FairyFilterLayout = 2131361860;
+			// aapt resource value: 0x7f030044
+			public const int FairyFilterLayout = 2130903108;
 			
-			// aapt resource value: 0x7F0A0045
-			public const int FairyListLayout = 2131361861;
+			// aapt resource value: 0x7f030045
+			public const int FairyListLayout = 2130903109;
 			
-			// aapt resource value: 0x7F0A0046
-			public const int FSTDBDetailLayout = 2131361862;
+			// aapt resource value: 0x7f030046
+			public const int FSTDBDetailLayout = 2130903110;
 			
-			// aapt resource value: 0x7F0A0047
-			public const int FSTDBListLayout = 2131361863;
+			// aapt resource value: 0x7f030047
+			public const int FSTDBListLayout = 2130903111;
 			
-			// aapt resource value: 0x7F0A0048
-			public const int FSTFilterLayout = 2131361864;
+			// aapt resource value: 0x7f030048
+			public const int FSTFilterLayout = 2130903112;
 			
-			// aapt resource value: 0x7F0A0049
-			public const int FSTListLayout = 2131361865;
+			// aapt resource value: 0x7f030049
+			public const int FSTListLayout = 2130903113;
 			
-			// aapt resource value: 0x7F0A004A
-			public const int GFDInfoLayout = 2131361866;
+			// aapt resource value: 0x7f03004a
+			public const int GFDInfoLayout = 2130903114;
 			
-			// aapt resource value: 0x7F0A004B
-			public const int MainLayout = 2131361867;
+			// aapt resource value: 0x7f03004b
+			public const int MainLayout = 2130903115;
 			
-			// aapt resource value: 0x7F0A004C
-			public const int notification_action = 2131361868;
+			// aapt resource value: 0x7f03004c
+			public const int notification_action = 2130903116;
 			
-			// aapt resource value: 0x7F0A004D
-			public const int notification_action_tombstone = 2131361869;
+			// aapt resource value: 0x7f03004d
+			public const int notification_action_tombstone = 2130903117;
 			
-			// aapt resource value: 0x7F0A004E
-			public const int notification_media_action = 2131361870;
+			// aapt resource value: 0x7f03004e
+			public const int notification_media_action = 2130903118;
 			
-			// aapt resource value: 0x7F0A004F
-			public const int notification_media_cancel_action = 2131361871;
+			// aapt resource value: 0x7f03004f
+			public const int notification_media_cancel_action = 2130903119;
 			
-			// aapt resource value: 0x7F0A0050
-			public const int notification_template_big_media = 2131361872;
+			// aapt resource value: 0x7f030050
+			public const int notification_template_big_media = 2130903120;
 			
-			// aapt resource value: 0x7F0A0051
-			public const int notification_template_big_media_custom = 2131361873;
+			// aapt resource value: 0x7f030051
+			public const int notification_template_big_media_custom = 2130903121;
 			
-			// aapt resource value: 0x7F0A0052
-			public const int notification_template_big_media_narrow = 2131361874;
+			// aapt resource value: 0x7f030052
+			public const int notification_template_big_media_narrow = 2130903122;
 			
-			// aapt resource value: 0x7F0A0053
-			public const int notification_template_big_media_narrow_custom = 2131361875;
+			// aapt resource value: 0x7f030053
+			public const int notification_template_big_media_narrow_custom = 2130903123;
 			
-			// aapt resource value: 0x7F0A0054
-			public const int notification_template_custom_big = 2131361876;
+			// aapt resource value: 0x7f030054
+			public const int notification_template_custom_big = 2130903124;
 			
-			// aapt resource value: 0x7F0A0055
-			public const int notification_template_icon_group = 2131361877;
+			// aapt resource value: 0x7f030055
+			public const int notification_template_icon_group = 2130903125;
 			
-			// aapt resource value: 0x7F0A0056
-			public const int notification_template_lines_media = 2131361878;
+			// aapt resource value: 0x7f030056
+			public const int notification_template_lines_media = 2130903126;
 			
-			// aapt resource value: 0x7F0A0057
-			public const int notification_template_media = 2131361879;
+			// aapt resource value: 0x7f030057
+			public const int notification_template_media = 2130903127;
 			
-			// aapt resource value: 0x7F0A0058
-			public const int notification_template_media_custom = 2131361880;
+			// aapt resource value: 0x7f030058
+			public const int notification_template_media_custom = 2130903128;
 			
-			// aapt resource value: 0x7F0A0059
-			public const int notification_template_part_chronometer = 2131361881;
+			// aapt resource value: 0x7f030059
+			public const int notification_template_part_chronometer = 2130903129;
 			
-			// aapt resource value: 0x7F0A005A
-			public const int notification_template_part_time = 2131361882;
+			// aapt resource value: 0x7f03005a
+			public const int notification_template_part_time = 2130903130;
 			
-			// aapt resource value: 0x7F0A005B
-			public const int OldGFDLayout = 2131361883;
+			// aapt resource value: 0x7f03005b
+			public const int OldGFDLayout = 2130903131;
 			
-			// aapt resource value: 0x7F0A005C
-			public const int ProductPercentTableLayout = 2131361884;
+			// aapt resource value: 0x7f03005c
+			public const int ProductPercentTableLayout = 2130903132;
 			
-			// aapt resource value: 0x7F0A005D
-			public const int ProductResultLayout = 2131361885;
+			// aapt resource value: 0x7f03005d
+			public const int ProductResultLayout = 2130903133;
 			
-			// aapt resource value: 0x7F0A005E
-			public const int ProductSimulatorLayout = 2131361886;
+			// aapt resource value: 0x7f03005e
+			public const int ProductSimulatorLayout = 2130903134;
 			
-			// aapt resource value: 0x7F0A005F
-			public const int ProductSimulatorSelectLayout = 2131361887;
+			// aapt resource value: 0x7f03005f
+			public const int ProductSimulatorSelectLayout = 2130903135;
 			
-			// aapt resource value: 0x7F0A0060
-			public const int ProgressDialogLayout = 2131361888;
+			// aapt resource value: 0x7f030060
+			public const int ProgressDialogLayout = 2130903136;
 			
-			// aapt resource value: 0x7F0A0061
-			public const int range_navigator_layout = 2131361889;
+			// aapt resource value: 0x7f030061
+			public const int range_navigator_layout = 2130903137;
 			
-			// aapt resource value: 0x7F0A0062
-			public const int RFBotLayout = 2131361890;
+			// aapt resource value: 0x7f030062
+			public const int RFBotLayout = 2130903138;
 			
-			// aapt resource value: 0x7F0A0063
-			public const int select_dialog_item_material = 2131361891;
+			// aapt resource value: 0x7f030063
+			public const int select_dialog_item_material = 2130903139;
 			
-			// aapt resource value: 0x7F0A0064
-			public const int select_dialog_multichoice_material = 2131361892;
+			// aapt resource value: 0x7f030064
+			public const int select_dialog_multichoice_material = 2130903140;
 			
-			// aapt resource value: 0x7F0A0065
-			public const int select_dialog_singlechoice_material = 2131361893;
+			// aapt resource value: 0x7f030065
+			public const int select_dialog_singlechoice_material = 2130903141;
 			
-			// aapt resource value: 0x7F0A0066
-			public const int SettingMainLayout = 2131361894;
+			// aapt resource value: 0x7f030066
+			public const int SettingMainLayout = 2130903142;
 			
-			// aapt resource value: 0x7F0A0067
-			public const int SideLinkFABLayout = 2131361895;
+			// aapt resource value: 0x7f030067
+			public const int SideLinkFABLayout = 2130903143;
 			
-			// aapt resource value: 0x7F0A0068
-			public const int SpinnerListLayout = 2131361896;
+			// aapt resource value: 0x7f030068
+			public const int SpinnerListLayout = 2130903144;
 			
-			// aapt resource value: 0x7F0A0069
-			public const int SpinnerProgressDialogLayout = 2131361897;
+			// aapt resource value: 0x7f030069
+			public const int SpinnerProgressDialogLayout = 2130903145;
 			
-			// aapt resource value: 0x7F0A006A
-			public const int SplashLayout = 2131361898;
+			// aapt resource value: 0x7f03006a
+			public const int SplashLayout = 2130903146;
 			
-			// aapt resource value: 0x7F0A006B
-			public const int support_simple_spinner_dropdown_item = 2131361899;
+			// aapt resource value: 0x7f03006b
+			public const int support_simple_spinner_dropdown_item = 2130903147;
 			
-			// aapt resource value: 0x7F0A006C
-			public const int TestLayout = 2131361900;
+			// aapt resource value: 0x7f03006c
+			public const int TestLayout = 2130903148;
 			
-			// aapt resource value: 0x7F0A006D
-			public const int ToolbarLayout = 2131361901;
+			// aapt resource value: 0x7f03006d
+			public const int ToolbarLayout = 2130903149;
 			
-			// aapt resource value: 0x7F0A006E
-			public const int tooltip = 2131361902;
+			// aapt resource value: 0x7f03006e
+			public const int tooltip = 2130903150;
 			
-			// aapt resource value: 0x7F0A006F
-			public const int WebBrowserLayout = 2131361903;
+			// aapt resource value: 0x7f03006f
+			public const int WebBrowserLayout = 2130903151;
 			
-			// aapt resource value: 0x7F0A0070
-			public const int ZinaOS = 2131361904;
+			// aapt resource value: 0x7f030070
+			public const int ZinaOS = 2130903152;
 			
 			static Layout()
 			{
@@ -6535,17 +6553,17 @@ namespace GFI_with_GFS_A
 		public partial class Menu
 		{
 			
-			// aapt resource value: 0x7F0B0000
-			public const int CalcMenu = 2131427328;
+			// aapt resource value: 0x7f0f0000
+			public const int CalcMenu = 2131689472;
 			
-			// aapt resource value: 0x7F0B0001
-			public const int DollDBMenu = 2131427329;
+			// aapt resource value: 0x7f0f0001
+			public const int DollDBMenu = 2131689473;
 			
-			// aapt resource value: 0x7F0B0002
-			public const int EquipDBMenu = 2131427330;
+			// aapt resource value: 0x7f0f0002
+			public const int EquipDBMenu = 2131689474;
 			
-			// aapt resource value: 0x7F0B0003
-			public const int FairyDBMenu = 2131427331;
+			// aapt resource value: 0x7f0f0003
+			public const int FairyDBMenu = 2131689475;
 			
 			static Menu()
 			{
@@ -6557,431 +6575,1116 @@ namespace GFI_with_GFS_A
 			}
 		}
 		
+		public partial class Raw
+		{
+			
+			// aapt resource value: 0x7f070000
+			public const int UI_card = 2131165184;
+			
+			// aapt resource value: 0x7f070001
+			public const int UI_card2 = 2131165185;
+			
+			// aapt resource value: 0x7f070002
+			public const int UI_flash = 2131165186;
+			
+			static Raw()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Raw()
+			{
+			}
+		}
+		
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7F0D0054
-			public const int abc_action_bar_home_description = 2131558484;
+			// aapt resource value: 0x7f09006a
+			public const int AbnormalAccess = 2131296362;
 			
-			// aapt resource value: 0x7F0D0055
-			public const int abc_action_bar_up_description = 2131558485;
+			// aapt resource value: 0x7f090068
+			public const int Activity_LoadFail = 2131296360;
 			
-			// aapt resource value: 0x7F0D0056
-			public const int abc_action_menu_overflow_description = 2131558486;
+			// aapt resource value: 0x7f090067
+			public const int Activity_OnCreateError = 2131296359;
 			
-			// aapt resource value: 0x7F0D0057
-			public const int abc_action_mode_done = 2131558487;
+			// aapt resource value: 0x7f09007d
+			public const int AdMob_ID = 2131296381;
 			
-			// aapt resource value: 0x7F0D0059
-			public const int abc_activitychooserview_choose_application = 2131558489;
+			// aapt resource value: 0x7f09007c
+			public const int AdMob_TestID = 2131296380;
 			
-			// aapt resource value: 0x7F0D0058
-			public const int abc_activity_chooser_view_see_all = 2131558488;
+			// aapt resource value: 0x7f09003d
+			public const int AlertDialog_Cancel = 2131296317;
 			
-			// aapt resource value: 0x7F0D005A
-			public const int abc_capital_off = 2131558490;
+			// aapt resource value: 0x7f09003b
+			public const int AlertDialog_Confirm = 2131296315;
 			
-			// aapt resource value: 0x7F0D005B
-			public const int abc_capital_on = 2131558491;
+			// aapt resource value: 0x7f090040
+			public const int AlertDialog_Delete = 2131296320;
 			
-			// aapt resource value: 0x7F0D005C
-			public const int abc_font_family_body_1_material = 2131558492;
+			// aapt resource value: 0x7f09003c
+			public const int AlertDialog_Download = 2131296316;
 			
-			// aapt resource value: 0x7F0D005D
-			public const int abc_font_family_body_2_material = 2131558493;
+			// aapt resource value: 0x7f09006d
+			public const int AlertDialog_Error = 2131296365;
 			
-			// aapt resource value: 0x7F0D005E
-			public const int abc_font_family_button_material = 2131558494;
+			// aapt resource value: 0x7f090041
+			public const int AlertDialog_Exit = 2131296321;
 			
-			// aapt resource value: 0x7F0D005F
-			public const int abc_font_family_caption_material = 2131558495;
+			// aapt resource value: 0x7f09003f
+			public const int AlertDialog_Reset = 2131296319;
 			
-			// aapt resource value: 0x7F0D0060
-			public const int abc_font_family_display_1_material = 2131558496;
+			// aapt resource value: 0x7f09003e
+			public const int AlertDialog_Set = 2131296318;
 			
-			// aapt resource value: 0x7F0D0061
-			public const int abc_font_family_display_2_material = 2131558497;
+			// aapt resource value: 0x7f09008b
+			public const int Animation_Error = 2131296395;
 			
-			// aapt resource value: 0x7F0D0062
-			public const int abc_font_family_display_3_material = 2131558498;
+			// aapt resource value: 0x7f090030
+			public const int ApplicationName = 2131296304;
 			
-			// aapt resource value: 0x7F0D0063
-			public const int abc_font_family_display_4_material = 2131558499;
+			// aapt resource value: 0x7f09014f
+			public const int Calc_Core_DummySettingText = 2131296591;
 			
-			// aapt resource value: 0x7F0D0064
-			public const int abc_font_family_headline_material = 2131558500;
+			// aapt resource value: 0x7f09014e
+			public const int Calc_Core_GradeSettingText = 2131296590;
 			
-			// aapt resource value: 0x7F0D0065
-			public const int abc_font_family_menu_material = 2131558501;
+			// aapt resource value: 0x7f090150
+			public const int Calc_Core_ResultCoreCountText = 2131296592;
 			
-			// aapt resource value: 0x7F0D0066
-			public const int abc_font_family_subhead_material = 2131558502;
+			// aapt resource value: 0x7f090157
+			public const int Calc_ExpItem_Caution = 2131296599;
 			
-			// aapt resource value: 0x7F0D0067
-			public const int abc_font_family_title_material = 2131558503;
+			// aapt resource value: 0x7f090154
+			public const int Calc_ExpItem_LevelSettingText = 2131296596;
 			
-			// aapt resource value: 0x7F0D0069
-			public const int abc_searchview_description_clear = 2131558505;
+			// aapt resource value: 0x7f090152
+			public const int Calc_ExpItem_ModSettingCheckBox = 2131296594;
 			
-			// aapt resource value: 0x7F0D006A
-			public const int abc_searchview_description_query = 2131558506;
+			// aapt resource value: 0x7f090151
+			public const int Calc_ExpItem_ModSettingText = 2131296593;
 			
-			// aapt resource value: 0x7F0D006B
-			public const int abc_searchview_description_search = 2131558507;
+			// aapt resource value: 0x7f090155
+			public const int Calc_ExpItem_NowTotalExpSettingText = 2131296597;
 			
-			// aapt resource value: 0x7F0D006C
-			public const int abc_searchview_description_submit = 2131558508;
+			// aapt resource value: 0x7f090156
+			public const int Calc_ExpItem_TotalResultText = 2131296598;
 			
-			// aapt resource value: 0x7F0D006D
-			public const int abc_searchview_description_voice = 2131558509;
+			// aapt resource value: 0x7f090153
+			public const int Calc_ExpItem_VowSettingCheckBox = 2131296595;
 			
-			// aapt resource value: 0x7F0D0068
-			public const int abc_search_hint = 2131558504;
+			// aapt resource value: 0x7f090158
+			public const int Calc_SkillTraining_LevelSettingText = 2131296600;
 			
-			// aapt resource value: 0x7F0D006E
-			public const int abc_shareactionprovider_share_with = 2131558510;
+			// aapt resource value: 0x7f09015a
+			public const int Calc_SkillTraining_ResultChipCountDefaultText = 2131296602;
 			
-			// aapt resource value: 0x7F0D006F
-			public const int abc_shareactionprovider_share_with_application = 2131558511;
+			// aapt resource value: 0x7f090159
+			public const int Calc_SkillTraining_ResultChipCountText = 2131296601;
 			
-			// aapt resource value: 0x7F0D0070
-			public const int abc_toolbar_collapse_description = 2131558512;
+			// aapt resource value: 0x7f09015c
+			public const int Calc_SkillTraining_ResultTimeCountDefaultText = 2131296604;
 			
-			// aapt resource value: 0x7F0D0000
-			public const int AbnormalAccess = 2131558400;
+			// aapt resource value: 0x7f09015b
+			public const int Calc_SkillTraining_ResultTimeCountText = 2131296603;
 			
-			// aapt resource value: 0x7F0D0001
-			public const int Activity_LoadFail = 2131558401;
+			// aapt resource value: 0x7f090084
+			public const int Category_InitError = 2131296388;
 			
-			// aapt resource value: 0x7F0D0002
-			public const int Activity_OnCreateError = 2131558402;
+			// aapt resource value: 0x7f0900e2
+			public const int ChangeMode_Error = 2131296482;
 			
-			// aapt resource value: 0x7F0D0003
-			public const int AdMob_ID = 2131558403;
+			// aapt resource value: 0x7f090077
+			public const int CheckDBUpdateDialog_Message = 2131296375;
 			
-			// aapt resource value: 0x7F0D0004
-			public const int AdMob_TestID = 2131558404;
+			// aapt resource value: 0x7f090076
+			public const int CheckDBUpdateDialog_Title = 2131296374;
 			
-			// aapt resource value: 0x7F0D0005
-			public const int AleartDialog_Positive = 2131558405;
+			// aapt resource value: 0x7f09007b
+			public const int CheckDBUpdate_Complete = 2131296379;
 			
-			// aapt resource value: 0x7F0D0006
-			public const int AlertDialog_Error = 2131558406;
+			// aapt resource value: 0x7f09007a
+			public const int CheckDBUpdate_UpToDate = 2131296378;
 			
-			// aapt resource value: 0x7F0D0071
-			public const int appbar_scrolling_view_behavior = 2131558513;
+			// aapt resource value: 0x7f090042
+			public const int CheckingUpdate = 2131296322;
 			
-			// aapt resource value: 0x7F0D0007
-			public const int ApplicationName = 2131558407;
+			// aapt resource value: 0x7f09008e
+			public const int Common_AC = 2131296398;
 			
-			// aapt resource value: 0x7F0D0072
-			public const int bottom_sheet_behavior = 2131558514;
+			// aapt resource value: 0x7f09008f
+			public const int Common_AC2 = 2131296399;
 			
-			// aapt resource value: 0x7F0D0073
-			public const int character_counter_pattern = 2131558515;
+			// aapt resource value: 0x7f090090
+			public const int Common_AM = 2131296400;
 			
-			// aapt resource value: 0x7F0D0008
-			public const int CheckDBUpdateDialog_Message = 2131558408;
+			// aapt resource value: 0x7f090091
+			public const int Common_AS = 2131296401;
 			
-			// aapt resource value: 0x7F0D0009
-			public const int CheckDBUpdateDialog_Title = 2131558409;
+			// aapt resource value: 0x7f0900c8
+			public const int Common_Ability = 2131296456;
 			
-			// aapt resource value: 0x7F0D000A
-			public const int CheckDBUpdate_Complete = 2131558410;
+			// aapt resource value: 0x7f0900ba
+			public const int Common_Accessories = 2131296442;
 			
-			// aapt resource value: 0x7F0D000B
-			public const int CheckDBUpdate_UpToDate = 2131558411;
+			// aapt resource value: 0x7f0900b8
+			public const int Common_AdvanceProduct = 2131296440;
 			
-			// aapt resource value: 0x7F0D000C
-			public const int CheckFreeStorage_CheckFail = 2131558412;
+			// aapt resource value: 0x7f0900d7
+			public const int Common_AdvanceProduct_Type1 = 2131296471;
 			
-			// aapt resource value: 0x7F0D000D
-			public const int CheckFreeStorage_Message = 2131558413;
+			// aapt resource value: 0x7f0900d8
+			public const int Common_AdvanceProduct_Type2 = 2131296472;
 			
-			// aapt resource value: 0x7F0D000E
-			public const int CheckFreeStorage_Title = 2131558414;
+			// aapt resource value: 0x7f0900d9
+			public const int Common_AdvanceProduct_Type3 = 2131296473;
 			
-			// aapt resource value: 0x7F0D000F
-			public const int CheckingUpdate = 2131558415;
+			// aapt resource value: 0x7f0900c3
+			public const int Common_AllowRange = 2131296451;
 			
-			// aapt resource value: 0x7F0D0074
-			public const int common_google_play_services_unknown_issue = 2131558516;
+			// aapt resource value: 0x7f090097
+			public const int Common_Ammo = 2131296407;
 			
-			// aapt resource value: 0x7F0D0010
-			public const int DBDetail_LoadDetailFail = 2131558416;
+			// aapt resource value: 0x7f0900aa
+			public const int Common_AppearancePlace = 2131296426;
 			
-			// aapt resource value: 0x7F0D0011
-			public const int DBList_DownloadCropImageCheckMessage = 2131558417;
+			// aapt resource value: 0x7f0900c6
+			public const int Common_Boss = 2131296454;
 			
-			// aapt resource value: 0x7F0D0012
-			public const int DBList_DownloadCropImageCheckTitle = 2131558418;
+			// aapt resource value: 0x7f0900b6
+			public const int Common_Buff = 2131296438;
 			
-			// aapt resource value: 0x7F0D0013
-			public const int DBList_DownloadCropImageComplete = 2131558419;
+			// aapt resource value: 0x7f090095
+			public const int Common_CL = 2131296405;
 			
-			// aapt resource value: 0x7F0D0014
-			public const int DBList_DownloadCropImageFail = 2131558420;
+			// aapt resource value: 0x7f090092
+			public const int Common_CR = 2131296402;
 			
-			// aapt resource value: 0x7F0D0015
-			public const int DBList_DownloadCropImageTitle = 2131558421;
+			// aapt resource value: 0x7f0900d3
+			public const int Common_Category = 2131296467;
 			
-			// aapt resource value: 0x7F0D0016
-			public const int DBList_FilterBoxApplyFail = 2131558422;
+			// aapt resource value: 0x7f0900a0
+			public const int Common_CodeName = 2131296416;
 			
-			// aapt resource value: 0x7F0D0017
-			public const int DBList_FilterBoxResetFail = 2131558423;
+			// aapt resource value: 0x7f09009c
+			public const int Common_Crush = 2131296412;
 			
-			// aapt resource value: 0x7F0D0018
-			public const int DBList_FilterBoxTitle = 2131558424;
+			// aapt resource value: 0x7f0900bf
+			public const int Common_Default = 2131296447;
 			
-			// aapt resource value: 0x7F0D0019
-			public const int DBList_Listing = 2131558425;
+			// aapt resource value: 0x7f0900a4
+			public const int Common_DicNumber = 2131296420;
 			
-			// aapt resource value: 0x7F0D001A
-			public const int DBList_ListingFail = 2131558426;
+			// aapt resource value: 0x7f0900c7
+			public const int Common_ETC = 2131296455;
 			
-			// aapt resource value: 0x7F0D001B
-			public const int DBList_RefreshCropImageMessage = 2131558427;
+			// aapt resource value: 0x7f090093
+			public const int Common_EV = 2131296403;
 			
-			// aapt resource value: 0x7F0D001C
-			public const int DBList_RefreshCropImageTitle = 2131558428;
+			// aapt resource value: 0x7f0900ab
+			public const int Common_Effect = 2131296427;
 			
-			// aapt resource value: 0x7F0D001D
-			public const int DB_Recovery = 2131558429;
+			// aapt resource value: 0x7f0900b1
+			public const int Common_EnemyType = 2131296433;
 			
-			// aapt resource value: 0x7F0D001E
-			public const int DevMode = 2131558430;
+			// aapt resource value: 0x7f0900ae
+			public const int Common_EquipCategory = 2131296430;
 			
-			// aapt resource value: 0x7F0D001F
-			public const int DollDBDetail_MODChangeFail = 2131558431;
+			// aapt resource value: 0x7f0900af
+			public const int Common_EquipType = 2131296431;
 			
-			// aapt resource value: 0x7F0D0020
-			public const int ETC1 = 2131558432;
+			// aapt resource value: 0x7f090094
+			public const int Common_FR = 2131296404;
 			
-			// aapt resource value: 0x7F0D0021
-			public const int Hello = 2131558433;
+			// aapt resource value: 0x7f0900b2
+			public const int Common_FSTType = 2131296434;
 			
-			// aapt resource value: 0x7F0D0022
-			public const int ImageLoad_Fail = 2131558434;
+			// aapt resource value: 0x7f0900b0
+			public const int Common_FairyType = 2131296432;
 			
-			// aapt resource value: 0x7F0D0023
-			public const int Initialize_Fail = 2131558435;
+			// aapt resource value: 0x7f0900bd
+			public const int Common_FairyType_Combat = 2131296445;
 			
-			// aapt resource value: 0x7F0D0024
-			public const int Initialize_List_Fail = 2131558436;
+			// aapt resource value: 0x7f0900be
+			public const int Common_FairyType_Strategy = 2131296446;
 			
-			// aapt resource value: 0x7F0D0025
-			public const int LatestUpdateVersion = 2131558437;
+			// aapt resource value: 0x7f0900d0
+			public const int Common_Food = 2131296464;
 			
-			// aapt resource value: 0x7F0D0075
-			public const int library_name = 2131558517;
+			// aapt resource value: 0x7f0900cd
+			public const int Common_GFDv2 = 2131296461;
 			
-			// aapt resource value: 0x7F0D0026
-			public const int Main_CheckExit = 2131558438;
+			// aapt resource value: 0x7f0900a1
+			public const int Common_Grade = 2131296417;
 			
-			// aapt resource value: 0x7F0D0027
-			public const int Main_CheckExitTitle = 2131558439;
+			// aapt resource value: 0x7f0900ad
+			public const int Common_GunType = 2131296429;
 			
-			// aapt resource value: 0x7F0D0028
-			public const int Main_NotificationInitializeFail = 2131558440;
+			// aapt resource value: 0x7f090096
+			public const int Common_HP = 2131296406;
 			
-			// aapt resource value: 0x7F0D0029
-			public const int Main_NotificationLoadFail = 2131558441;
+			// aapt resource value: 0x7f0900a9
+			public const int Common_HowToGain = 2131296425;
 			
-			// aapt resource value: 0x7F0D002A
-			public const int Main_NotificationTitle = 2131558442;
+			// aapt resource value: 0x7f0900a7
+			public const int Common_Illustrator = 2131296423;
 			
-			// aapt resource value: 0x7F0D002B
-			public const int Main_StartUpHello = 2131558443;
+			// aapt resource value: 0x7f0900c9
+			public const int Common_Init = 2131296457;
 			
-			// aapt resource value: 0x7F0D002C
-			public const int MenuAccess_Fail = 2131558444;
+			// aapt resource value: 0x7f0900dc
+			public const int Common_Input = 2131296476;
 			
-			// aapt resource value: 0x7F0D002D
-			public const int NetworkDelay = 2131558445;
+			// aapt resource value: 0x7f09009b
+			public const int Common_Kill = 2131296411;
 			
-			// aapt resource value: 0x7F0D002E
-			public const int NewFeature = 2131558446;
+			// aapt resource value: 0x7f0900ac
+			public const int Common_Mag = 2131296428;
 			
-			// aapt resource value: 0x7F0D002F
-			public const int NewFeatureDialog_Title = 2131558447;
+			// aapt resource value: 0x7f0900bb
+			public const int Common_Magazine = 2131296443;
 			
-			// aapt resource value: 0x7F0D0030
-			public const int NotifyCheckServer_Title = 2131558448;
+			// aapt resource value: 0x7f0900cf
+			public const int Common_ManPower = 2131296463;
 			
-			// aapt resource value: 0x7F0D0076
-			public const int password_toggle_content_description = 2131558518;
+			// aapt resource value: 0x7f0900cb
+			public const int Common_Max = 2131296459;
 			
-			// aapt resource value: 0x7F0D0077
-			public const int path_password_eye = 2131558519;
+			// aapt resource value: 0x7f0900ca
+			public const int Common_Min = 2131296458;
 			
-			// aapt resource value: 0x7F0D0078
-			public const int path_password_eye_mask_strike_through = 2131558520;
+			// aapt resource value: 0x7f090098
+			public const int Common_MoveSpeed = 2131296408;
 			
-			// aapt resource value: 0x7F0D0079
-			public const int path_password_eye_mask_visible = 2131558521;
+			// aapt resource value: 0x7f09009f
+			public const int Common_Name = 2131296415;
 			
-			// aapt resource value: 0x7F0D007A
-			public const int path_password_strike_through = 2131558522;
+			// aapt resource value: 0x7f09009e
+			public const int Common_NickName = 2131296414;
 			
-			// aapt resource value: 0x7F0D0031
-			public const int ProductPercentTable_LoadFail = 2131558449;
+			// aapt resource value: 0x7f0900c5
+			public const int Common_Normal = 2131296453;
 			
-			// aapt resource value: 0x7F0D007B
-			public const int q = 2131558523;
+			// aapt resource value: 0x7f0900b9
+			public const int Common_NormalProduct = 2131296441;
 			
-			// aapt resource value: 0x7F0D007C
-			public const int quarter = 2131558524;
+			// aapt resource value: 0x7f0900da
+			public const int Common_Now = 2131296474;
 			
-			// aapt resource value: 0x7F0D0034
-			public const int RetryLoad_CauseNetwork = 2131558452;
+			// aapt resource value: 0x7f0900cc
+			public const int Common_OnlyUseEquip = 2131296460;
 			
-			// aapt resource value: 0x7F0D0032
-			public const int RFBot_DisunderstandInput = 2131558450;
+			// aapt resource value: 0x7f0900d1
+			public const int Common_Parts = 2131296465;
 			
-			// aapt resource value: 0x7F0D0033
-			public const int RFBot_TestMode = 2131558451;
+			// aapt resource value: 0x7f090099
+			public const int Common_Penetration = 2131296409;
 			
-			// aapt resource value: 0x7F0D007D
-			public const int s1 = 2131558525;
+			// aapt resource value: 0x7f0900c4
+			public const int Common_Play = 2131296452;
 			
-			// aapt resource value: 0x7F0D007E
-			public const int s2 = 2131558526;
+			// aapt resource value: 0x7f0900d6
+			public const int Common_Probability = 2131296470;
 			
-			// aapt resource value: 0x7F0D007F
-			public const int s3 = 2131558527;
+			// aapt resource value: 0x7f0900a6
+			public const int Common_ProductCountry = 2131296422;
 			
-			// aapt resource value: 0x7F0D0080
-			public const int s4 = 2131558528;
+			// aapt resource value: 0x7f0900d4
+			public const int Common_ProductHitCount = 2131296468;
 			
-			// aapt resource value: 0x7F0D0081
-			public const int s5 = 2131558529;
+			// aapt resource value: 0x7f0900b3
+			public const int Common_ProductTime = 2131296435;
 			
-			// aapt resource value: 0x7F0D0082
-			public const int s6 = 2131558530;
+			// aapt resource value: 0x7f0900d5
+			public const int Common_ProductTotalCount = 2131296469;
 			
-			// aapt resource value: 0x7F0D0083
-			public const int s7 = 2131558531;
+			// aapt resource value: 0x7f0900a3
+			public const int Common_Range = 2131296419;
 			
-			// aapt resource value: 0x7F0D0084
-			public const int search_menu_title = 2131558532;
+			// aapt resource value: 0x7f0900a5
+			public const int Common_RealGunModel = 2131296421;
 			
-			// aapt resource value: 0x7F0D0035
-			public const int Setting_DeleteAllCache_CheckMessage = 2131558453;
+			// aapt resource value: 0x7f09009a
+			public const int Common_Reload = 2131296410;
 			
-			// aapt resource value: 0x7F0D0036
-			public const int Setting_DeleteAllCache_CheckTitle = 2131558454;
+			// aapt resource value: 0x7f09009d
+			public const int Common_Reload2 = 2131296413;
 			
-			// aapt resource value: 0x7F0D0037
-			public const int Setting_DeleteAllCache_Complete = 2131558455;
+			// aapt resource value: 0x7f0900b7
+			public const int Common_Skill = 2131296439;
 			
-			// aapt resource value: 0x7F0D0038
-			public const int Setting_DeleteAllCache_Fail = 2131558456;
+			// aapt resource value: 0x7f0900b5
+			public const int Common_SkillExplain = 2131296437;
 			
-			// aapt resource value: 0x7F0D0039
-			public const int Setting_DeleteAllCache_Message = 2131558457;
+			// aapt resource value: 0x7f0900b4
+			public const int Common_SkillName = 2131296436;
 			
-			// aapt resource value: 0x7F0D003A
-			public const int Setting_DeleteAllCache_Title = 2131558458;
+			// aapt resource value: 0x7f0900bc
+			public const int Common_TDoll = 2131296444;
 			
-			// aapt resource value: 0x7F0D003B
-			public const int Setting_DeleteAllLogFile_CheckMessage = 2131558459;
+			// aapt resource value: 0x7f0900d2
+			public const int Common_Tier = 2131296466;
 			
-			// aapt resource value: 0x7F0D003C
-			public const int Setting_DeleteAllLogFile_Complete = 2131558460;
+			// aapt resource value: 0x7f0900db
+			public const int Common_Total = 2131296475;
 			
-			// aapt resource value: 0x7F0D003D
-			public const int Setting_DeleteAllLogFile_Fail = 2131558461;
+			// aapt resource value: 0x7f0900ce
+			public const int Common_Update = 2131296462;
 			
-			// aapt resource value: 0x7F0D003E
-			public const int Setting_DeleteAllLogFile_Message = 2131558462;
+			// aapt resource value: 0x7f0900a2
+			public const int Common_VersionUpGrade = 2131296418;
 			
-			// aapt resource value: 0x7F0D003F
-			public const int Setting_DeleteAllLogFile_Title = 2131558463;
+			// aapt resource value: 0x7f0900a8
+			public const int Common_VoiceActor = 2131296424;
 			
-			// aapt resource value: 0x7F0D0040
-			public const int Setting_DownloadAllCache_CheckMessage = 2131558464;
+			// aapt resource value: 0x7f0900e1
+			public const int CoreCalc_ItemCount = 2131296481;
 			
-			// aapt resource value: 0x7F0D0041
-			public const int Setting_DownloadAllCache_CheckTitle = 2131558465;
+			// aapt resource value: 0x7f090059
+			public const int DBDetail_LoadDetailFail = 2131296345;
 			
-			// aapt resource value: 0x7F0D0042
-			public const int Setting_DownloadAllCache_CompleteMessage = 2131558466;
+			// aapt resource value: 0x7f09004f
+			public const int DBList_DownloadCropImageCheckMessage = 2131296335;
 			
-			// aapt resource value: 0x7F0D0043
-			public const int Setting_DownloadAllCache_CompleteTitle = 2131558467;
+			// aapt resource value: 0x7f09004d
+			public const int DBList_DownloadCropImageCheckTitle = 2131296333;
 			
-			// aapt resource value: 0x7F0D0044
-			public const int Setting_DownloadAllCache_FailMessage = 2131558468;
+			// aapt resource value: 0x7f090050
+			public const int DBList_DownloadCropImageComplete = 2131296336;
 			
-			// aapt resource value: 0x7F0D0045
-			public const int Setting_DownloadAllCache_FailTitle = 2131558469;
+			// aapt resource value: 0x7f090055
+			public const int DBList_DownloadCropImageFail = 2131296341;
 			
-			// aapt resource value: 0x7F0D0046
-			public const int Setting_DownloadAllCache_Message = 2131558470;
+			// aapt resource value: 0x7f09004e
+			public const int DBList_DownloadCropImageTitle = 2131296334;
 			
-			// aapt resource value: 0x7F0D0047
-			public const int Setting_DownloadAllCache_Title = 2131558471;
+			// aapt resource value: 0x7f090057
+			public const int DBList_FilterBoxApplyFail = 2131296343;
 			
-			// aapt resource value: 0x7F0D0085
-			public const int sfchart_close_label = 2131558533;
+			// aapt resource value: 0x7f090058
+			public const int DBList_FilterBoxResetFail = 2131296344;
 			
-			// aapt resource value: 0x7F0D0086
-			public const int sfchart_high_label = 2131558534;
+			// aapt resource value: 0x7f090056
+			public const int DBList_FilterBoxTitle = 2131296342;
 			
-			// aapt resource value: 0x7F0D0087
-			public const int sfchart_low_label = 2131558535;
+			// aapt resource value: 0x7f090053
+			public const int DBList_Listing = 2131296339;
 			
-			// aapt resource value: 0x7F0D0088
-			public const int sfchart_open_label = 2131558536;
+			// aapt resource value: 0x7f090054
+			public const int DBList_ListingFail = 2131296340;
 			
-			// aapt resource value: 0x7F0D0089
-			public const int sfchart_others_label = 2131558537;
+			// aapt resource value: 0x7f090052
+			public const int DBList_RefreshCropImageMessage = 2131296338;
 			
-			// aapt resource value: 0x7F0D0048
-			public const int SideLinkOpen_Fail = 2131558472;
+			// aapt resource value: 0x7f090051
+			public const int DBList_RefreshCropImageTitle = 2131296337;
 			
-			// aapt resource value: 0x7F0D0049
-			public const int Splash_SkipCheckUpdate = 2131558473;
+			// aapt resource value: 0x7f090073
+			public const int DB_Recovery = 2131296371;
 			
-			// aapt resource value: 0x7F0D008A
-			public const int status_bar_notification_info_overflow = 2131558538;
+			// aapt resource value: 0x7f090069
+			public const int DevMode = 2131296361;
 			
-			// aapt resource value: 0x7F0D004A
-			public const int UnableCheckUpdate = 2131558474;
+			// aapt resource value: 0x7f090160
+			public const int DollDBDetailLayout_AbilityCaution = 2131296608;
 			
-			// aapt resource value: 0x7F0D004B
-			public const int UpdateCheck_Fail = 2131558475;
+			// aapt resource value: 0x7f09015f
+			public const int DollDBDetailLayout_SDAnimationButtonText = 2131296607;
 			
-			// aapt resource value: 0x7F0D004C
-			public const int UpdateDialog_Message = 2131558476;
+			// aapt resource value: 0x7f0900e5
+			public const int DollDBDetail_BuffType_All = 2131296485;
 			
-			// aapt resource value: 0x7F0D004D
-			public const int UpdateDialog_Title = 2131558477;
+			// aapt resource value: 0x7f0900e6
+			public const int DollDBDetail_BuffType_ConfirmString = 2131296486;
 			
-			// aapt resource value: 0x7F0D004E
-			public const int UpdateDownloadDialog_Message = 2131558478;
+			// aapt resource value: 0x7f09005a
+			public const int DollDBDetail_MODChangeFail = 2131296346;
 			
-			// aapt resource value: 0x7F0D004F
-			public const int UpdateDownloadDialog_Title = 2131558479;
+			// aapt resource value: 0x7f0900e4
+			public const int DollDBDetail_RadarAverageString = 2131296484;
 			
-			// aapt resource value: 0x7F0D0050
-			public const int UpdateDownload_Complete = 2131558480;
+			// aapt resource value: 0x7f0900e7
+			public const int DollDBImageViewer_DefaultCostume = 2131296487;
 			
-			// aapt resource value: 0x7F0D0051
-			public const int UpdateDownload_Fail = 2131558481;
+			// aapt resource value: 0x7f0900e9
+			public const int DollDBImageViewer_ImageStatusDamage = 2131296489;
 			
-			// aapt resource value: 0x7F0D0052
-			public const int VoiceStreaming_Error = 2131558482;
+			// aapt resource value: 0x7f0900e8
+			public const int DollDBImageViewer_ImageStatusNormal = 2131296488;
 			
-			// aapt resource value: 0x7F0D0053
-			public const int VoiceStreaming_PlayError = 2131558483;
+			// aapt resource value: 0x7f0900ea
+			public const int DollDBMainActivity_Title = 2131296490;
 			
-			// aapt resource value: 0x7F0D008B
-			public const int w = 2131558539;
+			// aapt resource value: 0x7f09015e
+			public const int DollDB_ImageViewer_ImageStatusDefaultText = 2131296606;
 			
-			// aapt resource value: 0x7F0D008C
-			public const int week = 2131558540;
+			// aapt resource value: 0x7f09015d
+			public const int DollDB_ImageViewer_RefreshImageCacheText = 2131296605;
+			
+			// aapt resource value: 0x7f090161
+			public const int DollFilterLayout_ModFilterTitle = 2131296609;
+			
+			// aapt resource value: 0x7f090046
+			public const int ETC1 = 2131296326;
+			
+			// aapt resource value: 0x7f0900ed
+			public const int EnemyDBDetail_Boss = 2131296493;
+			
+			// aapt resource value: 0x7f0900ee
+			public const int EnemyDBDetail_Normal = 2131296494;
+			
+			// aapt resource value: 0x7f0900ef
+			public const int EnemyDBMainActivity_Title = 2131296495;
+			
+			// aapt resource value: 0x7f090163
+			public const int EquipDBDetailLayout_AvailableGunTypeText = 2131296611;
+			
+			// aapt resource value: 0x7f090164
+			public const int EquipDBDetailLayout_OnlyUseText = 2131296612;
+			
+			// aapt resource value: 0x7f090162
+			public const int EquipDBDetailLayout_RecommendGunTypeText = 2131296610;
+			
+			// aapt resource value: 0x7f0900f0
+			public const int EquipDBMainActivity_Title = 2131296496;
+			
+			// aapt resource value: 0x7f0900f1
+			public const int EventListActivity_Title = 2131296497;
+			
+			// aapt resource value: 0x7f090165
+			public const int EventListLayout_EventOngoing = 2131296613;
+			
+			// aapt resource value: 0x7f090166
+			public const int EventListLayout_EventUpComing = 2131296614;
+			
+			// aapt resource value: 0x7f0900f2
+			public const int EventList_NoEvent = 2131296498;
+			
+			// aapt resource value: 0x7f0900e0
+			public const int ExpItemCalc_ItemCount = 2131296480;
+			
+			// aapt resource value: 0x7f090080
+			public const int FAB_ChangeStatusError = 2131296384;
+			
+			// aapt resource value: 0x7f09007f
+			public const int FAB_ChangeSubMenuError = 2131296383;
+			
+			// aapt resource value: 0x7f0900f7
+			public const int FSTDBDetail_AbilityCalcError = 2131296503;
+			
+			// aapt resource value: 0x7f0900f4
+			public const int FSTDBDetail_Chipset_Default = 2131296500;
+			
+			// aapt resource value: 0x7f0900f6
+			public const int FSTDBDetail_CircuitCalcError = 2131296502;
+			
+			// aapt resource value: 0x7f0900f5
+			public const int FSTDBDetail_SubGradeError = 2131296501;
+			
+			// aapt resource value: 0x7f0900f8
+			public const int FSTDBMainActivity_Title = 2131296504;
+			
+			// aapt resource value: 0x7f0900f3
+			public const int FairyDBMainActivity_Title = 2131296499;
+			
+			// aapt resource value: 0x7f090083
+			public const int FilterBox_InitError = 2131296387;
+			
+			// aapt resource value: 0x7f090167
+			public const int GFDInfoLayout_DeveloperInfo = 2131296615;
+			
+			// aapt resource value: 0x7f0900fb
+			public const int GFDInfo_Developer_Bibitjyadame = 2131296507;
+			
+			// aapt resource value: 0x7f0900f9
+			public const int GFDInfo_Developer_Soomae = 2131296505;
+			
+			// aapt resource value: 0x7f0900fa
+			public const int GFDInfo_Developer_URK96 = 2131296506;
+			
+			// aapt resource value: 0x7f0900fd
+			public const int GFDInfo_NewVersion = 2131296509;
+			
+			// aapt resource value: 0x7f0900fc
+			public const int GFDInfo_NowVersion = 2131296508;
+			
+			// aapt resource value: 0x7f0900ff
+			public const int GFDInfo_Update_Apk = 2131296511;
+			
+			// aapt resource value: 0x7f0900fe
+			public const int GFDInfo_Update_Playstore = 2131296510;
+			
+			// aapt resource value: 0x7f09002f
+			public const int Hello = 2131296303;
+			
+			// aapt resource value: 0x7f09005f
+			public const int ImageLoad_Fail = 2131296351;
+			
+			// aapt resource value: 0x7f090081
+			public const int ImageViewer_ActivityOpenError = 2131296385;
+			
+			// aapt resource value: 0x7f09008a
+			public const int ImageViewer_ChangeImageError = 2131296394;
+			
+			// aapt resource value: 0x7f090089
+			public const int InitLoad_Error = 2131296393;
+			
+			// aapt resource value: 0x7f09005c
+			public const int Initialize_Fail = 2131296348;
+			
+			// aapt resource value: 0x7f09005e
+			public const int Initialize_List_Fail = 2131296350;
+			
+			// aapt resource value: 0x7f0900e3
+			public const int InternalCalc_Error = 2131296483;
+			
+			// aapt resource value: 0x7f090044
+			public const int LatestUpdateVersion = 2131296324;
+			
+			// aapt resource value: 0x7f090082
+			public const int LineUp_Error = 2131296386;
+			
+			// aapt resource value: 0x7f090085
+			public const int List_InitError = 2131296389;
+			
+			// aapt resource value: 0x7f090100
+			public const int MainActivity_Title = 2131296512;
+			
+			// aapt resource value: 0x7f09004c
+			public const int Main_CheckExit = 2131296332;
+			
+			// aapt resource value: 0x7f09004b
+			public const int Main_CheckExitTitle = 2131296331;
+			
+			// aapt resource value: 0x7f090109
+			public const int Main_DBMenu_DollDB = 2131296521;
+			
+			// aapt resource value: 0x7f09010c
+			public const int Main_DBMenu_EnemyDB = 2131296524;
+			
+			// aapt resource value: 0x7f09010a
+			public const int Main_DBMenu_EquipDB = 2131296522;
+			
+			// aapt resource value: 0x7f09010d
+			public const int Main_DBMenu_FSTDB = 2131296525;
+			
+			// aapt resource value: 0x7f09010b
+			public const int Main_DBMenu_FairyDB = 2131296523;
+			
+			// aapt resource value: 0x7f09010e
+			public const int Main_ExtraMenu_Event = 2131296526;
+			
+			// aapt resource value: 0x7f090112
+			public const int Main_ExtraMenu_FormationSimulator = 2131296530;
+			
+			// aapt resource value: 0x7f09010f
+			public const int Main_ExtraMenu_OfficialNotification = 2131296527;
+			
+			// aapt resource value: 0x7f090111
+			public const int Main_ExtraMenu_ProductSimulator = 2131296529;
+			
+			// aapt resource value: 0x7f090110
+			public const int Main_ExtraMenu_RFBot = 2131296528;
+			
+			// aapt resource value: 0x7f090105
+			public const int Main_MainMenu_Calc = 2131296517;
+			
+			// aapt resource value: 0x7f090101
+			public const int Main_MainMenu_DBMenu = 2131296513;
+			
+			// aapt resource value: 0x7f090107
+			public const int Main_MainMenu_Extras = 2131296519;
+			
+			// aapt resource value: 0x7f090103
+			public const int Main_MainMenu_FreeOP = 2131296515;
+			
+			// aapt resource value: 0x7f090106
+			public const int Main_MainMenu_GFDInfo = 2131296518;
+			
+			// aapt resource value: 0x7f090102
+			public const int Main_MainMenu_MDSupport = 2131296514;
+			
+			// aapt resource value: 0x7f090104
+			public const int Main_MainMenu_OldGFD = 2131296516;
+			
+			// aapt resource value: 0x7f090108
+			public const int Main_MainMenu_Setting = 2131296520;
+			
+			// aapt resource value: 0x7f09004a
+			public const int Main_NotificationInitializeFail = 2131296330;
+			
+			// aapt resource value: 0x7f090049
+			public const int Main_NotificationLoadFail = 2131296329;
+			
+			// aapt resource value: 0x7f090048
+			public const int Main_NotificationTitle = 2131296328;
+			
+			// aapt resource value: 0x7f090047
+			public const int Main_StartUpHello = 2131296327;
+			
+			// aapt resource value: 0x7f09006b
+			public const int MenuAccess_Fail = 2131296363;
+			
+			// aapt resource value: 0x7f090074
+			public const int NetworkDelay = 2131296372;
+			
+			// aapt resource value: 0x7f090169
+			public const int NewFeature = 2131296617;
+			
+			// aapt resource value: 0x7f09007e
+			public const int NewFeatureDialog_Title = 2131296382;
+			
+			// aapt resource value: 0x7f09006c
+			public const int NotifyCheckServer_Title = 2131296364;
+			
+			// aapt resource value: 0x7f090113
+			public const int OldGFDViewer_ProductDollTable = 2131296531;
+			
+			// aapt resource value: 0x7f090114
+			public const int OldGFDViewer_ProductEquipTable = 2131296532;
+			
+			// aapt resource value: 0x7f090115
+			public const int OldGFDViewer_ProductFairyTable = 2131296533;
+			
+			// aapt resource value: 0x7f090116
+			public const int OldGFDViewer_RecommendDollRecipe = 2131296534;
+			
+			// aapt resource value: 0x7f090117
+			public const int OldGFDViewer_RecommendEquipRecipe = 2131296535;
+			
+			// aapt resource value: 0x7f090119
+			public const int OldGFDViewer_RecommendLeveling = 2131296537;
+			
+			// aapt resource value: 0x7f090118
+			public const int OldGFDViewer_RecommendMD = 2131296536;
+			
+			// aapt resource value: 0x7f09008d
+			public const int PermissionDeny_Message = 2131296397;
+			
+			// aapt resource value: 0x7f09008c
+			public const int Permission_Error = 2131296396;
+			
+			// aapt resource value: 0x7f0900ec
+			public const int ProductPercentTable_List_Percentage = 2131296492;
+			
+			// aapt resource value: 0x7f0900eb
+			public const int ProductPercentTable_List_TotalCount = 2131296491;
+			
+			// aapt resource value: 0x7f090075
+			public const int ProductPercentTable_LoadFail = 2131296373;
+			
+			// aapt resource value: 0x7f09011c
+			public const int ProductSimulatorActivity_CalcResourceError = 2131296540;
+			
+			// aapt resource value: 0x7f09011e
+			public const int ProductSimulatorActivity_GroupDollError = 2131296542;
+			
+			// aapt resource value: 0x7f09011b
+			public const int ProductSimulatorActivity_InitRangeSetError = 2131296539;
+			
+			// aapt resource value: 0x7f09011f
+			public const int ProductSimulatorActivity_ProductDollError = 2131296543;
+			
+			// aapt resource value: 0x7f09011a
+			public const int ProductSimulatorActivity_ProductStartError = 2131296538;
+			
+			// aapt resource value: 0x7f09011d
+			public const int ProductSimulatorActivity_StartResultError = 2131296541;
+			
+			// aapt resource value: 0x7f090120
+			public const int ProductSimulatorCategorySelectActivity_Title = 2131296544;
+			
+			// aapt resource value: 0x7f090168
+			public const int ProductSimulatorLayout_ProductButtonText = 2131296616;
+			
+			// aapt resource value: 0x7f090124
+			public const int RFBotMain_Command_Detail = 2131296548;
+			
+			// aapt resource value: 0x7f090122
+			public const int RFBotMain_Command_DollProduct = 2131296546;
+			
+			// aapt resource value: 0x7f090123
+			public const int RFBotMain_Command_EquipProduct = 2131296547;
+			
+			// aapt resource value: 0x7f090128
+			public const int RFBotMain_DollInfo_ReferDollInfoError = 2131296552;
+			
+			// aapt resource value: 0x7f090127
+			public const int RFBotMain_DollInfo_Title = 2131296551;
+			
+			// aapt resource value: 0x7f09012a
+			public const int RFBotMain_EquipInfo_ReferEquipInfoError = 2131296554;
+			
+			// aapt resource value: 0x7f090129
+			public const int RFBotMain_EquipInfo_Title = 2131296553;
+			
+			// aapt resource value: 0x7f09012c
+			public const int RFBotMain_FairyInfo_ReferFairyInfoError = 2131296556;
+			
+			// aapt resource value: 0x7f09012b
+			public const int RFBotMain_FairyInfo_Title = 2131296555;
+			
+			// aapt resource value: 0x7f090126
+			public const int RFBotMain_Reply_CommandNotMatch = 2131296550;
+			
+			// aapt resource value: 0x7f090125
+			public const int RFBotMain_Reply_EquipProductTimeNotMatch = 2131296549;
+			
+			// aapt resource value: 0x7f090121
+			public const int RFBotMain_Title = 2131296545;
+			
+			// aapt resource value: 0x7f090071
+			public const int RFBot_DisunderstandInput = 2131296369;
+			
+			// aapt resource value: 0x7f090072
+			public const int RFBot_TestMode = 2131296370;
+			
+			// aapt resource value: 0x7f09005b
+			public const int RetryLoad_CauseNetwork = 2131296347;
+			
+			// aapt resource value: 0x7f09014d
+			public const int SettingActivity_CheckFreeStorage_CheckFail = 2131296589;
+			
+			// aapt resource value: 0x7f090148
+			public const int SettingActivity_CheckFreeStorage_DialogMessage = 2131296584;
+			
+			// aapt resource value: 0x7f090149
+			public const int SettingActivity_CheckFreeStorage_DialogMessage2 = 2131296585;
+			
+			// aapt resource value: 0x7f09014a
+			public const int SettingActivity_CheckFreeStorage_DialogMessage2_1 = 2131296586;
+			
+			// aapt resource value: 0x7f090147
+			public const int SettingActivity_CheckFreeStorage_DialogTitle = 2131296583;
+			
+			// aapt resource value: 0x7f09014c
+			public const int SettingActivity_CheckFreeStorage_FailDialogMessage = 2131296588;
+			
+			// aapt resource value: 0x7f09014b
+			public const int SettingActivity_CheckFreeStorage_FailDialogTitle = 2131296587;
+			
+			// aapt resource value: 0x7f090145
+			public const int SettingActivity_DeleteAllCache_Complete = 2131296581;
+			
+			// aapt resource value: 0x7f090143
+			public const int SettingActivity_DeleteAllCache_DialogCheckMessage = 2131296579;
+			
+			// aapt resource value: 0x7f090144
+			public const int SettingActivity_DeleteAllCache_DialogMessage = 2131296580;
+			
+			// aapt resource value: 0x7f090142
+			public const int SettingActivity_DeleteAllCache_DialogTitle = 2131296578;
+			
+			// aapt resource value: 0x7f090146
+			public const int SettingActivity_DeleteAllCache_Fail = 2131296582;
+			
+			// aapt resource value: 0x7f090131
+			public const int SettingActivity_DeleteLogFile_Complete = 2131296561;
+			
+			// aapt resource value: 0x7f09012f
+			public const int SettingActivity_DeleteLogFile_DialogCheckMessage = 2131296559;
+			
+			// aapt resource value: 0x7f090130
+			public const int SettingActivity_DeleteLogFile_DialogMessage = 2131296560;
+			
+			// aapt resource value: 0x7f09012e
+			public const int SettingActivity_DeleteLogFile_DialogTitle = 2131296558;
+			
+			// aapt resource value: 0x7f090132
+			public const int SettingActivity_DeleteLogFile_Fail = 2131296562;
+			
+			// aapt resource value: 0x7f090141
+			public const int SettingActivity_DownloadAllCache_CompleteDialogMessage = 2131296577;
+			
+			// aapt resource value: 0x7f090140
+			public const int SettingActivity_DownloadAllCache_CompleteDialogTitle = 2131296576;
+			
+			// aapt resource value: 0x7f090134
+			public const int SettingActivity_DownloadAllCache_DialogCheckMessage = 2131296564;
+			
+			// aapt resource value: 0x7f090135
+			public const int SettingActivity_DownloadAllCache_DialogMessage = 2131296565;
+			
+			// aapt resource value: 0x7f090133
+			public const int SettingActivity_DownloadAllCache_DialogTitle = 2131296563;
+			
+			// aapt resource value: 0x7f09013f
+			public const int SettingActivity_DownloadAllCache_FailDialogMessage = 2131296575;
+			
+			// aapt resource value: 0x7f09013e
+			public const int SettingActivity_DownloadAllCache_FailDialogTitle = 2131296574;
+			
+			// aapt resource value: 0x7f090136
+			public const int SettingActivity_DownloadAllCache_StatusDollDB = 2131296566;
+			
+			// aapt resource value: 0x7f090137
+			public const int SettingActivity_DownloadAllCache_StatusDollDB2 = 2131296567;
+			
+			// aapt resource value: 0x7f09013a
+			public const int SettingActivity_DownloadAllCache_StatusEquipDB = 2131296570;
+			
+			// aapt resource value: 0x7f09013b
+			public const int SettingActivity_DownloadAllCache_StatusEquipDB2 = 2131296571;
+			
+			// aapt resource value: 0x7f090138
+			public const int SettingActivity_DownloadAllCache_StatusFairyDB = 2131296568;
+			
+			// aapt resource value: 0x7f090139
+			public const int SettingActivity_DownloadAllCache_StatusFairyDB2 = 2131296569;
+			
+			// aapt resource value: 0x7f09013c
+			public const int SettingActivity_DownloadAllCache_StatusOldGFD = 2131296572;
+			
+			// aapt resource value: 0x7f09013d
+			public const int SettingActivity_DownloadAllCache_StatusOldGFD2 = 2131296573;
+			
+			// aapt resource value: 0x7f09012d
+			public const int SettingActivity_Title = 2131296557;
+			
+			// aapt resource value: 0x7f09005d
+			public const int SideLinkOpen_Fail = 2131296349;
+			
+			// aapt resource value: 0x7f090043
+			public const int Splash_SkipCheckUpdate = 2131296323;
+			
+			// aapt resource value: 0x7f0900c0
+			public const int Time_Hour = 2131296448;
+			
+			// aapt resource value: 0x7f0900c1
+			public const int Time_Minute = 2131296449;
+			
+			// aapt resource value: 0x7f0900c2
+			public const int Time_Second = 2131296450;
+			
+			// aapt resource value: 0x7f0900de
+			public const int TitleName_CoreCalc = 2131296478;
+			
+			// aapt resource value: 0x7f0900dd
+			public const int TitleName_ExpItemCalc = 2131296477;
+			
+			// aapt resource value: 0x7f0900df
+			public const int TitleName_SkillTrainingCalc = 2131296479;
+			
+			// aapt resource value: 0x7f090045
+			public const int UnableCheckUpdate = 2131296325;
+			
+			// aapt resource value: 0x7f090062
+			public const int UpdateCheck_Fail = 2131296354;
+			
+			// aapt resource value: 0x7f090078
+			public const int UpdateDBDialog_Message = 2131296376;
+			
+			// aapt resource value: 0x7f090079
+			public const int UpdateDBDialog_RefreshVersionMessage = 2131296377;
+			
+			// aapt resource value: 0x7f090061
+			public const int UpdateDialog_Message = 2131296353;
+			
+			// aapt resource value: 0x7f090060
+			public const int UpdateDialog_Title = 2131296352;
+			
+			// aapt resource value: 0x7f090064
+			public const int UpdateDownloadDialog_Message = 2131296356;
+			
+			// aapt resource value: 0x7f090063
+			public const int UpdateDownloadDialog_Title = 2131296355;
+			
+			// aapt resource value: 0x7f090065
+			public const int UpdateDownload_Complete = 2131296357;
+			
+			// aapt resource value: 0x7f090066
+			public const int UpdateDownload_Fail = 2131296358;
+			
+			// aapt resource value: 0x7f090087
+			public const int UpdateEventDialog_Message = 2131296391;
+			
+			// aapt resource value: 0x7f090088
+			public const int UpdateEventDialog_RefreshVersionMessage = 2131296392;
+			
+			// aapt resource value: 0x7f090086
+			public const int UpdateEventDialog_Title = 2131296390;
+			
+			// aapt resource value: 0x7f090070
+			public const int VoiceList_InitError = 2131296368;
+			
+			// aapt resource value: 0x7f09006e
+			public const int VoiceStreaming_Error = 2131296366;
+			
+			// aapt resource value: 0x7f09006f
+			public const int VoiceStreaming_PlayError = 2131296367;
+			
+			// aapt resource value: 0x7f090008
+			public const int abc_action_bar_home_description = 2131296264;
+			
+			// aapt resource value: 0x7f090009
+			public const int abc_action_bar_up_description = 2131296265;
+			
+			// aapt resource value: 0x7f09000a
+			public const int abc_action_menu_overflow_description = 2131296266;
+			
+			// aapt resource value: 0x7f09000b
+			public const int abc_action_mode_done = 2131296267;
+			
+			// aapt resource value: 0x7f09000c
+			public const int abc_activity_chooser_view_see_all = 2131296268;
+			
+			// aapt resource value: 0x7f09000d
+			public const int abc_activitychooserview_choose_application = 2131296269;
+			
+			// aapt resource value: 0x7f09000e
+			public const int abc_capital_off = 2131296270;
+			
+			// aapt resource value: 0x7f09000f
+			public const int abc_capital_on = 2131296271;
+			
+			// aapt resource value: 0x7f09001a
+			public const int abc_font_family_body_1_material = 2131296282;
+			
+			// aapt resource value: 0x7f09001b
+			public const int abc_font_family_body_2_material = 2131296283;
+			
+			// aapt resource value: 0x7f09001c
+			public const int abc_font_family_button_material = 2131296284;
+			
+			// aapt resource value: 0x7f09001d
+			public const int abc_font_family_caption_material = 2131296285;
+			
+			// aapt resource value: 0x7f09001e
+			public const int abc_font_family_display_1_material = 2131296286;
+			
+			// aapt resource value: 0x7f09001f
+			public const int abc_font_family_display_2_material = 2131296287;
+			
+			// aapt resource value: 0x7f090020
+			public const int abc_font_family_display_3_material = 2131296288;
+			
+			// aapt resource value: 0x7f090021
+			public const int abc_font_family_display_4_material = 2131296289;
+			
+			// aapt resource value: 0x7f090022
+			public const int abc_font_family_headline_material = 2131296290;
+			
+			// aapt resource value: 0x7f090023
+			public const int abc_font_family_menu_material = 2131296291;
+			
+			// aapt resource value: 0x7f090024
+			public const int abc_font_family_subhead_material = 2131296292;
+			
+			// aapt resource value: 0x7f090025
+			public const int abc_font_family_title_material = 2131296293;
+			
+			// aapt resource value: 0x7f090010
+			public const int abc_search_hint = 2131296272;
+			
+			// aapt resource value: 0x7f090011
+			public const int abc_searchview_description_clear = 2131296273;
+			
+			// aapt resource value: 0x7f090012
+			public const int abc_searchview_description_query = 2131296274;
+			
+			// aapt resource value: 0x7f090013
+			public const int abc_searchview_description_search = 2131296275;
+			
+			// aapt resource value: 0x7f090014
+			public const int abc_searchview_description_submit = 2131296276;
+			
+			// aapt resource value: 0x7f090015
+			public const int abc_searchview_description_voice = 2131296277;
+			
+			// aapt resource value: 0x7f090016
+			public const int abc_shareactionprovider_share_with = 2131296278;
+			
+			// aapt resource value: 0x7f090017
+			public const int abc_shareactionprovider_share_with_application = 2131296279;
+			
+			// aapt resource value: 0x7f090018
+			public const int abc_toolbar_collapse_description = 2131296280;
+			
+			// aapt resource value: 0x7f090026
+			public const int appbar_scrolling_view_behavior = 2131296294;
+			
+			// aapt resource value: 0x7f090027
+			public const int bottom_sheet_behavior = 2131296295;
+			
+			// aapt resource value: 0x7f090028
+			public const int character_counter_pattern = 2131296296;
+			
+			// aapt resource value: 0x7f090000
+			public const int common_google_play_services_unknown_issue = 2131296256;
+			
+			// aapt resource value: 0x7f09003a
+			public const int library_name = 2131296314;
+			
+			// aapt resource value: 0x7f090029
+			public const int password_toggle_content_description = 2131296297;
+			
+			// aapt resource value: 0x7f09002a
+			public const int path_password_eye = 2131296298;
+			
+			// aapt resource value: 0x7f09002b
+			public const int path_password_eye_mask_strike_through = 2131296299;
+			
+			// aapt resource value: 0x7f09002c
+			public const int path_password_eye_mask_visible = 2131296300;
+			
+			// aapt resource value: 0x7f09002d
+			public const int path_password_strike_through = 2131296301;
+			
+			// aapt resource value: 0x7f090032
+			public const int q = 2131296306;
+			
+			// aapt resource value: 0x7f090031
+			public const int quarter = 2131296305;
+			
+			// aapt resource value: 0x7f090001
+			public const int s1 = 2131296257;
+			
+			// aapt resource value: 0x7f090002
+			public const int s2 = 2131296258;
+			
+			// aapt resource value: 0x7f090003
+			public const int s3 = 2131296259;
+			
+			// aapt resource value: 0x7f090004
+			public const int s4 = 2131296260;
+			
+			// aapt resource value: 0x7f090005
+			public const int s5 = 2131296261;
+			
+			// aapt resource value: 0x7f090006
+			public const int s6 = 2131296262;
+			
+			// aapt resource value: 0x7f090007
+			public const int s7 = 2131296263;
+			
+			// aapt resource value: 0x7f090019
+			public const int search_menu_title = 2131296281;
+			
+			// aapt resource value: 0x7f090038
+			public const int sfchart_close_label = 2131296312;
+			
+			// aapt resource value: 0x7f090035
+			public const int sfchart_high_label = 2131296309;
+			
+			// aapt resource value: 0x7f090036
+			public const int sfchart_low_label = 2131296310;
+			
+			// aapt resource value: 0x7f090037
+			public const int sfchart_open_label = 2131296311;
+			
+			// aapt resource value: 0x7f090039
+			public const int sfchart_others_label = 2131296313;
+			
+			// aapt resource value: 0x7f09002e
+			public const int status_bar_notification_info_overflow = 2131296302;
+			
+			// aapt resource value: 0x7f090034
+			public const int w = 2131296308;
+			
+			// aapt resource value: 0x7f090033
+			public const int week = 2131296307;
 			
 			static String()
 			{
@@ -6996,1220 +7699,1220 @@ namespace GFI_with_GFS_A
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7F0E0000
-			public const int AlertDialog_AppCompat = 2131623936;
+			// aapt resource value: 0x7f0a009a
+			public const int AlertDialog_AppCompat = 2131361946;
 			
-			// aapt resource value: 0x7F0E0001
-			public const int AlertDialog_AppCompat_Light = 2131623937;
+			// aapt resource value: 0x7f0a009b
+			public const int AlertDialog_AppCompat_Light = 2131361947;
 			
-			// aapt resource value: 0x7F0E0002
-			public const int Animation_AppCompat_Dialog = 2131623938;
+			// aapt resource value: 0x7f0a009c
+			public const int Animation_AppCompat_Dialog = 2131361948;
 			
-			// aapt resource value: 0x7F0E0003
-			public const int Animation_AppCompat_DropDownUp = 2131623939;
+			// aapt resource value: 0x7f0a009d
+			public const int Animation_AppCompat_DropDownUp = 2131361949;
 			
-			// aapt resource value: 0x7F0E0004
-			public const int Animation_AppCompat_Tooltip = 2131623940;
+			// aapt resource value: 0x7f0a009e
+			public const int Animation_AppCompat_Tooltip = 2131361950;
 			
-			// aapt resource value: 0x7F0E0005
-			public const int Animation_Design_BottomSheetDialog = 2131623941;
+			// aapt resource value: 0x7f0a0164
+			public const int Animation_Design_BottomSheetDialog = 2131362148;
 			
-			// aapt resource value: 0x7F0E0006
-			public const int Base_AlertDialog_AppCompat = 2131623942;
+			// aapt resource value: 0x7f0a009f
+			public const int Base_AlertDialog_AppCompat = 2131361951;
 			
-			// aapt resource value: 0x7F0E0007
-			public const int Base_AlertDialog_AppCompat_Light = 2131623943;
+			// aapt resource value: 0x7f0a00a0
+			public const int Base_AlertDialog_AppCompat_Light = 2131361952;
 			
-			// aapt resource value: 0x7F0E0008
-			public const int Base_Animation_AppCompat_Dialog = 2131623944;
+			// aapt resource value: 0x7f0a00a1
+			public const int Base_Animation_AppCompat_Dialog = 2131361953;
 			
-			// aapt resource value: 0x7F0E0009
-			public const int Base_Animation_AppCompat_DropDownUp = 2131623945;
+			// aapt resource value: 0x7f0a00a2
+			public const int Base_Animation_AppCompat_DropDownUp = 2131361954;
 			
-			// aapt resource value: 0x7F0E000A
-			public const int Base_Animation_AppCompat_Tooltip = 2131623946;
+			// aapt resource value: 0x7f0a00a3
+			public const int Base_Animation_AppCompat_Tooltip = 2131361955;
 			
-			// aapt resource value: 0x7F0E000B
-			public const int Base_CardView = 2131623947;
+			// aapt resource value: 0x7f0a0002
+			public const int Base_CardView = 2131361794;
 			
-			// aapt resource value: 0x7F0E000D
-			public const int Base_DialogWindowTitleBackground_AppCompat = 2131623949;
+			// aapt resource value: 0x7f0a00a4
+			public const int Base_DialogWindowTitle_AppCompat = 2131361956;
 			
-			// aapt resource value: 0x7F0E000C
-			public const int Base_DialogWindowTitle_AppCompat = 2131623948;
+			// aapt resource value: 0x7f0a00a5
+			public const int Base_DialogWindowTitleBackground_AppCompat = 2131361957;
 			
-			// aapt resource value: 0x7F0E000E
-			public const int Base_TextAppearance_AppCompat = 2131623950;
+			// aapt resource value: 0x7f0a003e
+			public const int Base_TextAppearance_AppCompat = 2131361854;
 			
-			// aapt resource value: 0x7F0E000F
-			public const int Base_TextAppearance_AppCompat_Body1 = 2131623951;
+			// aapt resource value: 0x7f0a003f
+			public const int Base_TextAppearance_AppCompat_Body1 = 2131361855;
 			
-			// aapt resource value: 0x7F0E0010
-			public const int Base_TextAppearance_AppCompat_Body2 = 2131623952;
+			// aapt resource value: 0x7f0a0040
+			public const int Base_TextAppearance_AppCompat_Body2 = 2131361856;
 			
-			// aapt resource value: 0x7F0E0011
-			public const int Base_TextAppearance_AppCompat_Button = 2131623953;
+			// aapt resource value: 0x7f0a002c
+			public const int Base_TextAppearance_AppCompat_Button = 2131361836;
 			
-			// aapt resource value: 0x7F0E0012
-			public const int Base_TextAppearance_AppCompat_Caption = 2131623954;
+			// aapt resource value: 0x7f0a0041
+			public const int Base_TextAppearance_AppCompat_Caption = 2131361857;
 			
-			// aapt resource value: 0x7F0E0013
-			public const int Base_TextAppearance_AppCompat_Display1 = 2131623955;
+			// aapt resource value: 0x7f0a0042
+			public const int Base_TextAppearance_AppCompat_Display1 = 2131361858;
 			
-			// aapt resource value: 0x7F0E0014
-			public const int Base_TextAppearance_AppCompat_Display2 = 2131623956;
+			// aapt resource value: 0x7f0a0043
+			public const int Base_TextAppearance_AppCompat_Display2 = 2131361859;
 			
-			// aapt resource value: 0x7F0E0015
-			public const int Base_TextAppearance_AppCompat_Display3 = 2131623957;
+			// aapt resource value: 0x7f0a0044
+			public const int Base_TextAppearance_AppCompat_Display3 = 2131361860;
 			
-			// aapt resource value: 0x7F0E0016
-			public const int Base_TextAppearance_AppCompat_Display4 = 2131623958;
+			// aapt resource value: 0x7f0a0045
+			public const int Base_TextAppearance_AppCompat_Display4 = 2131361861;
 			
-			// aapt resource value: 0x7F0E0017
-			public const int Base_TextAppearance_AppCompat_Headline = 2131623959;
+			// aapt resource value: 0x7f0a0046
+			public const int Base_TextAppearance_AppCompat_Headline = 2131361862;
 			
-			// aapt resource value: 0x7F0E0018
-			public const int Base_TextAppearance_AppCompat_Inverse = 2131623960;
+			// aapt resource value: 0x7f0a0010
+			public const int Base_TextAppearance_AppCompat_Inverse = 2131361808;
 			
-			// aapt resource value: 0x7F0E0019
-			public const int Base_TextAppearance_AppCompat_Large = 2131623961;
+			// aapt resource value: 0x7f0a0047
+			public const int Base_TextAppearance_AppCompat_Large = 2131361863;
 			
-			// aapt resource value: 0x7F0E001A
-			public const int Base_TextAppearance_AppCompat_Large_Inverse = 2131623962;
+			// aapt resource value: 0x7f0a0011
+			public const int Base_TextAppearance_AppCompat_Large_Inverse = 2131361809;
 			
-			// aapt resource value: 0x7F0E001B
-			public const int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131623963;
+			// aapt resource value: 0x7f0a0048
+			public const int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131361864;
 			
-			// aapt resource value: 0x7F0E001C
-			public const int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131623964;
+			// aapt resource value: 0x7f0a0049
+			public const int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131361865;
 			
-			// aapt resource value: 0x7F0E001D
-			public const int Base_TextAppearance_AppCompat_Medium = 2131623965;
+			// aapt resource value: 0x7f0a004a
+			public const int Base_TextAppearance_AppCompat_Medium = 2131361866;
 			
-			// aapt resource value: 0x7F0E001E
-			public const int Base_TextAppearance_AppCompat_Medium_Inverse = 2131623966;
+			// aapt resource value: 0x7f0a0012
+			public const int Base_TextAppearance_AppCompat_Medium_Inverse = 2131361810;
 			
-			// aapt resource value: 0x7F0E001F
-			public const int Base_TextAppearance_AppCompat_Menu = 2131623967;
+			// aapt resource value: 0x7f0a004b
+			public const int Base_TextAppearance_AppCompat_Menu = 2131361867;
 			
-			// aapt resource value: 0x7F0E0020
-			public const int Base_TextAppearance_AppCompat_SearchResult = 2131623968;
+			// aapt resource value: 0x7f0a00a6
+			public const int Base_TextAppearance_AppCompat_SearchResult = 2131361958;
 			
-			// aapt resource value: 0x7F0E0021
-			public const int Base_TextAppearance_AppCompat_SearchResult_Subtitle = 2131623969;
+			// aapt resource value: 0x7f0a004c
+			public const int Base_TextAppearance_AppCompat_SearchResult_Subtitle = 2131361868;
 			
-			// aapt resource value: 0x7F0E0022
-			public const int Base_TextAppearance_AppCompat_SearchResult_Title = 2131623970;
+			// aapt resource value: 0x7f0a004d
+			public const int Base_TextAppearance_AppCompat_SearchResult_Title = 2131361869;
 			
-			// aapt resource value: 0x7F0E0023
-			public const int Base_TextAppearance_AppCompat_Small = 2131623971;
+			// aapt resource value: 0x7f0a004e
+			public const int Base_TextAppearance_AppCompat_Small = 2131361870;
 			
-			// aapt resource value: 0x7F0E0024
-			public const int Base_TextAppearance_AppCompat_Small_Inverse = 2131623972;
+			// aapt resource value: 0x7f0a0013
+			public const int Base_TextAppearance_AppCompat_Small_Inverse = 2131361811;
 			
-			// aapt resource value: 0x7F0E0025
-			public const int Base_TextAppearance_AppCompat_Subhead = 2131623973;
+			// aapt resource value: 0x7f0a004f
+			public const int Base_TextAppearance_AppCompat_Subhead = 2131361871;
 			
-			// aapt resource value: 0x7F0E0026
-			public const int Base_TextAppearance_AppCompat_Subhead_Inverse = 2131623974;
+			// aapt resource value: 0x7f0a0014
+			public const int Base_TextAppearance_AppCompat_Subhead_Inverse = 2131361812;
 			
-			// aapt resource value: 0x7F0E0027
-			public const int Base_TextAppearance_AppCompat_Title = 2131623975;
+			// aapt resource value: 0x7f0a0050
+			public const int Base_TextAppearance_AppCompat_Title = 2131361872;
 			
-			// aapt resource value: 0x7F0E0028
-			public const int Base_TextAppearance_AppCompat_Title_Inverse = 2131623976;
+			// aapt resource value: 0x7f0a0015
+			public const int Base_TextAppearance_AppCompat_Title_Inverse = 2131361813;
 			
-			// aapt resource value: 0x7F0E0029
-			public const int Base_TextAppearance_AppCompat_Tooltip = 2131623977;
+			// aapt resource value: 0x7f0a00a7
+			public const int Base_TextAppearance_AppCompat_Tooltip = 2131361959;
 			
-			// aapt resource value: 0x7F0E002A
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131623978;
+			// aapt resource value: 0x7f0a008b
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131361931;
 			
-			// aapt resource value: 0x7F0E002B
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131623979;
+			// aapt resource value: 0x7f0a0051
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131361873;
 			
-			// aapt resource value: 0x7F0E002C
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131623980;
+			// aapt resource value: 0x7f0a0052
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131361874;
 			
-			// aapt resource value: 0x7F0E002D
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Title = 2131623981;
+			// aapt resource value: 0x7f0a0053
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Title = 2131361875;
 			
-			// aapt resource value: 0x7F0E002E
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131623982;
+			// aapt resource value: 0x7f0a0054
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131361876;
 			
-			// aapt resource value: 0x7F0E002F
-			public const int Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131623983;
+			// aapt resource value: 0x7f0a0055
+			public const int Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131361877;
 			
-			// aapt resource value: 0x7F0E0030
-			public const int Base_TextAppearance_AppCompat_Widget_ActionMode_Title = 2131623984;
+			// aapt resource value: 0x7f0a0056
+			public const int Base_TextAppearance_AppCompat_Widget_ActionMode_Title = 2131361878;
 			
-			// aapt resource value: 0x7F0E0031
-			public const int Base_TextAppearance_AppCompat_Widget_Button = 2131623985;
+			// aapt resource value: 0x7f0a0057
+			public const int Base_TextAppearance_AppCompat_Widget_Button = 2131361879;
 			
-			// aapt resource value: 0x7F0E0032
-			public const int Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131623986;
+			// aapt resource value: 0x7f0a0092
+			public const int Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131361938;
 			
-			// aapt resource value: 0x7F0E0033
-			public const int Base_TextAppearance_AppCompat_Widget_Button_Colored = 2131623987;
+			// aapt resource value: 0x7f0a0093
+			public const int Base_TextAppearance_AppCompat_Widget_Button_Colored = 2131361939;
 			
-			// aapt resource value: 0x7F0E0034
-			public const int Base_TextAppearance_AppCompat_Widget_Button_Inverse = 2131623988;
+			// aapt resource value: 0x7f0a008c
+			public const int Base_TextAppearance_AppCompat_Widget_Button_Inverse = 2131361932;
 			
-			// aapt resource value: 0x7F0E0035
-			public const int Base_TextAppearance_AppCompat_Widget_DropDownItem = 2131623989;
+			// aapt resource value: 0x7f0a00a8
+			public const int Base_TextAppearance_AppCompat_Widget_DropDownItem = 2131361960;
 			
-			// aapt resource value: 0x7F0E0036
-			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131623990;
+			// aapt resource value: 0x7f0a0058
+			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131361880;
 			
-			// aapt resource value: 0x7F0E0037
-			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131623991;
+			// aapt resource value: 0x7f0a0059
+			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131361881;
 			
-			// aapt resource value: 0x7F0E0038
-			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131623992;
+			// aapt resource value: 0x7f0a005a
+			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131361882;
 			
-			// aapt resource value: 0x7F0E0039
-			public const int Base_TextAppearance_AppCompat_Widget_Switch = 2131623993;
+			// aapt resource value: 0x7f0a005b
+			public const int Base_TextAppearance_AppCompat_Widget_Switch = 2131361883;
 			
-			// aapt resource value: 0x7F0E003A
-			public const int Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131623994;
+			// aapt resource value: 0x7f0a005c
+			public const int Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131361884;
 			
-			// aapt resource value: 0x7F0E003B
-			public const int Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131623995;
+			// aapt resource value: 0x7f0a00a9
+			public const int Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131361961;
 			
-			// aapt resource value: 0x7F0E003C
-			public const int Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131623996;
+			// aapt resource value: 0x7f0a005d
+			public const int Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131361885;
 			
-			// aapt resource value: 0x7F0E003D
-			public const int Base_TextAppearance_Widget_AppCompat_Toolbar_Title = 2131623997;
+			// aapt resource value: 0x7f0a005e
+			public const int Base_TextAppearance_Widget_AppCompat_Toolbar_Title = 2131361886;
 			
-			// aapt resource value: 0x7F0E004C
-			public const int Base_ThemeOverlay_AppCompat = 2131624012;
+			// aapt resource value: 0x7f0a005f
+			public const int Base_Theme_AppCompat = 2131361887;
 			
-			// aapt resource value: 0x7F0E004D
-			public const int Base_ThemeOverlay_AppCompat_ActionBar = 2131624013;
+			// aapt resource value: 0x7f0a00aa
+			public const int Base_Theme_AppCompat_CompactMenu = 2131361962;
 			
-			// aapt resource value: 0x7F0E004E
-			public const int Base_ThemeOverlay_AppCompat_Dark = 2131624014;
+			// aapt resource value: 0x7f0a0016
+			public const int Base_Theme_AppCompat_Dialog = 2131361814;
 			
-			// aapt resource value: 0x7F0E004F
-			public const int Base_ThemeOverlay_AppCompat_Dark_ActionBar = 2131624015;
+			// aapt resource value: 0x7f0a0017
+			public const int Base_Theme_AppCompat_Dialog_Alert = 2131361815;
 			
-			// aapt resource value: 0x7F0E0050
-			public const int Base_ThemeOverlay_AppCompat_Dialog = 2131624016;
+			// aapt resource value: 0x7f0a00ab
+			public const int Base_Theme_AppCompat_Dialog_FixedSize = 2131361963;
 			
-			// aapt resource value: 0x7F0E0051
-			public const int Base_ThemeOverlay_AppCompat_Dialog_Alert = 2131624017;
+			// aapt resource value: 0x7f0a0018
+			public const int Base_Theme_AppCompat_Dialog_MinWidth = 2131361816;
 			
-			// aapt resource value: 0x7F0E0052
-			public const int Base_ThemeOverlay_AppCompat_Light = 2131624018;
+			// aapt resource value: 0x7f0a0006
+			public const int Base_Theme_AppCompat_DialogWhenLarge = 2131361798;
 			
-			// aapt resource value: 0x7F0E003E
-			public const int Base_Theme_AppCompat = 2131623998;
+			// aapt resource value: 0x7f0a0060
+			public const int Base_Theme_AppCompat_Light = 2131361888;
 			
-			// aapt resource value: 0x7F0E003F
-			public const int Base_Theme_AppCompat_CompactMenu = 2131623999;
+			// aapt resource value: 0x7f0a00ac
+			public const int Base_Theme_AppCompat_Light_DarkActionBar = 2131361964;
 			
-			// aapt resource value: 0x7F0E0040
-			public const int Base_Theme_AppCompat_Dialog = 2131624000;
+			// aapt resource value: 0x7f0a0019
+			public const int Base_Theme_AppCompat_Light_Dialog = 2131361817;
 			
-			// aapt resource value: 0x7F0E0044
-			public const int Base_Theme_AppCompat_DialogWhenLarge = 2131624004;
+			// aapt resource value: 0x7f0a001a
+			public const int Base_Theme_AppCompat_Light_Dialog_Alert = 2131361818;
 			
-			// aapt resource value: 0x7F0E0041
-			public const int Base_Theme_AppCompat_Dialog_Alert = 2131624001;
+			// aapt resource value: 0x7f0a00ad
+			public const int Base_Theme_AppCompat_Light_Dialog_FixedSize = 2131361965;
 			
-			// aapt resource value: 0x7F0E0042
-			public const int Base_Theme_AppCompat_Dialog_FixedSize = 2131624002;
+			// aapt resource value: 0x7f0a001b
+			public const int Base_Theme_AppCompat_Light_Dialog_MinWidth = 2131361819;
 			
-			// aapt resource value: 0x7F0E0043
-			public const int Base_Theme_AppCompat_Dialog_MinWidth = 2131624003;
+			// aapt resource value: 0x7f0a0007
+			public const int Base_Theme_AppCompat_Light_DialogWhenLarge = 2131361799;
 			
-			// aapt resource value: 0x7F0E0045
-			public const int Base_Theme_AppCompat_Light = 2131624005;
+			// aapt resource value: 0x7f0a00ae
+			public const int Base_ThemeOverlay_AppCompat = 2131361966;
 			
-			// aapt resource value: 0x7F0E0046
-			public const int Base_Theme_AppCompat_Light_DarkActionBar = 2131624006;
+			// aapt resource value: 0x7f0a00af
+			public const int Base_ThemeOverlay_AppCompat_ActionBar = 2131361967;
 			
-			// aapt resource value: 0x7F0E0047
-			public const int Base_Theme_AppCompat_Light_Dialog = 2131624007;
+			// aapt resource value: 0x7f0a00b0
+			public const int Base_ThemeOverlay_AppCompat_Dark = 2131361968;
 			
-			// aapt resource value: 0x7F0E004B
-			public const int Base_Theme_AppCompat_Light_DialogWhenLarge = 2131624011;
+			// aapt resource value: 0x7f0a00b1
+			public const int Base_ThemeOverlay_AppCompat_Dark_ActionBar = 2131361969;
 			
-			// aapt resource value: 0x7F0E0048
-			public const int Base_Theme_AppCompat_Light_Dialog_Alert = 2131624008;
+			// aapt resource value: 0x7f0a001c
+			public const int Base_ThemeOverlay_AppCompat_Dialog = 2131361820;
 			
-			// aapt resource value: 0x7F0E0049
-			public const int Base_Theme_AppCompat_Light_Dialog_FixedSize = 2131624009;
+			// aapt resource value: 0x7f0a001d
+			public const int Base_ThemeOverlay_AppCompat_Dialog_Alert = 2131361821;
 			
-			// aapt resource value: 0x7F0E004A
-			public const int Base_Theme_AppCompat_Light_Dialog_MinWidth = 2131624010;
+			// aapt resource value: 0x7f0a00b2
+			public const int Base_ThemeOverlay_AppCompat_Light = 2131361970;
 			
-			// aapt resource value: 0x7F0E0055
-			public const int Base_V11_ThemeOverlay_AppCompat_Dialog = 2131624021;
+			// aapt resource value: 0x7f0a001e
+			public const int Base_V11_Theme_AppCompat_Dialog = 2131361822;
 			
-			// aapt resource value: 0x7F0E0053
-			public const int Base_V11_Theme_AppCompat_Dialog = 2131624019;
+			// aapt resource value: 0x7f0a001f
+			public const int Base_V11_Theme_AppCompat_Light_Dialog = 2131361823;
 			
-			// aapt resource value: 0x7F0E0054
-			public const int Base_V11_Theme_AppCompat_Light_Dialog = 2131624020;
+			// aapt resource value: 0x7f0a0020
+			public const int Base_V11_ThemeOverlay_AppCompat_Dialog = 2131361824;
 			
-			// aapt resource value: 0x7F0E0056
-			public const int Base_V12_Widget_AppCompat_AutoCompleteTextView = 2131624022;
+			// aapt resource value: 0x7f0a0028
+			public const int Base_V12_Widget_AppCompat_AutoCompleteTextView = 2131361832;
 			
-			// aapt resource value: 0x7F0E0057
-			public const int Base_V12_Widget_AppCompat_EditText = 2131624023;
+			// aapt resource value: 0x7f0a0029
+			public const int Base_V12_Widget_AppCompat_EditText = 2131361833;
 			
-			// aapt resource value: 0x7F0E0058
-			public const int Base_V14_Widget_Design_AppBarLayout = 2131624024;
+			// aapt resource value: 0x7f0a0165
+			public const int Base_V14_Widget_Design_AppBarLayout = 2131362149;
 			
-			// aapt resource value: 0x7F0E005D
-			public const int Base_V21_ThemeOverlay_AppCompat_Dialog = 2131624029;
+			// aapt resource value: 0x7f0a0061
+			public const int Base_V21_Theme_AppCompat = 2131361889;
 			
-			// aapt resource value: 0x7F0E0059
-			public const int Base_V21_Theme_AppCompat = 2131624025;
+			// aapt resource value: 0x7f0a0062
+			public const int Base_V21_Theme_AppCompat_Dialog = 2131361890;
 			
-			// aapt resource value: 0x7F0E005A
-			public const int Base_V21_Theme_AppCompat_Dialog = 2131624026;
+			// aapt resource value: 0x7f0a0063
+			public const int Base_V21_Theme_AppCompat_Light = 2131361891;
 			
-			// aapt resource value: 0x7F0E005B
-			public const int Base_V21_Theme_AppCompat_Light = 2131624027;
+			// aapt resource value: 0x7f0a0064
+			public const int Base_V21_Theme_AppCompat_Light_Dialog = 2131361892;
 			
-			// aapt resource value: 0x7F0E005C
-			public const int Base_V21_Theme_AppCompat_Light_Dialog = 2131624028;
+			// aapt resource value: 0x7f0a0065
+			public const int Base_V21_ThemeOverlay_AppCompat_Dialog = 2131361893;
 			
-			// aapt resource value: 0x7F0E005E
-			public const int Base_V21_Widget_Design_AppBarLayout = 2131624030;
+			// aapt resource value: 0x7f0a0161
+			public const int Base_V21_Widget_Design_AppBarLayout = 2131362145;
 			
-			// aapt resource value: 0x7F0E005F
-			public const int Base_V22_Theme_AppCompat = 2131624031;
+			// aapt resource value: 0x7f0a0089
+			public const int Base_V22_Theme_AppCompat = 2131361929;
 			
-			// aapt resource value: 0x7F0E0060
-			public const int Base_V22_Theme_AppCompat_Light = 2131624032;
+			// aapt resource value: 0x7f0a008a
+			public const int Base_V22_Theme_AppCompat_Light = 2131361930;
 			
-			// aapt resource value: 0x7F0E0061
-			public const int Base_V23_Theme_AppCompat = 2131624033;
+			// aapt resource value: 0x7f0a008d
+			public const int Base_V23_Theme_AppCompat = 2131361933;
 			
-			// aapt resource value: 0x7F0E0062
-			public const int Base_V23_Theme_AppCompat_Light = 2131624034;
+			// aapt resource value: 0x7f0a008e
+			public const int Base_V23_Theme_AppCompat_Light = 2131361934;
 			
-			// aapt resource value: 0x7F0E0063
-			public const int Base_V26_Theme_AppCompat = 2131624035;
+			// aapt resource value: 0x7f0a0096
+			public const int Base_V26_Theme_AppCompat = 2131361942;
 			
-			// aapt resource value: 0x7F0E0064
-			public const int Base_V26_Theme_AppCompat_Light = 2131624036;
+			// aapt resource value: 0x7f0a0097
+			public const int Base_V26_Theme_AppCompat_Light = 2131361943;
 			
-			// aapt resource value: 0x7F0E0065
-			public const int Base_V26_Widget_AppCompat_Toolbar = 2131624037;
+			// aapt resource value: 0x7f0a0098
+			public const int Base_V26_Widget_AppCompat_Toolbar = 2131361944;
 			
-			// aapt resource value: 0x7F0E0066
-			public const int Base_V26_Widget_Design_AppBarLayout = 2131624038;
+			// aapt resource value: 0x7f0a0163
+			public const int Base_V26_Widget_Design_AppBarLayout = 2131362147;
 			
-			// aapt resource value: 0x7F0E006B
-			public const int Base_V7_ThemeOverlay_AppCompat_Dialog = 2131624043;
+			// aapt resource value: 0x7f0a00b3
+			public const int Base_V7_Theme_AppCompat = 2131361971;
 			
-			// aapt resource value: 0x7F0E0067
-			public const int Base_V7_Theme_AppCompat = 2131624039;
+			// aapt resource value: 0x7f0a00b4
+			public const int Base_V7_Theme_AppCompat_Dialog = 2131361972;
 			
-			// aapt resource value: 0x7F0E0068
-			public const int Base_V7_Theme_AppCompat_Dialog = 2131624040;
+			// aapt resource value: 0x7f0a00b5
+			public const int Base_V7_Theme_AppCompat_Light = 2131361973;
 			
-			// aapt resource value: 0x7F0E0069
-			public const int Base_V7_Theme_AppCompat_Light = 2131624041;
+			// aapt resource value: 0x7f0a00b6
+			public const int Base_V7_Theme_AppCompat_Light_Dialog = 2131361974;
 			
-			// aapt resource value: 0x7F0E006A
-			public const int Base_V7_Theme_AppCompat_Light_Dialog = 2131624042;
+			// aapt resource value: 0x7f0a00b7
+			public const int Base_V7_ThemeOverlay_AppCompat_Dialog = 2131361975;
 			
-			// aapt resource value: 0x7F0E006C
-			public const int Base_V7_Widget_AppCompat_AutoCompleteTextView = 2131624044;
+			// aapt resource value: 0x7f0a00b8
+			public const int Base_V7_Widget_AppCompat_AutoCompleteTextView = 2131361976;
 			
-			// aapt resource value: 0x7F0E006D
-			public const int Base_V7_Widget_AppCompat_EditText = 2131624045;
+			// aapt resource value: 0x7f0a00b9
+			public const int Base_V7_Widget_AppCompat_EditText = 2131361977;
 			
-			// aapt resource value: 0x7F0E006E
-			public const int Base_V7_Widget_AppCompat_Toolbar = 2131624046;
+			// aapt resource value: 0x7f0a00ba
+			public const int Base_V7_Widget_AppCompat_Toolbar = 2131361978;
 			
-			// aapt resource value: 0x7F0E006F
-			public const int Base_Widget_AppCompat_ActionBar = 2131624047;
+			// aapt resource value: 0x7f0a00bb
+			public const int Base_Widget_AppCompat_ActionBar = 2131361979;
 			
-			// aapt resource value: 0x7F0E0070
-			public const int Base_Widget_AppCompat_ActionBar_Solid = 2131624048;
+			// aapt resource value: 0x7f0a00bc
+			public const int Base_Widget_AppCompat_ActionBar_Solid = 2131361980;
 			
-			// aapt resource value: 0x7F0E0071
-			public const int Base_Widget_AppCompat_ActionBar_TabBar = 2131624049;
+			// aapt resource value: 0x7f0a00bd
+			public const int Base_Widget_AppCompat_ActionBar_TabBar = 2131361981;
 			
-			// aapt resource value: 0x7F0E0072
-			public const int Base_Widget_AppCompat_ActionBar_TabText = 2131624050;
+			// aapt resource value: 0x7f0a0066
+			public const int Base_Widget_AppCompat_ActionBar_TabText = 2131361894;
 			
-			// aapt resource value: 0x7F0E0073
-			public const int Base_Widget_AppCompat_ActionBar_TabView = 2131624051;
+			// aapt resource value: 0x7f0a0067
+			public const int Base_Widget_AppCompat_ActionBar_TabView = 2131361895;
 			
-			// aapt resource value: 0x7F0E0074
-			public const int Base_Widget_AppCompat_ActionButton = 2131624052;
+			// aapt resource value: 0x7f0a0068
+			public const int Base_Widget_AppCompat_ActionButton = 2131361896;
 			
-			// aapt resource value: 0x7F0E0075
-			public const int Base_Widget_AppCompat_ActionButton_CloseMode = 2131624053;
+			// aapt resource value: 0x7f0a0069
+			public const int Base_Widget_AppCompat_ActionButton_CloseMode = 2131361897;
 			
-			// aapt resource value: 0x7F0E0076
-			public const int Base_Widget_AppCompat_ActionButton_Overflow = 2131624054;
+			// aapt resource value: 0x7f0a006a
+			public const int Base_Widget_AppCompat_ActionButton_Overflow = 2131361898;
 			
-			// aapt resource value: 0x7F0E0077
-			public const int Base_Widget_AppCompat_ActionMode = 2131624055;
+			// aapt resource value: 0x7f0a00be
+			public const int Base_Widget_AppCompat_ActionMode = 2131361982;
 			
-			// aapt resource value: 0x7F0E0078
-			public const int Base_Widget_AppCompat_ActivityChooserView = 2131624056;
+			// aapt resource value: 0x7f0a00bf
+			public const int Base_Widget_AppCompat_ActivityChooserView = 2131361983;
 			
-			// aapt resource value: 0x7F0E0079
-			public const int Base_Widget_AppCompat_AutoCompleteTextView = 2131624057;
+			// aapt resource value: 0x7f0a002a
+			public const int Base_Widget_AppCompat_AutoCompleteTextView = 2131361834;
 			
-			// aapt resource value: 0x7F0E007A
-			public const int Base_Widget_AppCompat_Button = 2131624058;
+			// aapt resource value: 0x7f0a006b
+			public const int Base_Widget_AppCompat_Button = 2131361899;
 			
-			// aapt resource value: 0x7F0E0080
-			public const int Base_Widget_AppCompat_ButtonBar = 2131624064;
+			// aapt resource value: 0x7f0a006c
+			public const int Base_Widget_AppCompat_Button_Borderless = 2131361900;
 			
-			// aapt resource value: 0x7F0E0081
-			public const int Base_Widget_AppCompat_ButtonBar_AlertDialog = 2131624065;
+			// aapt resource value: 0x7f0a006d
+			public const int Base_Widget_AppCompat_Button_Borderless_Colored = 2131361901;
 			
-			// aapt resource value: 0x7F0E007B
-			public const int Base_Widget_AppCompat_Button_Borderless = 2131624059;
+			// aapt resource value: 0x7f0a00c0
+			public const int Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131361984;
 			
-			// aapt resource value: 0x7F0E007C
-			public const int Base_Widget_AppCompat_Button_Borderless_Colored = 2131624060;
+			// aapt resource value: 0x7f0a008f
+			public const int Base_Widget_AppCompat_Button_Colored = 2131361935;
 			
-			// aapt resource value: 0x7F0E007D
-			public const int Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131624061;
+			// aapt resource value: 0x7f0a006e
+			public const int Base_Widget_AppCompat_Button_Small = 2131361902;
 			
-			// aapt resource value: 0x7F0E007E
-			public const int Base_Widget_AppCompat_Button_Colored = 2131624062;
+			// aapt resource value: 0x7f0a006f
+			public const int Base_Widget_AppCompat_ButtonBar = 2131361903;
 			
-			// aapt resource value: 0x7F0E007F
-			public const int Base_Widget_AppCompat_Button_Small = 2131624063;
+			// aapt resource value: 0x7f0a00c1
+			public const int Base_Widget_AppCompat_ButtonBar_AlertDialog = 2131361985;
 			
-			// aapt resource value: 0x7F0E0082
-			public const int Base_Widget_AppCompat_CompoundButton_CheckBox = 2131624066;
+			// aapt resource value: 0x7f0a0070
+			public const int Base_Widget_AppCompat_CompoundButton_CheckBox = 2131361904;
 			
-			// aapt resource value: 0x7F0E0083
-			public const int Base_Widget_AppCompat_CompoundButton_RadioButton = 2131624067;
+			// aapt resource value: 0x7f0a0071
+			public const int Base_Widget_AppCompat_CompoundButton_RadioButton = 2131361905;
 			
-			// aapt resource value: 0x7F0E0084
-			public const int Base_Widget_AppCompat_CompoundButton_Switch = 2131624068;
+			// aapt resource value: 0x7f0a00c2
+			public const int Base_Widget_AppCompat_CompoundButton_Switch = 2131361986;
 			
-			// aapt resource value: 0x7F0E0085
-			public const int Base_Widget_AppCompat_DrawerArrowToggle = 2131624069;
+			// aapt resource value: 0x7f0a0005
+			public const int Base_Widget_AppCompat_DrawerArrowToggle = 2131361797;
 			
-			// aapt resource value: 0x7F0E0086
-			public const int Base_Widget_AppCompat_DrawerArrowToggle_Common = 2131624070;
+			// aapt resource value: 0x7f0a00c3
+			public const int Base_Widget_AppCompat_DrawerArrowToggle_Common = 2131361987;
 			
-			// aapt resource value: 0x7F0E0087
-			public const int Base_Widget_AppCompat_DropDownItem_Spinner = 2131624071;
+			// aapt resource value: 0x7f0a0072
+			public const int Base_Widget_AppCompat_DropDownItem_Spinner = 2131361906;
 			
-			// aapt resource value: 0x7F0E0088
-			public const int Base_Widget_AppCompat_EditText = 2131624072;
+			// aapt resource value: 0x7f0a002b
+			public const int Base_Widget_AppCompat_EditText = 2131361835;
 			
-			// aapt resource value: 0x7F0E0089
-			public const int Base_Widget_AppCompat_ImageButton = 2131624073;
+			// aapt resource value: 0x7f0a0073
+			public const int Base_Widget_AppCompat_ImageButton = 2131361907;
 			
-			// aapt resource value: 0x7F0E008A
-			public const int Base_Widget_AppCompat_Light_ActionBar = 2131624074;
+			// aapt resource value: 0x7f0a00c4
+			public const int Base_Widget_AppCompat_Light_ActionBar = 2131361988;
 			
-			// aapt resource value: 0x7F0E008B
-			public const int Base_Widget_AppCompat_Light_ActionBar_Solid = 2131624075;
+			// aapt resource value: 0x7f0a00c5
+			public const int Base_Widget_AppCompat_Light_ActionBar_Solid = 2131361989;
 			
-			// aapt resource value: 0x7F0E008C
-			public const int Base_Widget_AppCompat_Light_ActionBar_TabBar = 2131624076;
+			// aapt resource value: 0x7f0a00c6
+			public const int Base_Widget_AppCompat_Light_ActionBar_TabBar = 2131361990;
 			
-			// aapt resource value: 0x7F0E008D
-			public const int Base_Widget_AppCompat_Light_ActionBar_TabText = 2131624077;
+			// aapt resource value: 0x7f0a0074
+			public const int Base_Widget_AppCompat_Light_ActionBar_TabText = 2131361908;
 			
-			// aapt resource value: 0x7F0E008E
-			public const int Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131624078;
+			// aapt resource value: 0x7f0a0075
+			public const int Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131361909;
 			
-			// aapt resource value: 0x7F0E008F
-			public const int Base_Widget_AppCompat_Light_ActionBar_TabView = 2131624079;
+			// aapt resource value: 0x7f0a0076
+			public const int Base_Widget_AppCompat_Light_ActionBar_TabView = 2131361910;
 			
-			// aapt resource value: 0x7F0E0090
-			public const int Base_Widget_AppCompat_Light_PopupMenu = 2131624080;
+			// aapt resource value: 0x7f0a0077
+			public const int Base_Widget_AppCompat_Light_PopupMenu = 2131361911;
 			
-			// aapt resource value: 0x7F0E0091
-			public const int Base_Widget_AppCompat_Light_PopupMenu_Overflow = 2131624081;
+			// aapt resource value: 0x7f0a0078
+			public const int Base_Widget_AppCompat_Light_PopupMenu_Overflow = 2131361912;
 			
-			// aapt resource value: 0x7F0E0092
-			public const int Base_Widget_AppCompat_ListMenuView = 2131624082;
+			// aapt resource value: 0x7f0a00c7
+			public const int Base_Widget_AppCompat_ListMenuView = 2131361991;
 			
-			// aapt resource value: 0x7F0E0093
-			public const int Base_Widget_AppCompat_ListPopupWindow = 2131624083;
+			// aapt resource value: 0x7f0a0079
+			public const int Base_Widget_AppCompat_ListPopupWindow = 2131361913;
 			
-			// aapt resource value: 0x7F0E0094
-			public const int Base_Widget_AppCompat_ListView = 2131624084;
+			// aapt resource value: 0x7f0a007a
+			public const int Base_Widget_AppCompat_ListView = 2131361914;
 			
-			// aapt resource value: 0x7F0E0095
-			public const int Base_Widget_AppCompat_ListView_DropDown = 2131624085;
+			// aapt resource value: 0x7f0a007b
+			public const int Base_Widget_AppCompat_ListView_DropDown = 2131361915;
 			
-			// aapt resource value: 0x7F0E0096
-			public const int Base_Widget_AppCompat_ListView_Menu = 2131624086;
+			// aapt resource value: 0x7f0a007c
+			public const int Base_Widget_AppCompat_ListView_Menu = 2131361916;
 			
-			// aapt resource value: 0x7F0E0097
-			public const int Base_Widget_AppCompat_PopupMenu = 2131624087;
+			// aapt resource value: 0x7f0a007d
+			public const int Base_Widget_AppCompat_PopupMenu = 2131361917;
 			
-			// aapt resource value: 0x7F0E0098
-			public const int Base_Widget_AppCompat_PopupMenu_Overflow = 2131624088;
+			// aapt resource value: 0x7f0a007e
+			public const int Base_Widget_AppCompat_PopupMenu_Overflow = 2131361918;
 			
-			// aapt resource value: 0x7F0E0099
-			public const int Base_Widget_AppCompat_PopupWindow = 2131624089;
+			// aapt resource value: 0x7f0a00c8
+			public const int Base_Widget_AppCompat_PopupWindow = 2131361992;
 			
-			// aapt resource value: 0x7F0E009A
-			public const int Base_Widget_AppCompat_ProgressBar = 2131624090;
+			// aapt resource value: 0x7f0a0021
+			public const int Base_Widget_AppCompat_ProgressBar = 2131361825;
 			
-			// aapt resource value: 0x7F0E009B
-			public const int Base_Widget_AppCompat_ProgressBar_Horizontal = 2131624091;
+			// aapt resource value: 0x7f0a0022
+			public const int Base_Widget_AppCompat_ProgressBar_Horizontal = 2131361826;
 			
-			// aapt resource value: 0x7F0E009C
-			public const int Base_Widget_AppCompat_RatingBar = 2131624092;
+			// aapt resource value: 0x7f0a007f
+			public const int Base_Widget_AppCompat_RatingBar = 2131361919;
 			
-			// aapt resource value: 0x7F0E009D
-			public const int Base_Widget_AppCompat_RatingBar_Indicator = 2131624093;
+			// aapt resource value: 0x7f0a0090
+			public const int Base_Widget_AppCompat_RatingBar_Indicator = 2131361936;
 			
-			// aapt resource value: 0x7F0E009E
-			public const int Base_Widget_AppCompat_RatingBar_Small = 2131624094;
+			// aapt resource value: 0x7f0a0091
+			public const int Base_Widget_AppCompat_RatingBar_Small = 2131361937;
 			
-			// aapt resource value: 0x7F0E009F
-			public const int Base_Widget_AppCompat_SearchView = 2131624095;
+			// aapt resource value: 0x7f0a00c9
+			public const int Base_Widget_AppCompat_SearchView = 2131361993;
 			
-			// aapt resource value: 0x7F0E00A0
-			public const int Base_Widget_AppCompat_SearchView_ActionBar = 2131624096;
+			// aapt resource value: 0x7f0a00ca
+			public const int Base_Widget_AppCompat_SearchView_ActionBar = 2131361994;
 			
-			// aapt resource value: 0x7F0E00A1
-			public const int Base_Widget_AppCompat_SeekBar = 2131624097;
+			// aapt resource value: 0x7f0a0080
+			public const int Base_Widget_AppCompat_SeekBar = 2131361920;
 			
-			// aapt resource value: 0x7F0E00A2
-			public const int Base_Widget_AppCompat_SeekBar_Discrete = 2131624098;
+			// aapt resource value: 0x7f0a00cb
+			public const int Base_Widget_AppCompat_SeekBar_Discrete = 2131361995;
 			
-			// aapt resource value: 0x7F0E00A3
-			public const int Base_Widget_AppCompat_Spinner = 2131624099;
+			// aapt resource value: 0x7f0a0081
+			public const int Base_Widget_AppCompat_Spinner = 2131361921;
 			
-			// aapt resource value: 0x7F0E00A4
-			public const int Base_Widget_AppCompat_Spinner_Underlined = 2131624100;
+			// aapt resource value: 0x7f0a0008
+			public const int Base_Widget_AppCompat_Spinner_Underlined = 2131361800;
 			
-			// aapt resource value: 0x7F0E00A5
-			public const int Base_Widget_AppCompat_TextView_SpinnerItem = 2131624101;
+			// aapt resource value: 0x7f0a0082
+			public const int Base_Widget_AppCompat_TextView_SpinnerItem = 2131361922;
 			
-			// aapt resource value: 0x7F0E00A6
-			public const int Base_Widget_AppCompat_Toolbar = 2131624102;
+			// aapt resource value: 0x7f0a0099
+			public const int Base_Widget_AppCompat_Toolbar = 2131361945;
 			
-			// aapt resource value: 0x7F0E00A7
-			public const int Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131624103;
+			// aapt resource value: 0x7f0a0083
+			public const int Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131361923;
 			
-			// aapt resource value: 0x7F0E00A8
-			public const int Base_Widget_Design_AppBarLayout = 2131624104;
+			// aapt resource value: 0x7f0a0162
+			public const int Base_Widget_Design_AppBarLayout = 2131362146;
 			
-			// aapt resource value: 0x7F0E00A9
-			public const int Base_Widget_Design_TabLayout = 2131624105;
+			// aapt resource value: 0x7f0a0166
+			public const int Base_Widget_Design_TabLayout = 2131362150;
 			
-			// aapt resource value: 0x7F0E00AA
-			public const int CardView = 2131624106;
+			// aapt resource value: 0x7f0a0001
+			public const int CardView = 2131361793;
 			
-			// aapt resource value: 0x7F0E00AB
-			public const int CardView_Dark = 2131624107;
+			// aapt resource value: 0x7f0a0003
+			public const int CardView_Dark = 2131361795;
 			
-			// aapt resource value: 0x7F0E00AC
-			public const int CardView_Light = 2131624108;
+			// aapt resource value: 0x7f0a0004
+			public const int CardView_Light = 2131361796;
 			
-			// aapt resource value: 0x7F0E00AD
-			public const int GFD_Dialog = 2131624109;
+			// aapt resource value: 0x7f0a018f
+			public const int GFD_Dialog = 2131362191;
 			
-			// aapt resource value: 0x7F0E00AF
-			public const int GFD_Dialog_Download = 2131624111;
+			// aapt resource value: 0x7f0a0192
+			public const int GFD_Dialog_Light = 2131362194;
 			
-			// aapt resource value: 0x7F0E00B0
-			public const int GFD_Dialog_Download_Light = 2131624112;
+			// aapt resource value: 0x7f0a0191
+			public const int GFD_Dialog_Download = 2131362193;
 			
-			// aapt resource value: 0x7F0E00AE
-			public const int GFD_Dialog_Light = 2131624110;
+			// aapt resource value: 0x7f0a0194
+			public const int GFD_Dialog_Download_Light = 2131362196;
 			
-			// aapt resource value: 0x7F0E00B1
-			public const int GFD_Dialog_Vertical = 2131624113;
+			// aapt resource value: 0x7f0a0190
+			public const int GFD_Dialog_Vertical = 2131362192;
 			
-			// aapt resource value: 0x7F0E00B2
-			public const int GFD_Dialog_Vertical_Light = 2131624114;
+			// aapt resource value: 0x7f0a0193
+			public const int GFD_Dialog_Vertical_Light = 2131362195;
 			
-			// aapt resource value: 0x7F0E00B3
-			public const int GFS = 2131624115;
+			// aapt resource value: 0x7f0a0185
+			public const int GFS = 2131362181;
 			
-			// aapt resource value: 0x7F0E00B4
-			public const int GFS_Light = 2131624116;
+			// aapt resource value: 0x7f0a0186
+			public const int GFS_Light = 2131362182;
 			
-			// aapt resource value: 0x7F0E00B5
-			public const int GFS_NoActionBar = 2131624117;
+			// aapt resource value: 0x7f0a0189
+			public const int GFS_NoActionBar = 2131362185;
 			
-			// aapt resource value: 0x7F0E00B6
-			public const int GFS_NoActionBar_Light = 2131624118;
+			// aapt resource value: 0x7f0a018a
+			public const int GFS_NoActionBar_Light = 2131362186;
 			
-			// aapt resource value: 0x7F0E00B7
-			public const int GFS_Setting = 2131624119;
+			// aapt resource value: 0x7f0a0187
+			public const int GFS_Setting = 2131362183;
 			
-			// aapt resource value: 0x7F0E00B8
-			public const int GFS_Setting_Light = 2131624120;
+			// aapt resource value: 0x7f0a0188
+			public const int GFS_Setting_Light = 2131362184;
 			
-			// aapt resource value: 0x7F0E00B9
-			public const int GFS_Splash = 2131624121;
+			// aapt resource value: 0x7f0a018d
+			public const int GFS_Splash = 2131362189;
 			
-			// aapt resource value: 0x7F0E00BA
-			public const int GFS_Splash_Light = 2131624122;
+			// aapt resource value: 0x7f0a018e
+			public const int GFS_Splash_Light = 2131362190;
 			
-			// aapt resource value: 0x7F0E00BB
-			public const int GFS_Toolbar = 2131624123;
+			// aapt resource value: 0x7f0a018b
+			public const int GFS_Toolbar = 2131362187;
 			
-			// aapt resource value: 0x7F0E00BC
-			public const int GFS_Toolbar_Light = 2131624124;
+			// aapt resource value: 0x7f0a018c
+			public const int GFS_Toolbar_Light = 2131362188;
 			
-			// aapt resource value: 0x7F0E00BD
-			public const int Platform_AppCompat = 2131624125;
+			// aapt resource value: 0x7f0a0023
+			public const int Platform_AppCompat = 2131361827;
 			
-			// aapt resource value: 0x7F0E00BE
-			public const int Platform_AppCompat_Light = 2131624126;
+			// aapt resource value: 0x7f0a0024
+			public const int Platform_AppCompat_Light = 2131361828;
 			
-			// aapt resource value: 0x7F0E00BF
-			public const int Platform_ThemeOverlay_AppCompat = 2131624127;
+			// aapt resource value: 0x7f0a0084
+			public const int Platform_ThemeOverlay_AppCompat = 2131361924;
 			
-			// aapt resource value: 0x7F0E00C0
-			public const int Platform_ThemeOverlay_AppCompat_Dark = 2131624128;
+			// aapt resource value: 0x7f0a0085
+			public const int Platform_ThemeOverlay_AppCompat_Dark = 2131361925;
 			
-			// aapt resource value: 0x7F0E00C1
-			public const int Platform_ThemeOverlay_AppCompat_Light = 2131624129;
+			// aapt resource value: 0x7f0a0086
+			public const int Platform_ThemeOverlay_AppCompat_Light = 2131361926;
 			
-			// aapt resource value: 0x7F0E00C2
-			public const int Platform_V11_AppCompat = 2131624130;
+			// aapt resource value: 0x7f0a0025
+			public const int Platform_V11_AppCompat = 2131361829;
 			
-			// aapt resource value: 0x7F0E00C3
-			public const int Platform_V11_AppCompat_Light = 2131624131;
+			// aapt resource value: 0x7f0a0026
+			public const int Platform_V11_AppCompat_Light = 2131361830;
 			
-			// aapt resource value: 0x7F0E00C4
-			public const int Platform_V14_AppCompat = 2131624132;
+			// aapt resource value: 0x7f0a002d
+			public const int Platform_V14_AppCompat = 2131361837;
 			
-			// aapt resource value: 0x7F0E00C5
-			public const int Platform_V14_AppCompat_Light = 2131624133;
+			// aapt resource value: 0x7f0a002e
+			public const int Platform_V14_AppCompat_Light = 2131361838;
 			
-			// aapt resource value: 0x7F0E00C6
-			public const int Platform_V21_AppCompat = 2131624134;
+			// aapt resource value: 0x7f0a0087
+			public const int Platform_V21_AppCompat = 2131361927;
 			
-			// aapt resource value: 0x7F0E00C7
-			public const int Platform_V21_AppCompat_Light = 2131624135;
+			// aapt resource value: 0x7f0a0088
+			public const int Platform_V21_AppCompat_Light = 2131361928;
 			
-			// aapt resource value: 0x7F0E00C8
-			public const int Platform_V25_AppCompat = 2131624136;
+			// aapt resource value: 0x7f0a0094
+			public const int Platform_V25_AppCompat = 2131361940;
 			
-			// aapt resource value: 0x7F0E00C9
-			public const int Platform_V25_AppCompat_Light = 2131624137;
+			// aapt resource value: 0x7f0a0095
+			public const int Platform_V25_AppCompat_Light = 2131361941;
 			
-			// aapt resource value: 0x7F0E00CA
-			public const int Platform_Widget_AppCompat_Spinner = 2131624138;
+			// aapt resource value: 0x7f0a0027
+			public const int Platform_Widget_AppCompat_Spinner = 2131361831;
 			
-			// aapt resource value: 0x7F0E00CB
-			public const int RtlOverlay_DialogWindowTitle_AppCompat = 2131624139;
+			// aapt resource value: 0x7f0a0030
+			public const int RtlOverlay_DialogWindowTitle_AppCompat = 2131361840;
 			
-			// aapt resource value: 0x7F0E00CC
-			public const int RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = 2131624140;
+			// aapt resource value: 0x7f0a0031
+			public const int RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = 2131361841;
 			
-			// aapt resource value: 0x7F0E00CD
-			public const int RtlOverlay_Widget_AppCompat_DialogTitle_Icon = 2131624141;
+			// aapt resource value: 0x7f0a0032
+			public const int RtlOverlay_Widget_AppCompat_DialogTitle_Icon = 2131361842;
 			
-			// aapt resource value: 0x7F0E00CE
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem = 2131624142;
+			// aapt resource value: 0x7f0a0033
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem = 2131361843;
 			
-			// aapt resource value: 0x7F0E00CF
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = 2131624143;
+			// aapt resource value: 0x7f0a0034
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = 2131361844;
 			
-			// aapt resource value: 0x7F0E00D0
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = 2131624144;
+			// aapt resource value: 0x7f0a0035
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = 2131361845;
 			
-			// aapt resource value: 0x7F0E00D6
-			public const int RtlOverlay_Widget_AppCompat_SearchView_MagIcon = 2131624150;
+			// aapt resource value: 0x7f0a0036
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown = 2131361846;
 			
-			// aapt resource value: 0x7F0E00D1
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown = 2131624145;
+			// aapt resource value: 0x7f0a0037
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = 2131361847;
 			
-			// aapt resource value: 0x7F0E00D2
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = 2131624146;
+			// aapt resource value: 0x7f0a0038
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = 2131361848;
 			
-			// aapt resource value: 0x7F0E00D3
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = 2131624147;
+			// aapt resource value: 0x7f0a0039
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Query = 2131361849;
 			
-			// aapt resource value: 0x7F0E00D4
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Query = 2131624148;
+			// aapt resource value: 0x7f0a003a
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Text = 2131361850;
 			
-			// aapt resource value: 0x7F0E00D5
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Text = 2131624149;
+			// aapt resource value: 0x7f0a003b
+			public const int RtlOverlay_Widget_AppCompat_SearchView_MagIcon = 2131361851;
 			
-			// aapt resource value: 0x7F0E00D7
-			public const int RtlUnderlay_Widget_AppCompat_ActionButton = 2131624151;
+			// aapt resource value: 0x7f0a003c
+			public const int RtlUnderlay_Widget_AppCompat_ActionButton = 2131361852;
 			
-			// aapt resource value: 0x7F0E00D8
-			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131624152;
+			// aapt resource value: 0x7f0a003d
+			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131361853;
 			
-			// aapt resource value: 0x7F0E00D9
-			public const int TextAppearance_AppCompat = 2131624153;
+			// aapt resource value: 0x7f0a00cc
+			public const int TextAppearance_AppCompat = 2131361996;
 			
-			// aapt resource value: 0x7F0E00DA
-			public const int TextAppearance_AppCompat_Body1 = 2131624154;
+			// aapt resource value: 0x7f0a00cd
+			public const int TextAppearance_AppCompat_Body1 = 2131361997;
 			
-			// aapt resource value: 0x7F0E00DB
-			public const int TextAppearance_AppCompat_Body2 = 2131624155;
+			// aapt resource value: 0x7f0a00ce
+			public const int TextAppearance_AppCompat_Body2 = 2131361998;
 			
-			// aapt resource value: 0x7F0E00DC
-			public const int TextAppearance_AppCompat_Button = 2131624156;
+			// aapt resource value: 0x7f0a00cf
+			public const int TextAppearance_AppCompat_Button = 2131361999;
 			
-			// aapt resource value: 0x7F0E00DD
-			public const int TextAppearance_AppCompat_Caption = 2131624157;
+			// aapt resource value: 0x7f0a00d0
+			public const int TextAppearance_AppCompat_Caption = 2131362000;
 			
-			// aapt resource value: 0x7F0E00DE
-			public const int TextAppearance_AppCompat_Display1 = 2131624158;
+			// aapt resource value: 0x7f0a00d1
+			public const int TextAppearance_AppCompat_Display1 = 2131362001;
 			
-			// aapt resource value: 0x7F0E00DF
-			public const int TextAppearance_AppCompat_Display2 = 2131624159;
+			// aapt resource value: 0x7f0a00d2
+			public const int TextAppearance_AppCompat_Display2 = 2131362002;
 			
-			// aapt resource value: 0x7F0E00E0
-			public const int TextAppearance_AppCompat_Display3 = 2131624160;
+			// aapt resource value: 0x7f0a00d3
+			public const int TextAppearance_AppCompat_Display3 = 2131362003;
 			
-			// aapt resource value: 0x7F0E00E1
-			public const int TextAppearance_AppCompat_Display4 = 2131624161;
+			// aapt resource value: 0x7f0a00d4
+			public const int TextAppearance_AppCompat_Display4 = 2131362004;
 			
-			// aapt resource value: 0x7F0E00E2
-			public const int TextAppearance_AppCompat_Headline = 2131624162;
+			// aapt resource value: 0x7f0a00d5
+			public const int TextAppearance_AppCompat_Headline = 2131362005;
 			
-			// aapt resource value: 0x7F0E00E3
-			public const int TextAppearance_AppCompat_Inverse = 2131624163;
+			// aapt resource value: 0x7f0a00d6
+			public const int TextAppearance_AppCompat_Inverse = 2131362006;
 			
-			// aapt resource value: 0x7F0E00E4
-			public const int TextAppearance_AppCompat_Large = 2131624164;
+			// aapt resource value: 0x7f0a00d7
+			public const int TextAppearance_AppCompat_Large = 2131362007;
 			
-			// aapt resource value: 0x7F0E00E5
-			public const int TextAppearance_AppCompat_Large_Inverse = 2131624165;
+			// aapt resource value: 0x7f0a00d8
+			public const int TextAppearance_AppCompat_Large_Inverse = 2131362008;
 			
-			// aapt resource value: 0x7F0E00E6
-			public const int TextAppearance_AppCompat_Light_SearchResult_Subtitle = 2131624166;
+			// aapt resource value: 0x7f0a00d9
+			public const int TextAppearance_AppCompat_Light_SearchResult_Subtitle = 2131362009;
 			
-			// aapt resource value: 0x7F0E00E7
-			public const int TextAppearance_AppCompat_Light_SearchResult_Title = 2131624167;
+			// aapt resource value: 0x7f0a00da
+			public const int TextAppearance_AppCompat_Light_SearchResult_Title = 2131362010;
 			
-			// aapt resource value: 0x7F0E00E8
-			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131624168;
+			// aapt resource value: 0x7f0a00db
+			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131362011;
 			
-			// aapt resource value: 0x7F0E00E9
-			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131624169;
+			// aapt resource value: 0x7f0a00dc
+			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131362012;
 			
-			// aapt resource value: 0x7F0E00EA
-			public const int TextAppearance_AppCompat_Medium = 2131624170;
+			// aapt resource value: 0x7f0a00dd
+			public const int TextAppearance_AppCompat_Medium = 2131362013;
 			
-			// aapt resource value: 0x7F0E00EB
-			public const int TextAppearance_AppCompat_Medium_Inverse = 2131624171;
+			// aapt resource value: 0x7f0a00de
+			public const int TextAppearance_AppCompat_Medium_Inverse = 2131362014;
 			
-			// aapt resource value: 0x7F0E00EC
-			public const int TextAppearance_AppCompat_Menu = 2131624172;
+			// aapt resource value: 0x7f0a00df
+			public const int TextAppearance_AppCompat_Menu = 2131362015;
 			
-			// aapt resource value: 0x7F0E00ED
-			public const int TextAppearance_AppCompat_SearchResult_Subtitle = 2131624173;
+			// aapt resource value: 0x7f0a00e0
+			public const int TextAppearance_AppCompat_SearchResult_Subtitle = 2131362016;
 			
-			// aapt resource value: 0x7F0E00EE
-			public const int TextAppearance_AppCompat_SearchResult_Title = 2131624174;
+			// aapt resource value: 0x7f0a00e1
+			public const int TextAppearance_AppCompat_SearchResult_Title = 2131362017;
 			
-			// aapt resource value: 0x7F0E00EF
-			public const int TextAppearance_AppCompat_Small = 2131624175;
+			// aapt resource value: 0x7f0a00e2
+			public const int TextAppearance_AppCompat_Small = 2131362018;
 			
-			// aapt resource value: 0x7F0E00F0
-			public const int TextAppearance_AppCompat_Small_Inverse = 2131624176;
+			// aapt resource value: 0x7f0a00e3
+			public const int TextAppearance_AppCompat_Small_Inverse = 2131362019;
 			
-			// aapt resource value: 0x7F0E00F1
-			public const int TextAppearance_AppCompat_Subhead = 2131624177;
+			// aapt resource value: 0x7f0a00e4
+			public const int TextAppearance_AppCompat_Subhead = 2131362020;
 			
-			// aapt resource value: 0x7F0E00F2
-			public const int TextAppearance_AppCompat_Subhead_Inverse = 2131624178;
+			// aapt resource value: 0x7f0a00e5
+			public const int TextAppearance_AppCompat_Subhead_Inverse = 2131362021;
 			
-			// aapt resource value: 0x7F0E00F3
-			public const int TextAppearance_AppCompat_Title = 2131624179;
+			// aapt resource value: 0x7f0a00e6
+			public const int TextAppearance_AppCompat_Title = 2131362022;
 			
-			// aapt resource value: 0x7F0E00F4
-			public const int TextAppearance_AppCompat_Title_Inverse = 2131624180;
+			// aapt resource value: 0x7f0a00e7
+			public const int TextAppearance_AppCompat_Title_Inverse = 2131362023;
 			
-			// aapt resource value: 0x7F0E00F5
-			public const int TextAppearance_AppCompat_Tooltip = 2131624181;
+			// aapt resource value: 0x7f0a002f
+			public const int TextAppearance_AppCompat_Tooltip = 2131361839;
 			
-			// aapt resource value: 0x7F0E00F6
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131624182;
+			// aapt resource value: 0x7f0a00e8
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131362024;
 			
-			// aapt resource value: 0x7F0E00F7
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131624183;
+			// aapt resource value: 0x7f0a00e9
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131362025;
 			
-			// aapt resource value: 0x7F0E00F8
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131624184;
+			// aapt resource value: 0x7f0a00ea
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131362026;
 			
-			// aapt resource value: 0x7F0E00F9
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Title = 2131624185;
+			// aapt resource value: 0x7f0a00eb
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Title = 2131362027;
 			
-			// aapt resource value: 0x7F0E00FA
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131624186;
+			// aapt resource value: 0x7f0a00ec
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131362028;
 			
-			// aapt resource value: 0x7F0E00FB
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131624187;
+			// aapt resource value: 0x7f0a00ed
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131362029;
 			
-			// aapt resource value: 0x7F0E00FC
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = 2131624188;
+			// aapt resource value: 0x7f0a00ee
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = 2131362030;
 			
-			// aapt resource value: 0x7F0E00FD
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Title = 2131624189;
+			// aapt resource value: 0x7f0a00ef
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Title = 2131362031;
 			
-			// aapt resource value: 0x7F0E00FE
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = 2131624190;
+			// aapt resource value: 0x7f0a00f0
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = 2131362032;
 			
-			// aapt resource value: 0x7F0E00FF
-			public const int TextAppearance_AppCompat_Widget_Button = 2131624191;
+			// aapt resource value: 0x7f0a00f1
+			public const int TextAppearance_AppCompat_Widget_Button = 2131362033;
 			
-			// aapt resource value: 0x7F0E0100
-			public const int TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131624192;
+			// aapt resource value: 0x7f0a00f2
+			public const int TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131362034;
 			
-			// aapt resource value: 0x7F0E0101
-			public const int TextAppearance_AppCompat_Widget_Button_Colored = 2131624193;
+			// aapt resource value: 0x7f0a00f3
+			public const int TextAppearance_AppCompat_Widget_Button_Colored = 2131362035;
 			
-			// aapt resource value: 0x7F0E0102
-			public const int TextAppearance_AppCompat_Widget_Button_Inverse = 2131624194;
+			// aapt resource value: 0x7f0a00f4
+			public const int TextAppearance_AppCompat_Widget_Button_Inverse = 2131362036;
 			
-			// aapt resource value: 0x7F0E0103
-			public const int TextAppearance_AppCompat_Widget_DropDownItem = 2131624195;
+			// aapt resource value: 0x7f0a00f5
+			public const int TextAppearance_AppCompat_Widget_DropDownItem = 2131362037;
 			
-			// aapt resource value: 0x7F0E0104
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131624196;
+			// aapt resource value: 0x7f0a00f6
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131362038;
 			
-			// aapt resource value: 0x7F0E0105
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131624197;
+			// aapt resource value: 0x7f0a00f7
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131362039;
 			
-			// aapt resource value: 0x7F0E0106
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131624198;
+			// aapt resource value: 0x7f0a00f8
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131362040;
 			
-			// aapt resource value: 0x7F0E0107
-			public const int TextAppearance_AppCompat_Widget_Switch = 2131624199;
+			// aapt resource value: 0x7f0a00f9
+			public const int TextAppearance_AppCompat_Widget_Switch = 2131362041;
 			
-			// aapt resource value: 0x7F0E0108
-			public const int TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131624200;
+			// aapt resource value: 0x7f0a00fa
+			public const int TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131362042;
 			
-			// aapt resource value: 0x7F0E0109
-			public const int TextAppearance_Compat_Notification = 2131624201;
+			// aapt resource value: 0x7f0a017e
+			public const int TextAppearance_Compat_Notification = 2131362174;
 			
-			// aapt resource value: 0x7F0E010A
-			public const int TextAppearance_Compat_Notification_Info = 2131624202;
+			// aapt resource value: 0x7f0a017f
+			public const int TextAppearance_Compat_Notification_Info = 2131362175;
 			
-			// aapt resource value: 0x7F0E010B
-			public const int TextAppearance_Compat_Notification_Info_Media = 2131624203;
+			// aapt resource value: 0x7f0a015b
+			public const int TextAppearance_Compat_Notification_Info_Media = 2131362139;
 			
-			// aapt resource value: 0x7F0E010C
-			public const int TextAppearance_Compat_Notification_Line2 = 2131624204;
+			// aapt resource value: 0x7f0a0184
+			public const int TextAppearance_Compat_Notification_Line2 = 2131362180;
 			
-			// aapt resource value: 0x7F0E010D
-			public const int TextAppearance_Compat_Notification_Line2_Media = 2131624205;
+			// aapt resource value: 0x7f0a015f
+			public const int TextAppearance_Compat_Notification_Line2_Media = 2131362143;
 			
-			// aapt resource value: 0x7F0E010E
-			public const int TextAppearance_Compat_Notification_Media = 2131624206;
+			// aapt resource value: 0x7f0a015c
+			public const int TextAppearance_Compat_Notification_Media = 2131362140;
 			
-			// aapt resource value: 0x7F0E010F
-			public const int TextAppearance_Compat_Notification_Time = 2131624207;
+			// aapt resource value: 0x7f0a0180
+			public const int TextAppearance_Compat_Notification_Time = 2131362176;
 			
-			// aapt resource value: 0x7F0E0110
-			public const int TextAppearance_Compat_Notification_Time_Media = 2131624208;
+			// aapt resource value: 0x7f0a015d
+			public const int TextAppearance_Compat_Notification_Time_Media = 2131362141;
 			
-			// aapt resource value: 0x7F0E0111
-			public const int TextAppearance_Compat_Notification_Title = 2131624209;
+			// aapt resource value: 0x7f0a0181
+			public const int TextAppearance_Compat_Notification_Title = 2131362177;
 			
-			// aapt resource value: 0x7F0E0112
-			public const int TextAppearance_Compat_Notification_Title_Media = 2131624210;
+			// aapt resource value: 0x7f0a015e
+			public const int TextAppearance_Compat_Notification_Title_Media = 2131362142;
 			
-			// aapt resource value: 0x7F0E0113
-			public const int TextAppearance_Design_CollapsingToolbar_Expanded = 2131624211;
+			// aapt resource value: 0x7f0a0167
+			public const int TextAppearance_Design_CollapsingToolbar_Expanded = 2131362151;
 			
-			// aapt resource value: 0x7F0E0114
-			public const int TextAppearance_Design_Counter = 2131624212;
+			// aapt resource value: 0x7f0a0168
+			public const int TextAppearance_Design_Counter = 2131362152;
 			
-			// aapt resource value: 0x7F0E0115
-			public const int TextAppearance_Design_Counter_Overflow = 2131624213;
+			// aapt resource value: 0x7f0a0169
+			public const int TextAppearance_Design_Counter_Overflow = 2131362153;
 			
-			// aapt resource value: 0x7F0E0116
-			public const int TextAppearance_Design_Error = 2131624214;
+			// aapt resource value: 0x7f0a016a
+			public const int TextAppearance_Design_Error = 2131362154;
 			
-			// aapt resource value: 0x7F0E0117
-			public const int TextAppearance_Design_Hint = 2131624215;
+			// aapt resource value: 0x7f0a016b
+			public const int TextAppearance_Design_Hint = 2131362155;
 			
-			// aapt resource value: 0x7F0E0118
-			public const int TextAppearance_Design_Snackbar_Message = 2131624216;
+			// aapt resource value: 0x7f0a016c
+			public const int TextAppearance_Design_Snackbar_Message = 2131362156;
 			
-			// aapt resource value: 0x7F0E0119
-			public const int TextAppearance_Design_Tab = 2131624217;
+			// aapt resource value: 0x7f0a016d
+			public const int TextAppearance_Design_Tab = 2131362157;
 			
-			// aapt resource value: 0x7F0E011A
-			public const int TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131624218;
+			// aapt resource value: 0x7f0a00fb
+			public const int TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131362043;
 			
-			// aapt resource value: 0x7F0E011B
-			public const int TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131624219;
+			// aapt resource value: 0x7f0a00fc
+			public const int TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131362044;
 			
-			// aapt resource value: 0x7F0E011C
-			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131624220;
+			// aapt resource value: 0x7f0a00fd
+			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131362045;
 			
-			// aapt resource value: 0x7F0E0139
-			public const int ThemeOverlay_AppCompat = 2131624249;
+			// aapt resource value: 0x7f0a00fe
+			public const int Theme_AppCompat = 2131362046;
 			
-			// aapt resource value: 0x7F0E013A
-			public const int ThemeOverlay_AppCompat_ActionBar = 2131624250;
+			// aapt resource value: 0x7f0a00ff
+			public const int Theme_AppCompat_CompactMenu = 2131362047;
 			
-			// aapt resource value: 0x7F0E013B
-			public const int ThemeOverlay_AppCompat_Dark = 2131624251;
+			// aapt resource value: 0x7f0a0009
+			public const int Theme_AppCompat_DayNight = 2131361801;
 			
-			// aapt resource value: 0x7F0E013C
-			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131624252;
+			// aapt resource value: 0x7f0a000a
+			public const int Theme_AppCompat_DayNight_DarkActionBar = 2131361802;
 			
-			// aapt resource value: 0x7F0E013D
-			public const int ThemeOverlay_AppCompat_Dialog = 2131624253;
+			// aapt resource value: 0x7f0a000b
+			public const int Theme_AppCompat_DayNight_Dialog = 2131361803;
 			
-			// aapt resource value: 0x7F0E013E
-			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131624254;
+			// aapt resource value: 0x7f0a000c
+			public const int Theme_AppCompat_DayNight_Dialog_Alert = 2131361804;
 			
-			// aapt resource value: 0x7F0E013F
-			public const int ThemeOverlay_AppCompat_Light = 2131624255;
+			// aapt resource value: 0x7f0a000d
+			public const int Theme_AppCompat_DayNight_Dialog_MinWidth = 2131361805;
 			
-			// aapt resource value: 0x7F0E011D
-			public const int Theme_AppCompat = 2131624221;
+			// aapt resource value: 0x7f0a000e
+			public const int Theme_AppCompat_DayNight_DialogWhenLarge = 2131361806;
 			
-			// aapt resource value: 0x7F0E011E
-			public const int Theme_AppCompat_CompactMenu = 2131624222;
+			// aapt resource value: 0x7f0a000f
+			public const int Theme_AppCompat_DayNight_NoActionBar = 2131361807;
 			
-			// aapt resource value: 0x7F0E011F
-			public const int Theme_AppCompat_DayNight = 2131624223;
+			// aapt resource value: 0x7f0a0100
+			public const int Theme_AppCompat_Dialog = 2131362048;
 			
-			// aapt resource value: 0x7F0E0120
-			public const int Theme_AppCompat_DayNight_DarkActionBar = 2131624224;
+			// aapt resource value: 0x7f0a0101
+			public const int Theme_AppCompat_Dialog_Alert = 2131362049;
 			
-			// aapt resource value: 0x7F0E0121
-			public const int Theme_AppCompat_DayNight_Dialog = 2131624225;
+			// aapt resource value: 0x7f0a0102
+			public const int Theme_AppCompat_Dialog_MinWidth = 2131362050;
 			
-			// aapt resource value: 0x7F0E0124
-			public const int Theme_AppCompat_DayNight_DialogWhenLarge = 2131624228;
+			// aapt resource value: 0x7f0a0103
+			public const int Theme_AppCompat_DialogWhenLarge = 2131362051;
 			
-			// aapt resource value: 0x7F0E0122
-			public const int Theme_AppCompat_DayNight_Dialog_Alert = 2131624226;
+			// aapt resource value: 0x7f0a0104
+			public const int Theme_AppCompat_Light = 2131362052;
 			
-			// aapt resource value: 0x7F0E0123
-			public const int Theme_AppCompat_DayNight_Dialog_MinWidth = 2131624227;
+			// aapt resource value: 0x7f0a0105
+			public const int Theme_AppCompat_Light_DarkActionBar = 2131362053;
 			
-			// aapt resource value: 0x7F0E0125
-			public const int Theme_AppCompat_DayNight_NoActionBar = 2131624229;
+			// aapt resource value: 0x7f0a0106
+			public const int Theme_AppCompat_Light_Dialog = 2131362054;
 			
-			// aapt resource value: 0x7F0E0126
-			public const int Theme_AppCompat_Dialog = 2131624230;
+			// aapt resource value: 0x7f0a0107
+			public const int Theme_AppCompat_Light_Dialog_Alert = 2131362055;
 			
-			// aapt resource value: 0x7F0E0129
-			public const int Theme_AppCompat_DialogWhenLarge = 2131624233;
+			// aapt resource value: 0x7f0a0108
+			public const int Theme_AppCompat_Light_Dialog_MinWidth = 2131362056;
 			
-			// aapt resource value: 0x7F0E0127
-			public const int Theme_AppCompat_Dialog_Alert = 2131624231;
+			// aapt resource value: 0x7f0a0109
+			public const int Theme_AppCompat_Light_DialogWhenLarge = 2131362057;
 			
-			// aapt resource value: 0x7F0E0128
-			public const int Theme_AppCompat_Dialog_MinWidth = 2131624232;
+			// aapt resource value: 0x7f0a010a
+			public const int Theme_AppCompat_Light_NoActionBar = 2131362058;
 			
-			// aapt resource value: 0x7F0E012A
-			public const int Theme_AppCompat_Light = 2131624234;
+			// aapt resource value: 0x7f0a010b
+			public const int Theme_AppCompat_NoActionBar = 2131362059;
 			
-			// aapt resource value: 0x7F0E012B
-			public const int Theme_AppCompat_Light_DarkActionBar = 2131624235;
+			// aapt resource value: 0x7f0a016e
+			public const int Theme_Design = 2131362158;
 			
-			// aapt resource value: 0x7F0E012C
-			public const int Theme_AppCompat_Light_Dialog = 2131624236;
+			// aapt resource value: 0x7f0a016f
+			public const int Theme_Design_BottomSheetDialog = 2131362159;
 			
-			// aapt resource value: 0x7F0E012F
-			public const int Theme_AppCompat_Light_DialogWhenLarge = 2131624239;
+			// aapt resource value: 0x7f0a0170
+			public const int Theme_Design_Light = 2131362160;
 			
-			// aapt resource value: 0x7F0E012D
-			public const int Theme_AppCompat_Light_Dialog_Alert = 2131624237;
+			// aapt resource value: 0x7f0a0171
+			public const int Theme_Design_Light_BottomSheetDialog = 2131362161;
 			
-			// aapt resource value: 0x7F0E012E
-			public const int Theme_AppCompat_Light_Dialog_MinWidth = 2131624238;
+			// aapt resource value: 0x7f0a0172
+			public const int Theme_Design_Light_NoActionBar = 2131362162;
 			
-			// aapt resource value: 0x7F0E0130
-			public const int Theme_AppCompat_Light_NoActionBar = 2131624240;
+			// aapt resource value: 0x7f0a0173
+			public const int Theme_Design_NoActionBar = 2131362163;
 			
-			// aapt resource value: 0x7F0E0131
-			public const int Theme_AppCompat_NoActionBar = 2131624241;
+			// aapt resource value: 0x7f0a0000
+			public const int Theme_IAPTheme = 2131361792;
 			
-			// aapt resource value: 0x7F0E0132
-			public const int Theme_Design = 2131624242;
+			// aapt resource value: 0x7f0a010c
+			public const int ThemeOverlay_AppCompat = 2131362060;
 			
-			// aapt resource value: 0x7F0E0133
-			public const int Theme_Design_BottomSheetDialog = 2131624243;
+			// aapt resource value: 0x7f0a010d
+			public const int ThemeOverlay_AppCompat_ActionBar = 2131362061;
 			
-			// aapt resource value: 0x7F0E0134
-			public const int Theme_Design_Light = 2131624244;
+			// aapt resource value: 0x7f0a010e
+			public const int ThemeOverlay_AppCompat_Dark = 2131362062;
 			
-			// aapt resource value: 0x7F0E0135
-			public const int Theme_Design_Light_BottomSheetDialog = 2131624245;
+			// aapt resource value: 0x7f0a010f
+			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131362063;
 			
-			// aapt resource value: 0x7F0E0136
-			public const int Theme_Design_Light_NoActionBar = 2131624246;
+			// aapt resource value: 0x7f0a0110
+			public const int ThemeOverlay_AppCompat_Dialog = 2131362064;
 			
-			// aapt resource value: 0x7F0E0137
-			public const int Theme_Design_NoActionBar = 2131624247;
+			// aapt resource value: 0x7f0a0111
+			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131362065;
 			
-			// aapt resource value: 0x7F0E0138
-			public const int Theme_IAPTheme = 2131624248;
+			// aapt resource value: 0x7f0a0112
+			public const int ThemeOverlay_AppCompat_Light = 2131362066;
 			
-			// aapt resource value: 0x7F0E0140
-			public const int Widget_AppCompat_ActionBar = 2131624256;
+			// aapt resource value: 0x7f0a0113
+			public const int Widget_AppCompat_ActionBar = 2131362067;
 			
-			// aapt resource value: 0x7F0E0141
-			public const int Widget_AppCompat_ActionBar_Solid = 2131624257;
+			// aapt resource value: 0x7f0a0114
+			public const int Widget_AppCompat_ActionBar_Solid = 2131362068;
 			
-			// aapt resource value: 0x7F0E0142
-			public const int Widget_AppCompat_ActionBar_TabBar = 2131624258;
+			// aapt resource value: 0x7f0a0115
+			public const int Widget_AppCompat_ActionBar_TabBar = 2131362069;
 			
-			// aapt resource value: 0x7F0E0143
-			public const int Widget_AppCompat_ActionBar_TabText = 2131624259;
+			// aapt resource value: 0x7f0a0116
+			public const int Widget_AppCompat_ActionBar_TabText = 2131362070;
 			
-			// aapt resource value: 0x7F0E0144
-			public const int Widget_AppCompat_ActionBar_TabView = 2131624260;
+			// aapt resource value: 0x7f0a0117
+			public const int Widget_AppCompat_ActionBar_TabView = 2131362071;
 			
-			// aapt resource value: 0x7F0E0145
-			public const int Widget_AppCompat_ActionButton = 2131624261;
+			// aapt resource value: 0x7f0a0118
+			public const int Widget_AppCompat_ActionButton = 2131362072;
 			
-			// aapt resource value: 0x7F0E0146
-			public const int Widget_AppCompat_ActionButton_CloseMode = 2131624262;
+			// aapt resource value: 0x7f0a0119
+			public const int Widget_AppCompat_ActionButton_CloseMode = 2131362073;
 			
-			// aapt resource value: 0x7F0E0147
-			public const int Widget_AppCompat_ActionButton_Overflow = 2131624263;
+			// aapt resource value: 0x7f0a011a
+			public const int Widget_AppCompat_ActionButton_Overflow = 2131362074;
 			
-			// aapt resource value: 0x7F0E0148
-			public const int Widget_AppCompat_ActionMode = 2131624264;
+			// aapt resource value: 0x7f0a011b
+			public const int Widget_AppCompat_ActionMode = 2131362075;
 			
-			// aapt resource value: 0x7F0E0149
-			public const int Widget_AppCompat_ActivityChooserView = 2131624265;
+			// aapt resource value: 0x7f0a011c
+			public const int Widget_AppCompat_ActivityChooserView = 2131362076;
 			
-			// aapt resource value: 0x7F0E014A
-			public const int Widget_AppCompat_AutoCompleteTextView = 2131624266;
+			// aapt resource value: 0x7f0a011d
+			public const int Widget_AppCompat_AutoCompleteTextView = 2131362077;
 			
-			// aapt resource value: 0x7F0E014B
-			public const int Widget_AppCompat_Button = 2131624267;
+			// aapt resource value: 0x7f0a011e
+			public const int Widget_AppCompat_Button = 2131362078;
 			
-			// aapt resource value: 0x7F0E0151
-			public const int Widget_AppCompat_ButtonBar = 2131624273;
+			// aapt resource value: 0x7f0a011f
+			public const int Widget_AppCompat_Button_Borderless = 2131362079;
 			
-			// aapt resource value: 0x7F0E0152
-			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131624274;
+			// aapt resource value: 0x7f0a0120
+			public const int Widget_AppCompat_Button_Borderless_Colored = 2131362080;
 			
-			// aapt resource value: 0x7F0E014C
-			public const int Widget_AppCompat_Button_Borderless = 2131624268;
+			// aapt resource value: 0x7f0a0121
+			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131362081;
 			
-			// aapt resource value: 0x7F0E014D
-			public const int Widget_AppCompat_Button_Borderless_Colored = 2131624269;
+			// aapt resource value: 0x7f0a0122
+			public const int Widget_AppCompat_Button_Colored = 2131362082;
 			
-			// aapt resource value: 0x7F0E014E
-			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131624270;
+			// aapt resource value: 0x7f0a0123
+			public const int Widget_AppCompat_Button_Small = 2131362083;
 			
-			// aapt resource value: 0x7F0E014F
-			public const int Widget_AppCompat_Button_Colored = 2131624271;
+			// aapt resource value: 0x7f0a0124
+			public const int Widget_AppCompat_ButtonBar = 2131362084;
 			
-			// aapt resource value: 0x7F0E0150
-			public const int Widget_AppCompat_Button_Small = 2131624272;
+			// aapt resource value: 0x7f0a0125
+			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131362085;
 			
-			// aapt resource value: 0x7F0E0153
-			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131624275;
+			// aapt resource value: 0x7f0a0126
+			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131362086;
 			
-			// aapt resource value: 0x7F0E0154
-			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131624276;
+			// aapt resource value: 0x7f0a0127
+			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131362087;
 			
-			// aapt resource value: 0x7F0E0155
-			public const int Widget_AppCompat_CompoundButton_Switch = 2131624277;
+			// aapt resource value: 0x7f0a0128
+			public const int Widget_AppCompat_CompoundButton_Switch = 2131362088;
 			
-			// aapt resource value: 0x7F0E0156
-			public const int Widget_AppCompat_DrawerArrowToggle = 2131624278;
+			// aapt resource value: 0x7f0a0129
+			public const int Widget_AppCompat_DrawerArrowToggle = 2131362089;
 			
-			// aapt resource value: 0x7F0E0157
-			public const int Widget_AppCompat_DropDownItem_Spinner = 2131624279;
+			// aapt resource value: 0x7f0a012a
+			public const int Widget_AppCompat_DropDownItem_Spinner = 2131362090;
 			
-			// aapt resource value: 0x7F0E0158
-			public const int Widget_AppCompat_EditText = 2131624280;
+			// aapt resource value: 0x7f0a012b
+			public const int Widget_AppCompat_EditText = 2131362091;
 			
-			// aapt resource value: 0x7F0E0159
-			public const int Widget_AppCompat_ImageButton = 2131624281;
+			// aapt resource value: 0x7f0a012c
+			public const int Widget_AppCompat_ImageButton = 2131362092;
 			
-			// aapt resource value: 0x7F0E015A
-			public const int Widget_AppCompat_Light_ActionBar = 2131624282;
+			// aapt resource value: 0x7f0a012d
+			public const int Widget_AppCompat_Light_ActionBar = 2131362093;
 			
-			// aapt resource value: 0x7F0E015B
-			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131624283;
+			// aapt resource value: 0x7f0a012e
+			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131362094;
 			
-			// aapt resource value: 0x7F0E015C
-			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131624284;
+			// aapt resource value: 0x7f0a012f
+			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131362095;
 			
-			// aapt resource value: 0x7F0E015D
-			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131624285;
+			// aapt resource value: 0x7f0a0130
+			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131362096;
 			
-			// aapt resource value: 0x7F0E015E
-			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131624286;
+			// aapt resource value: 0x7f0a0131
+			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131362097;
 			
-			// aapt resource value: 0x7F0E015F
-			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131624287;
+			// aapt resource value: 0x7f0a0132
+			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131362098;
 			
-			// aapt resource value: 0x7F0E0160
-			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131624288;
+			// aapt resource value: 0x7f0a0133
+			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131362099;
 			
-			// aapt resource value: 0x7F0E0161
-			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131624289;
+			// aapt resource value: 0x7f0a0134
+			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131362100;
 			
-			// aapt resource value: 0x7F0E0162
-			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131624290;
+			// aapt resource value: 0x7f0a0135
+			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131362101;
 			
-			// aapt resource value: 0x7F0E0163
-			public const int Widget_AppCompat_Light_ActionButton = 2131624291;
+			// aapt resource value: 0x7f0a0136
+			public const int Widget_AppCompat_Light_ActionButton = 2131362102;
 			
-			// aapt resource value: 0x7F0E0164
-			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131624292;
+			// aapt resource value: 0x7f0a0137
+			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131362103;
 			
-			// aapt resource value: 0x7F0E0165
-			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131624293;
+			// aapt resource value: 0x7f0a0138
+			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131362104;
 			
-			// aapt resource value: 0x7F0E0166
-			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131624294;
+			// aapt resource value: 0x7f0a0139
+			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131362105;
 			
-			// aapt resource value: 0x7F0E0167
-			public const int Widget_AppCompat_Light_ActivityChooserView = 2131624295;
+			// aapt resource value: 0x7f0a013a
+			public const int Widget_AppCompat_Light_ActivityChooserView = 2131362106;
 			
-			// aapt resource value: 0x7F0E0168
-			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131624296;
+			// aapt resource value: 0x7f0a013b
+			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131362107;
 			
-			// aapt resource value: 0x7F0E0169
-			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131624297;
+			// aapt resource value: 0x7f0a013c
+			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131362108;
 			
-			// aapt resource value: 0x7F0E016A
-			public const int Widget_AppCompat_Light_ListPopupWindow = 2131624298;
+			// aapt resource value: 0x7f0a013d
+			public const int Widget_AppCompat_Light_ListPopupWindow = 2131362109;
 			
-			// aapt resource value: 0x7F0E016B
-			public const int Widget_AppCompat_Light_ListView_DropDown = 2131624299;
+			// aapt resource value: 0x7f0a013e
+			public const int Widget_AppCompat_Light_ListView_DropDown = 2131362110;
 			
-			// aapt resource value: 0x7F0E016C
-			public const int Widget_AppCompat_Light_PopupMenu = 2131624300;
+			// aapt resource value: 0x7f0a013f
+			public const int Widget_AppCompat_Light_PopupMenu = 2131362111;
 			
-			// aapt resource value: 0x7F0E016D
-			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131624301;
+			// aapt resource value: 0x7f0a0140
+			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131362112;
 			
-			// aapt resource value: 0x7F0E016E
-			public const int Widget_AppCompat_Light_SearchView = 2131624302;
+			// aapt resource value: 0x7f0a0141
+			public const int Widget_AppCompat_Light_SearchView = 2131362113;
 			
-			// aapt resource value: 0x7F0E016F
-			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131624303;
+			// aapt resource value: 0x7f0a0142
+			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131362114;
 			
-			// aapt resource value: 0x7F0E0170
-			public const int Widget_AppCompat_ListMenuView = 2131624304;
+			// aapt resource value: 0x7f0a0143
+			public const int Widget_AppCompat_ListMenuView = 2131362115;
 			
-			// aapt resource value: 0x7F0E0171
-			public const int Widget_AppCompat_ListPopupWindow = 2131624305;
+			// aapt resource value: 0x7f0a0144
+			public const int Widget_AppCompat_ListPopupWindow = 2131362116;
 			
-			// aapt resource value: 0x7F0E0172
-			public const int Widget_AppCompat_ListView = 2131624306;
+			// aapt resource value: 0x7f0a0145
+			public const int Widget_AppCompat_ListView = 2131362117;
 			
-			// aapt resource value: 0x7F0E0173
-			public const int Widget_AppCompat_ListView_DropDown = 2131624307;
+			// aapt resource value: 0x7f0a0146
+			public const int Widget_AppCompat_ListView_DropDown = 2131362118;
 			
-			// aapt resource value: 0x7F0E0174
-			public const int Widget_AppCompat_ListView_Menu = 2131624308;
+			// aapt resource value: 0x7f0a0147
+			public const int Widget_AppCompat_ListView_Menu = 2131362119;
 			
-			// aapt resource value: 0x7F0E0175
-			public const int Widget_AppCompat_PopupMenu = 2131624309;
+			// aapt resource value: 0x7f0a0148
+			public const int Widget_AppCompat_PopupMenu = 2131362120;
 			
-			// aapt resource value: 0x7F0E0176
-			public const int Widget_AppCompat_PopupMenu_Overflow = 2131624310;
+			// aapt resource value: 0x7f0a0149
+			public const int Widget_AppCompat_PopupMenu_Overflow = 2131362121;
 			
-			// aapt resource value: 0x7F0E0177
-			public const int Widget_AppCompat_PopupWindow = 2131624311;
+			// aapt resource value: 0x7f0a014a
+			public const int Widget_AppCompat_PopupWindow = 2131362122;
 			
-			// aapt resource value: 0x7F0E0178
-			public const int Widget_AppCompat_ProgressBar = 2131624312;
+			// aapt resource value: 0x7f0a014b
+			public const int Widget_AppCompat_ProgressBar = 2131362123;
 			
-			// aapt resource value: 0x7F0E0179
-			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131624313;
+			// aapt resource value: 0x7f0a014c
+			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131362124;
 			
-			// aapt resource value: 0x7F0E017A
-			public const int Widget_AppCompat_RatingBar = 2131624314;
+			// aapt resource value: 0x7f0a014d
+			public const int Widget_AppCompat_RatingBar = 2131362125;
 			
-			// aapt resource value: 0x7F0E017B
-			public const int Widget_AppCompat_RatingBar_Indicator = 2131624315;
+			// aapt resource value: 0x7f0a014e
+			public const int Widget_AppCompat_RatingBar_Indicator = 2131362126;
 			
-			// aapt resource value: 0x7F0E017C
-			public const int Widget_AppCompat_RatingBar_Small = 2131624316;
+			// aapt resource value: 0x7f0a014f
+			public const int Widget_AppCompat_RatingBar_Small = 2131362127;
 			
-			// aapt resource value: 0x7F0E017D
-			public const int Widget_AppCompat_SearchView = 2131624317;
+			// aapt resource value: 0x7f0a0150
+			public const int Widget_AppCompat_SearchView = 2131362128;
 			
-			// aapt resource value: 0x7F0E017E
-			public const int Widget_AppCompat_SearchView_ActionBar = 2131624318;
+			// aapt resource value: 0x7f0a0151
+			public const int Widget_AppCompat_SearchView_ActionBar = 2131362129;
 			
-			// aapt resource value: 0x7F0E017F
-			public const int Widget_AppCompat_SeekBar = 2131624319;
+			// aapt resource value: 0x7f0a0152
+			public const int Widget_AppCompat_SeekBar = 2131362130;
 			
-			// aapt resource value: 0x7F0E0180
-			public const int Widget_AppCompat_SeekBar_Discrete = 2131624320;
+			// aapt resource value: 0x7f0a0153
+			public const int Widget_AppCompat_SeekBar_Discrete = 2131362131;
 			
-			// aapt resource value: 0x7F0E0181
-			public const int Widget_AppCompat_Spinner = 2131624321;
+			// aapt resource value: 0x7f0a0154
+			public const int Widget_AppCompat_Spinner = 2131362132;
 			
-			// aapt resource value: 0x7F0E0182
-			public const int Widget_AppCompat_Spinner_DropDown = 2131624322;
+			// aapt resource value: 0x7f0a0155
+			public const int Widget_AppCompat_Spinner_DropDown = 2131362133;
 			
-			// aapt resource value: 0x7F0E0183
-			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131624323;
+			// aapt resource value: 0x7f0a0156
+			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131362134;
 			
-			// aapt resource value: 0x7F0E0184
-			public const int Widget_AppCompat_Spinner_Underlined = 2131624324;
+			// aapt resource value: 0x7f0a0157
+			public const int Widget_AppCompat_Spinner_Underlined = 2131362135;
 			
-			// aapt resource value: 0x7F0E0185
-			public const int Widget_AppCompat_TextView_SpinnerItem = 2131624325;
+			// aapt resource value: 0x7f0a0158
+			public const int Widget_AppCompat_TextView_SpinnerItem = 2131362136;
 			
-			// aapt resource value: 0x7F0E0186
-			public const int Widget_AppCompat_Toolbar = 2131624326;
+			// aapt resource value: 0x7f0a0159
+			public const int Widget_AppCompat_Toolbar = 2131362137;
 			
-			// aapt resource value: 0x7F0E0187
-			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131624327;
+			// aapt resource value: 0x7f0a015a
+			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131362138;
 			
-			// aapt resource value: 0x7F0E0188
-			public const int Widget_Compat_NotificationActionContainer = 2131624328;
+			// aapt resource value: 0x7f0a0182
+			public const int Widget_Compat_NotificationActionContainer = 2131362178;
 			
-			// aapt resource value: 0x7F0E0189
-			public const int Widget_Compat_NotificationActionText = 2131624329;
+			// aapt resource value: 0x7f0a0183
+			public const int Widget_Compat_NotificationActionText = 2131362179;
 			
-			// aapt resource value: 0x7F0E018A
-			public const int Widget_Design_AppBarLayout = 2131624330;
+			// aapt resource value: 0x7f0a0174
+			public const int Widget_Design_AppBarLayout = 2131362164;
 			
-			// aapt resource value: 0x7F0E018B
-			public const int Widget_Design_BottomNavigationView = 2131624331;
+			// aapt resource value: 0x7f0a0175
+			public const int Widget_Design_BottomNavigationView = 2131362165;
 			
-			// aapt resource value: 0x7F0E018C
-			public const int Widget_Design_BottomSheet_Modal = 2131624332;
+			// aapt resource value: 0x7f0a0176
+			public const int Widget_Design_BottomSheet_Modal = 2131362166;
 			
-			// aapt resource value: 0x7F0E018D
-			public const int Widget_Design_CollapsingToolbar = 2131624333;
+			// aapt resource value: 0x7f0a0177
+			public const int Widget_Design_CollapsingToolbar = 2131362167;
 			
-			// aapt resource value: 0x7F0E018E
-			public const int Widget_Design_CoordinatorLayout = 2131624334;
+			// aapt resource value: 0x7f0a0178
+			public const int Widget_Design_CoordinatorLayout = 2131362168;
 			
-			// aapt resource value: 0x7F0E018F
-			public const int Widget_Design_FloatingActionButton = 2131624335;
+			// aapt resource value: 0x7f0a0179
+			public const int Widget_Design_FloatingActionButton = 2131362169;
 			
-			// aapt resource value: 0x7F0E0190
-			public const int Widget_Design_NavigationView = 2131624336;
+			// aapt resource value: 0x7f0a017a
+			public const int Widget_Design_NavigationView = 2131362170;
 			
-			// aapt resource value: 0x7F0E0191
-			public const int Widget_Design_ScrimInsetsFrameLayout = 2131624337;
+			// aapt resource value: 0x7f0a017b
+			public const int Widget_Design_ScrimInsetsFrameLayout = 2131362171;
 			
-			// aapt resource value: 0x7F0E0192
-			public const int Widget_Design_Snackbar = 2131624338;
+			// aapt resource value: 0x7f0a017c
+			public const int Widget_Design_Snackbar = 2131362172;
 			
-			// aapt resource value: 0x7F0E0193
-			public const int Widget_Design_TabLayout = 2131624339;
+			// aapt resource value: 0x7f0a0160
+			public const int Widget_Design_TabLayout = 2131362144;
 			
-			// aapt resource value: 0x7F0E0194
-			public const int Widget_Design_TextInputLayout = 2131624340;
+			// aapt resource value: 0x7f0a017d
+			public const int Widget_Design_TextInputLayout = 2131362173;
 			
 			static Style()
 			{
@@ -8221,298 +8924,316 @@ namespace GFI_with_GFS_A
 			}
 		}
 		
+		public partial class Xml
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int HiddenSetting = 2131099648;
+			
+			// aapt resource value: 0x7f060001
+			public const int MainSetting = 2131099649;
+			
+			static Xml()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Xml()
+			{
+			}
+		}
+		
 		public partial class Styleable
 		{
 			
 			public static int[] ActionBar = new int[] {
-					2130903092,
-					2130903093,
-					2130903094,
-					2130903146,
-					2130903147,
-					2130903148,
-					2130903149,
-					2130903150,
-					2130903151,
-					2130903163,
-					2130903167,
-					2130903168,
-					2130903179,
-					2130903213,
-					2130903214,
-					2130903218,
-					2130903219,
-					2130903220,
-					2130903225,
-					2130903231,
-					2130903268,
-					2130903277,
-					2130903293,
-					2130903297,
-					2130903298,
-					2130903334,
-					2130903337,
-					2130903381,
-					2130903399};
+					2130771992,
+					2130771994,
+					2130771995,
+					2130771996,
+					2130771997,
+					2130771998,
+					2130771999,
+					2130772000,
+					2130772001,
+					2130772002,
+					2130772003,
+					2130772004,
+					2130772005,
+					2130772006,
+					2130772007,
+					2130772008,
+					2130772009,
+					2130772010,
+					2130772011,
+					2130772012,
+					2130772013,
+					2130772014,
+					2130772015,
+					2130772016,
+					2130772017,
+					2130772018,
+					2130772019,
+					2130772020,
+					2130772090};
+			
+			// aapt resource value: 10
+			public const int ActionBar_background = 10;
+			
+			// aapt resource value: 12
+			public const int ActionBar_backgroundSplit = 12;
+			
+			// aapt resource value: 11
+			public const int ActionBar_backgroundStacked = 11;
+			
+			// aapt resource value: 21
+			public const int ActionBar_contentInsetEnd = 21;
+			
+			// aapt resource value: 25
+			public const int ActionBar_contentInsetEndWithActions = 25;
+			
+			// aapt resource value: 22
+			public const int ActionBar_contentInsetLeft = 22;
+			
+			// aapt resource value: 23
+			public const int ActionBar_contentInsetRight = 23;
+			
+			// aapt resource value: 20
+			public const int ActionBar_contentInsetStart = 20;
+			
+			// aapt resource value: 24
+			public const int ActionBar_contentInsetStartWithNavigation = 24;
+			
+			// aapt resource value: 13
+			public const int ActionBar_customNavigationLayout = 13;
+			
+			// aapt resource value: 3
+			public const int ActionBar_displayOptions = 3;
+			
+			// aapt resource value: 9
+			public const int ActionBar_divider = 9;
+			
+			// aapt resource value: 26
+			public const int ActionBar_elevation = 26;
+			
+			// aapt resource value: 0
+			public const int ActionBar_height = 0;
+			
+			// aapt resource value: 19
+			public const int ActionBar_hideOnContentScroll = 19;
+			
+			// aapt resource value: 28
+			public const int ActionBar_homeAsUpIndicator = 28;
+			
+			// aapt resource value: 14
+			public const int ActionBar_homeLayout = 14;
+			
+			// aapt resource value: 7
+			public const int ActionBar_icon = 7;
+			
+			// aapt resource value: 16
+			public const int ActionBar_indeterminateProgressStyle = 16;
+			
+			// aapt resource value: 18
+			public const int ActionBar_itemPadding = 18;
+			
+			// aapt resource value: 8
+			public const int ActionBar_logo = 8;
+			
+			// aapt resource value: 2
+			public const int ActionBar_navigationMode = 2;
+			
+			// aapt resource value: 27
+			public const int ActionBar_popupTheme = 27;
+			
+			// aapt resource value: 17
+			public const int ActionBar_progressBarPadding = 17;
+			
+			// aapt resource value: 15
+			public const int ActionBar_progressBarStyle = 15;
+			
+			// aapt resource value: 4
+			public const int ActionBar_subtitle = 4;
+			
+			// aapt resource value: 6
+			public const int ActionBar_subtitleTextStyle = 6;
+			
+			// aapt resource value: 1
+			public const int ActionBar_title = 1;
+			
+			// aapt resource value: 5
+			public const int ActionBar_titleTextStyle = 5;
 			
 			public static int[] ActionBarLayout = new int[] {
 					16842931};
 			
-			// aapt resource value: 0x7F010033
-			public const int ActionBarLayout_android_layout_gravity = 2130772019;
-			
-			// aapt resource value: 0x7F010003
-			public const int ActionBar_background = 2130771971;
-			
-			// aapt resource value: 0x1
-			public const int ActionBar_backgroundSplit = 1;
-			
-			// aapt resource value: 0x2
-			public const int ActionBar_backgroundStacked = 2;
-			
-			// aapt resource value: 0x3
-			public const int ActionBar_contentInsetEnd = 3;
-			
-			// aapt resource value: 0x4
-			public const int ActionBar_contentInsetEndWithActions = 4;
-			
-			// aapt resource value: 0x5
-			public const int ActionBar_contentInsetLeft = 5;
-			
-			// aapt resource value: 0x6
-			public const int ActionBar_contentInsetRight = 6;
-			
-			// aapt resource value: 0x7
-			public const int ActionBar_contentInsetStart = 7;
-			
-			// aapt resource value: 0x8
-			public const int ActionBar_contentInsetStartWithNavigation = 8;
-			
-			// aapt resource value: 0x9
-			public const int ActionBar_customNavigationLayout = 9;
-			
-			// aapt resource value: 0x10
-			public const int ActionBar_displayOptions = 16;
-			
-			// aapt resource value: 0x11
-			public const int ActionBar_divider = 17;
-			
-			// aapt resource value: 0x12
-			public const int ActionBar_elevation = 18;
-			
-			// aapt resource value: 0x13
-			public const int ActionBar_height = 19;
-			
-			// aapt resource value: 0x14
-			public const int ActionBar_hideOnContentScroll = 20;
-			
-			// aapt resource value: 0x15
-			public const int ActionBar_homeAsUpIndicator = 21;
-			
-			// aapt resource value: 0x16
-			public const int ActionBar_homeLayout = 22;
-			
-			// aapt resource value: 0x17
-			public const int ActionBar_icon = 23;
-			
-			// aapt resource value: 0x18
-			public const int ActionBar_indeterminateProgressStyle = 24;
-			
-			// aapt resource value: 0x19
-			public const int ActionBar_itemPadding = 25;
-			
-			// aapt resource value: 0x20
-			public const int ActionBar_logo = 32;
-			
-			// aapt resource value: 0x21
-			public const int ActionBar_navigationMode = 33;
-			
-			// aapt resource value: 0x22
-			public const int ActionBar_popupTheme = 34;
-			
-			// aapt resource value: 0x23
-			public const int ActionBar_progressBarPadding = 35;
-			
-			// aapt resource value: 0x24
-			public const int ActionBar_progressBarStyle = 36;
-			
-			// aapt resource value: 0x25
-			public const int ActionBar_subtitle = 37;
-			
-			// aapt resource value: 0x26
-			public const int ActionBar_subtitleTextStyle = 38;
-			
-			// aapt resource value: 0x27
-			public const int ActionBar_title = 39;
-			
-			// aapt resource value: 0x28
-			public const int ActionBar_titleTextStyle = 40;
+			// aapt resource value: 0
+			public const int ActionBarLayout_android_layout_gravity = 0;
 			
 			public static int[] ActionMenuItemView = new int[] {
 					16843071};
 			
-			// aapt resource value: 0x7F010035
-			public const int ActionMenuItemView_android_minWidth = 2130772021;
+			// aapt resource value: 0
+			public const int ActionMenuItemView_android_minWidth = 0;
 			
-			public static int[] ActionMenuView = new int[] {
-					0};
+			public static int[] ActionMenuView;
 			
 			public static int[] ActionMode = new int[] {
-					2130903092,
-					2130903093,
-					2130903127,
-					2130903213,
-					2130903337,
-					2130903399};
+					2130771992,
+					2130771998,
+					2130771999,
+					2130772003,
+					2130772005,
+					2130772021};
 			
-			// aapt resource value: 0x7F010038
-			public const int ActionMode_background = 2130772024;
+			// aapt resource value: 3
+			public const int ActionMode_background = 3;
 			
-			// aapt resource value: 0x1
-			public const int ActionMode_backgroundSplit = 1;
+			// aapt resource value: 4
+			public const int ActionMode_backgroundSplit = 4;
 			
-			// aapt resource value: 0x2
-			public const int ActionMode_closeItemLayout = 2;
+			// aapt resource value: 5
+			public const int ActionMode_closeItemLayout = 5;
 			
-			// aapt resource value: 0x3
-			public const int ActionMode_height = 3;
+			// aapt resource value: 0
+			public const int ActionMode_height = 0;
 			
-			// aapt resource value: 0x4
-			public const int ActionMode_subtitleTextStyle = 4;
+			// aapt resource value: 2
+			public const int ActionMode_subtitleTextStyle = 2;
 			
-			// aapt resource value: 0x5
-			public const int ActionMode_titleTextStyle = 5;
+			// aapt resource value: 1
+			public const int ActionMode_titleTextStyle = 1;
 			
 			public static int[] ActivityChooserView = new int[] {
-					2130903184,
-					2130903226};
+					2130772022,
+					2130772023};
 			
-			// aapt resource value: 0x7F010045
-			public const int ActivityChooserView_expandActivityOverflowButtonDrawable = 2130772037;
+			// aapt resource value: 1
+			public const int ActivityChooserView_expandActivityOverflowButtonDrawable = 1;
 			
-			// aapt resource value: 0x1
-			public const int ActivityChooserView_initialActivityCount = 1;
+			// aapt resource value: 0
+			public const int ActivityChooserView_initialActivityCount = 0;
 			
 			public static int[] AdsAttrs = new int[] {
-					2130903074,
-					2130903075,
-					2130903076};
+					2130771968,
+					2130771969,
+					2130771970};
 			
-			// aapt resource value: 0x7F010048
-			public const int AdsAttrs_adSize = 2130772040;
+			// aapt resource value: 0
+			public const int AdsAttrs_adSize = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int AdsAttrs_adSizes = 1;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int AdsAttrs_adUnitId = 2;
 			
 			public static int[] AlertDialog = new int[] {
 					16842994,
-					2130903113,
-					2130903259,
-					2130903260,
-					2130903274,
-					2130903318,
-					2130903319};
+					2130772024,
+					2130772025,
+					2130772026,
+					2130772027,
+					2130772028,
+					2130772029};
 			
-			// aapt resource value: 0x7F010052
-			public const int AlertDialog_android_layout = 2130772050;
+			// aapt resource value: 0
+			public const int AlertDialog_android_layout = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int AlertDialog_buttonPanelSideLayout = 1;
 			
-			// aapt resource value: 0x2
-			public const int AlertDialog_listItemLayout = 2;
+			// aapt resource value: 5
+			public const int AlertDialog_listItemLayout = 5;
 			
-			// aapt resource value: 0x3
-			public const int AlertDialog_listLayout = 3;
+			// aapt resource value: 2
+			public const int AlertDialog_listLayout = 2;
 			
-			// aapt resource value: 0x4
-			public const int AlertDialog_multiChoiceItemLayout = 4;
+			// aapt resource value: 3
+			public const int AlertDialog_multiChoiceItemLayout = 3;
 			
-			// aapt resource value: 0x5
-			public const int AlertDialog_showTitle = 5;
+			// aapt resource value: 6
+			public const int AlertDialog_showTitle = 6;
 			
-			// aapt resource value: 0x6
-			public const int AlertDialog_singleChoiceItemLayout = 6;
+			// aapt resource value: 4
+			public const int AlertDialog_singleChoiceItemLayout = 4;
 			
 			public static int[] AppBarLayout = new int[] {
 					16842964,
 					16843919,
 					16844096,
-					2130903179,
-					2130903185};
+					2130772019,
+					2130772237};
 			
-			public static int[] AppBarLayoutStates = new int[] {
-					2130903328,
-					2130903329};
+			// aapt resource value: 0
+			public const int AppBarLayout_android_background = 0;
 			
-			// aapt resource value: 0x7F010066
-			public const int AppBarLayoutStates_state_collapsed = 2130772070;
-			
-			// aapt resource value: 0x1
-			public const int AppBarLayoutStates_state_collapsible = 1;
-			
-			// aapt resource value: 0x7F010060
-			public const int AppBarLayout_android_background = 2130772064;
-			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int AppBarLayout_android_keyboardNavigationCluster = 2;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int AppBarLayout_android_touchscreenBlocksFocus = 1;
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int AppBarLayout_elevation = 3;
 			
-			// aapt resource value: 0x4
+			// aapt resource value: 4
 			public const int AppBarLayout_expanded = 4;
 			
+			public static int[] AppBarLayoutStates = new int[] {
+					2130772238,
+					2130772239};
+			
+			// aapt resource value: 0
+			public const int AppBarLayoutStates_state_collapsed = 0;
+			
+			// aapt resource value: 1
+			public const int AppBarLayoutStates_state_collapsible = 1;
+			
 			public static int[] AppBarLayout_Layout = new int[] {
-					2130903245,
-					2130903246};
+					2130772240,
+					2130772241};
 			
-			// aapt resource value: 0x7F010069
-			public const int AppBarLayout_Layout_layout_scrollFlags = 2130772073;
+			// aapt resource value: 0
+			public const int AppBarLayout_Layout_layout_scrollFlags = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int AppBarLayout_Layout_layout_scrollInterpolator = 1;
 			
 			public static int[] AppCompatImageView = new int[] {
 					16843033,
-					2130903325,
-					2130903379,
-					2130903380};
+					2130772030,
+					2130772031,
+					2130772032};
 			
-			// aapt resource value: 0x7F010072
-			public const int AppCompatImageView_android_src = 2130772082;
+			// aapt resource value: 0
+			public const int AppCompatImageView_android_src = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int AppCompatImageView_srcCompat = 1;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int AppCompatImageView_tint = 2;
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int AppCompatImageView_tintMode = 3;
 			
 			public static int[] AppCompatSeekBar = new int[] {
 					16843074,
-					2130903376,
-					2130903377,
-					2130903378};
+					2130772033,
+					2130772034,
+					2130772035};
 			
-			// aapt resource value: 0x7F010077
-			public const int AppCompatSeekBar_android_thumb = 2130772087;
+			// aapt resource value: 0
+			public const int AppCompatSeekBar_android_thumb = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int AppCompatSeekBar_tickMark = 1;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int AppCompatSeekBar_tickMarkTint = 2;
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int AppCompatSeekBar_tickMarkTintMode = 3;
 			
 			public static int[] AppCompatTextHelper = new int[] {
@@ -8524,931 +9245,931 @@ namespace GFI_with_GFS_A
 					16843666,
 					16843667};
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int AppCompatTextHelper_android_drawableBottom = 2;
 			
-			// aapt resource value: 0x6
+			// aapt resource value: 6
 			public const int AppCompatTextHelper_android_drawableEnd = 6;
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int AppCompatTextHelper_android_drawableLeft = 3;
 			
-			// aapt resource value: 0x4
+			// aapt resource value: 4
 			public const int AppCompatTextHelper_android_drawableRight = 4;
 			
-			// aapt resource value: 0x5
+			// aapt resource value: 5
 			public const int AppCompatTextHelper_android_drawableStart = 5;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int AppCompatTextHelper_android_drawableTop = 1;
 			
-			// aapt resource value: 0x7F010082
-			public const int AppCompatTextHelper_android_textAppearance = 2130772098;
+			// aapt resource value: 0
+			public const int AppCompatTextHelper_android_textAppearance = 0;
 			
 			public static int[] AppCompatTextView = new int[] {
 					16842804,
-					2130903087,
-					2130903088,
-					2130903089,
-					2130903090,
-					2130903091,
-					2130903200,
-					2130903359};
+					2130772036,
+					2130772037,
+					2130772038,
+					2130772039,
+					2130772040,
+					2130772041,
+					2130772042};
 			
-			// aapt resource value: 0x7F010090
-			public const int AppCompatTextView_android_textAppearance = 2130772112;
+			// aapt resource value: 0
+			public const int AppCompatTextView_android_textAppearance = 0;
 			
-			// aapt resource value: 0x1
-			public const int AppCompatTextView_autoSizeMaxTextSize = 1;
+			// aapt resource value: 6
+			public const int AppCompatTextView_autoSizeMaxTextSize = 6;
 			
-			// aapt resource value: 0x2
-			public const int AppCompatTextView_autoSizeMinTextSize = 2;
+			// aapt resource value: 5
+			public const int AppCompatTextView_autoSizeMinTextSize = 5;
 			
-			// aapt resource value: 0x3
-			public const int AppCompatTextView_autoSizePresetSizes = 3;
+			// aapt resource value: 4
+			public const int AppCompatTextView_autoSizePresetSizes = 4;
 			
-			// aapt resource value: 0x4
-			public const int AppCompatTextView_autoSizeStepGranularity = 4;
+			// aapt resource value: 3
+			public const int AppCompatTextView_autoSizeStepGranularity = 3;
 			
-			// aapt resource value: 0x5
-			public const int AppCompatTextView_autoSizeTextType = 5;
+			// aapt resource value: 2
+			public const int AppCompatTextView_autoSizeTextType = 2;
 			
-			// aapt resource value: 0x6
-			public const int AppCompatTextView_fontFamily = 6;
+			// aapt resource value: 7
+			public const int AppCompatTextView_fontFamily = 7;
 			
-			// aapt resource value: 0x7
-			public const int AppCompatTextView_textAllCaps = 7;
+			// aapt resource value: 1
+			public const int AppCompatTextView_textAllCaps = 1;
 			
 			public static int[] AppCompatTheme = new int[] {
 					16842839,
 					16842926,
-					2130903040,
-					2130903041,
-					2130903042,
-					2130903043,
-					2130903044,
-					2130903045,
-					2130903046,
-					2130903047,
-					2130903048,
-					2130903049,
-					2130903050,
-					2130903051,
-					2130903052,
-					2130903054,
-					2130903055,
-					2130903056,
-					2130903057,
-					2130903058,
-					2130903059,
-					2130903060,
-					2130903061,
-					2130903062,
-					2130903063,
-					2130903064,
-					2130903065,
-					2130903066,
-					2130903067,
-					2130903068,
-					2130903069,
-					2130903070,
-					2130903073,
-					2130903077,
-					2130903078,
-					2130903079,
-					2130903080,
-					2130903086,
-					2130903104,
-					2130903107,
-					2130903108,
-					2130903109,
-					2130903110,
-					2130903111,
-					2130903114,
-					2130903115,
-					2130903124,
-					2130903125,
-					2130903133,
-					2130903134,
-					2130903135,
-					2130903136,
-					2130903137,
-					2130903138,
-					2130903139,
-					2130903141,
-					2130903142,
-					2130903143,
-					2130903158,
-					2130903165,
-					2130903166,
-					2130903169,
-					2130903171,
-					2130903174,
-					2130903175,
-					2130903176,
-					2130903177,
-					2130903178,
-					2130903218,
-					2130903224,
-					2130903257,
-					2130903258,
-					2130903261,
-					2130903262,
-					2130903263,
-					2130903264,
-					2130903265,
-					2130903266,
-					2130903267,
-					2130903284,
-					2130903285,
-					2130903286,
-					2130903292,
-					2130903294,
-					2130903301,
-					2130903302,
-					2130903303,
-					2130903304,
-					2130903311,
-					2130903312,
-					2130903313,
-					2130903314,
-					2130903322,
-					2130903323,
-					2130903341,
-					2130903360,
-					2130903361,
-					2130903362,
-					2130903363,
-					2130903364,
-					2130903365,
-					2130903366,
-					2130903367,
-					2130903368,
-					2130903370,
-					2130903401,
-					2130903402,
-					2130903403,
-					2130903404,
-					2130903411,
-					2130903412,
-					2130903413,
-					2130903414,
-					2130903415,
-					2130903416,
-					2130903417,
-					2130903418,
-					2130903419,
-					2130903420};
+					2130772043,
+					2130772044,
+					2130772045,
+					2130772046,
+					2130772047,
+					2130772048,
+					2130772049,
+					2130772050,
+					2130772051,
+					2130772052,
+					2130772053,
+					2130772054,
+					2130772055,
+					2130772056,
+					2130772057,
+					2130772058,
+					2130772059,
+					2130772060,
+					2130772061,
+					2130772062,
+					2130772063,
+					2130772064,
+					2130772065,
+					2130772066,
+					2130772067,
+					2130772068,
+					2130772069,
+					2130772070,
+					2130772071,
+					2130772072,
+					2130772073,
+					2130772074,
+					2130772075,
+					2130772076,
+					2130772077,
+					2130772078,
+					2130772079,
+					2130772080,
+					2130772081,
+					2130772082,
+					2130772083,
+					2130772084,
+					2130772085,
+					2130772086,
+					2130772087,
+					2130772088,
+					2130772089,
+					2130772090,
+					2130772091,
+					2130772092,
+					2130772093,
+					2130772094,
+					2130772095,
+					2130772096,
+					2130772097,
+					2130772098,
+					2130772099,
+					2130772100,
+					2130772101,
+					2130772102,
+					2130772103,
+					2130772104,
+					2130772105,
+					2130772106,
+					2130772107,
+					2130772108,
+					2130772109,
+					2130772110,
+					2130772111,
+					2130772112,
+					2130772113,
+					2130772114,
+					2130772115,
+					2130772116,
+					2130772117,
+					2130772118,
+					2130772119,
+					2130772120,
+					2130772121,
+					2130772122,
+					2130772123,
+					2130772124,
+					2130772125,
+					2130772126,
+					2130772127,
+					2130772128,
+					2130772129,
+					2130772130,
+					2130772131,
+					2130772132,
+					2130772133,
+					2130772134,
+					2130772135,
+					2130772136,
+					2130772137,
+					2130772138,
+					2130772139,
+					2130772140,
+					2130772141,
+					2130772142,
+					2130772143,
+					2130772144,
+					2130772145,
+					2130772146,
+					2130772147,
+					2130772148,
+					2130772149,
+					2130772150,
+					2130772151,
+					2130772152,
+					2130772153,
+					2130772154,
+					2130772155,
+					2130772156,
+					2130772157,
+					2130772158,
+					2130772159};
 			
-			// aapt resource value: 0x2
-			public const int AppCompatTheme_actionBarDivider = 2;
+			// aapt resource value: 23
+			public const int AppCompatTheme_actionBarDivider = 23;
 			
-			// aapt resource value: 0x3
-			public const int AppCompatTheme_actionBarItemBackground = 3;
+			// aapt resource value: 24
+			public const int AppCompatTheme_actionBarItemBackground = 24;
 			
-			// aapt resource value: 0x4
-			public const int AppCompatTheme_actionBarPopupTheme = 4;
+			// aapt resource value: 17
+			public const int AppCompatTheme_actionBarPopupTheme = 17;
 			
-			// aapt resource value: 0x5
-			public const int AppCompatTheme_actionBarSize = 5;
+			// aapt resource value: 22
+			public const int AppCompatTheme_actionBarSize = 22;
 			
-			// aapt resource value: 0x6
-			public const int AppCompatTheme_actionBarSplitStyle = 6;
+			// aapt resource value: 19
+			public const int AppCompatTheme_actionBarSplitStyle = 19;
 			
-			// aapt resource value: 0x7
-			public const int AppCompatTheme_actionBarStyle = 7;
+			// aapt resource value: 18
+			public const int AppCompatTheme_actionBarStyle = 18;
 			
-			// aapt resource value: 0x8
-			public const int AppCompatTheme_actionBarTabBarStyle = 8;
+			// aapt resource value: 13
+			public const int AppCompatTheme_actionBarTabBarStyle = 13;
 			
-			// aapt resource value: 0x9
-			public const int AppCompatTheme_actionBarTabStyle = 9;
+			// aapt resource value: 12
+			public const int AppCompatTheme_actionBarTabStyle = 12;
 			
-			// aapt resource value: 0x10
-			public const int AppCompatTheme_actionBarTabTextStyle = 16;
+			// aapt resource value: 14
+			public const int AppCompatTheme_actionBarTabTextStyle = 14;
 			
-			// aapt resource value: 0x11
-			public const int AppCompatTheme_actionBarTheme = 17;
+			// aapt resource value: 20
+			public const int AppCompatTheme_actionBarTheme = 20;
 			
-			// aapt resource value: 0x12
-			public const int AppCompatTheme_actionBarWidgetTheme = 18;
+			// aapt resource value: 21
+			public const int AppCompatTheme_actionBarWidgetTheme = 21;
 			
-			// aapt resource value: 0x13
-			public const int AppCompatTheme_actionButtonStyle = 19;
+			// aapt resource value: 50
+			public const int AppCompatTheme_actionButtonStyle = 50;
 			
-			// aapt resource value: 0x14
-			public const int AppCompatTheme_actionDropDownStyle = 20;
+			// aapt resource value: 46
+			public const int AppCompatTheme_actionDropDownStyle = 46;
 			
-			// aapt resource value: 0x15
-			public const int AppCompatTheme_actionMenuTextAppearance = 21;
+			// aapt resource value: 25
+			public const int AppCompatTheme_actionMenuTextAppearance = 25;
 			
-			// aapt resource value: 0x16
-			public const int AppCompatTheme_actionMenuTextColor = 22;
+			// aapt resource value: 26
+			public const int AppCompatTheme_actionMenuTextColor = 26;
 			
-			// aapt resource value: 0x17
-			public const int AppCompatTheme_actionModeBackground = 23;
+			// aapt resource value: 29
+			public const int AppCompatTheme_actionModeBackground = 29;
 			
-			// aapt resource value: 0x18
-			public const int AppCompatTheme_actionModeCloseButtonStyle = 24;
+			// aapt resource value: 28
+			public const int AppCompatTheme_actionModeCloseButtonStyle = 28;
 			
-			// aapt resource value: 0x19
-			public const int AppCompatTheme_actionModeCloseDrawable = 25;
+			// aapt resource value: 31
+			public const int AppCompatTheme_actionModeCloseDrawable = 31;
 			
-			// aapt resource value: 0x20
-			public const int AppCompatTheme_actionModeCopyDrawable = 32;
+			// aapt resource value: 33
+			public const int AppCompatTheme_actionModeCopyDrawable = 33;
 			
-			// aapt resource value: 0x21
-			public const int AppCompatTheme_actionModeCutDrawable = 33;
+			// aapt resource value: 32
+			public const int AppCompatTheme_actionModeCutDrawable = 32;
 			
-			// aapt resource value: 0x22
-			public const int AppCompatTheme_actionModeFindDrawable = 34;
+			// aapt resource value: 37
+			public const int AppCompatTheme_actionModeFindDrawable = 37;
 			
-			// aapt resource value: 0x23
-			public const int AppCompatTheme_actionModePasteDrawable = 35;
+			// aapt resource value: 34
+			public const int AppCompatTheme_actionModePasteDrawable = 34;
 			
-			// aapt resource value: 0x24
-			public const int AppCompatTheme_actionModePopupWindowStyle = 36;
+			// aapt resource value: 39
+			public const int AppCompatTheme_actionModePopupWindowStyle = 39;
 			
-			// aapt resource value: 0x25
-			public const int AppCompatTheme_actionModeSelectAllDrawable = 37;
+			// aapt resource value: 35
+			public const int AppCompatTheme_actionModeSelectAllDrawable = 35;
 			
-			// aapt resource value: 0x26
-			public const int AppCompatTheme_actionModeShareDrawable = 38;
+			// aapt resource value: 36
+			public const int AppCompatTheme_actionModeShareDrawable = 36;
 			
-			// aapt resource value: 0x27
-			public const int AppCompatTheme_actionModeSplitBackground = 39;
+			// aapt resource value: 30
+			public const int AppCompatTheme_actionModeSplitBackground = 30;
 			
-			// aapt resource value: 0x28
-			public const int AppCompatTheme_actionModeStyle = 40;
+			// aapt resource value: 27
+			public const int AppCompatTheme_actionModeStyle = 27;
 			
-			// aapt resource value: 0x29
-			public const int AppCompatTheme_actionModeWebSearchDrawable = 41;
+			// aapt resource value: 38
+			public const int AppCompatTheme_actionModeWebSearchDrawable = 38;
 			
-			// aapt resource value: 0x30
-			public const int AppCompatTheme_actionOverflowButtonStyle = 48;
+			// aapt resource value: 15
+			public const int AppCompatTheme_actionOverflowButtonStyle = 15;
 			
-			// aapt resource value: 0x31
-			public const int AppCompatTheme_actionOverflowMenuStyle = 49;
+			// aapt resource value: 16
+			public const int AppCompatTheme_actionOverflowMenuStyle = 16;
 			
-			// aapt resource value: 0x32
-			public const int AppCompatTheme_activityChooserViewStyle = 50;
+			// aapt resource value: 58
+			public const int AppCompatTheme_activityChooserViewStyle = 58;
 			
-			// aapt resource value: 0x33
-			public const int AppCompatTheme_alertDialogButtonGroupStyle = 51;
+			// aapt resource value: 95
+			public const int AppCompatTheme_alertDialogButtonGroupStyle = 95;
 			
-			// aapt resource value: 0x34
-			public const int AppCompatTheme_alertDialogCenterButtons = 52;
+			// aapt resource value: 96
+			public const int AppCompatTheme_alertDialogCenterButtons = 96;
 			
-			// aapt resource value: 0x35
-			public const int AppCompatTheme_alertDialogStyle = 53;
+			// aapt resource value: 94
+			public const int AppCompatTheme_alertDialogStyle = 94;
 			
-			// aapt resource value: 0x36
-			public const int AppCompatTheme_alertDialogTheme = 54;
+			// aapt resource value: 97
+			public const int AppCompatTheme_alertDialogTheme = 97;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int AppCompatTheme_android_windowAnimationStyle = 1;
 			
-			// aapt resource value: 0x7F010099
-			public const int AppCompatTheme_android_windowIsFloating = 2130772121;
+			// aapt resource value: 0
+			public const int AppCompatTheme_android_windowIsFloating = 0;
 			
-			// aapt resource value: 0x37
-			public const int AppCompatTheme_autoCompleteTextViewStyle = 55;
+			// aapt resource value: 102
+			public const int AppCompatTheme_autoCompleteTextViewStyle = 102;
 			
-			// aapt resource value: 0x38
-			public const int AppCompatTheme_borderlessButtonStyle = 56;
+			// aapt resource value: 55
+			public const int AppCompatTheme_borderlessButtonStyle = 55;
 			
-			// aapt resource value: 0x39
-			public const int AppCompatTheme_buttonBarButtonStyle = 57;
+			// aapt resource value: 52
+			public const int AppCompatTheme_buttonBarButtonStyle = 52;
 			
-			// aapt resource value: 0x40
-			public const int AppCompatTheme_buttonBarNegativeButtonStyle = 64;
+			// aapt resource value: 100
+			public const int AppCompatTheme_buttonBarNegativeButtonStyle = 100;
 			
-			// aapt resource value: 0x41
-			public const int AppCompatTheme_buttonBarNeutralButtonStyle = 65;
+			// aapt resource value: 101
+			public const int AppCompatTheme_buttonBarNeutralButtonStyle = 101;
 			
-			// aapt resource value: 0x42
-			public const int AppCompatTheme_buttonBarPositiveButtonStyle = 66;
+			// aapt resource value: 99
+			public const int AppCompatTheme_buttonBarPositiveButtonStyle = 99;
 			
-			// aapt resource value: 0x43
-			public const int AppCompatTheme_buttonBarStyle = 67;
+			// aapt resource value: 51
+			public const int AppCompatTheme_buttonBarStyle = 51;
 			
-			// aapt resource value: 0x44
-			public const int AppCompatTheme_buttonStyle = 68;
+			// aapt resource value: 103
+			public const int AppCompatTheme_buttonStyle = 103;
 			
-			// aapt resource value: 0x45
-			public const int AppCompatTheme_buttonStyleSmall = 69;
+			// aapt resource value: 104
+			public const int AppCompatTheme_buttonStyleSmall = 104;
 			
-			// aapt resource value: 0x46
-			public const int AppCompatTheme_checkboxStyle = 70;
+			// aapt resource value: 105
+			public const int AppCompatTheme_checkboxStyle = 105;
 			
-			// aapt resource value: 0x47
-			public const int AppCompatTheme_checkedTextViewStyle = 71;
+			// aapt resource value: 106
+			public const int AppCompatTheme_checkedTextViewStyle = 106;
 			
-			// aapt resource value: 0x48
-			public const int AppCompatTheme_colorAccent = 72;
+			// aapt resource value: 86
+			public const int AppCompatTheme_colorAccent = 86;
 			
-			// aapt resource value: 0x49
-			public const int AppCompatTheme_colorBackgroundFloating = 73;
+			// aapt resource value: 93
+			public const int AppCompatTheme_colorBackgroundFloating = 93;
 			
-			// aapt resource value: 0x50
-			public const int AppCompatTheme_colorButtonNormal = 80;
+			// aapt resource value: 90
+			public const int AppCompatTheme_colorButtonNormal = 90;
 			
-			// aapt resource value: 0x51
-			public const int AppCompatTheme_colorControlActivated = 81;
+			// aapt resource value: 88
+			public const int AppCompatTheme_colorControlActivated = 88;
 			
-			// aapt resource value: 0x52
-			public const int AppCompatTheme_colorControlHighlight = 82;
+			// aapt resource value: 89
+			public const int AppCompatTheme_colorControlHighlight = 89;
 			
-			// aapt resource value: 0x53
-			public const int AppCompatTheme_colorControlNormal = 83;
+			// aapt resource value: 87
+			public const int AppCompatTheme_colorControlNormal = 87;
 			
-			// aapt resource value: 0x54
-			public const int AppCompatTheme_colorError = 84;
+			// aapt resource value: 118
+			public const int AppCompatTheme_colorError = 118;
 			
-			// aapt resource value: 0x55
-			public const int AppCompatTheme_colorPrimary = 85;
+			// aapt resource value: 84
+			public const int AppCompatTheme_colorPrimary = 84;
 			
-			// aapt resource value: 0x56
-			public const int AppCompatTheme_colorPrimaryDark = 86;
+			// aapt resource value: 85
+			public const int AppCompatTheme_colorPrimaryDark = 85;
 			
-			// aapt resource value: 0x57
-			public const int AppCompatTheme_colorSwitchThumbNormal = 87;
+			// aapt resource value: 91
+			public const int AppCompatTheme_colorSwitchThumbNormal = 91;
 			
-			// aapt resource value: 0x58
-			public const int AppCompatTheme_controlBackground = 88;
+			// aapt resource value: 92
+			public const int AppCompatTheme_controlBackground = 92;
 			
-			// aapt resource value: 0x59
-			public const int AppCompatTheme_dialogPreferredPadding = 89;
+			// aapt resource value: 44
+			public const int AppCompatTheme_dialogPreferredPadding = 44;
 			
-			// aapt resource value: 0x60
-			public const int AppCompatTheme_dialogTheme = 96;
+			// aapt resource value: 43
+			public const int AppCompatTheme_dialogTheme = 43;
 			
-			// aapt resource value: 0x61
-			public const int AppCompatTheme_dividerHorizontal = 97;
+			// aapt resource value: 57
+			public const int AppCompatTheme_dividerHorizontal = 57;
 			
-			// aapt resource value: 0x62
-			public const int AppCompatTheme_dividerVertical = 98;
+			// aapt resource value: 56
+			public const int AppCompatTheme_dividerVertical = 56;
 			
-			// aapt resource value: 0x64
-			public const int AppCompatTheme_dropdownListPreferredItemHeight = 100;
+			// aapt resource value: 75
+			public const int AppCompatTheme_dropDownListViewStyle = 75;
 			
-			// aapt resource value: 0x63
-			public const int AppCompatTheme_dropDownListViewStyle = 99;
+			// aapt resource value: 47
+			public const int AppCompatTheme_dropdownListPreferredItemHeight = 47;
 			
-			// aapt resource value: 0x65
-			public const int AppCompatTheme_editTextBackground = 101;
+			// aapt resource value: 64
+			public const int AppCompatTheme_editTextBackground = 64;
 			
-			// aapt resource value: 0x66
-			public const int AppCompatTheme_editTextColor = 102;
+			// aapt resource value: 63
+			public const int AppCompatTheme_editTextColor = 63;
 			
-			// aapt resource value: 0x67
-			public const int AppCompatTheme_editTextStyle = 103;
+			// aapt resource value: 107
+			public const int AppCompatTheme_editTextStyle = 107;
 			
-			// aapt resource value: 0x68
-			public const int AppCompatTheme_homeAsUpIndicator = 104;
+			// aapt resource value: 49
+			public const int AppCompatTheme_homeAsUpIndicator = 49;
 			
-			// aapt resource value: 0x69
-			public const int AppCompatTheme_imageButtonStyle = 105;
+			// aapt resource value: 65
+			public const int AppCompatTheme_imageButtonStyle = 65;
 			
-			// aapt resource value: 0x70
-			public const int AppCompatTheme_listChoiceBackgroundIndicator = 112;
+			// aapt resource value: 83
+			public const int AppCompatTheme_listChoiceBackgroundIndicator = 83;
 			
-			// aapt resource value: 0x71
-			public const int AppCompatTheme_listDividerAlertDialog = 113;
+			// aapt resource value: 45
+			public const int AppCompatTheme_listDividerAlertDialog = 45;
 			
-			// aapt resource value: 0x72
-			public const int AppCompatTheme_listMenuViewStyle = 114;
+			// aapt resource value: 115
+			public const int AppCompatTheme_listMenuViewStyle = 115;
 			
-			// aapt resource value: 0x73
-			public const int AppCompatTheme_listPopupWindowStyle = 115;
+			// aapt resource value: 76
+			public const int AppCompatTheme_listPopupWindowStyle = 76;
 			
-			// aapt resource value: 0x74
-			public const int AppCompatTheme_listPreferredItemHeight = 116;
+			// aapt resource value: 70
+			public const int AppCompatTheme_listPreferredItemHeight = 70;
 			
-			// aapt resource value: 0x75
-			public const int AppCompatTheme_listPreferredItemHeightLarge = 117;
+			// aapt resource value: 72
+			public const int AppCompatTheme_listPreferredItemHeightLarge = 72;
 			
-			// aapt resource value: 0x76
-			public const int AppCompatTheme_listPreferredItemHeightSmall = 118;
+			// aapt resource value: 71
+			public const int AppCompatTheme_listPreferredItemHeightSmall = 71;
 			
-			// aapt resource value: 0x77
-			public const int AppCompatTheme_listPreferredItemPaddingLeft = 119;
+			// aapt resource value: 73
+			public const int AppCompatTheme_listPreferredItemPaddingLeft = 73;
 			
-			// aapt resource value: 0x78
-			public const int AppCompatTheme_listPreferredItemPaddingRight = 120;
+			// aapt resource value: 74
+			public const int AppCompatTheme_listPreferredItemPaddingRight = 74;
 			
-			// aapt resource value: 0x79
-			public const int AppCompatTheme_panelBackground = 121;
+			// aapt resource value: 80
+			public const int AppCompatTheme_panelBackground = 80;
 			
-			// aapt resource value: 0x80
-			public const int AppCompatTheme_panelMenuListTheme = 128;
+			// aapt resource value: 82
+			public const int AppCompatTheme_panelMenuListTheme = 82;
 			
-			// aapt resource value: 0x81
-			public const int AppCompatTheme_panelMenuListWidth = 129;
+			// aapt resource value: 81
+			public const int AppCompatTheme_panelMenuListWidth = 81;
 			
-			// aapt resource value: 0x82
-			public const int AppCompatTheme_popupMenuStyle = 130;
+			// aapt resource value: 61
+			public const int AppCompatTheme_popupMenuStyle = 61;
 			
-			// aapt resource value: 0x83
-			public const int AppCompatTheme_popupWindowStyle = 131;
+			// aapt resource value: 62
+			public const int AppCompatTheme_popupWindowStyle = 62;
 			
-			// aapt resource value: 0x84
-			public const int AppCompatTheme_radioButtonStyle = 132;
+			// aapt resource value: 108
+			public const int AppCompatTheme_radioButtonStyle = 108;
 			
-			// aapt resource value: 0x85
-			public const int AppCompatTheme_ratingBarStyle = 133;
+			// aapt resource value: 109
+			public const int AppCompatTheme_ratingBarStyle = 109;
 			
-			// aapt resource value: 0x86
-			public const int AppCompatTheme_ratingBarStyleIndicator = 134;
+			// aapt resource value: 110
+			public const int AppCompatTheme_ratingBarStyleIndicator = 110;
 			
-			// aapt resource value: 0x87
-			public const int AppCompatTheme_ratingBarStyleSmall = 135;
+			// aapt resource value: 111
+			public const int AppCompatTheme_ratingBarStyleSmall = 111;
 			
-			// aapt resource value: 0x88
-			public const int AppCompatTheme_searchViewStyle = 136;
+			// aapt resource value: 69
+			public const int AppCompatTheme_searchViewStyle = 69;
 			
-			// aapt resource value: 0x89
-			public const int AppCompatTheme_seekBarStyle = 137;
+			// aapt resource value: 112
+			public const int AppCompatTheme_seekBarStyle = 112;
 			
-			// aapt resource value: 0x90
-			public const int AppCompatTheme_selectableItemBackground = 144;
+			// aapt resource value: 53
+			public const int AppCompatTheme_selectableItemBackground = 53;
 			
-			// aapt resource value: 0x91
-			public const int AppCompatTheme_selectableItemBackgroundBorderless = 145;
+			// aapt resource value: 54
+			public const int AppCompatTheme_selectableItemBackgroundBorderless = 54;
 			
-			// aapt resource value: 0x92
-			public const int AppCompatTheme_spinnerDropDownItemStyle = 146;
+			// aapt resource value: 48
+			public const int AppCompatTheme_spinnerDropDownItemStyle = 48;
 			
-			// aapt resource value: 0x93
-			public const int AppCompatTheme_spinnerStyle = 147;
+			// aapt resource value: 113
+			public const int AppCompatTheme_spinnerStyle = 113;
 			
-			// aapt resource value: 0x94
-			public const int AppCompatTheme_switchStyle = 148;
+			// aapt resource value: 114
+			public const int AppCompatTheme_switchStyle = 114;
 			
-			// aapt resource value: 0x95
-			public const int AppCompatTheme_textAppearanceLargePopupMenu = 149;
+			// aapt resource value: 40
+			public const int AppCompatTheme_textAppearanceLargePopupMenu = 40;
 			
-			// aapt resource value: 0x96
-			public const int AppCompatTheme_textAppearanceListItem = 150;
+			// aapt resource value: 77
+			public const int AppCompatTheme_textAppearanceListItem = 77;
 			
-			// aapt resource value: 0x97
-			public const int AppCompatTheme_textAppearanceListItemSecondary = 151;
+			// aapt resource value: 78
+			public const int AppCompatTheme_textAppearanceListItemSecondary = 78;
 			
-			// aapt resource value: 0x98
-			public const int AppCompatTheme_textAppearanceListItemSmall = 152;
+			// aapt resource value: 79
+			public const int AppCompatTheme_textAppearanceListItemSmall = 79;
 			
-			// aapt resource value: 0x99
-			public const int AppCompatTheme_textAppearancePopupMenuHeader = 153;
+			// aapt resource value: 42
+			public const int AppCompatTheme_textAppearancePopupMenuHeader = 42;
 			
-			// aapt resource value: 0x100
-			public const int AppCompatTheme_textAppearanceSearchResultSubtitle = 256;
+			// aapt resource value: 67
+			public const int AppCompatTheme_textAppearanceSearchResultSubtitle = 67;
 			
-			// aapt resource value: 0x101
-			public const int AppCompatTheme_textAppearanceSearchResultTitle = 257;
+			// aapt resource value: 66
+			public const int AppCompatTheme_textAppearanceSearchResultTitle = 66;
 			
-			// aapt resource value: 0x102
-			public const int AppCompatTheme_textAppearanceSmallPopupMenu = 258;
+			// aapt resource value: 41
+			public const int AppCompatTheme_textAppearanceSmallPopupMenu = 41;
 			
-			// aapt resource value: 0x103
-			public const int AppCompatTheme_textColorAlertDialogListItem = 259;
+			// aapt resource value: 98
+			public const int AppCompatTheme_textColorAlertDialogListItem = 98;
 			
-			// aapt resource value: 0x104
-			public const int AppCompatTheme_textColorSearchUrl = 260;
+			// aapt resource value: 68
+			public const int AppCompatTheme_textColorSearchUrl = 68;
 			
-			// aapt resource value: 0x105
-			public const int AppCompatTheme_toolbarNavigationButtonStyle = 261;
+			// aapt resource value: 60
+			public const int AppCompatTheme_toolbarNavigationButtonStyle = 60;
 			
-			// aapt resource value: 0x106
-			public const int AppCompatTheme_toolbarStyle = 262;
+			// aapt resource value: 59
+			public const int AppCompatTheme_toolbarStyle = 59;
 			
-			// aapt resource value: 0x107
-			public const int AppCompatTheme_tooltipForegroundColor = 263;
+			// aapt resource value: 117
+			public const int AppCompatTheme_tooltipForegroundColor = 117;
 			
-			// aapt resource value: 0x108
-			public const int AppCompatTheme_tooltipFrameBackground = 264;
+			// aapt resource value: 116
+			public const int AppCompatTheme_tooltipFrameBackground = 116;
 			
-			// aapt resource value: 0x109
-			public const int AppCompatTheme_windowActionBar = 265;
+			// aapt resource value: 2
+			public const int AppCompatTheme_windowActionBar = 2;
 			
-			// aapt resource value: 0x110
-			public const int AppCompatTheme_windowActionBarOverlay = 272;
+			// aapt resource value: 4
+			public const int AppCompatTheme_windowActionBarOverlay = 4;
 			
-			// aapt resource value: 0x111
-			public const int AppCompatTheme_windowActionModeOverlay = 273;
+			// aapt resource value: 5
+			public const int AppCompatTheme_windowActionModeOverlay = 5;
 			
-			// aapt resource value: 0x112
-			public const int AppCompatTheme_windowFixedHeightMajor = 274;
+			// aapt resource value: 9
+			public const int AppCompatTheme_windowFixedHeightMajor = 9;
 			
-			// aapt resource value: 0x113
-			public const int AppCompatTheme_windowFixedHeightMinor = 275;
+			// aapt resource value: 7
+			public const int AppCompatTheme_windowFixedHeightMinor = 7;
 			
-			// aapt resource value: 0x114
-			public const int AppCompatTheme_windowFixedWidthMajor = 276;
+			// aapt resource value: 6
+			public const int AppCompatTheme_windowFixedWidthMajor = 6;
 			
-			// aapt resource value: 0x115
-			public const int AppCompatTheme_windowFixedWidthMinor = 277;
+			// aapt resource value: 8
+			public const int AppCompatTheme_windowFixedWidthMinor = 8;
 			
-			// aapt resource value: 0x116
-			public const int AppCompatTheme_windowMinWidthMajor = 278;
+			// aapt resource value: 10
+			public const int AppCompatTheme_windowMinWidthMajor = 10;
 			
-			// aapt resource value: 0x117
-			public const int AppCompatTheme_windowMinWidthMinor = 279;
+			// aapt resource value: 11
+			public const int AppCompatTheme_windowMinWidthMinor = 11;
 			
-			// aapt resource value: 0x118
-			public const int AppCompatTheme_windowNoTitle = 280;
+			// aapt resource value: 3
+			public const int AppCompatTheme_windowNoTitle = 3;
 			
 			public static int[] BottomNavigationView = new int[] {
-					2130903179,
-					2130903229,
-					2130903230,
-					2130903233,
-					2130903273};
+					2130772019,
+					2130772280,
+					2130772281,
+					2130772282,
+					2130772283};
 			
-			// aapt resource value: 0x7F010219
-			public const int BottomNavigationView_elevation = 2130772505;
+			// aapt resource value: 0
+			public const int BottomNavigationView_elevation = 0;
 			
-			// aapt resource value: 0x1
-			public const int BottomNavigationView_itemBackground = 1;
+			// aapt resource value: 4
+			public const int BottomNavigationView_itemBackground = 4;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int BottomNavigationView_itemIconTint = 2;
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int BottomNavigationView_itemTextColor = 3;
 			
-			// aapt resource value: 0x4
-			public const int BottomNavigationView_menu = 4;
+			// aapt resource value: 1
+			public const int BottomNavigationView_menu = 1;
 			
 			public static int[] BottomSheetBehavior_Layout = new int[] {
-					2130903099,
-					2130903101,
-					2130903102};
+					2130772242,
+					2130772243,
+					2130772244};
 			
-			// aapt resource value: 0x7F010225
-			public const int BottomSheetBehavior_Layout_behavior_hideable = 2130772517;
+			// aapt resource value: 1
+			public const int BottomSheetBehavior_Layout_behavior_hideable = 1;
 			
-			// aapt resource value: 0x1
-			public const int BottomSheetBehavior_Layout_behavior_peekHeight = 1;
+			// aapt resource value: 0
+			public const int BottomSheetBehavior_Layout_behavior_peekHeight = 0;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int BottomSheetBehavior_Layout_behavior_skipCollapsed = 2;
 			
 			public static int[] ButtonBarLayout = new int[] {
-					2130903081};
+					2130772160};
 			
-			// aapt resource value: 0x7F010229
-			public const int ButtonBarLayout_allowStacking = 2130772521;
+			// aapt resource value: 0
+			public const int ButtonBarLayout_allowStacking = 0;
 			
 			public static int[] CardView = new int[] {
 					16843071,
 					16843072,
-					2130903118,
-					2130903119,
-					2130903120,
-					2130903121,
-					2130903122,
-					2130903123,
-					2130903152,
-					2130903153,
-					2130903154,
-					2130903155,
-					2130903156};
+					2130771980,
+					2130771981,
+					2130771982,
+					2130771983,
+					2130771984,
+					2130771985,
+					2130771986,
+					2130771987,
+					2130771988,
+					2130771989,
+					2130771990};
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int CardView_android_minHeight = 1;
 			
-			// aapt resource value: 0x7F010231
-			public const int CardView_android_minWidth = 2130772529;
+			// aapt resource value: 0
+			public const int CardView_android_minWidth = 0;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int CardView_cardBackgroundColor = 2;
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int CardView_cardCornerRadius = 3;
 			
-			// aapt resource value: 0x4
+			// aapt resource value: 4
 			public const int CardView_cardElevation = 4;
 			
-			// aapt resource value: 0x5
+			// aapt resource value: 5
 			public const int CardView_cardMaxElevation = 5;
 			
-			// aapt resource value: 0x6
-			public const int CardView_cardPreventCornerOverlap = 6;
+			// aapt resource value: 7
+			public const int CardView_cardPreventCornerOverlap = 7;
 			
-			// aapt resource value: 0x7
-			public const int CardView_cardUseCompatPadding = 7;
+			// aapt resource value: 6
+			public const int CardView_cardUseCompatPadding = 6;
 			
-			// aapt resource value: 0x8
+			// aapt resource value: 8
 			public const int CardView_contentPadding = 8;
 			
-			// aapt resource value: 0x9
-			public const int CardView_contentPaddingBottom = 9;
+			// aapt resource value: 12
+			public const int CardView_contentPaddingBottom = 12;
 			
-			// aapt resource value: 0x10
-			public const int CardView_contentPaddingLeft = 16;
+			// aapt resource value: 9
+			public const int CardView_contentPaddingLeft = 9;
 			
-			// aapt resource value: 0x11
-			public const int CardView_contentPaddingRight = 17;
+			// aapt resource value: 10
+			public const int CardView_contentPaddingRight = 10;
 			
-			// aapt resource value: 0x12
-			public const int CardView_contentPaddingTop = 18;
+			// aapt resource value: 11
+			public const int CardView_contentPaddingTop = 11;
 			
 			public static int[] CollapsingToolbarLayout = new int[] {
-					2130903130,
-					2130903131,
-					2130903157,
-					2130903186,
-					2130903187,
-					2130903188,
-					2130903189,
-					2130903190,
-					2130903191,
-					2130903192,
-					2130903307,
-					2130903308,
-					2130903331,
-					2130903381,
-					2130903384,
-					2130903400};
+					2130771994,
+					2130772245,
+					2130772246,
+					2130772247,
+					2130772248,
+					2130772249,
+					2130772250,
+					2130772251,
+					2130772252,
+					2130772253,
+					2130772254,
+					2130772255,
+					2130772256,
+					2130772257,
+					2130772258,
+					2130772259};
 			
-			// aapt resource value: 0x7F010245
-			public const int CollapsingToolbarLayout_collapsedTitleGravity = 2130772549;
+			// aapt resource value: 13
+			public const int CollapsingToolbarLayout_collapsedTitleGravity = 13;
 			
-			// aapt resource value: 0x1
-			public const int CollapsingToolbarLayout_collapsedTitleTextAppearance = 1;
+			// aapt resource value: 7
+			public const int CollapsingToolbarLayout_collapsedTitleTextAppearance = 7;
 			
-			// aapt resource value: 0x2
-			public const int CollapsingToolbarLayout_contentScrim = 2;
+			// aapt resource value: 8
+			public const int CollapsingToolbarLayout_contentScrim = 8;
 			
-			// aapt resource value: 0x3
-			public const int CollapsingToolbarLayout_expandedTitleGravity = 3;
+			// aapt resource value: 14
+			public const int CollapsingToolbarLayout_expandedTitleGravity = 14;
 			
-			// aapt resource value: 0x4
-			public const int CollapsingToolbarLayout_expandedTitleMargin = 4;
+			// aapt resource value: 1
+			public const int CollapsingToolbarLayout_expandedTitleMargin = 1;
 			
-			// aapt resource value: 0x5
+			// aapt resource value: 5
 			public const int CollapsingToolbarLayout_expandedTitleMarginBottom = 5;
 			
-			// aapt resource value: 0x6
-			public const int CollapsingToolbarLayout_expandedTitleMarginEnd = 6;
+			// aapt resource value: 4
+			public const int CollapsingToolbarLayout_expandedTitleMarginEnd = 4;
 			
-			// aapt resource value: 0x7
-			public const int CollapsingToolbarLayout_expandedTitleMarginStart = 7;
+			// aapt resource value: 2
+			public const int CollapsingToolbarLayout_expandedTitleMarginStart = 2;
 			
-			// aapt resource value: 0x8
-			public const int CollapsingToolbarLayout_expandedTitleMarginTop = 8;
+			// aapt resource value: 3
+			public const int CollapsingToolbarLayout_expandedTitleMarginTop = 3;
 			
-			// aapt resource value: 0x9
-			public const int CollapsingToolbarLayout_expandedTitleTextAppearance = 9;
+			// aapt resource value: 6
+			public const int CollapsingToolbarLayout_expandedTitleTextAppearance = 6;
+			
+			// aapt resource value: 12
+			public const int CollapsingToolbarLayout_scrimAnimationDuration = 12;
+			
+			// aapt resource value: 11
+			public const int CollapsingToolbarLayout_scrimVisibleHeightTrigger = 11;
+			
+			// aapt resource value: 9
+			public const int CollapsingToolbarLayout_statusBarScrim = 9;
+			
+			// aapt resource value: 0
+			public const int CollapsingToolbarLayout_title = 0;
+			
+			// aapt resource value: 15
+			public const int CollapsingToolbarLayout_titleEnabled = 15;
+			
+			// aapt resource value: 10
+			public const int CollapsingToolbarLayout_toolbarId = 10;
 			
 			public static int[] CollapsingToolbarLayout_Layout = new int[] {
-					2130903240,
-					2130903241};
+					2130772260,
+					2130772261};
 			
-			// aapt resource value: 0x7F010262
-			public const int CollapsingToolbarLayout_Layout_layout_collapseMode = 2130772578;
+			// aapt resource value: 0
+			public const int CollapsingToolbarLayout_Layout_layout_collapseMode = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = 1;
-			
-			// aapt resource value: 0x10
-			public const int CollapsingToolbarLayout_scrimAnimationDuration = 16;
-			
-			// aapt resource value: 0x11
-			public const int CollapsingToolbarLayout_scrimVisibleHeightTrigger = 17;
-			
-			// aapt resource value: 0x12
-			public const int CollapsingToolbarLayout_statusBarScrim = 18;
-			
-			// aapt resource value: 0x13
-			public const int CollapsingToolbarLayout_title = 19;
-			
-			// aapt resource value: 0x14
-			public const int CollapsingToolbarLayout_titleEnabled = 20;
-			
-			// aapt resource value: 0x15
-			public const int CollapsingToolbarLayout_toolbarId = 21;
 			
 			public static int[] ColorStateListItem = new int[] {
 					16843173,
 					16843551,
-					2130903082};
+					2130772161};
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int ColorStateListItem_alpha = 2;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int ColorStateListItem_android_alpha = 1;
 			
-			// aapt resource value: 0x7F010265
-			public const int ColorStateListItem_android_color = 2130772581;
+			// aapt resource value: 0
+			public const int ColorStateListItem_android_color = 0;
 			
 			public static int[] CompoundButton = new int[] {
 					16843015,
-					2130903116,
-					2130903117};
+					2130772162,
+					2130772163};
 			
-			// aapt resource value: 0x7F010269
-			public const int CompoundButton_android_button = 2130772585;
+			// aapt resource value: 0
+			public const int CompoundButton_android_button = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int CompoundButton_buttonTint = 1;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int CompoundButton_buttonTintMode = 2;
 			
 			public static int[] CoordinatorLayout = new int[] {
-					2130903234,
-					2130903330};
+					2130772262,
+					2130772263};
 			
-			// aapt resource value: 0x7F010273
-			public const int CoordinatorLayout_keylines = 2130772595;
+			// aapt resource value: 0
+			public const int CoordinatorLayout_keylines = 0;
+			
+			// aapt resource value: 1
+			public const int CoordinatorLayout_statusBarBackground = 1;
 			
 			public static int[] CoordinatorLayout_Layout = new int[] {
 					16842931,
-					2130903237,
-					2130903238,
-					2130903239,
-					2130903242,
-					2130903243,
-					2130903244};
+					2130772264,
+					2130772265,
+					2130772266,
+					2130772267,
+					2130772268,
+					2130772269};
 			
-			// aapt resource value: 0x7F010276
-			public const int CoordinatorLayout_Layout_android_layout_gravity = 2130772598;
+			// aapt resource value: 0
+			public const int CoordinatorLayout_Layout_android_layout_gravity = 0;
 			
-			// aapt resource value: 0x1
-			public const int CoordinatorLayout_Layout_layout_anchor = 1;
+			// aapt resource value: 2
+			public const int CoordinatorLayout_Layout_layout_anchor = 2;
 			
-			// aapt resource value: 0x2
-			public const int CoordinatorLayout_Layout_layout_anchorGravity = 2;
+			// aapt resource value: 4
+			public const int CoordinatorLayout_Layout_layout_anchorGravity = 4;
 			
-			// aapt resource value: 0x3
-			public const int CoordinatorLayout_Layout_layout_behavior = 3;
+			// aapt resource value: 1
+			public const int CoordinatorLayout_Layout_layout_behavior = 1;
 			
-			// aapt resource value: 0x4
-			public const int CoordinatorLayout_Layout_layout_dodgeInsetEdges = 4;
+			// aapt resource value: 6
+			public const int CoordinatorLayout_Layout_layout_dodgeInsetEdges = 6;
 			
-			// aapt resource value: 0x5
+			// aapt resource value: 5
 			public const int CoordinatorLayout_Layout_layout_insetEdge = 5;
 			
-			// aapt resource value: 0x6
-			public const int CoordinatorLayout_Layout_layout_keyline = 6;
-			
-			// aapt resource value: 0x1
-			public const int CoordinatorLayout_statusBarBackground = 1;
+			// aapt resource value: 3
+			public const int CoordinatorLayout_Layout_layout_keyline = 3;
 			
 			public static int[] DesignTheme = new int[] {
-					2130903105,
-					2130903106,
-					2130903369};
+					2130772270,
+					2130772271,
+					2130772272};
 			
-			// aapt resource value: 0x7F010284
-			public const int DesignTheme_bottomSheetDialogTheme = 2130772612;
+			// aapt resource value: 0
+			public const int DesignTheme_bottomSheetDialogTheme = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int DesignTheme_bottomSheetStyle = 1;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int DesignTheme_textColorError = 2;
 			
 			public static int[] DrawerArrowToggle = new int[] {
-					2130903084,
-					2130903085,
-					2130903097,
-					2130903132,
-					2130903172,
-					2130903210,
-					2130903321,
-					2130903372};
+					2130772164,
+					2130772165,
+					2130772166,
+					2130772167,
+					2130772168,
+					2130772169,
+					2130772170,
+					2130772171};
 			
-			// aapt resource value: 0x7F010288
-			public const int DrawerArrowToggle_arrowHeadLength = 2130772616;
+			// aapt resource value: 4
+			public const int DrawerArrowToggle_arrowHeadLength = 4;
 			
-			// aapt resource value: 0x1
-			public const int DrawerArrowToggle_arrowShaftLength = 1;
+			// aapt resource value: 5
+			public const int DrawerArrowToggle_arrowShaftLength = 5;
 			
-			// aapt resource value: 0x2
-			public const int DrawerArrowToggle_barLength = 2;
+			// aapt resource value: 6
+			public const int DrawerArrowToggle_barLength = 6;
 			
-			// aapt resource value: 0x3
-			public const int DrawerArrowToggle_color = 3;
+			// aapt resource value: 0
+			public const int DrawerArrowToggle_color = 0;
 			
-			// aapt resource value: 0x4
-			public const int DrawerArrowToggle_drawableSize = 4;
+			// aapt resource value: 2
+			public const int DrawerArrowToggle_drawableSize = 2;
 			
-			// aapt resource value: 0x5
-			public const int DrawerArrowToggle_gapBetweenBars = 5;
+			// aapt resource value: 3
+			public const int DrawerArrowToggle_gapBetweenBars = 3;
 			
-			// aapt resource value: 0x6
-			public const int DrawerArrowToggle_spinBars = 6;
+			// aapt resource value: 1
+			public const int DrawerArrowToggle_spinBars = 1;
 			
-			// aapt resource value: 0x7
+			// aapt resource value: 7
 			public const int DrawerArrowToggle_thickness = 7;
 			
 			public static int[] FloatingActionButton = new int[] {
-					2130903095,
-					2130903096,
-					2130903103,
-					2130903179,
-					2130903193,
-					2130903296,
-					2130903306,
-					2130903409};
+					2130772019,
+					2130772235,
+					2130772236,
+					2130772273,
+					2130772274,
+					2130772275,
+					2130772276,
+					2130772277};
 			
-			// aapt resource value: 0x7F010297
-			public const int FloatingActionButton_backgroundTint = 2130772631;
+			// aapt resource value: 1
+			public const int FloatingActionButton_backgroundTint = 1;
 			
-			// aapt resource value: 0x1
-			public const int FloatingActionButton_backgroundTintMode = 1;
+			// aapt resource value: 2
+			public const int FloatingActionButton_backgroundTintMode = 2;
 			
-			public static int[] FloatingActionButton_Behavior_Layout = new int[] {
-					2130903098};
+			// aapt resource value: 6
+			public const int FloatingActionButton_borderWidth = 6;
 			
-			// aapt resource value: 0x7F010306
-			public const int FloatingActionButton_Behavior_Layout_behavior_autoHide = 2130772742;
+			// aapt resource value: 0
+			public const int FloatingActionButton_elevation = 0;
 			
-			// aapt resource value: 0x2
-			public const int FloatingActionButton_borderWidth = 2;
-			
-			// aapt resource value: 0x3
-			public const int FloatingActionButton_elevation = 3;
-			
-			// aapt resource value: 0x4
+			// aapt resource value: 4
 			public const int FloatingActionButton_fabSize = 4;
 			
-			// aapt resource value: 0x5
+			// aapt resource value: 5
 			public const int FloatingActionButton_pressedTranslationZ = 5;
 			
-			// aapt resource value: 0x6
-			public const int FloatingActionButton_rippleColor = 6;
+			// aapt resource value: 3
+			public const int FloatingActionButton_rippleColor = 3;
 			
-			// aapt resource value: 0x7
+			// aapt resource value: 7
 			public const int FloatingActionButton_useCompatPadding = 7;
 			
+			public static int[] FloatingActionButton_Behavior_Layout = new int[] {
+					2130772278};
+			
+			// aapt resource value: 0
+			public const int FloatingActionButton_Behavior_Layout_behavior_autoHide = 0;
+			
 			public static int[] FontFamily = new int[] {
-					2130903201,
-					2130903202,
-					2130903203,
-					2130903204,
-					2130903205,
-					2130903206};
+					2130772319,
+					2130772320,
+					2130772321,
+					2130772322,
+					2130772323,
+					2130772324};
+			
+			// aapt resource value: 0
+			public const int FontFamily_fontProviderAuthority = 0;
+			
+			// aapt resource value: 3
+			public const int FontFamily_fontProviderCerts = 3;
+			
+			// aapt resource value: 4
+			public const int FontFamily_fontProviderFetchStrategy = 4;
+			
+			// aapt resource value: 5
+			public const int FontFamily_fontProviderFetchTimeout = 5;
+			
+			// aapt resource value: 1
+			public const int FontFamily_fontProviderPackage = 1;
+			
+			// aapt resource value: 2
+			public const int FontFamily_fontProviderQuery = 2;
 			
 			public static int[] FontFamilyFont = new int[] {
 					16844082,
 					16844083,
 					16844095,
-					2130903199,
-					2130903207,
-					2130903208};
+					2130772325,
+					2130772326,
+					2130772327};
 			
-			// aapt resource value: 0x7F010315
-			public const int FontFamilyFont_android_font = 2130772757;
+			// aapt resource value: 0
+			public const int FontFamilyFont_android_font = 0;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int FontFamilyFont_android_fontStyle = 2;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int FontFamilyFont_android_fontWeight = 1;
 			
-			// aapt resource value: 0x3
-			public const int FontFamilyFont_font = 3;
+			// aapt resource value: 4
+			public const int FontFamilyFont_font = 4;
 			
-			// aapt resource value: 0x4
-			public const int FontFamilyFont_fontStyle = 4;
+			// aapt resource value: 3
+			public const int FontFamilyFont_fontStyle = 3;
 			
-			// aapt resource value: 0x5
+			// aapt resource value: 5
 			public const int FontFamilyFont_fontWeight = 5;
-			
-			// aapt resource value: 0x7F010308
-			public const int FontFamily_fontProviderAuthority = 2130772744;
-			
-			// aapt resource value: 0x1
-			public const int FontFamily_fontProviderCerts = 1;
-			
-			// aapt resource value: 0x2
-			public const int FontFamily_fontProviderFetchStrategy = 2;
-			
-			// aapt resource value: 0x3
-			public const int FontFamily_fontProviderFetchTimeout = 3;
-			
-			// aapt resource value: 0x4
-			public const int FontFamily_fontProviderPackage = 4;
-			
-			// aapt resource value: 0x5
-			public const int FontFamily_fontProviderQuery = 5;
 			
 			public static int[] ForegroundLinearLayout = new int[] {
 					16843017,
 					16843264,
-					2130903209};
+					2130772279};
 			
-			// aapt resource value: 0x7F010322
-			public const int ForegroundLinearLayout_android_foreground = 2130772770;
+			// aapt resource value: 0
+			public const int ForegroundLinearLayout_android_foreground = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int ForegroundLinearLayout_android_foregroundGravity = 1;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int ForegroundLinearLayout_foregroundInsidePadding = 2;
 			
 			public static int[] LinearLayoutCompat = new int[] {
@@ -9457,31 +10178,37 @@ namespace GFI_with_GFS_A
 					16843046,
 					16843047,
 					16843048,
-					2130903168,
-					2130903170,
-					2130903272,
-					2130903316};
+					2130772002,
+					2130772172,
+					2130772173,
+					2130772174};
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int LinearLayoutCompat_android_baselineAligned = 2;
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int LinearLayoutCompat_android_baselineAlignedChildIndex = 3;
 			
-			// aapt resource value: 0x7F010326
-			public const int LinearLayoutCompat_android_gravity = 2130772774;
+			// aapt resource value: 0
+			public const int LinearLayoutCompat_android_gravity = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int LinearLayoutCompat_android_orientation = 1;
 			
-			// aapt resource value: 0x4
+			// aapt resource value: 4
 			public const int LinearLayoutCompat_android_weightSum = 4;
 			
-			// aapt resource value: 0x5
+			// aapt resource value: 5
 			public const int LinearLayoutCompat_divider = 5;
 			
-			// aapt resource value: 0x6
-			public const int LinearLayoutCompat_dividerPadding = 6;
+			// aapt resource value: 8
+			public const int LinearLayoutCompat_dividerPadding = 8;
+			
+			// aapt resource value: 6
+			public const int LinearLayoutCompat_measureWithLargestChild = 6;
+			
+			// aapt resource value: 7
+			public const int LinearLayoutCompat_showDividers = 7;
 			
 			public static int[] LinearLayoutCompat_Layout = new int[] {
 					16842931,
@@ -9489,32 +10216,26 @@ namespace GFI_with_GFS_A
 					16842997,
 					16843137};
 			
-			// aapt resource value: 0x7F010336
-			public const int LinearLayoutCompat_Layout_android_layout_gravity = 2130772790;
+			// aapt resource value: 0
+			public const int LinearLayoutCompat_Layout_android_layout_gravity = 0;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int LinearLayoutCompat_Layout_android_layout_height = 2;
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int LinearLayoutCompat_Layout_android_layout_weight = 3;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int LinearLayoutCompat_Layout_android_layout_width = 1;
-			
-			// aapt resource value: 0x7
-			public const int LinearLayoutCompat_measureWithLargestChild = 7;
-			
-			// aapt resource value: 0x8
-			public const int LinearLayoutCompat_showDividers = 8;
 			
 			public static int[] ListPopupWindow = new int[] {
 					16843436,
 					16843437};
 			
-			// aapt resource value: 0x7F010341
-			public const int ListPopupWindow_android_dropDownHorizontalOffset = 2130772801;
+			// aapt resource value: 0
+			public const int ListPopupWindow_android_dropDownHorizontalOffset = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int ListPopupWindow_android_dropDownVerticalOffset = 1;
 			
 			public static int[] MenuGroup = new int[] {
@@ -9525,22 +10246,22 @@ namespace GFI_with_GFS_A
 					16843231,
 					16843232};
 			
-			// aapt resource value: 0x5
+			// aapt resource value: 5
 			public const int MenuGroup_android_checkableBehavior = 5;
 			
-			// aapt resource value: 0x7F010344
-			public const int MenuGroup_android_enabled = 2130772804;
+			// aapt resource value: 0
+			public const int MenuGroup_android_enabled = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int MenuGroup_android_id = 1;
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int MenuGroup_android_menuCategory = 3;
 			
-			// aapt resource value: 0x4
+			// aapt resource value: 4
 			public const int MenuGroup_android_orderInCategory = 4;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int MenuGroup_android_visible = 2;
 			
 			public static int[] MenuItem = new int[] {
@@ -9557,85 +10278,85 @@ namespace GFI_with_GFS_A
 					16843236,
 					16843237,
 					16843375,
-					2130903053,
-					2130903071,
-					2130903072,
-					2130903083,
-					2130903145,
-					2130903221,
-					2130903222,
-					2130903278,
-					2130903315,
-					2130903405};
+					2130772175,
+					2130772176,
+					2130772177,
+					2130772178,
+					2130772179,
+					2130772180,
+					2130772181,
+					2130772182,
+					2130772183,
+					2130772184};
 			
-			// aapt resource value: 0x13
-			public const int MenuItem_actionLayout = 19;
+			// aapt resource value: 16
+			public const int MenuItem_actionLayout = 16;
 			
-			// aapt resource value: 0x14
-			public const int MenuItem_actionProviderClass = 20;
+			// aapt resource value: 18
+			public const int MenuItem_actionProviderClass = 18;
 			
-			// aapt resource value: 0x15
-			public const int MenuItem_actionViewClass = 21;
+			// aapt resource value: 17
+			public const int MenuItem_actionViewClass = 17;
 			
-			// aapt resource value: 0x16
-			public const int MenuItem_alphabeticModifiers = 22;
+			// aapt resource value: 13
+			public const int MenuItem_alphabeticModifiers = 13;
 			
-			// aapt resource value: 0x9
+			// aapt resource value: 9
 			public const int MenuItem_android_alphabeticShortcut = 9;
 			
-			// aapt resource value: 0x11
-			public const int MenuItem_android_checkable = 17;
+			// aapt resource value: 11
+			public const int MenuItem_android_checkable = 11;
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int MenuItem_android_checked = 3;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int MenuItem_android_enabled = 1;
 			
-			// aapt resource value: 0x7F010351
-			public const int MenuItem_android_icon = 2130772817;
+			// aapt resource value: 0
+			public const int MenuItem_android_icon = 0;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int MenuItem_android_id = 2;
 			
-			// aapt resource value: 0x5
+			// aapt resource value: 5
 			public const int MenuItem_android_menuCategory = 5;
 			
-			// aapt resource value: 0x10
-			public const int MenuItem_android_numericShortcut = 16;
+			// aapt resource value: 10
+			public const int MenuItem_android_numericShortcut = 10;
 			
-			// aapt resource value: 0x12
-			public const int MenuItem_android_onClick = 18;
+			// aapt resource value: 12
+			public const int MenuItem_android_onClick = 12;
 			
-			// aapt resource value: 0x6
+			// aapt resource value: 6
 			public const int MenuItem_android_orderInCategory = 6;
 			
-			// aapt resource value: 0x7
+			// aapt resource value: 7
 			public const int MenuItem_android_title = 7;
 			
-			// aapt resource value: 0x8
+			// aapt resource value: 8
 			public const int MenuItem_android_titleCondensed = 8;
 			
-			// aapt resource value: 0x4
+			// aapt resource value: 4
 			public const int MenuItem_android_visible = 4;
 			
-			// aapt resource value: 0x17
-			public const int MenuItem_contentDescription = 23;
+			// aapt resource value: 19
+			public const int MenuItem_contentDescription = 19;
 			
-			// aapt resource value: 0x18
-			public const int MenuItem_iconTint = 24;
+			// aapt resource value: 21
+			public const int MenuItem_iconTint = 21;
 			
-			// aapt resource value: 0x19
-			public const int MenuItem_iconTintMode = 25;
+			// aapt resource value: 22
+			public const int MenuItem_iconTintMode = 22;
 			
-			// aapt resource value: 0x20
-			public const int MenuItem_numericModifiers = 32;
+			// aapt resource value: 14
+			public const int MenuItem_numericModifiers = 14;
 			
-			// aapt resource value: 0x21
-			public const int MenuItem_showAsAction = 33;
+			// aapt resource value: 15
+			public const int MenuItem_showAsAction = 15;
 			
-			// aapt resource value: 0x22
-			public const int MenuItem_tooltipText = 34;
+			// aapt resource value: 20
+			public const int MenuItem_tooltipText = 20;
 			
 			public static int[] MenuView = new int[] {
 					16842926,
@@ -9645,406 +10366,406 @@ namespace GFI_with_GFS_A
 					16843055,
 					16843056,
 					16843057,
-					2130903295,
-					2130903332};
+					2130772185,
+					2130772186};
 			
-			// aapt resource value: 0x4
+			// aapt resource value: 4
 			public const int MenuView_android_headerBackground = 4;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int MenuView_android_horizontalDivider = 2;
 			
-			// aapt resource value: 0x5
+			// aapt resource value: 5
 			public const int MenuView_android_itemBackground = 5;
 			
-			// aapt resource value: 0x6
+			// aapt resource value: 6
 			public const int MenuView_android_itemIconDisabledAlpha = 6;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int MenuView_android_itemTextAppearance = 1;
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int MenuView_android_verticalDivider = 3;
 			
-			// aapt resource value: 0x7F010375
-			public const int MenuView_android_windowAnimationStyle = 2130772853;
+			// aapt resource value: 0
+			public const int MenuView_android_windowAnimationStyle = 0;
 			
-			// aapt resource value: 0x7
+			// aapt resource value: 7
 			public const int MenuView_preserveIconSpacing = 7;
 			
-			// aapt resource value: 0x8
+			// aapt resource value: 8
 			public const int MenuView_subMenuArrow = 8;
 			
 			public static int[] NavigationView = new int[] {
 					16842964,
 					16842973,
 					16843039,
-					2130903179,
-					2130903212,
-					2130903229,
-					2130903230,
-					2130903232,
-					2130903233,
-					2130903273};
+					2130772019,
+					2130772280,
+					2130772281,
+					2130772282,
+					2130772283,
+					2130772284,
+					2130772285};
 			
-			// aapt resource value: 0x7F010385
-			public const int NavigationView_android_background = 2130772869;
+			// aapt resource value: 0
+			public const int NavigationView_android_background = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int NavigationView_android_fitsSystemWindows = 1;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int NavigationView_android_maxWidth = 2;
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int NavigationView_elevation = 3;
 			
-			// aapt resource value: 0x4
-			public const int NavigationView_headerLayout = 4;
+			// aapt resource value: 9
+			public const int NavigationView_headerLayout = 9;
 			
-			// aapt resource value: 0x5
-			public const int NavigationView_itemBackground = 5;
+			// aapt resource value: 7
+			public const int NavigationView_itemBackground = 7;
 			
-			// aapt resource value: 0x6
-			public const int NavigationView_itemIconTint = 6;
+			// aapt resource value: 5
+			public const int NavigationView_itemIconTint = 5;
 			
-			// aapt resource value: 0x7
-			public const int NavigationView_itemTextAppearance = 7;
+			// aapt resource value: 8
+			public const int NavigationView_itemTextAppearance = 8;
 			
-			// aapt resource value: 0x8
-			public const int NavigationView_itemTextColor = 8;
+			// aapt resource value: 6
+			public const int NavigationView_itemTextColor = 6;
 			
-			// aapt resource value: 0x9
-			public const int NavigationView_menu = 9;
+			// aapt resource value: 4
+			public const int NavigationView_menu = 4;
 			
 			public static int[] PopupWindow = new int[] {
 					16843126,
 					16843465,
-					2130903279};
+					2130772187};
 			
-			public static int[] PopupWindowBackgroundState = new int[] {
-					2130903327};
-			
-			// aapt resource value: 0x7F010400
-			public const int PopupWindowBackgroundState_state_above_anchor = 2130772992;
-			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int PopupWindow_android_popupAnimationStyle = 1;
 			
-			// aapt resource value: 0x7F010396
-			public const int PopupWindow_android_popupBackground = 2130772886;
+			// aapt resource value: 0
+			public const int PopupWindow_android_popupBackground = 0;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int PopupWindow_overlapAnchor = 2;
 			
+			public static int[] PopupWindowBackgroundState = new int[] {
+					2130772188};
+			
+			// aapt resource value: 0
+			public const int PopupWindowBackgroundState_state_above_anchor = 0;
+			
 			public static int[] RecycleListView = new int[] {
-					2130903280,
-					2130903283};
+					2130772189,
+					2130772190};
 			
-			// aapt resource value: 0x7F010402
-			public const int RecycleListView_paddingBottomNoButtons = 2130772994;
+			// aapt resource value: 0
+			public const int RecycleListView_paddingBottomNoButtons = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int RecycleListView_paddingTopNoTitle = 1;
 			
 			public static int[] RecyclerView = new int[] {
 					16842948,
 					16842993,
-					2130903194,
-					2130903195,
-					2130903196,
-					2130903197,
-					2130903198,
-					2130903236,
-					2130903305,
-					2130903320,
-					2130903326};
+					2130771971,
+					2130771972,
+					2130771973,
+					2130771974,
+					2130771975,
+					2130771976,
+					2130771977,
+					2130771978,
+					2130771979};
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int RecyclerView_android_descendantFocusability = 1;
 			
-			// aapt resource value: 0x7F010405
-			public const int RecyclerView_android_orientation = 2130772997;
+			// aapt resource value: 0
+			public const int RecyclerView_android_orientation = 0;
 			
-			// aapt resource value: 0x2
-			public const int RecyclerView_fastScrollEnabled = 2;
+			// aapt resource value: 6
+			public const int RecyclerView_fastScrollEnabled = 6;
 			
-			// aapt resource value: 0x3
-			public const int RecyclerView_fastScrollHorizontalThumbDrawable = 3;
+			// aapt resource value: 9
+			public const int RecyclerView_fastScrollHorizontalThumbDrawable = 9;
 			
-			// aapt resource value: 0x4
-			public const int RecyclerView_fastScrollHorizontalTrackDrawable = 4;
+			// aapt resource value: 10
+			public const int RecyclerView_fastScrollHorizontalTrackDrawable = 10;
 			
-			// aapt resource value: 0x5
-			public const int RecyclerView_fastScrollVerticalThumbDrawable = 5;
+			// aapt resource value: 7
+			public const int RecyclerView_fastScrollVerticalThumbDrawable = 7;
 			
-			// aapt resource value: 0x6
-			public const int RecyclerView_fastScrollVerticalTrackDrawable = 6;
+			// aapt resource value: 8
+			public const int RecyclerView_fastScrollVerticalTrackDrawable = 8;
 			
-			// aapt resource value: 0x7
-			public const int RecyclerView_layoutManager = 7;
+			// aapt resource value: 2
+			public const int RecyclerView_layoutManager = 2;
 			
-			// aapt resource value: 0x8
-			public const int RecyclerView_reverseLayout = 8;
+			// aapt resource value: 4
+			public const int RecyclerView_reverseLayout = 4;
 			
-			// aapt resource value: 0x9
-			public const int RecyclerView_spanCount = 9;
+			// aapt resource value: 3
+			public const int RecyclerView_spanCount = 3;
 			
-			// aapt resource value: 0x10
-			public const int RecyclerView_stackFromEnd = 16;
+			// aapt resource value: 5
+			public const int RecyclerView_stackFromEnd = 5;
 			
 			public static int[] ScrimInsetsFrameLayout = new int[] {
-					2130903227};
+					2130772286};
 			
-			// aapt resource value: 0x7F010417
-			public const int ScrimInsetsFrameLayout_insetForeground = 2130773015;
+			// aapt resource value: 0
+			public const int ScrimInsetsFrameLayout_insetForeground = 0;
 			
 			public static int[] ScrollingViewBehavior_Layout = new int[] {
-					2130903100};
+					2130772287};
 			
-			// aapt resource value: 0x7F010419
-			public const int ScrollingViewBehavior_Layout_behavior_overlapTop = 2130773017;
+			// aapt resource value: 0
+			public const int ScrollingViewBehavior_Layout_behavior_overlapTop = 0;
 			
 			public static int[] SearchView = new int[] {
 					16842970,
 					16843039,
 					16843296,
 					16843364,
-					2130903126,
-					2130903144,
-					2130903164,
-					2130903211,
-					2130903223,
-					2130903235,
-					2130903299,
-					2130903300,
-					2130903309,
-					2130903310,
-					2130903333,
-					2130903338,
-					2130903410};
+					2130772191,
+					2130772192,
+					2130772193,
+					2130772194,
+					2130772195,
+					2130772196,
+					2130772197,
+					2130772198,
+					2130772199,
+					2130772200,
+					2130772201,
+					2130772202,
+					2130772203};
 			
-			// aapt resource value: 0x7F010421
-			public const int SearchView_android_focusable = 2130773025;
+			// aapt resource value: 0
+			public const int SearchView_android_focusable = 0;
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int SearchView_android_imeOptions = 3;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int SearchView_android_inputType = 2;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int SearchView_android_maxWidth = 1;
 			
-			// aapt resource value: 0x4
-			public const int SearchView_closeIcon = 4;
+			// aapt resource value: 8
+			public const int SearchView_closeIcon = 8;
 			
-			// aapt resource value: 0x5
-			public const int SearchView_commitIcon = 5;
+			// aapt resource value: 13
+			public const int SearchView_commitIcon = 13;
 			
-			// aapt resource value: 0x6
-			public const int SearchView_defaultQueryHint = 6;
+			// aapt resource value: 7
+			public const int SearchView_defaultQueryHint = 7;
 			
-			// aapt resource value: 0x7
-			public const int SearchView_goIcon = 7;
+			// aapt resource value: 9
+			public const int SearchView_goIcon = 9;
 			
-			// aapt resource value: 0x8
-			public const int SearchView_iconifiedByDefault = 8;
+			// aapt resource value: 5
+			public const int SearchView_iconifiedByDefault = 5;
 			
-			// aapt resource value: 0x9
-			public const int SearchView_layout = 9;
+			// aapt resource value: 4
+			public const int SearchView_layout = 4;
 			
-			// aapt resource value: 0x10
-			public const int SearchView_queryBackground = 16;
+			// aapt resource value: 15
+			public const int SearchView_queryBackground = 15;
 			
-			// aapt resource value: 0x11
-			public const int SearchView_queryHint = 17;
+			// aapt resource value: 6
+			public const int SearchView_queryHint = 6;
 			
-			// aapt resource value: 0x12
-			public const int SearchView_searchHintIcon = 18;
+			// aapt resource value: 11
+			public const int SearchView_searchHintIcon = 11;
 			
-			// aapt resource value: 0x13
-			public const int SearchView_searchIcon = 19;
+			// aapt resource value: 10
+			public const int SearchView_searchIcon = 10;
 			
-			// aapt resource value: 0x14
-			public const int SearchView_submitBackground = 20;
+			// aapt resource value: 16
+			public const int SearchView_submitBackground = 16;
 			
-			// aapt resource value: 0x15
-			public const int SearchView_suggestionRowLayout = 21;
+			// aapt resource value: 14
+			public const int SearchView_suggestionRowLayout = 14;
 			
-			// aapt resource value: 0x16
-			public const int SearchView_voiceIcon = 22;
+			// aapt resource value: 12
+			public const int SearchView_voiceIcon = 12;
 			
 			public static int[] SfChart = new int[] {
-					2130903140,
-					2130903180,
-					2130903181,
-					2130903247,
-					2130903248,
-					2130903249,
-					2130903250,
-					2130903251,
-					2130903252,
-					2130903253,
-					2130903254,
-					2130903255,
-					2130903256,
-					2130903382,
-					2130903383,
-					2130903391,
-					2130903392,
-					2130903393,
-					2130903394,
-					2130903395,
-					2130903396,
-					2130903421,
-					2130903422,
-					2130903423,
-					2130903424,
-					2130903425,
-					2130903426,
-					2130903427,
-					2130903428,
-					2130903429,
-					2130903430,
-					2130903431,
-					2130903432,
-					2130903433,
-					2130903434,
-					2130903435,
-					2130903436,
-					2130903437,
-					2130903438};
+					2130772328,
+					2130772329,
+					2130772330,
+					2130772331,
+					2130772332,
+					2130772333,
+					2130772334,
+					2130772335,
+					2130772336,
+					2130772337,
+					2130772338,
+					2130772339,
+					2130772340,
+					2130772341,
+					2130772342,
+					2130772343,
+					2130772344,
+					2130772345,
+					2130772346,
+					2130772347,
+					2130772348,
+					2130772349,
+					2130772350,
+					2130772351,
+					2130772352,
+					2130772353,
+					2130772354,
+					2130772355,
+					2130772356,
+					2130772357,
+					2130772358,
+					2130772359,
+					2130772360,
+					2130772361,
+					2130772362,
+					2130772363,
+					2130772364,
+					2130772365,
+					2130772366};
 			
-			// aapt resource value: 0x7F010439
-			public const int SfChart_colorPalette = 2130773049;
+			// aapt resource value: 36
+			public const int SfChart_colorPalette = 36;
 			
-			// aapt resource value: 0x1
-			public const int SfChart_enableTrackball = 1;
+			// aapt resource value: 38
+			public const int SfChart_enableTrackball = 38;
 			
-			// aapt resource value: 0x2
-			public const int SfChart_enableZooming = 2;
+			// aapt resource value: 37
+			public const int SfChart_enableZooming = 37;
 			
-			// aapt resource value: 0x3
-			public const int SfChart_legendDockPosition = 3;
+			// aapt resource value: 26
+			public const int SfChart_legendDockPosition = 26;
 			
-			// aapt resource value: 0x4
-			public const int SfChart_legendIconHeight = 4;
+			// aapt resource value: 20
+			public const int SfChart_legendIconHeight = 20;
 			
-			// aapt resource value: 0x5
-			public const int SfChart_legendIconWidth = 5;
+			// aapt resource value: 21
+			public const int SfChart_legendIconWidth = 21;
 			
-			// aapt resource value: 0x6
-			public const int SfChart_legendItemMarginBottom = 6;
+			// aapt resource value: 22
+			public const int SfChart_legendItemMarginBottom = 22;
 			
-			// aapt resource value: 0x7
-			public const int SfChart_legendItemMarginLeft = 7;
+			// aapt resource value: 23
+			public const int SfChart_legendItemMarginLeft = 23;
 			
-			// aapt resource value: 0x8
-			public const int SfChart_legendItemMarginRight = 8;
+			// aapt resource value: 24
+			public const int SfChart_legendItemMarginRight = 24;
 			
-			// aapt resource value: 0x9
-			public const int SfChart_legendItemMarginTop = 9;
+			// aapt resource value: 25
+			public const int SfChart_legendItemMarginTop = 25;
 			
-			// aapt resource value: 0x10
-			public const int SfChart_legendOrientation = 16;
+			// aapt resource value: 27
+			public const int SfChart_legendOrientation = 27;
 			
-			// aapt resource value: 0x11
-			public const int SfChart_legendTitleText = 17;
+			// aapt resource value: 19
+			public const int SfChart_legendTitleText = 19;
 			
-			// aapt resource value: 0x12
+			// aapt resource value: 18
 			public const int SfChart_legendVisibility = 18;
 			
-			// aapt resource value: 0x13
-			public const int SfChart_titleBackgroundColor = 19;
+			// aapt resource value: 31
+			public const int SfChart_titleBackgroundColor = 31;
 			
-			// aapt resource value: 0x14
-			public const int SfChart_titleColor = 20;
+			// aapt resource value: 29
+			public const int SfChart_titleColor = 29;
 			
-			// aapt resource value: 0x15
-			public const int SfChart_titlePaddingBottom = 21;
+			// aapt resource value: 35
+			public const int SfChart_titlePaddingBottom = 35;
 			
-			// aapt resource value: 0x16
-			public const int SfChart_titlePaddingLeft = 22;
+			// aapt resource value: 32
+			public const int SfChart_titlePaddingLeft = 32;
 			
-			// aapt resource value: 0x17
-			public const int SfChart_titlePaddingRight = 23;
+			// aapt resource value: 33
+			public const int SfChart_titlePaddingRight = 33;
 			
-			// aapt resource value: 0x18
-			public const int SfChart_titlePaddingTop = 24;
+			// aapt resource value: 34
+			public const int SfChart_titlePaddingTop = 34;
 			
-			// aapt resource value: 0x19
-			public const int SfChart_titleSize = 25;
+			// aapt resource value: 30
+			public const int SfChart_titleSize = 30;
 			
-			// aapt resource value: 0x20
-			public const int SfChart_titleText = 32;
+			// aapt resource value: 28
+			public const int SfChart_titleText = 28;
 			
-			// aapt resource value: 0x21
-			public const int SfChart_xAxis = 33;
+			// aapt resource value: 0
+			public const int SfChart_xAxis = 0;
 			
-			// aapt resource value: 0x22
-			public const int SfChart_xAxisLineColor = 34;
+			// aapt resource value: 12
+			public const int SfChart_xAxisLineColor = 12;
 			
-			// aapt resource value: 0x23
-			public const int SfChart_xAxisLineWidth = 35;
+			// aapt resource value: 13
+			public const int SfChart_xAxisLineWidth = 13;
 			
-			// aapt resource value: 0x24
-			public const int SfChart_xAxisMajorGridLineColor = 36;
+			// aapt resource value: 10
+			public const int SfChart_xAxisMajorGridLineColor = 10;
 			
-			// aapt resource value: 0x25
-			public const int SfChart_xAxisMajorGridLineWidth = 37;
+			// aapt resource value: 11
+			public const int SfChart_xAxisMajorGridLineWidth = 11;
 			
-			// aapt resource value: 0x26
-			public const int SfChart_xAxisTitleBackgroundColor = 38;
+			// aapt resource value: 5
+			public const int SfChart_xAxisTitleBackgroundColor = 5;
 			
-			// aapt resource value: 0x27
-			public const int SfChart_xAxisTitleSize = 39;
+			// aapt resource value: 4
+			public const int SfChart_xAxisTitleSize = 4;
 			
-			// aapt resource value: 0x28
-			public const int SfChart_xAxisTitleText = 40;
+			// aapt resource value: 2
+			public const int SfChart_xAxisTitleText = 2;
 			
-			// aapt resource value: 0x29
-			public const int SfChart_xAxisTitleTextColor = 41;
+			// aapt resource value: 3
+			public const int SfChart_xAxisTitleTextColor = 3;
 			
-			// aapt resource value: 0x30
-			public const int SfChart_yAxis = 48;
+			// aapt resource value: 1
+			public const int SfChart_yAxis = 1;
 			
-			// aapt resource value: 0x31
-			public const int SfChart_yAxisLineColor = 49;
+			// aapt resource value: 16
+			public const int SfChart_yAxisLineColor = 16;
 			
-			// aapt resource value: 0x32
-			public const int SfChart_yAxisLineWidth = 50;
+			// aapt resource value: 17
+			public const int SfChart_yAxisLineWidth = 17;
 			
-			// aapt resource value: 0x33
-			public const int SfChart_yAxisMajorGridLineColor = 51;
+			// aapt resource value: 14
+			public const int SfChart_yAxisMajorGridLineColor = 14;
 			
-			// aapt resource value: 0x34
-			public const int SfChart_yAxisMajorGridLineWidth = 52;
+			// aapt resource value: 15
+			public const int SfChart_yAxisMajorGridLineWidth = 15;
 			
-			// aapt resource value: 0x35
-			public const int SfChart_yAxisTitleBackgroundColor = 53;
+			// aapt resource value: 9
+			public const int SfChart_yAxisTitleBackgroundColor = 9;
 			
-			// aapt resource value: 0x36
-			public const int SfChart_yAxisTitleSize = 54;
+			// aapt resource value: 8
+			public const int SfChart_yAxisTitleSize = 8;
 			
-			// aapt resource value: 0x37
-			public const int SfChart_yAxisTitleText = 55;
+			// aapt resource value: 6
+			public const int SfChart_yAxisTitleText = 6;
 			
-			// aapt resource value: 0x38
-			public const int SfChart_yAxisTitleTextColor = 56;
+			// aapt resource value: 7
+			public const int SfChart_yAxisTitleTextColor = 7;
 			
 			public static int[] SnackbarLayout = new int[] {
 					16843039,
-					2130903179,
-					2130903270};
+					2130772019,
+					2130772288};
 			
-			// aapt resource value: 0x7F010479
-			public const int SnackbarLayout_android_maxWidth = 2130773113;
+			// aapt resource value: 0
+			public const int SnackbarLayout_android_maxWidth = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int SnackbarLayout_elevation = 1;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int SnackbarLayout_maxActionInlineWidth = 2;
 			
 			public static int[] Spinner = new int[] {
@@ -10052,160 +10773,160 @@ namespace GFI_with_GFS_A
 					16843126,
 					16843131,
 					16843362,
-					2130903293};
+					2130772020};
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int Spinner_android_dropDownWidth = 3;
 			
-			// aapt resource value: 0x7F010483
-			public const int Spinner_android_entries = 2130773123;
+			// aapt resource value: 0
+			public const int Spinner_android_entries = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int Spinner_android_popupBackground = 1;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int Spinner_android_prompt = 2;
 			
-			// aapt resource value: 0x4
+			// aapt resource value: 4
 			public const int Spinner_popupTheme = 4;
 			
 			public static int[] SwitchCompat = new int[] {
 					16843044,
 					16843045,
 					16843074,
-					2130903317,
-					2130903324,
-					2130903339,
-					2130903340,
-					2130903342,
-					2130903373,
-					2130903374,
-					2130903375,
-					2130903406,
-					2130903407,
-					2130903408};
+					2130772204,
+					2130772205,
+					2130772206,
+					2130772207,
+					2130772208,
+					2130772209,
+					2130772210,
+					2130772211,
+					2130772212,
+					2130772213,
+					2130772214};
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int SwitchCompat_android_textOff = 1;
 			
-			// aapt resource value: 0x7F010489
-			public const int SwitchCompat_android_textOn = 2130773129;
+			// aapt resource value: 0
+			public const int SwitchCompat_android_textOn = 0;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int SwitchCompat_android_thumb = 2;
 			
-			// aapt resource value: 0x3
-			public const int SwitchCompat_showText = 3;
+			// aapt resource value: 13
+			public const int SwitchCompat_showText = 13;
 			
-			// aapt resource value: 0x4
-			public const int SwitchCompat_splitTrack = 4;
+			// aapt resource value: 12
+			public const int SwitchCompat_splitTrack = 12;
 			
-			// aapt resource value: 0x5
-			public const int SwitchCompat_switchMinWidth = 5;
+			// aapt resource value: 10
+			public const int SwitchCompat_switchMinWidth = 10;
 			
-			// aapt resource value: 0x6
-			public const int SwitchCompat_switchPadding = 6;
+			// aapt resource value: 11
+			public const int SwitchCompat_switchPadding = 11;
 			
-			// aapt resource value: 0x7
-			public const int SwitchCompat_switchTextAppearance = 7;
+			// aapt resource value: 9
+			public const int SwitchCompat_switchTextAppearance = 9;
 			
-			// aapt resource value: 0x8
+			// aapt resource value: 8
 			public const int SwitchCompat_thumbTextPadding = 8;
 			
-			// aapt resource value: 0x9
-			public const int SwitchCompat_thumbTint = 9;
+			// aapt resource value: 3
+			public const int SwitchCompat_thumbTint = 3;
 			
-			// aapt resource value: 0x10
-			public const int SwitchCompat_thumbTintMode = 16;
+			// aapt resource value: 4
+			public const int SwitchCompat_thumbTintMode = 4;
 			
-			// aapt resource value: 0x11
-			public const int SwitchCompat_track = 17;
+			// aapt resource value: 5
+			public const int SwitchCompat_track = 5;
 			
-			// aapt resource value: 0x12
-			public const int SwitchCompat_trackTint = 18;
+			// aapt resource value: 6
+			public const int SwitchCompat_trackTint = 6;
 			
-			// aapt resource value: 0x13
-			public const int SwitchCompat_trackTintMode = 19;
+			// aapt resource value: 7
+			public const int SwitchCompat_trackTintMode = 7;
 			
 			public static int[] TabItem = new int[] {
 					16842754,
 					16842994,
 					16843087};
 			
-			// aapt resource value: 0x7F010504
-			public const int TabItem_android_icon = 2130773252;
+			// aapt resource value: 0
+			public const int TabItem_android_icon = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int TabItem_android_layout = 1;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int TabItem_android_text = 2;
 			
 			public static int[] TabLayout = new int[] {
-					2130903343,
-					2130903344,
-					2130903345,
-					2130903346,
-					2130903347,
-					2130903348,
-					2130903349,
-					2130903350,
-					2130903351,
-					2130903352,
-					2130903353,
-					2130903354,
-					2130903355,
-					2130903356,
-					2130903357,
-					2130903358};
+					2130772289,
+					2130772290,
+					2130772291,
+					2130772292,
+					2130772293,
+					2130772294,
+					2130772295,
+					2130772296,
+					2130772297,
+					2130772298,
+					2130772299,
+					2130772300,
+					2130772301,
+					2130772302,
+					2130772303,
+					2130772304};
 			
-			// aapt resource value: 0x7F010508
-			public const int TabLayout_tabBackground = 2130773256;
+			// aapt resource value: 3
+			public const int TabLayout_tabBackground = 3;
 			
-			// aapt resource value: 0x1
-			public const int TabLayout_tabContentStart = 1;
+			// aapt resource value: 2
+			public const int TabLayout_tabContentStart = 2;
 			
-			// aapt resource value: 0x2
-			public const int TabLayout_tabGravity = 2;
+			// aapt resource value: 5
+			public const int TabLayout_tabGravity = 5;
 			
-			// aapt resource value: 0x3
-			public const int TabLayout_tabIndicatorColor = 3;
+			// aapt resource value: 0
+			public const int TabLayout_tabIndicatorColor = 0;
 			
-			// aapt resource value: 0x4
-			public const int TabLayout_tabIndicatorHeight = 4;
+			// aapt resource value: 1
+			public const int TabLayout_tabIndicatorHeight = 1;
 			
-			// aapt resource value: 0x5
-			public const int TabLayout_tabMaxWidth = 5;
+			// aapt resource value: 7
+			public const int TabLayout_tabMaxWidth = 7;
 			
-			// aapt resource value: 0x6
+			// aapt resource value: 6
 			public const int TabLayout_tabMinWidth = 6;
 			
-			// aapt resource value: 0x7
-			public const int TabLayout_tabMode = 7;
+			// aapt resource value: 4
+			public const int TabLayout_tabMode = 4;
 			
-			// aapt resource value: 0x8
-			public const int TabLayout_tabPadding = 8;
+			// aapt resource value: 15
+			public const int TabLayout_tabPadding = 15;
 			
-			// aapt resource value: 0x9
-			public const int TabLayout_tabPaddingBottom = 9;
+			// aapt resource value: 14
+			public const int TabLayout_tabPaddingBottom = 14;
 			
-			// aapt resource value: 0x10
-			public const int TabLayout_tabPaddingEnd = 16;
+			// aapt resource value: 13
+			public const int TabLayout_tabPaddingEnd = 13;
 			
-			// aapt resource value: 0x11
-			public const int TabLayout_tabPaddingStart = 17;
+			// aapt resource value: 11
+			public const int TabLayout_tabPaddingStart = 11;
 			
-			// aapt resource value: 0x12
-			public const int TabLayout_tabPaddingTop = 18;
+			// aapt resource value: 12
+			public const int TabLayout_tabPaddingTop = 12;
 			
-			// aapt resource value: 0x13
-			public const int TabLayout_tabSelectedTextColor = 19;
+			// aapt resource value: 10
+			public const int TabLayout_tabSelectedTextColor = 10;
 			
-			// aapt resource value: 0x14
-			public const int TabLayout_tabTextAppearance = 20;
+			// aapt resource value: 8
+			public const int TabLayout_tabTextAppearance = 8;
 			
-			// aapt resource value: 0x15
-			public const int TabLayout_tabTextColor = 21;
+			// aapt resource value: 9
+			public const int TabLayout_tabTextColor = 9;
 			
 			public static int[] TextAppearance = new int[] {
 					16842901,
@@ -10219,251 +10940,266 @@ namespace GFI_with_GFS_A
 					16843107,
 					16843108,
 					16843692,
-					2130903200,
-					2130903359};
+					2130772036,
+					2130772042};
 			
-			// aapt resource value: 0x10
-			public const int TextAppearance_android_fontFamily = 16;
+			// aapt resource value: 10
+			public const int TextAppearance_android_fontFamily = 10;
 			
-			// aapt resource value: 0x6
+			// aapt resource value: 6
 			public const int TextAppearance_android_shadowColor = 6;
 			
-			// aapt resource value: 0x7
+			// aapt resource value: 7
 			public const int TextAppearance_android_shadowDx = 7;
 			
-			// aapt resource value: 0x8
+			// aapt resource value: 8
 			public const int TextAppearance_android_shadowDy = 8;
 			
-			// aapt resource value: 0x9
+			// aapt resource value: 9
 			public const int TextAppearance_android_shadowRadius = 9;
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int TextAppearance_android_textColor = 3;
 			
-			// aapt resource value: 0x4
+			// aapt resource value: 4
 			public const int TextAppearance_android_textColorHint = 4;
 			
-			// aapt resource value: 0x5
+			// aapt resource value: 5
 			public const int TextAppearance_android_textColorLink = 5;
 			
-			// aapt resource value: 0x7F010525
-			public const int TextAppearance_android_textSize = 2130773285;
+			// aapt resource value: 0
+			public const int TextAppearance_android_textSize = 0;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int TextAppearance_android_textStyle = 2;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int TextAppearance_android_typeface = 1;
 			
-			// aapt resource value: 0x11
-			public const int TextAppearance_fontFamily = 17;
+			// aapt resource value: 12
+			public const int TextAppearance_fontFamily = 12;
 			
-			// aapt resource value: 0x12
-			public const int TextAppearance_textAllCaps = 18;
+			// aapt resource value: 11
+			public const int TextAppearance_textAllCaps = 11;
 			
 			public static int[] TextInputLayout = new int[] {
 					16842906,
 					16843088,
-					2130903159,
-					2130903160,
-					2130903161,
-					2130903162,
-					2130903182,
-					2130903183,
-					2130903215,
-					2130903216,
-					2130903217,
-					2130903287,
-					2130903288,
-					2130903289,
-					2130903290,
-					2130903291};
+					2130772305,
+					2130772306,
+					2130772307,
+					2130772308,
+					2130772309,
+					2130772310,
+					2130772311,
+					2130772312,
+					2130772313,
+					2130772314,
+					2130772315,
+					2130772316,
+					2130772317,
+					2130772318};
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int TextInputLayout_android_hint = 1;
 			
-			// aapt resource value: 0x7F010539
-			public const int TextInputLayout_android_textColorHint = 2130773305;
+			// aapt resource value: 0
+			public const int TextInputLayout_android_textColorHint = 0;
 			
-			// aapt resource value: 0x2
-			public const int TextInputLayout_counterEnabled = 2;
+			// aapt resource value: 6
+			public const int TextInputLayout_counterEnabled = 6;
 			
-			// aapt resource value: 0x3
-			public const int TextInputLayout_counterMaxLength = 3;
+			// aapt resource value: 7
+			public const int TextInputLayout_counterMaxLength = 7;
 			
-			// aapt resource value: 0x4
-			public const int TextInputLayout_counterOverflowTextAppearance = 4;
+			// aapt resource value: 9
+			public const int TextInputLayout_counterOverflowTextAppearance = 9;
 			
-			// aapt resource value: 0x5
-			public const int TextInputLayout_counterTextAppearance = 5;
+			// aapt resource value: 8
+			public const int TextInputLayout_counterTextAppearance = 8;
 			
-			// aapt resource value: 0x6
-			public const int TextInputLayout_errorEnabled = 6;
+			// aapt resource value: 4
+			public const int TextInputLayout_errorEnabled = 4;
 			
-			// aapt resource value: 0x7
-			public const int TextInputLayout_errorTextAppearance = 7;
+			// aapt resource value: 5
+			public const int TextInputLayout_errorTextAppearance = 5;
 			
-			// aapt resource value: 0x8
-			public const int TextInputLayout_hintAnimationEnabled = 8;
+			// aapt resource value: 10
+			public const int TextInputLayout_hintAnimationEnabled = 10;
 			
-			// aapt resource value: 0x9
-			public const int TextInputLayout_hintEnabled = 9;
+			// aapt resource value: 3
+			public const int TextInputLayout_hintEnabled = 3;
 			
-			// aapt resource value: 0x10
-			public const int TextInputLayout_hintTextAppearance = 16;
+			// aapt resource value: 2
+			public const int TextInputLayout_hintTextAppearance = 2;
 			
-			// aapt resource value: 0x11
-			public const int TextInputLayout_passwordToggleContentDescription = 17;
+			// aapt resource value: 13
+			public const int TextInputLayout_passwordToggleContentDescription = 13;
 			
-			// aapt resource value: 0x12
-			public const int TextInputLayout_passwordToggleDrawable = 18;
+			// aapt resource value: 12
+			public const int TextInputLayout_passwordToggleDrawable = 12;
 			
-			// aapt resource value: 0x13
-			public const int TextInputLayout_passwordToggleEnabled = 19;
+			// aapt resource value: 11
+			public const int TextInputLayout_passwordToggleEnabled = 11;
 			
-			// aapt resource value: 0x14
-			public const int TextInputLayout_passwordToggleTint = 20;
+			// aapt resource value: 14
+			public const int TextInputLayout_passwordToggleTint = 14;
 			
-			// aapt resource value: 0x15
-			public const int TextInputLayout_passwordToggleTintMode = 21;
+			// aapt resource value: 15
+			public const int TextInputLayout_passwordToggleTintMode = 15;
 			
 			public static int[] Toolbar = new int[] {
 					16842927,
 					16843072,
-					2130903112,
-					2130903128,
-					2130903129,
-					2130903146,
-					2130903147,
-					2130903148,
-					2130903149,
-					2130903150,
-					2130903151,
-					2130903268,
-					2130903269,
-					2130903271,
-					2130903275,
-					2130903276,
-					2130903293,
-					2130903334,
-					2130903335,
-					2130903336,
-					2130903381,
-					2130903385,
-					2130903386,
-					2130903387,
-					2130903388,
-					2130903389,
-					2130903390,
-					2130903397,
-					2130903398};
+					2130771994,
+					2130771997,
+					2130772001,
+					2130772013,
+					2130772014,
+					2130772015,
+					2130772016,
+					2130772017,
+					2130772018,
+					2130772020,
+					2130772215,
+					2130772216,
+					2130772217,
+					2130772218,
+					2130772219,
+					2130772220,
+					2130772221,
+					2130772222,
+					2130772223,
+					2130772224,
+					2130772225,
+					2130772226,
+					2130772227,
+					2130772228,
+					2130772229,
+					2130772230,
+					2130772231};
 			
-			// aapt resource value: 0x7F010556
-			public const int Toolbar_android_gravity = 2130773334;
+			// aapt resource value: 0
+			public const int Toolbar_android_gravity = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int Toolbar_android_minHeight = 1;
 			
-			// aapt resource value: 0x2
-			public const int Toolbar_buttonGravity = 2;
+			// aapt resource value: 21
+			public const int Toolbar_buttonGravity = 21;
 			
-			// aapt resource value: 0x3
-			public const int Toolbar_collapseContentDescription = 3;
+			// aapt resource value: 23
+			public const int Toolbar_collapseContentDescription = 23;
 			
-			// aapt resource value: 0x4
-			public const int Toolbar_collapseIcon = 4;
+			// aapt resource value: 22
+			public const int Toolbar_collapseIcon = 22;
 			
-			// aapt resource value: 0x5
-			public const int Toolbar_contentInsetEnd = 5;
+			// aapt resource value: 6
+			public const int Toolbar_contentInsetEnd = 6;
 			
-			// aapt resource value: 0x6
-			public const int Toolbar_contentInsetEndWithActions = 6;
+			// aapt resource value: 10
+			public const int Toolbar_contentInsetEndWithActions = 10;
 			
-			// aapt resource value: 0x7
+			// aapt resource value: 7
 			public const int Toolbar_contentInsetLeft = 7;
 			
-			// aapt resource value: 0x8
+			// aapt resource value: 8
 			public const int Toolbar_contentInsetRight = 8;
 			
-			// aapt resource value: 0x9
-			public const int Toolbar_contentInsetStart = 9;
+			// aapt resource value: 5
+			public const int Toolbar_contentInsetStart = 5;
 			
-			// aapt resource value: 0x10
-			public const int Toolbar_contentInsetStartWithNavigation = 16;
+			// aapt resource value: 9
+			public const int Toolbar_contentInsetStartWithNavigation = 9;
 			
-			// aapt resource value: 0x11
-			public const int Toolbar_logo = 17;
+			// aapt resource value: 4
+			public const int Toolbar_logo = 4;
 			
-			// aapt resource value: 0x12
-			public const int Toolbar_logoDescription = 18;
+			// aapt resource value: 26
+			public const int Toolbar_logoDescription = 26;
 			
-			// aapt resource value: 0x13
-			public const int Toolbar_maxButtonHeight = 19;
+			// aapt resource value: 20
+			public const int Toolbar_maxButtonHeight = 20;
 			
-			// aapt resource value: 0x14
-			public const int Toolbar_navigationContentDescription = 20;
+			// aapt resource value: 25
+			public const int Toolbar_navigationContentDescription = 25;
 			
-			// aapt resource value: 0x15
-			public const int Toolbar_navigationIcon = 21;
+			// aapt resource value: 24
+			public const int Toolbar_navigationIcon = 24;
 			
-			// aapt resource value: 0x16
-			public const int Toolbar_popupTheme = 22;
+			// aapt resource value: 11
+			public const int Toolbar_popupTheme = 11;
 			
-			// aapt resource value: 0x17
-			public const int Toolbar_subtitle = 23;
+			// aapt resource value: 3
+			public const int Toolbar_subtitle = 3;
 			
-			// aapt resource value: 0x18
-			public const int Toolbar_subtitleTextAppearance = 24;
+			// aapt resource value: 13
+			public const int Toolbar_subtitleTextAppearance = 13;
 			
-			// aapt resource value: 0x19
-			public const int Toolbar_subtitleTextColor = 25;
+			// aapt resource value: 28
+			public const int Toolbar_subtitleTextColor = 28;
 			
-			// aapt resource value: 0x20
-			public const int Toolbar_title = 32;
+			// aapt resource value: 2
+			public const int Toolbar_title = 2;
 			
-			// aapt resource value: 0x21
-			public const int Toolbar_titleMargin = 33;
+			// aapt resource value: 14
+			public const int Toolbar_titleMargin = 14;
 			
-			// aapt resource value: 0x22
-			public const int Toolbar_titleMarginBottom = 34;
+			// aapt resource value: 18
+			public const int Toolbar_titleMarginBottom = 18;
 			
-			// aapt resource value: 0x23
-			public const int Toolbar_titleMarginEnd = 35;
+			// aapt resource value: 16
+			public const int Toolbar_titleMarginEnd = 16;
 			
-			// aapt resource value: 0x26
-			public const int Toolbar_titleMargins = 38;
+			// aapt resource value: 15
+			public const int Toolbar_titleMarginStart = 15;
 			
-			// aapt resource value: 0x24
-			public const int Toolbar_titleMarginStart = 36;
+			// aapt resource value: 17
+			public const int Toolbar_titleMarginTop = 17;
 			
-			// aapt resource value: 0x25
-			public const int Toolbar_titleMarginTop = 37;
+			// aapt resource value: 19
+			public const int Toolbar_titleMargins = 19;
 			
-			// aapt resource value: 0x27
-			public const int Toolbar_titleTextAppearance = 39;
+			// aapt resource value: 12
+			public const int Toolbar_titleTextAppearance = 12;
 			
-			// aapt resource value: 0x28
-			public const int Toolbar_titleTextColor = 40;
+			// aapt resource value: 27
+			public const int Toolbar_titleTextColor = 27;
 			
 			public static int[] View = new int[] {
 					16842752,
 					16842970,
-					2130903281,
-					2130903282,
-					2130903371};
+					2130772232,
+					2130772233,
+					2130772234};
+			
+			// aapt resource value: 1
+			public const int View_android_focusable = 1;
+			
+			// aapt resource value: 0
+			public const int View_android_theme = 0;
+			
+			// aapt resource value: 3
+			public const int View_paddingEnd = 3;
+			
+			// aapt resource value: 2
+			public const int View_paddingStart = 2;
+			
+			// aapt resource value: 4
+			public const int View_theme = 4;
 			
 			public static int[] ViewBackgroundHelper = new int[] {
 					16842964,
-					2130903095,
-					2130903096};
+					2130772235,
+					2130772236};
 			
-			// aapt resource value: 0x7F010592
-			public const int ViewBackgroundHelper_android_background = 2130773394;
+			// aapt resource value: 0
+			public const int ViewBackgroundHelper_android_background = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int ViewBackgroundHelper_backgroundTint = 1;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int ViewBackgroundHelper_backgroundTintMode = 2;
 			
 			public static int[] ViewStubCompat = new int[] {
@@ -10471,29 +11207,14 @@ namespace GFI_with_GFS_A
 					16842994,
 					16842995};
 			
-			// aapt resource value: 0x7F010596
-			public const int ViewStubCompat_android_id = 2130773398;
+			// aapt resource value: 0
+			public const int ViewStubCompat_android_id = 0;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int ViewStubCompat_android_inflatedId = 2;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int ViewStubCompat_android_layout = 1;
-			
-			// aapt resource value: 0x1
-			public const int View_android_focusable = 1;
-			
-			// aapt resource value: 0x7F010586
-			public const int View_android_theme = 2130773382;
-			
-			// aapt resource value: 0x2
-			public const int View_paddingEnd = 2;
-			
-			// aapt resource value: 0x3
-			public const int View_paddingStart = 3;
-			
-			// aapt resource value: 0x4
-			public const int View_theme = 4;
 			
 			static Styleable()
 			{
@@ -10501,25 +11222,6 @@ namespace GFI_with_GFS_A
 			}
 			
 			private Styleable()
-			{
-			}
-		}
-		
-		public partial class Xml
-		{
-			
-			// aapt resource value: 0x7F100000
-			public const int HiddenSetting = 2131755008;
-			
-			// aapt resource value: 0x7F100001
-			public const int MainSetting = 2131755009;
-			
-			static Xml()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Xml()
 			{
 			}
 		}

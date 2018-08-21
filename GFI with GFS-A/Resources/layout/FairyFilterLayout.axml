@@ -16,7 +16,7 @@
             <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:text="제조 시간"
+                android:text="@string/Common_ProductTime"
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_marginRight="8dp"
@@ -40,7 +40,7 @@
                 <TextView
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
-                    android:text="시간"
+                    android:text="@string/Time_Hour"
                     android:gravity="center"
                     android:layout_marginRight="10dp" />
                 <NumberPicker
@@ -51,7 +51,7 @@
                 <TextView
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
-                    android:text="분"
+                    android:text="@string/Time_Minute"
                     android:gravity="center" />
             </LinearLayout>
             <View
@@ -72,7 +72,7 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="종류"
+                    android:text="@string/Common_FairyType"
                     android:textStyle="bold"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:layout_marginRight="8dp"
@@ -93,13 +93,13 @@
                     <CheckBox
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:text="전투"
+                        android:text="@string/Common_FairyType_Combat"
                         android:layout_weight="2"
                         android:id="@+id/FairyFilterTypeCombat" />
                     <CheckBox
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:text="책략"
+                        android:text="@string/Common_FairyType_Strategy"
                         android:layout_weight="2"
                         android:id="@+id/FairyFilterTypeStrategy" />
                     <Space

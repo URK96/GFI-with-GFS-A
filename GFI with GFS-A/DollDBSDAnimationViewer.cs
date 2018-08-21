@@ -99,7 +99,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                Toast.MakeText(this, "카테고리 초기화 실패", ToastLength.Short).Show();
+                Toast.MakeText(this, Resource.String.Category_InitError, ToastLength.Short).Show();
             }
         }
 
@@ -134,7 +134,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                Toast.MakeText(this, "리스트 초기화 실패", ToastLength.Short).Show();
+                Toast.MakeText(this, Resource.String.List_InitError, ToastLength.Short).Show();
             }
         }
 
@@ -199,7 +199,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "error load animation", Snackbar.LengthShort);
+                ETC.ShowSnackbar(SnackbarLayout, "Error Load Animation", Snackbar.LengthShort);
             }
             finally
             {

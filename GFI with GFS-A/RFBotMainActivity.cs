@@ -30,6 +30,8 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.RFBotLayout);
 
+            SetTitle(Resource.String.RFBotMain_Title);
+
             StatusText = FindViewById<TextView>(Resource.Id.RFBotStatusText);
             InputText = FindViewById<EditText>(Resource.Id.RFBotInputText);
             InputButton = FindViewById<Button>(Resource.Id.RFBotInputButton);
@@ -79,7 +81,7 @@ namespace GFI_with_GFS_A
                         }
                     }
                 }
-                else if (Command[0] == "인형제조")
+                else if (Command[0] == Resources.GetString(Resource.String.RFBotMain_Command_DollProduct))
                 {
                     int Input_ProductTime = 0;
                     if ((int.TryParse(Command[1], out Input_ProductTime) == false) || (Command[1].Length > 4) || (Command[1].Length < 3)) await AnimateText("입력한 제조시간 형식이 잘못되었습니다.", 10, true);
@@ -98,7 +100,7 @@ namespace GFI_with_GFS_A
                         await AnimateText(sb.ToString(), 10, true);
                     }
                 }
-                else if (Command[0] == "장비제조")
+                else if (Command[0] == Resources.GetString(Resource.String.RFBotMain_Command_EquipProduct))
                 {
                     int Input_ProductTime = 0;
                     if ((int.TryParse(Command[1], out Input_ProductTime) == false) || (Command[1].Length > 4) || (Command[1].Length < 3)) await AnimateText("입력한 제조시간 형식이 잘못되었습니다.", 10, true);
@@ -110,7 +112,7 @@ namespace GFI_with_GFS_A
                         DataRowType Type = DataRowType.Equip;
                         bool IsDetail = false;
 
-                        if (Command.Length >= 3) IsDetail = (Command[2] == "상세정보") ? true : false;
+                        if (Command.Length >= 3) IsDetail = (Command[2] == Resources.GetString(Resource.String.RFBotMain_Command_Detail)) ? true : false;
                         else IsDetail = false;
 
                         InfoDR = ETC.FindDataRow(ETC.EquipmentList, "ProductTime", ProductTime);
@@ -149,12 +151,12 @@ namespace GFI_with_GFS_A
                                 await AnimateText(Info, 10, true);
                             }
                         }
-                        else await AnimateText("해당 제조시간에 맞는 장비/요정이 없습니다.", 10, true);
+                        else await AnimateText(Resources.GetString(Resource.String.RFBotMain_Reply_EquipProductTimeNotMatch), 10, true);
                     }
                 }
                 else
                 {
-                    await AnimateText("잘못된 명령어를 입력하셨습니다.", 10, true);
+                    await AnimateText(Resources.GetString(Resource.String.RFBotMain_Reply_CommandNotMatch), 10, true);
                 }
             }
             catch (Exception ex)
@@ -177,22 +179,22 @@ namespace GFI_with_GFS_A
             {
                 int Grade = (int)DollDR["Grade"];
 
-                sb.Append("* 인형 요약 정보 *\n\n");
-                sb.AppendFormat(" # 이름 : {0}\n\n", (string)DollDR["Name"]);
-                sb.AppendFormat(" # 별명 : {0}\n\n", (string)DollDR["NickName"]);
-                sb.AppendFormat(" # 등급 : {0}\n\n", (Grade == 0) ? "Extra" : Grade.ToString());
-                sb.AppendFormat(" # 도감 번호 : {0}\n\n", (int)DollDR["DicNumber"]);
-                sb.AppendFormat(" # 총기 종류 : {0}\n\n", (string)DollDR["Type"]);
-                sb.AppendFormat(" # 제조 시간 : {0}\n\n", ETC.CalcTime((int)DollDR["ProductTime"]));
-                sb.AppendFormat(" # 스킬명 : {0}\n\n", (string)DollDR["Skill"]);
-                sb.AppendFormat(" # 스킬설명 : {0}\n\n", (string)DollDR["SkillExplain"]);
+                sb.AppendFormat("* {0} *\n\n", Resources.GetString(Resource.String.Common_SkillExplain));
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_Name), (string)DollDR["Name"]);
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_NickName), (string)DollDR["NickName"]);
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_Grade), (Grade == 0) ? "Extra" : Grade.ToString());
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_DicNumber), (int)DollDR["DicNumber"]);
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_GunType), (string)DollDR["Type"]);
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_ProductTime), ETC.CalcTime((int)DollDR["ProductTime"]));
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_SkillName), (string)DollDR["Skill"]);
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_SkillExplain), (string)DollDR["SkillExplain"]);
 
                 return sb.ToString();
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                return "인형 데이터 참조 오류";
+                return Resources.GetString(Resource.String.RFBotMain_DollInfo_ReferDollInfoError);
             }
         }
 
@@ -204,19 +206,19 @@ namespace GFI_with_GFS_A
             {
                 int Grade = (int)EquipDR["Grade"];
 
-                sb.Append("* 장비 요약 정보 *\n\n");
-                sb.AppendFormat(" # 이름 : {0}\n\n", (string)EquipDR["Name"]);
-                sb.AppendFormat(" # 등급 : {0}\n\n", (Grade == 0) ? "Extra" : Grade.ToString());
-                sb.AppendFormat(" # 장비 분류 : {0}\n\n", (string)EquipDR["Category"]);
-                sb.AppendFormat(" # 장비 종류 : {0}\n\n", (string)EquipDR["Type"]);
-                sb.AppendFormat(" # 제조 시간 : {0}\n\n", ETC.CalcTime((int)EquipDR["ProductTime"]));
+                sb.AppendFormat("* {0} *\n\n", Resources.GetString(Resource.String.RFBotMain_EquipInfo_Title));
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_Name), (string)EquipDR["Name"]);
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_Grade), (Grade == 0) ? "Extra" : Grade.ToString());
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_EquipCategory), (string)EquipDR["Category"]);
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_EquipType), (string)EquipDR["Type"]);
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_ProductTime), ETC.CalcTime((int)EquipDR["ProductTime"]));
 
                 return sb.ToString();
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                return "장비 데이터 참조 오류";
+                return Resources.GetString(Resource.String.RFBotMain_EquipInfo_ReferEquipInfoError);
             }
         }
 
@@ -226,20 +228,20 @@ namespace GFI_with_GFS_A
 
             try
             {
-                sb.Append("* 요정 요약 정보 *\n\n");
-                sb.AppendFormat(" # 이름 : {0}\n\n", (string)FairyDR["Name"]);
-                sb.AppendFormat(" # 도감 번호 : {0}\n\n", (int)FairyDR["DicNumber"]);
-                sb.AppendFormat(" # 요정 종류 : {0}\n\n", (string)FairyDR["Type"]);
-                sb.AppendFormat(" # 제조 시간 : {0}\n\n", ETC.CalcTime((int)FairyDR["ProductTime"]));
-                sb.AppendFormat(" # 스킬명 : {0}\n\n", (string)FairyDR["SkillName"]);
-                sb.AppendFormat(" # 스킬설명 : {0}\n\n", (string)FairyDR["SkillExplain"]);
+                sb.AppendFormat("* {0} *\n\n", Resources.GetString(Resource.String.RFBotMain_FairyInfo_Title));
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_Name), (string)FairyDR["Name"]);
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_DicNumber), (int)FairyDR["DicNumber"]);
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_FairyType), (string)FairyDR["Type"]);
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_ProductTime), ETC.CalcTime((int)FairyDR["ProductTime"]));
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_SkillName), (string)FairyDR["SkillName"]);
+                sb.AppendFormat(" # {0} : {1}\n\n", Resources.GetString(Resource.String.Common_SkillExplain), (string)FairyDR["SkillExplain"]);
 
                 return sb.ToString();
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                return "요정 데이터 참조 오류";
+                return Resources.GetString(Resource.String.RFBotMain_FairyInfo_ReferFairyInfoError);
             }
         }
 

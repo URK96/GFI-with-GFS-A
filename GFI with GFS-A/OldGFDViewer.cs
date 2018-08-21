@@ -29,8 +29,26 @@ namespace GFI_with_GFS_A
 
         int p_now = 0;
         int p_total = 0;
-        string[] ImageName = { "ProductTable_Doll", "ProductTable_Equipment", "ProductTable_Fairy", "RecommendDollRecipe", "RecommendEquipmentRecipe", "RecommendMD", "RecommendLeveling" };
-        readonly string[] SpinnerList = { "인형 제조 시간표", "장비 제조 시간표", "요정 제조 시간표 & 제조식", "인형 추천 제조식", "장비 추천 제조식", "군수지원 효율표", "추천 레벨링 루트" };
+        string[] ImageName = 
+        {
+            "ProductTable_Doll",
+            "ProductTable_Equipment",
+            "ProductTable_Fairy",
+            "RecommendDollRecipe",
+            "RecommendEquipmentRecipe",
+            "RecommendMD",
+            "RecommendLeveling"
+        };
+        readonly string[] SpinnerList = 
+        {
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_ProductDollTable),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_ProductEquipTable),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_ProductFairyTable),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendDollRecipe),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendEquipRecipe),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendMD),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling)
+        };
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -126,8 +144,8 @@ namespace GFI_with_GFS_A
                     builder.SetTitle(Resource.String.UpdateDialog_Title);
                     builder.SetMessage(Resource.String.UpdateDialog_Message);
                     builder.SetCancelable(true);
-                    builder.SetPositiveButton("확인", async delegate { await DownloadGFDImage(); });
-                    builder.SetNegativeButton("취소", delegate { });
+                    builder.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate { await DownloadGFDImage(); });
+                    builder.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
 
                     var dialog = builder.Create();
                     dialog.Show();
@@ -205,13 +223,13 @@ namespace GFI_with_GFS_A
             p_now += 1;
 
             totalProgressBar.Progress = Convert.ToInt32((p_now / Convert.ToDouble(p_total)) * 100);
-            totalProgress.Text = totalProgressBar.Progress + "%";
+            totalProgress.Text = string.Format("{0}%", totalProgressBar.Progress);
         }
 
         private void Wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             nowProgressBar.Progress = e.ProgressPercentage;
-            nowProgress.Text = e.ProgressPercentage.ToString() + "%";
+            nowProgress.Text = string.Format("{0}%", e.ProgressPercentage);
         }
 
         public override void OnBackPressed()

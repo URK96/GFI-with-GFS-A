@@ -21,7 +21,6 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
-                android:text=""
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:gravity="center"
                 android:id="@+id/FairyDBImageViewerImageNum" />
@@ -50,7 +49,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/FairyDBImageViewerImageStatus"
-        android:text=""
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_alignParentBottom="true" />
     <android.support.design.widget.CoordinatorLayout

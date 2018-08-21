@@ -23,7 +23,7 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="철혈 타입"
+                    android:text="@string/Common_EnemyType"
                     android:textStyle="bold"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:layout_marginRight="8dp"
@@ -44,13 +44,13 @@
                     <CheckBox
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:text="일반"
+                        android:text="@string/Common_Normal"
                         android:layout_weight="2"
                         android:id="@+id/EnemyFilterNormalEnemy" />
                     <CheckBox
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:text="보스"
+                        android:text="@string/Common_Boss"
                         android:layout_weight="2"
                         android:id="@+id/EnemyFilterBossEnemy" />
                     <Space

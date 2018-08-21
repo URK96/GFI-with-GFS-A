@@ -91,16 +91,23 @@ namespace GFI_with_GFS_A
                         FileName = (string)ResultDR["Icon"];
                         break;
                     case ResultType.Fairy:
-                        FileName = (string)ResultDR["Name"] + "_1";
+                        FileName = string.Format("{0}_1", (string)ResultDR["Name"]);
                         break;
                 }
 
-                if (File.Exists(Path.Combine(ETC.CachePath, "Doll", "Normal", FileName + ".gfdcache")) == false)
+                try
                 {
-                    using (WebClient wc = new WebClient())
+                    if (File.Exists(Path.Combine(ETC.CachePath, "Doll", "Normal", FileName + ".gfdcache")) == false)
                     {
-                        await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", FileName + ".png"), Path.Combine(ETC.CachePath, "Doll", "Normal", FileName + ".gfdcache"));
+                        using (WebClient wc = new WebClient())
+                        {
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", FileName + ".png"), Path.Combine(ETC.CachePath, "Doll", "Normal", FileName + ".gfdcache"));
+                        }
                     }
+                }
+                catch (Exception)
+                {
+
                 }
             });
 
@@ -151,7 +158,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "시간 애니메이션 오류", Snackbar.LengthShort);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Animation_Error, Snackbar.LengthShort);
             }
             finally
             {
@@ -212,7 +219,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "등급 애니메이션 오류", Snackbar.LengthShort);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Animation_Error, Snackbar.LengthShort);
             }
         }
 
@@ -236,7 +243,7 @@ namespace GFI_with_GFS_A
                         FileName = (string)ResultDR["Icon"];
                         break;
                     case ResultType.Fairy:
-                        FileName = (string)ResultDR["Name"] + "_1";
+                        FileName = string.Format("{0}_1", (string)ResultDR["Name"]);
                         break;
                 }
 
@@ -251,7 +258,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "결과 애니메이션 오류", Snackbar.LengthShort);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Animation_Error, Snackbar.LengthShort);
             }
         }
 

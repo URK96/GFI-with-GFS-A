@@ -41,6 +41,8 @@ namespace GFI_with_GFS_A
 
         internal static AverageAbility[] Avg_List;
 
+        internal static Android.Content.Res.Resources Resources;
+
         internal static ISharedPreferences sharedPreferences;
 
         internal struct AverageAbility
@@ -267,36 +269,8 @@ namespace GFI_with_GFS_A
                 Path.Combine(CachePath, "Voices")
             };
 
-            /*if (Directory.Exists(DBPath) == false) Directory.CreateDirectory(DBPath);
-            if (Directory.Exists(SystemPath) == false) Directory.CreateDirectory(SystemPath);
-            if (Directory.Exists(LogPath) == false) Directory.CreateDirectory(LogPath);
-
-            if (Directory.Exists(CachePath) == false) Directory.CreateDirectory(CachePath);*/
-
             foreach (string path in MainPaths) if (Directory.Exists(path) == false) Directory.CreateDirectory(path);
             foreach (string path in SubPaths) if (Directory.Exists(path) == false) Directory.CreateDirectory(path);
-
-            /*if (Directory.Exists(Path.Combine(CachePath, "Doll")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll"));
-            if (Directory.Exists(Path.Combine(CachePath, "Doll", "SD")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll", "SD"));
-            if (Directory.Exists(Path.Combine(CachePath, "Doll", "SD", "Animation")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll", "SD", "Animation"));
-            if (Directory.Exists(Path.Combine(CachePath, "Doll", "Normal_Crop")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll", "Normal_Crop"));
-            if (Directory.Exists(Path.Combine(CachePath, "Doll", "Normal")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll", "Normal"));
-            if (Directory.Exists(Path.Combine(CachePath, "Doll", "Skill")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Doll", "Skill"));
-            if (Directory.Exists(Path.Combine(CachePath, "Equip")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Equip"));
-            if (Directory.Exists(Path.Combine(CachePath, "Equip", "Normal")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Equip", "Normal"));
-            if (Directory.Exists(Path.Combine(CachePath, "Fairy")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Fairy"));
-            if (Directory.Exists(Path.Combine(CachePath, "Fairy", "Normal")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Fairy", "Normal"));
-            if (Directory.Exists(Path.Combine(CachePath, "Fairy", "Normal_Crop")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Fairy", "Normal_Crop"));
-            if (Directory.Exists(Path.Combine(CachePath, "Fairy", "Skill")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Fairy", "Skill"));
-            if (Directory.Exists(Path.Combine(CachePath, "Enemy")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Enemy"));
-            if (Directory.Exists(Path.Combine(CachePath, "Enemy", "SD")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Enemy", "SD"));
-            if (Directory.Exists(Path.Combine(CachePath, "Enemy", "Normal_Crop")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Enemy", "Normal_Crop"));
-            if (Directory.Exists(Path.Combine(CachePath, "Enemy", "Normal")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Enemy", "Normal"));
-            if (Directory.Exists(Path.Combine(CachePath, "OldGFD")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "OldGFD"));
-            if (Directory.Exists(Path.Combine(CachePath, "OldGFD", "Images")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "OldGFD", "Images"));
-            if (Directory.Exists(Path.Combine(CachePath, "Event")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Event"));
-            if (Directory.Exists(Path.Combine(CachePath, "Event", "Images")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Event", "Images"));
-            if (Directory.Exists(Path.Combine(CachePath, "Voices")) == false) Directory.CreateDirectory(Path.Combine(CachePath, "Voices"));*/
         }
 
         internal static async Task<bool> LoadDB()
@@ -444,8 +418,8 @@ namespace GFI_with_GFS_A
 
             ProgressDialog pd = new ProgressDialog(activity, DialogBG_Download);
             pd.SetProgressStyle(ProgressDialogStyle.Horizontal);
-            pd.SetTitle("DB 업데이트");
-            pd.SetMessage("DB 업데이트 중...");
+            pd.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
+            pd.SetMessage(Resources.GetString(Resource.String.UpdateDBDialog_Message));
             pd.SetCancelable(false);
             pd.Max = 100;
             pd.Show();
@@ -477,7 +451,7 @@ namespace GFI_with_GFS_A
 
             await Task.Delay(500);
 
-            activity.RunOnUiThread(() => { pd.SetMessage("DB 버전 갱신 중..."); });
+            activity.RunOnUiThread(() => { pd.SetMessage(Resources.GetString(Resource.String.UpdateDBDialog_RefreshVersionMessage)); });
 
             string oldVersion = Path.Combine(SystemPath, "DBVer.txt");
             string newVersion = Path.Combine(tempPath, "DBVer.txt");
@@ -493,8 +467,8 @@ namespace GFI_with_GFS_A
         {
             ProgressDialog pd = new ProgressDialog(activity, DialogBG_Download);
             pd.SetProgressStyle(ProgressDialogStyle.Horizontal);
-            pd.SetTitle("이벤트 업데이트");
-            pd.SetMessage("이벤트 업데이트 중...");
+            pd.SetTitle(Resource.String.UpdateEventDialog_Title);
+            pd.SetMessage(Resources.GetString(Resource.String.UpdateEventDialog_Message));
             pd.SetCancelable(false);
             pd.Max = 100;
             pd.Show();
@@ -511,7 +485,7 @@ namespace GFI_with_GFS_A
 
             using (StreamReader sr = new StreamReader(new FileStream(Path.Combine(tempPath, "EventVer.txt"), FileMode.Open, FileAccess.Read)))
             {
-                image_count = Int32.Parse((sr.ReadToEnd()).Split(';')[2]);
+                image_count = int.Parse((sr.ReadToEnd()).Split(';')[2]);
             }
 
             pd.Max = image_count;
@@ -530,7 +504,7 @@ namespace GFI_with_GFS_A
 
             await Task.Delay(500);
 
-            activity.RunOnUiThread(() => { pd.SetMessage("이벤트 버전 갱신 중..."); });
+            activity.RunOnUiThread(() => { pd.SetMessage(Resources.GetString(Resource.String.UpdateEventDialog_RefreshVersionMessage)); });
 
             string oldVersion = Path.Combine(CachePath, "Event", "EventVer.txt");
             string newVersion = Path.Combine(tempPath, "EventVer.txt");
@@ -548,7 +522,7 @@ namespace GFI_with_GFS_A
                 DateTime now = DateTime.Now;
 
                 string nowDateTime = now.Year.ToString() + now.Month.ToString() + now.Day.ToString() + now.Hour.ToString() + now.Minute.ToString() + now.Second.ToString();
-                string ErrorFileName = nowDateTime + "-ErrorLog.txt";
+                string ErrorFileName = string.Format("{0}-ErrorLog.txt", nowDateTime);
 
                 using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
                 {
@@ -557,7 +531,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                activity.RunOnUiThread(() => { Toast.MakeText(activity, "Error write log", ToastLength.Long).Show(); });
+                activity.RunOnUiThread(() => { Toast.MakeText(activity, "Error Write Log", ToastLength.Long).Show(); });
             }
         }
 
@@ -595,7 +569,7 @@ namespace GFI_with_GFS_A
 
         internal static string CalcTime(int minute)
         {
-            return (minute / 60) + " : " + (minute % 60).ToString("D2");
+            return string.Format("{0} : {1}", (minute / 60), (minute % 60).ToString("D2"));
         }
 
         internal class ADViewListener : Android.Gms.Ads.AdListener

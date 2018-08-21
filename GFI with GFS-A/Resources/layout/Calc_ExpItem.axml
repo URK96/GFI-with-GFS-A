@@ -12,7 +12,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="* 모드 설정 *"
+            android:text="@string/Calc_ExpItem_ModSettingText"
             android:gravity="center"
             android:layout_marginTop="20dp" />
         <LinearLayout
@@ -27,7 +27,7 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="개조 Mod 적용"
+                android:text="@string/Calc_ExpItem_ModSettingCheckBox"
                 android:checked="false"
                 android:id="@+id/CalcReportModSelector" />
             <Space
@@ -47,7 +47,7 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="서약 적용"
+                android:text="@string/Calc_ExpItem_VowSettingCheckBox"
                 android:checked="false"
                 android:id="@+id/CalcReportVowSelector" />
             <Space
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="* 레벨 설정 *"
+            android:text="@string/Calc_ExpItem_LevelSettingText"
             android:gravity="center"
             android:layout_marginTop="20dp" />
         <LinearLayout
@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="* 현재 총 경험치 *"
+            android:text="@string/Calc_ExpItem_NowTotalExpSettingText"
             android:gravity="center"
             android:layout_marginTop="10dp" />
         <LinearLayout
@@ -128,7 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="* 필요한 수량 / 남는 경험치 *"
+            android:text="@string/Calc_ExpItem_TotalResultText"
             android:gravity="center"
             android:layout_marginTop="10dp" />
         <TextView
@@ -145,7 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="$ 작전 보고서 1장당 3000Exp $"
+            android:text="@string/Calc_ExpItem_Caution"
             android:gravity="center"
             android:layout_marginTop="50dp" />
     </LinearLayout>

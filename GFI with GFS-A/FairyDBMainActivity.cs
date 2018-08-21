@@ -57,6 +57,8 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.FairyDBListLayout);
 
+                SetTitle(Resource.String.FairyDBMainActivity_Title);
+
                 mFairyListView = FindViewById<ListView>(Resource.Id.FairyDBListView);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FairyDBSnackbarLayout);
 
@@ -107,7 +109,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "FAB 상태 변경 오류!", Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeStatusError, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
             }
         }
 
@@ -156,7 +158,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "정렬 오류 발생!", Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.LineUp_Error, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
             }
         }
 
@@ -202,8 +204,8 @@ namespace GFI_with_GFS_A
             ad.SetTitle(title);
             ad.SetMessage(message);
             ad.SetCancelable(true);
-            ad.SetPositiveButton("다운로드", delegate { method(); });
-            ad.SetNegativeButton("취소", delegate { });
+            ad.SetPositiveButton(Resource.String.AlertDialog_Download, delegate { method(); });
+            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
 
             ad.Show();
         }
@@ -275,13 +277,13 @@ namespace GFI_with_GFS_A
             p_now += 1;
 
             totalProgressBar.Progress = Convert.ToInt32((p_now / Convert.ToDouble(p_total)) * 100);
-            totalProgress.Text = totalProgressBar.Progress + "%";
+            totalProgress.Text = string.Format("{0}%", totalProgressBar.Progress);
         }
 
         private void Wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             nowProgressBar.Progress = e.ProgressPercentage;
-            nowProgress.Text = e.ProgressPercentage.ToString() + "%";
+            nowProgress.Text = string.Format("{0}%", e.ProgressPercentage);
         }
 
         private void InitFilterBox()
@@ -301,16 +303,16 @@ namespace GFI_with_GFS_A
                 Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG_Vertical);
                 FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
                 FilterBox.SetView(v);
-                FilterBox.SetPositiveButton("설정", delegate { ApplyFilter(v); });
-                FilterBox.SetNegativeButton("취소", delegate { });
-                FilterBox.SetNeutralButton("초기화", delegate { ResetFilter(v); });
+                FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
+                FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(v); });
 
                 FilterBox.Show();
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "Error Init Filter Box", Snackbar.LengthLong);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FilterBox_InitError, Snackbar.LengthLong);
             }
         }
 
@@ -425,10 +427,10 @@ namespace GFI_with_GFS_A
 
             switch (type)
             {
-                case "전투":
+                case string s when s == Resources.GetString(Resource.String.Common_FairyType_Combat):
                     if (Filter_Type[0] == false) return true;
                     break;
-                case "책략":
+                case string s when s == Resources.GetString(Resource.String.Common_FairyType_Strategy):
                     if (Filter_Type[1] == false) return true;
                     break;
             }
@@ -532,10 +534,10 @@ namespace GFI_with_GFS_A
                 int TypeIconId = 0;
                 switch ((string)item.FairyDR["Type"])
                 {
-                    case "전투":
+                    case string s when s == ETC.Resources.GetString(Resource.String.Common_FairyType_Combat):
                         TypeIconId = Resource.Drawable.Fairy_Combat;
                         break;
-                    case "책략":
+                    case string s when s == ETC.Resources.GetString(Resource.String.Common_FairyType_Strategy):
                         TypeIconId = Resource.Drawable.Fairy_Strategy;
                         break;
                     default:
@@ -566,7 +568,7 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(mcontext, ex 
                     .ToString());
-                Toast.MakeText(mcontext, "Error create view", ToastLength.Short).Show();
+                Toast.MakeText(mcontext, "Error Create View", ToastLength.Short).Show();
             }
 
             return view;

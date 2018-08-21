@@ -19,27 +19,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="소전사전 v2"
+            android:text="@string/Common_GFDv2"
             android:textStyle="bold"
             android:gravity="center" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text=""
             android:gravity="center"
             android:id="@+id/GFDInfo_NowAppVersion" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text=""
             android:gravity="center"
             android:id="@+id/GFDInfo_ServerAppVersion" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="업데이트"
+            android:text="@string/Common_Update"
             android:alpha="0"
             android:id="@+id/GFDInfo_AppUpdateButton"
             android:visibility="invisible"
@@ -49,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="개발자 정보"
+            android:text="@string/GFDInfoLayout_DeveloperInfo"
             android:textStyle="bold"
             android:gravity="center" />
         <ScrollView
@@ -128,7 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="10dp"
-                android:text="Powered by Xamarin (C#)" />
+                android:text="Powered by Xamarin.Android" />
         </LinearLayout>
     </LinearLayout>
     <android.support.design.widget.FloatingActionButton

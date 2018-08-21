@@ -40,7 +40,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text=""
                 android:gravity="center"
                 android:layout_marginBottom="2dp"
                 android:id="@+id/FairyDBDetailFairyType" />
@@ -48,7 +47,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text=""
                 android:gravity="center"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
@@ -57,7 +55,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text=""
                 android:gravity="center"
                 android:layout_marginTop="2dp"
                 android:id="@+id/FairyDBDetailFairyProductTime" />
@@ -98,7 +95,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="요정 종류"
+                            android:text="@string/Common_FairyType"
                             android:gravity="center" />
                         <View
                             android:layout_width="5px"
@@ -126,7 +123,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="이름"
+                            android:text="@string/Common_Name"
                             android:gravity="center" />
                         <View
                             android:layout_width="5px"
@@ -154,7 +151,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="일러스트"
+                            android:text="@string/Common_Illustrator"
                             android:gravity="center" />
                         <View
                             android:layout_width="5px"
@@ -182,7 +179,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="기타"
+                            android:text="@string/Common_ETC"
                             android:gravity="center" />
                         <View
                             android:layout_width="5px"
@@ -242,7 +239,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text=""
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:gravity="center"
                                 android:id="@+id/FairyDBDetailSkillName" />
@@ -305,7 +301,6 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text=""
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:gravity="center"
                             android:id="@+id/FairyDBDetailSkillExplain" />
@@ -322,13 +317,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="스킬 효과"
+                            android:text="@string/Common_Effect"
                             android:gravity="center" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:text=""
                             android:gravity="center"
                             android:id="@+id/FairyDBDetailSkillEffect" />
                         <TextView
@@ -336,13 +330,12 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="스킬 효과치"
+                            android:text="@string/Common_Mag"
                             android:gravity="center" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:text=""
                             android:gravity="center"
                             android:id="@+id/FairyDBDetailSkillRate" />
                     </LinearLayout>
@@ -372,7 +365,7 @@
                         android:layout_height="50dp"
                         android:id="@+id/FairyInfoFRLayout">
                         <TextView
-                            android:text="화력"
+                            android:text="@string/Common_FR"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -437,7 +430,7 @@
                         android:layout_height="50dp"
                         android:id="@+id/FairyInfoACLayout">
                         <TextView
-                            android:text="명중"
+                            android:text="@string/Common_AC"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -502,7 +495,7 @@
                         android:layout_height="50dp"
                         android:id="@+id/FairyInfoEVLayout">
                         <TextView
-                            android:text="회피"
+                            android:text="@string/Common_EV"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -567,7 +560,7 @@
                         android:layout_height="50dp"
                         android:id="@+id/FairyInfoAMLayout">
                         <TextView
-                            android:text="장갑"
+                            android:text="@string/Common_AM"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -632,7 +625,7 @@
                         android:layout_height="50dp"
                         android:id="@+id/FairyInfoCRLayout">
                         <TextView
-                            android:text="치명타"
+                            android:text="@string/Common_CR"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"

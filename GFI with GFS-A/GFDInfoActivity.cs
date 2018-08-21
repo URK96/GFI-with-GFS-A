@@ -90,11 +90,11 @@ namespace GFI_with_GFS_A
             {
                 StringBuilder sb = new StringBuilder();
 
-                sb.Append("총괄 & 디자인 : 수매\n");
+                sb.AppendFormat("{0}\n", Resources.GetString(Resource.String.GFDInfo_Developer_Soomae));
                 sb.Append("eveia@naver.com\n\n");
-                sb.Append("App & 소스 제작 : URK96\n");
+                sb.AppendFormat("{0}\n", Resources.GetString(Resource.String.GFDInfo_Developer_URK96));
                 sb.Append("chlwlsgur96@hotmail.com\n\n");
-                sb.Append("App 검수 & 확인 : 스텡\n");
+                sb.AppendFormat("{0}\n", Resources.GetString(Resource.String.GFDInfo_Developer_Bibitjyadame));
                 sb.Append("yuiroa@naver.com");
 
                 FindViewById<TextView>(Resource.Id.GFDInfoDeveloperInfo).Text = sb.ToString();
@@ -116,7 +116,7 @@ namespace GFI_with_GFS_A
                 string[] now_ver = context.PackageManager.GetPackageInfo(context.PackageName, 0).VersionName.Split('.');
                 string[] server_ver = new string[now_ver.Length];
 
-                NowVersion.Text = "현재 버전 : " + context.PackageManager.GetPackageInfo(context.PackageName, 0).VersionName + " - ";
+                NowVersion.Text = string.Format("{0} : {1} - ", Resources.GetString(Resource.String.GFDInfo_NowVersion), context.PackageManager.GetPackageInfo(context.PackageName, 0).VersionName);
 #if DEBUG
                 NowVersion.Text += "Debug";
 #else
@@ -150,7 +150,7 @@ namespace GFI_with_GFS_A
                 {
                     UpdateButton.Visibility = ViewStates.Visible;
                     UpdateButton.Animate().Alpha(1.0f).SetDuration(500).Start();
-                    ServerVersion.Text = "최신 버전 : " + server_ver[0] + "." + server_ver[1] + "." + server_ver[2];
+                    ServerVersion.Text = string.Format("{0} : {1}.{2}.{3}", Resources.GetString(Resource.String.GFDInfo_NewVersion), server_ver[0], server_ver[1],  server_ver[2]);
                 }
                 else
                 {
@@ -171,8 +171,8 @@ namespace GFI_with_GFS_A
             ad.SetTitle(Resource.String.UpdateDialog_Title);
             ad.SetMessage(Resource.String.UpdateDialog_Message);
             ad.SetCancelable(true);
-            ad.SetPositiveButton("Play Store로 업데이트", delegate { LinkAppStore(); });
-            ad.SetNegativeButton("APK로 설치", async delegate { await AppUpdate(); });
+            ad.SetPositiveButton(Resource.String.GFDInfo_Update_Playstore, delegate { LinkAppStore(); });
+            ad.SetNegativeButton(Resource.String.GFDInfo_Update_Apk, async delegate { await AppUpdate(); });
 
             ad.Show();
         }
@@ -183,12 +183,12 @@ namespace GFI_with_GFS_A
 
             try
             {
-                string url = "market://details?id=" + PackageName;
+                string url = string.Format("market://details?id={0}", PackageName);
                 StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse(url)));
             }
             catch (Exception ex)
             {
-                string url = "https://play.google.com/store/apps/details?id=" + PackageName;
+                string url = string.Format("https://play.google.com/store/apps/details?id={0}", PackageName);
                 StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse(url)));
             }
         }

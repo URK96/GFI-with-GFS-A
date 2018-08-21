@@ -34,7 +34,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="입력"
+                        android:text="@string/Common_Input"
                         android:id="@+id/RFBotInputButton" />
                 </LinearLayout>
             </RelativeLayout>

@@ -31,6 +31,8 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.SettingMainLayout);
 
+                SetTitle(Resource.String.SettingActivity_Title);
+
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.SettingSnackbarLayout);
 
                 Fragment SettingFragment = new MainSettingFragment();
@@ -86,7 +88,7 @@ namespace GFI_with_GFS_A
             ListPreference StartAppMode = (ListPreference)FindPreference("StartAppMode");
             if (ETC.UseLightTheme == true) StartAppMode.SetIcon(Resource.Drawable.AppStartModeIcon_WhiteTheme);
             else StartAppMode.SetIcon(Resource.Drawable.AppStartModeIcon);
-            StartAppMode.SetEntries(new string[] { "기본", "소전사전v1", "RFBot (라플봇)" });
+            StartAppMode.SetEntries(new string[] { Resources.GetString(Resource.String.Common_Default), Resources.GetString(Resource.String.Main_MainMenu_OldGFD), Resources.GetString(Resource.String.Main_ExtraMenu_RFBot) });
             StartAppMode.SetEntryValues(new string[] { "0", "1", "2" });
             StartAppMode.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("StartAppMode", "0")));
 
@@ -218,11 +220,11 @@ namespace GFI_with_GFS_A
             try
             {
                 Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
-                ad.SetTitle("로그 파일 삭제 확인");
-                ad.SetMessage("로그 파일을 전부 삭제하실건가요?");
+                ad.SetTitle(Resource.String.SettingActivity_DeleteLogFile_DialogTitle);
+                ad.SetMessage(Resource.String.SettingActivity_DeleteLogFile_DialogCheckMessage);
                 ad.SetCancelable(true);
-                ad.SetNegativeButton("취소", delegate { });
-                ad.SetPositiveButton("확인", delegate { CleanLogFolderProcess(); });
+                ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { CleanLogFolderProcess(); });
 
                 ad.Show();
             }
@@ -238,8 +240,8 @@ namespace GFI_with_GFS_A
             //View v = Activity.LayoutInflater.Inflate(Resource.Layout.SpinnerProgressDialogLayout, null);
 
             Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG_Download);
-            ad.SetTitle(Resource.String.Setting_DeleteAllLogFile_Title);
-            ad.SetMessage(Resource.String.Setting_DeleteAllLogFile_Message);
+            ad.SetTitle(Resource.String.SettingActivity_DeleteLogFile_DialogTitle);
+            ad.SetMessage(Resource.String.SettingActivity_DeleteLogFile_DialogMessage);
             ad.SetCancelable(false);
             //ad.SetView(v);
             ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
@@ -258,12 +260,12 @@ namespace GFI_with_GFS_A
                     ETC.CheckInitFolder();
                 });
 
-                Toast.MakeText(Activity, Resource.String.Setting_DeleteAllLogFile_Complete, ToastLength.Short).Show();
+                Toast.MakeText(Activity, Resource.String.SettingActivity_DeleteLogFile_Complete, ToastLength.Short).Show();
             }
             catch (Exception ex)
             {
                 ETC.LogError(Activity, ex.ToString());
-                Toast.MakeText(Activity, Resource.String.Setting_DeleteAllLogFile_Fail, ToastLength.Short).Show();
+                Toast.MakeText(Activity, Resource.String.SettingActivity_DeleteLogFile_Fail, ToastLength.Short).Show();
             }
             finally
             {
@@ -274,15 +276,15 @@ namespace GFI_with_GFS_A
         private void DownloadAllCache_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
         {
             Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
-            alert.SetTitle(Resource.String.Setting_DownloadAllCache_CheckTitle);
-            alert.SetMessage(Resource.String.Setting_DownloadAllCache_CheckMessage);
+            alert.SetTitle(Resource.String.SettingActivity_DownloadAllCache_DialogTitle);
+            alert.SetMessage(Resource.String.SettingActivity_DownloadAllCache_DialogCheckMessage);
             alert.SetCancelable(true);
-            alert.SetNegativeButton("취소", delegate { });
-            alert.SetPositiveButton("다운로드", async delegate
+            alert.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+            alert.SetPositiveButton(Resource.String.AlertDialog_Download, async delegate
             {
                 if (await CheckStorageCapacity() == false) return;
                 string[] OSVer = Build.VERSION.Release.Split('.');
-                if (Int32.Parse(OSVer[0]) <= 4) await DownloadAllCacheProcess_OldVer();
+                if (int.Parse(OSVer[0]) <= 4) await DownloadAllCacheProcess_OldVer();
                 else await DownloadAllCacheProcess();
             });
 
@@ -292,8 +294,8 @@ namespace GFI_with_GFS_A
         private async Task<bool> CheckStorageCapacity()
         {
             ProgressDialog pd = new ProgressDialog(Activity, ETC.DialogBG);
-            pd.SetTitle(Resource.String.CheckFreeStorage_Title);
-            pd.SetMessage(Resources.GetString(Resource.String.CheckFreeStorage_Message));
+            pd.SetTitle(Resource.String.SettingActivity_CheckFreeStorage_DialogTitle);
+            pd.SetMessage(Resources.GetString(Resource.String.SettingActivity_CheckFreeStorage_DialogMessage));
             pd.SetCancelable(false);
 
             pd.Show();
@@ -312,7 +314,7 @@ namespace GFI_with_GFS_A
 
                 if (FreeSpace >= 600)
                 {
-                    pd.SetMessage("저장 장치 여유 공간 : " + FreeSpace + "MB\n\n잠시 후 다운로드를 진행할게.");
+                    pd.SetMessage(string.Format("{0} : {1}MB\n\n{2}", Resources.GetString(Resource.String.SettingActivity_CheckFreeStorage_DialogMessage2), FreeSpace, Resources.GetString(Resource.String.SettingActivity_CheckFreeStorage_DialogMessage2_1));
                     await Task.Delay(2000);
                     return true;
                 }
@@ -321,9 +323,9 @@ namespace GFI_with_GFS_A
                     pd.Dismiss();
 
                     AlertDialog.Builder ad = new AlertDialog.Builder(Activity);
-                    ad.SetTitle("다운로드 진행 불가");
-                    ad.SetMessage("지휘관님! 여유 공간이 충분하지 않아 다운로드를 진행할 수 없어요... 현재 남은 용량은 " + FreeSpace + "MB");
-                    ad.SetNeutralButton("확인", delegate { });
+                    ad.SetTitle(Resource.String.SettingActivity_CheckFreeStorage_FailDialogTitle);
+                    ad.SetMessage(string.Format("{0} {1}MB",Resources.GetString(Resource.String.SettingActivity_CheckFreeStorage_FailDialogMessage), FreeSpace));
+                    ad.SetNeutralButton(Resource.String.AlertDialog_Confirm, delegate { });
                     ad.SetCancelable(true);
 
                     ad.Show();
@@ -333,7 +335,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(Activity, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.CheckFreeStorage_CheckFail, Snackbar.LengthLong);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.SettingActivity_CheckFreeStorage_CheckFail, Snackbar.LengthLong);
             }
             finally
             {
@@ -351,8 +353,8 @@ namespace GFI_with_GFS_A
 
             Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
             Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG_Download);
-            pd.SetTitle(Resource.String.Setting_DownloadAllCache_Title);
-            pd.SetMessage(Resource.String.Setting_DownloadAllCache_Message);
+            pd.SetTitle(Resource.String.SettingActivity_DownloadAllCache_DialogTitle);
+            pd.SetMessage(Resource.String.SettingActivity_DownloadAllCache_DialogMessage);
             pd.SetCancelable(false);
             pd.SetView(v);
 
@@ -376,7 +378,7 @@ namespace GFI_with_GFS_A
 
                 int totalCount = 0;
 
-                status.Text = "인형 DB 읽는 중...";
+                status.Text = Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusDollDB);
 
                 foreach (DataRow dr in ETC.DollList.Rows)
                 {
@@ -401,7 +403,7 @@ namespace GFI_with_GFS_A
                 total = totalCount;
                 now = 0;
 
-                status.Text = "인형 캐시 다운로드 중...(1/4)";
+                status.Text = string.Format("{0}...(1/4)", Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusDollDB2));
 
                 using (WebClient wc = new WebClient())
                 {
@@ -414,7 +416,7 @@ namespace GFI_with_GFS_A
 
                         if (dr["Costume"] != DBNull.Value)
                         {
-                            if (System.String.IsNullOrEmpty((string)dr["Costume"]) == false)
+                            if (string.IsNullOrEmpty((string)dr["Costume"]) == false)
                             {
                                 string[] costume_list = ((string)dr["Costume"]).Split(';');
                                 count += costume_list.Length;
@@ -487,7 +489,7 @@ namespace GFI_with_GFS_A
                 totalProgress.Text = "0%";
                 nowProgress.Text = "0%";
 
-                status.Text = "요정 DB 읽는 중...";
+                status.Text = Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusFairyDB);
 
                 await Task.Delay(500);
 
@@ -496,7 +498,7 @@ namespace GFI_with_GFS_A
                 total = totalCount;
                 now = 0;
 
-                status.Text = "요정 캐시 다운로드 중...(2/4)";
+                status.Text = string.Format("{0}(2/4)", Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusFairyDB2));
 
                 using (WebClient wc = new WebClient())
                 {
@@ -538,7 +540,7 @@ namespace GFI_with_GFS_A
                 totalProgress.Text = "0%";
                 nowProgress.Text = "0%";
 
-                status.Text = "장비 DB 읽는 중...";
+                status.Text = Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusEquipDB);
 
                 await Task.Delay(500);
 
@@ -574,7 +576,7 @@ namespace GFI_with_GFS_A
                 total = totalCount;
                 now = 0;
 
-                status.Text = "장비 캐시 다운로드 중...(3/4)";
+                status.Text = string.Format("{0}(3/4)", Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusEquipDB2));
 
                 using (WebClient wc = new WebClient())
                 {
@@ -599,7 +601,7 @@ namespace GFI_with_GFS_A
                 totalProgress.Text = "0%";
                 nowProgress.Text = "0%";
 
-                status.Text = "소전사전 이미지 DB 읽는 중...";
+                status.Text = Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusOldGFD);
 
                 await Task.Delay(500);
 
@@ -609,7 +611,7 @@ namespace GFI_with_GFS_A
                 total = totalCount;
                 now = 0;
 
-                status.Text = "소전사전 이미지 캐시 다운로드 중...(4/4)";
+                status.Text = string.Format("{0}(4/4)", Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusOldGFD2));
 
                 using (WebClient wc = new WebClient())
                 {
@@ -625,29 +627,29 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(500);
 
-                ad.SetTitle(Resource.String.Setting_DownloadAllCache_CompleteTitle);
-                ad.SetMessage(Resource.String.Setting_DownloadAllCache_CompleteMessage);
-                ad.SetPositiveButton("확인", delegate { });
+                ad.SetTitle(Resource.String.SettingActivity_DownloadAllCache_CompleteDialogTitle);
+                ad.SetMessage(Resource.String.Setting_DownloadAllCache_CompleteSettingActivity_DownloadAllCache_CompleteDialogMessageMessage);
+                ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
 
                 ad.Show();
             }
             catch (Java.Lang.Exception ex)
             {
-                ETC.LogError(this.Activity, ex.ToString());
+                ETC.LogError(Activity, ex.ToString());
 
-                ad.SetTitle(Resource.String.Setting_DownloadAllCache_FailTitle);
-                ad.SetMessage(Resource.String.Setting_DownloadAllCache_FailMessage);
-                ad.SetPositiveButton("확인", delegate { });
+                ad.SetTitle(Resource.String.SettingActivity_DownloadAllCache_FailDialogTitle);
+                ad.SetMessage(Resource.String.SettingActivity_DownloadAllCache_FailDialogMessage);
+                ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
 
                 ad.Show();
             }
             catch (Exception ex)
             {
-                ETC.LogError(this.Activity, ex.ToString());
+                ETC.LogError(Activity, ex.ToString());
 
-                ad.SetTitle(Resource.String.Setting_DownloadAllCache_FailTitle);
-                ad.SetMessage(Resource.String.Setting_DownloadAllCache_FailMessage);
-                ad.SetPositiveButton("확인", delegate { });
+                ad.SetTitle(Resource.String.SettingActivity_DownloadAllCache_FailDialogTitle);
+                ad.SetMessage(Resource.String.SettingActivity_DownloadAllCache_FailDialogMessage);
+                ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
 
                 ad.Show();
             }
@@ -662,8 +664,8 @@ namespace GFI_with_GFS_A
         {
             Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
             ProgressDialog pd = new ProgressDialog(Activity, ETC.DialogBG_Download);
-            pd.SetTitle(Resource.String.Setting_DownloadAllCache_Title);
-            pd.SetMessage(Resources.GetString(Resource.String.Setting_DownloadAllCache_Message));
+            pd.SetTitle(Resource.String.SettingActivity_DownloadAllCache_DialogTitle);
+            pd.SetMessage(Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_DialogMessage));
             pd.SetProgressStyle(ProgressDialogStyle.Horizontal);
             pd.SetCancelable(false);
             pd.Max = 100;
@@ -681,7 +683,7 @@ namespace GFI_with_GFS_A
                     // 코스튬 별 일러스트 2장
                     if (dr["Costume"] != DBNull.Value)
                     {
-                        if (System.String.IsNullOrEmpty((string)dr["Costume"]) == false)
+                        if (string.IsNullOrEmpty((string)dr["Costume"]) == false)
                         {
                             string[] costume_list = ((string)dr["Costume"]).Split(';');
 
@@ -748,7 +750,7 @@ namespace GFI_with_GFS_A
 
                         if (dr["Costume"] != DBNull.Value)
                         {
-                            if (System.String.IsNullOrEmpty((string)dr["Costume"]) == false)
+                            if (string.IsNullOrEmpty((string)dr["Costume"]) == false)
                             {
                                 string[] costume_list = ((string)dr["Costume"]).Split(';');
                                 count += costume_list.Length;
@@ -835,9 +837,9 @@ namespace GFI_with_GFS_A
                     }
                     wc.DownloadFile(Path.Combine(ETC.Server, "OldGFDVer.txt"), Path.Combine(ETC.SystemPath, "OldGFDVer.txt"));
 
-                    ad.SetTitle(Resource.String.Setting_DownloadAllCache_CompleteTitle);
-                    ad.SetMessage(Resource.String.Setting_DownloadAllCache_CompleteMessage);
-                    ad.SetPositiveButton("확인", delegate { });
+                    ad.SetTitle(Resource.String.SettingActivity_DownloadAllCache_CompleteDialogTitle);
+                    ad.SetMessage(Resource.String.SettingActivity_DownloadAllCache_CompleteDialogMessage);
+                    ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
 
                     ad.Show();
                 }
@@ -846,9 +848,9 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(Activity, ex.ToString());
 
-                ad.SetTitle(Resource.String.Setting_DownloadAllCache_FailTitle);
-                ad.SetMessage(Resource.String.Setting_DownloadAllCache_FailMessage);
-                ad.SetPositiveButton("확인", delegate { });
+                ad.SetTitle(Resource.String.SettingActivity_DownloadAllCache_FailDialogTitle);
+                ad.SetMessage(Resource.String.SettingActivity_DownloadAllCache_FailDialogMessage);
+                ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
 
                 ad.Show();
             }
@@ -856,9 +858,9 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(Activity, ex.StackTrace);
 
-                ad.SetTitle(Resource.String.Setting_DownloadAllCache_FailTitle);
-                ad.SetMessage(Resource.String.Setting_DownloadAllCache_FailMessage);
-                ad.SetPositiveButton("확인", delegate { });
+                ad.SetTitle(Resource.String.SettingActivity_DownloadAllCache_FailDialogTitle);
+                ad.SetMessage(Resource.String.SettingActivity_DownloadAllCache_FailDialogMessage);
+                ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
 
                 ad.Show();
             }
@@ -887,13 +889,13 @@ namespace GFI_with_GFS_A
             now += 1;
 
             totalProgressBar.Progress = Convert.ToInt32((now / Convert.ToDouble(total)) * 100);
-            totalProgress.Text = totalProgressBar.Progress + "%";
+            totalProgress.Text = string.Format("{0}%", totalProgressBar.Progress);
         }
 
         private void Wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             nowProgressBar.Progress = e.ProgressPercentage;
-            nowProgress.Text = e.ProgressPercentage.ToString() + "%";
+            nowProgress.Text = string.Format("{0}%", e.ProgressPercentage);
         }
 
         private void CleanCache_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
@@ -908,11 +910,11 @@ namespace GFI_with_GFS_A
             int TotalSize = Convert.ToInt32((tTotalSize / 1024) / 1024);
 
             Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
-            alert.SetTitle(Resource.String.Setting_DeleteAllCache_CheckTitle);
-            alert.SetMessage(string.Format("{0} {1}{2}", Resources.GetString(Resource.String.Setting_DeleteAllCache_CheckMessage), TotalSize, "MB"));
+            alert.SetTitle(Resource.String.SettingActivity_DeleteAllCache_DialogTitle);
+            alert.SetMessage(string.Format("{0} {1}{2}", Resources.GetString(Resource.String.SettingActivity_DeleteAllCache_DialogCheckMessage), TotalSize, "MB"));
             alert.SetCancelable(true);
-            alert.SetNegativeButton("취소", delegate { });
-            alert.SetPositiveButton("삭제", delegate { CleanCacheProcess(); });
+            alert.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+            alert.SetPositiveButton(Resource.String.AlertDialog_Delete, delegate { CleanCacheProcess(); });
 
             alert.Show();
         }
@@ -920,8 +922,8 @@ namespace GFI_with_GFS_A
         private async void CleanCacheProcess()
         {
             Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG_Download);
-            ad.SetTitle(Resource.String.Setting_DeleteAllCache_Title);
-            ad.SetMessage(Resource.String.Setting_DeleteAllCache_Message);
+            ad.SetTitle(Resource.String.SettingActivity_DeleteAllCache_DialogTitle);
+            ad.SetMessage(Resource.String.SettingActivity_DeleteAllCache_DialogMessage);
             ad.SetCancelable(false);
             ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
 
@@ -940,12 +942,12 @@ namespace GFI_with_GFS_A
                     ETC.CheckInitFolder();
                 });
 
-                Toast.MakeText(Activity, Resource.String.Setting_DeleteAllCache_Complete, ToastLength.Short).Show();
+                Toast.MakeText(Activity, Resource.String.SettingActivity_DeleteAllCache_Complete, ToastLength.Short).Show();
             }
             catch (Exception ex)
             {
                 ETC.LogError(Activity, ex.ToString());
-                Toast.MakeText(Activity, Resource.String.Setting_DeleteAllCache_Fail, ToastLength.Short).Show();
+                Toast.MakeText(Activity, Resource.String.SettingActivity_DeleteAllCache_Fail, ToastLength.Short).Show();
             }
             finally
             {

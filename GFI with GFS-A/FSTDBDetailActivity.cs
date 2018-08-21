@@ -111,7 +111,7 @@ namespace GFI_with_GFS_A
 
                 List<string> list = new List<string>
                 {
-                    "기본"
+                    Resources.GetString(Resource.String.FSTDBDetail_Chipset_Default)
                 };
                 
                 if (GradeSetting > 0)
@@ -132,7 +132,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "Chipset Bonus 목록 구성 실패", Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.List_InitError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -153,7 +153,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "보조등급 효과 적용 실패", Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FSTDBDetail_SubGradeError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -176,21 +176,21 @@ namespace GFI_with_GFS_A
                 switch (fab.Id)
                 {
                     case Resource.Id.SideLinkNamuWikiFAB:
-                        string uri = "https://namu.wiki/w/" + FSTName + "(소녀전선)";
+                        string uri = string.Format("https://namu.wiki/w/{0}(소녀전선)", FSTName);
                         var intent = new Intent(this, typeof(WebBrowserActivity));
                         intent.PutExtra("url", uri);
                         StartActivity(intent);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.SideLinkInvenFAB:
-                        /*string uri2 = "http://gf.inven.co.kr/dataninfo/dolls/detail.php?d=126&c=" + FSTDicNum;
+                        /*string uri2 = string.Format("http://gf.inven.co.kr/dataninfo/dolls/detail.php?d=126&c={0}", FSTDicNum);
                         var intent2 = new Intent(this, typeof(WebBrowserActivity));
                         intent2.PutExtra("url", uri2);
                         StartActivity(intent2);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);*/
                         break;
                     case Resource.Id.SideLinkBaseFAB:
-                        /*string uri3 = "https://girlsfrontline.kr/doll/" + FSTDicNum;
+                        /*string uri3 = string.Format("https://girlsfrontline.kr/doll/{0}", FSTDicNum);
                         var intent3 = new Intent(this, typeof(WebBrowserActivity));
                         intent3.PutExtra("url", uri3);
                         StartActivity(intent3);
@@ -264,7 +264,7 @@ namespace GFI_with_GFS_A
                 catch (Exception ex)
                 {
                     ETC.LogError(this, ex.ToString());
-                    ETC.ShowSnackbar(SnackbarLayout, "FAB 작동 실패!", Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                    ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeSubMenuError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
                 }
             }
         }
@@ -281,7 +281,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "이미지 뷰어 실행 실패!", Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ImageViewer_ActivityOpenError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -545,7 +545,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "회로 계산 오류", Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FSTDBDetail_CircuitCalcError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
             finally
             {
@@ -618,7 +618,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "능력치 계산 오류", Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FSTDBDetail_AbilityCalcError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
             finally
             {

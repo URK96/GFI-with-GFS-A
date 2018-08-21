@@ -16,7 +16,7 @@ using Android.Support.Design.Widget;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "진행 중인 이벤트", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "이벤트 목록", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class EventListActivity : AppCompatActivity
     {
         enum EventPeriodType { Now, Scheduled, Over }
@@ -40,6 +40,8 @@ namespace GFI_with_GFS_A
 
             // Create your application here
             SetContentView(Resource.Layout.EventListLayout);
+
+            SetTitle(Resource.String.EventListActivity_Title);
 
             SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EventListSnackbarLayout);
 
@@ -157,13 +159,13 @@ namespace GFI_with_GFS_A
 
                 if (NowEventCount == 0)
                 {
-                    period1.Text = "이벤트 없음";
+                    period1.Text = Resources.GetString(Resource.String.EventList_NoEvent);
                     button1.Visibility = ViewStates.Gone;
                 }
 
                 if (ScheduledEventCount == 0)
                 {
-                    period2.Text = "이벤트 없음";
+                    period2.Text = Resources.GetString(Resource.String.EventList_NoEvent);
                     button2.Visibility = ViewStates.Gone;
                 }
 
@@ -200,7 +202,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "초기 로딩 실패", Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.InitLoad_Error, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
 

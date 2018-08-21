@@ -23,7 +23,7 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="종류"
+                    android:text="@string/Common_FSTType"
                     android:textStyle="bold"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:layout_marginRight="8dp"

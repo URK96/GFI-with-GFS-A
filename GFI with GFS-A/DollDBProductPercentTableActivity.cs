@@ -79,34 +79,34 @@ namespace GFI_with_GFS_A
                         if (Show_Mode == ShowMode.Normal)
                         {
                             Show_Mode = ShowMode.Advance;
-                            bt.Text = "중형제조";
+                            bt.Text = Resources.GetString(Resource.String.Common_AdvanceProduct);
                         }
                         else if (Show_Mode == ShowMode.Advance)
                         {
                             Show_Mode = ShowMode.Normal;
-                            bt.Text = "일반제조";
+                            bt.Text = Resources.GetString(Resource.String.Common_NormalProduct);
                         }
                         else
                         {
                             Show_Mode = ShowMode.Normal;
-                            bt.Text = "일반제조";
+                            bt.Text = Resources.GetString(Resource.String.Common_NormalProduct);
                         }
                         break;
                     case Resource.Id.ProductPercentTableChangeListModeButton:
                         if (List_Mode == ListMode.Percentage)
                         {
                             List_Mode = ListMode.TotalCount;
-                            bt.Text = "시도 횟수 우선";
+                            bt.Text = Resources.GetString(Resource.String.ProductPercentTable_List_TotalCount);
                         }
                         else if (List_Mode == ListMode.TotalCount)
                         {
                             List_Mode = ListMode.Percentage;
-                            bt.Text = "확률 우선";
+                            bt.Text = Resources.GetString(Resource.String.ProductPercentTable_List_Percentage);
                         }
                         else
                         {
                             List_Mode = ListMode.Percentage;
-                            bt.Text = "확률 우선";
+                            bt.Text = Resources.GetString(Resource.String.ProductPercentTable_List_Percentage);
                         }
                         break;
                 }
@@ -171,7 +171,7 @@ namespace GFI_with_GFS_A
                             LayoutParameters = FindViewById<TextView>(TopViewIds[j]).LayoutParameters
                         };
 
-                        if (j == 8) tv.Text = list[i, j] + "%";
+                        if (j == 8) tv.Text = string.Format("{0}%", list[i, j]);
                         else tv.Text = list[i, j].ToString();
 
                         tv.Gravity = GravityFlags.Center;
@@ -253,7 +253,7 @@ namespace GFI_with_GFS_A
                 InitLoadProgressBar.Visibility = ViewStates.Visible;
                 InitLoadProgressBar.BringToFront();
 
-                string url = "https://ipick.baka.pw:444/stats/tdoll/id/" + DollDicNum;
+                string url = string.Format("https://ipick.baka.pw:444/stats/tdoll/id/{0}", DollDicNum);
                 string temp_data;
 
                 using (WebClient wc = new WebClient())

@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="* 레벨 설정 *"
+            android:text="@string/Calc_SkillTraining_LevelSettingText"
             android:gravity="center"
             android:layout_marginTop="20dp" />
      <LinearLayout
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="* 단계별 스킬 훈련칩 요구량 *\n(초급 / 중급 / 고급)"
+            android:text="@string/Calc_SkillTraining_ResultChipCountText"
             android:gravity="center"
             android:layout_marginTop="10dp" />
     <TextView
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="0 / 0 / 0"
+        android:text="@string/Calc_SkillTraining_ResultChipCountDefaultText"
         android:gravity="center"
         android:layout_marginTop="10dp"
         android:id="@+id/CalcSkillTrainingResultSkillChip" />
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="* 총 소요시간 *"
+            android:text="@string/Calc_SkillTraining_ResultTimeCountText"
             android:gravity="center"
             android:layout_marginTop="10dp" />
     <TextView
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="0 시간"
+        android:text="@string/Calc_SkillTraining_ResultTimeCountDefaultText"
         android:gravity="center"
         android:layout_marginTop="10dp"
         android:id="@+id/CalcSkillTrainingResultTime" />

@@ -19,6 +19,8 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.ProductSimulatorSelectLayout);
 
+            SetTitle(Resource.String.ProductSimulatorCategorySelectActivity_Title);
+
             Button Doll_NormalProduct = FindViewById<Button>(Resource.Id.ProductSimulatorCategoryDollNormalButton);
             Doll_NormalProduct.Click += ProductCategoryButton_Click;
             Button Doll_AdvanceProduct = FindViewById<Button>(Resource.Id.ProductSimulatorCategoryDollAdvanceButton);

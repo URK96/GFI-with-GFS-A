@@ -16,7 +16,7 @@
             <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:text="제조 시간"
+                android:text="@string/Common_ProductTime"
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_marginRight="8dp"
@@ -45,7 +45,7 @@
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="wrap_content"
-                        android:text="시간"
+                        android:text="@string/Time_Hour"
                         android:gravity="center"
                         android:layout_marginRight="10dp" />
                     <NumberPicker
@@ -56,7 +56,7 @@
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="wrap_content"
-                        android:text="분"
+                        android:text="@@string/Time_Minute"
                         android:gravity="center" />
                 </LinearLayout>
                 <LinearLayout
@@ -67,7 +67,7 @@
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="wrap_content"
-                        android:text="허용 범위 ±"
+                        android:text="@string/Common_AllowRange"
                         android:gravity="center"
                         android:layout_marginRight="10dp" />
                     <NumberPicker
@@ -78,7 +78,7 @@
                     <TextView
                         android:layout_height="match_parent"
                         android:layout_width="wrap_content"
-                        android:text="분"
+                        android:text="@@string/Time_Minute"
                         android:gravity="center" />
                 </LinearLayout>
             </LinearLayout>
@@ -100,7 +100,7 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="등급"
+                    android:text="@string/Common_Grade"
                     android:textStyle="bold"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:layout_marginRight="8dp"
@@ -121,21 +121,21 @@
                     <CheckBox
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:text="2성"
+                        android:text="2"
                         android:layout_weight="2"
                         android:layout_gravity="center"
                         android:id="@+id/DollFilterGrade2" />
                     <CheckBox
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:text="3성"
+                        android:text="3"
                         android:layout_weight="2"
                         android:layout_gravity="center"
                         android:id="@+id/DollFilterGrade3" />
                     <CheckBox
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:text="4성"
+                        android:text="4"
                         android:layout_weight="2"
                         android:layout_marginRight="4dp"
                         android:layout_gravity="center"
@@ -156,7 +156,7 @@
                     <CheckBox
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:text="5성"
+                        android:text="5"
                         android:layout_weight="2"
                         android:id="@+id/DollFilterGrade5" />
                     <CheckBox
@@ -189,7 +189,7 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="종류"
+                    android:text="@string/Common_GunType"
                     android:textStyle="bold"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:layout_marginRight="8dp"
@@ -280,7 +280,7 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="개조 가능 여부"
+                    android:text="@string/DollFilterLayout_ModFilterTitle"
                     android:textStyle="bold"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:layout_marginRight="8dp"
@@ -301,13 +301,13 @@
                     <CheckBox
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:text="가능"
+                        android:text="O"
                         android:layout_weight="2"
                         android:id="@+id/DollFilterHasModYes" />
                     <CheckBox
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:text="불가능"
+                        android:text="X"
                         android:layout_weight="2"
                         android:id="@+id/DollFilterHasModNo" />
                     <Space

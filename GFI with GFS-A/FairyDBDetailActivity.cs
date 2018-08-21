@@ -78,7 +78,7 @@ namespace GFI_with_GFS_A
             FABTimer.Stop();
             IsEnableFABMenu = false;
 
-            //RefreshCacheFAB.Hide();
+            RefreshCacheFAB.Hide();
             RefreshCacheFAB.Alpha = 0.3f;
         }
 
@@ -106,7 +106,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                Toast.MakeText(this, "이미지 뷰어 실행 실패!", ToastLength.Long).Show();
+                Toast.MakeText(this, Resource.String.ImageViewer_ActivityOpenError, ToastLength.Long).Show();
             }
         }
 
@@ -189,7 +189,7 @@ namespace GFI_with_GFS_A
                 }
 
                 FindViewById<TextView>(Resource.Id.FairyDBDetailSkillTicket).Text = ((int)FairyInfoDR["OrderConsume"]).ToString();
-                FindViewById<TextView>(Resource.Id.FairyDBDetailSkillCoolTime).Text = ((int)FairyInfoDR["CoolDown"]).ToString() + "턴";
+                FindViewById<TextView>(Resource.Id.FairyDBDetailSkillCoolTime).Text = ((int)FairyInfoDR["CoolDown"]).ToString();
                 FindViewById<TextView>(Resource.Id.FairyDBDetailSkillExplain).Text = (string)FairyInfoDR["SkillExplain"];
 
                 string[] effect = ((string)FairyInfoDR["SkillEffect"]).Split(';');
@@ -229,7 +229,7 @@ namespace GFI_with_GFS_A
 
                     int MaxValue = 0;
 
-                    MaxValue = Int32.Parse((((string)FairyInfoDR[abilities[i]]).Split('/'))[1]);
+                    MaxValue = int.Parse((((string)FairyInfoDR[abilities[i]]).Split('/'))[1]);
 
                     ETC.UpProgressBarProgress(FindViewById<ProgressBar>(Progresses[i]), 0, MaxValue, delay);
                     FindViewById<TextView>(StatusTexts[i]).Text = ((string)FairyInfoDR[abilities[i]]);

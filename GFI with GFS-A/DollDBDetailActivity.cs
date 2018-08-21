@@ -26,6 +26,8 @@ namespace GFI_with_GFS_A
     {
         System.Timers.Timer FABTimer = new System.Timers.Timer();
 
+        internal static Android.Content.Res.Resources resources;
+
         private LinearLayout SkillTableSubLayout;
         private LinearLayout ModSkillTableSubLayout;
 
@@ -67,6 +69,7 @@ namespace GFI_with_GFS_A
                 base.OnCreate(savedInstanceState);
 
                 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY0NkAzMTM2MmUzMjJlMzBmNFFDVVZlU2NDRTVmYVJqQ0ZyOTVPOGhYWnFIazlQNFNPeGVEMU9WMjZnPQ==");
+                resources = Resources;
 
                 if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
 
@@ -174,7 +177,7 @@ namespace GFI_with_GFS_A
             radar2.DrawType = PolarChartDrawType.Line;
             radar2.Color = Android.Graphics.Color.Magenta;
 
-            radar2.Label = DollType + "평균";
+            radar2.Label = string.Format("{0}{1}", DollType, Resources.GetString(Resource.String.DollDBDetail_RadarAverageString));
             radar2.TooltipEnabled = true;
 
             chart.Series.Add(radar2);
@@ -289,7 +292,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                Toast.MakeText(this, "보이스 리스트 초기화 실패", ToastLength.Short).Show();
+                Toast.MakeText(this, Resource.String.VoiceList_InitError, ToastLength.Short).Show();
             }
         }
 
@@ -302,21 +305,21 @@ namespace GFI_with_GFS_A
                 switch (fab.Id)
                 {
                     case Resource.Id.SideLinkNamuWikiFAB:
-                        string uri = "https://namu.wiki/w/" + DollName + "(소녀전선)";
+                        string uri = string.Format("https://namu.wiki/w/{0}(소녀전선)", DollName);
                         var intent = new Intent(this, typeof(WebBrowserActivity));
                         intent.PutExtra("url", uri);
                         StartActivity(intent);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.SideLinkInvenFAB:
-                        string uri2 = "http://gf.inven.co.kr/dataninfo/dolls/detail.php?d=126&c=" + DollDicNum;
+                        string uri2 = string.Format("http://gf.inven.co.kr/dataninfo/dolls/detail.php?d=126&c={0}", DollDicNum);
                         var intent2 = new Intent(this, typeof(WebBrowserActivity));
                         intent2.PutExtra("url", uri2);
                         StartActivity(intent2);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.SideLinkBaseFAB:
-                        string uri3 = "https://girlsfrontline.kr/doll/" + DollDicNum;
+                        string uri3 = string.Format("https://girlsfrontline.kr/doll/{0}", DollDicNum);
                         var intent3 = new Intent(this, typeof(WebBrowserActivity));
                         intent3.PutExtra("url", uri3);
                         StartActivity(intent3);
@@ -393,7 +396,7 @@ namespace GFI_with_GFS_A
                 catch (Exception ex)
                 {
                     ETC.LogError(this, ex.ToString());
-                    ETC.ShowSnackbar(SnackbarLayout, "FAB 작동 실패!", Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                    ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeSubMenuError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
                 }
             }
         }
@@ -403,14 +406,14 @@ namespace GFI_with_GFS_A
             try
             {
                 var DollImageViewer = new Intent(this, typeof(DollDBImageViewer));
-                DollImageViewer.PutExtra("Data", DollName + ";" + ModIndex);
+                DollImageViewer.PutExtra("Data", string.Format("{0};{1}", DollName, ModIndex));
                 StartActivity(DollImageViewer);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "이미지 뷰어 실행 실패!", Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ImageViewer_ActivityOpenError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -468,7 +471,7 @@ namespace GFI_with_GFS_A
                 }
 
                 FindViewById<TextView>(Resource.Id.DollDBDetailDollName).Text = DollName;
-                FindViewById<TextView>(Resource.Id.DollDBDetailDollDicNumber).Text = "No. " + DollDicNum;
+                FindViewById<TextView>(Resource.Id.DollDBDetailDollDicNumber).Text = string.Format("No. {0}", DollDicNum);
                 FindViewById<TextView>(Resource.Id.DollDBDetailDollProductTime).Text = ETC.CalcTime((int)DollInfoDR["ProductTime"]);
 
                 // 인형 기본 정보 초기화
@@ -492,7 +495,7 @@ namespace GFI_with_GFS_A
 
                 FindViewById<TextView>(Resource.Id.DollDBDetailInfoType).Text = (string)DollInfoDR["Type"];
                 FindViewById<TextView>(Resource.Id.DollDBDetailInfoName).Text = DollName;
-                FindViewById<TextView>(Resource.Id.DollDBDetailInfoNickName).Text = "";
+                FindViewById<TextView>(Resource.Id.DollDBDetailInfoNickName).Text = (string)DollInfoDR["NickName"];
                 if (DollInfoDR["Illustrator"] == DBNull.Value) FindViewById<TextView>(Resource.Id.DollDBDetailInfoIllustrator).Text = "";
                 else FindViewById<TextView>(Resource.Id.DollDBDetailInfoIllustrator).Text = (string)DollInfoDR["Illustrator"];
                 if (DollInfoDR["VoiceActor"] == DBNull.Value) FindViewById<TextView>(Resource.Id.DollDBDetailInfoVoiceActor).Text = "";
@@ -548,8 +551,8 @@ namespace GFI_with_GFS_A
 
                 BuffType = Buff[0].Split(',');
 
-                if (BuffType.Length == 1) FindViewById<RelativeLayout>(Resource.Id.DollDBDetailBuffLayout2).Visibility = ViewStates.Gone;
-                else FindViewById<RelativeLayout>(Resource.Id.DollDBDetailBuffLayout2).Visibility = ViewStates.Visible;
+                if (BuffType.Length == 1) FindViewById<LinearLayout>(Resource.Id.DollDBDetailBuffLayout2).Visibility = ViewStates.Gone;
+                else FindViewById<LinearLayout>(Resource.Id.DollDBDetailBuffLayout2).Visibility = ViewStates.Visible;
 
                 for (int i = 0; i < BuffType.Length; ++i)
                 {
@@ -561,37 +564,37 @@ namespace GFI_with_GFS_A
                         case "AC":
                             if (ETC.UseLightTheme == true) id = Resource.Drawable.AC_Icon_WhiteTheme;
                             else id = Resource.Drawable.AC_Icon;
-                            name = "명중";
+                            name = Resources.GetString(Resource.String.Common_AC);
                             break;
                         case "AM":
                             if (ETC.UseLightTheme == true) id = Resource.Drawable.AM_Icon_WhiteTheme;
                             else id = Resource.Drawable.AM_Icon;
-                            name = "장갑";
+                            name = Resources.GetString(Resource.String.Common_AM);
                             break;
                         case "AS":
                             if (ETC.UseLightTheme == true) id = Resource.Drawable.AS_Icon_WhiteTheme;
                             else id = Resource.Drawable.AS_Icon;
-                            name = "공속";
+                            name = Resources.GetString(Resource.String.Common_AS);
                             break;
                         case "CR":
                             if (ETC.UseLightTheme == true) id = Resource.Drawable.CR_Icon_WhiteTheme;
                             else id = Resource.Drawable.CR_Icon;
-                            name = "치명타";
+                            name = Resources.GetString(Resource.String.Common_CR);
                             break;
                         case "EV":
                             if (ETC.UseLightTheme == true) id = Resource.Drawable.EV_Icon_WhiteTheme;
                             else id = Resource.Drawable.EV_Icon;
-                            name = "회피";
+                            name = Resources.GetString(Resource.String.Common_EV);
                             break;
                         case "FR":
                             if (ETC.UseLightTheme == true) id = Resource.Drawable.FR_Icon_WhiteTheme;
                             else id = Resource.Drawable.FR_Icon;
-                            name = "화력";
+                            name = Resources.GetString(Resource.String.Common_FR);
                             break;
                         case "CL":
                             if (ETC.UseLightTheme == true) id = Resource.Drawable.CL_Icon_WhiteTheme;
                             else id = Resource.Drawable.CL_Icon;
-                            name = "쿨타임";
+                            name = Resources.GetString(Resource.String.Common_CL);
                             break;
                         default:
                             break;
@@ -626,8 +629,8 @@ namespace GFI_with_GFS_A
                 string EffectType = (string)DollInfoDR["EffectType"];
 
                 var EffectTypeView = FindViewById<TextView>(Resource.Id.DollDBDetailEffectType);
-                if (EffectType == "ALL") EffectTypeView.Text = "모든 총기 적용";
-                else EffectTypeView.Text = EffectType + " 적용";
+                if (EffectType == "ALL") EffectTypeView.Text = Resources.GetString(Resource.String.DollDBDetail_BuffType_All);
+                else EffectTypeView.Text = string.Format("{0} {1}", EffectType, Resources.GetString(Resource.String.DollDBDetail_BuffType_ConfirmString));
 
 
                 // 인형 스킬 정보 초기화
@@ -664,9 +667,6 @@ namespace GFI_with_GFS_A
                 string[] SkillMags;
                 if (ModIndex == 0 ) SkillMags = ((string)DollInfoDR["SkillMag"]).Split(',');
                 else SkillMags = ((string)DollInfoDR["SkillMagAfterMod"]).Split(',');
-
-                //string[] S_Effect = ((string)DollInfoDR["SkillEffect"]).Split(';');
-                //string[] S_Mag = ((string)DollInfoDR["SkillMag"]).Split(',');
 
                 TextView SkillInitCoolTime = FindViewById<TextView>(Resource.Id.DollDBDetailSkillInitCoolTime);
                 SkillInitCoolTime.SetTextColor(Android.Graphics.Color.Orange);
@@ -802,8 +802,7 @@ namespace GFI_with_GFS_A
 
                     AbilityValues[i] = MaxValue;
 
-                    //ETC.UpProgressBarProgress(FindViewById<ProgressBar>(Progresses[i]), 0, MaxValue, delay);
-                    FindViewById<TextView>(StatusTexts[i]).Text = ((string)DollInfoDR[abilities[i]]).Split('/')[0] + "/" + MaxValue + " (" + AbilityGrade[i] + ")";
+                    FindViewById<TextView>(StatusTexts[i]).Text = string.Format("{0}/{1} ({2})", ((string)DollInfoDR[abilities[i]]).Split('/')[0], MaxValue, AbilityGrade[i]);
                 }
 
                 if ((DollType == "MG") || (DollType == "SG"))
@@ -816,9 +815,8 @@ namespace GFI_with_GFS_A
                     FindViewById<TextView>(Resource.Id.DollInfoBulletProgressMax).Text = FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress).Max.ToString();
 
                     FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress).Progress = Bullet;
-                    //ETC.UpProgressBarProgress(FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress), 0, Bullet, delay);
                     FindViewById<TextView>(Resource.Id.DollInfoBulletStatus).Text = Bullet.ToString();
-                    FindViewById<TextView>(Resource.Id.DollInfoReloadStatus).Text = ReloadTime.ToString() + " 초";
+                    FindViewById<TextView>(Resource.Id.DollInfoReloadStatus).Text = string.Format("{0} {1}", ReloadTime, Resources.GetString(Resource.String.Time_Second));
                 }
                 else
                 {
@@ -844,8 +842,7 @@ namespace GFI_with_GFS_A
                     FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress).SecondaryProgress = MaxValue;
 
                     AbilityValues[5] = MaxValue;
-                    //ETC.UpProgressBarProgress(FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress), 0, Int32.Parse((((string)DollInfoDR["Armor"]).Split('/'))[1]), delay);
-                    FindViewById<TextView>(Resource.Id.DollInfoAMStatus).Text = (string)DollInfoDR["Armor"] + " (" + AbilityGrade[6] + ")";
+                    FindViewById<TextView>(Resource.Id.DollInfoAMStatus).Text = string.Format("{0} ({1})", (string)DollInfoDR["Armor"], AbilityGrade[6]);
                 }
                 else
                 {
@@ -1041,12 +1038,12 @@ namespace GFI_with_GFS_A
             {
                 MaxAbilityList = new ObservableCollection<DollMaxAbility>()
                 {
-                    new DollMaxAbility("체력", AbilityValues[0]),
-                    new DollMaxAbility("화력", AbilityValues[1]),
-                    new DollMaxAbility("회피", AbilityValues[2]),
-                    new DollMaxAbility("명중", AbilityValues[3]),
-                    new DollMaxAbility("공속", AbilityValues[4]),
-                    new DollMaxAbility("장갑", AbilityValues[5])
+                    new DollMaxAbility(resources.GetString(Resource.String.Common_HP), AbilityValues[0]),
+                    new DollMaxAbility(resources.GetString(Resource.String.Common_FR), AbilityValues[1]),
+                    new DollMaxAbility(resources.GetString(Resource.String.Common_EV), AbilityValues[2]),
+                    new DollMaxAbility(resources.GetString(Resource.String.Common_AC), AbilityValues[3]),
+                    new DollMaxAbility(resources.GetString(Resource.String.Common_AS), AbilityValues[4]),
+                    new DollMaxAbility(resources.GetString(Resource.String.Common_AM), AbilityValues[5])
                 };
 
                 int index = 0;
@@ -1075,12 +1072,12 @@ namespace GFI_with_GFS_A
 
                 AvgAbilityList = new ObservableCollection<DollMaxAbility>()
                 {
-                    new DollMaxAbility("체력", ETC.Avg_List[index].HP),
-                    new DollMaxAbility("화력", ETC.Avg_List[index].FR),
-                    new DollMaxAbility("회피", ETC.Avg_List[index].EV),
-                    new DollMaxAbility("명중", ETC.Avg_List[index].AC),
-                    new DollMaxAbility("공속", ETC.Avg_List[index].AS),
-                    new DollMaxAbility("장갑", ETC.Avg_List[index].AM)
+                    new DollMaxAbility(resources.GetString(Resource.String.Common_HP), ETC.Avg_List[index].HP),
+                    new DollMaxAbility(resources.GetString(Resource.String.Common_FR), ETC.Avg_List[index].FR),
+                    new DollMaxAbility(resources.GetString(Resource.String.Common_EV), ETC.Avg_List[index].EV),
+                    new DollMaxAbility(resources.GetString(Resource.String.Common_AC), ETC.Avg_List[index].AC),
+                    new DollMaxAbility(resources.GetString(Resource.String.Common_AS), ETC.Avg_List[index].AS),
+                    new DollMaxAbility(resources.GetString(Resource.String.Common_AM), ETC.Avg_List[index].AM)
                 };
             }
         }

@@ -43,7 +43,7 @@ namespace GFI_with_GFS_A
             SupportActionBar.SetHomeButtonEnabled(true);
             if (ETC.UseLightTheme == true) SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.CalcIcon_WhiteTheme);
             else SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.CalcIcon);
-            SupportActionBar.Title = "작전보고서 계산기";
+            SupportActionBar.Title = Resources.GetString(Resource.String.TitleName_ExpItemCalc);
 
             ft = FragmentManager.BeginTransaction();
 
@@ -67,15 +67,15 @@ namespace GFI_with_GFS_A
                 {
                     case Resource.Id.CalcNavigation_ExpItem:
                         ft.Replace(Resource.Id.CalcFragmentContainer, ExpItemCalc_F, "ExpItemCalc");
-                        title = "작전보고서 계산기";
+                        title = Resources.GetString(Resource.String.TitleName_ExpItemCalc);
                         break;
                     case Resource.Id.CalcNavigation_Core:
                         ft.Replace (Resource.Id.CalcFragmentContainer, CoreCalc_F, "CoreCalc");
-                        title = "코어 계산기";
+                        title = Resources.GetString(Resource.String.TitleName_CoreCalc);
                         break;
                     case Resource.Id.CalcNavigation_SkillTraining:
                         ft.Replace(Resource.Id.CalcFragmentContainer, SkillTrainingCalc_F, "SkillTraining");
-                        title = "훈련-스킬칩 계산기";
+                        title = Resources.GetString(Resource.String.TitleName_SkillTrainingCalc);
                         break;
                 }
 
@@ -87,7 +87,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                Toast.MakeText(this, "Change Mode Error", ToastLength.Short).Show();
+                Toast.MakeText(this, Resource.String.ChangeMode_Error, ToastLength.Short).Show();
             }
         }
 
@@ -116,6 +116,7 @@ namespace GFI_with_GFS_A
         private View v;
 
         private readonly int[] LevelExp = { 0, 100, 300, 600, 1000, 1500, 2100, 2800, 3600, 4500, 5500, 6600, 7800, 9100, 10500, 12000, 13600, 15300, 17100, 19000, 21000, 23100, 25300, 27600, 30000, 32500, 35100, 37900, 41000, 44400, 48600, 53200, 58200, 63600, 69400, 75700, 82400, 89600, 97300, 105500, 114300, 123600, 133500, 144000, 155100, 166900, 179400, 192500, 206400, 221000, 236400, 252500, 269400, 287100, 305700, 325200, 345600, 366900, 389200, 412500, 436800, 462100, 488400, 515800, 544300, 573900, 604700, 636700, 669900, 704300, 749400, 796200, 844800, 895200, 947400, 1001400, 1057300, 1115200, 1175000, 1236800, 1300700, 1366700, 1434800, 1505100, 1577700, 1652500, 1729600, 1809100, 1891000, 1975300, 2087900, 2204000, 2323500, 2446600, 2573300, 2703700, 2837800, 2975700, 3117500, 3263200, 3363200, 3483200, 3623200, 3783200, 3963200, 4163200, 4383200, 4623200, 4903200, 5263200, 5743200, 6383200, 7283200, 8483200, 10083200, 12283200, 15283200, 19283200, 24283200, 30283200 };
+        private readonly int[] LevelExp_Fairy = { 0, 300, 600, 900, 1200, 1500, 1800, 2100, 2400, 2700, 3000, 3300, 3600, 3900, 4200, 4500, 4800, 5100, 5500, 6000, 6500, 7100, 8000, 9000, 10000, 11000, 12200, 13400, 14700, 16000, 17500, 18900, 20500, 22200, 23900, 25700, 27600, 29500, 31600, 33700, 35900, 38200, 40500, 43000, 45500, 48200, 50900, 53700, 56600, 59600, 62700, 65900, 69200, 72600, 76000, 79600, 83300, 87000, 90900, 94900, 99000, 103100, 107400, 111800, 116300, 120900, 125600, 130400, 135300, 140400, 145500, 150800, 156100, 161600, 167200, 172900, 178700, 184700, 190700, 196900, 202300, 209600, 216100, 222800, 229600, 236500, 243500, 250600, 257900, 265300, 272800, 280400, 288200, 296100, 304100, 312300, 320600, 329000, 337500, 357000 };
 
         private CheckBox ApplyMODModeCheckBox;
         private CheckBox ApplyVowCheckBox;
@@ -249,12 +250,12 @@ namespace GFI_with_GFS_A
                         break;
                 }
 
-                Result.Text = RequireExpItem + "장 / " + SurplusExp + " Exp";
+                Result.Text = string.Format("{0}{1} / {2} Exp", RequireExpItem, Resources.GetString(Resource.String.ExpItemCalc_ItemCount), SurplusExp);
             }
             catch (Exception ex)
             {
                 ETC.LogError(Activity, ex.ToString());
-                Toast.MakeText(Activity, "내부 계산 오류", ToastLength.Short).Show();
+                Toast.MakeText(Activity, Resource.String.InternalCalc_Error, ToastLength.Short).Show();
             }
         }
     }
@@ -336,12 +337,14 @@ namespace GFI_with_GFS_A
                     RequireDollCount += LevelLink_DollCount[start + i];
                 }
 
-                Result.Text = (RequireDollCount * GradeLinkCore[grade - 2]) + "개";
+                int ResultCore = RequireDollCount * GradeLinkCore[grade - 2];
+
+                Result.Text = string.Format("{0}{1}", ResultCore, Resources.GetString(Resource.String.CoreCalc_ItemCount));
             }
             catch (Exception ex)
             {
                 ETC.LogError(Activity, ex.ToString());
-                Toast.MakeText(Activity, "내부 계산 오류", ToastLength.Long).Show();
+                Toast.MakeText(Activity, Resource.String.InternalCalc_Error, ToastLength.Long).Show();
             }
         }
     }
@@ -447,16 +450,16 @@ namespace GFI_with_GFS_A
                             break;
                     }
 
-                    TimeCount += Int32.Parse(Time[i - 1]);
+                    TimeCount += int.Parse(Time[i - 1]);
                 }
 
-                Result_Chip.Text = ItemCount[0] + " / " + ItemCount[1] + " / " + ItemCount[2];
-                Result_Time.Text = TimeCount + " 시간";
+                Result_Chip.Text = string.Format("{0} / {1} / {2}",ItemCount[0], ItemCount[1], ItemCount[2]);
+                Result_Time.Text = string.Format("{0} {1}", TimeCount, Resources.GetString(Resource.String.Time_Hour));
             }
             catch (Exception ex)
             {
                 ETC.LogError(Activity, ex.ToString());
-                Toast.MakeText(Activity, "내부 계산 오류", ToastLength.Long).Show();
+                Toast.MakeText(Activity, Resource.String.InternalCalc_Error, ToastLength.Long).Show();
             }
         }
     }

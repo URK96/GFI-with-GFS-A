@@ -13,7 +13,6 @@
     <RootNamespace>GFI_with_GFS_A</RootNamespace>
     <AssemblyName>GFI with GFS-A</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <AndroidUseAapt2>True</AndroidUseAapt2>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -188,6 +187,7 @@
     <Compile Include="ProductResultActivity.cs" />
     <Compile Include="ProductSimulatorActivity.cs" />
     <Compile Include="ProductSimulatorCategorySelectActivity.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="TestActivity.cs" />
     <Compile Include="WebBrowserActivity.cs" />
     <Compile Include="EventActivity.cs" />
@@ -198,7 +198,6 @@
     <Compile Include="HiddenSettingActivity.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="OldGFDViewer.cs" />
-    <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="RFBotMainActivity.cs" />
     <Compile Include="SettingActivity.cs" />
     <Compile Include="SplashScreen.cs" />

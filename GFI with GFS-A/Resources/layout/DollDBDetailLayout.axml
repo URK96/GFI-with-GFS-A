@@ -50,7 +50,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text=""
                     android:gravity="center"
                     android:layout_marginBottom="2dp"
                     android:id="@+id/DollDBDetailDollDicNumber" />
@@ -58,7 +57,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text=""
                     android:gravity="center"
                     android:layout_marginTop="2dp"
                     android:layout_marginBottom="2dp"
@@ -66,7 +64,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=""
                     android:gravity="center"
                     android:layout_marginTop="2dp"
                     android:id="@+id/DollDBDetailDollProductTime" />
@@ -92,7 +89,7 @@
                         android:layout_width="20dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="재생"
+                        android:text="@string/Common_Play"
                         android:id="@+id/DollDBDetailVoicePlayButton" />
                 </LinearLayout>
                 <ProgressBar
@@ -147,7 +144,7 @@
                 android:layout_gravity="center"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/DollDBDetailModSelectLayout"
-                android:text="SD 애니메이션 (Beta)"
+                android:text="@string/DollDBDetailLayout_SDAnimationButtonText"
                 android:id="@+id/DollDBDetailSDAnimationButton" />
         </RelativeLayout>
     <!--Scroll Part-->
@@ -186,7 +183,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="등급"
+                                android:text="@string/Common_Grade"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -248,7 +245,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="총기 종류"
+                                android:text="@string/Common_GunType"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -276,7 +273,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="이름"
+                                android:text="@string/Common_Name"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -304,7 +301,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="별명"
+                                android:text="@string/Common_NickName"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -332,7 +329,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="실제 총기"
+                                android:text="@string/Common_RealGunModel"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -360,7 +357,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="출신 국가"
+                                android:text="@string/Common_ProductCountry"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -388,7 +385,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="일러스트"
+                                android:text="@string/Common_Illustrator"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -416,7 +413,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="성우"
+                                android:text="@string/Common_VoiceActor"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -444,7 +441,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="획득 방법"
+                                android:text="@string/Common_HowToGain"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -590,7 +587,8 @@
                                     android:gravity="center"
                                     android:id="@+id/DollDBDetailBuffDetail1" />
                             </LinearLayout>
-                            <RelativeLayout
+                            <LinearLayout
+								android:orientation="horizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
@@ -605,7 +603,6 @@
                                     android:layout_height="match_parent"
                                     android:textSize="10dp"
                                     android:gravity="center"
-                                    android:layout_below="@id/DollDBDetailBuffIcon2"
                                     android:id="@+id/DollDBDetailBuffName2" />
                                 <TextView
                                     android:layout_width="match_parent"
@@ -613,7 +610,7 @@
                                     android:gravity="center"
                                     android:layout_toRightOf="@id/DollDBDetailBuffIcon2"
                                     android:id="@+id/DollDBDetailBuffDetail2" />
-                            </RelativeLayout>
+                            </LinearLayout>
                         <!--Doll Buff Part - Doll Buff Detail - Buff Type-->
                             <LinearLayout
                                 android:orientation="horizontal"
@@ -669,7 +666,6 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:text="기습공격"
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:gravity="center"
                                     android:id="@+id/DollDBDetailSkillName" />
@@ -733,7 +729,6 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="예시 설명"
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:gravity="center"
                                 android:id="@+id/DollDBDetailSkillExplain" />
@@ -756,14 +751,14 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:text="효과"
+                                    android:text="@string/Common_Effect"
                                     android:id="@+id/DollDBDetailSkillAbilityTopText1" />
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:text="비율"
+                                    android:text="@string/Common_Mag"
                                     android:id="@+id/DollDBDetailSkillAbilityTopText2" />
                             </LinearLayout>
                             <LinearLayout
@@ -816,7 +811,6 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:text=""
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:gravity="center"
                                     android:id="@+id/DollDBDetailModSkillName" />
@@ -832,7 +826,6 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="예시 설명"
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:gravity="center"
                                 android:id="@+id/DollDBDetailModSkillExplain" />
@@ -855,14 +848,14 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:text="효과"
+                                    android:text="@string/Common_Effect"
                                     android:id="@+id/DollDBDetailModSkillAbilityTopText1" />
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:text="비율"
+                                    android:text="@string/Common_Mag"
                                     android:id="@+id/DollDBDetailModSkillAbilityTopText2" />
                             </LinearLayout>
                             <LinearLayout
@@ -897,7 +890,7 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="10dp"
                             android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:text="# 최대 능력치는 MAX레벨, 호감도에 따른 능력치 상승 미적용 값입니다 #"
+                            android:text="@string/DollDBDetailLayout_AbilityCaution"
                             android:gravity="center" />
                         <LinearLayout
                             android:orientation="horizontal"
@@ -905,11 +898,10 @@
                             android:layout_height="50dp"
                             android:id="@+id/DollInfoHPLayout">
                             <TextView
-                                android:text="HP"
+                                android:text="@string/Common_HP"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -969,11 +961,10 @@
                             android:layout_height="50dp"
                             android:id="@+id/DollInfoFRLayout">
                             <TextView
-                                android:text="화력"
+                                android:text="@string/Common_FR"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -1033,11 +1024,10 @@
                             android:layout_height="50dp"
                             android:id="@+id/DollInfoEVLayout">
                             <TextView
-                                android:text="회피"
+                                android:text="@string/Common_EV"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -1097,11 +1087,10 @@
                             android:layout_height="50dp"
                             android:id="@+id/DollInfoACLayout">
                             <TextView
-                                android:text="명중"
+                                android:text="@string/Common_AC"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -1161,11 +1150,10 @@
                             android:layout_height="50dp"
                             android:id="@+id/DollInfoASLayout">
                             <TextView
-                                android:text="공속"
+                                android:text="@string/Common_AS"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -1226,11 +1214,10 @@
                             android:id="@+id/DollInfoBulletLayout"
                             android:visibility="gone">
                             <TextView
-                                android:text="탄약"
+                                android:text="@string/Common_Ammo"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -1291,11 +1278,10 @@
                             android:id="@+id/DollInfoAMLayout"
                             android:visibility="gone">
                             <TextView
-                                android:text="장갑"
+                                android:text="@string/Common_AM"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -1356,11 +1342,10 @@
                             android:id="@+id/DollInfoReloadLayout"
                             android:visibility="gone">
                             <TextView
-                                android:text="재장전"
+                                android:text="@string/Common_Reload"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -1373,7 +1358,7 @@
                                 android:layout_marginRight="5dp"
                                 android:background="@drawable/seperatebar_vertical" />
                             <TextView
-                                android:text="0 초"
+                                android:text="0 sec"
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"

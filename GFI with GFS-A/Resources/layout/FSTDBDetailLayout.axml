@@ -45,7 +45,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text=""
                     android:gravity="center"
                     android:layout_marginBottom="2dp"
                     android:id="@+id/FSTDBDetailFSTDicNumber" />
@@ -53,7 +52,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text=""
                     android:gravity="center"
                     android:layout_marginTop="2dp"
                     android:layout_marginBottom="2dp"
@@ -61,7 +59,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=""
                     android:gravity="center"
                     android:layout_marginTop="2dp"
                     android:id="@+id/FSTDBDetailFSTProductTime" />
@@ -77,7 +74,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="등급" />
+                    android:text="@string/Common_Grade" />
                 <RatingBar
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -97,7 +94,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="버전업" />
+                    android:text="@string/Common_VersionUpGrade" />
                 <RatingBar
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -142,7 +139,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="중화기 종류"
+                                android:text="@string/Common_FSTType"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -170,7 +167,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="이름"
+                                android:text="@string/Common_Name"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -198,7 +195,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="별명"
+                                android:text="@string/Common_NickName"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -226,7 +223,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="실제 중화기"
+                                android:text="@string/Common_RealGunModel"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -254,7 +251,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="출신 국가"
+                                android:text="@string/Common_ProductCountry"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -282,7 +279,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="일러스트"
+                                android:text="@string/Common_Illustrator"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -310,7 +307,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="성우"
+                                android:text="@string/Common_VoiceActor"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -338,7 +335,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="획득 방법"
+                                android:text="@string/Common_HowToGain"
                                 android:gravity="center" />
                             <View
                                 android:layout_width="5px"
@@ -488,7 +485,6 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:text="기습공격"
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:gravity="center"
                                     android:id="@+id/FSTDBDetailSkillName1" />
@@ -552,7 +548,6 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="예시 설명"
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:gravity="center"
                                 android:id="@+id/FSTDBDetailSkillExplain1" />
@@ -575,14 +570,14 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:text="효과"
+                                    android:text="@string/Common_Effect"
                                     android:id="@+id/FSTDBDetailSkillAbilityTopText11" />
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:text="비율"
+                                    android:text="@string/Common_Mag"
                                     android:id="@+id/FSTDBDetailSkillAbilityTopText12" />
                             </LinearLayout>
                             <LinearLayout
@@ -634,7 +629,6 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:text="기습공격"
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:gravity="center"
                                     android:id="@+id/FSTDBDetailSkillName2" />
@@ -698,7 +692,6 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="예시 설명"
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:gravity="center"
                                 android:id="@+id/FSTDBDetailSkillExplain2" />
@@ -721,14 +714,14 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:text="효과"
+                                    android:text="@string/Common_Effect"
                                     android:id="@+id/FSTDBDetailSkillAbilityTopText21" />
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:text="비율"
+                                    android:text="@string/Common_Mag"
                                     android:id="@+id/FSTDBDetailSkillAbilityTopText22" />
                             </LinearLayout>
                             <LinearLayout
@@ -780,7 +773,6 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:text="기습공격"
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:gravity="center"
                                     android:id="@+id/FSTDBDetailSkillName3" />
@@ -844,7 +836,6 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="예시 설명"
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:gravity="center"
                                 android:id="@+id/FSTDBDetailSkillExplain3" />
@@ -867,14 +858,14 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:text="효과"
+                                    android:text="@string/Common_Effect"
                                     android:id="@+id/FSTDBDetailSkillAbilityTopText31" />
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:text="비율"
+                                    android:text="@string/Common_Mag"
                                     android:id="@+id/FSTDBDetailSkillAbilityTopText32" />
                             </LinearLayout>
                             <LinearLayout
@@ -929,11 +920,10 @@
                             android:layout_height="50dp"
                             android:id="@+id/FSTInfoKillLayout">
                             <TextView
-                                android:text="살상"
+                                android:text="@string/Common_Kill"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -993,11 +983,10 @@
                             android:layout_height="50dp"
                             android:id="@+id/FSTInfoCrushLayout">
                             <TextView
-                                android:text="파쇄"
+                                android:text="@string/Common_Crush"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -1057,11 +1046,10 @@
                             android:layout_height="50dp"
                             android:id="@+id/FSTInfoACLayout">
                             <TextView
-                                android:text="정밀"
+                                android:text="@string/Common_AC2"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />
@@ -1121,11 +1109,10 @@
                             android:layout_height="50dp"
                             android:id="@+id/FSTInfoRLLayout">
                             <TextView
-                                android:text="장전"
+                                android:text="@string/Common_Reload2"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/textView1"
                                 android:gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_weight="1" />

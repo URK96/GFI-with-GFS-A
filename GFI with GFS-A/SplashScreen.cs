@@ -38,6 +38,7 @@ namespace GFI_with_GFS_A
 
                 ETC.sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
                 PreferenceEditor = ETC.sharedPreferences.Edit();
+                ETC.Resources = Resources;
 
                 ETC.UseLightTheme = ETC.sharedPreferences.GetBoolean("UseLightTheme", false);
 
@@ -141,7 +142,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "앗···! 앱 초기화 실패!", Snackbar.LengthIndefinite, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.InitLoad_Error, Snackbar.LengthIndefinite, Android.Graphics.Color.DarkRed);
             }
             finally
             {
@@ -181,7 +182,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "권한 부여 실패", Snackbar.LengthIndefinite, Android.Graphics.Color.DarkMagenta);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Permission_Error, Snackbar.LengthIndefinite, Android.Graphics.Color.DarkMagenta);
             }
         }
 
@@ -191,7 +192,7 @@ namespace GFI_with_GFS_A
 
             if (grantResults[0] == Permission.Denied)
             {
-                Toast.MakeText(this, "해당 권한을 허용하지 않으면 소전사전을 정상적으로 이용하실 수 없습니다.", ToastLength.Short).Show();
+                Toast.MakeText(this, Resource.String.PermissionDeny_Message, ToastLength.Short).Show();
                 FinishAffinity();
             }
             else
@@ -226,12 +227,12 @@ namespace GFI_with_GFS_A
             ExitDialog.SetTitle(Resource.String.Main_CheckExitTitle);
             ExitDialog.SetMessage(Resource.String.Main_CheckExit);
             ExitDialog.SetCancelable(true);
-            ExitDialog.SetPositiveButton("종료", delegate
+            ExitDialog.SetPositiveButton(Resource.String.AlertDialog_Exit, delegate
             {
                 FinishAffinity();
                 Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
             });
-            ExitDialog.SetNegativeButton("취소", delegate { });
+            ExitDialog.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
             ExitDialog.Show();
         }
     }
