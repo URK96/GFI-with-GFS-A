@@ -53,6 +53,18 @@
             android:dividerHeight="2dp"
             android:id="@+id/EquipDBListView" />
     </LinearLayout>
+	<android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/refresh"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="145dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:backgroundTint="@color/FABColor"
+        app:fabSize="auto"
+        app:rippleColor="#FF80AB"
+        android:id="@+id/EquipRefreshCacheFAB" />
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

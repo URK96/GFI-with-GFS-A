@@ -30,6 +30,7 @@ namespace GFI_with_GFS_A
         internal static int DialogBG_Vertical = 0;
         internal static int DialogBG_Download = 0;
         internal static bool HasEvent = false;
+        internal static bool ServerStatusError = false;
 
         internal static DataTable DollList = new DataTable();
         internal static DataTable EquipmentList = new DataTable();
@@ -403,6 +404,8 @@ namespace GFI_with_GFS_A
         //ProgressDialog 교체
         internal static async Task UpdateDB(Activity activity)
         {
+            if (ServerStatusError == true) return;
+
             string[] DBFiles = 
             {
                 "Doll.gfs",
@@ -570,6 +573,42 @@ namespace GFI_with_GFS_A
         internal static string CalcTime(int minute)
         {
             return string.Format("{0} : {1}", (minute / 60), (minute % 60).ToString("D2"));
+        }
+
+        internal static void CheckServerStatus()
+        {
+            WebRequest request = WebRequest.Create(Server);
+            request.Timeout = 5000;
+            
+            try
+            {
+                request.GetResponse();
+            }
+            catch (Exception)
+            {
+                ServerStatusError = true;
+                return;
+            }
+
+            ServerStatusError = false;
+        }
+
+        internal static async Task CheckServerStatusAsync()
+        {
+            WebRequest request = WebRequest.Create(Server);
+            request.Timeout = 5000;
+
+            try
+            {
+                await request.GetResponseAsync();
+            }
+            catch (Exception)
+            {
+                ServerStatusError = true;
+                return;
+            }
+
+            ServerStatusError = false;
         }
 
         internal class ADViewListener : Android.Gms.Ads.AdListener

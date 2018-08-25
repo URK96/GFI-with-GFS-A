@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/DollDBDetailSmallImageLayout"
                 android:layout_margin="10dp"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:id="@+id/DollDBDetailVoiceLayout">
                 <LinearLayout
                     android:orientation="horizontal"
@@ -106,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_below="@id/DollDBDetailVoiceLayout"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:id="@+id/DollDBDetailModSelectLayout">
                 <LinearLayout
                     android:orientation="horizontal"
@@ -138,14 +138,30 @@
                         android:id="@+id/DollDBDetailModSelect3" />
                 </LinearLayout>
             </LinearLayout>
+			<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/DollDBDetailModSelectLayout"
+				android:visibility="gone"
+				android:id="@+id/DollDBDetailExtraButtonLayout">
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/DollDBDetailModSelectLayout"
+				android:layout_weight="1"
+				android:layout_marginLeft="5dp"
+				android:layout_marginRight="5dp"
                 android:text="@string/DollDBDetailLayout_SDAnimationButtonText"
                 android:id="@+id/DollDBDetailSDAnimationButton" />
+				<Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:layout_marginLeft="5dp"
+				android:layout_marginRight="5dp"
+                android:text="@string/DollDBDetailLayout_ModelData"
+                android:id="@+id/DollDBDetailModelDataButton" />
+				</LinearLayout>
         </RelativeLayout>
     <!--Scroll Part-->
         <ScrollView

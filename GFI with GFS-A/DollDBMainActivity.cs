@@ -33,6 +33,7 @@ namespace GFI_with_GFS_A
         private bool[] Filter_Type = { true, true, true, true, true, true };
         private int[] Filter_ProductTime = { 0, 0, 0 };
         private bool[] Filter_Mod = { true, true };
+        private bool CanRefresh = false;
 
         private enum LineUp { Name, Number, ProductTime }
         private LineUp LineUpStyle = LineUp.Name;
@@ -47,6 +48,7 @@ namespace GFI_with_GFS_A
         private ProgressBar nowProgressBar = null;
         private TextView totalProgress = null;
         private TextView nowProgress = null;
+        private FloatingActionButton refresh_fab = null;
         private FloatingActionButton filter_fab = null;
         private FloatingActionButton array_fab = null;
 
@@ -62,6 +64,8 @@ namespace GFI_with_GFS_A
                 SetContentView(Resource.Layout.DollDBListLayout);
 
                 SetTitle(Resource.String.DollDBMainActivity_Title);
+
+                CanRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
                 mDollListView = FindViewById<ListView>(Resource.Id.DollDBListView);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBSnackbarLayout);
@@ -102,10 +106,12 @@ namespace GFI_with_GFS_A
                 switch (e.ScrollState)
                 {
                     case ScrollState.TouchScroll:
+                        if (CanRefresh == true) refresh_fab.Hide();
                         filter_fab.Hide();
                         array_fab.Hide();
                         break;
                     case ScrollState.Idle:
+                        if (CanRefresh == true) refresh_fab.Show();
                         filter_fab.Show();
                         array_fab.Show();
                         break;
@@ -174,7 +180,7 @@ namespace GFI_with_GFS_A
             sb.AppendFormat("{0} : {1}\n\n", Resources.GetString(Resource.String.Common_Buff), buff_sb.ToString());
             sb.AppendFormat("{0} : {1}", Resources.GetString(Resource.String.Common_Skill),(string)dr["Skill"]);
 
-            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this);
+            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
             ad.SetTitle("<No. " + (int)dr["DicNumber"] + "> " + (string)dr["Name"]);
             ad.SetCancelable(true);
             ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
@@ -184,6 +190,13 @@ namespace GFI_with_GFS_A
 
         private void InitializeView()
         {
+            refresh_fab = FindViewById<FloatingActionButton>(Resource.Id.DollRefreshCacheFAB);
+            if (CanRefresh == false) refresh_fab.Hide();
+            else
+            {
+                if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate { ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(DollCropImageDownloadProcess)); };
+            }
+
             filter_fab = FindViewById<FloatingActionButton>(Resource.Id.DollFilterFAB);
             if (filter_fab.HasOnClickListeners == false) filter_fab.Click += Filter_Fab_Click;
 
@@ -571,36 +584,6 @@ namespace GFI_with_GFS_A
             }
 
             return false;
-        }
-
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            try
-            {
-                MenuInflater.Inflate(Resource.Menu.DollDBMenu, menu);
-
-                if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true) menu.FindItem(Resource.Id.RefreshDollCropImageCache).SetVisible(true);
-                else menu.FindItem(Resource.Id.RefreshDollCropImageCache).SetVisible(false);
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(this, ex.ToString());
-                Toast.MakeText(this, Resource.String.Activity_LoadFail, ToastLength.Short).Show();
-            }
-
-            return true;
-        }
-
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            switch (item.ItemId)
-            {
-                case Resource.Id.RefreshDollCropImageCache:
-                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(DollCropImageDownloadProcess));
-                    break;
-            }
-
-            return true;
         }
 
         public override void OnBackPressed()

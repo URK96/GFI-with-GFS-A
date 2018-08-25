@@ -1,5 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <!--New String-->
+  <string name="DollDBDetailLayout_ModelData">총기 제원</string>
+  
+  <string name="Common_ExpItem">작전보고서</string>
+  <string name="Common_Core">대체코어</string>
+  <string name="Common_SkillTraining">스킬 훈련</string>
+  <string name="Common_FSTGradeUp">FST 등급</string>
+  
+  <string name="Calc_ExpItem_FSTTrainerLevelSettingText">* 훈련장 레벨 설정 *</string>
+  <string name="Calc_ExpItem_TotalResultBatteryText">* 필요한 전지 수량 *</string>
+  <string name="Calc_ExpItem_TotalResultTimeText">* 총 소요 시간 *</string>
+  <string name="Calc_FSTGradeUp_ResultFragmentText">* 필요한 조각 *</string>
+  <string name="Calc_FSTGradeUp_ResultDataPatchText">* 필요한 데이터 패치 *</string>
+  <string name="Calc_FSTGradeUp_NowGradeSelectorTitle">* 현재 등급 *</string>
+  <string name="Calc_FSTGradeUp_TargetGradeSelectorTitle">* 목표 등급 *</string>
   
   <!--Solution String-->
   <string name="CheckingUpdate">업데이트 확인 중...</string>
@@ -156,7 +171,7 @@
   <string name="Common_Now">현재</string>
   <string name="Common_Total">전체</string>
   <string name="Common_Input">입력</string>
-  
+
   <!--Common Dialog String-->
   <string name="AlertDialog_Confirm">확인</string>
   <string name="AlertDialog_Download">다운로드</string>
@@ -170,6 +185,7 @@
   <string name="TitleName_ExpItemCalc">작전보고서 계산기</string>
   <string name="TitleName_CoreCalc">코어 계산기</string>
   <string name="TitleName_SkillTrainingCalc">훈련-스킬칩 계산기</string>
+  <string name="TitleName_FSTGradeUpCalc">FST 등급 계산기</string>
   <string name="ExpItemCalc_ItemCount">장</string>
   <string name="CoreCalc_ItemCount">개</string>
   <string name="ChangeMode_Error">항목 변경 오류</string>

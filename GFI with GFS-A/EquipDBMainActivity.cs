@@ -33,6 +33,7 @@ namespace GFI_with_GFS_A
         private bool[] Filter_Grade = { true, true, true, true, true };
         private bool[] Filter_Category = { true, true, true};
         private int[] Filter_ProductTime = { 0, 0, 0 };
+        private bool CanRefresh = false;
 
         private ListView mEquipListView = null;
         private CoordinatorLayout SnackbarLayout = null;
@@ -44,6 +45,7 @@ namespace GFI_with_GFS_A
         private ProgressBar nowProgressBar = null;
         private TextView totalProgress = null;
         private TextView nowProgress = null;
+        private FloatingActionButton refresh_fab = null;
         private FloatingActionButton filter_fab = null;
         private FloatingActionButton array_fab = null;
 
@@ -59,6 +61,8 @@ namespace GFI_with_GFS_A
                 SetContentView(Resource.Layout.EquipDBListLayout);
 
                 SetTitle(Resource.String.EquipDBMainActivity_Title);
+
+                CanRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
                 mEquipListView = FindViewById<ListView>(Resource.Id.EquipDBListView);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EquipDBSnackbarLayout);
@@ -98,10 +102,12 @@ namespace GFI_with_GFS_A
                 switch (e.ScrollState)
                 {
                     case ScrollState.TouchScroll:
+                        if (CanRefresh == true) refresh_fab.Hide();
                         filter_fab.Hide();
                         array_fab.Hide();
                         break;
                     case ScrollState.Idle:
+                        if (CanRefresh == true) refresh_fab.Hide();
                         filter_fab.Show();
                         array_fab.Show();
                         break;
@@ -125,6 +131,13 @@ namespace GFI_with_GFS_A
 
         private void InitializeView()
         {
+            refresh_fab = FindViewById<FloatingActionButton>(Resource.Id.EquipRefreshCacheFAB);
+            if (CanRefresh == false) refresh_fab.Hide();
+            else
+            {
+                if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate { ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EquipCropImageDownloadProcess)); };
+            }
+
             filter_fab = FindViewById<FloatingActionButton>(Resource.Id.EquipFilterFAB);
             if (filter_fab.HasOnClickListeners == false) filter_fab.Click += Filter_fab_Click;
 
@@ -501,36 +514,6 @@ namespace GFI_with_GFS_A
             }
 
             return false;
-        }
-
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            try
-            {
-                MenuInflater.Inflate(Resource.Menu.EquipDBMenu, menu);
-
-                if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true) menu.FindItem(Resource.Id.RefreshEquipCropImageCache).SetVisible(true);
-                else menu.FindItem(Resource.Id.RefreshEquipCropImageCache).SetVisible(false);
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(this, ex.ToString());
-                Toast.MakeText(this, Resource.String.Activity_LoadFail, ToastLength.Short).Show();
-            }
-
-            return true;
-        }
-
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            switch (item.ItemId)
-            {
-                case Resource.Id.RefreshEquipCropImageCache:
-                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EquipCropImageDownloadProcess));
-                    break;
-            }
-
-            return true;
         }
 
         public override void OnBackPressed()

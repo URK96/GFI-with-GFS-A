@@ -50,6 +50,7 @@ namespace GFI_with_GFS_A
         private ProgressBar InitLoadProgressBar;
         private Spinner VoiceSelector;
         private Button VoicePlayButton;
+        private Button ModelDataButton;
         private FloatingActionButton RefreshCacheFAB;
         private FloatingActionButton PercentTableFAB;
         private FloatingActionButton MainFAB;
@@ -88,8 +89,8 @@ namespace GFI_with_GFS_A
                 SkillTableSubLayout = FindViewById<LinearLayout>(Resource.Id.DollDBDetailSkillAbilitySubLayout);
                 ModSkillTableSubLayout = FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSkillAbilitySubLayout);
 
-                if ((bool)DollInfoDR["HasMod"] == false) FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSelectLayout).Visibility = ViewStates.Gone;
-                else
+                
+                if ((bool)DollInfoDR["HasMod"] == true)
                 {
                     foreach (int id in ModButtonIds)
                     {
@@ -102,10 +103,17 @@ namespace GFI_with_GFS_A
 
                 FindViewById<ImageView>(Resource.Id.DollDBDetailSmallImage).Click += DollDBDetailSmallImage_Click;
 
-                VoiceSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailVoiceSelector);
-                InitializeVoiceList();
-                VoicePlayButton = FindViewById<Button>(Resource.Id.DollDBDetailVoicePlayButton);
-                VoicePlayButton.Click += VoicePlayButton_Click;
+                
+                if ((bool)DollInfoDR["HasVoice"] == true)
+                {
+                    VoiceSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailVoiceSelector);
+                    VoicePlayButton = FindViewById<Button>(Resource.Id.DollDBDetailVoicePlayButton);
+                    VoicePlayButton.Click += VoicePlayButton_Click;
+                    InitializeVoiceList();
+                }
+
+                ModelDataButton = FindViewById<Button>(Resource.Id.DollDBDetailModelDataButton);
+                ModelDataButton.Click += ModelDataButton_Click;
 
                 ScrollLayout = FindViewById<ScrollView>(Resource.Id.DollDBDetailScrollLayout);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBDetailSnackbarLayout);
@@ -135,6 +143,34 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(this, ex.ToString());
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
+            }
+        }
+
+        private void ModelDataButton_Click(object sender, EventArgs e)
+        {
+            string FileName = string.Format("{0}.txt", DollDicNum);
+            string data = "";
+
+            try
+            {
+                Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
+                ad.SetTitle(Resource.String.DollDBDetailLayout_ModelData);
+                ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
+
+                Task.Run(async () =>
+                {
+                    using (WebClient wc = new WebClient())
+                    {
+                        data = await wc.DownloadStringTaskAsync(Path.Combine(ETC.Server, "Data", "Text", "Gun", "ModelData", FileName));
+                    }
+                }).Wait();
+
+                ad.SetMessage(data);
+                ad.Show();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
             }
         }
 
@@ -277,12 +313,6 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                if ((bool)DollInfoDR["HasVoice"] == false)
-                {
-                    FindViewById<LinearLayout>(Resource.Id.DollDBDetailVoiceLayout).Visibility = ViewStates.Gone;
-                    return;
-                }
-                
                 VoiceList = ((string)DollInfoDR["Voices"]).Split(';');
 
                 var adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, VoiceList);
@@ -425,6 +455,11 @@ namespace GFI_with_GFS_A
 
             try
             {
+                await ETC.CheckServerStatusAsync();
+
+                if (ETC.ServerStatusError == true) ModelDataButton.Enabled = false;
+                else ModelDataButton.Enabled = true;
+
                 // 인형 타이틀 바 초기화
 
                 if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false) == true)
@@ -858,6 +893,7 @@ namespace GFI_with_GFS_A
                 LoadChart();
 
                 ShowCardViewAnimation();
+                ShowTitleSubLayout();
                 HideFloatingActionButtonAnimation();
 
                 LoadAD();
@@ -878,6 +914,13 @@ namespace GFI_with_GFS_A
             {
                 InitLoadProgressBar.Visibility = ViewStates.Invisible;
             }
+        }
+
+        private void ShowTitleSubLayout()
+        {
+            if ((bool)DollInfoDR["HasVoice"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailVoiceLayout).Visibility = ViewStates.Visible;
+            if ((bool)DollInfoDR["HasMod"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSelectLayout).Visibility = ViewStates.Visible;
+            FindViewById<LinearLayout>(Resource.Id.DollDBDetailExtraButtonLayout).Visibility = ViewStates.Visible;
         }
 
         private void HideFloatingActionButtonAnimation()

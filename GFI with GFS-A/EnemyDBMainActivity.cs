@@ -26,6 +26,7 @@ namespace GFI_with_GFS_A
         int p_total = 0;
 
         private bool[] Filter_EnemyType = { true, true };
+        private bool CanRefresh = false;
 
         private ListView mEnemyListView = null;
         private CoordinatorLayout SnackbarLayout = null;
@@ -37,6 +38,7 @@ namespace GFI_with_GFS_A
         private ProgressBar nowProgressBar = null;
         private TextView totalProgress = null;
         private TextView nowProgress = null;
+        private FloatingActionButton refresh_fab = null;
         private FloatingActionButton filter_fab = null;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -51,6 +53,8 @@ namespace GFI_with_GFS_A
                 SetContentView(Resource.Layout.EnemyDBListLayout);
 
                 SetTitle(Resource.String.EnemyDBMainActivity_Title);
+
+                CanRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
                 mEnemyListView = FindViewById<ListView>(Resource.Id.EnemyDBListView);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EnemyDBSnackbarLayout);
@@ -91,9 +95,11 @@ namespace GFI_with_GFS_A
                 switch (e.ScrollState)
                 {
                     case ScrollState.TouchScroll:
+                        if (CanRefresh == true) refresh_fab.Hide();
                         filter_fab.Hide();
                         break;
                     case ScrollState.Idle:
+                        if (CanRefresh == true) refresh_fab.Show();
                         filter_fab.Show();
                         break;
                 }
@@ -116,6 +122,13 @@ namespace GFI_with_GFS_A
 
         private void InitializeView()
         {
+            refresh_fab = FindViewById<FloatingActionButton>(Resource.Id.EnemyRefreshCacheFAB);
+            if (CanRefresh == false) refresh_fab.Hide();
+            else
+            {
+                if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate { ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EnemyCropImageDownloadProcess)); };
+            }
+
             filter_fab = FindViewById<FloatingActionButton>(Resource.Id.EnemyFilterFAB);
             if (filter_fab.HasOnClickListeners == false) filter_fab.Click += Filter_Fab_Click;
 
@@ -395,36 +408,6 @@ namespace GFI_with_GFS_A
             }
 
             return false;
-        }
-
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            try
-            {
-                MenuInflater.Inflate(Resource.Menu.DollDBMenu, menu);
-
-                if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true) menu.FindItem(Resource.Id.RefreshDollCropImageCache).SetVisible(true);
-                else menu.FindItem(Resource.Id.RefreshDollCropImageCache).SetVisible(false);
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(this, ex.ToString());
-                Toast.MakeText(this, Resource.String.Activity_LoadFail, ToastLength.Short).Show();
-            }
-
-            return true;
-        }
-
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            switch (item.ItemId)
-            {
-                case Resource.Id.RefreshDollCropImageCache:
-                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EnemyCropImageDownloadProcess));
-                    break;
-            }
-
-            return true;
         }
 
         public override void OnBackPressed()

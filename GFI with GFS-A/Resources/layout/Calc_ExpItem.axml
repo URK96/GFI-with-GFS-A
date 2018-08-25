@@ -7,6 +7,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/CalcReportMainLayout">
+		<Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/CalcReportType"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -95,6 +100,39 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
         </LinearLayout>
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/CalcReportTrainerLevelSettingLayout">
+		<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/Calc_ExpItem_FSTTrainerLevelSettingText"
+            android:gravity="center"
+            android:layout_marginTop="20dp" />
+		<LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="2">
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                hideWheelUntilFocused="true"
+                android:id="@+id/CalcReportTrainerLevel" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+			</LinearLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -140,6 +178,40 @@
             android:gravity="center"
             android:layout_marginTop="10dp"
             android:id="@+id/CalcReportResult" />
+		<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/Calc_ExpItem_TotalResultTimeText"
+            android:gravity="center"
+            android:layout_marginTop="10dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="0 Hr"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:id="@+id/CalcReportResult_Time" />
+		<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/Calc_ExpItem_TotalResultBatteryText"
+            android:gravity="center"
+            android:layout_marginTop="10dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="0"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:id="@+id/CalcReportResult_Battery" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

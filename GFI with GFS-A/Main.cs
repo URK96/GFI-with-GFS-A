@@ -165,15 +165,20 @@ namespace GFI_with_GFS_A
             Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG_Vertical);
             ad.SetTitle(Resource.String.Main_NotificationTitle);
             ad.SetCancelable(true);
-            ad.SetPositiveButton("닫기", delegate { });
+            ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
 
             try
             {
-                string url = Path.Combine(ETC.Server, "Android_Notification.txt");
-
-                using (WebClient wc = new WebClient())
+                ETC.CheckServerStatus();
+                if (ETC.ServerStatusError == true) notification = Resources.GetString(Resource.String.Main_NotificationLoadFail);
+                else
                 {
-                    notification = wc.DownloadString(url);
+                    string url = Path.Combine(ETC.Server, "Android_Notification.txt");
+
+                    using (WebClient wc = new WebClient())
+                    {
+                        notification = wc.DownloadString(url);
+                    }
                 }
 
                 ad.SetMessage(notification);
@@ -227,6 +232,8 @@ namespace GFI_with_GFS_A
 
                 if(ETC.sharedPreferences.GetBoolean("ShowNewFeatureDialog", true) == true) ShowNewVersionFeatureDialog();
 
+                await ETC.CheckServerStatusAsync();
+
                 ReadServerChecking();
                 LoadTopNotification();
                 if (ETC.sharedPreferences.GetString("StartAppMode", "0") != "0") RunStartMode();
@@ -244,7 +251,7 @@ namespace GFI_with_GFS_A
             ad.SetTitle(Resource.String.NewFeatureDialog_Title);
             ad.SetMessage(Resource.String.NewFeature);
             ad.SetCancelable(true);
-            ad.SetPositiveButton("닫기", delegate { });
+            ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
 
             try
             {
@@ -252,10 +259,6 @@ namespace GFI_with_GFS_A
                 ISharedPreferencesEditor Editor = ETC.sharedPreferences.Edit();
                 Editor.PutBoolean("ShowNewFeatureDialog", false);
                 Editor.Apply();
-            }
-            catch (WebException ex)
-            {
-                ETC.LogError(this, ex.ToString());
             }
             catch (Exception ex)
             {
@@ -356,6 +359,8 @@ namespace GFI_with_GFS_A
 
         private async Task ReadServerChecking()
         {
+            if (ETC.ServerStatusError == true) return;
+
             string url = Path.Combine(ETC.Server, "ServerCheck.txt");
             bool HasCheck = false;
             string s = "";
@@ -391,7 +396,7 @@ namespace GFI_with_GFS_A
                     ad.SetTitle(Resource.String.NotifyCheckServer_Title);
                     ad.SetMessage(s);
                     ad.SetCancelable(false);
-                    ad.SetPositiveButton("확인", delegate { });
+                    ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
 
                     ad.Show();
                 }
@@ -405,25 +410,29 @@ namespace GFI_with_GFS_A
 
         private async Task LoadTopNotification()
         {
-            await Task.Delay(100);
             string url = Path.Combine(ETC.Server, "Android_Notification.txt");
             string notification = "";
 
-            using (WebClient wc = new WebClient())
+            try
             {
-                try
+                if (ETC.ServerStatusError == true) throw new Exception();
+                else
                 {
-                    notification = await wc.DownloadStringTaskAsync(url);
+
+                    using (WebClient wc = new WebClient())
+                    {
+                        notification = await wc.DownloadStringTaskAsync(url);
+                    }
 
                     NotificationView.Text = notification;
                     NotificationView.Selected = true;
                 }
-                catch (Exception ex)
-                {
-                    ETC.LogError(this, ex.ToString());
-                    ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_NotificationInitializeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
-                }
-            } 
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_NotificationInitializeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+            }
         }
 
         private async void MainMenuButton_Click(object sender, EventArgs e)
@@ -547,32 +556,8 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.ProductSimulatorExtraButton:
-#if RELEASE
-                        ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
-#else
                         StartActivity(typeof(ProductSimulatorCategorySelectActivity));
-#endif
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case Resource.Id.FormationSimulatorExtraButton:
-                        string pack_name = "com.Cosmos.GfTileSim";
-                        Intent AppIntent = PackageManager.GetLaunchIntentForPackage(pack_name);
-                        if (AppIntent != null) StartActivity(AppIntent);
-                        else
-                        {
-                            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
-                            ad.SetTitle("연결할 앱이 없네요 :(");
-                            ad.SetMessage("이 기능을 사용하려면 외부 앱이 설치되어야 해요. 설치 화면으로 이동할건가요?");
-                            ad.SetCancelable(true);
-                            ad.SetPositiveButton("설치", delegate 
-                            {
-                                string url = "https://play.google.com/store/apps/details?id=" + pack_name;
-                                StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse(url)));
-                            });
-                            ad.SetNegativeButton("취소", delegate { });
-
-                            ad.Show();
-                        }
                         break;
                     default:
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
@@ -696,7 +681,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "권한 부여 실패", Snackbar.LengthIndefinite, Android.Graphics.Color.DarkMagenta);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Permission_Error, Snackbar.LengthIndefinite, Android.Graphics.Color.DarkMagenta);
             }
         }
 
@@ -704,7 +689,7 @@ namespace GFI_with_GFS_A
         {
             if (grantResults[0] == Permission.Denied)
             {
-                Toast.MakeText(this, "해당 권한을 허용하지 않으면 소전사전을 정상적으로 이용하실 수 없습니다.", ToastLength.Short).Show();
+                Toast.MakeText(this, Resource.String.PermissionDeny_Message, ToastLength.Short).Show();
             }
         }
     }

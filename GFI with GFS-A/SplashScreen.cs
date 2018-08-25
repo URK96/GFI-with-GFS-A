@@ -73,7 +73,6 @@ namespace GFI_with_GFS_A
 
         private async Task InitProcess()
         {
-            
             SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.SplashSnackbarLayout);
 
             await Task.Delay(500);
@@ -90,10 +89,11 @@ namespace GFI_with_GFS_A
                 if (VersionTracking.IsFirstLaunchForCurrentVersion == true) PreferenceEditor.PutBoolean("ShowNewFeatureDialog", true);
                 
                 ETC.CheckInitFolder();
+                await ETC.CheckServerStatusAsync();
 
-                if (System.IO.File.Exists(System.IO.Path.Combine(ETC.DBPath, "FST.gfs")) == false) await ETC.UpdateDB(this);
+                if ((System.IO.File.Exists(System.IO.Path.Combine(ETC.DBPath, "FST.gfs")) == false) && (ETC.ServerStatusError == false)) await ETC.UpdateDB(this);
 
-                if (ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true) == true)
+                if ((ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true) == true) && (ETC.ServerStatusError == false))
                 {
                     try
                     {

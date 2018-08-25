@@ -335,9 +335,9 @@ namespace GFI_with_GFS_A
                     ETC.LogError(this, ex.ToString());
                 }
 
-                FindViewById<TextView>(Resource.Id.FSTDBDetailFSTName).Text = FSTName;
+                /*FindViewById<TextView>(Resource.Id.FSTDBDetailFSTName).Text = FSTName;
                 FindViewById<TextView>(Resource.Id.FSTDBDetailFSTDicNumber).Text = "No. " + 1;
-                FindViewById<TextView>(Resource.Id.FSTDBDetailFSTProductTime).Text = "제조 불가";
+                FindViewById<TextView>(Resource.Id.FSTDBDetailFSTProductTime).Text = "제조 불가";*/
 
                 // 인형 기본 정보 초기화
 

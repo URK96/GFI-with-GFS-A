@@ -190,8 +190,8 @@ namespace GFI_with_GFS_A
             for (int i = 0; i < ETC.FSTList.Rows.Count; ++i)
             {
                 DataRow dr = ETC.FSTList.Rows[i];
-                int FSTNum = (int)dr["DicNumber"];
-                string FilePath = System.IO.Path.Combine(ETC.CachePath, "FST", "Normal_Crop", FSTNum + ".gfdcache");
+                string FileName = (string)dr["Name"];
+                string FilePath = System.IO.Path.Combine(ETC.CachePath, "FST", "Normal_Crop", FileName + ".gfdcache");
                 if (System.IO.File.Exists(FilePath) == false)
                 {
                     //Toast.MakeText(this, DollNum.ToString(), ToastLength.Short).Show();
@@ -539,9 +539,15 @@ namespace GFI_with_GFS_A
                 ImageView FSTSmallImage = view.FindViewById<ImageView>(Resource.Id.FSTListSmallImage);
                 if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
                 {
-                    FSTSmallImage.Visibility = ViewStates.Visible;
+                    //FSTSmallImage.Visibility = ViewStates.Visible;
                     string FilePath = System.IO.Path.Combine(ETC.CachePath, "FST", "Normal_Crop", FST_name + ".gfdcache");
-                    if (System.IO.File.Exists(FilePath) == true) FSTSmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(FilePath));
+                    //if (System.IO.File.Exists(FilePath) == true) FSTSmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(FilePath));
+                    if (System.IO.File.Exists(FilePath) == true)
+                    {
+                        Android.Graphics.Drawables.Drawable drawable = Android.Graphics.Drawables.Drawable.CreateFromPath(FilePath);
+                        drawable.Alpha = 40;
+                        view.FindViewById<LinearLayout>(Resource.Id.FSTListMainLayout).Background = drawable;
+                    }
                 }
                 else FSTSmallImage.Visibility = ViewStates.Gone;
 

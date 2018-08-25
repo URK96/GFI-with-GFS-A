@@ -207,7 +207,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(Activity, ex.ToString());
-                Toast.MakeText(Activity, Resource.String.Setting_DeleteAllLogFile_Fail, ToastLength.Short).Show();
+                Toast.MakeText(Activity, Resource.String.SettingActivity_DeleteLogFile_Fail, ToastLength.Short).Show();
             }
             finally
             {
@@ -231,7 +231,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(Activity, ex.ToString());
-                Toast.MakeText(Activity, Resource.String.Setting_DeleteAllLogFile_Fail, ToastLength.Short).Show();
+                Toast.MakeText(Activity, Resource.String.SettingActivity_DeleteLogFile_Fail, ToastLength.Short).Show();
             }
         }
 
@@ -314,7 +314,7 @@ namespace GFI_with_GFS_A
 
                 if (FreeSpace >= 600)
                 {
-                    pd.SetMessage(string.Format("{0} : {1}MB\n\n{2}", Resources.GetString(Resource.String.SettingActivity_CheckFreeStorage_DialogMessage2), FreeSpace, Resources.GetString(Resource.String.SettingActivity_CheckFreeStorage_DialogMessage2_1));
+                    pd.SetMessage(string.Format("{0} : {1}MB\n\n{2}", Resources.GetString(Resource.String.SettingActivity_CheckFreeStorage_DialogMessage2), FreeSpace, Resources.GetString(Resource.String.SettingActivity_CheckFreeStorage_DialogMessage2_1)));
                     await Task.Delay(2000);
                     return true;
                 }
@@ -628,7 +628,7 @@ namespace GFI_with_GFS_A
                 await Task.Delay(500);
 
                 ad.SetTitle(Resource.String.SettingActivity_DownloadAllCache_CompleteDialogTitle);
-                ad.SetMessage(Resource.String.Setting_DownloadAllCache_CompleteSettingActivity_DownloadAllCache_CompleteDialogMessageMessage);
+                ad.SetMessage(Resource.String.SettingActivity_DownloadAllCache_CompleteDialogMessage);
                 ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
 
                 ad.Show();

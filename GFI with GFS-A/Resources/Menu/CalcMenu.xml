@@ -3,13 +3,16 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
   <group android:checkableBehavior="single">
     <item
-      android:title="작전보고서"
+      android:title="@string/Common_ExpItem"
       android:id="@+id/CalcNavigation_ExpItem"/>
   <item
-      android:title="대체코어"
+      android:title="@string/Common_Core"
       android:id="@+id/CalcNavigation_Core"/>
 <item
-      android:title="훈련-스킬칩"
+      android:title="@string/Common_SkillTraining"
       android:id="@+id/CalcNavigation_SkillTraining"/>
+    <item
+          android:title="@string/Common_FSTGradeUp"
+          android:id="@+id/CalcNavigation_FSTGradeUp"/>
   </group>
 </menu>

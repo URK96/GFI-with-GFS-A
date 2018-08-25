@@ -32,6 +32,7 @@ namespace GFI_with_GFS_A
 
         private bool[] Filter_Type = { true, true };
         private int[] Filter_ProductTime = { 0, 0 };
+        private bool CanRefresh = false;
 
         private ListView mFairyListView = null;
         private CoordinatorLayout SnackbarLayout = null;
@@ -43,6 +44,7 @@ namespace GFI_with_GFS_A
         private ProgressBar nowProgressBar = null;
         private TextView totalProgress = null;
         private TextView nowProgress = null;
+        private FloatingActionButton refresh_fab = null;
         private FloatingActionButton filter_fab = null;
         private FloatingActionButton array_fab = null;
 
@@ -58,6 +60,8 @@ namespace GFI_with_GFS_A
                 SetContentView(Resource.Layout.FairyDBListLayout);
 
                 SetTitle(Resource.String.FairyDBMainActivity_Title);
+
+                CanRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
                 mFairyListView = FindViewById<ListView>(Resource.Id.FairyDBListView);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FairyDBSnackbarLayout);
@@ -97,10 +101,12 @@ namespace GFI_with_GFS_A
                 switch (e.ScrollState)
                 {
                     case ScrollState.TouchScroll:
+                        if (CanRefresh == true) refresh_fab.Hide();
                         filter_fab.Hide();
                         array_fab.Hide();
                         break;
                     case ScrollState.Idle:
+                        if (CanRefresh == true) refresh_fab.Show();
                         filter_fab.Show();
                         array_fab.Show();
                         break;
@@ -124,6 +130,13 @@ namespace GFI_with_GFS_A
 
         private void InitializeView()
         {
+            refresh_fab = FindViewById<FloatingActionButton>(Resource.Id.FairyRefreshCacheFAB);
+            if (CanRefresh == false) refresh_fab.Hide();
+            else
+            {
+                if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate { ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(FairyCropImageDownloadProcess)); };
+            }
+
             filter_fab = FindViewById<FloatingActionButton>(Resource.Id.FairyFilterFAB);
             if (filter_fab.HasOnClickListeners == false) filter_fab.Click += Filter_Fab_Click;
 
@@ -436,36 +449,6 @@ namespace GFI_with_GFS_A
             }
 
             return false;
-        }
-
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            try
-            {
-                MenuInflater.Inflate(Resource.Menu.FairyDBMenu, menu);
-
-                if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true) menu.FindItem(Resource.Id.RefreshFairyCropImageCache).SetVisible(true);
-                else menu.FindItem(Resource.Id.RefreshFairyCropImageCache).SetVisible(false);
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(this, ex.ToString());
-                Toast.MakeText(this, Resource.String.Activity_LoadFail, ToastLength.Short).Show();
-            }
-
-            return true;
-        }
-
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            switch (item.ItemId)
-            {
-                case Resource.Id.RefreshFairyCropImageCache:
-                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(FairyCropImageDownloadProcess));
-                    break;
-            }
-
-            return true;
         }
 
         public override void OnBackPressed()

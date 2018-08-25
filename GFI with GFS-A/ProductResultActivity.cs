@@ -31,9 +31,11 @@ namespace GFI_with_GFS_A
         private MediaPlayer[] GradeEffect = new MediaPlayer[5];
         private MediaPlayer ResultEffect;
 
+        private FloatingActionButton LinkDetailFAB;
+
         private CoordinatorLayout SnackbarLayout;
 
-        private int[] PB_Ids =
+        private readonly int[] PB_Ids =
         {
             Resource.Id.PSResultPB1,
             Resource.Id.PSResultPB2,
@@ -76,6 +78,10 @@ namespace GFI_with_GFS_A
 
             for (int i = 0; i < PBs.Length; ++i) PBs[i] = FindViewById<ProgressBar>(PB_Ids[i]);
 
+            LinkDetailFAB = FindViewById<FloatingActionButton>(Resource.Id.PSResultLinkDetailFAB);
+            LinkDetailFAB.Hide();
+            LinkDetailFAB.Click += LinkDetailFAB_Click;
+
             SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.PSResultSnackbarLayout);
 
             Task.Run(async () =>
@@ -114,6 +120,36 @@ namespace GFI_with_GFS_A
             ResultAnimationProcess();
         }
 
+        private void LinkDetailFAB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Intent ResultInfo = null;
+                
+                switch (Result_Type)
+                {
+                    case ResultType.Doll:
+                        ResultInfo = new Intent(this, typeof(DollDBDetailActivity));
+                        break;
+                    case ResultType.Equip:
+                        ResultInfo = new Intent(this, typeof(EquipDBDetailActivity));
+                        break;
+                    case ResultType.Fairy:
+                        ResultInfo = new Intent(this, typeof(FairyDBDetailActivity));
+                        break;
+                }
+
+                ResultInfo.PutExtra("Keyword", ResultName);
+                StartActivity(ResultInfo);
+                OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthShort);
+            }
+        }
+
         private async Task ResultAnimationProcess()
         {
             await Task.Delay(500);
@@ -122,6 +158,9 @@ namespace GFI_with_GFS_A
             await Task.Delay(500);
             await GradeImageAnimation();
             await ResultImageAnimation();
+
+            await Task.Delay(500);
+            LinkDetailFAB.Show();
         }
 
         private async Task ProductTimeAnimation()
