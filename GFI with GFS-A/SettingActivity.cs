@@ -88,8 +88,14 @@ namespace GFI_with_GFS_A
             ListPreference StartAppMode = (ListPreference)FindPreference("StartAppMode");
             if (ETC.UseLightTheme == true) StartAppMode.SetIcon(Resource.Drawable.AppStartModeIcon_WhiteTheme);
             else StartAppMode.SetIcon(Resource.Drawable.AppStartModeIcon);
-            StartAppMode.SetEntries(new string[] { Resources.GetString(Resource.String.Common_Default), Resources.GetString(Resource.String.Main_MainMenu_OldGFD), Resources.GetString(Resource.String.Main_ExtraMenu_RFBot) });
-            StartAppMode.SetEntryValues(new string[] { "0", "1", "2" });
+            StartAppMode.SetEntries(new string[] 
+            {
+                Resources.GetString(Resource.String.Common_Default),
+                Resources.GetString(Resource.String.Main_MainMenu_OldGFD),
+                Resources.GetString(Resource.String.Main_ExtraMenu_RFBot),
+                Resources.GetString(Resource.String.Main_MainMenu_Calc)
+            });
+            StartAppMode.SetEntryValues(new string[] { "0", "1", "2", "3" });
             StartAppMode.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("StartAppMode", "0")));
 
             SwitchPreference LowMemoryOption = (SwitchPreference)FindPreference("LowMemoryOption");

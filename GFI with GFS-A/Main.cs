@@ -80,11 +80,11 @@ namespace GFI_with_GFS_A
         };
         readonly string[] DBSubMenuButtonText =
         {
-            "인형 DB",
-            "장비 DB",
-            "요정 DB",
-            "철혈 DB",
-            "FST DB"
+            ETC.Resources.GetString(Resource.String.Main_DBMenu_DollDB),
+            ETC.Resources.GetString(Resource.String.Main_DBMenu_EquipDB),
+            ETC.Resources.GetString(Resource.String.Main_DBMenu_FairyDB),
+            ETC.Resources.GetString(Resource.String.Main_DBMenu_EnemyDB),
+            ETC.Resources.GetString(Resource.String.Main_DBMenu_FSTDB)
         };
 
         readonly int[] ExtraMenuButtonIds = 
@@ -93,7 +93,6 @@ namespace GFI_with_GFS_A
             Resource.Id.GFNewsExtraButton,
             Resource.Id.RFBotExtraButton,
             Resource.Id.ProductSimulatorExtraButton,
-            Resource.Id.FormationSimulatorExtraButton
         };
         readonly int[] ExtraMenuButtonBackgroundIds = 
         {
@@ -101,15 +100,13 @@ namespace GFI_with_GFS_A
             Resource.Drawable.Extra_GFNewsSelector,
             Resource.Drawable.Extra_RFBotSelector,
             Resource.Drawable.Extra_ProductSimulatorSelector,
-            Resource.Drawable.Extra_FormationSimulatorSelector
         };
         readonly string[] ExtraMenuButtonText =
         {
-            "이벤트",
-            "소전 공지사항",
-            "라플봇",
-            "제조 시뮬레이터",
-            "진형 시뮬레이터"
+            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_Event),
+            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_OfficialNotification),
+            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_RFBot),
+            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_ProductSimulator),
         };
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -154,6 +151,9 @@ namespace GFI_with_GFS_A
                     break;
                 case "2":
                     ExtraMenuButton_Click(FindViewById<Button>(Resource.Id.RFBotExtraButton), new EventArgs());
+                    break;
+                case "3":
+                    MainMenuButton_Click(FindViewById<Button>(Resource.Id.CalcMainButton), new EventArgs());
                     break;
             }
         }

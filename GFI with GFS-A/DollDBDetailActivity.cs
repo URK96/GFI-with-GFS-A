@@ -509,6 +509,12 @@ namespace GFI_with_GFS_A
                 FindViewById<TextView>(Resource.Id.DollDBDetailDollDicNumber).Text = string.Format("No. {0}", DollDicNum);
                 FindViewById<TextView>(Resource.Id.DollDBDetailDollProductTime).Text = ETC.CalcTime((int)DollInfoDR["ProductTime"]);
 
+
+                // 인형 제조 대사
+
+                FindViewById<TextView>(Resource.Id.DollDBDetailDollProductDialog).Text = (string)DollInfoDR["ProductDialog"];
+
+
                 // 인형 기본 정보 초기화
 
                 int[] GradeStarIds = { Resource.Id.DollDBDetailInfoGrade1, Resource.Id.DollDBDetailInfoGrade2, Resource.Id.DollDBDetailInfoGrade3, Resource.Id.DollDBDetailInfoGrade4, Resource.Id.DollDBDetailInfoGrade5 };
