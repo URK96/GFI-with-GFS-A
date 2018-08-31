@@ -89,7 +89,7 @@ namespace GFI_with_GFS_A
                 if (VersionTracking.IsFirstLaunchForCurrentVersion == true) PreferenceEditor.PutBoolean("ShowNewFeatureDialog", true);
                 
                 ETC.CheckInitFolder();
-                await ETC.CheckServerStatusAsync();
+                //await ETC.CheckServerStatusAsync();
 
                 if ((System.IO.File.Exists(System.IO.Path.Combine(ETC.DBPath, "FST.gfs")) == false) && (ETC.ServerStatusError == false)) await ETC.UpdateDB(this);
 

@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <!--New String-->
+  <string name="Main_ExtraMenu_GFOSTPlayer">OST 플레이어</string>
+  
   <string name="DollDBDetailLayout_ModelData">총기 제원</string>
   
   <string name="Common_ExpItem">작전보고서</string>

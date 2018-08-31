@@ -118,7 +118,7 @@ namespace GFI_with_GFS_A
 
             try
             {
-                using (WebClient wc = new WebClient())
+                using (TimeOutWebClient wc = new TimeOutWebClient())
                 {
                     string LocalDBVerPath = Path.Combine(ETC.SystemPath, "OldGFDVer.txt");
 
@@ -182,7 +182,7 @@ namespace GFI_with_GFS_A
                 totalProgressBar.Max = 100;
                 totalProgressBar.Progress = 0;
 
-                using (WebClient wc = new WebClient())
+                using (TimeOutWebClient wc = new TimeOutWebClient())
                 {
                     wc.DownloadFileCompleted += Wc_DownloadFileCompleted;
                     wc.DownloadProgressChanged += Wc_DownloadProgressChanged;

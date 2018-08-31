@@ -123,7 +123,7 @@ namespace GFI_with_GFS_A
                 {
                     if ((File.Exists(Path.Combine(ETC.CachePath, "Fairy", "Normal", FairyName + "_1" + ".gfdcache")) == false) || (IsRefresh == true))
                     {
-                        using (WebClient wc = new WebClient())
+                        using (TimeOutWebClient wc = new TimeOutWebClient())
                         {
                             await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Fairy", FairyName + "_1" + ".png"), Path.Combine(ETC.CachePath, "Fairy", "Normal", FairyName + "_1" + ".gfdcache"));
                         }
@@ -167,7 +167,7 @@ namespace GFI_with_GFS_A
                 {
                     if ((File.Exists(Path.Combine(ETC.CachePath, "Fairy", "Skill", SkillName + ".gfdcache")) == false) || (IsRefresh == true))
                     {
-                        using (WebClient wc = new WebClient())
+                        using (TimeOutWebClient wc = new TimeOutWebClient())
                         {
                             await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "FairySkill", SkillName + ".png"), Path.Combine(ETC.CachePath, "Fairy", "Skill", SkillName + ".gfdcache"));
                         }

@@ -256,7 +256,7 @@ namespace GFI_with_GFS_A
                 string url = string.Format("https://ipick.baka.pw:444/stats/tdoll/id/{0}", DollDicNum);
                 string temp_data;
 
-                using (WebClient wc = new WebClient())
+                using (TimeOutWebClient wc = new TimeOutWebClient())
                 {
                     temp_data = await wc.DownloadStringTaskAsync(url);
                 }

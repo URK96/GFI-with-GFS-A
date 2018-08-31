@@ -93,6 +93,7 @@ namespace GFI_with_GFS_A
             Resource.Id.GFNewsExtraButton,
             Resource.Id.RFBotExtraButton,
             Resource.Id.ProductSimulatorExtraButton,
+            Resource.Id.GFOSTPlayerExtraButton
         };
         readonly int[] ExtraMenuButtonBackgroundIds = 
         {
@@ -100,6 +101,7 @@ namespace GFI_with_GFS_A
             Resource.Drawable.Extra_GFNewsSelector,
             Resource.Drawable.Extra_RFBotSelector,
             Resource.Drawable.Extra_ProductSimulatorSelector,
+            Resource.Drawable.Extra_GFNewsSelector
         };
         readonly string[] ExtraMenuButtonText =
         {
@@ -107,6 +109,7 @@ namespace GFI_with_GFS_A
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_OfficialNotification),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_RFBot),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_ProductSimulator),
+            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_GFOSTPlayer)
         };
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -175,7 +178,7 @@ namespace GFI_with_GFS_A
                 {
                     string url = Path.Combine(ETC.Server, "Android_Notification.txt");
 
-                    using (WebClient wc = new WebClient())
+                    using (TimeOutWebClient wc = new TimeOutWebClient())
                     {
                         notification = wc.DownloadString(url);
                     }
@@ -234,8 +237,13 @@ namespace GFI_with_GFS_A
 
                 await ETC.CheckServerStatusAsync();
 
-                ReadServerChecking();
+                Task.Run(async () =>
+                {
+                    ReadServerChecking();
+                });
+
                 LoadTopNotification();
+
                 if (ETC.sharedPreferences.GetString("StartAppMode", "0") != "0") RunStartMode();
             }
             catch (Exception ex)
@@ -367,7 +375,7 @@ namespace GFI_with_GFS_A
 
             try
             {
-                using (WebClient wc = new WebClient())
+                using (TimeOutWebClient wc = new TimeOutWebClient())
                 {
                     string[] temp = (await wc.DownloadStringTaskAsync(url)).Split(';');
 
@@ -419,13 +427,13 @@ namespace GFI_with_GFS_A
                 else
                 {
 
-                    using (WebClient wc = new WebClient())
+                    using (TimeOutWebClient wc = new TimeOutWebClient())
                     {
                         notification = await wc.DownloadStringTaskAsync(url);
                     }
 
                     NotificationView.Text = notification;
-                    NotificationView.Selected = true;
+                    RunOnUiThread(() => { NotificationView.Selected = true; });
                 }
             }
             catch (Exception ex)

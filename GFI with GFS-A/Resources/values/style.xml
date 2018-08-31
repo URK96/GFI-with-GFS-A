@@ -15,10 +15,12 @@
   <style name="GFS.Setting" parent="Theme.AppCompat">
     <item name="android:windowNoTitle">false</item>
     <item name="android:windowFullscreen">false</item>
+    <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
   </style>
   <style name="GFS.Setting.Light" parent="Theme.AppCompat.Light">
     <item name="android:windowNoTitle">false</item>
     <item name="android:windowFullscreen">false</item>
+    <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
   </style>
   <style name="GFS.NoActionBar" parent="Theme.AppCompat.NoActionBar">
     <item name="android:windowNoTitle">true</item>

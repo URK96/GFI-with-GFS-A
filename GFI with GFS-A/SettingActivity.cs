@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Preferences;
+using Android.Support.V14.Preferences;
 using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Widget;
@@ -12,6 +12,7 @@ using System.Data;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using Android.Support.V7.Preferences;
 
 namespace GFI_with_GFS_A
 {
@@ -35,10 +36,12 @@ namespace GFI_with_GFS_A
 
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.SettingSnackbarLayout);
 
-                Fragment SettingFragment = new MainSettingFragment();
+                FragmentManager.BeginTransaction().Replace(Resource.Id.SettingFragmentContainer, new MainSettingFragment(), null).Commit();
+
+                /*FragmentCompat SettingFragment = new MainSettingFragment();
                 FragmentTransaction ft = FragmentManager.BeginTransaction();
                 ft.Add(Resource.Id.SettingFragmentContainer, SettingFragment);
-                ft.Commit();
+                ft.Commit();*/
             }
             catch (Exception ex)
             {
@@ -70,10 +73,8 @@ namespace GFI_with_GFS_A
         private int total = 0;
         private int now = 0;
 
-        public override void OnCreate(Bundle savedInstanceState)
+        public override void OnCreatePreferences(Bundle savedInstanceState, string rootKey)
         {
-            base.OnCreate(savedInstanceState);
-
             SnackbarLayout = Activity.FindViewById<CoordinatorLayout>(Resource.Id.SettingSnackbarLayout);
             SnackbarLayout.BringToFront();
 
@@ -213,7 +214,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(Activity, ex.ToString());
-                Toast.MakeText(Activity, Resource.String.SettingActivity_DeleteLogFile_Fail, ToastLength.Short).Show();
+                Toast.MakeText(Activity, Resource.String.UnableCheckUpdate, ToastLength.Short).Show();
             }
             finally
             {
@@ -411,7 +412,7 @@ namespace GFI_with_GFS_A
 
                 status.Text = string.Format("{0}...(1/4)", Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusDollDB2));
 
-                using (WebClient wc = new WebClient())
+                using (TimeOutWebClient wc = new TimeOutWebClient())
                 {
                     wc.DownloadProgressChanged += Wc_DownloadProgressChanged;
                     wc.DownloadFileCompleted += Wc_DownloadFileCompleted;
@@ -506,7 +507,7 @@ namespace GFI_with_GFS_A
 
                 status.Text = string.Format("{0}(2/4)", Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusFairyDB2));
 
-                using (WebClient wc = new WebClient())
+                using (TimeOutWebClient wc = new TimeOutWebClient())
                 {
                     wc.DownloadProgressChanged += Wc_DownloadProgressChanged;
                     wc.DownloadFileCompleted += Wc_DownloadFileCompleted;
@@ -584,7 +585,7 @@ namespace GFI_with_GFS_A
 
                 status.Text = string.Format("{0}(3/4)", Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusEquipDB2));
 
-                using (WebClient wc = new WebClient())
+                using (TimeOutWebClient wc = new TimeOutWebClient())
                 {
                     wc.DownloadProgressChanged += Wc_DownloadProgressChanged;
                     wc.DownloadFileCompleted += Wc_DownloadFileCompleted;
@@ -619,7 +620,7 @@ namespace GFI_with_GFS_A
 
                 status.Text = string.Format("{0}(4/4)", Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusOldGFD2));
 
-                using (WebClient wc = new WebClient())
+                using (TimeOutWebClient wc = new TimeOutWebClient())
                 {
                     foreach (string s in ImageName)
                     {
@@ -745,7 +746,7 @@ namespace GFI_with_GFS_A
                 total = totalCount;
                 now = 0;
 
-                using (WebClient wc = new WebClient())
+                using (TimeOutWebClient wc = new TimeOutWebClient())
                 {
                     wc.DownloadProgressChanged += Wc_DownloadProgressChanged_OldVer;
                     wc.DownloadFileCompleted += Wc_DownloadFileCompleted_OldVer;

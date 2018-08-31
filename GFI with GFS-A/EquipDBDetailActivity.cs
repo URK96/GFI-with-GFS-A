@@ -90,7 +90,7 @@ namespace GFI_with_GFS_A
                 {
                     if ((File.Exists(Path.Combine(ETC.CachePath, "Equip", "Normal", IconName + ".gfdcache")) == false) || (IsRefresh == true))
                     {
-                        using (WebClient wc = new WebClient())
+                        using (TimeOutWebClient wc = new TimeOutWebClient())
                         {
                             await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Equipments", IconName + ".png"), Path.Combine(ETC.CachePath, "Equip", "Normal", IconName + ".gfdcache"));
                         }

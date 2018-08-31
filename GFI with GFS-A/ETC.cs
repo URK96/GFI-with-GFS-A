@@ -346,7 +346,7 @@ namespace GFI_with_GFS_A
             if (File.Exists(LocalDBVerPath) == false) HasDBUpdate = true;
             else
             {
-                using (WebClient wc = new WebClient())
+                using (TimeOutWebClient wc = new TimeOutWebClient())
                 {
                     await wc.DownloadFileTaskAsync(ServerDBVerPath, TempDBVerPath);
                 }
@@ -379,7 +379,7 @@ namespace GFI_with_GFS_A
             if (File.Exists(LocalEventVerPath) == false) HasEventUpdate = true;
             else
             {
-                using (WebClient wc = new WebClient())
+                using (TimeOutWebClient wc = new TimeOutWebClient())
                 {
                     await wc.DownloadFileTaskAsync(ServerEventVerPath, TempEventVerPath);
                 }
@@ -427,7 +427,7 @@ namespace GFI_with_GFS_A
             pd.Max = 100;
             pd.Show();
 
-            using (WebClient wc = new WebClient())
+            using (TimeOutWebClient wc = new TimeOutWebClient())
             {
                 for (int i = 0; i < DBFiles.Length; ++i)
                 {
@@ -476,7 +476,7 @@ namespace GFI_with_GFS_A
             pd.Max = 100;
             pd.Show();
 
-            using (WebClient wc = new WebClient())
+            using (TimeOutWebClient wc = new TimeOutWebClient())
             {
                 string url = Path.Combine(Server, "EventVer.txt");
                 string target = Path.Combine(tempPath, "EventVer.txt");
@@ -493,7 +493,7 @@ namespace GFI_with_GFS_A
 
             pd.Max = image_count;
 
-            using (WebClient wc2 = new WebClient())
+            using (TimeOutWebClient wc2 = new TimeOutWebClient())
             {
                 for (int i = 1; i <= image_count; ++i)
                 {
@@ -597,18 +597,23 @@ namespace GFI_with_GFS_A
         {
             WebRequest request = WebRequest.Create(Server);
             request.Timeout = 5000;
+            WebResponse response = null;
 
             try
             {
-                await request.GetResponseAsync();
+                response = request.GetResponse();
             }
             catch (Exception)
             {
                 ServerStatusError = true;
+                response.Close();
+                response.Dispose();
                 return;
             }
 
             ServerStatusError = false;
+            response.Close();
+            response.Dispose();
         }
 
         internal class ADViewListener : Android.Gms.Ads.AdListener
@@ -623,7 +628,15 @@ namespace GFI_with_GFS_A
                 return;
             }
         }
+    }
 
-        
+    public class TimeOutWebClient : WebClient
+    {
+        protected override WebRequest GetWebRequest(Uri address)
+        {
+            WebRequest request = base.GetWebRequest(address);
+            request.Timeout = 3000;
+            return request;
+        }
     }
 }
