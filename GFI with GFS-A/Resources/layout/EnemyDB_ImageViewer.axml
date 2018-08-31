@@ -3,19 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/DollDBImageViewerMainLayout">
+    android:id="@+id/EnemyDBImageViewerMainLayout">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <Spinner
-            android:id="@+id/DollDBImageViewerCostumeList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
         <ProgressBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/DollDBImageViewerLoadProgress"
+            android:id="@+id/EnemyDBImageViewerLoadProgress"
             android:visibility="invisible"
             style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
             android:progressTint="@color/ProgressBarColor"
@@ -24,43 +20,37 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/DollDBImageViewerButtonLayout">
+            android:id="@+id/EnemyDBImageViewerButtonLayout">
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/RefreshImageCacheText"
-                android:id="@+id/DollDBImageViewerRefreshImageCacheButton" />
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/DollDB_ImageViewer_ImageStatusDefaultText"
-                android:id="@+id/DollDBImageViewerChangeStateButton" />
+                android:id="@+id/EnemyDBImageViewerRefreshImageCacheButton" />
         </LinearLayout>
 		<uk.co.senab.photoview.PhotoView
 			android:layout_width="match_parent"
             android:layout_height="match_parent"
 			android:isScrollContainer="true"
-            android:id="@+id/DollDBImageViewerImageView"
+            android:id="@+id/EnemyDBImageViewerImageView"
             android:clickable="true"/>
         <!--<ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 			android:isScrollContainer="true"
-            android:id="@+id/DollDBImageViewerImageView"
+            android:id="@+id/EnemyDBImageViewerImageView"
             android:clickable="true" />-->
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/DollDBImageViewerImageStatus"
+        android:id="@+id/EnemyDBImageViewerImageStatus"
         android:text=""
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_alignParentBottom="true" />
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/DollDBImageViewerSnackbarLayout"
-        android:layout_alignTop="@id/DollDBImageViewerMainLayout" />
+        android:id="@+id/EnemyDBImageViewerSnackbarLayout"
+        android:layout_alignTop="@id/EnemyDBImageViewerMainLayout" />
 </RelativeLayout>

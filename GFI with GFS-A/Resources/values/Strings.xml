@@ -91,6 +91,7 @@
   <string name="Animation_Error">애니메이션 오류</string>
   <string name="Permission_Error">권한 부여 실패</string>
   <string name="PermissionDeny_Message">해당 권한을 허용하지 않으면 소전사전을 정상적으로 이용하실 수 없습니다</string>
+  <string name="RefreshImageCacheText">이미지 캐시 갱신</string>
   
   <!--Common String-->
   <string name="Common_AC">명중</string>
@@ -362,7 +363,6 @@
   <string name="Calc_SkillTraining_ResultTimeCountDefaultText">0 시간</string>
   
   <!--DollDB_ImageViewer-->
-  <string name="DollDB_ImageViewer_RefreshImageCacheText">이미지 캐시 갱신</string>
   <string name="DollDB_ImageViewer_ImageStatusDefaultText">정상</string>
   
   <!--DollDBDetailLayout-->

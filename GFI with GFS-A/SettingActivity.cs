@@ -1,18 +1,17 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Support.V14.Preferences;
 using Android.Support.Design.Widget;
+using Android.Support.V14.Preferences;
+using Android.Support.V7.Preferences;
 using Android.Views;
 using Android.Widget;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
-using Android.Support.V7.Preferences;
 
 namespace GFI_with_GFS_A
 {

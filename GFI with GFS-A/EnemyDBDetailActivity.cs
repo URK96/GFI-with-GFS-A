@@ -48,7 +48,7 @@ namespace GFI_with_GFS_A
 
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.EnemyDBDetailInitLoadProgress);
 
-                //FindViewById<ImageView>(Resource.Id.DollDBDetailSmallImage).Click += EnemyDBDetailSmallImage_Click;
+                FindViewById<ImageView>(Resource.Id.EnemyDBDetailSmallImage).Click += EnemyDBDetailSmallImage_Click;
 
                 TypeSelector = FindViewById<Spinner>(Resource.Id.EnemyDBDetailEnemyTypeSelector);
                 TypeSelector.ItemSelected += TypeSelector_ItemSelected;
@@ -75,9 +75,9 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                var DollImageViewer = new Intent(this, typeof(DollDBImageViewer));
-                DollImageViewer.PutExtra("Data", EnemyCodeName);
-                StartActivity(DollImageViewer);
+                var EnemyImageViewer = new Intent(this, typeof(EnemyDBImageViewer));
+                EnemyImageViewer.PutExtra("Data", EnemyCodeName);
+                StartActivity(EnemyImageViewer);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
             catch (Exception ex)

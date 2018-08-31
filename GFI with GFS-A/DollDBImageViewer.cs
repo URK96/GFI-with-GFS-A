@@ -12,16 +12,14 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using UK.CO.Senab.Photoview;
 
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "DollDBImageViewer", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class DollDBImageViewer : AppCompatActivity
     {
-        private ScaleGestureDetector mScaleGestureDetector;
-        private static float mScaleFactor = 1.0f;
-        private bool IsScaleMode = false;
-        private bool ChangeModeTemp = false;
+        private bool IsFullImageMode = false;
 
         private DataRow DollInfoDR = null;
         private int DollDicNum;
@@ -32,9 +30,8 @@ namespace GFI_with_GFS_A
         private ProgressBar LoadProgressBar;
         private Button RefreshCacheButton;
         private Button ChangeStateButton;
-        private static ImageView DollImageView;
+        private PhotoView DollImageView;
         private TextView ImageStatus;
-        private FloatingActionButton ExitFAB;
 
         private List<string> Costumes;
 
@@ -65,8 +62,7 @@ namespace GFI_with_GFS_A
                 HasCensored = (bool)DollInfoDR["HasCensor"];
                 if (HasCensored == true) CensorType = ((string)DollInfoDR["CensorType"]).Split(';');
 
-                DollImageView = FindViewById<ImageView>(Resource.Id.DollDBImageViewerImageView);
-                DollImageView.Click += DollImageView_Click;
+                DollImageView = FindViewById<PhotoView>(Resource.Id.DollDBImageViewerImageView);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBImageViewerSnackbarLayout);
                 CostumeList = FindViewById<Spinner>(Resource.Id.DollDBImageViewerCostumeList);
                 CostumeList.ItemSelected += CostumeList_ItemSelected;
@@ -81,10 +77,6 @@ namespace GFI_with_GFS_A
                 ChangeStateButton = FindViewById<Button>(Resource.Id.DollDBImageViewerChangeStateButton);
                 ChangeStateButton.Click += ChangeStateButton_Click;
                 ImageStatus = FindViewById<TextView>(Resource.Id.DollDBImageViewerImageStatus);
-                ExitFAB = FindViewById<FloatingActionButton>(Resource.Id.DollDBImageViewerExitModeFAB);
-                ExitFAB.Click += ExitFAB_Click;
-
-                mScaleGestureDetector = new ScaleGestureDetector(this, new ImageScaleListener());
 
                 LoadCostumeList();
                 LoadImage(0, IsDamage);
@@ -93,37 +85,6 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(this, ex.ToString());
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
-            }
-        }
-
-        private void DollImageView_Click(object sender, EventArgs e)
-        {
-            if (IsScaleMode == false)
-            {
-                IsScaleMode = true;
-
-                CostumeList.Animate().Alpha(0.0f).SetDuration(500).Start();
-                FindViewById<LinearLayout>(Resource.Id.DollDBImageViewerButtonLayout).Animate().Alpha(0.0f).SetDuration(500).Start();
-                ImageStatus.Animate().Alpha(0.0f).SetDuration(500).Start();
-
-                ExitFAB.Animate().Alpha(1.0f).SetDuration(500).WithStartAction(new Java.Lang.Runnable(delegate { ExitFAB.Visibility = ViewStates.Visible; })).Start();
-            }
-        }
-
-        private void ExitFAB_Click(object sender, EventArgs e)
-        {
-            if (IsScaleMode == true)
-            {
-                IsScaleMode = false;
-
-                CostumeList.Animate().Alpha(1.0f).SetDuration(500).Start();
-                FindViewById<LinearLayout>(Resource.Id.DollDBImageViewerButtonLayout).Animate().Alpha(1.0f).SetDuration(500).Start();
-                ImageStatus.Animate().Alpha(1.0f).SetDuration(500).Start();
-
-                ExitFAB.Animate().Alpha(0.0f).SetDuration(500).WithEndAction(new Java.Lang.Runnable(delegate { ExitFAB.Visibility = ViewStates.Gone; })).Start();
-
-                mScaleFactor = 1.0f;
-                DollImageView.Animate().ScaleX(1.0f).ScaleY(1.0f).SetDuration(500).SetStartDelay(300).Start();
             }
         }
 
@@ -214,7 +175,7 @@ namespace GFI_with_GFS_A
 
                 if ((File.Exists(ImagePath) == false) || (IsRefresh == true))
                 {
-                    using (WebClient wc = new WebClient())
+                    using (TimeOutWebClient wc = new TimeOutWebClient())
                     {
                         await Task.Run(async () => { await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", ImageName + ".png"), ImagePath); });
                     }
@@ -254,32 +215,11 @@ namespace GFI_with_GFS_A
             }
         }
 
-        public override bool DispatchTouchEvent(MotionEvent ev)
-        {
-            if (IsScaleMode == true) mScaleGestureDetector.OnTouchEvent(ev);
-
-            return base.DispatchTouchEvent(ev);
-        }
-
         public override void OnBackPressed()
         {
             base.OnBackPressed();
             OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             GC.Collect();
-        }
-
-        private class ImageScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener
-        {
-            public override bool OnScale(ScaleGestureDetector detector)
-            {
-                mScaleFactor *= detector.ScaleFactor;
-                mScaleFactor = Math.Max(1.0f, Math.Min(mScaleFactor, 3.0f));
-
-                DollImageView.ScaleX = mScaleFactor;
-                DollImageView.ScaleY = mScaleFactor;
-
-                return true;
-            }
         }
     }
 }

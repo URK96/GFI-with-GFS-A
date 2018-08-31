@@ -9,7 +9,6 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Felipecsl.GifImageViewLibrary;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Android.Support.Design.Widget;
