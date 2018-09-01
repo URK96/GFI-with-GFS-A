@@ -40,7 +40,6 @@ namespace GFI_with_GFS_A
         private int ModIndex = 0;
         private bool HasCensored = false;
         private string[] CensorType;
-        private bool IsRefresh = false;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -69,17 +68,13 @@ namespace GFI_with_GFS_A
                 LoadProgressBar = FindViewById<ProgressBar>(Resource.Id.DollDBImageViewerLoadProgress);
                 LoadProgressBar.Visibility = ViewStates.Visible;
                 RefreshCacheButton = FindViewById<Button>(Resource.Id.DollDBImageViewerRefreshImageCacheButton);
-                RefreshCacheButton.Click += delegate
-                {
-                    IsRefresh = true;
-                    LoadImage(CostumeIndex, IsDamage);
-                };
+                RefreshCacheButton.Click += delegate { LoadImage(CostumeIndex, IsDamage, true); };
                 ChangeStateButton = FindViewById<Button>(Resource.Id.DollDBImageViewerChangeStateButton);
                 ChangeStateButton.Click += ChangeStateButton_Click;
                 ImageStatus = FindViewById<TextView>(Resource.Id.DollDBImageViewerImageStatus);
 
                 LoadCostumeList();
-                LoadImage(0, IsDamage);
+                LoadImage(0, IsDamage, false);
             }
             catch (Exception ex)
             {
@@ -92,7 +87,7 @@ namespace GFI_with_GFS_A
         {
             IsDamage = !IsDamage;
 
-            LoadImage(CostumeIndex, IsDamage);
+            LoadImage(CostumeIndex, IsDamage, false);
         }
 
         private void CostumeList_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -100,7 +95,7 @@ namespace GFI_with_GFS_A
             IsDamage = false;
             CostumeIndex = e.Position;
 
-            LoadImage(CostumeIndex, IsDamage);
+            LoadImage(CostumeIndex, IsDamage, false);
         }
 
         private void LoadCostumeList()
@@ -136,7 +131,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async void LoadImage(int CostumeIndex, bool Damage)
+        private async void LoadImage(int CostumeIndex, bool Damage, bool IsRefresh)
         {
             try
             {
@@ -185,23 +180,20 @@ namespace GFI_with_GFS_A
 
                 DollImageView.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(ImagePath));
 
-                StringBuilder sb = new StringBuilder();
-                sb.Append(DollName);
-                sb.Append(" - ");
-                sb.Append(Costumes[CostumeIndex]);
-                sb.Append(" - ");
-                if (IsDamage == true)
+                string DamageText = "";
+
+                switch (IsDamage)
                 {
-                    sb.Append(Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusDamage));
-                    ChangeStateButton.Text = Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusDamage);
-                }
-                else
-                {
-                    sb.Append(Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusNormal));
-                    ChangeStateButton.Text = Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusNormal);
+                    case true:
+                        DamageText = Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusDamage);
+                        break;
+                    case false:
+                        DamageText = Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusNormal);
+                        break;
                 }
 
-                ImageStatus.Text = sb.ToString();
+                ChangeStateButton.Text = DamageText;
+                ImageStatus.Text = string.Format("{0} - {1} - {2}", DollName, Costumes[CostumeIndex], DamageText);
             }
             catch (Exception ex)
             {

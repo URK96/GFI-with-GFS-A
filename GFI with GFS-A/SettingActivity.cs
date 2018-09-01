@@ -36,11 +36,6 @@ namespace GFI_with_GFS_A
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.SettingSnackbarLayout);
 
                 FragmentManager.BeginTransaction().Replace(Resource.Id.SettingFragmentContainer, new MainSettingFragment(), null).Commit();
-
-                /*FragmentCompat SettingFragment = new MainSettingFragment();
-                FragmentTransaction ft = FragmentManager.BeginTransaction();
-                ft.Add(Resource.Id.SettingFragmentContainer, SettingFragment);
-                ft.Commit();*/
             }
             catch (Exception ex)
             {

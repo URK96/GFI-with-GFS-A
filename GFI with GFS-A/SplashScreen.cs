@@ -150,18 +150,6 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task ImageAnimation()
-        {
-            ClipDrawable drawable = (ClipDrawable)MainSplashImageView.Drawable;
-
-            for (int i = 0; i <= 10000; i += 200)
-            {
-                drawable.SetLevel(i);
-                MainSplashImageView.SetImageDrawable(drawable);
-                await Task.Delay(10);
-            }
-        }
-
         private void CheckPermission()
         {
             try
