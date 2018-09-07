@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Normal">
+    <item>(Area 0) Frontline</item>
+    <item>(Area 0) War</item>
+    <item>(Area 1) Safety First.A</item>
+    <item>(Area 1) Safety First.B</item>
+    <item>(Area 2) GreenLight.A</item>
+    <item>(Area 2) GreenLight.B</item>
+    <item>(Area 3) Beacon.A</item>
+    <item>(Area 3) Beacon.B</item>
+    <item>(Area 4) Sentry.A</item>
+    <item>(Area 4) Sentry.B</item>
+    <item>(Area 5) For the record.A</item>
+    <item>(Area 5) For the record.B</item>
+    <item>(Area 6) Host.A</item>
+    <item>(Area 6) Host.B</item>
+    <item>(Area 7) Nihilism.A</item>
+    <item>(Area 7) Nihilism.B</item>
+    <item>(Area 8)</item>
+    <item>(Area 9)</item>
+    <item>(Area 10)</item>
+    <item>Achieve</item>
+    <item>cafe</item>
+    <item>combat_simulation_loop</item>
+    <item>dorm</item>
+    <item>event intermission</item>
+    <item>event_loop</item>
+    <item>formation</item>
+    <item>GF_Emotional_Normal_loop</item>
+    <item>GF_Emotional_Without_Chorus_loop</item>
+    <item>intermission</item>
+    <item>made in heaven (area boss)</item>
+    <item>mission clear</item>
+    <item>wedding</item>
+  </string-array>
+
+  <string-array name="ContinuumTurbulence">
+    <item>Boss</item>
+    <item>Intermission</item>
+    <item>Map1</item>
+    <item>Map2</item>
+    <item>Map3</item>
+  </string-array>
+
+  <string-array name="DeepDive">
+    <item>3-4(inst)</item>
+    <item>3-4</item>
+    <item>area 1</item>
+    <item>area 2</item>
+    <item>area 3</item>
+    <item>Hidden</item>
+  </string-array>
+
+  <string-array name="Cube">
+    <item>area 1</item>
+    <item>area 1 boss</item>
+  </string-array>
+
+  <string-array name="DJMAX">
+    <item>ArmoredPhantom (HeartBeat, Area 1-2)</item>
+    <item>AsktoWind (Area 1-2 minigame)</item>
+    <item>BELL</item>
+    <item>BeyondYourself</item>
+    <item>BlackCat (End of the Moonlight, Area 2-3)</item>
+    <item>BulletWanted</item>
+    <item>Daily 01</item>
+    <item>Daily 02</item>
+    <item>FallenAngel (Area 1-3 minigame)</item>
+    <item>FirstKiss</item>
+    <item>GloryDay</item>
+    <item>IWantYou</item>
+    <item>LadyMadeStar</item>
+    <item>Miles (DJMAX collab intermission)</item>
+    <item>Nightmare (Fate, Area 2-2)</item>
+    <item>OBLIVION (Area 2-3 minigame)</item>
+    <item>OnlyForYou</item>
+    <item>PlasticMethod (Stalker, Area 1-1)</item>
+    <item>ShadowFlower</item>
+    <item>ShadowFlower_F</item>
+    <item>Syriana (Area 2-2 minigame)</item>
+    <item>TheLastScene (Sunset Rider, Area 2-1)</item>
+    <item>TheObliterator</item>
+    <item>Ventilator (Waiting for you, Area 1-3)</item>
+    <item>VirginForce (Area 2-1 minigame)</item>
+    <item>WHY</item>
+  </string-array>
+
+  <string-array name="GuiltyGear">
+    <item>Danger</item>
+    <item>intermission</item>
+    <item>map 1</item>
+    <item>map 2</item>
+    <item>map 3</item>
+    <item>map 4</item>
+    <item>Sad</item>
+    <item>Sunshine</item>
+    <item>War</item>
+  </string-array>
+
+  <string-array name="Houkai2">
+    <item>intermission</item>
+    <item>map1</item>
+    <item>map2</item>
+    <item>map3</item>
+    <item>map4</item>
+    <item>map5</item>
+    <item>map6</item>
+    <item>map7</item>
+    <item>map8</item>
+  </string-array>
+
+  <string-array name="Hypothermia">
+    <item>3-4</item>
+    <item>winter_day</item>
+    <item>winter_night</item>
+  </string-array>
+
+  <string-array name="Singularity">
+    <item>Boss1</item>
+    <item>Boss2</item>
+    <item>Daily2</item>
+    <item>Intermission</item>
+    <item>Map1</item>
+    <item>Map2</item>
+    <item>Map3</item>
+    <item>What am I fighting for</item>
+  </string-array>
+</resources>

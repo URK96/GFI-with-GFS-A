@@ -538,6 +538,26 @@ namespace GFI_with_GFS_A
             }
         }
 
+        internal static void LogError(string error)
+        {
+            try
+            {
+                DateTime now = DateTime.Now;
+
+                string nowDateTime = now.Year.ToString() + now.Month.ToString() + now.Day.ToString() + now.Hour.ToString() + now.Minute.ToString() + now.Second.ToString();
+                string ErrorFileName = string.Format("{0}-ErrorLog.txt", nowDateTime);
+
+                using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
+                {
+                    sw.Write(error);
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
+
         internal static void ShowSnackbar(View v, string message, int time)
         {
             Snackbar sb = Snackbar.Make(v, message, time);

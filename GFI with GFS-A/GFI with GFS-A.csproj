@@ -72,12 +72,6 @@
     <Reference Include="PhotoViewBinding, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.PhotoView.Android.1.2.4\lib\PhotoViewBinding.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.SimpleAudioPlayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xam.Plugin.SimpleAudioPlayer.1.1.0\lib\MonoAndroid10\Plugin.SimpleAudioPlayer.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.SimpleAudioPlayer.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xam.Plugin.SimpleAudioPlayer.1.1.0\lib\MonoAndroid10\Plugin.SimpleAudioPlayer.Abstractions.dll</HintPath>
-    </Reference>
     <Reference Include="Syncfusion.Licensing, Version=16.2.0.50, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Licensing.16.2.0.50\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
     </Reference>
@@ -198,6 +192,7 @@
     <Compile Include="EquipDBMainActivity.cs" />
     <Compile Include="ETC.cs" />
     <Compile Include="EventListActivity.cs" />
+    <Compile Include="GFOSTPlayerActivity.cs" />
     <Compile Include="ProductResultActivity.cs" />
     <Compile Include="ProductSimulatorActivity.cs" />
     <Compile Include="ProductSimulatorCategorySelectActivity.cs" />
@@ -936,6 +931,20 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\EnemyDB_ImageViewer.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\GFOSTPlayer.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\MusicList.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\GFOSTPlayerScreen.axml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>

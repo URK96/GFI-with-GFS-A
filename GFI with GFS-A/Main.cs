@@ -53,8 +53,8 @@ namespace GFI_with_GFS_A
         readonly string[] MainMenuButtonText = 
         {
             ETC.Resources.GetString(Resource.String.Main_MainMenu_DBMenu),
-            ETC.Resources.GetString(Resource.String.Main_MainMenu_MDSupport),
-            ETC.Resources.GetString(Resource.String.Main_MainMenu_FreeOP),
+            ETC.Resources.GetString(Resource.String.ComingSoon),
+            ETC.Resources.GetString(Resource.String.ComingSoon),
             ETC.Resources.GetString(Resource.String.Main_MainMenu_OldGFD),
             ETC.Resources.GetString(Resource.String.Main_MainMenu_Calc),
             ETC.Resources.GetString(Resource.String.Main_MainMenu_GFDInfo),
@@ -150,13 +150,22 @@ namespace GFI_with_GFS_A
             switch (ETC.sharedPreferences.GetString("StartAppMode", "0"))
             {
                 case "1":
-                    MainMenuButton_Click(FindViewById<Button>(Resource.Id.OldGFDMainButton), new EventArgs());
+                    MainMenuButton_Click(FindViewById<Button>(Resource.Id.DBSubMenuMainButton), new EventArgs());
                     break;
                 case "2":
-                    ExtraMenuButton_Click(FindViewById<Button>(Resource.Id.RFBotExtraButton), new EventArgs());
+                    MainMenuButton_Click(FindViewById<Button>(Resource.Id.OldGFDMainButton), new EventArgs());
                     break;
                 case "3":
+                    ExtraMenuButton_Click(FindViewById<Button>(Resource.Id.RFBotExtraButton), new EventArgs());
+                    break;
+                case "4":
                     MainMenuButton_Click(FindViewById<Button>(Resource.Id.CalcMainButton), new EventArgs());
+                    break;
+                case "5":
+                    ExtraMenuButton_Click(FindViewById<Button>(Resource.Id.EventExtraButton), new EventArgs());
+                    break;
+                case "6":
+                    ExtraMenuButton_Click(FindViewById<Button>(Resource.Id.GFNewsExtraButton), new EventArgs());
                     break;
             }
         }
@@ -207,7 +216,11 @@ namespace GFI_with_GFS_A
 
             try
             {
-                if (ETC.sharedPreferences.GetBoolean("LowMemoryOption", false) == false)
+                for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).Text = MainMenuButtonText[i];
+                for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).Text = DBSubMenuButtonText[i];
+                for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).Text = ExtraMenuButtonText[i];
+
+                /*if (ETC.sharedPreferences.GetBoolean("LowMemoryOption", false) == false)
                 {
                     for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).SetBackgroundResource(MainMenuButtonBackgroundIds[i]);
                     for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).SetBackgroundResource(DBSubMenuButtonBackgroundIds[i]);
@@ -218,7 +231,7 @@ namespace GFI_with_GFS_A
                     for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).Text = MainMenuButtonText[i];
                     for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).Text = DBSubMenuButtonText[i];
                     for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).Text = ExtraMenuButtonText[i];
-                }
+                }*/
 
                 SetMainMenuEvent(1);
 
@@ -455,6 +468,8 @@ namespace GFI_with_GFS_A
                         SwitchDBSubMenu(1);
                         break;
                     case Resource.Id.MDSupportMainButton:
+                        /*StartActivity(typeof(GFOSTPlayerActivity));
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);*/
                         break;
                     case Resource.Id.FreeOPMainButton:
                         break;

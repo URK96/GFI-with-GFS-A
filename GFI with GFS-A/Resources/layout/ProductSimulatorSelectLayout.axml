@@ -32,12 +32,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_margin="20dp"
+					android:visibility="gone"
                     android:background="@drawable/equip_normalproduct"
                     android:id="@+id/ProductSimulatorCategoryEquipNormalButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_margin="20dp"
+					android:visibility="gone"
                     android:background="@drawable/equip_advanceproduct"
                     android:id="@+id/ProductSimulatorCategoryEquipAdvanceButton" />
             </LinearLayout>

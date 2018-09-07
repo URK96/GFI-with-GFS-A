@@ -18,6 +18,8 @@
   <string name="Calc_FSTGradeUp_NowGradeSelectorTitle">* 현재 등급 *</string>
   <string name="Calc_FSTGradeUp_TargetGradeSelectorTitle">* 목표 등급 *</string>
   
+  <string name="ComingSoon">Coming Soon...</string>
+  
   <!--Solution String-->
   <string name="CheckingUpdate">업데이트 확인 중...</string>
   <string name="Splash_SkipCheckUpdate">업데이트 확인은 건너뛰어보겠어!</string>
@@ -388,15 +390,36 @@
   <string name="ProductSimulatorLayout_ProductButtonText">제조</string>
   
   
+  <!--Music Category-->
+  <string name="Music_Category_ContinuumTurbulence">난류연속</string>
+  <string name="Music_Category_Cube">큐브</string>
+  <string name="Music_Category_DeepDive">심층투영</string>
+  <string name="Music_Category_DJMAX">DJMAX 콜라보</string>
+  <string name="Music_Category_GuiltyGear">길티기어 콜라보</string>
+  <string name="Music_Category_Houkai2">붕괴2 콜라보</string>
+  <string name="Music_Category_Singularity">특이점</string>
+  <string name="Music_Category_Hypothermia">저체온증</string>
+  <string name="Music_Category_Normal">일반</string>
+  
+  
   <!--ETC String Value-->
   <string name="AdMob_TestID">ca-app-pub-3940256099942544/6300978111</string>
   <string name="AdMob_ID">ca-app-pub-4576756770200148/6439609402</string>
     
   <string name="NewFeature">
-    [2.1.8 수정사항]\n\n
-- 인형 정보 중 Mod 전환 시 스킬 효과치가 변경되지 않는 문제 수정\n
-- 인형, 장비, 요정 상세정보에 캐시 갱신 플로팅 버튼 추가\n
-- 오프라인에서도 이미지 없이 도감이 정상적으로 열리도록 수정\n
+    [2.2.0 수정사항]\n\n
+- 메인메뉴 화면 개편\n
+- 초기 로딩 애니메이션 변경\n
+- 화력소대 DB 추가\n
+- 작전보고서 계산기에서 요정, 화력소대 항목 추가\n
+- 화력소대 계산기 추가\n
+- 설정 항목 추가\n
+- 인형 이미지를 확대/축소 후 스크롤 할 수 있게 수정\n
+- RFBot에 명령어 일부 추가\n
+- 해당 인형의 총기 제원 열람 기능 추가\n
+- 제조 시뮬레이터 추가 (인형 제조만)\n
+- 철혈 DB 추가\n
+- 네트워크 접속 TimeOut이 무한대로 설정되는 문제 수정\n
 - 성능 최적화
 </string>
 </resources>

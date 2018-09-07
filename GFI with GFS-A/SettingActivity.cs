@@ -86,11 +86,14 @@ namespace GFI_with_GFS_A
             StartAppMode.SetEntries(new string[] 
             {
                 Resources.GetString(Resource.String.Common_Default),
+                Resources.GetString(Resource.String.Main_MainMenu_DBMenu),
                 Resources.GetString(Resource.String.Main_MainMenu_OldGFD),
                 Resources.GetString(Resource.String.Main_ExtraMenu_RFBot),
-                Resources.GetString(Resource.String.Main_MainMenu_Calc)
+                Resources.GetString(Resource.String.Main_MainMenu_Calc),
+                Resources.GetString(Resource.String.Main_ExtraMenu_Event),
+                Resources.GetString(Resource.String.Main_ExtraMenu_OfficialNotification)
             });
-            StartAppMode.SetEntryValues(new string[] { "0", "1", "2", "3" });
+            StartAppMode.SetEntryValues(new string[] { "0", "1", "2", "3", "4", "5", "6" });
             StartAppMode.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("StartAppMode", "0")));
 
             SwitchPreference LowMemoryOption = (SwitchPreference)FindPreference("LowMemoryOption");

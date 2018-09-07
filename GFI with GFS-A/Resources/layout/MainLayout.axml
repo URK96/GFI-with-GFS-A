@@ -213,12 +213,14 @@
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
                     android:enabled="false"
+					android:visibility="gone"
                     android:id="@+id/FSTDBButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
                     android:enabled="false"
+					android:visibility="gone"
                     android:id="@+id/FSTDBButton" />
             </LinearLayout>
         </ScrollView>

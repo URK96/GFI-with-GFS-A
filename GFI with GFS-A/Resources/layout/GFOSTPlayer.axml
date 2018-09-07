@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:id="@+id/GFOSTPlayerRootLayout">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/GFOSTPlayerToolbar" />
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+		android:layout_below="@id/GFOSTPlayerToolbar"
+        android:id="@+id/GFOSTPlayerMainDrawerLayout">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+			android:layout_gravity="center"
+			android:gravity="center"
+            android:id="@+id/GFOSTPlayerMainLayout">
+		</LinearLayout>
+        <ListView
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+			android:choiceMode="singleChoice"
+            android:fitsSystemWindows="true"
+            android:id="@+id/GFOSTPlayerNavigationListView" />
+    </android.support.v4.widget.DrawerLayout>
+	<android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/GFOSTPlayerSnackbarLayout"
+        android:layout_alignTop="@id/GFOSTPlayerRootLayout" />
+</RelativeLayout>
