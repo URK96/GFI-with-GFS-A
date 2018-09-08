@@ -468,8 +468,6 @@ namespace GFI_with_GFS_A
                         SwitchDBSubMenu(1);
                         break;
                     case Resource.Id.MDSupportMainButton:
-                        /*StartActivity(typeof(GFOSTPlayerActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);*/
                         break;
                     case Resource.Id.FreeOPMainButton:
                         break;
@@ -580,6 +578,10 @@ namespace GFI_with_GFS_A
                         break;
                     case Resource.Id.ProductSimulatorExtraButton:
                         StartActivity(typeof(ProductSimulatorCategorySelectActivity));
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    case Resource.Id.GFOSTPlayerExtraButton:
+                        StartActivity(typeof(GFOSTPlayerActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     default:

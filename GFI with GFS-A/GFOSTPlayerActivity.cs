@@ -4,6 +4,8 @@ using Android.Media;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
+using Android.Support.V4.View;
+using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
@@ -25,9 +27,8 @@ namespace GFI_with_GFS_A
         private ArrayAdapter Category_Adapter;
         private FragmentTransaction ft;
 
+        private DrawerLayout MainDrawerLayout;
         private ListView DrawerListView;
-
-        private CoordinatorLayout SnackbarLayout;
 
         private List<string> Item_List = new List<string>();
         private string[] Category_List =
@@ -52,43 +53,36 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.GFOSTPlayer);
 
+            MainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.GFOSTPlayerMainDrawerLayout);
+
             SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.GFOSTPlayerToolbar));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
-            SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.CalcIcon);
+            if (ETC.UseLightTheme == true) SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.OSTPlayer_WhiteTheme);
+            else SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.OSTPlayer);
 
             DrawerListView = FindViewById<ListView>(Resource.Id.GFOSTPlayerNavigationListView);
             DrawerListView.ItemClick += DrawerListView_ItemSelected;
 
-            SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.GFOSTPlayerSnackbarLayout);
-
             ft = FragmentManager.BeginTransaction();
-            ft.Add(Resource.Id.CalcFragmentContainer, new GFOSTPlayerScreen(), "GFOSTPlayerScreen");
+            ft.Add(Resource.Id.GFOSTPlayerMainLayout, new GFOSTPlayerScreen(), "GFOSTPlayerScreen");
 
             ft.Commit();
 
             LoadCategoryList();
         }
 
-        private void GFOSTPlayerButton_Click(object sender, EventArgs e)
+        public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            try
+            switch (item.ItemId)
             {
-                Button bt = sender as Button;
-
-                switch (bt.Id)
-                {
-                    case Resource.Id.GFOSTPlayerPlayButton:
-                        break;
-                    case Resource.Id.GFOSTPlayerStopButton:
-                        break;
-                }
+                case Android.Resource.Id.Home:
+                    if (MainDrawerLayout.IsDrawerOpen(GravityCompat.Start) == false) MainDrawerLayout.OpenDrawer(GravityCompat.Start);
+                    else MainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                    return true;
             }
-            catch (Exception ex)
-            {
-                ETC.LogError(this, ex.ToString());
-            }
+            return base.OnOptionsItemSelected(item);
         }
 
         private void LoadCategoryList()
@@ -98,11 +92,12 @@ namespace GFI_with_GFS_A
                 Category_Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, Category_List);
 
                 DrawerListView.Adapter = Category_Adapter;
+
+                MainDrawerLayout.OpenDrawer(GravityCompat.Start);
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.List_InitError, Snackbar.LengthShort);
             }
         }
 
@@ -176,7 +171,7 @@ namespace GFI_with_GFS_A
                             IsCategory = true;
                             break;
                         default:
-                            LoadMusic(Item_List[e.Position]);
+                            LoadMusicPath(Item_List[e.Position]);
                             break;
                     }
                 }
@@ -184,30 +179,31 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "Error Change List Items", Snackbar.LengthShort);
             }
         }
 
-        private async Task LoadMusic(string MusicName)
+        private void LoadMusicPath(string MusicName)
         {
             try
             {
                 string FileName = string.Format("{0}.mp3", MusicName);
                 MusicPath = Path.Combine(Server_MusicPath, "OST", Category, FileName);
 
-                GFOSTPlayerButton_Click(FindViewById<Button>(Resource.Id.GFOSTPlayerPlayButton), new EventArgs());
+                var intent = new Intent(this, typeof(GFOSTService));
+                intent.PutExtra("MusicPath", MusicPath);
+                intent.PutExtra("Command", "Start_C");
+                StartService(intent);
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "Fail to load music", Snackbar.LengthShort);
             }
         }
 
         public string GetMusicPath() { return MusicPath; }
     }
 
-    internal class GFOSTPlayerScreen : Fragment
+    public class GFOSTPlayerScreen : Fragment
     {
         private string MusicPath;
 
@@ -263,6 +259,8 @@ namespace GFI_with_GFS_A
     {
         MediaPlayer player;
 
+        bool IsLoad = false;
+
         public override void OnCreate()
         {
             base.OnCreate();
@@ -285,10 +283,13 @@ namespace GFI_with_GFS_A
             switch (command)
             {
                 case "Start":
-                    LoadMusic(path);
+                    player.Start();
+                    break;
+                case "Start_C":
+                    LoadMusic(path, true);
                     break;
                 case "Stop":
-                    player.Stop();
+                    player.Pause();
                     break;
             }
 
@@ -303,13 +304,25 @@ namespace GFI_with_GFS_A
             player.Dispose();
         }
 
-        private async Task LoadMusic(string path)
+        private void LoadMusic(string path, bool IsChange)
         {
             try
             {
-                player.Release();
+                if (IsChange == true)
+                {
+                    player.Stop();
+                    player.Reset();
+                }
+
+                /*using (TimeOutWebClient wc = new TimeOutWebClient())
+                {
+                    await wc.DownloadFileTaskAsync(path, Path.Combine(ETC.CachePath, "test.mp3"));
+                }*/
+
                 player.SetDataSource(path);
                 player.Prepare();
+
+                IsLoad = true;
             }
             catch (Exception ex)
             {

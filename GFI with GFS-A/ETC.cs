@@ -13,7 +13,7 @@ namespace GFI_with_GFS_A
 {
     internal static class ETC
     {
-        internal static string Server = "http://chlwlsgur96.ipdisk.co.kr:80/publist/HDD1/Data/Project/GFS/";
+        internal static string Server = "http://192.168.0.10/publist/HDD1/Data/Project/GFS/";
         internal static string SDCardPath = (string)Android.OS.Environment.ExternalStorageDirectory;
         internal static string tempPath = Path.Combine(SDCardPath, "GFDTemp");
         internal static string AppDataPath = Path.Combine(SDCardPath, "Android", "data", "GFD");

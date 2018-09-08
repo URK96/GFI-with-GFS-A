@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <!--New String-->
-  <string name="Main_ExtraMenu_GFOSTPlayer">OST 플레이어</string>
+  <string name="Main_ExtraMenu_GFOSTPlayer">OST 플레이어 (Alpha)</string>
   
   <string name="DollDBDetailLayout_ModelData">총기 제원</string>
   
@@ -407,19 +407,8 @@
   <string name="AdMob_ID">ca-app-pub-4576756770200148/6439609402</string>
     
   <string name="NewFeature">
-    [2.2.0 수정사항]\n\n
-- 메인메뉴 화면 개편\n
-- 초기 로딩 애니메이션 변경\n
-- 화력소대 DB 추가\n
-- 작전보고서 계산기에서 요정, 화력소대 항목 추가\n
-- 화력소대 계산기 추가\n
-- 설정 항목 추가\n
-- 인형 이미지를 확대/축소 후 스크롤 할 수 있게 수정\n
-- RFBot에 명령어 일부 추가\n
-- 해당 인형의 총기 제원 열람 기능 추가\n
-- 제조 시뮬레이터 추가 (인형 제조만)\n
-- 철혈 DB 추가\n
-- 네트워크 접속 TimeOut이 무한대로 설정되는 문제 수정\n
-- 성능 최적화
-</string>
+    [2.2.1 수정사항]\n\n
+    - 서버 DDNS 문제로 인한 서버 내부 주소 변경\n
+    - 소녀전선 OST 플레이어 (Alpha 버전) 추가\n
+  </string>
 </resources>
