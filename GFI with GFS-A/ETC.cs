@@ -274,10 +274,8 @@ namespace GFI_with_GFS_A
             foreach (string path in SubPaths) if (Directory.Exists(path) == false) Directory.CreateDirectory(path);
         }
 
-        internal static async Task<bool> LoadDB()
+        internal static bool LoadDB()
         {
-            await Task.Delay(1);
-
             try
             {
                 DollList.Clear();
@@ -350,8 +348,6 @@ namespace GFI_with_GFS_A
                 {
                     await wc.DownloadFileTaskAsync(ServerDBVerPath, TempDBVerPath);
                 }
-
-                await Task.Delay(1);
 
                 using (StreamReader sr1 = new StreamReader(new FileStream(LocalDBVerPath, FileMode.Open, FileAccess.Read)))
                 {
@@ -460,7 +456,7 @@ namespace GFI_with_GFS_A
             string newVersion = Path.Combine(tempPath, "DBVer.txt");
             File.Copy(newVersion, oldVersion, true);
 
-            await Task.Delay(1000);
+            await Task.Delay(500);
 
             pd.Dismiss();
         }
@@ -655,7 +651,7 @@ namespace GFI_with_GFS_A
         protected override WebRequest GetWebRequest(Uri address)
         {
             WebRequest request = base.GetWebRequest(address);
-            request.Timeout = 3000;
+            request.Timeout = 7000;
             return request;
         }
     }

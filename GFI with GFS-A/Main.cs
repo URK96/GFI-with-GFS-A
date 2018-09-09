@@ -378,7 +378,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task ReadServerChecking()
+        private void ReadServerChecking()
         {
             if (ETC.ServerStatusError == true) return;
 
@@ -390,7 +390,7 @@ namespace GFI_with_GFS_A
             {
                 using (TimeOutWebClient wc = new TimeOutWebClient())
                 {
-                    string[] temp = (await wc.DownloadStringTaskAsync(url)).Split(';');
+                    string[] temp = wc.DownloadString(url).Split(';');
 
                     if (temp[0] == "Y")
                     {
@@ -429,7 +429,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task LoadTopNotification()
+        private void LoadTopNotification()
         {
             string url = Path.Combine(ETC.Server, "Android_Notification.txt");
             string notification = "";
@@ -442,7 +442,7 @@ namespace GFI_with_GFS_A
 
                     using (TimeOutWebClient wc = new TimeOutWebClient())
                     {
-                        notification = await wc.DownloadStringTaskAsync(url);
+                        notification = wc.DownloadString(url);
                     }
 
                     NotificationView.Text = notification;

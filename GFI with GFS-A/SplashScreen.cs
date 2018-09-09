@@ -104,6 +104,7 @@ namespace GFI_with_GFS_A
                     }
                     catch (Exception ex)
                     {
+                        ETC.LogError(this, ex.ToString());
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.Splash_SkipCheckUpdate, 1000, Android.Graphics.Color.DarkBlue);
                     }
                 }
@@ -112,7 +113,7 @@ namespace GFI_with_GFS_A
 
                 if (ETC.EnableDynamicDB == false)
                 {
-                    while (await ETC.LoadDB() == false)
+                    while (ETC.LoadDB() == false)
                     {
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.DB_Recovery, Snackbar.LengthShort);
 
