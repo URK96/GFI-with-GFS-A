@@ -170,7 +170,7 @@ namespace GFI_with_GFS_A
 
                 if ((File.Exists(ImagePath) == false) || (IsRefresh == true))
                 {
-                    using (TimeOutWebClient wc = new TimeOutWebClient())
+                    using (WebClient wc = new WebClient())
                     {
                         await Task.Run(async () => { await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", ImageName + ".png"), ImagePath); });
                     }

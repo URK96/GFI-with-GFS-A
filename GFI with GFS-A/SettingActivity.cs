@@ -409,7 +409,7 @@ namespace GFI_with_GFS_A
 
                 status.Text = string.Format("{0}...(1/4)", Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusDollDB2));
 
-                using (TimeOutWebClient wc = new TimeOutWebClient())
+                using (WebClient wc = new WebClient())
                 {
                     wc.DownloadProgressChanged += Wc_DownloadProgressChanged;
                     wc.DownloadFileCompleted += Wc_DownloadFileCompleted;
@@ -504,7 +504,7 @@ namespace GFI_with_GFS_A
 
                 status.Text = string.Format("{0}(2/4)", Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusFairyDB2));
 
-                using (TimeOutWebClient wc = new TimeOutWebClient())
+                using (WebClient wc = new WebClient())
                 {
                     wc.DownloadProgressChanged += Wc_DownloadProgressChanged;
                     wc.DownloadFileCompleted += Wc_DownloadFileCompleted;
@@ -582,7 +582,7 @@ namespace GFI_with_GFS_A
 
                 status.Text = string.Format("{0}(3/4)", Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusEquipDB2));
 
-                using (TimeOutWebClient wc = new TimeOutWebClient())
+                using (WebClient wc = new WebClient())
                 {
                     wc.DownloadProgressChanged += Wc_DownloadProgressChanged;
                     wc.DownloadFileCompleted += Wc_DownloadFileCompleted;
@@ -617,7 +617,7 @@ namespace GFI_with_GFS_A
 
                 status.Text = string.Format("{0}(4/4)", Resources.GetString(Resource.String.SettingActivity_DownloadAllCache_StatusOldGFD2));
 
-                using (TimeOutWebClient wc = new TimeOutWebClient())
+                using (WebClient wc = new WebClient())
                 {
                     foreach (string s in ImageName)
                     {
@@ -743,7 +743,7 @@ namespace GFI_with_GFS_A
                 total = totalCount;
                 now = 0;
 
-                using (TimeOutWebClient wc = new TimeOutWebClient())
+                using (WebClient wc = new WebClient())
                 {
                     wc.DownloadProgressChanged += Wc_DownloadProgressChanged_OldVer;
                     wc.DownloadFileCompleted += Wc_DownloadFileCompleted_OldVer;

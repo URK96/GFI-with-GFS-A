@@ -212,7 +212,7 @@ namespace GFI_with_GFS_A
                 totalProgressBar.Max = 100;
                 totalProgressBar.Progress = 0;
 
-                using (TimeOutWebClient wc = new TimeOutWebClient())
+                using (WebClient wc = new WebClient())
                 {
                     wc.DownloadProgressChanged += Wc_DownloadProgressChanged;
                     wc.DownloadFileCompleted += Wc_DownloadFileCompleted;

@@ -159,7 +159,7 @@ namespace GFI_with_GFS_A
 
                 Task.Run(async () =>
                 {
-                    using (TimeOutWebClient wc = new TimeOutWebClient())
+                    using (WebClient wc = new WebClient())
                     {
                         data = await wc.DownloadStringTaskAsync(Path.Combine(ETC.Server, "Data", "Text", "Gun", "ModelData", FileName));
                     }
@@ -279,7 +279,7 @@ namespace GFI_with_GFS_A
                 }
                 catch (Exception)
                 {
-                    using (TimeOutWebClient wc = new TimeOutWebClient())
+                    using (WebClient wc = new WebClient())
                     {
                         wc.DownloadProgressChanged += (object s, DownloadProgressChangedEventArgs args) =>
                         {
@@ -468,7 +468,7 @@ namespace GFI_with_GFS_A
                     {
                         if ((File.Exists(Path.Combine(ETC.CachePath, "Doll", "Normal", DollDicNum + ".gfdcache")) == false) || (IsRefresh == true))
                         {
-                            using (TimeOutWebClient wc = new TimeOutWebClient())
+                            using (WebClient wc = new WebClient())
                             {
                                 await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", DollDicNum + ".png"), Path.Combine(ETC.CachePath, "Doll", "Normal", DollDicNum + ".gfdcache"));
                             }
@@ -491,7 +491,7 @@ namespace GFI_with_GFS_A
                 {
                     if ((File.Exists(Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", FileName + ".gfdcache")) == false) || (IsRefresh == true))
                     {
-                        using (TimeOutWebClient wc = new TimeOutWebClient())
+                        using (WebClient wc = new WebClient())
                         {
                             await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal_Crop", FileName + ".png"), Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", FileName + ".gfdcache"));
                         }
@@ -679,7 +679,7 @@ namespace GFI_with_GFS_A
                     if ((File.Exists(Path.Combine(ETC.CachePath, "Doll", "Skill", SkillName + ".gfdcache")) == false) || (IsRefresh == true))
                     {
 
-                        using (TimeOutWebClient wc = new TimeOutWebClient())
+                        using (WebClient wc = new WebClient())
                         {
                             wc.DownloadFile(Path.Combine(ETC.Server, "Data", "Images", "SkillIcons", SkillName + ".png"), Path.Combine(ETC.CachePath, "Doll", "Skill", SkillName + ".gfdcache"));
                         }
@@ -750,7 +750,7 @@ namespace GFI_with_GFS_A
                     {
                         if ((File.Exists(Path.Combine(ETC.CachePath, "Doll", "Skill", MSkillName + ".gfdcache")) == false) || (IsRefresh == true))
                         {
-                            using (TimeOutWebClient wc = new TimeOutWebClient())
+                            using (WebClient wc = new WebClient())
                             {
                                 wc.DownloadFile(Path.Combine(ETC.Server, "Data", "Images", "SkillIcons", MSkillName + ".png"), Path.Combine(ETC.CachePath, "Doll", "Skill", MSkillName + ".gfdcache"));
                             }

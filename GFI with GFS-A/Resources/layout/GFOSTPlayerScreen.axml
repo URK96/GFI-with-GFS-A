@@ -16,17 +16,20 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="10dp">
-				<Button
+				<ImageView
 					android:layout_width="0dp"
-					android:layout_height="wrap_content"
+					android:layout_height="match_parent"
 					android:layout_weight="1"
-					android:text="Play"
-					android:id="@+id/GFOSTPlayerPlayButton"/>
-				<Button
+					android:id="@+id/GFOSTPlayerSkipPreviousButton">
+				<ImageView
 					android:layout_width="0dp"
-					android:layout_height="wrap_content"
+					android:layout_height="match_parent"
 					android:layout_weight="1"
-					android:text="Stop"
-					android:id="@+id/GFOSTPlayerStopButton"/>
+					android:id="@+id/GFOSTPlayerSkipPlayPauseButton">
+				<ImageView
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="1"
+					android:id="@+id/GFOSTPlayerSkipNextButton">
 			</LinearLayout>
     </LinearLayout>

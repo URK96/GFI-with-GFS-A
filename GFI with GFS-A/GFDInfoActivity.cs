@@ -125,7 +125,7 @@ namespace GFI_with_GFS_A
                 string url = Path.Combine(ETC.Server, "GFD_AppVer.txt");
                 string target = Path.Combine(ETC.tempPath, "AppVer.txt");
 
-                using (TimeOutWebClient wc = new TimeOutWebClient())
+                using (WebClient wc = new WebClient())
                 {
                     await wc.DownloadFileTaskAsync(url, target);
                 }
@@ -209,7 +209,7 @@ namespace GFI_with_GFS_A
 
             try
             {
-                using (TimeOutWebClient wc = new TimeOutWebClient())
+                using (WebClient wc = new WebClient())
                 {
                     wc.DownloadProgressChanged += Wc_DownloadProgressChanged;
 

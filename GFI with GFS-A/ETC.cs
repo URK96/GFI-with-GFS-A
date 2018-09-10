@@ -13,7 +13,7 @@ namespace GFI_with_GFS_A
 {
     internal static class ETC
     {
-        internal static string Server = "http://192.168.0.10/publist/HDD1/Data/Project/GFS/";
+        internal static string Server = "http://chlwlsgur96.ipdisk.co.kr/publist/HDD1/Data/Project/GFS/";
         internal static string SDCardPath = (string)Android.OS.Environment.ExternalStorageDirectory;
         internal static string tempPath = Path.Combine(SDCardPath, "GFDTemp");
         internal static string AppDataPath = Path.Combine(SDCardPath, "Android", "data", "GFD");
@@ -344,7 +344,7 @@ namespace GFI_with_GFS_A
             if (File.Exists(LocalDBVerPath) == false) HasDBUpdate = true;
             else
             {
-                using (TimeOutWebClient wc = new TimeOutWebClient())
+                using (WebClient wc = new WebClient())
                 {
                     await wc.DownloadFileTaskAsync(ServerDBVerPath, TempDBVerPath);
                 }
@@ -375,7 +375,7 @@ namespace GFI_with_GFS_A
             if (File.Exists(LocalEventVerPath) == false) HasEventUpdate = true;
             else
             {
-                using (TimeOutWebClient wc = new TimeOutWebClient())
+                using (WebClient wc = new WebClient())
                 {
                     await wc.DownloadFileTaskAsync(ServerEventVerPath, TempEventVerPath);
                 }
@@ -423,7 +423,7 @@ namespace GFI_with_GFS_A
             pd.Max = 100;
             pd.Show();
 
-            using (TimeOutWebClient wc = new TimeOutWebClient())
+            using (WebClient wc = new WebClient())
             {
                 for (int i = 0; i < DBFiles.Length; ++i)
                 {
@@ -472,7 +472,7 @@ namespace GFI_with_GFS_A
             pd.Max = 100;
             pd.Show();
 
-            using (TimeOutWebClient wc = new TimeOutWebClient())
+            using (WebClient wc = new WebClient())
             {
                 string url = Path.Combine(Server, "EventVer.txt");
                 string target = Path.Combine(tempPath, "EventVer.txt");
@@ -489,7 +489,7 @@ namespace GFI_with_GFS_A
 
             pd.Max = image_count;
 
-            using (TimeOutWebClient wc2 = new TimeOutWebClient())
+            using (WebClient wc2 = new WebClient())
             {
                 for (int i = 1; i <= image_count; ++i)
                 {
@@ -643,16 +643,6 @@ namespace GFI_with_GFS_A
             {
                 return;
             }
-        }
-    }
-
-    public class TimeOutWebClient : WebClient
-    {
-        protected override WebRequest GetWebRequest(Uri address)
-        {
-            WebRequest request = base.GetWebRequest(address);
-            request.Timeout = 7000;
-            return request;
         }
     }
 }

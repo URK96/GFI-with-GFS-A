@@ -187,7 +187,7 @@ namespace GFI_with_GFS_A
                 {
                     string url = Path.Combine(ETC.Server, "Android_Notification.txt");
 
-                    using (TimeOutWebClient wc = new TimeOutWebClient())
+                    using (WebClient wc = new WebClient())
                     {
                         notification = wc.DownloadString(url);
                     }
@@ -388,7 +388,7 @@ namespace GFI_with_GFS_A
 
             try
             {
-                using (TimeOutWebClient wc = new TimeOutWebClient())
+                using (WebClient wc = new WebClient())
                 {
                     string[] temp = wc.DownloadString(url).Split(';');
 
@@ -440,7 +440,7 @@ namespace GFI_with_GFS_A
                 else
                 {
 
-                    using (TimeOutWebClient wc = new TimeOutWebClient())
+                    using (WebClient wc = new WebClient())
                     {
                         notification = wc.DownloadString(url);
                     }
