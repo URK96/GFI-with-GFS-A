@@ -23,9 +23,11 @@ namespace GFI_with_GFS_A
         private string Category = "";
         private string Server_MusicPath = Path.Combine(ETC.Server, "Data", "Music");
         private string MusicPath = "";
+        private int SelectedMusicIndex = 0;
 
         private ArrayAdapter Category_Adapter;
         private FragmentTransaction ft;
+        private Fragment GFOSTPlayerScreen_F;
 
         private DrawerLayout MainDrawerLayout;
         private ListView DrawerListView;
@@ -65,8 +67,10 @@ namespace GFI_with_GFS_A
             DrawerListView = FindViewById<ListView>(Resource.Id.GFOSTPlayerNavigationListView);
             DrawerListView.ItemClick += DrawerListView_ItemSelected;
 
+            GFOSTPlayerScreen_F = new GFOSTPlayerScreen();
+
             ft = FragmentManager.BeginTransaction();
-            ft.Add(Resource.Id.GFOSTPlayerMainLayout, new GFOSTPlayerScreen(), "GFOSTPlayerScreen");
+            ft.Add(Resource.Id.GFOSTPlayerMainLayout, GFOSTPlayerScreen_F, "GFOSTPlayerScreen");
 
             ft.Commit();
 
@@ -172,6 +176,7 @@ namespace GFI_with_GFS_A
                             break;
                         default:
                             LoadMusicPath(Item_List[e.Position]);
+                            SelectedMusicIndex = e.Position;
                             break;
                     }
                 }
@@ -189,10 +194,12 @@ namespace GFI_with_GFS_A
                 string FileName = string.Format("{0}.mp3", MusicName);
                 MusicPath = Path.Combine(Server_MusicPath, "OST", Category, FileName);
 
-                var intent = new Intent(this, typeof(GFOSTService));
+                ((GFOSTPlayerScreen)GFOSTPlayerScreen_F).CommandService("Start");
+
+                /*var intent = new Intent(this, typeof(GFOSTService));
                 intent.PutExtra("MusicPath", MusicPath);
-                intent.PutExtra("Command", "Start_C");
-                StartService(intent);
+                intent.PutExtra("Command", "Start");
+                StartService(intent);*/
             }
             catch (Exception ex)
             {
@@ -201,6 +208,30 @@ namespace GFI_with_GFS_A
         }
 
         public string GetMusicPath() { return MusicPath; }
+
+        public void SkipMusic(int mode)
+        {
+            try
+            {
+                switch (mode)
+                {
+                    case 0:
+                        if (SelectedMusicIndex == 0) SelectedMusicIndex = Item_List.Count - 1;
+                        else SelectedMusicIndex -= 1;
+                        break;
+                    case 1:
+                        if (SelectedMusicIndex == (Item_List.Count - 1)) SelectedMusicIndex = 0;
+                        else SelectedMusicIndex += 1;
+                        break;
+                }
+
+                MusicPath = Item_List[SelectedMusicIndex];
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+            }
+        }
     }
 
     public class GFOSTPlayerScreen : Fragment
@@ -209,17 +240,33 @@ namespace GFI_with_GFS_A
 
         private View v;
 
-        private Button PlayButton;
-        private Button StopButton;
+        private ImageView SkipPreviousButton;
+        private ImageView PlayPauseButton;
+        private ImageView SkipNextButton;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             v = inflater.Inflate(Resource.Layout.GFOSTPlayerScreen, container, false);
 
-            PlayButton = v.FindViewById<Button>(Resource.Id.GFOSTPlayerPlayButton);
-            PlayButton.Click += MusicControlButton_Click;
-            StopButton = v.FindViewById<Button>(Resource.Id.GFOSTPlayerStopButton);
-            StopButton.Click += MusicControlButton_Click;
+            SkipPreviousButton = v.FindViewById<ImageView>(Resource.Id.GFOSTPlayerSkipPreviousButton);
+            SkipPreviousButton.Click += MusicControlButton_Click;
+            PlayPauseButton = v.FindViewById<ImageView>(Resource.Id.GFOSTPlayerPlayPauseButton);
+            PlayPauseButton.Click += MusicControlButton_Click;
+            SkipNextButton = v.FindViewById<ImageView>(Resource.Id.GFOSTPlayerSkipNextButton);
+            SkipNextButton.Click += MusicControlButton_Click;
+
+            if (ETC.UseLightTheme == true)
+            {
+                SkipPreviousButton.SetImageResource(Resource.Drawable.SkipPrevious_WhiteTheme);
+                PlayPauseButton.SetImageResource(Resource.Drawable.Play_WhiteTheme);
+                SkipNextButton.SetImageResource(Resource.Drawable.SkipNext_WhiteTheme);
+            }
+            else
+            {
+                SkipPreviousButton.SetImageResource(Resource.Drawable.SkipPrevious);
+                PlayPauseButton.SetImageResource(Resource.Drawable.Play);
+                SkipNextButton.SetImageResource(Resource.Drawable.SkipNext);
+            }
 
             return v;
         }
@@ -231,19 +278,33 @@ namespace GFI_with_GFS_A
                 Button bt = sender as Button;
                 string command = "";
 
-                var intent = new Intent(Activity, typeof(GFOSTService));
-                intent.PutExtra("MusicPath", ((GFOSTPlayerActivity)Activity).GetMusicPath());
-
                 switch (bt.Id)
                 {
-                    case Resource.Id.GFOSTPlayerPlayButton:
-                        command = "Start";
+                    case Resource.Id.GFOSTPlayerSkipPreviousButton:
+                        command = "SkipPrevious";
                         break;
-                    case Resource.Id.GFOSTPlayerStopButton:
-                        command = "Stop";
+                    case Resource.Id.GFOSTPlayerPlayPauseButton:
+                        command = "Play";
+                        break;
+                    case Resource.Id.GFOSTPlayerSkipNextButton:
+                        command = "SkipNext";
                         break;
                 }
 
+                CommandService(command);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(Activity, ex.ToString());
+            }
+        }
+
+        internal void CommandService(string command)
+        {
+            try
+            {
+                var intent = new Intent(Activity, typeof(GFOSTService));
+                intent.PutExtra("MusicPath", ((GFOSTPlayerActivity)Activity).GetMusicPath());
                 intent.PutExtra("Command", command);
                 Activity.StartService(intent);
             }
@@ -258,8 +319,6 @@ namespace GFI_with_GFS_A
     public class GFOSTService : Service
     {
         MediaPlayer player;
-
-        bool IsLoad = false;
 
         public override void OnCreate()
         {
@@ -282,14 +341,18 @@ namespace GFI_with_GFS_A
 
             switch (command)
             {
-                case "Start":
+                case "Play":
                     player.Start();
                     break;
-                case "Start_C":
+                case "Start":
                     LoadMusic(path, true);
                     break;
-                case "Stop":
+                case "Pause":
                     player.Pause();
+                    break;
+                case "SkipPrevious":
+                    break;
+                case "SkipNext":
                     break;
             }
 
@@ -321,8 +384,6 @@ namespace GFI_with_GFS_A
 
                 player.SetDataSource(path);
                 player.Prepare();
-
-                IsLoad = true;
             }
             catch (Exception ex)
             {

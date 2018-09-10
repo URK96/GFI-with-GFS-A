@@ -16,20 +16,31 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="10dp">
+				<Space
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="1"/>
 				<ImageView
 					android:layout_width="0dp"
 					android:layout_height="match_parent"
 					android:layout_weight="1"
-					android:id="@+id/GFOSTPlayerSkipPreviousButton">
+					android:clickable="true"
+					android:id="@+id/GFOSTPlayerSkipPreviousButton"/>
 				<ImageView
 					android:layout_width="0dp"
 					android:layout_height="match_parent"
 					android:layout_weight="1"
-					android:id="@+id/GFOSTPlayerSkipPlayPauseButton">
+					android:clickable="true"
+					android:id="@+id/GFOSTPlayerPlayPauseButton"/>
 				<ImageView
 					android:layout_width="0dp"
 					android:layout_height="match_parent"
 					android:layout_weight="1"
-					android:id="@+id/GFOSTPlayerSkipNextButton">
+					android:clickable="true"
+					android:id="@+id/GFOSTPlayerSkipNextButton"/>
+				<Space
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="1"/>
 			</LinearLayout>
     </LinearLayout>
