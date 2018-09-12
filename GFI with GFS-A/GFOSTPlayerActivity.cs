@@ -3,7 +3,6 @@ using Android.Content;
 using Android.Media;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.Design.Widget;
 using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
@@ -16,24 +15,25 @@ using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "GFOSTPlayerActivity", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class GFOSTPlayerActivity : AppCompatActivity
+    internal static class MusicRepository
     {
-        private bool IsCategory = true;
-        private string Category = "";
-        private string Server_MusicPath = Path.Combine(ETC.Server, "Data", "Music");
-        private string MusicPath = "";
-        private int SelectedMusicIndex = 0;
+        internal static MediaPlayer player = null;
+        internal static SeekBar PlayerSeekBar = null;
+        internal static TextView MusicTimeText = null;
+        internal static TextView MusicNameText = null;
+        internal static Activity activity;
+        internal static Fragment PlayerScreenFragment;
+        internal static bool IsPlayerPlaying = false;
 
-        private ArrayAdapter Category_Adapter;
-        private FragmentTransaction ft;
-        private Fragment GFOSTPlayerScreen_F;
+        private static readonly string Server_MusicPath = Path.Combine(ETC.Server, "Data", "Music");
 
-        private DrawerLayout MainDrawerLayout;
-        private ListView DrawerListView;
+        internal static string MusicServerPath = "";
+        internal static int CategoryIndex = 0;
+        internal static int ItemIndex = 0;
 
-        private List<string> Item_List = new List<string>();
-        private string[] Category_List =
+        private static int[] MusicDuration = new int[3];
+
+        internal static string[] Category_List =
         {
             ETC.Resources.GetString(Resource.String.Music_Category_Normal),
             ETC.Resources.GetString(Resource.String.Music_Category_ContinuumTurbulence),
@@ -45,6 +45,180 @@ namespace GFI_with_GFS_A
             ETC.Resources.GetString(Resource.String.Music_Category_Hypothermia),
             ETC.Resources.GetString(Resource.String.Music_Category_Singularity)
         };
+        internal static string[] Category_RealPath =
+        {
+            "Normal",
+            "Continuum Turbulence",
+            "Cube",
+            "Deep Dive",
+            "DJMAX",
+            "GuiltyGear",
+            "Houkai2",
+            "Hypothermia",
+            "Singularity"
+        };
+        internal static List<List<string>> Item_List = new List<List<string>>();
+
+        internal static void PlayerInitialize()
+        {
+            player = new MediaPlayer();
+            player.Prepared += delegate 
+            {
+                MusicDuration[0] = player.Duration / 1000 / 60;
+                MusicDuration[1] = player.Duration / 1000 - MusicDuration[0] * 60;
+                MusicDuration[2] = player.Duration % 1000;
+                IsPlayerPlaying = true;
+                if (MusicTimeText != null) MusicTimeText.Text = string.Format("{0}:{1}.{2}", MusicDuration[0], MusicDuration[1], MusicDuration[2]);
+                if (PlayerSeekBar != null) PlayerSeekBar.Max = player.Duration;
+                if (MusicNameText != null) MusicNameText.Text = Item_List[CategoryIndex][ItemIndex];
+                StartSeekBarTask();
+                player.Start();
+            };
+        }
+
+        internal static void MusicItemInitialize()
+        {
+            try
+            {
+                Item_List.Clear();
+
+                for (int i = 0; i < Category_List.Length; ++i)
+                {
+                    int Array_Id = 0;
+
+                    CategoryIndex = i;
+
+                    switch (i)
+                    {
+                        case 0:
+                            Array_Id = Resource.Array.Normal;
+                            break;
+                        case 1:
+                            Array_Id = Resource.Array.ContinuumTurbulence;
+                            break;
+                        case 2:
+                            Array_Id = Resource.Array.Cube;
+                            break;
+                        case 3:
+                            Array_Id = Resource.Array.DeepDive;
+                            break;
+                        case 4:
+                            Array_Id = Resource.Array.DJMAX;
+                            break;
+                        case 5:
+                            Array_Id = Resource.Array.GuiltyGear;
+                            break;
+                        case 6:
+                            Array_Id = Resource.Array.Houkai2;
+                            break;
+                        case 7:
+                            Array_Id = Resource.Array.Hypothermia;
+                            break;
+                        case 8:
+                            Array_Id = Resource.Array.Singularity;
+                            break;
+                    }
+
+                    List<string> list = new List<string>();
+
+                    list.Add("...");
+                    list.AddRange(ETC.Resources.GetStringArray(Array_Id));
+                    list.TrimExcess();
+
+                    Item_List.Add(list);
+                }
+
+                Item_List.TrimExcess();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex.ToString());
+            }
+        }
+
+        internal static void SkipMusic(int mode)
+        {
+            try
+            {
+                switch (mode)
+                {
+                    case 0:
+                        if (ItemIndex == 1)
+                        {
+                            if (CategoryIndex == 0) CategoryIndex = Category_List.Length - 1;
+                            else CategoryIndex -= 1;
+
+                            ItemIndex = Item_List[CategoryIndex].Count - 1;
+                        }
+                        else ItemIndex -= 1;
+                        break;
+                    case 1:
+                        if (ItemIndex == (Item_List[CategoryIndex].Count - 1))
+                        {
+                            if (CategoryIndex == Category_List.Length - 1) CategoryIndex = 0;
+                            else CategoryIndex += 1;
+
+                            ItemIndex = 1;
+                        }
+                        else ItemIndex += 1;
+                        break;
+                }
+
+                SelectMusic();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex.ToString());
+            }
+        }
+
+        internal static void SelectMusic()
+        {
+            try
+            {
+                string FileName = string.Format("{0}.mp3", Item_List[CategoryIndex][ItemIndex]);
+                MusicServerPath = Path.Combine(Server_MusicPath, "OST", Category_RealPath[CategoryIndex], FileName);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex.ToString());
+            }
+        }
+
+        internal static void StartSeekBarTask()
+        {
+            try
+            {
+                if (PlayerSeekBar == null) return;
+
+                Task UpdateSeekBar = new Task(async () => 
+                {
+                    while (IsPlayerPlaying)
+                    {
+                        activity.RunOnUiThread(() => { PlayerSeekBar.Progress = player.CurrentPosition; });
+                        await Task.Delay(1);
+                    }
+                });
+                UpdateSeekBar.Start();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex.ToString());
+            }
+        }
+    }
+
+    [Activity(Label = "GFOSTPlayerActivity", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class GFOSTPlayerActivity : AppCompatActivity
+    {
+        private bool IsCategory = true;
+
+        private ArrayAdapter Category_Adapter;
+        private FragmentTransaction ft;
+        private Fragment GFOSTPlayerScreen_F;
+
+        private DrawerLayout MainDrawerLayout;
+        private ListView DrawerListView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -74,6 +248,9 @@ namespace GFI_with_GFS_A
 
             ft.Commit();
 
+            MusicRepository.activity = this;
+            MusicRepository.PlayerScreenFragment = GFOSTPlayerScreen_F;
+
             LoadCategoryList();
         }
 
@@ -93,8 +270,10 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                Category_Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, Category_List);
+                MusicRepository.PlayerInitialize();
+                MusicRepository.MusicItemInitialize();
 
+                Category_Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, MusicRepository.Category_List);
                 DrawerListView.Adapter = Category_Adapter;
 
                 MainDrawerLayout.OpenDrawer(GravityCompat.Start);
@@ -111,54 +290,9 @@ namespace GFI_with_GFS_A
             {
                 if (IsCategory == true)
                 {
-                    int Array_Id = 0;
+                    MusicRepository.CategoryIndex = e.Position;
 
-                    switch (e.Position)
-                    {
-                        case 0:
-                            Category = "Normal";
-                            Array_Id = Resource.Array.Normal;
-                            break;
-                        case 1:
-                            Array_Id = Resource.Array.ContinuumTurbulence;
-                            Category = "Continuum Turbulence";
-                            break;
-                        case 2:
-                            Array_Id = Resource.Array.Cube;
-                            Category = "Cube";
-                            break;
-                        case 3:
-                            Array_Id = Resource.Array.DeepDive;
-                            Category = "Deep Dive";
-                            break;
-                        case 4:
-                            Array_Id = Resource.Array.DJMAX;
-                            Category = "DJMAX";
-                            break;
-                        case 5:
-                            Array_Id = Resource.Array.GuiltyGear;
-                            Category = "GuiltyGear";
-                            break;
-                        case 6:
-                            Array_Id = Resource.Array.Houkai2;
-                            Category = "Houkai2";
-                            break;
-                        case 7:
-                            Array_Id = Resource.Array.Hypothermia;
-                            Category = "Hypothermia";
-                            break;
-                        case 8:
-                            Array_Id = Resource.Array.Singularity;
-                            Category = "Singularity";
-                            break;
-                    }
-
-                    Item_List.Clear();
-                    Item_List.Add("...");
-                    Item_List.AddRange(Resources.GetStringArray(Array_Id));
-                    Item_List.TrimExcess();
-
-                    var item_adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, Item_List);
+                    var item_adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, MusicRepository.Item_List[MusicRepository.CategoryIndex]);
 
                     DrawerListView.Adapter = null;
                     DrawerListView.Adapter = item_adapter;
@@ -170,62 +304,17 @@ namespace GFI_with_GFS_A
                     switch (e.Position)
                     {
                         case 0:
-                            Category = "";
                             DrawerListView.Adapter = Category_Adapter;
                             IsCategory = true;
                             break;
                         default:
-                            LoadMusicPath(Item_List[e.Position]);
-                            SelectedMusicIndex = e.Position;
+                            MusicRepository.ItemIndex = e.Position;
+                            MusicRepository.SelectMusic();
+
+                            ((GFOSTPlayerScreen)GFOSTPlayerScreen_F).CommandService("Start");
                             break;
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(this, ex.ToString());
-            }
-        }
-
-        private void LoadMusicPath(string MusicName)
-        {
-            try
-            {
-                string FileName = string.Format("{0}.mp3", MusicName);
-                MusicPath = Path.Combine(Server_MusicPath, "OST", Category, FileName);
-
-                ((GFOSTPlayerScreen)GFOSTPlayerScreen_F).CommandService("Start");
-
-                /*var intent = new Intent(this, typeof(GFOSTService));
-                intent.PutExtra("MusicPath", MusicPath);
-                intent.PutExtra("Command", "Start");
-                StartService(intent);*/
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(this, ex.ToString());
-            }
-        }
-
-        public string GetMusicPath() { return MusicPath; }
-
-        public void SkipMusic(int mode)
-        {
-            try
-            {
-                switch (mode)
-                {
-                    case 0:
-                        if (SelectedMusicIndex == 0) SelectedMusicIndex = Item_List.Count - 1;
-                        else SelectedMusicIndex -= 1;
-                        break;
-                    case 1:
-                        if (SelectedMusicIndex == (Item_List.Count - 1)) SelectedMusicIndex = 0;
-                        else SelectedMusicIndex += 1;
-                        break;
-                }
-
-                MusicPath = Item_List[SelectedMusicIndex];
             }
             catch (Exception ex)
             {
@@ -236,10 +325,14 @@ namespace GFI_with_GFS_A
 
     public class GFOSTPlayerScreen : Fragment
     {
-        private string MusicPath;
+        private bool IsPlaying = false;
 
         private View v;
 
+        private ImageView MusicAlbumArt;
+        private TextView MusicName;
+        private SeekBar MusicSeekBar;
+        private TextView MusicLengthText;
         private ImageView SkipPreviousButton;
         private ImageView PlayPauseButton;
         private ImageView SkipNextButton;
@@ -248,45 +341,77 @@ namespace GFI_with_GFS_A
         {
             v = inflater.Inflate(Resource.Layout.GFOSTPlayerScreen, container, false);
 
+            MusicAlbumArt = v.FindViewById<ImageView>(Resource.Id.GFOSTPlayerMusicAlbumArt);
+            MusicName = v.FindViewById<TextView>(Resource.Id.GFOSTPlayerMusicName);
+            MusicSeekBar = v.FindViewById<SeekBar>(Resource.Id.GFOSTPlayerMusicSeekBar);
+            MusicSeekBar.StopTrackingTouch += MusicSeekBar_StopTrackingTouch;
+            MusicLengthText = v.FindViewById<TextView>(Resource.Id.GFOSTPlayerMusicLengthText);
+
+            MusicRepository.PlayerSeekBar = MusicSeekBar;
+            MusicRepository.MusicTimeText = MusicLengthText;
+            MusicRepository.MusicNameText = MusicName;
+
             SkipPreviousButton = v.FindViewById<ImageView>(Resource.Id.GFOSTPlayerSkipPreviousButton);
+            SkipPreviousButton.Clickable = true;
             SkipPreviousButton.Click += MusicControlButton_Click;
             PlayPauseButton = v.FindViewById<ImageView>(Resource.Id.GFOSTPlayerPlayPauseButton);
+            PlayPauseButton.Clickable = true;
             PlayPauseButton.Click += MusicControlButton_Click;
             SkipNextButton = v.FindViewById<ImageView>(Resource.Id.GFOSTPlayerSkipNextButton);
+            SkipNextButton.Clickable = true;
             SkipNextButton.Click += MusicControlButton_Click;
 
             if (ETC.UseLightTheme == true)
             {
                 SkipPreviousButton.SetImageResource(Resource.Drawable.SkipPrevious_WhiteTheme);
-                PlayPauseButton.SetImageResource(Resource.Drawable.Play_WhiteTheme);
+                PlayPauseButton.SetImageResource(Resource.Drawable.PlayPause_WhiteTheme);
                 SkipNextButton.SetImageResource(Resource.Drawable.SkipNext_WhiteTheme);
             }
             else
             {
                 SkipPreviousButton.SetImageResource(Resource.Drawable.SkipPrevious);
-                PlayPauseButton.SetImageResource(Resource.Drawable.Play);
+                PlayPauseButton.SetImageResource(Resource.Drawable.PlayPause);
                 SkipNextButton.SetImageResource(Resource.Drawable.SkipNext);
             }
 
             return v;
         }
 
+        private void MusicSeekBar_StopTrackingTouch(object sender, SeekBar.StopTrackingTouchEventArgs e)
+        {
+            try
+            {
+                MusicRepository.player.SeekTo(e.SeekBar.Progress);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(Activity, ex.ToString());
+            }
+        }
+
         private void MusicControlButton_Click(object sender, EventArgs e)
         {
             try
             {
-                Button bt = sender as Button;
+                ImageView iv = sender as ImageView;
                 string command = "";
 
-                switch (bt.Id)
+                switch (iv.Id)
                 {
                     case Resource.Id.GFOSTPlayerSkipPreviousButton:
+                        MusicRepository.SkipMusic(0);
                         command = "SkipPrevious";
                         break;
-                    case Resource.Id.GFOSTPlayerPlayPauseButton:
+                    case Resource.Id.GFOSTPlayerPlayPauseButton when IsPlaying == false:
                         command = "Play";
+                        IsPlaying = true;
+                        break;
+                    case Resource.Id.GFOSTPlayerPlayPauseButton when IsPlaying == true:
+                        command = "Pause";
+                        IsPlaying = false;
                         break;
                     case Resource.Id.GFOSTPlayerSkipNextButton:
+                        MusicRepository.SkipMusic(1);
                         command = "SkipNext";
                         break;
                 }
@@ -304,7 +429,6 @@ namespace GFI_with_GFS_A
             try
             {
                 var intent = new Intent(Activity, typeof(GFOSTService));
-                intent.PutExtra("MusicPath", ((GFOSTPlayerActivity)Activity).GetMusicPath());
                 intent.PutExtra("Command", command);
                 Activity.StartService(intent);
             }
@@ -318,14 +442,41 @@ namespace GFI_with_GFS_A
     [Service]
     public class GFOSTService : Service
     {
-        MediaPlayer player;
-
         public override void OnCreate()
         {
             base.OnCreate();
 
-            player = new MediaPlayer();
-            player.Prepared += delegate { player.Start(); };
+            if (CheckInit() == true)
+            {
+                MusicRepository.PlayerInitialize();
+                MusicRepository.MusicItemInitialize();
+            }
+
+            MusicRepository.player.Completion += delegate
+            {
+                MusicRepository.SkipMusic(1);
+                LoadMusic(MusicRepository.MusicServerPath, true);
+            };
+        }
+
+        private bool CheckInit()
+        {
+            try
+            {
+                if (MusicRepository.player == null) return true;
+
+                foreach (List<string> list in MusicRepository.Item_List)
+                {
+                    if (list.Count == 0) return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex.ToString());
+                return true;
+            }
         }
 
         public override IBinder OnBind(Intent intent)
@@ -336,23 +487,25 @@ namespace GFI_with_GFS_A
         [return: GeneratedEnum]
         public override StartCommandResult OnStartCommand(Intent intent, [GeneratedEnum] StartCommandFlags flags, int startId)
         {
-            string path = intent.Extras.GetString("MusicPath");
             string command = intent.Extras.GetString("Command");
 
             switch (command)
             {
                 case "Play":
-                    player.Start();
+                    MusicRepository.player.Start();
+                    MusicRepository.IsPlayerPlaying = true;
+                    MusicRepository.StartSeekBarTask();
                     break;
                 case "Start":
-                    LoadMusic(path, true);
+                case "SkipPrevious":
+                case "SkipNext":
+                    LoadMusic(MusicRepository.MusicServerPath, true);
+                    MusicRepository.IsPlayerPlaying = true;
+                    MusicRepository.StartSeekBarTask();
                     break;
                 case "Pause":
-                    player.Pause();
-                    break;
-                case "SkipPrevious":
-                    break;
-                case "SkipNext":
+                    MusicRepository.player.Pause();
+                    MusicRepository.IsPlayerPlaying = false;
                     break;
             }
 
@@ -363,8 +516,9 @@ namespace GFI_with_GFS_A
         {
             base.OnDestroy();
 
-            player.Release();
-            player.Dispose();
+            MusicRepository.IsPlayerPlaying = false;
+            MusicRepository.player.Release();
+            MusicRepository.player.Dispose();
         }
 
         private void LoadMusic(string path, bool IsChange)
@@ -373,8 +527,9 @@ namespace GFI_with_GFS_A
             {
                 if (IsChange == true)
                 {
-                    player.Stop();
-                    player.Reset();
+                    MusicRepository.player.Stop();
+                    MusicRepository.player.Reset();
+                    MusicRepository.IsPlayerPlaying = false;
                 }
 
                 /*using (TimeOutWebClient wc = new TimeOutWebClient())
@@ -382,8 +537,8 @@ namespace GFI_with_GFS_A
                     await wc.DownloadFileTaskAsync(path, Path.Combine(ETC.CachePath, "test.mp3"));
                 }*/
 
-                player.SetDataSource(path);
-                player.Prepare();
+                MusicRepository.player.SetDataSource(path);
+                MusicRepository.player.Prepare();
             }
             catch (Exception ex)
             {
