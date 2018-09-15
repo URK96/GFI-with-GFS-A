@@ -2,20 +2,21 @@
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
+using Android.Gms.Ads;
 using Android.OS;
 using Android.Preferences;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Widget;
+using Com.Syncfusion.Sfbusyindicator;
 using System;
 using System.Collections;
+using System.IO;
+using System.Net;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
-using Android.Gms.Ads;
 using System.Diagnostics;
-using Android.Graphics.Drawables;
-using Com.Syncfusion.Sfbusyindicator;
 
 namespace GFI_with_GFS_A
 {
@@ -26,7 +27,7 @@ namespace GFI_with_GFS_A
 
         private ImageView MainSplashImageView;
         private SfBusyIndicator indicator;
-        private Stopwatch sw = new Stopwatch();
+        //private Stopwatch sw = new Stopwatch();
 
         private ISharedPreferencesEditor PreferenceEditor;
 
@@ -53,9 +54,11 @@ namespace GFI_with_GFS_A
                 SetContentView(Resource.Layout.SplashLayout);
 
                 MainSplashImageView = FindViewById<ImageView>(Resource.Id.SplashBackImageLayout);
-                indicator = new SfBusyIndicator(this);
-                indicator.AnimationType = Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.GearBox;
-                indicator.TextColor = Android.Graphics.Color.White;
+                indicator = new SfBusyIndicator(this)
+                {
+                    AnimationType = Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.GearBox,
+                    TextColor = Android.Graphics.Color.White
+                };
                 indicator.SetBackgroundResource(Resource.Drawable.SplashBG2);
                 FindViewById<FrameLayout>(Resource.Id.SplashBusyIndicatorLayout).AddView(indicator);
 
@@ -79,6 +82,8 @@ namespace GFI_with_GFS_A
 
             try
             {
+                await ETC.CheckServerNetwork();
+
                 indicator.IsBusy = true;
 
                 MobileAds.Initialize(this, "ca-app-pub-4576756770200148~8135834453");
@@ -89,11 +94,8 @@ namespace GFI_with_GFS_A
                 if (VersionTracking.IsFirstLaunchForCurrentVersion == true) PreferenceEditor.PutBoolean("ShowNewFeatureDialog", true);
                 
                 ETC.CheckInitFolder();
-                //await ETC.CheckServerStatusAsync();
 
-                if ((System.IO.File.Exists(System.IO.Path.Combine(ETC.DBPath, "FST.gfs")) == false) && (ETC.ServerStatusError == false)) await ETC.UpdateDB(this);
-
-                if ((ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true) == true) && (ETC.ServerStatusError == false))
+                if ((ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true) == true) && (ETC.IsServerDown = false))
                 {
                     try
                     {
@@ -108,6 +110,7 @@ namespace GFI_with_GFS_A
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.Splash_SkipCheckUpdate, 1000, Android.Graphics.Color.DarkBlue);
                     }
                 }
+                else if (ETC.IsServerDown == true) ETC.ShowSnackbar(SnackbarLayout, Resource.String.Common_ServerMaintenance, 1000, Android.Graphics.Color.DarkBlue);
 
                 ETC.EnableDynamicDB = ETC.sharedPreferences.GetBoolean("DynamicDBLoad", false);
 
@@ -117,7 +120,8 @@ namespace GFI_with_GFS_A
                     {
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.DB_Recovery, Snackbar.LengthShort);
 
-                        await ETC.UpdateDB(this);
+                        if (ETC.IsServerDown == false) await ETC.UpdateDB(this);
+                        else break;
                     }
 
                     ETC.InitializeAverageAbility();
@@ -223,6 +227,49 @@ namespace GFI_with_GFS_A
             });
             ExitDialog.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
             ExitDialog.Show();
+        }
+
+        private void ReadServerChecking()
+        {
+            if (ETC.IsServerDown == true) return;
+
+            string url = Path.Combine(ETC.Server, "ServerCheck.txt");
+            string s = "";
+
+            try
+            {
+                using (WebClient wc = new WebClient())
+                {
+                    string[] temp = wc.DownloadString(url).Split(';');
+
+                    if (temp[0] == "Y") s = temp[1];
+                    else return;
+                }
+            }
+            catch (WebException)
+            {
+
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+            }
+
+            try
+            {
+                Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
+                ad.SetTitle(Resource.String.NotifyCheckServer_Title);
+                ad.SetMessage(s);
+                ad.SetCancelable(false);
+                ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
+
+                ad.Show();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.AlertDialog_Error, Snackbar.LengthShort, Android.Graphics.Color.DarkKhaki);
+            }
         }
     }
 }

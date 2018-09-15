@@ -186,7 +186,7 @@ namespace GFI_with_GFS_A
                 string url = string.Format("market://details?id={0}", PackageName);
                 StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse(url)));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 string url = string.Format("https://play.google.com/store/apps/details?id={0}", PackageName);
                 StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse(url)));

@@ -167,6 +167,11 @@ namespace GFI_with_GFS_A
                 case "6":
                     ExtraMenuButton_Click(FindViewById<Button>(Resource.Id.GFNewsExtraButton), new EventArgs());
                     break;
+                case "7":
+                    ExtraMenuButton_Click(FindViewById<Button>(Resource.Id.GFOSTPlayerExtraButton), new EventArgs());
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -181,8 +186,7 @@ namespace GFI_with_GFS_A
 
             try
             {
-                ETC.CheckServerStatus();
-                if (ETC.ServerStatusError == true) notification = Resources.GetString(Resource.String.Main_NotificationLoadFail);
+                if (ETC.IsServerDown == true) ad.SetMessage(Resource.String.Main_NotificationLoadFail);
                 else
                 {
                     string url = Path.Combine(ETC.Server, "Android_Notification.txt");
@@ -191,9 +195,10 @@ namespace GFI_with_GFS_A
                     {
                         notification = wc.DownloadString(url);
                     }
+
+                    ad.SetMessage(notification);
                 }
 
-                ad.SetMessage(notification);
                 ad.Show();
             }
             catch (WebException ex)
@@ -247,13 +252,6 @@ namespace GFI_with_GFS_A
                 FindViewById<LinearLayout>(Resource.Id.MainMenuButtonLayout1).BringToFront();
 
                 if(ETC.sharedPreferences.GetBoolean("ShowNewFeatureDialog", true) == true) ShowNewVersionFeatureDialog();
-
-                await ETC.CheckServerStatusAsync();
-
-                Task.Run(async () =>
-                {
-                    ReadServerChecking();
-                });
 
                 LoadTopNotification();
 
@@ -378,76 +376,27 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ReadServerChecking()
-        {
-            if (ETC.ServerStatusError == true) return;
-
-            string url = Path.Combine(ETC.Server, "ServerCheck.txt");
-            bool HasCheck = false;
-            string s = "";
-
-            try
-            {
-                using (WebClient wc = new WebClient())
-                {
-                    string[] temp = wc.DownloadString(url).Split(';');
-
-                    if (temp[0] == "Y")
-                    {
-                        HasCheck = true;
-                        s = temp[1];
-                    }
-                    else HasCheck = false;
-                }
-            }
-            catch (WebException ex)
-            {
-                
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(this, ex.ToString());
-            }
-
-            if (HasCheck == true)
-            {
-                try
-                {
-                    Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
-                    ad.SetTitle(Resource.String.NotifyCheckServer_Title);
-                    ad.SetMessage(s);
-                    ad.SetCancelable(false);
-                    ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
-
-                    ad.Show();
-                }
-                catch (Exception ex)
-                {
-                    ETC.LogError(this, ex.ToString());
-                    ETC.ShowSnackbar(SnackbarLayout, Resource.String.AlertDialog_Error, Snackbar.LengthShort, Android.Graphics.Color.DarkKhaki);
-                }
-            }
-        }
-
-        private void LoadTopNotification()
+        private async Task LoadTopNotification()
         {
             string url = Path.Combine(ETC.Server, "Android_Notification.txt");
             string notification = "";
 
             try
             {
-                if (ETC.ServerStatusError == true) throw new Exception();
+                await ETC.CheckServerNetwork();
+
+                if (ETC.IsServerDown == true) NotificationView.Text = "& Server is Maintenance &";
                 else
                 {
-
                     using (WebClient wc = new WebClient())
                     {
                         notification = wc.DownloadString(url);
                     }
 
                     NotificationView.Text = notification;
-                    RunOnUiThread(() => { NotificationView.Selected = true; });
                 }
+
+                RunOnUiThread(() => { NotificationView.Selected = true; });
             }
             catch (Exception ex)
             {

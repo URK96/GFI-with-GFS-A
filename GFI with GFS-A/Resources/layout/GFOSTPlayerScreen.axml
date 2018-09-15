@@ -28,7 +28,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="match_parent"
 				android:textAppearance="?android:attr/textAppearanceSmall"
-				android:text="0:00"/>
+				android:text="0:00"
+				android:id="@+id/GFOSTPlayerMusicNowPositionText"/>
 			<SeekBar
 				android:layout_width="0dp"
 				android:layout_height="match_parent"

@@ -21,6 +21,7 @@ namespace GFI_with_GFS_A
         internal static SeekBar PlayerSeekBar = null;
         internal static TextView MusicTimeText = null;
         internal static TextView MusicNameText = null;
+        internal static TextView MusicNowPositionText = null;
         internal static Activity activity;
         internal static Fragment PlayerScreenFragment;
         internal static bool IsPlayerPlaying = false;
@@ -61,16 +62,16 @@ namespace GFI_with_GFS_A
 
         internal static void PlayerInitialize()
         {
-            player = new MediaPlayer();
+            if (ETC.OSTPlayer == null)
+            {
+                player = new MediaPlayer();
+                ETC.OSTPlayer = player;
+            }
+            else player = ETC.OSTPlayer;
+
             player.Prepared += delegate 
             {
-                MusicDuration[0] = player.Duration / 1000 / 60;
-                MusicDuration[1] = player.Duration / 1000 - MusicDuration[0] * 60;
-                MusicDuration[2] = player.Duration % 1000;
                 IsPlayerPlaying = true;
-                if (MusicTimeText != null) MusicTimeText.Text = string.Format("{0}:{1}.{2}", MusicDuration[0], MusicDuration[1], MusicDuration[2]);
-                if (PlayerSeekBar != null) PlayerSeekBar.Max = player.Duration;
-                if (MusicNameText != null) MusicNameText.Text = Item_List[CategoryIndex][ItemIndex];
                 StartSeekBarTask();
                 player.Start();
             };
@@ -191,12 +192,26 @@ namespace GFI_with_GFS_A
             {
                 if (PlayerSeekBar == null) return;
 
+                MusicDuration[0] = player.Duration / 1000 / 60;
+                MusicDuration[1] = player.Duration / 1000 - MusicDuration[0] * 60;
+                MusicDuration[2] = player.Duration % 1000;
+
+                if (MusicTimeText != null) MusicTimeText.Text = string.Format("{0}:{1}", MusicDuration[0], MusicDuration[1]);
+                if (PlayerSeekBar != null) PlayerSeekBar.Max = player.Duration;
+                if (MusicNameText != null) MusicNameText.Text = Item_List[CategoryIndex][ItemIndex];
+
                 Task UpdateSeekBar = new Task(async () => 
                 {
                     while (IsPlayerPlaying)
                     {
-                        activity.RunOnUiThread(() => { PlayerSeekBar.Progress = player.CurrentPosition; });
-                        await Task.Delay(1);
+                        activity.RunOnUiThread(() => 
+                        {
+                            PlayerSeekBar.Progress = player.CurrentPosition;
+                            int minute = player.CurrentPosition / 1000 / 60;
+                            int second = player.CurrentPosition / 1000 - minute * 60;
+                            MusicNowPositionText.Text = string.Format("{0}:{1}", minute, second);
+                        });
+                        await Task.Delay(1000);
                     }
                 });
                 UpdateSeekBar.Start();
@@ -312,6 +327,8 @@ namespace GFI_with_GFS_A
                             MusicRepository.SelectMusic();
 
                             ((GFOSTPlayerScreen)GFOSTPlayerScreen_F).CommandService("Start");
+
+                            MainDrawerLayout.CloseDrawer(GravityCompat.Start);
                             break;
                     }
                 }
@@ -320,6 +337,21 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(this, ex.ToString());
             }
+        }
+
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+
+            if (MainDrawerLayout.IsDrawerOpen(GravityCompat.Start) == true)
+            {
+                MainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                return;
+            }
+
+            ETC.OSTPlayer = MusicRepository.player;
+            ETC.OST_Index[0] = MusicRepository.CategoryIndex;
+            ETC.OST_Index[1] = MusicRepository.ItemIndex;
         }
     }
 
@@ -333,6 +365,7 @@ namespace GFI_with_GFS_A
         private TextView MusicName;
         private SeekBar MusicSeekBar;
         private TextView MusicLengthText;
+        private TextView MusicNowPosition;
         private ImageView SkipPreviousButton;
         private ImageView PlayPauseButton;
         private ImageView SkipNextButton;
@@ -346,10 +379,12 @@ namespace GFI_with_GFS_A
             MusicSeekBar = v.FindViewById<SeekBar>(Resource.Id.GFOSTPlayerMusicSeekBar);
             MusicSeekBar.StopTrackingTouch += MusicSeekBar_StopTrackingTouch;
             MusicLengthText = v.FindViewById<TextView>(Resource.Id.GFOSTPlayerMusicLengthText);
+            MusicNowPosition = v.FindViewById<TextView>(Resource.Id.GFOSTPlayerMusicNowPositionText);
 
             MusicRepository.PlayerSeekBar = MusicSeekBar;
             MusicRepository.MusicTimeText = MusicLengthText;
             MusicRepository.MusicNameText = MusicName;
+            MusicRepository.MusicNowPositionText = MusicNowPosition;
 
             SkipPreviousButton = v.FindViewById<ImageView>(Resource.Id.GFOSTPlayerSkipPreviousButton);
             SkipPreviousButton.Clickable = true;
@@ -372,6 +407,14 @@ namespace GFI_with_GFS_A
                 SkipPreviousButton.SetImageResource(Resource.Drawable.SkipPrevious);
                 PlayPauseButton.SetImageResource(Resource.Drawable.PlayPause);
                 SkipNextButton.SetImageResource(Resource.Drawable.SkipNext);
+            }
+
+            if (ETC.OSTPlayer != null)
+            {
+                MusicRepository.PlayerInitialize();
+                MusicRepository.CategoryIndex = ETC.OST_Index[0];
+                MusicRepository.ItemIndex = ETC.OST_Index[1];
+                MusicRepository.StartSeekBarTask();
             }
 
             return v;
@@ -411,7 +454,7 @@ namespace GFI_with_GFS_A
                         IsPlaying = false;
                         break;
                     case Resource.Id.GFOSTPlayerSkipNextButton:
-                        MusicRepository.SkipMusic(1);
+                        MusicRepository.SkipMusic(1000);
                         command = "SkipNext";
                         break;
                 }
@@ -519,6 +562,8 @@ namespace GFI_with_GFS_A
             MusicRepository.IsPlayerPlaying = false;
             MusicRepository.player.Release();
             MusicRepository.player.Dispose();
+            ETC.OSTPlayer.Release();
+            ETC.OSTPlayer = null;
         }
 
         private void LoadMusic(string path, bool IsChange)

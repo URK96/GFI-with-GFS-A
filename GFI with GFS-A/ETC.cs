@@ -8,6 +8,7 @@ using System.Data;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using UptimeSharp;
 
 namespace GFI_with_GFS_A
 {
@@ -30,7 +31,7 @@ namespace GFI_with_GFS_A
         internal static int DialogBG_Vertical = 0;
         internal static int DialogBG_Download = 0;
         internal static bool HasEvent = false;
-        internal static bool ServerStatusError = false;
+        internal static bool IsSeverMaintenance = false;
 
         internal static DataTable DollList = new DataTable();
         internal static DataTable EquipmentList = new DataTable();
@@ -42,9 +43,15 @@ namespace GFI_with_GFS_A
 
         internal static AverageAbility[] Avg_List;
 
+        internal static Android.Media.MediaPlayer OSTPlayer = null;
+        internal static int[] OST_Index = { 0, 0 };
+
         internal static Android.Content.Res.Resources Resources;
 
         internal static ISharedPreferences sharedPreferences;
+
+        internal static UptimeClient client = null;
+        internal static bool IsServerDown = false;
 
         internal struct AverageAbility
         {
@@ -162,6 +169,31 @@ namespace GFI_with_GFS_A
             }
 
             HasInitDollAvgAbility = true;
+        }
+
+        internal static async Task CheckServerNetwork()
+        {
+            try
+            {
+                var monitor = await client.GetMonitor("m780844852-8bd2516bb93800a9eb7e3d58");
+
+                switch (monitor.Status)
+                {
+                    case UptimeSharp.Models.Status.Up:
+                        IsServerDown = false;
+                        break;
+                    case UptimeSharp.Models.Status.Pause:
+                    case UptimeSharp.Models.Status.SeemsDown:
+                    case UptimeSharp.Models.Status.Down:
+                        IsServerDown = true;
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex.ToString());
+                IsServerDown = true;
+            }
         }
 
         internal static async Task UpViewAlpha(View view, int rate, int delay)
@@ -400,8 +432,6 @@ namespace GFI_with_GFS_A
         //ProgressDialog 교체
         internal static async Task UpdateDB(Activity activity)
         {
-            if (ServerStatusError == true) return;
-
             string[] DBFiles = 
             {
                 "Doll.gfs",
@@ -589,47 +619,6 @@ namespace GFI_with_GFS_A
         internal static string CalcTime(int minute)
         {
             return string.Format("{0} : {1}", (minute / 60), (minute % 60).ToString("D2"));
-        }
-
-        internal static void CheckServerStatus()
-        {
-            WebRequest request = WebRequest.Create(Server);
-            request.Timeout = 5000;
-            
-            try
-            {
-                request.GetResponse();
-            }
-            catch (Exception)
-            {
-                ServerStatusError = true;
-                return;
-            }
-
-            ServerStatusError = false;
-        }
-
-        internal static async Task CheckServerStatusAsync()
-        {
-            WebRequest request = WebRequest.Create(Server);
-            request.Timeout = 5000;
-            WebResponse response = null;
-
-            try
-            {
-                response = request.GetResponse();
-            }
-            catch (Exception)
-            {
-                ServerStatusError = true;
-                response.Close();
-                response.Dispose();
-                return;
-            }
-
-            ServerStatusError = false;
-            response.Close();
-            response.Dispose();
         }
 
         internal class ADViewListener : Android.Gms.Ads.AdListener

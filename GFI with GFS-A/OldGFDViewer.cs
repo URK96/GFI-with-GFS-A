@@ -34,10 +34,12 @@ namespace GFI_with_GFS_A
             "ProductTable_Doll",
             "ProductTable_Equipment",
             "ProductTable_Fairy",
+            "DollPerformance",
             "RecommendDollRecipe",
             "RecommendEquipmentRecipe",
             "RecommendMD",
-            "RecommendLeveling"
+            "RecommendLeveling_1",
+            "RecommendLeveling_2"
         };
         readonly string[] SpinnerList = 
         {
@@ -47,7 +49,8 @@ namespace GFI_with_GFS_A
             ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendDollRecipe),
             ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendEquipRecipe),
             ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendMD),
-            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling)
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling1),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling2)
         };
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -116,29 +119,43 @@ namespace GFI_with_GFS_A
         {
             await Task.Delay(100);
 
+            bool IsMissing = false;
+
             try
             {
-                using (WebClient wc = new WebClient())
+                foreach (string s in ImageName)
                 {
-                    string LocalDBVerPath = Path.Combine(ETC.SystemPath, "OldGFDVer.txt");
-
-                    if (File.Exists(LocalDBVerPath) == false) HasUpdate = true;
-                    else
+                    if (File.Exists(Path.Combine(ETC.CachePath, "OldGFD", "Images", s + ".gfdcache")) == false)
                     {
-                        int server_ver = int.Parse(await wc.DownloadStringTaskAsync(Path.Combine(ETC.Server, "OldGFDVer.txt")));
-                        int local_ver = 0;
-
-                        using (StreamReader sr = new StreamReader(new FileStream(LocalDBVerPath, FileMode.Open, FileAccess.Read)))
-                        {
-                            local_ver = int.Parse(sr.ReadToEnd());
-                        }
-
-                        if (local_ver < server_ver) HasUpdate = true;
-                        else HasUpdate = false;
+                        IsMissing = true;
+                        break;
                     }
                 }
 
-                if (HasUpdate == true)
+                if (IsMissing == false)
+                {
+                    using (WebClient wc = new WebClient())
+                    {
+                        string LocalDBVerPath = Path.Combine(ETC.SystemPath, "OldGFDVer.txt");
+
+                        if (File.Exists(LocalDBVerPath) == false) HasUpdate = true;
+                        else
+                        {
+                            int server_ver = int.Parse(await wc.DownloadStringTaskAsync(Path.Combine(ETC.Server, "OldGFDVer.txt")));
+                            int local_ver = 0;
+
+                            using (StreamReader sr = new StreamReader(new FileStream(LocalDBVerPath, FileMode.Open, FileAccess.Read)))
+                            {
+                                local_ver = int.Parse(sr.ReadToEnd());
+                            }
+
+                            if (local_ver < server_ver) HasUpdate = true;
+                            else HasUpdate = false;
+                        }
+                    }
+                }
+
+                if ((HasUpdate == true) || (IsMissing == true))
                 {
                     Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
                     builder.SetTitle(Resource.String.UpdateDialog_Title);

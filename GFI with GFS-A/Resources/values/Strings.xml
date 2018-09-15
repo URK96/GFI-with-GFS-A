@@ -19,6 +19,11 @@
   <string name="Calc_FSTGradeUp_TargetGradeSelectorTitle">* 목표 등급 *</string>
   
   <string name="ComingSoon">Coming Soon...</string>
+  <string name="Common_ServerMaintenance">서버 점검 중 입니다.</string>
+
+  <string name="OldGFDViewer_DollPerformance">인형 성능표</string>
+  <string name="OldGFDViewer_RecommendLeveling1">추천 레벨링 루트 1</string>
+  <string name="OldGFDViewer_RecommendLeveling2">추천 레벨링 루트 2</string>
   
   <!--Solution String-->
   <string name="CheckingUpdate">업데이트 확인 중...</string>

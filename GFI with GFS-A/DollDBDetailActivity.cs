@@ -455,11 +455,6 @@ namespace GFI_with_GFS_A
 
             try
             {
-                await ETC.CheckServerStatusAsync();
-
-                if (ETC.ServerStatusError == true) ModelDataButton.Enabled = false;
-                else ModelDataButton.Enabled = true;
-
                 // 인형 타이틀 바 초기화
 
                 if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false) == true)
