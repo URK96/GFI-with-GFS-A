@@ -82,6 +82,7 @@ namespace GFI_with_GFS_A
 
             try
             {
+                ETC.client = new UptimeSharp.UptimeClient("m780844852-8bd2516bb93800a9eb7e3d58");
                 await ETC.CheckServerNetwork();
 
                 indicator.IsBusy = true;
