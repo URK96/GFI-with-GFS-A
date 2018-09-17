@@ -34,7 +34,7 @@ namespace GFI_with_GFS_A
         private FloatingActionButton RefreshCacheFAB;
         private FloatingActionButton PercentTableFAB;
         private FloatingActionButton MainFAB;
-        private FloatingActionButton NamuWikiFAB;
+        private FloatingActionButton GFDBFAB;
         private FloatingActionButton InvenFAB;
         private FloatingActionButton BaseFAB;
         private CoordinatorLayout SnackbarLayout = null;
@@ -61,15 +61,19 @@ namespace GFI_with_GFS_A
 
                 RefreshCacheFAB = FindViewById<FloatingActionButton>(Resource.Id.FairyDBDetailRefreshCacheFAB);
                 PercentTableFAB = FindViewById<FloatingActionButton>(Resource.Id.FairyDBDetailProductPercentFAB);
+                if ((int)FairyInfoDR["ProductTime"] == 0) PercentTableFAB.Visibility = ViewStates.Gone;
                 MainFAB = FindViewById<FloatingActionButton>(Resource.Id.FairyDBDetailSideLinkMainFAB);
-                NamuWikiFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkNamuWikiFAB);
-                InvenFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkInvenFAB);
-                BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkBaseFAB);
+                GFDBFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB1);
+                GFDBFAB.SetImageResource(Resource.Drawable.GFDB_Logo);
+                InvenFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB2);
+                InvenFAB.SetImageResource(Resource.Drawable.Inven_Logo);
+                BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB3);
+                BaseFAB.SetImageResource(Resource.Drawable.Base36_Logo);
 
                 RefreshCacheFAB.Click += RefreshCacheFAB_Click;
                 PercentTableFAB.Click += PercentTableFAB_Click;
                 MainFAB.Click += MainFAB_Click;
-                NamuWikiFAB.Click += MainSubFAB_Click;
+                GFDBFAB.Click += MainSubFAB_Click;
                 InvenFAB.Click += MainSubFAB_Click;
                 BaseFAB.Click += MainSubFAB_Click;
 
@@ -129,30 +133,30 @@ namespace GFI_with_GFS_A
             {
                 FloatingActionButton fab = sender as FloatingActionButton;
 
-                /*switch (fab.Id)
+                switch (fab.Id)
                 {
-                    case Resource.Id.SideLinkNamuWikiFAB:
-                        string uri = string.Format("https://namu.wiki/w/{0}(소녀전선)", DollName);
+                    case Resource.Id.SideLinkFAB1:
+                        string uri = string.Format("http://gfl.zzzzz.kr/fairy.php?id={0}&lang=ko", FairyDicNum);
                         var intent = new Intent(this, typeof(WebBrowserActivity));
                         intent.PutExtra("url", uri);
                         StartActivity(intent);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
-                    case Resource.Id.SideLinkInvenFAB:
-                        string uri2 = string.Format("http://gf.inven.co.kr/dataninfo/dolls/detail.php?d=126&c={0}", DollDicNum);
+                    case Resource.Id.SideLinkFAB2:
+                        string uri2 = string.Format("http://girlsfrontline.inven.co.kr/dataninfo/fairy/?d=133&c={0}", FairyDicNum);
                         var intent2 = new Intent(this, typeof(WebBrowserActivity));
                         intent2.PutExtra("url", uri2);
                         StartActivity(intent2);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
-                    case Resource.Id.SideLinkBaseFAB:
-                        string uri3 = string.Format("https://girlsfrontline.kr/doll/{0}", DollDicNum);
+                    case Resource.Id.SideLinkFAB3:
+                        string uri3 = string.Format("https://girlsfrontline.kr/doll/{0}", FairyDicNum);
                         var intent3 = new Intent(this, typeof(WebBrowserActivity));
                         intent3.PutExtra("url", uri3);
                         StartActivity(intent3);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
-                }*/
+                }
             }
             catch (Exception ex)
             {
@@ -179,7 +183,7 @@ namespace GFI_with_GFS_A
             {
                 int[] ShowAnimationIds = { Resource.Animation.SideLinkFAB1_Show, Resource.Animation.SideLinkFAB2_Show, Resource.Animation.SideLinkFAB3_Show };
                 int[] HideAnimationIds = { Resource.Animation.SideLinkFAB1_Hide, Resource.Animation.SideLinkFAB2_Hide, Resource.Animation.SideLinkFAB3_Hide };
-                FloatingActionButton[] FABs = { NamuWikiFAB, InvenFAB, BaseFAB };
+                FloatingActionButton[] FABs = { GFDBFAB, InvenFAB, BaseFAB };
                 double[,] Mags = { { 1.80, 0.25 }, { 1.5, 1.5 }, { 0.25, 1.80 } };
 
                 try
@@ -229,7 +233,6 @@ namespace GFI_with_GFS_A
         }
 
         private void FairyDBDetailSmallImage_Click(object sender, EventArgs e)
-
         {
             try
             {

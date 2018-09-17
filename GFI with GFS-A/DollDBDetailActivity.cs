@@ -124,9 +124,12 @@ namespace GFI_with_GFS_A
                 PercentTableFAB = FindViewById<FloatingActionButton>(Resource.Id.DollDBDetailProductPercentFAB);
                 if ((int)DollInfoDR["ProductTIme"] == 0) PercentTableFAB.Visibility = ViewStates.Gone;
                 MainFAB = FindViewById<FloatingActionButton>(Resource.Id.DollDBDetailSideLinkMainFAB);
-                NamuWikiFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkNamuWikiFAB);
-                InvenFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkInvenFAB);
-                BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkBaseFAB);
+                NamuWikiFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB1);
+                NamuWikiFAB.SetImageResource(Resource.Drawable.NamuWiki_Logo);
+                InvenFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB2);
+                InvenFAB.SetImageResource(Resource.Drawable.Inven_Logo);
+                BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB3);
+                BaseFAB.SetImageResource(Resource.Drawable.Base36_Logo);
                 ChartCompareList = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityChartCompareList);
                 ChartCompareList.ItemSelected += ChartCompareList_ItemSelected;
                 chart = FindViewById<SfChart>(Resource.Id.DollDBDetailAbilityRadarChart);
@@ -388,21 +391,21 @@ namespace GFI_with_GFS_A
 
                 switch (fab.Id)
                 {
-                    case Resource.Id.SideLinkNamuWikiFAB:
+                    case Resource.Id.SideLinkFAB1:
                         string uri = string.Format("https://namu.wiki/w/{0}(소녀전선)", DollName);
                         var intent = new Intent(this, typeof(WebBrowserActivity));
                         intent.PutExtra("url", uri);
                         StartActivity(intent);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
-                    case Resource.Id.SideLinkInvenFAB:
+                    case Resource.Id.SideLinkFAB2:
                         string uri2 = string.Format("http://gf.inven.co.kr/dataninfo/dolls/detail.php?d=126&c={0}", DollDicNum);
                         var intent2 = new Intent(this, typeof(WebBrowserActivity));
                         intent2.PutExtra("url", uri2);
                         StartActivity(intent2);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
-                    case Resource.Id.SideLinkBaseFAB:
+                    case Resource.Id.SideLinkFAB3:
                         string uri3 = string.Format("https://girlsfrontline.kr/doll/{0}", DollDicNum);
                         var intent3 = new Intent(this, typeof(WebBrowserActivity));
                         intent3.PutExtra("url", uri3);

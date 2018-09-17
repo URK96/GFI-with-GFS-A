@@ -57,6 +57,14 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.ProductPercentTableLayout);
 
+            InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.ProductPercentTableInitLoadProgress);
+            ChangeShowMode = FindViewById<Button>(Resource.Id.ProductPercentTableChangeShowModeButton);
+            ChangeShowMode.Click += ChangeModeButton_Click;
+            ChangeListMode = FindViewById<Button>(Resource.Id.ProductPercentTableChangeListModeButton);
+            ChangeListMode.Click += ChangeModeButton_Click;
+
+            TableMainLayout = FindViewById<LinearLayout>(Resource.Id.ProductPercentTable_MainTableLayout);
+
             string[] data = Intent.GetStringArrayExtra("Info");
 
             Id = int.Parse(data[1]);
@@ -74,16 +82,10 @@ namespace GFI_with_GFS_A
                 case "Fairy":
                     ProductCategory = Category.Fairy;
                     TopURL = "https://ipick.baka.pw:444/stats/fairy/id/";
+                    Show_Mode = ShowMode.Advance;
+                    ChangeShowMode.Text = Resources.GetString(Resource.String.Common_AdvanceProduct);
                     break;
             }
-
-            InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.ProductPercentTableInitLoadProgress);
-            ChangeShowMode = FindViewById<Button>(Resource.Id.ProductPercentTableChangeShowModeButton);
-            ChangeShowMode.Click += ChangeModeButton_Click;
-            ChangeListMode = FindViewById<Button>(Resource.Id.ProductPercentTableChangeListModeButton);
-            ChangeListMode.Click += ChangeModeButton_Click;
-
-            TableMainLayout = FindViewById<LinearLayout>(Resource.Id.ProductPercentTable_MainTableLayout);
 
             ProcessData();
         }

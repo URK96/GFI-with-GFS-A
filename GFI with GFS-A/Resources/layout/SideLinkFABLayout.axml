@@ -8,8 +8,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:visibility="invisible"
-        android:src="@drawable/namuwiki_logo"
-        android:id="@+id/SideLinkNamuWikiFAB"
+        android:id="@+id/SideLinkFAB1"
         app:fabSize="mini"
         app:backgroundTint="#6ABF69"
         app:rippleColor="#00600F" />
@@ -18,8 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:visibility="invisible"
-        android:src="@drawable/inven_logo"
-        android:id="@+id/SideLinkInvenFAB"
+        android:id="@+id/SideLinkFAB2"
         app:fabSize="mini"
         app:backgroundTint="#63A4FF"
         app:rippleColor="#004BA0" />
@@ -28,8 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:visibility="invisible"
-        android:src="@drawable/base36_logo"
-        android:id="@+id/SideLinkBaseFAB"
+        android:id="@+id/SideLinkFAB3"
         app:fabSize="mini"
         app:backgroundTint="#4e5651"
         app:rippleColor="#242826" />

@@ -107,10 +107,13 @@ namespace GFI_with_GFS_A
                 }
                 else
                 {
-                    var intent = new Intent(this, typeof(ProductPercentTableActivity));
-                    intent.PutExtra("Info", new string[] { "Equip", EquipId.ToString() });
-                    StartActivity(intent);
-                    OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                    if ((int)EquipInfoDR["ProductTIme"] != 0)
+                    {
+                        var intent = new Intent(this, typeof(ProductPercentTableActivity));
+                        intent.PutExtra("Info", new string[] { "Equip", EquipId.ToString() });
+                        StartActivity(intent);
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                    }
                 }
             }
             catch (Exception ex)

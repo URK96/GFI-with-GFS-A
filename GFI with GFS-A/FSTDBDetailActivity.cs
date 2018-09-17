@@ -81,9 +81,12 @@ namespace GFI_with_GFS_A
 
                 RefreshCacheFAB = FindViewById<FloatingActionButton>(Resource.Id.FSTDBDetailRefreshCacheFAB);
                 MainFAB = FindViewById<FloatingActionButton>(Resource.Id.FSTDBDetailSideLinkMainFAB);
-                NamuWikiFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkNamuWikiFAB);
-                InvenFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkInvenFAB);
-                BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkBaseFAB);
+                NamuWikiFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB1);
+                NamuWikiFAB.SetImageResource(Resource.Drawable.NamuWiki_Logo);
+                InvenFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB2);
+                InvenFAB.SetImageResource(Resource.Drawable.Inven_Logo);
+                BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB3);
+                BaseFAB.SetImageResource(Resource.Drawable.Base36_Logo);
 
                 RefreshCacheFAB.Click += RefreshCacheFAB_Click;
                 MainFAB.Click += MainFAB_Click;
@@ -175,21 +178,21 @@ namespace GFI_with_GFS_A
 
                 switch (fab.Id)
                 {
-                    case Resource.Id.SideLinkNamuWikiFAB:
+                    case Resource.Id.SideLinkFAB1:
                         string uri = string.Format("https://namu.wiki/w/{0}(소녀전선)", FSTName);
                         var intent = new Intent(this, typeof(WebBrowserActivity));
                         intent.PutExtra("url", uri);
                         StartActivity(intent);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
-                    case Resource.Id.SideLinkInvenFAB:
+                    case Resource.Id.SideLinkFAB2:
                         /*string uri2 = string.Format("http://gf.inven.co.kr/dataninfo/dolls/detail.php?d=126&c={0}", FSTDicNum);
                         var intent2 = new Intent(this, typeof(WebBrowserActivity));
                         intent2.PutExtra("url", uri2);
                         StartActivity(intent2);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);*/
                         break;
-                    case Resource.Id.SideLinkBaseFAB:
+                    case Resource.Id.SideLinkFAB3:
                         /*string uri3 = string.Format("https://girlsfrontline.kr/doll/{0}", FSTDicNum);
                         var intent3 = new Intent(this, typeof(WebBrowserActivity));
                         intent3.PutExtra("url", uri3);
