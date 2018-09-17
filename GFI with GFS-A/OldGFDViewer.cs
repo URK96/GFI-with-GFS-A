@@ -9,6 +9,7 @@ using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using UK.CO.Senab.Photoview;
 
 namespace GFI_with_GFS_A
 {
@@ -18,7 +19,7 @@ namespace GFI_with_GFS_A
         private bool HasUpdate = false;
 
         private Spinner ImageList = null;
-        private ImageView ImageViewer = null;
+        private PhotoView ImageViewer = null;
         private CoordinatorLayout SnackbarLayout = null;
 
         private Dialog dialog = null;
@@ -46,6 +47,7 @@ namespace GFI_with_GFS_A
             ETC.Resources.GetString(Resource.String.OldGFDViewer_ProductDollTable),
             ETC.Resources.GetString(Resource.String.OldGFDViewer_ProductEquipTable),
             ETC.Resources.GetString(Resource.String.OldGFDViewer_ProductFairyTable),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_DollPerformance),
             ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendDollRecipe),
             ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendEquipRecipe),
             ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendMD),
@@ -66,7 +68,7 @@ namespace GFI_with_GFS_A
 
                 ImageList = FindViewById<Spinner>(Resource.Id.OldGFDImageList);
                 ImageList.ItemSelected += ImageList_ItemSelected;
-                ImageViewer = FindViewById<ImageView>(Resource.Id.OldGFDImageView);
+                ImageViewer = FindViewById<PhotoView>(Resource.Id.OldGFDImageView);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.OldGFDViewerSnackbarLayout);
 
                 InitProcess();

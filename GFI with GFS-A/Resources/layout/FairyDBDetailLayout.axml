@@ -692,13 +692,39 @@
         android:layout_height="wrap_content"
         android:src="@drawable/refresh"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="145dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:id="@+id/FairyDBDetailRefreshCacheFAB"
         cardview:backgroundTint="@color/FABColor"
         cardview:fabSize="auto"
         cardview:rippleColor="#FF80AB" />
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/productpercenttable_icon"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/FairyDBDetailProductPercentFAB"
+        cardview:backgroundTint="@color/FABColor"
+        cardview:fabSize="auto"
+        cardview:rippleColor="#FF80AB" />
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/sidelinkicon"
+        android:id="@+id/FairyDBDetailSideLinkMainFAB"
+        cardview:backgroundTint="@color/FABColor"
+        cardview:fabSize="auto"
+        cardview:rippleColor="#FF80AB" />
+	<include
+        layout="@layout/sidelinkfablayout" />
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

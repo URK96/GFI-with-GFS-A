@@ -12,16 +12,19 @@ using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "DollDBProductPercentTableActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class DollDBProductPercentTableActivity : FragmentActivity
+    [Activity(Label = "ProductPercentTableActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class ProductPercentTableActivity : FragmentActivity
     {
+        enum Category { Doll, Equip, Fairy }
         enum ShowMode { Normal, Advance }
         enum ListMode { TotalCount, Percentage }
 
+        private Category ProductCategory = Category.Doll;
         private ShowMode Show_Mode = ShowMode.Normal;
         private ListMode List_Mode = ListMode.Percentage;
 
-        private int DollDicNum;
+        private int Id;
+        private string TopURL = "";
 
         private LinearLayout TableMainLayout;
 
@@ -54,7 +57,25 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.ProductPercentTableLayout);
 
-            DollDicNum = Convert.ToInt32(Intent.GetStringExtra("DollNum"));
+            string[] data = Intent.GetStringArrayExtra("Info");
+
+            Id = int.Parse(data[1]);
+
+            switch (data[0])
+            {
+                case "Doll":
+                    ProductCategory = Category.Doll;
+                    TopURL = "https://ipick.baka.pw:444/stats/tdoll/id/";
+                    break;
+                case "Equip":
+                    ProductCategory = Category.Equip;
+                    TopURL = "https://ipick.baka.pw:444/stats/equip/id/";
+                    break;
+                case "Fairy":
+                    ProductCategory = Category.Fairy;
+                    TopURL = "https://ipick.baka.pw:444/stats/fairy/id/";
+                    break;
+            }
 
             InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.ProductPercentTableInitLoadProgress);
             ChangeShowMode = FindViewById<Button>(Resource.Id.ProductPercentTableChangeShowModeButton);
@@ -253,7 +274,7 @@ namespace GFI_with_GFS_A
                 InitLoadProgressBar.Visibility = ViewStates.Visible;
                 InitLoadProgressBar.BringToFront();
 
-                string url = string.Format("https://ipick.baka.pw:444/stats/tdoll/id/{0}", DollDicNum);
+                string url = string.Format("{0}{1}", TopURL, Id);
                 string temp_data;
 
                 using (WebClient wc = new WebClient())
@@ -333,7 +354,7 @@ namespace GFI_with_GFS_A
                     for (int j = 0; j < TopViewIds.Length; j++)
                     {
                         if (j == 8) Normal_Data[i, j] = Math.Round(((Normal_Data[i, 6] / Normal_Data[i, 7]) * 100), 4);
-                        else Normal_Data[i, j] = int.Parse(data[((row * 8) + j)].Split(':')[1]);
+                        else Normal_Data[i, j] = double.Parse(data[((row * 8) + j)].Split(':')[1]);
                     }
                 }
 

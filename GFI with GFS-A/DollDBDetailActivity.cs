@@ -18,6 +18,7 @@ using System.Threading.Tasks;
 using Android.Gms.Ads;
 using Com.Syncfusion.Charts;
 using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace GFI_with_GFS_A
 {
@@ -25,8 +26,6 @@ namespace GFI_with_GFS_A
     public class DollDBDetailActivity : FragmentActivity
     {
         System.Timers.Timer FABTimer = new System.Timers.Timer();
-
-        internal static Android.Content.Res.Resources resources;
 
         private LinearLayout SkillTableSubLayout;
         private LinearLayout ModSkillTableSubLayout;
@@ -39,6 +38,8 @@ namespace GFI_with_GFS_A
         private int ModIndex = 0;
         private string[] VoiceList;
         internal static int[] AbilityValues = new int[6];
+
+        internal static DataRow CompareDollInfoDR = null;
 
         private bool IsOpenFABMenu = false;
         private bool IsEnableFABMenu = false;
@@ -57,11 +58,13 @@ namespace GFI_with_GFS_A
         private FloatingActionButton NamuWikiFAB;
         private FloatingActionButton InvenFAB;
         private FloatingActionButton BaseFAB;
+        private Spinner ChartCompareList;
         private SfChart chart;
 
         private AdView adview;
 
         int[] ModButtonIds = { Resource.Id.DollDBDetailModSelect0, Resource.Id.DollDBDetailModSelect1, Resource.Id.DollDBDetailModSelect2, Resource.Id.DollDBDetailModSelect3 };
+        internal static List<string> CompareList;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -70,7 +73,6 @@ namespace GFI_with_GFS_A
                 base.OnCreate(savedInstanceState);
 
                 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY0NkAzMTM2MmUzMjJlMzBmNFFDVVZlU2NDRTVmYVJqQ0ZyOTVPOGhYWnFIazlQNFNPeGVEMU9WMjZnPQ==");
-                resources = Resources;
 
                 if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
 
@@ -125,6 +127,8 @@ namespace GFI_with_GFS_A
                 NamuWikiFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkNamuWikiFAB);
                 InvenFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkInvenFAB);
                 BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkBaseFAB);
+                ChartCompareList = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityChartCompareList);
+                ChartCompareList.ItemSelected += ChartCompareList_ItemSelected;
                 chart = FindViewById<SfChart>(Resource.Id.DollDBDetailAbilityRadarChart);
 
                 RefreshCacheFAB.Click += RefreshCacheFAB_Click;
@@ -137,6 +141,8 @@ namespace GFI_with_GFS_A
                 FABTimer.Interval = 3000;
                 FABTimer.Elapsed += FABTimer_Elapsed;
 
+                InitCompareList();
+
                 InitLoadProcess(false);
             }
             catch (Exception ex)
@@ -144,6 +150,40 @@ namespace GFI_with_GFS_A
                 ETC.LogError(this, ex.ToString());
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
+        }
+
+        private void InitCompareList()
+        {
+            try
+            {
+                CompareList = new List<string>();
+                CompareList.Add("Type Average");
+
+                foreach (DataRow dr in ETC.DollList.Rows)
+                {
+                    if (DollDicNum == (int)dr["DicNumber"]) continue;
+                    if ((string)dr["Type"] != DollType) continue;
+
+                    CompareList.Add((string)dr["Name"]);
+                }
+
+                CompareList.TrimExcess();
+
+                var adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, CompareList);
+                adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
+
+                ChartCompareList.Adapter = adapter;
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, "Test Error", Snackbar.LengthShort);
+            }
+        }
+
+        private void ChartCompareList_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            LoadChart(e.Position);
         }
 
         private void ModelDataButton_Click(object sender, EventArgs e)
@@ -179,9 +219,19 @@ namespace GFI_with_GFS_A
             InitLoadProcess(true);
         }
 
-        private async Task LoadChart()
+        private async Task LoadChart(int CompareIndex)
         {
             chart.Series.Clear();
+
+            ChartZoomPanBehavior ZoomBehavior = new ChartZoomPanBehavior();
+            ZoomBehavior.ZoomMode = ZoomMode.Xy;
+            ZoomBehavior.SelectionZoomingEnabled = true;
+            ZoomBehavior.MaximumZoomLevel = 2.0f;
+            ZoomBehavior.ZoomingEnabled = true;
+            ZoomBehavior.DoubleTapEnabled = true;
+            ZoomBehavior.ScrollingEnabled = true;
+
+            chart.Behaviors.Add(ZoomBehavior);
 
             chart.PrimaryAxis = new CategoryAxis();
             chart.SecondaryAxis = new NumericalAxis();
@@ -192,13 +242,14 @@ namespace GFI_with_GFS_A
 
             RadarSeries radar = new RadarSeries();
 
-            DataModel model = new DataModel();
+            DataModel model = new DataModel(CompareIndex);
 
             radar.ItemsSource = model.MaxAbilityList;
             radar.XBindingPath = "AbilityType";
             radar.YBindingPath = "AbilityValue";
             radar.DrawType = PolarChartDrawType.Line;
             radar.Color = Android.Graphics.Color.LightGreen;
+            radar.EnableAnimation = true;
 
             radar.Label = DollName;
             radar.TooltipEnabled = true;
@@ -207,13 +258,16 @@ namespace GFI_with_GFS_A
 
             RadarSeries radar2 = new RadarSeries();
 
-            radar2.ItemsSource = model.AvgAbilityList;
+            radar2.ItemsSource = model.CompareAbilityList;
             radar2.XBindingPath = "AbilityType";
             radar2.YBindingPath = "AbilityValue";
             radar2.DrawType = PolarChartDrawType.Line;
             radar2.Color = Android.Graphics.Color.Magenta;
+            radar2.EnableAnimation = true;
 
-            radar2.Label = string.Format("{0}{1}", DollType, Resources.GetString(Resource.String.DollDBDetail_RadarAverageString));
+            if (CompareIndex == 0) radar2.Label = string.Format("{0}{1}", DollType, Resources.GetString(Resource.String.DollDBDetail_RadarAverageString));
+            else radar2.Label = (string)CompareDollInfoDR["Name"];
+
             radar2.TooltipEnabled = true;
 
             chart.Series.Add(radar2);
@@ -226,7 +280,7 @@ namespace GFI_with_GFS_A
             try
             {
                 base.OnResume();
-                if (IsChartLoad == true) LoadChart();
+                if (IsChartLoad == true) LoadChart(ChartCompareList.SelectedItemPosition);
             }
             catch (Exception ex)
             {
@@ -244,8 +298,8 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                var intent = new Intent(this, typeof(DollDBProductPercentTableActivity));
-                intent.PutExtra("DollNum", DollDicNum.ToString());
+                var intent = new Intent(this, typeof(ProductPercentTableActivity));
+                intent.PutExtra("Info", new string[] { "Doll", DollDicNum.ToString() });
                 StartActivity(intent);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
@@ -887,7 +941,7 @@ namespace GFI_with_GFS_A
                 if ((bool)DollInfoDR["HasVoice"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailVoiceLayout).Visibility = ViewStates.Visible;
                 if ((bool)DollInfoDR["HasMod"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSelectLayout).Visibility = ViewStates.Visible;
 
-                LoadChart();
+                LoadChart(ChartCompareList.SelectedItemPosition);
 
                 ShowCardViewAnimation();
                 ShowTitleSubLayout();
@@ -1072,53 +1126,91 @@ namespace GFI_with_GFS_A
         internal class DataModel
         {
             public ObservableCollection<DollMaxAbility> MaxAbilityList { get; set; }
-            public ObservableCollection<DollMaxAbility> AvgAbilityList { get; set; }
+            public ObservableCollection<DollMaxAbility> CompareAbilityList { get; set; }
 
-            public DataModel()
+            public DataModel(int CompareIndex)
             {
                 MaxAbilityList = new ObservableCollection<DollMaxAbility>()
                 {
-                    new DollMaxAbility(resources.GetString(Resource.String.Common_HP), AbilityValues[0]),
-                    new DollMaxAbility(resources.GetString(Resource.String.Common_FR), AbilityValues[1]),
-                    new DollMaxAbility(resources.GetString(Resource.String.Common_EV), AbilityValues[2]),
-                    new DollMaxAbility(resources.GetString(Resource.String.Common_AC), AbilityValues[3]),
-                    new DollMaxAbility(resources.GetString(Resource.String.Common_AS), AbilityValues[4]),
-                    new DollMaxAbility(resources.GetString(Resource.String.Common_AM), AbilityValues[5])
+                    new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_HP), AbilityValues[0]),
+                    new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_FR), AbilityValues[1]),
+                    new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_EV), AbilityValues[2]),
+                    new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AC), AbilityValues[3]),
+                    new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AS), AbilityValues[4]),
+                    new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AM), AbilityValues[5])
                 };
 
-                int index = 0;
-
-                switch (DollType)
+                if (CompareIndex == 0)
                 {
-                    case "HG":
-                        index = 0;
-                        break;
-                    case "SMG":
-                        index = 1;
-                        break;
-                    case "AR":
-                        index = 2;
-                        break;
-                    case "RF":
-                        index = 3;
-                        break;
-                    case "MG":
-                        index = 4;
-                        break;
-                    case "SG":
-                        index = 5;
-                        break;
+                    int index = 0;
+
+                    switch (DollType)
+                    {
+                        case "HG":
+                            index = 0;
+                            break;
+                        case "SMG":
+                            index = 1;
+                            break;
+                        case "AR":
+                            index = 2;
+                            break;
+                        case "RF":
+                            index = 3;
+                            break;
+                        case "MG":
+                            index = 4;
+                            break;
+                        case "SG":
+                            index = 5;
+                            break;
+                    }
+
+                    CompareAbilityList = new ObservableCollection<DollMaxAbility>()
+                    {
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_HP), ETC.Avg_List[index].HP),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_FR), ETC.Avg_List[index].FR),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_EV), ETC.Avg_List[index].EV),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AC), ETC.Avg_List[index].AC),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AS), ETC.Avg_List[index].AS),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AM), ETC.Avg_List[index].AM)
+                    };
                 }
-
-                AvgAbilityList = new ObservableCollection<DollMaxAbility>()
+                else
                 {
-                    new DollMaxAbility(resources.GetString(Resource.String.Common_HP), ETC.Avg_List[index].HP),
-                    new DollMaxAbility(resources.GetString(Resource.String.Common_FR), ETC.Avg_List[index].FR),
-                    new DollMaxAbility(resources.GetString(Resource.String.Common_EV), ETC.Avg_List[index].EV),
-                    new DollMaxAbility(resources.GetString(Resource.String.Common_AC), ETC.Avg_List[index].AC),
-                    new DollMaxAbility(resources.GetString(Resource.String.Common_AS), ETC.Avg_List[index].AS),
-                    new DollMaxAbility(resources.GetString(Resource.String.Common_AM), ETC.Avg_List[index].AM)
-                };
+                    CompareDollInfoDR = ETC.FindDataRow(ETC.DollList, "Name", CompareList[CompareIndex]);
+
+                    string[] abilities = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
+
+                    int[] CompareAbilityValues = { 0, 0, 0, 0, 0, 0 };
+
+                    for (int i = 0; i < abilities.Length; ++i)
+                    {
+                        string data = (string)CompareDollInfoDR[abilities[i]];
+
+                        if ((bool)CompareDollInfoDR["HasMod"] == true) CompareAbilityValues[i] = int.Parse(data.Split(';')[0].Split('/')[1]);
+                        else CompareAbilityValues[i] = int.Parse(data.Split('/')[1]);
+                    }
+
+                    if (DollType == "SG")
+                    {
+                        string data = (string)CompareDollInfoDR["Armor"];
+
+                        if ((bool)CompareDollInfoDR["HasMod"] == true) CompareAbilityValues[5] = int.Parse(data.Split(';')[0].Split('/')[1]);
+                        else CompareAbilityValues[5] = int.Parse(data.Split('/')[1]);
+                    }
+                    else CompareAbilityValues[5] = 0;
+
+                    CompareAbilityList = new ObservableCollection<DollMaxAbility>()
+                    {
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_HP), CompareAbilityValues[0]),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_FR), CompareAbilityValues[1]),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_EV), CompareAbilityValues[2]),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AC), CompareAbilityValues[3]),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AS), CompareAbilityValues[4]),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AM), CompareAbilityValues[5])
+                    };
+                }
             }
         }
     }

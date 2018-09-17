@@ -14,13 +14,20 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <ImageView
+            <!--<ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/OldGFDImageView"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
-                android:scrollbars="vertical" />
+                android:scrollbars="vertical" />-->
+			<uk.co.senab.photoview.PhotoView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:isScrollContainer="true"
+				android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+				android:id="@+id/OldGFDImageView"/>
         </ScrollView>
     </LinearLayout>
     <android.support.design.widget.CoordinatorLayout

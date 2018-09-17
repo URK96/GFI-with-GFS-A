@@ -6,6 +6,7 @@ using Android.Support.Design.Widget;
 using Android.Support.V4.App;
 using Android.Support.V7.Widget;
 using Android.Views;
+using Android.Views.Animations;
 using Android.Widget;
 using System;
 using System.Data;
@@ -22,13 +23,20 @@ namespace GFI_with_GFS_A
         System.Timers.Timer FABTimer = new System.Timers.Timer();
 
         private DataRow FairyInfoDR = null;
+        private int FairyDicNum;
         private string FairyName;
         private string FairyType;
 
+        private bool IsOpenFABMenu = false;
         private bool IsEnableFABMenu = false;
 
         private ProgressBar InitLoadProgressBar;
         private FloatingActionButton RefreshCacheFAB;
+        private FloatingActionButton PercentTableFAB;
+        private FloatingActionButton MainFAB;
+        private FloatingActionButton NamuWikiFAB;
+        private FloatingActionButton InvenFAB;
+        private FloatingActionButton BaseFAB;
         private CoordinatorLayout SnackbarLayout = null;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -45,14 +53,25 @@ namespace GFI_with_GFS_A
                 FairyName = Intent.GetStringExtra("Keyword");
 
                 FairyInfoDR = ETC.FindDataRow(ETC.FairyList, "Name", FairyName);
+                FairyDicNum = (int)FairyInfoDR["DicNumber"];
                 FairyType = (string)FairyInfoDR["Type"];
 
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.FairyDBDetailInitLoadProgress);
                 FindViewById<ImageView>(Resource.Id.FairyDBDetailSmallImage).Click += FairyDBDetailSmallImage_Click;
 
                 RefreshCacheFAB = FindViewById<FloatingActionButton>(Resource.Id.FairyDBDetailRefreshCacheFAB);
+                PercentTableFAB = FindViewById<FloatingActionButton>(Resource.Id.FairyDBDetailProductPercentFAB);
+                MainFAB = FindViewById<FloatingActionButton>(Resource.Id.FairyDBDetailSideLinkMainFAB);
+                NamuWikiFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkNamuWikiFAB);
+                InvenFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkInvenFAB);
+                BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkBaseFAB);
 
                 RefreshCacheFAB.Click += RefreshCacheFAB_Click;
+                PercentTableFAB.Click += PercentTableFAB_Click;
+                MainFAB.Click += MainFAB_Click;
+                NamuWikiFAB.Click += MainSubFAB_Click;
+                InvenFAB.Click += MainSubFAB_Click;
+                BaseFAB.Click += MainSubFAB_Click;
 
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FairyDBSnackbarLayout);
 
@@ -78,19 +97,135 @@ namespace GFI_with_GFS_A
             FABTimer.Stop();
             IsEnableFABMenu = false;
 
+            PercentTableFAB.Hide();
             RefreshCacheFAB.Hide();
-            RefreshCacheFAB.Alpha = 0.3f;
+            MainFAB.Alpha = 0.3f;
         }
 
         private void RefreshCacheFAB_Click(object sender, EventArgs e)
         {
+            InitLoadProcess(true);
+        }
+
+        private void PercentTableFAB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var intent = new Intent(this, typeof(ProductPercentTableActivity));
+                intent.PutExtra("Info", new string[] { "Fairy", FairyDicNum.ToString() });
+                StartActivity(intent);
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.SideLinkOpen_Fail, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+            }
+        }
+
+        private void MainSubFAB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FloatingActionButton fab = sender as FloatingActionButton;
+
+                /*switch (fab.Id)
+                {
+                    case Resource.Id.SideLinkNamuWikiFAB:
+                        string uri = string.Format("https://namu.wiki/w/{0}(소녀전선)", DollName);
+                        var intent = new Intent(this, typeof(WebBrowserActivity));
+                        intent.PutExtra("url", uri);
+                        StartActivity(intent);
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    case Resource.Id.SideLinkInvenFAB:
+                        string uri2 = string.Format("http://gf.inven.co.kr/dataninfo/dolls/detail.php?d=126&c={0}", DollDicNum);
+                        var intent2 = new Intent(this, typeof(WebBrowserActivity));
+                        intent2.PutExtra("url", uri2);
+                        StartActivity(intent2);
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    case Resource.Id.SideLinkBaseFAB:
+                        string uri3 = string.Format("https://girlsfrontline.kr/doll/{0}", DollDicNum);
+                        var intent3 = new Intent(this, typeof(WebBrowserActivity));
+                        intent3.PutExtra("url", uri3);
+                        StartActivity(intent3);
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                }*/
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.SideLinkOpen_Fail, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+            }
+            finally
+            {
+                MainFAB_Click(MainFAB, new EventArgs());
+            }
+        }
+
+        private void MainFAB_Click(object sender, EventArgs e)
+        {
             if (IsEnableFABMenu == false)
             {
                 IsEnableFABMenu = true;
-                RefreshCacheFAB.Animate().Alpha(1.0f).SetDuration(500).Start();
+                MainFAB.Animate().Alpha(1.0f).SetDuration(500).Start();
+                PercentTableFAB.Show();
+                RefreshCacheFAB.Show();
                 FABTimer.Start();
             }
-            else InitLoadProcess(true);
+            else
+            {
+                int[] ShowAnimationIds = { Resource.Animation.SideLinkFAB1_Show, Resource.Animation.SideLinkFAB2_Show, Resource.Animation.SideLinkFAB3_Show };
+                int[] HideAnimationIds = { Resource.Animation.SideLinkFAB1_Hide, Resource.Animation.SideLinkFAB2_Hide, Resource.Animation.SideLinkFAB3_Hide };
+                FloatingActionButton[] FABs = { NamuWikiFAB, InvenFAB, BaseFAB };
+                double[,] Mags = { { 1.80, 0.25 }, { 1.5, 1.5 }, { 0.25, 1.80 } };
+
+                try
+                {
+                    switch (IsOpenFABMenu)
+                    {
+                        case false:
+                            for (int i = 0; i < FABs.Length; ++i)
+                            {
+                                FrameLayout.LayoutParams layoutparams = (FrameLayout.LayoutParams)FABs[i].LayoutParameters;
+                                layoutparams.RightMargin += (int)(FABs[i].Width * Mags[i, 0]);
+                                layoutparams.BottomMargin += (int)(FABs[i].Height * Mags[i, 1]);
+
+                                FABs[i].LayoutParameters = layoutparams;
+                                FABs[i].StartAnimation(AnimationUtils.LoadAnimation(Application, ShowAnimationIds[i]));
+                                FABs[i].Clickable = true;
+                            }
+                            IsOpenFABMenu = true;
+                            PercentTableFAB.Hide();
+                            RefreshCacheFAB.Hide();
+                            FABTimer.Stop();
+                            break;
+                        case true:
+                            for (int i = 0; i < FABs.Length; ++i)
+                            {
+                                FrameLayout.LayoutParams layoutparams = (FrameLayout.LayoutParams)FABs[i].LayoutParameters;
+                                layoutparams.RightMargin -= (int)(FABs[i].Width * Mags[i, 0]);
+                                layoutparams.BottomMargin -= (int)(FABs[i].Height * Mags[i, 1]);
+
+                                FABs[i].LayoutParameters = layoutparams;
+                                FABs[i].StartAnimation(AnimationUtils.LoadAnimation(Application, HideAnimationIds[i]));
+                                FABs[i].Clickable = false;
+                            }
+                            IsOpenFABMenu = false;
+                            PercentTableFAB.Show();
+                            RefreshCacheFAB.Show();
+                            FABTimer.Start();
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ETC.LogError(this, ex.ToString());
+                    ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeSubMenuError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                }
+            }
         }
 
         private void FairyDBDetailSmallImage_Click(object sender, EventArgs e)

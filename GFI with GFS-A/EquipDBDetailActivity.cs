@@ -7,6 +7,7 @@ using Android.Support.Design.Widget;
 using Android.Support.V4.App;
 using Android.Support.V7.Widget;
 using Android.Views;
+using Android.Views.Animations;
 using Android.Widget;
 using System;
 using System.Collections.Generic;
@@ -21,17 +22,23 @@ namespace GFI_with_GFS_A
     [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class EquipDBDetailActivity : FragmentActivity
     {
+        System.Timers.Timer FABTimer = new System.Timers.Timer();
+
         private LinearLayout AbilityTableSubLayout;
 
         private DataRow EquipInfoDR = null;
         private string EquipName;
+        private int EquipId;
         private int EquipGrade;
         private string EquipCategory;
         private string EquipType;
         private string IconName;
 
+        private bool IsEnableFABMenu = false;
+
         private ProgressBar InitLoadProgressBar;
         private FloatingActionButton RefreshCacheFAB;
+        private FloatingActionButton PercentTableFAB;
         private CoordinatorLayout SnackbarLayout = null;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -48,6 +55,7 @@ namespace GFI_with_GFS_A
                 EquipName = Intent.GetStringExtra("Keyword");
 
                 EquipInfoDR = ETC.FindDataRow(ETC.EquipmentList, "Name", EquipName);
+                EquipId = (int)EquipInfoDR["Id"];
                 EquipGrade = (int)EquipInfoDR["Grade"];
                 EquipCategory = (string)EquipInfoDR["Category"];
                 EquipType = (string)EquipInfoDR["Type"];
@@ -57,10 +65,14 @@ namespace GFI_with_GFS_A
                 AbilityTableSubLayout = FindViewById<LinearLayout>(Resource.Id.EquipDBDetailAbilitySubLayout);
 
                 RefreshCacheFAB = FindViewById<FloatingActionButton>(Resource.Id.EquipDBDetailRefreshCacheFAB);
-
                 RefreshCacheFAB.Click += RefreshCacheFAB_Click;
+                PercentTableFAB = FindViewById<FloatingActionButton>(Resource.Id.EquipDBDetailProductPercentFAB);
+                PercentTableFAB.Click += PercentTableFAB_Click;
 
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EquipDBDetailSnackbarLayout);
+
+                FABTimer.Interval = 3000;
+                FABTimer.Elapsed += FABTimer_Elapsed;
 
                 InitLoadProcess(false);
             }
@@ -74,6 +86,47 @@ namespace GFI_with_GFS_A
         private void RefreshCacheFAB_Click(object sender, EventArgs e)
         {
             InitLoadProcess(true);
+        }
+
+        private void FABTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            HideFloatingActionButtonAnimation();
+        }
+
+        private void PercentTableFAB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (IsEnableFABMenu == false)
+                {
+                    IsEnableFABMenu = true;
+                    PercentTableFAB.Animate().Alpha(1.0f).SetDuration(500).Start();
+                    PercentTableFAB.Show();
+                    RefreshCacheFAB.Show();
+                    FABTimer.Start();
+                }
+                else
+                {
+                    var intent = new Intent(this, typeof(ProductPercentTableActivity));
+                    intent.PutExtra("Info", new string[] { "Equip", EquipId.ToString() });
+                    StartActivity(intent);
+                    OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeSubMenuError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+            }
+        }
+
+        private void HideFloatingActionButtonAnimation()
+        {
+            FABTimer.Stop();
+            IsEnableFABMenu = false;
+
+            RefreshCacheFAB.Hide();
+            PercentTableFAB.Alpha = 0.3f;
         }
 
         private async Task InitLoadProcess(bool IsRefresh)
@@ -240,6 +293,7 @@ namespace GFI_with_GFS_A
 
                 if (ETC.UseLightTheme == true) SetCardTheme();
                 ShowCardViewAnimation();
+                HideFloatingActionButtonAnimation();
             }
             catch (WebException ex)
             {
