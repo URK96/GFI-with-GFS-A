@@ -79,9 +79,10 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.DollDBDetailLayout);
 
-                DollName = Intent.GetStringExtra("Keyword");
+                DollDicNum = Intent.GetIntExtra("Keyword", 0);
 
-                DollInfoDR = ETC.FindDataRow(ETC.DollList, "Name", DollName);
+                DollInfoDR = ETC.FindDataRow(ETC.DollList, "DicNumber", DollDicNum);
+                DollName = (string)DollInfoDR["Name"];
                 DollDicNum = (int)DollInfoDR["DicNumber"];
                 DollGrade = (int)DollInfoDR["Grade"];
                 DollType = (string)DollInfoDR["Type"];

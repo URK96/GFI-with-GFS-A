@@ -19,6 +19,7 @@ namespace GFI_with_GFS_A
         delegate void DownloadProgress();
 
         private List<EnemyListBasicInfo> mEnemyList = new List<EnemyListBasicInfo>();
+        private List<string> Download_List = new List<string>();
 
         int[] EnemyTypeFilters = { Resource.Id.EnemyFilterNormalEnemy, Resource.Id.EnemyFilterBossEnemy };
 
@@ -126,7 +127,14 @@ namespace GFI_with_GFS_A
             if (CanRefresh == false) refresh_fab.Hide();
             else
             {
-                if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate { ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EnemyCropImageDownloadProcess)); };
+                if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate 
+                {
+                    Download_List.Clear();
+                    foreach (DataRow dr in ETC.EnemyList.Rows) Download_List.Add((string)dr["CodeName"]);
+                    Download_List.TrimExcess();
+
+                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EnemyCropImageDownloadProcess));
+                };
             }
 
             filter_fab = FindViewById<FloatingActionButton>(Resource.Id.EnemyFilterFAB);
@@ -142,7 +150,7 @@ namespace GFI_with_GFS_A
         {
             if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
             {
-                if (CheckEnemyCropImage() == false) ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(EnemyCropImageDownloadProcess));
+                if (CheckEnemyCropImage() == true) ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(EnemyCropImageDownloadProcess));
             }
         }
 
@@ -153,14 +161,13 @@ namespace GFI_with_GFS_A
                 DataRow dr = ETC.EnemyList.Rows[i];
                 string EnemyCodeName = (string)dr["CodeName"];
                 string FilePath = System.IO.Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", EnemyCodeName + ".gfdcache");
-                if (System.IO.File.Exists(FilePath) == false)
-                {
-                    Toast.MakeText(this, EnemyCodeName.ToString(), ToastLength.Short).Show();
-                    return false;
-                }
+                if (System.IO.File.Exists(FilePath) == false) Download_List.Add(EnemyCodeName);
             }
 
-            return true;
+            Download_List.TrimExcess();
+
+            if (Download_List.Count == 0) return false;
+            else return true;
         }
 
         private void ShowDownloadCheckMessage(int title, int message, DownloadProgress method)

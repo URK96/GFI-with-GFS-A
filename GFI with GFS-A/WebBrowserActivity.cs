@@ -11,7 +11,7 @@ using Android.Support.Design.Widget;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.WebViewActivity", Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class WebBrowserActivity : FragmentActivity
     {
         private static ProgressBar LoadProgress;
@@ -57,6 +57,10 @@ namespace GFI_with_GFS_A
             try
             {
                 string url = Intent.GetStringExtra("url");
+
+                if (url == null) url = Intent.DataString;
+
+                Toast.MakeText(this, url, ToastLength.Short).Show();
 
                 web.LoadUrl(url);
             }

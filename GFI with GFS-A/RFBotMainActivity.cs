@@ -35,8 +35,10 @@ namespace GFI_with_GFS_A
             StatusText = FindViewById<TextView>(Resource.Id.RFBotStatusText);
             InputText = FindViewById<EditText>(Resource.Id.RFBotInputText);
             InputButton = FindViewById<Button>(Resource.Id.RFBotInputButton);
-            InputButton.Click += InputButton_Click;
+            //InputButton.Click += InputButton_Click;
             SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.RFBotSnackbarLayout);
+
+            StatusText.Text = "RFBot is Maintenance......\nAlso, you can't connect Zina OS on RFBot after this version. You can connect Zina OS in Settings.";
         }
 
         private async void InputButton_Click(object sender, EventArgs e)
@@ -51,11 +53,7 @@ namespace GFI_with_GFS_A
                 InputText.Enabled = false;
                 string[] Command = InputText.Text.Split(' ');
 
-                if (InputText.Text == "connect to Zina OS")
-                {
-                    StartOS();
-                }
-                else if (Command[0] == "Hidden")
+                if (Command[0] == "Hidden")
                 {
                     InputText.Text = "";
 

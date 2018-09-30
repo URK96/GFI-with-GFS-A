@@ -46,7 +46,7 @@ namespace GFI_with_GFS_A
         internal static Android.Media.MediaPlayer OSTPlayer = null;
         internal static int[] OST_Index = { 0, 0 };
 
-        internal static Android.Content.Res.Resources Resources;
+        internal static Android.Content.Res.Resources Resources = null;
 
         internal static ISharedPreferences sharedPreferences;
 

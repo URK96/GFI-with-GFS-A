@@ -13,7 +13,7 @@ using UK.CO.Senab.Photoview;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "OldGFDViewer", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.OldGFDActivity", Label = "OldGFDViewer", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class OldGFDViewer : FragmentActivity
     {
         private bool HasUpdate = false;
@@ -42,23 +42,14 @@ namespace GFI_with_GFS_A
             "RecommendLeveling_1",
             "RecommendLeveling_2"
         };
-        readonly string[] SpinnerList = 
-        {
-            ETC.Resources.GetString(Resource.String.OldGFDViewer_ProductDollTable),
-            ETC.Resources.GetString(Resource.String.OldGFDViewer_ProductEquipTable),
-            ETC.Resources.GetString(Resource.String.OldGFDViewer_ProductFairyTable),
-            ETC.Resources.GetString(Resource.String.OldGFDViewer_DollPerformance),
-            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendDollRecipe),
-            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendEquipRecipe),
-            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendMD),
-            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling1),
-            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling2)
-        };
+        string[] SpinnerList;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             try
             {
+                if (ETC.Resources == null) ETC.Resources = Resources;
+
                 base.OnCreate(savedInstanceState);
 
                 if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
@@ -88,16 +79,42 @@ namespace GFI_with_GFS_A
 
         private async void InitProcess()
         {
-            var ImageListAdapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, SpinnerList);
-            ImageListAdapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
+            try
+            {
+                ListImageList();
 
-            ImageList.Adapter = ImageListAdapter;
+                var ImageListAdapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, SpinnerList);
+                ImageListAdapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
 
-            ShowImage(0);
+                ImageList.Adapter = ImageListAdapter;
 
-            await Task.Delay(1000);
+                ShowImage(0);
 
-            await CheckUpdate();
+                await Task.Delay(1000);
+
+                await CheckUpdate();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, "Error InitProcess", Snackbar.LengthShort);
+            }
+        }
+
+        private void ListImageList()
+        {
+            SpinnerList = new string[]
+            {
+                Resources.GetString(Resource.String.OldGFDViewer_ProductDollTable),
+                Resources.GetString(Resource.String.OldGFDViewer_ProductEquipTable),
+                Resources.GetString(Resource.String.OldGFDViewer_ProductFairyTable),
+                Resources.GetString(Resource.String.OldGFDViewer_DollPerformance),
+                Resources.GetString(Resource.String.OldGFDViewer_RecommendDollRecipe),
+                Resources.GetString(Resource.String.OldGFDViewer_RecommendEquipRecipe),
+                Resources.GetString(Resource.String.OldGFDViewer_RecommendMD),
+                Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling1),
+                Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling2)
+            };
         }
 
         private void ShowImage(int index)

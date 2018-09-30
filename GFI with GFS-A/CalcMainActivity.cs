@@ -12,15 +12,15 @@ using System.Data;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "계산기", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.CalcActivity", Label = "계산기", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class CalcMainActivity : AppCompatActivity
     {
-        Fragment ExpItemCalc_F;
-        Fragment CoreCalc_F;
-        Fragment SkillTrainingCalc_F;
-        Fragment FSTGradeUp_F;
+        Android.Support.V4.App.Fragment ExpItemCalc_F;
+        Android.Support.V4.App.Fragment CoreCalc_F;
+        Android.Support.V4.App.Fragment SkillTrainingCalc_F;
+        Android.Support.V4.App.Fragment FSTGradeUp_F;
 
-        FragmentTransaction ft = null;
+        Android.Support.V4.App.FragmentTransaction ft = null;
 
         DrawerLayout MainDrawerLayout;
         NavigationView MainNavigationView;
@@ -46,7 +46,9 @@ namespace GFI_with_GFS_A
             else SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.CalcIcon);
             SupportActionBar.Title = Resources.GetString(Resource.String.TitleName_ExpItemCalc);
 
-            ft = FragmentManager.BeginTransaction();
+            ft = SupportFragmentManager.BeginTransaction();
+
+            ETC.LoadDBSync(ETC.SkillTrainingList, "SkillTraining.gfs", true);
 
             ExpItemCalc_F = new ExpItemCalc();
             CoreCalc_F = new Core();
@@ -63,7 +65,7 @@ namespace GFI_with_GFS_A
             try
             {
                 string title = "";
-                ft = FragmentManager.BeginTransaction();
+                ft = SupportFragmentManager.BeginTransaction();
 
                 switch (e.MenuItem.ItemId)
                 {
@@ -117,12 +119,12 @@ namespace GFI_with_GFS_A
         }
     }
 
-    public class ExpItemCalc : Fragment
+    public class ExpItemCalc : Android.Support.V4.App.Fragment
     {
         private View v;
 
         private readonly int[] LevelExp = { 0, 100, 300, 600, 1000, 1500, 2100, 2800, 3600, 4500, 5500, 6600, 7800, 9100, 10500, 12000, 13600, 15300, 17100, 19000, 21000, 23100, 25300, 27600, 30000, 32500, 35100, 37900, 41000, 44400, 48600, 53200, 58200, 63600, 69400, 75700, 82400, 89600, 97300, 105500, 114300, 123600, 133500, 144000, 155100, 166900, 179400, 192500, 206400, 221000, 236400, 252500, 269400, 287100, 305700, 325200, 345600, 366900, 389200, 412500, 436800, 462100, 488400, 515800, 544300, 573900, 604700, 636700, 669900, 704300, 749400, 796200, 844800, 895200, 947400, 1001400, 1057300, 1115200, 1175000, 1236800, 1300700, 1366700, 1434800, 1505100, 1577700, 1652500, 1729600, 1809100, 1891000, 1975300, 2087900, 2204000, 2323500, 2446600, 2573300, 2703700, 2837800, 2975700, 3117500, 3263200, 3363200, 3483200, 3623200, 3783200, 3963200, 4163200, 4383200, 4623200, 4903200, 5263200, 5743200, 6383200, 7283200, 8483200, 10083200, 12283200, 15283200, 19283200, 24283200, 30283200 };
-        private readonly int[] LevelExp_Fairy = { 0, 300, 600, 900, 1200, 1500, 1800, 2100, 2400, 2700, 3000, 3300, 3600, 3900, 4200, 4500, 4800, 5100, 5500, 6000, 6500, 7100, 8000, 9000, 10000, 11000, 12200, 13400, 14700, 16000, 17500, 18900, 20500, 22200, 23900, 25700, 27600, 29500, 31600, 33700, 35900, 38200, 40500, 43000, 45500, 48200, 50900, 53700, 56600, 59600, 62700, 65900, 69200, 72600, 76000, 79600, 83300, 87000, 90900, 94900, 99000, 103100, 107400, 111800, 116300, 120900, 125600, 130400, 135300, 140400, 145500, 150800, 156100, 161600, 167200, 172900, 178700, 184700, 190700, 196900, 202300, 209600, 216100, 222800, 229600, 236500, 243500, 250600, 257900, 265300, 272800, 280400, 288200, 296100, 304100, 312300, 320600, 329000, 337500, 357000 };
+        private readonly int[] LevelExp_Fairy = { 0, 300, 900, 1800, 3000, 4500, 6300, 8400, 10800, 13500, 16500, 19800, 23400, 27300, 31500, 36000, 40800, 45900, 51400, 57400, 63900, 71000, 79000, 88000, 98000, 109000, 121200, 134600, 149300, 165300, 182800, 201700, 222200, 244400, 268300, 294000, 321600, 351100, 382700, 416400, 452300, 490500, 531000, 574000, 619500, 667700, 718600, 772300, 828900, 888500, 951200, 1017100, 1086300, 1158900, 1234900, 1314500, 1397800, 1484800, 1575700, 1670600, 1769600, 1872700, 1980100, 2091900, 2208200, 2329100, 2454700, 2585100, 2720400, 2860800, 3006300, 3157100, 3313200, 3474800, 3642000, 3814900, 3993600, 4178300, 4369000, 4565900, 4769100, 4978700, 5194800, 5417600, 5647200, 5883700, 6127200, 6377800, 6635700, 6901000, 7173800, 7454200, 7742400, 8038500, 8342600, 8654900, 8975500, 9304500, 9642000, 9999000 };
         private readonly int[] LevelExp_FST = { 0, 500, 1400, 2700, 4500, 6700, 9400, 12600, 16200, 20200, 24700, 29700, 35100, 40900, 47200, 54000, 61200, 68800, 77100, 86100, 95900, 106500, 118500, 132000, 147000, 163500, 181800, 201900, 223900, 247900, 274200, 302500, 333300, 366600, 402400, 441000, 482400, 526600, 574000, 624600, 678400, 735700, 796500, 861000, 929200, 1001500, 1077900, 1158400, 1243300, 1332700, 1426800, 1525600, 1629400, 1738300, 1852300, 1971800, 2096700, 2227200, 2363500, 2505900, 2654400, 2809000, 2970100, 3137800, 3312300, 3493800, 3682300, 3877800, 4080800, 4291400, 4509600, 4735800, 4970000, 5212500, 5463300, 5722800, 5990800, 6267800, 6553800, 6849300, 7154000, 7468500, 7792500, 8127000, 8471000, 8826000, 9191000, 9567000, 9954000, 10352000, 10761000, 11182000, 11614000, 12058000, 12514000, 12983000, 13464000, 13957000, 14463000, 15000000 };
         private readonly int[] ConsumeCount_FST = { 1, 1, 3, 5, 5, 7, 9, 9, 11, 13, 15 };
 
@@ -396,7 +398,7 @@ namespace GFI_with_GFS_A
         }
     }
 
-    public class Core : Fragment
+    public class Core : Android.Support.V4.App.Fragment
     {
         private View v;
 
@@ -485,7 +487,7 @@ namespace GFI_with_GFS_A
         }
     }
 
-    public class SkillTraining : Fragment
+    public class SkillTraining : Android.Support.V4.App.Fragment
     {
         private View v;
 
@@ -600,7 +602,7 @@ namespace GFI_with_GFS_A
         }
     }
 
-    public class FSTGradeUp : Fragment
+    public class FSTGradeUp : Android.Support.V4.App.Fragment
     {
         private View v;
 

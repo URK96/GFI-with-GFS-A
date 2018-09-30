@@ -20,6 +20,7 @@ namespace GFI_with_GFS_A
         delegate void DownloadProgress();
 
         private List<FairyListBasicInfo> mFairyList = new List<FairyListBasicInfo>();
+        private List<int> Download_List = new List<int>();
 
         int[] TypeFilters = { Resource.Id.FairyFilterTypeCombat, Resource.Id.FairyFilterTypeStrategy };
         int[] ProductTimeFilters = { Resource.Id.FairyFilterProductHour, Resource.Id.FairyFilterProductMinute };
@@ -194,21 +195,26 @@ namespace GFI_with_GFS_A
         {
             if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
             {
-                if (CheckFairyCropImage() == false) ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(FairyCropImageDownloadProcess));
+                if (CheckFairyCropImage() == true) ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(FairyCropImageDownloadProcess));
             }
         }
 
         private bool CheckFairyCropImage()
-        { 
+        {
+            Download_List.Clear();
+
             for (int i = 0; i < ETC.FairyList.Rows.Count; ++i)
             {
                 DataRow dr = ETC.FairyList.Rows[i];
-                string FairyName = (string)dr["Name"];
-                string FilePath = System.IO.Path.Combine(ETC.CachePath, "Fairy", "Normal_Crop", FairyName + ".gfdcache");
-                if (System.IO.File.Exists(FilePath) == false) return false;
+                int FairyDicNumber = (int)dr["DicNumber"];
+                string FilePath = System.IO.Path.Combine(ETC.CachePath, "Fairy", "Normal_Crop", FairyDicNumber + ".gfdcache");
+                if (System.IO.File.Exists(FilePath) == false) Download_List.Add(FairyDicNumber);
             }
 
-            return true;
+            Download_List.TrimExcess();
+
+            if (Download_List.Count == 0) return false;
+            else return true;
         }
 
         private void ShowDownloadCheckMessage(int title, int message, DownloadProgress method)
@@ -243,7 +249,7 @@ namespace GFI_with_GFS_A
                 nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
 
                 p_total = 0;
-                p_total = ETC.FairyList.Rows.Count;
+                p_total = Download_List.Count;
                 totalProgressBar.Max = 100;
                 totalProgressBar.Progress = 0;
 
@@ -254,9 +260,7 @@ namespace GFI_with_GFS_A
 
                     for (int i = 0; i < p_total; ++i)
                     {
-                        DataRow dr = ETC.FairyList.Rows[i];
-                        string name = (string)dr["Name"];
-                        string filename = name;
+                        int filename = Download_List[i];
                         string url = System.IO.Path.Combine(ETC.Server, "Data", "Images", "Fairy", "Normal_Crop", filename + ".png");
                         string target = System.IO.Path.Combine(ETC.CachePath, "Fairy", "Normal_Crop", filename + ".gfdcache");
                         await wc.DownloadFileTaskAsync(url, target);
@@ -529,13 +533,13 @@ namespace GFI_with_GFS_A
                 }
                 FairyTypeIcon.SetImageResource(TypeIconId);
 
-                string F_Name = (string)item.FairyDR["Name"];
+                int F_DicNumber = (int)item.FairyDR["DicNumber"];
 
                 ImageView FairySmallImage = view.FindViewById<ImageView>(Resource.Id.FairyListSmallImage);
                 if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
                 {
                     FairySmallImage.Visibility = ViewStates.Visible;
-                    string FilePath = System.IO.Path.Combine(ETC.CachePath, "Fairy", "Normal_Crop", F_Name + ".gfdcache");
+                    string FilePath = System.IO.Path.Combine(ETC.CachePath, "Fairy", "Normal_Crop", F_DicNumber + ".gfdcache");
                     if (System.IO.File.Exists(FilePath) == true) FairySmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(FilePath));
                 }
                 else FairySmallImage.Visibility = ViewStates.Gone;

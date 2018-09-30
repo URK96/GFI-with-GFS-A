@@ -20,6 +20,7 @@ using System.Diagnostics;
 
 namespace GFI_with_GFS_A
 {
+    [MetaData("android.app.shortcuts", Resource = "@xml/appshortcut")]
     [Activity(Label = "소전사전", MainLauncher = true, Theme = "@style/GFS.Splash", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SplashScreen : AppCompatActivity
     {
@@ -48,7 +49,7 @@ namespace GFI_with_GFS_A
                     SetTheme(Resource.Style.GFS_Splash_Light);
                 }
 
-                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY0NkAzMTM2MmUzMjJlMzBmNFFDVVZlU2NDRTVmYVJqQ0ZyOTVPOGhYWnFIazlQNFNPeGVEMU9WMjZnPQ==");
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzAxMzlAMzEzNjJlMzMyZTMwaFNuV1Y2bEpzK25pSDlVREdzZHpPcW15TG54Slg3Z3JjQm1IYSs3SENoYz0=");
 
                 // Set our view from the "main" layout resource
                 SetContentView(Resource.Layout.SplashLayout);

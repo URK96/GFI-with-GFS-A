@@ -16,7 +16,7 @@ using Android.Support.Design.Widget;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "이벤트 목록", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.EventListActivity", Label = "이벤트 목록", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class EventListActivity : AppCompatActivity
     {
         enum EventPeriodType { Now, Scheduled, Over }

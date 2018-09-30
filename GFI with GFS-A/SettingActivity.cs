@@ -67,6 +67,8 @@ namespace GFI_with_GFS_A
         private int total = 0;
         private int now = 0;
 
+        private int count = 0;
+
         public override void OnCreatePreferences(Bundle savedInstanceState, string rootKey)
         {
             SnackbarLayout = Activity.FindViewById<CoordinatorLayout>(Resource.Id.SettingSnackbarLayout);
@@ -227,14 +229,43 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
-                ad.SetTitle(Resource.String.SettingActivity_DeleteLogFile_DialogTitle);
-                ad.SetMessage(Resource.String.SettingActivity_DeleteLogFile_DialogCheckMessage);
-                ad.SetCancelable(true);
-                ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { CleanLogFolderProcess(); });
+                count += 1;
 
-                ad.Show();
+                if (count == 5)
+                {
+                    Preference p = sender as Preference;
+
+                    p.SetTitle(Resource.String.Firewall);
+                    p.SetSummary(Resource.String.Firewall_Message);
+                    if (ETC.UseLightTheme == true) p.SetIcon(Resource.Drawable.Hack_WhiteTheme);
+                    else p.SetIcon(Resource.Drawable.Hack);
+                }
+                else if (count > 5)
+                {
+                    Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
+                    ad.SetTitle("¿Quiere neutralizar el cortafuegos?");
+                    ad.SetMessage("SANGVIS FERRI, Annulation - Chaos, OK - Inscrire cachée");
+                    ad.SetCancelable(true);
+                    ad.SetNegativeButton("䍡湣敬", delegate { PreferenceScreen.RemoveAll(); });
+                    ad.SetPositiveButton("佋", delegate
+                    {
+                        Activity.StartActivity(typeof(ZinaOS));
+                        Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                    });
+
+                    ad.Show();
+                }
+                else
+                {
+                    Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
+                    ad.SetTitle(Resource.String.SettingActivity_DeleteLogFile_DialogTitle);
+                    ad.SetMessage(Resource.String.SettingActivity_DeleteLogFile_DialogCheckMessage);
+                    ad.SetCancelable(true);
+                    ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                    ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { CleanLogFolderProcess(); });
+
+                    ad.Show();
+                }
             }
             catch (Exception ex)
             {

@@ -20,6 +20,7 @@ namespace GFI_with_GFS_A
     {
         private DataRow FairyInfoDR = null;
         private string FairyName = "";
+        private int FairyDicNumber = 0;
 
         private CoordinatorLayout SnackbarLayout;
         private ProgressBar LoadProgressBar;
@@ -44,6 +45,7 @@ namespace GFI_with_GFS_A
 
                 FairyInfoDR = ETC.FindDataRow(ETC.FairyList, "Name", Intent.GetStringExtra("Keyword"));
                 FairyName = (string)FairyInfoDR["Name"];
+                FairyDicNumber = (int)FairyInfoDR["DicNumber"];
 
                 FairyImageView = FindViewById<ImageView>(Resource.Id.FairyDBImageViewerImageView);
                 LoadProgressBar = FindViewById<ProgressBar>(Resource.Id.FairyDBImageViewerLoadProgress);
@@ -118,7 +120,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(100);
 
-                string ImageName = string.Format("{0}_{1}", FairyName, ImageNum);
+                string ImageName = string.Format("{0}_{1}", FairyDicNumber, ImageNum);
 
                 string ImagePath = Path.Combine(ETC.CachePath, "Fairy", "Normal", ImageName + ".gfdcache");
 

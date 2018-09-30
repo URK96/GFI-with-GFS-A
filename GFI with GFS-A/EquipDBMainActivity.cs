@@ -19,6 +19,7 @@ namespace GFI_with_GFS_A
         delegate void DownloadProgress();
 
         private List<EquipListBasicInfo> mEquipList = new List<EquipListBasicInfo>();
+        private List<string> Download_List = new List<string>();
 
         int[] GradeFilters = { Resource.Id.EquipFilterGrade2, Resource.Id.EquipFilterGrade3, Resource.Id.EquipFilterGrade4, Resource.Id.EquipFilterGrade5, Resource.Id.EquipFilterGradeExtra };
         int[] CategoryFilters = { Resource.Id.EquipFilterCategoryAttach, Resource.Id.EquipFilterCategoryBullet, Resource.Id.EquipFilterCategoryDoll };
@@ -135,7 +136,16 @@ namespace GFI_with_GFS_A
             if (CanRefresh == false) refresh_fab.Hide();
             else
             {
-                if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate { ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EquipCropImageDownloadProcess)); };
+                if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate 
+                {
+                    Download_List.Clear();
+                    foreach (DataRow dr in ETC.EquipmentList.Rows)
+                    {
+                        string item = (string)dr["IconName"];
+                        if (Download_List.Contains(item) == false) Download_List.Add(item);
+                    }
+                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EquipCropImageDownloadProcess));
+                };
             }
 
             filter_fab = FindViewById<FloatingActionButton>(Resource.Id.EquipFilterFAB);
@@ -186,6 +196,8 @@ namespace GFI_with_GFS_A
 
         private bool CheckEquipCropImage()
         {
+            Download_List.Clear();
+
             for (int i = 0; i < ETC.EquipmentList.Rows.Count; ++i)
             {
                 DataRow dr = ETC.EquipmentList.Rows[i];
@@ -193,12 +205,14 @@ namespace GFI_with_GFS_A
                 string FilePath = System.IO.Path.Combine(ETC.CachePath, "Equip", "Normal", IconName + ".gfdcache");
                 if (System.IO.File.Exists(FilePath) == false)
                 {
-                    Toast.MakeText(this, IconName, ToastLength.Short).Show();
-                    return false;
+                    if (Download_List.Contains(IconName) == false) Download_List.Add(IconName);
                 }
             }
 
-            return true;
+            Download_List.TrimExcess();
+
+            if (Download_List.Count == 0) return false;
+            else return true;
         }
 
         private void ShowDownloadCheckMessage(int title, int message, DownloadProgress method)
@@ -232,31 +246,8 @@ namespace GFI_with_GFS_A
                 nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
                 nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
 
-                List<string> IconList = new List<string>();
-
-                foreach (DataRow dr in ETC.EquipmentList.Rows)
-                {
-                    IconList.TrimExcess();
-                    bool IsExist = false;
-                    string icon = (string)dr["Icon"];
-                    foreach (string s in IconList)
-                    {
-                        if (s == icon)
-                        {
-                            IsExist = true;
-                            break;
-                        }
-                    }
-
-                    if (IsExist == true) continue;
-
-                    IconList.Add(icon);
-                }
-
-                IconList.TrimExcess();
-
                 p_total = 0;
-                p_total = IconList.Count;
+                p_total = Download_List.Count;
                 totalProgressBar.Max = 100;
                 totalProgressBar.Progress = 0;
 
@@ -267,7 +258,7 @@ namespace GFI_with_GFS_A
 
                     for (int i = 0; i < p_total; ++i)
                     {
-                        string filename = (string)IconList[i];
+                        string filename = Download_List[i];
                         string url = System.IO.Path.Combine(ETC.Server, "Data", "Images", "Equipments", filename + ".png");
                         string target = System.IO.Path.Combine(ETC.CachePath, "Equip", "Normal", filename + ".gfdcache");
                         await wc.DownloadFileTaskAsync(url, target);

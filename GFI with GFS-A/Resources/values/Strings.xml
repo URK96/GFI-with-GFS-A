@@ -25,6 +25,23 @@
   <string name="OldGFDViewer_RecommendLeveling1">추천 레벨링 루트 1</string>
   <string name="OldGFDViewer_RecommendLeveling2">추천 레벨링 루트 2</string>
   
+  <!--New - Shortcut String-->
+  <string name="Shortcut_GFNotification_ShortLabel">공지사항</string>
+  <string name="Shortcut_GFNotification_LongLabel">공지사항</string>
+  <string name="Shortcut_GFNotification_DisabledLabel">공지사항</string>
+  <string name="Shortcut_GFDEvent_ShortLabel">이벤트</string>
+  <string name="Shortcut_GFDEvent_LongLabel">이벤트</string>
+  <string name="Shortcut_GFDEvent_DisabledLabel">이벤트</string>
+  <string name="Shortcut_GFDCalc_ShortLabel">계산기</string>
+  <string name="Shortcut_GFDCalc_LongLabel">계산기</string>
+  <string name="Shortcut_GFDCalc_DisabledLabel">계산기</string>
+  <string name="Shortcut_OldGFD_ShortLabel">소전사전v1</string>
+  <string name="Shortcut_OldGFD_LongLabel">소전사전v1</string>
+  <string name="Shortcut_OldGFD_DisabledLabel">소전사전v1</string>
+  <string name="Shortcut_OSTPlayer_ShortLabel">OST Player</string>
+  <string name="Shortcut_OSTPlayer_LongLabel">OST Player</string>
+  <string name="Shortcut_OSTPlayer_DisabledLabel">OST Player</string>
+  
   <!--Solution String-->
   <string name="CheckingUpdate">업데이트 확인 중...</string>
   <string name="Splash_SkipCheckUpdate">업데이트 확인은 건너뛰어보겠어!</string>
@@ -410,6 +427,9 @@
   <!--ETC String Value-->
   <string name="AdMob_TestID">ca-app-pub-3940256099942544/6300978111</string>
   <string name="AdMob_ID">ca-app-pub-4576756770200148/6439609402</string>
+  <string name="Firewall_Category">楚慮传</string>
+  <string name="Firewall">䈀爀攀愀欀 䘀椀爀攀眀愀氀氀 漀昀 娀椀渀愀 伀匀</string>
+  <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
     [2.2.5 수정사항]\n\n

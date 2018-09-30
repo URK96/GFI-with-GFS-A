@@ -20,6 +20,7 @@ namespace GFI_with_GFS_A
         delegate void DownloadProgress();
 
         private List<DollListBasicInfo> mDollList = new List<DollListBasicInfo>();
+        private List<int> Download_List = new List<int>();
 
         int[] GradeFilters = { Resource.Id.DollFilterGrade2, Resource.Id.DollFilterGrade3, Resource.Id.DollFilterGrade4, Resource.Id.DollFilterGrade5, Resource.Id.DollFilterGradeExtra };
         int[] TypeFilters = { Resource.Id.DollFilterTypeHG, Resource.Id.DollFilterTypeSMG, Resource.Id.DollFilterTypeAR, Resource.Id.DollFilterTypeRF, Resource.Id.DollFilterTypeMG, Resource.Id.DollFilterTypeSG};
@@ -126,9 +127,9 @@ namespace GFI_with_GFS_A
 
         private void MDollListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            string DollName = (string)(mDollList[e.Position].DollDR)["Name"];
+            int DollNum = (int)(mDollList[e.Position].DollDR)["DicNumber"];
             var DollInfo = new Intent(this, typeof(DollDBDetailActivity));
-            DollInfo.PutExtra("Keyword", DollName);
+            DollInfo.PutExtra("Keyword", DollNum);
             StartActivity(DollInfo);
             OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }
@@ -194,7 +195,13 @@ namespace GFI_with_GFS_A
             if (CanRefresh == false) refresh_fab.Hide();
             else
             {
-                if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate { ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(DollCropImageDownloadProcess)); };
+                if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate 
+                {
+                    Download_List.Clear();
+                    foreach (DataRow dr in ETC.DollList.Rows) Download_List.Add((int)dr["DicNumber"]);
+                    Download_List.TrimExcess();
+                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(DollCropImageDownloadProcess));
+                };
             }
 
             filter_fab = FindViewById<FloatingActionButton>(Resource.Id.DollFilterFAB);
@@ -243,25 +250,26 @@ namespace GFI_with_GFS_A
         {
             if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
             {
-                if (CheckDollCropImage() == false) ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(DollCropImageDownloadProcess));
+                if (CheckDollCropImage() == true) ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(DollCropImageDownloadProcess));
             }
         }
 
         private bool CheckDollCropImage()
         {
+            Download_List.Clear();
+
             for (int i = 0; i < ETC.DollList.Rows.Count; ++i)
             {
                 DataRow dr = ETC.DollList.Rows[i];
                 int DollNum = (int)dr["DicNumber"];
                 string FilePath = System.IO.Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", DollNum + ".gfdcache");
-                if (System.IO.File.Exists(FilePath) == false)
-                {
-                    //Toast.MakeText(this, DollNum.ToString(), ToastLength.Short).Show();
-                    return false;
-                }
+                if (System.IO.File.Exists(FilePath) == false) Download_List.Add(DollNum);
             }
 
-            return true;
+            Download_List.TrimExcess();
+
+            if (Download_List.Count == 0) return false;
+            else return true;
         }
 
         private void ShowDownloadCheckMessage(int title, int message, DownloadProgress method)
@@ -297,7 +305,7 @@ namespace GFI_with_GFS_A
 
                 p_now = 0;
                 p_total = 0;
-                p_total = ETC.DollList.Rows.Count;
+                p_total = Download_List.Count;
                 totalProgressBar.Max = 100;
                 totalProgressBar.Progress = 0;
 
@@ -308,8 +316,7 @@ namespace GFI_with_GFS_A
 
                     for (int i = 0; i < p_total; ++i)
                     {
-                        DataRow dr = ETC.DollList.Rows[i];
-                        int num = (int)dr["DicNumber"];
+                        int num = Download_List[i];
                         string filename = num.ToString();
                         string url = System.IO.Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal_Crop", filename + ".png");
                         string target = System.IO.Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", filename + ".gfdcache");

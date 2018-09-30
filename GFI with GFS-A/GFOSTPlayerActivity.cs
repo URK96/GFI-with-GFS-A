@@ -23,7 +23,7 @@ namespace GFI_with_GFS_A
         internal static TextView MusicNameText = null;
         internal static TextView MusicNowPositionText = null;
         internal static Activity activity;
-        internal static Fragment PlayerScreenFragment;
+        internal static Android.Support.V4.App.Fragment PlayerScreenFragment;
         internal static bool IsPlayerPlaying = false;
 
         private static readonly string Server_MusicPath = Path.Combine(ETC.Server, "Data", "Music");
@@ -34,18 +34,7 @@ namespace GFI_with_GFS_A
 
         private static int[] MusicDuration = new int[3];
 
-        internal static string[] Category_List =
-        {
-            ETC.Resources.GetString(Resource.String.Music_Category_Normal),
-            ETC.Resources.GetString(Resource.String.Music_Category_ContinuumTurbulence),
-            ETC.Resources.GetString(Resource.String.Music_Category_Cube),
-            ETC.Resources.GetString(Resource.String.Music_Category_DeepDive),
-            ETC.Resources.GetString(Resource.String.Music_Category_DJMAX),
-            ETC.Resources.GetString(Resource.String.Music_Category_GuiltyGear),
-            ETC.Resources.GetString(Resource.String.Music_Category_Houkai2),
-            ETC.Resources.GetString(Resource.String.Music_Category_Hypothermia),
-            ETC.Resources.GetString(Resource.String.Music_Category_Singularity)
-        };
+        internal static string[] Category_List = null;
         internal static string[] Category_RealPath =
         {
             "Normal",
@@ -62,6 +51,8 @@ namespace GFI_with_GFS_A
 
         internal static void PlayerInitialize()
         {
+            if (Category_List == null) ListCategory();
+
             if (ETC.OSTPlayer == null)
             {
                 player = new MediaPlayer();
@@ -74,6 +65,22 @@ namespace GFI_with_GFS_A
                 IsPlayerPlaying = true;
                 StartSeekBarTask();
                 player.Start();
+            };
+        }
+
+        private static void ListCategory()
+        {
+            Category_List = new string[]
+            {
+                ETC.Resources.GetString(Resource.String.Music_Category_Normal),
+                ETC.Resources.GetString(Resource.String.Music_Category_ContinuumTurbulence),
+                ETC.Resources.GetString(Resource.String.Music_Category_Cube),
+                ETC.Resources.GetString(Resource.String.Music_Category_DeepDive),
+                ETC.Resources.GetString(Resource.String.Music_Category_DJMAX),
+                ETC.Resources.GetString(Resource.String.Music_Category_GuiltyGear),
+                ETC.Resources.GetString(Resource.String.Music_Category_Houkai2),
+                ETC.Resources.GetString(Resource.String.Music_Category_Hypothermia),
+                ETC.Resources.GetString(Resource.String.Music_Category_Singularity)
             };
         }
 
@@ -223,14 +230,14 @@ namespace GFI_with_GFS_A
         }
     }
 
-    [Activity(Label = "GFOSTPlayerActivity", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.OSTPlayer", Label = "GFOSTPlayerActivity", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class GFOSTPlayerActivity : AppCompatActivity
     {
         private bool IsCategory = true;
 
         private ArrayAdapter Category_Adapter;
-        private FragmentTransaction ft;
-        private Fragment GFOSTPlayerScreen_F;
+        private Android.Support.V4.App.FragmentTransaction ft;
+        private Android.Support.V4.App.Fragment GFOSTPlayerScreen_F;
 
         private DrawerLayout MainDrawerLayout;
         private ListView DrawerListView;
@@ -258,7 +265,7 @@ namespace GFI_with_GFS_A
 
             GFOSTPlayerScreen_F = new GFOSTPlayerScreen();
 
-            ft = FragmentManager.BeginTransaction();
+            ft = SupportFragmentManager.BeginTransaction();
             ft.Add(Resource.Id.GFOSTPlayerMainLayout, GFOSTPlayerScreen_F, "GFOSTPlayerScreen");
 
             ft.Commit();
@@ -355,7 +362,7 @@ namespace GFI_with_GFS_A
         }
     }
 
-    public class GFOSTPlayerScreen : Fragment
+    public class GFOSTPlayerScreen : Android.Support.V4.App.Fragment
     {
         private bool IsPlaying = false;
 
