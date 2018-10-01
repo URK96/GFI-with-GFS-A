@@ -432,11 +432,12 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.5 수정사항]\n\n
-    - 소전사전 v1 이미지가 제대로 표시되지 않는 현상 수정\n
-    - 장비, 요정 DB의 모수 확률 열람 기능 추가\n
-    - 요정 DB에 외부 링크 기능 추가\n
-    - 인형 능력치 그래프 레이아웃 조정\n
-    - 인형 능력치 그래프 비교 기능 추가\n
+    [2.2.6 수정사항]\n\n
+- Android 9.0 지원 추가\n
+- Crop Image 다운로드 방식 변경\n
+- RFBot 임시 폐쇄\n
+- Static Shortcut 기능 추가\n
+- SD Animation 버튼 제거\n
+- 히든 모드 진입 방법 변경\n
   </string>
 </resources>

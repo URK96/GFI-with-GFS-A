@@ -1,0 +1,8 @@
+<2.2.6 수정사항>
+
+- Android 9.0 지원 추가
+- Crop Image 다운로드 방식 변경
+- RFBot 임시 폐쇄
+- Static Shortcut 기능 추가
+- SD Animation 버튼 제거
+- 히든 모드 진입 방법 변경
