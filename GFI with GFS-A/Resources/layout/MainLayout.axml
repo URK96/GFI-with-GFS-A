@@ -29,7 +29,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="2">
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -38,7 +38,7 @@
                 android:alpha="0"
                 android:id="@+id/DBSubMenuMainButton" />
         </LinearLayout>
-        <LinearLayout
+        <!--<LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -58,7 +58,7 @@
                 android:layout_marginBottom="10dp"
                 android:alpha="0"
                 android:id="@+id/FreeOPMainButton" />
-        </LinearLayout>
+        </LinearLayout>-->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -83,7 +83,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:alpha="0"
-                android:id="@+id/CalcMainButton" />
+                android:id="@+id/MDMainButton" />
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -140,6 +140,11 @@
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
                     android:id="@+id/GFNewsExtraButton" />
+				<Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/CalcExtraButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"

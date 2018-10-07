@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "소전사전", Theme = "@style/GFS", ScreenOrientation = ScreenOrientation.Portrait)]
-    public class Main : AppCompatActivity
+    public partial class Main : AppCompatActivity
     {
         System.Timers.Timer ExitTimer = new System.Timers.Timer();
 
@@ -27,90 +27,6 @@ namespace GFI_with_GFS_A
 
         private bool ExtraSubMenuMode = false;
         private bool DBSubMenuMode = false;
-
-        readonly int[] MainMenuButtonIds =
-        {
-            Resource.Id.DBSubMenuMainButton,
-            Resource.Id.MDSupportMainButton,
-            Resource.Id.FreeOPMainButton,
-            Resource.Id.OldGFDMainButton,
-            Resource.Id.CalcMainButton,
-            Resource.Id.GFDInfoMainButton,
-            Resource.Id.ExtraMainButton,
-            Resource.Id.SettingMainButton
-        };
-        readonly int[] MainMenuButtonBackgroundIds = 
-        {
-            Resource.Drawable.Main_DollDBSelector,
-            Resource.Drawable.Main_DollDBSelector,
-            Resource.Drawable.Main_DollDBSelector,
-            Resource.Drawable.Main_OldGFDSelector,
-            Resource.Drawable.Main_CalcSelector,
-            Resource.Drawable.Main_GFDInfoSelector,
-            Resource.Drawable.Main_ExtraSelector,
-            Resource.Drawable.Main_SettingSelector
-        };
-        readonly string[] MainMenuButtonText = 
-        {
-            ETC.Resources.GetString(Resource.String.Main_MainMenu_DBMenu),
-            ETC.Resources.GetString(Resource.String.ComingSoon),
-            ETC.Resources.GetString(Resource.String.ComingSoon),
-            ETC.Resources.GetString(Resource.String.Main_MainMenu_OldGFD),
-            ETC.Resources.GetString(Resource.String.Main_MainMenu_Calc),
-            ETC.Resources.GetString(Resource.String.Main_MainMenu_GFDInfo),
-            ETC.Resources.GetString(Resource.String.Main_MainMenu_Extras),
-            ETC.Resources.GetString(Resource.String.Main_MainMenu_Setting)
-        };
-
-        readonly int[] DBSubMenuButtonIds =
-        {
-            Resource.Id.DollDBButton,
-            Resource.Id.EquipDBButton,
-            Resource.Id.FairyDBButton,
-            Resource.Id.EnemyDBButton,
-            Resource.Id.FSTDBButton
-        };
-        readonly int[] DBSubMenuButtonBackgroundIds =
-        {
-            Resource.Drawable.Main_DollDBSelector,
-            Resource.Drawable.Main_EquipDBSelector,
-            Resource.Drawable.Main_FairyDBSelector,
-            Resource.Drawable.Main_EnemyDBSelector,
-            Resource.Drawable.Main_ExtraSelector
-        };
-        readonly string[] DBSubMenuButtonText =
-        {
-            ETC.Resources.GetString(Resource.String.Main_DBMenu_DollDB),
-            ETC.Resources.GetString(Resource.String.Main_DBMenu_EquipDB),
-            ETC.Resources.GetString(Resource.String.Main_DBMenu_FairyDB),
-            ETC.Resources.GetString(Resource.String.Main_DBMenu_EnemyDB),
-            ETC.Resources.GetString(Resource.String.Main_DBMenu_FSTDB)
-        };
-
-        readonly int[] ExtraMenuButtonIds = 
-        {
-            Resource.Id.EventExtraButton,
-            Resource.Id.GFNewsExtraButton,
-            Resource.Id.RFBotExtraButton,
-            Resource.Id.ProductSimulatorExtraButton,
-            Resource.Id.GFOSTPlayerExtraButton
-        };
-        readonly int[] ExtraMenuButtonBackgroundIds = 
-        {
-            Resource.Drawable.Extra_EventSelector,
-            Resource.Drawable.Extra_GFNewsSelector,
-            Resource.Drawable.Extra_RFBotSelector,
-            Resource.Drawable.Extra_ProductSimulatorSelector,
-            Resource.Drawable.Extra_GFNewsSelector
-        };
-        readonly string[] ExtraMenuButtonText =
-        {
-            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_Event),
-            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_OfficialNotification),
-            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_RFBot),
-            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_ProductSimulator),
-            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_GFOSTPlayer)
-        };
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -159,7 +75,7 @@ namespace GFI_with_GFS_A
                     ExtraMenuButton_Click(FindViewById<Button>(Resource.Id.RFBotExtraButton), new EventArgs());
                     break;
                 case "4":
-                    MainMenuButton_Click(FindViewById<Button>(Resource.Id.CalcMainButton), new EventArgs());
+                    ExtraMenuButton_Click(FindViewById<Button>(Resource.Id.CalcExtraButton), new EventArgs());
                     break;
                 case "5":
                     ExtraMenuButton_Click(FindViewById<Button>(Resource.Id.EventExtraButton), new EventArgs());
@@ -221,22 +137,29 @@ namespace GFI_with_GFS_A
 
             try
             {
-                for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).Text = MainMenuButtonText[i];
-                for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).Text = DBSubMenuButtonText[i];
-                for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).Text = ExtraMenuButtonText[i];
-
-                /*if (ETC.sharedPreferences.GetBoolean("LowMemoryOption", false) == false)
+                if (ETC.sharedPreferences.GetBoolean("LowMemoryOption", false) == false)
                 {
-                    for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).SetBackgroundResource(MainMenuButtonBackgroundIds[i]);
-                    for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).SetBackgroundResource(DBSubMenuButtonBackgroundIds[i]);
-                    for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).SetBackgroundResource(ExtraMenuButtonBackgroundIds[i]);
+                    switch (ETC.sharedPreferences.GetString("MainButtonColor", "0"))
+                    {
+                        case "1":
+                            for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).SetBackgroundResource(MainMenuButtonBackgroundIds_Orange[i]);
+                            for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).SetBackgroundResource(DBSubMenuButtonBackgroundIds_Orange[i]);
+                            for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).SetBackgroundResource(ExtraMenuButtonBackgroundIds_Orange[i]);
+                            break;
+                        case "0":
+                        default:
+                            for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).SetBackgroundResource(MainMenuButtonBackgroundIds[i]);
+                            for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).SetBackgroundResource(DBSubMenuButtonBackgroundIds[i]);
+                            for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).SetBackgroundResource(ExtraMenuButtonBackgroundIds[i]);
+                            break;
+                    }
                 }
                 else
                 {
                     for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).Text = MainMenuButtonText[i];
                     for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).Text = DBSubMenuButtonText[i];
                     for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).Text = ExtraMenuButtonText[i];
-                }*/
+                }
 
                 SetMainMenuEvent(1);
 
@@ -405,7 +328,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async void MainMenuButton_Click(object sender, EventArgs e)
+        private void MainMenuButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -416,18 +339,11 @@ namespace GFI_with_GFS_A
                     case Resource.Id.DBSubMenuMainButton:
                         SwitchDBSubMenu(1);
                         break;
-                    case Resource.Id.MDSupportMainButton:
-                        break;
-                    case Resource.Id.FreeOPMainButton:
-                        break;
                     case Resource.Id.OldGFDMainButton:
                         StartActivity(typeof(OldGFDViewer));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
-                    case Resource.Id.CalcMainButton:
-                        await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.SkillTrainingList.TableName == "")) ETC.LoadDBSync(ETC.SkillTrainingList, "SkillTraining.gfs", false); });
-                        StartActivity(typeof(CalcMainActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                    case Resource.Id.MDMainButton:
                         break;
                     case Resource.Id.GFDInfoMainButton:
                         StartActivity(typeof(GFDInfoActivity));
@@ -501,7 +417,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ExtraMenuButton_Click(object sender, EventArgs e)
+        private async void ExtraMenuButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -518,6 +434,11 @@ namespace GFI_with_GFS_A
                         var intent = new Intent(this, typeof(WebBrowserActivity));
                         intent.PutExtra("url", news_url);
                         StartActivity(intent);
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    case Resource.Id.CalcExtraButton:
+                        await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.SkillTrainingList.TableName == "")) ETC.LoadDBSync(ETC.SkillTrainingList, "SkillTraining.gfs", false); });
+                        StartActivity(typeof(CalcMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.EventExtraButton:

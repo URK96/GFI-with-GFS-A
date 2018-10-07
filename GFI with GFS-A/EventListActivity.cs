@@ -13,6 +13,7 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using Android.Support.Design.Widget;
+using System.Net;
 
 namespace GFI_with_GFS_A
 {
@@ -41,6 +42,8 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.EventListLayout);
 
+            ETC.SetDialogTheme();
+
             SetTitle(Resource.String.EventListActivity_Title);
 
             SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EventListSnackbarLayout);
@@ -57,7 +60,7 @@ namespace GFI_with_GFS_A
 
             try
             {
-                if (await ETC.CheckEventVersion() == true) await ETC.UpdateEvent(this);
+                if (await ETC.CheckEventVersion() == true) await UpdateEvent();
 
                 TextView period1 = FindViewById<TextView>(Resource.Id.EventPeriodText1);
                 Button button1 = FindViewById<Button>(Resource.Id.EventButton1);
@@ -245,6 +248,58 @@ namespace GFI_with_GFS_A
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.MenuAccess_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
+        }
+
+        private async Task UpdateEvent()
+        {
+            ProgressDialog pd = new ProgressDialog(this, ETC.DialogBG_Download);
+            pd.SetProgressStyle(ProgressDialogStyle.Horizontal);
+            pd.SetTitle(Resource.String.UpdateEventDialog_Title);
+            pd.SetMessage(Resources.GetString(Resource.String.UpdateEventDialog_Message));
+            pd.SetCancelable(false);
+            pd.Max = 100;
+            pd.Show();
+
+            using (WebClient wc = new WebClient())
+            {
+                string url = Path.Combine(ETC.Server, "EventVer.txt");
+                string target = Path.Combine(ETC.tempPath, "EventVer.txt");
+                await wc.DownloadFileTaskAsync(url, target);
+                await Task.Delay(100);
+            }
+
+            int image_count = 0;
+
+            using (StreamReader sr = new StreamReader(new FileStream(Path.Combine(ETC.tempPath, "EventVer.txt"), FileMode.Open, FileAccess.Read)))
+            {
+                image_count = int.Parse((sr.ReadToEnd()).Split(';')[2]);
+            }
+
+            pd.Max = image_count;
+
+            using (WebClient wc2 = new WebClient())
+            {
+                for (int i = 1; i <= image_count; ++i)
+                {
+                    string url2 = Path.Combine(ETC.Server, "Data", "Images", "Events", "Event_" + i + ".png");
+                    string target2 = Path.Combine(ETC.CachePath, "Event", "Images", "Event_" + i + ".png");
+                    await wc2.DownloadFileTaskAsync(url2, target2);
+                    pd.Progress = i;
+                    await Task.Delay(100);
+                }
+            }
+
+            await Task.Delay(500);
+
+            this.RunOnUiThread(() => { pd.SetMessage(Resources.GetString(Resource.String.UpdateEventDialog_RefreshVersionMessage)); });
+
+            string oldVersion = Path.Combine(ETC.CachePath, "Event", "EventVer.txt");
+            string newVersion = Path.Combine(ETC.tempPath, "EventVer.txt");
+            File.Copy(newVersion, oldVersion, true);
+
+            await Task.Delay(1000);
+
+            pd.Dismiss();
         }
     }
 }

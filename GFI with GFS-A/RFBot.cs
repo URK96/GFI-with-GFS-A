@@ -4,6 +4,7 @@ using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Widget;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Net;
@@ -19,19 +20,23 @@ namespace GFI_with_GFS_A
 
         private string Command { get; set; }
         private Activity activity { get; set; }
-        private bool IsNotification = false;
 
-        internal RFBot(bool IsNotify)
+        internal RFBot()
         {
             Command = "NULL";
             activity = null;
-            IsNotification = IsNotify;
         }
 
-        internal RFBot(bool IsNotify, Activity context)
+        internal RFBot(Activity context)
         {
-            IsNotification = IsNotify;
             activity = context;
+        }
+
+        internal string InputCommand(string command)
+        {
+            Command = command;
+
+            return AnalysisCommand();
         }
 
         private string AnalysisCommand()
@@ -42,15 +47,15 @@ namespace GFI_with_GFS_A
 
             if (int.TryParse(Command_Split[0], out int DicNumber) == true)
             {
-                if (Command.Length >= 2)
+                if (Command_Split.Length >= 2)
                 {
-                    if (Command_Split[1] == "상세정보") OpenDollDetailActivity(DicNumber);
+                    if (Command_Split[1] == ETC.Resources.GetString(Resource.String.RFBotMain_Command_Detail)) OpenDollDetailActivity(DicNumber);
                 }
                 else
                 {
                     DataRow dr = ETC.FindDataRow(ETC.DollList, "DicNumber", DicNumber);
 
-                    if (dr == null) result = "입력한 도감번호에 해당하는 인형 정보가 없습니다.";
+                    if (dr == null) result = "RFBot Error : No T-Doll in match number";
                     else result = CombineDollInfo(dr);
                 }
             }
@@ -60,14 +65,29 @@ namespace GFI_with_GFS_A
                 else
                 {
                     string DollInfo = "";
-                    int ProductTime = ((Input_ProductTime / 100) * 60) + (Input_ProductTime % 100);
+                    int ProductTime = (Input_ProductTime / 100 * 60) + (Input_ProductTime % 100);
 
-                    DataRow DollDR = ETC.FindDataRow(ETC.DollList, "ProductTime", ProductTime);
+                    List<DataRow> DollDRs = new List<DataRow>();
 
-                    if (DollDR != null) DollInfo = CombineDollInfo(DollDR);
+                    foreach (DataRow dr in ETC.DollList.Rows)
+                    {
+                        if ((int)dr["ProductTime"] == ProductTime) DollDRs.Add(dr);
+                    }
+
+                    DollDRs.TrimExcess();
+
+                    if (DollDRs.Count == 0) return ETC.Resources.GetString(Resource.String.RFBotMain_Reply_DollProductTimeNotMatch);
 
                     StringBuilder sb = new StringBuilder();
-                    sb.AppendLine(DollInfo);
+
+                    foreach (DataRow dr in DollDRs)
+                    {
+                        if (dr != null) DollInfo = CombineDollInfo(dr);
+                        else return ETC.Resources.GetString(Resource.String.RFBotMain_Reply_DollProductTimeNotMatch);
+
+                        sb.AppendLine(DollInfo);
+                        sb.Append("\n\n");
+                    }
 
                     result = sb.ToString();
                 }
@@ -77,57 +97,172 @@ namespace GFI_with_GFS_A
                 if ((int.TryParse(Command_Split[1], out int Input_ProductTime) == false) || (Command_Split[1].Length > 4) || (Command_Split[1].Length < 3)) result = "입력한 제조시간 형식이 잘못되었습니다.";
                 else
                 {
-                    DataRow InfoDR = null;
-                    string Info = "";
                     int ProductTime = ((Input_ProductTime / 100) * 60) + (Input_ProductTime % 100);
-                    DataRowType Type = DataRowType.Equip;
-                    bool IsDetail = false;
+                    List<DataRow> InfoDRs = new List<DataRow>();
+                    List<DataRowType> InfoTypes = new List<DataRowType>();
 
-                    if (Command.Length >= 3) IsDetail = (Command_Split[2] == ETC.Resources.GetString(Resource.String.RFBotMain_Command_Detail)) ? true : false;
-                    else IsDetail = false;
-
-                    InfoDR = ETC.FindDataRow(ETC.EquipmentList, "ProductTime", ProductTime);
-                    if (InfoDR == null)
+                    foreach (DataRow dr in ETC.EquipmentList.Rows)
                     {
-                        InfoDR = ETC.FindDataRow(ETC.FairyList, "ProductTime", ProductTime);
-                        Type = DataRowType.Fairy;
-                    }
-
-                    if (InfoDR != null)
-                    {
-                        if (IsDetail == true)
+                        if ((int)dr["ProductTime"] == ProductTime)
                         {
-                            switch (Type)
-                            {
-                                case DataRowType.Equip:
-                                    OpenEquipDetailActivity((string)InfoDR["Name"]);
-                                    break;
-                                case DataRowType.Fairy:
-                                    OpenFairyDetailActivity((string)InfoDR["Name"]);
-                                    break;
-                            }
-                        }
-                        else
-                        {
-                            switch (Type)
-                            {
-                                case DataRowType.Equip:
-                                    Info = CombineEquipInfo(InfoDR);
-                                    break;
-                                case DataRowType.Fairy:
-                                    Info = CombineFairyInfo(InfoDR);
-                                    break;
-                            }
-
-                            result = Info;
+                            InfoDRs.Add(dr);
+                            InfoTypes.Add(DataRowType.Equip);
                         }
                     }
-                    else result = ETC.Resources.GetString(Resource.String.RFBotMain_Reply_EquipProductTimeNotMatch);
+                    foreach (DataRow dr in ETC.FairyList.Rows)
+                    {
+                        if ((int)dr["ProductTime"] == ProductTime)
+                        {
+                            InfoDRs.Add(dr);
+                            InfoTypes.Add(DataRowType.Fairy);
+                        }
+                    }
+
+                    InfoDRs.TrimExcess();
+                    InfoTypes.TrimExcess();
+
+                    if (InfoDRs.Count == 0) return ETC.Resources.GetString(Resource.String.RFBotMain_Reply_EquipProductTimeNotMatch);
+
+                    StringBuilder sb = new StringBuilder();
+
+                    for (int i = 0; i < InfoDRs.Count; ++i)
+                    {
+                        string Info = "";
+
+                        switch (InfoTypes[i])
+                        {
+                            case DataRowType.Equip:
+                                Info = CombineEquipInfo(InfoDRs[i]);
+                                break;
+                            case DataRowType.Fairy:
+                                Info = CombineFairyInfo(InfoDRs[i]);
+                                break;
+                        }
+
+                        sb.AppendLine(Info);
+                        sb.Append("\n\n");
+                    }
+
+                    result = sb.ToString();
+                }
+            }
+            else if (Command_Split[0] == ETC.Resources.GetString(Resource.String.Common_TDoll))
+            {
+                List<DataRow> DollDRs = new List<DataRow>();
+
+                CheckName(ETC.DollList, ref DollDRs, Command_Split[1]);
+
+                if (DollDRs.Count >= 2)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append(ETC.Resources.GetString(Resource.String.RFBotMain_MultipleResult));
+                    sb.Append("\n\n");
+
+                    foreach (DataRow dr in DollDRs) sb.AppendLine((string)dr["Name"]);
+
+                    result = sb.ToString();
+                }
+                else
+                {
+                    DataRow DollDR = DollDRs[0];
+
+                    if (Command_Split.Length >= 3)
+                    {
+                        if (Command_Split[2] == ETC.Resources.GetString(Resource.String.RFBotMain_Command_Detail)) OpenDollDetailActivity((int)DollDR["DicNumber"]);
+                    }
+                    else
+                    {
+                        if (DollDR == null) result = "RFBot Error : No T-Doll in match number";
+                        else result = CombineDollInfo(DollDR);
+                    }
+                }
+            }
+            else if (Command_Split[0] == ETC.Resources.GetString(Resource.String.Common_Equipment))
+            {
+                List<DataRow> EquipDRs = new List<DataRow>();
+
+                CheckName(ETC.EquipmentList, ref EquipDRs, Command_Split[1]);
+
+                if (EquipDRs.Count >= 2)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append(ETC.Resources.GetString(Resource.String.RFBotMain_MultipleResult));
+                    sb.Append("\n\n");
+
+                    foreach (DataRow dr in EquipDRs) sb.AppendLine((string)dr["Name"]);
+
+                    result = sb.ToString();
+                }
+                else
+                {
+                    DataRow EquipDR = EquipDRs[0];
+
+                    if (Command_Split.Length >= 3)
+                    {
+                        if (Command_Split[2] == ETC.Resources.GetString(Resource.String.RFBotMain_Command_Detail)) OpenEquipDetailActivity((string)EquipDR["Name"]);
+                    }
+                    else
+                    {
+                        if (EquipDR == null) result = "RFBot Error : No Equipment in match number";
+                        else result = CombineEquipInfo(EquipDR);
+                    }
+                }
+            }
+            else if (Command_Split[0] == ETC.Resources.GetString(Resource.String.Common_Fairy))
+            {
+                List<DataRow> FairyDRs = new List<DataRow>();
+
+                CheckName(ETC.FairyList, ref FairyDRs, Command_Split[1]);
+
+                if (FairyDRs.Count >= 2)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append(ETC.Resources.GetString(Resource.String.RFBotMain_MultipleResult));
+                    sb.Append("\n\n");
+
+                    foreach (DataRow dr in FairyDRs) sb.AppendLine((string)dr["Name"]);
+
+                    result = sb.ToString();
+                }
+                else
+                {
+                    DataRow FairyDR = FairyDRs[0];
+
+                    if (Command_Split.Length >= 3)
+                    {
+                        if (Command_Split[2] == ETC.Resources.GetString(Resource.String.RFBotMain_Command_Detail)) OpenEquipDetailActivity((string)FairyDR["Name"]);
+                    }
+                    else
+                    {
+                        if (FairyDR == null) result = "RFBot Error : No Fairy in match number";
+                        else result = CombineFairyInfo(FairyDR);
+                    }
                 }
             }
             else result = ETC.Resources.GetString(Resource.String.RFBotMain_Reply_CommandNotMatch);
 
             return result;
+        }
+
+        private void CheckName(DataTable TargetTable, ref List<DataRow> List, string Name)
+        {
+            List.Clear();
+
+            foreach (DataRow dr in TargetTable.Rows)
+            {
+                string index_name = ((string)dr["Name"]).Replace(" ", "").ToLower();
+
+                if (index_name == Name.ToLower())
+                {
+                    List.Clear();
+                    List.Add(dr);
+                    break;
+                }
+
+                if (index_name.Contains(Name.ToLower()) == true) List.Add(dr);
+            }
+
+            List.TrimExcess();
         }
 
         private void OpenDollDetailActivity(int DollDicNum)

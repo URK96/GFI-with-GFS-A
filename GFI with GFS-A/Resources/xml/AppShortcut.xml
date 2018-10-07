@@ -49,6 +49,18 @@
       android:targetPackage="com.gfl.dic"
       android:targetClass="com.gfl.dic.OldGFDActivity"/>
   </shortcut>
+  <shortcut
+  android:shortcutId="RFBot"
+  android:enabled="true"
+  android:icon="@drawable/ShortcutIcon_OldGFD"
+  android:shortcutShortLabel="@string/Shortcut_RFBot_ShortLabel"
+  android:shortcutLongLabel="@string/Shortcut_RFBot_LongLabel"
+  android:shortcutDisabledMessage="@string/Shortcut_RFBot_DisabledLabel">
+    <intent
+      android:action="android.intent.action.VIEW"
+      android:targetPackage="com.gfl.dic"
+      android:targetClass="com.gfl.dic.RFBotActivity"/>
+  </shortcut>
   <!--<shortcut
     android:shortcutId="OSTPlayer"
     android:enabled="true"

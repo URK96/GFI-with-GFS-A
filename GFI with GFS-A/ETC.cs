@@ -171,6 +171,22 @@ namespace GFI_with_GFS_A
             HasInitDollAvgAbility = true;
         }
 
+        internal static void SetDialogTheme()
+        {
+            if (UseLightTheme == true)
+            {
+                DialogBG = Resource.Style.GFD_Dialog_Light;
+                DialogBG_Vertical = Resource.Style.GFD_Dialog_Vertical_Light;
+                DialogBG_Download = Resource.Style.GFD_Dialog_Download_Light;
+            }
+            else
+            {
+                DialogBG = Resource.Style.GFD_Dialog;
+                DialogBG_Vertical = Resource.Style.GFD_Dialog_Vertical;
+                DialogBG_Download = Resource.Style.GFD_Dialog_Download;
+            }
+        }
+
         internal static async Task CheckServerNetwork()
         {
             try
@@ -249,6 +265,24 @@ namespace GFI_with_GFS_A
             }
 
             return null;
+        }
+
+        internal static bool FindDataRow<T>(DataTable table, string index, T value, out DataRow row)
+        {
+            
+
+            for (int i = 0; i < table.Rows.Count; ++i)
+            {
+                DataRow dr = table.Rows[i];
+                if (((T)dr[index]).Equals(value))
+                {
+                    row = dr;
+                    return true;
+                }
+            }
+
+            row = null;
+            return false;
         }
 
         internal static void CheckInitFolder()
@@ -487,59 +521,6 @@ namespace GFI_with_GFS_A
             File.Copy(newVersion, oldVersion, true);
 
             await Task.Delay(500);
-
-            pd.Dismiss();
-        }
-
-        //ProgressDialog 교체
-        internal static async Task UpdateEvent(Activity activity)
-        {
-            ProgressDialog pd = new ProgressDialog(activity, DialogBG_Download);
-            pd.SetProgressStyle(ProgressDialogStyle.Horizontal);
-            pd.SetTitle(Resource.String.UpdateEventDialog_Title);
-            pd.SetMessage(Resources.GetString(Resource.String.UpdateEventDialog_Message));
-            pd.SetCancelable(false);
-            pd.Max = 100;
-            pd.Show();
-
-            using (WebClient wc = new WebClient())
-            {
-                string url = Path.Combine(Server, "EventVer.txt");
-                string target = Path.Combine(tempPath, "EventVer.txt");
-                await wc.DownloadFileTaskAsync(url, target);
-                await Task.Delay(100);
-            }
-
-            int image_count = 0;
-
-            using (StreamReader sr = new StreamReader(new FileStream(Path.Combine(tempPath, "EventVer.txt"), FileMode.Open, FileAccess.Read)))
-            {
-                image_count = int.Parse((sr.ReadToEnd()).Split(';')[2]);
-            }
-
-            pd.Max = image_count;
-
-            using (WebClient wc2 = new WebClient())
-            {
-                for (int i = 1; i <= image_count; ++i)
-                {
-                    string url2 = Path.Combine(Server, "Data", "Images", "Events", "Event_" + i + ".png");
-                    string target2 = Path.Combine(CachePath, "Event", "Images", "Event_" + i + ".png");
-                    await wc2.DownloadFileTaskAsync(url2, target2);
-                    pd.Progress = i;
-                    await Task.Delay(100);
-                }
-            }
-
-            await Task.Delay(500);
-
-            activity.RunOnUiThread(() => { pd.SetMessage(Resources.GetString(Resource.String.UpdateEventDialog_RefreshVersionMessage)); });
-
-            string oldVersion = Path.Combine(CachePath, "Event", "EventVer.txt");
-            string newVersion = Path.Combine(tempPath, "EventVer.txt");
-            File.Copy(newVersion, oldVersion, true);
-
-            await Task.Delay(1000);
 
             pd.Dismiss();
         }

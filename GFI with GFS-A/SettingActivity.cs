@@ -91,7 +91,7 @@ namespace GFI_with_GFS_A
                 Resources.GetString(Resource.String.Main_MainMenu_DBMenu),
                 Resources.GetString(Resource.String.Main_MainMenu_OldGFD),
                 Resources.GetString(Resource.String.Main_ExtraMenu_RFBot),
-                Resources.GetString(Resource.String.Main_MainMenu_Calc),
+                Resources.GetString(Resource.String.Main_ExtraMenu_Calc),
                 Resources.GetString(Resource.String.Main_ExtraMenu_Event),
                 Resources.GetString(Resource.String.Main_ExtraMenu_OfficialNotification),
                 Resources.GetString(Resource.String.Main_ExtraMenu_GFOSTPlayer)
@@ -119,6 +119,17 @@ namespace GFI_with_GFS_A
                 SaveSetting.PutBoolean("UseLightTheme", UseLightTheme.Checked);
                 SaveSetting.Apply();
             };
+
+            ListPreference MainButtonColor = (ListPreference)FindPreference("MainButtonColor");
+            if (ETC.UseLightTheme == true) MainButtonColor.SetIcon(Resource.Drawable.AppStartModeIcon_WhiteTheme);
+            else MainButtonColor.SetIcon(Resource.Drawable.AppStartModeIcon);
+            MainButtonColor.SetEntries(new string[]
+            {
+                "Green (Default)",
+                "Orange"
+            });
+            MainButtonColor.SetEntryValues(new string[] { "0", "1" });
+            MainButtonColor.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("MainButtonColor", "0")));
 
             SwitchPreference DynamicDBLoad = (SwitchPreference)FindPreference("DynamicDBLoad");
             if (ETC.UseLightTheme == true) DynamicDBLoad.SetIcon(Resource.Drawable.DynamicDBLoadIcon_WhiteTheme);

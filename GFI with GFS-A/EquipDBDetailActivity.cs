@@ -99,6 +99,7 @@ namespace GFI_with_GFS_A
             {
                 if (IsEnableFABMenu == false)
                 {
+                    PercentTableFAB.SetImageResource(Resource.Drawable.ProductPercentTable_Icon);
                     IsEnableFABMenu = true;
                     PercentTableFAB.Animate().Alpha(1.0f).SetDuration(500).Start();
                     PercentTableFAB.Show();
@@ -130,6 +131,7 @@ namespace GFI_with_GFS_A
 
             RefreshCacheFAB.Hide();
             PercentTableFAB.Alpha = 0.3f;
+            PercentTableFAB.SetImageResource(Resource.Drawable.HideFloating_Icon);
         }
 
         private async Task InitLoadProcess(bool IsRefresh)

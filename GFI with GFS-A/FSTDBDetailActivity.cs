@@ -216,6 +216,7 @@ namespace GFI_with_GFS_A
         {
             if (IsEnableFABMenu == false)
             {
+                MainFAB.SetImageResource(Resource.Drawable.SideLinkIcon);
                 IsEnableFABMenu = true;
                 MainFAB.Animate().Alpha(1.0f).SetDuration(500).Start();
                 RefreshCacheFAB.Show();
@@ -637,6 +638,7 @@ namespace GFI_with_GFS_A
 
             RefreshCacheFAB.Hide();
             MainFAB.Alpha = 0.3f;
+            MainFAB.SetImageResource(Resource.Drawable.HideFloating_Icon);
         }
 
         private void SetCardTheme()

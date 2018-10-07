@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <!--New String-->
-  <string name="Main_ExtraMenu_GFOSTPlayer">OST 플레이어 (Alpha)</string>
+  <string name="Main_ExtraMenu_GFOSTPlayer">OST Player</string>
   
   <string name="DollDBDetailLayout_ModelData">총기 제원</string>
   
@@ -41,6 +41,9 @@
   <string name="Shortcut_OSTPlayer_ShortLabel">OST Player</string>
   <string name="Shortcut_OSTPlayer_LongLabel">OST Player</string>
   <string name="Shortcut_OSTPlayer_DisabledLabel">OST Player</string>
+  <string name="Shortcut_RFBot_ShortLabel">RFBot</string>
+  <string name="Shortcut_RFBot_LongLabel">RFBot</string>
+  <string name="Shortcut_RFBot_DisabledLabel">RFBot</string>
   
   <!--Solution String-->
   <string name="CheckingUpdate">업데이트 확인 중...</string>
@@ -198,6 +201,9 @@
   <string name="Common_Now">현재</string>
   <string name="Common_Total">전체</string>
   <string name="Common_Input">입력</string>
+  <string name="Common_TDoll">인형</string>
+  <string name="Common_Equipment">장비</string>
+  <string name="Common_Fairy">요정</string>
 
   <!--Common Dialog String-->
   <string name="AlertDialog_Confirm">확인</string>
@@ -274,9 +280,7 @@
   <string name="MainActivity_Title">소전사전</string>
   <string name="Main_MainMenu_DBMenu">DB 메뉴</string>
   <string name="Main_MainMenu_MDSupport">군수지원</string>
-  <string name="Main_MainMenu_FreeOP">자율작전</string>
   <string name="Main_MainMenu_OldGFD">소전사전v1</string>
-  <string name="Main_MainMenu_Calc">계산기</string>
   <string name="Main_MainMenu_GFDInfo">정보</string>
   <string name="Main_MainMenu_Extras">추가 기능</string>
   <string name="Main_MainMenu_Setting">설정</string>
@@ -287,9 +291,9 @@
   <string name="Main_DBMenu_FSTDB">화력소대 DB</string>
   <string name="Main_ExtraMenu_Event">이벤트</string>
   <string name="Main_ExtraMenu_OfficialNotification">소전 공지사항</string>
+  <string name="Main_ExtraMenu_Calc">계산기</string>
   <string name="Main_ExtraMenu_RFBot">RFBot</string>
   <string name="Main_ExtraMenu_ProductSimulator">제조 시뮬레이터</string>
-  <string name="Main_ExtraMenu_FormationSimulator">진형 시뮬레이터</string>
   
   <!--OldGFD-->
   <string name="OldGFDViewer_ProductDollTable">인형 제조 시간표</string>
@@ -313,9 +317,11 @@
   
   <!--RFBotMain-->
   <string name="RFBotMain_Title">RFBot</string>
+  <string name="RFBotMain_InputTextHint">명령어를 입력하세요</string>
   <string name="RFBotMain_Command_DollProduct">인형제조</string>
   <string name="RFBotMain_Command_EquipProduct">장비제조</string>
   <string name="RFBotMain_Command_Detail">상세정보</string>
+  <string name="RFBotMain_Reply_DollProductTimeNotMatch">해당 제조시간에 맞는 인형이 없습니다.</string>
   <string name="RFBotMain_Reply_EquipProductTimeNotMatch">해당 제조시간에 맞는 장비/요정이 없습니다.</string>
   <string name="RFBotMain_Reply_CommandNotMatch">잘못된 명령어를 입력하셨습니다.</string>
   <string name="RFBotMain_DollInfo_Title">인형 요약 정보</string>
@@ -324,6 +330,7 @@
   <string name="RFBotMain_EquipInfo_ReferEquipInfoError">장비 데이터 참조 오류</string>
   <string name="RFBotMain_FairyInfo_Title">요정 요약 정보</string>
   <string name="RFBotMain_FairyInfo_ReferFairyInfoError">요정 데이터 참조 오류</string>
+  <string name="RFBotMain_MultipleResult">여러 개의 검색 결과가 있습니다. 다음 중 하나만 선택해서 명령어를 입력하세요.</string>
   
   <!--Setting-->
   <string name="SettingActivity_Title">설정</string>
@@ -432,12 +439,24 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.6 수정사항]\n\n
-- Android 9.0 지원 추가\n
-- Crop Image 다운로드 방식 변경\n
-- RFBot 임시 폐쇄\n
-- Static Shortcut 기능 추가\n
-- SD Animation 버튼 제거\n
-- 히든 모드 진입 방법 변경\n
+    [2.2.7 수정사항]\n\n
+- 이벤트 Static Shortcut 진입 시 오류가 발생하는 현상 수정\n
+- 메모리 사용량 최적화\n
+  </string>
+
+  <string name="RFBot_CommandHelp">
+    [RFBot Command List]\n\n
+    번호 [상세정보] : 입력한 도감번호에 해당하는 인형의 요약 정보를 출력합니다. [상세정보] 옵션을 붙이면 해당 인형의 상세정보 화면으로 넘어갑니다.\n
+    usage ex) 2 상세정보\n\n
+    인형 이름 [상세정보] : 입력한 이름에 맞는 인형의 요약 정보를 출력합니다. 이름은 띄어쓰기를 허용하지 않습니다. [상세정보] 옵션을 붙이면 해당 결과의 상세정보 화면으로 넘어갑니다. 이름 명령어에 해당하는 항목이 2개 이상인 경우 [상세정보]옵션은 무시되며 포함되는 항목의 리스트를 출력합니다.\n
+    usage ex) 인형 80식 상세정보
+    장비 이름 [상세정보] : 입력한 이름에 맞는 장비의 요약 정보를 출력합니다. 이름은 띄어쓰기를 허용하지 않습니다. [상세정보] 옵션을 붙이면 해당 결과의 상세정보 화면으로 넘어갑니다. 이름 명령어에 해당하는 항목이 2개 이상인 경우 [상세정보]옵션은 무시되며 포함되는 항목의 리스트를 출력합니다.\n
+    usage ex) 장비 무한탄창 상세정보
+    요정 이름 [상세정보] : 입력한 이름에 맞는 요정의 요약 정보를 출력합니다. 이름은 띄어쓰기를 허용하지 않습니다. [상세정보] 옵션을 붙이면 해당 결과의 상세정보 화면으로 넘어갑니다. 이름 명령어에 해당하는 항목이 2개 이상인 경우 [상세정보]옵션은 무시되며 포함되는 항목의 리스트를 출력합니다.\n
+    usage ex) 요정 수색요정 상세정보
+    인형제조 제조시간 : 입력한 시간에 해당하는 인형의 요약 정보를 출력합니다. 제조시간 형식은 3~4자리로 이루어지며 (시간)(분)으로 입력합니다. 중형제조의 구분 없이 통합적으로 사용 가능합니다.\n
+    usage ex) 인형제조 020, 인형제조 225\n\n
+    장비제조 제조시간 : 입력한 시간에 해당하는 장비 또는 요정의 요약 정보를 출력합니다. 제조시간 형식은 3~4자리로 이루어지며 (시간)(분)으로 입력합니다. 중형제조의 구분 없이 통합적으로 사용 가능합니다.\n
+    usage ex) 장비제조 005, 장비제조 013, 장비제조 305
   </string>
 </resources>

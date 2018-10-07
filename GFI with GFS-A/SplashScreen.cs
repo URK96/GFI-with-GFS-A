@@ -97,7 +97,7 @@ namespace GFI_with_GFS_A
                 
                 ETC.CheckInitFolder();
 
-                if ((ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true) == true) && (ETC.IsServerDown = false))
+                if ((ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true) == true) && (ETC.IsServerDown = true))
                 {
                     try
                     {
@@ -129,18 +129,7 @@ namespace GFI_with_GFS_A
                     ETC.InitializeAverageAbility();
                 }
 
-                if (ETC.UseLightTheme == true)
-                {
-                    ETC.DialogBG = Resource.Style.GFD_Dialog_Light;
-                    ETC.DialogBG_Vertical = Resource.Style.GFD_Dialog_Vertical_Light;
-                    ETC.DialogBG_Download = Resource.Style.GFD_Dialog_Download_Light;
-                }
-                else
-                {
-                    ETC.DialogBG = Resource.Style.GFD_Dialog;
-                    ETC.DialogBG_Vertical = Resource.Style.GFD_Dialog_Vertical;
-                    ETC.DialogBG_Download = Resource.Style.GFD_Dialog_Download;
-                }
+                ETC.SetDialogTheme();
 
                 StartActivity(typeof(Main));
                 OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
