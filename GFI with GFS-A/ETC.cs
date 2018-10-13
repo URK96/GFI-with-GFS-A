@@ -40,6 +40,7 @@ namespace GFI_with_GFS_A
         internal static DataTable FSTList = new DataTable();
         internal static DataTable SkillTrainingList = new DataTable();
         internal static DataTable MDSupportList = new DataTable();
+        internal static DataTable FreeOPList = new DataTable();
 
         internal static AverageAbility[] Avg_List;
 
@@ -358,6 +359,8 @@ namespace GFI_with_GFS_A
                 SkillTrainingList.ReadXml(Path.Combine(DBPath, "SkillTraining.gfs"));
                 MDSupportList.Clear();
                 MDSupportList.ReadXml(Path.Combine(DBPath, "MDSupportList.gfs"));
+                FreeOPList.Clear();
+                FreeOPList.ReadXml(Path.Combine(DBPath, "FreeOP.gfs"));
             }
             catch (Exception)
             {

@@ -9,6 +9,8 @@
   <string name="Common_Core">대체코어</string>
   <string name="Common_SkillTraining">스킬 훈련</string>
   <string name="Common_FSTGradeUp">FST 등급</string>
+  <string name="Common_AreaExp">경험치 계산</string>
+  <string name="TitleName_FSTGradeUpCalc">지역별 경험치 계산</string>
   
   <string name="Calc_ExpItem_FSTTrainerLevelSettingText">* 훈련장 레벨 설정 *</string>
   <string name="Calc_ExpItem_TotalResultBatteryText">* 필요한 전지 수량 *</string>
@@ -17,6 +19,14 @@
   <string name="Calc_FSTGradeUp_ResultDataPatchText">* 필요한 데이터 패치 *</string>
   <string name="Calc_FSTGradeUp_NowGradeSelectorTitle">* 현재 등급 *</string>
   <string name="Calc_FSTGradeUp_TargetGradeSelectorTitle">* 목표 등급 *</string>
+  <string name="Calc_AreaExp_DollDummySettingText">* 편제 수 *</string>
+  <string name="Calc_AreaExp_WarCountSettingText">* 전투 횟수 *</string>
+  <string name="Calc_AreaExp_CountResult">* 총 횟수 (일반 / 리더 / MVP / 리더,MVP) *</string>
+  <string name="Calc_AreaExp_LevelSettingText">* 레벨 설정 *</string>
+  <string name="Calc_AreaExp_NowTotalExpSettingText">* 현재 경험치 *</string>
+  <string name="Calc_AreaExp_VowSettingCheckBox">서약 적용</string>
+  <string name="Calc_AreaExp_AutoAddDummySettingCheckBox">자동 편제확대</string>
+  <string name="Calc_AreaExp_LastEnemySettingCheckBox">보스, 마지막 몹 처치</string>
   
   <string name="ComingSoon">Coming Soon...</string>
   <string name="Common_ServerMaintenance">서버 점검 중 입니다.</string>

@@ -14,5 +14,8 @@
     <item
           android:title="@string/Common_FSTGradeUp"
           android:id="@+id/CalcNavigation_FSTGradeUp"/>
+    <item
+          android:title="@string/Common_AreaExp"
+          android:id="@+id/CalcNavigation_AreaExp"/>
   </group>
 </menu>
