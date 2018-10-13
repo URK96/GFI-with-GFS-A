@@ -878,6 +878,8 @@ namespace GFI_with_GFS_A
 
                 while (nowExp < targetExp)
                 {
+                    while ((nowExp < LevelExp[NowLevel - 1]) && (nowExp >= LevelExp[NowLevel])) NowLevel += 1;
+
                     if (IsAutoAddDummy == true)
                     {
                         if ((NowLevel >= 1) && (NowLevel < 10)) Dummy = 1;
