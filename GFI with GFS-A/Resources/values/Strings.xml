@@ -449,9 +449,12 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.7 수정사항]\n\n
-- 이벤트 Static Shortcut 진입 시 오류가 발생하는 현상 수정\n
-- 메모리 사용량 최적화\n
+    [2.2.8 수정사항]\n\n
+- 메인화면 버튼 이미지 리소스 변경\n
+- 일부 이미지 리소스 변경\n
+- 설정 항목에 버튼 이미지 색상 선택 기능 추가\n
+- 앱 기동시 DB 자동 업데이트가 실행되지 않는 문제 수정\n
+- 지역별 경험치 계산기 추가
   </string>
 
   <string name="RFBot_CommandHelp">
