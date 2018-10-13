@@ -1,6 +1,7 @@
 # GFI-with-GFS-A
-소전사전 for Android
+소전사전 (Girls Frontline Dictionary) for Android
 
-소녀전선을 위한 사전 Application 소스입니다.
+Language : C# (Xamarin.Android)
 
-사용언어 : C# (Xamarin.Android)
+Contact (Discord) : URK96#5796
+Contact (E-mail) : chlwlsgur96@hotmail.com
