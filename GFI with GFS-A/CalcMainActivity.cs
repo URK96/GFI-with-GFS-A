@@ -77,7 +77,7 @@ namespace GFI_with_GFS_A
                         title = Resources.GetString(Resource.String.TitleName_ExpItemCalc);
                         break;
                     case Resource.Id.CalcNavigation_Core:
-                        ft.Replace (Resource.Id.CalcFragmentContainer, CoreCalc_F, "CoreCalc");
+                        ft.Replace(Resource.Id.CalcFragmentContainer, CoreCalc_F, "CoreCalc");
                         title = Resources.GetString(Resource.String.TitleName_CoreCalc);
                         break;
                     case Resource.Id.CalcNavigation_SkillTraining:

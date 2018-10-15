@@ -10,7 +10,7 @@
   <string name="Common_SkillTraining">스킬 훈련</string>
   <string name="Common_FSTGradeUp">FST 등급</string>
   <string name="Common_AreaExp">경험치 계산</string>
-  <string name="TitleName_FSTGradeUpCalc">지역별 경험치 계산</string>
+  <string name="TitleName_AreaExpCalc">지역별 경험치 계산</string>
   
   <string name="Calc_ExpItem_FSTTrainerLevelSettingText">* 훈련장 레벨 설정 *</string>
   <string name="Calc_ExpItem_TotalResultBatteryText">* 필요한 전지 수량 *</string>
