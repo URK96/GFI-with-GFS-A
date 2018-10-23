@@ -92,6 +92,7 @@ namespace GFI_with_GFS_A
             Resource.Id.CalcExtraButton,
             Resource.Id.RFBotExtraButton,
             Resource.Id.ProductSimulatorExtraButton,
+            Resource.Id.CartoonExtraButton,
             Resource.Id.GFOSTPlayerExtraButton
         };
         readonly int[] ExtraMenuButtonBackgroundIds =
@@ -101,6 +102,7 @@ namespace GFI_with_GFS_A
             Resource.Drawable.Extra_CalcSelector,
             Resource.Drawable.Extra_RFBotSelector,
             Resource.Drawable.Extra_ProductSimulatorSelector,
+            Resource.Drawable.Extra_RFBotSelector,
             Resource.Drawable.Extra_OSTPlayerSelector
         };
         readonly int[] ExtraMenuButtonBackgroundIds_Orange =
@@ -110,6 +112,7 @@ namespace GFI_with_GFS_A
             Resource.Drawable.Extra_CalcSelector_Orange,
             Resource.Drawable.Extra_RFBotSelector_Orange,
             Resource.Drawable.Extra_ProductSimulatorSelector_Orange,
+            Resource.Drawable.Extra_RFBotSelector_Orange,
             Resource.Drawable.Extra_OSTPlayerSelector_Orange
         };
         readonly string[] ExtraMenuButtonText =
@@ -119,6 +122,7 @@ namespace GFI_with_GFS_A
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_Calc),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_RFBot),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_ProductSimulator),
+            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_Cartoon),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_GFOSTPlayer)
         };
     }

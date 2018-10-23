@@ -26,7 +26,6 @@ namespace GFI_with_GFS_A
     {
         private CoordinatorLayout SnackbarLayout = null;
 
-        private ImageView MainSplashImageView;
         private SfBusyIndicator indicator;
         //private Stopwatch sw = new Stopwatch();
 
@@ -54,7 +53,6 @@ namespace GFI_with_GFS_A
                 // Set our view from the "main" layout resource
                 SetContentView(Resource.Layout.SplashLayout);
 
-                MainSplashImageView = FindViewById<ImageView>(Resource.Id.SplashBackImageLayout);
                 indicator = new SfBusyIndicator(this)
                 {
                     AnimationType = Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.GearBox,
@@ -93,7 +91,7 @@ namespace GFI_with_GFS_A
                 if (ETC.sharedPreferences.GetBoolean("CheckInitLowMemory", true) == true) CheckDeviceMemory();
                 ETC.IsLowRAM = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);
 
-                if (VersionTracking.IsFirstLaunchForCurrentVersion == true) PreferenceEditor.PutBoolean("ShowNewFeatureDialog", true);
+                if (VersionTracking.IsFirstLaunchForCurrentBuild == true) PreferenceEditor.PutBoolean("ShowNewFeatureDialog", true);
                 
                 ETC.CheckInitFolder();
 

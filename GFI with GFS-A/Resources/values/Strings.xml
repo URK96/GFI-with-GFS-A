@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <!--New String-->
+  <string name="app_name">소전사전</string>
+  
   <string name="Main_ExtraMenu_GFOSTPlayer">OST Player</string>
+  <string name="Main_ExtraMenu_Cartoon">만화</string>
   
   <string name="DollDBDetailLayout_ModelData">총기 제원</string>
   
@@ -54,6 +57,10 @@
   <string name="Shortcut_RFBot_ShortLabel">RFBot</string>
   <string name="Shortcut_RFBot_LongLabel">RFBot</string>
   <string name="Shortcut_RFBot_DisabledLabel">RFBot</string>
+  
+  <!--New - Cartoon String-->
+  <string name="Cartoon_DownloadCartoonTitle">만화 다운로드</string>
+  <string name="Cartoon_DownloadCartoonMessage">만화 파일을 다운로드 중...</string>
   
   <!--Solution String-->
   <string name="CheckingUpdate">업데이트 확인 중...</string>

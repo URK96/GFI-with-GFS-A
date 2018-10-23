@@ -36,6 +36,7 @@
                 android:layout_weight="1"
                 android:layout_marginBottom="10dp"
                 android:alpha="0"
+				android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/DBSubMenuMainButton" />
         </LinearLayout>
         <!--<LinearLayout
@@ -69,6 +70,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
                 android:alpha="0"
+				android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/OldGFDMainButton" />
         </LinearLayout>
         <LinearLayout
@@ -83,6 +85,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:alpha="0"
+				android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/MDMainButton" />
             <Button
                 android:layout_width="0dp"
@@ -90,6 +93,7 @@
                 android:layout_weight="1"
                 android:layout_marginBottom="10dp"
                 android:alpha="0"
+				android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/GFDInfoMainButton" />
         </LinearLayout>
         <LinearLayout
@@ -103,12 +107,14 @@
                 android:layout_weight="1"
                 android:layout_marginRight="10dp"
                 android:alpha="0"
+				android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/ExtraMainButton" />
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:alpha="0"
+				android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/SettingMainButton" />
         </LinearLayout>
     </LinearLayout>
@@ -134,37 +140,43 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
+					android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/EventExtraButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
+					android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/GFNewsExtraButton" />
 				<Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
+					android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/CalcExtraButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
+					android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/RFBotExtraButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
+					android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/ProductSimulatorExtraButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
-                    android:visibility="gone"
-                    android:id="@+id/FormationSimulatorExtraButton" />
+					android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/CartoonExtraButton" />
 				<Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
+					android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/GFOSTPlayerExtraButton" />
             </LinearLayout>
         </ScrollView>
@@ -191,26 +203,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
+					android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/DollDBButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
+					android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/EquipDBButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
+					android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/FairyDBButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
+					android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/EnemyDBButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
+					android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/FSTDBButton" />
                 <Button
                     android:layout_width="match_parent"
@@ -218,6 +235,7 @@
                     android:layout_marginBottom="10dp"
                     android:enabled="false"
 					android:visibility="gone"
+					android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/FSTDBButton" />
                 <Button
                     android:layout_width="match_parent"
@@ -225,6 +243,7 @@
                     android:layout_marginBottom="10dp"
                     android:enabled="false"
 					android:visibility="gone"
+					android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/FSTDBButton" />
             </LinearLayout>
         </ScrollView>

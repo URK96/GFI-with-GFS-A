@@ -6,17 +6,15 @@ using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
-using Android.Views;
 using Android.Widget;
 using System;
 using System.IO;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "소전사전", Theme = "@style/GFS", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Theme = "@style/GFS", ScreenOrientation = ScreenOrientation.Portrait)]
     public partial class Main : AppCompatActivity
     {
         System.Timers.Timer ExitTimer = new System.Timers.Timer();
@@ -47,6 +45,8 @@ namespace GFI_with_GFS_A
                 NotificationView.Click += NotificationView_Click;
 
                 SupportActionBar.SetIcon(int.Parse(ETC.sharedPreferences.GetString("MainActionbarIcon", Resource.Drawable.AppIcon2.ToString())));
+                if ((int.Parse(ETC.sharedPreferences.GetString("MainActionbarIcon", Resource.Drawable.AppIcon2.ToString())) == Resource.Drawable.AppIcon2) && (DateTime.Now.Month == 10) && (DateTime.Now.Day == 31)) SupportActionBar.SetIcon(Resource.Drawable.AppIcon2_Core);
+                else SupportActionBar.SetIcon(int.Parse(ETC.sharedPreferences.GetString("MainActionbarIcon", Resource.Drawable.AppIcon2.ToString())));
                 SupportActionBar.SetDisplayShowHomeEnabled(true);
 
                 ExitTimer.Interval = 2000;
@@ -452,6 +452,10 @@ namespace GFI_with_GFS_A
                         break;
                     case Resource.Id.GFOSTPlayerExtraButton:
                         StartActivity(typeof(GFOSTPlayerActivity));
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    case Resource.Id.CartoonExtraButton:
+                        StartActivity(typeof(CartoonActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     default:

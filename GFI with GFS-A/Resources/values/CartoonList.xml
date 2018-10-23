@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Cartoon_Category">
+    <item>츠보우의 소녀전선</item>
+  </string-array>
+
+  <string-array name="kazensky_GF">
+    <item>1화 - 97식 혼나는 만화</item>
+    <item>2화 - 지휘관과 와짱</item>
+    <item>3화 - 벡터</item>
+    <item>4화 - 꿈 속에서</item>
+    <item>5화 - UMP45</item>
+    <item>6화 - 97식</item>
+    <item>7화 - 레깅스</item>
+    <item>8화 - 잠탱이</item>
+    <item>9화 - 흥국이</item>
+    <item>10화 - 95식의 오늘하루</item>
+    <item>11화 - 춘전이 (1)</item>
+    <item>12화 - 춘전이 (2)</item>
+    <item>13화 - 부관자리</item>
+    <item>14화 - 97식과 잠시 외출</item>
+    <item>15화 - 쪼꼬 작가님</item>
+    <item>16화 - FAL</item>
+    <item>17화 - 지휘관 소집</item>
+    <item>18화 - 샤워실</item>
+    <item>19화 - 취중담 (1)</item>
+    <item>20화 - 취중담 (2)</item>
+    <item>21화 - 녹화</item>
+    <item>22화 - 구명</item>
+    <item>23화 - 영점사격</item>
+    <item>24화 - 자체 조사</item>
+    <item>25화 - 복귀</item>
+    <item>26화 - 기분풀이</item>
+    <item>27화 - 라플비(RFB)</item>
+    <item>28화 - 해피엔딩</item>
+    <item>29화 - 캘리코</item>
+    <item>30화 - K2 전입</item>
+    <item>특1화 - 소린이 유입되는 만화</item>
+    <item>31화 - 전입자 안내</item>
+    <item>32화 - 쪼꼬 작가님 2</item>
+    <item>33화 - 비를 피한 곳</item>
+    <item>34화 - 지휘관 부재중</item>
+    <item>35화 - 복귀 후 당직</item>
+    <item>36화 - 쓸데없는 충고</item>
+    <item>37화 - 수오미</item>
+    <item>38화 - DSR-50</item>
+    <item>39화 - 원하는 것</item>
+    <item>40화 - 전투사격</item>
+    <item>특2화 - 서약반지</item>
+    <item>특3화 - 패싱 아동절은 없다</item>
+    <item>41화 - 시험본 캘리코</item>
+    <item>특4화 - 학교다니는 로게브</item>
+    <item>42화 - 호칭</item>
+    <item>43화 - 낚아채기</item>
+    <item>44화 - 팩트</item>
+    <item>특5화 - 셋째의 라면</item>
+    <item>45화 - 95식과 도시락</item>
+    <item>46화 - UMP45의 제안</item>
+    <item>47화 - NTW-20</item>
+    <item>48화 - 멀리 돌아온 길</item>
+    <item>49화 - 404 숙소에서</item>
+    <item>특6화 - RFB 혼나다</item>
+    <item>특7화 - K2쟝 이야기</item>
+    <item>50화 - 쇼부</item>
+    <item>특8화 - 97식과 새친구</item>
+    <item>특9화 - 학교 이야기</item>
+    <item>51화 - 위탁</item>
+    <item>52화 - AN-94의 고집</item>
+    <item>특10화 - K2쟝 이야기 2</item>
+    <item>특11화 - 캘리코 단편</item>
+    <item>53화 - 폭식</item>
+    <item>특12화 - 흥국이의 뉴스 소감x</item>
+    <item>54화 - FAL과 FS</item>
+    <item>특13화 - 썬더 이야기</item>
+    <item>55화 - 무도회 공지</item>
+    <item>56화 - 무도회 (1)</item>
+    <item>57화 - 무도회 (2)</item>
+    <item>특14화 - 하급자는 피곤하다</item>
+    <item>특15화 - 카리나가 챙겨준 것</item>
+    <item>특16화 - 부작용</item>
+    <item>특17화 - 니토</item>
+    <item>58화 - 썬더담당 춘전이</item>
+    <item>특18화 - 안구사 단편</item>
+    <item>특19화 - 4컷 단편</item>
+    <item>특20화 - 솔직한 대화</item>
+    <item>특21화 - 츤데레vs욕데레</item>
+    <item>특22화 - Saiga-12</item>
+    <item>특23화 - 수오미의 고민</item>
+  </string-array>
+</resources>
