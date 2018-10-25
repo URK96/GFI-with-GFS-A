@@ -36,7 +36,8 @@ namespace GFI_with_GFS_A
         private int DollGrade;
         internal static string DollType;
         private int ModIndex = 0;
-        private string[] VoiceList;
+        private int V_Costume_Index = 0;
+        private List<string> VoiceList = new List<string>();
         internal static int[] AbilityValues = new int[6];
 
         internal static DataRow CompareDollInfoDR = null;
@@ -49,6 +50,7 @@ namespace GFI_with_GFS_A
         private CoordinatorLayout SnackbarLayout = null;
 
         private ProgressBar InitLoadProgressBar;
+        private Spinner VoiceCostumeSelector;
         private Spinner VoiceSelector;
         private Button VoicePlayButton;
         private Button ModelDataButton;
@@ -65,6 +67,7 @@ namespace GFI_with_GFS_A
 
         int[] ModButtonIds = { Resource.Id.DollDBDetailModSelect0, Resource.Id.DollDBDetailModSelect1, Resource.Id.DollDBDetailModSelect2, Resource.Id.DollDBDetailModSelect3 };
         internal static List<string> CompareList;
+        private List<string> V_Costume_List = new List<string>();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -76,13 +79,21 @@ namespace GFI_with_GFS_A
 
                 if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
 
+                ETC.Language = Resources.Configuration.Locale;
+
                 // Create your application here
                 SetContentView(Resource.Layout.DollDBDetailLayout);
 
                 DollDicNum = Intent.GetIntExtra("Keyword", 0);
 
                 DollInfoDR = ETC.FindDataRow(ETC.DollList, "DicNumber", DollDicNum);
-                DollName = (string)DollInfoDR["Name"];
+                if (ETC.Language.Language == "ko") DollName = (string)DollInfoDR["Name"];
+                else
+                {
+                    if (DollInfoDR["Name_EN"] == DBNull.Value) DollName = (string)DollInfoDR["Name"];
+                    else if (string.IsNullOrWhiteSpace((string)DollInfoDR["Name_EN"])) DollName = (string)DollInfoDR["Name"];
+                    else DollName = (string)DollInfoDR["Name_EN"];
+                }
                 DollDicNum = (int)DollInfoDR["DicNumber"];
                 DollGrade = (int)DollInfoDR["Grade"];
                 DollType = (string)DollInfoDR["Type"];
@@ -109,6 +120,8 @@ namespace GFI_with_GFS_A
                 
                 if ((bool)DollInfoDR["HasVoice"] == true)
                 {
+                    VoiceCostumeSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailVoiceCostumeSelector);
+                    VoiceCostumeSelector.ItemSelected += VoiceCostumeSelector_ItemSelected;
                     VoiceSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailVoiceSelector);
                     VoicePlayButton = FindViewById<Button>(Resource.Id.DollDBDetailVoicePlayButton);
                     VoicePlayButton.Click += VoicePlayButton_Click;
@@ -155,7 +168,7 @@ namespace GFI_with_GFS_A
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
         }
-
+            
         private void InitCompareList()
         {
             try
@@ -168,7 +181,15 @@ namespace GFI_with_GFS_A
                     if (DollDicNum == (int)dr["DicNumber"]) continue;
                     if ((string)dr["Type"] != DollType) continue;
 
-                    CompareList.Add((string)dr["Name"]);
+                    string name = "";
+                    if (ETC.Language.Language == "ko") name = (string)DollInfoDR["Name"];
+                    else
+                    {
+                        if (DollInfoDR["Name_EN"] == DBNull.Value) name = (string)DollInfoDR["Name"];
+                        else if (string.IsNullOrWhiteSpace((string)DollInfoDR["Name_EN"])) name = (string)DollInfoDR["Name"];
+                        else name = (string)DollInfoDR["Name_EN"];
+                    }
+                    CompareList.Add(name);
                 }
 
                 CompareList.TrimExcess();
@@ -323,8 +344,20 @@ namespace GFI_with_GFS_A
 
                 string voice = VoiceList[VoiceSelector.SelectedItemPosition];
 
-                string VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", DollName, DollName + "_" + voice + "_JP.wav");
-                string target = Path.Combine(ETC.CachePath, "Voices", DollName + "_" + voice + "_JP.wav");
+                string VoiceServerURL = "";
+                string target = "";
+
+                switch (V_Costume_Index)
+                {
+                    case 0:
+                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", DollName, $"{DollName}_{voice}_JP.wav");
+                        target = Path.Combine(ETC.CachePath, "Voices", $"{DollName}_{voice}_JP.wav");
+                        break;
+                    case 1:
+                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", $"{DollName}_{V_Costume_Index - 1}", $"{DollName}_{V_Costume_Index - 1}_{voice}_JP.wav");
+                        target = Path.Combine(ETC.CachePath, "Voices", $"{DollName}_{V_Costume_Index - 1}_{voice}_JP.wav");
+                        break;
+                }
 
                 MediaPlayer SoundPlayer = new MediaPlayer();
                 SoundPlayer.Completion += delegate { SoundPlayer.Release(); };
@@ -371,7 +404,50 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                VoiceList = ((string)DollInfoDR["Voices"]).Split(';');
+                V_Costume_List.Clear();
+                V_Costume_List.Add($"Default:{(string)DollInfoDR["Voices"]}");
+                if (DollInfoDR["CostumeVoices"] != DBNull.Value)
+                {
+                    if (string.IsNullOrWhiteSpace((string)DollInfoDR["CostumeVoices"]) == false) V_Costume_List.AddRange(((string)DollInfoDR["CostumeVoices"]).Split(','));
+                }
+                V_Costume_List.TrimExcess();
+
+                List<string> V_C_List = new List<string>();
+
+                for (int i = 0; i < V_Costume_List.Count; ++i)
+                {
+                    if (i >= 1)
+                    {
+                        string[] Costumes = ((string)DollInfoDR["Costume"]).Split(';');
+                        V_C_List.Add(Costumes[int.Parse(V_Costume_List[i].Split(':')[0])]);
+                    }
+                    else V_C_List.Add(V_Costume_List[i].Split(':')[0]);
+                }
+
+                V_C_List.TrimExcess();
+
+                var c_adater = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, V_C_List);
+                c_adater.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
+                VoiceCostumeSelector.Adapter = c_adater;
+
+                VoiceCostumeSelector.SetSelection(0);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                Toast.MakeText(this, Resource.String.VoiceList_InitError, ToastLength.Short).Show();
+            }
+        }
+
+        private void VoiceCostumeSelector_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            try
+            {
+                V_Costume_Index = e.Position;
+
+                VoiceList.Clear();
+                VoiceList.AddRange(V_Costume_List[e.Position].Split(':')[1].Split(';'));
+                VoiceList.TrimExcess();
 
                 var adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, VoiceList);
                 adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);

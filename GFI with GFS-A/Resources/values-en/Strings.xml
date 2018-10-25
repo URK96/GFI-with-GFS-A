@@ -382,6 +382,42 @@
   <string name="SettingActivity_CheckFreeStorage_FailDialogTitle">Cannot proceed downloading</string>
   <string name="SettingActivity_CheckFreeStorage_FailDialogMessage">There is not enough free space to proceed with the download... The capacity you have left </string>
   <string name="SettingActivity_CheckFreeStorage_CheckFail">Failed to check free space on the storage device</string>
+
+
+
+
+  <!--Setting Menus-->
+  <string name="Setting_Category_App">App</string>
+  <string name="Setting_StartAppMode_Title">App Start Mode</string>
+  <string name="Setting_StartAppMode_Summary">Select the menu item that will be displayed as soon as the app starts. After setup, the app must be restarted before it takes effect.</string>
+  <string name="Setting_LowMemoryOption_Title">Enable Low Memory Option</string>
+  <string name="Setting_LowMemoryOption_Summary">Restrict some effects or custom resources for Low-RAM devices. After setup, the app must be restarted before it takes effect.</string>
+  <string name="Setting_UseLightTheme_Title">Use Light Theme</string>
+  <string name="Setting_UseLightTheme_Summary">Use a Light theme instead of the default Dark Theme. After setup, the app must be restarted before it takes effect.</string>
+  <string name="Setting_Category_MainMenu">Main Menu</string>
+  <string name="Setting_MainButtonColor_Title">Main Button Color</string>
+  <string name="Setting_MainButtonColor_Summary">Select the color of the menu button. After setup, the app must be restarted before it takes effect.</string>
+  <string name="Setting_Category_DB">DB</string>
+  <string name="Setting_DynamicDBLoad_Title">Dynamic DB LOad</string>
+  <string name="Setting_DynamicDBLoad_Summary">Load DB only if app need it. Enabling this feature will shorten app startup time, but may increase load time when using the feature. After setup, the app must be restarted before it takes effect.</string>
+  <string name="Setting_AutoDBUpdate_Title">Auto DB Update</string>
+  <string name="Setting_AutoDBUpdate_Summary">Automatically check for DB updates during app starting. If you disable this setting, you must manually check for DB updates.</string>
+  <string name="Setting_CheckDBUpdate_Title">Check DB Update Now</string>
+  <string name="Setting_CheckDBUpdate_Summary">Check for updates to DB data. If there is an update, it will proceed automatically.</string>
+  <string name="Setting_Category_DBList">DB List</string>
+  <string name="Setting_DBListImageShow_Title">Activate List Image</string>
+  <string name="Setting_DBListImageShow_Summary">Set the DB list to display the corresponding image for each item. On devices with less than 2GB of RAM, app may crash when activated.</string>
+  <string name="Setting_Category_DBDetail">DB Detail</string>
+  <string name="Setting_DBDetailBackgroundImage_Title">Enable Detail Page Background Image</string>
+  <string name="Setting_DBDetailBackgroundImage_Summary">Set image displayed in the background on the DB Details page. On devices with less than 2GB of RAM, app may crash when activated.</string>
+  <string name="Setting_Category_Cache">Cache</string>
+  <string name="Setting_DownloadAllCache_Title">Download Part-All Cache</string>
+  <string name="Setting_DownloadAllCache_Summary">The database cache files used in the small dictionary are downloaded in advance. Use this feature to download the cache and you can use some features of app on offline.</string>
+  <string name="Setting_CleanCache_Title">Delete All Cache</string>
+  <string name="Setting_CleanCache_Summary">Free up storage space by deleting the cache file. If there is no cache, the cache can be downloaded again, which can increase data usage. We recommend restarting the app after deleting the cache.</string>
+  <string name="Setting_Category_Log">Log</string>
+  <string name="Setting_DeleteAllLogFile_Title">Delete Log</string>
+  <string name="Setting_DeleteAllLogFile_Summary">Delete all log files.</string>
   
   
     
@@ -452,12 +488,13 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.8 수정사항]\n\n
-- 메인화면 버튼 이미지 리소스 변경\n
-- 일부 이미지 리소스 변경\n
-- 설정 항목에 버튼 이미지 색상 선택 기능 추가\n
-- 앱 기동시 DB 자동 업데이트가 실행되지 않는 문제 수정\n
-- 지역별 경험치 계산기 추가
+    [2.2.9 Update Log]\n\n
+- Add English Support (Some feature is not support)\n
+- Add Cartoon Viewer (Only support Korean)\n
+- Add Costume Voices\n
+- Fix New Feature Dialog when run update app\n
+- Fix GFD v1 imgae issue\n
+- Optimize Memory\n
   </string>
 
   <string name="RFBot_CommandHelp">

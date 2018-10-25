@@ -61,6 +61,9 @@ namespace GFI_with_GFS_A
 
                 if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
 
+                ETC.Language = Resources.Configuration.Locale;
+                Toast.MakeText(this, ETC.Language.Language, ToastLength.Short).Show();
+
                 // Create your application here
                 SetContentView(Resource.Layout.DollDBListLayout);
 
@@ -466,7 +469,14 @@ namespace GFI_with_GFS_A
                     if (CheckFilter(dr) == true) continue;
                     if (searchText != "")
                     {
-                        string name = ((string)dr["Name"]).ToUpper();
+                        string name = "";
+                        if (ETC.Language.Language == "ko") name = ((string)dr["Name"]).ToUpper();
+                        else
+                        {
+                            if (dr["Name_EN"] == DBNull.Value) name = ((string)dr["Name"]).ToUpper();
+                            else if (string.IsNullOrWhiteSpace((string)dr["Name_EN"])) name = ((string)dr["Name"]).ToUpper();
+                            else name = ((string)dr["Name_EN"]).ToUpper();
+                        }
                         if (name.Contains(searchText) == false) continue;
                     }
 
@@ -520,15 +530,48 @@ namespace GFI_with_GFS_A
                     else if ((y_time == 0) && (x_time != 0)) return -1;
                     else if (x_time == y_time)
                     {
-                        string x_name_t = (string)x.DollDR["Name"];
-                        string y_name_t = (string)y.DollDR["Name"];
+                        string x_name_t = "";
+                        string y_name_t = "";
+
+                        if (ETC.Language.Language == "ko")
+                        {
+                            x_name_t = (string)x.DollDR["Name"];
+                            y_name_t = (string)y.DollDR["Name"];
+                        }
+                        else
+                        {
+                            if (x.DollDR["Name_EN"] == DBNull.Value) x_name_t = (string)x.DollDR["Name"];
+                            else if (string.IsNullOrWhiteSpace((string)x.DollDR["Name_EN"])) x_name_t = (string)x.DollDR["Name"];
+                            else x_name_t = (string)x.DollDR["Name_EN"];
+
+                            if (y.DollDR["Name_EN"] == DBNull.Value) y_name_t = (string)y.DollDR["Name"];
+                            else if (string.IsNullOrWhiteSpace((string)y.DollDR["Name_EN"])) y_name_t = (string)x.DollDR["Name"];
+                            else y_name_t = (string)y.DollDR["Name_EN"];
+                        }
+
                         return x_name_t.CompareTo(y_name_t);
                     }
                     else return x_time.CompareTo(y_time);
                 case LineUp.Name:
                 default:
-                    string x_name = (string)x.DollDR["Name"];
-                    string y_name = (string)y.DollDR["Name"];
+                    string x_name = "";
+                    string y_name = "";
+
+                    if (ETC.Language.Language == "ko_KR")
+                    {
+                        x_name = (string)x.DollDR["Name"];
+                        y_name = (string)y.DollDR["Name"];
+                    }
+                    else
+                    {
+                        if (x.DollDR["Name_EN"] == DBNull.Value) x_name = (string)x.DollDR["Name"];
+                        else if (string.IsNullOrWhiteSpace((string)x.DollDR["Name_EN"])) x_name = (string)x.DollDR["Name"];
+                        else x_name = (string)x.DollDR["Name_EN"];
+
+                        if (y.DollDR["Name_EN"] == DBNull.Value) y_name = (string)y.DollDR["Name"];
+                        else if (string.IsNullOrWhiteSpace((string)y.DollDR["Name_EN"])) y_name = (string)x.DollDR["Name"];
+                        else y_name = (string)y.DollDR["Name_EN"];
+                    }
                     return x_name.CompareTo(y_name);
             }
         }
@@ -695,8 +738,18 @@ namespace GFI_with_GFS_A
                 TextView DollType = view.FindViewById<TextView>(Resource.Id.DollListType);
                 DollType.Text = (string)item.DollDR["Type"];
 
+
+                string name = "";
+
+                if (ETC.Language.Language == "ko") name = (string)item.DollDR["Name"];
+                else
+                {
+                    if (item.DollDR["Name_EN"] == DBNull.Value) name = (string)item.DollDR["Name"];
+                    else if (string.IsNullOrWhiteSpace((string)item.DollDR["Name_EN"])) name = (string)item.DollDR["Name"];
+                    else name = (string)item.DollDR["Name_EN"];
+                }
                 TextView DollName = view.FindViewById<TextView>(Resource.Id.DollListName);
-                DollName.Text = (string)item.DollDR["Name"];
+                DollName.Text = name;
 
                 TextView DollProductTime = view.FindViewById<TextView>(Resource.Id.DollListProductTime);
                 DollProductTime.Text = ETC.CalcTime((int)item.DollDR["ProductTime"]);

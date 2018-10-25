@@ -1,0 +1,19 @@
+<2.2.9 수정사항>
+
+- 영어 지원 추가 (일부 항목 미지원)
+- 만화 뷰어 기능 추가
+- 코스튬별 보이스 기능 추가
+- 새로운 버전 실행 시 새로운 기능 창이 뜨지 않던 문제 수정
+- 소전사전 v1에서 이미지 길이로 인해 이미지가 표시되지 않던 문제 수정
+- 메모리 관련 최적화
+
+
+
+
+
+- Add English Support (Some feature is not support)
+- Add Cartoon Viewer (Only support Korean)
+- Add Costume's Voices
+- Fix New Feature Dialog when run update app
+- Fix GFD v1 imgae issue
+- Optimize Memory

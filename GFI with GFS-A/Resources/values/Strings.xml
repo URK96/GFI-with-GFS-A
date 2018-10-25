@@ -388,7 +388,41 @@
   <string name="SettingActivity_CheckFreeStorage_CheckFail">저장 장치 여유공간 확인 실패</string>
   
   
-    
+  <!--Setting Menus-->
+  <string name="Setting_Category_App">일반</string>
+  <string name="Setting_StartAppMode_Title">앱 기동 모드</string>
+  <string name="Setting_StartAppMode_Summary">소전사전 시작 시 바로 표시될 메뉴 항목을 선택합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
+  <string name="Setting_LowMemoryOption_Title">저사양 옵션 활성화</string>
+  <string name="Setting_LowMemoryOption_Summary">RAM이 부족한 저사양 기기를 위해 일부 효과나 커스텀 리소스를 제한합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
+  <string name="Setting_UseLightTheme_Title">밝은 테마 사용</string>
+  <string name="Setting_UseLightTheme_Summary">기본값인 어두운 테마 대신 밝은 테마를 사용합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
+  <string name="Setting_Category_MainMenu">메인 화면</string>
+  <string name="Setting_MainButtonColor_Title">메인 버튼 이미지 색상</string>
+  <string name="Setting_MainButtonColor_Summary">소전사전 시작 시 표시될 메뉴 버튼 이미지의 색상을 선택합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
+  <string name="Setting_Category_DB">DB 설정</string>
+  <string name="Setting_DynamicDBLoad_Title">동적 DB 로드</string>
+  <string name="Setting_DynamicDBLoad_Summary">DB가 필요한 경우만에 DB를 불러옵니다. 이 기능을 활성화하면 앱 기동 시간은 짧아지지만 기능을 사용할 때 로드 시간이 증가할 수 있습니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
+  <string name="Setting_AutoDBUpdate_Title">자동 DB 업데이트</string>
+  <string name="Setting_AutoDBUpdate_Summary">소전사전 기동 시 자동으로 DB 업데이트를 확인합니다. 이 설정을 비활성화하면 수동으로 DB 업데이트를 확인해야 합니다.</string>
+  <string name="Setting_CheckDBUpdate_Title">지금 업데이트 확인</string>
+  <string name="Setting_CheckDBUpdate_Summary">DB 데이터의 업데이트를 확인합니다. 업데이트가 있는 경우 자동으로 업데이트가 진행됩니다.</string>
+  <string name="Setting_Category_DBList">DB 리스트 설정</string>
+  <string name="Setting_DBListImageShow_Title">리스트 이미지 보기 활성화</string>
+  <string name="Setting_DBListImageShow_Summary">DB 리스트에서 각 항목에 해당하는 이미지를 표시/비표시 하도록 설정합니다. RAM이 2GB 이하인 기기에서 활성화 시 소전사전이 튕길 수 있습니다.</string>
+  <string name="Setting_Category_DBDetail">DB 세부페이지 설정</string> 
+  <string name="Setting_DBDetailBackgroundImage_Title">세부페이지 배경 이미지 활성화</string>
+  <string name="Setting_DBDetailBackgroundImage_Summary">DB 세부페이지에서 배경에 표시되는 이미지의 활성화 여부를 설정합니다. RAM이 2GB 이하인 기기에서 활성화 시 소전사전이 튕길 수 있습니다.</string>
+  <string name="Setting_Category_Cache">캐시 설정</string> 
+  <string name="Setting_DownloadAllCache_Title">캐시 일괄 다운로드</string>
+  <string name="Setting_DownloadAllCache_Summary">소전사전에서 사용하는 데이터베이스 캐쉬 파일들을 일괄적으로 미리 다운로드 합니다. 이 항목을 이용하여 캐시를 다운로드 하시면 오프라인에서도 일부분은 문제없이 사용하실 수 있습니다.</string>
+  <string name="Setting_CleanCache_Title">캐시 삭제</string>
+  <string name="Setting_CleanCache_Summary">소전사전 사용 중 누적된 캐시 파일을 삭제하여 저장 공간을 확보합니다. DB 캐시가 없으면 해당 캐시를 다시 다운받기 때문에 데이터 사용량이 증가할 수 있습니다. 캐시 삭제 후에는 앱을 재시작하는 것을 권장합니다.</string>
+  <string name="Setting_Category_Log">Log 설정</string> 
+  <string name="Setting_DeleteAllLogFile_Title">Log 파일 삭제</string>
+  <string name="Setting_DeleteAllLogFile_Summary">Log 파일을 전부 삭제합니다.</string>
+
+  
+  
   <!--Calc_Core-->
   <string name="Calc_Core_GradeSettingText">* 등급 설정 *</string>
   <string name="Calc_Core_DummySettingText">* 편제 수 설정 *</string>
@@ -456,12 +490,13 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.8 수정사항]\n\n
-- 메인화면 버튼 이미지 리소스 변경\n
-- 일부 이미지 리소스 변경\n
-- 설정 항목에 버튼 이미지 색상 선택 기능 추가\n
-- 앱 기동시 DB 자동 업데이트가 실행되지 않는 문제 수정\n
-- 지역별 경험치 계산기 추가
+    [2.2.9 수정사항]\n\n
+- 영어 지원 추가 (일부 항목 미지원)\n
+- 만화 뷰어 기능 추가\n
+- 코스튬별 보이스 기능 추가\n
+- 새로운 버전 실행 시 새로운 기능 창이 뜨지 않던 문제 수정\n
+- 소전사전 v1에서 이미지 길이로 인해 이미지가 표시되지 않던 문제 수정\n
+- 메모리 관련 최적화\n
   </string>
 
   <string name="RFBot_CommandHelp">

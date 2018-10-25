@@ -29,7 +29,7 @@ namespace GFI_with_GFS_A
         private Android.Support.V4.App.FragmentTransaction ft;
         private Android.Support.V4.App.Fragment CartoonScreen_F;
 
-        private DrawerLayout MainDrawerLayout;
+        internal DrawerLayout MainDrawerLayout;
         private ListView DrawerListView;
 
         private string[] Category_List;
@@ -184,6 +184,7 @@ namespace GFI_with_GFS_A
             try
             {
                 LoadProgress.Visibility = ViewStates.Visible;
+                ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
 
                 ImageViewList.Clear();
                 MainLayout.RemoveAllViews();
@@ -219,15 +220,7 @@ namespace GFI_with_GFS_A
                         break;
                 }
 
-                /*LinearLayout.LayoutParams p1 = (LinearLayout.LayoutParams)tv1.LayoutParameters;
-                p1.SetMargins(0, 10, 0, 10);
-                tv1.LayoutParameters = p1;
-
-                LinearLayout.LayoutParams p2 = (LinearLayout.LayoutParams)tv2.LayoutParameters;
-                p2.SetMargins(0, 10, 0, 10);
-                tv2.LayoutParameters = p2;
-
-                LinearLayout.LayoutParams p3 = (LinearLayout.LayoutParams)layout.LayoutParameters;
+                /*LinearLayout.LayoutParams p3 = (LinearLayout.LayoutParams)layout.LayoutParameters;
                 p3.SetMargins(0, 10, 0, 10);
                 layout.LayoutParameters = p3;*/
 
@@ -248,14 +241,15 @@ namespace GFI_with_GFS_A
                 foreach (string file in Files)
                 {
                     ImageView iv = new ImageView(Activity);
-                    iv.SetImageDrawable(await Drawable.CreateFromPathAsync(file));
+                    iv.SetImageDrawable(await Drawable.CreateFromPathAsync(Path.ChangeExtension(file, ".gfdcache")));
                     iv.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, ((BitmapDrawable)iv.Drawable).Bitmap.Height);
                     iv.SetScaleType(ImageView.ScaleType.FitXy);
+                    iv.SetAdjustViewBounds(true);
 
                     ImageViewList.Add(iv);
                     MainLayout.AddView(iv);
 
-                    await Task.Delay(500);
+                    await Task.Delay(10);
                 }
 
                 LoadProgress.Visibility = ViewStates.Invisible;
@@ -263,6 +257,10 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(Activity, ex.ToString());
+            }
+            finally
+            {
+                ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
             }
         }
 
@@ -291,8 +289,10 @@ namespace GFI_with_GFS_A
 
                 while (true)
                 {
+                    ad.SetMessage($"{Resource.String.Cartoon_DownloadCartoonMessage}i");
+
                     string ContentPath = Path.Combine(ServerItemPath, $"{count}.png");
-                    string ContentPath_local = Path.Combine(CartoonTopPath, Category, Item_Index.ToString(), $"{count}.png");
+                    string ContentPath_local = Path.Combine(CartoonTopPath, Category, Item_Index.ToString(), $"{count}.gfdcache");
                     WebRequest request = WebRequest.Create(ContentPath);
 
                     using (WebResponse response = await request.GetResponseAsync())

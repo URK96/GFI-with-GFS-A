@@ -10,6 +10,7 @@ using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using UK.CO.Senab.Photoview;
+using System.Collections.Generic;
 
 namespace GFI_with_GFS_A
 {
@@ -20,6 +21,8 @@ namespace GFI_with_GFS_A
 
         private Spinner ImageList = null;
         private PhotoView ImageViewer = null;
+        private LinearLayout ImageContainer;
+        //private List<ImageView> ImageViewer_List = new List<ImageView>();
         private CoordinatorLayout SnackbarLayout = null;
 
         private Dialog dialog = null;
@@ -59,7 +62,8 @@ namespace GFI_with_GFS_A
 
                 ImageList = FindViewById<Spinner>(Resource.Id.OldGFDImageList);
                 ImageList.ItemSelected += ImageList_ItemSelected;
-                ImageViewer = FindViewById<PhotoView>(Resource.Id.OldGFDImageView);
+                //ImageViewer = FindViewById<PhotoView>(Resource.Id.OldGFDImageView);
+                ImageContainer = FindViewById<LinearLayout>(Resource.Id.OldGFDImageContainer);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.OldGFDViewerSnackbarLayout);
 
                 InitProcess();
@@ -121,9 +125,42 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "OldGFD", "Images", ImageName[index] + ".gfdcache"));
+                ImageContainer.RemoveAllViews();
 
-                ImageViewer.SetImageDrawable(drawable);
+                Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "OldGFD", "Images", ImageName[index] + ".gfdcache"));
+                Android.Graphics.Bitmap bitmap = ((BitmapDrawable)drawable).Bitmap;
+
+                if (bitmap.Height > 1000)
+                {
+                    int height = 0;
+
+                    while (height < bitmap.Height)
+                    {
+                        int remain_height = bitmap.Height - height;
+
+                        Android.Graphics.Bitmap bitmap_fix;
+
+                        if (remain_height >= 1000)
+                        {
+                            bitmap_fix = Android.Graphics.Bitmap.CreateBitmap(bitmap, 0, height, bitmap.Width, 1000);
+                            height += 1000;
+                        }
+                        else
+                        {
+                            bitmap_fix = Android.Graphics.Bitmap.CreateBitmap(bitmap, 0, height, bitmap.Width, remain_height);
+                            height += remain_height;
+                        }
+
+                        ImageView iv = new ImageView(this);
+                        iv.SetImageBitmap(bitmap_fix);
+                        iv.SetScaleType(ImageView.ScaleType.FitXy);
+                        iv.SetAdjustViewBounds(true);
+
+                        ImageContainer.AddView(iv);
+                    }
+                }
+
+                //ImageViewer.SetImageDrawable(drawable);
 
                 GC.Collect();
             }

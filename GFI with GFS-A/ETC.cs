@@ -32,6 +32,7 @@ namespace GFI_with_GFS_A
         internal static int DialogBG_Download = 0;
         internal static bool HasEvent = false;
         internal static bool IsSeverMaintenance = false;
+        internal static Java.Util.Locale Language;
 
         internal static DataTable DollList = new DataTable();
         internal static DataTable EquipmentList = new DataTable();
