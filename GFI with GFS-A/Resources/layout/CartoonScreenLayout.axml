@@ -10,6 +10,34 @@
 		android:indeterminateOnly="true"
 		android:visibility="invisible"
 		android:id="@+id/CartoonScreenLoadProgress"/>
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:text="&lt;"
+			android:enabled="false"
+			android:id="@+id/CartoonScreenPreviousButton"/>
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:text=""
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:ellipsize="marquee"
+			android:marqueeRepeatLimit="marquee_forever"
+			android:singleLine="true"
+			android:gravity="center"
+			android:id="@+id/CartoonScreenNowCartoonText"/>
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:text="&gt;"
+			android:enabled="false"
+			android:id="@+id/CartoonScreenNextButton"/>
+	</LinearLayout>
 <ScrollView 
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">

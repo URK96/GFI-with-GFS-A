@@ -35,8 +35,6 @@
   <string name="Common_ServerMaintenance">서버 점검 중 입니다.</string>
 
   <string name="OldGFDViewer_DollPerformance">인형 성능표</string>
-  <string name="OldGFDViewer_RecommendLeveling1">추천 레벨링 루트 1</string>
-  <string name="OldGFDViewer_RecommendLeveling2">추천 레벨링 루트 2</string>
   
   <!--New - Shortcut String-->
   <string name="Shortcut_GFNotification_ShortLabel">공지사항</string>
@@ -490,12 +488,10 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.9 수정사항]\n\n
-- 영어 지원 추가 (일부 항목 미지원)\n
-- 만화 뷰어 기능 추가\n
-- 코스튬별 보이스 기능 추가\n
-- 새로운 버전 실행 시 새로운 기능 창이 뜨지 않던 문제 수정\n
-- 소전사전 v1에서 이미지 길이로 인해 이미지가 표시되지 않던 문제 수정\n
+    [2.2.10 수정사항]\n\n
+- 만화 뷰어 기능 개선\n
+- 만화 카테고리 추가\n
+- 소전사전 v1 이미지가 짤려 나오는 현상 수정\n
 - 메모리 관련 최적화\n
   </string>
 

@@ -1,0 +1,15 @@
+<2.2.10 수정사항>
+
+- 만화 뷰어 기능 개선
+- 만화 카테고리 추가
+- 소전사전 v1 이미지가 짤려 나오는 현상 수정
+- 메모리 관련 최적화
+
+
+
+
+
+- Improve Cartoon Viewer
+- Add Cartoon Series (Korean)
+- Fix GFD v1 imgae croping issue
+- Optimize Memory

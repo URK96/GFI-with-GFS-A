@@ -35,8 +35,6 @@
   <string name="Common_ServerMaintenance">Server is Maintenance...</string>
 
   <string name="OldGFDViewer_DollPerformance">Doll Performance</string>
-  <string name="OldGFDViewer_RecommendLeveling1">Recommend Leveling Route 1</string>
-  <string name="OldGFDViewer_RecommendLeveling2">Recommend Leveling Route 2</string>
   
   <!--New - Shortcut String-->
   <string name="Shortcut_GFNotification_ShortLabel">GF Notification</string>
@@ -488,12 +486,10 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.9 Update Log]\n\n
-- Add English Support (Some feature is not support)\n
-- Add Cartoon Viewer (Only support Korean)\n
-- Add Costume Voices\n
-- Fix New Feature Dialog when run update app\n
-- Fix GFD v1 imgae issue\n
+    [2.2.10 Update Log]\n\n
+- Improve Cartoon Viewer\n
+- Add Cartoon Series (Korean)\n
+- Fix GFD v1 imgae croping issue\n
 - Optimize Memory\n
   </string>
 

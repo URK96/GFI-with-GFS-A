@@ -124,6 +124,12 @@ namespace GFI_with_GFS_A
                         case 0:
                             Item_List.AddRange(Resources.GetStringArray(Resource.Array.kazensky_GF));
                             break;
+                        case 1:
+                            Item_List.AddRange(Resources.GetStringArray(Resource.Array.GF_SF));
+                            break;
+                        case 2:
+                            Item_List.AddRange(Resources.GetStringArray(Resource.Array.GF_SF2));
+                            break;
                     }
                     Item_List.TrimExcess();
 
@@ -144,10 +150,9 @@ namespace GFI_with_GFS_A
                             break;
                         default:
                             ((CartoonScreen)CartoonScreen_F).LoadProcess(Category_List[Category_Index], Category_Index, (e.Position - 1));
+                            MainDrawerLayout.CloseDrawer(GravityCompat.Start);
                             break;
                     }
-
-                    MainDrawerLayout.CloseDrawer(GravityCompat.Start);
                 }
             }
             catch (Exception ex)
@@ -162,10 +167,16 @@ namespace GFI_with_GFS_A
         private View v;
 
         private LinearLayout MainLayout;
-        private List<ImageView> ImageViewList = new List<ImageView>();
         private ProgressBar LoadProgress;
+        private Button PreviousButton;
+        private Button NextButton;
+        private TextView NowCartoonText;
 
         private List<string> Selected_Item_List = new List<string>();
+
+        private string Now_Category = "";
+        private int Now_Category_Index = 0;
+        private int Now_Item_Index = 0;
 
         private string CartoonTopPath = Path.Combine(ETC.CachePath, "Cartoon");
 
@@ -175,23 +186,60 @@ namespace GFI_with_GFS_A
 
             MainLayout = v.FindViewById<LinearLayout>(Resource.Id.CartoonScreenMainLayout);
             LoadProgress = v.FindViewById<ProgressBar>(Resource.Id.CartoonScreenLoadProgress);
+            PreviousButton = v.FindViewById<Button>(Resource.Id.CartoonScreenPreviousButton);
+            PreviousButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index - 1); };
+            NextButton = v.FindViewById<Button>(Resource.Id.CartoonScreenNextButton);
+            NextButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index + 1); };
+            NowCartoonText = v.FindViewById<TextView>(Resource.Id.CartoonScreenNowCartoonText);
 
             return v;
         }
 
         internal async Task LoadProcess(string Category, int Category_Index, int Item_Index)
         {
+            Now_Item_Index = Item_Index;
+            Now_Category_Index = Category_Index;
+            Now_Category = Category;
+
             try
             {
+                if (Item_Index == 0)
+                {
+                    PreviousButton.Enabled = false;
+                    NextButton.Enabled = true;
+                }
+                else if (Item_Index == (Selected_Item_List.Count - 1))
+                {
+                    PreviousButton.Enabled = true;
+                    NextButton.Enabled = false;
+                }
+                else
+                {
+                    PreviousButton.Enabled = true;
+                    NextButton.Enabled = true;
+                }
+
                 LoadProgress.Visibility = ViewStates.Visible;
                 ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
+                Selected_Item_List.Clear();
 
-                ImageViewList.Clear();
                 MainLayout.RemoveAllViews();
 
                 await Task.Delay(100);
 
-                Selected_Item_List.AddRange(Resources.GetStringArray(Resource.Array.kazensky_GF));
+                switch (Category_Index)
+                {
+                    case 0:
+                        Selected_Item_List.AddRange(Resources.GetStringArray(Resource.Array.kazensky_GF));
+                        break;
+                    case 1:
+                        Selected_Item_List.AddRange(Resources.GetStringArray(Resource.Array.GF_SF));
+                        break;
+                    case 2:
+                        Selected_Item_List.AddRange(Resources.GetStringArray(Resource.Array.GF_SF2));
+                        break;
+                }
+                Selected_Item_List.TrimExcess();
 
                 string Category_Path = Path.Combine(CartoonTopPath, Category);
                 string Item_Path = Path.Combine(Category_Path, Item_Index.ToString());
@@ -218,6 +266,11 @@ namespace GFI_with_GFS_A
                         tv1.Text = "Creator : 츠보우 (kazensky)";
                         tv2.Text = "http://kazensky.blog.me/221115059226";
                         break;
+                    case 1:
+                    case 2:
+                        tv1.Text = "Creator : 잉여군";
+                        tv2.Text = "https://twitter.com/INGUKOON";
+                        break;
                 }
 
                 /*LinearLayout.LayoutParams p3 = (LinearLayout.LayoutParams)layout.LayoutParameters;
@@ -240,17 +293,41 @@ namespace GFI_with_GFS_A
 
                 foreach (string file in Files)
                 {
-                    ImageView iv = new ImageView(Activity);
-                    iv.SetImageDrawable(await Drawable.CreateFromPathAsync(Path.ChangeExtension(file, ".gfdcache")));
-                    iv.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, ((BitmapDrawable)iv.Drawable).Bitmap.Height);
-                    iv.SetScaleType(ImageView.ScaleType.FitXy);
-                    iv.SetAdjustViewBounds(true);
+                    Drawable drawable = Drawable.CreateFromPath(file);
+                    Android.Graphics.Bitmap bitmap = ((BitmapDrawable)drawable).Bitmap;
 
-                    ImageViewList.Add(iv);
-                    MainLayout.AddView(iv);
+                    int height = 0;
+
+                    while (height < bitmap.Height)
+                    {
+                        int remain_height = bitmap.Height - height;
+
+                        Android.Graphics.Bitmap bitmap_fix;
+
+                        if (remain_height >= 1000)
+                        {
+                            bitmap_fix = Android.Graphics.Bitmap.CreateBitmap(bitmap, 0, height, bitmap.Width, 1000);
+                            height += 1000;
+                        }
+                        else
+                        {
+                            bitmap_fix = Android.Graphics.Bitmap.CreateBitmap(bitmap, 0, height, bitmap.Width, remain_height);
+                            height += remain_height;
+                        }
+
+                        ImageView iv = new ImageView(Activity);
+                        iv.SetImageBitmap(bitmap_fix);
+                        iv.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent);
+                        iv.SetScaleType(ImageView.ScaleType.FitXy);
+                        iv.SetAdjustViewBounds(true);
+
+                        MainLayout.AddView(iv);
+                    }
 
                     await Task.Delay(10);
                 }
+
+                GC.Collect();
 
                 LoadProgress.Visibility = ViewStates.Invisible;
             }
@@ -261,6 +338,7 @@ namespace GFI_with_GFS_A
             finally
             {
                 ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
+                NowCartoonText.Text = Selected_Item_List[Item_Index];
             }
         }
 
