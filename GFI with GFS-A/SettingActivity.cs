@@ -219,7 +219,7 @@ namespace GFI_with_GFS_A
 
                     await Task.Delay(500);
 
-                    ETC.LoadDB();
+                    await ETC.LoadDB();
 
                     Toast.MakeText(Activity, Resource.String.CheckDBUpdate_Complete, ToastLength.Short).Show();
                 }

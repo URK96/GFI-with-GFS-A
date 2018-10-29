@@ -49,9 +49,9 @@
       android:targetPackage="com.gfl.dic"
       android:targetClass="com.gfl.dic.OldGFDActivity"/>
   </shortcut>
-  <shortcut
+  <!--<shortcut
   android:shortcutId="RFBot"
-  android:enabled="true"
+  android:enabled="false"
   android:icon="@drawable/ShortcutIcon_OldGFD"
   android:shortcutShortLabel="@string/Shortcut_RFBot_ShortLabel"
   android:shortcutLongLabel="@string/Shortcut_RFBot_LongLabel"
@@ -60,6 +60,18 @@
       android:action="android.intent.action.VIEW"
       android:targetPackage="com.gfl.dic"
       android:targetClass="com.gfl.dic.RFBotActivity"/>
+  </shortcut>-->
+  <shortcut
+  android:shortcutId="Cartoon"
+  android:enabled="true"
+  android:icon="@drawable/ShortcutIcon_Cartoon"
+  android:shortcutShortLabel="@string/Shortcut_Cartoon_ShortLabel"
+  android:shortcutLongLabel="@string/Shortcut_Cartoon_LongLabel"
+  android:shortcutDisabledMessage="@string/Shortcut_Cartoon_DisabledLabel">
+    <intent
+      android:action="android.intent.action.VIEW"
+      android:targetPackage="com.gfl.dic"
+      android:targetClass="com.gfl.dic.CartoonActivity"/>
   </shortcut>
   <!--<shortcut
     android:shortcutId="OSTPlayer"

@@ -55,6 +55,9 @@
   <string name="Shortcut_RFBot_ShortLabel">RFBot</string>
   <string name="Shortcut_RFBot_LongLabel">RFBot</string>
   <string name="Shortcut_RFBot_DisabledLabel">RFBot</string>
+  <string name="Shortcut_Cartoon_ShortLabel">Cartoon</string>
+  <string name="Shortcut_Cartoon_LongLabel">Cartoon</string>
+  <string name="Shortcut_Cartoon_DisabledLabel">Cartoon</string>
   
   <!--Solution String-->
   <string name="CheckingUpdate">Checking Updates...</string>

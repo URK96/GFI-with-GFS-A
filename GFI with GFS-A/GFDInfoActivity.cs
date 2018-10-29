@@ -96,6 +96,10 @@ namespace GFI_with_GFS_A
                 sb.Append("chlwlsgur96@hotmail.com\n\n");
                 sb.AppendFormat("{0}\n", Resources.GetString(Resource.String.GFDInfo_Developer_Bibitjyadame));
                 sb.Append("yuiroa@naver.com");
+                sb.Append("\n\n## Special Thanks ##\n\n");
+                sb.Append("츠보우\n");
+                sb.Append("잉여군\n");
+                sb.Append("MADCORE");
 
                 FindViewById<TextView>(Resource.Id.GFDInfoDeveloperInfo).Text = sb.ToString();
             }

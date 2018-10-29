@@ -385,6 +385,7 @@ namespace GFI_with_GFS_A
                         {
                             if ((ETC.EnableDynamicDB == true) && (ETC.DollList.TableName == "")) ETC.LoadDBSync(ETC.DollList, "Doll.gfs", false);
                             if (ETC.HasInitDollAvgAbility == false) ETC.InitializeAverageAbility();
+                            ETC.InitializeAverageAbility();
                         });
                         StartActivity(typeof(DollDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);

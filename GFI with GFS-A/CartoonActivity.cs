@@ -119,18 +119,7 @@ namespace GFI_with_GFS_A
                     Item_List.Clear();
                     Item_List.Add("...");
 
-                    switch (Category_Index)
-                    {
-                        case 0:
-                            Item_List.AddRange(Resources.GetStringArray(Resource.Array.kazensky_GF));
-                            break;
-                        case 1:
-                            Item_List.AddRange(Resources.GetStringArray(Resource.Array.GF_SF));
-                            break;
-                        case 2:
-                            Item_List.AddRange(Resources.GetStringArray(Resource.Array.GF_SF2));
-                            break;
-                    }
+                    ListItems(Category_Index, ref Item_List);
                     Item_List.TrimExcess();
 
                     var Item_Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, Item_List);
@@ -158,6 +147,28 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
+            }
+        }
+
+        internal void ListItems(int Category_Index, ref List<string> list)
+        {
+            switch (Category_Index)
+            {
+                case 0:
+                    list.AddRange(Resources.GetStringArray(Resource.Array.kazensky_GF));
+                    break;
+                case 1:
+                    list.AddRange(Resources.GetStringArray(Resource.Array.GF_SF));
+                    break;
+                case 2:
+                    list.AddRange(Resources.GetStringArray(Resource.Array.GF_SF2));
+                    break;
+                case 3:
+                    list.AddRange(Resources.GetStringArray(Resource.Array.GF_Guide));
+                    break;
+                case 4:
+                    list.AddRange(Resources.GetStringArray(Resource.Array.GF_DailyComic));
+                    break;
             }
         }
     }
@@ -227,18 +238,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(100);
 
-                switch (Category_Index)
-                {
-                    case 0:
-                        Selected_Item_List.AddRange(Resources.GetStringArray(Resource.Array.kazensky_GF));
-                        break;
-                    case 1:
-                        Selected_Item_List.AddRange(Resources.GetStringArray(Resource.Array.GF_SF));
-                        break;
-                    case 2:
-                        Selected_Item_List.AddRange(Resources.GetStringArray(Resource.Array.GF_SF2));
-                        break;
-                }
+                ((CartoonActivity)Activity).ListItems(Category_Index, ref Selected_Item_List);
                 Selected_Item_List.TrimExcess();
 
                 string Category_Path = Path.Combine(CartoonTopPath, Category);
@@ -263,13 +263,18 @@ namespace GFI_with_GFS_A
                 switch (Category_Index)
                 {
                     case 0:
-                        tv1.Text = "Creator : 츠보우 (kazensky)";
+                        tv1.Text = "Creator : 츠보우";
                         tv2.Text = "http://kazensky.blog.me/221115059226";
                         break;
                     case 1:
                     case 2:
                         tv1.Text = "Creator : 잉여군";
                         tv2.Text = "https://twitter.com/INGUKOON";
+                        break;
+                    case 3:
+                    case 4:
+                        tv1.Text = "Creator : MADCORE";
+                        tv2.Text = "https://www.pixiv.net/member.php?id=455690";
                         break;
                 }
 

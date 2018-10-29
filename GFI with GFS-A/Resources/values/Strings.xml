@@ -55,6 +55,9 @@
   <string name="Shortcut_RFBot_ShortLabel">RFBot</string>
   <string name="Shortcut_RFBot_LongLabel">RFBot</string>
   <string name="Shortcut_RFBot_DisabledLabel">RFBot</string>
+  <string name="Shortcut_Cartoon_ShortLabel">만화</string>
+  <string name="Shortcut_Cartoon_LongLabel">만화</string>
+  <string name="Shortcut_Cartoon_DisabledLabel">만화</string>
   
   <!--New - Cartoon String-->
   <string name="Cartoon_DownloadCartoonTitle">만화 다운로드</string>

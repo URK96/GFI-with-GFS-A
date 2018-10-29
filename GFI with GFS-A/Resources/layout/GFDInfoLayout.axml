@@ -60,47 +60,6 @@
                 android:gravity="center"
                 android:id="@+id/GFDInfoDeveloperInfo" />
         </ScrollView>
-    <!--<TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="총괄 &amp; 디자인 : 수매"
-                android:gravity="center" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="eveia@naver.com"
-                android:gravity="center" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="App 기능구현 &amp; 소스 제작 : URK96"
-                android:gravity="center" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="chlwlsgur96@hotmail.com"
-                android:gravity="center" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="App 검수 &amp; 확인 : 스텡"
-                android:gravity="center" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="yuiroa@naver.com"
-                android:gravity="center" />-->
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"

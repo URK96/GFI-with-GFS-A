@@ -116,15 +116,13 @@ namespace GFI_with_GFS_A
 
                 if (ETC.EnableDynamicDB == false)
                 {
-                    while (ETC.LoadDB() == false)
+                    while (await ETC.LoadDB() == false)
                     {
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.DB_Recovery, Snackbar.LengthShort);
 
                         if (ETC.IsServerDown == false) await ETC.UpdateDB(this);
                         else break;
                     }
-
-                    ETC.InitializeAverageAbility();
                 }
 
                 ETC.SetDialogTheme();

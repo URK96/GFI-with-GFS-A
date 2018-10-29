@@ -182,12 +182,12 @@ namespace GFI_with_GFS_A
                     if ((string)dr["Type"] != DollType) continue;
 
                     string name = "";
-                    if (ETC.Language.Language == "ko") name = (string)DollInfoDR["Name"];
+                    if (ETC.Language.Language == "ko") name = (string)dr["Name"];
                     else
                     {
-                        if (DollInfoDR["Name_EN"] == DBNull.Value) name = (string)DollInfoDR["Name"];
-                        else if (string.IsNullOrWhiteSpace((string)DollInfoDR["Name_EN"])) name = (string)DollInfoDR["Name"];
-                        else name = (string)DollInfoDR["Name_EN"];
+                        if (DollInfoDR["Name_EN"] == DBNull.Value) name = (string)dr["Name"];
+                        else if (string.IsNullOrWhiteSpace((string)DollInfoDR["Name_EN"])) name = (string)dr["Name"];
+                        else name = (string)dr["Name_EN"];
                     }
                     CompareList.Add(name);
                 }

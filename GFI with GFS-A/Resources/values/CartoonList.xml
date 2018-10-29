@@ -4,6 +4,8 @@
     <item>츠보우의 소녀전선</item>
     <item>그리폰 &amp; 철혈</item>
     <item>그리폰 &amp; 철혈 2</item>
+    <item>그리폰 안내서</item>
+    <item>그리폰 일상만화</item>
   </string-array>
 
   <string-array name="kazensky_GF">
@@ -120,5 +122,71 @@
     <item>6화</item>
     <item>7화</item>
     <item>8화</item>
+    <item>9화</item>
+  </string-array>
+
+  <string-array name="GF_Guide">
+    <item>1화</item>
+    <item>2화</item>
+    <item>3화</item>
+    <item>4화</item>
+    <item>5화</item>
+    <item>6화</item>
+    <item>7화</item>
+    <item>8화</item>
+    <item>9화</item>
+    <item>10화</item>
+    <item>11화</item>
+    <item>12화</item>
+    <item>13화</item>
+    <item>14화</item>
+    <item>15화</item>
+    <item>16화</item>
+    <item>17화</item>
+    <item>18화</item>
+  </string-array>
+
+  <string-array name="GF_DailyComic">
+    <item>1화</item>
+    <item>2화</item>
+    <item>3화</item>
+    <item>4화</item>
+    <item>5화</item>
+    <item>6화</item>
+    <item>7화</item>
+    <item>8화</item>
+    <item>9화</item>
+    <item>10화</item>
+    <item>11화</item>
+    <item>12화</item>
+    <item>13화</item>
+    <item>14화</item>
+    <item>15화</item>
+    <item>16화</item>
+    <item>17화</item>
+    <item>18화</item>
+    <item>19화</item>
+    <item>20화</item>
+    <item>21화</item>
+    <item>22화</item>
+    <item>23화</item>
+    <item>24화</item>
+    <item>25화</item>
+    <item>26화</item>
+    <item>27화</item>
+    <item>28화</item>
+    <item>29화</item>
+    <item>30화</item>
+    <item>31화</item>
+    <item>32화</item>
+    <item>33화</item>
+    <item>34화</item>
+    <item>35화</item>
+    <item>36화</item>
+    <item>37화</item>
+    <item>38화</item>
+    <item>39화</item>
+    <item>40화</item>
+    <item>41화</item>
   </string-array>
 </resources>

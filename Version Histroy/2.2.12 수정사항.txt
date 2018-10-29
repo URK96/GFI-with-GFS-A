@@ -1,0 +1,17 @@
+<2.2.12 수정사항>
+
+- 만화 컨텐츠 추가
+- 만화 카테고리 추가
+- Static Shortcut 메뉴 변경 (RFBot 제거, 만화 추가)
+- 인형 능력치 그래프 비교 목록에 인형이 한 종류만 채워지는 현상 수정
+- 기동 시 발생하는 평균 능력치 계산 오류 수정
+- 로그 파일 이름 형식 변경
+
+
+
+- Add Cartoon Chapter (Korean)
+- Add Cartoon Series (Korean)
+- Change Static Shortcut Menus (Remove RFBot, Add Cartoon)
+- Fix T-Doll Ability Graph Compare List issue
+- Fix calculating T-Doll average ability issue
+- Change Log file name format

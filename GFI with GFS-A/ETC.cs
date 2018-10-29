@@ -203,6 +203,7 @@ namespace GFI_with_GFS_A
                     case UptimeSharp.Models.Status.Pause:
                     case UptimeSharp.Models.Status.SeemsDown:
                     case UptimeSharp.Models.Status.Down:
+                    default:
                         IsServerDown = true;
                         break;
                 }
@@ -342,7 +343,38 @@ namespace GFI_with_GFS_A
             foreach (string path in SubPaths) if (Directory.Exists(path) == false) Directory.CreateDirectory(path);
         }
 
-        internal static bool LoadDB()
+        internal static async Task<bool> LoadDB()
+        {
+            await Task.Delay(1);
+
+            try
+            {
+                DollList.Clear();
+                DollList.ReadXml(Path.Combine(DBPath, "Doll.gfs"));
+                EquipmentList.Clear();
+                EquipmentList.ReadXml(Path.Combine(DBPath, "Equipment.gfs"));
+                FairyList.Clear();
+                FairyList.ReadXml(Path.Combine(DBPath, "Fairy.gfs"));
+                EnemyList.Clear();
+                EnemyList.ReadXml(Path.Combine(DBPath, "Enemy.gfs"));
+                FSTList.Clear();
+                FSTList.ReadXml(Path.Combine(DBPath, "FST.gfs"));
+                SkillTrainingList.Clear();
+                SkillTrainingList.ReadXml(Path.Combine(DBPath, "SkillTraining.gfs"));
+                MDSupportList.Clear();
+                MDSupportList.ReadXml(Path.Combine(DBPath, "MDSupportList.gfs"));
+                FreeOPList.Clear();
+                FreeOPList.ReadXml(Path.Combine(DBPath, "FreeOP.gfs"));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        internal static bool LoadDBSync()
         {
             try
             {
@@ -423,8 +455,8 @@ namespace GFI_with_GFS_A
                 {
                     using (StreamReader sr2 = new StreamReader(new FileStream(TempDBVerPath, FileMode.Open, FileAccess.Read)))
                     {
-                        int localVer = Convert.ToInt32(sr1.ReadToEnd());
-                        int serverVer = Convert.ToInt32(sr2.ReadToEnd());
+                        int localVer = int.Parse(sr1.ReadToEnd());
+                        int serverVer = int.Parse(sr2.ReadToEnd());
 
                         if (localVer < serverVer) HasDBUpdate = true;
                     }
@@ -456,8 +488,8 @@ namespace GFI_with_GFS_A
                 {
                     using (StreamReader sr2 = new StreamReader(new FileStream(TempEventVerPath, FileMode.Open, FileAccess.Read)))
                     {
-                        int localVer = Convert.ToInt32((sr1.ReadToEnd()).Split(';')[1]);
-                        int serverVer = Convert.ToInt32((sr2.ReadToEnd()).Split(';')[1]);
+                        int localVer = int.Parse(sr1.ReadToEnd().Split(';')[1]);
+                        int serverVer = int.Parse(sr2.ReadToEnd().Split(';')[1]);
 
                         if (localVer < serverVer) HasEventUpdate = true;
                     }
@@ -535,15 +567,16 @@ namespace GFI_with_GFS_A
             {
                 DateTime now = DateTime.Now;
 
-                string nowDateTime = now.Year.ToString() + now.Month.ToString() + now.Day.ToString() + now.Hour.ToString() + now.Minute.ToString() + now.Second.ToString();
-                string ErrorFileName = string.Format("{0}-ErrorLog.txt", nowDateTime);
+                //string nowDateTime = now.Year.ToString() + now.Month.ToString() + now.Day.ToString() + now.Hour.ToString() + now.Minute.ToString() + now.Second.ToString();
+                string nowDateTime = $"{now.Year}/{now.Month}/{now.Day} {now.Hour}:{now.Minute}:{now.Second}";
+                string ErrorFileName = $"{nowDateTime}-ErrorLog.txt";
 
                 using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
                 {
                     sw.Write(error);
                 } 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 activity.RunOnUiThread(() => { Toast.MakeText(activity, "Error Write Log", ToastLength.Long).Show(); });
             }
@@ -555,15 +588,16 @@ namespace GFI_with_GFS_A
             {
                 DateTime now = DateTime.Now;
 
-                string nowDateTime = now.Year.ToString() + now.Month.ToString() + now.Day.ToString() + now.Hour.ToString() + now.Minute.ToString() + now.Second.ToString();
-                string ErrorFileName = string.Format("{0}-ErrorLog.txt", nowDateTime);
+                //string nowDateTime = now.Year.ToString() + now.Month.ToString() + now.Day.ToString() + now.Hour.ToString() + now.Minute.ToString() + now.Second.ToString();
+                string nowDateTime = $"{now.Year}/{now.Month}/{now.Day} {now.Hour}:{now.Minute}:{now.Second}";
+                string ErrorFileName = $"{nowDateTime}-ErrorLog.txt";
 
                 using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
                 {
                     sw.Write(error);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 
             }
@@ -603,7 +637,7 @@ namespace GFI_with_GFS_A
 
         internal static string CalcTime(int minute)
         {
-            return string.Format("{0} : {1}", (minute / 60), (minute % 60).ToString("D2"));
+            return $"{minute / 60} : {(minute % 60).ToString("D2")}"; //string.Format("{0} : {1}", (minute / 60), (minute % 60).ToString("D2"));
         }
 
         internal class ADViewListener : Android.Gms.Ads.AdListener
