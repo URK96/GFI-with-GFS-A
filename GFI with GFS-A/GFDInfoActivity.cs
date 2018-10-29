@@ -24,6 +24,7 @@ namespace GFI_with_GFS_A
         ProgressDialog DownloadProgress;
 
         FloatingActionButton KakaoPlusFriendFAB;
+        FloatingActionButton DiscordFAB;
 
         private bool IsOpenFABMenu = false;
 
@@ -45,7 +46,9 @@ namespace GFI_with_GFS_A
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.GFDInfoSnackbarLayout);
 
                 KakaoPlusFriendFAB = FindViewById<FloatingActionButton>(Resource.Id.KakaoPlusFriendFAB);
-                KakaoPlusFriendFAB.Click += KakaoPlusFriendFAB_Click;
+                KakaoPlusFriendFAB.Click += HelpFAB_Click;
+                DiscordFAB = FindViewById<FloatingActionButton>(Resource.Id.DiscordFAB);
+                DiscordFAB.Click += HelpFAB_Click;
 
                 Initialize();
             }
@@ -56,12 +59,26 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void KakaoPlusFriendFAB_Click(object sender, EventArgs e)
+        private void HelpFAB_Click(object sender, EventArgs e)
         {
             try
             {
-                string url = "https://pf.kakao.com/_JEcmC/chat";
-                var intent = new Intent(Intent.ActionView, Android.Net.Uri.Parse(url));
+                FloatingActionButton fab = sender as FloatingActionButton;
+
+                Intent intent = null;
+                string url = "";
+
+                switch (fab.Id)
+                {
+                    case Resource.Id.KakaoPlusFriendFAB:
+                        url = "https://pf.kakao.com/_JEcmC/chat";
+                        break;
+                    case Resource.Id.DiscordFAB:
+                        url = "https://discord.gg/sWRw4MN";
+                        break;
+                }
+
+                intent = new Intent(Intent.ActionView, Android.Net.Uri.Parse(url));
                 StartActivity(intent);
             }
             catch (Exception ex)

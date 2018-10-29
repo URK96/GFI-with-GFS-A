@@ -348,17 +348,19 @@ namespace GFI_with_GFS_A
 
         public override void OnBackPressed()
         {
-            base.OnBackPressed();
-
             if (MainDrawerLayout.IsDrawerOpen(GravityCompat.Start) == true)
             {
                 MainDrawerLayout.CloseDrawer(GravityCompat.Start);
                 return;
             }
+            else
+            {
+                ETC.OSTPlayer = MusicRepository.player;
+                ETC.OST_Index[0] = MusicRepository.CategoryIndex;
+                ETC.OST_Index[1] = MusicRepository.ItemIndex;
 
-            ETC.OSTPlayer = MusicRepository.player;
-            ETC.OST_Index[0] = MusicRepository.CategoryIndex;
-            ETC.OST_Index[1] = MusicRepository.ItemIndex;
+                base.OnBackPressed();
+            }
         }
     }
 

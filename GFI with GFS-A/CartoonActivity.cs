@@ -171,6 +171,16 @@ namespace GFI_with_GFS_A
                     break;
             }
         }
+
+        public override void OnBackPressed()
+        {
+            if (MainDrawerLayout.IsDrawerOpen(GravityCompat.Start) == true)
+            {
+                MainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                return;
+            }
+            else base.OnBackPressed();
+        }
     }
 
     public class CartoonScreen : Android.Support.V4.App.Fragment
