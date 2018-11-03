@@ -46,7 +46,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(1000);
 
-                string temp_text1 = "Zina Protocol OS [Ver. 1.0.0]\n";
+                string temp_text1 = "Zina Protocol OS [Ver. 1.0.1]\n";
 
                 for (int i = 0; i < temp_text1.Length; ++i)
                 {

@@ -25,6 +25,8 @@ namespace GFI_with_GFS_A
 
             // Create your application here
             SetContentView(Resource.Layout.TestLayout);
+
+
         }
     }
 }
