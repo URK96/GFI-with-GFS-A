@@ -66,8 +66,10 @@ namespace GFI_with_GFS_A
 
                 RefreshCacheFAB = FindViewById<FloatingActionButton>(Resource.Id.EquipDBDetailRefreshCacheFAB);
                 RefreshCacheFAB.Click += RefreshCacheFAB_Click;
+                RefreshCacheFAB.LongClick += DBDetailFAB_LongClick;
                 PercentTableFAB = FindViewById<FloatingActionButton>(Resource.Id.EquipDBDetailProductPercentFAB);
                 PercentTableFAB.Click += PercentTableFAB_Click;
+                PercentTableFAB.LongClick += DBDetailFAB_LongClick;
 
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EquipDBDetailSnackbarLayout);
 
@@ -80,6 +82,32 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.Activity_OnCreateError, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+            }
+        }
+
+        private void DBDetailFAB_LongClick(object sender, View.LongClickEventArgs e)
+        {
+            try
+            {
+                FloatingActionButton fab = sender as FloatingActionButton;
+
+                string tip = "";
+
+                switch (fab.Id)
+                {
+                    case Resource.Id.EquipDBDetailRefreshCacheFAB:
+                        tip = Resources.GetString(Resource.String.Tooltip_DB_CacheRefresh);
+                        break;
+                    case Resource.Id.EquipDBDetailProductPercentFAB:
+                        tip = Resources.GetString(Resource.String.Tooltip_DB_ProductPercentage);
+                        break;
+                }
+
+                Toast.MakeText(this, tip, ToastLength.Short).Show();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
             }
         }
 

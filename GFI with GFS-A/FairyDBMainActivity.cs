@@ -136,18 +136,51 @@ namespace GFI_with_GFS_A
             else
             {
                 if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate { ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(FairyCropImageDownloadProcess)); };
+
+                refresh_fab.LongClick += MainFAB_fab_LongClick;
             }
 
             filter_fab = FindViewById<FloatingActionButton>(Resource.Id.FairyFilterFAB);
             if (filter_fab.HasOnClickListeners == false) filter_fab.Click += Filter_Fab_Click;
+            filter_fab.LongClick += MainFAB_fab_LongClick;
 
             array_fab = FindViewById<FloatingActionButton>(Resource.Id.FairyArrayFAB);
             if (array_fab.HasOnClickListeners == false) array_fab.Click += Array_fab_Click;
+            array_fab.LongClick += MainFAB_fab_LongClick;
 
             ImageButton SearchResetButton = FindViewById<ImageButton>(Resource.Id.FairySearchResetButton);
             if (SearchResetButton.HasOnClickListeners == false) SearchResetButton.Click += SearchResetButton_Click;
 
             SearchText.TextChanged += SearchText_TextChanged;
+        }
+
+        private void MainFAB_fab_LongClick(object sender, View.LongClickEventArgs e)
+        {
+            try
+            {
+                FloatingActionButton fab = sender as FloatingActionButton;
+
+                string tip = "";
+
+                switch (fab.Id)
+                {
+                    case Resource.Id.FairyRefreshCacheFAB:
+                        tip = Resources.GetString(Resource.String.Tooltip_DB_CacheRefresh);
+                        break;
+                    case Resource.Id.FairyFilterFAB:
+                        tip = Resources.GetString(Resource.String.Tooltip_DB_Filter);
+                        break;
+                    case Resource.Id.FairyArrayFAB:
+                        tip = Resources.GetString(Resource.String.Tooltip_DB_LineUp);
+                        break;
+                }
+
+                Toast.MakeText(this, tip, ToastLength.Short).Show();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+            }
         }
 
         private void Array_fab_Click(object sender, EventArgs e)

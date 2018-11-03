@@ -77,6 +77,13 @@ namespace GFI_with_GFS_A
                 InvenFAB.Click += MainSubFAB_Click;
                 BaseFAB.Click += MainSubFAB_Click;
 
+                RefreshCacheFAB.LongClick += DBDetailFAB_LongClick;
+                PercentTableFAB.LongClick += DBDetailFAB_LongClick;
+                MainFAB.LongClick += DBDetailFAB_LongClick;
+                GFDBFAB.LongClick += DBDetailFAB_LongClick;
+                InvenFAB.LongClick += DBDetailFAB_LongClick;
+                BaseFAB.LongClick += DBDetailFAB_LongClick;
+
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FairyDBSnackbarLayout);
 
                 FABTimer.Interval = 3000;
@@ -88,6 +95,45 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(this, ex.ToString());
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
+            }
+        }
+
+        private void DBDetailFAB_LongClick(object sender, View.LongClickEventArgs e)
+        {
+            try
+            {
+                FloatingActionButton fab = sender as FloatingActionButton;
+
+                string tip = "";
+
+                switch (fab.Id)
+                {
+                    case Resource.Id.FairyDBDetailRefreshCacheFAB:
+                        tip = Resources.GetString(Resource.String.Tooltip_DB_CacheRefresh);
+                        break;
+                    case Resource.Id.FairyDBDetailProductPercentFAB:
+                        tip = Resources.GetString(Resource.String.Tooltip_DB_ProductPercentage);
+                        break;
+                    case Resource.Id.FairyDBDetailSideLinkMainFAB:
+                        if (IsEnableFABMenu == false) return;
+                        tip = Resources.GetString(Resource.String.Tooltip_DB_SideLink);
+                        break;
+                    case Resource.Id.SideLinkFAB1:
+                        tip = Resources.GetString(Resource.String.Tooltip_SideLink_GFDB);
+                        break;
+                    case Resource.Id.SideLinkFAB2:
+                        tip = Resources.GetString(Resource.String.Tooltip_SideLink_Inven);
+                        break;
+                    case Resource.Id.SideLinkFAB3:
+                        tip = Resources.GetString(Resource.String.Tooltip_SideLink_36Base);
+                        break;
+                }
+
+                Toast.MakeText(this, tip, ToastLength.Short).Show();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
             }
         }
 

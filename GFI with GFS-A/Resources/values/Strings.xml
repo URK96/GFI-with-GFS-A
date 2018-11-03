@@ -59,6 +59,19 @@
   <string name="Shortcut_Cartoon_LongLabel">만화</string>
   <string name="Shortcut_Cartoon_DisabledLabel">만화</string>
   
+  <!--New - Tooltip String-->
+  <string name="Tooltip_GFDInfo_KakaoPlus">카카오 플러스 친구 연결</string>
+  <string name="Tooltip_GFDInfo_Discord">디스코드 연결</string>
+  <string name="Tooltip_DB_CacheRefresh">캐시 갱신</string>
+  <string name="Tooltip_DB_LineUp">정렬</string>
+  <string name="Tooltip_DB_Filter">목록 필터</string>
+  <string name="Tooltip_DB_SideLink">외부 링크</string>
+  <string name="Tooltip_DB_ProductPercentage">제조 확률</string>
+  <string name="Tooltip_SideLink_Inven">인벤</string>
+  <string name="Tooltip_SideLink_NamuWiki">나무위키</string>
+  <string name="Tooltip_SideLink_36Base">36 베이스</string>
+  <string name="Tooltip_SideLink_GFDB">소전 DB</string>
+  
   <!--New - Cartoon String-->
   <string name="Cartoon_DownloadCartoonTitle">만화 다운로드</string>
   <string name="Cartoon_DownloadCartoonMessage">만화 파일을 다운로드 중...</string>

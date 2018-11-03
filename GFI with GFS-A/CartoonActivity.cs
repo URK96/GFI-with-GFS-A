@@ -138,7 +138,7 @@ namespace GFI_with_GFS_A
                             IsCategory = true;
                             break;
                         default:
-                            ((CartoonScreen)CartoonScreen_F).LoadProcess(Category_List[Category_Index], Category_Index, (e.Position - 1));
+                            ((CartoonScreen)CartoonScreen_F).LoadProcess(Category_List[Category_Index], Category_Index, (e.Position - 1), false);
                             MainDrawerLayout.CloseDrawer(GravityCompat.Start);
                             break;
                     }
@@ -191,6 +191,7 @@ namespace GFI_with_GFS_A
         private ProgressBar LoadProgress;
         private Button PreviousButton;
         private Button NextButton;
+        private ImageButton RefreshButton;
         private TextView NowCartoonText;
 
         private List<string> Selected_Item_List = new List<string>();
@@ -208,15 +209,17 @@ namespace GFI_with_GFS_A
             MainLayout = v.FindViewById<LinearLayout>(Resource.Id.CartoonScreenMainLayout);
             LoadProgress = v.FindViewById<ProgressBar>(Resource.Id.CartoonScreenLoadProgress);
             PreviousButton = v.FindViewById<Button>(Resource.Id.CartoonScreenPreviousButton);
-            PreviousButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index - 1); };
+            PreviousButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index - 1, false); };
             NextButton = v.FindViewById<Button>(Resource.Id.CartoonScreenNextButton);
-            NextButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index + 1); };
+            NextButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index + 1, false); };
+            RefreshButton = v.FindViewById<ImageButton>(Resource.Id.CartoonScreenRefreshButton);
+            RefreshButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Category_Index, true); };
             NowCartoonText = v.FindViewById<TextView>(Resource.Id.CartoonScreenNowCartoonText);
 
             return v;
         }
 
-        internal async Task LoadProcess(string Category, int Category_Index, int Item_Index)
+        internal async Task LoadProcess(string Category, int Category_Index, int Item_Index, bool IsRefresh)
         {
             Now_Item_Index = Item_Index;
             Now_Category_Index = Category_Index;
@@ -253,6 +256,8 @@ namespace GFI_with_GFS_A
 
                 string Category_Path = Path.Combine(CartoonTopPath, Category);
                 string Item_Path = Path.Combine(Category_Path, Item_Index.ToString());
+
+                if (IsRefresh == true) Directory.Delete(Item_Path, true);
 
                 if (Directory.Exists(Category_Path) == false) Directory.CreateDirectory(Category_Path);
                 if (Directory.Exists(Item_Path) == false)

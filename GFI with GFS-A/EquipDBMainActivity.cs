@@ -146,18 +146,51 @@ namespace GFI_with_GFS_A
                     }
                     ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EquipCropImageDownloadProcess));
                 };
+
+                refresh_fab.LongClick += MainFAB_LongClick;
             }
 
             filter_fab = FindViewById<FloatingActionButton>(Resource.Id.EquipFilterFAB);
             if (filter_fab.HasOnClickListeners == false) filter_fab.Click += Filter_fab_Click;
+            filter_fab.LongClick += MainFAB_LongClick;
 
             array_fab = FindViewById<FloatingActionButton>(Resource.Id.EquipArrayFAB);
             if (array_fab.HasOnClickListeners == false) array_fab.Click += Array_fab_Click;
+            array_fab.LongClick += MainFAB_LongClick;
 
             ImageButton SearchResetButton = FindViewById<ImageButton>(Resource.Id.EquipSearchResetButton);
             if (SearchResetButton.HasOnClickListeners == false) SearchResetButton.Click += SearchResetButton_Click;
 
             SearchText.TextChanged += SearchText_TextChanged;
+        }
+
+        private void MainFAB_LongClick(object sender, View.LongClickEventArgs e)
+        {
+            try
+            {
+                FloatingActionButton fab = sender as FloatingActionButton;
+
+                string tip = "";
+
+                switch (fab.Id)
+                {
+                    case Resource.Id.EquipRefreshCacheFAB:
+                        tip = Resources.GetString(Resource.String.Tooltip_DB_CacheRefresh);
+                        break;
+                    case Resource.Id.EquipFilterFAB:
+                        tip = Resources.GetString(Resource.String.Tooltip_DB_Filter);
+                        break;
+                    case Resource.Id.EquipArrayFAB:
+                        tip = Resources.GetString(Resource.String.Tooltip_DB_LineUp);
+                        break;
+                }
+
+                Toast.MakeText(this, tip, ToastLength.Short).Show();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+            }
         }
 
         private void Array_fab_Click(object sender, EventArgs e)

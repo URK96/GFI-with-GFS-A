@@ -47,6 +47,7 @@ namespace GFI_with_GFS_A
 
                 KakaoPlusFriendFAB = FindViewById<FloatingActionButton>(Resource.Id.KakaoPlusFriendFAB);
                 KakaoPlusFriendFAB.Click += HelpFAB_Click;
+                KakaoPlusFriendFAB.LongClick += HelpFAB_LongClick;
                 DiscordFAB = FindViewById<FloatingActionButton>(Resource.Id.DiscordFAB);
                 DiscordFAB.Click += HelpFAB_Click;
 
@@ -56,6 +57,32 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(this, ex.ToString());
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
+            }
+        }
+
+        private void HelpFAB_LongClick(object sender, View.LongClickEventArgs e)
+        {
+            try
+            {
+                FloatingActionButton fab = sender as FloatingActionButton;
+
+                string tip = "";
+
+                switch (fab.Id)
+                {
+                    case Resource.Id.KakaoPlusFriendFAB:
+                        tip = Resources.GetString(Resource.String.Tooltip_GFDInfo_KakaoPlus);
+                        break;
+                    case Resource.Id.DiscordFAB:
+                        tip = Resources.GetString(Resource.String.Tooltip_GFDInfo_Discord);
+                        break;
+                }
+
+                Toast.MakeText(this, tip, ToastLength.Short).Show();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
             }
         }
 

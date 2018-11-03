@@ -135,15 +135,44 @@ namespace GFI_with_GFS_A
 
                     ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EnemyCropImageDownloadProcess));
                 };
+
+                refresh_fab.LongClick += MainFAB_fab_LongClick;
             }
 
             filter_fab = FindViewById<FloatingActionButton>(Resource.Id.EnemyFilterFAB);
             if (filter_fab.HasOnClickListeners == false) filter_fab.Click += Filter_Fab_Click;
+            filter_fab.LongClick += MainFAB_fab_LongClick;
 
             ImageButton SearchResetButton = FindViewById<ImageButton>(Resource.Id.EnemySearchResetButton);
             if (SearchResetButton.HasOnClickListeners == false) SearchResetButton.Click += SearchResetButton_Click;
 
             SearchText.TextChanged += SearchText_TextChanged;
+        }
+
+        private void MainFAB_fab_LongClick(object sender, View.LongClickEventArgs e)
+        {
+            try
+            {
+                FloatingActionButton fab = sender as FloatingActionButton;
+
+                string tip = "";
+
+                switch (fab.Id)
+                {
+                    case Resource.Id.EnemyRefreshCacheFAB:
+                        tip = Resources.GetString(Resource.String.Tooltip_DB_CacheRefresh);
+                        break;
+                    case Resource.Id.EnemyFilterFAB:
+                        tip = Resources.GetString(Resource.String.Tooltip_DB_Filter);
+                        break;
+                }
+
+                Toast.MakeText(this, tip, ToastLength.Short).Show();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+            }
         }
 
         private void InitProcess()

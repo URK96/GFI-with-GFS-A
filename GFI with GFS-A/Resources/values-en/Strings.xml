@@ -59,6 +59,19 @@
   <string name="Shortcut_Cartoon_LongLabel">Cartoon</string>
   <string name="Shortcut_Cartoon_DisabledLabel">Cartoon</string>
   
+   <!--New - Tooltip String-->
+  <string name="Tooltip_GFDInfo_KakaoPlus">Link Kakao Plus Friend</string>
+  <string name="Tooltip_GFDInfo_Discord">Link Discord</string>
+  <string name="Tooltip_DB_CacheRefresh">Refresh Cache</string>
+  <string name="Tooltip_DB_LineUp">Line Up</string>
+  <string name="Tooltip_DB_Filter">Filter</string>
+  <string name="Tooltip_DB_SideLink">Side Link</string>
+  <string name="Tooltip_DB_ProductPercentage">Product Percentage</string>
+  <string name="Tooltip_SideLink_Inven">Inven</string>
+  <string name="Tooltip_SideLink_NamuWiki">Namu Wiki</string>
+  <string name="Tooltip_SideLink_36Base">36 Base</string>
+  <string name="Tooltip_SideLink_GFDB">GF DB</string>
+  
   <!--Solution String-->
   <string name="CheckingUpdate">Checking Updates...</string>
   <string name="Splash_SkipCheckUpdate">Skipping the update checking</string>

@@ -102,7 +102,7 @@ namespace GFI_with_GFS_A
             Resource.Drawable.Extra_CalcSelector,
             Resource.Drawable.Extra_RFBotSelector,
             Resource.Drawable.Extra_ProductSimulatorSelector,
-            Resource.Drawable.Extra_RFBotSelector,
+            Resource.Drawable.Extra_CartoonSelector,
             Resource.Drawable.Extra_OSTPlayerSelector
         };
         readonly int[] ExtraMenuButtonBackgroundIds_Orange =
@@ -112,7 +112,7 @@ namespace GFI_with_GFS_A
             Resource.Drawable.Extra_CalcSelector_Orange,
             Resource.Drawable.Extra_RFBotSelector_Orange,
             Resource.Drawable.Extra_ProductSimulatorSelector_Orange,
-            Resource.Drawable.Extra_RFBotSelector_Orange,
+            Resource.Drawable.Extra_CartoonSelector_Orange,
             Resource.Drawable.Extra_OSTPlayerSelector_Orange
         };
         readonly string[] ExtraMenuButtonText =
