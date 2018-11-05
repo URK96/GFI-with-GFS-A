@@ -504,11 +504,11 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.10 수정사항]\n\n
-- 만화 뷰어 기능 개선\n
-- 만화 카테고리 추가\n
-- 소전사전 v1 이미지가 짤려 나오는 현상 수정\n
-- 메모리 관련 최적화\n
+    [2.2.13 수정사항]\n\n
+- 만화 캐시 갱신 버튼 추가\n
+- 플로팅 버튼을 길게 누르면 해당 버튼의 기능이 툴팁으로 표시되는 기능 추가\n
+- 만화 버튼 이미지 추가\n
+- 만화 다운로드 창 메시지 수정\n
   </string>
 
   <string name="RFBot_CommandHelp">

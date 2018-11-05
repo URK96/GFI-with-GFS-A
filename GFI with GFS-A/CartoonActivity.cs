@@ -202,6 +202,9 @@ namespace GFI_with_GFS_A
 
         private string CartoonTopPath = Path.Combine(ETC.CachePath, "Cartoon");
 
+        private Android.Support.V7.App.AlertDialog dialog;
+        private int count = 0;
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             v = inflater.Inflate(Resource.Layout.CartoonScreenLayout, container, false);
@@ -213,7 +216,7 @@ namespace GFI_with_GFS_A
             NextButton = v.FindViewById<Button>(Resource.Id.CartoonScreenNextButton);
             NextButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index + 1, false); };
             RefreshButton = v.FindViewById<ImageButton>(Resource.Id.CartoonScreenRefreshButton);
-            RefreshButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Category_Index, true); };
+            RefreshButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index, true); };
             NowCartoonText = v.FindViewById<TextView>(Resource.Id.CartoonScreenNowCartoonText);
 
             return v;
@@ -378,17 +381,16 @@ namespace GFI_with_GFS_A
             ad.SetCancelable(false);
             ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
 
-            var dialog = ad.Show();
+            dialog = ad.Show();
 
             try
             {
+                string message = Resources.GetString(Resource.String.Cartoon_DownloadCartoonMessage);
                 string ServerItemPath = Path.Combine(ETC.Server, "Data", "Images", "Cartoon", "ko", Category, Selected_Item_List[Item_Index]);
-                int count = 1;
+                count = 1;
 
                 while (true)
                 {
-                    ad.SetMessage($"{Resource.String.Cartoon_DownloadCartoonMessage}i");
-
                     string ContentPath = Path.Combine(ServerItemPath, $"{count}.png");
                     string ContentPath_local = Path.Combine(CartoonTopPath, Category, Item_Index.ToString(), $"{count}.gfdcache");
                     WebRequest request = WebRequest.Create(ContentPath);
@@ -400,6 +402,7 @@ namespace GFI_with_GFS_A
 
                     using (WebClient wc = new WebClient())
                     {
+                        wc.DownloadProgressChanged += Wc_DownloadProgressChanged;
                         await wc.DownloadFileTaskAsync(ContentPath, ContentPath_local);
                     }
 
@@ -414,6 +417,12 @@ namespace GFI_with_GFS_A
             {
                 dialog.Dismiss();
             }
+        }
+
+        private void Wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            string message = Resources.GetString(Resource.String.Cartoon_DownloadCartoonMessage);
+            Activity.RunOnUiThread(() => { dialog.SetMessage($"{message}{count}({e.ProgressPercentage}%)"); });
         }
     }
 }

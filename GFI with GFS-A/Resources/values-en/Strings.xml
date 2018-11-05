@@ -502,11 +502,11 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.10 Update Log]\n\n
-- Improve Cartoon Viewer\n
-- Add Cartoon Series (Korean)\n
-- Fix GFD v1 imgae croping issue\n
-- Optimize Memory\n
+    [2.2.13 Update Log]\n\n
+- Add Refresh Cache in Cartoon Feature\n
+- Add Tooltip on Long Click Floating Button\n
+- Add Cartoon Button Image Resource\n
+- Edit Cartoon Download Dialog Message\n
   </string>
 
   <string name="RFBot_CommandHelp">

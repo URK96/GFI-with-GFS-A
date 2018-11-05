@@ -2,9 +2,11 @@
 
 - 만화 캐시 갱신 버튼 추가
 - 플로팅 버튼을 길게 누르면 해당 버튼의 기능이 툴팁으로 표시되는 기능 추가
-- 만화 버튼 이미지 추가 
+- 만화 버튼 이미지 추가
+- 만화 다운로드 창 메시지 수정
 
 
 - Add Refresh Cache in Cartoon Feature
 - Add Tooltip on Long Click Floating Button
 - Add Cartoon Button Image Resource
+- Edit Cartoon Download Dialog Message
