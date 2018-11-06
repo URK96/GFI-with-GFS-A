@@ -404,6 +404,8 @@
   
   <!--Setting Menus-->
   <string name="Setting_Category_App">일반</string>
+  <string name="Setting_UpdateLog_Title">업데이트 내역</string>
+  <string name="Setting_UpdateLog_Summary">이 버전의 업데이트 내역을 열람합니다.</string>
   <string name="Setting_StartAppMode_Title">앱 기동 모드</string>
   <string name="Setting_StartAppMode_Summary">소전사전 시작 시 바로 표시될 메뉴 항목을 선택합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
   <string name="Setting_LowMemoryOption_Title">저사양 옵션 활성화</string>

@@ -2,6 +2,10 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
   <android.support.v7.preference.PreferenceCategory
     android:title="@string/Setting_Category_App">
+    <android.support.v7.preference.Preference
+      android:key="UpdateLog"
+      android:title="@string/Setting_UpdateLog_Title"
+      android:summary="@string/Setting_UpdateLog_Summary"/>
     <android.support.v7.preference.ListPreference
       android:key="StartAppMode"
       android:title="@string/Setting_StartAppMode_Title"

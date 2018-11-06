@@ -82,6 +82,25 @@ namespace GFI_with_GFS_A
         {
             SaveSetting =  ETC.sharedPreferences.Edit();
 
+            Preference UpdateLog = FindPreference("UpdateLog");
+            UpdateLog.PreferenceClick += delegate
+            {
+                Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG_Vertical);
+                ad.SetTitle(Resource.String.NewFeatureDialog_Title);
+                ad.SetMessage(Resource.String.NewFeature);
+                ad.SetCancelable(true);
+                ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
+
+                try
+                {
+                    ad.Show();
+                }
+                catch (Exception ex)
+                {
+                    ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_NotificationInitializeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                }
+            };
+
             ListPreference StartAppMode = (ListPreference)FindPreference("StartAppMode");
             if (ETC.UseLightTheme == true) StartAppMode.SetIcon(Resource.Drawable.AppStartModeIcon_WhiteTheme);
             else StartAppMode.SetIcon(Resource.Drawable.AppStartModeIcon);

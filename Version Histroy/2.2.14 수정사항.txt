@@ -1,0 +1,8 @@
+<2.2.14 수정사항>
+
+- 만화 컨텐츠 추가 (그리폰 일상만화 42~50화)
+- 설정에 해당 버전의 업데이트 내역 열람 기능 추가
+
+
+- Add Cartoon Content
+- Add Setting Content (Open Update Log in this version)

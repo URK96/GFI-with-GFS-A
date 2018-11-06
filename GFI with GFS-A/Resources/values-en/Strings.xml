@@ -402,6 +402,8 @@
 
   <!--Setting Menus-->
   <string name="Setting_Category_App">App</string>
+  <string name="Setting_UpdateLog_Title">Update Log</string>
+  <string name="Setting_UpdateLog_Summary">Open update log of this app version.</string>
   <string name="Setting_StartAppMode_Title">App Start Mode</string>
   <string name="Setting_StartAppMode_Summary">Select the menu item that will be displayed as soon as the app starts. After setup, the app must be restarted before it takes effect.</string>
   <string name="Setting_LowMemoryOption_Title">Enable Low Memory Option</string>
