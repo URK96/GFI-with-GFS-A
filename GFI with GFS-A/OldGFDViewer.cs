@@ -91,9 +91,22 @@ namespace GFI_with_GFS_A
 
                 ImageList.Adapter = ImageListAdapter;
 
+                if (CheckImage() == false)
+                {
+                    Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
+                    builder.SetTitle(Resource.String.UpdateDialog_Title);
+                    builder.SetMessage(Resource.String.UpdateDialog_Message);
+                    builder.SetCancelable(true);
+                    builder.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate { await DownloadGFDImage(); });
+                    builder.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+
+                    var dialog = builder.Create();
+                    dialog.Show();
+                }
+
                 ShowImage(0);
 
-                await Task.Delay(1000);
+                await Task.Delay(500);
 
                 await CheckUpdate();
             }
@@ -167,6 +180,16 @@ namespace GFI_with_GFS_A
             }
         }
 
+        private bool CheckImage()
+        {
+            foreach (string s in ImageName)
+            {
+                if (File.Exists(Path.Combine(ETC.CachePath, "OldGFD", "Images", s + ".gfdcache")) == false) return true;
+            }
+
+            return false;
+        }
+
         private async Task CheckUpdate()
         {
             await Task.Delay(100);
@@ -175,14 +198,7 @@ namespace GFI_with_GFS_A
 
             try
             {
-                foreach (string s in ImageName)
-                {
-                    if (File.Exists(Path.Combine(ETC.CachePath, "OldGFD", "Images", s + ".gfdcache")) == false)
-                    {
-                        IsMissing = true;
-                        break;
-                    }
-                }
+                IsMissing = CheckImage();
 
                 if (IsMissing == false)
                 {

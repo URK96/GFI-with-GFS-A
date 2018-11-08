@@ -375,7 +375,7 @@ namespace GFI_with_GFS_A
 
         private async Task DownloadCartoon(string Category, int Item_Index)
         {
-            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
+            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG_Download);
             ad.SetTitle(Resource.String.Cartoon_DownloadCartoonTitle);
             ad.SetMessage(Resource.String.Cartoon_DownloadCartoonMessage);
             ad.SetCancelable(false);

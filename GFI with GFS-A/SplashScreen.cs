@@ -21,7 +21,7 @@ using System.Diagnostics;
 namespace GFI_with_GFS_A
 {
     [MetaData("android.app.shortcuts", Resource = "@xml/appshortcut")]
-    [Activity(Label = "소전사전", MainLauncher = true, Theme = "@style/GFS.Splash", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(MainLauncher = true, Theme = "@style/GFS.Splash", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SplashScreen : AppCompatActivity
     {
         private CoordinatorLayout SnackbarLayout = null;
@@ -52,6 +52,7 @@ namespace GFI_with_GFS_A
 
                 // Set our view from the "main" layout resource
                 SetContentView(Resource.Layout.SplashLayout);
+                SetTitle(Resource.String.app_name);
 
                 indicator = new SfBusyIndicator(this)
                 {

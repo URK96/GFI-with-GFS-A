@@ -521,9 +521,9 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                Random R = new Random();
+                Random R = new Random(DateTime.Now.Millisecond);
                 int seed_num1 = (num1 + num2 + num3 + num4) / (AvailableDoll.Count / 10);
-                int seed_num2 = (num1 + num2 + num3 + num4);
+                int seed_num2 = num1 + num2 + num3 + num4;
 
                 int[] tP = { 60, 27, 10, 3 };
                 int[] tAP1 = { 40, 45, 15 };
