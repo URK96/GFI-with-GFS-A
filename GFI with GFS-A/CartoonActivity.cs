@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Net;
 using Android.Graphics.Drawables;
+using Android.Webkit;
 
 namespace GFI_with_GFS_A
 {
@@ -138,7 +139,8 @@ namespace GFI_with_GFS_A
                             IsCategory = true;
                             break;
                         default:
-                            ((CartoonScreen)CartoonScreen_F).LoadProcess(Category_List[Category_Index], Category_Index, (e.Position - 1), false);
+                            if (Category_Index == 5) ((CartoonScreen)CartoonScreen_F).LoadProcess_Web(Category_List[Category_Index], Category_Index, (e.Position - 1), false);
+                            else ((CartoonScreen)CartoonScreen_F).LoadProcess(Category_List[Category_Index], Category_Index, (e.Position - 1), false);
                             MainDrawerLayout.CloseDrawer(GravityCompat.Start);
                             break;
                     }
@@ -169,6 +171,9 @@ namespace GFI_with_GFS_A
                 case 4:
                     list.AddRange(Resources.GetStringArray(Resource.Array.GF_DailyComic));
                     break;
+                case 5:
+                    list.AddRange(Resources.GetStringArray(Resource.Array.mota6nako_GF));
+                    break;
             }
         }
 
@@ -195,6 +200,7 @@ namespace GFI_with_GFS_A
         private TextView NowCartoonText;
 
         private List<string> Selected_Item_List = new List<string>();
+        private List<string> Selected_Item_URL_List = new List<string>();
 
         private string Now_Category = "";
         private int Now_Category_Index = 0;
@@ -309,7 +315,6 @@ namespace GFI_with_GFS_A
 
                 MainLayout.AddView(layout);
 
-
                 List<string> Files = Directory.GetFiles(Item_Path).ToList();
                 Files.TrimExcess();
                 Files.Sort(SortCartoonList);
@@ -362,6 +367,72 @@ namespace GFI_with_GFS_A
             {
                 ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
                 NowCartoonText.Text = Selected_Item_List[Item_Index];
+            }
+        }
+
+        internal async Task LoadProcess_Web(string Category, int Category_Index, int Item_Index, bool IsRefresh)
+        {
+            Now_Item_Index = Item_Index;
+            Now_Category_Index = Category_Index;
+            Now_Category = Category;
+
+            try
+            {
+                if (Item_Index == 0)
+                {
+                    PreviousButton.Enabled = false;
+                    NextButton.Enabled = true;
+                }
+                else if (Item_Index == (Selected_Item_List.Count - 1))
+                {
+                    PreviousButton.Enabled = true;
+                    NextButton.Enabled = false;
+                }
+                else
+                {
+                    PreviousButton.Enabled = true;
+                    NextButton.Enabled = true;
+                }
+
+                LoadProgress.Visibility = ViewStates.Visible;
+                ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
+                Selected_Item_List.Clear();
+                Selected_Item_URL_List.Clear();
+
+                MainLayout.RemoveAllViews();
+
+                await Task.Delay(100);
+
+                ((CartoonActivity)Activity).ListItems(Category_Index, ref Selected_Item_List);
+                ListItemURLs(Category_Index, ref Selected_Item_URL_List);
+                Selected_Item_List.TrimExcess();
+                Selected_Item_URL_List.TrimExcess();
+
+                WebView webview = new WebView(Activity);
+                webview.SetWebViewClient(new WebBrowserWebClient());
+                webview.Settings.BuiltInZoomControls = true;
+                webview.Settings.AllowContentAccess = true;
+                webview.Settings.BlockNetworkImage = false;
+                webview.Settings.BlockNetworkLoads = false;
+                webview.Settings.LoadsImagesAutomatically = true;
+                webview.Settings.DomStorageEnabled = true;
+                webview.Settings.MixedContentMode = MixedContentHandling.AlwaysAllow;
+                webview.Settings.SetAppCacheEnabled(true);
+                webview.Settings.JavaScriptEnabled = true;
+
+                MainLayout.AddView(webview);
+                webview.LoadUrl(Selected_Item_URL_List[Now_Item_Index]);
+
+                LoadProgress.Visibility = ViewStates.Invisible;
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(Activity, ex.ToString());
+            }
+            finally
+            {
+                ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
+                //NowCartoonText.Text = Selected_Item_List[Item_Index];
             }
         }
 
@@ -423,6 +494,40 @@ namespace GFI_with_GFS_A
         {
             string message = Resources.GetString(Resource.String.Cartoon_DownloadCartoonMessage);
             Activity.RunOnUiThread(() => { dialog.SetMessage($"{message}{count}({e.ProgressPercentage}%)"); });
+        }
+
+        internal void ListItemURLs(int Category_Index, ref List<string> list)
+        {
+            switch (Category_Index)
+            {
+                case 5:
+                    list.AddRange(Resources.GetStringArray(Resource.Array.mota6nako_GF_URL));
+                    break;
+            }
+        }
+
+        private class WebBrowserWebClient : WebViewClient
+        {
+            public override bool ShouldOverrideUrlLoading(WebView view, string url)
+            {
+                view.LoadUrl(url);
+                return false;
+            }
+
+            public override void OnLoadResource(WebView view, string url)
+            {
+                base.OnLoadResource(view, url);
+            }
+
+            public override void OnPageStarted(WebView view, string url, Android.Graphics.Bitmap favicon)
+            {
+                base.OnPageStarted(view, url, favicon);
+            }
+
+            public override void OnPageFinished(WebView view, string url)
+            {
+                base.OnPageFinished(view, url);
+            }
         }
     }
 }

@@ -92,19 +92,19 @@ namespace GFI_with_GFS_A
             public override void OnLoadResource(WebView view, string url)
             {
                 base.OnLoadResource(view, url);
-                LoadProgress.Progress = view.Progress;
+                if (LoadProgress != null) LoadProgress.Progress = view.Progress;
             }
 
             public override void OnPageStarted(WebView view, string url, Bitmap favicon)
             {
                 base.OnPageStarted(view, url, favicon);
-                LoadProgress.Visibility = ViewStates.Visible;
+                if (LoadProgress != null) LoadProgress.Visibility = ViewStates.Visible;
             }
 
             public override void OnPageFinished(WebView view, string url)
             {
                 base.OnPageFinished(view, url);
-                LoadProgress.Visibility = ViewStates.Gone;
+                if (LoadProgress != null) LoadProgress.Visibility = ViewStates.Gone;
             }
         }
     }

@@ -11,6 +11,10 @@
       android:title="@string/Setting_StartAppMode_Title"
       android:summary="@string/Setting_StartAppMode_Summary"/>
     <android.support.v14.preference.SwitchPreference
+      android:key="NotificationAnimationOption"
+      android:title="@string/Setting_NotificationAnimationOption_Title"
+      android:summary="@string/Setting_NotificationAnimationOption_Summary"/>
+    <android.support.v14.preference.SwitchPreference
       android:key="LowMemoryOption"
       android:title="@string/Setting_LowMemoryOption_Title"
       android:summary="@string/Setting_LowMemoryOption_Summary"/>

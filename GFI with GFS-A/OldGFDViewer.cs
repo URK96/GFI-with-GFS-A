@@ -60,7 +60,6 @@ namespace GFI_with_GFS_A
                 SetContentView(Resource.Layout.OldGFDLayout);
 
                 ImageList = FindViewById<Spinner>(Resource.Id.OldGFDImageList);
-                ImageList.ItemSelected += ImageList_ItemSelected;
                 //ImageViewer = FindViewById<PhotoView>(Resource.Id.OldGFDImageView);
                 ImageContainer = FindViewById<LinearLayout>(Resource.Id.OldGFDImageContainer);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.OldGFDViewerSnackbarLayout);
@@ -80,7 +79,7 @@ namespace GFI_with_GFS_A
             ShowImage(index);
         }
 
-        private async void InitProcess()
+        private async Task InitProcess()
         {
             try
             {
@@ -90,25 +89,13 @@ namespace GFI_with_GFS_A
                 ImageListAdapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
 
                 ImageList.Adapter = ImageListAdapter;
+                ImageList.ItemSelected += ImageList_ItemSelected;
 
-                if (CheckImage() == false)
-                {
-                    Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
-                    builder.SetTitle(Resource.String.UpdateDialog_Title);
-                    builder.SetMessage(Resource.String.UpdateDialog_Message);
-                    builder.SetCancelable(true);
-                    builder.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate { await DownloadGFDImage(); });
-                    builder.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-
-                    var dialog = builder.Create();
-                    dialog.Show();
-                }
+                if (CheckImage() == true) await DownloadGFDImage();
 
                 ShowImage(0);
-
-                await Task.Delay(500);
-
-                await CheckUpdate();
+                //await Task.Delay(500);
+                CheckUpdate();
             }
             catch (Exception ex)
             {

@@ -323,7 +323,7 @@ namespace GFI_with_GFS_A
                     NotificationView.Text = notification;
                 }
 
-                RunOnUiThread(() => { NotificationView.Selected = true; });
+                if (ETC.sharedPreferences.GetBoolean("NotificationAnimationOption", true)) RunOnUiThread(() => { NotificationView.Selected = true; });
             }
             catch (Exception ex)
             {
