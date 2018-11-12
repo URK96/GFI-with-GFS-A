@@ -1,0 +1,10 @@
+<2.2.15 수정사항>
+
+- 만화 컨텐츠 추가 (츠보우의 소녀전선 특25화, 철혈 그리폰 2 10화)
+- 만화 카테고리 추가 (천솜향의 소녀전선)
+- 기본 설정 언어 변경 (한국어 -> 영어)
+
+
+- Add Cartoon Content
+- Add Cartoon Category
+- Change Default Language (Korean -> English)

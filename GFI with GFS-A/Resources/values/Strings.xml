@@ -506,9 +506,10 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.14 Update Log]\n\n
+    [2.2.15 Update Log]\n\n
 - Add Cartoon Content\n
-- Add Setting Content (Open Update Log in this version)
+- Add Cartoon Category\n
+- Change Default Language (Korean -> English)
   </string>
 
   <string name="RFBot_CommandHelp">

@@ -590,7 +590,7 @@ namespace GFI_with_GFS_A
                     string x_name = "";
                     string y_name = "";
 
-                    if (ETC.Language.Language == "ko_KR")
+                    if (ETC.Language.Language == "ko")
                     {
                         x_name = (string)x.DollDR["Name"];
                         y_name = (string)y.DollDR["Name"];
