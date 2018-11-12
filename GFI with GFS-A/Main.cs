@@ -383,7 +383,7 @@ namespace GFI_with_GFS_A
                     case Resource.Id.DollDBButton:
                         await Task.Run(() =>
                         {
-                            if ((ETC.EnableDynamicDB == true) || (ETC.DollList.TableName == "")) ETC.LoadDBSync(ETC.DollList, "Doll.gfs", false);
+                            if ((ETC.EnableDynamicDB == true) && (ETC.DollList.TableName == "")) ETC.LoadDBSync(ETC.DollList, "Doll.gfs", false);
                             if (ETC.HasInitDollAvgAbility == false) ETC.InitializeAverageAbility();
                             ETC.InitializeAverageAbility();
                         });
