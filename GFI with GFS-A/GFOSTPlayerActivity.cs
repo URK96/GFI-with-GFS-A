@@ -230,7 +230,7 @@ namespace GFI_with_GFS_A
         }
     }
 
-    [Activity(Name = "com.gfl.dic.OSTPlayer", Label = "GFOSTPlayerActivity", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.OSTPlayer", Label = "OST (Beta)", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class GFOSTPlayerActivity : AppCompatActivity
     {
         private bool IsCategory = true;

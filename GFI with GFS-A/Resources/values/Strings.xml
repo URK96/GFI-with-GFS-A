@@ -506,10 +506,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.15 Update Log]\n\n
+    [2.2.16 Update]\n\n
 - Add Cartoon Content\n
-- Add Cartoon Category\n
-- Change Default Language (Korean -> English)
+- Fix Entering DB Menu Issue on some devices
   </string>
 
   <string name="RFBot_CommandHelp">

@@ -1,0 +1,8 @@
+<2.2.16 수정사항>
+
+- 만화 컨텐츠 추가 (츠보우의 소녀전선 특26화)
+- 일부 기기에서 DB 메뉴가 정상적으로 진입되지 않는 문제 수정
+
+
+- Add Cartoon Content
+- Fix Entering DB Menu Issue on some devices

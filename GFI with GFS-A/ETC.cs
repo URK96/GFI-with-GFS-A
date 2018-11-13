@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Preferences;
 using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Widget;
@@ -186,6 +187,25 @@ namespace GFI_with_GFS_A
                 DialogBG = Resource.Style.GFD_Dialog;
                 DialogBG_Vertical = Resource.Style.GFD_Dialog_Vertical;
                 DialogBG_Download = Resource.Style.GFD_Dialog_Download;
+            }
+        }
+
+        internal static void BasicInitializeApp(Activity context)
+        {
+            sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(context);
+            Resources = context.Resources;
+            UseLightTheme = sharedPreferences.GetBoolean("UseLightTheme", false);
+            SetDialogTheme();
+        }
+
+        internal static async Task AnimateText(TextView view, string text)
+        {
+            view.Text = "";
+
+            for (int i = 0; i < text.Length; ++i)
+            {
+                view.Text += text[i];
+                await Task.Delay(50);
             }
         }
 

@@ -508,10 +508,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.14 수정사항]\n\n
-- 만화 컨텐츠 추가 (츠보우의 소녀전선 특25화, 철혈 그리폰 2 10화)\n
-- 만화 카테고리 추가 (천솜향의 소녀전선)\n
-- 기본 설정 언어 변경 (한국어 -> 영어)
+    [2.2.16 수정사항]\n\n
+- 만화 컨텐츠 추가 (츠보우의 소녀전선 특26화)\n
+- 일부 기기에서 DB 메뉴가 정상적으로 진입되지 않는 문제 수정
   </string>
 
   <string name="RFBot_CommandHelp">

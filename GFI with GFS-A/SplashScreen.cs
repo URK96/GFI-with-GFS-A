@@ -16,7 +16,7 @@ using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
-using System.Diagnostics;
+using Android.Graphics.Drawables;
 
 namespace GFI_with_GFS_A
 {
@@ -25,9 +25,10 @@ namespace GFI_with_GFS_A
     public class SplashScreen : AppCompatActivity
     {
         private CoordinatorLayout SnackbarLayout = null;
+        private ImageView SplashImageView;
+        private TextView StatusText;
 
-        private SfBusyIndicator indicator;
-        //private Stopwatch sw = new Stopwatch();
+        private ClipDrawable drawable;
 
         private ISharedPreferencesEditor PreferenceEditor;
 
@@ -37,32 +38,33 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                ETC.sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
+                ETC.BasicInitializeApp(this);
+
                 PreferenceEditor = ETC.sharedPreferences.Edit();
-                ETC.Resources = Resources;
 
-                ETC.UseLightTheme = ETC.sharedPreferences.GetBoolean("UseLightTheme", false);
-
-                if (ETC.UseLightTheme == true)
-                {
-                    SetTheme(Resource.Style.GFS_Splash_Light);
-                }
+                if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Splash_Light);
 
                 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzAxMzlAMzEzNjJlMzMyZTMwaFNuV1Y2bEpzK25pSDlVREdzZHpPcW15TG54Slg3Z3JjQm1IYSs3SENoYz0=");
 
-                // Set our view from the "main" layout resource
                 SetContentView(Resource.Layout.SplashLayout);
                 SetTitle(Resource.String.app_name);
 
-                indicator = new SfBusyIndicator(this)
+                /*indicator = new SfBusyIndicator(this)
                 {
                     AnimationType = Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.GearBox,
                     TextColor = Android.Graphics.Color.White
                 };
                 indicator.SetBackgroundResource(Resource.Drawable.SplashBG2);
-                FindViewById<FrameLayout>(Resource.Id.SplashBusyIndicatorLayout).AddView(indicator);
+                FindViewById<FrameLayout>(Resource.Id.SplashBusyIndicatorLayout).AddView(indicator);*/
 
-                VersionTracking.Track();
+                SplashImageView = FindViewById<ImageView>(Resource.Id.SplashImageView);
+                drawable = (ClipDrawable)SplashImageView.Background;
+                drawable.SetLevel(0);
+
+                StatusText = FindViewById<TextView>(Resource.Id.SplashStatusText);
+
+
+                // Check Permission
 
                 if ((int.Parse(Build.VERSION.Release.Split('.')[0])) >= 6) CheckPermission();
                 else InitProcess();
@@ -74,6 +76,20 @@ namespace GFI_with_GFS_A
             }
         }
 
+        private async Task Animation()
+        {
+            while (drawable.Level < 10000)
+            {
+                drawable.SetLevel(drawable.Level + 100);
+                await Task.Delay(10);
+            }
+            while (SplashImageView.Alpha < 1.0f)
+            {
+                SplashImageView.Alpha += 0.01f;
+                await Task.Delay(10);
+            }
+        }
+
         private async Task InitProcess()
         {
             SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.SplashSnackbarLayout);
@@ -82,10 +98,13 @@ namespace GFI_with_GFS_A
 
             try
             {
-                ETC.client = new UptimeSharp.UptimeClient("m780844852-8bd2516bb93800a9eb7e3d58");
-                await ETC.CheckServerNetwork();
+                //indicator.IsBusy = true;
+            
+                await Animation();
 
-                indicator.IsBusy = true;
+                // Initialize
+
+                await ETC.AnimateText(StatusText, "Initializing");
 
                 MobileAds.Initialize(this, "ca-app-pub-4576756770200148~8135834453");
 
@@ -95,6 +114,21 @@ namespace GFI_with_GFS_A
                 if (VersionTracking.IsFirstLaunchForCurrentBuild == true) PreferenceEditor.PutBoolean("ShowNewFeatureDialog", true);
                 
                 ETC.CheckInitFolder();
+
+                ETC.EnableDynamicDB = ETC.sharedPreferences.GetBoolean("DynamicDBLoad", false);
+
+              
+                // Check Server
+
+                await ETC.AnimateText(StatusText, "Check Server");
+
+                ETC.client = new UptimeSharp.UptimeClient("m780844852-8bd2516bb93800a9eb7e3d58");
+                await ETC.CheckServerNetwork();
+
+
+                // Check DB Update
+
+                await ETC.AnimateText(StatusText, "Check DB Update");
 
                 if ((ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true) == true) && (ETC.IsServerDown = true))
                 {
@@ -113,7 +147,10 @@ namespace GFI_with_GFS_A
                 }
                 else if (ETC.IsServerDown == true) ETC.ShowSnackbar(SnackbarLayout, Resource.String.Common_ServerMaintenance, 1000, Android.Graphics.Color.DarkBlue);
 
-                ETC.EnableDynamicDB = ETC.sharedPreferences.GetBoolean("DynamicDBLoad", false);
+
+                // Load DB
+
+                await ETC.AnimateText(StatusText, "Load DB");
 
                 if (ETC.EnableDynamicDB == false)
                 {
@@ -126,7 +163,8 @@ namespace GFI_with_GFS_A
                     }
                 }
 
-                ETC.SetDialogTheme();
+
+                // Finalize & Start Main
 
                 StartActivity(typeof(Main));
                 OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
@@ -211,53 +249,10 @@ namespace GFI_with_GFS_A
             ExitDialog.SetPositiveButton(Resource.String.AlertDialog_Exit, delegate
             {
                 FinishAffinity();
-                Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+                Process.KillProcess(Process.MyPid());
             });
             ExitDialog.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
             ExitDialog.Show();
-        }
-
-        private void ReadServerChecking()
-        {
-            if (ETC.IsServerDown == true) return;
-
-            string url = Path.Combine(ETC.Server, "ServerCheck.txt");
-            string s = "";
-
-            try
-            {
-                using (WebClient wc = new WebClient())
-                {
-                    string[] temp = wc.DownloadString(url).Split(';');
-
-                    if (temp[0] == "Y") s = temp[1];
-                    else return;
-                }
-            }
-            catch (WebException)
-            {
-
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(this, ex.ToString());
-            }
-
-            try
-            {
-                Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
-                ad.SetTitle(Resource.String.NotifyCheckServer_Title);
-                ad.SetMessage(s);
-                ad.SetCancelable(false);
-                ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
-
-                ad.Show();
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.AlertDialog_Error, Snackbar.LengthShort, Android.Graphics.Color.DarkKhaki);
-            }
         }
     }
 }

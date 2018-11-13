@@ -34,12 +34,25 @@
 		android:text=""
 		android:textAlignment="center"/>
     </LinearLayout>-->
-    <FrameLayout
+	<ImageView
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:alpha="0.3"
+		android:id="@+id/SplashImageView"
+		android:background="@drawable/splashclip"/>
+	<TextView
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_centerInParent="true"
+		android:id="@+id/SplashStatusText"/>
+    <!--<FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:id="@+id/SplashBusyIndicatorLayout" />
+		android:visibility="gone"
+        android:id="@+id/SplashBusyIndicatorLayout" />-->
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
