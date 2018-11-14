@@ -1064,6 +1064,9 @@ namespace GFI_with_GFS_A
                     FindViewById<LinearLayout>(Resource.Id.DollInfoAMLayout).Visibility = ViewStates.Gone;
                 }
 
+                double[] DPS = ETC.CalcDPS(AbilityValues[1], AbilityValues[4], 0, AbilityValues[3], 3, int.Parse((string)DollInfoDR["Critical"]), 5);
+                FindViewById<TextView>(Resource.Id.DollInfoDPSStatus).Text = $"{DPS[0]} ~ {DPS[1]}";
+
                 if (ETC.UseLightTheme == true) SetCardTheme();
                 if ((bool)DollInfoDR["HasVoice"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailVoiceLayout).Visibility = ViewStates.Visible;
                 if ((bool)DollInfoDR["HasMod"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSelectLayout).Visibility = ViewStates.Visible;

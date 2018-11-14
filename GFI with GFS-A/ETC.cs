@@ -657,7 +657,30 @@ namespace GFI_with_GFS_A
 
         internal static string CalcTime(int minute)
         {
-            return $"{minute / 60} : {(minute % 60).ToString("D2")}"; //string.Format("{0} : {1}", (minute / 60), (minute % 60).ToString("D2"));
+            return $"{minute / 60} : {(minute % 60).ToString("D2")}";
+        }
+
+        internal static double[] CalcDPS(int FireRate, int AttackSpeed, int Enemy_Armor, int Accuracy, int Enemy_Evasion, int Critical, int Dummy, int Penetration = 10, int Critical_Rate = 150)
+        {
+            double dAccuracy = Accuracy / 100.0;
+            double dCritical_Rate = Critical_Rate / 100.0;
+            double APS = 29.999994 / Math.Floor(1500.0 / AttackSpeed);
+
+            double[] Power = { 0, 0 };
+            Power[0] = Math.Max(FireRate * 0.85 + Math.Min(Penetration - Enemy_Armor, 2), 1);
+            Power[1] = Math.Max(FireRate * 1.15 + Math.Min(Penetration - Enemy_Armor, 2), 1);
+
+            double[] Normal_Damage = { Math.Round(Power[0]), Math.Round(Power[1]) };
+            double[] Critical_Damage = { Math.Round(Power[0] * dCritical_Rate), Math.Round(Power[1] * dCritical_Rate) };
+            double Accuracy_Rate = (double)Accuracy / (Accuracy + Enemy_Evasion);
+
+            double[] DPS =
+            {
+                (Normal_Damage[0] * (1 - dAccuracy) + Critical_Damage[0] * dAccuracy) * APS * Accuracy_Rate * Dummy,
+                (Normal_Damage[1] * (1 - dAccuracy) + Critical_Damage[1] * dAccuracy) * APS * Accuracy_Rate * Dummy
+            };
+
+            return DPS;
         }
 
         internal class ADViewListener : Android.Gms.Ads.AdListener
