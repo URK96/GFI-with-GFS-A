@@ -348,6 +348,7 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.MDMainButton:
+                        StartActivity(typeof(StoryActivity));
                         break;
                     case Resource.Id.GFDInfoMainButton:
                         StartActivity(typeof(GFDInfoActivity));

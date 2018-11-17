@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Story_Main">
+    <item>메인스토리</item>
+    <item>서브스토리</item>
+  </string-array>
+
+  <string-array name="Story_Main_Caption">
+    <item>메인스토리</item>
+    <item>서브스토리</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main">
+    <item>프롤로그</item>
+    <item>제0전역 : 종자</item>
+    <item>제1전역 : 소생</item>
+    <item>제2전역 : 메아리</item>
+    <item>제3전역 : 침묵</item>
+    <item>제4전역 : 소문</item>
+    <item>제5전역 : 불씨</item>
+    <item>제6전역 : 혜성</item>
+    <item>제7전역 : 동반자</item>
+    <item>제8전역 : 불꽃</item>
+    <item>제9전역 : 미실</item>
+    <item>제10전역 : 연옥</item>
+    <item>제11전역 : 사냥</item>
+    <item>큐브작전</item>
+    <item>저체온증 : 재앙의 울버린</item>
+    <item>저체온증 : 등화관제</item>
+    <item>저체온증 : 귀환작전</item>
+    <item>저체온증 : 히든</item>
+    <item>파해법칙</item>
+    <item>헌팅래빗작전</item>
+    <item>딥다이브 : 심지혼선</item>
+    <item>딥다이브 : 쌍곡함수</item>
+    <item>딥다이브 : 대립행동</item>
+    <item>딥다이브 : 허수미궁</item>
+    <item>특이점</item>
+    <item>영광의 날 : Avec Nous</item>
+    <item>영광의 날 : Dreaming on You</item>
+    <item>난류연속</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Caption">
+    <item>프롤로그</item>
+    <item>침수발생! 진퇴양난!</item>
+    <item>알고 싶니? 네가 얼마나 정신을 잃었는지 말이야...</item>
+    <item>귀향길을 찾아서, 한 번에 총알 한 발</item>
+    <item>진정한 사냥꾼의 선택</item>
+    <item>폭풍이 다가온다</item>
+    <item>파티에서 마신 술은 흘린 피만큼 많아야 한다</item>
+    <item>칠흑 속에서 소녀를 구하자, 다시 써지는 당신의 운명</item>
+    <item>서로의 결속이 진정한 힘의 근원이다</item>
+    <item>나는 널 위해 벽을 부수고, 세계를 보며, 타락해간다.</item>
+    <item>달링, 당신의 마음은 지금 어디있나요?</item>
+    <item>절망 속에서 행복을 떠올리는 건 최악의 고통이다.</item>
+    <item>난세를 홀로 떠도는 자여, 한번이라도 세상을 사랑해 본 적은 있는가?</item>
+    <item>큐브작전</item>
+    <item>CH.01 재앙의 울버린</item>
+    <item>CH.02 등화관제</item>
+    <item>CH.03 귀환작전</item>
+    <item>히든작전</item>
+    <item>큐브작전+</item>
+    <item>헌팅래빗</item>
+    <item>심지혼선</item>
+    <item>쌍곡함수</item>
+    <item>대립행동</item>
+    <item>히든</item>
+    <item>특이점</item>
+    <item>Avec Nous</item>
+    <item>Dreaming on You</item>
+    <item>난류연속</item>
+    <item>딥다이브 : 대립행동</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub">
+
+  </string-array>
+
+  <string-array name="Story_Main_Sub_Caption">
+
+  </string-array>
+</resources>

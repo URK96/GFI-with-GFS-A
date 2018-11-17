@@ -42,6 +42,7 @@ namespace GFI_with_GFS_A
 
         internal static DataRow CompareDollInfoDR = null;
 
+        private bool IsExtraFeatureOpen = false;
         private bool IsOpenFABMenu = false;
         private bool IsEnableFABMenu = false;
         private bool IsChartLoad = false;
@@ -103,6 +104,7 @@ namespace GFI_with_GFS_A
                 SkillTableSubLayout = FindViewById<LinearLayout>(Resource.Id.DollDBDetailSkillAbilitySubLayout);
                 ModSkillTableSubLayout = FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSkillAbilitySubLayout);
 
+                FindViewById<Button>(Resource.Id.DollDBExtraFeatureButton).Click += DollDBDetailActivity_Click;
                 
                 if ((bool)DollInfoDR["HasMod"] == true)
                 {
@@ -173,6 +175,25 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(this, ex.ToString());
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
+            }
+        }
+
+        private void DollDBDetailActivity_Click(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+
+            switch (IsExtraFeatureOpen)
+            {
+                case false:
+                    IsExtraFeatureOpen = true;
+                    b.Text = "△△△";
+                    FindViewById<LinearLayout>(Resource.Id.DollDBExtraFeatureLayout).Visibility = ViewStates.Visible;
+                    break;
+                case true:
+                    IsExtraFeatureOpen = false;
+                    b.Text = "▽▽▽";
+                    FindViewById<LinearLayout>(Resource.Id.DollDBExtraFeatureLayout).Visibility = ViewStates.Gone;
+                    break;
             }
         }
 

@@ -81,7 +81,7 @@ namespace GFI_with_GFS_A
             while (drawable.Level < 10000)
             {
                 drawable.SetLevel(drawable.Level + 100);
-                await Task.Delay(10);
+                await Task.Delay(1);
             }
             while (SplashImageView.Alpha < 1.0f)
             {

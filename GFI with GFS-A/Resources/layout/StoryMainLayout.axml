@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:id="@+id/StoryMainRootLayout">
+	<android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/StoryMainToolbar" />
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="5dp"
+		android:visibility="invisible"
+		android:background="@android:drawable/screen_background_dark_transparent"
+		android:text="←←←"
+		android:id="@+id/StoryMainPreviousButton"/>
+	<android.support.v7.widget.RecyclerView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scrollbars="vertical"
+		android:id="@+id/StoryRecyclerView"/>
+</RelativeLayout>
