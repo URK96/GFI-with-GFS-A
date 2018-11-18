@@ -32,8 +32,7 @@ namespace GFI_with_GFS_A
         private RecyclerView.LayoutManager MainRecyclerManager;
 
         private string[] Main_List;
-        private string[] Main_Main_List;
-        private string[] Main_Sub_List;
+        private List<string> SubMain_List = new List<string>();
         private List<string> Item_List = new List<string>();
 
         private List<string> Caption_List = new List<string>();
@@ -73,11 +72,9 @@ namespace GFI_with_GFS_A
                 case Category.Main:
                     if (position == 0) TopType = Top.Main;
                     else TopType = Top.Sub;
-                    CategoryType = Category.SubMain;
                     break;
                 case Category.SubMain:
                     SubMain_Index = position;
-                    CategoryType = Category.Item;
                     break;
                 case Category.Item:
                     Item_Index = position;
@@ -90,7 +87,6 @@ namespace GFI_with_GFS_A
         private void InitializeList()
         {
             Main_List = Resources.GetStringArray(Resource.Array.Story_Main);
-            Main_Main_List = Resources.GetStringArray(Resource.Array.Story_Main_Main);
 
             Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Caption));
             Caption_List.TrimExcess();
@@ -98,6 +94,8 @@ namespace GFI_with_GFS_A
 
         private void ChangeAdapter(bool IsPrevious)
         {
+            adapter = null;
+            SubMain_List.Clear();
             Caption_List.Clear();
 
             if (IsPrevious == true)
@@ -107,50 +105,83 @@ namespace GFI_with_GFS_A
                     case Category.SubMain:
                         Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Caption));
                         adapter = new StoryListAdapter(Main_List, Caption_List.ToArray());
+                        CategoryType = Category.Main;
+                        PreviousButton.Enabled = false;
                         break;
                     case Category.Item:
                         if (TopType == Top.Main)
                         {
+                            SubMain_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main));
                             Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main_Caption));
+                            SubMain_List.TrimExcess();
                             Caption_List.TrimExcess();
-                            adapter = new StoryListAdapter(Main_Main_List, Caption_List.ToArray());
+                            adapter = new StoryListAdapter(SubMain_List.ToArray(), Caption_List.ToArray());
                         }
                         else if (TopType == Top.Sub)
                         {
+                            SubMain_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub));
                             Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_Caption));
+                            SubMain_List.TrimExcess();
                             Caption_List.TrimExcess();
-                            adapter = new StoryListAdapter(Main_Sub_List, Caption_List.ToArray());
+                            adapter = new StoryListAdapter(SubMain_List.ToArray(), Caption_List.ToArray());
                         }
+                        CategoryType = Category.SubMain;
                         break;
                 }
             }
             else
             {
+                PreviousButton.Enabled = true;
+
                 switch (CategoryType)
                 {
-                    case Category.SubMain:
+                    case Category.Main:
                         if (TopType == Top.Main)
                         {
+                            SubMain_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main));
                             Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main_Caption));
+                            SubMain_List.TrimExcess();
                             Caption_List.TrimExcess();
-                            adapter = new StoryListAdapter(Main_Main_List, Caption_List.ToArray());
+                            adapter = new StoryListAdapter(SubMain_List.ToArray(), Caption_List.ToArray());
                         }
                         else if (TopType == Top.Sub)
                         {
+                            SubMain_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub));
                             Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_Caption));
+                            SubMain_List.TrimExcess();
                             Caption_List.TrimExcess();
-                            adapter = new StoryListAdapter(Main_Sub_List, Caption_List.ToArray());
+                            adapter = new StoryListAdapter(SubMain_List.ToArray(), Caption_List.ToArray());
                         }
+                        CategoryType = Category.SubMain;
                         break;
-                    case Category.Item:
+                    case Category.SubMain:
                         if (TopType == Top.Main) ListStoryItem_Main();
                         //else if (TopType == Top.Sub) ListStoryItem_Sub();
+                        CategoryType = Category.Item;
                         break;
+                    case Category.Item:
+                        RunReader();
+                        return;
                 }
             }
 
-            adapter.ItemClick += Adapter_ItemClick;
+            if (adapter.HasOnItemClick() == false) adapter.ItemClick += Adapter_ItemClick;
             MainRecyclerView.SetAdapter(adapter);
+        }
+
+        public override void OnBackPressed()
+        {
+            switch (CategoryType)
+            {
+                case Category.Item:
+                case Category.SubMain:
+                    ChangeAdapter(true);
+                    break;
+                case Category.Main:
+                    base.OnBackPressed();
+                    OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                    break;
+            }
         }
     }
 
@@ -208,6 +239,12 @@ namespace GFI_with_GFS_A
             {
                 ItemClick(this, position);
             }
+        }
+
+        public bool HasOnItemClick()
+        {
+            if (ItemClick == null) return false;
+            else return true;
         }
     }
 }

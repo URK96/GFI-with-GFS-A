@@ -12,13 +12,15 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_margin="5dp"
-		android:visibility="invisible"
+		android:enabled="false"
 		android:background="@android:drawable/screen_background_dark_transparent"
+		android:layout_below="@id/StoryMainToolbar"
 		android:text="←←←"
 		android:id="@+id/StoryMainPreviousButton"/>
 	<android.support.v7.widget.RecyclerView
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
+		android:layout_below="@id/StoryMainPreviousButton"
 		android:scrollbars="vertical"
 		android:id="@+id/StoryRecyclerView"/>
 </RelativeLayout>

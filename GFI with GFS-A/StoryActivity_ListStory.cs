@@ -142,5 +142,99 @@ namespace GFI_with_GFS_A
             adapter = new StoryListAdapter(Item_List.ToArray(), Caption_List.ToArray());
             adapter.ItemClick += Adapter_ItemClick;
         }
+
+        private void RunReader()
+        {
+            string Top = "";
+            string Category = "";
+
+            switch (TopType)
+            {
+                case StoryActivity.Top.Main:
+                    Top = "Main";
+                    break;
+                case StoryActivity.Top.Sub:
+                    Top = "Sub";
+                    break;
+            }
+
+            if (TopType == StoryActivity.Top.Main)
+            {
+                switch (SubMain_Index)
+                {
+                    case 0:
+                        Category = "Prologue";
+                        break;
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                    case 10:
+                    case 11:
+                    case 12:
+                        Category = $"Area_{SubMain_Index - 1}";
+                        break;
+                    case 13:
+                        Category = "Cube";
+                        break;
+                    case 14:
+                        Category = "Hypothermia_1";
+                        break;
+                    case 15:
+                        Category = "Hypothermia_2";
+                        break;
+                    case 16:
+                        Category = "Hypothermia_3";
+                        break;
+                    case 17:
+                        Category = "Hypothermia_Hidden";
+                        break;
+                    case 18:
+                        Category = "CubePlus";
+                        break;
+                    case 19:
+                        Category = "GuiltyGear";
+                        break;
+                    case 20:
+                        Category = "DeepDive_1";
+                        break;
+                    case 21:
+                        Category = "DeepDive_2";
+                        break;
+                    case 22:
+                        Category = "DeepDive_3";
+                        break;
+                    case 23:
+                        Category = "DeepDive_Hidden";
+                        break;
+                    case 24:
+                        Category = "Singularity";
+                        break;
+                    case 25:
+                        Category = "DJMAX_1";
+                        break;
+                    case 26:
+                        Category = "DJMAX_2";
+                        break;
+                    case 27:
+                        Category = "ContinuumTurbulence";
+                        break;
+                }
+            }
+            else if (TopType == StoryActivity.Top.Sub)
+            {
+
+            }
+
+            var intent = new Intent(this, typeof(StoryReaderActivity));
+            intent.PutExtra("Info", new string[] { Top, Category, Item_Index.ToString(), Item_List.Count.ToString() });
+            StartActivity(intent);
+            OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
+        }
     }
 }

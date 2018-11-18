@@ -166,6 +166,12 @@
                     android:layout_marginBottom="10dp"
 					android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/ProductSimulatorExtraButton" />
+				<Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="10dp"
+					android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/StoryExtraButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"

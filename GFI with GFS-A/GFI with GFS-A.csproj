@@ -245,6 +245,7 @@
     <Compile Include="RFBot.cs" />
     <Compile Include="StoryActivity.cs" />
     <Compile Include="StoryActivity_ListStory.cs" />
+    <Compile Include="StoryReaderActivity.cs" />
     <Compile Include="TestActivity.cs" />
     <Compile Include="WebBrowserActivity.cs" />
     <Compile Include="EventActivity.cs" />
@@ -1371,6 +1372,35 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\StoryList_Event.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\StoryReaderLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\Extra_Story.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\Extra_Story_Orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\Extra_StoryClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\Extra_StoryClick_Orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Extra_StorySelector.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Extra_StorySelector_Orange.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
