@@ -15,7 +15,7 @@
 		android:enabled="false"
 		android:background="@android:drawable/screen_background_dark_transparent"
 		android:layout_below="@id/StoryMainToolbar"
-		android:text="←←←"
+		android:text="@string/Common_PreviousList"
 		android:id="@+id/StoryMainPreviousButton"/>
 	<android.support.v7.widget.RecyclerView
 		android:layout_width="match_parent"

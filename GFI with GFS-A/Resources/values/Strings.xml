@@ -129,7 +129,7 @@
   <string name="UpdateDBDialog_Message">Updating DB...</string>
   <string name="UpdateDBDialog_RefreshVersionMessage">Renewing DB Version...</string>
   <string name="CheckDBUpdate_UpToDate">You already have a latest version. No need to update!</string>
-  <string name="CheckDBUpdate_Complete">DB 업데이트 완료</string>
+  <string name="CheckDBUpdate_Complete">Complete Update DB</string>
   <string name="NewFeatureDialog_Title">New Function</string>
   <string name="FAB_ChangeSubMenuError">Floating menu operation failed</string>
   <string name="FAB_ChangeStatusError">Floating state change failed</string>
@@ -232,6 +232,9 @@
   <string name="Common_TDoll">T-Doll</string>
   <string name="Common_Equipment">Equip</string>
   <string name="Common_Fairy">Fairy</string>
+  <string name="Common_Previous">Previous</string>
+  <string name="Common_Next">Next</string>
+  <string name="Common_PreviousList">Previous List</string>
 
   <!--Common Dialog String-->
   <string name="AlertDialog_Confirm">Confirm</string>

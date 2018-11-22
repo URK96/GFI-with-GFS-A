@@ -236,6 +236,9 @@
   <string name="Common_TDoll">인형</string>
   <string name="Common_Equipment">장비</string>
   <string name="Common_Fairy">요정</string>
+  <string name="Common_Previous">이전</string>
+  <string name="Common_Next">다음</string>
+  <string name="Common_PreviousList">이전 목록으로</string>
 
   <!--Common Dialog String-->
   <string name="AlertDialog_Confirm">확인</string>

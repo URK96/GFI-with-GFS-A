@@ -121,6 +121,8 @@ namespace GFI_with_GFS_A
                     Caption_res = Resource.Array.Story_Main_Main_Event_DeepDive_Hidden_Caption;
                     break;
                 case 24:
+                    Title_res = Resource.Array.Story_Main_Main_Event_Singularity;
+                    Caption_res = Resource.Array.Story_Main_Main_Event_Singularity_Caption;
                     break;
                 case 25:
                     Title_res = Resource.Array.Story_Main_Main_Event_DJMAX_1;

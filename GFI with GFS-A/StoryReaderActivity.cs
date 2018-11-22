@@ -26,6 +26,9 @@ namespace GFI_with_GFS_A
         private string Language = "ko";
 
         private ProgressBar LoadProgressBar;
+        private Button PreviousButton;
+        private Button NextButton;
+        private ImageButton RefreshButton;
         private TextView MainTextView;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -42,20 +45,54 @@ namespace GFI_with_GFS_A
             Item_Count = int.Parse(info[3]);
 
             LoadProgressBar = FindViewById<ProgressBar>(Resource.Id.StoryReaderLoadProgress);
+            PreviousButton = FindViewById<Button>(Resource.Id.StoryReaderPreviousButton);
+            PreviousButton.Click += StatusButton_Click;
+            NextButton = FindViewById<Button>(Resource.Id.StoryReaderNextButton);
+            NextButton.Click += StatusButton_Click;
+            RefreshButton = FindViewById<ImageButton>(Resource.Id.StoryReaderRefreshButton);
+            RefreshButton.Click += delegate { LoadProcess(true); };
             MainTextView = FindViewById<TextView>(Resource.Id.StoryReaderMainTextView);
 
-            LoadProcess();
+            if (Item_Index == 1) PreviousButton.Enabled = false;
+            if (Item_Index == Item_Count) NextButton.Enabled = false;
+
+            LoadProcess(false);
         }
 
-        private async Task LoadProcess()
+        private void StatusButton_Click(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+
+            switch (b.Id)
+            {
+                case Resource.Id.StoryReaderPreviousButton:
+                    if (Item_Index == 1) return;
+                    if (Item_Index == 2) PreviousButton.Enabled = false;
+                    Item_Index -= 1;
+                    if (Item_Index != Item_Count) NextButton.Enabled = true;
+                    LoadProcess(false);
+                    break;
+                case Resource.Id.StoryReaderNextButton:
+                    if (Item_Index == Item_Count) return;
+                    if (Item_Index == (Item_Count - 1)) NextButton.Enabled = false;
+                    Item_Index += 1;
+                    if (Item_Index != 1) PreviousButton.Enabled = true;
+                    LoadProcess(false);
+                    break;
+            }
+        }
+
+        private async Task LoadProcess(bool IsRefresh)
         {
             LoadProgressBar.Visibility = ViewStates.Visible;
 
             string file = Path.Combine(ETC.CachePath, "Story", Category, $"{Item_Index}.gfdcache");
 
-            if (File.Exists(file) == false) await DownloadStory();
+            if ((File.Exists(file) == false) || (IsRefresh == true)) await DownloadStory();
 
             await LoadText(file);
+
+            FindViewById<TextView>(Resource.Id.StoryReaderNowStoryText).Text = $"{Item_Index} / {Item_Count}";
 
             LoadProgressBar.Visibility = ViewStates.Invisible;
         }
