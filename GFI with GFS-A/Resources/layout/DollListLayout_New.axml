@@ -1,56 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"/>
-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp"
-    android:id="@+id/DollListMainLayout">
+    android:id="@+id/DollListMainLayout_New">
     <LinearLayout
         android:layout_width="48dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/DollListType"
+            android:id="@+id/DollListType_New"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:gravity="center" />
         <ImageView
-            android:id="@+id/DollListGrade"
+            android:id="@+id/DollListGrade_New"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitCenter" />
     </LinearLayout>
     <ImageView
-        android:id="@+id/DollListSmallImage"
-        android:layout_width="80dp"
+        android:id="@+id/DollListSmallImage_New"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:scaleType="fitCenter" />
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <TextView
-            android:id="@+id/DollListNumber"
+		<TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:textSize="10dp"
             android:textAppearance="?android:attr/textAppearanceSmall"
+			android:id="@+id/DollListNumber_New"
             android:gravity="center" />
         <TextView
-            android:id="@+id/DollListName"
+            android:id="@+id/DollListName_New"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:gravity="center" />
         <TextView
-            android:id="@+id/DollListProductTime"
+            android:id="@+id/DollListProductTime_New"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:gravity="center" />
     </LinearLayout>
-</LinearLayout>-->
+</LinearLayout>
+

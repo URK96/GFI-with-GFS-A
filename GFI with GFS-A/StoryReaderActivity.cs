@@ -22,6 +22,7 @@ namespace GFI_with_GFS_A
         private string Category = "";
         private int Item_Index = 0;
         private int Item_Count = 0;
+        private string[] Item_List;
 
         private string Language = "ko";
 
@@ -43,6 +44,7 @@ namespace GFI_with_GFS_A
             Category = info[1];
             Item_Index = int.Parse(info[2]) + 1;
             Item_Count = int.Parse(info[3]);
+            Item_List = Intent.GetStringArrayExtra("List");
 
             LoadProgressBar = FindViewById<ProgressBar>(Resource.Id.StoryReaderLoadProgress);
             PreviousButton = FindViewById<Button>(Resource.Id.StoryReaderPreviousButton);
@@ -92,7 +94,7 @@ namespace GFI_with_GFS_A
 
             await LoadText(file);
 
-            FindViewById<TextView>(Resource.Id.StoryReaderNowStoryText).Text = $"{Item_Index} / {Item_Count}";
+            FindViewById<TextView>(Resource.Id.StoryReaderNowStoryText).Text = Item_List[Item_Index - 1];
 
             LoadProgressBar.Visibility = ViewStates.Invisible;
         }

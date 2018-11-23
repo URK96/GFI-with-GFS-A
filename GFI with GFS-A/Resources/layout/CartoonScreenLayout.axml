@@ -41,7 +41,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:text=""
-			android:src="@drawable/refresh"
+			android:src="@drawable/refreshicon_whitetheme"
 			android:scaleType="fitCenter"
 			android:enabled="false"
 			android:id="@+id/CartoonScreenRefreshButton"/>

@@ -235,6 +235,7 @@ namespace GFI_with_GFS_A
 
             var intent = new Intent(this, typeof(StoryReaderActivity));
             intent.PutExtra("Info", new string[] { Top, Category, Item_Index.ToString(), Item_List.Count.ToString() });
+            intent.PutExtra("List", Item_List.ToArray());
             StartActivity(intent);
             OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }

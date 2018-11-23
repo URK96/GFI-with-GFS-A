@@ -63,7 +63,6 @@ namespace GFI_with_GFS_A
 
                 StatusText = FindViewById<TextView>(Resource.Id.SplashStatusText);
 
-
                 // Check Permission
 
                 if ((int.Parse(Build.VERSION.Release.Split('.')[0])) >= 6) CheckPermission();

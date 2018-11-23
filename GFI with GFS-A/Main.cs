@@ -387,7 +387,7 @@ namespace GFI_with_GFS_A
                             if (ETC.HasInitDollAvgAbility == false) ETC.InitializeAverageAbility();
                             ETC.InitializeAverageAbility();
                         });
-                        StartActivity(typeof(DollDBMainActivity));
+                        StartActivity(typeof(DollDBMainActivity_New));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.EquipDBButton:

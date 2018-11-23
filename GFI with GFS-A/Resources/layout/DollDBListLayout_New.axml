@@ -10,13 +10,13 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:id="@+id/EquipDBMainLayout">
+        android:id="@+id/DollDBMainLayout">
         <LinearLayout
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:animateLayoutChanges="true"
-            android:id="@+id/EquipSearchLayout">
+            android:id="@+id/DollSearchLayout">
             <ImageButton
                 android:layout_height="36dp"
                 android:layout_width="36dp"
@@ -25,14 +25,14 @@
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginRight="4dp"
-                android:id="@+id/EquipSearchResetButton" />
+                android:id="@+id/DollSearchResetButton" />
             <View
                 android:layout_height="match_parent"
                 android:layout_width="3dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="#FFFFFF"
-                android:id="@+id/EquipSearchSeperateBar" />
+                android:id="@+id/DollSearchSeperateBar" />
             <EditText
                 android:inputType="textPersonName"
                 android:layout_width="0dp"
@@ -40,18 +40,17 @@
                 android:layout_weight="1"
                 android:textColor="#FFFFFF"
                 android:paddingBottom="8dp"
-                android:id="@+id/EquipSearchText" />
+                android:id="@+id/DollSearchText" />
         </LinearLayout>
         <View
             android:background="#1b1b1b"
             android:layout_height="2dp"
             android:layout_width="match_parent" />
-        <ListView
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:divider="#2E2E2E"
-            android:dividerHeight="2dp"
-            android:id="@+id/EquipDBListView" />
+		<android.support.v7.widget.RecyclerView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scrollbars="vertical"
+		android:id="@+id/DollDBRecyclerView"/>
     </LinearLayout>
 	<android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
@@ -64,7 +63,7 @@
         app:backgroundTint="@color/FABColor"
         app:fabSize="auto"
         app:rippleColor="#FF80AB"
-        android:id="@+id/EquipRefreshCacheFAB" />
+        android:id="@+id/DollRefreshCacheFAB" />
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -76,7 +75,7 @@
         app:backgroundTint="@color/FABColor"
         app:fabSize="auto"
         app:rippleColor="#FF80AB"
-        android:id="@+id/EquipArrayFAB" />
+        android:id="@+id/DollArrayFAB" />
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -88,10 +87,10 @@
         app:backgroundTint="@color/FABColor"
         app:fabSize="auto"
         app:rippleColor="#FF80AB"
-        android:id="@+id/EquipFilterFAB" />
+        android:id="@+id/DollFilterFAB" />
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/EquipDBSnackbarLayout"
-        android:layout_alignTop="@id/EquipDBMainLayout" />
+        android:id="@+id/DollDBSnackbarLayout"
+        android:layout_alignTop="@id/DollDBMainLayout" />
 </RelativeLayout>

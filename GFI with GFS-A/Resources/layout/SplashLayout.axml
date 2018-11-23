@@ -45,6 +45,8 @@
 		android:layout_width="wrap_content"
 		android:layout_alignParentBottom="true"
 		android:layout_centerInParent="true"
+		android:textColor="#F2F2F2"
+		android:textAppearance="?android:attr/textAppearanceLarge"
 		android:id="@+id/SplashStatusText"/>
     <!--<FrameLayout
         android:layout_width="wrap_content"

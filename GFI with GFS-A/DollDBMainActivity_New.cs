@@ -1,8 +1,9 @@
-﻿/*using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using System;
@@ -15,11 +16,11 @@ using System.Threading.Tasks;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "인형 목록", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class DollDBMainActivity : AppCompatActivity
+    public class DollDBMainActivity_New : AppCompatActivity
     {
         delegate void DownloadProgress();
 
-        private List<DollListBasicInfo> mDollList = new List<DollListBasicInfo>();
+        private List<DollListBasicInfo_New> mDollList = new List<DollListBasicInfo_New>();
         private List<int> Download_List = new List<int>();
 
         int[] GradeFilters = { Resource.Id.DollFilterGrade2, Resource.Id.DollFilterGrade3, Resource.Id.DollFilterGrade4, Resource.Id.DollFilterGrade5, Resource.Id.DollFilterGradeExtra };
@@ -39,7 +40,8 @@ namespace GFI_with_GFS_A
         private enum LineUp { Name, Number, ProductTime }
         private LineUp LineUpStyle = LineUp.Name;
 
-        private ListView mDollListView = null;
+        private RecyclerView mDollListView;
+        private RecyclerView.LayoutManager MainRecyclerManager;
         private CoordinatorLayout SnackbarLayout = null;
 
         private EditText SearchText = null;
@@ -65,13 +67,15 @@ namespace GFI_with_GFS_A
                 Toast.MakeText(this, ETC.Language.Language, ToastLength.Short).Show();
 
                 // Create your application here
-                SetContentView(Resource.Layout.DollDBListLayout);
+                SetContentView(Resource.Layout.DollDBListLayout_New);
 
                 SetTitle(Resource.String.DollDBMainActivity_Title);
 
                 CanRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
-                mDollListView = FindViewById<ListView>(Resource.Id.DollDBListView);
+                mDollListView = FindViewById<RecyclerView>(Resource.Id.DollDBRecyclerView);
+                MainRecyclerManager = new LinearLayoutManager(this);
+                mDollListView.SetLayoutManager(MainRecyclerManager);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBSnackbarLayout);
 
                 SearchText = FindViewById<EditText>(Resource.Id.DollSearchText);
@@ -83,18 +87,13 @@ namespace GFI_with_GFS_A
                     FindViewById<LinearLayout>(Resource.Id.DollSearchLayout).SetBackgroundColor(Android.Graphics.Color.LightGray);
                     FindViewById<ImageButton>(Resource.Id.DollSearchResetButton).SetBackgroundResource(Resource.Drawable.SearchIcon_WhiteTheme);
                     FindViewById<View>(Resource.Id.DollSearchSeperateBar).SetBackgroundColor(Android.Graphics.Color.DarkGreen);
-                    mDollListView.Divider = new Android.Graphics.Drawables.ColorDrawable(Android.Graphics.Color.Gray);
                 }
 
                 InitProcess();
 
                 ListDoll(SearchText.Text, new int[] { Filter_ProductTime[0], Filter_ProductTime[1] }, Filter_ProductTime[2]);
 
-                mDollListView.FastScrollEnabled = true;
-                mDollListView.FastScrollAlwaysVisible = false;
-                mDollListView.ItemClick += MDollListView_ItemClick;
-                mDollListView.ItemLongClick += MDollListView_ItemLongClick;
-                mDollListView.ScrollStateChanged += MDollListView_ScrollStateChanged;
+
             }
             catch (Exception ex)
             {
@@ -482,8 +481,6 @@ namespace GFI_with_GFS_A
 
         private async void ListDoll(string searchText, int[] p_time, int p_range)
         {
-            //ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_Listing, Snackbar.LengthShort, Android.Graphics.Color.DarkViolet);
-
             mDollList.Clear();
 
             searchText = searchText.ToUpper();
@@ -513,7 +510,7 @@ namespace GFI_with_GFS_A
                         if (name.Contains(searchText) == false) continue;
                     }
 
-                    DollListBasicInfo info = new DollListBasicInfo()
+                    DollListBasicInfo_New info = new DollListBasicInfo_New()
                     {
                         Id = i,
                         DollDR = dr
@@ -523,17 +520,28 @@ namespace GFI_with_GFS_A
 
                 mDollList.Sort(SortDoll);
 
-                var adapter = new DollListAdapter(this, mDollList);
+                var adapter = new DollListAdapter_New(mDollList, this);
+
+                if (adapter.HasOnItemClick() == false) adapter.ItemClick += Adapter_ItemClick;
 
                 await Task.Delay(100);
 
-                RunOnUiThread(() => { mDollListView.Adapter = adapter; });
+                RunOnUiThread(() => { mDollListView.SetAdapter(adapter); });
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_ListingFail, Snackbar.LengthLong);
             }
+        }
+
+        private void Adapter_ItemClick(object sender, int position)
+        {
+            int DollNum = (int)(mDollList[position].DollDR)["DicNumber"];
+            var DollInfo = new Intent(this, typeof(DollDBDetailActivity));
+            DollInfo.PutExtra("Keyword", DollNum);
+            StartActivity(DollInfo);
+            OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }
 
         private bool CheckDollByProductTime(int[] p_time, int range, int d_time)
@@ -548,7 +556,7 @@ namespace GFI_with_GFS_A
             return false;
         }
 
-        private int SortDoll(DollListBasicInfo x, DollListBasicInfo y)
+        private int SortDoll(DollListBasicInfo_New x, DollListBasicInfo_New y)
         {
             switch (LineUpStyle)
             {
@@ -678,72 +686,101 @@ namespace GFI_with_GFS_A
         }
     }
 
-    class DollListBasicInfo
+    class DollListBasicInfo_New
     {
         public int Id { set; get; }
         public DataRow DollDR { set; get; }
     }
 
-    class DollListAdapter : BaseAdapter<DollListBasicInfo>
+    class DollListViewHolder : RecyclerView.ViewHolder
     {
-        List<DollListBasicInfo> mitems;
-        Activity mcontext;
-        int count = 0;
+        public TextView DicNumber { get; private set; }
+        public TextView Type { get; private set; }
+        public ImageView Grade { get; private set; }
+        public ImageView SmallImage { get; private set; }
+        public TextView Name { get; private set; }
+        public TextView ProductTime { get; private set; }
 
-        public DollListAdapter(Activity context, List<DollListBasicInfo> items) : base()
+        public DollListViewHolder(View view, Action<int> listener) : base(view)
         {
-            mcontext = context;
-            mitems = items;
+            DicNumber = view.FindViewById<TextView>(Resource.Id.DollListNumber_New);
+            Type = view.FindViewById<TextView>(Resource.Id.DollListType_New);
+            Grade = view.FindViewById<ImageView>(Resource.Id.DollListGrade_New);
+            SmallImage = view.FindViewById<ImageView>(Resource.Id.DollListSmallImage_New);
+            Name = view.FindViewById<TextView>(Resource.Id.DollListName_New);
+            ProductTime = view.FindViewById<TextView>(Resource.Id.DollListProductTime_New);
+
+            view.Click += (sender, e) => listener(base.LayoutPosition);
+        }
+    }
+
+    class DollListAdapter_New : RecyclerView.Adapter
+    {
+        List<DollListBasicInfo_New> items;
+        Activity context;
+
+        public event EventHandler<int> ItemClick;
+
+        public DollListAdapter_New(List<DollListBasicInfo_New> items, Activity context)
+        {
+            this.items = items;
+            this.context = context;
         }
 
-        public override DollListBasicInfo this[int position]
+        public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            get { return mitems[position]; }
+            View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.DollListLayout_New, parent, false);
+
+            DollListViewHolder vh = new DollListViewHolder(view, OnClick);
+            return vh;
         }
 
-        public override int Count
+        public override int ItemCount
         {
-            get { return mitems.Count; }
+            get { return items.Count; }
         }
 
-        public override Java.Lang.Object GetItem(int position)
+        void OnClick(int position)
         {
-            return null;
+            if (ItemClick != null)
+            {
+                ItemClick(this, position);
+            }
         }
 
-        public override long GetItemId(int position)
+        public bool HasOnItemClick()
         {
-            return mitems[position].Id;
+            if (ItemClick == null) return false;
+            else return true;
         }
 
-        public override View GetView(int position, View convertView, ViewGroup parent)
+        public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            var item = mitems[position];
-            var view = convertView;
+            DollListViewHolder vh = holder as DollListViewHolder;
+
+            var item = items[position];
 
             try
             {
-                if (view == null) view = mcontext.LayoutInflater.Inflate(Resource.Layout.DollListLayout, null);
-
-                count += 1;
+                /*count += 1;
                 if (count == 50)
                 {
                     GC.Collect(0, GCCollectionMode.Optimized, false, true);
                     count = 0;
-                }
+                }*/
 
                 int D_Num = (int)item.DollDR["DicNumber"];
 
-                ImageView DollSmallImage = view.FindViewById<ImageView>(Resource.Id.DollListSmallImage);
+                vh.DicNumber.Text = $"No. {D_Num}";
+
                 if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
                 {
-                    DollSmallImage.Visibility = ViewStates.Visible;
+                    vh.SmallImage.Visibility = ViewStates.Visible;
                     string FilePath = System.IO.Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", D_Num + ".gfdcache");
-                    if (System.IO.File.Exists(FilePath) == true) DollSmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(FilePath));
+                    if (System.IO.File.Exists(FilePath) == true) vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(FilePath));
                 }
-                else DollSmallImage.Visibility = ViewStates.Gone;
+                else vh.SmallImage.Visibility = ViewStates.Gone;
 
-                ImageView DollGradeIcon = view.FindViewById<ImageView>(Resource.Id.DollListGrade);
                 int GradeIconId = 0;
                 switch ((int)item.DollDR["Grade"])
                 {
@@ -766,11 +803,9 @@ namespace GFI_with_GFS_A
                         GradeIconId = Resource.Drawable.Grade_2;
                         break;
                 }
-                DollGradeIcon.SetImageResource(GradeIconId);
+                vh.Grade.SetImageResource(GradeIconId);
 
-                TextView DollType = view.FindViewById<TextView>(Resource.Id.DollListType);
-                DollType.Text = (string)item.DollDR["Type"];
-
+                vh.Type.Text = (string)item.DollDR["Type"];
 
                 string name = "";
 
@@ -781,24 +816,15 @@ namespace GFI_with_GFS_A
                     else if (string.IsNullOrWhiteSpace((string)item.DollDR["Name_EN"])) name = (string)item.DollDR["Name"];
                     else name = (string)item.DollDR["Name_EN"];
                 }
-                TextView DollName = view.FindViewById<TextView>(Resource.Id.DollListName);
-                DollName.Text = name;
+                vh.Name.Text = name;
 
-                TextView DollProductTime = view.FindViewById<TextView>(Resource.Id.DollListProductTime);
-                DollProductTime.Text = ETC.CalcTime((int)item.DollDR["ProductTime"]);
-            }
-            catch (OutOfMemoryException)
-            {
-                GC.Collect(0, GCCollectionMode.Forced, false, true);
-                GetView(position, convertView, parent);
+                vh.ProductTime.Text = ETC.CalcTime((int)item.DollDR["ProductTime"]);
             }
             catch (Exception ex)
             {
-                ETC.LogError(mcontext, ex.ToString());
-                Toast.MakeText(mcontext, "Error Create View", ToastLength.Short).Show();
+                ETC.LogError(context, ex.ToString());
+                Toast.MakeText(context, "Error Create View", ToastLength.Short).Show();
             }
-
-            return view;
         }
     }
-}*/
+}
