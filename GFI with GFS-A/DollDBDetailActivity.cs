@@ -959,9 +959,9 @@ namespace GFI_with_GFS_A
                         ability.LayoutParameters = FindViewById<TextView>(Resource.Id.DollDBDetailModSkillAbilityTopText1).LayoutParameters;
                         mag.LayoutParameters = FindViewById<TextView>(Resource.Id.DollDBDetailModSkillAbilityTopText2).LayoutParameters;
 
-                        ability.Text = SkillAbilities[i];
+                        ability.Text = MSkillAbilities[i];
                         ability.Gravity = GravityFlags.Center;
-                        mag.Text = SkillMags[i];
+                        mag.Text = MSkillMags[i];
                         mag.Gravity = GravityFlags.Center;
 
                         layout.AddView(ability);
@@ -1024,7 +1024,9 @@ namespace GFI_with_GFS_A
                     FindViewById<LinearLayout>(Resource.Id.DollInfoReloadLayout).Visibility = ViewStates.Visible;
 
                     double ReloadTime = CalcReloadTime(DollInfoDR, DollType);
-                    int Bullet = (int)DollInfoDR["Bullet"];
+                    int Bullet = 0;
+                    if ((bool)DollInfoDR["HasMod"] == false) Bullet = int.Parse((string)DollInfoDR["Bullet"]);
+                    else Bullet = int.Parse(((string)DollInfoDR["Bullet"]).Split(';')[ModIndex]);
                     FindViewById<TextView>(Resource.Id.DollInfoBulletProgressMax).Text = FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress).Max.ToString();
 
                     FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress).Progress = Bullet;

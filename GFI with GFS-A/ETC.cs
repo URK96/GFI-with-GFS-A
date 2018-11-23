@@ -591,12 +591,14 @@ namespace GFI_with_GFS_A
                 string nowDateTime = $"{now.Year}/{now.Month}/{now.Day} {now.Hour}:{now.Minute}:{now.Second}";
                 string ErrorFileName = $"{nowDateTime}-ErrorLog.txt";
 
+                if (Directory.Exists(LogPath) == false) Directory.CreateDirectory(LogPath);
+
                 using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
                 {
                     sw.Write(error);
                 } 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 activity.RunOnUiThread(() => { Toast.MakeText(activity, "Error Write Log", ToastLength.Long).Show(); });
             }

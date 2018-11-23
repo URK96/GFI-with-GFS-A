@@ -508,9 +508,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.16 수정사항]\n\n
-- 만화 컨텐츠 추가 (츠보우의 소녀전선 특26화)\n
-- 일부 기기에서 DB 메뉴가 정상적으로 진입되지 않는 문제 수정
+    [2.2.17 수정사항]\n\n
+- 일부 인형정보가 정상적으로 로드되지 않는 현상 수정\n
+- DB 일부 구조 변경에 대한 대응
   </string>
 
   <string name="RFBot_CommandHelp">

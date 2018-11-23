@@ -1,0 +1,8 @@
+<2.2.17 수정사항>
+
+- 일부 인형정보가 정상적으로 로드되지 않는 현상 수정
+- DB 일부 구조 변경에 대한 대응
+
+
+- Fix load DB issue on some T-Doll Details
+- Fix code for update DB tree
