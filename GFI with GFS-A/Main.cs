@@ -348,6 +348,7 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.MDMainButton:
+                        ETC.ShowSnackbar(SnackbarLayout, Resource.String.ComingSoon, Snackbar.LengthShort, Android.Graphics.Color.Violet);
                         break;
                     case Resource.Id.GFDInfoMainButton:
                         StartActivity(typeof(GFDInfoActivity));

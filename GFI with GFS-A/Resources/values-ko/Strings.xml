@@ -508,9 +508,8 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.17 수정사항]\n\n
-- 일부 인형정보가 정상적으로 로드되지 않는 현상 수정\n
-- DB 일부 구조 변경에 대한 대응
+    [2.2.18 수정사항]\n\n
+- 만화 컨텐츠 추가 (그리폰 철혈 11화)
   </string>
 
   <string name="RFBot_CommandHelp">
