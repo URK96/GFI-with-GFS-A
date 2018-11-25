@@ -591,6 +591,9 @@ namespace GFI_with_GFS_A
                 string nowDateTime = $"{now.Year}/{now.Month}/{now.Day} {now.Hour}:{now.Minute}:{now.Second}";
                 string ErrorFileName = $"{nowDateTime}-ErrorLog.txt";
 
+                DirectoryInfo di = new DirectoryInfo(LogPath);
+                if (di.Exists == false) di.Create();
+
                 using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
                 {
                     sw.Write(error);
@@ -611,6 +614,9 @@ namespace GFI_with_GFS_A
                 //string nowDateTime = now.Year.ToString() + now.Month.ToString() + now.Day.ToString() + now.Hour.ToString() + now.Minute.ToString() + now.Second.ToString();
                 string nowDateTime = $"{now.Year}/{now.Month}/{now.Day} {now.Hour}:{now.Minute}:{now.Second}";
                 string ErrorFileName = $"{nowDateTime}-ErrorLog.txt";
+
+                DirectoryInfo di = new DirectoryInfo(LogPath);
+                if (di.Exists == false) di.Create();
 
                 using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
                 {

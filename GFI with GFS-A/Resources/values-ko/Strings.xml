@@ -418,6 +418,8 @@
   <string name="Setting_LowMemoryOption_Summary">RAM이 부족한 저사양 기기를 위해 일부 효과나 커스텀 리소스를 제한합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
   <string name="Setting_UseLightTheme_Title">밝은 테마 사용</string>
   <string name="Setting_UseLightTheme_Summary">기본값인 어두운 테마 대신 밝은 테마를 사용합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
+  <string name="Setting_ServerCheck_Title">서버 체크 활성화</string>
+  <string name="Setting_ServerCheck_Summary">앱 기동시 서버를 체크합니다. 비활성화 시 기동 시간이 짧아지지만 권장하지 않습니다.</string>
   <string name="Setting_Category_MainMenu">메인 화면</string>
   <string name="Setting_MainButtonColor_Title">메인 버튼 이미지 색상</string>
   <string name="Setting_MainButtonColor_Summary">소전사전 시작 시 표시될 메뉴 버튼 이미지의 색상을 선택합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>

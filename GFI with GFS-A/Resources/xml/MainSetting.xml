@@ -22,6 +22,10 @@
       android:key="UseLightTheme"
       android:title="@string/Setting_UseLightTheme_Title"
       android:summary="@string/Setting_UseLightTheme_Summary"/>
+    <android.support.v14.preference.SwitchPreference
+      android:key="EnableServerCheck"
+      android:title="@string/Setting_ServerCheck_Title"
+      android:summary="@string/Setting_ServerCheck_Summary"/>
   </android.support.v7.preference.PreferenceCategory>
   <android.support.v7.preference.PreferenceCategory
   android:title="@string/Setting_Category_MainMenu">

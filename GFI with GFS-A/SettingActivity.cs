@@ -149,6 +149,16 @@ namespace GFI_with_GFS_A
                 SaveSetting.Apply();
             };
 
+            SwitchPreference EnableServerCheck = (SwitchPreference)FindPreference("EnableServerCheck");
+            if (ETC.UseLightTheme == true) EnableServerCheck.SetIcon(Resource.Drawable.UseLightThemeIcon_WhiteTheme);
+            else EnableServerCheck.SetIcon(Resource.Drawable.UseLightThemeIcon);
+            EnableServerCheck.Checked = ETC.sharedPreferences.GetBoolean("UseLightTheme", false);
+            EnableServerCheck.PreferenceChange += delegate
+            {
+                SaveSetting.PutBoolean("EnableServerCheck", EnableServerCheck.Checked);
+                SaveSetting.Apply();
+            };
+
             ListPreference MainButtonColor = (ListPreference)FindPreference("MainButtonColor");
             if (ETC.UseLightTheme == true) MainButtonColor.SetIcon(Resource.Drawable.AppStartModeIcon_WhiteTheme);
             else MainButtonColor.SetIcon(Resource.Drawable.AppStartModeIcon);

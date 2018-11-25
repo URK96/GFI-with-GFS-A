@@ -416,6 +416,8 @@
   <string name="Setting_LowMemoryOption_Summary">Restrict some effects or custom resources for Low-RAM devices. After setup, the app must be restarted before it takes effect.</string>
   <string name="Setting_UseLightTheme_Title">Use Light Theme</string>
   <string name="Setting_UseLightTheme_Summary">Use a Light theme instead of the default Dark Theme. After setup, the app must be restarted before it takes effect.</string>
+  <string name="Setting_ServerCheck_Title">Enable Check Server</string>
+  <string name="Setting_ServerCheck_Summary">Checking server when app start. When disable, app starting time is short but not recommend.</string>
   <string name="Setting_Category_MainMenu">Main Menu</string>
   <string name="Setting_MainButtonColor_Title">Main Button Color</string>
   <string name="Setting_MainButtonColor_Summary">Select the color of the menu button. After setup, the app must be restarted before it takes effect.</string>
