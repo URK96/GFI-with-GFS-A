@@ -49,6 +49,8 @@ namespace GFI_with_GFS_A
                 SetContentView(Resource.Layout.SplashLayout);
                 SetTitle(Resource.String.app_name);
 
+                Random r = new Random(DateTime.Now.Millisecond);
+
                 /*indicator = new SfBusyIndicator(this)
                 {
                     AnimationType = Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.GearBox,
@@ -58,6 +60,9 @@ namespace GFI_with_GFS_A
                 FindViewById<FrameLayout>(Resource.Id.SplashBusyIndicatorLayout).AddView(indicator);*/
 
                 SplashImageView = FindViewById<ImageView>(Resource.Id.SplashImageView);
+
+                if ((ETC.sharedPreferences.GetInt("SplashBG_Index", 0) == 1) || ((r.Next() % 20) == 0)) SplashImageView.SetBackgroundResource(Resource.Drawable.SplashClip_Special);
+
                 drawable = (ClipDrawable)SplashImageView.Background;
                 drawable.SetLevel(0);
 

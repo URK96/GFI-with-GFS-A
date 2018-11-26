@@ -506,8 +506,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.18 Update]\n\n
-- Add Cartoon Content
+    [2.2.19 Update]\n\n
+- Add Cartoon Content\n
+- Add Hidden Splash Image
   </string>
 
   <string name="RFBot_CommandHelp">

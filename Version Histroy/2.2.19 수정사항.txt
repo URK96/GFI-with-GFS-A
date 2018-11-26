@@ -1,0 +1,8 @@
+<2.2.19 수정사항>
+
+- 만화 컨텐츠 추가 (츠보우의 소녀전선 특27화)
+- 히든 로딩화면 추가
+
+
+- Add Cartoon Content
+- Add Hidden Splash Image
