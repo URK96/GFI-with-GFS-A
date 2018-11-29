@@ -25,8 +25,6 @@ namespace GFI_with_GFS_A
         private Category CategoryType = Category.Main;
         private Top TopType = Top.Main;
 
-        private ArrayAdapter Category_Adapter;
-
         private RecyclerView MainRecyclerView;
         private Button PreviousButton;
         private RecyclerView.LayoutManager MainRecyclerManager;

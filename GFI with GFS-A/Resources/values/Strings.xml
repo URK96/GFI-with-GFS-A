@@ -442,6 +442,9 @@
   <string name="Setting_Category_Log">Log</string>
   <string name="Setting_DeleteAllLogFile_Title">Delete Log</string>
   <string name="Setting_DeleteAllLogFile_Summary">Delete all log files.</string>
+  <string name="Setting_Category_ETC">ETC</string>
+  <string name="Setting_ExternalLibraryLicense_Title">External Library License</string>
+  <string name="Setting_ExternalLibraryLicense_Summary">Check license of external library applied on this app</string>
   
   
     

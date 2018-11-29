@@ -41,12 +41,22 @@
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:text=""
-			android:src="@drawable/refreshicon_whitetheme"
+			android:src="@drawable/refreshicon"
 			android:scaleType="fitCenter"
 			android:enabled="false"
 			android:id="@+id/CartoonScreenRefreshButton"/>
 	</LinearLayout>
-<ScrollView 
+	<LinearLayout 
+	    android:orientation="vertical"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+		android:id="@+id/CartoonScreenCopyrightLayout"/>
+	<android.support.v7.widget.RecyclerView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scrollbars="vertical"
+		android:id="@+id/CartoonScreenMainRecyclerView"/>
+<!--<ScrollView 
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 	<LinearLayout 
@@ -56,5 +66,5 @@
 		android:id="@+id/CartoonScreenMainLayout">
 
 	</LinearLayout>
-</ScrollView>
+</ScrollView>-->
 </LinearLayout>

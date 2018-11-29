@@ -231,6 +231,9 @@ namespace GFI_with_GFS_A
             if (ETC.UseLightTheme == true) DeleteAllLogFile.SetIcon(Resource.Drawable.DeleteAllLogFileIcon_WhiteTheme);
             else DeleteAllLogFile.SetIcon(Resource.Drawable.DeleteAllLogFileIcon);
             DeleteAllLogFile.PreferenceClick += DeleteAllLogFile_PreferenceClick;
+
+            Preference ExternalLibraryLicense = FindPreference("ExternalLibraryLicense");
+            ExternalLibraryLicense.PreferenceClick += delegate { Activity.StartActivity(typeof(ExternLibraryCopyright)); };
         }
 
         private async void CheckDBUpdate_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)

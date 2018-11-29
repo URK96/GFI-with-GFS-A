@@ -76,29 +76,20 @@
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\portable-net45+win8+wpa81\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android.Export" />
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PhotoViewBinding, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.PhotoView.Android.1.2.4\lib\PhotoViewBinding.dll</HintPath>
     </Reference>
-    <Reference Include="spine-csharp">
-      <HintPath>..\spine-csharp.dll</HintPath>
+    <Reference Include="Syncfusion.Licensing, Version=16.3.0.36, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.16.3.0.36\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=16.3.0.29, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Licensing.16.3.0.29\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
+    <Reference Include="Syncfusion.SfBusyIndicator.Android, Version=16.3451.0.36, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfBusyIndicator.Android.16.3.0.36\lib\MonoAndroid10\Syncfusion.SfBusyIndicator.Android.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfBusyIndicator.Android, Version=16.3451.0.29, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfBusyIndicator.Android.16.3.0.29\lib\MonoAndroid10\Syncfusion.SfBusyIndicator.Android.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfChart.Android, Version=16.3451.0.29, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.Android.16.3.0.29\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfGauge.Android, Version=16.3451.0.29, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfGauge.Android.16.3.0.29\lib\MonoAndroid10\Syncfusion.SfGauge.Android.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfRating.Android, Version=16.3451.0.29, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfRating.Android.16.3.0.29\lib\MonoAndroid10\Syncfusion.SfRating.Android.dll</HintPath>
+    <Reference Include="Syncfusion.SfChart.Android, Version=16.3451.0.36, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.Android.16.3.0.36\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -225,6 +216,7 @@
     <Compile Include="CartoonActivity.cs" />
     <Compile Include="DollDBMainActivity_New.cs" />
     <Compile Include="EnemyDBImageViewer.cs" />
+    <Compile Include="ExternLibraryCopyright.cs" />
     <Compile Include="FSTDBDetailActivity.cs" />
     <Compile Include="DollDBDetailActivity.cs" />
     <Compile Include="FSTDBMainActivity.cs" />
@@ -1417,6 +1409,29 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\DollListLayout_New.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ExternLibraryCopyrightLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ExternLibraryListViewLayout.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\ExternLibraryList.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\CartoonScreenListLayout.axml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>

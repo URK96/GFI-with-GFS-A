@@ -444,6 +444,9 @@
   <string name="Setting_Category_Log">Log 설정</string> 
   <string name="Setting_DeleteAllLogFile_Title">Log 파일 삭제</string>
   <string name="Setting_DeleteAllLogFile_Summary">Log 파일을 전부 삭제합니다.</string>
+  <string name="Setting_Category_ETC">기타</string>
+  <string name="Setting_ExternalLibraryLicense_Title">외부 라이브러리 라이선스</string>
+  <string name="Setting_ExternalLibraryLicense_Summary">소전사전에 사용된 외부 라이브러리의 라이선스를 확인합니다.</string>
 
   
   
