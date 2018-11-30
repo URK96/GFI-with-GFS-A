@@ -195,6 +195,7 @@ namespace GFI_with_GFS_A
 
         private LinearLayout MainLayout;
         private LinearLayout CopyrightLayout;
+        private FrameLayout WebViewLayout;
         private ProgressBar LoadProgress;
         private Button PreviousButton;
         private Button NextButton;
@@ -222,6 +223,7 @@ namespace GFI_with_GFS_A
 
             //MainLayout = v.FindViewById<LinearLayout>(Resource.Id.CartoonScreenMainLayout);
             CopyrightLayout = v.FindViewById<LinearLayout>(Resource.Id.CartoonScreenCopyrightLayout);
+            WebViewLayout = v.FindViewById<FrameLayout>(Resource.Id.CartoonScreenWebViewLayout);
             LoadProgress = v.FindViewById<ProgressBar>(Resource.Id.CartoonScreenLoadProgress);
             PreviousButton = v.FindViewById<Button>(Resource.Id.CartoonScreenPreviousButton);
             PreviousButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index - 1, false); };
@@ -417,7 +419,7 @@ namespace GFI_with_GFS_A
                 Selected_Item_List.Clear();
                 Selected_Item_URL_List.Clear();
 
-                MainLayout.RemoveAllViews();
+                WebViewLayout.RemoveAllViews();
 
                 await Task.Delay(100);
 
@@ -438,7 +440,7 @@ namespace GFI_with_GFS_A
                 webview.Settings.SetAppCacheEnabled(true);
                 webview.Settings.JavaScriptEnabled = true;
 
-                MainLayout.AddView(webview);
+                WebViewLayout.AddView(webview);
                 webview.LoadUrl(Selected_Item_URL_List[Now_Item_Index]);
 
                 LoadProgress.Visibility = ViewStates.Invisible;
