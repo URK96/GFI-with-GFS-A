@@ -508,9 +508,8 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.19 수정사항]\n\n
-- 만화 컨텐츠 추가 (츠보우의 소녀전선 특27화)\n
-- 히든 로딩화면 추가
+    [2.2.20 수정사항]\n\n
+- SG 타입의 인형 상세정보가 로드되지 않는 문제 수정
   </string>
 
   <string name="RFBot_CommandHelp">

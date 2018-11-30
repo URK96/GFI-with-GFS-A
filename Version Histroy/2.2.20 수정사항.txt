@@ -1,0 +1,6 @@
+<2.2.20 수정사항>
+
+- SG 타입의 인형 상세정보가 로드되지 않는 문제 수정
+
+
+- Fix load issue about SG Type T-Doll

@@ -506,9 +506,8 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.19 Update]\n\n
-- Add Cartoon Content\n
-- Add Hidden Splash Image
+    [2.2.20 Update]\n\n
+- Fix load issue about SG Type T-Doll
   </string>
 
   <string name="RFBot_CommandHelp">

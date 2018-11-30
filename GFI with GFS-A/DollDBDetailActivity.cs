@@ -1228,7 +1228,7 @@ namespace GFI_with_GFS_A
                     result = (4 + (200 / tAS));
                     break;
                 case "SG":
-                    int tB = (int)dr["Bullet"];
+                    int tB = int.Parse((string)dr["Bullet"]);
                     result = (1.5 + (0.5 * tB));
                     break;
             }
