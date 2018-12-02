@@ -54,7 +54,7 @@ namespace GFI_with_GFS_A
 
                 EquipName = Intent.GetStringExtra("Keyword");
 
-                EquipInfoDR = ETC.FindDataRow(ETC.EquipmentList, "Name", EquipName);
+                EquipInfoDR = ETC.FindDataRow(ETC.EquipmentList, "Id", EquipName);
                 EquipId = (int)EquipInfoDR["Id"];
                 EquipGrade = (int)EquipInfoDR["Grade"];
                 EquipCategory = (string)EquipInfoDR["Category"];
@@ -77,6 +77,8 @@ namespace GFI_with_GFS_A
                 FABTimer.Elapsed += FABTimer_Elapsed;
 
                 InitLoadProcess(false);
+
+                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_EquipDBDetail", true) == true)) ETC.RunHelpActivity(this, "EquipDBDetail");
             }
             catch (Exception ex)
             {

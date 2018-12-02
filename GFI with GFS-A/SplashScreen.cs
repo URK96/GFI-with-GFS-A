@@ -44,7 +44,7 @@ namespace GFI_with_GFS_A
 
                 if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Splash_Light);
 
-                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzAxMzlAMzEzNjJlMzMyZTMwaFNuV1Y2bEpzK25pSDlVREdzZHpPcW15TG54Slg3Z3JjQm1IYSs3SENoYz0=");
+                //Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzAxMzlAMzEzNjJlMzMyZTMwaFNuV1Y2bEpzK25pSDlVREdzZHpPcW15TG54Slg3Z3JjQm1IYSs3SENoYz0=");
 
                 SetContentView(Resource.Layout.SplashLayout);
                 SetTitle(Resource.String.app_name);

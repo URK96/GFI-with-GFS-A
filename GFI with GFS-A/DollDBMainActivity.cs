@@ -1,13 +1,15 @@
-﻿/*using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +21,8 @@ namespace GFI_with_GFS_A
     {
         delegate void DownloadProgress();
 
-        private List<DollListBasicInfo> mDollList = new List<DollListBasicInfo>();
+        private List<Doll> RootDollLIst = new List<Doll>();
+        private List<Doll> SubDollList = new List<Doll>();
         private List<int> Download_List = new List<int>();
 
         int[] GradeFilters = { Resource.Id.DollFilterGrade2, Resource.Id.DollFilterGrade3, Resource.Id.DollFilterGrade4, Resource.Id.DollFilterGrade5, Resource.Id.DollFilterGradeExtra };
@@ -39,7 +42,8 @@ namespace GFI_with_GFS_A
         private enum LineUp { Name, Number, ProductTime }
         private LineUp LineUpStyle = LineUp.Name;
 
-        private ListView mDollListView = null;
+        private RecyclerView mDollListView;
+        private RecyclerView.LayoutManager MainRecyclerManager;
         private CoordinatorLayout SnackbarLayout = null;
 
         private EditText SearchText = null;
@@ -61,9 +65,6 @@ namespace GFI_with_GFS_A
 
                 if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
 
-                ETC.Language = Resources.Configuration.Locale;
-                Toast.MakeText(this, ETC.Language.Language, ToastLength.Short).Show();
-
                 // Create your application here
                 SetContentView(Resource.Layout.DollDBListLayout);
 
@@ -71,7 +72,9 @@ namespace GFI_with_GFS_A
 
                 CanRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
-                mDollListView = FindViewById<ListView>(Resource.Id.DollDBListView);
+                mDollListView = FindViewById<RecyclerView>(Resource.Id.DollDBRecyclerView);
+                MainRecyclerManager = new LinearLayoutManager(this);
+                mDollListView.SetLayoutManager(MainRecyclerManager);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBSnackbarLayout);
 
                 SearchText = FindViewById<EditText>(Resource.Id.DollSearchText);
@@ -83,18 +86,13 @@ namespace GFI_with_GFS_A
                     FindViewById<LinearLayout>(Resource.Id.DollSearchLayout).SetBackgroundColor(Android.Graphics.Color.LightGray);
                     FindViewById<ImageButton>(Resource.Id.DollSearchResetButton).SetBackgroundResource(Resource.Drawable.SearchIcon_WhiteTheme);
                     FindViewById<View>(Resource.Id.DollSearchSeperateBar).SetBackgroundColor(Android.Graphics.Color.DarkGreen);
-                    mDollListView.Divider = new Android.Graphics.Drawables.ColorDrawable(Android.Graphics.Color.Gray);
                 }
 
                 InitProcess();
 
                 ListDoll(SearchText.Text, new int[] { Filter_ProductTime[0], Filter_ProductTime[1] }, Filter_ProductTime[2]);
 
-                mDollListView.FastScrollEnabled = true;
-                mDollListView.FastScrollAlwaysVisible = false;
-                mDollListView.ItemClick += MDollListView_ItemClick;
-                mDollListView.ItemLongClick += MDollListView_ItemLongClick;
-                mDollListView.ScrollStateChanged += MDollListView_ScrollStateChanged;
+                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true) == true)) ETC.RunHelpActivity(this, "DBList");
             }
             catch (Exception ex)
             {
@@ -126,70 +124,6 @@ namespace GFI_with_GFS_A
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeStatusError, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
             }
-        }
-
-        private void MDollListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            int DollNum = (int)(mDollList[e.Position].DollDR)["DicNumber"];
-            var DollInfo = new Intent(this, typeof(DollDBDetailActivity));
-            DollInfo.PutExtra("Keyword", DollNum);
-            StartActivity(DollInfo);
-            OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
-        }
-
-
-        private void MDollListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
-        {
-            DataRow dr = mDollList[e.Position].DollDR;
-
-            string[] Buffs = ((string)dr["Effect"]).Split(';')[0].Split(',');
-            StringBuilder buff_sb = new StringBuilder();
-
-            for (int i = 0; i < Buffs.Length; ++i)
-            {
-                string temp = "";
-                
-                switch (Buffs[i])
-                {
-                    case "FR":
-                        temp = string.Format("{0}↑", Resources.GetString(Resource.String.Common_FR));
-                        break;
-                    case "EV":
-                        temp = string.Format("{0}↑", Resources.GetString(Resource.String.Common_EV));
-                        break;
-                    case "AC":
-                        temp = string.Format("{0}↑", Resources.GetString(Resource.String.Common_AC));
-                        break;
-                    case "AS":
-                        temp = string.Format("{0}↑", Resources.GetString(Resource.String.Common_AS));
-                        break;
-                    case "CR":
-                        temp = string.Format("{0}↑", Resources.GetString(Resource.String.Common_CR));
-                        break;
-                    case "CL":
-                        temp = string.Format("{0}↓", Resources.GetString(Resource.String.Common_CL));
-                        break;
-                    case "AM":
-                        temp = string.Format("{0}↑", Resources.GetString(Resource.String.Common_AM));
-                        break;
-                }
-
-                buff_sb.Append(temp);
-                if (i < (Buffs.Length - 1)) buff_sb.Append(" | ");
-            }
-
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendFormat("{0} : {1}\n\n", Resources.GetString(Resource.String.Common_NickName), (string)dr["NickName"]);
-            sb.AppendFormat("{0} : {1}\n\n", Resources.GetString(Resource.String.Common_Buff), buff_sb.ToString());
-            sb.AppendFormat("{0} : {1}", Resources.GetString(Resource.String.Common_Skill),(string)dr["Skill"]);
-
-            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
-            ad.SetTitle("<No. " + (int)dr["DicNumber"] + "> " + (string)dr["Name"]);
-            ad.SetCancelable(true);
-            ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
-            ad.SetMessage(sb.ToString());
-            ad.Show();
         }
 
         private void InitializeView()
@@ -284,9 +218,36 @@ namespace GFI_with_GFS_A
 
         private void InitProcess()
         {
+            CreateDollObject();
+
             if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
             {
-                if (CheckDollCropImage() == true) ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(DollCropImageDownloadProcess));
+                if (CheckDollCropImage() == true)
+                    ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(DollCropImageDownloadProcess));
+            }
+        }
+
+        private void CreateDollObject()
+        {
+            string name = "";
+
+            try
+            {
+                foreach (DataRow dr in ETC.DollList.Rows)
+                {
+                    name = (string)dr["Name"];
+
+                    if (name == "PPK")
+                        name = "ppk";
+
+                    RootDollLIst.Add(new Doll(dr));
+                }
+
+                RootDollLIst.TrimExcess();
+            }
+            catch (Exception ex)
+            {
+                Toast.MakeText(this, name, ToastLength.Short).Show();
             }
         }
 
@@ -482,58 +443,62 @@ namespace GFI_with_GFS_A
 
         private async void ListDoll(string searchText, int[] p_time, int p_range)
         {
-            //ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_Listing, Snackbar.LengthShort, Android.Graphics.Color.DarkViolet);
-
-            mDollList.Clear();
+            SubDollList.Clear();
 
             searchText = searchText.ToUpper();
 
             try
             {
-                for (int i = 0; i < ETC.DollList.Rows.Count; ++i)
+                for (int i = 0; i < RootDollLIst.Count; ++i)
                 {
-                    DataRow dr = ETC.DollList.Rows[i];
+                    Doll doll = RootDollLIst[i];
 
                     if ((p_time[0] + p_time[1]) != 0)
                     {
-                        if (CheckDollByProductTime(p_time, p_range, (int)dr["ProductTime"]) == false) continue;
+                        if (CheckDollByProductTime(p_time, p_range, doll.ProductTime) == false) continue;
                     }
 
-                    if (CheckFilter(dr) == true) continue;
+                    if (CheckFilter(doll) == true) continue;
                     if (searchText != "")
                     {
-                        string name = "";
-                        if (ETC.Language.Language == "ko") name = ((string)dr["Name"]).ToUpper();
+                        string name = doll.Name.ToUpper();
+                        /*if (ETC.Language.Language == "ko") name = ((string)dr["Name"]).ToUpper();
                         else
                         {
                             if (dr["Name_EN"] == DBNull.Value) name = ((string)dr["Name"]).ToUpper();
                             else if (string.IsNullOrWhiteSpace((string)dr["Name_EN"])) name = ((string)dr["Name"]).ToUpper();
                             else name = ((string)dr["Name_EN"]).ToUpper();
-                        }
+                        }*/
                         if (name.Contains(searchText) == false) continue;
                     }
 
-                    DollListBasicInfo info = new DollListBasicInfo()
-                    {
-                        Id = i,
-                        DollDR = dr
-                    };
-                    mDollList.Add(info);
+                    SubDollList.Add(doll);
                 }
 
-                mDollList.Sort(SortDoll);
+                SubDollList.Sort(SortDoll);
 
-                var adapter = new DollListAdapter(this, mDollList);
+                var adapter = new DollListAdapter(SubDollList, this);
+
+                if (adapter.HasOnItemClick() == false) adapter.ItemClick += Adapter_ItemClick;
 
                 await Task.Delay(100);
 
-                RunOnUiThread(() => { mDollListView.Adapter = adapter; });
+                RunOnUiThread(() => { mDollListView.SetAdapter(adapter); });
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_ListingFail, Snackbar.LengthLong);
             }
+        }
+
+        private async void Adapter_ItemClick(object sender, int position)
+        {
+            await Task.Delay(100);
+            var DollInfo = new Intent(this, typeof(DollDBDetailActivity));
+            DollInfo.PutExtra("DicNum", SubDollList[position].DicNumber);
+            StartActivity(DollInfo);
+            OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }
 
         private bool CheckDollByProductTime(int[] p_time, int range, int d_time)
@@ -548,25 +513,21 @@ namespace GFI_with_GFS_A
             return false;
         }
 
-        private int SortDoll(DollListBasicInfo x, DollListBasicInfo y)
+        private int SortDoll(Doll x, Doll y)
         {
             switch (LineUpStyle)
             {
                 case LineUp.Number:
-                    int x_num = (int)x.DollDR["DicNumber"];
-                    int y_num = (int)y.DollDR["DicNumber"];
-                    return x_num.CompareTo(y_num);
+                    return x.DicNumber.CompareTo(y.DicNumber);
                 case LineUp.ProductTime:
-                    int x_time = (int)x.DollDR["ProductTime"];
-                    int y_time = (int)y.DollDR["ProductTime"];
+                    int x_time = x.ProductTime;
+                    int y_time = y.ProductTime;
+
                     if ((x_time == 0) && (y_time !=0)) return 1;
                     else if ((y_time == 0) && (x_time != 0)) return -1;
                     else if (x_time == y_time)
                     {
-                        string x_name_t = "";
-                        string y_name_t = "";
-
-                        if (ETC.Language.Language == "ko")
+                        /*if (ETC.Language.Language == "ko")
                         {
                             x_name_t = (string)x.DollDR["Name"];
                             y_name_t = (string)y.DollDR["Name"];
@@ -580,17 +541,14 @@ namespace GFI_with_GFS_A
                             if (y.DollDR["Name_EN"] == DBNull.Value) y_name_t = (string)y.DollDR["Name"];
                             else if (string.IsNullOrWhiteSpace((string)y.DollDR["Name_EN"])) y_name_t = (string)x.DollDR["Name"];
                             else y_name_t = (string)y.DollDR["Name_EN"];
-                        }
+                        }*/
 
-                        return x_name_t.CompareTo(y_name_t);
+                        return x.Name.CompareTo(y.Name);
                     }
                     else return x_time.CompareTo(y_time);
                 case LineUp.Name:
                 default:
-                    string x_name = "";
-                    string y_name = "";
-
-                    if (ETC.Language.Language == "ko")
+                    /*if (ETC.Language.Language == "ko")
                     {
                         x_name = (string)x.DollDR["Name"];
                         y_name = (string)y.DollDR["Name"];
@@ -604,18 +562,14 @@ namespace GFI_with_GFS_A
                         if (y.DollDR["Name_EN"] == DBNull.Value) y_name = (string)y.DollDR["Name"];
                         else if (string.IsNullOrWhiteSpace((string)y.DollDR["Name_EN"])) y_name = (string)x.DollDR["Name"];
                         else y_name = (string)y.DollDR["Name_EN"];
-                    }
-                    return x_name.CompareTo(y_name);
+                    }*/
+                    return x.Name.CompareTo(y.Name);
             }
         }
 
-        private bool CheckFilter(DataRow dr)
+        private bool CheckFilter(Doll doll)
         {
-            int grade = (int)dr["Grade"];
-            string type = (string)dr["Type"];
-            bool HasMOD = (bool)dr["HasMod"];
-
-            switch (grade)
+            switch (doll.Grade)
             {
                 case 2:
                     if (Filter_Grade[0] == false) return true;
@@ -634,7 +588,7 @@ namespace GFI_with_GFS_A
                     break;
             }
 
-            switch (type)
+            switch (doll.Type)
             {
                 case "HG":
                     if (Filter_Type[0] == false) return true;
@@ -656,7 +610,7 @@ namespace GFI_with_GFS_A
                     break;
             }
 
-            switch (HasMOD)
+            switch (doll.HasMod)
             {
                 case true:
                     if (Filter_Mod[0] == false) return true;
@@ -678,127 +632,96 @@ namespace GFI_with_GFS_A
         }
     }
 
-    class DollListBasicInfo
+    class DollListViewHolder : RecyclerView.ViewHolder
     {
-        public int Id { set; get; }
-        public DataRow DollDR { set; get; }
+        public TextView DicNumber { get; private set; }
+        public TextView Type { get; private set; }
+        public ImageView Grade { get; private set; }
+        public ImageView SmallImage { get; private set; }
+        public TextView Name { get; private set; }
+        public TextView ProductTime { get; private set; }
+
+        public DollListViewHolder(View view, Action<int> listener) : base(view)
+        {
+            DicNumber = view.FindViewById<TextView>(Resource.Id.DollListNumber);
+            Type = view.FindViewById<TextView>(Resource.Id.DollListType);
+            Grade = view.FindViewById<ImageView>(Resource.Id.DollListGrade);
+            SmallImage = view.FindViewById<ImageView>(Resource.Id.DollListSmallImage);
+            Name = view.FindViewById<TextView>(Resource.Id.DollListName);
+            ProductTime = view.FindViewById<TextView>(Resource.Id.DollListProductTime);
+
+            view.Click += (sender, e) => listener(base.LayoutPosition);
+        }
     }
 
-    class DollListAdapter : BaseAdapter<DollListBasicInfo>
+    class DollListAdapter : RecyclerView.Adapter
     {
-        List<DollListBasicInfo> mitems;
-        Activity mcontext;
-        int count = 0;
+        List<Doll> items;
+        Activity context;
 
-        public DollListAdapter(Activity context, List<DollListBasicInfo> items) : base()
+        public event EventHandler<int> ItemClick;
+
+        public DollListAdapter(List<Doll> items, Activity context)
         {
-            mcontext = context;
-            mitems = items;
+            this.items = items;
+            this.context = context;
         }
 
-        public override DollListBasicInfo this[int position]
+        public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            get { return mitems[position]; }
+            View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.DollListLayout, parent, false);
+
+            DollListViewHolder vh = new DollListViewHolder(view, OnClick);
+            return vh;
         }
 
-        public override int Count
+        public override int ItemCount
         {
-            get { return mitems.Count; }
+            get { return items.Count; }
         }
 
-        public override Java.Lang.Object GetItem(int position)
+        void OnClick(int position)
         {
-            return null;
+            if (ItemClick != null)
+            {
+                ItemClick(this, position);
+            }
         }
 
-        public override long GetItemId(int position)
+        public bool HasOnItemClick()
         {
-            return mitems[position].Id;
+            if (ItemClick == null) return false;
+            else return true;
         }
 
-        public override View GetView(int position, View convertView, ViewGroup parent)
+        public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            var item = mitems[position];
-            var view = convertView;
+            DollListViewHolder vh = holder as DollListViewHolder;
+
+            var item = items[position];
 
             try
             {
-                if (view == null) view = mcontext.LayoutInflater.Inflate(Resource.Layout.DollListLayout, null);
+                vh.DicNumber.Text = $"No. {item.DicNumber}";
 
-                count += 1;
-                if (count == 50)
-                {
-                    GC.Collect(0, GCCollectionMode.Optimized, false, true);
-                    count = 0;
-                }
-
-                int D_Num = (int)item.DollDR["DicNumber"];
-
-                ImageView DollSmallImage = view.FindViewById<ImageView>(Resource.Id.DollListSmallImage);
                 if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
                 {
-                    DollSmallImage.Visibility = ViewStates.Visible;
-                    string FilePath = System.IO.Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", D_Num + ".gfdcache");
-                    if (System.IO.File.Exists(FilePath) == true) DollSmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(FilePath));
+                    vh.SmallImage.Visibility = ViewStates.Visible;
+                    if (File.Exists(Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", $"{item.DicNumber}.gfdcache")) == true)
+                        vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", $"{item.DicNumber}.gfdcache")));
                 }
-                else DollSmallImage.Visibility = ViewStates.Gone;
+                else vh.SmallImage.Visibility = ViewStates.Gone;
 
-                ImageView DollGradeIcon = view.FindViewById<ImageView>(Resource.Id.DollListGrade);
-                int GradeIconId = 0;
-                switch ((int)item.DollDR["Grade"])
-                {
-                    case 2:
-                        GradeIconId = Resource.Drawable.Grade_2;
-                        break;
-                    case 3:
-                        GradeIconId = Resource.Drawable.Grade_3;
-                        break;
-                    case 4:
-                        GradeIconId = Resource.Drawable.Grade_4;
-                        break;
-                    case 5:
-                        GradeIconId = Resource.Drawable.Grade_5;
-                        break;
-                    case 0:
-                        GradeIconId = Resource.Drawable.Grade_0;
-                        break;
-                    default:
-                        GradeIconId = Resource.Drawable.Grade_2;
-                        break;
-                }
-                DollGradeIcon.SetImageResource(GradeIconId);
-
-                TextView DollType = view.FindViewById<TextView>(Resource.Id.DollListType);
-                DollType.Text = (string)item.DollDR["Type"];
-
-
-                string name = "";
-
-                if (ETC.Language.Language == "ko") name = (string)item.DollDR["Name"];
-                else
-                {
-                    if (item.DollDR["Name_EN"] == DBNull.Value) name = (string)item.DollDR["Name"];
-                    else if (string.IsNullOrWhiteSpace((string)item.DollDR["Name_EN"])) name = (string)item.DollDR["Name"];
-                    else name = (string)item.DollDR["Name_EN"];
-                }
-                TextView DollName = view.FindViewById<TextView>(Resource.Id.DollListName);
-                DollName.Text = name;
-
-                TextView DollProductTime = view.FindViewById<TextView>(Resource.Id.DollListProductTime);
-                DollProductTime.Text = ETC.CalcTime((int)item.DollDR["ProductTime"]);
-            }
-            catch (OutOfMemoryException)
-            {
-                GC.Collect(0, GCCollectionMode.Forced, false, true);
-                GetView(position, convertView, parent);
+                vh.Grade.SetImageResource(item.GradeIconId);
+                vh.Type.Text = item.Type;
+                vh.Name.Text = item.Name;
+                vh.ProductTime.Text = ETC.CalcTime(item.ProductTime);
             }
             catch (Exception ex)
             {
-                ETC.LogError(mcontext, ex.ToString());
-                Toast.MakeText(mcontext, "Error Create View", ToastLength.Short).Show();
+                ETC.LogError(context, ex.ToString());
+                Toast.MakeText(context, "Error Create View", ToastLength.Short).Show();
             }
-
-            return view;
         }
     }
-}*/
+}

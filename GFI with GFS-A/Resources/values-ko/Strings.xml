@@ -239,6 +239,7 @@
   <string name="Common_Previous">이전</string>
   <string name="Common_Next">다음</string>
   <string name="Common_PreviousList">이전 목록으로</string>
+  <string name="Common_NonProduct">제조 불가</string>
 
   <!--Common Dialog String-->
   <string name="AlertDialog_Confirm">확인</string>

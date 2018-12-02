@@ -196,6 +196,16 @@ namespace GFI_with_GFS_A
             Resources = context.Resources;
             UseLightTheme = sharedPreferences.GetBoolean("UseLightTheme", false);
             SetDialogTheme();
+            Language = Resources.Configuration.Locale;
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NDcxNjJAMzEzNjJlMzMyZTMwbW5TdG9SMTNvVEZJcXo3VEg2Z0JlUTNDbytQTUVpNXJPUGZBb0FqUDV3TT0=");
+        }
+
+        internal static void RunHelpActivity(Activity activity, string type)
+        {
+            Intent intent = new Intent(activity, typeof(HelpImageActivity));
+            intent.PutExtra("Type", type);
+            activity.StartActivity(intent);
+            activity.OverridePendingTransition(Resource.Animation.Fadein, Resource.Animation.Fadeout);
         }
 
         internal static async Task AnimateText(TextView view, string text)
@@ -663,7 +673,16 @@ namespace GFI_with_GFS_A
 
         internal static string CalcTime(int minute)
         {
-            return $"{minute / 60} : {(minute % 60).ToString("D2")}";
+            if (minute != 0) return $"{minute / 60} : {(minute % 60).ToString("D2")}";
+            else return Resources.GetString(Resource.String.Common_NonProduct);
+        }
+
+        internal static bool IsDBNullOrBlank(DataRow dr, string index)
+        {
+            if (dr[index] == DBNull.Value) return true;
+            if (string.IsNullOrWhiteSpace((string)dr[index]) == true) return true;
+
+            return false;
         }
 
         internal static double[] CalcDPS(int FireRate, int AttackSpeed, int Enemy_Armor, int Accuracy, int Enemy_Evasion, int Critical, int Dummy, int Penetration = 10, int Critical_Rate = 150)

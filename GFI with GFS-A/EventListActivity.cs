@@ -17,7 +17,7 @@ using System.Net;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Name = "com.gfl.dic.EventListActivity", Label = "이벤트 목록", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.EventListActivity", Label = "Event", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class EventListActivity : AppCompatActivity
     {
         enum EventPeriodType { Now, Scheduled, Over }
@@ -300,6 +300,12 @@ namespace GFI_with_GFS_A
             await Task.Delay(1000);
 
             pd.Dismiss();
+        }
+
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+            OverridePendingTransition(Resource.Animation.Fadein, Resource.Animation.Fadeout);
         }
     }
 }

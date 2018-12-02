@@ -30,17 +30,13 @@ namespace GFI_with_GFS_A
         private LinearLayout SkillTableSubLayout;
         private LinearLayout ModSkillTableSubLayout;
 
+        internal static Doll doll;
+        internal static Doll c_doll;
         private DataRow DollInfoDR = null;
-        private string DollName;
-        private int DollDicNum;
-        private int DollGrade;
-        internal static string DollType;
         private int ModIndex = 0;
         private int V_Costume_Index = 0;
         private List<string> VoiceList = new List<string>();
         internal static int[] AbilityValues = new int[6];
-
-        internal static DataRow CompareDollInfoDR = null;
 
         private bool IsExtraFeatureOpen = false;
         private bool IsOpenFABMenu = false;
@@ -76,28 +72,15 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY0NkAzMTM2MmUzMjJlMzBmNFFDVVZlU2NDRTVmYVJqQ0ZyOTVPOGhYWnFIazlQNFNPeGVEMU9WMjZnPQ==");
+                //Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY0NkAzMTM2MmUzMjJlMzBmNFFDVVZlU2NDRTVmYVJqQ0ZyOTVPOGhYWnFIazlQNFNPeGVEMU9WMjZnPQ==");
 
                 if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
-
-                ETC.Language = Resources.Configuration.Locale;
 
                 // Create your application here
                 SetContentView(Resource.Layout.DollDBDetailLayout);
 
-                DollDicNum = Intent.GetIntExtra("Keyword", 0);
-
-                DollInfoDR = ETC.FindDataRow(ETC.DollList, "DicNumber", DollDicNum);
-                if (ETC.Language.Language == "ko") DollName = (string)DollInfoDR["Name"];
-                else
-                {
-                    if (DollInfoDR["Name_EN"] == DBNull.Value) DollName = (string)DollInfoDR["Name"];
-                    else if (string.IsNullOrWhiteSpace((string)DollInfoDR["Name_EN"])) DollName = (string)DollInfoDR["Name"];
-                    else DollName = (string)DollInfoDR["Name_EN"];
-                }
-                DollDicNum = (int)DollInfoDR["DicNumber"];
-                DollGrade = (int)DollInfoDR["Grade"];
-                DollType = (string)DollInfoDR["Type"];
+                DollInfoDR = ETC.FindDataRow(ETC.DollList, "DicNumber", Intent.GetIntExtra("DicNum", 0));
+                doll = new Doll(DollInfoDR);
 
                 adview = FindViewById<AdView>(Resource.Id.DollDBDetail_adView);
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.DollDBDetailInitLoadProgress);
@@ -106,7 +89,7 @@ namespace GFI_with_GFS_A
 
                 FindViewById<Button>(Resource.Id.DollDBExtraFeatureButton).Click += DollDBDetailActivity_Click;
                 
-                if ((bool)DollInfoDR["HasMod"] == true)
+                if (doll.HasMod == true)
                 {
                     foreach (int id in ModButtonIds)
                     {
@@ -120,7 +103,7 @@ namespace GFI_with_GFS_A
                 FindViewById<ImageView>(Resource.Id.DollDBDetailSmallImage).Click += DollDBDetailSmallImage_Click;
 
                 
-                if ((bool)DollInfoDR["HasVoice"] == true)
+                if (doll.HasVoice == true)
                 {
                     VoiceCostumeSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailVoiceCostumeSelector);
                     VoiceCostumeSelector.ItemSelected += VoiceCostumeSelector_ItemSelected;
@@ -170,6 +153,8 @@ namespace GFI_with_GFS_A
                 InitCompareList();
 
                 InitLoadProcess(false);
+
+                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DollDBDetail", true) == true)) ETC.RunHelpActivity(this, "DollDBDetail");
             }
             catch (Exception ex)
             {
@@ -245,18 +230,12 @@ namespace GFI_with_GFS_A
 
                 foreach (DataRow dr in ETC.DollList.Rows)
                 {
-                    if (DollDicNum == (int)dr["DicNumber"]) continue;
-                    if ((string)dr["Type"] != DollType) continue;
+                    Doll c_doll = new Doll(dr);
 
-                    string name = "";
-                    if (ETC.Language.Language == "ko") name = (string)dr["Name"];
-                    else
-                    {
-                        if (DollInfoDR["Name_EN"] == DBNull.Value) name = (string)dr["Name"];
-                        else if (string.IsNullOrWhiteSpace((string)DollInfoDR["Name_EN"])) name = (string)dr["Name"];
-                        else name = (string)dr["Name_EN"];
-                    }
-                    CompareList.Add(name);
+                    if (doll.DicNumber == c_doll.DicNumber) continue;
+                    if (c_doll.Type != doll.Type) continue;
+
+                    CompareList.Add(c_doll.Name);
                 }
 
                 CompareList.TrimExcess();
@@ -280,7 +259,7 @@ namespace GFI_with_GFS_A
 
         private void ModelDataButton_Click(object sender, EventArgs e)
         {
-            string FileName = string.Format("{0}.txt", DollDicNum);
+            string FileName = $"{doll.DicNumber}.txt";
             string data = "";
 
             try
@@ -343,7 +322,7 @@ namespace GFI_with_GFS_A
             radar.Color = Android.Graphics.Color.LightGreen;
             radar.EnableAnimation = true;
 
-            radar.Label = DollName;
+            radar.Label = doll.Name;
             radar.TooltipEnabled = true;
 
             chart.Series.Add(radar);
@@ -357,8 +336,8 @@ namespace GFI_with_GFS_A
             radar2.Color = Android.Graphics.Color.Magenta;
             radar2.EnableAnimation = true;
 
-            if (CompareIndex == 0) radar2.Label = string.Format("{0}{1}", DollType, Resources.GetString(Resource.String.DollDBDetail_RadarAverageString));
-            else radar2.Label = (string)CompareDollInfoDR["Name"];
+            if (CompareIndex == 0) radar2.Label = $"{doll.Type}{Resources.GetString(Resource.String.DollDBDetail_RadarAverageString)}";
+            else radar2.Label = c_doll.Name;
 
             radar2.TooltipEnabled = true;
 
@@ -391,7 +370,7 @@ namespace GFI_with_GFS_A
             try
             {
                 var intent = new Intent(this, typeof(ProductPercentTableActivity));
-                intent.PutExtra("Info", new string[] { "Doll", DollDicNum.ToString() });
+                intent.PutExtra("Info", new string[] { "Doll", doll.DicNumber.ToString() });
                 StartActivity(intent);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
@@ -417,12 +396,12 @@ namespace GFI_with_GFS_A
                 switch (V_Costume_Index)
                 {
                     case 0:
-                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", DollName, $"{DollName}_{voice}_JP.wav");
-                        target = Path.Combine(ETC.CachePath, "Voices", $"{DollName}_{voice}_JP.wav");
+                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", doll.krName, $"{doll.krName}_{voice}_JP.wav");
+                        target = Path.Combine(ETC.CachePath, "Voices", $"{doll.DicNumber}_{voice}_JP.gfdcache");
                         break;
                     case 1:
-                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", $"{DollName}_{V_Costume_Index - 1}", $"{DollName}_{V_Costume_Index - 1}_{voice}_JP.wav");
-                        target = Path.Combine(ETC.CachePath, "Voices", $"{DollName}_{V_Costume_Index - 1}_{voice}_JP.wav");
+                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", $"{doll.krName}_{V_Costume_Index - 1}", $"{doll.krName}_{V_Costume_Index - 1}_{voice}_JP.wav");
+                        target = Path.Combine(ETC.CachePath, "Voices", $"{doll.DicNumber}_{V_Costume_Index - 1}_{voice}_JP.gfdcache");
                         break;
                 }
 
@@ -471,17 +450,27 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                V_Costume_List.Clear();
+                /*V_Costume_List.Clear();
                 V_Costume_List.Add($"Default:{(string)DollInfoDR["Voices"]}");
                 if (DollInfoDR["CostumeVoices"] != DBNull.Value)
                 {
-                    if (string.IsNullOrWhiteSpace((string)DollInfoDR["CostumeVoices"]) == false) V_Costume_List.AddRange(((string)DollInfoDR["CostumeVoices"]).Split(','));
+                    if (ETC.IsDBNullOrBlank(DollInfoDR, "CostumeVoices") == false)
+                        V_Costume_List.AddRange(((string)DollInfoDR["CostumeVoices"]).Split(','));
                 }
-                V_Costume_List.TrimExcess();
+                V_Costume_List.TrimExcess();*/
 
-                List<string> V_C_List = new List<string>();
+                List<string> V_C_List = new List<string>()
+                {
+                    "Default"
+                };
 
-                for (int i = 0; i < V_Costume_List.Count; ++i)
+                if (doll.CostumeVoices != null)
+                {
+                    for (int i = 0; i < (doll.CostumeVoices.Length / doll.CostumeVoices.Rank); ++i)
+                        V_C_List.Add(doll.Costumes[int.Parse(doll.CostumeVoices[i, 0])]);
+                }
+
+                /*for (int i = 0; i < V_Costume_List.Count; ++i)
                 {
                     if (i >= 1)
                     {
@@ -489,7 +478,7 @@ namespace GFI_with_GFS_A
                         V_C_List.Add(Costumes[int.Parse(V_Costume_List[i].Split(':')[0])]);
                     }
                     else V_C_List.Add(V_Costume_List[i].Split(':')[0]);
-                }
+                }*/
 
                 V_C_List.TrimExcess();
 
@@ -513,7 +502,16 @@ namespace GFI_with_GFS_A
                 V_Costume_Index = e.Position;
 
                 VoiceList.Clear();
-                VoiceList.AddRange(V_Costume_List[e.Position].Split(':')[1].Split(';'));
+                switch(V_Costume_Index)
+                {
+                    case 0:
+                        VoiceList.AddRange(doll.Voices);
+                        break;
+                    default:
+                        VoiceList.AddRange(doll.CostumeVoices[V_Costume_Index - 1, 1].Split(';'));
+                        break;
+                }
+                //VoiceList.AddRange(V_Costume_List[e.Position].Split(':')[1].Split(';'));
                 VoiceList.TrimExcess();
 
                 var adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, VoiceList);
@@ -533,30 +531,25 @@ namespace GFI_with_GFS_A
             {
                 FloatingActionButton fab = sender as FloatingActionButton;
 
+                string url = "";
+                
                 switch (fab.Id)
                 {
                     case Resource.Id.SideLinkFAB1:
-                        string uri = string.Format("https://namu.wiki/w/{0}(소녀전선)", DollName);
-                        var intent = new Intent(this, typeof(WebBrowserActivity));
-                        intent.PutExtra("url", uri);
-                        StartActivity(intent);
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        url = $"https://namu.wiki/w/{doll.krName}(소녀전선)";
                         break;
                     case Resource.Id.SideLinkFAB2:
-                        string uri2 = string.Format("http://gf.inven.co.kr/dataninfo/dolls/detail.php?d=126&c={0}", DollDicNum);
-                        var intent2 = new Intent(this, typeof(WebBrowserActivity));
-                        intent2.PutExtra("url", uri2);
-                        StartActivity(intent2);
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        url = $"http://gf.inven.co.kr/dataninfo/dolls/detail.php?d=126&c={doll.DicNumber}";
                         break;
                     case Resource.Id.SideLinkFAB3:
-                        string uri3 = string.Format("https://girlsfrontline.kr/doll/{0}", DollDicNum);
-                        var intent3 = new Intent(this, typeof(WebBrowserActivity));
-                        intent3.PutExtra("url", uri3);
-                        StartActivity(intent3);
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        url = $"https://girlsfrontline.kr/doll/{doll.DicNumber}";
                         break;
                 }
+
+                Intent intent = new Intent(this, typeof(WebBrowserActivity));
+                intent.PutExtra("url", url);
+                StartActivity(intent);
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
             catch (Exception ex)
             {
@@ -638,7 +631,7 @@ namespace GFI_with_GFS_A
             try
             {
                 var DollImageViewer = new Intent(this, typeof(DollDBImageViewer));
-                DollImageViewer.PutExtra("Data", string.Format("{0};{1}", DollName, ModIndex));
+                DollImageViewer.PutExtra("Data", $"{doll.DicNumber};{ModIndex}");
                 StartActivity(DollImageViewer);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
@@ -663,15 +656,18 @@ namespace GFI_with_GFS_A
                 {
                     try
                     {
-                        if ((File.Exists(Path.Combine(ETC.CachePath, "Doll", "Normal", DollDicNum + ".gfdcache")) == false) || (IsRefresh == true))
+                        string url = Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", $"{doll.DicNumber}.png");
+                        string target = Path.Combine(ETC.CachePath, "Doll", "Normal", $"{doll.DicNumber}.gfdcache");
+
+                        if ((File.Exists(target) == false) || (IsRefresh == true))
                         {
                             using (WebClient wc = new WebClient())
                             {
-                                await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", DollDicNum + ".png"), Path.Combine(ETC.CachePath, "Doll", "Normal", DollDicNum + ".gfdcache"));
+                                await wc.DownloadFileTaskAsync(url, target);
                             }
                         }
 
-                        Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Normal", DollDicNum + ".gfdcache"));
+                        Drawable drawable = Drawable.CreateFromPath(target);
                         drawable.SetAlpha(40);
                         FindViewById<RelativeLayout>(Resource.Id.DollDBDetailMainLayout).Background = drawable;
                     }
@@ -681,61 +677,67 @@ namespace GFI_with_GFS_A
                     }
                 }
 
-                string FileName = DollDicNum.ToString();
+                string FileName = doll.DicNumber.ToString();
                 if (ModIndex == 3) FileName += "_M";
 
                 try
                 {
-                    if ((File.Exists(Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", FileName + ".gfdcache")) == false) || (IsRefresh == true))
+                    string url = Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal_Crop", $"{FileName}.png");
+                    string target = Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", $"{FileName}.gfdcache");
+
+                    if ((File.Exists(target) == false) || (IsRefresh == true))
                     {
                         using (WebClient wc = new WebClient())
                         {
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal_Crop", FileName + ".png"), Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", FileName + ".gfdcache"));
+                            await wc.DownloadFileTaskAsync(url, target);
                         }
                     }
 
                     ImageView DollSmallImage = FindViewById<ImageView>(Resource.Id.DollDBDetailSmallImage);
-                    DollSmallImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", FileName + ".gfdcache")));
+                    DollSmallImage.SetImageDrawable(Drawable.CreateFromPath(target));
                 }
                 catch (Exception ex)
                 {
                     ETC.LogError(this, ex.ToString());
                 }
 
-                FindViewById<TextView>(Resource.Id.DollDBDetailDollName).Text = DollName;
-                FindViewById<TextView>(Resource.Id.DollDBDetailDollDicNumber).Text = string.Format("No. {0}", DollDicNum);
-                FindViewById<TextView>(Resource.Id.DollDBDetailDollProductTime).Text = ETC.CalcTime((int)DollInfoDR["ProductTime"]);
-                FindViewById<TextView>(Resource.Id.DollDBDetailDollProductDialog).Text = (string)DollInfoDR["ProductDialog"];
+                FindViewById<TextView>(Resource.Id.DollDBDetailDollName).Text = doll.Name;
+                FindViewById<TextView>(Resource.Id.DollDBDetailDollDicNumber).Text = $"No. {doll.DicNumber}";
+                FindViewById<TextView>(Resource.Id.DollDBDetailDollProductTime).Text = ETC.CalcTime(doll.ProductTime);
+                FindViewById<TextView>(Resource.Id.DollDBDetailDollProductDialog).Text = doll.ProductDialog;
 
 
                 // 인형 기본 정보 초기화
 
                 int[] GradeStarIds = { Resource.Id.DollDBDetailInfoGrade1, Resource.Id.DollDBDetailInfoGrade2, Resource.Id.DollDBDetailInfoGrade3, Resource.Id.DollDBDetailInfoGrade4, Resource.Id.DollDBDetailInfoGrade5 };
 
-                if (DollGrade == 0)
+                int Grade = 0;
+
+                if (ModIndex > 0) Grade = doll.ModGrade;
+                else Grade = doll.Grade;
+
+                if (Grade == 0)
                 {
                     for (int i = 1; i < GradeStarIds.Length; ++i) FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
                     FindViewById<ImageView>(GradeStarIds[0]).SetImageResource(Resource.Drawable.Grade_Star_EX);
                 }
                 else
                 {
-                    for (int i = DollGrade; i < GradeStarIds.Length; ++i) FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
-                    for (int i = 0; i < DollGrade; ++i)
+                    for (int i = Grade; i < GradeStarIds.Length; ++i) FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
+                    for (int i = 0; i < Grade; ++i)
                     {
                         FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Visible;
                         FindViewById<ImageView>(GradeStarIds[i]).SetImageResource(Resource.Drawable.Grade_Star);
                     }
                 }
 
-                FindViewById<TextView>(Resource.Id.DollDBDetailInfoType).Text = (string)DollInfoDR["Type"];
-                FindViewById<TextView>(Resource.Id.DollDBDetailInfoName).Text = DollName;
-                FindViewById<TextView>(Resource.Id.DollDBDetailInfoNickName).Text = (string)DollInfoDR["NickName"];
-                if (DollInfoDR["Illustrator"] == DBNull.Value) FindViewById<TextView>(Resource.Id.DollDBDetailInfoIllustrator).Text = "";
-                else FindViewById<TextView>(Resource.Id.DollDBDetailInfoIllustrator).Text = (string)DollInfoDR["Illustrator"];
-                if (DollInfoDR["VoiceActor"] == DBNull.Value) FindViewById<TextView>(Resource.Id.DollDBDetailInfoVoiceActor).Text = "";
-                else FindViewById<TextView>(Resource.Id.DollDBDetailInfoVoiceActor).Text = (string)DollInfoDR["VoiceActor"];
-                FindViewById<TextView>(Resource.Id.DollDBDetailInfoRealModel).Text = (string)DollInfoDR["Model"];
-                FindViewById<TextView>(Resource.Id.DollDBDetailInfoCountry).Text = (string)DollInfoDR["Country"];
+                FindViewById<TextView>(Resource.Id.DollDBDetailInfoType).Text = doll.Type;
+                FindViewById<TextView>(Resource.Id.DollDBDetailInfoName).Text = doll.Name;
+                FindViewById<TextView>(Resource.Id.DollDBDetailInfoNickName).Text = doll.NickName;
+                FindViewById<TextView>(Resource.Id.DollDBDetailInfoIllustrator).Text = doll.Illustrator;
+                FindViewById<TextView>(Resource.Id.DollDBDetailInfoVoiceActor).Text = doll.VoiceActor;
+                FindViewById<TextView>(Resource.Id.DollDBDetailInfoRealModel).Text = doll.RealModel;
+                FindViewById<TextView>(Resource.Id.DollDBDetailInfoCountry).Text = doll.Country;
                 FindViewById<TextView>(Resource.Id.DollDBDetailInfoHowToGain).Text = (string)DollInfoDR["DropEvent"];
 
 
@@ -743,18 +745,16 @@ namespace GFI_with_GFS_A
 
                 int[] BuffIds = { Resource.Id.DollDBDetailBuff1, Resource.Id.DollDBDetailBuff2, Resource.Id.DollDBDetailBuff3, Resource.Id.DollDBDetailBuff4, Resource.Id.DollDBDetailBuff5, Resource.Id.DollDBDetailBuff6, Resource.Id.DollDBDetailBuff7, Resource.Id.DollDBDetailBuff8, Resource.Id.DollDBDetailBuff9 };
 
-                string[] Buff_Data = new string[9];
+                int[] Buff_Data = new int[9];
 
-                if (ModIndex == 0) Buff_Data = ((string)DollInfoDR["EffectFormation"]).Split(',');
-                else Buff_Data = ((string)DollInfoDR["ModEffectFormation"]).Split(',');
+                if (ModIndex == 0) Buff_Data = doll.BuffFormation;
+                else Buff_Data = doll.ModBuffFormation;
 
                 for (int i = 0; i < Buff_Data.Length; ++i)
                 {
-                    int data = int.Parse(Buff_Data[i]);
-
                     Android.Graphics.Color color;
 
-                    switch (data)
+                    switch (Buff_Data[i])
                     {
                         case 0:
                             color = Android.Graphics.Color.Gray;
@@ -780,8 +780,8 @@ namespace GFI_with_GFS_A
                 string[] Buff;
                 string[] BuffType;
 
-                if (ModIndex >= 1) Buff = ((string)DollInfoDR["ModEffect"]).Split(';');
-                else Buff = ((string)DollInfoDR["Effect"]).Split(';');
+                if (ModIndex >= 1) Buff = doll.ModBuffInfo;
+                else Buff = doll.BuffInfo;
 
                 BuffType = Buff[0].Split(',');
 
@@ -856,33 +856,34 @@ namespace GFI_with_GFS_A
                 }
 
                 for (int i = 0; i < BuffType.Length; ++i)
-                {
                     FindViewById<TextView>(BuffDetailIds[i]).Text = EffectString[i].ToString();
-                }
 
-                string EffectType = (string)DollInfoDR["EffectType"];
+                string EffectType = doll.BuffType;
 
                 var EffectTypeView = FindViewById<TextView>(Resource.Id.DollDBDetailEffectType);
                 if (EffectType == "ALL") EffectTypeView.Text = Resources.GetString(Resource.String.DollDBDetail_BuffType_All);
-                else EffectTypeView.Text = string.Format("{0} {1}", EffectType, Resources.GetString(Resource.String.DollDBDetail_BuffType_ConfirmString));
+                else EffectTypeView.Text = $"{EffectType} {Resources.GetString(Resource.String.DollDBDetail_BuffType_ConfirmString)}";
 
 
                 // 인형 스킬 정보 초기화
 
-                string SkillName = (string)DollInfoDR["Skill"];
+                string SkillName = doll.SkillName;
 
                 try
                 {
-                    if ((File.Exists(Path.Combine(ETC.CachePath, "Doll", "Skill", SkillName + ".gfdcache")) == false) || (IsRefresh == true))
+                    string url = Path.Combine(ETC.Server, "Data", "Images", "SkillIcons", $"{SkillName}.png");
+                    string target = Path.Combine(ETC.CachePath, "Doll", "Skill", $"{SkillName}.gfdcache");
+
+                    if ((File.Exists(target) == false) || (IsRefresh == true))
                     {
 
                         using (WebClient wc = new WebClient())
                         {
-                            wc.DownloadFile(Path.Combine(ETC.Server, "Data", "Images", "SkillIcons", SkillName + ".png"), Path.Combine(ETC.CachePath, "Doll", "Skill", SkillName + ".gfdcache"));
+                            wc.DownloadFile(url, target);
                         }
 
                     }
-                    FindViewById<ImageView>(Resource.Id.DollDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Skill", SkillName + ".gfdcache")));
+                    FindViewById<ImageView>(Resource.Id.DollDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(target));
                 }
                 catch (Exception ex)
                 {
@@ -897,19 +898,21 @@ namespace GFI_with_GFS_A
                     FindViewById<ImageView>(Resource.Id.DollDBDetailSkillCoolTimeIcon).SetImageResource(Resource.Drawable.CoolTime_Icon_WhiteTheme);
                 }
 
-                string[] SkillAbilities = ((string)DollInfoDR["SkillEffect"]).Split(';');
+                string[] SkillAbilities = doll.SkillEffect;
                 string[] SkillMags;
-                if (ModIndex == 0 ) SkillMags = ((string)DollInfoDR["SkillMag"]).Split(',');
-                else SkillMags = ((string)DollInfoDR["SkillMagAfterMod"]).Split(',');
+
+                if (ModIndex == 0 ) SkillMags = doll.SkillMag;
+                else SkillMags = doll.SkillMagAfterMod;
 
                 TextView SkillInitCoolTime = FindViewById<TextView>(Resource.Id.DollDBDetailSkillInitCoolTime);
                 SkillInitCoolTime.SetTextColor(Android.Graphics.Color.Orange);
                 SkillInitCoolTime.Text = SkillMags[0];
+
                 TextView SkillCoolTime = FindViewById<TextView>(Resource.Id.DollDBDetailSkillCoolTime);
                 SkillCoolTime.SetTextColor(Android.Graphics.Color.DarkOrange);
                 SkillCoolTime.Text = SkillMags[1];
 
-                FindViewById<TextView>(Resource.Id.DollDBDetailSkillExplain).Text = (string)DollInfoDR["SkillExplain"];
+                FindViewById<TextView>(Resource.Id.DollDBDetailSkillExplain).Text = doll.SkillExplain;
 
                 SkillTableSubLayout.RemoveAllViews();
 
@@ -939,21 +942,24 @@ namespace GFI_with_GFS_A
 
                 // 인형 Mod 스킬 정보 초기화
 
-                if ((bool)DollInfoDR["HasMod"] == true)
+                if (doll.HasMod == true)
                 {
-                    string MSkillName = (string)DollInfoDR["ModSkill"];
+                    string MSkillName = doll.ModSkillName;
 
                     try
                     {
-                        if ((File.Exists(Path.Combine(ETC.CachePath, "Doll", "Skill", MSkillName + ".gfdcache")) == false) || (IsRefresh == true))
+                        string url = Path.Combine(ETC.Server, "Data", "Images", "SkillIcons", $"{MSkillName}.png");
+                        string target = Path.Combine(ETC.CachePath, "Doll", "Skill", $"{MSkillName}.gfdcache");
+
+                        if ((File.Exists(target) == false) || (IsRefresh == true))
                         {
                             using (WebClient wc = new WebClient())
                             {
-                                wc.DownloadFile(Path.Combine(ETC.Server, "Data", "Images", "SkillIcons", MSkillName + ".png"), Path.Combine(ETC.CachePath, "Doll", "Skill", MSkillName + ".gfdcache"));
+                                wc.DownloadFile(url, target);
                             }
                         }
 
-                        FindViewById<ImageView>(Resource.Id.DollDBDetailModSkillIcon).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Skill", MSkillName + ".gfdcache")));
+                        FindViewById<ImageView>(Resource.Id.DollDBDetailModSkillIcon).SetImageDrawable(Drawable.CreateFromPath(target));
                     }
                     catch (Exception ex)
                     {
@@ -961,10 +967,10 @@ namespace GFI_with_GFS_A
                     }
 
                     FindViewById<TextView>(Resource.Id.DollDBDetailModSkillName).Text = MSkillName;
-                    FindViewById<TextView>(Resource.Id.DollDBDetailModSkillExplain).Text = (string)DollInfoDR["ModSkillExplain"];
+                    FindViewById<TextView>(Resource.Id.DollDBDetailModSkillExplain).Text = doll.ModSkillExplain;
 
-                    string[] MSkillAbilities = ((string)DollInfoDR["ModSkillEffect"]).Split(';');
-                    string[] MSkillMags = ((string)DollInfoDR["ModSkillMag"]).Split(',');
+                    string[] MSkillAbilities = doll.ModSkillEffect;
+                    string[] MSkillMags = doll.ModSkillMag;
 
                     ModSkillTableSubLayout.RemoveAllViews();
 
@@ -1002,15 +1008,13 @@ namespace GFI_with_GFS_A
                 int[] ProgressMaxTexts = { Resource.Id.DollInfoHPProgressMax, Resource.Id.DollInfoFRProgressMax, Resource.Id.DollInfoEVProgressMax, Resource.Id.DollInfoACProgressMax, Resource.Id.DollInfoASProgressMax };
                 int[] StatusTexts = { Resource.Id.DollInfoHPStatus, Resource.Id.DollInfoFRStatus, Resource.Id.DollInfoEVStatus, Resource.Id.DollInfoACStatus, Resource.Id.DollInfoASStatus };
 
-                string[] AbilityGrade = ((string)DollInfoDR["AbilityGrade"]).Split(';');
-
                 for (int i = 0; i < Progresses.Length; ++i)
                 {
                     FindViewById<TextView>(ProgressMaxTexts[i]).Text = FindViewById<ProgressBar>(Progresses[i]).Max.ToString();
 
                     int MinValue = 0;
 
-                    string temp = (((string)DollInfoDR[abilities[i]]).Split(';')[0].Split('/'))[0];
+                    string temp = doll.Abilities[abilities[i]].Split('/')[0];
 
                     if (temp.Contains("?") == true) MinValue = 0;
                     else MinValue = int.Parse(temp);
@@ -1036,21 +1040,25 @@ namespace GFI_with_GFS_A
 
                     AbilityValues[i] = MaxValue;
 
-                    FindViewById<TextView>(StatusTexts[i]).Text = string.Format("{0}/{1} ({2})", ((string)DollInfoDR[abilities[i]]).Split('/')[0], MaxValue, AbilityGrade[i]);
+                    FindViewById<TextView>(StatusTexts[i]).Text = $"{MinValue}/{MaxValue} ({doll.AbilityGrade[i]})";
                 }
 
-                if ((DollType == "MG") || (DollType == "SG"))
+                if ((doll.Type == "MG") || (doll.Type == "SG"))
                 {
                     FindViewById<LinearLayout>(Resource.Id.DollInfoBulletLayout).Visibility = ViewStates.Visible;
                     FindViewById<LinearLayout>(Resource.Id.DollInfoReloadLayout).Visibility = ViewStates.Visible;
 
-                    double ReloadTime = CalcReloadTime(DollInfoDR, DollType);
-                    int Bullet = (int)DollInfoDR["Bullet"];
+                    double ReloadTime = CalcReloadTime(doll, doll.Type);
+                    int Bullet = 0;
+
+                    if (doll.HasMod == false) Bullet = int.Parse(doll.Abilities["Bullet"]);
+                    else Bullet = int.Parse(doll.Abilities["Bullet"].Split(';')[ModIndex]);
+
                     FindViewById<TextView>(Resource.Id.DollInfoBulletProgressMax).Text = FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress).Max.ToString();
 
                     FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress).Progress = Bullet;
                     FindViewById<TextView>(Resource.Id.DollInfoBulletStatus).Text = Bullet.ToString();
-                    FindViewById<TextView>(Resource.Id.DollInfoReloadStatus).Text = string.Format("{0} {1}", ReloadTime, Resources.GetString(Resource.String.Time_Second));
+                    FindViewById<TextView>(Resource.Id.DollInfoReloadStatus).Text = $"{ReloadTime} {Resources.GetString(Resource.String.Time_Second)}";
                 }
                 else
                 {
@@ -1058,16 +1066,16 @@ namespace GFI_with_GFS_A
                     FindViewById<LinearLayout>(Resource.Id.DollInfoReloadLayout).Visibility = ViewStates.Gone;
                 }
 
-                if (DollType == "SG")
+                if (doll.Type == "SG")
                 {
                     FindViewById<LinearLayout>(Resource.Id.DollInfoAMLayout).Visibility = ViewStates.Visible;
 
                     FindViewById<TextView>(Resource.Id.DollInfoAMProgressMax).Text = FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress).Max.ToString();
 
                     int MinValue = 0;
-                    int MaxValue = int.Parse((((string)DollInfoDR["Armor"]).Split('/'))[1]);
+                    int MaxValue = int.Parse(doll.Abilities["Armor"].Split('/')[1]);
 
-                    string temp = (((string)DollInfoDR["Armor"]).Split('/'))[0];
+                    string temp = doll.Abilities["Armor"].Split('/')[0];
 
                     if (temp.Contains("?") == true) MinValue = 0;
                     else MinValue = int.Parse(temp);
@@ -1076,21 +1084,18 @@ namespace GFI_with_GFS_A
                     FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress).SecondaryProgress = MaxValue;
 
                     AbilityValues[5] = MaxValue;
-                    FindViewById<TextView>(Resource.Id.DollInfoAMStatus).Text = string.Format("{0} ({1})", (string)DollInfoDR["Armor"], AbilityGrade[6]);
+                    FindViewById<TextView>(Resource.Id.DollInfoAMStatus).Text = $"{MinValue}/{MaxValue} ({doll.AbilityGrade[6]})";
                 }
                 else
                 {
                     AbilityValues[5] = 0;
-
                     FindViewById<LinearLayout>(Resource.Id.DollInfoAMLayout).Visibility = ViewStates.Gone;
                 }
 
-                double[] DPS = ETC.CalcDPS(AbilityValues[1], AbilityValues[4], 0, AbilityValues[3], 3, int.Parse((string)DollInfoDR["Critical"]), 5);
+                double[] DPS = ETC.CalcDPS(AbilityValues[1], AbilityValues[4], 0, AbilityValues[3], 3, int.Parse(doll.Abilities["Critical"]), 5);
                 FindViewById<TextView>(Resource.Id.DollInfoDPSStatus).Text = $"{DPS[0]} ~ {DPS[1]}";
 
                 if (ETC.UseLightTheme == true) SetCardTheme();
-                if ((bool)DollInfoDR["HasVoice"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailVoiceLayout).Visibility = ViewStates.Visible;
-                if ((bool)DollInfoDR["HasMod"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSelectLayout).Visibility = ViewStates.Visible;
 
                 LoadChart(ChartCompareList.SelectedItemPosition);
 
@@ -1120,8 +1125,8 @@ namespace GFI_with_GFS_A
 
         private void ShowTitleSubLayout()
         {
-            if ((bool)DollInfoDR["HasVoice"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailVoiceLayout).Visibility = ViewStates.Visible;
-            if ((bool)DollInfoDR["HasMod"] == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSelectLayout).Visibility = ViewStates.Visible;
+            if (doll.HasVoice == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailVoiceLayout).Visibility = ViewStates.Visible;
+            if (doll.HasMod == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSelectLayout).Visibility = ViewStates.Visible;
             FindViewById<LinearLayout>(Resource.Id.DollDBDetailExtraButtonLayout).Visibility = ViewStates.Visible;
         }
 
@@ -1148,7 +1153,15 @@ namespace GFI_with_GFS_A
 
         private void SetCardTheme()
         {
-            int[] CardViewIds = { Resource.Id.DollDBDetailBasicInfoCardLayout, Resource.Id.DollDBDetailBuffCardLayout, Resource.Id.DollDBDetailSkillCardLayout, Resource.Id.DollDBDetailModSkillCardLayout, Resource.Id.DollDBDetailAbilityCardLayout, Resource.Id.DollDBDetailAbilityRadarChartCardLayout };
+            int[] CardViewIds = 
+            {
+                Resource.Id.DollDBDetailBasicInfoCardLayout,
+                Resource.Id.DollDBDetailBuffCardLayout,
+                Resource.Id.DollDBDetailSkillCardLayout,
+                Resource.Id.DollDBDetailModSkillCardLayout,
+                Resource.Id.DollDBDetailAbilityCardLayout,
+                Resource.Id.DollDBDetailAbilityRadarChartCardLayout
+            };
 
             foreach (int id in CardViewIds)
             {
@@ -1161,9 +1174,12 @@ namespace GFI_with_GFS_A
 
         private async Task ShowCardViewAnimation()
         {
-            if (FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout).Animate().Alpha(1.0f).SetDuration(500).Start();
-            if (FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(500).Start();
-            if (FindViewById<CardView>(Resource.Id.DollDBDetailSkillCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.DollDBDetailSkillCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1000).Start();
+            if (FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout).Alpha == 0.0f)
+                FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout).Animate().Alpha(1.0f).SetDuration(500).Start();
+            if (FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout).Alpha == 0.0f)
+                FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(500).Start();
+            if (FindViewById<CardView>(Resource.Id.DollDBDetailSkillCardLayout).Alpha == 0.0f)
+                FindViewById<CardView>(Resource.Id.DollDBDetailSkillCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1000).Start();
 
             CardView ModCardView = FindViewById<CardView>(Resource.Id.DollDBDetailModSkillCardLayout);
 
@@ -1189,8 +1205,10 @@ namespace GFI_with_GFS_A
                     break;
             }
 
-            if (FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1500).Start();
-            if (FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(2000).Start();
+            if (FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout).Alpha == 0.0f)
+                FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1500).Start();
+            if (FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout).Alpha == 0.0f)
+                FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(2000).Start();
         }
 
         private void DollDBDetailModSelectButton_Click(object sender, EventArgs e)
@@ -1218,12 +1236,10 @@ namespace GFI_with_GFS_A
                         break;
                 }
 
-                foreach (int id in ModButtonIds) FindViewById<ImageButton>(id).SetBackgroundColor(Android.Graphics.Color.Transparent);
+                foreach (int id in ModButtonIds)
+                    FindViewById<ImageButton>(id).SetBackgroundColor(Android.Graphics.Color.Transparent);
 
                 ModButton.SetBackgroundColor(Android.Graphics.Color.ParseColor("#54A716"));
-
-                if (ModIndex > 0) DollGrade = (int)DollInfoDR["ModGrade"];
-                else DollGrade = (int)DollInfoDR["Grade"];
 
                 InitLoadProcess(false);
             }
@@ -1234,7 +1250,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private double CalcReloadTime(DataRow dr, string type)
+        private double CalcReloadTime(Doll doll, string type)
         {
             double result = 0;
 
@@ -1242,13 +1258,13 @@ namespace GFI_with_GFS_A
             {
                 case "MG":
                     int tAS = 0;
-                    if ((bool)dr["HasMod"] == true) tAS = int.Parse((((string)dr["AttackSpeed"]).Split('/')[1]).Split(';')[0]);
-                    else tAS = int.Parse(((string)dr["AttackSpeed"]).Split('/')[1]);
-                    result = (4 + (200 / tAS));
+                    if (doll.HasMod == true) tAS = int.Parse(doll.Abilities["AttackSpeed"].Split('/')[1].Split(';')[0]);
+                    else tAS = int.Parse(doll.Abilities["AttackSpeed"].Split('/')[1]);
+                    result = 4 + (200 / tAS);
                     break;
                 case "SG":
-                    int tB = (int)dr["Bullet"];
-                    result = (1.5 + (0.5 * tB));
+                    int tB = int.Parse(doll.Abilities["Bullet"]);
+                    result = 1.5 + (0.5 * tB);
                     break;
             }
 
@@ -1296,7 +1312,7 @@ namespace GFI_with_GFS_A
                 {
                     int index = 0;
 
-                    switch (DollType)
+                    switch (doll.Type)
                     {
                         case "HG":
                             index = 0;
@@ -1330,7 +1346,7 @@ namespace GFI_with_GFS_A
                 }
                 else
                 {
-                    CompareDollInfoDR = ETC.FindDataRow(ETC.DollList, "Name", CompareList[CompareIndex]);
+                    c_doll = new Doll(ETC.FindDataRow(ETC.DollList, "Name", CompareList[CompareIndex]));
 
                     string[] abilities = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
 
@@ -1338,17 +1354,17 @@ namespace GFI_with_GFS_A
 
                     for (int i = 0; i < abilities.Length; ++i)
                     {
-                        string data = (string)CompareDollInfoDR[abilities[i]];
+                        string data = c_doll.Abilities[abilities[i]];
 
-                        if ((bool)CompareDollInfoDR["HasMod"] == true) CompareAbilityValues[i] = int.Parse(data.Split(';')[0].Split('/')[1]);
+                        if (c_doll.HasMod == true) CompareAbilityValues[i] = int.Parse(data.Split(';')[0].Split('/')[1]);
                         else CompareAbilityValues[i] = int.Parse(data.Split('/')[1]);
                     }
 
-                    if (DollType == "SG")
+                    if (doll.Type == "SG")
                     {
-                        string data = (string)CompareDollInfoDR["Armor"];
+                        string data = c_doll.Abilities["Armor"];
 
-                        if ((bool)CompareDollInfoDR["HasMod"] == true) CompareAbilityValues[5] = int.Parse(data.Split(';')[0].Split('/')[1]);
+                        if (c_doll.HasMod == true) CompareAbilityValues[5] = int.Parse(data.Split(';')[0].Split('/')[1]);
                         else CompareAbilityValues[5] = int.Parse(data.Split('/')[1]);
                     }
                     else CompareAbilityValues[5] = 0;

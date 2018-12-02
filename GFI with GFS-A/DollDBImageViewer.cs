@@ -19,11 +19,8 @@ namespace GFI_with_GFS_A
     [Activity(Label = "DollDBImageViewer", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class DollDBImageViewer : AppCompatActivity
     {
-        private bool IsFullImageMode = false;
-
         private DataRow DollInfoDR = null;
-        private int DollDicNum;
-        private string DollName;
+        private Doll doll;
 
         private CoordinatorLayout SnackbarLayout;
         private Spinner CostumeList;
@@ -54,12 +51,15 @@ namespace GFI_with_GFS_A
 
                 string[] temp = Intent.GetStringExtra("Data").Split(';');
 
-                DollInfoDR = ETC.FindDataRow(ETC.DollList, "Name", temp[0]);
-                DollDicNum = (int)DollInfoDR["DicNumber"];
                 ModIndex = int.Parse(temp[1]);
-                DollName = (string)DollInfoDR["Name"];
-                HasCensored = (bool)DollInfoDR["HasCensor"];
-                if (HasCensored == true) CensorType = ((string)DollInfoDR["CensorType"]).Split(';');
+
+                doll = new Doll(ETC.FindDataRow(ETC.DollList, "DicNumber", int.Parse(temp[0])));
+
+                if (ETC.sharedPreferences.GetBoolean("DollImageCensoredUnlock", false) == false)
+                {
+                    HasCensored = doll.HasCensored;
+                    if (HasCensored == true) CensorType = doll.CensorType;
+                }
 
                 DollImageView = FindViewById<PhotoView>(Resource.Id.DollDBImageViewerImageView);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBImageViewerSnackbarLayout);
@@ -107,15 +107,7 @@ namespace GFI_with_GFS_A
                     Resources.GetString(Resource.String.DollDBImageViewer_DefaultCostume)
                 };
 
-                if (DollInfoDR["Costume"] != DBNull.Value)
-                {
-                    if (string.IsNullOrEmpty((string)DollInfoDR["Costume"]) == false)
-                    {
-                        string[] costume_list = ((string)DollInfoDR["Costume"]).Split(';');
-
-                        foreach (string s in costume_list) Costumes.Add(s);
-                    }
-                }
+                if (doll.Costumes != null) Costumes.AddRange(doll.Costumes);
 
                 Costumes.TrimExcess();
 
@@ -139,12 +131,12 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(100);
 
-                string ImageName = DollDicNum.ToString();
-                if (CostumeIndex >= 1) ImageName += "_" + (CostumeIndex + 1);
+                string ImageName = doll.DicNumber.ToString();
+                if (CostumeIndex >= 1) ImageName += $"_{CostumeIndex + 1}";
                 else if ((CostumeIndex == 0) && (ModIndex == 3)) ImageName += "_M";
                 if (Damage == true) ImageName += "_D";
 
-                if ((HasCensored == true) && (ETC.sharedPreferences.GetBoolean("UseCensorImage", true)) && (ModIndex != 3))
+                if ((HasCensored == true) && (ModIndex != 3))
                 {
                     string censor_type = "";
 
@@ -166,17 +158,18 @@ namespace GFI_with_GFS_A
                     }
                 }
 
-                string ImagePath = Path.Combine(ETC.CachePath, "Doll", "Normal", ImageName + ".gfdcache");
+                string ImagePath = Path.Combine(ETC.CachePath, "Doll", "Normal", $"{ImageName}.gfdcache");
+                string URL = Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", $"{ImageName}.png");
 
                 if ((File.Exists(ImagePath) == false) || (IsRefresh == true))
                 {
                     using (WebClient wc = new WebClient())
                     {
-                        await Task.Run(async () => { await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", ImageName + ".png"), ImagePath); });
+                        await Task.Run(async () => { await wc.DownloadFileTaskAsync(URL, ImagePath); });
                     }
                 }
 
-                await Task.Delay(500);
+                await Task.Delay(100);
 
                 DollImageView.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(ImagePath));
 
@@ -193,7 +186,7 @@ namespace GFI_with_GFS_A
                 }
 
                 ChangeStateButton.Text = DamageText;
-                ImageStatus.Text = string.Format("{0} - {1} - {2}", DollName, Costumes[CostumeIndex], DamageText);
+                ImageStatus.Text = $"{doll.Name} - {Costumes[CostumeIndex]} - {DamageText}";
             }
             catch (Exception ex)
             {

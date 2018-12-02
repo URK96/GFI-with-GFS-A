@@ -50,9 +50,10 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.FairyDBDetailLayout);
 
-                FairyName = Intent.GetStringExtra("Keyword");
+                FairyDicNum = int.Parse(Intent.GetStringExtra("DicNum"));
+                FairyName = (string)FairyInfoDR["Name"];
 
-                FairyInfoDR = ETC.FindDataRow(ETC.FairyList, "Name", FairyName);
+                FairyInfoDR = ETC.FindDataRow(ETC.FairyList, "DicNumber", FairyDicNum);
                 FairyDicNum = (int)FairyInfoDR["DicNumber"];
                 FairyType = (string)FairyInfoDR["Type"];
 
@@ -90,6 +91,8 @@ namespace GFI_with_GFS_A
                 FABTimer.Elapsed += FABTimer_Elapsed;
 
                 InitLoadProcess(false);
+
+                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_FairyDBDetail", true) == true)) ETC.RunHelpActivity(this, "FairyDBDetail");
             }
             catch (Exception ex)
             {

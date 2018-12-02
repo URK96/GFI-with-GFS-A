@@ -1,7 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Preferences;
 using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Widget;
@@ -11,6 +10,8 @@ using System.Data;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using Android.Support.V14.Preferences;
+using Android.Support.V7.Preferences;
 
 namespace GFI_with_GFS_A
 {
@@ -30,10 +31,7 @@ namespace GFI_with_GFS_A
 
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.SettingSnackbarLayout);
 
-                Fragment SettingFragment = new HiddenSettingFragment();
-                FragmentTransaction ft = FragmentManager.BeginTransaction();
-                ft.Add(Resource.Id.SettingFragmentContainer, SettingFragment);
-                ft.Commit();
+                FragmentManager.BeginTransaction().Replace(Resource.Id.SettingFragmentContainer, new HiddenSettingFragment(), null).Commit();
             }
             catch (Exception ex)
             {
@@ -65,10 +63,8 @@ namespace GFI_with_GFS_A
         private int total = 0;
         private int now = 0;
 
-        public override void OnCreate(Bundle savedInstanceState)
+        public override void OnCreatePreferences(Bundle savedInstanceState, string rootKey)
         {
-            base.OnCreate(savedInstanceState);
-
             SnackbarLayout = Activity.FindViewById<CoordinatorLayout>(Resource.Id.SettingSnackbarLayout);
             SnackbarLayout.BringToFront();
 
@@ -86,6 +82,14 @@ namespace GFI_with_GFS_A
             MainActionbarIcon.PreferenceChange += delegate
             {
                 SaveSetting.PutString("MainActionbarIcon", MainActionbarIcon.Value);
+                SaveSetting.Commit();
+            };
+
+            SwitchPreference UnlockCensored = (SwitchPreference)FindPreference("UnlockCensored");
+            UnlockCensored.Checked = ETC.sharedPreferences.GetBoolean("DollImageCensoredUnlock", false);
+            UnlockCensored.PreferenceChange += delegate
+            {
+                SaveSetting.PutBoolean("DollImageCensoredUnlock", UnlockCensored.Checked);
                 SaveSetting.Commit();
             };
         }

@@ -185,7 +185,11 @@ namespace GFI_with_GFS_A
                 MainDrawerLayout.CloseDrawer(GravityCompat.Start);
                 return;
             }
-            else base.OnBackPressed();
+            else
+            {
+                base.OnBackPressed();
+                OverridePendingTransition(Resource.Animation.Fadein, Resource.Animation.Fadeout);
+            }
         }
     }
 
@@ -387,6 +391,8 @@ namespace GFI_with_GFS_A
             {
                 ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
                 NowCartoonText.Text = Selected_Item_List[Item_Index];
+                WebViewLayout.Visibility = ViewStates.Gone;
+                MainRecyclerView.Visibility = ViewStates.Visible;
             }
         }
 
@@ -397,7 +403,7 @@ namespace GFI_with_GFS_A
             Now_Category = Category;
 
             try
-            {
+            {              
                 if (Item_Index == 0)
                 {
                     PreviousButton.Enabled = false;
@@ -452,7 +458,9 @@ namespace GFI_with_GFS_A
             finally
             {
                 ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
-                //NowCartoonText.Text = Selected_Item_List[Item_Index];
+                NowCartoonText.Text = Selected_Item_List[Item_Index];
+                MainRecyclerView.Visibility = ViewStates.Gone;
+                WebViewLayout.Visibility = ViewStates.Visible;
             }
         }
 

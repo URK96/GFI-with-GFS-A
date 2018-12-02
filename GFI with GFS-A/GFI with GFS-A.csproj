@@ -214,14 +214,15 @@
   <ItemGroup>
     <Compile Include="CalcMainActivity.cs" />
     <Compile Include="CartoonActivity.cs" />
-    <Compile Include="DollDBMainActivity_New.cs" />
+    <Compile Include="DataModel.cs" />
+    <Compile Include="DollDBMainActivity.cs" />
     <Compile Include="EnemyDBImageViewer.cs" />
     <Compile Include="ExternLibraryCopyright.cs" />
     <Compile Include="FSTDBDetailActivity.cs" />
     <Compile Include="DollDBDetailActivity.cs" />
     <Compile Include="FSTDBMainActivity.cs" />
     <Compile Include="DollDBImageViewer.cs" />
-    <Compile Include="DollDBMainActivity.cs" />
+    <Compile Include="HelpImageActivity.cs" />
     <Compile Include="Main_Resources.cs" />
     <Compile Include="ProductPercentTableActivity.cs" />
     <Compile Include="EnemyDBDetailActivity.cs" />
@@ -241,7 +242,6 @@
     <Compile Include="StoryReaderActivity.cs" />
     <Compile Include="TestActivity.cs" />
     <Compile Include="WebBrowserActivity.cs" />
-    <Compile Include="EventActivity.cs" />
     <Compile Include="FairyDBDetailActivity.cs" />
     <Compile Include="FairyDBImageViewer.cs" />
     <Compile Include="FairyDBMainActivity.cs" />
@@ -766,13 +766,7 @@
     <AndroidResource Include="Resources\layout\DollDBDetailLayout.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\DollDBListLayout.axml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\DollFilterLayout.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\DollListLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\EnemyDBDetailLayout.axml" />
@@ -1402,13 +1396,13 @@
     <AndroidResource Include="Resources\drawable-nodpi\RefreshIcon_WhiteTheme.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\DollDBListLayout_New.axml">
+    <AndroidResource Include="Resources\layout\DollDBListLayout.axml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\DollListLayout_New.axml">
+    <AndroidResource Include="Resources\layout\DollListLayout.axml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -1432,6 +1426,29 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\CartoonScreenListLayout.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\HelpImageLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\Help_DBList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\Help_DollDBDetail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\Help_EquipDBDetail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\Help_FairyDBDetail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ProductResultListLayout.axml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>

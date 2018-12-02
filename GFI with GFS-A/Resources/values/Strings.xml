@@ -235,6 +235,7 @@
   <string name="Common_Previous">Previous</string>
   <string name="Common_Next">Next</string>
   <string name="Common_PreviousList">Previous List</string>
+  <string name="Common_NonProduct">Non-Manufacturing</string>
 
   <!--Common Dialog String-->
   <string name="AlertDialog_Confirm">Confirm</string>

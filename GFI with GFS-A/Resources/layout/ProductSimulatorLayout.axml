@@ -4,6 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/ProductSimulatorMainLayout">
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -191,14 +194,26 @@
                     android:id="@+id/PSAdvanceProductType3" />
             </RadioGroup>
         </LinearLayout>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
-            android:text="@string/ProductSimulatorLayout_ProductButtonText"
-            android:id="@+id/PSProductStart" />
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center">
+			<NumberPicker
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:id="@+id/PSCountNumberPicker" />
+			<Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="20dp"
+				android:gravity="center"
+				android:text="@string/ProductSimulatorLayout_ProductButtonText"
+				android:id="@+id/PSProductStart" />
+		</LinearLayout>
     </LinearLayout>
+	</ScrollView>
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

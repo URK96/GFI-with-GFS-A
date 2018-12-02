@@ -4,25 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp"
-    android:id="@+id/DollListMainLayout_New">
+	android:background="?android:attr/selectableItemBackground"
+    android:id="@+id/PSResultListMainLayout">
     <LinearLayout
         android:layout_width="48dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/DollListType_New"
+            android:id="@+id/PSResultListType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:gravity="center" />
         <ImageView
-            android:id="@+id/DollListGrade_New"
+            android:id="@+id/PSResultListGrade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitCenter" />
     </LinearLayout>
     <ImageView
-        android:id="@+id/DollListSmallImage_New"
+        android:id="@+id/PSResultListSmallImage"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:scaleType="fitCenter" />
@@ -35,16 +36,16 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:textAppearance="?android:attr/textAppearanceSmall"
-			android:id="@+id/DollListNumber_New"
+			android:id="@+id/PSResultListNumber"
             android:gravity="center" />
         <TextView
-            android:id="@+id/DollListName_New"
+            android:id="@+id/PSResultListName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:gravity="center" />
         <TextView
-            android:id="@+id/DollListProductTime_New"
+            android:id="@+id/PSResultListProductTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15dp"

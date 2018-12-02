@@ -88,6 +88,8 @@ namespace GFI_with_GFS_A
                 mEquipListView.FastScrollAlwaysVisible = false;
                 mEquipListView.ItemClick += MEquipListView_ItemClick;
                 mEquipListView.ScrollStateChanged += MEquipListView_ScrollStateChanged;
+
+                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true) == true)) ETC.RunHelpActivity(this, "DBList");
             }
             catch (Exception ex)
             {
@@ -123,9 +125,9 @@ namespace GFI_with_GFS_A
 
         private void MEquipListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            string EquipName = (string)(mEquipList[e.Position].EquipDR)["Name"];
+            string EquipName = mEquipList[e.Position].EquipDR["Id"].ToString();
             var EquipInfo = new Intent(this, typeof(EquipDBDetailActivity));
-            EquipInfo.PutExtra("Keyword", EquipName);
+            EquipInfo.PutExtra("Id", EquipName);
             StartActivity(EquipInfo);
             OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }

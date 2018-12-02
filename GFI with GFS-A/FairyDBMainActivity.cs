@@ -87,6 +87,8 @@ namespace GFI_with_GFS_A
                 mFairyListView.FastScrollAlwaysVisible = false;
                 mFairyListView.ItemClick += MFairyListView_ItemClick;
                 mFairyListView.ScrollStateChanged += MFairyListView_ScrollStateChanged;
+
+                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true) == true)) ETC.RunHelpActivity(this, "DBList");
             }
             catch (Exception ex)
             {
@@ -122,9 +124,9 @@ namespace GFI_with_GFS_A
 
         private void MFairyListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            string FairyName = (string)(mFairyList[e.Position].FairyDR)["Name"];
+            string FairyDicNum = mFairyList[e.Position].FairyDR["DicNumber"].ToString();
             var FairyInfo = new Intent(this, typeof(FairyDBDetailActivity));
-            FairyInfo.PutExtra("Keyword", FairyName);
+            FairyInfo.PutExtra("DicNum", FairyDicNum);
             StartActivity(FairyInfo);
             OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }

@@ -25,12 +25,15 @@ namespace GFI_with_GFS_A
         private ProductType Type;
         private AdvanceType Adv_Type = AdvanceType._1;
 
+        private int Count = 0;
+
         private CoordinatorLayout SnackbarLayout = null;
 
         private NumberPicker[] ManPower_NPs = new NumberPicker[4];
         private NumberPicker[] Ammo_NPs = new NumberPicker[4];
         private NumberPicker[] Food_NPs = new NumberPicker[4];
         private NumberPicker[] Parts_NPs = new NumberPicker[4];
+        private NumberPicker ProductCount;
 
         private RadioButton[] Adv_Type_RBs = new RadioButton[3];
 
@@ -140,6 +143,10 @@ namespace GFI_with_GFS_A
                 Parts_NPs[0].ValueChanged += ResourceValueNP_ValueChanged;
             }
 
+            ProductCount = FindViewById<NumberPicker>(Resource.Id.PSCountNumberPicker);
+            ProductCount.MinValue = 1;
+            ProductCount.MaxValue = 10;
+            ProductCount.Value = 1;
             FindViewById<Button>(Resource.Id.PSProductStart).Click += ProductStartButton_Click;
         }
 
@@ -177,6 +184,8 @@ namespace GFI_with_GFS_A
         {
             try
             {
+                Count = ProductCount.Value;
+
                 switch (Category)
                 {
                     case ProductCategory.Doll:
@@ -369,34 +378,39 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ShowResultScreen(DataRow dr)
+        private void ShowResultScreen(DataRow[] drs)
         {
             try
             {
-                if (dr == null)
+                if (drs.Length == 0)
                 {
                     ETC.ShowSnackbar(SnackbarLayout, "Result Null", Snackbar.LengthShort);
                     return;
                 }
 
-                StringBuilder sb = new StringBuilder();
-                
-                switch (Category)
+                string[] type = new string[drs.Length];
+                string[] result_names = new string[drs.Length];
+
+                for (int i = 0; i < drs.Length; ++i)
                 {
-                    case ProductCategory.Doll:
-                        sb.Append("Doll");
-                        break;
-                    case ProductCategory.Equip:
-                        if ((int)dr["ProductTime"] <= 60) sb.Append("Equip");
-                        else sb.Append("Fairy");
-                        break;
+                    DataRow dr = drs[i];
+                    result_names[i] = (string)dr["Name"];
+
+                    switch (Category)
+                    {
+                        case ProductCategory.Doll:
+                            type[i] = "Doll";
+                            break;
+                        case ProductCategory.Equip:
+                            if ((int)dr["ProductTime"] <= 60) type[i] = "Equip";
+                            else type[i] = "Fairy";
+                            break;
+                    }
                 }
 
-                sb.Append(";");
-                sb.Append((string)dr["Name"]);
-
                 Intent ResultInfo = new Intent(this, typeof(ProductResultActivity));
-                ResultInfo.PutExtra("ResultData", sb.ToString());
+                ResultInfo.PutExtra("ResultType", type);
+                ResultInfo.PutExtra("ResultInfo", result_names);
                 StartActivity(ResultInfo);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
@@ -418,11 +432,6 @@ namespace GFI_with_GFS_A
                 int pAmmo = CalcResource("Ammo");
                 int pFood = CalcResource("Food");
                 int pParts = CalcResource("Parts");
-
-                /*if (ETC.IsShowCensorImage == true)
-                {
-                    if ((pManPower == 666) && (pAmmo == 666) && (pFood == 666) && (pParts == 666)) File.Create(Path.Combine("System", "Extra", "Censor.extra"));
-                }*/
 
                 AvailableType.Add("SMG");
                 switch (Type)
@@ -508,7 +517,7 @@ namespace GFI_with_GFS_A
                 }
 
                 AvailableDoll.TrimExcess();
-                ProductProcess_Doll(AvailableDoll, pManPower, pAmmo, pFood, pParts);
+                ProductProcess_Doll(AvailableDoll, pManPower, pAmmo, pFood, pParts, Count);
             }
             catch (Exception ex)
             {
@@ -517,119 +526,127 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ProductProcess_Doll(List<DataRow> AvailableDoll, int num1, int num2, int num3, int num4)
+        private void ProductProcess_Doll(List<DataRow> AvailableDoll, int num1, int num2, int num3, int num4, int LoopCount)
         {
             try
             {
+                DataRow[] Results = new DataRow[LoopCount];
+
                 Random R = new Random(DateTime.Now.Millisecond);
-                int seed_num1 = (num1 + num2 + num3 + num4) / (AvailableDoll.Count / 10);
-                int seed_num2 = num1 + num2 + num3 + num4;
 
-                int[] tP = { 60, 27, 10, 3 };
-                int[] tAP1 = { 40, 45, 15 };
-                int[] tAP2 = { 20, 60, 20 };
-                int[] tAP3 = { 0, 75, 25 };
-                int ConfirmGrade = 0;
-
-                int mag = 1;
-                int[] P = null;
-
-                switch (Type)
+                for (int i = 0; i < LoopCount; ++i)
                 {
-                    case ProductType.Normal:
-                        P = new int[4];
-                        for (int k = 0; k < tP.Length; ++k) P[k] = tP[k] * mag;
-                        break;
-                    case ProductType.Advance:
-                        P = new int[3];
-                        switch (Adv_Type)
-                        {
-                            case AdvanceType._1:
-                                for (int k = 0; k < tAP1.Length; ++k) P[k] = tAP1[k] * mag;
-                                break;
-                            case AdvanceType._2:
-                                for (int k = 0; k < tAP2.Length; ++k) P[k] = tAP2[k] * mag;
-                                break;
-                            case AdvanceType._3:
-                                for (int k = 0; k < tAP3.Length; ++k) P[k] = tAP3[k] * mag;
-                                break;
-                        }
-                        break;
-                }
+                    int seed_num1 = (num1 + num2 + num3 + num4) / (AvailableDoll.Count / 10);
+                    int seed_num2 = num1 + num2 + num3 + num4;
 
-                int num = R.Next(seed_num1, seed_num2 * mag) % (100 * mag);
+                    int[] tP = { 60, 27, 10, 3 };
+                    int[] tAP1 = { 40, 45, 15 };
+                    int[] tAP2 = { 20, 60, 20 };
+                    int[] tAP3 = { 0, 75, 25 };
+                    int ConfirmGrade = 0;
 
-                switch (Type)
-                {
-                    case ProductType.Normal:
-                        if ((num >= 0) && (num < P[0])) ConfirmGrade = 2;
-                        else if ((num >= P[0]) && (num < (P[0] + P[1]))) ConfirmGrade = 3;
-                        else if ((num >= (P[0] + P[1])) && (num >= (P[0] + P[1] + P[2]))) ConfirmGrade = 4;
-                        else ConfirmGrade = 5;
-                        break;
-                    case ProductType.Advance:
-                        if ((num >= 0) && (num < P[0])) ConfirmGrade = 3;
-                        else if ((num >= P[0]) && (num < (P[0] + P[1]))) ConfirmGrade = 4;
-                        else ConfirmGrade = 5;
-                        break;
-                }
+                    int mag = 1;
+                    int[] P = null;
 
-
-                if (ConfirmGrade == 0)
-                {
-                    if (Type == ProductType.Normal) ConfirmGrade = 2;
-                    else if ((Type == ProductType.Advance) && (Adv_Type == AdvanceType._3)) ConfirmGrade = 4;
-                    else ConfirmGrade = 3;
-                }
-
-                List<DataRow> FinalDoll = new List<DataRow>();
-                int tArrange = 0;
-
-                foreach (DataRow dr in AvailableDoll)
-                {
-                    if ((int)dr["Grade"] == ConfirmGrade)
+                    switch (Type)
                     {
-                        FinalDoll.Add(dr);
+                        case ProductType.Normal:
+                            P = new int[4];
+                            for (int k = 0; k < tP.Length; ++k) P[k] = tP[k] * mag;
+                            break;
+                        case ProductType.Advance:
+                            P = new int[3];
+                            switch (Adv_Type)
+                            {
+                                case AdvanceType._1:
+                                    for (int k = 0; k < tAP1.Length; ++k) P[k] = tAP1[k] * mag;
+                                    break;
+                                case AdvanceType._2:
+                                    for (int k = 0; k < tAP2.Length; ++k) P[k] = tAP2[k] * mag;
+                                    break;
+                                case AdvanceType._3:
+                                    for (int k = 0; k < tAP3.Length; ++k) P[k] = tAP3[k] * mag;
+                                    break;
+                            }
+                            break;
+                    }
 
-                        int tcount = 0;
-                        if (((Type == ProductType.Normal) && (dr["ProductionPercent"] == DBNull.Value)) ||  ((Type == ProductType.Advance) && (dr["AdvanceProductionPercent"] == DBNull.Value))) tcount = 100;
+                    int num = R.Next(seed_num1, seed_num2 * mag) % (100 * mag);
+
+                    switch (Type)
+                    {
+                        case ProductType.Normal:
+                            if ((num >= 0) && (num < P[0])) ConfirmGrade = 2;
+                            else if ((num >= P[0]) && (num < (P[0] + P[1]))) ConfirmGrade = 3;
+                            else if ((num >= (P[0] + P[1])) && (num >= (P[0] + P[1] + P[2]))) ConfirmGrade = 4;
+                            else ConfirmGrade = 5;
+                            break;
+                        case ProductType.Advance:
+                            if ((num >= 0) && (num < P[0])) ConfirmGrade = 3;
+                            else if ((num >= P[0]) && (num < (P[0] + P[1]))) ConfirmGrade = 4;
+                            else ConfirmGrade = 5;
+                            break;
+                    }
+
+
+                    if (ConfirmGrade == 0)
+                    {
+                        if (Type == ProductType.Normal) ConfirmGrade = 2;
+                        else if ((Type == ProductType.Advance) && (Adv_Type == AdvanceType._3)) ConfirmGrade = 4;
+                        else ConfirmGrade = 3;
+                    }
+
+                    List<DataRow> FinalDoll = new List<DataRow>();
+                    int tArrange = 0;
+
+                    foreach (DataRow dr in AvailableDoll)
+                    {
+                        if ((int)dr["Grade"] == ConfirmGrade)
+                        {
+                            FinalDoll.Add(dr);
+
+                            int tcount = 0;
+                            if (((Type == ProductType.Normal) && (dr["ProductionPercent"] == DBNull.Value)) || ((Type == ProductType.Advance) && (dr["AdvanceProductionPercent"] == DBNull.Value))) tcount = 100;
+                            else
+                            {
+                                if (Type == ProductType.Normal) tcount += (int)dr["ProductionPercent"];
+                                else tcount += (int)dr["AdvanceProductionPercent"];
+                            }
+
+                            tArrange += tcount;
+                        }
+                    }
+
+                    FinalDoll.TrimExcess();
+
+                    int fnum = R.Next(1, tArrange);
+                    int count = 0;
+                    DataRow ResultDoll = null;
+
+                    foreach (DataRow dr in FinalDoll)
+                    {
+                        int count2 = count;
+
+                        if (((Type == ProductType.Normal) && (dr["ProductionPercent"] == DBNull.Value)) || ((Type == ProductType.Advance) && (dr["AdvanceProductionPercent"] == DBNull.Value))) count2 += 100;
                         else
                         {
-                            if (Type == ProductType.Normal) tcount += (int)dr["ProductionPercent"];
-                            else tcount += (int)dr["AdvanceProductionPercent"];
+                            if (Type == ProductType.Normal) count2 += (int)dr["ProductionPercent"];
+                            else count2 += (int)dr["AdvanceProductionPercent"];
                         }
 
-                        tArrange += tcount;
+                        if ((fnum > count) && (fnum <= count2))
+                        {
+                            ResultDoll = dr;
+                            break;
+                        }
+
+                        count = count2;
                     }
+
+                    Results[i] = ResultDoll;
                 }
 
-                FinalDoll.TrimExcess();
-
-                int fnum = R.Next(1, tArrange);
-                int count = 0;
-                DataRow ResultDoll = null;
-
-                foreach (DataRow dr in FinalDoll)
-                {
-                    int count2 = count;
-
-                    if (((Type == ProductType.Normal) && (dr["ProductionPercent"] == DBNull.Value)) || ((Type == ProductType.Advance) && (dr["AdvanceProductionPercent"] == DBNull.Value))) count2 += 100;
-                    else
-                    {
-                        if (Type == ProductType.Normal) count2 += (int)dr["ProductionPercent"];
-                        else count2 += (int)dr["AdvanceProductionPercent"];
-                    }
-
-                    if ((fnum > count) && (fnum <= count2))
-                    {
-                        ResultDoll = dr;
-                        break;
-                    }
-
-                    count = count2;
-                }
-
-                ShowResultScreen(ResultDoll);
+                ShowResultScreen(Results);
             }
             catch (Exception ex)
             {
