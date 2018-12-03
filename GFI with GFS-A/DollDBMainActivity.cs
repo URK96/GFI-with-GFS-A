@@ -28,15 +28,16 @@ namespace GFI_with_GFS_A
         int[] GradeFilters = { Resource.Id.DollFilterGrade2, Resource.Id.DollFilterGrade3, Resource.Id.DollFilterGrade4, Resource.Id.DollFilterGrade5, Resource.Id.DollFilterGradeExtra };
         int[] TypeFilters = { Resource.Id.DollFilterTypeHG, Resource.Id.DollFilterTypeSMG, Resource.Id.DollFilterTypeAR, Resource.Id.DollFilterTypeRF, Resource.Id.DollFilterTypeMG, Resource.Id.DollFilterTypeSG};
         int[] ProductTimeFilters = { Resource.Id.DollFilterProductHour, Resource.Id.DollFilterProductMinute, Resource.Id.DollFilterProductNearRange };
-        int[] ModFilters = { Resource.Id.DollFilterHasModYes, Resource.Id.DollFilterHasModNo };
+        int ModFilter = Resource.Id.DollFilterOnlyMod;
 
         int p_now = 0;
         int p_total = 0;
 
-        private bool[] Filter_Grade = { true, true, true, true, true };
-        private bool[] Filter_Type = { true, true, true, true, true, true };
+        private bool[] HasApplyFilter = { false, false, false, false };
         private int[] Filter_ProductTime = { 0, 0, 0 };
-        private bool[] Filter_Mod = { true, true };
+        private bool[] Filter_Grade = { false, false, false, false, false };
+        private bool[] Filter_Type = { false, false, false, false, false, false };
+        private bool Filter_Mod = false;
         private bool CanRefresh = false;
 
         private enum LineUp { Name, Number, ProductTime }
@@ -44,18 +45,21 @@ namespace GFI_with_GFS_A
 
         private RecyclerView mDollListView;
         private RecyclerView.LayoutManager MainRecyclerManager;
-        private CoordinatorLayout SnackbarLayout = null;
+        private CoordinatorLayout SnackbarLayout;
 
-        private EditText SearchText = null;
+        private TextView LineUp_Name;
+        private TextView LineUp_Time;
+        private TextView LineUp_Num;
 
-        private Dialog dialog = null;
-        private ProgressBar totalProgressBar = null;
-        private ProgressBar nowProgressBar = null;
-        private TextView totalProgress = null;
-        private TextView nowProgress = null;
-        private FloatingActionButton refresh_fab = null;
-        private FloatingActionButton filter_fab = null;
-        private FloatingActionButton array_fab = null;
+        private EditText SearchText;
+
+        private Dialog dialog;
+        private ProgressBar totalProgressBar;
+        private ProgressBar nowProgressBar;
+        private TextView totalProgress;
+        private TextView nowProgress;
+        private FloatingActionButton refresh_fab;
+        private FloatingActionButton filter_fab;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -77,9 +81,17 @@ namespace GFI_with_GFS_A
                 mDollListView.SetLayoutManager(MainRecyclerManager);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBSnackbarLayout);
 
+                LineUp_Name = FindViewById<TextView>(Resource.Id.DollDBLineUp_Name);
+                LineUp_Name.SetBackgroundColor(Android.Graphics.Color.ParseColor("#54A716"));
+                LineUp_Name.Click += LineUp_Text_Click;
+                LineUp_Time = FindViewById<TextView>(Resource.Id.DollDBLineUp_Time);
+                LineUp_Time.Click += LineUp_Text_Click;
+                LineUp_Num = FindViewById<TextView>(Resource.Id.DollDBLineUp_Number);
+                LineUp_Num.Click += LineUp_Text_Click;
+
                 SearchText = FindViewById<EditText>(Resource.Id.DollSearchText);
 
-                InitializeView();
+                InitializeFABView();
 
                 if (ETC.UseLightTheme == true)
                 {
@@ -110,12 +122,10 @@ namespace GFI_with_GFS_A
                     case ScrollState.TouchScroll:
                         if (CanRefresh == true) refresh_fab.Hide();
                         filter_fab.Hide();
-                        array_fab.Hide();
                         break;
                     case ScrollState.Idle:
                         if (CanRefresh == true) refresh_fab.Show();
                         filter_fab.Show();
-                        array_fab.Show();
                         break;
                 }
             }
@@ -126,7 +136,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void InitializeView()
+        private void InitializeFABView()
         {
             refresh_fab = FindViewById<FloatingActionButton>(Resource.Id.DollRefreshCacheFAB);
             if (CanRefresh == false) refresh_fab.Hide();
@@ -146,10 +156,6 @@ namespace GFI_with_GFS_A
             filter_fab = FindViewById<FloatingActionButton>(Resource.Id.DollFilterFAB);
             if (filter_fab.HasOnClickListeners == false) filter_fab.Click += Filter_Fab_Click;
             filter_fab.LongClick += MainFAB_LongClick;
-
-            array_fab = FindViewById<FloatingActionButton>(Resource.Id.DollArrayFAB);
-            if (array_fab.HasOnClickListeners == false) array_fab.Click += Array_fab_Click;
-            array_fab.LongClick += MainFAB_LongClick;
 
             ImageButton SearchResetButton = FindViewById<ImageButton>(Resource.Id.DollSearchResetButton);
             if (SearchResetButton.HasOnClickListeners == false) SearchResetButton.Click += SearchResetButton_Click;
@@ -173,9 +179,6 @@ namespace GFI_with_GFS_A
                     case Resource.Id.DollFilterFAB:
                         tip = Resources.GetString(Resource.String.Tooltip_DB_Filter);
                         break;
-                    case Resource.Id.DollArrayFAB:
-                        tip = Resources.GetString(Resource.String.Tooltip_DB_LineUp);
-                        break;
                 }
 
                 Toast.MakeText(this, tip, ToastLength.Short).Show();
@@ -186,24 +189,32 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void Array_fab_Click(object sender, EventArgs e)
+        private void LineUp_Text_Click(object sender, EventArgs e)
         {
             try
             {
-                switch (LineUpStyle)
+                TextView tv = sender as TextView;
+
+                switch (tv.Id)
                 {
-                    case LineUp.Name:
+                    case Resource.Id.DollDBLineUp_Number:
                         LineUpStyle = LineUp.Number;
-                        array_fab.SetImageResource(Resource.Drawable.LineUp_DicNum_Icon);
+                        LineUp_Name.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        LineUp_Time.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        LineUp_Num.SetBackgroundColor(Android.Graphics.Color.ParseColor("#54A716"));
                         break;
-                    case LineUp.Number:
+                    case Resource.Id.DollDBLineUp_Time:
                         LineUpStyle = LineUp.ProductTime;
-                        array_fab.SetImageResource(Resource.Drawable.LineUp_ProductTime_Icon);
+                        LineUp_Num.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        LineUp_Name.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        LineUp_Time.SetBackgroundColor(Android.Graphics.Color.ParseColor("#54A716"));
                         break;
-                    case LineUp.ProductTime:
+                    case Resource.Id.DollDBLineUp_Name:
                     default:
                         LineUpStyle = LineUp.Name;
-                        array_fab.SetImageResource(Resource.Drawable.LineUp_Name_Icon);
+                        LineUp_Num.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        LineUp_Time.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        LineUp_Name.SetBackgroundColor(Android.Graphics.Color.ParseColor("#54A716"));
                         break;
                 }
 
@@ -387,7 +398,7 @@ namespace GFI_with_GFS_A
                 for (int i = 0; i < GradeFilters.Length; ++i) v.FindViewById<CheckBox>(GradeFilters[i]).Checked = Filter_Grade[i];
                 for (int i = 0; i < TypeFilters.Length; ++i) v.FindViewById<CheckBox>(TypeFilters[i]).Checked = Filter_Type[i];
                 for (int i = 0; i < ProductTimeFilters.Length; ++i) v.FindViewById<NumberPicker>(ProductTimeFilters[i]).Value = Filter_ProductTime[i];
-                for (int i = 0; i < ModFilters.Length; ++i) v.FindViewById<CheckBox>(ModFilters[i]).Checked = Filter_Mod[i];
+                v.FindViewById<CheckBox>(ModFilter).Checked = Filter_Mod;
 
                 Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG_Vertical);
                 FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
@@ -412,7 +423,9 @@ namespace GFI_with_GFS_A
                 for (int i = 0; i < GradeFilters.Length; ++i) Filter_Grade[i] = view.FindViewById<CheckBox>(GradeFilters[i]).Checked;
                 for (int i = 0; i < TypeFilters.Length; ++i) Filter_Type[i] = view.FindViewById<CheckBox>(TypeFilters[i]).Checked;
                 for (int i = 0; i < ProductTimeFilters.Length; ++i) Filter_ProductTime[i] = view.FindViewById<NumberPicker>(ProductTimeFilters[i]).Value;
-                for (int i = 0; i < ModFilters.Length; ++i) Filter_Mod[i] = view.FindViewById<CheckBox>(ModFilters[i]).Checked;
+                Filter_Mod = view.FindViewById<CheckBox>(ModFilter).Checked;
+
+                CheckApplyFilter();
 
                 ListDoll(SearchText.Text, new int[] { Filter_ProductTime[0], Filter_ProductTime[1] }, Filter_ProductTime[2]);
             }
@@ -423,14 +436,45 @@ namespace GFI_with_GFS_A
             }
         }
 
+        private void CheckApplyFilter()
+        {
+            for (int i = 0; i < ProductTimeFilters.Length; ++i)
+                if (Filter_ProductTime[i] != 0)
+                {
+                    HasApplyFilter[0] = true;
+                    break;
+                }
+                else HasApplyFilter[0] = false;
+            for (int i = 0; i < GradeFilters.Length; ++i)
+                if (Filter_Grade[i] == true)
+                {
+                    HasApplyFilter[1] = true;
+                    break;
+                }
+                else HasApplyFilter[1] = false;
+            for (int i = 0; i < TypeFilters.Length; ++i)
+                if (Filter_Type[i] == true)
+                {
+                    HasApplyFilter[2] = true;
+                    break;
+                }
+                else HasApplyFilter[2] = false;
+
+            if (Filter_Mod == true) HasApplyFilter[3] = true;
+            else HasApplyFilter[3] = false;
+        }
+
         private void ResetFilter(View view)
         {
             try
             {
-                for (int i = 0; i < GradeFilters.Length; ++i) Filter_Grade[i] = true;
-                for (int i = 0; i < TypeFilters.Length; ++i) Filter_Type[i] = true;
+                for (int i = 0; i < GradeFilters.Length; ++i) Filter_Grade[i] = false;
+                for (int i = 0; i < TypeFilters.Length; ++i) Filter_Type[i] = false;
                 for (int i = 0; i < ProductTimeFilters.Length; ++i) Filter_ProductTime[i] = 0;
-                for (int i = 0; i < ModFilters.Length; ++i) Filter_Mod[i] = true;
+                Filter_Mod = false;
+
+                for (int i = 0; i < HasApplyFilter.Length; ++i)
+                    HasApplyFilter[i] = false;
 
                 ListDoll(SearchText.Text, new int[] { Filter_ProductTime[0], Filter_ProductTime[1] }, Filter_ProductTime[2]);
             }
@@ -454,21 +498,14 @@ namespace GFI_with_GFS_A
                     Doll doll = RootDollLIst[i];
 
                     if ((p_time[0] + p_time[1]) != 0)
-                    {
                         if (CheckDollByProductTime(p_time, p_range, doll.ProductTime) == false) continue;
-                    }
 
                     if (CheckFilter(doll) == true) continue;
+
                     if (searchText != "")
                     {
                         string name = doll.Name.ToUpper();
-                        /*if (ETC.Language.Language == "ko") name = ((string)dr["Name"]).ToUpper();
-                        else
-                        {
-                            if (dr["Name_EN"] == DBNull.Value) name = ((string)dr["Name"]).ToUpper();
-                            else if (string.IsNullOrWhiteSpace((string)dr["Name_EN"])) name = ((string)dr["Name"]).ToUpper();
-                            else name = ((string)dr["Name_EN"]).ToUpper();
-                        }*/
+
                         if (name.Contains(searchText) == false) continue;
                     }
 
@@ -525,100 +562,65 @@ namespace GFI_with_GFS_A
 
                     if ((x_time == 0) && (y_time !=0)) return 1;
                     else if ((y_time == 0) && (x_time != 0)) return -1;
-                    else if (x_time == y_time)
-                    {
-                        /*if (ETC.Language.Language == "ko")
-                        {
-                            x_name_t = (string)x.DollDR["Name"];
-                            y_name_t = (string)y.DollDR["Name"];
-                        }
-                        else
-                        {
-                            if (x.DollDR["Name_EN"] == DBNull.Value) x_name_t = (string)x.DollDR["Name"];
-                            else if (string.IsNullOrWhiteSpace((string)x.DollDR["Name_EN"])) x_name_t = (string)x.DollDR["Name"];
-                            else x_name_t = (string)x.DollDR["Name_EN"];
-
-                            if (y.DollDR["Name_EN"] == DBNull.Value) y_name_t = (string)y.DollDR["Name"];
-                            else if (string.IsNullOrWhiteSpace((string)y.DollDR["Name_EN"])) y_name_t = (string)x.DollDR["Name"];
-                            else y_name_t = (string)y.DollDR["Name_EN"];
-                        }*/
-
-                        return x.Name.CompareTo(y.Name);
-                    }
+                    else if (x_time == y_time) return x.Name.CompareTo(y.Name);
                     else return x_time.CompareTo(y_time);
                 case LineUp.Name:
                 default:
-                    /*if (ETC.Language.Language == "ko")
-                    {
-                        x_name = (string)x.DollDR["Name"];
-                        y_name = (string)y.DollDR["Name"];
-                    }
-                    else
-                    {
-                        if (x.DollDR["Name_EN"] == DBNull.Value) x_name = (string)x.DollDR["Name"];
-                        else if (string.IsNullOrWhiteSpace((string)x.DollDR["Name_EN"])) x_name = (string)x.DollDR["Name"];
-                        else x_name = (string)x.DollDR["Name_EN"];
-
-                        if (y.DollDR["Name_EN"] == DBNull.Value) y_name = (string)y.DollDR["Name"];
-                        else if (string.IsNullOrWhiteSpace((string)y.DollDR["Name_EN"])) y_name = (string)x.DollDR["Name"];
-                        else y_name = (string)y.DollDR["Name_EN"];
-                    }*/
                     return x.Name.CompareTo(y.Name);
             }
         }
 
         private bool CheckFilter(Doll doll)
         {
-            switch (doll.Grade)
+            if (HasApplyFilter[1] == true)
             {
-                case 2:
-                    if (Filter_Grade[0] == false) return true;
-                    break;
-                case 3:
-                    if (Filter_Grade[1] == false) return true;
-                    break;
-                case 4:
-                    if (Filter_Grade[2] == false) return true;
-                    break;
-                case 5:
-                    if (Filter_Grade[3] == false) return true;
-                    break;
-                case 0:
-                    if (Filter_Grade[4] == false) return true;
-                    break;
+                switch (doll.Grade)
+                {
+                    case 2:
+                        if (Filter_Grade[0] == false) return true;
+                        break;
+                    case 3:
+                        if (Filter_Grade[1] == false) return true;
+                        break;
+                    case 4:
+                        if (Filter_Grade[2] == false) return true;
+                        break;
+                    case 5:
+                        if (Filter_Grade[3] == false) return true;
+                        break;
+                    case 0:
+                        if (Filter_Grade[4] == false) return true;
+                        break;
+                }
             }
 
-            switch (doll.Type)
+            if (HasApplyFilter[2] == true)
             {
-                case "HG":
-                    if (Filter_Type[0] == false) return true;
-                    break;
-                case "SMG":
-                    if (Filter_Type[1] == false) return true;
-                    break;
-                case "AR":
-                    if (Filter_Type[2] == false) return true;
-                    break;
-                case "RF":
-                    if (Filter_Type[3] == false) return true;
-                    break;
-                case "MG":
-                    if (Filter_Type[4] == false) return true;
-                    break;
-                case "SG":
-                    if (Filter_Type[5] == false) return true;
-                    break;
+                switch (doll.Type)
+                {
+                    case "HG":
+                        if (Filter_Type[0] == false) return true;
+                        break;
+                    case "SMG":
+                        if (Filter_Type[1] == false) return true;
+                        break;
+                    case "AR":
+                        if (Filter_Type[2] == false) return true;
+                        break;
+                    case "RF":
+                        if (Filter_Type[3] == false) return true;
+                        break;
+                    case "MG":
+                        if (Filter_Type[4] == false) return true;
+                        break;
+                    case "SG":
+                        if (Filter_Type[5] == false) return true;
+                        break;
+                }
             }
 
-            switch (doll.HasMod)
-            {
-                case true:
-                    if (Filter_Mod[0] == false) return true;
-                    break;
-                case false:
-                    if (Filter_Mod[1] == false) return true;
-                    break;
-            }
+            if (doll.HasMod == false)
+                if (Filter_Mod == true) return true;
 
             return false;
         }

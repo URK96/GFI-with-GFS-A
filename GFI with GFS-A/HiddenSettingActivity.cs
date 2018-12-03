@@ -77,20 +77,32 @@ namespace GFI_with_GFS_A
             SaveSetting = ETC.sharedPreferences.Edit();
 
             ListPreference MainActionbarIcon = (ListPreference)FindPreference("MainActionbarIcon");
-            MainActionbarIcon.SetEntries(new string[] { "RFB 1", "Dictionary", "K5", "RFB 2" });
-            MainActionbarIcon.SetEntryValues(new string[] { Resource.Drawable.AppIcon_Old.ToString(), Resource.Drawable.AppIcon_Old2.ToString(), Resource.Drawable.AppIcon.ToString(), Resource.Drawable.AppIcon2.ToString() });
-            MainActionbarIcon.PreferenceChange += delegate
+            MainActionbarIcon.SetEntries(new string[] 
+            {
+                "RFB 1",
+                "Dictionary",
+                "K5",
+                "RFB 2"
+            });
+            MainActionbarIcon.SetEntryValues(new string[] 
+            {
+                Resource.Drawable.AppIcon_Old.ToString(),
+                Resource.Drawable.AppIcon_Old2.ToString(),
+                Resource.Drawable.AppIcon.ToString(),
+                Resource.Drawable.AppIcon2.ToString()
+            });
+            /*MainActionbarIcon.PreferenceChange += delegate
             {
                 SaveSetting.PutString("MainActionbarIcon", MainActionbarIcon.Value);
                 SaveSetting.Commit();
-            };
+            };*/
 
             SwitchPreference UnlockCensored = (SwitchPreference)FindPreference("UnlockCensored");
             UnlockCensored.Checked = ETC.sharedPreferences.GetBoolean("DollImageCensoredUnlock", false);
             UnlockCensored.PreferenceChange += delegate
             {
                 SaveSetting.PutBoolean("DollImageCensoredUnlock", UnlockCensored.Checked);
-                SaveSetting.Commit();
+                SaveSetting.Apply();
             };
         }
     }

@@ -246,6 +246,11 @@
   <string name="AlertDialog_Delete">Delete</string>
   <string name="AlertDialog_Exit">Quit</string>
   
+  <!--Common LineUp String-->
+  <string name="LineUp_Name">Name</string>
+  <string name="LineUp_Time">Time</string>
+  <string name="LineUp_Num">Number</string>
+  
   <!--CalcMain-->
   <string name="TitleName_ExpItemCalc">Battle Report Calc</string>
   <string name="TitleName_CoreCalc">Core Calc</string>
@@ -478,7 +483,8 @@
   <string name="DollDBDetailLayout_AbilityCaution"># 최대 능력치는 MAX레벨, 호감도에 따른 능력치 상승 미적용 값입니다 #</string>
   
   <!--DollFilterLayout-->
-  <string name="DollFilterLayout_ModFilterTitle">Mod Available</string>
+  <string name="DollFilterLayout_ModFilterTitle">Only Mod Available</string>
+  <string name="DollFilterLayout_ModFilterItem">Enable</string>
   
   <!--EquipDBDetailLayout-->
   <string name="EquipDBDetailLayout_RecommendGunTypeText"># Recommend Type #</string>
