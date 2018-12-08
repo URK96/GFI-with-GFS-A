@@ -588,7 +588,7 @@ namespace GFI_with_GFS_A
                 DateTime now = DateTime.Now;
 
                 //string nowDateTime = now.Year.ToString() + now.Month.ToString() + now.Day.ToString() + now.Hour.ToString() + now.Minute.ToString() + now.Second.ToString();
-                string nowDateTime = $"{now.Year}/{now.Month}/{now.Day} {now.Hour}:{now.Minute}:{now.Second}";
+                string nowDateTime = $"{now.Year}{now.Month}{now.Day}-{now.Hour}{now.Minute}{now.Second}";
                 string ErrorFileName = $"{nowDateTime}-ErrorLog.txt";
 
                 if (Directory.Exists(LogPath) == false) Directory.CreateDirectory(LogPath);

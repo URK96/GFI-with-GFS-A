@@ -292,58 +292,66 @@ namespace GFI_with_GFS_A
 
         private async Task LoadChart(int CompareIndex)
         {
-            chart.Series.Clear();
+            try
+            {
+                chart.Series.Clear();
 
-            ChartZoomPanBehavior ZoomBehavior = new ChartZoomPanBehavior();
-            ZoomBehavior.ZoomMode = ZoomMode.Xy;
-            ZoomBehavior.SelectionZoomingEnabled = true;
-            ZoomBehavior.MaximumZoomLevel = 2.0f;
-            ZoomBehavior.ZoomingEnabled = true;
-            ZoomBehavior.DoubleTapEnabled = true;
-            ZoomBehavior.ScrollingEnabled = true;
+                ChartZoomPanBehavior ZoomBehavior = new ChartZoomPanBehavior();
+                ZoomBehavior.ZoomMode = ZoomMode.Xy;
+                ZoomBehavior.SelectionZoomingEnabled = true;
+                ZoomBehavior.MaximumZoomLevel = 2.0f;
+                ZoomBehavior.ZoomingEnabled = true;
+                ZoomBehavior.DoubleTapEnabled = true;
+                ZoomBehavior.ScrollingEnabled = true;
 
-            chart.Behaviors.Add(ZoomBehavior);
+                chart.Behaviors.Add(ZoomBehavior);
 
-            chart.PrimaryAxis = new CategoryAxis();
-            chart.SecondaryAxis = new NumericalAxis();
-            chart.Legend.Visibility = Visibility.Visible;
+                chart.PrimaryAxis = new CategoryAxis();
+                chart.SecondaryAxis = new NumericalAxis();
+                chart.Legend.Visibility = Visibility.Visible;
 
-            if (ETC.UseLightTheme == true) chart.Legend.LabelStyle.TextColor = Android.Graphics.Color.DarkGray;
-            else chart.Legend.LabelStyle.TextColor = Android.Graphics.Color.LightGray;
+                if (ETC.UseLightTheme == true) chart.Legend.LabelStyle.TextColor = Android.Graphics.Color.DarkGray;
+                else chart.Legend.LabelStyle.TextColor = Android.Graphics.Color.LightGray;
 
-            RadarSeries radar = new RadarSeries();
+                RadarSeries radar = new RadarSeries();
 
-            DataModel model = new DataModel(CompareIndex);
+                DataModel model = new DataModel(CompareIndex);
 
-            radar.ItemsSource = model.MaxAbilityList;
-            radar.XBindingPath = "AbilityType";
-            radar.YBindingPath = "AbilityValue";
-            radar.DrawType = PolarChartDrawType.Line;
-            radar.Color = Android.Graphics.Color.LightGreen;
-            radar.EnableAnimation = true;
+                radar.ItemsSource = model.MaxAbilityList;
+                radar.XBindingPath = "AbilityType";
+                radar.YBindingPath = "AbilityValue";
+                radar.DrawType = PolarChartDrawType.Line;
+                radar.Color = Android.Graphics.Color.LightGreen;
+                radar.EnableAnimation = true;
 
-            radar.Label = DollName;
-            radar.TooltipEnabled = true;
+                radar.Label = DollName;
+                radar.TooltipEnabled = true;
 
-            chart.Series.Add(radar);
+                chart.Series.Add(radar);
 
-            RadarSeries radar2 = new RadarSeries();
+                RadarSeries radar2 = new RadarSeries();
 
-            radar2.ItemsSource = model.CompareAbilityList;
-            radar2.XBindingPath = "AbilityType";
-            radar2.YBindingPath = "AbilityValue";
-            radar2.DrawType = PolarChartDrawType.Line;
-            radar2.Color = Android.Graphics.Color.Magenta;
-            radar2.EnableAnimation = true;
+                radar2.ItemsSource = model.CompareAbilityList;
+                radar2.XBindingPath = "AbilityType";
+                radar2.YBindingPath = "AbilityValue";
+                radar2.DrawType = PolarChartDrawType.Line;
+                radar2.Color = Android.Graphics.Color.Magenta;
+                radar2.EnableAnimation = true;
 
-            if (CompareIndex == 0) radar2.Label = string.Format("{0}{1}", DollType, Resources.GetString(Resource.String.DollDBDetail_RadarAverageString));
-            else radar2.Label = (string)CompareDollInfoDR["Name"];
+                if (CompareIndex == 0) radar2.Label = string.Format("{0}{1}", DollType, Resources.GetString(Resource.String.DollDBDetail_RadarAverageString));
+                else radar2.Label = (string)CompareDollInfoDR["Name"];
 
-            radar2.TooltipEnabled = true;
+                radar2.TooltipEnabled = true;
 
-            chart.Series.Add(radar2);
+                chart.Series.Add(radar2);
 
-            IsChartLoad = true;
+                IsChartLoad = true;
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                Toast.MakeText(this, "Fail init chart", ToastLength.Long).Show();
+            }
         }
 
         protected override void OnResume()
