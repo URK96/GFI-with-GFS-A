@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Gms.Ads;
 using Android.Preferences;
 using Android.Support.Design.Widget;
 using Android.Views;
@@ -198,6 +199,7 @@ namespace GFI_with_GFS_A
             SetDialogTheme();
             Language = Resources.Configuration.Locale;
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NDcxNjJAMzEzNjJlMzMyZTMwbW5TdG9SMTNvVEZJcXo3VEg2Z0JlUTNDbytQTUVpNXJPUGZBb0FqUDV3TT0=");
+            MobileAds.Initialize(context, "ca-app-pub-4576756770200148~8135834453");
         }
 
         internal static void RunHelpActivity(Activity activity, string type)

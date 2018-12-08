@@ -39,27 +39,6 @@
 				android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/DBSubMenuMainButton" />
         </LinearLayout>
-        <!--<LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:alpha="0"
-                android:id="@+id/MDSupportMainButton" />
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginBottom="10dp"
-                android:alpha="0"
-                android:id="@+id/FreeOPMainButton" />
-        </LinearLayout>-->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"

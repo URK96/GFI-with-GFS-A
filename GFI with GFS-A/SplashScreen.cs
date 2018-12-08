@@ -44,22 +44,16 @@ namespace GFI_with_GFS_A
 
                 if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Splash_Light);
 
-                //Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzAxMzlAMzEzNjJlMzMyZTMwaFNuV1Y2bEpzK25pSDlVREdzZHpPcW15TG54Slg3Z3JjQm1IYSs3SENoYz0=");
-
                 SetContentView(Resource.Layout.SplashLayout);
                 SetTitle(Resource.String.app_name);
 
-                /*indicator = new SfBusyIndicator(this)
-                {
-                    AnimationType = Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.GearBox,
-                    TextColor = Android.Graphics.Color.White
-                };
-                indicator.SetBackgroundResource(Resource.Drawable.SplashBG2);
-                FindViewById<FrameLayout>(Resource.Id.SplashBusyIndicatorLayout).AddView(indicator);*/
-
                 SplashImageView = FindViewById<ImageView>(Resource.Id.SplashImageView);
-                drawable = (ClipDrawable)SplashImageView.Background;
-                drawable.SetLevel(0);
+
+                Random r = new Random(DateTime.Now.Millisecond);
+
+                if ((ETC.sharedPreferences.GetInt("SplashBG_Index", 0) == 1) || ((r.Next() % 20) == 0))
+                    SplashImageView.SetImageResource(Resource.Drawable.Splash_Special);
+                else SplashImageView.SetImageResource(Resource.Drawable.SplashBG2);
 
                 StatusText = FindViewById<TextView>(Resource.Id.SplashStatusText);
 
@@ -77,14 +71,9 @@ namespace GFI_with_GFS_A
 
         private async Task Animation()
         {
-            while (drawable.Level < 10000)
-            {
-                drawable.SetLevel(drawable.Level + 100);
-                await Task.Delay(1);
-            }
             while (SplashImageView.Alpha < 1.0f)
             {
-                SplashImageView.Alpha += 0.01f;
+                SplashImageView.Alpha += 1f;
                 await Task.Delay(10);
             }
         }
@@ -97,15 +86,11 @@ namespace GFI_with_GFS_A
 
             try
             {
-                //indicator.IsBusy = true;
-            
                 await Animation();
 
                 // Initialize
 
                 await ETC.AnimateText(StatusText, "Initializing");
-
-                MobileAds.Initialize(this, "ca-app-pub-4576756770200148~8135834453");
 
                 if (ETC.sharedPreferences.GetBoolean("CheckInitLowMemory", true) == true) CheckDeviceMemory();
                 ETC.IsLowRAM = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);

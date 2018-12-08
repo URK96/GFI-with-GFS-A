@@ -3624,26 +3624,26 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f020063
 			public const int avd_hide_password = 2130837603;
 			
+			// aapt resource value: 0x7f020190
+			public const int avd_hide_password_1 = 2130837904;
+			
 			// aapt resource value: 0x7f020191
-			public const int avd_hide_password_1 = 2130837905;
+			public const int avd_hide_password_2 = 2130837905;
 			
 			// aapt resource value: 0x7f020192
-			public const int avd_hide_password_2 = 2130837906;
-			
-			// aapt resource value: 0x7f020193
-			public const int avd_hide_password_3 = 2130837907;
+			public const int avd_hide_password_3 = 2130837906;
 			
 			// aapt resource value: 0x7f020064
 			public const int avd_show_password = 2130837604;
 			
+			// aapt resource value: 0x7f020193
+			public const int avd_show_password_1 = 2130837907;
+			
 			// aapt resource value: 0x7f020194
-			public const int avd_show_password_1 = 2130837908;
+			public const int avd_show_password_2 = 2130837908;
 			
 			// aapt resource value: 0x7f020195
-			public const int avd_show_password_2 = 2130837909;
-			
-			// aapt resource value: 0x7f020196
-			public const int avd_show_password_3 = 2130837910;
+			public const int avd_show_password_3 = 2130837909;
 			
 			// aapt resource value: 0x7f020065
 			public const int Base36_Logo = 2130837605;
@@ -4392,11 +4392,11 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f02015d
 			public const int notification_icon_background = 2130837853;
 			
-			// aapt resource value: 0x7f02018f
-			public const int notification_template_icon_bg = 2130837903;
+			// aapt resource value: 0x7f02018e
+			public const int notification_template_icon_bg = 2130837902;
 			
-			// aapt resource value: 0x7f020190
-			public const int notification_template_icon_low_bg = 2130837904;
+			// aapt resource value: 0x7f02018f
+			public const int notification_template_icon_low_bg = 2130837903;
 			
 			// aapt resource value: 0x7f02015e
 			public const int notification_tile_bg = 2130837854;
@@ -4510,40 +4510,37 @@ namespace GFI_with_GFS_A
 			public const int Splash_DataLoad = 2130837890;
 			
 			// aapt resource value: 0x7f020183
-			public const int SplashAnimation = 2130837891;
+			public const int Splash_Special = 2130837891;
 			
 			// aapt resource value: 0x7f020184
 			public const int SplashBG2 = 2130837892;
 			
 			// aapt resource value: 0x7f020185
-			public const int SplashClip = 2130837893;
+			public const int tooltip_frame_dark = 2130837893;
 			
 			// aapt resource value: 0x7f020186
-			public const int tooltip_frame_dark = 2130837894;
+			public const int tooltip_frame_light = 2130837894;
 			
 			// aapt resource value: 0x7f020187
-			public const int tooltip_frame_light = 2130837895;
+			public const int Type_Boss = 2130837895;
 			
 			// aapt resource value: 0x7f020188
-			public const int Type_Boss = 2130837896;
+			public const int Type_Normal = 2130837896;
 			
 			// aapt resource value: 0x7f020189
-			public const int Type_Normal = 2130837897;
+			public const int UseLightThemeIcon = 2130837897;
 			
 			// aapt resource value: 0x7f02018a
-			public const int UseLightThemeIcon = 2130837898;
+			public const int UseLightThemeIcon_WhiteTheme = 2130837898;
 			
 			// aapt resource value: 0x7f02018b
-			public const int UseLightThemeIcon_WhiteTheme = 2130837899;
+			public const int Xamarin_Logo = 2130837899;
 			
 			// aapt resource value: 0x7f02018c
-			public const int Xamarin_Logo = 2130837900;
+			public const int ZinaOS_Background = 2130837900;
 			
 			// aapt resource value: 0x7f02018d
-			public const int ZinaOS_Background = 2130837901;
-			
-			// aapt resource value: 0x7f02018e
-			public const int ZinaOS_BootLogo = 2130837902;
+			public const int ZinaOS_BootLogo = 2130837901;
 			
 			static Drawable()
 			{
