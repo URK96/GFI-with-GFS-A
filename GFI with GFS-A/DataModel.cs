@@ -191,19 +191,19 @@ namespace GFI_with_GFS_A
 
     public class Equip
     {
-        public string Name { get; set; }
-        public int Id { get; set; }
-        public int Grade { get; set; }
-        public string GradeColor { get; set; }
-        public int ProductTime { get; set; }
-        public string Category { get; set; }
-        public string Icon { get; set; }
-        public string[] OnlyUse { get; set; }
-        public string[] DollType { get; set; }
-        public string[] SpecialDoll { get; set; }
-        public string Note { get; set; }
-        public string Type { get; set; }
-        public string ImagePath { get; set; }
+        public string Name { get; private set; }
+        public int Id { get; private set; }
+        public int Grade { get; private set; }
+        public int GradeIconId { get; private set; }
+        public int ProductTime { get; private set; }
+        public string Category { get; private set; }
+        public string Type { get; private set; }
+        public string Icon { get; private set; }
+        public string[] OnlyUse { get; private set; }
+        public string[] DollType { get; private set; }
+        public string[] SpecialDoll { get; private set; }
+        public string Note { get; private set; }
+        public string ImagePath { get; private set; }
 
         public string GetIdString { get { return string.Format("No. {0}", Id); } }
         public string GetProductTimeToString { get { return ETC.CalcTime(ProductTime); } }
@@ -228,6 +228,25 @@ namespace GFI_with_GFS_A
             else DollType = ((string)dr["DollType"]).Split(';');
             if (dr["SpecialDoll"] == DBNull.Value) SpecialDoll = null;
             else SpecialDoll = ((string)dr["SpecialDoll"]).Split(';');
+
+            switch (Grade)
+            {
+                case 0:
+                    GradeIconId = Resource.Drawable.Grade_0;
+                    break;
+                case 2:
+                    GradeIconId = Resource.Drawable.Grade_2;
+                    break;
+                case 3:
+                    GradeIconId = Resource.Drawable.Grade_3;
+                    break;
+                case 4:
+                    GradeIconId = Resource.Drawable.Grade_4;
+                    break;
+                case 5:
+                    GradeIconId = Resource.Drawable.Grade_5;
+                    break;
+            }
         }
     }
 

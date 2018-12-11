@@ -21,8 +21,8 @@ namespace GFI_with_GFS_A
     {
         delegate void DownloadProgress();
 
-        private List<Doll> RootDollLIst = new List<Doll>();
-        private List<Doll> SubDollList = new List<Doll>();
+        private List<Doll> RootList = new List<Doll>();
+        private List<Doll> SubList = new List<Doll>();
         private List<int> Download_List = new List<int>();
 
         int[] GradeFilters = { Resource.Id.DollFilterGrade2, Resource.Id.DollFilterGrade3, Resource.Id.DollFilterGrade4, Resource.Id.DollFilterGrade5, Resource.Id.DollFilterGradeExtra };
@@ -91,7 +91,7 @@ namespace GFI_with_GFS_A
 
                 SearchText = FindViewById<EditText>(Resource.Id.DollSearchText);
 
-                InitializeFABView();
+                InitializeView();
 
                 if (ETC.UseLightTheme == true)
                 {
@@ -136,7 +136,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void InitializeFABView()
+        private void InitializeView()
         {
             refresh_fab = FindViewById<FloatingActionButton>(Resource.Id.DollRefreshCacheFAB);
             if (CanRefresh == false) refresh_fab.Hide();
@@ -229,49 +229,40 @@ namespace GFI_with_GFS_A
 
         private void InitProcess()
         {
-            CreateDollObject();
+            CreateListObject();
 
             if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
             {
-                if (CheckDollCropImage() == true)
+                if (CheckCropImage() == true)
                     ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(DollCropImageDownloadProcess));
             }
         }
 
-        private void CreateDollObject()
+        private void CreateListObject()
         {
-            string name = "";
-
             try
             {
                 foreach (DataRow dr in ETC.DollList.Rows)
-                {
-                    name = (string)dr["Name"];
+                    RootList.Add(new Doll(dr));
 
-                    if (name == "PPK")
-                        name = "ppk";
-
-                    RootDollLIst.Add(new Doll(dr));
-                }
-
-                RootDollLIst.TrimExcess();
+                RootList.TrimExcess();
             }
             catch (Exception ex)
             {
-                Toast.MakeText(this, name, ToastLength.Short).Show();
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Initialize_List_Fail, Snackbar.LengthShort);
             }
         }
 
-        private bool CheckDollCropImage()
+        private bool CheckCropImage()
         {
             Download_List.Clear();
 
-            for (int i = 0; i < ETC.DollList.Rows.Count; ++i)
+            for (int i = 0; i < RootList.Count; ++i)
             {
-                DataRow dr = ETC.DollList.Rows[i];
-                int DollNum = (int)dr["DicNumber"];
-                string FilePath = System.IO.Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", DollNum + ".gfdcache");
-                if (System.IO.File.Exists(FilePath) == false) Download_List.Add(DollNum);
+                Doll doll = RootList[i];
+                string FilePath = Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", $"{doll.DicNumber}.gfdcache");
+                if (File.Exists(FilePath) == false) Download_List.Add(doll.DicNumber);
             }
 
             Download_List.TrimExcess();
@@ -324,10 +315,8 @@ namespace GFI_with_GFS_A
 
                     for (int i = 0; i < p_total; ++i)
                     {
-                        int num = Download_List[i];
-                        string filename = num.ToString();
-                        string url = System.IO.Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal_Crop", filename + ".png");
-                        string target = System.IO.Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", filename + ".gfdcache");
+                        string url = Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal_Crop", $"{Download_List[i]}.png");
+                        string target = Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", $"{Download_List[i]}.gfdcache");
                         await wc.DownloadFileTaskAsync(url, target);
                     }
                 }
@@ -359,13 +348,13 @@ namespace GFI_with_GFS_A
             p_now += 1;
 
             totalProgressBar.Progress = Convert.ToInt32((p_now / Convert.ToDouble(p_total)) * 100);
-            totalProgress.Text = string.Format("{0}%", totalProgressBar.Progress);
+            totalProgress.Text = $"{totalProgressBar.Progress}%";
         }
 
         private void Wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             nowProgressBar.Progress = e.ProgressPercentage;
-            nowProgress.Text = string.Format("{0}%", e.ProgressPercentage);
+            nowProgress.Text = $"{e.ProgressPercentage}%";
         }
 
         private void SearchText_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
@@ -487,15 +476,15 @@ namespace GFI_with_GFS_A
 
         private async void ListDoll(string searchText, int[] p_time, int p_range)
         {
-            SubDollList.Clear();
+            SubList.Clear();
 
             searchText = searchText.ToUpper();
 
             try
             {
-                for (int i = 0; i < RootDollLIst.Count; ++i)
+                for (int i = 0; i < RootList.Count; ++i)
                 {
-                    Doll doll = RootDollLIst[i];
+                    Doll doll = RootList[i];
 
                     if ((p_time[0] + p_time[1]) != 0)
                         if (CheckDollByProductTime(p_time, p_range, doll.ProductTime) == false) continue;
@@ -509,12 +498,12 @@ namespace GFI_with_GFS_A
                         if (name.Contains(searchText) == false) continue;
                     }
 
-                    SubDollList.Add(doll);
+                    SubList.Add(doll);
                 }
 
-                SubDollList.Sort(SortDoll);
+                SubList.Sort(SortDoll);
 
-                var adapter = new DollListAdapter(SubDollList, this);
+                var adapter = new DollListAdapter(SubList, this);
 
                 if (adapter.HasOnItemClick() == false) adapter.ItemClick += Adapter_ItemClick;
 
@@ -533,7 +522,7 @@ namespace GFI_with_GFS_A
         {
             await Task.Delay(100);
             var DollInfo = new Intent(this, typeof(DollDBDetailActivity));
-            DollInfo.PutExtra("DicNum", SubDollList[position].DicNumber);
+            DollInfo.PutExtra("DicNum", SubList[position].DicNumber);
             StartActivity(DollInfo);
             OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }
@@ -542,10 +531,8 @@ namespace GFI_with_GFS_A
         {
             int p_time_minute = (p_time[0] * 60) + p_time[1];
 
-            for (int i = (p_time_minute - range); i <= (p_time_minute + range); ++i)
-            {
+            for (int i = p_time_minute - range; i <= (p_time_minute + range); ++i)
                 if (d_time == i) return true;
-            }
 
             return false;
         }
