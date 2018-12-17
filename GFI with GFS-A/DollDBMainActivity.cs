@@ -44,7 +44,7 @@ namespace GFI_with_GFS_A
         private LineUp LineUpStyle = LineUp.Name;
 
         private RecyclerView mDollListView;
-        private RecyclerView.LayoutManager MainRecyclerManager;
+        private RecyclerView.LayoutManager MainLayoutManager;
         private CoordinatorLayout SnackbarLayout;
 
         private TextView LineUp_Name;
@@ -77,8 +77,8 @@ namespace GFI_with_GFS_A
                 CanRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
                 mDollListView = FindViewById<RecyclerView>(Resource.Id.DollDBRecyclerView);
-                MainRecyclerManager = new LinearLayoutManager(this);
-                mDollListView.SetLayoutManager(MainRecyclerManager);
+                MainLayoutManager = new LinearLayoutManager(this);
+                mDollListView.SetLayoutManager(MainLayoutManager);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBSnackbarLayout);
 
                 LineUp_Name = FindViewById<TextView>(Resource.Id.DollDBLineUp_Name);
@@ -104,7 +104,8 @@ namespace GFI_with_GFS_A
 
                 ListDoll(SearchText.Text, new int[] { Filter_ProductTime[0], Filter_ProductTime[1] }, Filter_ProductTime[2]);
 
-                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true) == true)) ETC.RunHelpActivity(this, "DBList");
+                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true) == true))
+                    ETC.RunHelpActivity(this, "DBList");
             }
             catch (Exception ex)
             {

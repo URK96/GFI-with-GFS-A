@@ -156,7 +156,7 @@ namespace GFI_with_GFS_A
         {
             View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.DollListLayout, parent, false);
 
-            DollListViewHolder vh = new DollListViewHolder(view, OnClick);
+            ProductResultViewHolder vh = new ProductResultViewHolder(view, OnClick);
             return vh;
         }
 
@@ -181,7 +181,7 @@ namespace GFI_with_GFS_A
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            DollListViewHolder vh = holder as DollListViewHolder;
+            ProductResultViewHolder vh = holder as ProductResultViewHolder;
 
             string type = types[position];
             DataRow item = items[position];
@@ -199,7 +199,7 @@ namespace GFI_with_GFS_A
                 switch (type)
                 {
                     case "Doll":
-                        URL = Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", $"{(int)item["DicNumber"]}.png");
+                        URL = Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal_Crop", $"{(int)item["DicNumber"]}.png");
                         FilePath = Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", $"{(int)item["DicNumber"]}.gfdcache");
                         break;
                     case "Equip":

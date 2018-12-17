@@ -1099,7 +1099,7 @@ namespace GFI_with_GFS_A
 
                 LoadChart(ChartCompareList.SelectedItemPosition);
 
-                ShowCardViewAnimation();
+                ShowCardViewVisibility();
                 ShowTitleSubLayout();
                 HideFloatingActionButtonAnimation();
 
@@ -1172,14 +1172,11 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task ShowCardViewAnimation()
+        private void ShowCardViewVisibility()
         {
-            if (FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout).Alpha == 0.0f)
-                FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout).Animate().Alpha(1.0f).SetDuration(500).Start();
-            if (FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout).Alpha == 0.0f)
-                FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(500).Start();
-            if (FindViewById<CardView>(Resource.Id.DollDBDetailSkillCardLayout).Alpha == 0.0f)
-                FindViewById<CardView>(Resource.Id.DollDBDetailSkillCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1000).Start();
+            FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout).Visibility = ViewStates.Visible;
+            FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout).Visibility = ViewStates.Visible;
+            FindViewById<CardView>(Resource.Id.DollDBDetailSkillCardLayout).Visibility = ViewStates.Visible;
 
             CardView ModCardView = FindViewById<CardView>(Resource.Id.DollDBDetailModSkillCardLayout);
 
@@ -1188,27 +1185,16 @@ namespace GFI_with_GFS_A
                 case 0:
                 case 1:
                 default:
-                    if (ModCardView.Alpha == 1.0f)
-                    {
-                        ModCardView.Animate().Alpha(0.0f).SetDuration(500).Start();
-                        await Task.Delay(500);
-                        ModCardView.Visibility = ViewStates.Gone;
-                    }
+                    ModCardView.Visibility = ViewStates.Gone;
                     break;
                 case 2:
                 case 3:
-                    if (ModCardView.Alpha == 0.0f)
-                    {
-                        ModCardView.Visibility = ViewStates.Visible;
-                        ModCardView.Animate().Alpha(1.0f).SetDuration(500).Start();
-                    }
+                    ModCardView.Visibility = ViewStates.Visible;
                     break;
             }
 
-            if (FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout).Alpha == 0.0f)
-                FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1500).Start();
-            if (FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout).Alpha == 0.0f)
-                FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(2000).Start();
+            FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout).Visibility = ViewStates.Visible;
+            FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout).Visibility = ViewStates.Visible;
         }
 
         private void DollDBDetailModSelectButton_Click(object sender, EventArgs e)

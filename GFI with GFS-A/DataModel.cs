@@ -173,13 +173,11 @@ namespace GFI_with_GFS_A
         {
             Abilities = new Dictionary<string, string>();
 
-            Abilities.Add("HP", (string)dr["HP"]);
-            Abilities.Add("FireRate", (string)dr["FireRate"]);
-            Abilities.Add("Evasion", (string)dr["Evasion"]);
-            Abilities.Add("Accuracy", (string)dr["Accuracy"]);
-            Abilities.Add("AttackSpeed", (string)dr["AttackSpeed"]);
-            Abilities.Add("MoveSpeed", (string)dr["MoveSpeed"]);
-            Abilities.Add("Critical", (string)dr["Critical"]);
+            string[] ability_name = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed", "MoveSpeed", "Critical" };
+
+            for (int i = 0; i < ability_name.Length; ++i)
+                Abilities.Add(ability_name[i], (string)dr[ability_name[i]]);
+
             if (ETC.IsDBNullOrBlank(dr, "Bullet") == true) Abilities.Add("Bullet", "0");
             else Abilities.Add("Bullet", (string)dr["Bullet"]);
             if (ETC.IsDBNullOrBlank(dr, "Armor") == true) Abilities.Add("Armor", "0");
@@ -204,6 +202,11 @@ namespace GFI_with_GFS_A
         public string[] SpecialDoll { get; private set; }
         public string Note { get; private set; }
         public string ImagePath { get; private set; }
+
+        public string[] Abilities { get; private set; }
+        public string[] InitMags { get; private set; }
+        public string[] MaxMags { get; private set; }
+        public bool CanUpgrade { get; private set; }
 
         public string GetIdString { get { return string.Format("No. {0}", Id); } }
         public string GetProductTimeToString { get { return ETC.CalcTime(ProductTime); } }
@@ -247,17 +250,36 @@ namespace GFI_with_GFS_A
                     GradeIconId = Resource.Drawable.Grade_5;
                     break;
             }
+
+            SetAbility(ref dr);
+        }
+
+        private void SetAbility(ref DataRow dr)
+        {
+            Abilities = ((string)dr["Ability"]).Split(';');
+            InitMags = ((string)dr["InitialMagnification"]).Split(';');
+            MaxMags = ((string)dr["MaxMagnification"]).Split(';');
+
+            if (MaxMags[0] == "강화불가") CanUpgrade = false;
+            else CanUpgrade = true;
         }
     }
 
     public class Fairy
     {
-        public string Name { get; set; }
-        public int DicNumber { get; set; }
-        public string Type { get; set; }
-        public int ProductTime { get; set; }
-        public string Note { get; set; }
-        public string CropImagePath { get; set; }
+        public string Name { get; private set; }
+        public int DicNumber { get; private set; }
+        public string Type { get; private set; }
+        public int ProductTime { get; private set; }
+        public string Note { get; private set; }
+        public string SkillName { get; private set; }
+        public string SkillExplain { get; private set; }
+        public string[] SkillEffect { get; private set; }
+        public string[] SkillRate { get; private set; }
+        public int OrderConsume { get; private set; }
+        public int CoolDown { get; private set; }
+
+        public Dictionary<string, string> Abilities;
 
         public string GetDicNumberString { get { return string.Format("No. {0}", DicNumber); } }
         public string GetProductTimeToString { get { return ETC.CalcTime(ProductTime); } }
@@ -272,7 +294,25 @@ namespace GFI_with_GFS_A
             if (dr["Note"] == DBNull.Value) Note = "";
             else Note = (string)dr["Note"];
 
-            CropImagePath = Path.Combine(ETC.CachePath, "Fairy", "Normal_Crop", string.Format("{0}.gfdcache", DicNumber));
+            SkillName = (string)dr["SkillName"];
+            SkillExplain = (string)dr["SkillExplain"];
+            SkillEffect = ((string)dr["SkillEffect"]).Split(';');
+            SkillRate = ((string)dr["SkillRate"]).Split(';');
+
+            OrderConsume = (int)dr["OrderConsume"];
+            CoolDown = (int)dr["CoolDown"];
+
+            SetAbility(ref dr);
+        }
+
+        private void SetAbility(ref DataRow dr)
+        {
+            Abilities = new Dictionary<string, string>();
+
+            string[] ability_name = { "FireRate", "Accuracy", "Evasion", "Armor", "Critical" };
+
+            for (int i = 0; i < ability_name.Length; ++i)
+                Abilities.Add(ability_name[i], (string)dr[ability_name[i]]);
         }
     }
 }

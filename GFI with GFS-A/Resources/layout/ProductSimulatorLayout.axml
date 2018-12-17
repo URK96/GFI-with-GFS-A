@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/ProductSimulatorMainLayout">
 	<ScrollView
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
+		android:layout_height="wrap_content">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:id="@+id/PSResourceIn">
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-			android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:id="@+id/ProductSimulatorManPowerLayout">
             <Space
@@ -55,8 +53,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-			android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:id="@+id/ProductSimulatorAmmoLayout">
             <Space
@@ -93,8 +90,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-			android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:id="@+id/ProductSimulatorFoodLayout">
             <Space
@@ -126,13 +122,12 @@
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"/>
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-			android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:id="@+id/ProductSimulatorPartsLayout">
             <Space
@@ -198,6 +193,7 @@
 			android:orientation="horizontal"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:layout_marginTop="20dp"
 			android:gravity="center">
 			<NumberPicker
                 android:layout_width="50dp"
@@ -207,8 +203,6 @@
 			<Button
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="20dp"
-				android:gravity="center"
 				android:text="@string/ProductSimulatorLayout_ProductButtonText"
 				android:id="@+id/PSProductStart" />
 		</LinearLayout>
@@ -219,4 +213,4 @@
         android:layout_height="wrap_content"
         android:id="@+id/ProductSimulatorSnackbarLayout"
         android:layout_alignTop="@id/ProductSimulatorMainLayout" />
-</RelativeLayout>
+</LinearLayout>

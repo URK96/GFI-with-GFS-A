@@ -22,10 +22,8 @@ namespace GFI_with_GFS_A
     {
         System.Timers.Timer FABTimer = new System.Timers.Timer();
 
+        private Fairy fairy;
         private DataRow FairyInfoDR = null;
-        private int FairyDicNum;
-        private string FairyName;
-        private string FairyType;
 
         private bool IsOpenFABMenu = false;
         private bool IsEnableFABMenu = false;
@@ -50,19 +48,15 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.FairyDBDetailLayout);
 
-                FairyDicNum = int.Parse(Intent.GetStringExtra("DicNum"));
-                FairyName = (string)FairyInfoDR["Name"];
-
-                FairyInfoDR = ETC.FindDataRow(ETC.FairyList, "DicNumber", FairyDicNum);
-                FairyDicNum = (int)FairyInfoDR["DicNumber"];
-                FairyType = (string)FairyInfoDR["Type"];
+                FairyInfoDR = ETC.FindDataRow(ETC.FairyList, "DicNumber", Intent.GetIntExtra("DicNum", 0));
+                fairy = new Fairy(FairyInfoDR);
 
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.FairyDBDetailInitLoadProgress);
                 FindViewById<ImageView>(Resource.Id.FairyDBDetailSmallImage).Click += FairyDBDetailSmallImage_Click;
 
                 RefreshCacheFAB = FindViewById<FloatingActionButton>(Resource.Id.FairyDBDetailRefreshCacheFAB);
                 PercentTableFAB = FindViewById<FloatingActionButton>(Resource.Id.FairyDBDetailProductPercentFAB);
-                if ((int)FairyInfoDR["ProductTime"] == 0) PercentTableFAB.Visibility = ViewStates.Gone;
+                if (fairy.ProductTime == 0) PercentTableFAB.Visibility = ViewStates.Gone;
                 MainFAB = FindViewById<FloatingActionButton>(Resource.Id.FairyDBDetailSideLinkMainFAB);
                 GFDBFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB1);
                 GFDBFAB.SetImageResource(Resource.Drawable.GFDB_Logo);
@@ -92,7 +86,8 @@ namespace GFI_with_GFS_A
 
                 InitLoadProcess(false);
 
-                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_FairyDBDetail", true) == true)) ETC.RunHelpActivity(this, "FairyDBDetail");
+                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_FairyDBDetail", true) == true))
+                    ETC.RunHelpActivity(this, "FairyDBDetail");
             }
             catch (Exception ex)
             {
@@ -166,7 +161,7 @@ namespace GFI_with_GFS_A
             try
             {
                 var intent = new Intent(this, typeof(ProductPercentTableActivity));
-                intent.PutExtra("Info", new string[] { "Fairy", FairyDicNum.ToString() });
+                intent.PutExtra("Info", new string[] { "Fairy", fairy.DicNumber.ToString() });
                 StartActivity(intent);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
@@ -186,21 +181,21 @@ namespace GFI_with_GFS_A
                 switch (fab.Id)
                 {
                     case Resource.Id.SideLinkFAB1:
-                        string uri = string.Format("http://gfl.zzzzz.kr/fairy.php?id={0}&lang=ko", FairyDicNum);
+                        string uri = string.Format("http://gfl.zzzzz.kr/fairy.php?id={0}&lang=ko", fairy.DicNumber);
                         var intent = new Intent(this, typeof(WebBrowserActivity));
                         intent.PutExtra("url", uri);
                         StartActivity(intent);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.SideLinkFAB2:
-                        string uri2 = string.Format("http://girlsfrontline.inven.co.kr/dataninfo/fairy/?d=133&c={0}", FairyDicNum);
+                        string uri2 = string.Format("http://girlsfrontline.inven.co.kr/dataninfo/fairy/?d=133&c={0}", fairy.DicNumber);
                         var intent2 = new Intent(this, typeof(WebBrowserActivity));
                         intent2.PutExtra("url", uri2);
                         StartActivity(intent2);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.SideLinkFAB3:
-                        string uri3 = string.Format("https://girlsfrontline.kr/doll/{0}", FairyDicNum);
+                        string uri3 = string.Format("https://girlsfrontline.kr/doll/{0}", fairy.DicNumber);
                         var intent3 = new Intent(this, typeof(WebBrowserActivity));
                         intent3.PutExtra("url", uri3);
                         StartActivity(intent3);
@@ -288,7 +283,7 @@ namespace GFI_with_GFS_A
             try
             {
                 var FairyImageViewer = new Intent(this, typeof(FairyDBImageViewer));
-                FairyImageViewer.PutExtra("Keyword", FairyName);
+                FairyImageViewer.PutExtra("Keyword", fairy.Name);
                 StartActivity(FairyImageViewer);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
@@ -310,66 +305,62 @@ namespace GFI_with_GFS_A
                 // 요정 타이틀 바 초기화
                 try
                 {
-                    if ((File.Exists(Path.Combine(ETC.CachePath, "Fairy", "Normal", FairyName + "_1" + ".gfdcache")) == false) || (IsRefresh == true))
+                    if ((File.Exists(Path.Combine(ETC.CachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache")) == false) || (IsRefresh == true))
                     {
                         using (WebClient wc = new WebClient())
                         {
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Fairy", FairyName + "_1" + ".png"), Path.Combine(ETC.CachePath, "Fairy", "Normal", FairyName + "_1" + ".gfdcache"));
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Fairy", $"{fairy.DicNumber}_1.png"), Path.Combine(ETC.CachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache"));
                         }
                     }
 
                     if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", true) == true)
                     {
-                        Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Fairy", "Normal", FairyName + "_1" + ".gfdcache"));
+                        Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache"));
                         drawable.SetAlpha(40);
                         FindViewById<RelativeLayout>(Resource.Id.FairyDBDetailMainLayout).Background = drawable;
                     }
 
                     ImageView FairySmallImage = FindViewById<ImageView>(Resource.Id.FairyDBDetailSmallImage);
-                    FairySmallImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Fairy", "Normal", FairyName + "_1" + ".gfdcache")));
+                    FairySmallImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache")));
                 }
                 catch (Exception ex)
                 {
                     ETC.LogError(this, ex.ToString());
                 }
 
-                FindViewById<TextView>(Resource.Id.FairyDBDetailFairyType).Text = FairyType;
-                FindViewById<TextView>(Resource.Id.FairyDBDetailFairyName).Text = FairyName;
-                FindViewById<TextView>(Resource.Id.FairyDBDetailFairyProductTime).Text = ETC.CalcTime((int)FairyInfoDR["ProductTime"]);
+                FindViewById<TextView>(Resource.Id.FairyDBDetailFairyType).Text = fairy.Type;
+                FindViewById<TextView>(Resource.Id.FairyDBDetailFairyName).Text = fairy.Name;
+                FindViewById<TextView>(Resource.Id.FairyDBDetailFairyProductTime).Text = ETC.CalcTime(fairy.ProductTime);
 
 
                 // 요정 기본 정보 초기화
 
-                FindViewById<TextView>(Resource.Id.FairyDBDetailInfoType).Text = FairyType;
-                FindViewById<TextView>(Resource.Id.FairyDBDetailInfoName).Text = FairyName;
+                FindViewById<TextView>(Resource.Id.FairyDBDetailInfoType).Text = fairy.Type;
+                FindViewById<TextView>(Resource.Id.FairyDBDetailInfoName).Text = fairy.Name;
                 FindViewById<TextView>(Resource.Id.FairyDBDetailInfoIllustrator).Text = "";
-
-                if (FairyInfoDR["Note"] == DBNull.Value) FindViewById<TextView>(Resource.Id.FairyDBDetailInfoETC).Text = "";
-                else FindViewById<TextView>(Resource.Id.FairyDBDetailInfoETC).Text = (string)FairyInfoDR["Note"];
+                FindViewById<TextView>(Resource.Id.FairyDBDetailInfoETC).Text = fairy.Note;
 
 
                 // 요정 스킬 정보 초기화
 
-                string SkillName = (string)FairyInfoDR["SkillName"];
-
                 try
                 {
-                    if ((File.Exists(Path.Combine(ETC.CachePath, "Fairy", "Skill", SkillName + ".gfdcache")) == false) || (IsRefresh == true))
+                    if ((File.Exists(Path.Combine(ETC.CachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache")) == false) || (IsRefresh == true))
                     {
                         using (WebClient wc = new WebClient())
                         {
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "FairySkill", SkillName + ".png"), Path.Combine(ETC.CachePath, "Fairy", "Skill", SkillName + ".gfdcache"));
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "FairySkill", $"{fairy.SkillName}.png"), Path.Combine(ETC.CachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache"));
                         }
                     }
 
-                    FindViewById<ImageView>(Resource.Id.FairyDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Fairy", "Skill", SkillName + ".gfdcache")));
+                    FindViewById<ImageView>(Resource.Id.FairyDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache")));
                 }
                 catch (Exception ex)
                 {
                     ETC.LogError(this, ex.ToString());
                 }
 
-                FindViewById<TextView>(Resource.Id.FairyDBDetailSkillName).Text = SkillName;
+                FindViewById<TextView>(Resource.Id.FairyDBDetailSkillName).Text = fairy.SkillName;
 
                 if (ETC.UseLightTheme == true)
                 {
@@ -377,12 +368,12 @@ namespace GFI_with_GFS_A
                     FindViewById<ImageView>(Resource.Id.FairyDBDetailSkillCoolTimeIcon).SetImageResource(Resource.Drawable.CoolTime_Icon_WhiteTheme);
                 }
 
-                FindViewById<TextView>(Resource.Id.FairyDBDetailSkillTicket).Text = ((int)FairyInfoDR["OrderConsume"]).ToString();
-                FindViewById<TextView>(Resource.Id.FairyDBDetailSkillCoolTime).Text = ((int)FairyInfoDR["CoolDown"]).ToString();
-                FindViewById<TextView>(Resource.Id.FairyDBDetailSkillExplain).Text = (string)FairyInfoDR["SkillExplain"];
+                FindViewById<TextView>(Resource.Id.FairyDBDetailSkillTicket).Text = fairy.OrderConsume.ToString();
+                FindViewById<TextView>(Resource.Id.FairyDBDetailSkillCoolTime).Text = fairy.CoolDown.ToString();
+                FindViewById<TextView>(Resource.Id.FairyDBDetailSkillExplain).Text = fairy.SkillExplain.ToString();
 
-                string[] effect = ((string)FairyInfoDR["SkillEffect"]).Split(';');
-                string[] rate = ((string)FairyInfoDR["SkillRate"]).Split(';');
+                string[] effect = fairy.SkillEffect;
+                string[] rate = fairy.SkillRate;
 
                 StringBuilder sb1 = new StringBuilder();
                 StringBuilder sb2 = new StringBuilder();
@@ -405,8 +396,6 @@ namespace GFI_with_GFS_A
 
                 // 요정 능력치 초기화
 
-                int delay = 1;
-
                 string[] abilities = { "FireRate", "Accuracy", "Evasion", "Armor", "Critical" };
                 int[] Progresses = { Resource.Id.FairyInfoFRProgress, Resource.Id.FairyInfoACProgress, Resource.Id.FairyInfoEVProgress, Resource.Id.FairyInfoAMProgress, Resource.Id.FairyInfoCRProgress };
                 int[] ProgressMaxTexts = { Resource.Id.FairyInfoFRProgressMax, Resource.Id.FairyInfoACProgressMax, Resource.Id.FairyInfoEVProgressMax, Resource.Id.FairyInfoAMProgressMax, Resource.Id.FairyInfoCRProgressMax };
@@ -416,17 +405,14 @@ namespace GFI_with_GFS_A
                 {
                     FindViewById<TextView>(ProgressMaxTexts[i]).Text = FindViewById<ProgressBar>(Progresses[i]).Max.ToString();
 
-                    int MaxValue = 0;
+                    int MaxValue = int.Parse(fairy.Abilities[abilities[i]].Split('/')[1]);
 
-                    MaxValue = int.Parse((((string)FairyInfoDR[abilities[i]]).Split('/'))[1]);
-
-                    ETC.UpProgressBarProgress(FindViewById<ProgressBar>(Progresses[i]), 0, MaxValue, delay);
-                    FindViewById<TextView>(StatusTexts[i]).Text = ((string)FairyInfoDR[abilities[i]]);
+                    FindViewById<ProgressBar>(Progresses[i]).Progress = MaxValue;
+                    FindViewById<TextView>(StatusTexts[i]).Text = fairy.Abilities[abilities[i]];
                 }
 
-
                 if (ETC.UseLightTheme == true) SetCardTheme();
-                ShowCardViewAnimation();
+                ShowCardViewVisibility();
                 HideFloatingActionButtonAnimation();
             }
             catch (Exception ex)
@@ -453,11 +439,11 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ShowCardViewAnimation()
+        private void ShowCardViewVisibility()
         {
-            FindViewById<CardView>(Resource.Id.FairyDBDetailBasicInfoCardLayout).Animate().Alpha(1.0f).SetDuration(500).Start();
-            FindViewById<CardView>(Resource.Id.FairyDBDetailSkillCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(500).Start();
-            FindViewById<CardView>(Resource.Id.FairyDBDetailAbilityCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1000).Start();
+            FindViewById<CardView>(Resource.Id.FairyDBDetailBasicInfoCardLayout).Visibility = ViewStates.Visible;
+            FindViewById<CardView>(Resource.Id.FairyDBDetailSkillCardLayout).Visibility = ViewStates.Visible;
+            FindViewById<CardView>(Resource.Id.FairyDBDetailAbilityCardLayout).Visibility = ViewStates.Visible;
         }
 
         public override void OnBackPressed()
