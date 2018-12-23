@@ -9,7 +9,6 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Android.Support.V4.App;
 using Android.Support.V7.App;
 using Android.Support.V4.Widget;
 using Android.Support.V4.View;
@@ -19,6 +18,7 @@ using System.Net;
 using Android.Graphics.Drawables;
 using Android.Webkit;
 using Android.Support.V7.Widget;
+
 
 namespace GFI_with_GFS_A
 {
@@ -43,6 +43,8 @@ namespace GFI_with_GFS_A
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+            ETC.SetDialogTheme();
 
             if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
@@ -74,8 +76,7 @@ namespace GFI_with_GFS_A
             CartoonScreen_F = new CartoonScreen();
 
             ft = SupportFragmentManager.BeginTransaction();
-            ft.Add(Resource.Id.CartoonMainLayout, CartoonScreen_F, "CartoonScreen");
-
+            ft.Add(Resource.Id.CartoonContainer, CartoonScreen_F, "CartoonScreen");
             ft.Commit();
 
             LoadCategoryList();
@@ -86,7 +87,8 @@ namespace GFI_with_GFS_A
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    if (MainDrawerLayout.IsDrawerOpen(GravityCompat.Start) == false) MainDrawerLayout.OpenDrawer(GravityCompat.Start);
+                    if (MainDrawerLayout.IsDrawerOpen(GravityCompat.Start) == false)
+                        MainDrawerLayout.OpenDrawer(GravityCompat.Start);
                     else MainDrawerLayout.CloseDrawer(GravityCompat.Start);
                     return true;
             }

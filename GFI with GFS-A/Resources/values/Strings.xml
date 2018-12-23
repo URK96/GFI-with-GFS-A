@@ -126,6 +126,10 @@
   <string name="ProductPercentTable_LoadFail">Failed to load Production Info</string>
   <string name="CheckDBUpdateDialog_Title">Update DB</string>
   <string name="CheckDBUpdateDialog_Message">Checking for updates. Wait a minute!</string>
+  <string name="RepairDBDialog_Title">DB Repair</string>
+  <string name="RepairDBDialog_Message">Repairing DB...</string>
+  <string name="RepairDB_Complete">Complete Repair DB</string>
+  <string name="RepairDB_Fail">Fail Repair DB</string>
   <string name="UpdateDBDialog_Message">Updating DB...</string>
   <string name="UpdateDBDialog_RefreshVersionMessage">Renewing DB Version...</string>
   <string name="CheckDBUpdate_UpToDate">You already have a latest version. No need to update!</string>
@@ -434,6 +438,8 @@
   <string name="Setting_AutoDBUpdate_Summary">Automatically check for DB updates during app starting. If you disable this setting, you must manually check for DB updates.</string>
   <string name="Setting_CheckDBUpdate_Title">Check DB Update Now</string>
   <string name="Setting_CheckDBUpdate_Summary">Check for updates to DB data. If there is an update, it will proceed automatically.</string>
+  <string name="Setting_RepairDB_Title">Repair DB</string>
+  <string name="Setting_RepairDB_Summary">Repair DB Data. If the DB cannot be loaded correctly, use this option to repair the DB.</string>
   <string name="Setting_Category_DBList">DB List</string>
   <string name="Setting_DBListImageShow_Title">Activate List Image</string>
   <string name="Setting_DBListImageShow_Summary">Set the DB list to display the corresponding image for each item. On devices with less than 2GB of RAM, app may crash when activated.</string>

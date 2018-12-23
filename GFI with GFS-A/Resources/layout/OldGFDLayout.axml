@@ -7,44 +7,30 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="fill_parent">
-        <Spinner
-            android:id="@+id/OldGFDImageList"
+		<android.support.v7.widget.Toolbar
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/OldGFDViewerMainToolbar" />
+		<android.support.v4.widget.DrawerLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_below="@id/OldGFDViewerMainToolbar"
+			android:id="@+id/OldGFDViewerMainDrawerLayout">
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-		<View
-                android:layout_height="5px"
-                android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/seperatebar" />
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-			<LinearLayout
-				android:orientation="vertical"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:id="@+id/OldGFDImageContainer">
-			</LinearLayout>
-            <!--<ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/OldGFDImageView"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:scrollbars="vertical" />
-			<uk.co.senab.photoview.PhotoView
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:isScrollContainer="true"
-				android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-				android:id="@+id/OldGFDImageView"/>-->
-        </ScrollView>
+            android:layout_height="match_parent"
+            android:id="@+id/OldGFDViewerContainer"/>
+        <ListView
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+			android:choiceMode="singleChoice"
+            android:fitsSystemWindows="true"
+            android:id="@+id/OldGFDImageListView" />
+		</android.support.v4.widget.DrawerLayout>
     </LinearLayout>
-    <android.support.design.widget.CoordinatorLayout
+	<android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/OldGFDViewerSnackbarLayout"

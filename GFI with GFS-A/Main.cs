@@ -348,6 +348,7 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.MDMainButton:
+                        StartActivity(typeof(Live2DViewer));
                         break;
                     case Resource.Id.GFDInfoMainButton:
                         StartActivity(typeof(GFDInfoActivity));
@@ -383,30 +384,31 @@ namespace GFI_with_GFS_A
                     case Resource.Id.DollDBButton:
                         await Task.Run(() =>
                         {
-                            if ((ETC.EnableDynamicDB == true) && (ETC.DollList.TableName == "")) ETC.LoadDBSync(ETC.DollList, "Doll.gfs", false);
-                            if (ETC.HasInitDollAvgAbility == false) ETC.InitializeAverageAbility();
-                            ETC.InitializeAverageAbility();
+                            if (ETC.DollList.TableName == "")
+                                ETC.LoadDBSync(ETC.DollList, "Doll.gfs", false);
+                            if (ETC.HasInitDollAvgAbility == false)
+                                ETC.InitializeAverageAbility();
                         });
                         StartActivity(typeof(DollDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.EquipDBButton:
-                        await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.EquipmentList.TableName == "")) ETC.LoadDBSync(ETC.EquipmentList, "Equipment.gfs", false); });
+                        await Task.Run(() => { if (ETC.EquipmentList.TableName == "") ETC.LoadDBSync(ETC.EquipmentList, "Equipment.gfs", false); });
                         StartActivity(typeof(EquipDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.FairyDBButton:
-                        await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.FairyList.TableName == "")) ETC.LoadDBSync(ETC.FairyList, "Fairy.gfs", false); });
+                        await Task.Run(() => { if (ETC.FairyList.TableName == "") ETC.LoadDBSync(ETC.FairyList, "Fairy.gfs", false); });
                         StartActivity(typeof(FairyDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.EnemyDBButton:
-                        await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.EnemyList.TableName == "")) ETC.LoadDBSync(ETC.EnemyList, "Enemy.gfs", false); });
+                        await Task.Run(() => { if (ETC.EnemyList.TableName == "") ETC.LoadDBSync(ETC.EnemyList, "Enemy.gfs", false); });
                         StartActivity(typeof(EnemyDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.FSTDBButton:
-                        await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.FSTList.TableName == "")) ETC.LoadDBSync(ETC.FSTList, "FST.gfs", false); });
+                        await Task.Run(() => { if (ETC.FSTList.TableName == "") ETC.LoadDBSync(ETC.FSTList, "FST.gfs", false); });
                         StartActivity(typeof(FSTDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
@@ -442,7 +444,7 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.CalcExtraButton:
-                        await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.SkillTrainingList.TableName == "")) ETC.LoadDBSync(ETC.SkillTrainingList, "SkillTraining.gfs", false); });
+                        //await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.SkillTrainingList.TableName == "")) ETC.LoadDBSync(ETC.SkillTrainingList, "SkillTraining.gfs", false); });
                         StartActivity(typeof(CalcMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;

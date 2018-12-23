@@ -130,6 +130,10 @@
   <string name="ProductPercentTable_LoadFail">제조 정보 로드 실패</string>
   <string name="CheckDBUpdateDialog_Title">DB 업데이트</string>
   <string name="CheckDBUpdateDialog_Message">업데이트 확인중이야. 잠시만 기다려줘!</string>
+  <string name="RepairDBDialog_Title">DB 복구중</string>
+  <string name="RepairDBDialog_Message">DB 복구 중...</string>
+  <string name="RepairDB_Complete">DB 복구 성공</string>
+  <string name="RepairDB_Fail">DB 복구 실패</string>
   <string name="UpdateDBDialog_Message">DB 업데이트 중...</string>
   <string name="UpdateDBDialog_RefreshVersionMessage">DB 버전 갱신 중...</string>
   <string name="CheckDBUpdate_UpToDate">최신버전이야. 업데이트가 필요없어!</string>
@@ -436,6 +440,8 @@
   <string name="Setting_AutoDBUpdate_Summary">소전사전 기동 시 자동으로 DB 업데이트를 확인합니다. 이 설정을 비활성화하면 수동으로 DB 업데이트를 확인해야 합니다.</string>
   <string name="Setting_CheckDBUpdate_Title">지금 업데이트 확인</string>
   <string name="Setting_CheckDBUpdate_Summary">DB 데이터의 업데이트를 확인합니다. 업데이트가 있는 경우 자동으로 업데이트가 진행됩니다.</string>
+  <string name="Setting_RepairDB_Title">DB 복구</string>
+  <string name="Setting_RepairDB_Summary">DB 데이터를 복구합니다. DB가 로드가 안되는 오류가 있을 경우 이 항목을 사용하여 다시 다운로드하여 복구합니다.</string>
   <string name="Setting_Category_DBList">DB 리스트 설정</string>
   <string name="Setting_DBListImageShow_Title">리스트 이미지 보기 활성화</string>
   <string name="Setting_DBListImageShow_Summary">DB 리스트에서 각 항목에 해당하는 이미지를 표시/비표시 하도록 설정합니다. RAM이 2GB 이하인 기기에서 활성화 시 소전사전이 튕길 수 있습니다.</string>

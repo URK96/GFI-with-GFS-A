@@ -108,8 +108,6 @@ namespace GFI_with_GFS_A
         {
             base.OnBackPressed();
 
-            //ResultEffect.Stop();
-            //ResultEffect.Release();
             GC.Collect();
             OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
         }
@@ -133,7 +131,7 @@ namespace GFI_with_GFS_A
             Name = view.FindViewById<TextView>(Resource.Id.PSResultListName);
             ProductTime = view.FindViewById<TextView>(Resource.Id.PSResultListProductTime);
 
-            view.Click += (sender, e) => listener(base.LayoutPosition);
+            view.Click += (sender, e) => listener(LayoutPosition);
         }
     }
 
@@ -154,7 +152,7 @@ namespace GFI_with_GFS_A
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.DollListLayout, parent, false);
+            View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.ProductResultListLayout, parent, false);
 
             ProductResultViewHolder vh = new ProductResultViewHolder(view, OnClick);
             return vh;

@@ -19,22 +19,21 @@ namespace GFI_with_GFS_A
         internal static string Server = "http://chlwlsgur96.ipdisk.co.kr/publist/HDD1/Data/Project/GFS/";
         internal static string SDCardPath = (string)Android.OS.Environment.ExternalStorageDirectory;
         internal static string tempPath = Path.Combine(SDCardPath, "GFDTemp");
-        internal static string AppDataPath = Path.Combine(SDCardPath, "Android", "data", "GFD");
+        internal static string AppDataPath = Path.Combine(SDCardPath, "Android", "data", "com.gfl.dic");
         internal static string DBPath = Path.Combine(AppDataPath, "DB");
         internal static string SystemPath = Path.Combine(AppDataPath, "System");
         internal static string CachePath = Path.Combine(AppDataPath, "Cache");
         internal static string LogPath = Path.Combine(SystemPath, "Log");
 
-        internal static bool EnableDynamicDB = false;
         internal static bool HasInitDollAvgAbility = false;
         internal static bool IsLowRAM = false;
         internal static bool UseLightTheme = false;
+        internal static bool HasEvent = false;
+        internal static Java.Util.Locale Language;
+
         internal static int DialogBG = 0;
         internal static int DialogBG_Vertical = 0;
         internal static int DialogBG_Download = 0;
-        internal static bool HasEvent = false;
-        internal static bool IsSeverMaintenance = false;
-        internal static Java.Util.Locale Language;
 
         internal static DataTable DollList = new DataTable();
         internal static DataTable EquipmentList = new DataTable();
@@ -200,6 +199,7 @@ namespace GFI_with_GFS_A
             Language = Resources.Configuration.Locale;
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NDcxNjJAMzEzNjJlMzMyZTMwbW5TdG9SMTNvVEZJcXo3VEg2Z0JlUTNDbytQTUVpNXJPUGZBb0FqUDV3TT0=");
             MobileAds.Initialize(context, "ca-app-pub-4576756770200148~8135834453");
+            client = new UptimeClient("m780844852-8bd2516bb93800a9eb7e3d58");
         }
 
         internal static void RunHelpActivity(Activity activity, string type)
@@ -532,7 +532,7 @@ namespace GFI_with_GFS_A
         }
 
         //ProgressDialog 교체
-        internal static async Task UpdateDB(Activity activity)
+        internal static async Task UpdateDB(Activity activity, int TitleMsg = Resource.String.CheckDBUpdateDialog_Title, int MessageMgs = Resource.String.CheckDBUpdateDialog_Message)
         {
             string[] DBFiles = 
             {
@@ -549,8 +549,8 @@ namespace GFI_with_GFS_A
 
             ProgressDialog pd = new ProgressDialog(activity, DialogBG_Download);
             pd.SetProgressStyle(ProgressDialogStyle.Horizontal);
-            pd.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
-            pd.SetMessage(Resources.GetString(Resource.String.UpdateDBDialog_Message));
+            pd.SetTitle(TitleMsg);
+            pd.SetMessage(Resources.GetString(MessageMgs));
             pd.SetCancelable(false);
             pd.Max = 100;
             pd.Show();
@@ -599,17 +599,14 @@ namespace GFI_with_GFS_A
             {
                 DateTime now = DateTime.Now;
 
-                //string nowDateTime = now.Year.ToString() + now.Month.ToString() + now.Day.ToString() + now.Hour.ToString() + now.Minute.ToString() + now.Second.ToString();
-                string nowDateTime = $"{now.Year}/{now.Month}/{now.Day} {now.Hour}:{now.Minute}:{now.Second}";
+                string nowDateTime = $"{now.Year}{now.Month}{now.Day} {now.Hour}{now.Minute}{now.Second}";
                 string ErrorFileName = $"{nowDateTime}-ErrorLog.txt";
 
                 DirectoryInfo di = new DirectoryInfo(LogPath);
                 if (di.Exists == false) di.Create();
 
                 using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
-                {
                     sw.Write(error);
-                } 
             }
             catch (Exception)
             {
@@ -623,17 +620,14 @@ namespace GFI_with_GFS_A
             {
                 DateTime now = DateTime.Now;
 
-                //string nowDateTime = now.Year.ToString() + now.Month.ToString() + now.Day.ToString() + now.Hour.ToString() + now.Minute.ToString() + now.Second.ToString();
-                string nowDateTime = $"{now.Year}/{now.Month}/{now.Day} {now.Hour}:{now.Minute}:{now.Second}";
+                string nowDateTime = $"{now.Year}{now.Month}{now.Day} {now.Hour}{now.Minute}{now.Second}";
                 string ErrorFileName = $"{nowDateTime}-ErrorLog.txt";
 
                 DirectoryInfo di = new DirectoryInfo(LogPath);
                 if (di.Exists == false) di.Create();
 
                 using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
-                {
                     sw.Write(error);
-                }
             }
             catch (Exception)
             {

@@ -2,21 +2,16 @@
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
-using Android.Gms.Ads;
+using Android.Graphics.Drawables;
 using Android.OS;
-using Android.Preferences;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Widget;
-using Com.Syncfusion.Sfbusyindicator;
 using System;
 using System.Collections;
-using System.IO;
-using System.Net;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
-using Android.Graphics.Drawables;
 
 namespace GFI_with_GFS_A
 {
@@ -88,6 +83,7 @@ namespace GFI_with_GFS_A
             {
                 await Animation();
 
+
                 // Initialize
 
                 await ETC.AnimateText(StatusText, "Initializing");
@@ -99,16 +95,15 @@ namespace GFI_with_GFS_A
                 
                 ETC.CheckInitFolder();
 
-                ETC.EnableDynamicDB = ETC.sharedPreferences.GetBoolean("DynamicDBLoad", false);
-
               
                 // Check Server
-
-                await ETC.AnimateText(StatusText, "Check Server");
-
-                ETC.client = new UptimeSharp.UptimeClient("m780844852-8bd2516bb93800a9eb7e3d58");
-                await ETC.CheckServerNetwork();
-
+                
+                if (ETC.sharedPreferences.GetBoolean("EnableServerCheck", false) == true)
+                {
+                    await ETC.AnimateText(StatusText, "Check Server");
+                    await ETC.CheckServerNetwork();
+                }
+                    
 
                 // Check DB Update
 
@@ -134,7 +129,7 @@ namespace GFI_with_GFS_A
 
                 // Load DB
 
-                await ETC.AnimateText(StatusText, "Load DB");
+                /*await ETC.AnimateText(StatusText, "Load DB");
 
                 if (ETC.EnableDynamicDB == false)
                 {
@@ -145,7 +140,7 @@ namespace GFI_with_GFS_A
                         if (ETC.IsServerDown == false) await ETC.UpdateDB(this);
                         else break;
                     }
-                }
+                }*/
 
 
                 // Finalize & Start Main
@@ -210,7 +205,7 @@ namespace GFI_with_GFS_A
             var memoryInfo = new ActivityManager.MemoryInfo();
             activityManager.GetMemoryInfo(memoryInfo);
 
-            var totalRam = ((memoryInfo.TotalMem / 1024) / 1024);
+            var totalRam = memoryInfo.TotalMem / 1024 / 1024;
 
             if (totalRam <= 2048)
             {

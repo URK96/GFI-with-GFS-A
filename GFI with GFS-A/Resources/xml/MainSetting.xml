@@ -36,10 +36,10 @@
   </android.support.v7.preference.PreferenceCategory>
   <android.support.v7.preference.PreferenceCategory
     android:title="@string/Setting_Category_DB">
-    <android.support.v14.preference.SwitchPreference
+    <!--<android.support.v14.preference.SwitchPreference
   android:key="DynamicDBLoad"
   android:title="@string/Setting_DynamicDBLoad_Title"
-  android:summary="@string/Setting_DynamicDBLoad_Summary"/>
+  android:summary="@string/Setting_DynamicDBLoad_Summary"/>-->
     <android.support.v14.preference.SwitchPreference
       android:key="AutoDBUpdate"
       android:title="@string/Setting_AutoDBUpdate_Title"
@@ -48,6 +48,10 @@
       android:key="CheckDBUpdate"
       android:title="@string/Setting_CheckDBUpdate_Title"
       android:summary="@string/Setting_CheckDBUpdate_Summary"/>
+    <android.support.v7.preference.Preference
+      android:key="RepairDB"
+      android:title="@string/Setting_RepairDB_Title"
+      android:summary="@string/Setting_RepairDB_Summary"/>
   </android.support.v7.preference.PreferenceCategory>
   <android.support.v7.preference.PreferenceCategory
     android:title="@string/Setting_Category_DBList">
