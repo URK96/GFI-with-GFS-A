@@ -5,6 +5,7 @@
   
   <string name="Main_ExtraMenu_GFOSTPlayer">OST Player</string>
   <string name="Main_ExtraMenu_Cartoon">만화</string>
+  <string name="Main_ExtraMenu_Story">스토리</string>
   
   <string name="DollDBDetailLayout_ModelData">총기 제원</string>
   
@@ -127,8 +128,14 @@
   <string name="DB_Recovery">DB 복구 중...</string>
   <string name="NetworkDelay">서버 응답 대기 중...</string>
   <string name="ProductPercentTable_LoadFail">제조 정보 로드 실패</string>
+  <string name="NoDBFileFound_Message">서버 점검 문제로 초기 DB를 다운로드할 수 없습니다. 나중에 다시 시도해 주세요.</string>
   <string name="CheckDBUpdateDialog_Title">DB 업데이트</string>
+  <string name="CheckDBUpdateDialog_Question">새로운 DB 버전이 존재해. 업데이트를 진행할 거야?</string>
   <string name="CheckDBUpdateDialog_Message">업데이트 확인중이야. 잠시만 기다려줘!</string>
+  <string name="RepairDBDialog_Title">DB 복구중</string>
+  <string name="RepairDBDialog_Message">DB 복구 중...</string>
+  <string name="RepairDB_Complete">DB 복구 성공</string>
+  <string name="RepairDB_Fail">DB 복구 실패</string>
   <string name="UpdateDBDialog_Message">DB 업데이트 중...</string>
   <string name="UpdateDBDialog_RefreshVersionMessage">DB 버전 갱신 중...</string>
   <string name="CheckDBUpdate_UpToDate">최신버전이야. 업데이트가 필요없어!</string>
@@ -161,7 +168,6 @@
   <string name="Common_FR">화력</string>
   <string name="Common_CL">쿨타임</string>
   <string name="Common_HP">체력</string>
-  <string name="Common_Ammo">탄약</string>
   <string name="Common_MoveSpeed">이동속도</string>
   <string name="Common_Penetration">관통</string>
   <string name="Common_Reload">재장전</string>
@@ -198,7 +204,6 @@
   <string name="Common_NormalProduct">일반제조</string>
   <string name="Common_Accessories">부속</string>
   <string name="Common_Magazine">탄환</string>
-  <string name="Common_TDoll">인형</string>
   <string name="Common_FairyType_Combat">전투</string>
   <string name="Common_FairyType_Strategy">책략</string>
   <string name="Common_Default">기본</string>
@@ -235,6 +240,10 @@
   <string name="Common_TDoll">인형</string>
   <string name="Common_Equipment">장비</string>
   <string name="Common_Fairy">요정</string>
+  <string name="Common_Previous">이전</string>
+  <string name="Common_Next">다음</string>
+  <string name="Common_PreviousList">이전 목록으로</string>
+  <string name="Common_NonProduct">제조 불가</string>
 
   <!--Common Dialog String-->
   <string name="AlertDialog_Confirm">확인</string>
@@ -244,6 +253,11 @@
   <string name="AlertDialog_Reset">초기화</string>
   <string name="AlertDialog_Delete">삭제</string>
   <string name="AlertDialog_Exit">종료</string>
+  
+  <!--Common LineUp String-->
+  <string name="LineUp_Name">이름</string>
+  <string name="LineUp_Time">제조시간</string>
+  <string name="LineUp_Num">도감번호</string>
   
   <!--CalcMain-->
   <string name="TitleName_ExpItemCalc">작전보고서 계산기</string>
@@ -264,6 +278,8 @@
   <string name="DollDBImageViewer_DefaultCostume">기본 코스튬</string>
   <string name="DollDBImageViewer_ImageStatusNormal">정상</string>
   <string name="DollDBImageViewer_ImageStatusDamage">중상</string>
+  <string name="DollDBImageViewer_ImageCensored">검열</string>
+  <string name="DollDBImageViewer_ImageOriginal">원본</string>
   
   <!--DollDBMain-->
   <string name="DollDBMainActivity_Title">인형 목록</string>
@@ -414,6 +430,8 @@
   <string name="Setting_LowMemoryOption_Summary">RAM이 부족한 저사양 기기를 위해 일부 효과나 커스텀 리소스를 제한합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
   <string name="Setting_UseLightTheme_Title">밝은 테마 사용</string>
   <string name="Setting_UseLightTheme_Summary">기본값인 어두운 테마 대신 밝은 테마를 사용합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
+  <string name="Setting_ServerCheck_Title">서버 체크 활성화</string>
+  <string name="Setting_ServerCheck_Summary">앱 기동시 서버를 체크합니다. 비활성화 시 기동 시간이 짧아지지만 권장하지 않습니다.</string>
   <string name="Setting_Category_MainMenu">메인 화면</string>
   <string name="Setting_MainButtonColor_Title">메인 버튼 이미지 색상</string>
   <string name="Setting_MainButtonColor_Summary">소전사전 시작 시 표시될 메뉴 버튼 이미지의 색상을 선택합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
@@ -424,6 +442,8 @@
   <string name="Setting_AutoDBUpdate_Summary">소전사전 기동 시 자동으로 DB 업데이트를 확인합니다. 이 설정을 비활성화하면 수동으로 DB 업데이트를 확인해야 합니다.</string>
   <string name="Setting_CheckDBUpdate_Title">지금 업데이트 확인</string>
   <string name="Setting_CheckDBUpdate_Summary">DB 데이터의 업데이트를 확인합니다. 업데이트가 있는 경우 자동으로 업데이트가 진행됩니다.</string>
+  <string name="Setting_RepairDB_Title">DB 복구</string>
+  <string name="Setting_RepairDB_Summary">DB 데이터를 복구합니다. DB가 로드가 안되는 오류가 있을 경우 이 항목을 사용하여 다시 다운로드하여 복구합니다.</string>
   <string name="Setting_Category_DBList">DB 리스트 설정</string>
   <string name="Setting_DBListImageShow_Title">리스트 이미지 보기 활성화</string>
   <string name="Setting_DBListImageShow_Summary">DB 리스트에서 각 항목에 해당하는 이미지를 표시/비표시 하도록 설정합니다. RAM이 2GB 이하인 기기에서 활성화 시 소전사전이 튕길 수 있습니다.</string>
@@ -438,6 +458,9 @@
   <string name="Setting_Category_Log">Log 설정</string> 
   <string name="Setting_DeleteAllLogFile_Title">Log 파일 삭제</string>
   <string name="Setting_DeleteAllLogFile_Summary">Log 파일을 전부 삭제합니다.</string>
+  <string name="Setting_Category_ETC">기타</string>
+  <string name="Setting_ExternalLibraryLicense_Title">외부 라이브러리 라이선스</string>
+  <string name="Setting_ExternalLibraryLicense_Summary">소전사전에 사용된 외부 라이브러리의 라이선스를 확인합니다.</string>
 
   
   
@@ -462,15 +485,13 @@
   <string name="Calc_SkillTraining_ResultTimeCountText">* 총 소요시간 *</string>
   <string name="Calc_SkillTraining_ResultTimeCountDefaultText">0 시간</string>
   
-  <!--DollDB_ImageViewer-->
-  <string name="DollDB_ImageViewer_ImageStatusDefaultText">정상</string>
-  
   <!--DollDBDetailLayout-->
   <string name="DollDBDetailLayout_SDAnimationButtonText">SD 애니메이션 (Beta)</string>
   <string name="DollDBDetailLayout_AbilityCaution"># 최대 능력치는 MAX레벨, 호감도에 따른 능력치 상승 미적용 값입니다 #</string>
   
   <!--DollFilterLayout-->
-  <string name="DollFilterLayout_ModFilterTitle">개조 가능 여부</string>
+  <string name="DollFilterLayout_ModFilterTitle">개조 인형만 보기</string>
+  <string name="DollFilterLayout_ModFilterItem">활성화</string>
   
   <!--EquipDBDetailLayout-->
   <string name="EquipDBDetailLayout_RecommendGunTypeText"># 장착 권장되는 총기 #</string>

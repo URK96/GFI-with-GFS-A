@@ -300,16 +300,10 @@
                         android:layout_weight="1" />
                     <CheckBox
                         android:layout_height="match_parent"
-                        android:layout_width="0dp"
-                        android:text="O"
-                        android:layout_weight="2"
-                        android:id="@+id/DollFilterHasModYes" />
-                    <CheckBox
-                        android:layout_height="match_parent"
-                        android:layout_width="0dp"
-                        android:text="X"
-                        android:layout_weight="2"
-                        android:id="@+id/DollFilterHasModNo" />
+                        android:layout_width="wrap_content"
+						android:gravity="center"
+                        android:text="@string/DollFilterLayout_ModFilterItem"
+                        android:id="@+id/DollFilterOnlyMod" />
                     <Space
                         android:layout_height="match_parent"
                         android:layout_width="0dp"

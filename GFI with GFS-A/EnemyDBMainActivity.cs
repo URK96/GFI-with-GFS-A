@@ -81,6 +81,8 @@ namespace GFI_with_GFS_A
                 mEnemyListView.ItemClick += MEnemyListView_ItemClick;
                 //mEnemyListView.ItemLongClick += MDollListView_ItemLongClick;
                 mEnemyListView.ScrollStateChanged += MEnemyListView_ScrollStateChanged;
+
+                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true) == true)) ETC.RunHelpActivity(this, "DBList");
             }
             catch (Exception ex)
             {

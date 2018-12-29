@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true">
     <LinearLayout
@@ -11,6 +10,35 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:id="@+id/FairyDBMainLayout">
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<TextView
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="10dp"
+				android:text="@string/LineUp_Name"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:gravity="center"
+				android:id="@+id/FairyDBLineUp_Name"/>
+			<View
+				android:background="#1b1b1b"
+				android:layout_height="match_parent"
+				android:layout_width="2dp" />
+			<TextView
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="10dp"
+				android:text="@string/LineUp_Time"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:gravity="center"
+				android:id="@+id/FairyDBLineUp_Time"/>
+		</LinearLayout>
         <LinearLayout
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -46,17 +74,16 @@
             android:background="#1b1b1b"
             android:layout_height="2dp"
             android:layout_width="match_parent" />
-        <ListView
+        <android.support.v7.widget.RecyclerView
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:divider="#2E2E2E"
-            android:dividerHeight="2dp"
-            android:id="@+id/FairyDBListView" />
+			android:scrollbars="vertical"
+            android:id="@+id/FairyDBRecyclerView" />
     </LinearLayout>
 	<android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/refresh"
+        android:src="@drawable/refreshicon_whitetheme"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="145dp"
         android:layout_alignParentBottom="true"
@@ -65,18 +92,6 @@
         app:fabSize="auto"
         app:rippleColor="#FF80AB"
         android:id="@+id/FairyRefreshCacheFAB" />
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/lineup_name_icon"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="80dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        app:backgroundTint="@color/FABColor"
-        app:fabSize="auto"
-        app:rippleColor="#FF80AB"
-        android:id="@+id/FairyArrayFAB" />
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

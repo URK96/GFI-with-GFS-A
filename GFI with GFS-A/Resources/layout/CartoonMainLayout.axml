@@ -18,8 +18,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/CartoonMainLayout">
-		</LinearLayout>
+            android:id="@+id/CartoonContainer"/>
         <ListView
             android:layout_width="240dp"
             android:layout_height="match_parent"

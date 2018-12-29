@@ -118,7 +118,7 @@ namespace GFI_with_GFS_A
             StartAppMode.SetEntryValues(new string[] { "0", "1", "2", "3", "4", "5", "6", "7" });
             StartAppMode.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("StartAppMode", "0")));
 
-            SwitchPreference NotificationAnimationOption = (SwitchPreference)FindPreference("NotificationAnimationOption");
+            /*SwitchPreference NotificationAnimationOption = (SwitchPreference)FindPreference("NotificationAnimationOption");
             if (ETC.UseLightTheme == true) NotificationAnimationOption.SetIcon(Resource.Drawable.NotificationAnimationIcon_WhiteTheme);
             else NotificationAnimationOption.SetIcon(Resource.Drawable.NotificationAnimationIcon);
             NotificationAnimationOption.Checked = ETC.sharedPreferences.GetBoolean("NotificationAnimationOption", true);
@@ -126,7 +126,7 @@ namespace GFI_with_GFS_A
             {
                 SaveSetting.PutBoolean("NotificationAnimationOption", NotificationAnimationOption.Checked);
                 SaveSetting.Apply();
-            };
+            };*/
 
             SwitchPreference LowMemoryOption = (SwitchPreference)FindPreference("LowMemoryOption");
             if (ETC.UseLightTheme == true) LowMemoryOption.SetIcon(Resource.Drawable.LowMemoryOptionIcon_WhiteTheme);
@@ -149,6 +149,16 @@ namespace GFI_with_GFS_A
                 SaveSetting.Apply();
             };
 
+            SwitchPreference EnableServerCheck = (SwitchPreference)FindPreference("EnableServerCheck");
+            if (ETC.UseLightTheme == true) EnableServerCheck.SetIcon(Resource.Drawable.UseLightThemeIcon_WhiteTheme);
+            else EnableServerCheck.SetIcon(Resource.Drawable.UseLightThemeIcon);
+            EnableServerCheck.Checked = ETC.sharedPreferences.GetBoolean("EnableServerCheck", false);
+            EnableServerCheck.PreferenceChange += delegate
+            {
+                SaveSetting.PutBoolean("EnableServerCheck", EnableServerCheck.Checked);
+                SaveSetting.Apply();
+            };
+
             ListPreference MainButtonColor = (ListPreference)FindPreference("MainButtonColor");
             if (ETC.UseLightTheme == true) MainButtonColor.SetIcon(Resource.Drawable.AppStartModeIcon_WhiteTheme);
             else MainButtonColor.SetIcon(Resource.Drawable.AppStartModeIcon);
@@ -160,7 +170,7 @@ namespace GFI_with_GFS_A
             MainButtonColor.SetEntryValues(new string[] { "0", "1" });
             MainButtonColor.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("MainButtonColor", "0")));
 
-            SwitchPreference DynamicDBLoad = (SwitchPreference)FindPreference("DynamicDBLoad");
+            /*SwitchPreference DynamicDBLoad = (SwitchPreference)FindPreference("DynamicDBLoad");
             if (ETC.UseLightTheme == true) DynamicDBLoad.SetIcon(Resource.Drawable.DynamicDBLoadIcon_WhiteTheme);
             else DynamicDBLoad.SetIcon(Resource.Drawable.DynamicDBLoadIcon);
             DynamicDBLoad.Checked = ETC.sharedPreferences.GetBoolean("DynamicDBLoad", false);
@@ -168,7 +178,7 @@ namespace GFI_with_GFS_A
             {
                 SaveSetting.PutBoolean("DynamicDBLoad", DynamicDBLoad.Checked);
                 SaveSetting.Apply();
-            };
+            };*/
 
             SwitchPreference AutoDBUpdate = (SwitchPreference)FindPreference("AutoDBUpdate");
             if (ETC.UseLightTheme == true) AutoDBUpdate.SetIcon(Resource.Drawable.AutoDBUpdate_WhiteTheme);
@@ -184,6 +194,11 @@ namespace GFI_with_GFS_A
             if (ETC.UseLightTheme == true) CheckDBUpdate.SetIcon(Resource.Drawable.CheckDBUpdate_WhiteTheme);
             else CheckDBUpdate.SetIcon(Resource.Drawable.CheckDBUpdate);
             CheckDBUpdate.PreferenceClick += CheckDBUpdate_PreferenceClick;
+
+            Preference RepairDB = FindPreference("RepairDB");
+            if (ETC.UseLightTheme == true) RepairDB.SetIcon(Resource.Drawable.RepairDB_WhiteTheme);
+            else RepairDB.SetIcon(Resource.Drawable.RepairDB);
+            RepairDB.PreferenceClick += RepairDB_PreferenceClick; ;
 
             SwitchPreference DBListImage = (SwitchPreference)FindPreference("DBListImageShow");
             if (ETC.UseLightTheme == true) DBListImage.SetIcon(Resource.Drawable.DBListImageIcon_WhiteTheme);
@@ -221,6 +236,9 @@ namespace GFI_with_GFS_A
             if (ETC.UseLightTheme == true) DeleteAllLogFile.SetIcon(Resource.Drawable.DeleteAllLogFileIcon_WhiteTheme);
             else DeleteAllLogFile.SetIcon(Resource.Drawable.DeleteAllLogFileIcon);
             DeleteAllLogFile.PreferenceClick += DeleteAllLogFile_PreferenceClick;
+
+            Preference ExternalLibraryLicense = FindPreference("ExternalLibraryLicense");
+            ExternalLibraryLicense.PreferenceClick += delegate { Activity.StartActivity(typeof(ExternLibraryCopyright)); };
         }
 
         private async void CheckDBUpdate_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
@@ -258,6 +276,64 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(Activity, ex.ToString());
                 Toast.MakeText(Activity, Resource.String.UnableCheckUpdate, ToastLength.Short).Show();
+            }
+            finally
+            {
+                if (dialog.IsShowing == true) dialog.Dismiss();
+            }
+        }
+
+        private async void RepairDB_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
+        {
+            try
+            {
+                await ETC.CheckServerNetwork();
+
+                await Task.Delay(100);
+
+                if (ETC.IsServerDown == true) Toast.MakeText(Activity, Resource.String.Common_ServerMaintenance, ToastLength.Short).Show();
+                else
+                {
+                    await ETC.UpdateDB(Activity, Resource.String.RepairDBDialog_Title, Resource.String.RepairDBDialog_Message);
+
+                    await Task.Delay(500);
+
+                    await ETC.LoadDB();
+
+                    Toast.MakeText(Activity, Resource.String.RepairDB_Complete, ToastLength.Short).Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(Activity, ex.ToString());
+                Toast.MakeText(Activity, Resource.String.RepairDB_Fail, ToastLength.Short).Show();
+            }
+        }
+
+        private async Task RepairDBProcess()
+        {
+            try
+            {
+                await ETC.CheckServerNetwork();
+
+                await Task.Delay(100);
+
+                if (ETC.IsServerDown == true) Toast.MakeText(Activity, Resource.String.Common_ServerMaintenance, ToastLength.Short).Show();
+                else
+                {
+                    await ETC.UpdateDB(Activity, Resource.String.RepairDBDialog_Title, Resource.String.RepairDBDialog_Message);
+
+                    await Task.Delay(500);
+
+                    await ETC.LoadDB();
+
+                    Toast.MakeText(Activity, Resource.String.RepairDB_Complete, ToastLength.Short).Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(Activity, ex.ToString());
+                Toast.MakeText(Activity, Resource.String.RepairDB_Fail, ToastLength.Short).Show();
             }
             finally
             {

@@ -9,42 +9,24 @@ using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
-using UK.CO.Senab.Photoview;
 using System.Collections.Generic;
+using Android.Support.V7.App;
+using Android.Support.V4.Widget;
+using Android.Support.V4.View;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Name = "com.gfl.dic.OldGFDActivity", Label = "OldGFDViewer", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class OldGFDViewer : FragmentActivity
+    [Activity(Name = "com.gfl.dic.OldGFDActivity", Label = "GFD v1", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class OldGFDViewer : AppCompatActivity
     {
-        private bool HasUpdate = false;
+        private ArrayAdapter Image_Adapter;
+        private Android.Support.V4.App.FragmentTransaction ft;
+        private Android.Support.V4.App.Fragment OldGFDViewer_F;
 
-        private Spinner ImageList = null;
-        //private PhotoView ImageViewer = null;
-        private LinearLayout ImageContainer;
-        //private List<ImageView> ImageViewer_List = new List<ImageView>();
-        private CoordinatorLayout SnackbarLayout = null;
-
-        private Dialog dialog = null;
-        private ProgressBar totalProgressBar = null;
-        private ProgressBar nowProgressBar = null;
-        private TextView totalProgress = null;
-        private TextView nowProgress = null;
-
-        int p_now = 0;
-        int p_total = 0;
-        string[] ImageName = 
-        {
-            "ProductTable_Doll",
-            "ProductTable_Equipment",
-            "ProductTable_Fairy",
-            "DollPerformance",
-            "RecommendDollRecipe",
-            "RecommendEquipmentRecipe",
-            "RecommendMD",
-            "RecommendLeveling"
-        };
-        string[] SpinnerList;
+        internal DrawerLayout MainDrawerLayout;
+        private ListView DrawerListView;
+        
+        string[] OldGFDImageList;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -59,12 +41,35 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.OldGFDLayout);
 
-                ImageList = FindViewById<Spinner>(Resource.Id.OldGFDImageList);
-                //ImageViewer = FindViewById<PhotoView>(Resource.Id.OldGFDImageView);
-                ImageContainer = FindViewById<LinearLayout>(Resource.Id.OldGFDImageContainer);
-                SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.OldGFDViewerSnackbarLayout);
+                MainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.OldGFDViewerMainDrawerLayout);
+                MainDrawerLayout.DrawerOpened += delegate
+                {
+                    if (ETC.UseLightTheme == true) SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen_WhiteTheme);
+                    else SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen);
+                };
+                MainDrawerLayout.DrawerClosed += delegate
+                {
+                    if (ETC.UseLightTheme == true) SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
+                    else SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
+                };
 
-                InitProcess();
+                SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.OldGFDViewerMainToolbar));
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+                SupportActionBar.SetDisplayShowTitleEnabled(true);
+                SupportActionBar.SetHomeButtonEnabled(true);
+                if (ETC.UseLightTheme == true) SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
+                else SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
+
+                DrawerListView = FindViewById<ListView>(Resource.Id.OldGFDImageListView);
+                DrawerListView.ItemClick += DrawerListView_ItemClick;
+
+                OldGFDViewer_F = new OldGFDViewerScreen();
+
+                ft = SupportFragmentManager.BeginTransaction();
+                ft.Add(Resource.Id.OldGFDViewerContainer, OldGFDViewer_F, "OldGFDViewerScreen");
+                ft.Commit();
+
+                InitList();
             }
             catch (Exception ex)
             {
@@ -73,40 +78,38 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ImageList_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            int index = e.Position;
-            ShowImage(index);
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    if (MainDrawerLayout.IsDrawerOpen(GravityCompat.Start) == false)
+                        MainDrawerLayout.OpenDrawer(GravityCompat.Start);
+                    else MainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                    return true;
+            }
+            return base.OnOptionsItemSelected(item);
         }
 
-        private async Task InitProcess()
+        private void InitList()
         {
             try
             {
                 ListImageList();
 
-                var ImageListAdapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, SpinnerList);
-                ImageListAdapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
-
-                ImageList.Adapter = ImageListAdapter;
-                ImageList.ItemSelected += ImageList_ItemSelected;
-
-                if (CheckImage() == true) await DownloadGFDImage();
-
-                ShowImage(0);
-                //await Task.Delay(500);
-                CheckUpdate();
+                Image_Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, OldGFDImageList);
+                DrawerListView.Adapter = Image_Adapter;
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "Error InitProcess", Snackbar.LengthShort);
+                Toast.MakeText(this, "Fail List Process", ToastLength.Short).Show();
             }
         }
 
         private void ListImageList()
         {
-            SpinnerList = new string[]
+            OldGFDImageList = new string[]
             {
                 Resources.GetString(Resource.String.OldGFDViewer_ProductDollTable),
                 Resources.GetString(Resource.String.OldGFDViewer_ProductEquipTable),
@@ -119,13 +122,108 @@ namespace GFI_with_GFS_A
             };
         }
 
-        private void ShowImage(int index)
+        private void DrawerListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             try
             {
+                ((OldGFDViewerScreen)OldGFDViewer_F).ShowImage(e.Position);
+                MainDrawerLayout.CloseDrawer(GravityCompat.Start);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+            }
+        }
+
+        public override void OnBackPressed()
+        {
+            if (MainDrawerLayout.IsDrawerOpen(GravityCompat.Start) == true)
+            {
+                MainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                return;
+            }
+            else
+            {
+                base.OnBackPressed();
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                GC.Collect();
+            }
+        }
+    }
+
+    public class OldGFDViewerScreen : Android.Support.V4.App.Fragment
+    {
+        private View v;
+
+        private bool HasUpdate = false;
+        private int Image_Index = 0;
+
+        private LinearLayout ImageContainer;
+        private CoordinatorLayout SnackbarLayout;
+
+        private Dialog dialog = null;
+        private ProgressBar totalProgressBar = null;
+        private ProgressBar nowProgressBar = null;
+        private TextView totalProgress = null;
+        private TextView nowProgress = null;
+
+        int p_now = 0;
+        int p_total = 0;
+
+        string[] ImageName =
+        {
+            "ProductTable_Doll",
+            "ProductTable_Equipment",
+            "ProductTable_Fairy",
+            "DollPerformance",
+            "RecommendDollRecipe",
+            "RecommendEquipmentRecipe",
+            "RecommendMD",
+            "RecommendLeveling"
+        };
+
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+            v = inflater.Inflate(Resource.Layout.OldGFDScreenLayout, container, false);
+
+            ImageContainer = v.FindViewById<LinearLayout>(Resource.Id.OldGFDImageContainer);
+            SnackbarLayout = v.FindViewById<CoordinatorLayout>(Resource.Id.OldGFDViewerSnackbarLayout);
+
+            InitProcess();
+
+            return v;
+        }
+
+        private void ImageList_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            int index = e.Position;
+            ShowImage(index);
+        }
+
+        private async Task InitProcess()
+        {
+            try
+            {
+                if (CheckImage() == true) await DownloadGFDImage();
+
+                ShowImage(0);
+                CheckUpdate();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(Activity, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, "Error InitProcess", Snackbar.LengthShort);
+            }
+        }
+
+        internal void ShowImage(int index)
+        {
+            try
+            {
+                Image_Index = index;
                 ImageContainer.RemoveAllViews();
 
-                Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "OldGFD", "Images", ImageName[index] + ".gfdcache"));
+                Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ImageName[index]}.gfdcache"));
                 Android.Graphics.Bitmap bitmap = ((BitmapDrawable)drawable).Bitmap;
 
                 int height = 0;
@@ -147,7 +245,7 @@ namespace GFI_with_GFS_A
                         height += remain_height;
                     }
 
-                    ImageView iv = new ImageView(this);
+                    ImageView iv = new ImageView(Activity);
                     iv.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent);
                     iv.SetImageBitmap(bitmap_fix);
                     iv.SetScaleType(ImageView.ScaleType.FitXy);
@@ -156,13 +254,11 @@ namespace GFI_with_GFS_A
                     ImageContainer.AddView(iv);
                 }
 
-                //ImageViewer.SetImageDrawable(drawable);
-
                 GC.Collect();
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(Activity, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.ImageLoad_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
@@ -170,9 +266,8 @@ namespace GFI_with_GFS_A
         private bool CheckImage()
         {
             foreach (string s in ImageName)
-            {
-                if (File.Exists(Path.Combine(ETC.CachePath, "OldGFD", "Images", s + ".gfdcache")) == false) return true;
-            }
+                if (File.Exists(Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{s}.gfdcache")) == false)
+                    return true;
 
             return false;
         }
@@ -200,9 +295,7 @@ namespace GFI_with_GFS_A
                             int local_ver = 0;
 
                             using (StreamReader sr = new StreamReader(new FileStream(LocalDBVerPath, FileMode.Open, FileAccess.Read)))
-                            {
                                 local_ver = int.Parse(sr.ReadToEnd());
-                            }
 
                             if (local_ver < server_ver) HasUpdate = true;
                             else HasUpdate = false;
@@ -212,7 +305,7 @@ namespace GFI_with_GFS_A
 
                 if ((HasUpdate == true) || (IsMissing == true))
                 {
-                    Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
+                    Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(Activity);
                     builder.SetTitle(Resource.String.UpdateDialog_Title);
                     builder.SetMessage(Resource.String.UpdateDialog_Message);
                     builder.SetCancelable(true);
@@ -225,7 +318,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(Activity, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.UpdateCheck_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
@@ -234,7 +327,7 @@ namespace GFI_with_GFS_A
         {
             View v = LayoutInflater.Inflate(Resource.Layout.ProgressDialogLayout, null);
 
-            Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
+            Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG_Download);
             builder.SetTitle(Resource.String.UpdateDownloadDialog_Title);
             builder.SetView(v);
 
@@ -261,8 +354,8 @@ namespace GFI_with_GFS_A
 
                     foreach (string s in ImageName)
                     {
-                        string url = Path.Combine(ETC.Server, "Data", "Images", "OldGFD", "Images", s + ".png");
-                        string target = Path.Combine(ETC.CachePath, "OldGFD", "Images", s + ".gfdcache");
+                        string url = Path.Combine(ETC.Server, "Data", "Images", "OldGFD", "Images", $"{s}.png");
+                        string target = Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{s}.gfdcache");
 
                         await wc.DownloadFileTaskAsync(url, target);
                     }
@@ -274,7 +367,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(Activity, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.UpdateDownload_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
             finally
@@ -287,28 +380,21 @@ namespace GFI_with_GFS_A
                 nowProgress = null;
             }
 
-            ShowImage(ImageList.SelectedItemPosition);
+            ShowImage(Image_Index);
         }
 
         private void Wc_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             p_now += 1;
 
-            totalProgressBar.Progress = Convert.ToInt32((p_now / Convert.ToDouble(p_total)) * 100);
-            totalProgress.Text = string.Format("{0}%", totalProgressBar.Progress);
+            totalProgressBar.Progress = Convert.ToInt32(p_now / Convert.ToDouble(p_total) * 100);
+            totalProgress.Text = $"{totalProgressBar.Progress}%";
         }
 
         private void Wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             nowProgressBar.Progress = e.ProgressPercentage;
-            nowProgress.Text = string.Format("{0}%", e.ProgressPercentage);
-        }
-
-        public override void OnBackPressed()
-        {
-            base.OnBackPressed();
-            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-            GC.Collect();
+            nowProgress.Text = $"{e.ProgressPercentage}%";
         }
     }
 }

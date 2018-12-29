@@ -7,7 +7,6 @@ using Android.Support.Design.Widget;
 using Android.Support.V4.App;
 using Android.Support.V7.Widget;
 using Android.Views;
-using Android.Views.Animations;
 using Android.Widget;
 using System;
 using System.Collections.Generic;
@@ -26,13 +25,8 @@ namespace GFI_with_GFS_A
 
         private LinearLayout AbilityTableSubLayout;
 
+        private Equip equip;
         private DataRow EquipInfoDR = null;
-        private string EquipName;
-        private int EquipId;
-        private int EquipGrade;
-        private string EquipCategory;
-        private string EquipType;
-        private string IconName;
 
         private bool IsEnableFABMenu = false;
 
@@ -52,15 +46,9 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.EquipDBDetailLayout);
 
-                EquipName = Intent.GetStringExtra("Keyword");
-
-                EquipInfoDR = ETC.FindDataRow(ETC.EquipmentList, "Name", EquipName);
-                EquipId = (int)EquipInfoDR["Id"];
-                EquipGrade = (int)EquipInfoDR["Grade"];
-                EquipCategory = (string)EquipInfoDR["Category"];
-                EquipType = (string)EquipInfoDR["Type"];
-                IconName = (string)EquipInfoDR["Icon"];
-
+                EquipInfoDR = ETC.FindDataRow(ETC.EquipmentList, "Id", Intent.GetIntExtra("Id", 0));
+                equip = new Equip(EquipInfoDR);
+                
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.EquipDBDetailInitLoadProgress);
                 AbilityTableSubLayout = FindViewById<LinearLayout>(Resource.Id.EquipDBDetailAbilitySubLayout);
 
@@ -77,6 +65,8 @@ namespace GFI_with_GFS_A
                 FABTimer.Elapsed += FABTimer_Elapsed;
 
                 InitLoadProcess(false);
+
+                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_EquipDBDetail", true) == true)) ETC.RunHelpActivity(this, "EquipDBDetail");
             }
             catch (Exception ex)
             {
@@ -139,7 +129,7 @@ namespace GFI_with_GFS_A
                     if ((int)EquipInfoDR["ProductTIme"] != 0)
                     {
                         var intent = new Intent(this, typeof(ProductPercentTableActivity));
-                        intent.PutExtra("Info", new string[] { "Equip", EquipId.ToString() });
+                        intent.PutExtra("Info", new string[] { "Equip", equip.Id.ToString() });
                         StartActivity(intent);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                     }
@@ -170,66 +160,65 @@ namespace GFI_with_GFS_A
 
             try
             {
-                // 장비 타이틀 바 초기화
+                     // 장비 타이틀 바 초기화
 
                 try
                 {
-                    if ((File.Exists(Path.Combine(ETC.CachePath, "Equip", "Normal", IconName + ".gfdcache")) == false) || (IsRefresh == true))
+                    if ((File.Exists(Path.Combine(ETC.CachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache")) == false) || (IsRefresh == true))
                     {
                         using (WebClient wc = new WebClient())
                         {
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Equipments", IconName + ".png"), Path.Combine(ETC.CachePath, "Equip", "Normal", IconName + ".gfdcache"));
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Equipments", $"{equip.Icon}.png"), Path.Combine(ETC.CachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache"));
                         }
                     }
 
                     if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", true) == true)
                     {
-                        Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Equip", "Normal", IconName + ".gfdcache"));
+                        Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache"));
                         drawable.SetAlpha(40);
                         FindViewById<RelativeLayout>(Resource.Id.EquipDBDetailMainLayout).Background = drawable;
                     }
 
-                    ImageView EquipImage = FindViewById<ImageView>(Resource.Id.EquipDBDetailImage);
-                    EquipImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Equip", "Normal", IconName + ".gfdcache")));
+                    FindViewById<ImageView>(Resource.Id.EquipDBDetailImage).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache")));
                 }
                 catch (Exception ex)
                 {
                     ETC.LogError(this, ex.ToString());
                 }
 
-                FindViewById<TextView>(Resource.Id.EquipDBDetailEquipName).Text = EquipName;
-                FindViewById<TextView>(Resource.Id.EquipDBDetailEquipType).Text = EquipType;
-                FindViewById<TextView>(Resource.Id.EquipDBDetailEquipProductTime).Text = ETC.CalcTime((int)EquipInfoDR["ProductTime"]);
+                FindViewById<TextView>(Resource.Id.EquipDBDetailEquipName).Text = equip.Name;
+                FindViewById<TextView>(Resource.Id.EquipDBDetailEquipType).Text = equip.Type;
+                FindViewById<TextView>(Resource.Id.EquipDBDetailEquipProductTime).Text = ETC.CalcTime(equip.ProductTime);
 
 
-                // 장비 기본 정보 초기화
+                             // 장비 기본 정보 초기화
 
                 int[] GradeStarIds = { Resource.Id.EquipDBDetailInfoGrade1, Resource.Id.EquipDBDetailInfoGrade2, Resource.Id.EquipDBDetailInfoGrade3, Resource.Id.EquipDBDetailInfoGrade4, Resource.Id.EquipDBDetailInfoGrade5 };
 
-                if (EquipGrade == 0)
+                if (equip.Grade == 0)
                 {
                     for (int i = 1; i < GradeStarIds.Length; ++i) FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
                     FindViewById<ImageView>(GradeStarIds[0]).SetImageResource(Resource.Drawable.Grade_Star_EX);
                 }
                 else
                 {
-                    for (int i = EquipGrade; i < GradeStarIds.Length; ++i) FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
-                    for (int i = 0; i < EquipGrade; ++i) FindViewById<ImageView>(GradeStarIds[i]).SetImageResource(Resource.Drawable.Grade_Star);
+                    for (int i = equip.Grade; i < GradeStarIds.Length; ++i) FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
+                    for (int i = 0; i < equip.Grade; ++i) FindViewById<ImageView>(GradeStarIds[i]).SetImageResource(Resource.Drawable.Grade_Star);
                 }
 
-                FindViewById<TextView>(Resource.Id.EquipDBDetailInfoCategory).Text = EquipCategory;
-                FindViewById<TextView>(Resource.Id.EquipDBDetailInfoType).Text = EquipType;
-                FindViewById<TextView>(Resource.Id.EquipDBDetailInfoName).Text = EquipName;
-                if (EquipInfoDR["Note"] != DBNull.Value) FindViewById<TextView>(Resource.Id.EquipDBDetailInfoETC).Text = (string)EquipInfoDR["Note"];
+                FindViewById<TextView>(Resource.Id.EquipDBDetailInfoCategory).Text = equip.Category;
+                FindViewById<TextView>(Resource.Id.EquipDBDetailInfoType).Text = equip.Type;
+                FindViewById<TextView>(Resource.Id.EquipDBDetailInfoName).Text = equip.Name;
+                FindViewById<TextView>(Resource.Id.EquipDBDetailInfoETC).Text = equip.Note;
 
 
-                // 장비 사용여부 정보 초기화
+                            // 장비 사용여부 정보 초기화
 
                 bool IsOnlyUse = false;
 
-                if (EquipInfoDR["OnlyUse"] != DBNull.Value)
+                if (equip.OnlyUse != null)
                 {
-                    if (string.IsNullOrWhiteSpace((string)EquipInfoDR["OnlyUse"]) == false) IsOnlyUse = true;
+                    if (string.IsNullOrWhiteSpace(equip.OnlyUse[0]) == false) IsOnlyUse = true;
                     else IsOnlyUse = false;
                 }
                 else IsOnlyUse = false;
@@ -241,7 +230,7 @@ namespace GFI_with_GFS_A
                         FindViewById<LinearLayout>(Resource.Id.EquipDBDetailAvailableInfoRecommendLayout).Visibility = ViewStates.Visible;
                         FindViewById<LinearLayout>(Resource.Id.EquipDBDetailAvailableInfoUseLayout).Visibility = ViewStates.Visible;
 
-                        string[] TotalAvailable = ((string)EquipInfoDR["DollType"]).Split(';');
+                        string[] TotalAvailable = equip.DollType;
                         List<string> RecommendType = new List<string>();
                         List<string> UseType = new List<string>();
 
@@ -278,20 +267,28 @@ namespace GFI_with_GFS_A
                         FindViewById<LinearLayout>(Resource.Id.EquipDBDetailAvailableInfoUseLayout).Visibility = ViewStates.Gone;
                         FindViewById<LinearLayout>(Resource.Id.EquipDBDetailAvailableInfoOnlyUseLayout).Visibility = ViewStates.Visible;
 
-                        FindViewById<TextView>(Resource.Id.EquipDBDetailAvailableInfoOnlyUse).Text = (string)EquipInfoDR["OnlyUse"];
+                        StringBuilder sb = new StringBuilder();
+                        
+                        for (int i = 0; i < equip.OnlyUse.Length; ++i)
+                        {
+                            sb.Append(equip.OnlyUse[i]);
+                            if (i < (equip.OnlyUse.Length - 1)) sb.Append(" | ");
+                        }
+
+                        FindViewById<TextView>(Resource.Id.EquipDBDetailAvailableInfoOnlyUse).Text = sb.ToString();
                         break;
                 }
 
 
-                // 장비 능력치 초기화
+                            // 장비 능력치 초기화
 
-                string[] Abilities = ((string)EquipInfoDR["Ability"]).Split(';');
-                string[] AbilityInitMags = ((string)EquipInfoDR["InitialMagnification"]).Split(';');
-                string[] AbilityMaxMags = ((string)EquipInfoDR["MaxMagnification"]).Split(';');
+                string[] Abilities = equip.Abilities;
+                string[] AbilityInitMags = equip.InitMags;
+                string[] AbilityMaxMags = equip.MaxMags;
 
                 AbilityTableSubLayout.RemoveAllViews();
 
-                for (int i = 0; i < Abilities.Length; ++i)
+                for (int i = 0; i < equip.Abilities.Length; ++i)
                 {
                     LinearLayout layout = new LinearLayout(this)
                     {
@@ -307,13 +304,13 @@ namespace GFI_with_GFS_A
                     initmag.LayoutParameters = FindViewById<TextView>(Resource.Id.EquipDBDetailAbilityTopText2).LayoutParameters;
                     maxmag.LayoutParameters = FindViewById<TextView>(Resource.Id.EquipDBDetailAbilityTopText3).LayoutParameters;
 
-                    ability.Text = Abilities[i];
+                    ability.Text = equip.Abilities[i];
                     ability.SetTextColor(Android.Graphics.Color.LimeGreen);
                     ability.Gravity = GravityFlags.Center;
-                    initmag.Text = AbilityInitMags[i];
+                    initmag.Text = equip.InitMags[i];
                     initmag.Gravity = GravityFlags.Center;
-                    if (AbilityMaxMags[0] == "강화 불가") maxmag.Text = AbilityMaxMags[0];
-                    else maxmag.Text = AbilityMaxMags[i];
+                    if (equip.CanUpgrade == false) maxmag.Text = "X";
+                    else maxmag.Text = equip.MaxMags[i];
                     maxmag.Gravity = GravityFlags.Center;
 
                     layout.AddView(ability);
@@ -323,9 +320,8 @@ namespace GFI_with_GFS_A
                     AbilityTableSubLayout.AddView(layout);
                 }
 
-
                 if (ETC.UseLightTheme == true) SetCardTheme();
-                ShowCardViewAnimation();
+                ShowCardViewVisibility();
                 HideFloatingActionButtonAnimation();
             }
             catch (WebException ex)
@@ -359,11 +355,11 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ShowCardViewAnimation()
+        private void ShowCardViewVisibility()
         {
-            FindViewById<CardView>(Resource.Id.EquipDBDetailBasicInfoCardLayout).Animate().Alpha(1.0f).SetDuration(500).Start();
-            FindViewById<CardView>(Resource.Id.EquipDBDetailAvailableInfoCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(500).Start();
-            FindViewById<CardView>(Resource.Id.EquipDBDetailAbilityCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1000).Start();
+            FindViewById<CardView>(Resource.Id.EquipDBDetailBasicInfoCardLayout).Visibility = ViewStates.Visible;
+            FindViewById<CardView>(Resource.Id.EquipDBDetailAvailableInfoCardLayout).Visibility = ViewStates.Visible;
+            FindViewById<CardView>(Resource.Id.EquipDBDetailAbilityCardLayout).Visibility = ViewStates.Visible;
         }
 
         public override void OnBackPressed()

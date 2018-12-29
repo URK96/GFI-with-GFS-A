@@ -3,56 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/SplashMainLayout">
-    <!--<LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/SplashEventLoadingLayout">
-		<LinearLayout
-			android:orientation="horizontal"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
-			<Space
-			android:layout_width="0"
-			android:layout_height="match_parent"
-			android:layout_weight="1"/>
-			<ImageView
-			android:layout_width="0"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:layout_centerInParent="true"
-			android:src="@drawable/appicon2"/>
-			<Space
-			android:layout_width="0"
-			android:layout_height="match_parent"
-			android:layout_weight="1"/>
-		</LinearLayout>
-		<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center"
-		android:text=""
-		android:textAlignment="center"/>
-    </LinearLayout>-->
 	<ImageView
 		android:layout_height="match_parent"
 		android:layout_width="match_parent"
-		android:alpha="0.3"
-		android:id="@+id/SplashImageView"
-		android:background="@drawable/splashclip"/>
+		android:scaleType="fitXY"
+		android:adjustViewBounds="true"
+		android:alpha="0"
+		android:id="@+id/SplashImageView"/>
 	<TextView
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content"
 		android:layout_alignParentBottom="true"
 		android:layout_centerInParent="true"
+		android:textColor="#F2F2F2"
+		android:textAppearance="?android:attr/textAppearanceLarge"
 		android:id="@+id/SplashStatusText"/>
-    <!--<FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-		android:visibility="gone"
-        android:id="@+id/SplashBusyIndicatorLayout" />-->
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

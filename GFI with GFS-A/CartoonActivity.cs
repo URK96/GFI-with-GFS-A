@@ -9,7 +9,6 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Android.Support.V4.App;
 using Android.Support.V7.App;
 using Android.Support.V4.Widget;
 using Android.Support.V4.View;
@@ -18,6 +17,8 @@ using System.IO;
 using System.Net;
 using Android.Graphics.Drawables;
 using Android.Webkit;
+using Android.Support.V7.Widget;
+
 
 namespace GFI_with_GFS_A
 {
@@ -42,6 +43,8 @@ namespace GFI_with_GFS_A
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+            ETC.SetDialogTheme();
 
             if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
@@ -73,8 +76,7 @@ namespace GFI_with_GFS_A
             CartoonScreen_F = new CartoonScreen();
 
             ft = SupportFragmentManager.BeginTransaction();
-            ft.Add(Resource.Id.CartoonMainLayout, CartoonScreen_F, "CartoonScreen");
-
+            ft.Add(Resource.Id.CartoonContainer, CartoonScreen_F, "CartoonScreen");
             ft.Commit();
 
             LoadCategoryList();
@@ -85,7 +87,8 @@ namespace GFI_with_GFS_A
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    if (MainDrawerLayout.IsDrawerOpen(GravityCompat.Start) == false) MainDrawerLayout.OpenDrawer(GravityCompat.Start);
+                    if (MainDrawerLayout.IsDrawerOpen(GravityCompat.Start) == false)
+                        MainDrawerLayout.OpenDrawer(GravityCompat.Start);
                     else MainDrawerLayout.CloseDrawer(GravityCompat.Start);
                     return true;
             }
@@ -184,7 +187,11 @@ namespace GFI_with_GFS_A
                 MainDrawerLayout.CloseDrawer(GravityCompat.Start);
                 return;
             }
-            else base.OnBackPressed();
+            else
+            {
+                base.OnBackPressed();
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeIn);
+            }
         }
     }
 
@@ -193,14 +200,19 @@ namespace GFI_with_GFS_A
         private View v;
 
         private LinearLayout MainLayout;
+        private LinearLayout CopyrightLayout;
+        private FrameLayout WebViewLayout;
         private ProgressBar LoadProgress;
         private Button PreviousButton;
         private Button NextButton;
         private ImageButton RefreshButton;
         private TextView NowCartoonText;
+        private RecyclerView MainRecyclerView;
+        private RecyclerView.LayoutManager MainLayoutManager;
 
         private List<string> Selected_Item_List = new List<string>();
         private List<string> Selected_Item_URL_List = new List<string>();
+        private List<Android.Graphics.Bitmap> Bitmap_List = new List<Android.Graphics.Bitmap>();
 
         private string Now_Category = "";
         private int Now_Category_Index = 0;
@@ -215,7 +227,9 @@ namespace GFI_with_GFS_A
         {
             v = inflater.Inflate(Resource.Layout.CartoonScreenLayout, container, false);
 
-            MainLayout = v.FindViewById<LinearLayout>(Resource.Id.CartoonScreenMainLayout);
+            //MainLayout = v.FindViewById<LinearLayout>(Resource.Id.CartoonScreenMainLayout);
+            CopyrightLayout = v.FindViewById<LinearLayout>(Resource.Id.CartoonScreenCopyrightLayout);
+            WebViewLayout = v.FindViewById<FrameLayout>(Resource.Id.CartoonScreenWebViewLayout);
             LoadProgress = v.FindViewById<ProgressBar>(Resource.Id.CartoonScreenLoadProgress);
             PreviousButton = v.FindViewById<Button>(Resource.Id.CartoonScreenPreviousButton);
             PreviousButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index - 1, false); };
@@ -224,6 +238,9 @@ namespace GFI_with_GFS_A
             RefreshButton = v.FindViewById<ImageButton>(Resource.Id.CartoonScreenRefreshButton);
             RefreshButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index, true); };
             NowCartoonText = v.FindViewById<TextView>(Resource.Id.CartoonScreenNowCartoonText);
+            MainRecyclerView = v.FindViewById<RecyclerView>(Resource.Id.CartoonScreenMainRecyclerView);
+            MainLayoutManager = new LinearLayoutManager(Activity);
+            MainRecyclerView.SetLayoutManager(MainLayoutManager);
 
             return v;
         }
@@ -256,7 +273,8 @@ namespace GFI_with_GFS_A
                 ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
                 Selected_Item_List.Clear();
 
-                MainLayout.RemoveAllViews();
+                //MainLayout.RemoveAllViews();
+                CopyrightLayout.RemoveAllViews();
 
                 await Task.Delay(100);
 
@@ -313,11 +331,13 @@ namespace GFI_with_GFS_A
                 layout.AddView(tv1);
                 layout.AddView(tv2);
 
-                MainLayout.AddView(layout);
+                //MainLayout.AddView(layout);
+                CopyrightLayout.AddView(layout);
 
                 List<string> Files = Directory.GetFiles(Item_Path).ToList();
                 Files.TrimExcess();
                 Files.Sort(SortCartoonList);
+                Bitmap_List.Clear();
 
                 foreach (string file in Files)
                 {
@@ -343,17 +363,23 @@ namespace GFI_with_GFS_A
                             height += remain_height;
                         }
 
-                        ImageView iv = new ImageView(Activity);
+                        /*ImageView iv = new ImageView(Activity);
                         iv.SetImageBitmap(bitmap_fix);
                         iv.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent);
                         iv.SetScaleType(ImageView.ScaleType.FitXy);
                         iv.SetAdjustViewBounds(true);
 
-                        MainLayout.AddView(iv);
+                        MainLayout.AddView(iv);*/
+
+                        Bitmap_List.Add(bitmap_fix);
                     }
 
                     await Task.Delay(10);
                 }
+
+                Bitmap_List.TrimExcess();
+
+                MainRecyclerView.SetAdapter(new CartoonScreenAdapter(Bitmap_List.ToArray()));
 
                 GC.Collect();
 
@@ -367,6 +393,8 @@ namespace GFI_with_GFS_A
             {
                 ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
                 NowCartoonText.Text = Selected_Item_List[Item_Index];
+                WebViewLayout.Visibility = ViewStates.Gone;
+                MainRecyclerView.Visibility = ViewStates.Visible;
             }
         }
 
@@ -377,7 +405,7 @@ namespace GFI_with_GFS_A
             Now_Category = Category;
 
             try
-            {
+            {              
                 if (Item_Index == 0)
                 {
                     PreviousButton.Enabled = false;
@@ -399,7 +427,7 @@ namespace GFI_with_GFS_A
                 Selected_Item_List.Clear();
                 Selected_Item_URL_List.Clear();
 
-                MainLayout.RemoveAllViews();
+                WebViewLayout.RemoveAllViews();
 
                 await Task.Delay(100);
 
@@ -420,7 +448,7 @@ namespace GFI_with_GFS_A
                 webview.Settings.SetAppCacheEnabled(true);
                 webview.Settings.JavaScriptEnabled = true;
 
-                MainLayout.AddView(webview);
+                WebViewLayout.AddView(webview);
                 webview.LoadUrl(Selected_Item_URL_List[Now_Item_Index]);
 
                 LoadProgress.Visibility = ViewStates.Invisible;
@@ -432,7 +460,9 @@ namespace GFI_with_GFS_A
             finally
             {
                 ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
-                //NowCartoonText.Text = Selected_Item_List[Item_Index];
+                NowCartoonText.Text = Selected_Item_List[Item_Index];
+                MainRecyclerView.Visibility = ViewStates.Gone;
+                WebViewLayout.Visibility = ViewStates.Visible;
             }
         }
 
@@ -528,6 +558,46 @@ namespace GFI_with_GFS_A
             {
                 base.OnPageFinished(view, url);
             }
+        }
+    }
+
+    public class CartoonScreenViewHolder : RecyclerView.ViewHolder
+    {
+        public ImageView CartoonImageView { get; private set; }
+
+        public CartoonScreenViewHolder(View view) : base(view)
+        {
+            CartoonImageView = view.FindViewById<ImageView>(Resource.Id.CartoonScreenImageView);
+        }
+    }
+
+    public class CartoonScreenAdapter : RecyclerView.Adapter
+    {
+        private Android.Graphics.Bitmap[] Image;
+
+        public CartoonScreenAdapter(Android.Graphics.Bitmap[] bitmaps)
+        {
+            Image = bitmaps;
+        }
+
+        public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
+        {
+            CartoonScreenViewHolder vh = holder as CartoonScreenViewHolder;
+
+            vh.CartoonImageView.SetImageBitmap(Image[position]);
+        }
+
+        public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
+        {
+            View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.CartoonScreenListLayout, parent, false);
+
+            CartoonScreenViewHolder vh = new CartoonScreenViewHolder(view);
+            return vh;
+        }
+
+        public override int ItemCount
+        {
+            get { return Image.Length; }
         }
     }
 }

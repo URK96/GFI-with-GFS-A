@@ -74,11 +74,26 @@
 					android:layout_below="@id/DollDBDetailSmallImageLayout"
 					android:gravity="center"
 					android:id="@+id/DollDBDetailDollProductDialog"/>
+			<Button
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_marginRight="10dp"
+				android:text="▽▽▽"
+				android:layout_below="@id/DollDBDetailDollProductDialog"
+				android:id="@+id/DollDBExtraFeatureButton"/>
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/DollDBExtraFeatureButton"
+				android:layout_margin="10dp"
+				android:visibility="gone"
+				android:id="@+id/DollDBExtraFeatureLayout">
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/DollDBDetailDollProductDialog"
                 android:layout_margin="10dp"
                 android:visibility="gone"
                 android:id="@+id/DollDBDetailVoiceLayout">
@@ -162,9 +177,10 @@
 				android:layout_weight="1"
 				android:layout_marginLeft="5dp"
 				android:layout_marginRight="5dp"
+				android:visibility="gone"
                 android:text="@string/DollDBDetailLayout_SDAnimationButtonText"
                 android:id="@+id/DollDBDetailSDAnimationButton" />
-				<Button
+			<Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
 				android:layout_weight="1"
@@ -172,6 +188,7 @@
 				android:layout_marginRight="5dp"
                 android:text="@string/DollDBDetailLayout_ModelData"
                 android:id="@+id/DollDBDetailModelDataButton"/>
+				</LinearLayout>
 				</LinearLayout>
         </RelativeLayout>
     <!--Scroll Part-->
@@ -190,7 +207,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:alpha="0"
+					android:visibility="gone"
                     android:id="@+id/DollDBDetailBasicInfoCardLayout"
                     cardview:cardElevation="4dp"
                     cardview:cardCornerRadius="5dp"
@@ -493,7 +510,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:alpha="0"
+                    android:visibility="gone"
                     android:id="@+id/DollDBDetailBuffCardLayout"
                     cardview:cardElevation="4dp"
                     cardview:cardCornerRadius="5dp"
@@ -658,7 +675,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:alpha="0"
+                    android:visibility="gone"
                     android:id="@+id/DollDBDetailSkillCardLayout"
                     cardview:cardElevation="4dp"
                     cardview:cardCornerRadius="5dp"
@@ -802,7 +819,6 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:alpha="0"
                     android:visibility="gone"
                     android:id="@+id/DollDBDetailModSkillCardLayout"
                     cardview:cardElevation="4dp"
@@ -899,7 +915,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:alpha="0"
+                    android:visibility="visible"
                     android:id="@+id/DollDBDetailAbilityCardLayout"
                     cardview:cardElevation="4dp"
                     cardview:cardCornerRadius="5dp"
@@ -911,6 +927,41 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:id="@+id/DollInfo_DetailMainLayout">
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<LinearLayout
+								android:orientation="horizontal"
+								android:layout_width="0dp"
+								android:layout_height="wrap_content"
+								android:layout_weight="1"
+								android:layout_marginRight="5dp">
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="Lv. "/>
+							<Spinner
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:id="@+id/DollDBDetailAbilityLevelSelector"/>
+							</LinearLayout>
+							<LinearLayout
+								android:orientation="horizontal"
+								android:layout_width="0dp"
+								android:layout_height="wrap_content"
+								android:layout_weight="1"
+								android:layout_marginLeft="5dp">
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="♡ "/>
+							<Spinner
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:id="@+id/DollDBDetailAbilityFavorSelector"/>
+							</LinearLayout>
+						</LinearLayout>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1444,7 +1495,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="400dp"
                     android:layout_margin="10dp"
-                    android:alpha="0"
+                    android:visibility="gone"
                     android:id="@+id/DollDBDetailAbilityRadarChartCardLayout"
                     cardview:cardElevation="4dp"
                     cardview:cardCornerRadius="5dp"
@@ -1486,7 +1537,7 @@
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/refresh"
+        android:src="@drawable/refreshicon_whitetheme"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="145dp"
         android:layout_alignParentBottom="true"

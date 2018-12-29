@@ -5,6 +5,7 @@
   
   <string name="Main_ExtraMenu_GFOSTPlayer">OST Player</string>
   <string name="Main_ExtraMenu_Cartoon">Cartoon</string>
+  <string name="Main_ExtraMenu_Story">Story</string>
   
   <string name="DollDBDetailLayout_ModelData">Model Data</string>
   
@@ -123,12 +124,18 @@
   <string name="DB_Recovery">Recovering DB...</string>
   <string name="NetworkDelay">Waiting for server response...</string>
   <string name="ProductPercentTable_LoadFail">Failed to load Production Info</string>
+  <string name="NoDBFileFound_Message">Initial DB cannot be downloaded due to server check issue. Try again later.</string>
   <string name="CheckDBUpdateDialog_Title">Update DB</string>
+  <string name="CheckDBUpdateDialog_Question">A new DB update is available. Are you going to proceed with the update?</string>
   <string name="CheckDBUpdateDialog_Message">Checking for updates. Wait a minute!</string>
+  <string name="RepairDBDialog_Title">DB Repair</string>
+  <string name="RepairDBDialog_Message">Repairing DB...</string>
+  <string name="RepairDB_Complete">Complete Repair DB</string>
+  <string name="RepairDB_Fail">Fail Repair DB</string>
   <string name="UpdateDBDialog_Message">Updating DB...</string>
   <string name="UpdateDBDialog_RefreshVersionMessage">Renewing DB Version...</string>
   <string name="CheckDBUpdate_UpToDate">You already have a latest version. No need to update!</string>
-  <string name="CheckDBUpdate_Complete">DB 업데이트 완료</string>
+  <string name="CheckDBUpdate_Complete">Complete Update DB</string>
   <string name="NewFeatureDialog_Title">New Function</string>
   <string name="FAB_ChangeSubMenuError">Floating menu operation failed</string>
   <string name="FAB_ChangeStatusError">Floating state change failed</string>
@@ -157,7 +164,6 @@
   <string name="Common_FR">Damage</string>
   <string name="Common_CL">CoolDown</string>
   <string name="Common_HP">HP</string>
-  <string name="Common_Ammo">Ammo</string>
   <string name="Common_MoveSpeed">Move Speed</string>
   <string name="Common_Penetration">Penetration</string>
   <string name="Common_Reload">Reload</string>
@@ -194,7 +200,6 @@
   <string name="Common_NormalProduct">Standard Production</string>
   <string name="Common_Accessories">Accessories</string>
   <string name="Common_Magazine">Magazine</string>
-  <string name="Common_TDoll">T-Doll</string>
   <string name="Common_FairyType_Combat">Combat</string>
   <string name="Common_FairyType_Strategy">Strategy</string>
   <string name="Common_Default">Default</string>
@@ -231,6 +236,10 @@
   <string name="Common_TDoll">T-Doll</string>
   <string name="Common_Equipment">Equip</string>
   <string name="Common_Fairy">Fairy</string>
+  <string name="Common_Previous">Previous</string>
+  <string name="Common_Next">Next</string>
+  <string name="Common_PreviousList">Previous List</string>
+  <string name="Common_NonProduct">Non-Manufacturing</string>
 
   <!--Common Dialog String-->
   <string name="AlertDialog_Confirm">Confirm</string>
@@ -240,6 +249,11 @@
   <string name="AlertDialog_Reset">Reset</string>
   <string name="AlertDialog_Delete">Delete</string>
   <string name="AlertDialog_Exit">Quit</string>
+  
+  <!--Common LineUp String-->
+  <string name="LineUp_Name">Name</string>
+  <string name="LineUp_Time">Time</string>
+  <string name="LineUp_Num">Number</string>
   
   <!--CalcMain-->
   <string name="TitleName_ExpItemCalc">Battle Report Calc</string>
@@ -260,6 +274,8 @@
   <string name="DollDBImageViewer_DefaultCostume">Basic Costume</string>
   <string name="DollDBImageViewer_ImageStatusNormal">Normal</string>
   <string name="DollDBImageViewer_ImageStatusDamage">Damaged</string>
+  <string name="DollDBImageViewer_ImageCensored">Censor</string>
+  <string name="DollDBImageViewer_ImageOriginal">Original</string>
   
   <!--DollDBMain-->
   <string name="DollDBMainActivity_Title">T-Doll List</string>
@@ -412,6 +428,8 @@
   <string name="Setting_LowMemoryOption_Summary">Restrict some effects or custom resources for Low-RAM devices. After setup, the app must be restarted before it takes effect.</string>
   <string name="Setting_UseLightTheme_Title">Use Light Theme</string>
   <string name="Setting_UseLightTheme_Summary">Use a Light theme instead of the default Dark Theme. After setup, the app must be restarted before it takes effect.</string>
+  <string name="Setting_ServerCheck_Title">Enable Check Server</string>
+  <string name="Setting_ServerCheck_Summary">Checking server when app start. When disable, app starting time is short but not recommend.</string>
   <string name="Setting_Category_MainMenu">Main Menu</string>
   <string name="Setting_MainButtonColor_Title">Main Button Color</string>
   <string name="Setting_MainButtonColor_Summary">Select the color of the menu button. After setup, the app must be restarted before it takes effect.</string>
@@ -422,6 +440,8 @@
   <string name="Setting_AutoDBUpdate_Summary">Automatically check for DB updates during app starting. If you disable this setting, you must manually check for DB updates.</string>
   <string name="Setting_CheckDBUpdate_Title">Check DB Update Now</string>
   <string name="Setting_CheckDBUpdate_Summary">Check for updates to DB data. If there is an update, it will proceed automatically.</string>
+  <string name="Setting_RepairDB_Title">Repair DB</string>
+  <string name="Setting_RepairDB_Summary">Repair DB Data. If the DB cannot be loaded correctly, use this option to repair the DB.</string>
   <string name="Setting_Category_DBList">DB List</string>
   <string name="Setting_DBListImageShow_Title">Activate List Image</string>
   <string name="Setting_DBListImageShow_Summary">Set the DB list to display the corresponding image for each item. On devices with less than 2GB of RAM, app may crash when activated.</string>
@@ -436,6 +456,9 @@
   <string name="Setting_Category_Log">Log</string>
   <string name="Setting_DeleteAllLogFile_Title">Delete Log</string>
   <string name="Setting_DeleteAllLogFile_Summary">Delete all log files.</string>
+  <string name="Setting_Category_ETC">ETC</string>
+  <string name="Setting_ExternalLibraryLicense_Title">External Library License</string>
+  <string name="Setting_ExternalLibraryLicense_Summary">Check license of external library applied on this app</string>
   
   
     
@@ -460,15 +483,13 @@
   <string name="Calc_SkillTraining_ResultTimeCountText">* Total Time *</string>
   <string name="Calc_SkillTraining_ResultTimeCountDefaultText">0 Hour</string>
   
-  <!--DollDB_ImageViewer-->
-  <string name="DollDB_ImageViewer_ImageStatusDefaultText">Normal</string>
-  
   <!--DollDBDetailLayout-->
   <string name="DollDBDetailLayout_SDAnimationButtonText">SD Animation (Beta)</string>
   <string name="DollDBDetailLayout_AbilityCaution"># 최대 능력치는 MAX레벨, 호감도에 따른 능력치 상승 미적용 값입니다 #</string>
   
   <!--DollFilterLayout-->
-  <string name="DollFilterLayout_ModFilterTitle">Mod Available</string>
+  <string name="DollFilterLayout_ModFilterTitle">Only Mod Available</string>
+  <string name="DollFilterLayout_ModFilterItem">Enable</string>
   
   <!--EquipDBDetailLayout-->
   <string name="EquipDBDetailLayout_RecommendGunTypeText"># Recommend Type #</string>

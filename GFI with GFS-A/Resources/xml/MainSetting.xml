@@ -10,10 +10,10 @@
       android:key="StartAppMode"
       android:title="@string/Setting_StartAppMode_Title"
       android:summary="@string/Setting_StartAppMode_Summary"/>
-    <android.support.v14.preference.SwitchPreference
+    <!--<android.support.v14.preference.SwitchPreference
       android:key="NotificationAnimationOption"
       android:title="@string/Setting_NotificationAnimationOption_Title"
-      android:summary="@string/Setting_NotificationAnimationOption_Summary"/>
+      android:summary="@string/Setting_NotificationAnimationOption_Summary"/>-->
     <android.support.v14.preference.SwitchPreference
       android:key="LowMemoryOption"
       android:title="@string/Setting_LowMemoryOption_Title"
@@ -22,6 +22,10 @@
       android:key="UseLightTheme"
       android:title="@string/Setting_UseLightTheme_Title"
       android:summary="@string/Setting_UseLightTheme_Summary"/>
+    <android.support.v14.preference.SwitchPreference
+      android:key="EnableServerCheck"
+      android:title="@string/Setting_ServerCheck_Title"
+      android:summary="@string/Setting_ServerCheck_Summary"/>
   </android.support.v7.preference.PreferenceCategory>
   <android.support.v7.preference.PreferenceCategory
   android:title="@string/Setting_Category_MainMenu">
@@ -32,10 +36,10 @@
   </android.support.v7.preference.PreferenceCategory>
   <android.support.v7.preference.PreferenceCategory
     android:title="@string/Setting_Category_DB">
-    <android.support.v14.preference.SwitchPreference
+    <!--<android.support.v14.preference.SwitchPreference
   android:key="DynamicDBLoad"
   android:title="@string/Setting_DynamicDBLoad_Title"
-  android:summary="@string/Setting_DynamicDBLoad_Summary"/>
+  android:summary="@string/Setting_DynamicDBLoad_Summary"/>-->
     <android.support.v14.preference.SwitchPreference
       android:key="AutoDBUpdate"
       android:title="@string/Setting_AutoDBUpdate_Title"
@@ -44,6 +48,10 @@
       android:key="CheckDBUpdate"
       android:title="@string/Setting_CheckDBUpdate_Title"
       android:summary="@string/Setting_CheckDBUpdate_Summary"/>
+    <android.support.v7.preference.Preference
+      android:key="RepairDB"
+      android:title="@string/Setting_RepairDB_Title"
+      android:summary="@string/Setting_RepairDB_Summary"/>
   </android.support.v7.preference.PreferenceCategory>
   <android.support.v7.preference.PreferenceCategory
     android:title="@string/Setting_Category_DBList">
@@ -82,5 +90,12 @@
       android:key="DeleteAllLogFile"
       android:title="@string/Setting_DeleteAllLogFile_Title"
       android:summary="@string/Setting_DeleteAllLogFile_Summary"/>
+  </android.support.v7.preference.PreferenceCategory>
+  <android.support.v7.preference.PreferenceCategory
+    android:title="@string/Setting_Category_ETC">
+    <android.support.v7.preference.Preference
+      android:key="ExternalLibraryLicense"
+      android:title="@string/Setting_ExternalLibraryLicense_Title"
+      android:summary="@string/Setting_ExternalLibraryLicense_Summary"/>
   </android.support.v7.preference.PreferenceCategory>
 </android.support.v7.preference.PreferenceScreen>

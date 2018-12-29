@@ -92,6 +92,7 @@ namespace GFI_with_GFS_A
             Resource.Id.CalcExtraButton,
             Resource.Id.RFBotExtraButton,
             Resource.Id.ProductSimulatorExtraButton,
+            Resource.Id.StoryExtraButton,
             Resource.Id.CartoonExtraButton,
             Resource.Id.GFOSTPlayerExtraButton
         };
@@ -102,6 +103,7 @@ namespace GFI_with_GFS_A
             Resource.Drawable.Extra_CalcSelector,
             Resource.Drawable.Extra_RFBotSelector,
             Resource.Drawable.Extra_ProductSimulatorSelector,
+            Resource.Drawable.Extra_StorySelector,
             Resource.Drawable.Extra_CartoonSelector,
             Resource.Drawable.Extra_OSTPlayerSelector
         };
@@ -112,6 +114,7 @@ namespace GFI_with_GFS_A
             Resource.Drawable.Extra_CalcSelector_Orange,
             Resource.Drawable.Extra_RFBotSelector_Orange,
             Resource.Drawable.Extra_ProductSimulatorSelector_Orange,
+            Resource.Drawable.Extra_StorySelector_Orange,
             Resource.Drawable.Extra_CartoonSelector_Orange,
             Resource.Drawable.Extra_OSTPlayerSelector_Orange
         };
@@ -122,6 +125,7 @@ namespace GFI_with_GFS_A
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_Calc),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_RFBot),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_ProductSimulator),
+            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_Story),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_Cartoon),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_GFOSTPlayer)
         };

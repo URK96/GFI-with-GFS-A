@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Gms.Ads;
 using Android.Preferences;
 using Android.Support.Design.Widget;
 using Android.Views;
@@ -18,22 +19,21 @@ namespace GFI_with_GFS_A
         internal static string Server = "http://chlwlsgur96.ipdisk.co.kr/publist/HDD1/Data/Project/GFS/";
         internal static string SDCardPath = (string)Android.OS.Environment.ExternalStorageDirectory;
         internal static string tempPath = Path.Combine(SDCardPath, "GFDTemp");
-        internal static string AppDataPath = Path.Combine(SDCardPath, "Android", "data", "GFD");
+        internal static string AppDataPath = Path.Combine(SDCardPath, "Android", "data", "com.gfl.dic");
         internal static string DBPath = Path.Combine(AppDataPath, "DB");
         internal static string SystemPath = Path.Combine(AppDataPath, "System");
         internal static string CachePath = Path.Combine(AppDataPath, "Cache");
         internal static string LogPath = Path.Combine(SystemPath, "Log");
 
-        internal static bool EnableDynamicDB = false;
         internal static bool HasInitDollAvgAbility = false;
         internal static bool IsLowRAM = false;
         internal static bool UseLightTheme = false;
+        internal static bool HasEvent = false;
+        internal static Java.Util.Locale Language;
+
         internal static int DialogBG = 0;
         internal static int DialogBG_Vertical = 0;
         internal static int DialogBG_Download = 0;
-        internal static bool HasEvent = false;
-        internal static bool IsSeverMaintenance = false;
-        internal static Java.Util.Locale Language;
 
         internal static DataTable DollList = new DataTable();
         internal static DataTable EquipmentList = new DataTable();
@@ -90,21 +90,17 @@ namespace GFI_with_GFS_A
             };
             
             int[] count = { 0, 0, 0, 0, 0, 0 };
-            int[,] total = new int[TypeCount, AbilityCount];
+            int[,] total = new int[TypeCount, AbilityCount + 1];
 
             for (int i = 0; i < TypeCount; ++i)
-            {
                 for (int j = 0; j < AbilityCount; ++j) total[i, j] = 0;
-            }
 
             for (int i = 0; i < DollList.Rows.Count; ++i)
             {
-                DataRow dr = DollList.Rows[i];
-
-                string type = (string)dr["Type"];
+                Doll doll = new Doll(DollList.Rows[i]);
                 int index = 0;
                 
-                switch (type)
+                switch (doll.Type)
                 {
                     case "HG":
                         index = 0;
@@ -129,43 +125,64 @@ namespace GFI_with_GFS_A
                 count[index] += 1;
 
                 for (int j = 0; j < AbilityList.Length; ++j)
-                {
-                    int value = int.Parse((((string)dr[AbilityList[j]]).Split(';')[0].Split('/'))[1]);
-                    total[index, j] += value;
-                }
+                    total[index, j] += int.Parse(doll.Abilities[AbilityList[j]].Split(';')[0]);
 
-                if (type == "SG")
-                {
-                    int value = int.Parse((((string)dr["Armor"]).Split('/'))[1]);
-                    total[index, 5] += value;
-                }
+                if (doll.Type == "SG")
+                    total[index, 5] += int.Parse(doll.Abilities["Armor"].Split(';')[0]);
+
+                total[index, 6] += int.Parse(doll.Abilities["Grow"].Split(';')[0]);
             }
 
             for (int i = 0; i < TypeCount; ++i)
             {
+                DollAbilitySet DAS = null;
+
+                switch (i)
+                {
+                    case 0:
+                        DAS = new DollAbilitySet("HG");
+                        break;
+                    case 1:
+                        DAS = new DollAbilitySet("SMG");
+                        break;
+                    case 2:
+                        DAS = new DollAbilitySet("AR");
+                        break;
+                    case 3:
+                        DAS = new DollAbilitySet("RF");
+                        break;
+                    case 4:
+                        DAS = new DollAbilitySet("MG");
+                        break;
+                    case 5:
+                        DAS = new DollAbilitySet("SG");
+                        break;
+                }
+
                 for (int j = 0; j < AbilityCount; ++j)
                 {
                     int value = Convert.ToInt32(Math.Round((double)total[i, j] / count[i]));
+                    int grow = Convert.ToInt32(Math.Round((double)total[i, 6] / count[i]));
 
                     switch (j)
                     {
                         case 0:
-                            Avg_List[i].HP = value;
+                            Avg_List[i].HP = DAS.CalcAbility(AbilityList[j], value, grow, 100, 100, false);
                             break;
                         case 1:
-                            Avg_List[i].FR = value;
+                            Avg_List[i].FR = DAS.CalcAbility(AbilityList[j], value, grow, 100, 100, false);
                             break;
                         case 2:
-                            Avg_List[i].EV = value;
+                            Avg_List[i].EV = DAS.CalcAbility(AbilityList[j], value, grow, 100, 100, false);
                             break;
                         case 3:
-                            Avg_List[i].AC = value;
+                            Avg_List[i].AC = DAS.CalcAbility(AbilityList[j], value, grow, 100, 100, false);
                             break;
                         case 4:
-                            Avg_List[i].AS = value;
+                            Avg_List[i].AS = DAS.CalcAbility(AbilityList[j], value, grow, 100, 100, false);
                             break;
                         case 5:
-                            Avg_List[i].AM = value;
+                            Avg_List[i].AM = DAS.CalcAbility("Armor", value, grow, 100, 100, false);
                             break;
                     }
                 }
@@ -196,6 +213,18 @@ namespace GFI_with_GFS_A
             Resources = context.Resources;
             UseLightTheme = sharedPreferences.GetBoolean("UseLightTheme", false);
             SetDialogTheme();
+            Language = Resources.Configuration.Locale;
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTQzNDRAMzEzNjJlMzQyZTMwZHNFSDUyRjdlWXZ6WXNtelNkRWV3QVh1WmR0Q3hSbTFqZ0dKTTVsQlBOQT0=");
+            MobileAds.Initialize(context, "ca-app-pub-4576756770200148~8135834453");
+            client = new UptimeClient("m780844852-8bd2516bb93800a9eb7e3d58");
+        }
+
+        internal static void RunHelpActivity(Activity activity, string type)
+        {
+            Intent intent = new Intent(activity, typeof(HelpImageActivity));
+            intent.PutExtra("Type", type);
+            activity.StartActivity(intent);
+            activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
         }
 
         internal static async Task AnimateText(TextView view, string text)
@@ -235,7 +264,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        internal static async Task UpViewAlpha(View view, int rate, int delay)
+        /*internal static async Task UpViewAlpha(View view, int rate, int delay)
         {
             if (rate <= 0) rate = 1;
             int mag = 10 * rate;
@@ -277,7 +306,7 @@ namespace GFI_with_GFS_A
                 pb.Progress = i;
                 await Task.Delay(delay);
             }
-        }
+        }*/
 
         internal static DataRow FindDataRow<T>(DataTable table, string index, T value)
         {
@@ -457,6 +486,8 @@ namespace GFI_with_GFS_A
 
         internal static async Task<bool> CheckDBVersion()
         {
+            if (IsServerDown == true) return false;
+
             string LocalDBVerPath = Path.Combine(SystemPath, "DBVer.txt");
             string ServerDBVerPath = Path.Combine(Server, "DBVer.txt");
             string TempDBVerPath = Path.Combine(tempPath, "DBVer.txt");
@@ -488,6 +519,8 @@ namespace GFI_with_GFS_A
 
         internal static async Task<bool> CheckEventVersion()
         {
+            if (IsServerDown == true) return false;
+
             string LocalEventVerPath = Path.Combine(CachePath, "Event", "EventVer.txt");
             string ServerEventVerPath = Path.Combine(Server, "EventVer.txt");
             string TempEventVerPath = Path.Combine(tempPath, "EventVer.txt");
@@ -520,7 +553,7 @@ namespace GFI_with_GFS_A
         }
 
         //ProgressDialog 교체
-        internal static async Task UpdateDB(Activity activity)
+        internal static async Task UpdateDB(Activity activity, int TitleMsg = Resource.String.CheckDBUpdateDialog_Title, int MessageMgs = Resource.String.CheckDBUpdateDialog_Message)
         {
             string[] DBFiles = 
             {
@@ -537,8 +570,8 @@ namespace GFI_with_GFS_A
 
             ProgressDialog pd = new ProgressDialog(activity, DialogBG_Download);
             pd.SetProgressStyle(ProgressDialogStyle.Horizontal);
-            pd.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
-            pd.SetMessage(Resources.GetString(Resource.String.UpdateDBDialog_Message));
+            pd.SetTitle(TitleMsg);
+            pd.SetMessage(Resources.GetString(MessageMgs));
             pd.SetCancelable(false);
             pd.Max = 100;
             pd.Show();
@@ -547,7 +580,7 @@ namespace GFI_with_GFS_A
             {
                 for (int i = 0; i < DBFiles.Length; ++i)
                 {
-                    string url = Path.Combine(Server, "Data", "DB", DBFiles[i]);
+                    string url = Path.Combine(Server, "Data", "DB", "Test", DBFiles[i]);
                     string target = Path.Combine(tempPath, DBFiles[i]);
                     pd.SecondaryProgress = Convert.ToInt32(((double)pd.Max / DBFiles.Length) * (i + 1));
                     await wc.DownloadFileTaskAsync(url, target);
@@ -587,18 +620,16 @@ namespace GFI_with_GFS_A
             {
                 DateTime now = DateTime.Now;
 
-                //string nowDateTime = now.Year.ToString() + now.Month.ToString() + now.Day.ToString() + now.Hour.ToString() + now.Minute.ToString() + now.Second.ToString();
-                string nowDateTime = $"{now.Year}{now.Month}{now.Day}-{now.Hour}{now.Minute}{now.Second}";
+                string nowDateTime = $"{now.Year}{now.Month}{now.Day} {now.Hour}{now.Minute}{now.Second}";
                 string ErrorFileName = $"{nowDateTime}-ErrorLog.txt";
 
-                if (Directory.Exists(LogPath) == false) Directory.CreateDirectory(LogPath);
+                DirectoryInfo di = new DirectoryInfo(LogPath);
+                if (di.Exists == false) di.Create();
 
                 using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
-                {
                     sw.Write(error);
-                } 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 activity.RunOnUiThread(() => { Toast.MakeText(activity, "Error Write Log", ToastLength.Long).Show(); });
             }
@@ -610,14 +641,14 @@ namespace GFI_with_GFS_A
             {
                 DateTime now = DateTime.Now;
 
-                //string nowDateTime = now.Year.ToString() + now.Month.ToString() + now.Day.ToString() + now.Hour.ToString() + now.Minute.ToString() + now.Second.ToString();
-                string nowDateTime = $"{now.Year}/{now.Month}/{now.Day} {now.Hour}:{now.Minute}:{now.Second}";
+                string nowDateTime = $"{now.Year}{now.Month}{now.Day} {now.Hour}{now.Minute}{now.Second}";
                 string ErrorFileName = $"{nowDateTime}-ErrorLog.txt";
 
+                DirectoryInfo di = new DirectoryInfo(LogPath);
+                if (di.Exists == false) di.Create();
+
                 using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
-                {
                     sw.Write(error);
-                }
             }
             catch (Exception)
             {
@@ -659,7 +690,16 @@ namespace GFI_with_GFS_A
 
         internal static string CalcTime(int minute)
         {
-            return $"{minute / 60} : {(minute % 60).ToString("D2")}";
+            if (minute != 0) return $"{minute / 60} : {(minute % 60).ToString("D2")}";
+            else return Resources.GetString(Resource.String.Common_NonProduct);
+        }
+
+        internal static bool IsDBNullOrBlank(DataRow dr, string index)
+        {
+            if (dr[index] == DBNull.Value) return true;
+            if (string.IsNullOrWhiteSpace((string)dr[index]) == true) return true;
+
+            return false;
         }
 
         internal static double[] CalcDPS(int FireRate, int AttackSpeed, int Enemy_Armor, int Accuracy, int Enemy_Evasion, int Critical, int Dummy, int Penetration = 10, int Critical_Rate = 150)

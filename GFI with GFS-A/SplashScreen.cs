@@ -2,21 +2,16 @@
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
-using Android.Gms.Ads;
+using Android.Graphics.Drawables;
 using Android.OS;
-using Android.Preferences;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Widget;
-using Com.Syncfusion.Sfbusyindicator;
 using System;
 using System.Collections;
-using System.IO;
-using System.Net;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
-using Android.Graphics.Drawables;
 
 namespace GFI_with_GFS_A
 {
@@ -27,8 +22,6 @@ namespace GFI_with_GFS_A
         private CoordinatorLayout SnackbarLayout = null;
         private ImageView SplashImageView;
         private TextView StatusText;
-
-        private ClipDrawable drawable;
 
         private ISharedPreferencesEditor PreferenceEditor;
 
@@ -44,30 +37,18 @@ namespace GFI_with_GFS_A
 
                 if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Splash_Light);
 
-                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzAxMzlAMzEzNjJlMzMyZTMwaFNuV1Y2bEpzK25pSDlVREdzZHpPcW15TG54Slg3Z3JjQm1IYSs3SENoYz0=");
-
                 SetContentView(Resource.Layout.SplashLayout);
                 SetTitle(Resource.String.app_name);
 
-                Random r = new Random(DateTime.Now.Millisecond);
-
-                /*indicator = new SfBusyIndicator(this)
-                {
-                    AnimationType = Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.GearBox,
-                    TextColor = Android.Graphics.Color.White
-                };
-                indicator.SetBackgroundResource(Resource.Drawable.SplashBG2);
-                FindViewById<FrameLayout>(Resource.Id.SplashBusyIndicatorLayout).AddView(indicator);*/
-
                 SplashImageView = FindViewById<ImageView>(Resource.Id.SplashImageView);
 
-                if ((ETC.sharedPreferences.GetInt("SplashBG_Index", 0) == 1) || ((r.Next() % 20) == 0)) SplashImageView.SetBackgroundResource(Resource.Drawable.SplashClip_Special);
+                Random r = new Random(DateTime.Now.Millisecond);
 
-                drawable = (ClipDrawable)SplashImageView.Background;
-                drawable.SetLevel(0);
+                if ((ETC.sharedPreferences.GetInt("SplashBG_Index", 0) == 1) || ((r.Next() % 20) == 0))
+                    SplashImageView.SetImageResource(Resource.Drawable.Splash_Special);
+                else SplashImageView.SetImageResource(Resource.Drawable.SplashBG2);
 
                 StatusText = FindViewById<TextView>(Resource.Id.SplashStatusText);
-
 
                 // Check Permission
 
@@ -83,14 +64,9 @@ namespace GFI_with_GFS_A
 
         private async Task Animation()
         {
-            while (drawable.Level < 10000)
-            {
-                drawable.SetLevel(drawable.Level + 100);
-                await Task.Delay(10);
-            }
             while (SplashImageView.Alpha < 1.0f)
             {
-                SplashImageView.Alpha += 0.01f;
+                SplashImageView.Alpha += 0.1f;
                 await Task.Delay(10);
             }
         }
@@ -103,15 +79,12 @@ namespace GFI_with_GFS_A
 
             try
             {
-                //indicator.IsBusy = true;
-            
                 await Animation();
+
 
                 // Initialize
 
                 await ETC.AnimateText(StatusText, "Initializing");
-
-                MobileAds.Initialize(this, "ca-app-pub-4576756770200148~8135834453");
 
                 if (ETC.sharedPreferences.GetBoolean("CheckInitLowMemory", true) == true) CheckDeviceMemory();
                 ETC.IsLowRAM = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);
@@ -120,28 +93,33 @@ namespace GFI_with_GFS_A
                 
                 ETC.CheckInitFolder();
 
-                ETC.EnableDynamicDB = ETC.sharedPreferences.GetBoolean("DynamicDBLoad", false);
 
-              
                 // Check Server
 
-                await ETC.AnimateText(StatusText, "Check Server");
-
-                ETC.client = new UptimeSharp.UptimeClient("m780844852-8bd2516bb93800a9eb7e3d58");
-                await ETC.CheckServerNetwork();
+                /*if (ETC.sharedPreferences.GetBoolean("EnableServerCheck", false) == true)
+                {
+                    await ETC.AnimateText(StatusText, "Check Server");
+                    await ETC.CheckServerNetwork();
+                }*/
 
 
                 // Check DB Update
 
-                await ETC.AnimateText(StatusText, "Check DB Update");
-
-                if ((ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true) == true) && (ETC.IsServerDown = true))
+                if (CheckDBFiles() == false)
                 {
+                    await ETC.AnimateText(StatusText, "Download DB First");
+
                     try
                     {
-                        if (await ETC.CheckDBVersion() == true)
-                        {
+                        await ETC.CheckServerNetwork();
+
+                        if (ETC.IsServerDown == false)
                             await ETC.UpdateDB(this);
+                        else
+                        {
+                            Toast.MakeText(this, Resource.String.NoDBFileFound_Message, ToastLength.Long).Show();
+                            FinishAffinity();
+                            Process.KillProcess(Process.MyPid());
                         }
                     }
                     catch (Exception ex)
@@ -150,12 +128,11 @@ namespace GFI_with_GFS_A
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.Splash_SkipCheckUpdate, 1000, Android.Graphics.Color.DarkBlue);
                     }
                 }
-                else if (ETC.IsServerDown == true) ETC.ShowSnackbar(SnackbarLayout, Resource.String.Common_ServerMaintenance, 1000, Android.Graphics.Color.DarkBlue);
 
 
                 // Load DB
 
-                await ETC.AnimateText(StatusText, "Load DB");
+                /*await ETC.AnimateText(StatusText, "Load DB");
 
                 if (ETC.EnableDynamicDB == false)
                 {
@@ -166,7 +143,7 @@ namespace GFI_with_GFS_A
                         if (ETC.IsServerDown == false) await ETC.UpdateDB(this);
                         else break;
                     }
-                }
+                }*/
 
 
                 // Finalize & Start Main
@@ -231,7 +208,7 @@ namespace GFI_with_GFS_A
             var memoryInfo = new ActivityManager.MemoryInfo();
             activityManager.GetMemoryInfo(memoryInfo);
 
-            var totalRam = ((memoryInfo.TotalMem / 1024) / 1024);
+            var totalRam = memoryInfo.TotalMem / 1024 / 1024;
 
             if (totalRam <= 2048)
             {
@@ -242,6 +219,28 @@ namespace GFI_with_GFS_A
 
             PreferenceEditor.PutBoolean("CheckInitLowMemory", false);
             PreferenceEditor.Apply();
+        }
+
+        private bool CheckDBFiles()
+        {
+            string[] DBFiles =
+            {
+                "Doll.gfs",
+                "Equipment.gfs",
+                "Fairy.gfs",
+                "Enemy.gfs",
+                "FST.gfs",
+                "MDSupportList.gfs",
+                "FreeOP.gfs",
+                "SkillTraining.gfs",
+                "FairyAttribution.gfs"
+            };
+
+            foreach (string s in DBFiles)
+                if (System.IO.File.Exists(System.IO.Path.Combine(ETC.DBPath, s)) == false)
+                    return false;
+
+            return true;
         }
 
         public override void OnBackPressed()

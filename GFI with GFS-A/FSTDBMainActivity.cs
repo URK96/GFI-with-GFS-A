@@ -81,6 +81,8 @@ namespace GFI_with_GFS_A
                 mFSTListView.ItemClick += MFSTListView_ItemClick;
                 mFSTListView.ItemLongClick += MFSTListView_ItemLongClick;
                 mFSTListView.ScrollStateChanged += MFSTListView_ScrollStateChanged;
+
+                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true) == true)) ETC.RunHelpActivity(this, "DBList");
             }
             catch (Exception ex)
             {
