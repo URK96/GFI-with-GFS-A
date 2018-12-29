@@ -915,7 +915,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:id="@+id/DollDBDetailAbilityCardLayout"
                     cardview:cardElevation="4dp"
                     cardview:cardCornerRadius="5dp"
@@ -927,6 +927,41 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:id="@+id/DollInfo_DetailMainLayout">
+						<LinearLayout
+							android:orientation="horizontal"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+							<LinearLayout
+								android:orientation="horizontal"
+								android:layout_width="0dp"
+								android:layout_height="wrap_content"
+								android:layout_weight="1"
+								android:layout_marginRight="5dp">
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="Lv. "/>
+							<Spinner
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:id="@+id/DollDBDetailAbilityLevelSelector"/>
+							</LinearLayout>
+							<LinearLayout
+								android:orientation="horizontal"
+								android:layout_width="0dp"
+								android:layout_height="wrap_content"
+								android:layout_weight="1"
+								android:layout_marginLeft="5dp">
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="♡ "/>
+							<Spinner
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:id="@+id/DollDBDetailAbilityFavorSelector"/>
+							</LinearLayout>
+						</LinearLayout>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

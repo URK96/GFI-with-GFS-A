@@ -128,7 +128,9 @@
   <string name="DB_Recovery">DB 복구 중...</string>
   <string name="NetworkDelay">서버 응답 대기 중...</string>
   <string name="ProductPercentTable_LoadFail">제조 정보 로드 실패</string>
+  <string name="NoDBFileFound_Message">서버 점검 문제로 초기 DB를 다운로드할 수 없습니다. 나중에 다시 시도해 주세요.</string>
   <string name="CheckDBUpdateDialog_Title">DB 업데이트</string>
+  <string name="CheckDBUpdateDialog_Question">새로운 DB 버전이 존재해. 업데이트를 진행할 거야?</string>
   <string name="CheckDBUpdateDialog_Message">업데이트 확인중이야. 잠시만 기다려줘!</string>
   <string name="RepairDBDialog_Title">DB 복구중</string>
   <string name="RepairDBDialog_Message">DB 복구 중...</string>
@@ -166,7 +168,6 @@
   <string name="Common_FR">화력</string>
   <string name="Common_CL">쿨타임</string>
   <string name="Common_HP">체력</string>
-  <string name="Common_Ammo">탄약</string>
   <string name="Common_MoveSpeed">이동속도</string>
   <string name="Common_Penetration">관통</string>
   <string name="Common_Reload">재장전</string>
@@ -203,7 +204,6 @@
   <string name="Common_NormalProduct">일반제조</string>
   <string name="Common_Accessories">부속</string>
   <string name="Common_Magazine">탄환</string>
-  <string name="Common_TDoll">인형</string>
   <string name="Common_FairyType_Combat">전투</string>
   <string name="Common_FairyType_Strategy">책략</string>
   <string name="Common_Default">기본</string>
@@ -278,6 +278,8 @@
   <string name="DollDBImageViewer_DefaultCostume">기본 코스튬</string>
   <string name="DollDBImageViewer_ImageStatusNormal">정상</string>
   <string name="DollDBImageViewer_ImageStatusDamage">중상</string>
+  <string name="DollDBImageViewer_ImageCensored">검열</string>
+  <string name="DollDBImageViewer_ImageOriginal">원본</string>
   
   <!--DollDBMain-->
   <string name="DollDBMainActivity_Title">인형 목록</string>
@@ -482,9 +484,6 @@
   <string name="Calc_SkillTraining_ResultChipCountDefaultText">0 / 0 / 0</string>
   <string name="Calc_SkillTraining_ResultTimeCountText">* 총 소요시간 *</string>
   <string name="Calc_SkillTraining_ResultTimeCountDefaultText">0 시간</string>
-  
-  <!--DollDB_ImageViewer-->
-  <string name="DollDB_ImageViewer_ImageStatusDefaultText">정상</string>
   
   <!--DollDBDetailLayout-->
   <string name="DollDBDetailLayout_SDAnimationButtonText">SD 애니메이션 (Beta)</string>

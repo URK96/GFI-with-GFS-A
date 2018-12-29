@@ -174,13 +174,9 @@ namespace GFI_with_GFS_A
                     await Task.Delay(100);
                 }
 
-                //ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_StartUpHello, Snackbar.LengthShort, Android.Graphics.Color.DarkCyan);
-
                 FindViewById<LinearLayout>(Resource.Id.MainMenuButtonLayout1).BringToFront();
 
-                if(ETC.sharedPreferences.GetBoolean("ShowNewFeatureDialog", true) == true) ShowNewVersionFeatureDialog();
-
-                LoadTopNotification();
+                CheckNetworkData();
 
                 if (ETC.sharedPreferences.GetString("StartAppMode", "0") != "0") RunStartMode();
             }
@@ -191,7 +187,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ShowNewVersionFeatureDialog()
+        /*private void ShowNewVersionFeatureDialog()
         {
             Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG_Vertical);
             ad.SetTitle(Resource.String.NewFeatureDialog_Title);
@@ -211,7 +207,7 @@ namespace GFI_with_GFS_A
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_NotificationInitializeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
-        }
+        }*/
 
         private void SetMainMenuEvent(int mode)
         {
@@ -303,33 +299,50 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task LoadTopNotification()
+        private void CheckNetworkData()
         {
-            string url = Path.Combine(ETC.Server, "Android_Notification.txt");
-            string notification = "";
-
-            try
+            Task.Run(async () =>
             {
-                await ETC.CheckServerNetwork();
-
-                if (ETC.IsServerDown == true) NotificationView.Text = "& Server is Maintenance &";
-                else
+                try
                 {
-                    using (WebClient wc = new WebClient())
+                    // Check Server Status
+
+                    await ETC.CheckServerNetwork();
+
+
+                    // Get Notification
+
+                    string url = Path.Combine(ETC.Server, "Android_Notification.txt");
+                    string notification = "";
+
+                    if (ETC.IsServerDown == true) NotificationView.Text = "& Server is Maintenance &";
+                    else
                     {
-                        notification = wc.DownloadString(url);
+                        using (WebClient wc = new WebClient())
+                            notification = wc.DownloadString(url);
+
+                        NotificationView.Text = notification;
                     }
 
-                    NotificationView.Text = notification;
-                }
 
-                if (ETC.sharedPreferences.GetBoolean("NotificationAnimationOption", true)) RunOnUiThread(() => { NotificationView.Selected = true; });
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_NotificationInitializeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
-            }
+                    // Check DB Version
+
+                    if (await ETC.CheckDBVersion() == true)
+                    {
+                        Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
+                        ad.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
+                        ad.SetMessage(Resource.String.CheckDBUpdateDialog_Question);
+                        ad.SetCancelable(true);
+                        ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                        ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { ETC.UpdateDB(this); });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ETC.LogError(this, ex.ToString());
+                    ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_NotificationInitializeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                }
+            });
         }
 
         private void MainMenuButton_Click(object sender, EventArgs e)
@@ -348,7 +361,7 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.MDMainButton:
-                        StartActivity(typeof(Live2DViewer));
+                        ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
                         break;
                     case Resource.Id.GFDInfoMainButton:
                         StartActivity(typeof(GFDInfoActivity));
@@ -426,6 +439,8 @@ namespace GFI_with_GFS_A
 
         private async void ExtraMenuButton_Click(object sender, EventArgs e)
         {
+            await Task.Delay(10);
+
             try
             {
                 int id = (sender as Button).Id;
@@ -444,7 +459,6 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.CalcExtraButton:
-                        //await Task.Run(() => { if ((ETC.EnableDynamicDB == true) && (ETC.SkillTrainingList.TableName == "")) ETC.LoadDBSync(ETC.SkillTrainingList, "SkillTraining.gfs", false); });
                         StartActivity(typeof(CalcMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;

@@ -118,7 +118,7 @@ namespace GFI_with_GFS_A
             StartAppMode.SetEntryValues(new string[] { "0", "1", "2", "3", "4", "5", "6", "7" });
             StartAppMode.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("StartAppMode", "0")));
 
-            SwitchPreference NotificationAnimationOption = (SwitchPreference)FindPreference("NotificationAnimationOption");
+            /*SwitchPreference NotificationAnimationOption = (SwitchPreference)FindPreference("NotificationAnimationOption");
             if (ETC.UseLightTheme == true) NotificationAnimationOption.SetIcon(Resource.Drawable.NotificationAnimationIcon_WhiteTheme);
             else NotificationAnimationOption.SetIcon(Resource.Drawable.NotificationAnimationIcon);
             NotificationAnimationOption.Checked = ETC.sharedPreferences.GetBoolean("NotificationAnimationOption", true);
@@ -126,7 +126,7 @@ namespace GFI_with_GFS_A
             {
                 SaveSetting.PutBoolean("NotificationAnimationOption", NotificationAnimationOption.Checked);
                 SaveSetting.Apply();
-            };
+            };*/
 
             SwitchPreference LowMemoryOption = (SwitchPreference)FindPreference("LowMemoryOption");
             if (ETC.UseLightTheme == true) LowMemoryOption.SetIcon(Resource.Drawable.LowMemoryOptionIcon_WhiteTheme);

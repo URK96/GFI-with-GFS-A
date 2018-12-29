@@ -33,6 +33,12 @@ namespace GFI_with_GFS_A
 
         public DollAbilitySet(string type)
         {
+            NormalGrow_Basic = new Dictionary<string, double[]>();
+            NormalGrow_Grow = new Dictionary<string, double[]>();
+            ModGrow_Basic = new Dictionary<string, double[]>();
+            ModGrow_Grow = new Dictionary<string, double[]>();
+            Attributes = new Dictionary<string, double>();
+
             NormalGrow_Basic.Add("HP", new double[] { 55, 0.555 });
             NormalGrow_Basic.Add("FireRate", new double[] { 16, 0 });
             NormalGrow_Basic.Add("Accuracy", new double[] { 5, 0 });
@@ -107,11 +113,13 @@ namespace GFI_with_GFS_A
                 {
                     case false:
                         basic = NormalGrow_Basic[ability];
-                        grow = NormalGrow_Grow[ability];
+                        if ((ability != "HP") && (ability != "Armor"))
+                            grow = NormalGrow_Grow[ability];
                         break;
                     case true:
                         basic = ModGrow_Basic[ability];
-                        grow = ModGrow_Grow[ability];
+                        if ((ability != "HP") && (ability != "Armor"))
+                            grow = ModGrow_Grow[ability];
                         break;
                 }
 

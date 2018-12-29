@@ -23,8 +23,6 @@ namespace GFI_with_GFS_A
         private ImageView SplashImageView;
         private TextView StatusText;
 
-        private ClipDrawable drawable;
-
         private ISharedPreferencesEditor PreferenceEditor;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -68,7 +66,7 @@ namespace GFI_with_GFS_A
         {
             while (SplashImageView.Alpha < 1.0f)
             {
-                SplashImageView.Alpha += 1f;
+                SplashImageView.Alpha += 0.1f;
                 await Task.Delay(10);
             }
         }
@@ -95,27 +93,33 @@ namespace GFI_with_GFS_A
                 
                 ETC.CheckInitFolder();
 
-              
+
                 // Check Server
-                
-                if (ETC.sharedPreferences.GetBoolean("EnableServerCheck", false) == true)
+
+                /*if (ETC.sharedPreferences.GetBoolean("EnableServerCheck", false) == true)
                 {
                     await ETC.AnimateText(StatusText, "Check Server");
                     await ETC.CheckServerNetwork();
-                }
-                    
+                }*/
+
 
                 // Check DB Update
 
-                await ETC.AnimateText(StatusText, "Check DB Update");
-
-                if ((ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true) == true) && (ETC.IsServerDown = true))
+                if (CheckDBFiles() == false)
                 {
+                    await ETC.AnimateText(StatusText, "Download DB First");
+
                     try
                     {
-                        if (await ETC.CheckDBVersion() == true)
-                        {
+                        await ETC.CheckServerNetwork();
+
+                        if (ETC.IsServerDown == false)
                             await ETC.UpdateDB(this);
+                        else
+                        {
+                            Toast.MakeText(this, Resource.String.NoDBFileFound_Message, ToastLength.Long).Show();
+                            FinishAffinity();
+                            Process.KillProcess(Process.MyPid());
                         }
                     }
                     catch (Exception ex)
@@ -124,7 +128,6 @@ namespace GFI_with_GFS_A
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.Splash_SkipCheckUpdate, 1000, Android.Graphics.Color.DarkBlue);
                     }
                 }
-                else if (ETC.IsServerDown == true) ETC.ShowSnackbar(SnackbarLayout, Resource.String.Common_ServerMaintenance, 1000, Android.Graphics.Color.DarkBlue);
 
 
                 // Load DB
@@ -216,6 +219,28 @@ namespace GFI_with_GFS_A
 
             PreferenceEditor.PutBoolean("CheckInitLowMemory", false);
             PreferenceEditor.Apply();
+        }
+
+        private bool CheckDBFiles()
+        {
+            string[] DBFiles =
+            {
+                "Doll.gfs",
+                "Equipment.gfs",
+                "Fairy.gfs",
+                "Enemy.gfs",
+                "FST.gfs",
+                "MDSupportList.gfs",
+                "FreeOP.gfs",
+                "SkillTraining.gfs",
+                "FairyAttribution.gfs"
+            };
+
+            foreach (string s in DBFiles)
+                if (System.IO.File.Exists(System.IO.Path.Combine(ETC.DBPath, s)) == false)
+                    return false;
+
+            return true;
         }
 
         public override void OnBackPressed()

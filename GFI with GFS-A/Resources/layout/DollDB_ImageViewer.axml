@@ -31,12 +31,22 @@
                 android:layout_weight="1"
                 android:text="@string/RefreshImageCacheText"
                 android:id="@+id/DollDBImageViewerRefreshImageCacheButton" />
-            <Button
+            <ToggleButton
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/DollDB_ImageViewer_ImageStatusDefaultText"
+				android:checked="false"
+                android:textOff="@string/DollDBImageViewer_ImageStatusNormal"
+				android:textOn="@string/DollDBImageViewer_ImageStatusDamage"
                 android:id="@+id/DollDBImageViewerChangeStateButton" />
+			<ToggleButton
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:checked="true"
+				android:textOff="@string/DollDBImageViewer_ImageOriginal"
+				android:textOn="@string/DollDBImageViewer_ImageCensored"
+				android:id="@+id/DollDBImageViewerCensoredOption"/>
         </LinearLayout>
 		<uk.co.senab.photoview.PhotoView
 			android:layout_width="match_parent"

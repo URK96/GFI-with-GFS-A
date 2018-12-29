@@ -10,7 +10,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 using UK.CO.Senab.Photoview;
 
@@ -26,7 +25,8 @@ namespace GFI_with_GFS_A
         private Spinner CostumeList;
         private ProgressBar LoadProgressBar;
         private Button RefreshCacheButton;
-        private Button ChangeStateButton;
+        private ToggleButton ChangeStateButton;
+        private ToggleButton CensoredOption;
         private PhotoView DollImageView;
         private TextView ImageStatus;
 
@@ -36,6 +36,7 @@ namespace GFI_with_GFS_A
         private int CostumeIndex = 0;
         private int ModIndex = 0;
         private bool HasCensored = false;
+        private bool EnableCensored = true;
         private string[] CensorType;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -55,11 +56,8 @@ namespace GFI_with_GFS_A
 
                 doll = new Doll(ETC.FindDataRow(ETC.DollList, "DicNumber", int.Parse(temp[0])));
 
-                if (ETC.sharedPreferences.GetBoolean("DollImageCensoredUnlock", false) == false)
-                {
-                    HasCensored = doll.HasCensored;
-                    if (HasCensored == true) CensorType = doll.CensorType;
-                }
+                HasCensored = doll.HasCensored;
+                if (HasCensored == true) CensorType = doll.CensorType;
 
                 DollImageView = FindViewById<PhotoView>(Resource.Id.DollDBImageViewerImageView);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBImageViewerSnackbarLayout);
@@ -68,13 +66,32 @@ namespace GFI_with_GFS_A
                 LoadProgressBar = FindViewById<ProgressBar>(Resource.Id.DollDBImageViewerLoadProgress);
                 LoadProgressBar.Visibility = ViewStates.Visible;
                 RefreshCacheButton = FindViewById<Button>(Resource.Id.DollDBImageViewerRefreshImageCacheButton);
-                RefreshCacheButton.Click += delegate { LoadImage(CostumeIndex, IsDamage, true); };
-                ChangeStateButton = FindViewById<Button>(Resource.Id.DollDBImageViewerChangeStateButton);
-                ChangeStateButton.Click += ChangeStateButton_Click;
+                RefreshCacheButton.Click += delegate { LoadImage(CostumeIndex, true); };
+                ChangeStateButton = FindViewById<ToggleButton>(Resource.Id.DollDBImageViewerChangeStateButton);
+                ChangeStateButton.CheckedChange += (object sender, CompoundButton.CheckedChangeEventArgs e) =>
+                {
+                    IsDamage = e.IsChecked;
+                    CensoredOption.Enabled = CheckCensorType();
+                    if (CensoredOption.Enabled == true) CensoredOption.Checked = true;
+                    LoadImage(CostumeIndex, false);
+                };
+                CensoredOption = FindViewById<ToggleButton>(Resource.Id.DollDBImageViewerCensoredOption);
+                if (HasCensored == true) CensoredOption.Checked = true;
+                else CensoredOption.Checked = false;
+                CensoredOption.CheckedChange += (object sender, CompoundButton.CheckedChangeEventArgs e) =>
+                {
+                    EnableCensored = e.IsChecked;
+                    LoadImage(CostumeIndex, false);
+                };
                 ImageStatus = FindViewById<TextView>(Resource.Id.DollDBImageViewerImageStatus);
 
+                if (ETC.sharedPreferences.GetBoolean("ImageCensoredUnlock", false) == true)
+                    CensoredOption.Visibility = ViewStates.Visible;
+                else
+                    CensoredOption.Visibility = ViewStates.Gone;
+
                 LoadCostumeList();
-                LoadImage(0, IsDamage, false);
+                LoadImage(0, false);
             }
             catch (Exception ex)
             {
@@ -83,19 +100,15 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ChangeStateButton_Click(object sender, EventArgs e)
-        {
-            IsDamage = !IsDamage;
-
-            LoadImage(CostumeIndex, IsDamage, false);
-        }
-
         private void CostumeList_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             IsDamage = false;
             CostumeIndex = e.Position;
+            ChangeStateButton.Checked = false;
+            CensoredOption.Enabled = CheckCensorType();
+            if (CensoredOption.Enabled == true) CensoredOption.Checked = true;
 
-            LoadImage(CostumeIndex, IsDamage, false);
+            LoadImage(CostumeIndex, false);
         }
 
         private void LoadCostumeList()
@@ -123,7 +136,31 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async void LoadImage(int CostumeIndex, bool Damage, bool IsRefresh)
+        private bool CheckCensorType()
+        {
+            string censor_type = "";
+
+            switch (CostumeIndex)
+            {
+                case 0:
+                    if (IsDamage == true) censor_type = "D";
+                    else censor_type = "N";
+                    break;
+                default:
+                    censor_type = $"C{CostumeIndex}";
+                    if (IsDamage == true) censor_type += "D";
+                    break;
+            }
+
+            foreach (string type in CensorType)
+            {
+                if (type == censor_type) return true;
+            }
+
+            return false;
+        }
+
+        private async void LoadImage(int CostumeIndex, bool IsRefresh)
         {
             try
             {
@@ -134,29 +171,10 @@ namespace GFI_with_GFS_A
                 string ImageName = doll.DicNumber.ToString();
                 if (CostumeIndex >= 1) ImageName += $"_{CostumeIndex + 1}";
                 else if ((CostumeIndex == 0) && (ModIndex == 3)) ImageName += "_M";
-                if (Damage == true) ImageName += "_D";
+                if (IsDamage == true) ImageName += "_D";
 
-                if ((HasCensored == true) && (ModIndex != 3))
-                {
-                    string censor_type = "";
-
-                    switch (CostumeIndex)
-                    {
-                        case 0:
-                            if (Damage == true) censor_type = "D";
-                            else censor_type = "N";
-                            break;
-                        default:
-                            censor_type = "C" + CostumeIndex;
-                            if (Damage == true) censor_type += "D";
-                            break;
-                    }
-
-                    foreach (string type in CensorType)
-                    {
-                        if (type == censor_type) ImageName += "_C";
-                    }
-                }
+                if ((HasCensored == true) && (EnableCensored == true) && (ModIndex != 3))
+                    if (CheckCensorType() == true) ImageName += "_C";
 
                 string ImagePath = Path.Combine(ETC.CachePath, "Doll", "Normal", $"{ImageName}.gfdcache");
                 string URL = Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", $"{ImageName}.png");

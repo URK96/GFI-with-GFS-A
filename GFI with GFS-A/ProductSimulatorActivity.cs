@@ -433,6 +433,17 @@ namespace GFI_with_GFS_A
                 int pFood = CalcResource("Food");
                 int pParts = CalcResource("Parts");
 
+                if ((pManPower == 666) && (pAmmo == 666) && (pFood == 666) && (pParts == 666))
+                    if (ETC.sharedPreferences.GetBoolean("ImageCensoredUnlock", false) == false)
+                    {
+                        ISharedPreferencesEditor editor = ETC.sharedPreferences.Edit();
+                        editor.PutBoolean("ImageCensoredUnlock", true);
+                        editor.Commit();
+
+                        Toast.MakeText(this, "Image Censor Option unlock", ToastLength.Short).Show();
+                    }
+                    else Toast.MakeText(this, "Image Censor Option already unlock", ToastLength.Short).Show();
+
                 AvailableType.Add("SMG");
                 switch (Type)
                 {

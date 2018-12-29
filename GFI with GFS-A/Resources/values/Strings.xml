@@ -124,7 +124,9 @@
   <string name="DB_Recovery">Recovering DB...</string>
   <string name="NetworkDelay">Waiting for server response...</string>
   <string name="ProductPercentTable_LoadFail">Failed to load Production Info</string>
+  <string name="NoDBFileFound_Message">Initial DB cannot be downloaded due to server check issue. Try again later.</string>
   <string name="CheckDBUpdateDialog_Title">Update DB</string>
+  <string name="CheckDBUpdateDialog_Question">A new DB update is available. Are you going to proceed with the update?</string>
   <string name="CheckDBUpdateDialog_Message">Checking for updates. Wait a minute!</string>
   <string name="RepairDBDialog_Title">DB Repair</string>
   <string name="RepairDBDialog_Message">Repairing DB...</string>
@@ -162,7 +164,6 @@
   <string name="Common_FR">Damage</string>
   <string name="Common_CL">CoolDown</string>
   <string name="Common_HP">HP</string>
-  <string name="Common_Ammo">Ammo</string>
   <string name="Common_MoveSpeed">Move Speed</string>
   <string name="Common_Penetration">Penetration</string>
   <string name="Common_Reload">Reload</string>
@@ -199,7 +200,6 @@
   <string name="Common_NormalProduct">Standard Production</string>
   <string name="Common_Accessories">Accessories</string>
   <string name="Common_Magazine">Magazine</string>
-  <string name="Common_TDoll">T-Doll</string>
   <string name="Common_FairyType_Combat">Combat</string>
   <string name="Common_FairyType_Strategy">Strategy</string>
   <string name="Common_Default">Default</string>
@@ -274,6 +274,8 @@
   <string name="DollDBImageViewer_DefaultCostume">Basic Costume</string>
   <string name="DollDBImageViewer_ImageStatusNormal">Normal</string>
   <string name="DollDBImageViewer_ImageStatusDamage">Damaged</string>
+  <string name="DollDBImageViewer_ImageCensored">Censor</string>
+  <string name="DollDBImageViewer_ImageOriginal">Original</string>
   
   <!--DollDBMain-->
   <string name="DollDBMainActivity_Title">T-Doll List</string>
@@ -480,9 +482,6 @@
   <string name="Calc_SkillTraining_ResultChipCountDefaultText">0 / 0 / 0</string>
   <string name="Calc_SkillTraining_ResultTimeCountText">* Total Time *</string>
   <string name="Calc_SkillTraining_ResultTimeCountDefaultText">0 Hour</string>
-  
-  <!--DollDB_ImageViewer-->
-  <string name="DollDB_ImageViewer_ImageStatusDefaultText">Normal</string>
   
   <!--DollDBDetailLayout-->
   <string name="DollDBDetailLayout_SDAnimationButtonText">SD Animation (Beta)</string>

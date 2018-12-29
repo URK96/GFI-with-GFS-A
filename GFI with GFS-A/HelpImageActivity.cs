@@ -33,7 +33,7 @@ namespace GFI_with_GFS_A
             HelpImageView.Click += delegate
             {
                 Finish();
-                OverridePendingTransition(Resource.Animation.Fadein, Resource.Animation.Fadeout);
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             };
 
             SetImage();
@@ -42,20 +42,25 @@ namespace GFI_with_GFS_A
         private void SetImage()
         {
             int ImageId = 0;
+            ISharedPreferencesEditor SettingEditor = ETC.sharedPreferences.Edit();
 
             switch (ImageType)
             {
                 case "DBList":
                     ImageId = Resource.Drawable.Help_DBList;
+                    SettingEditor.PutBoolean("Help_DBList", false);
                     break;
                 case "DollDBDetail":
                     ImageId = Resource.Drawable.Help_DollDBDetail;
+                    SettingEditor.PutBoolean("Help_DollDBDetail", false);
                     break;
                 case "EquipDBDetail":
                     ImageId = Resource.Drawable.Help_EquipDBDetail;
+                    SettingEditor.PutBoolean("Help_EquipDBDetail", false);
                     break;
                 case "FairyDBDetail":
                     ImageId = Resource.Drawable.Help_FairyDBDetail;
+                    SettingEditor.PutBoolean("Help_FairyDBDetail", false);
                     break;
                 case "Calc":
                     break;
@@ -69,7 +74,7 @@ namespace GFI_with_GFS_A
         public override void OnBackPressed()
         {
             base.OnBackPressed();
-            OverridePendingTransition(Resource.Animation.Fadein, Resource.Animation.Fadeout);
+            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
         }
     }
 }

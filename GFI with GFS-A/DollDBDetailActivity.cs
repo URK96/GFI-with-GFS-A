@@ -36,6 +36,12 @@ namespace GFI_with_GFS_A
         private int ModIndex = 0;
         private int V_Costume_Index = 0;
         private List<string> VoiceList = new List<string>();
+
+        internal static int Ability_Level = 1;
+        private List<int> Level_List = new List<int>();
+        internal static int Ability_Favor = 0;
+        private List<string> Favor_List = new List<string>();
+        internal static DollAbilitySet DAS;
         internal static int[] AbilityValues = new int[6];
 
         private bool IsExtraFeatureOpen = false;
@@ -57,6 +63,8 @@ namespace GFI_with_GFS_A
         private FloatingActionButton NamuWikiFAB;
         private FloatingActionButton InvenFAB;
         private FloatingActionButton BaseFAB;
+        private Spinner AbilityLevelSelector;
+        private Spinner AbilityFavorSelector;
         private Spinner ChartCompareList;
         private SfChart chart;
 
@@ -81,6 +89,8 @@ namespace GFI_with_GFS_A
 
                 DollInfoDR = ETC.FindDataRow(ETC.DollList, "DicNumber", Intent.GetIntExtra("DicNum", 0));
                 doll = new Doll(DollInfoDR);
+
+                DAS = new DollAbilitySet(doll.Type);
 
                 adview = FindViewById<AdView>(Resource.Id.DollDBDetail_adView);
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.DollDBDetailInitLoadProgress);
@@ -129,6 +139,35 @@ namespace GFI_with_GFS_A
                 InvenFAB.SetImageResource(Resource.Drawable.Inven_Logo);
                 BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB3);
                 BaseFAB.SetImageResource(Resource.Drawable.Base36_Logo);
+                AbilityLevelSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityLevelSelector);
+                AbilityLevelSelector.ItemSelected += (object sender, AdapterView.ItemSelectedEventArgs e) => 
+                {
+                    Ability_Level = Level_List[e.Position];
+                    LoadAbility();
+                };
+                AbilityFavorSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityFavorSelector);
+                AbilityFavorSelector.ItemSelected += (object sender, AdapterView.ItemSelectedEventArgs e) => 
+                {
+                    switch (e.Position)
+                    {
+                        case 0:
+                            Ability_Favor = 5;
+                            break;
+                        case 1:
+                            Ability_Favor = 50;
+                            break;
+                        case 2:
+                            Ability_Favor = 115;
+                            break;
+                        case 3:
+                            Ability_Favor = 165;
+                            break;
+                        case 4:
+                            Ability_Favor = 195;
+                            break;
+                    }
+                    LoadAbility();
+                };
                 ChartCompareList = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityChartCompareList);
                 ChartCompareList.ItemSelected += ChartCompareList_ItemSelected;
                 chart = FindViewById<SfChart>(Resource.Id.DollDBDetailAbilityRadarChart);
@@ -151,6 +190,7 @@ namespace GFI_with_GFS_A
                 FABTimer.Elapsed += FABTimer_Elapsed;
 
                 InitCompareList();
+                ListAbilityLevelFavor();
 
                 InitLoadProcess(false);
 
@@ -179,6 +219,54 @@ namespace GFI_with_GFS_A
                     b.Text = "▽▽▽";
                     FindViewById<LinearLayout>(Resource.Id.DollDBExtraFeatureLayout).Visibility = ViewStates.Gone;
                     break;
+            }
+        }
+
+        private void ListAbilityLevelFavor()
+        {
+            try
+            {
+                Level_List.Clear();
+                Favor_List.Clear();
+
+                Favor_List.Add("0 ~ 10");
+                Favor_List.Add("11 ~ 90");
+                Favor_List.Add("91 ~ 140");
+
+                switch (ModIndex)
+                {
+                    case 0:
+                        for (int i = 1; i <= 100; ++i) Level_List.Add(i);
+                        Favor_List.Add("141 ~ 150");
+                        break;
+                    case 1:
+                        for (int i = 100; i <= 110; ++i) Level_List.Add(i);
+                        Favor_List.Add("141 ~ 150");
+                        break;
+                    case 2:
+                        for (int i = 110; i <= 115; ++i) Level_List.Add(i);
+                        Favor_List.Add("141 ~ 150");
+                        break;
+                    case 3:
+                        for (int i = 115; i <= 120; ++i) Level_List.Add(i);
+                        Favor_List.Add("141 ~ 190");
+                        Favor_List.Add("191 ~ 200");
+                        break;
+                }
+
+                var adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, Level_List.ToArray());
+                adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
+
+                var adapter2 = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, Favor_List.ToArray());
+                adapter2.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
+
+                AbilityLevelSelector.Adapter = adapter;
+                AbilityFavorSelector.Adapter = adapter2;
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, "Error List Level", Snackbar.LengthShort);
             }
         }
 
@@ -1001,46 +1089,79 @@ namespace GFI_with_GFS_A
 
                 // 인형 능력치 초기화
 
-                int delay = 1;
+                await LoadAbility();
 
+                double[] DPS = ETC.CalcDPS(AbilityValues[1], AbilityValues[4], 0, AbilityValues[3], 3, int.Parse(doll.Abilities["Critical"]), 5);
+                FindViewById<TextView>(Resource.Id.DollInfoDPSStatus).Text = $"{DPS[0].ToString("F2")} ~ {DPS[1].ToString("F2")}";
+
+                if (ETC.UseLightTheme == true) SetCardTheme();
+
+                LoadChart(ChartCompareList.SelectedItemPosition);
+
+                ShowCardViewVisibility();
+                ShowTitleSubLayout();
+                HideFloatingActionButtonAnimation();
+
+                //LoadAD();
+            }
+            catch (WebException ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
+                InitLoadProcess(false);
+                return;
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+            }
+            finally
+            {
+                InitLoadProgressBar.Visibility = ViewStates.Invisible;
+            }
+        }
+
+        private async Task LoadAbility()
+        {
+            await Task.Delay(10);
+
+            try
+            {
                 string[] abilities = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
                 int[] Progresses = { Resource.Id.DollInfoHPProgress, Resource.Id.DollInfoFRProgress, Resource.Id.DollInfoEVProgress, Resource.Id.DollInfoACProgress, Resource.Id.DollInfoASProgress };
                 int[] ProgressMaxTexts = { Resource.Id.DollInfoHPProgressMax, Resource.Id.DollInfoFRProgressMax, Resource.Id.DollInfoEVProgressMax, Resource.Id.DollInfoACProgressMax, Resource.Id.DollInfoASProgressMax };
                 int[] StatusTexts = { Resource.Id.DollInfoHPStatus, Resource.Id.DollInfoFRStatus, Resource.Id.DollInfoEVStatus, Resource.Id.DollInfoACStatus, Resource.Id.DollInfoASStatus };
 
+                string[] grow_ratio = doll.Abilities["Grow"].Split(';');
+
                 for (int i = 0; i < Progresses.Length; ++i)
                 {
                     FindViewById<TextView>(ProgressMaxTexts[i]).Text = FindViewById<ProgressBar>(Progresses[i]).Max.ToString();
 
-                    int MinValue = 0;
+                    string[] basic_ratio = doll.Abilities[abilities[i]].Split(';');
 
-                    string temp = doll.Abilities[abilities[i]].Split('/')[0];
-
-                    if (temp.Contains("?") == true) MinValue = 0;
-                    else MinValue = int.Parse(temp);
-
-                    int MaxValue = 0;
+                    int value = 0;
 
                     switch (ModIndex)
                     {
                         case 0:
-                            MaxValue = int.Parse((((string)DollInfoDR[abilities[i]]).Split(';')[0].Split('/'))[1]);
+                            value = DAS.CalcAbility(abilities[i], int.Parse(basic_ratio[0]), int.Parse(grow_ratio[0]), Ability_Level, Ability_Favor, false);
                             break;
                         case 1:
                         case 2:
                         case 3:
-                            MaxValue = int.Parse((((string)DollInfoDR[abilities[i]]).Split(';'))[ModIndex]);
+                            value = DAS.CalcAbility(abilities[i], int.Parse(basic_ratio[1]), int.Parse(grow_ratio[1]), Ability_Level, Ability_Favor, false);
                             break;
                     }
 
                     ProgressBar pb = FindViewById<ProgressBar>(Progresses[i]);
 
-                    pb.Progress = MinValue;
-                    pb.SecondaryProgress = MaxValue;
+                    pb.Progress = value;
 
-                    AbilityValues[i] = MaxValue;
+                    AbilityValues[i] = value;
 
-                    FindViewById<TextView>(StatusTexts[i]).Text = $"{MinValue}/{MaxValue} ({doll.AbilityGrade[i]})";
+                    FindViewById<TextView>(StatusTexts[i]).Text = $"{value} ({doll.AbilityGrade[i]})";
                 }
 
                 if ((doll.Type == "MG") || (doll.Type == "SG"))
@@ -1048,7 +1169,7 @@ namespace GFI_with_GFS_A
                     FindViewById<LinearLayout>(Resource.Id.DollInfoBulletLayout).Visibility = ViewStates.Visible;
                     FindViewById<LinearLayout>(Resource.Id.DollInfoReloadLayout).Visibility = ViewStates.Visible;
 
-                    double ReloadTime = CalcReloadTime(doll, doll.Type);
+                    double ReloadTime = CalcReloadTime(doll, doll.Type, AbilityValues[4]);
                     int Bullet = 0;
 
                     if (doll.HasMod == false) Bullet = int.Parse(doll.Abilities["Bullet"]);
@@ -1072,54 +1193,36 @@ namespace GFI_with_GFS_A
 
                     FindViewById<TextView>(Resource.Id.DollInfoAMProgressMax).Text = FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress).Max.ToString();
 
-                    int MinValue = 0;
-                    int MaxValue = int.Parse(doll.Abilities["Armor"].Split('/')[1]);
+                    string[] basic_ratio = doll.Abilities["Armor"].Split(';');
+                    int value = 0;
 
-                    string temp = doll.Abilities["Armor"].Split('/')[0];
+                    switch (ModIndex)
+                    {
+                        case 0:
+                            value = DAS.CalcAbility("Armor", int.Parse(basic_ratio[0]), int.Parse(grow_ratio[0]), 100, 50, false);
+                            break;
+                        case 1:
+                        case 2:
+                        case 3:
+                            value = DAS.CalcAbility("Armor", int.Parse(basic_ratio[1]), int.Parse(grow_ratio[1]), 100, 50, false);
+                            break;
+                    }
 
-                    if (temp.Contains("?") == true) MinValue = 0;
-                    else MinValue = int.Parse(temp);
+                    FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress).Progress = value;
 
-                    FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress).Progress = MinValue;
-                    FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress).SecondaryProgress = MaxValue;
-
-                    AbilityValues[5] = MaxValue;
-                    FindViewById<TextView>(Resource.Id.DollInfoAMStatus).Text = $"{MinValue}/{MaxValue} ({doll.AbilityGrade[6]})";
+                    AbilityValues[5] = value;
+                    FindViewById<TextView>(Resource.Id.DollInfoAMStatus).Text = $"{value} ({doll.AbilityGrade[6]})";
                 }
                 else
                 {
                     AbilityValues[5] = 0;
                     FindViewById<LinearLayout>(Resource.Id.DollInfoAMLayout).Visibility = ViewStates.Gone;
                 }
-
-                double[] DPS = ETC.CalcDPS(AbilityValues[1], AbilityValues[4], 0, AbilityValues[3], 3, int.Parse(doll.Abilities["Critical"]), 5);
-                FindViewById<TextView>(Resource.Id.DollInfoDPSStatus).Text = $"{DPS[0]} ~ {DPS[1]}";
-
-                if (ETC.UseLightTheme == true) SetCardTheme();
-
-                LoadChart(ChartCompareList.SelectedItemPosition);
-
-                ShowCardViewVisibility();
-                ShowTitleSubLayout();
-                HideFloatingActionButtonAnimation();
-
-                LoadAD();
-            }
-            catch (WebException ex)
-            {
-                ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
-                InitLoadProcess(false);
-                return;
             }
             catch (Exception ex)
             {
                 ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
-            }
-            finally
-            {
-                InitLoadProgressBar.Visibility = ViewStates.Invisible;
+                ETC.ShowSnackbar(SnackbarLayout, "Error Load Ability", Snackbar.LengthShort);
             }
         }
 
@@ -1227,6 +1330,8 @@ namespace GFI_with_GFS_A
 
                 ModButton.SetBackgroundColor(Android.Graphics.Color.ParseColor("#54A716"));
 
+                ListAbilityLevelFavor();
+
                 InitLoadProcess(false);
             }
             catch (Exception ex)
@@ -1236,16 +1341,14 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private double CalcReloadTime(Doll doll, string type)
+        private double CalcReloadTime(Doll doll, string type, int AttackSpeed)
         {
             double result = 0;
 
             switch (type)
             {
                 case "MG":
-                    int tAS = 0;
-                    if (doll.HasMod == true) tAS = int.Parse(doll.Abilities["AttackSpeed"].Split('/')[1].Split(';')[0]);
-                    else tAS = int.Parse(doll.Abilities["AttackSpeed"].Split('/')[1]);
+                    int tAS = AttackSpeed;
                     result = 4 + (200 / tAS);
                     break;
                 case "SG":
@@ -1337,21 +1440,20 @@ namespace GFI_with_GFS_A
                     string[] abilities = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
 
                     int[] CompareAbilityValues = { 0, 0, 0, 0, 0, 0 };
+                    int grow_ratio = int.Parse(c_doll.Abilities["Grow"].Split(';')[0]);
 
                     for (int i = 0; i < abilities.Length; ++i)
                     {
-                        string data = c_doll.Abilities[abilities[i]];
+                        int base_ratio = int.Parse(c_doll.Abilities[abilities[i]].Split(';')[0]);
 
-                        if (c_doll.HasMod == true) CompareAbilityValues[i] = int.Parse(data.Split(';')[0].Split('/')[1]);
-                        else CompareAbilityValues[i] = int.Parse(data.Split('/')[1]);
+                        CompareAbilityValues[i] = DAS.CalcAbility(abilities[i], base_ratio, grow_ratio, Ability_Level, Ability_Favor, false);
                     }
 
                     if (doll.Type == "SG")
                     {
-                        string data = c_doll.Abilities["Armor"];
+                        int base_ratio = int.Parse(c_doll.Abilities["Armor"].Split(';')[0]);
 
-                        if (c_doll.HasMod == true) CompareAbilityValues[5] = int.Parse(data.Split(';')[0].Split('/')[1]);
-                        else CompareAbilityValues[5] = int.Parse(data.Split('/')[1]);
+                        CompareAbilityValues[5] = DAS.CalcAbility("Armro", base_ratio, grow_ratio, Ability_Level, Ability_Favor, false);
                     }
                     else CompareAbilityValues[5] = 0;
 

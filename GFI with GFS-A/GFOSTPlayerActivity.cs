@@ -360,7 +360,7 @@ namespace GFI_with_GFS_A
                 ETC.OST_Index[1] = MusicRepository.ItemIndex;
 
                 base.OnBackPressed();
-                OverridePendingTransition(Resource.Animation.Fadein, Resource.Animation.Fadeout);
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
         }
     }

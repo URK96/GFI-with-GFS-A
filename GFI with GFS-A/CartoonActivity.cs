@@ -190,7 +190,7 @@ namespace GFI_with_GFS_A
             else
             {
                 base.OnBackPressed();
-                OverridePendingTransition(Resource.Animation.Fadein, Resource.Animation.Fadeout);
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeIn);
             }
         }
     }
