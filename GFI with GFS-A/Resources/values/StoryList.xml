@@ -2,12 +2,12 @@
 <resources>
   <string-array name="Story_Main">
     <item>메인스토리</item>
-    <item>서브스토리</item>
+    <item>서브스토리 (Comming Soon)</item>
   </string-array>
 
   <string-array name="Story_Main_Caption">
     <item>메인스토리</item>
-    <item>서브스토리</item>
+    <item>서브스토리 (Comming Soon)</item>
   </string-array>
 
   <string-array name="Story_Main_Main">

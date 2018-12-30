@@ -321,7 +321,7 @@ namespace GFI_with_GFS_A
                         using (WebClient wc = new WebClient())
                             notification = wc.DownloadString(url);
 
-                        NotificationView.Text = notification;
+                        RunOnUiThread(() => { NotificationView.Text = notification; });
                     }
 
 
@@ -334,7 +334,9 @@ namespace GFI_with_GFS_A
                         ad.SetMessage(Resource.String.CheckDBUpdateDialog_Question);
                         ad.SetCancelable(true);
                         ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                        ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { ETC.UpdateDB(this); });
+                        ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate { await ETC.UpdateDB(this); });
+
+                        RunOnUiThread(() => { ad.Show(); });
                     }
                 }
                 catch (Exception ex)

@@ -1,0 +1,17 @@
+<2.3.1 수정사항>
+
+- 소전사전 v1 항목 추가 (요정 특성)
+- 소전사전 v1 항목 제거 (인형 성능표)
+- 일부 레이아웃 수정
+- 일부 애니메이션 수정
+- 개조 인형의 개조 스킬이 정상적으로 로드되지 않는 문제 수정
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, 그리폰 일상만화)
+- 만화 카테고리 추가 (불멸전선)
+
+- Add Image in GFD v1 (Fairy Attribute)
+- Remove Image in GFD v1 (Doll Performance)
+- Fix Layout
+- Fix Animation
+- Fix Mod T-Doll Skill load issue
+- Add Cartoon Category
+- Add Cartoon Content

@@ -139,11 +139,13 @@ namespace GFI_with_GFS_A
                 sb.AppendFormat("{0}\n", Resources.GetString(Resource.String.GFDInfo_Developer_URK96));
                 sb.Append("chlwlsgur96@hotmail.com\n\n");
                 sb.AppendFormat("{0}\n", Resources.GetString(Resource.String.GFDInfo_Developer_Bibitjyadame));
-                sb.Append("yuiroa@naver.com");
+                sb.Append("bibitjyadame@gmail.com");
                 sb.Append("\n\n## Special Thanks ##\n\n");
                 sb.Append("츠보우\n");
                 sb.Append("잉여군\n");
-                sb.Append("MADCORE");
+                sb.Append("MADCORE\n");
+                sb.Append("천솜향\n");
+                sb.Append("우용곡");
 
                 FindViewById<TextView>(Resource.Id.GFDInfoDeveloperInfo).Text = sb.ToString();
             }
@@ -215,14 +217,7 @@ namespace GFI_with_GFS_A
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
-            ad.SetTitle(Resource.String.UpdateDialog_Title);
-            ad.SetMessage(Resource.String.UpdateDialog_Message);
-            ad.SetCancelable(true);
-            ad.SetPositiveButton(Resource.String.GFDInfo_Update_Playstore, delegate { LinkAppStore(); });
-            ad.SetNegativeButton(Resource.String.GFDInfo_Update_Apk, async delegate { await AppUpdate(); });
-
-            ad.Show();
+            LinkAppStore();
         }
 
         private void LinkAppStore()
@@ -241,7 +236,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task AppUpdate()
+        /*private async Task AppUpdate()
         {
             ProgressDialog pd = new ProgressDialog(this, ETC.DialogBG_Download);
             pd.SetTitle(Resource.String.UpdateDownloadDialog_Title);
@@ -285,7 +280,7 @@ namespace GFI_with_GFS_A
         private void Wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             DownloadProgress.Progress = e.ProgressPercentage;
-        }
+        }*/
 
         public override void OnBackPressed()
         {

@@ -7,95 +7,98 @@
     <item>그리폰 안내서</item>
     <item>그리폰 일상만화</item>
     <item>천솜향의 소녀전선</item>
+    <item>불멸전선</item>
   </string-array>
 
   <string-array name="kazensky_GF">
-    <item>1화 - 97식 혼나는 만화</item>
-    <item>2화 - 지휘관과 와짱</item>
-    <item>3화 - 벡터</item>
-    <item>4화 - 꿈 속에서</item>
-    <item>5화 - UMP45</item>
-    <item>6화 - 97식</item>
-    <item>7화 - 레깅스</item>
-    <item>8화 - 잠탱이</item>
-    <item>9화 - 흥국이</item>
-    <item>10화 - 95식의 오늘하루</item>
-    <item>11화 - 춘전이 (1)</item>
-    <item>12화 - 춘전이 (2)</item>
-    <item>13화 - 부관자리</item>
-    <item>14화 - 97식과 잠시 외출</item>
-    <item>15화 - 쪼꼬 작가님</item>
-    <item>16화 - FAL</item>
-    <item>17화 - 지휘관 소집</item>
-    <item>18화 - 샤워실</item>
-    <item>19화 - 취중담 (1)</item>
-    <item>20화 - 취중담 (2)</item>
-    <item>21화 - 녹화</item>
-    <item>22화 - 구명</item>
-    <item>23화 - 영점사격</item>
-    <item>24화 - 자체 조사</item>
-    <item>25화 - 복귀</item>
-    <item>26화 - 기분풀이</item>
-    <item>27화 - 라플비(RFB)</item>
-    <item>28화 - 해피엔딩</item>
-    <item>29화 - 캘리코</item>
-    <item>30화 - K2 전입</item>
-    <item>특1화 - 소린이 유입되는 만화</item>
-    <item>31화 - 전입자 안내</item>
-    <item>32화 - 쪼꼬 작가님 2</item>
-    <item>33화 - 비를 피한 곳</item>
-    <item>34화 - 지휘관 부재중</item>
-    <item>35화 - 복귀 후 당직</item>
-    <item>36화 - 쓸데없는 충고</item>
-    <item>37화 - 수오미</item>
-    <item>38화 - DSR-50</item>
-    <item>39화 - 원하는 것</item>
-    <item>40화 - 전투사격</item>
-    <item>특2화 - 서약반지</item>
-    <item>특3화 - 패싱 아동절은 없다</item>
-    <item>41화 - 시험본 캘리코</item>
-    <item>특4화 - 학교다니는 로게브</item>
-    <item>42화 - 호칭</item>
-    <item>43화 - 낚아채기</item>
-    <item>44화 - 팩트</item>
-    <item>특5화 - 셋째의 라면</item>
-    <item>45화 - 95식과 도시락</item>
-    <item>46화 - UMP45의 제안</item>
-    <item>47화 - NTW-20</item>
-    <item>48화 - 멀리 돌아온 길</item>
-    <item>49화 - 404 숙소에서</item>
-    <item>특6화 - RFB 혼나다</item>
-    <item>특7화 - K2쟝 이야기</item>
-    <item>50화 - 쇼부</item>
-    <item>특8화 - 97식과 새친구</item>
-    <item>특9화 - 학교 이야기</item>
-    <item>51화 - 위탁</item>
-    <item>52화 - AN-94의 고집</item>
-    <item>특10화 - K2쟝 이야기 2</item>
-    <item>특11화 - 캘리코 단편</item>
-    <item>53화 - 폭식</item>
-    <item>특12화 - 흥국이의 뉴스 소감x</item>
-    <item>54화 - FAL과 FS</item>
-    <item>특13화 - 썬더 이야기</item>
-    <item>55화 - 무도회 공지</item>
-    <item>56화 - 무도회 (1)</item>
-    <item>57화 - 무도회 (2)</item>
-    <item>특14화 - 하급자는 피곤하다</item>
-    <item>특15화 - 카리나가 챙겨준 것</item>
-    <item>특16화 - 부작용</item>
-    <item>특17화 - 니토</item>
-    <item>58화 - 썬더담당 춘전이</item>
-    <item>특18화 - 안구사 단편</item>
-    <item>특19화 - 4컷 단편</item>
-    <item>특20화 - 솔직한 대화</item>
-    <item>특21화 - 츤데레vs욕데레</item>
-    <item>특22화 - Saiga-12</item>
-    <item>특23화 - 수오미의 고민</item>
-    <item>특24화 - 캘리코와 썬더</item>
-    <item>특25화 - 감성소녀</item>
-    <item>특26화 - 그곳으로 함께</item>
-    <item>특27화 - K5의 전입</item>
-    <item>특28화 - K5</item>
+    <item>97식 혼나는 만화</item>
+    <item>지휘관과 와짱</item>
+    <item>벡터</item>
+    <item>꿈 속에서</item>
+    <item>UMP45</item>
+    <item>97식</item>
+    <item>레깅스</item>
+    <item>잠탱이</item>
+    <item>흥국이</item>
+    <item>95식의 오늘하루</item>
+    <item>춘전이 (1)</item>
+    <item>춘전이 (2)</item>
+    <item>부관자리</item>
+    <item>97식과 잠시 외출</item>
+    <item>쪼꼬 작가님</item>
+    <item>FAL</item>
+    <item>지휘관 소집</item>
+    <item>샤워실</item>
+    <item>취중담 (1)</item>
+    <item>취중담 (2)</item>
+    <item>녹화</item>
+    <item>구명</item>
+    <item>영점사격</item>
+    <item>자체 조사</item>
+    <item>복귀</item>
+    <item>기분풀이</item>
+    <item>라플비(RFB)</item>
+    <item>해피엔딩</item>
+    <item>캘리코</item>
+    <item>K2 전입</item>
+    <item>소린이 유입되는 만화</item>
+    <item>전입자 안내</item>
+    <item>쪼꼬 작가님 2</item>
+    <item>비를 피한 곳</item>
+    <item>지휘관 부재중</item>
+    <item>복귀 후 당직</item>
+    <item>쓸데없는 충고</item>
+    <item>수오미</item>
+    <item>DSR-50</item>
+    <item>원하는 것</item>
+    <item>전투사격</item>
+    <item>서약반지</item>
+    <item>패싱 아동절은 없다</item>
+    <item>시험본 캘리코</item>
+    <item>학교다니는 로게브</item>
+    <item>호칭</item>
+    <item>낚아채기</item>
+    <item>팩트</item>
+    <item>셋째의 라면</item>
+    <item>95식과 도시락</item>
+    <item>UMP45의 제안</item>
+    <item>NTW-20</item>
+    <item>멀리 돌아온 길</item>
+    <item>404 숙소에서</item>
+    <item>RFB 혼나다</item>
+    <item>K2쟝 이야기</item>
+    <item>쇼부</item>
+    <item>97식과 새친구</item>
+    <item>학교 이야기</item>
+    <item>위탁</item>
+    <item>AN-94의 고집</item>
+    <item>K2쟝 이야기 2</item>
+    <item>캘리코 단편</item>
+    <item>폭식</item>
+    <item>흥국이의 뉴스 소감x</item>
+    <item>FAL과 FS</item>
+    <item>썬더 이야기</item>
+    <item>무도회 공지</item>
+    <item>무도회 (1)</item>
+    <item>무도회 (2)</item>
+    <item>하급자는 피곤하다</item>
+    <item>카리나가 챙겨준 것</item>
+    <item>부작용</item>
+    <item>니토</item>
+    <item>썬더담당 춘전이</item>
+    <item>안구사 단편</item>
+    <item>4컷 단편</item>
+    <item>솔직한 대화</item>
+    <item>츤데레vs욕데레</item>
+    <item>Saiga-12</item>
+    <item>수오미의 고민</item>
+    <item>캘리코와 썬더</item>
+    <item>감성소녀</item>
+    <item>그곳으로 함께</item>
+    <item>K5의 전입</item>
+    <item>K5</item>
+    <item>여러 모습</item>
+    <item>K2의 하소연</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -207,6 +210,13 @@
     <item>48화</item>
     <item>49화</item>
     <item>50화</item>
+    <item>51화</item>
+    <item>52화</item>
+    <item>53화</item>
+    <item>54화</item>
+    <item>55화</item>
+    <item>56화</item>
+    <item>57화</item>
   </string-array>
 
   <string-array name="mota6nako_GF">
@@ -253,5 +263,31 @@
     <item>http://naver.me/5Khx8aro</item>
     <item>http://naver.me/5m4fau6H</item>
     <item>http://naver.me/5Kh2lpJ0</item>
+  </string-array>
+
+  <string-array name="ImmortalityFront_GF">
+    <item>1화</item>
+    <item>2화</item>
+    <item>3화</item>
+    <item>4화</item>
+    <item>5화</item>
+    <item>6화</item>
+    <item>7화</item>
+    <item>8화</item>
+    <item>9화</item>
+    <item>10화</item>
+  </string-array>
+
+  <string-array name="ImmortalityFront_GF_URL">
+    <item>https://blog.naver.com/dndudwp99/221198965602</item>
+    <item>https://blog.naver.com/dndudwp99/221202076879</item>
+    <item>https://blog.naver.com/dndudwp99/221209264369</item>
+    <item>https://blog.naver.com/dndudwp99/221236937380</item>
+    <item>https://blog.naver.com/dndudwp99/221259132624</item>
+    <item>https://blog.naver.com/dndudwp99/221274950682</item>
+    <item>https://blog.naver.com/dndudwp99/221294079132</item>
+    <item>https://blog.naver.com/dndudwp99/221372072394</item>
+    <item>https://blog.naver.com/dndudwp99/221423848120</item>
+    <item>https://blog.naver.com/dndudwp99/221425236747</item>
   </string-array>
 </resources>

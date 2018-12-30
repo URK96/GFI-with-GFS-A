@@ -35,7 +35,7 @@
   <string name="ComingSoon">Coming Soon...</string>
   <string name="Common_ServerMaintenance">서버 점검 중 입니다.</string>
 
-  <string name="OldGFDViewer_DollPerformance">인형 성능표</string>
+  
   
   <!--New - Shortcut String-->
   <string name="Shortcut_GFNotification_ShortLabel">공지사항</string>
@@ -350,6 +350,8 @@
   <string name="OldGFDViewer_RecommendEquipRecipe">장비 추천 제조식</string>
   <string name="OldGFDViewer_RecommendMD">군수지원 효율표</string>
   <string name="OldGFDViewer_RecommendLeveling">추천 레벨링 루트</string>
+  <string name="OldGFDViewer_DollPerformance">인형 성능표</string>
+  <string name="OldGFDViewer_FairyAttribute">요정 특성표</string>
   
   <!--ProductSimulator-->
   <string name="ProductSimulatorActivity_ProductStartError">제조 시작 오류</string>
@@ -529,8 +531,14 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.23 수정사항]\n\n
-- 만화 컨텐츠 추가 (철혈 그리폰 2 13화)
+    [2.3.1 수정사항]\n\n
+- 소전사전 v1 항목 추가 (요정 특성)\n
+- 소전사전 v1 항목 제거 (인형 성능표)\n
+- 일부 레이아웃 수정\n
+- 일부 애니메이션 수정\n
+- 개조 인형의 개조 스킬이 정상적으로 로드되지 않는 문제 수정\n
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, 그리폰 일상만화)\n
+- 만화 카테고리 추가 (불멸전선)
   </string>
 
   <string name="RFBot_CommandHelp">

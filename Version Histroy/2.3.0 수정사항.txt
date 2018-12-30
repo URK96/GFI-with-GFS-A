@@ -1,0 +1,33 @@
+<2.3.0 수정사항>
+
+- 초기 로딩 속도 개선
+- DB 정렬 기능 개선
+- DB 필터링 기능 개선
+- 검열 이미지 전환 기능 추가
+- 인형별 레벨, 호감도에 따른 능력치 표시
+- 리스트 Component 변경
+- 일부 UI 변경
+- 스토리 기능 추가
+- 제조 시뮬레이터 확률 이상현상 수정
+- 일괄 제조 기능 추가
+- 만화 스크롤링 성능 문제 수정
+- 데이터 저장 경로 변경
+- 일부 애니메이션 변경
+- DB 복구 기능 추가
+- 만화 컨텐츠 추가 (츠보우의 소녀전선 - 여러 모습)
+
+- Improve Splash Screen Loading Process
+- Improve DB line up feature
+- Improve DB filtering feature
+- Add Switching Censored Image Option
+- Add Doll Ability feature by level and favor
+- Change List Component
+- Change some UI
+- Add Story Feature (Only KR now)
+- Fix Internal Product Simulator Percentage Calc
+- Add Multiple Product Simulating
+- Fix performance scrolling in Cartoon
+- Change Data Directory path
+- Change some animation
+- Add Fix DB feature
+- Add Cartoon Content

@@ -69,7 +69,7 @@ namespace GFI_with_GFS_A
             {
                 case Category.Main:
                     if (position == 0) TopType = Top.Main;
-                    else TopType = Top.Sub;
+                    else return;
                     break;
                 case Category.SubMain:
                     SubMain_Index = position;

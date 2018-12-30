@@ -152,7 +152,7 @@ namespace GFI_with_GFS_A
             SwitchPreference EnableServerCheck = (SwitchPreference)FindPreference("EnableServerCheck");
             if (ETC.UseLightTheme == true) EnableServerCheck.SetIcon(Resource.Drawable.UseLightThemeIcon_WhiteTheme);
             else EnableServerCheck.SetIcon(Resource.Drawable.UseLightThemeIcon);
-            EnableServerCheck.Checked = ETC.sharedPreferences.GetBoolean("EnableServerCheck", false);
+            EnableServerCheck.Checked = ETC.sharedPreferences.GetBoolean("EnableServerCheck", true);
             EnableServerCheck.PreferenceChange += delegate
             {
                 SaveSetting.PutBoolean("EnableServerCheck", EnableServerCheck.Checked);

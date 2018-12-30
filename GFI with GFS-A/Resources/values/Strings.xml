@@ -34,8 +34,6 @@
   
   <string name="ComingSoon">Coming Soon...</string>
   <string name="Common_ServerMaintenance">Server is Maintenance...</string>
-
-  <string name="OldGFDViewer_DollPerformance">Doll Performance</string>
   
   <!--New - Shortcut String-->
   <string name="Shortcut_GFNotification_ShortLabel">GF Notification</string>
@@ -346,6 +344,8 @@
   <string name="OldGFDViewer_RecommendEquipRecipe">Equip Recipe</string>
   <string name="OldGFDViewer_RecommendMD">Logistic Support Table</string>
   <string name="OldGFDViewer_RecommendLeveling">Recommend Leveling Route</string>
+  <string name="OldGFDViewer_DollPerformance">Doll Performance</string>
+  <string name="OldGFDViewer_FairyAttribute">Fairy Attribute</string>
   
   <!--ProductSimulator-->
   <string name="ProductSimulatorActivity_ProductStartError">Production start error</string>
@@ -527,7 +527,13 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.2.23 Update]\n\n
+    [2.3.1 Update]\n\n
+- Add Image in GFD v1 (Fairy Attribute)\n
+- Remove Image in GFD v1 (Doll Performance)\n
+- Fix Layout\n
+- Fix Animation\n
+- Fix Mod T-Doll Skill load issue\n
+- Add Cartoon Category\n
 - Add Cartoon Content
   </string>
 

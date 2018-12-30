@@ -142,8 +142,20 @@ namespace GFI_with_GFS_A
                             IsCategory = true;
                             break;
                         default:
-                            if (Category_Index == 5) ((CartoonScreen)CartoonScreen_F).LoadProcess_Web(Category_List[Category_Index], Category_Index, (e.Position - 1), false);
-                            else ((CartoonScreen)CartoonScreen_F).LoadProcess(Category_List[Category_Index], Category_Index, (e.Position - 1), false);
+                            switch (Category_Index)
+                            {
+                                case 0:
+                                case 1:
+                                case 2:
+                                case 3:
+                                case 4:
+                                    ((CartoonScreen)CartoonScreen_F).LoadProcess(Category_List[Category_Index], Category_Index, (e.Position - 1), false);
+                                    break;
+                                case 5:
+                                case 6:
+                                    ((CartoonScreen)CartoonScreen_F).LoadProcess_Web(Category_List[Category_Index], Category_Index, (e.Position - 1), false);
+                                    break;
+                            }
                             MainDrawerLayout.CloseDrawer(GravityCompat.Start);
                             break;
                     }
@@ -177,6 +189,9 @@ namespace GFI_with_GFS_A
                 case 5:
                     list.AddRange(Resources.GetStringArray(Resource.Array.mota6nako_GF));
                     break;
+                case 6:
+                    list.AddRange(Resources.GetStringArray(Resource.Array.ImmortalityFront_GF));
+                    break;
             }
         }
 
@@ -190,13 +205,15 @@ namespace GFI_with_GFS_A
             else
             {
                 base.OnBackPressed();
-                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeIn);
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
         }
     }
 
     public class CartoonScreen : Android.Support.V4.App.Fragment
     {
+        enum CartoonType { Image, Web }
+
         private View v;
 
         private LinearLayout MainLayout;
@@ -209,6 +226,8 @@ namespace GFI_with_GFS_A
         private TextView NowCartoonText;
         private RecyclerView MainRecyclerView;
         private RecyclerView.LayoutManager MainLayoutManager;
+
+        private CartoonType C_Type = CartoonType.Image;
 
         private List<string> Selected_Item_List = new List<string>();
         private List<string> Selected_Item_URL_List = new List<string>();
@@ -232,11 +251,44 @@ namespace GFI_with_GFS_A
             WebViewLayout = v.FindViewById<FrameLayout>(Resource.Id.CartoonScreenWebViewLayout);
             LoadProgress = v.FindViewById<ProgressBar>(Resource.Id.CartoonScreenLoadProgress);
             PreviousButton = v.FindViewById<Button>(Resource.Id.CartoonScreenPreviousButton);
-            PreviousButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index - 1, false); };
+            PreviousButton.Click += delegate
+            {
+                switch (C_Type)
+                {
+                    case CartoonType.Image:
+                        LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index - 1, false);
+                        break;
+                    case CartoonType.Web:
+                        LoadProcess_Web(Now_Category, Now_Category_Index, Now_Item_Index - 1, false);
+                        break;
+                }
+            };
             NextButton = v.FindViewById<Button>(Resource.Id.CartoonScreenNextButton);
-            NextButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index + 1, false); };
+            NextButton.Click += delegate 
+            {
+                switch (C_Type)
+                {
+                    case CartoonType.Image:
+                        LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index + 1, false);
+                        break;
+                    case CartoonType.Web:
+                        LoadProcess_Web(Now_Category, Now_Category_Index, Now_Item_Index + 1, false);
+                        break;
+                }
+            };
             RefreshButton = v.FindViewById<ImageButton>(Resource.Id.CartoonScreenRefreshButton);
-            RefreshButton.Click += delegate { LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index, true); };
+            RefreshButton.Click += delegate 
+            {
+                switch (C_Type)
+                {
+                    case CartoonType.Image:
+                        LoadProcess(Now_Category, Now_Category_Index, Now_Item_Index, true);
+                        break;
+                    case CartoonType.Web:
+                        LoadProcess_Web(Now_Category, Now_Category_Index, Now_Item_Index, true);
+                        break;
+                }
+            };
             NowCartoonText = v.FindViewById<TextView>(Resource.Id.CartoonScreenNowCartoonText);
             MainRecyclerView = v.FindViewById<RecyclerView>(Resource.Id.CartoonScreenMainRecyclerView);
             MainLayoutManager = new LinearLayoutManager(Activity);
@@ -247,6 +299,7 @@ namespace GFI_with_GFS_A
 
         internal async Task LoadProcess(string Category, int Category_Index, int Item_Index, bool IsRefresh)
         {
+            C_Type = CartoonType.Image;
             Now_Item_Index = Item_Index;
             Now_Category_Index = Category_Index;
             Now_Category = Category;
@@ -400,6 +453,7 @@ namespace GFI_with_GFS_A
 
         internal async Task LoadProcess_Web(string Category, int Category_Index, int Item_Index, bool IsRefresh)
         {
+            C_Type = CartoonType.Web;
             Now_Item_Index = Item_Index;
             Now_Category_Index = Category_Index;
             Now_Category = Category;
@@ -532,6 +586,9 @@ namespace GFI_with_GFS_A
             {
                 case 5:
                     list.AddRange(Resources.GetStringArray(Resource.Array.mota6nako_GF_URL));
+                    break;
+                case 6:
+                    list.AddRange(Resources.GetStringArray(Resource.Array.ImmortalityFront_GF_URL));
                     break;
             }
         }

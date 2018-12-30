@@ -138,6 +138,8 @@ namespace GFI_with_GFS_A
 
         private bool CheckCensorType()
         {
+            if (CensorType == null) return false;
+
             string censor_type = "";
 
             switch (CostumeIndex)

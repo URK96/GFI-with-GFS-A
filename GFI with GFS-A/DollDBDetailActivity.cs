@@ -1074,9 +1074,9 @@ namespace GFI_with_GFS_A
                         ability.LayoutParameters = FindViewById<TextView>(Resource.Id.DollDBDetailModSkillAbilityTopText1).LayoutParameters;
                         mag.LayoutParameters = FindViewById<TextView>(Resource.Id.DollDBDetailModSkillAbilityTopText2).LayoutParameters;
 
-                        ability.Text = SkillAbilities[i];
+                        ability.Text = MSkillAbilities[i];
                         ability.Gravity = GravityFlags.Center;
-                        mag.Text = SkillMags[i];
+                        mag.Text = MSkillMags[i];
                         mag.Gravity = GravityFlags.Center;
 
                         layout.AddView(ability);

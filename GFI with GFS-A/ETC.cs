@@ -221,10 +221,10 @@ namespace GFI_with_GFS_A
 
         internal static void RunHelpActivity(Activity activity, string type)
         {
-            Intent intent = new Intent(activity, typeof(HelpImageActivity));
+            /*Intent intent = new Intent(activity, typeof(HelpImageActivity));
             intent.PutExtra("Type", type);
             activity.StartActivity(intent);
-            activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+            activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);*/
         }
 
         internal static async Task AnimateText(TextView view, string text)
@@ -580,7 +580,7 @@ namespace GFI_with_GFS_A
             {
                 for (int i = 0; i < DBFiles.Length; ++i)
                 {
-                    string url = Path.Combine(Server, "Data", "DB", "Test", DBFiles[i]);
+                    string url = Path.Combine(Server, "Data", "DB", DBFiles[i]);
                     string target = Path.Combine(tempPath, DBFiles[i]);
                     pd.SecondaryProgress = Convert.ToInt32(((double)pd.Max / DBFiles.Length) * (i + 1));
                     await wc.DownloadFileTaskAsync(url, target);
