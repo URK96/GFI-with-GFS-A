@@ -78,6 +78,11 @@
             android:layout_height="match_parent"
             android:layout_width="match_parent"
 			android:scrollbars="vertical"
+			app:fastScrollEnabled="true"
+			app:fastScrollHorizontalThumbDrawable="@drawable/fastscroll_thumbdrawable"
+			app:fastScrollHorizontalTrackDrawable="@drawable/fastscroll_linedrawable"
+			app:fastScrollVerticalThumbDrawable="@drawable/fastscroll_thumbdrawable"
+			app:fastScrollVerticalTrackDrawable="@drawable/fastscroll_linedrawable"
             android:id="@+id/FairyDBRecyclerView" />
     </LinearLayout>
 	<android.support.design.widget.FloatingActionButton

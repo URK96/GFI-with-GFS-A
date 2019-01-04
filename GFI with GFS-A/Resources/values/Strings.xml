@@ -527,12 +527,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.1 Update]\n\n
-- Add Image in GFD v1 (Fairy Attribute)\n
-- Remove Image in GFD v1 (Doll Performance)\n
-- Fix Layout\n
-- Fix Animation\n
-- Fix Mod T-Doll Skill load issue\n
+    [2.3.2 Update]\n\n
+- Add Fast Scroll feature\n
+- Fix image load issue in Cartoon\n
 - Add Cartoon Category\n
 - Add Cartoon Content
   </string>

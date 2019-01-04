@@ -149,6 +149,7 @@ namespace GFI_with_GFS_A
                                 case 2:
                                 case 3:
                                 case 4:
+                                case 7:
                                     ((CartoonScreen)CartoonScreen_F).LoadProcess(Category_List[Category_Index], Category_Index, (e.Position - 1), false);
                                     break;
                                 case 5:
@@ -191,6 +192,9 @@ namespace GFI_with_GFS_A
                     break;
                 case 6:
                     list.AddRange(Resources.GetStringArray(Resource.Array.ImmortalityFront_GF));
+                    break;
+                case 7:
+                    list.AddRange(Resources.GetStringArray(Resource.Array.MMM_GF));
                     break;
             }
         }
@@ -326,7 +330,6 @@ namespace GFI_with_GFS_A
                 ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
                 Selected_Item_List.Clear();
 
-                //MainLayout.RemoveAllViews();
                 CopyrightLayout.RemoveAllViews();
 
                 await Task.Delay(100);
@@ -371,11 +374,11 @@ namespace GFI_with_GFS_A
                         tv1.Text = "Creator : MADCORE";
                         tv2.Text = "https://www.pixiv.net/member.php?id=455690";
                         break;
+                    case 7:
+                        tv1.Text = "Creator : MMM";
+                        tv2.Text = "https://www.pixiv.net/member.php?id=25683341";
+                        break;
                 }
-
-                /*LinearLayout.LayoutParams p3 = (LinearLayout.LayoutParams)layout.LayoutParameters;
-                p3.SetMargins(0, 10, 0, 10);
-                layout.LayoutParameters = p3;*/
 
                 layout.Orientation = Orientation.Vertical;
                 tv1.Gravity = GravityFlags.Center;
@@ -384,13 +387,14 @@ namespace GFI_with_GFS_A
                 layout.AddView(tv1);
                 layout.AddView(tv2);
 
-                //MainLayout.AddView(layout);
                 CopyrightLayout.AddView(layout);
 
                 List<string> Files = Directory.GetFiles(Item_Path).ToList();
                 Files.TrimExcess();
                 Files.Sort(SortCartoonList);
                 Bitmap_List.Clear();
+
+                const int Image_Size = 500;
 
                 foreach (string file in Files)
                 {
@@ -405,24 +409,16 @@ namespace GFI_with_GFS_A
 
                         Android.Graphics.Bitmap bitmap_fix;
 
-                        if (remain_height >= 1000)
+                        if (remain_height >= Image_Size)
                         {
-                            bitmap_fix = Android.Graphics.Bitmap.CreateBitmap(bitmap, 0, height, bitmap.Width, 1000);
-                            height += 1000;
+                            bitmap_fix = Android.Graphics.Bitmap.CreateBitmap(bitmap, 0, height, bitmap.Width, Image_Size);
+                            height += Image_Size;
                         }
                         else
                         {
                             bitmap_fix = Android.Graphics.Bitmap.CreateBitmap(bitmap, 0, height, bitmap.Width, remain_height);
                             height += remain_height;
                         }
-
-                        /*ImageView iv = new ImageView(Activity);
-                        iv.SetImageBitmap(bitmap_fix);
-                        iv.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent);
-                        iv.SetScaleType(ImageView.ScaleType.FitXy);
-                        iv.SetAdjustViewBounds(true);
-
-                        MainLayout.AddView(iv);*/
 
                         Bitmap_List.Add(bitmap_fix);
                     }

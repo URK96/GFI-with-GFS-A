@@ -1,0 +1,11 @@
+<2.3.2 수정사항>
+
+- 일부 도감에 Fast Scroll 기능 추가
+- 만화 이미지가 로드 되지 않는 문제 수정
+- 만화 컨텐츠 추가 (츠보우의 소녀전선)
+- 만화 카테고리 추가 (학식전선)
+
+- Add Fast Scroll feature
+- Fix image load issue in Cartoon
+- Add Cartoon Category
+- Add Cartoon Content

@@ -8,6 +8,7 @@
     <item>그리폰 일상만화</item>
     <item>천솜향의 소녀전선</item>
     <item>불멸전선</item>
+    <item>학식전선</item>
   </string-array>
 
   <string-array name="kazensky_GF">
@@ -99,6 +100,7 @@
     <item>K5</item>
     <item>여러 모습</item>
     <item>K2의 하소연</item>
+    <item>성냥팔이 소녀 이야기</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -289,5 +291,28 @@
     <item>https://blog.naver.com/dndudwp99/221372072394</item>
     <item>https://blog.naver.com/dndudwp99/221423848120</item>
     <item>https://blog.naver.com/dndudwp99/221425236747</item>
+  </string-array>
+
+  <string-array name="MMM_GF">
+    <item>1화</item>
+    <item>2화</item>
+    <item>3화</item>
+    <item>4화</item>
+    <item>5화</item>
+    <item>6화</item>
+    <item>7화</item>
+    <item>8화</item>
+    <item>9화</item>
+    <item>10화</item>
+    <item>11화</item>
+    <item>12화</item>
+    <item>13화</item>
+    <item>14화</item>
+    <item>15화</item>
+    <item>16화</item>
+    <item>17화</item>
+    <item>18화</item>
+    <item>19화</item>
+    <item>20화</item>
   </string-array>
 </resources>
