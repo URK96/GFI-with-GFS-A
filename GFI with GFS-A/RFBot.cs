@@ -10,7 +10,6 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using UptimeSharp;
 
 namespace GFI_with_GFS_A
 {

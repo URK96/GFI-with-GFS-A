@@ -1,0 +1,7 @@
+<2.3.4 수정사항>
+
+- 서버 확인 알고리즘 변경
+- 서버 확인이 안되던 문제 수정
+
+- Change Server Checking algorithm
+- Fix Server Checking Issue

@@ -3,13 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/SplashMainLayout">
-	<ImageView
-		android:layout_height="match_parent"
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:layout_alignParentRight="true"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:id="@+id/SplashAppVersion"/>
+	<LinearLayout
+		android:orientation="vertical"
 		android:layout_width="match_parent"
-		android:scaleType="fitXY"
-		android:adjustViewBounds="true"
-		android:alpha="0"
-		android:id="@+id/SplashImageView"/>
+		android:layout_height="match_parent">
+		<ImageView
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:scaleType="fitXY"
+			android:adjustViewBounds="true"
+			android:alpha="0"
+			android:id="@+id/SplashImageView"/>
+	</LinearLayout>
 	<TextView
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content"

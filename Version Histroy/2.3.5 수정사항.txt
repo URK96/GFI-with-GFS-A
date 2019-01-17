@@ -1,0 +1,11 @@
+<2.3.5 수정사항>
+
+- 앱 기동 화면 추가
+- 메인화면에 DB 버전 상태표시 추가
+- 전역 경험치 계산기에 경험치 이벤트 활성화 옵션 추가
+- 일부 문구 수정
+
+- Add Splash Screen
+- Add DB Version status in Mainmenu
+- Add Exp Event Option in Area Exp Calc
+- Edit some string

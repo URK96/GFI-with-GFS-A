@@ -61,6 +61,20 @@ namespace GFI_with_GFS_A
             }
         }
 
+        protected override void OnResume()
+        {
+            try
+            {
+                base.OnResume();
+
+                CheckNetworkData();
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+            }
+        }
+
         private void RunStartMode()
         {
             switch (ETC.sharedPreferences.GetString("StartAppMode", "0"))
@@ -175,8 +189,6 @@ namespace GFI_with_GFS_A
                 }
 
                 FindViewById<LinearLayout>(Resource.Id.MainMenuButtonLayout1).BringToFront();
-
-                CheckNetworkData();
 
                 if (ETC.sharedPreferences.GetString("StartAppMode", "0") != "0") RunStartMode();
             }
@@ -301,6 +313,9 @@ namespace GFI_with_GFS_A
 
         private void CheckNetworkData()
         {
+            TextView tv = FindViewById<TextView>(Resource.Id.MainNowDBVersion);
+            tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBChecking)})";
+
             Task.Run(async () =>
             {
                 try
@@ -329,6 +344,8 @@ namespace GFI_with_GFS_A
 
                     if (await ETC.CheckDBVersion() == true)
                     {
+                        tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})";
+
                         Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
                         ad.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
                         ad.SetMessage(Resource.String.CheckDBUpdateDialog_Question);
@@ -338,6 +355,7 @@ namespace GFI_with_GFS_A
 
                         RunOnUiThread(() => { ad.Show(); });
                     }
+                    else tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})";
                 }
                 catch (Exception ex)
                 {

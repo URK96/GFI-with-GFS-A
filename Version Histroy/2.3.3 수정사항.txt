@@ -1,0 +1,7 @@
+<2.3.3 수정사항>
+
+- 제조 시뮬레이터가 제대로 동작하지 않는 문제 수정
+- 일부 문구 수정
+
+- Fix Product Simulator issue
+- Edit some text

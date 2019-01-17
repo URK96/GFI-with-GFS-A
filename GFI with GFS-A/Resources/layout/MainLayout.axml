@@ -233,6 +233,14 @@
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:gravity="center"
+		android:id="@+id/MainNowDBVersion"/>
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

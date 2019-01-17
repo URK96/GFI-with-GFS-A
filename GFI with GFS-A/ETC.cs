@@ -10,7 +10,6 @@ using System.Data;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
-using UptimeSharp;
 
 namespace GFI_with_GFS_A
 {
@@ -34,6 +33,7 @@ namespace GFI_with_GFS_A
         internal static int DialogBG = 0;
         internal static int DialogBG_Vertical = 0;
         internal static int DialogBG_Download = 0;
+        internal static int DBVersion = 0;
 
         internal static DataTable DollList = new DataTable();
         internal static DataTable EquipmentList = new DataTable();
@@ -53,7 +53,6 @@ namespace GFI_with_GFS_A
 
         internal static ISharedPreferences sharedPreferences;
 
-        internal static UptimeClient client = null;
         internal static bool IsServerDown = false;
 
         internal struct AverageAbility
@@ -216,7 +215,7 @@ namespace GFI_with_GFS_A
             Language = Resources.Configuration.Locale;
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTQzNDRAMzEzNjJlMzQyZTMwZHNFSDUyRjdlWXZ6WXNtelNkRWV3QVh1WmR0Q3hSbTFqZ0dKTTVsQlBOQT0=");
             MobileAds.Initialize(context, "ca-app-pub-4576756770200148~8135834453");
-            client = new UptimeClient("m780844852-8bd2516bb93800a9eb7e3d58");
+            //client = new UptimeClient("m780844852-8bd2516bb93800a9eb7e3d58");
         }
 
         internal static void RunHelpActivity(Activity activity, string type)
@@ -240,9 +239,12 @@ namespace GFI_with_GFS_A
 
         internal static async Task CheckServerNetwork()
         {
+            HttpWebRequest request = null;
+            HttpWebResponse response = null;
+
             try
             {
-                var monitor = await client.GetMonitor("m780844852-8bd2516bb93800a9eb7e3d58");
+                /*var monitor = await client.GetMonitor("m780844852-8bd2516bb93800a9eb7e3d58");
 
                 switch (monitor.Status)
                 {
@@ -255,12 +257,25 @@ namespace GFI_with_GFS_A
                     default:
                         IsServerDown = true;
                         break;
-                }
+                }*/
+
+                request = WebRequest.Create(ETC.Server) as HttpWebRequest;
+                request.Method = "HEAD";
+                response = request.GetResponse() as HttpWebResponse;
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                    IsServerDown = false;
+                else IsServerDown = true;
             }
             catch (Exception ex)
             {
                 LogError(ex.ToString());
                 IsServerDown = true;
+            }
+            finally
+            {
+                if (response != null) response.Close();
+                response.Dispose();
             }
         }
 
@@ -509,6 +524,8 @@ namespace GFI_with_GFS_A
                         int localVer = int.Parse(sr1.ReadToEnd());
                         int serverVer = int.Parse(sr2.ReadToEnd());
 
+                        DBVersion = localVer;
+
                         if (localVer < serverVer) HasDBUpdate = true;
                     }
                 }
@@ -608,6 +625,9 @@ namespace GFI_with_GFS_A
             string oldVersion = Path.Combine(SystemPath, "DBVer.txt");
             string newVersion = Path.Combine(tempPath, "DBVer.txt");
             File.Copy(newVersion, oldVersion, true);
+
+            using (StreamReader sr = new StreamReader(new FileStream(oldVersion, FileMode.Open, FileAccess.Read)))
+                int.TryParse(sr.ReadToEnd(), out DBVersion);
 
             await Task.Delay(500);
 

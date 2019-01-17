@@ -41,12 +41,14 @@
     <item name="android:windowFullscreen">false</item>
   </style>
   <style name="GFS.Splash" parent ="Theme.AppCompat.NoActionBar">
+    <item name="android:windowBackground">@drawable/splash</item>
     <item name="android:windowNoTitle">true</item>
-    <item name="android:windowFullscreen">true</item>
+    <item name="android:windowFullscreen">false</item>
   </style>
   <style name="GFS.Splash.Light" parent ="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowBackground">@drawable/splash</item>
     <item name="android:windowNoTitle">true</item>
-    <item name="android:windowFullscreen">true</item>
+    <item name="android:windowFullscreen">false</item>
   </style>
   <style name="GFD.Dialog" parent ="Theme.AppCompat.Dialog.Alert">
     <item name="android:colorAccent">#54A716</item>

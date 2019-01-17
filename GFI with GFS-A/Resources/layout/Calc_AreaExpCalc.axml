@@ -166,6 +166,25 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:text="@string/Calc_AreaExp_ExpEventSettingCheckBox"
+                android:checked="false"
+                android:id="@+id/CalcAreaExpExpEventSelector" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+		<LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:text="@string/Calc_AreaExp_AutoAddDummySettingCheckBox"
                 android:checked="false"
                 android:id="@+id/CalcAreaExpAutoAddDummySelector" />

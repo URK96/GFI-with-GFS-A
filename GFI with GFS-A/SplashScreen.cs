@@ -2,7 +2,6 @@
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
-using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
@@ -10,6 +9,7 @@ using Android.Support.V7.App;
 using Android.Widget;
 using System;
 using System.Collections;
+using System.IO;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 
@@ -80,6 +80,7 @@ namespace GFI_with_GFS_A
             try
             {
                 await Animation();
+                FindViewById<TextView>(Resource.Id.SplashAppVersion).Text = $"v{AppInfo.VersionString}({AppInfo.BuildString}";
 
 
                 // Initialize
@@ -130,23 +131,10 @@ namespace GFI_with_GFS_A
                 }
 
 
-                // Load DB
-
-                /*await ETC.AnimateText(StatusText, "Load DB");
-
-                if (ETC.EnableDynamicDB == false)
-                {
-                    while (await ETC.LoadDB() == false)
-                    {
-                        ETC.ShowSnackbar(SnackbarLayout, Resource.String.DB_Recovery, Snackbar.LengthShort);
-
-                        if (ETC.IsServerDown == false) await ETC.UpdateDB(this);
-                        else break;
-                    }
-                }*/
-
-
                 // Finalize & Start Main
+
+                using (StreamReader sr = new StreamReader(new FileStream(Path.Combine(ETC.SystemPath, "DBVer.txt"), FileMode.Open, FileAccess.Read)))
+                    int.TryParse(sr.ReadToEnd(), out ETC.DBVersion);
 
                 StartActivity(typeof(Main));
                 OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
@@ -237,7 +225,7 @@ namespace GFI_with_GFS_A
             };
 
             foreach (string s in DBFiles)
-                if (System.IO.File.Exists(System.IO.Path.Combine(ETC.DBPath, s)) == false)
+                if (File.Exists(Path.Combine(ETC.DBPath, s)) == false)
                     return false;
 
             return true;

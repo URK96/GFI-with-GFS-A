@@ -90,7 +90,7 @@ namespace GFI_with_GFS_A
                         break;
                     case Resource.Id.CalcNavigation_AreaExp:
                         ft.Replace(Resource.Id.CalcFragmentContainer, AreaExpCalc_F, "AreaExpCalc");
-                        title = Resources.GetString(Resource.String.TitleName_FSTGradeUpCalc);
+                        title = Resources.GetString(Resource.String.TitleName_AreaExpCalc);
                         break;
                 }
 
@@ -707,7 +707,8 @@ namespace GFI_with_GFS_A
         private readonly int[] LevelExp = { 0, 100, 300, 600, 1000, 1500, 2100, 2800, 3600, 4500, 5500, 6600, 7800, 9100, 10500, 12000, 13600, 15300, 17100, 19000, 21000, 23100, 25300, 27600, 30000, 32500, 35100, 37900, 41000, 44400, 48600, 53200, 58200, 63600, 69400, 75700, 82400, 89600, 97300, 105500, 114300, 123600, 133500, 144000, 155100, 166900, 179400, 192500, 206400, 221000, 236400, 252500, 269400, 287100, 305700, 325200, 345600, 366900, 389200, 412500, 436800, 462100, 488400, 515800, 544300, 573900, 604700, 636700, 669900, 704300, 749400, 796200, 844800, 895200, 947400, 1001400, 1057300, 1115200, 1175000, 1236800, 1300700, 1366700, 1434800, 1505100, 1577700, 1652500, 1729600, 1809100, 1891000, 1975300, 2087900, 2204000, 2323500, 2446600, 2573300, 2703700, 2837800, 2975700, 3117500, 3263200, 3363200, 3483200, 3623200, 3783200, 3963200, 4163200, 4383200, 4623200, 4903200, 5263200, 5743200, 6383200, 7283200, 8483200, 10083200, 12283200, 15283200, 19283200, 24283200, 30283200 };
 
         private Spinner AreaList;
-        private CheckBox ApplyVowCheckBox;
+        private CheckBox ApplyVow;
+        private CheckBox ApplyExpEvent;
         private CheckBox ApplyAutoAddDummy;
         private CheckBox LastEnemy;
         private NumberPicker NowLevel;
@@ -720,6 +721,7 @@ namespace GFI_with_GFS_A
         private DataRow AreaDR;
 
         private bool IsVow = false;
+        private bool IsExpEvent = false;
         private bool IsAutoAddDummy = false;
         private bool HasLastEnemy = false;
 
@@ -740,10 +742,16 @@ namespace GFI_with_GFS_A
             WarCount.ValueChanged += LevelSelector_ValueChanged;
             NowExp = v.FindViewById<EditText>(Resource.Id.CalcAreaExpNowExp);
             NowExp.TextChanged += delegate { CalcCount(NowLevel.Value, TargetLevel.Value, DollDummy.Value, WarCount.Value); };
-            ApplyVowCheckBox = v.FindViewById<CheckBox>(Resource.Id.CalcAreaExpVowSelector);
-            ApplyVowCheckBox.CheckedChange += delegate
+            ApplyVow = v.FindViewById<CheckBox>(Resource.Id.CalcAreaExpVowSelector);
+            ApplyVow.CheckedChange += delegate
             {
-                IsVow = ApplyVowCheckBox.Checked;
+                IsVow = ApplyVow.Checked;
+                CalcCount(NowLevel.Value, TargetLevel.Value, DollDummy.Value, WarCount.Value);
+            };
+            ApplyExpEvent = v.FindViewById<CheckBox>(Resource.Id.CalcAreaExpExpEventSelector);
+            ApplyExpEvent.CheckedChange += delegate
+            {
+                IsExpEvent = ApplyExpEvent.Checked;
                 CalcCount(NowLevel.Value, TargetLevel.Value, DollDummy.Value, WarCount.Value);
             };
             ApplyAutoAddDummy = v.FindViewById<CheckBox>(Resource.Id.CalcAreaExpAutoAddDummySelector);
@@ -789,7 +797,7 @@ namespace GFI_with_GFS_A
             adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
             AreaList.Adapter = adapter;
 
-            ApplyVowCheckBox.Checked = false;
+            ApplyVow.Checked = false;
 
             NowLevel.MinValue = 1;
             NowLevel.MaxValue = 120;
@@ -870,6 +878,8 @@ namespace GFI_with_GFS_A
             {
                 const double LeaderRate = 1.2;
                 const double MVPRate = 1.3;
+                const double VowRate = 2.0;
+                const double ExpEventRate = 1.5;
                 int PaneltyLevel = (int)AreaDR["PaneltyLevel"];
                 int targetExp = LevelExp[TargetLevel - 1];
                 int EarnExp = 0;
@@ -925,8 +935,14 @@ namespace GFI_with_GFS_A
 
                     if (IsVow == true)
                     {
-                        EarnExp *= 2;
-                        if (HasLastEnemy == true) LastEarnExp *= 2;
+                        EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * VowRate));
+                        if (HasLastEnemy == true) LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * VowRate));
+                    }
+
+                    if (IsExpEvent == true)
+                    {
+                        EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * ExpEventRate));
+                        if (HasLastEnemy == true) LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * ExpEventRate));
                     }
 
                     if (HasLastEnemy == true) nowExp += (EarnExp * (WarCount - 1)) + LastEarnExp;

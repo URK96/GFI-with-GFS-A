@@ -29,6 +29,7 @@
   <string name="Calc_AreaExp_LevelSettingText">* 레벨 설정 *</string>
   <string name="Calc_AreaExp_NowTotalExpSettingText">* 현재 경험치 *</string>
   <string name="Calc_AreaExp_VowSettingCheckBox">서약 적용</string>
+  <string name="Calc_AreaExp_ExpEventSettingCheckBox">경험치 이벤트(x1.5) 적용</string>
   <string name="Calc_AreaExp_AutoAddDummySettingCheckBox">자동 편제확대</string>
   <string name="Calc_AreaExp_LastEnemySettingCheckBox">보스, 마지막 몹 처치</string>
   
@@ -157,6 +158,9 @@
   <string name="Permission_Error">권한 부여 실패</string>
   <string name="PermissionDeny_Message">해당 권한을 허용하지 않으면 소전사전을 정상적으로 이용하실 수 없습니다</string>
   <string name="RefreshImageCacheText">이미지 캐시 갱신</string>
+  <string name="Main_DBChecking">확인 중...</string>
+  <string name="Main_DBUpdateAvailable">업데이트 존재</string>
+  <string name="Main_DBUpdateNewest">최신버전</string>
   
   <!--Common String-->
   <string name="Common_AC">명중</string>
@@ -317,7 +321,7 @@
   <!--GFDInfo-->
   <string name="GFDInfo_Developer_Soomae">총괄 &amp; 디자인 : 수매</string>
   <string name="GFDInfo_Developer_URK96">App &amp; 소스제작 : URK96</string>
-  <string name="GFDInfo_Developer_Bibitjyadame">검수 &amp; 확인 : 스텡</string>
+  <string name="GFDInfo_Developer_Bibitjyadame">검수 &amp; 공략 : 스텡</string>
   <string name="GFDInfo_NowVersion">현재 버전</string>
   <string name="GFDInfo_NewVersion">최신 버전</string>
   <string name="GFDInfo_Update_Playstore">Play Store</string>
@@ -531,11 +535,11 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.2 수정사항]\n\n
-- 일부 도감에 Fast Scroll 기능 추가\n
-- 만화 이미지가 로드 되지 않는 문제 수정\n
-- 만화 컨텐츠 추가 (츠보우의 소녀전선)\n
-- 만화 카테고리 추가 (학식전선)
+    [2.3.5 수정사항]\n\n
+- 앱 기동 화면 추가\n
+- 메인화면에 DB 버전 상태표시 추가\n
+- 전역 경험치 계산기에 경험치 이벤트 활성화 옵션 추가\n
+- 일부 문구 수정
   </string>
 
   <string name="RFBot_CommandHelp">

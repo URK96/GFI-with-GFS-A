@@ -11,6 +11,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace GFI_with_GFS_A
 {
@@ -84,6 +85,10 @@ namespace GFI_with_GFS_A
 
             // Create your application here
             SetContentView(Resource.Layout.ProductSimulatorLayout);
+
+            ETC.LoadDBSync(ETC.DollList, Path.Combine(ETC.DBPath, "Doll.gfs"), true);
+            ETC.LoadDBSync(ETC.EquipmentList, Path.Combine(ETC.DBPath, "Equipment.gfs"), true);
+            ETC.LoadDBSync(ETC.FairyList, Path.Combine(ETC.DBPath, "Fairy.gfs"), true);
 
             SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.ProductSimulatorSnackbarLayout);
 
@@ -378,34 +383,44 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ShowResultScreen(DataRow[] drs)
+        private void ShowResultScreen(int[] result_dicnumbers)
         {
             try
             {
-                if (drs.Length == 0)
+                if (result_dicnumbers.Length == 0)
                 {
-                    ETC.ShowSnackbar(SnackbarLayout, "Result Null", Snackbar.LengthShort);
+                    ETC.ShowSnackbar(SnackbarLayout, "Result Empty", Snackbar.LengthShort);
                     return;
                 }
 
-                string[] type = new string[drs.Length];
-                string[] result_names = new string[drs.Length];
+                string[] type = new string[result_dicnumbers.Length];
+                string[] result_names = new string[result_dicnumbers.Length];
 
-                for (int i = 0; i < drs.Length; ++i)
+                for (int i = 0; i < result_dicnumbers.Length; ++i)
                 {
-                    DataRow dr = drs[i];
-                    result_names[i] = (string)dr["Name"];
-
+                    DataRow dr = null;
+                    
                     switch (Category)
                     {
                         case ProductCategory.Doll:
                             type[i] = "Doll";
+                            dr = ETC.FindDataRow(ETC.DollList, "DicNumber", result_dicnumbers[i]);
                             break;
                         case ProductCategory.Equip:
-                            if ((int)dr["ProductTime"] <= 60) type[i] = "Equip";
-                            else type[i] = "Fairy";
+                            if ((int)dr["ProductTime"] <= 60)
+                            {
+                                type[i] = "Equip";
+                                dr = ETC.FindDataRow(ETC.EquipmentList, "DicNumber", result_dicnumbers[i]);
+                            }
+                            else
+                            {
+                                type[i] = "Fairy";
+                                dr = ETC.FindDataRow(ETC.FairyList, "DicNumber", result_dicnumbers[i]);
+                            }
                             break;
                     }
+
+                    result_names[i] = (string)dr["Name"];
                 }
 
                 Intent ResultInfo = new Intent(this, typeof(ProductResultActivity));
@@ -426,7 +441,7 @@ namespace GFI_with_GFS_A
             try
             {
                 List<string> AvailableType = new List<string>();
-                List<DataRow> AvailableDoll = new List<DataRow>();
+                List<Doll> AvailableDoll = new List<Doll>();
 
                 int pManPower = CalcResource("ManPower");
                 int pAmmo = CalcResource("Ammo");
@@ -465,22 +480,20 @@ namespace GFI_with_GFS_A
 
                 for (int i = 0; i < ETC.DollList.Rows.Count; ++i)
                 {
-                    DataRow dr = ETC.DollList.Rows[i];
-                    string d_name = (string)dr["Name"];
+                    Doll doll = new Doll(ETC.DollList.Rows[i]);
 
-                    if (AvailableType.Contains((string)dr["Type"]) == false) continue;
+                    if (AvailableType.Contains(doll.Type) == false) continue;
+                    if ((Type == ProductType.Normal) && (doll.DropEvent[0] == "중형제조")) continue;
+                    if (doll.ProductTime == 0) continue;
 
-                    string[] drop = ((string)dr["DropEvent"]).Split(',');
-                    if ((Type == ProductType.Normal) && (drop[0] == "중형제조")) continue;
-                    if ((int)dr["ProductTime"] == 0) continue;
-
-                    switch ((string)dr["Type"])
+                    switch (doll.Type)
                     {
                         case "SMG":
                             string[] list_smg = { "G36C", "벡터", "79식", "수오미", "SR-3MP", "C-MS", "UMP9", "UMP45", "PP-90", "시프카", "PP-19-01", "스텐 Mk.II" };
 
-                            if ((list_smg.Contains(d_name) == true) && (((Type == ProductType.Normal) && (pManPower >= 400) && (pAmmo >= 400) && (pFood >= 30) && (pParts >= 30)) || ((Type == ProductType.Advance) && (pManPower >= 4000) && (pAmmo >= 4000) && (pFood >= 1000) && (pParts >= 1000)))) AvailableDoll.Add(dr);
-                            else if (list_smg.Contains(d_name) == false) AvailableDoll.Add(dr);
+                            if ((list_smg.Contains(doll.Name) == true) && (((Type == ProductType.Normal) && (pManPower >= 400) && (pAmmo >= 400) && (pFood >= 30) && (pParts >= 30)) || ((Type == ProductType.Advance) && (pManPower >= 4000) && (pAmmo >= 4000) && (pFood >= 1000) && (pParts >= 1000))))
+                                AvailableDoll.Add(doll);
+                            else if (list_smg.Contains(doll.Name) == false) AvailableDoll.Add(doll);
                             else continue;
                             break;
                         case "HG":
@@ -488,30 +501,34 @@ namespace GFI_with_GFS_A
                             {
                                 string[] list_hg = { "M950A", "웰로드 Mk.II", "컨텐더", "스테츠킨", "P7", "Spitfire", "K5" };
 
-                                if ((list_hg.Contains(d_name) == true) && (pManPower >= 130) && (pAmmo >= 130) && (pFood >= 130) && (pParts >= 30)) AvailableDoll.Add(dr);
-                                else if (list_hg.Contains(d_name) == false) AvailableDoll.Add(dr);
+                                if ((list_hg.Contains(doll.Name) == true) && (pManPower >= 130) && (pAmmo >= 130) && (pFood >= 130) && (pParts >= 30))
+                                    AvailableDoll.Add(doll);
+                                else if (list_hg.Contains(doll.Name) == false) AvailableDoll.Add(doll);
                                 else continue;
                             }
                             break;
                         case "AR":
                             string[] list_ar = { "G41", "FAL", "95식", "97식", "RFB", "T91", "K2", "MDR", "Zas M21", "AN-94", "AK-12", "TAR-21", "G36", "리베롤" };
 
-                            if ((list_ar.Contains(d_name) == true) && (((Type == ProductType.Normal) && (pManPower >= 30) && (pAmmo >= 400) && (pFood >= 400) && (pParts >= 30)) || ((Type == ProductType.Advance) && (pManPower >= 1000) && (pAmmo >= 4000) && (pFood >= 4000) && (pParts >= 1000)))) AvailableDoll.Add(dr);
-                            else if (list_ar.Contains(d_name) == false) AvailableDoll.Add(dr);
+                            if ((list_ar.Contains(doll.Name) == true) && (((Type == ProductType.Normal) && (pManPower >= 30) && (pAmmo >= 400) && (pFood >= 400) && (pParts >= 30)) || ((Type == ProductType.Advance) && (pManPower >= 1000) && (pAmmo >= 4000) && (pFood >= 4000) && (pParts >= 1000))))
+                                AvailableDoll.Add(doll);
+                            else if (list_ar.Contains(doll.Name) == false) AvailableDoll.Add(doll);
                             else continue;
                             break;
                         case "RF":
                             string[] list_rf = { "Kar98k", "리엔필드", "M99", "IWS2000", "카르카노 M1938", "SVD", "T-5000", "한양조88식" };
 
-                            if ((list_rf.Contains(d_name) == true) && (((Type == ProductType.Normal) && (pManPower >= 400) && (pAmmo >= 30) && (pFood >= 400) && (pParts >= 30)) || ((Type == ProductType.Advance) && (pManPower >= 4000) && (pAmmo >= 1000) && (pFood >= 4000) && (pParts >= 1000)))) AvailableDoll.Add(dr);
-                            else if (list_rf.Contains(d_name) == false) AvailableDoll.Add(dr);
+                            if ((list_rf.Contains(doll.Name) == true) && (((Type == ProductType.Normal) && (pManPower >= 400) && (pAmmo >= 30) && (pFood >= 400) && (pParts >= 30)) || ((Type == ProductType.Advance) && (pManPower >= 4000) && (pAmmo >= 1000) && (pFood >= 4000) && (pParts >= 1000))))
+                                AvailableDoll.Add(doll);
+                            else if (list_rf.Contains(doll.Name) == false) AvailableDoll.Add(doll);
                             else continue;
                             break;
                         case "MG":
                             string[] list_mg = { "네게브", "MG4", "PKP", "PK" };
 
-                            if ((list_mg.Contains(d_name) == true) && (((Type == ProductType.Normal) && (pManPower >= 600) && (pAmmo >= 600) && (pFood >= 100) && (pParts >= 400)) || ((Type == ProductType.Advance) && (pManPower >= 6000) && (pAmmo >= 6000) && (pFood >= 1000) && (pParts >= 4000)))) AvailableDoll.Add(dr);
-                            else if (list_mg.Contains(d_name) == false) AvailableDoll.Contains(dr);
+                            if ((list_mg.Contains(doll.Name) == true) && (((Type == ProductType.Normal) && (pManPower >= 600) && (pAmmo >= 600) && (pFood >= 100) && (pParts >= 400)) || ((Type == ProductType.Advance) && (pManPower >= 6000) && (pAmmo >= 6000) && (pFood >= 1000) && (pParts >= 4000))))
+                                AvailableDoll.Add(doll);
+                            else if (list_mg.Contains(doll.Name) == false) AvailableDoll.Contains(doll);
                             else continue;
                             break;
                         case "SG":
@@ -519,8 +536,9 @@ namespace GFI_with_GFS_A
                             {
                                 string[] list_sg = { "Saiga-12", "S.A.T.8", "M37", "Super-Shorty", "RMB", "M1897" };
 
-                                if ((list_sg.Contains(d_name) == true) && ((pManPower >= 6000) && (pAmmo >= 1000) && (pFood >= 6000) && (pParts >= 4000))) AvailableDoll.Add(dr);
-                                else if (list_sg.Contains(d_name) == false) AvailableDoll.Add(dr);
+                                if ((list_sg.Contains(doll.Name) == true) && (pManPower >= 6000) && (pAmmo >= 1000) && (pFood >= 6000) && (pParts >= 4000))
+                                    AvailableDoll.Add(doll);
+                                else if (list_sg.Contains(doll.Name) == false) AvailableDoll.Add(doll);
                                 else continue;
                             }
                             break;
@@ -537,17 +555,23 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ProductProcess_Doll(List<DataRow> AvailableDoll, int num1, int num2, int num3, int num4, int LoopCount)
+        private void ProductProcess_Doll(List<Doll> AvailableDoll, int num1, int num2, int num3, int num4, int LoopCount)
         {
+            if (AvailableDoll.Count == 0)
+            {
+                Toast.MakeText(this, "Empty Doll List", ToastLength.Short).Show();
+                return;
+            }
+
             try
             {
-                DataRow[] Results = new DataRow[LoopCount];
+                int[] Results_DicNumber = new int[LoopCount];
 
                 Random R = new Random(DateTime.Now.Millisecond);
 
                 for (int i = 0; i < LoopCount; ++i)
                 {
-                    int seed_num1 = (num1 + num2 + num3 + num4) / (AvailableDoll.Count / 10);
+                    int seed_num1 = (num1 + num2 + num3 + num4) / AvailableDoll.Count;
                     int seed_num2 = num1 + num2 + num3 + num4;
 
                     int[] tP = { 60, 27, 10, 3 };
@@ -556,7 +580,7 @@ namespace GFI_with_GFS_A
                     int[] tAP3 = { 0, 75, 25 };
                     int ConfirmGrade = 0;
 
-                    int mag = 1;
+                    int mag = 10;
                     int[] P = null;
 
                     switch (Type)
@@ -581,6 +605,8 @@ namespace GFI_with_GFS_A
                             }
                             break;
                     }
+
+                    if (seed_num1 == 0) seed_num1 = 1;
 
                     int num = R.Next(seed_num1, seed_num2 * mag) % (100 * mag);
 
@@ -607,57 +633,22 @@ namespace GFI_with_GFS_A
                         else ConfirmGrade = 3;
                     }
 
-                    List<DataRow> FinalDoll = new List<DataRow>();
-                    int tArrange = 0;
+                    List<Doll> FinalDoll = new List<Doll>();
 
-                    foreach (DataRow dr in AvailableDoll)
+                    foreach (Doll doll in AvailableDoll)
                     {
-                        if ((int)dr["Grade"] == ConfirmGrade)
-                        {
-                            FinalDoll.Add(dr);
-
-                            int tcount = 0;
-                            if (((Type == ProductType.Normal) && (dr["ProductionPercent"] == DBNull.Value)) || ((Type == ProductType.Advance) && (dr["AdvanceProductionPercent"] == DBNull.Value))) tcount = 100;
-                            else
-                            {
-                                if (Type == ProductType.Normal) tcount += (int)dr["ProductionPercent"];
-                                else tcount += (int)dr["AdvanceProductionPercent"];
-                            }
-
-                            tArrange += tcount;
-                        }
+                        if (doll.Grade == ConfirmGrade)
+                            FinalDoll.Add(doll);
                     }
 
                     FinalDoll.TrimExcess();
 
-                    int fnum = R.Next(1, tArrange);
-                    int count = 0;
-                    DataRow ResultDoll = null;
+                    int fnum = R.Next(1, FinalDoll.Count * 100) % FinalDoll.Count;
 
-                    foreach (DataRow dr in FinalDoll)
-                    {
-                        int count2 = count;
-
-                        if (((Type == ProductType.Normal) && (dr["ProductionPercent"] == DBNull.Value)) || ((Type == ProductType.Advance) && (dr["AdvanceProductionPercent"] == DBNull.Value))) count2 += 100;
-                        else
-                        {
-                            if (Type == ProductType.Normal) count2 += (int)dr["ProductionPercent"];
-                            else count2 += (int)dr["AdvanceProductionPercent"];
-                        }
-
-                        if ((fnum > count) && (fnum <= count2))
-                        {
-                            ResultDoll = dr;
-                            break;
-                        }
-
-                        count = count2;
-                    }
-
-                    Results[i] = ResultDoll;
+                    Results_DicNumber[i] = FinalDoll[fnum].DicNumber;
                 }
 
-                ShowResultScreen(Results);
+                ShowResultScreen(Results_DicNumber);
             }
             catch (Exception ex)
             {

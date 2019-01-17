@@ -29,6 +29,7 @@
   <string name="Calc_AreaExp_LevelSettingText">* Set Level *</string>
   <string name="Calc_AreaExp_NowTotalExpSettingText">* Now Exp *</string>
   <string name="Calc_AreaExp_VowSettingCheckBox">Apply Oath (Marry)</string>
+  <string name="Calc_AreaExp_ExpEventSettingCheckBox">Apply Exp Event(x1.5)</string>
   <string name="Calc_AreaExp_AutoAddDummySettingCheckBox">Auto Dummy Link Up</string>
   <string name="Calc_AreaExp_LastEnemySettingCheckBox">Remove Boss, Last Enemy</string>
   
@@ -151,6 +152,9 @@
   <string name="Permission_Error">Authorization failed</string>
   <string name="PermissionDeny_Message">You cannot use this dictionary app normally If you do not allow the authority</string>
   <string name="RefreshImageCacheText">Update Image cache</string>
+  <string name="Main_DBChecking">Checking...</string>
+  <string name="Main_DBUpdateAvailable">Update Available</string>
+  <string name="Main_DBUpdateNewest">Up To Date</string>
   
   <!--Common String-->
   <string name="Common_AC">Accurace</string>
@@ -527,11 +531,11 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.2 Update]\n\n
-- Add Fast Scroll feature\n
-- Fix image load issue in Cartoon\n
-- Add Cartoon Category\n
-- Add Cartoon Content
+    [2.3.5 Update]\n\n
+- Add Splash Screen\n
+- Add DB Version status in Mainmenu\n
+- Add Exp Event Option in Area Exp Calc\n
+- Edit some string
   </string>
 
   <string name="RFBot_CommandHelp">

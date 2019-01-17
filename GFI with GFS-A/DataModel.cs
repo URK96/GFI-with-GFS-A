@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using UptimeSharp;
 using System.Data;
 using System.Net;
 
@@ -48,6 +47,7 @@ namespace GFI_with_GFS_A
         public string[,] CostumeVoices { get; private set; }
         public bool HasCensored { get; private set; }
         public string[] CensorType { get; private set; }
+        public string[] DropEvent { get; private set; }
 
         public Dictionary<string, string> Abilities { get; private set; }
         public string[] AbilityGrade { get; private set; }
@@ -82,6 +82,7 @@ namespace GFI_with_GFS_A
             Grade = (int)dr["Grade"];
             ProductTime = (int)dr["ProductTime"];
             Type = (string)dr["Type"];
+            DropEvent = ((string)dr["DropEvent"]).Split(',');
             HasMod = (bool)dr["HasMod"];
             HasVoice = (bool)dr["HasVoice"];
             Illustrator = (string)dr["Illustrator"];
@@ -142,10 +143,6 @@ namespace GFI_with_GFS_A
                 CostumeVoices = null;
             }
 
-            //CropImagePath = Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", $"{DicNumber}.gfdcache");
-            //ModCropImagePath = Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", $"{DicNumber}_M.gfdcache");
-            //FullImagePath = Path.Combine(ETC.CachePath, "Doll", "Normal", $"{doll.DicNumber}.gfdcache");
-
             switch (Grade)
             {
                 case 0:
@@ -164,7 +161,6 @@ namespace GFI_with_GFS_A
                     GradeIconId = Resource.Drawable.Grade_5;
                     break;
             }
-
 
             SetAbility(ref dr);
         }
