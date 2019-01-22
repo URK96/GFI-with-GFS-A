@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.OS;
-using Android.Runtime;
-using Android.Support.V4.View;
-using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using System;
+using System.Collections.Generic;
 
 namespace GFI_with_GFS_A
 {
@@ -32,7 +25,7 @@ namespace GFI_with_GFS_A
         private string[] Main_List;
         private List<string> SubMain_List = new List<string>();
         private List<string> Item_List = new List<string>();
-
+        private List<string> TopTitle_List = new List<string>();
         private List<string> Caption_List = new List<string>();
 
         private StoryListAdapter adapter;
@@ -58,7 +51,7 @@ namespace GFI_with_GFS_A
 
             InitializeList();
 
-            adapter = new StoryListAdapter(Main_List, Caption_List.ToArray());
+            adapter = new StoryListAdapter(Main_List, TopTitle_List.ToArray(), Caption_List.ToArray());
             adapter.ItemClick += Adapter_ItemClick;
             MainRecyclerView.SetAdapter(adapter);
         }
@@ -86,6 +79,8 @@ namespace GFI_with_GFS_A
         {
             Main_List = Resources.GetStringArray(Resource.Array.Story_Main);
 
+            TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_TopTitle));
+            TopTitle_List.TrimExcess();
             Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Caption));
             Caption_List.TrimExcess();
         }
@@ -95,6 +90,7 @@ namespace GFI_with_GFS_A
             adapter = null;
             SubMain_List.Clear();
             Caption_List.Clear();
+            TopTitle_List.Clear();
 
             if (IsPrevious == true)
             {
@@ -102,7 +98,10 @@ namespace GFI_with_GFS_A
                 {
                     case Category.SubMain:
                         Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Caption));
-                        adapter = new StoryListAdapter(Main_List, Caption_List.ToArray());
+                        TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_TopTitle));
+                        Caption_List.TrimExcess();
+                        TopTitle_List.TrimExcess();
+                        adapter = new StoryListAdapter(Main_List, TopTitle_List.ToArray(), Caption_List.ToArray());
                         CategoryType = Category.Main;
                         PreviousButton.Enabled = false;
                         break;
@@ -111,17 +110,21 @@ namespace GFI_with_GFS_A
                         {
                             SubMain_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main));
                             Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main_Caption));
+                            TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main_TopTitle));
                             SubMain_List.TrimExcess();
                             Caption_List.TrimExcess();
-                            adapter = new StoryListAdapter(SubMain_List.ToArray(), Caption_List.ToArray());
+                            TopTitle_List.TrimExcess();
+                            adapter = new StoryListAdapter(SubMain_List.ToArray(), TopTitle_List.ToArray(), Caption_List.ToArray());
                         }
                         else if (TopType == Top.Sub)
                         {
                             SubMain_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub));
                             Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_Caption));
+                            TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_Caption));
                             SubMain_List.TrimExcess();
                             Caption_List.TrimExcess();
-                            adapter = new StoryListAdapter(SubMain_List.ToArray(), Caption_List.ToArray());
+                            TopTitle_List.TrimExcess();
+                            adapter = new StoryListAdapter(SubMain_List.ToArray(), TopTitle_List.ToArray(), Caption_List.ToArray());
                         }
                         CategoryType = Category.SubMain;
                         break;
@@ -138,17 +141,21 @@ namespace GFI_with_GFS_A
                         {
                             SubMain_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main));
                             Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main_Caption));
+                            TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main_TopTitle));
                             SubMain_List.TrimExcess();
                             Caption_List.TrimExcess();
-                            adapter = new StoryListAdapter(SubMain_List.ToArray(), Caption_List.ToArray());
+                            TopTitle_List.TrimExcess();
+                            adapter = new StoryListAdapter(SubMain_List.ToArray(), TopTitle_List.ToArray(), Caption_List.ToArray());
                         }
                         else if (TopType == Top.Sub)
                         {
                             SubMain_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub));
                             Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_Caption));
+                            TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_Caption));
                             SubMain_List.TrimExcess();
                             Caption_List.TrimExcess();
-                            adapter = new StoryListAdapter(SubMain_List.ToArray(), Caption_List.ToArray());
+                            TopTitle_List.TrimExcess();
+                            adapter = new StoryListAdapter(SubMain_List.ToArray(), TopTitle_List.ToArray(), Caption_List.ToArray());
                         }
                         CategoryType = Category.SubMain;
                         break;
@@ -185,11 +192,13 @@ namespace GFI_with_GFS_A
 
     public class StoryListViewHolder : RecyclerView.ViewHolder
     {
+        public TextView TopTitle { get; private set; }
         public TextView Title { get; private set; }
         public TextView Caption { get; private set; }
 
         public StoryListViewHolder(View view, Action<int> listener) : base (view)
         {
+            TopTitle = view.FindViewById<TextView>(Resource.Id.StoryListViewTopTitleText);
             Title = view.FindViewById<TextView>(Resource.Id.StoryListViewTitleText);
             Caption = view.FindViewById<TextView>(Resource.Id.StoryListViewCaptionText);
 
@@ -200,13 +209,15 @@ namespace GFI_with_GFS_A
     public class StoryListAdapter : RecyclerView.Adapter
     {
         private string[] TitleList;
+        private string[] TopTitleList;
         private string[] CaptionList;
 
         public event EventHandler<int> ItemClick;
 
-        public StoryListAdapter(string[] title, string[] caption)
+        public StoryListAdapter(string[] title, string[] toptitle, string[] caption)
         {
             TitleList = title;
+            TopTitleList = toptitle;
             CaptionList = caption;
         }
 
@@ -214,6 +225,7 @@ namespace GFI_with_GFS_A
         {
             StoryListViewHolder vh = holder as StoryListViewHolder;
 
+            vh.TopTitle.Text = TopTitleList[position];
             vh.Title.Text = TitleList[position];
             vh.Caption.Text = CaptionList[position];
         }

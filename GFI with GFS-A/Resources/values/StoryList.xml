@@ -1,13 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
+  <string-array name="Story_Main_TopTitle">
+    <item>Main</item>
+    <item>Sub</item>
+  </string-array>
+  
   <string-array name="Story_Main">
-    <item>메인스토리</item>
-    <item>서브스토리 (Comming Soon)</item>
+    <item>메인이야기</item>
+    <item>서브이야기 (Comming Soon)</item>
   </string-array>
 
   <string-array name="Story_Main_Caption">
-    <item>메인스토리</item>
-    <item>서브스토리 (Comming Soon)</item>
+    <item>메인이야기</item>
+    <item>서브이야기 (Comming Soon)</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_TopTitle">
+    <item>프롤로그</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>콜라보 이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>콜라보 이벤트</item>
+    <item>콜라보 이벤트</item>
+    <item>이벤트</item>
   </string-array>
 
   <string-array name="Story_Main_Main">
@@ -38,7 +74,7 @@
     <item>특이점</item>
     <item>영광의 날 : Avec Nous</item>
     <item>영광의 날 : Dreaming on You</item>
-    <!--<item>난류연속</item>--><item>Coming Soon...</item>
+    <item>난류연속</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Caption">
@@ -69,7 +105,7 @@
     <item>특이점</item>
     <item>Avec Nous</item>
     <item>Dreaming on You</item>
-    <!--<item>난류연속</item>--><item>Coming Soon...</item>
+    <item>난류연속</item>
   </string-array>
 
   <string-array name="Story_Main_Sub">

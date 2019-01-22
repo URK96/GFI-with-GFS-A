@@ -1,5 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
+  <string-array name="Story_Main_Main_Prologue_TopTitle">
+    <item>프롤로그</item>
+    <item>프롤로그</item>
+    <item>프롤로그</item>
+    <item>프롤로그</item>
+    <item>프롤로그</item>
+    <item>프롤로그</item>
+    <item>프롤로그</item>
+    <item>프롤로그</item>
+    <item>프롤로그</item>
+    <item>프롤로그</item>
+    <item>프롤로그</item>
+    <item>프롤로그</item>
+  </string-array>
+  
   <string-array name="Story_Main_Main_Prologue">
     <item>프롤로그 1</item>
     <item>프롤로그 2</item>
@@ -29,12 +44,19 @@
     <item>프롤로그 11</item>
     <item>프롤로그 12</item>
   </string-array>
-  
+
+  <string-array name="Story_Main_Main_Area_0_TopTitle">
+    <item>일반 0-1</item>
+    <item>일반 0-2</item>
+    <item>일반 0-3</item>
+    <item>일반 0-4</item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Area_0">
-    <item>0-1 준비운동</item>
-    <item>0-2 흑색정보</item>
-    <item>0-3 거점수호</item>
-    <item>0-4 마지막 도전</item>
+    <item>준비운동</item>
+    <item>흑색정보</item>
+    <item>거점수호</item>
+    <item>마지막 도전</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Area_0_Caption">
@@ -44,21 +66,38 @@
     <item>M4A1의 보고 : 현지 그리폰소대의 협조하에, 뿔뿔이 흩어진 우리가, 겨우 모일 수 있었어요...</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Area_1_TopTitle">
+    <item>일반 1-1</item>
+    <item>일반 1-2</item>
+    <item>일반 1-3</item>
+    <item>일반 1-4</item>
+    <item>일반 1-5</item>
+    <item>일반 1-6</item>
+    <item>긴급 1-1</item>
+    <item>긴급 1-2</item>
+    <item>긴급 1-3 </item>
+    <item>긴급 1-4 </item>
+    <item>야간 1-1</item>
+    <item>야간 1-2 </item>
+    <item>야간 1-3</item>
+    <item>야간 1-4</item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Area_1">
-    <item>1-1 연습훈련</item>
-    <item>1-2 부상자 이송</item>
-    <item>1-3 이변 조사</item>
-    <item>1-4 실종자</item>
-    <item>1-5 구조신호</item>
-    <item>1-6 제초작전</item>
-    <item>1-1E 역량 평가 1</item>
-    <item>1-2E 역량 평가 2</item>
-    <item>1-3E 역량 평가 3</item>
-    <item>1-4E 역량 평가 4</item>
-    <item>1-1N 꼬마 집배원 1</item>
-    <item>1-2N 꼬마 집배원 2</item>
-    <item>1-3N 꼬마 집배원 3</item>
-    <item>1-4N 꼬마 집배원 4</item>
+    <item>연습훈련</item>
+    <item>부상자 이송</item>
+    <item>이변 조사</item>
+    <item>실종자</item>
+    <item>구조신호</item>
+    <item>제초작전</item>
+    <item>역량 평가 1</item>
+    <item>역량 평가 2</item>
+    <item>역량 평가 3</item>
+    <item>역량 평가 4</item>
+    <item>꼬마 집배원 1</item>
+    <item>꼬마 집배원 2</item>
+    <item>꼬마 집배원 3</item>
+    <item>꼬마 집배원 4</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Area_1_Caption">
@@ -78,21 +117,38 @@
     <item>지휘관님의 협조아래, MP5가 헬리안 씨에게 무사히 정보를 전달했습니다. 이제부터 시작이에요.</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Area_2_TopTitle">
+    <item>일반 2-1</item>
+    <item>일반 2-2</item>
+    <item>일반 2-3</item>
+    <item>일반 2-4</item>
+    <item>일반 2-5</item>
+    <item>일반 2-6</item>
+    <item>긴급 2-1</item>
+    <item>긴급 2-2</item>
+    <item>긴급 2-3 </item>
+    <item>긴급 2-4 </item>
+    <item>야간 2-1</item>
+    <item>야간 2-2 </item>
+    <item>야간 2-3</item>
+    <item>야간 2-4</item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Area_2">
-    <item>2-1 추적일지</item>
-    <item>2-2 긴급지원</item>
-    <item>2-3 정황조사</item>
-    <item>2-4 데이터 수집</item>
-    <item>2-5 추가의뢰</item>
-    <item>2-6 작전종료</item>
-    <item>2-1E 샘플수집 1</item>
-    <item>2-2E 샘플수집 2</item>
-    <item>2-3E 샘플수집 3</item>
-    <item>2-4E 샘플수집 4</item>
-    <item>2-1N 전문 서포터 1</item>
-    <item>2-2N 전문 서포터 2</item>
-    <item>2-3N 전문 서포터 3</item>
-    <item>2-4N 전문 서포터 4</item>
+    <item>추적일지</item>
+    <item>긴급지원</item>
+    <item>정황조사</item>
+    <item>데이터 수집</item>
+    <item>추가의뢰</item>
+    <item>작전종료</item>
+    <item>샘플수집 1</item>
+    <item>샘플수집 2</item>
+    <item>샘플수집 3</item>
+    <item>샘플수집 4</item>
+    <item>전문 서포터 1</item>
+    <item>전문 서포터 2</item>
+    <item>전문 서포터 3</item>
+    <item>전문 서포터 4</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Area_2_Caption">
@@ -112,21 +168,38 @@
     <item>군측은 아무런 반응도 보이지 않네요...작전은 원만하게 흘러가고있어요. 이런 소소한 복수도 포함해서 말이죠.</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Area_3_TopTitle">
+    <item>일반 3-1</item>
+    <item>일반 3-2</item>
+    <item>일반 3-3</item>
+    <item>일반 3-4</item>
+    <item>일반 3-5</item>
+    <item>일반 3-6</item>
+    <item>긴급 3-1</item>
+    <item>긴급 3-2</item>
+    <item>긴급 3-3 </item>
+    <item>긴급 3-4 </item>
+    <item>야간 3-1</item>
+    <item>야간 3-2 </item>
+    <item>야간 3-3</item>
+    <item>야간 3-4</item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Area_3">
-    <item>3-1 입구개통</item>
-    <item>3-2 정보탈취</item>
-    <item>3-3 비밀지원</item>
-    <item>3-4 방어작전</item>
-    <item>3-5 빠른역습</item>
-    <item>3-6 사냥금지</item>
-    <item>3-1E 데이터 회수 1</item>
-    <item>3-2E 데이터 회수 2</item>
-    <item>3-3E 데이터 회수 3</item>
-    <item>3-4E 데이터 회수 4</item>
-    <item>3-1N 익명구조 1</item>
-    <item>3-2N 익명구조 2</item>
-    <item>3-3N 익명구조 3</item>
-    <item>3-4N 익명구조 4</item>
+    <item>입구개통</item>
+    <item>정보탈취</item>
+    <item>비밀지원</item>
+    <item>방어작전</item>
+    <item>빠른역습</item>
+    <item>사냥금지</item>
+    <item>데이터 회수 1</item>
+    <item>데이터 회수 2</item>
+    <item>데이터 회수 3</item>
+    <item>데이터 회수 4</item>
+    <item>익명구조 1</item>
+    <item>익명구조 2</item>
+    <item>익명구조 3</item>
+    <item>익명구조 4</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Area_3_Caption">
@@ -146,21 +219,38 @@
     <item>저희는 나강M1895의 도구를 회수하여, 작전을 완료했어요. 이후 작전에 도움이 되면 좋겠지만...</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Area_4_TopTitle">
+    <item>일반 4-1</item>
+    <item>일반 4-2</item>
+    <item>일반 4-3</item>
+    <item>일반 4-4</item>
+    <item>일반 4-5</item>
+    <item>일반 4-6</item>
+    <item>긴급 4-1</item>
+    <item>긴급 4-2</item>
+    <item>긴급 4-3 </item>
+    <item>긴급 4-4 </item>
+    <item>야간 4-1</item>
+    <item>야간 4-2 </item>
+    <item>야간 4-3</item>
+    <item>야간 4-4</item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Area_4">
-    <item>4-1 보조용병</item>
-    <item>4-2 증원차단</item>
-    <item>4-3 전선돌파</item>
-    <item>4-4 동료수색</item>
-    <item>4-5 좌표측정</item>
-    <item>4-6 교랸수습</item>
-    <item>4-1E 기억회상 1</item>
-    <item>4-2E 기억회상 2</item>
-    <item>4-3E 기억회상 3</item>
-    <item>4-4E 기억회상 4</item>
-    <item>4-1N 7일간 동료 1</item>
-    <item>4-2N 7일간 동료 2</item>
-    <item>4-3N 7일간 동료 3</item>
-    <item>4-4N 7일간 동료 4</item>
+    <item>보조용병</item>
+    <item>증원차단</item>
+    <item>전선돌파</item>
+    <item>동료수색</item>
+    <item>좌표측정</item>
+    <item>교랸수습</item>
+    <item>기억회상 1</item>
+    <item>기억회상 2</item>
+    <item>기억회상 3</item>
+    <item>기억회상 4</item>
+    <item>7일간 동료 1</item>
+    <item>7일간 동료 2</item>
+    <item>7일간 동료 3</item>
+    <item>7일간 동료 4</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Area_4_Caption">
@@ -180,21 +270,38 @@
     <item>RO의 보고 : 임무를 완료했습니다. 부디 오늘밤엔 모두다 즐겁게 놀수 있었으면 좋겠습니다...그리고...</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Area_5_TopTitle">
+    <item>일반 5-1</item>
+    <item>일반 5-2</item>
+    <item>일반 5-3</item>
+    <item>일반 5-4</item>
+    <item>일반 5-5</item>
+    <item>일반 5-6</item>
+    <item>긴급 5-1</item>
+    <item>긴급 5-2</item>
+    <item>긴급 5-3 </item>
+    <item>긴급 5-4 </item>
+    <item>야간 5-1</item>
+    <item>야간 5-2 </item>
+    <item>야간 5-3</item>
+    <item>야간 5-4</item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Area_5">
-    <item>5-1 훈련 참가</item>
-    <item>5-2 기습 저지</item>
-    <item>5-3 반격개시</item>
-    <item>5-4 퇴로확보</item>
-    <item>5-5 내부현상</item>
-    <item>5-6 추격 밀령</item>
-    <item>5-1E 퍼즐풀이 1</item>
-    <item>5-2E 퍼즐풀이 2</item>
-    <item>5-3E 퍼즐풀이 3</item>
-    <item>5-4E 퍼즐풀이 4</item>
-    <item>5-1N 비상배식 1</item>
-    <item>5-2N 비상배식 2</item>
-    <item>5-3N 비상배식 3</item>
-    <item>5-4N 비상배식 4</item>
+    <item>훈련 참가</item>
+    <item>기습 저지</item>
+    <item>반격개시</item>
+    <item>퇴로확보</item>
+    <item>내부현상</item>
+    <item>추격 밀령</item>
+    <item>퍼즐풀이 1</item>
+    <item>퍼즐풀이 2</item>
+    <item>퍼즐풀이 3</item>
+    <item>퍼즐풀이 4</item>
+    <item>비상배식 1</item>
+    <item>비상배식 2</item>
+    <item>비상배식 3</item>
+    <item>비상배식 4</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Area_5_Caption">
@@ -214,21 +321,38 @@
     <item>강대한 철혈의 보스가 무서운 재난을 가지고 왔지만, 전우들의 마음을 다시 한번 한곳으로 모아주었어요.</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Area_6_TopTitle">
+    <item>일반 6-1</item>
+    <item>일반 6-2</item>
+    <item>일반 6-3</item>
+    <item>일반 6-4</item>
+    <item>일반 6-5</item>
+    <item>일반 6-6</item>
+    <item>긴급 6-1</item>
+    <item>긴급 6-2</item>
+    <item>긴급 6-3 </item>
+    <item>긴급 6-4 </item>
+    <item>야간 6-1</item>
+    <item>야간 6-2 </item>
+    <item>야간 6-3</item>
+    <item>야간 6-4</item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Area_6">
-    <item>6-1 네게브 소대</item>
-    <item>6-2 이중 구조작전</item>
-    <item>6-3 재회</item>
-    <item>6-4 감금인</item>
-    <item>6-5 의지</item>
-    <item>6-6 뒤늦은 이별</item>
-    <item>6-1E 마지막 소원 1</item>
-    <item>6-2E 마지막 소원 2</item>
-    <item>6-3E 마지막 소원 3</item>
-    <item>6-4E 마지막 소원 4</item>
-    <item>6-1N 호문쿨루스 1</item>
-    <item>6-2N 호문쿨루스 2</item>
-    <item>6-3N 호문쿨루스 3</item>
-    <item>6-4N 호문쿨루스 4</item>
+    <item>네게브 소대</item>
+    <item>이중 구조작전</item>
+    <item>재회</item>
+    <item>감금인</item>
+    <item>의지</item>
+    <item>뒤늦은 이별</item>
+    <item>마지막 소원 1</item>
+    <item>마지막 소원 2</item>
+    <item>마지막 소원 3</item>
+    <item>마지막 소원 4</item>
+    <item>호문쿨루스 1</item>
+    <item>호문쿨루스 2</item>
+    <item>호문쿨루스 3</item>
+    <item>호문쿨루스 4</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Area_6_Caption">
@@ -248,21 +372,38 @@
     <item>FAL의 보고 : 알케미스트의 계획을 저지하기 위해 저희는 작전을 개시하였어요. 57과 동료들이 무사하길...</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Area_7_TopTitle">
+    <item>일반 7-1</item>
+    <item>일반 7-2</item>
+    <item>일반 7-3</item>
+    <item>일반 7-4</item>
+    <item>일반 7-5</item>
+    <item>일반 7-6</item>
+    <item>긴급 7-1</item>
+    <item>긴급 7-2</item>
+    <item>긴급 7-3 </item>
+    <item>긴급 7-4 </item>
+    <item>야간 7-1</item>
+    <item>야간 7-2 </item>
+    <item>야간 7-3</item>
+    <item>야간 7-4</item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Area_7">
-    <item>7-1 새로운 일</item>
-    <item>7-2 파괴활동</item>
-    <item>7-3 일과순찰</item>
-    <item>7-4 급습</item>
-    <item>7-5 술래잡기</item>
-    <item>7-6 재회</item>
-    <item>7-1E 회수작전 1</item>
-    <item>7-2E 회수작전 2</item>
-    <item>7-3E 회수작전 3</item>
-    <item>7-4E 회수작전 4</item>
-    <item>7-1N 일방적인 회상 1</item>
-    <item>7-2N 일방적인 회상 2</item>
-    <item>7-3N 일방적인 회상 3</item>
-    <item>7-4N 일방적인 회상 4</item>
+    <item>새로운 일</item>
+    <item>파괴활동</item>
+    <item>일과순찰</item>
+    <item>급습</item>
+    <item>술래잡기</item>
+    <item>재회</item>
+    <item>회수작전 1</item>
+    <item>회수작전 2</item>
+    <item>회수작전 3</item>
+    <item>회수작전 4</item>
+    <item>일방적인 회상 1</item>
+    <item>일방적인 회상 2</item>
+    <item>일방적인 회상 3</item>
+    <item>일방적인 회상 4</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Area_7_Caption">
@@ -281,22 +422,39 @@
     <item>네게브 : 난 이러한 기억을 통해 우리의 마음에 희망을 가져다 주고, 바꿀 수 없는 미래를 향해 나아가기로 한다......</item>
     <item>네게브 : 끝내, 나는 깨어났고, 모든 것을 떠올렸다......</item>
   </string-array>
+  
+  <string-array name="Story_Main_Main_Area_8_TopTitle">
+    <item>일반 8-1</item>
+    <item>일반 8-2</item>
+    <item>일반 8-3</item>
+    <item>일반 8-4</item>
+    <item>일반 8-5</item>
+    <item>일반 8-6</item>
+    <item>긴급 8-1</item>
+    <item>긴급 8-2</item>
+    <item>긴급 8-3 </item>
+    <item>긴급 8-4 </item>
+    <item>야간 8-1</item>
+    <item>야간 8-2 </item>
+    <item>야간 8-3</item>
+    <item>야간 8-4</item>
+  </string-array>
 
   <string-array name="Story_Main_Main_Area_8">
-    <item>8-1 발표회</item>
-    <item>8-2 최후의만찬</item>
-    <item>8-3 가속</item>
-    <item>8-4 불청객</item>
-    <item>8-5 하늘에 그림자</item>
-    <item>8-6 사명</item>
-    <item>8-1E 순례자 1</item>
-    <item>8-2E 순례자 2</item>
-    <item>8-3E 순례자 3</item>
-    <item>8-4E 순례자 4</item>
-    <item>8-1N 독수리와 갈까마귀 1</item>
-    <item>8-2N 독수리와 갈까마귀 2</item>
-    <item>8-3N 독수리와 갈까마귀 3</item>
-    <item>8-4N 독수리와 갈까마귀 4</item>
+    <item>발표회</item>
+    <item>최후의만찬</item>
+    <item>가속</item>
+    <item>불청객</item>
+    <item>하늘에 그림자</item>
+    <item>사명</item>
+    <item>순례자 1</item>
+    <item>순례자 2</item>
+    <item>순례자 3</item>
+    <item>순례자 4</item>
+    <item>독수리와 갈까마귀 1</item>
+    <item>독수리와 갈까마귀 2</item>
+    <item>독수리와 갈까마귀 3</item>
+    <item>독수리와 갈까마귀 4</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Area_8_Caption">
@@ -316,17 +474,30 @@
     <item>IWS2000의 보고: 이 테러를 막아내는 대가로 제 목숨 하나만 희생하면 된다면… 꽤나 괜찮은 거래지 않을까요?</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Area_9_TopTitle">
+    <item>일반 9-1</item>
+    <item>일반 9-2</item>
+    <item>일반 9-3</item>
+    <item>일반 9-4</item>
+    <item>일반 9-5</item>
+    <item>일반 9-6</item>
+    <item>긴급 9-1</item>
+    <item>긴급 9-2</item>
+    <item>긴급 9-3 </item>
+    <item>긴급 9-4 </item>
+  </string-array>
+  
   <string-array name="Story_Main_Main_Area_9">
-    <item>9-1 야간연회</item>
-    <item>9-2 탐색</item>
-    <item>9-3 토론회</item>
-    <item>9-4 2차 탐색</item>
-    <item>9-5 전주곡</item>
-    <item>9-6 포위돌파</item>
-    <item>9-1E 매와 개 1</item>
-    <item>9-2E 매와 개 2</item>
-    <item>9-3E 매와 개 3</item>
-    <item>9-4E 매와 개 4</item>
+    <item>야간연회</item>
+    <item>탐색</item>
+    <item>토론회</item>
+    <item>2차 탐색</item>
+    <item>전주곡</item>
+    <item>포위돌파</item>
+    <item>매와 개 1</item>
+    <item>매와 개 2</item>
+    <item>매와 개 3</item>
+    <item>매와 개 4</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Area_9_Caption">
@@ -342,17 +513,30 @@
     <item>RO의 보고 : 저희는 저지의 움직임을 포착했습니다! 이 때, 만약 더 많은 동료들이 도와주러 왔다면...</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Area_10_TopTitle">
+    <item>일반 10-1</item>
+    <item>일반 10-2</item>
+    <item>일반 10-3</item>
+    <item>일반 10-4</item>
+    <item>일반 10-5</item>
+    <item>일반 10-6</item>
+    <item>긴급 10-1</item>
+    <item>긴급 10-2</item>
+    <item>긴급 10-3 </item>
+    <item>긴급 10-4 </item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Area_10">
-    <item>10-1 출발일</item>
-    <item>10-2 전선으로 가다</item>
-    <item>10-3 중심 지역 도착</item>
-    <item>10-4 대토벌</item>
-    <item>10-5 고군분투</item>
-    <item>10-6 목숨을 건 돌파</item>
-    <item>10-1E 배신 1</item>
-    <item>10-2E 배신 2</item>
-    <item>10-3E 배신 3</item>
-    <item>10-4E 배신 4</item>
+    <item>출발일</item>
+    <item>전선으로 가다</item>
+    <item>중심 지역 도착</item>
+    <item>대토벌</item>
+    <item>고군분투</item>
+    <item>목숨을 건 돌파</item>
+    <item>배신 1</item>
+    <item>배신 2</item>
+    <item>배신 3</item>
+    <item>배신 4</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Area_10_Caption">
@@ -368,17 +552,30 @@
     <item>저기! 대체 어떻게 된 거죠? 엉망진창이에요! AR팀은 어떻게 됐나요? 저희 기지도 대체 무슨 일이 일어난 거죠? 전 어쩌면 좋죠? 지휘관님!</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Area_11_TopTitle">
+    <item>일반 11-1</item>
+    <item>일반 11-2</item>
+    <item>일반 11-3</item>
+    <item>일반 11-4</item>
+    <item>일반 11-5</item>
+    <item>일반 11-6</item>
+    <item>긴급 11-1</item>
+    <item>긴급 11-2</item>
+    <item>긴급 11-3 </item>
+    <item>긴급 11-4 </item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Area_11">
-    <item>11-1 급류를 뚫고</item>
-    <item>11-2 전자의 눈동자</item>
-    <item>11-3 침묵 속 추적</item>
-    <item>11-4 파멸 직전</item>
-    <item>11-5 거리의 오두막</item>
-    <item>11-6 지하세계</item>
-    <item>11-1E 낮선 여정</item>
-    <item>11-2E 습격 준비</item>
-    <item>11-3E 난리 속 강도</item>
-    <item>11-4E 역경 탈출</item>
+    <item>급류를 뚫고</item>
+    <item>전자의 눈동자</item>
+    <item>침묵 속 추적</item>
+    <item>파멸 직전</item>
+    <item>거리의 오두막</item>
+    <item>지하세계</item>
+    <item>낮선 여정</item>
+    <item>습격 준비</item>
+    <item>난리 속 강도</item>
+    <item>역경 탈출</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Area_11_Caption">

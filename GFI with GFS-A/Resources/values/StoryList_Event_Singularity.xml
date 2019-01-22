@@ -1,48 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
+  <string-array name="Story_Main_Main_Event_Singularity_TopTitle">
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 풀 리트릿</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 세컨드 문</item>
+    <item>특이점 : 엔드 게임</item>
+    <item>특이점 : 엔드 게임</item>
+    <item>특이점 : 엔드 게임</item>
+    <item>특이점 : 엔드 게임</item>
+    <item>특이점 : 엔드 게임</item>
+    <item>특이점 : 엔드 게임</item>
+    <item>특이점 : 엔드 게임</item>
+    <item>특이점 : 엔드 게임</item>
+  </string-array>
+  
   <string-array name="Story_Main_Main_Event_Singularity">
-    <item>풀 리트릿 - 엔드 게임</item>
-    <item>풀 리트릿 - 시작점</item>
-    <item>풀 리트릿 - 분기점</item>
-    <item>풀 리트릿 - 행정사점 1</item>
-    <item>풀 리트릿 - 행정사점 2</item>
-    <item>풀 리트릿 - 행정사점 3</item>
-    <item>풀 리트릿 - 행정사점 4</item>
-    <item>풀 리트릿 - 압축시동 1</item>
-    <item>풀 리트릿 - 압축시동 2</item>
-    <item>풀 리트릿 - 압축시동 3</item>
-    <item>풀 리트릿 - 압축시동 4</item>
-    <item>풀 리트릿 - 재점화 1</item>
-    <item>풀 리트릿 - 재점화 2</item>
-    <item>풀 리트릿 - 재점화 3</item>
-    <item>풀 리트릿 - 재점화 4</item>
-    <item>풀 리트릿 - 메신저</item>
-    <item>세컨드 문 - 분기점</item>
-    <item>세컨드 문 - 퀸즈 갬빗 1</item>
-    <item>세컨드 문 - 퀸즈 갬빗 2</item>
-    <item>세컨드 문 - 퀸즈 갬빗 3</item>
-    <item>세컨드 문 - 퀸즈 갬빗 4</item>
-    <item>세컨드 문 - 캐슬링 1</item>
-    <item>세컨드 문 - 캐슬링 2</item>
-    <item>세컨드 문 - 캐슬링 3</item>
-    <item>세컨드 문 - 캐슬링 4</item>
-    <item>세컨드 문 - 프로모션 1</item>
-    <item>세컨드 문 - 프로모션 2</item>
-    <item>세컨드 문 - 프로모션 3</item>
-    <item>세컨드 문 - 프로모션 4</item>
-    <item>세컨드 문 - 노 메이트 1</item>
-    <item>세컨드 문 - 노 메이트 2</item>
-    <item>세컨드 문 - 노 메이트 3</item>
-    <item>세컨드 문 - 노 메이트 4</item>
-    <item>세컨드 문 - 생존자</item>
-    <item>엔드 게임 - 최종수단 1</item>
-    <item>엔드 게임 - 최종수단 2</item>
-    <item>엔드 게임 - 최종수단 3</item>
-    <item>엔드 게임 - 최종수단 4</item>
-    <item>엔드 게임 - 최종수단 5</item>
-    <item>엔드 게임 - 엔드 게임</item>
-    <item>엔드 게임 - 굿바이 용궁</item>
-    <item>엔드 게임 - 말벌집</item>
+    <item>엔드 게임</item>
+    <item>시작점</item>
+    <item>분기점</item>
+    <item>행정사점 1</item>
+    <item>행정사점 2</item>
+    <item>행정사점 3</item>
+    <item>행정사점 4</item>
+    <item>압축시동 1</item>
+    <item>압축시동 2</item>
+    <item>압축시동 3</item>
+    <item>압축시동 4</item>
+    <item>재점화 1</item>
+    <item>재점화 2</item>
+    <item>재점화 3</item>
+    <item>재점화 4</item>
+    <item>메신저</item>
+    <item>분기점</item>
+    <item>퀸즈 갬빗 1</item>
+    <item>퀸즈 갬빗 2</item>
+    <item>퀸즈 갬빗 3</item>
+    <item>퀸즈 갬빗 4</item>
+    <item>캐슬링 1</item>
+    <item>캐슬링 2</item>
+    <item>캐슬링 3</item>
+    <item>캐슬링 4</item>
+    <item>프로모션 1</item>
+    <item>프로모션 2</item>
+    <item>프로모션 3</item>
+    <item>프로모션 4</item>
+    <item>노 메이트 1</item>
+    <item>노 메이트 2</item>
+    <item>노 메이트 3</item>
+    <item>노 메이트 4</item>
+    <item>생존자</item>
+    <item>최종수단 1</item>
+    <item>최종수단 2</item>
+    <item>최종수단 3</item>
+    <item>최종수단 4</item>
+    <item>최종수단 5</item>
+    <item>엔드 게임</item>
+    <item>굿바이 용궁</item>
+    <item>말벌집</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Event_Singularity_Caption">

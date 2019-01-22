@@ -78,6 +78,7 @@ namespace GFI_with_GFS_A
 
                 mDollListView = FindViewById<RecyclerView>(Resource.Id.DollDBRecyclerView);
                 MainLayoutManager = new LinearLayoutManager(this);
+                LinearLayoutManager manager = new LinearLayoutManager(this);
                 mDollListView.SetLayoutManager(MainLayoutManager);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBSnackbarLayout);
 

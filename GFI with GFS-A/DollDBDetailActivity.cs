@@ -1199,12 +1199,12 @@ namespace GFI_with_GFS_A
                     switch (ModIndex)
                     {
                         case 0:
-                            value = DAS.CalcAbility("Armor", int.Parse(basic_ratio[0]), int.Parse(grow_ratio[0]), 100, 50, false);
+                            value = DAS.CalcAbility("Armor", int.Parse(basic_ratio[0]), int.Parse(grow_ratio[0]), Ability_Level, Ability_Favor, false);
                             break;
                         case 1:
                         case 2:
                         case 3:
-                            value = DAS.CalcAbility("Armor", int.Parse(basic_ratio[1]), int.Parse(grow_ratio[1]), 100, 50, false);
+                            value = DAS.CalcAbility("Armor", int.Parse(basic_ratio[1]), int.Parse(grow_ratio[1]), Ability_Level, Ability_Favor, true);
                             break;
                     }
 
@@ -1453,7 +1453,7 @@ namespace GFI_with_GFS_A
                     {
                         int base_ratio = int.Parse(c_doll.Abilities["Armor"].Split(';')[0]);
 
-                        CompareAbilityValues[5] = DAS.CalcAbility("Armro", base_ratio, grow_ratio, Ability_Level, Ability_Favor, false);
+                        CompareAbilityValues[5] = DAS.CalcAbility("Armor", base_ratio, grow_ratio, Ability_Level, Ability_Favor, false);
                     }
                     else CompareAbilityValues[5] = 0;
 

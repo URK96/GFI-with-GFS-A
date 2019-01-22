@@ -118,16 +118,6 @@ namespace GFI_with_GFS_A
             StartAppMode.SetEntryValues(new string[] { "0", "1", "2", "3", "4", "5", "6", "7" });
             StartAppMode.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("StartAppMode", "0")));
 
-            /*SwitchPreference NotificationAnimationOption = (SwitchPreference)FindPreference("NotificationAnimationOption");
-            if (ETC.UseLightTheme == true) NotificationAnimationOption.SetIcon(Resource.Drawable.NotificationAnimationIcon_WhiteTheme);
-            else NotificationAnimationOption.SetIcon(Resource.Drawable.NotificationAnimationIcon);
-            NotificationAnimationOption.Checked = ETC.sharedPreferences.GetBoolean("NotificationAnimationOption", true);
-            NotificationAnimationOption.PreferenceChange += delegate
-            {
-                SaveSetting.PutBoolean("NotificationAnimationOption", NotificationAnimationOption.Checked);
-                SaveSetting.Apply();
-            };*/
-
             SwitchPreference LowMemoryOption = (SwitchPreference)FindPreference("LowMemoryOption");
             if (ETC.UseLightTheme == true) LowMemoryOption.SetIcon(Resource.Drawable.LowMemoryOptionIcon_WhiteTheme);
             else LowMemoryOption.SetIcon(Resource.Drawable.LowMemoryOptionIcon);
@@ -169,16 +159,6 @@ namespace GFI_with_GFS_A
             });
             MainButtonColor.SetEntryValues(new string[] { "0", "1" });
             MainButtonColor.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("MainButtonColor", "0")));
-
-            /*SwitchPreference DynamicDBLoad = (SwitchPreference)FindPreference("DynamicDBLoad");
-            if (ETC.UseLightTheme == true) DynamicDBLoad.SetIcon(Resource.Drawable.DynamicDBLoadIcon_WhiteTheme);
-            else DynamicDBLoad.SetIcon(Resource.Drawable.DynamicDBLoadIcon);
-            DynamicDBLoad.Checked = ETC.sharedPreferences.GetBoolean("DynamicDBLoad", false);
-            DynamicDBLoad.PreferenceChange += delegate
-            {
-                SaveSetting.PutBoolean("DynamicDBLoad", DynamicDBLoad.Checked);
-                SaveSetting.Apply();
-            };*/
 
             SwitchPreference AutoDBUpdate = (SwitchPreference)FindPreference("AutoDBUpdate");
             if (ETC.UseLightTheme == true) AutoDBUpdate.SetIcon(Resource.Drawable.AutoDBUpdate_WhiteTheme);

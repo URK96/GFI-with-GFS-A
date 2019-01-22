@@ -161,6 +161,7 @@
   <string name="Main_DBChecking">확인 중...</string>
   <string name="Main_DBUpdateAvailable">업데이트 존재</string>
   <string name="Main_DBUpdateNewest">최신버전</string>
+  <string name="Web_NetworkNotInternet">네트워크에 연결되어 있지 않습니다. 해당 기능은 네트워크 연결이 있어야 합니다. 네트워크 연결 확인 후 재시도 해주세요.</string>
   
   <!--Common String-->
   <string name="Common_AC">명중</string>
@@ -535,11 +536,11 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.5 수정사항]\n\n
-- 앱 기동 화면 추가\n
-- 메인화면에 DB 버전 상태표시 추가\n
-- 전역 경험치 계산기에 경험치 이벤트 활성화 옵션 추가\n
-- 일부 문구 수정
+    [2.3.6 수정사항]\n\n
+- 군수지원 기능 추가 (군수 추천시뮬로 이동)\n
+- 스토리 카테고리 추가 (난류연속)\n
+- 스토리 리스트 레이아웃 수정\n
+- 인형 정보에서 SG 인형의 장갑 수치가 제대로 나오지 않는 현상 수정
   </string>
 
   <string name="RFBot_CommandHelp">

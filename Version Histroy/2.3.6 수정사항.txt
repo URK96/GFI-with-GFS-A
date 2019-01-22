@@ -1,0 +1,11 @@
+<2.3.6 수정사항>
+
+- 군수지원 기능 추가 (군수 추천시뮬로 이동)
+- 스토리 카테고리 추가 (난류연속)
+- 스토리 리스트 레이아웃 수정
+- 인형 정보에서 SG 인형의 장갑 수치가 제대로 나오지 않는 현상 수정
+
+- Add MD Support Feature
+- Add Story Category (ContinuumTurbulence)
+- Edit some story list layout
+- Fix T-Doll ability value issue about SG type

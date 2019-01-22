@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
+  <string-array name="Story_Main_Main_Event_Cube_TopTitle">
+    <item>이벤트 : 큐브</item>
+    <item>이벤트 : 큐브</item>
+    <item>이벤트 : 큐브</item>
+    <item>이벤트 : 큐브</item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Event_Cube">
     <item>7단계 퍼즐</item>
     <item>모서리 처리</item>
@@ -12,6 +19,13 @@
     <item>HK416과 G11은 우로보로스의 함정에서 도망치며 UMP45와 UMP9와 합류하였어요...</item>
     <item>우로보로스가 헌터의 데이터를 소각하여, 실마리를 놓치지만, 이때 조그만 지원자가 나타났답니다.</item>
     <item>엑스큐셔너와의 사투가 폭음과 함께 끝나고, 의심을 품은 우로보로스는 전면포위를 개시하였어요! </item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_Hypothermia_1_TopTitle">
+    <item>이벤트 : 저체온증 CH.01</item>
+    <item>이벤트 : 저체온증 CH.01</item>
+    <item>이벤트 : 저체온증 CH.01</item>
+    <item>이벤트 : 저체온증 CH.01</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Event_Hypothermia_1">
@@ -28,6 +42,13 @@
     <item>철혈의 보스 게이저는 전구역에 수배령을 내렸어요...밤이 되고 AR소대는 최후의 돌파를 시작한다고 해요...</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Event_Hypothermia_2_TopTitle">
+    <item>이벤트 : 저체온증 CH.02</item>
+    <item>이벤트 : 저체온증 CH.02</item>
+    <item>이벤트 : 저체온증 CH.02</item>
+    <item>이벤트 : 저체온증 CH.02</item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Event_Hypothermia_2">
     <item>등화관제 1</item>
     <item>등화관제 2</item>
@@ -42,6 +63,13 @@
     <item>또 한명의 철혈 보스 아키텍트는 404소대를 발견하지만 45의 계획대로 돌파&amp;구조작전이 개시 되었어요..</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Event_Hypothermia_3_TopTitle">
+    <item>이벤트 : 저체온증 CH.03</item>
+    <item>이벤트 : 저체온증 CH.03</item>
+    <item>이벤트 : 저체온증 CH.03</item>
+    <item>이벤트 : 저체온증 CH.03</item>
+  </string-array>
+  
   <string-array name="Story_Main_Main_Event_Hypothermia_3">
     <item>귀환작전 1</item>
     <item>귀환작전 2</item>
@@ -56,12 +84,23 @@
     <item>위급상황에서, RO는 45의 계획대로 진행하지만, 모든 일은 뜻대로 된다는 보장은 없으니까요.</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Event_Hypothermia_Hidden_TopTitle">
+    <item>이벤트 : 저체온증 CH.??</item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Event_Hypothermia_Hidden">
     <item>이상한 나라로</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Event_Hypothermia_Hidden_Caption">
     <item>이상한 나라로</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_CubePlus_Toptitle">
+    <item>이벤트 : 큐브+</item>
+    <item>이벤트 : 큐브+</item>
+    <item>이벤트 : 큐브+</item>
+    <item>이벤트 : 큐브+</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Event_CubePlus">
@@ -78,6 +117,13 @@
     <item>M4A1의 보고：우로보로스...대체 어떻게...나는 어찌해야...그건...우린...살아남을...수...있을....</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Event_GuiltyGear_Toptitle">
+    <item>콜라보 이벤트 : 헌팅래빗</item>
+    <item>콜라보 이벤트 : 헌팅래빗</item>
+    <item>콜라보 이벤트 : 헌팅래빗</item>
+    <item>콜라보 이벤트 : 헌팅래빗</item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Event_GuiltyGear">
     <item>세인트 엘모</item>
     <item>인형섬멸</item>
@@ -92,6 +138,13 @@
     <item>헌팅 래빗 작전</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Event_DeepDive_1_TopTitle">
+    <item>이벤트 : 딥다이브 CH.01</item>
+    <item>이벤트 : 딥다이브 CH.01</item>
+    <item>이벤트 : 딥다이브 CH.01</item>
+    <item>이벤트 : 딥다이브 CH.01</item>
+  </string-array>
+  
   <string-array name="Story_Main_Main_Event_DeepDive_1">
     <item>심지혼선 1</item>
     <item>심지혼선 2</item>
@@ -104,6 +157,13 @@
     <item>전자전 훈련이 진행되던 중, UMP45가 과거로부터 온 소식을 듣게되는데......</item>
     <item>훈련의 강도가 강해지면서, UMP45는 마인드맵에 봉인 되어있던 기억이 되살아나기 시작한다.</item>
     <item>그리폰의 전술인형이 함정에 빠지고, 실전에서 전자전을 펼칠 기회를 갖게된다.</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DeepDive_2_TopTitle">
+    <item>이벤트 : 딥다이브 CH.02</item>
+    <item>이벤트 : 딥다이브 CH.02</item>
+    <item>이벤트 : 딥다이브 CH.02</item>
+    <item>이벤트 : 딥다이브 CH.02</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Event_DeepDive_2">
@@ -120,6 +180,13 @@
     <item>디스트로이어와… 아니, 디너게이트와의 전투가 막바지로 치닫는다!</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Event_DeepDive_3_TopTitle">
+    <item>이벤트 : 딥다이브 CH.03</item>
+    <item>이벤트 : 딥다이브 CH.03</item>
+    <item>이벤트 : 딥다이브 CH.03</item>
+    <item>이벤트 : 딥다이브 CH.03</item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Event_DeepDive_3">
     <item>대립행동 1</item>
     <item>대립행동 2</item>
@@ -134,12 +201,22 @@
     <item>최후의 탈출작전이 시작되었다. 404소대는 UMP45를 깨울 수 있을까, 자칭 완전체의 디스트로이어에게서 벗어날 수 있을까?</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Event_DeepDive_Hidden_TopTitle">
+    <item>이벤트 : 딥다이브 CH.??</item>
+  </string-array>
+
   <string-array name="Story_Main_Main_Event_DeepDive_Hidden">
     <item>허수미궁</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Event_DeepDive_Hidden_Caption">
     <item>허수미궁</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DJMAX_1_TopTitle">
+    <item>콜라보 이벤트 : 영광의 날 - Avec Nou</item>
+    <item>콜라보 이벤트 : 영광의 날 - Avec Nou</item>
+    <item>콜라보 이벤트 : 영광의 날 - Avec Nou</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Event_DJMAX_1">
@@ -152,6 +229,12 @@
     <item>Stalker</item>
     <item>HeartBeat</item>
     <item>Waiting for you</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DJMAX_2_TopTitle">
+    <item>콜라보 이벤트 : 영광의 날 - Dreaming on you</item>
+    <item>콜라보 이벤트 : 영광의 날 - Dreaming on you</item>
+    <item>콜라보 이벤트 : 영광의 날 - Dreaming on you</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Event_DJMAX_2">

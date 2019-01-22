@@ -8,6 +8,7 @@ using Android.Webkit;
 using Android.Widget;
 using System;
 using Android.Support.Design.Widget;
+using Xamarin.Essentials;
 
 namespace GFI_with_GFS_A
 {
@@ -27,6 +28,12 @@ namespace GFI_with_GFS_A
 
             // Create your application here
             SetContentView(Resource.Layout.WebBrowserLayout);
+
+            if (CheckDeviceNetwork() == false)
+            {
+                Toast.MakeText(this, Resource.String.Web_NetworkNotInternet, ToastLength.Short).Show();
+                Finish();
+            }
 
             LoadProgress = FindViewById<ProgressBar>(Resource.Id.WebBrowserProgressBar);       
             web = FindViewById<WebView>(Resource.Id.WebBrowser);
@@ -60,7 +67,7 @@ namespace GFI_with_GFS_A
 
                 if (url == null) url = Intent.DataString;
 
-                Toast.MakeText(this, url, ToastLength.Short).Show();
+                //Toast.MakeText(this, url, ToastLength.Short).Show();
 
                 web.LoadUrl(url);
             }
@@ -68,6 +75,22 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(this, ex.ToString());
             }
+        }
+
+        private bool CheckDeviceNetwork()
+        {
+            try
+            {
+                var network = Connectivity.NetworkAccess;
+                if (network != NetworkAccess.Internet) return false;
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                return false;
+            }
+
+            return true;
         }
 
         public override void OnBackPressed()

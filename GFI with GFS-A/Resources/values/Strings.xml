@@ -155,6 +155,7 @@
   <string name="Main_DBChecking">Checking...</string>
   <string name="Main_DBUpdateAvailable">Update Available</string>
   <string name="Main_DBUpdateNewest">Up To Date</string>
+  <string name="Web_NetworkNotInternet">Network is not available. This feature use network. Check device network status and try again.</string>
   
   <!--Common String-->
   <string name="Common_AC">Accurace</string>
@@ -532,10 +533,10 @@
     
   <string name="NewFeature">
     [2.3.5 Update]\n\n
-- Add Splash Screen\n
-- Add DB Version status in Mainmenu\n
-- Add Exp Event Option in Area Exp Calc\n
-- Edit some string
+- Add MD Support Feature\n
+- Add Story Category (ContinuumTurbulence)\n
+- Edit some story list layout\n
+- Fix T-Doll ability value issue about SG type
   </string>
 
   <string name="RFBot_CommandHelp">

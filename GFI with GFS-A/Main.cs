@@ -381,7 +381,11 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.MDMainButton:
-                        ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
+                        string md_url = "https://tempkaridc.github.io/gf/";
+                        var intent = new Intent(this, typeof(WebBrowserActivity));
+                        intent.PutExtra("url", md_url);
+                        StartActivity(intent);
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.GFDInfoMainButton:
                         StartActivity(typeof(GFDInfoActivity));
