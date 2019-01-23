@@ -177,9 +177,9 @@ namespace GFI_with_GFS_A
                 if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate 
                 {
                     Download_List.Clear();
-                    foreach (DataRow dr in ETC.EquipmentList.Rows)
+                    foreach (Equip equip in RootList)
                     {
-                        string item = (string)dr["IconName"];
+                        string item = equip.Icon;
                         if (Download_List.Contains(item) == false) Download_List.Add(item);
                     }
                     ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EquipCropImageDownloadProcess));
@@ -230,7 +230,7 @@ namespace GFI_with_GFS_A
 
             if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
             {
-                if (CheckCropImage() == false)
+                if (CheckCropImage() == true)
                     ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(EquipCropImageDownloadProcess));
             }
         }

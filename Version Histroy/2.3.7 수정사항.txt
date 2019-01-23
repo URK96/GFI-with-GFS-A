@@ -1,0 +1,5 @@
+<2.3.7 수정사항>
+
+- 장비 DB 리스트 아이콘 관련 문제 수정
+
+- Fix Equipment DB List Icon issue

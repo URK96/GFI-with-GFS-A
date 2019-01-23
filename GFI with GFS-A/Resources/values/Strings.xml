@@ -532,11 +532,8 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.5 Update]\n\n
-- Add MD Support Feature\n
-- Add Story Category (ContinuumTurbulence)\n
-- Edit some story list layout\n
-- Fix T-Doll ability value issue about SG type
+    [2.3.7 Update]\n\n
+- Fix Equipment DB List Icon issue
   </string>
 
   <string name="RFBot_CommandHelp">
