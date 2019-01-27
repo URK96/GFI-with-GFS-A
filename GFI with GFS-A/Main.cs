@@ -199,28 +199,6 @@ namespace GFI_with_GFS_A
             }
         }
 
-        /*private void ShowNewVersionFeatureDialog()
-        {
-            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG_Vertical);
-            ad.SetTitle(Resource.String.NewFeatureDialog_Title);
-            ad.SetMessage(Resource.String.NewFeature);
-            ad.SetCancelable(true);
-            ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
-
-            try
-            {
-                ad.Show();
-                ISharedPreferencesEditor Editor = ETC.sharedPreferences.Edit();
-                Editor.PutBoolean("ShowNewFeatureDialog", false);
-                Editor.Apply();
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(this, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_NotificationInitializeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
-            }
-        }*/
-
         private void SetMainMenuEvent(int mode)
         {
             try
@@ -351,7 +329,15 @@ namespace GFI_with_GFS_A
                         ad.SetMessage(Resource.String.CheckDBUpdateDialog_Question);
                         ad.SetCancelable(true);
                         ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                        ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate { await ETC.UpdateDB(this); });
+                        ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate 
+                        {
+                            await ETC.UpdateDB(this);
+                            if (await ETC.CheckDBVersion() == false)
+                                tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})";
+                            else
+                                tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})";
+
+                        });
 
                         RunOnUiThread(() => { ad.Show(); });
                     }

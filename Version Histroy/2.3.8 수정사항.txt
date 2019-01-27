@@ -1,0 +1,7 @@
+<2.3.8 수정사항>
+
+- 소전사전 v1에서 업데이트 다운로드 후 이미지가 뜨지 않는 현상 수정
+- 일부 기기에서 특정 기능을 사용하지 못하는 현상 수정
+
+- Fix image load issue on GFD v1
+- Fix crash issue on feature

@@ -16,18 +16,18 @@
 			android:layout_height="match_parent"
 			android:layout_below="@id/OldGFDViewerMainToolbar"
 			android:id="@+id/OldGFDViewerMainDrawerLayout">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/OldGFDViewerContainer"/>
-        <ListView
-            android:layout_width="240dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-			android:choiceMode="singleChoice"
-            android:fitsSystemWindows="true"
-            android:id="@+id/OldGFDImageListView" />
+			<LinearLayout
+			    android:orientation="vertical"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    android:id="@+id/OldGFDViewerContainer"/>
+			<ListView
+			    android:layout_width="240dp"
+			    android:layout_height="match_parent"
+			    android:layout_gravity="start"
+				android:choiceMode="singleChoice"
+				android:fitsSystemWindows="true"
+			    android:id="@+id/OldGFDImageListView" />
 		</android.support.v4.widget.DrawerLayout>
     </LinearLayout>
 	<android.support.design.widget.CoordinatorLayout

@@ -9,7 +9,6 @@
     <item>Syncfusion.Licensing</item>
     <item>Syncfusion.Xamarin.SfChart.Android</item>
     <item>System.Numerics.Vectors</item>
-    <item>UptimeSharp</item>
     <item>Xamarin.Android.Arch.Core.Common</item>
     <item>Xamarin.Android.Arch.Lifecycle.Common</item>
     <item>Xamarin.Android.Arch.Lifecycle.Runtime</item>
@@ -44,7 +43,6 @@
     <item>Syncfusion licensing is a .NET library for validating the registered Syncfusion license in an application at runtime.</item>
     <item>Syncfusion Charts for Xamarin.Android provides a perfect way to visualize data with a high level of user interactivity that focuses on development, productivity, and simplicity of use.</item>
     <item>Provides hardware-accelerated numeric types, suitable for high-performance processing and graphics application.</item>
-    <item>UptimeSharp is a .NET portable class library that integrates the UptimeRobot API.</item>
     <item>Android Architecture Core - Common C# bindings for Xamarin</item>
     <item>Android Architecture Lifecycle - Common C# bindings for Xamarin</item>
     <item>Android Architecture Lifecycle - Runtime C# bindings for Xamarin</item>
@@ -79,7 +77,6 @@
     <item>Syncfusion Inc. - ESSENTIAL STUDIO SOFTWARE LICENSE</item>
     <item>Syncfusion Inc. - ESSENTIAL STUDIO SOFTWARE LICENSE</item>
     <item>Microsoft - MICROSOFT SOFTWARE LICENSE TERMS</item>
-    <item>ceee - MIT LICENSE</item>
     <item>Xamarin Inc. - MIT LICENSE</item>
     <item>Xamarin Inc. - MIT LICENSE</item>
     <item>Xamarin Inc. - MIT LICENSE</item>
@@ -114,7 +111,6 @@
     <item>https://www.syncfusion.com/?utm_source=nuget&amp;utm_medium=listing</item>
     <item>https://www.syncfusion.com/?utm_source=nuget&amp;utm_medium=listing</item>
     <item>https://dot.net/</item>
-    <item>https://github.com/ceee/UptimeSharp</item>
     <item>https://go.microsoft.com/fwlink/?linkid=865327</item>
     <item>https://go.microsoft.com/fwlink/?linkid=865327</item>
     <item>https://go.microsoft.com/fwlink/?linkid=865327</item>

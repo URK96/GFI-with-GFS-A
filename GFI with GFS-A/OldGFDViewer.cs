@@ -2,17 +2,15 @@
 using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Support.Design.Widget;
-using Android.Support.V4.App;
+using Android.Support.V4.View;
+using Android.Support.V4.Widget;
+using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using Android.Support.V7.App;
-using Android.Support.V4.Widget;
-using Android.Support.V4.View;
 
 namespace GFI_with_GFS_A
 {
@@ -25,7 +23,8 @@ namespace GFI_with_GFS_A
 
         internal DrawerLayout MainDrawerLayout;
         private ListView DrawerListView;
-        
+        internal CoordinatorLayout SnackbarLayout;
+
         string[] OldGFDImageList;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -40,6 +39,8 @@ namespace GFI_with_GFS_A
 
                 // Create your application here
                 SetContentView(Resource.Layout.OldGFDLayout);
+
+                SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.OldGFDViewerSnackbarLayout);
 
                 MainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.OldGFDViewerMainDrawerLayout);
                 MainDrawerLayout.DrawerOpened += delegate
@@ -160,7 +161,7 @@ namespace GFI_with_GFS_A
         private int Image_Index = 0;
 
         private LinearLayout ImageContainer;
-        private CoordinatorLayout SnackbarLayout;
+        private CoordinatorLayout SnackbarLayout_F;
 
         private Dialog dialog = null;
         private ProgressBar totalProgressBar = null;
@@ -189,7 +190,7 @@ namespace GFI_with_GFS_A
             v = inflater.Inflate(Resource.Layout.OldGFDScreenLayout, container, false);
 
             ImageContainer = v.FindViewById<LinearLayout>(Resource.Id.OldGFDImageContainer);
-            SnackbarLayout = v.FindViewById<CoordinatorLayout>(Resource.Id.OldGFDViewerSnackbarLayout);
+            SnackbarLayout_F = ((OldGFDViewer)Activity).SnackbarLayout;
 
             InitProcess();
 
@@ -214,7 +215,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(Activity, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, "Error InitProcess", Snackbar.LengthShort);
+                ETC.ShowSnackbar(SnackbarLayout_F, "Error InitProcess", Snackbar.LengthShort);
             }
         }
 
@@ -261,7 +262,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(Activity, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ImageLoad_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(SnackbarLayout_F, Resource.String.ImageLoad_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -321,7 +322,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(Activity, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.UpdateCheck_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(SnackbarLayout_F, Resource.String.UpdateCheck_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -365,12 +366,12 @@ namespace GFI_with_GFS_A
                     wc.DownloadFile(Path.Combine(ETC.Server, "OldGFDVer.txt"), Path.Combine(ETC.SystemPath, "OldGFDVer.txt"));
                 }
 
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.UpdateDownload_Complete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);
+                ETC.ShowSnackbar(SnackbarLayout_F, Resource.String.UpdateDownload_Complete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);
             }
             catch (Exception ex)
             {
                 ETC.LogError(Activity, ex.ToString());
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.UpdateDownload_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(SnackbarLayout_F, Resource.String.UpdateDownload_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
             finally
             {
@@ -382,7 +383,7 @@ namespace GFI_with_GFS_A
                 nowProgress = null;
             }
 
-            ShowImage(Image_Index);
+            //ShowImage(Image_Index);
         }
 
         private void Wc_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)

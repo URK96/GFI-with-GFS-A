@@ -532,8 +532,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.7 Update]\n\n
-- Fix Equipment DB List Icon issue
+    [2.3.8 Update]\n\n
+- Fix image load issue on GFD v1\n
+- Fix crash issue on feature
   </string>
 
   <string name="RFBot_CommandHelp">
