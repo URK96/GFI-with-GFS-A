@@ -108,6 +108,10 @@ namespace GFI_with_GFS_A
                     }
 
                     FindViewById<ImageButton>(ModButtonIds[0]).SetBackgroundColor(Android.Graphics.Color.ParseColor("#54A716"));
+
+                    Button ModStoryButton = FindViewById<Button>(Resource.Id.DollDBDetailModStoryButton);
+                    ModStoryButton.Visibility = ViewStates.Visible;
+                    ModStoryButton.Click += ModStoryButton_Click;
                 }
 
                 FindViewById<ImageView>(Resource.Id.DollDBDetailSmallImage).Click += DollDBDetailSmallImage_Click;
@@ -200,6 +204,30 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(this, ex.ToString());
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
+            }
+        }
+
+        private void ModStoryButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string[] StoryList = new string[]
+                {
+                    $"{doll.Name} MOD Story 1",
+                    $"{doll.Name} MOD Story 2",
+                    $"{doll.Name} MOD Story 3",
+                    $"{doll.Name} MOD Story 4"
+                };
+
+                var intent = new Intent(this, typeof(StoryReaderActivity));
+                intent.PutExtra("Info", new string[] { "Sub", "ModStory", "0", StoryList.Length.ToString(), doll.DicNumber.ToString() });
+                intent.PutExtra("List", StoryList);
+                StartActivity(intent);
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
             }
         }
 

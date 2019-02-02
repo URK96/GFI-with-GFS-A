@@ -18,6 +18,7 @@ namespace GFI_with_GFS_A
         private string Category = "";
         private int Item_Index = 0;
         private int Item_Count = 0;
+        private int Doll_DicNumber = 0;
         private string[] Item_List;
 
         private string Language = "ko";
@@ -32,6 +33,8 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
+            if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_NoActionBar_Light);
+
             // Create your application here
             SetContentView(Resource.Layout.StoryReaderLayout);
 
@@ -40,6 +43,9 @@ namespace GFI_with_GFS_A
             Category = info[1];
             Item_Index = int.Parse(info[2]) + 1;
             Item_Count = int.Parse(info[3]);
+
+            if (Category == "ModStory") Doll_DicNumber = int.Parse(info[4]);
+
             Item_List = Intent.GetStringArrayExtra("List");
 
             LoadProgressBar = FindViewById<ProgressBar>(Resource.Id.StoryReaderLoadProgress);
@@ -84,7 +90,12 @@ namespace GFI_with_GFS_A
         {
             LoadProgressBar.Visibility = ViewStates.Visible;
 
-            string file = Path.Combine(ETC.CachePath, "Story", Category, $"{Item_Index}.gfdcache");
+            string file = "";
+
+            if (Category == "ModStory")
+                file = Path.Combine(ETC.CachePath, "Story", Category, $"{Doll_DicNumber}_{Item_Index}.gfdcache");
+            else
+                file = Path.Combine(ETC.CachePath, "Story", Category, $"{Item_Index}.gfdcache");
 
             if ((File.Exists(file) == false) || (IsRefresh == true)) await DownloadStory();
 
@@ -102,10 +113,8 @@ namespace GFI_with_GFS_A
             string s = "";
 
             using (StreamReader sr = new StreamReader(new FileStream(path, FileMode.Open, FileAccess.Read)))
-            {
                 s = await sr.ReadToEndAsync();
-            }
-
+            
             MainTextView.Text = s;
         }
 
@@ -113,16 +122,25 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                string server = Path.Combine(ETC.Server, "Data", "Text", "Story", Language, Top, Category, $"{Item_Index}.txt");
-                string target = Path.Combine(ETC.CachePath, "Story", Category, $"{Item_Index}.gfdcache");
+                string server = "";
+                string target = "";
+
+                if (Category == "ModStory")
+                {
+                    server = Path.Combine(ETC.Server, "Data", "Text", "Story", Language, Top, Category, $"{Doll_DicNumber}_{Item_Index}.txt");
+                    target = Path.Combine(ETC.CachePath, "Story", Category, $"{Doll_DicNumber}_{Item_Index}.gfdcache");
+                }
+                else
+                {
+                    server = Path.Combine(ETC.Server, "Data", "Text", "Story", Language, Top, Category, $"{Item_Index}.txt");
+                    target = Path.Combine(ETC.CachePath, "Story", Category, $"{Item_Index}.gfdcache");
+                }
 
                 DirectoryInfo di = new DirectoryInfo(Path.Combine(ETC.CachePath, "Story", Category));
                 if (di.Exists == false) di.Create();
 
                 using (WebClient wc = new WebClient())
-                {
                     await wc.DownloadFileTaskAsync(server, target);
-                }
             }
             catch (Exception ex)
             {

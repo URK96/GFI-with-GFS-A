@@ -133,12 +133,18 @@
                     android:layout_marginBottom="10dp"
 					android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/CalcExtraButton" />
-                <Button
+                <!--<Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
 					android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:id="@+id/RFBotExtraButton" />
+                    android:id="@+id/RFBotExtraButton" />-->
+				<Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="10dp"
+					android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/GuideBookViewerExtraButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"

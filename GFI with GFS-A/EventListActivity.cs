@@ -39,6 +39,8 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
+            if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+
             // Create your application here
             SetContentView(Resource.Layout.EventListLayout);
 

@@ -1,0 +1,7 @@
+<2.3.9 수정사항>
+
+- 인형의 추억 기능 추가 (인형의 Mod 스토리)
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, 그리폰 철혈 2)
+
+- Add T-Doll Memories Feature
+- Add Cartoon Content

@@ -400,7 +400,8 @@ namespace GFI_with_GFS_A
                 Path.Combine(CachePath, "OldGFD", "Images"),
                 Path.Combine(CachePath, "Event"),
                 Path.Combine(CachePath, "Event", "Images"),
-                Path.Combine(CachePath, "Voices")
+                Path.Combine(CachePath, "Voices"),
+                Path.Combine(CachePath, "GuideBook", "PDFs")
             };
 
             foreach (string path in MainPaths) if (Directory.Exists(path) == false) Directory.CreateDirectory(path);

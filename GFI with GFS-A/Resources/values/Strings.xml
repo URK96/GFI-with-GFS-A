@@ -3,11 +3,8 @@
   <!--New String-->
   <string name="app_name">GF Dictionary</string>
   
-  <string name="Main_ExtraMenu_GFOSTPlayer">OST Player</string>
-  <string name="Main_ExtraMenu_Cartoon">Cartoon</string>
-  <string name="Main_ExtraMenu_Story">Story</string>
   
-  <string name="DollDBDetailLayout_ModelData">Model Data</string>
+  
   
   <string name="Common_ExpItem">Battle Report</string>
   <string name="Common_Core">Core</string>
@@ -340,6 +337,10 @@
   <string name="Main_ExtraMenu_Calc">Calculator</string>
   <string name="Main_ExtraMenu_RFBot">RFBot</string>
   <string name="Main_ExtraMenu_ProductSimulator">Manufacturing Simulation</string>
+  <string name="Main_ExtraMenu_GFOSTPlayer">OST Player</string>
+  <string name="Main_ExtraMenu_Cartoon">Cartoon</string>
+  <string name="Main_ExtraMenu_Story">Story</string>
+  <string name="Main_ExtraMenu_GuideBookViewer">Guide Book</string>
   
   <!--OldGFD-->
   <string name="OldGFDViewer_ProductDollTable">T-Doll Production Timetable</string>
@@ -490,7 +491,8 @@
   
   <!--DollDBDetailLayout-->
   <string name="DollDBDetailLayout_SDAnimationButtonText">SD Animation (Beta)</string>
-  <string name="DollDBDetailLayout_AbilityCaution"># 최대 능력치는 MAX레벨, 호감도에 따른 능력치 상승 미적용 값입니다 #</string>
+  <string name="DollDBDetailLayout_ModStory">T-Doll Memories</string>
+  <string name="DollDBDetailLayout_ModelData">Model Data</string>
   
   <!--DollFilterLayout-->
   <string name="DollFilterLayout_ModFilterTitle">Only Mod Available</string>
@@ -510,6 +512,22 @@
   
   <!--ProductSimulatorLayout-->
   <string name="ProductSimulatorLayout_ProductButtonText">Product</string>
+
+  <!--GuideBookViewer-->
+  <string name="GuideBookViewer_PDF_PartA">Part.A 초보자 가이드</string>
+  <string name="GuideBookViewer_PDF_PartB_1">Part.B 전술인형 목록/제조</string>
+  <string name="GuideBookViewer_PDF_PartB_2">Part.B 전술인형 정보 (No.1 ~ 50)</string>
+  <string name="GuideBookViewer_PDF_PartB_3">Part.B 전술인형 정보 (No.51 ~ 100)</string>
+  <string name="GuideBookViewer_PDF_PartB_4">Part.B 전술인형 정보 (No.101 ~ 150)</string>
+  <string name="GuideBookViewer_PDF_PartB_5">Part.B 전술인형 정보 (No.151 ~ 200)</string>
+  <string name="GuideBookViewer_PDF_PartB_6">Part.B 전술인형 정보 (No.201 ~)</string>
+  <string name="GuideBookViewer_PDF_PartC">Part.C 제대 편성</string>
+  <string name="GuideBookViewer_PDF_PartD">Part.D 장비/요정/중장비</string>
+  <string name="GuideBookViewer_PDF_PartE_1">Part.E 작전임무 (전역 1 ~ 3)</string>
+  <string name="GuideBookViewer_PDF_PartE_2">Part.E 작전임무 (전역 0, 4 ~ 6)</string>
+  <string name="GuideBookViewer_PDF_PartE_3">Part.E 작전임무 (전역 7 ~ 9)</string>
+  <string name="GuideBookViewer_PDF_PartG">Part.G 가구/코스튬</string>
+  <string name="GuideBookViewer_PDF_PartJ">Part.J 기타 정보</string>
   
   
   <!--Music Category-->
@@ -532,9 +550,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.8 Update]\n\n
-- Fix image load issue on GFD v1\n
-- Fix crash issue on feature
+    [2.3.9 Update]\n\n
+- Add T-Doll Memories Feature\n
+- Add Cartoon Content
   </string>
 
   <string name="RFBot_CommandHelp">
