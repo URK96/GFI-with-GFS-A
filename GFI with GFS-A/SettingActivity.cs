@@ -109,7 +109,7 @@ namespace GFI_with_GFS_A
                 Resources.GetString(Resource.String.Common_Default),
                 Resources.GetString(Resource.String.Main_MainMenu_DBMenu),
                 Resources.GetString(Resource.String.Main_MainMenu_OldGFD),
-                Resources.GetString(Resource.String.Main_ExtraMenu_RFBot),
+                Resources.GetString(Resource.String.Main_ExtraMenu_AreaTip),
                 Resources.GetString(Resource.String.Main_ExtraMenu_Calc),
                 Resources.GetString(Resource.String.Main_ExtraMenu_Event),
                 Resources.GetString(Resource.String.Main_ExtraMenu_OfficialNotification),

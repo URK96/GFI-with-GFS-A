@@ -86,7 +86,7 @@ namespace GFI_with_GFS_A
                     MainMenuButton_Click(FindViewById<Button>(Resource.Id.OldGFDMainButton), new EventArgs());
                     break;
                 case "3":
-                    ExtraMenuButton_Click(FindViewById<Button>(Resource.Id.RFBotExtraButton), new EventArgs());
+                    ExtraMenuButton_Click(FindViewById<Button>(Resource.Id.AreaTipExtraButton), new EventArgs());
                     break;
                 case "4":
                     ExtraMenuButton_Click(FindViewById<Button>(Resource.Id.CalcExtraButton), new EventArgs());
@@ -151,7 +151,7 @@ namespace GFI_with_GFS_A
 
             try
             {
-                if (ETC.sharedPreferences.GetBoolean("LowMemoryOption", false) == false)
+                if ((ETC.sharedPreferences.GetBoolean("LowMemoryOption", false) == false) && (ETC.Language.Language == "ko"))
                 {
                     switch (ETC.sharedPreferences.GetString("MainButtonColor", "0"))
                     {
@@ -457,10 +457,6 @@ namespace GFI_with_GFS_A
 
                 switch (id)
                 {
-                    case Resource.Id.RFBotExtraButton:
-                        StartActivity(typeof(RFBotMainActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
                     case Resource.Id.GFNewsExtraButton:
                         string news_url = "http://www.girlsfrontline.co.kr/archives/category/news";
                         var intent = new Intent(this, typeof(WebBrowserActivity));

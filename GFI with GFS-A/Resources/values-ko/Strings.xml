@@ -338,7 +338,7 @@
   <string name="Main_ExtraMenu_Event">이벤트</string>
   <string name="Main_ExtraMenu_OfficialNotification">소전 공지사항</string>
   <string name="Main_ExtraMenu_Calc">계산기</string>
-  <string name="Main_ExtraMenu_RFBot">RFBot</string>
+  <string name="Main_ExtraMenu_AreaTip">지역 공략</string>
   <string name="Main_ExtraMenu_ProductSimulator">제조 시뮬레이터</string>
   <string name="Main_ExtraMenu_GFOSTPlayer">OST Player</string>
   <string name="Main_ExtraMenu_Cartoon">만화</string>
@@ -551,9 +551,10 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.9 수정사항]\n\n
-- 인형의 추억 기능 추가 (인형의 Mod 스토리)\n
-- 만화 컨텐츠 추가 (츠보우의 소녀전선, 그리폰 철혈 2)
+    [2.3.10 수정사항]\n\n
+- 밝은 테마 적용 시 일부 기능이 충돌하는 문제 수정\n
+- 라플봇 기능 제거\n
+- 스토리, 이벤트 기능에서 밝은 테마 적용 시 어두운 테마로 나오는 현상 수정
   </string>
 
   <string name="RFBot_CommandHelp">

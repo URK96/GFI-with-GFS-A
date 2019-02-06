@@ -335,7 +335,7 @@
   <string name="Main_ExtraMenu_Event">GF Event</string>
   <string name="Main_ExtraMenu_OfficialNotification">GF Notification</string>
   <string name="Main_ExtraMenu_Calc">Calculator</string>
-  <string name="Main_ExtraMenu_RFBot">RFBot</string>
+  <string name="Main_ExtraMenu_AreaTip">Area Tip</string>
   <string name="Main_ExtraMenu_ProductSimulator">Manufacturing Simulation</string>
   <string name="Main_ExtraMenu_GFOSTPlayer">OST Player</string>
   <string name="Main_ExtraMenu_Cartoon">Cartoon</string>
@@ -550,9 +550,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.9 Update]\n\n
-- Add T-Doll Memories Feature\n
-- Add Cartoon Content
+    [2.3.10 Update]\n\n
+- Fix Light Theme issue\n
+- Remove RFBot
   </string>
 
   <string name="RFBot_CommandHelp">
