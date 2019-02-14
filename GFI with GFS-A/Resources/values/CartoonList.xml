@@ -4,6 +4,7 @@
     <item>츠보우의 소녀전선</item>
     <item>그리폰 &amp; 철혈</item>
     <item>그리폰 &amp; 철혈 2</item>
+    <item>솦모챠 만화</item>
     <item>그리폰 안내서</item>
     <item>그리폰 일상만화</item>
     <item>천솜향의 소녀전선</item>
@@ -102,6 +103,7 @@
     <item>K2의 하소연</item>
     <item>성냥팔이 소녀 이야기</item>
     <item>기름 떨어진 날</item>
+    <item>파세의 알바</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -140,6 +142,12 @@
     <item>12화</item>
     <item>13화</item>
     <item>14화</item>
+  </string-array>
+
+  <string-array name="SOPMOD_Cartoon">
+    <item>1화</item>
+    <item>2화</item>
+    <item>3화</item>
   </string-array>
 
   <string-array name="GF_Guide">
@@ -221,6 +229,12 @@
     <item>55화</item>
     <item>56화</item>
     <item>57화</item>
+    <item>58화</item>
+    <item>59화</item>
+    <item>60화</item>
+    <item>61화</item>
+    <item>62화</item>
+    <item>63화</item>
   </string-array>
 
   <string-array name="mota6nako_GF">

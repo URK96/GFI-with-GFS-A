@@ -9,7 +9,7 @@ using System.Net;
 
 namespace GFI_with_GFS_A
 {
-    public class Doll
+    public partial class Doll
     {
         public string Name { get; private set; }
         public string krName { get; private set; }
@@ -78,7 +78,7 @@ namespace GFI_with_GFS_A
             CodeName = (string)dr["CodeName"];
             DicNumber = (int)dr["DicNumber"];
             RealModel = (string)dr["Model"];
-            Country = (string)dr["Country"];
+            Country = SetCountry(ref dr);
             Grade = (int)dr["Grade"];
             ProductTime = (int)dr["ProductTime"];
             Type = (string)dr["Type"];

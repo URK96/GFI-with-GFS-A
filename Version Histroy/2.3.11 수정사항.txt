@@ -1,0 +1,11 @@
+<2.3.11 수정사항>
+
+- 계산기 레이아웃 수정
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, 그리폰 일상만화)
+- 만화 카테고리 추가 (솦모챠 만화)
+- 인형 총기 출신 국가 다국어화
+
+- Calc Layout Renewal
+- Add Cartoon Contents
+- Add Cartoon Category
+- Add Language about T-Doll's gun country

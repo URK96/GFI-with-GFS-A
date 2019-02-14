@@ -6,77 +6,83 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+		android:background="@color/Calc_MainBackgroundColor"
         android:id="@+id/CalcCoreMainLayout">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/Calc_Core_GradeSettingText"
-            android:gravity="center"
-            android:layout_marginTop="20dp" />
-        <NumberPicker
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            hideWheelUntilFocused="true"
-            android:id="@+id/CalcCoreDollGrade" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/Calc_Core_DummySettingText"
-            android:gravity="center"
-            android:layout_marginTop="10dp" />
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2">
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-            <NumberPicker
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                hideWheelUntilFocused="true"
-                android:id="@+id/CalcCoreStartDollCount" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="=&gt;"
-                android:gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
-            <NumberPicker
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                hideWheelUntilFocused="true"
-                android:id="@+id/CalcCoreEndDollCount" />
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-        </LinearLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/Calc_Core_ResultCoreCountText"
-            android:gravity="center"
-            android:layout_marginTop="10dp" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="0/0"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:id="@+id/CalcCoreResult" />
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="100dp"
+			android:layout_margin="30dp"
+			android:gravity="center">
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:text="@string/Calc_Core_GradeSettingText"
+				android:textColor="@color/Calc_TextColor_WhiteTheme"/>
+			<NumberPicker
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				hideWheelUntilFocused="true"
+				android:id="@+id/CalcCoreDollGrade" />
+		</LinearLayout>
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="100dp"
+			android:layout_margin="20dp"
+			android:gravity="center">
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:text="@string/Calc_Core_DummySettingText"
+				android:textColor="@color/Calc_TextColor_WhiteTheme"/>
+			<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="20dp">
+				<NumberPicker
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					hideWheelUntilFocused="true"
+					android:id="@+id/CalcCoreStartDollCount" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text="==>"
+					android:textColor="@color/Calc_TextColor_WhiteTheme"
+					android:gravity="center"
+					android:layout_marginLeft="10dp"
+					android:layout_marginRight="10dp" />
+				<NumberPicker
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					hideWheelUntilFocused="true"
+					android:id="@+id/CalcCoreEndDollCount" />
+			</LinearLayout>
+		</LinearLayout>
+		<View
+			android:layout_width="300dp"
+			android:layout_height="5dp"
+			android:layout_gravity="right"
+			android:background="#303030"/>
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="20dp"
+			android:layout_marginBottom="10dp">
+			<TextView
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+			    android:text=""
+				android:textColor="@color/Calc_TextColor_WhiteTheme"
+				android:gravity="right"
+				android:id="@+id/CalcCoreResult"/>
+		</LinearLayout>
     </LinearLayout>
 </ScrollView>

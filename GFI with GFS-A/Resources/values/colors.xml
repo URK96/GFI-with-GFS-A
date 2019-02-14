@@ -11,4 +11,6 @@
   <color name="FABColor">#54A716</color>
   <color name="ProgressBarColor">#54A716</color>
   <color name="CardViewBackground_WhiteTheme">#FF7043</color>
+  <color name="Calc_MainBackgroundColor">#171717</color>
+  <color name="Calc_TextColor_WhiteTheme">#FFFFFF</color>
 </resources>

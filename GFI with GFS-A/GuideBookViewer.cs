@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.Support.V7.App;
-using Android.Support.V4.Widget;
 using Android.Support.Design.Widget;
 using Android.Support.V4.View;
-using Syncfusion.SfPdfViewer.Android;
-using System.Threading.Tasks;
-using System.Net;
+using Android.Support.V4.Widget;
+using Android.Support.V7.App;
+using Android.Views;
+using Android.Widget;
+using System;
 using System.IO;
+using System.Net;
+using System.Threading.Tasks;
 using Xfinium.Pdf.View;
-using System.Reflection;
 
 namespace GFI_with_GFS_A
 {

@@ -149,11 +149,12 @@ namespace GFI_with_GFS_A
                                 case 2:
                                 case 3:
                                 case 4:
-                                case 7:
+                                case 5:
+                                case 8:
                                     ((CartoonScreen)CartoonScreen_F).LoadProcess(Category_List[Category_Index], Category_Index, (e.Position - 1), false);
                                     break;
-                                case 5:
                                 case 6:
+                                case 7:
                                     ((CartoonScreen)CartoonScreen_F).LoadProcess_Web(Category_List[Category_Index], Category_Index, (e.Position - 1), false);
                                     break;
                             }
@@ -182,18 +183,21 @@ namespace GFI_with_GFS_A
                     list.AddRange(Resources.GetStringArray(Resource.Array.GF_SF2));
                     break;
                 case 3:
-                    list.AddRange(Resources.GetStringArray(Resource.Array.GF_Guide));
+                    list.AddRange(Resources.GetStringArray(Resource.Array.SOPMOD_Cartoon));
                     break;
                 case 4:
-                    list.AddRange(Resources.GetStringArray(Resource.Array.GF_DailyComic));
+                    list.AddRange(Resources.GetStringArray(Resource.Array.GF_Guide));
                     break;
                 case 5:
-                    list.AddRange(Resources.GetStringArray(Resource.Array.mota6nako_GF));
+                    list.AddRange(Resources.GetStringArray(Resource.Array.GF_DailyComic));
                     break;
                 case 6:
-                    list.AddRange(Resources.GetStringArray(Resource.Array.ImmortalityFront_GF));
+                    list.AddRange(Resources.GetStringArray(Resource.Array.mota6nako_GF));
                     break;
                 case 7:
+                    list.AddRange(Resources.GetStringArray(Resource.Array.ImmortalityFront_GF));
+                    break;
+                case 8:
                     list.AddRange(Resources.GetStringArray(Resource.Array.MMM_GF));
                     break;
             }
@@ -366,15 +370,16 @@ namespace GFI_with_GFS_A
                         break;
                     case 1:
                     case 2:
+                    case 3:
                         tv1.Text = "Creator : 잉여군";
                         tv2.Text = "https://twitter.com/INGUKOON";
                         break;
-                    case 3:
                     case 4:
+                    case 5:
                         tv1.Text = "Creator : MADCORE";
                         tv2.Text = "https://www.pixiv.net/member.php?id=455690";
                         break;
-                    case 7:
+                    case 8:
                         tv1.Text = "Creator : MMM";
                         tv2.Text = "https://www.pixiv.net/member.php?id=25683341";
                         break;

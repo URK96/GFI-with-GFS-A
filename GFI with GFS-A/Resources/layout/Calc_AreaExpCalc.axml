@@ -7,227 +7,189 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/CalcAreaExpMainLayout">
-      <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:id="@+id/CalcAreaSelector"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/Calc_SkillTraining_LevelSettingText"
-            android:gravity="center"
-            android:layout_marginTop="20dp" />
-     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2">
-      <Space
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:layout_weight="1" />
-      <NumberPicker
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          hideWheelUntilFocused="true"
-          android:id="@+id/CalcAreaExpNowLevel" />
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          android:textAppearance="?android:attr/textAppearanceMedium"
-          android:text="=&gt;"
-          android:gravity="center"
-          android:layout_marginLeft="10dp"
-          android:layout_marginRight="10dp" />
-      <NumberPicker
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          hideWheelUntilFocused="true"
-          android:id="@+id/CalcAreaExpTargetLevel" />
-      <Space
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:layout_weight="1" />
-    </LinearLayout>
-		<TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/Calc_AreaExp_DollDummySettingText"
-            android:gravity="center"
-            android:layout_marginTop="20dp" />
+		<Spinner
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:gravity="center"
+			android:id="@+id/CalcAreaSelector"/>
 		<LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2">
-      <Space
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:layout_weight="1" />
-      <NumberPicker
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          hideWheelUntilFocused="true"
-          android:id="@+id/CalcAreaExpDollDummy" />
-      <Space
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:layout_weight="1" />
-
-    </LinearLayout>
-				<TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/Calc_AreaExp_WarCountSettingText"
-            android:gravity="center"
-            android:layout_marginTop="20dp" />
-		<LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2">
-      <Space
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:layout_weight="1" />
-      <NumberPicker
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          hideWheelUntilFocused="true"
-          android:id="@+id/CalcAreaExpWarCount" />
-      <Space
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:layout_weight="1" />
-
-    </LinearLayout>
-		<TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/Calc_ExpItem_NowTotalExpSettingText"
-            android:gravity="center"
-            android:layout_marginTop="10dp" />
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@color/Calc_MainBackgroundColor">
 			<LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2">
-     <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:inputType="number"
-                android:text="0"
-                android:id="@+id/CalcAreaExpNowExp" />
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-    </LinearLayout>
+				android:orientation="horizontal"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_marginRight="10dp"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text="@string/Calc_SkillTraining_LevelSettingText"
+					android:textColor="@color/Calc_TextColor_WhiteTheme"
+					android:gravity="center"/>
+				<NumberPicker
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					hideWheelUntilFocused="true"
+					android:id="@+id/CalcAreaExpNowLevel" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text="==>"
+					android:textColor="@color/Calc_TextColor_WhiteTheme"
+					android:gravity="center"
+					android:layout_marginLeft="10dp"
+					android:layout_marginRight="10dp" />
+				<NumberPicker
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					hideWheelUntilFocused="true"
+					android:id="@+id/CalcAreaExpTargetLevel" />
+			</LinearLayout>
+			<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_marginRight="10dp"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text="@string/Calc_AreaExp_DollDummySettingText"
+					android:textColor="@color/Calc_TextColor_WhiteTheme"
+					android:gravity="center"/>
+				<NumberPicker
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					hideWheelUntilFocused="true"
+					android:id="@+id/CalcAreaExpDollDummy" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_marginLeft="20dp"
+					android:layout_marginRight="10dp"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text="@string/Calc_AreaExp_WarCountSettingText"
+					android:textColor="@color/Calc_TextColor_WhiteTheme"
+					android:gravity="center"/>
+				<NumberPicker
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					hideWheelUntilFocused="true"
+					android:id="@+id/CalcAreaExpWarCount" />
+			</LinearLayout>
+			<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_marginRight="10dp"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text="@string/Calc_ExpItem_NowTotalExpSettingText"
+					android:textColor="@color/Calc_TextColor_WhiteTheme"
+					android:gravity="center" />
+				<EditText
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:inputType="number"
+					android:text="0"
+					android:id="@+id/CalcAreaExpNowExp" />
+			</LinearLayout>
+			<View
+				android:layout_width="300dp"
+				android:layout_height="5dp"
+				android:layout_gravity="right"
+				android:background="#303030"/>
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="20dp"
+				android:paddingRight="10dp">
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text=""
+					android:textColor="@color/Calc_TextColor_WhiteTheme"
+					android:gravity="right"
+					android:id="@+id/CalcAreaExpResult_Normal" />
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text=""
+					android:textColor="@color/Calc_TextColor_WhiteTheme"
+					android:gravity="right"
+					android:id="@+id/CalcAreaExpResult_Leader" />
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text=""
+					android:textColor="@color/Calc_TextColor_WhiteTheme"
+					android:gravity="right"
+					android:id="@+id/CalcAreaExpResult_MVP" />
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text=""
+					android:textColor="@color/Calc_TextColor_WhiteTheme"
+					android:gravity="right"
+					android:id="@+id/CalcAreaExpResult_Leader_MVP" />
+			</LinearLayout>
+		</LinearLayout>
+	
 		<LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/Calc_AreaExp_VowSettingCheckBox"
-                android:checked="false"
-                android:id="@+id/CalcAreaExpVowSelector" />
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-        </LinearLayout>
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<ToggleButton
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:textOn=""
+				android:textOff=""
+				android:text=""
+				android:background="@drawable/calc_applyvowselector"
+				android:id="@+id/CalcAreaExpVowSelector"/>
+			<ToggleButton
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:textOn=""
+				android:textOff=""
+				android:text=""
+				android:background="@drawable/calc_expeventselector"
+				android:id="@+id/CalcAreaExpExpEventSelector"/>
+		</LinearLayout>
 		<LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/Calc_AreaExp_ExpEventSettingCheckBox"
-                android:checked="false"
-                android:id="@+id/CalcAreaExpExpEventSelector" />
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-        </LinearLayout>
-		<LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/Calc_AreaExp_AutoAddDummySettingCheckBox"
-                android:checked="false"
-                android:id="@+id/CalcAreaExpAutoAddDummySelector" />
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-        </LinearLayout>
-		<LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/Calc_AreaExp_LastEnemySettingCheckBox"
-                android:checked="false"
-                android:id="@+id/CalcAreaExpLastEnemySelector" />
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-        </LinearLayout>
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/Calc_AreaExp_CountResult"
-            android:gravity="center"
-            android:layout_marginTop="10dp" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="0 / 0 / 0 / 0"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:id="@+id/CalcAreaExpResult" />
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<ToggleButton
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:textOn=""
+				android:textOff=""
+				android:text=""
+				android:background="@drawable/calc_autodummyselector"
+				android:id="@+id/CalcAreaExpAutoAddDummySelector"/>
+			<ToggleButton
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:textOn=""
+				android:textOff=""
+				android:text=""
+				android:background="@drawable/calc_clearlastselector"
+				android:id="@+id/CalcAreaExpLastEnemySelector"/>
+		</LinearLayout>
     </LinearLayout>
 </ScrollView>

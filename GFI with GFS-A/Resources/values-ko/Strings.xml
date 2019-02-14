@@ -10,22 +10,7 @@
   <string name="Common_AreaExp">경험치 계산</string>
   <string name="TitleName_AreaExpCalc">지역별 경험치 계산</string>
   
-  <string name="Calc_ExpItem_FSTTrainerLevelSettingText">* 훈련장 레벨 설정 *</string>
-  <string name="Calc_ExpItem_TotalResultBatteryText">* 필요한 전지 수량 *</string>
-  <string name="Calc_ExpItem_TotalResultTimeText">* 총 소요 시간 *</string>
-  <string name="Calc_FSTGradeUp_ResultFragmentText">* 필요한 조각 *</string>
-  <string name="Calc_FSTGradeUp_ResultDataPatchText">* 필요한 데이터 패치 *</string>
-  <string name="Calc_FSTGradeUp_NowGradeSelectorTitle">* 현재 등급 *</string>
-  <string name="Calc_FSTGradeUp_TargetGradeSelectorTitle">* 목표 등급 *</string>
-  <string name="Calc_AreaExp_DollDummySettingText">* 편제 수 *</string>
-  <string name="Calc_AreaExp_WarCountSettingText">* 전투 횟수 *</string>
-  <string name="Calc_AreaExp_CountResult">* 총 횟수 (일반 / 리더 / MVP / 리더,MVP) *</string>
-  <string name="Calc_AreaExp_LevelSettingText">* 레벨 설정 *</string>
-  <string name="Calc_AreaExp_NowTotalExpSettingText">* 현재 경험치 *</string>
-  <string name="Calc_AreaExp_VowSettingCheckBox">서약 적용</string>
-  <string name="Calc_AreaExp_ExpEventSettingCheckBox">경험치 이벤트(x1.5) 적용</string>
-  <string name="Calc_AreaExp_AutoAddDummySettingCheckBox">자동 편제확대</string>
-  <string name="Calc_AreaExp_LastEnemySettingCheckBox">보스, 마지막 몹 처치</string>
+  
   
   <string name="ComingSoon">Coming Soon...</string>
   <string name="Common_ServerMaintenance">서버 점검 중 입니다.</string>
@@ -239,10 +224,46 @@
   <string name="Common_TDoll">인형</string>
   <string name="Common_Equipment">장비</string>
   <string name="Common_Fairy">요정</string>
+  <string name="Common_FST">화력소대</string>
   <string name="Common_Previous">이전</string>
   <string name="Common_Next">다음</string>
   <string name="Common_PreviousList">이전 목록으로</string>
   <string name="Common_NonProduct">제조 불가</string>
+  
+  <!--Country String-->
+  <string name="Country_Australia">호주</string>
+  <string name="Country_Austria">오스트리아</string>
+  <string name="Country_Belgium">벨기에</string>
+  <string name="Country_BlazeBlue">블레이블루</string>
+  <string name="Country_Brazil">브라질</string>
+  <string name="Country_Bulgaria">불가리아</string>
+  <string name="Country_China">중국</string>
+  <string name="Country_Croatia">크로아티아</string>
+  <string name="Country_Czech">체코</string>
+  <string name="Country_Czechoslovakia">체코슬로바키아</string>
+  <string name="Country_DJMAXRESPECT">DJMAX RESPECT</string>
+  <string name="Country_Finland">핀란드</string>
+  <string name="Country_France">프랑스</string>
+  <string name="Country_Germany">독일</string>
+  <string name="Country_GuiltyGear">길티기어</string>
+  <string name="Country_Honkai2">붕괴학원2</string>
+  <string name="Country_Hungary">헝가리</string>
+  <string name="Country_Israel">이스라엘</string>
+  <string name="Country_Italy">이탈리아</string>
+  <string name="Country_Japan">일본</string>
+  <string name="Country_Poland">폴란드</string>
+  <string name="Country_RepublicOfKorea">대한민국</string>
+  <string name="Country_RepublicOfSouthAfrica">남아프리카공화국</string>
+  <string name="Country_Russia">러시아</string>
+  <string name="Country_Serbia">세르비아</string>
+  <string name="Country_Singapore">싱가포르</string>
+  <string name="Country_SovietUnion">소비에트 연방</string>
+  <string name="Country_Spain">스페인</string>
+  <string name="Country_Sweden">스웨덴</string>
+  <string name="Country_Switzerland">스위스</string>
+  <string name="Country_Taiwan">대만</string>
+  <string name="Country_UnitedKingdom">영국</string>
+  <string name="Country_UnitedStatesOfAmerica">미국</string>
 
   <!--Common Dialog String-->
   <string name="AlertDialog_Confirm">확인</string>
@@ -267,6 +288,7 @@
   <string name="CoreCalc_ItemCount">개</string>
   <string name="ChangeMode_Error">항목 변경 오류</string>
   <string name="InternalCalc_Error">내부 계산 오류</string>
+ 
 
   <!--DollDBDetailActivity-->
   <string name="DollDBDetail_RadarAverageString">평균</string>
@@ -470,25 +492,61 @@
   
   
   <!--Calc_Core-->
-  <string name="Calc_Core_GradeSettingText">* 등급 설정 *</string>
-  <string name="Calc_Core_DummySettingText">* 편제 수 설정 *</string>
+  <string name="Calc_Core_GradeSettingText">등급</string>
+  <string name="Calc_Core_DummySettingText">편제 수</string>
   <string name="Calc_Core_ResultCoreCountText">* 필요한 코어 수 *</string>
+  <string name="Calc_Core_DefaultCoreCountResultText">개 코어 필요</string>
   
   <!--Calc_ExpItem-->
   <string name="Calc_ExpItem_ModSettingText">* Mod 설정 *</string>
   <string name="Calc_ExpItem_ModSettingCheckBox">Mod 적용</string>
   <string name="Calc_ExpItem_VowSettingCheckBox">서약 적용</string>
   <string name="Calc_ExpItem_LevelSettingText">* 레벨 설정 *</string>
-  <string name="Calc_ExpItem_NowTotalExpSettingText">* 현재 총 경험치 *</string>
+  <string name="Calc_ExpItem_NowTotalExpSettingText"> 현재 총 경험치 </string>
   <string name="Calc_ExpItem_TotalResultText">* 필요한 수량 / 남는 경험치 *</string>
-  <string name="Calc_ExpItem_Caution">$ 작전 보고서 1장당 3000Exp $</string>
+  <string name="Calc_ExpItem_Caution">작전보고서 1개당 3000 Exp 적용</string>
+  <string name="Calc_ExpItem_FSTTrainerLevelSettingText">훈련장 레벨</string>
+  <string name="Calc_ExpItem_TotalResultBatteryText">* 필요한 전지 수량 *</string>
+  <string name="Calc_ExpItem_TotalResultTimeText">* 총 소요 시간 *</string>
+  <string name="Calc_ExpItem_DefaultItemResultText">개의 작전보고서 소모</string>
+  <string name="Calc_ExpItem_DefaultRemainExpResultText">Exp 버려짐</string>
+  <string name="Calc_ExpItem_DefaultBatteryResultText">개의 전지 소모</string>
+  <string name="Calc_ExpItem_DefaultTimeResultText">시간 소요됨</string>
   
   <!--Calc_SkillTraining-->
-  <string name="Calc_SkillTraining_LevelSettingText">* 레벨 설정 *</string>
+  <string name="Calc_SkillTraining_LevelSettingText">레벨</string>
   <string name="Calc_SkillTraining_ResultChipCountText">* 단계별 스킬 훈련칩 요구량 *\n(초급 / 중급 / 고급)></string>
   <string name="Calc_SkillTraining_ResultChipCountDefaultText">0 / 0 / 0</string>
   <string name="Calc_SkillTraining_ResultTimeCountText">* 총 소요시간 *</string>
   <string name="Calc_SkillTraining_ResultTimeCountDefaultText">0 시간</string>
+  <string name="Calc_SkillTraining_DefaultBasicSkillChipResultText">초급</string>
+  <string name="Calc_SkillTraining_DefaultAdvanceSkillChipResultText">중급</string>
+  <string name="Calc_SkillTraining_DefaultMasterSkillChipResultText">고급</string>
+  <string name="Calc_SkillTraining_DefaultSkillChipResultText">스킬칩 필요</string>
+  <string name="Calc_SkillTraining_DefaultTimeResultText">시간 필요</string>
+  
+  <!--Calc_FSTGradeUp-->
+  <string name="Calc_FSTGradeUp_ResultFragmentText">* 필요한 조각 *</string>
+  <string name="Calc_FSTGradeUp_ResultDataPatchText">* 필요한 데이터 패치 *</string>
+  <string name="Calc_FSTGradeUp_NowGradeSelectorTitle">현재</string>
+  <string name="Calc_FSTGradeUp_TargetGradeSelectorTitle">목표</string>
+  <string name="Calc_FSTGradeUp_DefaultFragmentResultText">조각 필요</string>
+  <string name="Calc_FSTGradeUp_DefaultDataPatchText">데이터 패치 필요</string>
+  
+  <!--Calc_AreaExp-->
+  <string name="Calc_AreaExp_DollDummySettingText">편제</string>
+  <string name="Calc_AreaExp_WarCountSettingText">전투 횟수</string>
+  <string name="Calc_AreaExp_CountResult">* 총 횟수 (일반 / 리더 / MVP / 리더,MVP) *</string>
+  <string name="Calc_AreaExp_LevelSettingText">레벨</string>
+  <string name="Calc_AreaExp_NowTotalExpSettingText">현재 경험치</string>
+  <string name="Calc_AreaExp_VowSettingCheckBox">서약 적용</string>
+  <string name="Calc_AreaExp_ExpEventSettingCheckBox">경험치 이벤트(x1.5) 적용</string>
+  <string name="Calc_AreaExp_AutoAddDummySettingCheckBox">자동 편제확대</string>
+  <string name="Calc_AreaExp_LastEnemySettingCheckBox">보스, 마지막 몹 처치</string>
+  <string name="Calc_AreaExp_DefaultNormalResultText">일반</string>
+  <string name="Calc_AreaExp_DefaultLeaderResultText">리더</string>
+  <string name="Calc_AreaExp_DefaultMVPResultText">MVP</string>
+  <string name="Calc_AreaExp_DefaultLeaderMVPResultText">MVP &amp; 리더</string>
   
   <!--DollDBDetailLayout-->
   <string name="DollDBDetailLayout_SDAnimationButtonText">SD 애니메이션 (Beta)</string>
@@ -551,10 +609,11 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.10 수정사항]\n\n
-- 밝은 테마 적용 시 일부 기능이 충돌하는 문제 수정\n
-- 라플봇 기능 제거\n
-- 스토리, 이벤트 기능에서 밝은 테마 적용 시 어두운 테마로 나오는 현상 수정
+    [2.3.11 수정사항]\n\n
+- 계산기 레이아웃 수정\n
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, 그리폰 일상만화)\n
+- 만화 카테고리 추가 (솦모챠 만화)\n
+- 인형 총기 출신 국가 다국어화
   </string>
 
   <string name="RFBot_CommandHelp">

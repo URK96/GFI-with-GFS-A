@@ -13,22 +13,9 @@
   <string name="Common_AreaExp">Area Exp</string>
   <string name="TitleName_AreaExpCalc">Calc Area Exp</string>
   
-  <string name="Calc_ExpItem_FSTTrainerLevelSettingText">* Set Training Level *</string>
-  <string name="Calc_ExpItem_TotalResultBatteryText">* Require Batteries *</string>
-  <string name="Calc_ExpItem_TotalResultTimeText">* Total Time *</string>
-  <string name="Calc_FSTGradeUp_ResultFragmentText">* Require Sculpture *</string>
-  <string name="Calc_FSTGradeUp_ResultDataPatchText">* Require Data Patch *</string>
-  <string name="Calc_FSTGradeUp_NowGradeSelectorTitle">* Now Grade *</string>
-  <string name="Calc_FSTGradeUp_TargetGradeSelectorTitle">* Target Grade *</string>
-  <string name="Calc_AreaExp_DollDummySettingText">* Dummies *</string>
-  <string name="Calc_AreaExp_WarCountSettingText">* Combat Count *</string>
-  <string name="Calc_AreaExp_CountResult">* Total Count (Normal / Leader / MVP / Leader,MVP) *</string>
-  <string name="Calc_AreaExp_LevelSettingText">* Set Level *</string>
-  <string name="Calc_AreaExp_NowTotalExpSettingText">* Now Exp *</string>
-  <string name="Calc_AreaExp_VowSettingCheckBox">Apply Oath (Marry)</string>
-  <string name="Calc_AreaExp_ExpEventSettingCheckBox">Apply Exp Event(x1.5)</string>
-  <string name="Calc_AreaExp_AutoAddDummySettingCheckBox">Auto Dummy Link Up</string>
-  <string name="Calc_AreaExp_LastEnemySettingCheckBox">Remove Boss, Last Enemy</string>
+  
+  
+  
   
   <string name="ComingSoon">Coming Soon...</string>
   <string name="Common_ServerMaintenance">Server is Maintenance...</string>
@@ -236,10 +223,46 @@
   <string name="Common_TDoll">T-Doll</string>
   <string name="Common_Equipment">Equip</string>
   <string name="Common_Fairy">Fairy</string>
+  <string name="Common_FST">Fire Support Team</string>
   <string name="Common_Previous">Previous</string>
   <string name="Common_Next">Next</string>
   <string name="Common_PreviousList">Previous List</string>
   <string name="Common_NonProduct">Non-Manufacturing</string>
+
+  <!--Country String-->
+  <string name="Country_Australia">Australia</string>
+  <string name="Country_Austria">Austria</string>
+  <string name="Country_Belgium">Belgium</string>
+  <string name="Country_BlazeBlue">BlazeBlue</string>
+  <string name="Country_Brazil">Brazil</string>
+  <string name="Country_Bulgaria">Bulgaria</string>
+  <string name="Country_China">China</string>
+  <string name="Country_Croatia">Croatia</string>
+  <string name="Country_Czech">Czech</string>
+  <string name="Country_Czechoslovakia">Czechoslovakia</string>
+  <string name="Country_DJMAXRESPECT">DJMAX RESPECT</string>
+  <string name="Country_Finland">Finland</string>
+  <string name="Country_France">France</string>
+  <string name="Country_Germany">Germany</string>
+  <string name="Country_GuiltyGear">Guilty Gear</string>
+  <string name="Country_Honkai2">Honkai2</string>
+  <string name="Country_Hungary">Hungary</string>
+  <string name="Country_Israel">Israel</string>
+  <string name="Country_Italy">Italy</string>
+  <string name="Country_Japan">Japan</string>
+  <string name="Country_Poland">Poland</string>
+  <string name="Country_RepublicOfKorea">Republic of Korea</string>
+  <string name="Country_RepublicOfSouthAfrica">Republic of South Africa</string>
+  <string name="Country_Russia">Russia</string>
+  <string name="Country_Serbia">Serbia</string>
+  <string name="Country_Singapore">Singapore</string>
+  <string name="Country_SovietUnion">Soviet Union</string>
+  <string name="Country_Spain">Spain</string>
+  <string name="Country_Sweden">Sweden</string>
+  <string name="Country_Switzerland">Switzerland</string>
+  <string name="Country_Taiwan">Taiwan</string>
+  <string name="Country_UnitedKingdom">United Kingdom</string>
+  <string name="Country_UnitedStatesOfAmerica">United States of America</string>
 
   <!--Common Dialog String-->
   <string name="AlertDialog_Confirm">Confirm</string>
@@ -469,25 +492,61 @@
   
     
   <!--Calc_Core-->
-  <string name="Calc_Core_GradeSettingText">* Set Grade *</string>
-  <string name="Calc_Core_DummySettingText">* Set Dummy *</string>
+  <string name="Calc_Core_GradeSettingText">Grade</string>
+  <string name="Calc_Core_DummySettingText">Dummy</string>
   <string name="Calc_Core_ResultCoreCountText">* Require Core *</string>
+  <string name="Calc_Core_DefaultCoreCountResultText">Core Require</string>
   
   <!--Calc_ExpItem-->
   <string name="Calc_ExpItem_ModSettingText">* Set Mode *</string>
   <string name="Calc_ExpItem_ModSettingCheckBox">Apply Mod</string>
   <string name="Calc_ExpItem_VowSettingCheckBox">Apply Oath (Marry)</string>
-  <string name="Calc_ExpItem_LevelSettingText">* Set Level *</string>
-  <string name="Calc_ExpItem_NowTotalExpSettingText">* Now Exp *</string>
+  <string name="Calc_ExpItem_LevelSettingText"> Set Level </string>
+  <string name="Calc_ExpItem_NowTotalExpSettingText"> Now Exp </string>
   <string name="Calc_ExpItem_TotalResultText">* Require Count / Remain Exp *</string>
-  <string name="Calc_ExpItem_Caution">$ Battle Report 3000Exp / 1Count$</string>
+  <string name="Calc_ExpItem_Caution">Battle Report 3000Exp / 1Count</string>
+  <string name="Calc_ExpItem_FSTTrainerLevelSettingText">Training Level</string>
+  <string name="Calc_ExpItem_TotalResultBatteryText">* Require Batteries *</string>
+  <string name="Calc_ExpItem_TotalResultTimeText">* Total Time *</string>
+  <string name="Calc_ExpItem_DefaultItemResultText">Report Consume</string>
+  <string name="Calc_ExpItem_DefaultRemainExpResultText">Exp Remain</string>
+  <string name="Calc_ExpItem_DefaultBatteryResultText">Battery Consume</string>
+  <string name="Calc_ExpItem_DefaultTimeResultText">Hour Require</string>
   
   <!--Calc_SkillTraining-->
-  <string name="Calc_SkillTraining_LevelSettingText">* Set Level *</string>
+  <string name="Calc_SkillTraining_LevelSettingText">Level</string>
   <string name="Calc_SkillTraining_ResultChipCountText">* Require Skill Chips *\n(Basic / Advance / Master)></string>
   <string name="Calc_SkillTraining_ResultChipCountDefaultText">0 / 0 / 0</string>
   <string name="Calc_SkillTraining_ResultTimeCountText">* Total Time *</string>
   <string name="Calc_SkillTraining_ResultTimeCountDefaultText">0 Hour</string>
+  <string name="Calc_SkillTraining_DefaultBasicSkillChipResultText">Basic</string>
+  <string name="Calc_SkillTraining_DefaultAdvanceSkillChipResultText">Advance</string>
+  <string name="Calc_SkillTraining_DefaultMasterSkillChipResultText">Master</string>
+  <string name="Calc_SkillTraining_DefaultSkillChipResultText">Skill Chip Require</string>
+  <string name="Calc_SkillTraining_DefaultTimeResultText">Hour Require</string>
+
+  <!--Calc_FSTGradeUp-->
+  <string name="Calc_FSTGradeUp_ResultFragmentText">* Require Sculpture *</string>
+  <string name="Calc_FSTGradeUp_ResultDataPatchText">* Require Data Patch *</string>
+  <string name="Calc_FSTGradeUp_NowGradeSelectorTitle">Now</string>
+  <string name="Calc_FSTGradeUp_TargetGradeSelectorTitle">Target</string>
+  <string name="Calc_FSTGradeUp_DefaultFragmentResultText">Fragment Require</string>
+  <string name="Calc_FSTGradeUp_DefaultDataPatchText">Data Patch Require</string>
+
+  <!--Calc_AreaExp-->
+  <string name="Calc_AreaExp_DollDummySettingText">Dummies</string>
+  <string name="Calc_AreaExp_WarCountSettingText">Combat</string>
+  <string name="Calc_AreaExp_CountResult">* Total Count (Normal / Leader / MVP / Leader,MVP) *</string>
+  <string name="Calc_AreaExp_LevelSettingText">Level</string>
+  <string name="Calc_AreaExp_NowTotalExpSettingText">Now Exp</string>
+  <string name="Calc_AreaExp_VowSettingCheckBox">Apply Oath (Marry)</string>
+  <string name="Calc_AreaExp_ExpEventSettingCheckBox">Apply Exp Event(x1.5)</string>
+  <string name="Calc_AreaExp_AutoAddDummySettingCheckBox">Auto Dummy Link Up</string>
+  <string name="Calc_AreaExp_LastEnemySettingCheckBox">Remove Boss, Last Enemy</string>
+  <string name="Calc_AreaExp_DefaultNormalResultText">Normal</string>
+  <string name="Calc_AreaExp_DefaultLeaderResultText">Leader</string>
+  <string name="Calc_AreaExp_DefaultMVPResultText">MVP</string>
+  <string name="Calc_AreaExp_DefaultLeaderMVPResultText">MVP &amp; Leader</string>
   
   <!--DollDBDetailLayout-->
   <string name="DollDBDetailLayout_SDAnimationButtonText">SD Animation (Beta)</string>
@@ -550,9 +609,11 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.10 Update]\n\n
-- Fix Light Theme issue\n
-- Remove RFBot
+    [2.3.11 Update]\n\n
+- Calc Layout Renewal\n
+- Add Cartoon Contents\n
+- Add Cartoon Category\n
+- Add Language about T-Doll gun country
   </string>
 
   <string name="RFBot_CommandHelp">

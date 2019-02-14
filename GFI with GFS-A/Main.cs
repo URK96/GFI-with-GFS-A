@@ -494,6 +494,9 @@ namespace GFI_with_GFS_A
                         //StartActivity(typeof(GuideBookViewer));
                         //OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
+                    case Resource.Id.AreaTipExtraButton:
+                        ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
+                        break;
                     default:
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
                         break;
