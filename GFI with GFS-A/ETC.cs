@@ -28,7 +28,7 @@ namespace GFI_with_GFS_A
         internal static bool IsLowRAM = false;
         internal static bool UseLightTheme = false;
         internal static bool HasEvent = false;
-        internal static Java.Util.Locale Language;
+        internal static Java.Util.Locale Language; // ko, en
 
         internal static int DialogBG = 0;
         internal static int DialogBG_Vertical = 0;

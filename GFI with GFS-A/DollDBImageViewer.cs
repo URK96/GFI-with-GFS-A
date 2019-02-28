@@ -18,7 +18,6 @@ namespace GFI_with_GFS_A
     [Activity(Label = "DollDBImageViewer", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class DollDBImageViewer : AppCompatActivity
     {
-        private DataRow DollInfoDR = null;
         private Doll doll;
 
         private CoordinatorLayout SnackbarLayout;

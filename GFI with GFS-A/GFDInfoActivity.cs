@@ -21,12 +21,9 @@ namespace GFI_with_GFS_A
         TextView ServerVersion;
         CoordinatorLayout SnackbarLayout;
 
-        ProgressDialog DownloadProgress;
-
         FloatingActionButton KakaoPlusFriendFAB;
         FloatingActionButton DiscordFAB;
 
-        private bool IsOpenFABMenu = false;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {

@@ -24,7 +24,6 @@ namespace GFI_with_GFS_A
         private CoordinatorLayout SnackbarLayout;
         private ProgressBar LoadProgressBar;
         private Button RefreshCacheButton;
-        private Button ChangeStateButton;
         private PhotoView EnemyImageView;
         private TextView ImageStatus;
 

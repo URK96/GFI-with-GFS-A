@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Data;
 using System.Net;
+using System.Collections;
 
 namespace GFI_with_GFS_A
 {
@@ -311,6 +312,53 @@ namespace GFI_with_GFS_A
 
             for (int i = 0; i < ability_name.Length; ++i)
                 Abilities.Add(ability_name[i], (string)dr[ability_name[i]]);
+        }
+    }
+
+    public class Enemy
+    {
+        public string Name { get; private set; }
+        public string CodeName { get; private set; }
+        public string[] Types { get; private set; }
+        public bool IsBoss { get; private set; }
+
+        public Dictionary<string, int>[] Abilities;
+
+        public Enemy(DataRow dr)
+        {
+            Name = (string)dr["Name"];
+            CodeName = (string)dr["CodeName"];
+
+            List<DataRow> drs = new List<DataRow>();
+
+            foreach (DataRow t_dr in ETC.EnemyList.Rows)
+                if ((string)t_dr["CodeName"] == CodeName)
+                    drs.Add(t_dr);
+
+            drs.TrimExcess();
+
+            Types = new string[drs.Count];
+            for (int i = 0; i < Types.Length; ++i)
+                Types[i] = (string)drs[i]["Type"];
+
+            IsBoss = (bool)dr["IsBoss"];
+
+            SetAbility(ref drs);
+        }
+
+        private void SetAbility(ref List<DataRow> drs)
+        {
+            Abilities = new Dictionary<string, int>[Types.Length];
+
+            string[] ability_name = { "HP", "FireRate", "Accuracy", "Evasion", "AttackSpeed", "MoveSpeed", "Penetration", "Armor", "Range" };
+
+            for (int i = 0; i < Abilities.Length; ++i)
+            {
+                Abilities[i] = new Dictionary<string, int>();
+
+                for (int k = 0; k < ability_name.Length; ++k)
+                    Abilities[i].Add(ability_name[k], (int)drs[i][ability_name[k]]);
+            }
         }
     }
 }

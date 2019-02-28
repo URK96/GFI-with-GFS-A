@@ -78,7 +78,6 @@ namespace GFI_with_GFS_A
 
                 mDollListView = FindViewById<RecyclerView>(Resource.Id.DollDBRecyclerView);
                 MainLayoutManager = new LinearLayoutManager(this);
-                LinearLayoutManager manager = new LinearLayoutManager(this);
                 mDollListView.SetLayoutManager(MainLayoutManager);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBSnackbarLayout);
 
@@ -464,8 +463,7 @@ namespace GFI_with_GFS_A
                 for (int i = 0; i < ProductTimeFilters.Length; ++i) Filter_ProductTime[i] = 0;
                 Filter_Mod = false;
 
-                for (int i = 0; i < HasApplyFilter.Length; ++i)
-                    HasApplyFilter[i] = false;
+                for (int i = 0; i < HasApplyFilter.Length; ++i) HasApplyFilter[i] = false;
 
                 ListDoll(SearchText.Text, new int[] { Filter_ProductTime[0], Filter_ProductTime[1] }, Filter_ProductTime[2]);
             }

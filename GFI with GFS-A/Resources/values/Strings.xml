@@ -369,9 +369,10 @@
   <string name="OldGFDViewer_ProductDollTable">T-Doll Production Timetable</string>
   <string name="OldGFDViewer_ProductEquipTable">Equip Production Timetable</string>
   <string name="OldGFDViewer_ProductFairyTable">Fairy Production Timetable</string>
+  <string name="OldGFDViewer_MDTable">Logistic Support Table</string>
   <string name="OldGFDViewer_RecommendDollRecipe">T-Doll Recipe</string>
   <string name="OldGFDViewer_RecommendEquipRecipe">Equip Recipe</string>
-  <string name="OldGFDViewer_RecommendMD">Logistic Support Table</string>
+  <string name="OldGFDViewer_RecommendMD">Recommend Logistic Support</string>
   <string name="OldGFDViewer_RecommendLeveling">Recommend Leveling Route</string>
   <string name="OldGFDViewer_DollPerformance">Doll Performance</string>
   <string name="OldGFDViewer_FairyAttribute">Fairy Attribute</string>

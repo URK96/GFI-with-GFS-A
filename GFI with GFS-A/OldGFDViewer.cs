@@ -24,6 +24,7 @@ namespace GFI_with_GFS_A
         internal DrawerLayout MainDrawerLayout;
         private ListView DrawerListView;
         internal CoordinatorLayout SnackbarLayout;
+        private FloatingActionButton RefreshFAB;
 
         string[] OldGFDImageList;
 
@@ -31,7 +32,7 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                if (ETC.Resources == null) ETC.Resources = Resources;
+                ETC.BasicInitializeApp(this);
 
                 base.OnCreate(savedInstanceState);
 
@@ -52,6 +53,12 @@ namespace GFI_with_GFS_A
                 {
                     if (ETC.UseLightTheme == true) SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
                     else SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
+                };
+                RefreshFAB = FindViewById<FloatingActionButton>(Resource.Id.OldGFDViewerRefreshFAB);
+                RefreshFAB.Click += delegate 
+                {
+                    ((OldGFDViewerScreen)OldGFDViewer_F).DownloadGFDImage();
+                    ((OldGFDViewerScreen)OldGFDViewer_F).ShowImage(0);
                 };
 
                 SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.OldGFDViewerMainToolbar));
@@ -110,18 +117,38 @@ namespace GFI_with_GFS_A
 
         private void ListImageList()
         {
-            OldGFDImageList = new string[]
+            if (ETC.Language.Language == "ko")
             {
-                Resources.GetString(Resource.String.OldGFDViewer_ProductDollTable),
-                Resources.GetString(Resource.String.OldGFDViewer_ProductEquipTable),
-                Resources.GetString(Resource.String.OldGFDViewer_ProductFairyTable),
-                //Resources.GetString(Resource.String.OldGFDViewer_DollPerformance),
-                Resources.GetString(Resource.String.OldGFDViewer_FairyAttribute),
-                Resources.GetString(Resource.String.OldGFDViewer_RecommendDollRecipe),
-                Resources.GetString(Resource.String.OldGFDViewer_RecommendEquipRecipe),
-                Resources.GetString(Resource.String.OldGFDViewer_RecommendMD),
-                Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling),
-            };
+                OldGFDImageList = new string[]
+                {
+                    Resources.GetString(Resource.String.OldGFDViewer_ProductDollTable),
+                    Resources.GetString(Resource.String.OldGFDViewer_ProductEquipTable),
+                    Resources.GetString(Resource.String.OldGFDViewer_ProductFairyTable),
+                    Resources.GetString(Resource.String.OldGFDViewer_MDTable),
+                    //Resources.GetString(Resource.String.OldGFDViewer_DollPerformance),
+                    Resources.GetString(Resource.String.OldGFDViewer_FairyAttribute),
+                    Resources.GetString(Resource.String.OldGFDViewer_RecommendDollRecipe),
+                    Resources.GetString(Resource.String.OldGFDViewer_RecommendEquipRecipe),
+                    Resources.GetString(Resource.String.OldGFDViewer_RecommendMD),
+                    Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling),
+                };
+            }
+            else
+            {
+                OldGFDImageList = new string[]
+                {
+                    Resources.GetString(Resource.String.OldGFDViewer_ProductDollTable),
+                    Resources.GetString(Resource.String.OldGFDViewer_ProductEquipTable),
+                    //Resources.GetString(Resource.String.OldGFDViewer_ProductFairyTable),
+                    Resources.GetString(Resource.String.OldGFDViewer_MDTable),
+                    //Resources.GetString(Resource.String.OldGFDViewer_DollPerformance),
+                    //Resources.GetString(Resource.String.OldGFDViewer_FairyAttribute),
+                    Resources.GetString(Resource.String.OldGFDViewer_RecommendDollRecipe),
+                    Resources.GetString(Resource.String.OldGFDViewer_RecommendEquipRecipe),
+                    //Resources.GetString(Resource.String.OldGFDViewer_RecommendMD),
+                    Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling),
+                };
+            }
         }
 
         private void DrawerListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -172,18 +199,7 @@ namespace GFI_with_GFS_A
         int p_now = 0;
         int p_total = 0;
 
-        string[] ImageName =
-        {
-            "ProductTable_Doll",
-            "ProductTable_Equipment",
-            "ProductTable_Fairy",
-            //"DollPerformance",
-            "FairyAttribute",
-            "RecommendDollRecipe",
-            "RecommendEquipmentRecipe",
-            "RecommendMD",
-            "RecommendLeveling"
-        };
+        string[] ImageName = null;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -207,6 +223,8 @@ namespace GFI_with_GFS_A
         {
             try
             {
+                InitializeImageList();
+
                 if (CheckImage() == true) await DownloadGFDImage();
 
                 ShowImage(0);
@@ -216,6 +234,42 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(Activity, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout_F, "Error InitProcess", Snackbar.LengthShort);
+            }
+        }
+
+        private void InitializeImageList()
+        {
+            if (ETC.Language.Language == "ko")
+            {
+                string[] ImageName = new string[]
+                {
+                    "ProductTable_Doll",
+                    "ProductTable_Equipment",
+                    "ProductTable_Fairy",
+                    "MD_Table",
+                    //"DollPerformance",
+                    "FairyAttribute",
+                    "RecommendDollRecipe",
+                    "RecommendEquipmentRecipe",
+                    "RecommendMD",
+                    "RecommendLeveling"
+                };
+            }
+            else
+            {
+                string[] ImageName = new string[]
+                {
+                    "ProductTable_Doll",
+                    "ProductTable_Equipment",
+                    //"ProductTable_Fairy",
+                    "MD_Table",
+                    //"DollPerformance",
+                    //"FairyAttribute",
+                    "RecommendDollRecipe",
+                    "RecommendEquipmentRecipe",
+                    //"RecommendMD",
+                    "RecommendLeveling"
+                };
             }
         }
 
@@ -326,7 +380,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task DownloadGFDImage()
+        internal async Task DownloadGFDImage()
         {
             View v = LayoutInflater.Inflate(Resource.Layout.ProgressDialogLayout, null);
 
@@ -357,7 +411,7 @@ namespace GFI_with_GFS_A
 
                     foreach (string s in ImageName)
                     {
-                        string url = Path.Combine(ETC.Server, "Data", "Images", "OldGFD", "Images", $"{s}.png");
+                        string url = Path.Combine(ETC.Server, "Data", "Images", "OldGFD", "Images", ETC.Language.Language, $"{s}.png");
                         string target = Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{s}.gfdcache");
 
                         await wc.DownloadFileTaskAsync(url, target);

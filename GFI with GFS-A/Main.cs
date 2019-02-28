@@ -478,8 +478,9 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.GFOSTPlayerExtraButton:
-                        StartActivity(typeof(GFOSTPlayerActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
+                        //StartActivity(typeof(GFOSTPlayerActivity));
+                        //OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.StoryExtraButton:
                         StartActivity(typeof(StoryActivity));

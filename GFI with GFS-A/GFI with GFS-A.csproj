@@ -322,7 +322,6 @@
     <Compile Include="ProductSimulatorActivity.cs" />
     <Compile Include="ProductSimulatorCategorySelectActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
-    <Compile Include="RFBot.cs" />
     <Compile Include="StoryActivity.cs" />
     <Compile Include="StoryActivity_ListStory.cs" />
     <Compile Include="StoryReaderActivity.cs" />
@@ -335,7 +334,6 @@
     <Compile Include="HiddenSettingActivity.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="OldGFDViewer.cs" />
-    <Compile Include="RFBotMainActivity.cs" />
     <Compile Include="SettingActivity.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

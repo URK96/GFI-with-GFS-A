@@ -38,7 +38,6 @@ namespace GFI_with_GFS_A
         private List<string> Item_List = new List<string>();
 
         private int Category_Index = 0;
-        private int Item_Index = 0;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -224,7 +223,6 @@ namespace GFI_with_GFS_A
 
         private View v;
 
-        private LinearLayout MainLayout;
         private LinearLayout CopyrightLayout;
         private FrameLayout WebViewLayout;
         private ProgressBar LoadProgress;

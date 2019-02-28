@@ -18,13 +18,9 @@ namespace GFI_with_GFS_A
     [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class EnemyDBDetailActivity : Activity
     {
-        private DataRow[] EnemyInfoDRs;
-        private string EnemyName;
-        private string EnemyCodeName;
-        private int EnemyTypeIndex = 0;
-        private bool IsBoss;
+        Enemy enemy = null;
 
-        private bool ListingComplete = false;
+        private int EnemyTypeIndex = 0;
 
         private CoordinatorLayout SnackbarLayout;
 
@@ -37,14 +33,12 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY0NkAzMTM2MmUzMjJlMzBmNFFDVVZlU2NDRTVmYVJqQ0ZyOTVPOGhYWnFIazlQNFNPeGVEMU9WMjZnPQ==");
-
                 if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
 
                 // Create your application here
                 SetContentView(Resource.Layout.EnemyDBDetailLayout);
 
-                EnemyCodeName = Intent.GetStringExtra("Keyword");
+                enemy = new Enemy(ETC.FindDataRow(ETC.EnemyList, "CodeName", Intent.GetStringExtra("Keyword")));
 
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.EnemyDBDetailInitLoadProgress);
 
@@ -76,7 +70,7 @@ namespace GFI_with_GFS_A
             try
             {
                 var EnemyImageViewer = new Intent(this, typeof(EnemyDBImageViewer));
-                EnemyImageViewer.PutExtra("Data", EnemyCodeName);
+                EnemyImageViewer.PutExtra("Data", enemy.CodeName);
                 StartActivity(EnemyImageViewer);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
@@ -95,49 +89,44 @@ namespace GFI_with_GFS_A
 
             try
             {
-                if (ListingComplete == false) await InitializeTypeList();
+                //if (ListingComplete == false) await InitializeTypeList();
 
                 // 철혈 타이틀 바 초기화
 
                 if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false) == true)
                 {
-                    if (File.Exists(Path.Combine(ETC.CachePath, "Enemy", "Normal", EnemyCodeName + ".gfdcache")) == false)
-                    {
-                        using (WebClient wc = new WebClient())
-                        {
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Enemy", "Normal", EnemyCodeName + ".png"), Path.Combine(ETC.CachePath, "Enemy", "Normal", EnemyCodeName + ".gfdcache"));
-                        }
-                    }
+                    string image_path = Path.Combine(ETC.CachePath, "Enemy", "Normal", $"{enemy.CodeName}.gfdcache");
 
-                    Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Enemy", "Normal", EnemyCodeName + ".gfdcache"));
+                    if (File.Exists(image_path) == false)
+                        using (WebClient wc = new WebClient())
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Enemy", "Normal", $"{enemy.CodeName}.png"), image_path);
+
+                    Drawable drawable = Drawable.CreateFromPath(image_path);
                     drawable.SetAlpha(40);
                     FindViewById<RelativeLayout>(Resource.Id.EnemyDBDetailMainLayout).Background = drawable;
                 }
 
-                string FileName = EnemyCodeName;
+                string cropimage_path = Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", $"{enemy.CodeName}.gfdcache");
 
-                if (File.Exists(Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", FileName + ".gfdcache")) == false)
-                {
+                if (File.Exists(cropimage_path) == false)
                     using (WebClient wc = new WebClient())
-                    {
-                        await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Enemy", "Normal_Crop", EnemyCodeName + ".png"), Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", FileName + ".gfdcache"));
-                    }
-                }
+                        await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Enemy", "Normal_Crop", $"{enemy.CodeName}.png"), cropimage_path);
 
-                ImageView EnemySmallImage = FindViewById<ImageView>(Resource.Id.EnemyDBDetailSmallImage);
-                EnemySmallImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", FileName + ".gfdcache")));
+                FindViewById<ImageView>(Resource.Id.EnemyDBDetailSmallImage).SetImageDrawable(Drawable.CreateFromPath(cropimage_path));
 
-                if (IsBoss == true) FindViewById<TextView>(Resource.Id.EnemyDBDetailType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Boss);
-                else FindViewById<TextView>(Resource.Id.EnemyDBDetailType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Normal);
-                FindViewById<TextView>(Resource.Id.EnemyDBDetailEnemyName).Text = EnemyName;
-                FindViewById<TextView>(Resource.Id.EnemyDBDetailEnemyCodeName).Text = EnemyCodeName;
+                if (enemy.IsBoss == true)
+                    FindViewById<TextView>(Resource.Id.EnemyDBDetailType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Boss);
+                else
+                    FindViewById<TextView>(Resource.Id.EnemyDBDetailType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Normal);
+                FindViewById<TextView>(Resource.Id.EnemyDBDetailEnemyName).Text = enemy.Name;
+                FindViewById<TextView>(Resource.Id.EnemyDBDetailEnemyCodeName).Text = enemy.CodeName;
 
 
                 // 철혈 기본 정보 초기화
 
                 int GradeIconId = 0;
 
-                switch (IsBoss)
+                switch (enemy.IsBoss)
                 {
                     case true:
                         GradeIconId = Resource.Drawable.Type_Boss;
@@ -148,12 +137,15 @@ namespace GFI_with_GFS_A
                 }
                 FindViewById<ImageView>(Resource.Id.EnemyDBDetailInfoGrade).SetImageResource(GradeIconId);
 
-                if (IsBoss == true) FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoEnemyType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Boss);
-                else FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoEnemyType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Normal);
-                FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoName).Text = EnemyName;
-                FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoCodeName).Text = EnemyCodeName;
+                if (enemy.IsBoss == true)
+                    FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoEnemyType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Boss);
+                else
+                    FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoEnemyType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Normal);
+                FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoName).Text = enemy.Name;
+                FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoCodeName).Text = enemy.CodeName;
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoVoiceActor).Text = "";
-                if (IsBoss == true) FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoAppearPlace).Text = (string)EnemyInfoDRs[EnemyTypeIndex]["Type"];
+                if (enemy.IsBoss == true)
+                    FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoAppearPlace).Text = enemy.Types[EnemyTypeIndex];
 
 
                 // 철혈 능력치 초기화
@@ -167,10 +159,9 @@ namespace GFI_with_GFS_A
                 {
                     FindViewById<TextView>(ProgressMaxTexts[i]).Text = FindViewById<ProgressBar>(Progresses[i]).Max.ToString();
 
-                    int value = (int)EnemyInfoDRs[EnemyTypeIndex][abilities[i]];
+                    int value = enemy.Abilities[EnemyTypeIndex][abilities[i]];
 
                     FindViewById<ProgressBar>(Progresses[i]).Progress = value;
-
                     FindViewById<TextView>(StatusTexts[i]).Text = value.ToString();
                 }
 
@@ -195,7 +186,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task InitializeTypeList()
+        /*private async Task InitializeTypeList()
         {
             List<string> TypeList = new List<string>();
             List<int> row_index = new List<int>();
@@ -226,7 +217,7 @@ namespace GFI_with_GFS_A
             TypeSelector.Adapter = TypeListAdapter;
 
             ListingComplete = true;
-        }
+        }*/
 
         private void SetCardTheme()
         {
@@ -244,7 +235,7 @@ namespace GFI_with_GFS_A
         private async Task ShowCardViewAnimation()
         {
             if (FindViewById<CardView>(Resource.Id.EnemyDBDetailBasicInfoCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.EnemyDBDetailBasicInfoCardLayout).Animate().Alpha(1.0f).SetDuration(500).Start();
-            if (FindViewById<CardView>(Resource.Id.EnemyDBDetailAbilityCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.EnemyDBDetailAbilityCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1500).Start();
+            if (FindViewById<CardView>(Resource.Id.EnemyDBDetailAbilityCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.EnemyDBDetailAbilityCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1000).Start();
         }
 
     }

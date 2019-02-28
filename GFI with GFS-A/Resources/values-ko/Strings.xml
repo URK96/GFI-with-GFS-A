@@ -371,6 +371,7 @@
   <string name="OldGFDViewer_ProductDollTable">인형 제조 시간표</string>
   <string name="OldGFDViewer_ProductEquipTable">장비 제조 시간표</string>
   <string name="OldGFDViewer_ProductFairyTable">요정 제조 시간표 &amp; 제조식</string>
+  <string name="OldGFDViewer_MDTable">군수지원 목록표</string>
   <string name="OldGFDViewer_RecommendDollRecipe">인형 추천 제조식</string>
   <string name="OldGFDViewer_RecommendEquipRecipe">장비 추천 제조식</string>
   <string name="OldGFDViewer_RecommendMD">군수지원 효율표</string>
