@@ -321,6 +321,9 @@ namespace GFI_with_GFS_A
         public string CodeName { get; private set; }
         public string[] Types { get; private set; }
         public bool IsBoss { get; private set; }
+        public bool HasVoice { get; private set; }
+        public string VoiceActor { get; private set; }
+        public string[] Voices { get; private set; }
 
         public Dictionary<string, int>[] Abilities;
 
@@ -342,6 +345,12 @@ namespace GFI_with_GFS_A
                 Types[i] = (string)drs[i]["Type"];
 
             IsBoss = (bool)dr["IsBoss"];
+            HasVoice = (bool)dr["HasVoice"];
+            if (HasVoice == true)
+            {
+                VoiceActor = (string)dr["VoiceActor"];
+                Voices = ((string)dr["Voices"]).Split(';');
+            }
 
             SetAbility(ref drs);
         }

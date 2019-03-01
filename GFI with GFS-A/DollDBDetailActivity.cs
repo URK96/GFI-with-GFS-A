@@ -97,7 +97,7 @@ namespace GFI_with_GFS_A
                 SkillTableSubLayout = FindViewById<LinearLayout>(Resource.Id.DollDBDetailSkillAbilitySubLayout);
                 ModSkillTableSubLayout = FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSkillAbilitySubLayout);
 
-                FindViewById<Button>(Resource.Id.DollDBExtraFeatureButton).Click += DollDBDetailActivity_Click;
+                FindViewById<Button>(Resource.Id.DollDBExtraFeatureButton).Click += ExtraMenuButton_Click;
                 
                 if (doll.HasMod == true)
                 {
@@ -231,7 +231,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void DollDBDetailActivity_Click(object sender, EventArgs e)
+        private void ExtraMenuButton_Click(object sender, EventArgs e)
         {
             Button b = sender as Button;
 
@@ -512,12 +512,12 @@ namespace GFI_with_GFS_A
                 switch (V_Costume_Index)
                 {
                     case 0:
-                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", doll.krName, $"{doll.krName}_{voice}_JP.wav");
-                        target = Path.Combine(ETC.CachePath, "Voices", $"{doll.DicNumber}_{voice}_JP.gfdcache");
+                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", "Doll", doll.krName, $"{doll.krName}_{voice}_JP.wav");
+                        target = Path.Combine(ETC.CachePath, "Voices", "Doll", $"{doll.DicNumber}_{voice}_JP.gfdcache");
                         break;
                     case 1:
-                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", $"{doll.krName}_{V_Costume_Index - 1}", $"{doll.krName}_{V_Costume_Index - 1}_{voice}_JP.wav");
-                        target = Path.Combine(ETC.CachePath, "Voices", $"{doll.DicNumber}_{V_Costume_Index - 1}_{voice}_JP.gfdcache");
+                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", "Doll", $"{doll.krName}_{V_Costume_Index - 1}", $"{doll.krName}_{V_Costume_Index - 1}_{voice}_JP.wav");
+                        target = Path.Combine(ETC.CachePath, "Voices", "Doll", $"{doll.DicNumber}_{V_Costume_Index - 1}_{voice}_JP.gfdcache");
                         break;
                 }
 

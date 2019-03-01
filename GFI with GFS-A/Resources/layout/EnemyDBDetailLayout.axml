@@ -63,44 +63,61 @@
                     android:layout_marginTop="2dp"
                     android:id="@+id/EnemyDBDetailEnemyCodeName" />
             </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/EnemyDBDetailSmallImageLayout"
-                android:layout_margin="10dp"
-                android:visibility="gone"
-                android:id="@+id/EnemyDBDetailVoiceLayout">
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <Spinner
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:id="@+id/EnemyDBDetailVoiceSelector" />
-                    <Button
-                        android:layout_width="20dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/Common_Play"
-                        android:id="@+id/EnemyDBDetailVoicePlayButton" />
-                </LinearLayout>
-                <ProgressBar
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-                    android:progressTint="@color/ProgressBarColor"
-                    android:visibility="invisible"
-                    android:id="@+id/EnemyDBDetailVoiceDownloadProgress" />
-            </LinearLayout>
+			<Button
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_marginRight="10dp"
+				android:text="▽▽▽"
+				android:visibility="gone"
+				android:layout_below="@id/EnemyDBDetailBasicInfoLayout"
+				android:id="@+id/EnemyDBDetailExtraFeatureButton"/>
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/EnemyDBDetailExtraFeatureButton"
+				android:layout_margin="10dp"
+				android:visibility="gone"
+				android:id="@+id/EnemyDBDetailExtraFeatureLayout">
+				<LinearLayout
+					android:orientation="vertical"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_margin="10dp"
+					android:visibility="gone"
+					android:id="@+id/EnemyDBDetailVoiceLayout">
+					<LinearLayout
+						android:orientation="horizontal"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content">
+						<Spinner
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="4"
+							android:id="@+id/EnemyDBDetailVoiceSelector" />
+						<Button
+							android:layout_width="20dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:text="@string/Common_Play"
+							android:id="@+id/EnemyDBDetailVoicePlayButton" />
+					</LinearLayout>
+					<ProgressBar
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+						android:progressTint="@color/ProgressBarColor"
+						android:visibility="invisible"
+						android:id="@+id/EnemyDBDetailVoiceDownloadProgress" />
+				</LinearLayout>
+			</LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:layout_below="@id/EnemyDBDetailVoiceLayout"
+                android:layout_below="@id/EnemyDBDetailExtraFeatureLayout"
                 android:visibility="visible"
                 android:id="@+id/EnemyDBDetailEnemyTypeSelectLayout">
                 <Spinner

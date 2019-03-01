@@ -241,7 +241,7 @@ namespace GFI_with_GFS_A
         {
             if (ETC.Language.Language == "ko")
             {
-                string[] ImageName = new string[]
+                ImageName = new string[]
                 {
                     "ProductTable_Doll",
                     "ProductTable_Equipment",
@@ -257,7 +257,7 @@ namespace GFI_with_GFS_A
             }
             else
             {
-                string[] ImageName = new string[]
+                ImageName = new string[]
                 {
                     "ProductTable_Doll",
                     "ProductTable_Equipment",

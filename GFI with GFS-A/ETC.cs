@@ -401,6 +401,8 @@ namespace GFI_with_GFS_A
                 Path.Combine(CachePath, "Event"),
                 Path.Combine(CachePath, "Event", "Images"),
                 Path.Combine(CachePath, "Voices"),
+                Path.Combine(CachePath, "Voices", "Doll"),
+                Path.Combine(CachePath, "Voices", "Enemy"),
                 Path.Combine(CachePath, "GuideBook", "PDFs")
             };
 

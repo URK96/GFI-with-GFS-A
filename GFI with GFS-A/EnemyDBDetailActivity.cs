@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Graphics.Drawables;
+using Android.Media;
 using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V7.Widget;
@@ -21,11 +22,15 @@ namespace GFI_with_GFS_A
         Enemy enemy = null;
 
         private int EnemyTypeIndex = 0;
+        private bool IsExtraFeatureOpen = false;
 
         private CoordinatorLayout SnackbarLayout;
 
         private ProgressBar InitLoadProgressBar;
         private Spinner TypeSelector;
+        private Button ExtraMenuButton;
+        private Spinner VoiceSelector;
+        private Button VoicePlayButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -47,6 +52,23 @@ namespace GFI_with_GFS_A
                 TypeSelector = FindViewById<Spinner>(Resource.Id.EnemyDBDetailEnemyTypeSelector);
                 TypeSelector.ItemSelected += TypeSelector_ItemSelected;
 
+                var t_adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, enemy.Types);
+                t_adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
+                TypeSelector.Adapter = t_adapter;
+
+                ExtraMenuButton = FindViewById<Button>(Resource.Id.EnemyDBDetailExtraFeatureButton);
+                ExtraMenuButton.Click += ExtraMenuButton_Click;
+
+                if (enemy.HasVoice == true)
+                {
+                    ExtraMenuButton.Visibility = ViewStates.Visible;
+                    FindViewById<LinearLayout>(Resource.Id.EnemyDBDetailVoiceLayout).Visibility = ViewStates.Visible;
+                    VoiceSelector = FindViewById<Spinner>(Resource.Id.EnemyDBDetailVoiceSelector);
+                    VoicePlayButton = FindViewById<Button>(Resource.Id.EnemyDBDetailVoicePlayButton);
+                    VoicePlayButton.Click += VoicePlayButton_Click;
+                    InitializeVoiceList();
+                }
+
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EnemyDBDetailSnackbarLayout);
 
                 InitLoadProcess();
@@ -55,6 +77,109 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(this, ex.ToString());
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
+            }
+        }
+
+        private void ExtraMenuButton_Click(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+
+            switch (IsExtraFeatureOpen)
+            {
+                case false:
+                    IsExtraFeatureOpen = true;
+                    b.Text = "△△△";
+                    FindViewById<LinearLayout>(Resource.Id.EnemyDBDetailExtraFeatureLayout).Visibility = ViewStates.Visible;
+                    break;
+                case true:
+                    IsExtraFeatureOpen = false;
+                    b.Text = "▽▽▽";
+                    FindViewById<LinearLayout>(Resource.Id.EnemyDBDetailExtraFeatureLayout).Visibility = ViewStates.Gone;
+                    break;
+            }
+        }
+
+        private async void VoicePlayButton_Click(object sender, EventArgs e)
+        {
+            ProgressBar pb = FindViewById<ProgressBar>(Resource.Id.EnemyDBDetailVoiceDownloadProgress);
+
+            try
+            {
+                pb.Visibility = ViewStates.Visible;
+                pb.Indeterminate = true;
+
+                string voice = enemy.Voices[VoiceSelector.SelectedItemPosition];
+
+                string VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", "Enemy", enemy.CodeName, $"{enemy.CodeName}_{voice}_JP.wav");
+                string target = Path.Combine(ETC.CachePath, "Voices", "Enemy", $"{enemy.CodeName}_{voice}_JP.gfdcache");
+
+                /*switch (V_Costume_Index)
+                {
+                    case 0:
+                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", doll.krName, $"{doll.krName}_{voice}_JP.wav");
+                        target = Path.Combine(ETC.CachePath, "Voices", $"{doll.DicNumber}_{voice}_JP.gfdcache");
+                        break;
+                    case 1:
+                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", $"{doll.krName}_{V_Costume_Index - 1}", $"{doll.krName}_{V_Costume_Index - 1}_{voice}_JP.wav");
+                        target = Path.Combine(ETC.CachePath, "Voices", $"{doll.DicNumber}_{V_Costume_Index - 1}_{voice}_JP.gfdcache");
+                        break;
+                }*/
+
+                MediaPlayer SoundPlayer = new MediaPlayer();
+                SoundPlayer.Completion += delegate { SoundPlayer.Release(); };
+
+                await Task.Delay(100);
+
+                try
+                {
+                    SoundPlayer.SetDataSource(target);
+                }
+                catch (Exception)
+                {
+                    using (WebClient wc = new WebClient())
+                    {
+                        wc.DownloadProgressChanged += (object s, DownloadProgressChangedEventArgs args) =>
+                        {
+                            pb.Indeterminate = false;
+                            pb.Progress = args.ProgressPercentage;
+                        };
+                        await wc.DownloadFileTaskAsync(VoiceServerURL, target);
+                    }
+
+                    SoundPlayer.SetDataSource(target);
+                }
+
+                pb.Visibility = ViewStates.Invisible;
+
+                SoundPlayer.Prepare();
+                SoundPlayer.Start();
+            }
+            catch (WebException ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.VoiceStreaming_Error, Snackbar.LengthShort, Android.Graphics.Color.DarkViolet);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.VoiceStreaming_PlayError, Snackbar.LengthShort, Android.Graphics.Color.DarkCyan);
+            }
+        }
+
+        private void InitializeVoiceList()
+        {
+            try
+            {
+                var v_adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, enemy.Voices);
+                v_adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
+                VoiceSelector.Adapter = v_adapter;
+
+                VoiceSelector.SetSelection(0);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+                Toast.MakeText(this, Resource.String.VoiceList_InitError, ToastLength.Short).Show();
             }
         }
 
