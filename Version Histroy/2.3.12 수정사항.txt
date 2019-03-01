@@ -1,0 +1,15 @@
+<2.3.12 수정사항>
+
+- 철혈 보스 보이스 기능 추가
+- 철혈 DB 리스트 컴포넌트 변경
+- 소전사전v1 카테고리 재구성
+- 만화 카테고리 추가 (츠보우의 소녀전선)
+- 데이터 폴더 경로 일부 수정
+- 메모리 최적화
+
+- Add Enemy Boss Voice feature
+- Change list component on Enemy DB
+- Renewal OldGFD Categories
+- Add Cartoon Content
+- Change partial data folder path
+- Optimized memory usage

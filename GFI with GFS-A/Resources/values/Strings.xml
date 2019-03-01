@@ -610,11 +610,14 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.11 Update]\n\n
-- Calc Layout Renewal\n
-- Add Cartoon Contents\n
-- Add Cartoon Category\n
-- Add Language about T-Doll gun country
+    [2.3.12 Update]\n\n
+- Add Enemy Boss Voice feature\n
+- Change list component on Enemy DB\n
+- Renewal OldGFD Categories\n
+- Disable GF OST Player feature for Code Renewal\n
+- Add Cartoon Content\n
+- Change partial data folder path\n
+- Optimized memory usage
   </string>
 
   <string name="RFBot_CommandHelp">
