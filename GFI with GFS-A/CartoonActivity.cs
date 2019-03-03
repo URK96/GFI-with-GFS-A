@@ -583,10 +583,10 @@ namespace GFI_with_GFS_A
         {
             switch (Category_Index)
             {
-                case 5:
+                case 6:
                     list.AddRange(Resources.GetStringArray(Resource.Array.mota6nako_GF_URL));
                     break;
-                case 6:
+                case 7:
                     list.AddRange(Resources.GetStringArray(Resource.Array.ImmortalityFront_GF_URL));
                     break;
             }
