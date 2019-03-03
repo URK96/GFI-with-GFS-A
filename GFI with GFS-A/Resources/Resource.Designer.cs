@@ -836,13 +836,22 @@ namespace GFI_with_GFS_A
 			public const int Story_Main_Main_Event_Hypothermia_Hidden_TopTitle = 2131755092;
 			
 			// aapt resource value: 0x7f100073
-			public const int Story_Main_Main_Event_Singularity = 2131755123;
+			public const int Story_Main_Main_Event_Isomer = 2131755123;
 			
 			// aapt resource value: 0x7f100074
-			public const int Story_Main_Main_Event_Singularity_Caption = 2131755124;
+			public const int Story_Main_Main_Event_Isomer_Caption = 2131755124;
 			
 			// aapt resource value: 0x7f100072
-			public const int Story_Main_Main_Event_Singularity_TopTitle = 2131755122;
+			public const int Story_Main_Main_Event_Isomer_TopTitle = 2131755122;
+			
+			// aapt resource value: 0x7f100076
+			public const int Story_Main_Main_Event_Singularity = 2131755126;
+			
+			// aapt resource value: 0x7f100077
+			public const int Story_Main_Main_Event_Singularity_Caption = 2131755127;
+			
+			// aapt resource value: 0x7f100075
+			public const int Story_Main_Main_Event_Singularity_TopTitle = 2131755125;
 			
 			// aapt resource value: 0x7f100022
 			public const int Story_Main_Main_Prologue = 2131755042;

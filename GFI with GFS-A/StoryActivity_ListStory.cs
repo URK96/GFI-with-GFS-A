@@ -165,6 +165,11 @@ namespace GFI_with_GFS_A
                     Caption_res = Resource.Array.Story_Main_Main_Event_ContinuumTurbulence_Caption;
                     TopTitle_res = Resource.Array.Story_Main_Main_Event_ContinuumTurbulence_TopTitle;
                     break;
+                case 28:
+                    Title_res = Resource.Array.Story_Main_Main_Event_Isomer;
+                    Caption_res = Resource.Array.Story_Main_Main_Event_Isomer_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Main_Event_Isomer_TopTitle;
+                    break;
             }
 
             Item_List.AddRange(Resources.GetStringArray(Title_res));
@@ -258,6 +263,9 @@ namespace GFI_with_GFS_A
                         break;
                     case 27:
                         Category = "ContinuumTurbulence";
+                        break;
+                    case 28:
+                        Category = "Isomer";
                         break;
                 }
             }
