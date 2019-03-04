@@ -117,6 +117,7 @@
   <string name="RepairDB_Fail">Fail Repair DB</string>
   <string name="UpdateDBDialog_Message">Updating DB...</string>
   <string name="UpdateDBDialog_RefreshVersionMessage">Renewing DB Version...</string>
+  <string name="UpdateDBDialog_LoadDB">Reload DB...</string>
   <string name="CheckDBUpdate_UpToDate">You already have a latest version. No need to update!</string>
   <string name="CheckDBUpdate_Complete">Complete Update DB</string>
   <string name="NewFeatureDialog_Title">New Function</string>
@@ -610,14 +611,12 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.12 Update]\n\n
-- Add Enemy Boss Voice feature\n
-- Change list component on Enemy DB\n
-- Renewal OldGFD Categories\n
-- Disable GF OST Player feature for Code Renewal\n
-- Add Cartoon Content\n
-- Change partial data folder path\n
-- Optimized memory usage
+    [2.3.13 Update]\n\n
+- Add Main Story (Isomer)\n
+- Open Area Tip feature temporary\n
+- Fix Cartoon Issue\n
+- Fix MG type T-Doll load issue\n
+- Fix DB Reload issue after DB Update
   </string>
 
   <string name="RFBot_CommandHelp">

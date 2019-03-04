@@ -331,7 +331,7 @@ namespace GFI_with_GFS_A
                         ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
                         ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate 
                         {
-                            await ETC.UpdateDB(this);
+                            await ETC.UpdateDB(this, true);
                             if (await ETC.CheckDBVersion() == false)
                                 tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})";
                             else
@@ -496,7 +496,10 @@ namespace GFI_with_GFS_A
                         //OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.AreaTipExtraButton:
-                        ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
+                        string areatip_url = "https://cafe.naver.com/girlsfrontlinekr/235663";
+                        var intent2 = new Intent(this, typeof(WebBrowserActivity));
+                        intent2.PutExtra("url", areatip_url);
+                        StartActivity(intent2);
                         break;
                     default:
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);

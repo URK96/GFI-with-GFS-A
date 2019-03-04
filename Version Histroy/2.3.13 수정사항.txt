@@ -1,0 +1,13 @@
+<2.3.13 수정사항>
+
+- 메인스토리 추가 (이성질체)
+- 전역 공략 기능 임시 오픈
+- 만화 링크가 잘못 설정되어 있던 현상 수정
+- 인형 상세 정보에서 MG의 사속이 0이면 오류가 발생하는 현상 수정
+- DB 업데이트 후 DB가 재로드 되지 않는 현상 수정
+
+- Add Main Story (Isomer)
+- Open Area Tip feature temporary
+- Fix Cartoon Issue
+- Fix MG type T-Doll load Issue
+- Fix DB Reload issue after DB Update

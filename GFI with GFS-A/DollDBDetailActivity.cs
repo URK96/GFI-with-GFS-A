@@ -1377,7 +1377,8 @@ namespace GFI_with_GFS_A
             {
                 case "MG":
                     int tAS = AttackSpeed;
-                    result = 4 + (200 / tAS);
+                    if (tAS == 0) result = 0;
+                    else result = 4 + (200 / tAS);
                     break;
                 case "SG":
                     int tB = int.Parse(doll.Abilities["Bullet"]);

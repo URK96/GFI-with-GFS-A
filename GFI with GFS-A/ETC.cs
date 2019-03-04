@@ -573,7 +573,7 @@ namespace GFI_with_GFS_A
         }
 
         //ProgressDialog 교체
-        internal static async Task UpdateDB(Activity activity, int TitleMsg = Resource.String.CheckDBUpdateDialog_Title, int MessageMgs = Resource.String.CheckDBUpdateDialog_Message)
+        internal static async Task UpdateDB(Activity activity, bool DBLoad = false, int TitleMsg = Resource.String.CheckDBUpdateDialog_Title, int MessageMgs = Resource.String.CheckDBUpdateDialog_Message)
         {
             string[] DBFiles = 
             {
@@ -633,6 +633,13 @@ namespace GFI_with_GFS_A
                 int.TryParse(sr.ReadToEnd(), out DBVersion);
 
             await Task.Delay(500);
+
+            if (DBLoad == true)
+            {
+                activity.RunOnUiThread(() => { pd.SetMessage(Resources.GetString(Resource.String.UpdateDBDialog_LoadDB)); });
+                await Task.Delay(200);
+                await LoadDB();
+            }
 
             pd.Dismiss();
         }

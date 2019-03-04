@@ -274,7 +274,7 @@ namespace GFI_with_GFS_A
                 if (ETC.IsServerDown == true) Toast.MakeText(Activity, Resource.String.Common_ServerMaintenance, ToastLength.Short).Show();
                 else
                 {
-                    await ETC.UpdateDB(Activity, Resource.String.RepairDBDialog_Title, Resource.String.RepairDBDialog_Message);
+                    await ETC.UpdateDB(Activity, false, Resource.String.RepairDBDialog_Title, Resource.String.RepairDBDialog_Message);
 
                     await Task.Delay(500);
 
@@ -301,7 +301,7 @@ namespace GFI_with_GFS_A
                 if (ETC.IsServerDown == true) Toast.MakeText(Activity, Resource.String.Common_ServerMaintenance, ToastLength.Short).Show();
                 else
                 {
-                    await ETC.UpdateDB(Activity, Resource.String.RepairDBDialog_Title, Resource.String.RepairDBDialog_Message);
+                    await ETC.UpdateDB(Activity, false, Resource.String.RepairDBDialog_Title, Resource.String.RepairDBDialog_Message);
 
                     await Task.Delay(500);
 

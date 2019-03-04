@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.Support.V7.App;
-using Android.Support.V4.Widget;
-using Android.Support.V4.View;
-using System.Threading.Tasks;
-using System.IO;
-using System.Net;
+﻿using Android.App;
 using Android.Graphics.Drawables;
-using Android.Webkit;
+using Android.OS;
+using Android.Support.V4.View;
+using Android.Support.V4.Widget;
+using Android.Support.V7.App;
 using Android.Support.V7.Widget;
+using Android.Views;
+using Android.Webkit;
+using Android.Widget;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
 
 
 namespace GFI_with_GFS_A
