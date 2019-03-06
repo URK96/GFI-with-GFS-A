@@ -562,6 +562,9 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f100003
 			public const int GF_SF2 = 2131755011;
 			
+			// aapt resource value: 0x7f100004
+			public const int GF_SF2_After = 2131755012;
+			
 			// aapt resource value: 0x7f100015
 			public const int GuiltyGear = 2131755029;
 			
@@ -582,9 +585,6 @@ namespace GFI_with_GFS_A
 			
 			// aapt resource value: 0x7f100010
 			public const int Normal = 2131755024;
-			
-			// aapt resource value: 0x7f100004
-			public const int SOPMOD_Cartoon = 2131755012;
 			
 			// aapt resource value: 0x7f100018
 			public const int Singularity = 2131755032;

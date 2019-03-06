@@ -4,7 +4,7 @@
     <item>츠보우의 소녀전선</item>
     <item>그리폰 &amp; 철혈</item>
     <item>그리폰 &amp; 철혈 2</item>
-    <item>솦모챠 만화</item>
+    <item>그리폰 &amp; 철혈 2 외전</item>
     <item>그리폰 안내서</item>
     <item>그리폰 일상만화</item>
     <item>천솜향의 소녀전선</item>
@@ -105,6 +105,7 @@
     <item>기름 떨어진 날</item>
     <item>파세의 알바</item>
     <item>바쟝</item>
+    <item>지휘관 소집 2</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -145,10 +146,13 @@
     <item>14화</item>
   </string-array>
 
-  <string-array name="SOPMOD_Cartoon">
-    <item>1화</item>
-    <item>2화</item>
-    <item>3화</item>
+  <string-array name="GF_SF2_After">
+    <item>솦모챠 만화 1화</item>
+    <item>솦모챠 만화 2화</item>
+    <item>솦모챠 만화 3화</item>
+    <item>솦모챠 &amp; 드리머 1화</item>
+    <item>솦모챠 &amp; 드리머 2화</item>
+    <item>AR 소대 1화</item>
   </string-array>
 
   <string-array name="GF_Guide">

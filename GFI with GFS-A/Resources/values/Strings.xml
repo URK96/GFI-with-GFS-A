@@ -611,12 +611,8 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.13 Update]\n\n
-- Add Main Story (Isomer)\n
-- Open Area Tip feature temporary\n
-- Fix Cartoon Issue\n
-- Fix MG type T-Doll load issue\n
-- Fix DB Reload issue after DB Update
+    [2.3.14 Update]\n\n
+- Add Cartoon Content
   </string>
 
   <string name="RFBot_CommandHelp">

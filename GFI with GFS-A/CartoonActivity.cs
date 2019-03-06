@@ -178,7 +178,7 @@ namespace GFI_with_GFS_A
                     list.AddRange(Resources.GetStringArray(Resource.Array.GF_SF2));
                     break;
                 case 3:
-                    list.AddRange(Resources.GetStringArray(Resource.Array.SOPMOD_Cartoon));
+                    list.AddRange(Resources.GetStringArray(Resource.Array.GF_SF2_After));
                     break;
                 case 4:
                     list.AddRange(Resources.GetStringArray(Resource.Array.GF_Guide));
