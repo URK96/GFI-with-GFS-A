@@ -150,6 +150,7 @@ namespace GFI_with_GFS_A
                                     break;
                                 case 6:
                                 case 7:
+                                case 9:
                                     ((CartoonScreen)CartoonScreen_F).LoadProcess_Web(Category_List[Category_Index], Category_Index, (e.Position - 1), false);
                                     break;
                             }
@@ -194,6 +195,9 @@ namespace GFI_with_GFS_A
                     break;
                 case 8:
                     list.AddRange(Resources.GetStringArray(Resource.Array.MMM_GF));
+                    break;
+                case 9:
+                    list.AddRange(Resources.GetStringArray(Resource.Array.Geo_GF));
                     break;
             }
         }
@@ -584,6 +588,9 @@ namespace GFI_with_GFS_A
                     break;
                 case 7:
                     list.AddRange(Resources.GetStringArray(Resource.Array.ImmortalityFront_GF_URL));
+                    break;
+                case 9:
+                    list.AddRange(Resources.GetStringArray(Resource.Array.Geo_GF_URL));
                     break;
             }
         }

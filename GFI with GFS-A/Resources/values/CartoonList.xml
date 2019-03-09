@@ -10,6 +10,7 @@
     <item>천솜향의 소녀전선</item>
     <item>불멸전선</item>
     <item>학식전선</item>
+    <item>Geo의 코믹전선</item>
   </string-array>
 
   <string-array name="kazensky_GF">
@@ -335,5 +336,119 @@
     <item>18화</item>
     <item>19화</item>
     <item>20화</item>
+  </string-array>
+
+  <string-array name="Geo_GF">
+    <item>1 - 가장 가난한 제대</item>
+    <item>2 - 캡슐팔이 소녀</item>
+    <item>3 - 이것이 토카레프다!</item>
+    <item>4 - 가장 부유한 제대</item>
+    <item>5 - 지휘관의 인기</item>
+    <item>6 - 네가 거기서 왜 나와</item>
+    <item>7 - 타락한 춘전(상편)</item>
+    <item>8 - 타락한 춘전(하편)</item>
+    <item>9 - 인형은 무슨 생각을 할까?</item>
+    <item>10 - 이 게임은 설마...</item>
+    <item>11 - 사로잡힌 지휘관(상편)</item>
+    <item>12 - 사로잡힌 지휘관(하편)</item>
+    <item>13 - 절대반지와 카피인형</item>
+    <item>14 - 춘전의 아르바이트(상편)</item>
+    <item>15 - 춘전의 아르바이트(중편)</item>
+    <item>16 - 춘전의 아르바이트(하편)</item>
+    <item>17 - 소전 삼국지(삼고초려)</item>
+    <item>18 - 구세주 MG4</item>
+    <item>19 - 찬란히 빛나는 그 이름</item>
+    <item>20 - 그리폰 패션 쇼</item>
+    <item>21 - 소가 된 게으름뱅이</item>
+    <item>22 - 그리폰에 온 디스트로이어(상편)</item>
+    <item>23 - 그리폰에 온 디스트로이어(하편)</item>
+    <item>24 - 병에 걸린 지휘관</item>
+    <item>25 - 고독한 미식가(알케미스트)</item>
+    <item>26 - 우중 신의 선물</item>
+    <item>27 - 여름특집(귀신을 만난 전술인형)</item>
+    <item>28 - 개조 된 춘전(상편)</item>
+    <item>29 - 개조 된 춘전(하편)</item>
+    <item>30 - 힘내세요! 지휘관!</item>
+    <item>31 - 맛있는 녀석들의 습격</item>
+    <item>32 - 보직을 변경한 춘전</item>
+    <item>33 - MG4의 데스노트</item>
+    <item>34 - 어려운 야간임무</item>
+    <item>35 - 제4세력의 등장</item>
+    <item>36 - 헬리안의 남자친구</item>
+    <item>37 - 결혼하라고 하지 좀 마!</item>
+    <item>38 - 옷을 입을 수가 없어!</item>
+    <item>39 - 많이 먹기 대회와 방패요정</item>
+    <item>40 - 스파스의 폭주</item>
+    <item>41 - 리베롤 입양하기</item>
+    <item>42 - 새로운 부관 임명하기</item>
+    <item>43 - 부관 자리는 내 거야!</item>
+    <item>44 - 크리스마스 특집(산타의 선물)</item>
+    <item>45 - 피노키오 UMP45</item>
+    <item>46 - 4성인형 PK</item>
+    <item>47 - 새로운 지휘관</item>
+    <item>48 - 스프링필드의 스토킹</item>
+    <item>49 - 스프링필드의 마음</item>
+    <item>50 - WA2000의 필살기, 새로운 RF</item>
+    <item>51 - 발렌타인 특집(내 초콜릿을 받아주세요!)</item>
+    <item>52 - 납치된 헬리안</item>
+    <item>53 - 헬리안 구출작전</item>
+    <item>54 - 지휘관의 친구</item>
+  </string-array>
+
+  <string-array name="Geo_GF_URL">
+    <item>http://naver.me/5vWEnflH</item>
+    <item>http://naver.me/5AJ6rxcq</item>
+    <item>http://naver.me/FNbRF6JV</item>
+    <item>http://naver.me/55BFUivd</item>
+    <item>http://naver.me/FxkHGbro</item>
+    <item>http://naver.me/GZzeredB</item>
+    <item>http://naver.me/Fw1C2wQG</item>
+    <item>http://naver.me/x8fvOucC</item>
+    <item>http://naver.me/FpNOIdmB</item>
+    <item>http://naver.me/Gh5ekzpm</item>
+    <item>http://naver.me/GWGubX6T</item>
+    <item>http://naver.me/FUevrNQQ</item>
+    <item>http://naver.me/FAZqtIfN</item>
+    <item>http://naver.me/5WCZfcP2</item>
+    <item>http://naver.me/5lYGWyBF</item>
+    <item>http://naver.me/Fu7Z19zm</item>
+    <item>http://naver.me/xqWzRFlH</item>
+    <item>http://naver.me/GDT6BpDP</item>
+    <item>http://naver.me/G0RtMEcl</item>
+    <item>http://naver.me/G2KkVv4L</item>
+    <item>http://naver.me/Fr1m5O0S</item>
+    <item>http://naver.me/G3IlKW0s</item>
+    <item>http://naver.me/FIj1zuqS</item>
+    <item>http://naver.me/FuyRrCUL</item>
+    <item>http://naver.me/IgqWGQTc</item>
+    <item>http://naver.me/GksbjLY9</item>
+    <item>http://naver.me/5eMEVtG3</item>
+    <item>http://naver.me/GuinWj7d</item>
+    <item>http://naver.me/GJeYhNOi</item>
+    <item>http://naver.me/FdjN0mVF</item>
+    <item>http://naver.me/IFaaBJ5n</item>
+    <item>http://naver.me/F8MRLbtE</item>
+    <item>http://naver.me/GQm43mKg</item>
+    <item>http://naver.me/xgYkslKx</item>
+    <item>http://naver.me/xXfPyeh5</item>
+    <item>http://naver.me/FvG79F6s</item>
+    <item>http://naver.me/xItgLNBg</item>
+    <item>http://naver.me/5eMZOYwc</item>
+    <item>http://naver.me/GKOIpd22</item>
+    <item>http://naver.me/FdjVfsxL</item>
+    <item>http://naver.me/xLZlbpWk</item>
+    <item>http://naver.me/GKOp8rp4</item>
+    <item>http://naver.me/Fa8ofhct</item>
+    <item>http://naver.me/50qmE9AN</item>
+    <item>http://naver.me/GPw3Osdx</item>
+    <item>http://naver.me/xTU5dzqS</item>
+    <item>http://naver.me/F10XWtB1</item>
+    <item>http://naver.me/x5hdpaXl</item>
+    <item>http://naver.me/xuftkQKK</item>
+    <item>http://naver.me/5acl0u4e</item>
+    <item>http://naver.me/xxT2Ntds</item>
+    <item>http://naver.me/xxTNu5kh</item>
+    <item>http://naver.me/xisTGYAh</item>
+    <item>http://naver.me/xRMBSyen</item>
   </string-array>
 </resources>

@@ -370,4 +370,160 @@ namespace GFI_with_GFS_A
             }
         }
     }
+
+    public class FST
+    {
+        public string Name { get; private set; }
+        public string NickName { get; private set; }
+        public string RealModel { get; private set; }
+        public string Country { get; private set; }
+        public string Type { get; private set; }
+        public int ForceSize { get; private set; }
+        public string Distance { get; private set; }
+        public Dictionary<string, int>[] VersionUpPlus { get; private set; }
+        public int[,,] ChipsetCircuit { get; private set; }
+        public Dictionary<string, int>[] GradeRestriction { get; private set; }
+        public int[] ChipsetBonusCount { get; private set; }
+        public Dictionary<string, int>[] ChipsetBonusMag { get; private set; }
+        public string[] SkillName { get; private set; }
+        public string[] SkillExplain { get; private set; }
+        public string[][] SkillEffect { get; private set; }
+        public string[][] SkillMag { get; private set; }
+
+        public Dictionary<string, int>[] Abilities;
+
+        public string[] AbilityList = { "Kill", "Crush", "Accuracy", "Reload" };
+        public int CircuitCount = 5;
+        public int CircuitLength = 8;
+        public int CircuitHeight = 8;
+
+        public FST(DataRow dr)
+        {
+            Name = (string)dr["Name"];
+            NickName = "";
+            RealModel = (string)dr["RealModel"];
+            Country = (string)dr["Country"];
+            Type = (string)dr["Type"];
+            ForceSize = (int)dr["ForceSize"];
+            Distance = (string)dr["Distance"];
+
+            InitializeVersionUpPlus(ref dr);
+            InitializeChipsetCircuit(ref dr);
+            InitializeGradeRestriction(ref dr);
+            InitializeChipsetBonus(ref dr);
+        }
+
+        private void InitializeVersionUpPlus(ref DataRow dr)
+        {
+            VersionUpPlus = new Dictionary<string, int>[10];
+            string[] list = ((string)dr["VersionUp"]).Split(';');
+
+            for (int i = 0; i < VersionUpPlus.Length; ++i)
+            {
+                string[] ability_list = list[i].Split(',');
+
+                for (int k = 0; k < ability_list.Length; ++k)
+                    VersionUpPlus[i].Add(AbilityList[k], int.Parse(ability_list[k]));
+            }
+        }
+
+        private void InitializeChipsetCircuit(ref DataRow dr)
+        {
+            ChipsetCircuit = new int[CircuitCount, CircuitHeight, CircuitLength];
+
+            for (int i = 0; i < CircuitCount; ++i)
+                for (int k = 0; k < CircuitHeight; ++k)
+                    for (int x = 0; x < CircuitLength; ++x)
+                        ChipsetCircuit[i, k, x] = 0;
+
+            for (int i = 0; i < CircuitCount; ++i)
+            {
+                string[] circuit_rows = ((string)dr[$"Circuit{i}"]).Split(';');
+
+                for (int k = 0; k < circuit_rows.Length; ++k)
+                {
+                    string[] row_index = circuit_rows[i].Split(',');
+
+                    for (int j = 0; j < row_index.Length; ++j)
+                    {
+                        int num = int.Parse(row_index[j]);
+
+                        if (num != 0)
+                        {
+                            if (num < 10)
+                                ChipsetCircuit[i, k, num] = 1;
+                            else
+                            {
+                                int start = num / 10;
+                                int end = num % 10;
+
+                                for (int x = start - 1; x < end; ++x)
+                                    ChipsetCircuit[i, k, num] = 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void InitializeGradeRestriction(ref DataRow dr)
+        {
+            GradeRestriction = new Dictionary<string, int>[5];
+            string[] list = ((string)dr["CeilingRestriction"]).Split(';');
+
+            for (int i = 0; i < GradeRestriction.Length; ++i)
+            {
+                string[] ability_list = list[i].Split(',');
+
+                for (int k = 0; k < ability_list.Length; ++k)
+                    GradeRestriction[i].Add(AbilityList[k], int.Parse(ability_list[k]));
+            }
+        }
+
+        private void InitializeChipsetBonus(ref DataRow dr)
+        {
+            string[] count_list = ((string)dr["ChipsetBonusCount"]).Split(',');
+            ChipsetBonusCount = new int[count_list.Length];
+
+            for (int i = 0; i < count_list.Length; ++i)
+                ChipsetBonusCount[i] = int.Parse(count_list[i]);
+
+            string[] mag_list = ((string)dr["ChipsetBonusMag"]).Split(';');
+            ChipsetBonusMag = new Dictionary<string, int>[mag_list.Length];
+
+            for (int i = 0; i < mag_list.Length; ++i)
+            {
+                string[] ability_values = mag_list[i].Split(',');
+
+                for (int k = 0; k < ability_values.Length; ++k)
+                    ChipsetBonusMag[i].Add(AbilityList[k], int.Parse(ability_values[k]));
+            }
+        }
+
+        private void InitializeSkills(ref DataRow dr)
+        {
+            SkillName = new string[3];
+            SkillExplain = new string[3];
+            SkillEffect = new string[3][];
+            SkillMag = new string[3][];
+
+            for (int i = 0; i < 3; ++i)
+            {
+                SkillName[i] = (string)dr[$"SkillName{i}"];
+                SkillExplain[i] = (string)dr[$"SkillExplain{i}"];
+
+                string[] effect_list = ((string)dr[$"SkillEffect{i}"]).Split(';');
+                string[] mag_list = ((string)dr[$"SkillMag{i}"]).Split(',');
+
+                SkillEffect[i] = new string[effect_list.Length];
+                SkillMag[i] = new string[mag_list.Length];
+
+                for (int k = 0; k < effect_list.Length; ++k)
+                {
+                    SkillEffect[i][k] = effect_list[k];
+                    SkillMag[i][k] = mag_list[k];
+                }
+            }
+        }
+    }
 }
