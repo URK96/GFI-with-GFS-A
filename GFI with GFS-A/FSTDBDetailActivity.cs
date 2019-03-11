@@ -583,12 +583,12 @@ namespace GFI_with_GFS_A
                 if (ChipsetIndex > 0)
                     for (int i = 0; i < ChipsetIndex; ++i)
                         for (int k = 0; k < fst.AbilityList.Length; ++k)
-                            BonusUp[k] += fst.ChipsetBonusMag[i - 1][fst.AbilityList[k]];
+                            BonusUp[k] += fst.ChipsetBonusMag[i][fst.AbilityList[k]];
 
                 if (VersionIndex > 0)
                     for (int i = 0; i < VersionIndex; ++i)
                         for (int k = 0; k < fst.AbilityList.Length; ++k)
-                            BonusUp[k] += fst.VersionUpPlus[i - 1][fst.AbilityList[k]];
+                            BonusUp[k] += fst.VersionUpPlus[i][fst.AbilityList[k]];
 
                 for (int i = 0; i < Progresses.Length; ++i)
                 {

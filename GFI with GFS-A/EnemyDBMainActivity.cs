@@ -362,7 +362,8 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                for (int i = 0; i < EnemyTypeFilters.Length; ++i) Filter_EnemyType[i] = view.FindViewById<CheckBox>(EnemyTypeFilters[i]).Checked;
+                for (int i = 0; i < EnemyTypeFilters.Length; ++i)
+                    Filter_EnemyType[i] = view.FindViewById<CheckBox>(EnemyTypeFilters[i]).Checked;
 
                 CheckApplyFilter();
 
@@ -380,10 +381,10 @@ namespace GFI_with_GFS_A
             for (int i = 0; i < Filter_EnemyType.Length; ++i)
                 if (Filter_EnemyType[i] == true)
                 {
-                    HasApplyFilter[1] = true;
+                    HasApplyFilter[0] = true;
                     break;
                 }
-                else HasApplyFilter[1] = false;
+                else HasApplyFilter[0] = false;
         }
 
         private void ResetFilter(View view)
