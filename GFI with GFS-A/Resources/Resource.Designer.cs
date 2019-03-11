@@ -7831,11 +7831,11 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f0e037c
 			public const int FSTDBDetailSnackbarLayout = 2131624828;
 			
-			// aapt resource value: 0x7f0e0382
-			public const int FSTDBListView = 2131624834;
-			
 			// aapt resource value: 0x7f0e037d
 			public const int FSTDBMainLayout = 2131624829;
+			
+			// aapt resource value: 0x7f0e0382
+			public const int FSTDBRecyclerView = 2131624834;
 			
 			// aapt resource value: 0x7f0e0385
 			public const int FSTDBSnackbarLayout = 2131624837;
@@ -7918,9 +7918,6 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f0e0363
 			public const int FSTInfo_DetailMainLayout = 2131624803;
 			
-			// aapt resource value: 0x7f0e038c
-			public const int FSTListGrade = 2131624844;
-			
 			// aapt resource value: 0x7f0e038a
 			public const int FSTListMainLayout = 2131624842;
 			
@@ -7935,6 +7932,9 @@ namespace GFI_with_GFS_A
 			
 			// aapt resource value: 0x7f0e038b
 			public const int FSTListType = 2131624843;
+			
+			// aapt resource value: 0x7f0e038c
+			public const int FSTListTypeIcon = 2131624844;
 			
 			// aapt resource value: 0x7f0e037e
 			public const int FSTSearchLayout = 2131624830;

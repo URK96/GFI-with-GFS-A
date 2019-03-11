@@ -375,9 +375,12 @@ namespace GFI_with_GFS_A
     {
         public string Name { get; private set; }
         public string NickName { get; private set; }
+        public int DicNumber { get; private set; }
         public string RealModel { get; private set; }
         public string Country { get; private set; }
         public string Type { get; private set; }
+        public string Illustrator { get; private set; }
+        public string VoiceActor { get; private set; }
         public int ForceSize { get; private set; }
         public string Distance { get; private set; }
         public Dictionary<string, int>[] VersionUpPlus { get; private set; }
@@ -390,27 +393,35 @@ namespace GFI_with_GFS_A
         public string[][] SkillEffect { get; private set; }
         public string[][] SkillMag { get; private set; }
 
-        public Dictionary<string, int>[] Abilities;
+        public Dictionary<string, int> Abilities;
 
         public string[] AbilityList = { "Kill", "Crush", "Accuracy", "Reload" };
         public int CircuitCount = 5;
         public int CircuitLength = 8;
         public int CircuitHeight = 8;
 
-        public FST(DataRow dr)
+        public FST(DataRow dr, bool basic_info = false)
         {
             Name = (string)dr["Name"];
             NickName = "";
-            RealModel = (string)dr["RealModel"];
+            DicNumber = 0;
+            RealModel = (string)dr["Model"];
             Country = (string)dr["Country"];
             Type = (string)dr["Type"];
+            Illustrator = "";
+            VoiceActor = "";
             ForceSize = (int)dr["ForceSize"];
             Distance = (string)dr["Distance"];
 
-            InitializeVersionUpPlus(ref dr);
-            InitializeChipsetCircuit(ref dr);
-            InitializeGradeRestriction(ref dr);
-            InitializeChipsetBonus(ref dr);
+            if (basic_info == false)
+            {
+                InitializeVersionUpPlus(ref dr);
+                InitializeChipsetCircuit(ref dr);
+                InitializeGradeRestriction(ref dr);
+                InitializeChipsetBonus(ref dr);
+                InitializeSkills(ref dr);
+                InitializeAbilities(ref dr);
+            }
         }
 
         private void InitializeVersionUpPlus(ref DataRow dr)
@@ -420,6 +431,7 @@ namespace GFI_with_GFS_A
 
             for (int i = 0; i < VersionUpPlus.Length; ++i)
             {
+                VersionUpPlus[i] = new Dictionary<string, int>();
                 string[] ability_list = list[i].Split(',');
 
                 for (int k = 0; k < ability_list.Length; ++k)
@@ -438,11 +450,11 @@ namespace GFI_with_GFS_A
 
             for (int i = 0; i < CircuitCount; ++i)
             {
-                string[] circuit_rows = ((string)dr[$"Circuit{i}"]).Split(';');
+                string[] circuit_rows = ((string)dr[$"Circuit{i + 1}"]).Split(';');
 
                 for (int k = 0; k < circuit_rows.Length; ++k)
                 {
-                    string[] row_index = circuit_rows[i].Split(',');
+                    string[] row_index = circuit_rows[k].Split(',');
 
                     for (int j = 0; j < row_index.Length; ++j)
                     {
@@ -451,14 +463,14 @@ namespace GFI_with_GFS_A
                         if (num != 0)
                         {
                             if (num < 10)
-                                ChipsetCircuit[i, k, num] = 1;
+                                ChipsetCircuit[i, k, num - 1] = 1;
                             else
                             {
                                 int start = num / 10;
                                 int end = num % 10;
 
                                 for (int x = start - 1; x < end; ++x)
-                                    ChipsetCircuit[i, k, num] = 1;
+                                    ChipsetCircuit[i, k, x] = 1;
                             }
                         }
                     }
@@ -473,6 +485,7 @@ namespace GFI_with_GFS_A
 
             for (int i = 0; i < GradeRestriction.Length; ++i)
             {
+                GradeRestriction[i] = new Dictionary<string, int>();
                 string[] ability_list = list[i].Split(',');
 
                 for (int k = 0; k < ability_list.Length; ++k)
@@ -493,6 +506,7 @@ namespace GFI_with_GFS_A
 
             for (int i = 0; i < mag_list.Length; ++i)
             {
+                ChipsetBonusMag[i] = new Dictionary<string, int>();
                 string[] ability_values = mag_list[i].Split(',');
 
                 for (int k = 0; k < ability_values.Length; ++k)
@@ -509,11 +523,11 @@ namespace GFI_with_GFS_A
 
             for (int i = 0; i < 3; ++i)
             {
-                SkillName[i] = (string)dr[$"SkillName{i}"];
-                SkillExplain[i] = (string)dr[$"SkillExplain{i}"];
+                SkillName[i] = (string)dr[$"SkillName{i + 1}"];
+                SkillExplain[i] = (string)dr[$"SkillExplain{i + 1}"];
 
-                string[] effect_list = ((string)dr[$"SkillEffect{i}"]).Split(';');
-                string[] mag_list = ((string)dr[$"SkillMag{i}"]).Split(',');
+                string[] effect_list = ((string)dr[$"SkillEffect{i + 1}"]).Split(';');
+                string[] mag_list = ((string)dr[$"SkillMag{i + 1}"]).Split(',');
 
                 SkillEffect[i] = new string[effect_list.Length];
                 SkillMag[i] = new string[mag_list.Length];
@@ -523,6 +537,19 @@ namespace GFI_with_GFS_A
                     SkillEffect[i][k] = effect_list[k];
                     SkillMag[i][k] = mag_list[k];
                 }
+            }
+        }
+
+        private void InitializeAbilities(ref DataRow dr)
+        {
+            Abilities = new Dictionary<string, int>();
+
+            foreach (string s in AbilityList)
+            {
+                string[] list = ((string)dr[s]).Split('/');
+
+                Abilities.Add($"{s}_Min", int.Parse(list[0]));
+                Abilities.Add($"{s}_Max", int.Parse(list[1]));
             }
         }
     }

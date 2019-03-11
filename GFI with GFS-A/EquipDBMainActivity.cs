@@ -136,7 +136,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void MEquipListView_ScrollStateChanged(object sender, AbsListView.ScrollStateChangedEventArgs e)
+        /*private void MEquipListView_ScrollStateChanged(object sender, AbsListView.ScrollStateChangedEventArgs e)
         {
             try
             {
@@ -157,7 +157,7 @@ namespace GFI_with_GFS_A
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeStatusError, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
             }
-        }
+        }*/
 
         private async void Adapter_ItemClick(object sender, int position)
         {
@@ -260,9 +260,8 @@ namespace GFI_with_GFS_A
                 Equip equip = RootList[i];
                 string FilePath = System.IO.Path.Combine(ETC.CachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache");
                 if (System.IO.File.Exists(FilePath) == false)
-                {
-                    if (Download_List.Contains(equip.Icon) == false) Download_List.Add(equip.Icon);
-                }
+                    if (Download_List.Contains(equip.Icon) == false)
+                        Download_List.Add(equip.Icon);
             }
 
             Download_List.TrimExcess();

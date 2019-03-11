@@ -22,11 +22,8 @@ namespace GFI_with_GFS_A
     {
         System.Timers.Timer FABTimer = new System.Timers.Timer();
 
-        private DataRow FSTInfoDR = null;
-        private string FSTName;
-        private int FSTDicNum;
-        private int FSTGrade;
-        private string FSTType;
+        private DataRow FSTInfoDR;
+        private FST fst;
 
         private bool IsOpenFABMenu = false;
         private bool IsEnableFABMenu = false;
@@ -55,11 +52,8 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.FSTDBDetailLayout);
 
-                FSTName = Intent.GetStringExtra("Keyword");
-
-                FSTInfoDR = ETC.FindDataRow(ETC.FSTList, "Name", FSTName);
-                //FSTDicNum = (int)FSTInfoDR["DicNumber"];
-                FSTType = (string)FSTInfoDR["Type"];
+                FSTInfoDR = ETC.FindDataRow(ETC.FSTList, "Name", Intent.GetStringExtra("Keyword"));
+                fst = new FST(FSTInfoDR);
 
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.FSTDBDetailInitLoadProgress);
                 GradeControl = FindViewById<RatingBar>(Resource.Id.FSTDBDetailGradeControl1);
@@ -117,12 +111,8 @@ namespace GFI_with_GFS_A
                     Resources.GetString(Resource.String.FSTDBDetail_Chipset_Default)
                 };
                 
-                if (GradeSetting > 0)
-                {
-                    string[] temp = ((string)FSTInfoDR["ChipsetBonusCount"]).Split(',');
-
-                    for (int i = 0; i < GradeSetting; ++i) list.Add(temp[i]);
-                }
+                foreach (int i in fst.ChipsetBonusCount)
+                    list.Add(i.ToString());
 
                 list.TrimExcess();
 
@@ -179,7 +169,7 @@ namespace GFI_with_GFS_A
                 switch (fab.Id)
                 {
                     case Resource.Id.SideLinkFAB1:
-                        string uri = string.Format("https://namu.wiki/w/{0}(소녀전선)", FSTName);
+                        string uri = string.Format("https://namu.wiki/w/{0}(소녀전선)", fst.Name);
                         var intent = new Intent(this, typeof(WebBrowserActivity));
                         intent.PutExtra("url", uri);
                         StartActivity(intent);
@@ -273,12 +263,13 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void DollDBDetailSmallImage_Click(object sender, EventArgs e)
+        // Not Use Now
+        private void FSTDBDetailSmallImage_Click(object sender, EventArgs e)
         {
             try
             {
                 var FSTImageViewer = new Intent(this, typeof(DollDBImageViewer));
-                FSTImageViewer.PutExtra("Data", FSTName);
+                FSTImageViewer.PutExtra("Data", fst.Name);
                 StartActivity(FSTImageViewer);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
@@ -323,16 +314,15 @@ namespace GFI_with_GFS_A
 
                 try
                 {
-                    if ((File.Exists(Path.Combine(ETC.CachePath, "FST", "Normal_Crop", FSTName + ".gfdcache")) == false) || (IsRefresh == true))
+                    string cropimage_path = Path.Combine(ETC.CachePath, "FST", "Normal_Crop", $"{fst.Name}.gfdcache");
+
+                    if ((File.Exists(cropimage_path) == false) || (IsRefresh == true))
                     {
                         using (WebClient wc = new WebClient())
-                        {
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "FST", "Normal_Crop", FSTName + ".png"), Path.Combine(ETC.CachePath, "FST", "Normal_Crop", FSTName + ".gfdcache"));
-                        }
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "FST", "Normal_Crop", $"{fst.Name}.png"), cropimage_path);
                     }
 
-                    ImageView FSTSmallImage = FindViewById<ImageView>(Resource.Id.FSTDBDetailSmallImage);
-                    FSTSmallImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "FST", "Normal_Crop", FSTName + ".gfdcache")));
+                    FindViewById<ImageView>(Resource.Id.FSTDBDetailSmallImage).SetImageDrawable(Drawable.CreateFromPath(cropimage_path));
                 }
                 catch (Exception ex)
                 {
@@ -345,15 +335,13 @@ namespace GFI_with_GFS_A
 
                 // 인형 기본 정보 초기화
 
-                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoType).Text = (string)FSTInfoDR["Type"];
-                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoName).Text = FSTName;
-                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoNickName).Text = "";
-                if (FSTInfoDR["Illustrator"] == DBNull.Value) FindViewById<TextView>(Resource.Id.FSTDBDetailInfoIllustrator).Text = "";
-                else FindViewById<TextView>(Resource.Id.FSTDBDetailInfoIllustrator).Text = (string)FSTInfoDR["Illustrator"];
-                if (FSTInfoDR["VoiceActor"] == DBNull.Value) FindViewById<TextView>(Resource.Id.FSTDBDetailInfoVoiceActor).Text = "";
-                else FindViewById<TextView>(Resource.Id.FSTDBDetailInfoVoiceActor).Text = (string)FSTInfoDR["VoiceActor"];
-                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoRealModel).Text = (string)FSTInfoDR["Model"];
-                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoCountry).Text = (string)FSTInfoDR["Country"];
+                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoType).Text = fst.Type;
+                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoName).Text = fst.Name;
+                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoNickName).Text = fst.NickName;
+                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoIllustrator).Text = fst.Illustrator;
+                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoVoiceActor).Text = fst.VoiceActor;
+                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoRealModel).Text = fst.RealModel;
+                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoCountry).Text = fst.Country;
                 FindViewById<TextView>(Resource.Id.FSTDBDetailInfoHowToGain).Text = "정보 없음"; //(string)FSTInfoDR["DropEvent"];
 
 
@@ -379,20 +367,19 @@ namespace GFI_with_GFS_A
 
                 for (int i = 0; i < 3; ++i)
                 {
-                    string SkillName = (string)FSTInfoDR[string.Format("SkillName{0}", (i + 1))];
+                    string SkillName = fst.SkillName[i];
 
                     try
                     {
-                        if ((File.Exists(Path.Combine(ETC.CachePath, "FST", "Skill", SkillName + ".gfdcache")) == false) || (IsRefresh == true))
+                        string skillicon_path = Path.Combine(ETC.CachePath, "FST", "Skill", $"{SkillName}.gfdcache");
+
+                        if ((File.Exists(skillicon_path) == false) || (IsRefresh == true))
                         {
-
                             using (WebClient wc = new WebClient())
-                            {
-                                wc.DownloadFile(Path.Combine(ETC.Server, "Data", "Images", "SkillIcons", "FST", SkillName + ".png"), Path.Combine(ETC.CachePath, "FST", "Skill", SkillName + ".gfdcache"));
-                            }
-
+                                wc.DownloadFile(Path.Combine(ETC.Server, "Data", "Images", "SkillIcons", "FST", SkillName + ".png"), skillicon_path);
                         }
-                        FindViewById<ImageView>(SkillIconIds[i]).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "FST", "Skill", SkillName + ".gfdcache")));
+
+                        FindViewById<ImageView>(SkillIconIds[i]).SetImageDrawable(Drawable.CreateFromPath(skillicon_path));
                     }
                     catch (Exception ex)
                     {
@@ -407,8 +394,8 @@ namespace GFI_with_GFS_A
                         FindViewById<ImageView>(SkillCoolTimeIconIds[i]).SetImageResource(Resource.Drawable.CoolTime_Icon_WhiteTheme);
                     }
 
-                    string[] SkillAbilities = ((string)FSTInfoDR[string.Format("SkillEffect{0}", (i + 1))]).Split(';');
-                    string[] SkillMags = ((string)FSTInfoDR[string.Format("SkillMag{0}", (i + 1))]).Split(',');
+                    string[] SkillEffects = fst.SkillEffect[i];
+                    string[] SkillMags = fst.SkillMag[i];
 
                     TextView SkillInitCoolTime = FindViewById<TextView>(SkillInitCoolTimeIds[i]);
                     SkillInitCoolTime.SetTextColor(Android.Graphics.Color.Orange);
@@ -417,12 +404,12 @@ namespace GFI_with_GFS_A
                     SkillCoolTime.SetTextColor(Android.Graphics.Color.DarkOrange);
                     SkillCoolTime.Text = "0"; //SkillMags[1];
 
-                    FindViewById<TextView>(SkillExplainIds[i]).Text = (string)FSTInfoDR[string.Format("SkillExplain{0}", (i + 1))];
+                    FindViewById<TextView>(SkillExplainIds[i]).Text = fst.SkillExplain[i];
 
                     LinearLayout SkillTableSubLayout = FindViewById<LinearLayout>(SkillTableSubLayoutIds[i]);
                     SkillTableSubLayout.RemoveAllViews();
 
-                    for (int k = 0; k < SkillAbilities.Length; ++k)
+                    for (int k = 0; k < SkillEffects.Length; ++k)
                     {
                         LinearLayout layout = new LinearLayout(this);
                         layout.Orientation = Orientation.Horizontal;
@@ -434,7 +421,7 @@ namespace GFI_with_GFS_A
                         ability.LayoutParameters = FindViewById<TextView>(SkillAbilityTopTextIds_1[i]).LayoutParameters;
                         mag.LayoutParameters = FindViewById<TextView>(SkillAbilityTopTextIds_2[i]).LayoutParameters;
                         
-                        ability.Text = SkillAbilities[k];
+                        ability.Text = SkillEffects[k];
                         ability.Gravity = GravityFlags.Center;
                         mag.Text = SkillMags[k];
                         mag.Gravity = GravityFlags.Center;
@@ -503,7 +490,26 @@ namespace GFI_with_GFS_A
 
                 string[] row_values = ((string)FSTInfoDR[string.Format("Circuit{0}", Grade)]).Split(';');
 
-                for (int i = 0; i < row_values.Length; ++i)
+                for (int i = 0; i < fst.CircuitHeight; ++i)
+                {
+                    LinearLayout CircuitRow = FindViewById<LinearLayout>(CircuitRowIds[i]);
+
+                    for (int k = 0; k < fst.CircuitLength; ++k)
+                    {
+                        View view = new View(this);
+                        view.LayoutParameters = testView.LayoutParameters;
+                        view.Visibility = ViewStates.Visible;
+
+                        if (fst.ChipsetCircuit[Grade - 1, i, k] == 1)
+                            view.SetBackgroundColor(Android.Graphics.Color.Yellow);
+                        else
+                            view.SetBackgroundColor(Android.Graphics.Color.LightGray);
+
+                        CircuitRow.AddView(view);
+                    }
+                }
+
+                /*for (int i = 0; i < row_values.Length; ++i)
                 {
                     string[] values = row_values[i].Split(',');
 
@@ -544,7 +550,7 @@ namespace GFI_with_GFS_A
                             FindViewById<LinearLayout>(CircuitRowIds[i]).AddView(view);
                         }
                     }
-                }
+                }*/
             }
             catch (Exception ex)
             {
@@ -560,7 +566,6 @@ namespace GFI_with_GFS_A
 
         private void CalcAbility()
         {
-            string[] abilities = { "Kill", "Crush", "Accuracy", "Reload" };
             int[] Progresses = { Resource.Id.FSTInfoKillProgress, Resource.Id.FSTInfoCrushProgress, Resource.Id.FSTInfoACProgress, Resource.Id.FSTInfoRLProgress };
             int[] ProgressMaxTexts = { Resource.Id.FSTInfoKillProgressMax, Resource.Id.FSTInfoCrushProgressMax, Resource.Id.FSTInfoACProgressMax, Resource.Id.FSTInfoRLProgressMax };
             int[] StatusTexts = { Resource.Id.FSTInfoKillStatus, Resource.Id.FSTInfoCrushStatus, Resource.Id.FSTInfoACStatus, Resource.Id.FSTInfoRLStatus };
@@ -576,47 +581,27 @@ namespace GFI_with_GFS_A
                 VersionGradeControl.IsIndicator = true;
 
                 if (ChipsetIndex > 0)
-                {
-                    string[] bonus_list = ((string)FSTInfoDR["ChipsetBonusMag"]).Split(';');
-
                     for (int i = 0; i < ChipsetIndex; ++i)
-                    {
-                        string[] values = bonus_list[i].Split(',');
-
-                        for (int k = 0; k < values.Length; ++k) BonusUp[k] += int.Parse(values[k]);
-                    }
-                }
+                        for (int k = 0; k < fst.AbilityList.Length; ++k)
+                            BonusUp[k] += fst.ChipsetBonusMag[i - 1][fst.AbilityList[k]];
 
                 if (VersionIndex > 0)
-                {
-                    string[] up_list = ((string)FSTInfoDR["VersionUp"]).Split(';');
-
                     for (int i = 0; i < VersionIndex; ++i)
-                    {
-                        string[] values = up_list[i].Split(',');
-
-                        for (int k = 0; k < values.Length; ++k) BonusUp[k] += int.Parse(values[k]);
-                    }
-                }
+                        for (int k = 0; k < fst.AbilityList.Length; ++k)
+                            BonusUp[k] += fst.VersionUpPlus[i - 1][fst.AbilityList[k]];
 
                 for (int i = 0; i < Progresses.Length; ++i)
                 {
                     FindViewById<TextView>(ProgressMaxTexts[i]).Text = FindViewById<ProgressBar>(Progresses[i]).Max.ToString();
 
-                    int MinValue = 0;
-
-                    string temp = (((string)FSTInfoDR[abilities[i]]).Split('/'))[0];
-
-                    if (temp.Contains("?") == true) MinValue = 0;
-                    else MinValue = int.Parse(temp);
-
-                    int MaxValue = int.Parse((((string)FSTInfoDR[abilities[i]]).Split('/'))[1]);
+                    int MinValue = fst.Abilities[$"{fst.AbilityList[i]}_Min"];
+                    int MaxValue = fst.Abilities[$"{fst.AbilityList[i]}_Max"];
 
                     ProgressBar pb = FindViewById<ProgressBar>(Progresses[i]);
                     pb.Progress = MinValue;
                     pb.SecondaryProgress = MaxValue + BonusUp[i];
 
-                    FindViewById<TextView>(StatusTexts[i]).Text = string.Format("{0}/{1}(+{2})", MinValue, MaxValue, BonusUp[i]);
+                    FindViewById<TextView>(StatusTexts[i]).Text = $"{MinValue}/{MaxValue}(+{BonusUp[i]})";
                 }
             }
             catch (Exception ex)

@@ -46,12 +46,16 @@
             android:background="#1b1b1b"
             android:layout_height="2dp"
             android:layout_width="match_parent" />
-        <ListView
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:divider="#2E2E2E"
-            android:dividerHeight="2dp"
-            android:id="@+id/FSTDBListView" />
+		<android.support.v7.widget.RecyclerView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:scrollbars="vertical"
+			app:fastScrollEnabled="true"
+			app:fastScrollHorizontalThumbDrawable="@drawable/fastscroll_thumbdrawable"
+			app:fastScrollHorizontalTrackDrawable="@drawable/fastscroll_linedrawable"
+			app:fastScrollVerticalThumbDrawable="@drawable/fastscroll_thumbdrawable"
+			app:fastScrollVerticalTrackDrawable="@drawable/fastscroll_linedrawable"
+			android:id="@+id/FSTDBRecyclerView"/>
     </LinearLayout>
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
