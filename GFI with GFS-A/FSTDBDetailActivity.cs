@@ -52,7 +52,7 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.FSTDBDetailLayout);
 
-                FSTInfoDR = ETC.FindDataRow(ETC.FSTList, "Name", Intent.GetStringExtra("Keyword"));
+                FSTInfoDR = ETC.FindDataRow(ETC.FSTList, "CodeName", Intent.GetStringExtra("Keyword"));
                 fst = new FST(FSTInfoDR);
 
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.FSTDBDetailInitLoadProgress);
@@ -314,12 +314,12 @@ namespace GFI_with_GFS_A
 
                 try
                 {
-                    string cropimage_path = Path.Combine(ETC.CachePath, "FST", "Normal_Crop", $"{fst.Name}.gfdcache");
+                    string cropimage_path = Path.Combine(ETC.CachePath, "FST", "Normal_Crop", $"{fst.CodeName}.gfdcache");
 
                     if ((File.Exists(cropimage_path) == false) || (IsRefresh == true))
                     {
                         using (WebClient wc = new WebClient())
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "FST", "Normal_Crop", $"{fst.Name}.png"), cropimage_path);
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "FST", "Normal_Crop", $"{fst.CodeName}.png"), cropimage_path);
                     }
 
                     FindViewById<ImageView>(Resource.Id.FSTDBDetailSmallImage).SetImageDrawable(Drawable.CreateFromPath(cropimage_path));
@@ -501,56 +501,27 @@ namespace GFI_with_GFS_A
                         view.Visibility = ViewStates.Visible;
 
                         if (fst.ChipsetCircuit[Grade - 1, i, k] == 1)
-                            view.SetBackgroundColor(Android.Graphics.Color.Yellow);
+                        {
+                            int color_id = 0;
+
+                            switch (fst.ChipsetType)
+                            {
+                                default:
+                                case "Blue":
+                                    color_id = Resource.Color.FST_BlueChipset;
+                                    break;
+                                case "Orange":
+                                    color_id = Resource.Color.FST_OrangeChipset;
+                                    break;
+                            }
+                            view.SetBackgroundResource(color_id);
+                        }
                         else
                             view.SetBackgroundColor(Android.Graphics.Color.LightGray);
 
                         CircuitRow.AddView(view);
                     }
                 }
-
-                /*for (int i = 0; i < row_values.Length; ++i)
-                {
-                    string[] values = row_values[i].Split(',');
-
-                    if (values.Length > 1)
-                    {
-                        int count = 0;
-
-                        for (int k = 1; k <= 8; ++k)
-                        {
-                            View view = new View(this);
-                            view.LayoutParameters = testView.LayoutParameters;
-
-                            if ((count < values.Length) && (k == int.Parse(values[count])))
-                            {
-                                view.SetBackgroundColor(Android.Graphics.Color.Yellow);
-                                count += 1;
-                            }
-                            else view.SetBackgroundColor(Android.Graphics.Color.LightGray);
-
-                            FindViewById<LinearLayout>(CircuitRowIds[i]).AddView(view);
-                        }
-                    }
-                    else
-                    {
-                        int value = int.Parse(values[0]);
-                        int start = value / 10;
-                        int end = value % 10;
-
-                        for (int k = 1; k <= 8; ++k)
-                        {
-                            View view = new View(this);
-                            view.LayoutParameters = testView.LayoutParameters;
-                            view.Visibility = ViewStates.Visible;
-
-                            if ((k >= start) && (k <= end)) view.SetBackgroundColor(Android.Graphics.Color.Yellow);
-                            else view.SetBackgroundColor(Android.Graphics.Color.LightGray);
-
-                            FindViewById<LinearLayout>(CircuitRowIds[i]).AddView(view);
-                        }
-                    }
-                }*/
             }
             catch (Exception ex)
             {

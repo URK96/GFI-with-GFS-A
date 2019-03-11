@@ -305,7 +305,12 @@ namespace GFI_with_GFS_A
 
                     // Get Notification
 
-                    string url = Path.Combine(ETC.Server, "Android_Notification.txt");
+                    string url = "";
+                    if (ETC.Language.Language == "ko")
+                        url = Path.Combine(ETC.Server, "Android_Notification.txt");
+                    else
+                        url = Path.Combine(ETC.Server, "Android_Notification_en.txt");
+
                     string notification = "";
 
                     if (ETC.IsServerDown == true) NotificationView.Text = "& Server is Maintenance &";

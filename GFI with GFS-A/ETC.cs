@@ -395,6 +395,7 @@ namespace GFI_with_GFS_A
                 Path.Combine(CachePath, "FST", "SD"),
                 Path.Combine(CachePath, "FST", "Normal_Crop"),
                 Path.Combine(CachePath, "FST", "Normal"),
+                Path.Combine(CachePath, "FST", "Normal_Icon"),
                 Path.Combine(CachePath, "FST", "Skill"),
                 Path.Combine(CachePath, "OldGFD"),
                 Path.Combine(CachePath, "OldGFD", "Images"),

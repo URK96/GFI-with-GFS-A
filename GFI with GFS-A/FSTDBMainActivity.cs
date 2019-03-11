@@ -118,7 +118,7 @@ namespace GFI_with_GFS_A
         {
             await Task.Delay(100);
             var FSTInfo = new Intent(this, typeof(FSTDBDetailActivity));
-            FSTInfo.PutExtra("Keyword", SubList[position].Name);
+            FSTInfo.PutExtra("Keyword", SubList[position].CodeName);
             StartActivity(FSTInfo);
             OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }
@@ -213,9 +213,9 @@ namespace GFI_with_GFS_A
             for (int i = 0; i < RootList.Count; ++i)
             {
                 FST fst = RootList[i];
-                string FilePath = System.IO.Path.Combine(ETC.CachePath, "FST", "Normal_Crop", $"{fst.Name}.gfdcache");
+                string FilePath = System.IO.Path.Combine(ETC.CachePath, "FST", "Normal_Icon", $"{fst.CodeName}.gfdcache");
                 if (System.IO.File.Exists(FilePath) == false)
-                    Download_List.Add(fst.Name);
+                    Download_List.Add(fst.CodeName);
             }
 
             Download_List.TrimExcess();
@@ -268,8 +268,8 @@ namespace GFI_with_GFS_A
 
                     for (int i = 0; i < p_total; ++i)
                     {
-                        string url = System.IO.Path.Combine(ETC.Server, "Data", "Images", "FST", "Normal_Crop", $"{Download_List[i]}.png");
-                        string target = System.IO.Path.Combine(ETC.CachePath, "FST", "Normal_Crop", $"{Download_List[i]}.gfdcache");
+                        string url = System.IO.Path.Combine(ETC.Server, "Data", "Images", "FST", "Normal_Icon", $"{Download_List[i]}.png");
+                        string target = System.IO.Path.Combine(ETC.CachePath, "FST", "Normal_Icon", $"{Download_List[i]}.gfdcache");
                         await wc.DownloadFileTaskAsync(url, target);
                     }
                 }
@@ -481,7 +481,6 @@ namespace GFI_with_GFS_A
 
     class FSTListViewHolder : RecyclerView.ViewHolder
     {
-        public LinearLayout MainLayout { get; private set; }
         public TextView Type { get; private set; }
         public ImageView TypeIcon { get; private set; }
         public ImageView SmallImage { get; private set; }
@@ -490,7 +489,6 @@ namespace GFI_with_GFS_A
 
         public FSTListViewHolder(View view, Action<int> listener) : base(view)
         {
-            MainLayout = view.FindViewById<LinearLayout>(Resource.Id.FSTListMainLayout);
             Type = view.FindViewById<TextView>(Resource.Id.FSTListType);
             TypeIcon = view.FindViewById<ImageView>(Resource.Id.FSTListTypeIcon);
             SmallImage = view.FindViewById<ImageView>(Resource.Id.FSTListSmallImage);
@@ -552,13 +550,9 @@ namespace GFI_with_GFS_A
                 if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
                 {
                     vh.SmallImage.Visibility = ViewStates.Visible;
-                    string FilePath = System.IO.Path.Combine(ETC.CachePath, "FST", "Normal_Crop", $"{item.Name}.gfdcache");
+                    string FilePath = System.IO.Path.Combine(ETC.CachePath, "FST", "Normal_Icon", $"{item.CodeName}.gfdcache");
                     if (System.IO.File.Exists(FilePath) == true)
-                    {
-                        Android.Graphics.Drawables.Drawable drawable = Android.Graphics.Drawables.Drawable.CreateFromPath(FilePath);
-                        drawable.Alpha = 40;
-                        vh.MainLayout.Background = drawable;
-                    }
+                        vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(FilePath));
                 }
                 else vh.SmallImage.Visibility = ViewStates.Gone;
 

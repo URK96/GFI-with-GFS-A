@@ -374,6 +374,7 @@ namespace GFI_with_GFS_A
     public class FST
     {
         public string Name { get; private set; }
+        public string CodeName { get; private set; }
         public string NickName { get; private set; }
         public int DicNumber { get; private set; }
         public string RealModel { get; private set; }
@@ -384,6 +385,7 @@ namespace GFI_with_GFS_A
         public int ForceSize { get; private set; }
         public string Distance { get; private set; }
         public Dictionary<string, int>[] VersionUpPlus { get; private set; }
+        public string ChipsetType { get; private set; }
         public int[,,] ChipsetCircuit { get; private set; }
         public Dictionary<string, int>[] GradeRestriction { get; private set; }
         public int[] ChipsetBonusCount { get; private set; }
@@ -403,6 +405,7 @@ namespace GFI_with_GFS_A
         public FST(DataRow dr, bool basic_info = false)
         {
             Name = (string)dr["Name"];
+            CodeName = (string)dr["CodeName"];
             NickName = "";
             DicNumber = 0;
             RealModel = (string)dr["Model"];
@@ -441,6 +444,8 @@ namespace GFI_with_GFS_A
 
         private void InitializeChipsetCircuit(ref DataRow dr)
         {
+            ChipsetType = (string)dr["CircuitType"];
+
             ChipsetCircuit = new int[CircuitCount, CircuitHeight, CircuitLength];
 
             for (int i = 0; i < CircuitCount; ++i)
