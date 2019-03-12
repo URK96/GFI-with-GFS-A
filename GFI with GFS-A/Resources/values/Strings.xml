@@ -611,14 +611,8 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.15 Update]\n\n
-- Add Cartoon Category\n
-- Change FST List Component\n
-- Add &amp; Apply FST Data Model\n
-- Fix FST Chipset Circuit issue\n
-- Apply FST Chipset Circuit Color\n
-- Fix Enemy DB Filtering issue\n
-- Add Main Menu Notification Language (EN)
+    [2.3.16 Update]\n\n
+- Add Cartoon Content
   </string>
 
   <string name="RFBot_CommandHelp">
