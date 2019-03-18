@@ -1,6 +1,5 @@
 ﻿using Android.App;
 using Android.Content;
-using Android.Gms.Ads;
 using Android.Preferences;
 using Android.Support.Design.Widget;
 using Android.Views;
@@ -214,7 +213,6 @@ namespace GFI_with_GFS_A
             SetDialogTheme();
             Language = Resources.Configuration.Locale;
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTQzNDRAMzEzNjJlMzQyZTMwZHNFSDUyRjdlWXZ6WXNtelNkRWV3QVh1WmR0Q3hSbTFqZ0dKTTVsQlBOQT0=");
-            MobileAds.Initialize(context, "ca-app-pub-4576756770200148~8135834453");
             //client = new UptimeClient("m780844852-8bd2516bb93800a9eb7e3d58");
         }
 
@@ -754,19 +752,6 @@ namespace GFI_with_GFS_A
             };
 
             return DPS;
-        }
-
-        internal class ADViewListener : Android.Gms.Ads.AdListener
-        {
-            public override void OnAdOpened()
-            {
-                return;
-            }
-
-            public override void OnAdLeftApplication()
-            {
-                return;
-            }
         }
     }
 }

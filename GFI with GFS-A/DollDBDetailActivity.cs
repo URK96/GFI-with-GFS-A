@@ -15,7 +15,6 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Android.Gms.Ads;
 using Com.Syncfusion.Charts;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
@@ -68,8 +67,6 @@ namespace GFI_with_GFS_A
         private Spinner ChartCompareList;
         private SfChart chart;
 
-        private AdView adview;
-
         int[] ModButtonIds = { Resource.Id.DollDBDetailModSelect0, Resource.Id.DollDBDetailModSelect1, Resource.Id.DollDBDetailModSelect2, Resource.Id.DollDBDetailModSelect3 };
         internal static List<string> CompareList;
         private List<string> V_Costume_List = new List<string>();
@@ -92,7 +89,6 @@ namespace GFI_with_GFS_A
 
                 DAS = new DollAbilitySet(doll.Type);
 
-                adview = FindViewById<AdView>(Resource.Id.DollDBDetail_adView);
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.DollDBDetailInitLoadProgress);
                 SkillTableSubLayout = FindViewById<LinearLayout>(Resource.Id.DollDBDetailSkillAbilitySubLayout);
                 ModSkillTableSubLayout = FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSkillAbilitySubLayout);
@@ -1270,16 +1266,6 @@ namespace GFI_with_GFS_A
             RefreshCacheFAB.Hide();
             MainFAB.Alpha = 0.3f;
             MainFAB.SetImageResource(Resource.Drawable.HideFloating_Icon);
-        }
-
-        private async Task LoadAD()
-        {
-            await Task.Delay(100);
-
-            adview.AdListener = new ETC.ADViewListener();
-            adview.Clickable = false;
-
-            adview.LoadAd(new AdRequest.Builder().Build());
         }
 
         private void SetCardTheme()
