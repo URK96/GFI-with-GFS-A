@@ -71,18 +71,18 @@ namespace GFI_with_GFS_A
         internal static List<string> CompareList;
         private List<string> V_Costume_List = new List<string>();
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             try
             {
                 base.OnCreate(savedInstanceState);
 
-                //Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY0NkAzMTM2MmUzMjJlMzBmNFFDVVZlU2NDRTVmYVJqQ0ZyOTVPOGhYWnFIazlQNFNPeGVEMU9WMjZnPQ==");
-
                 if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
 
                 // Create your application here
                 SetContentView(Resource.Layout.DollDBDetailLayout);
+
+                await Task.Delay(100);
 
                 DollInfoDR = ETC.FindDataRow(ETC.DollList, "DicNumber", Intent.GetIntExtra("DicNum", 0));
                 doll = new Doll(DollInfoDR);

@@ -9,6 +9,9 @@ using System.Data;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace GFI_with_GFS_A
 {
@@ -42,6 +45,18 @@ namespace GFI_with_GFS_A
         internal static DataTable SkillTrainingList = new DataTable();
         internal static DataTable MDSupportList = new DataTable();
         internal static DataTable FreeOPList = new DataTable();
+        internal static string[] DBFiles =
+        {
+            "Doll.gfs",
+            "Equipment.gfs",
+            "Fairy.gfs",
+            "Enemy.gfs",
+            "FST.gfs",
+            "MDSupportList.gfs",
+            "FreeOP.gfs",
+            "SkillTraining.gfs",
+            "FairyAttribution.gfs"
+        };
 
         internal static AverageAbility[] Avg_List;
 
@@ -213,6 +228,7 @@ namespace GFI_with_GFS_A
             SetDialogTheme();
             Language = Resources.Configuration.Locale;
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTQzNDRAMzEzNjJlMzQyZTMwZHNFSDUyRjdlWXZ6WXNtelNkRWV3QVh1WmR0Q3hSbTFqZ0dKTTVsQlBOQT0=");
+            AppCenter.Start("aca0ed39-4b25-4548-bf2a-ac92ccee2977", typeof(Analytics), typeof(Crashes));
             //client = new UptimeClient("m780844852-8bd2516bb93800a9eb7e3d58");
         }
 
@@ -237,6 +253,8 @@ namespace GFI_with_GFS_A
 
         internal static async Task CheckServerNetwork()
         {
+            await Task.Delay(100);
+
             HttpWebRequest request = null;
             HttpWebResponse response = null;
 
@@ -334,8 +352,6 @@ namespace GFI_with_GFS_A
 
         internal static bool FindDataRow<T>(DataTable table, string index, T value, out DataRow row)
         {
-            
-
             for (int i = 0; i < table.Rows.Count; ++i)
             {
                 DataRow dr = table.Rows[i];
@@ -440,7 +456,7 @@ namespace GFI_with_GFS_A
             return true;
         }
 
-        internal static bool LoadDBSync()
+        /*internal static bool LoadDBSync()
         {
             try
             {
@@ -467,7 +483,7 @@ namespace GFI_with_GFS_A
             }
 
             return true;
-        }
+        }*/
 
         internal static async Task<bool> LoadDB(DataTable table, string DBFile, bool BeforeClear)
         {
@@ -574,19 +590,6 @@ namespace GFI_with_GFS_A
         //ProgressDialog 교체
         internal static async Task UpdateDB(Activity activity, bool DBLoad = false, int TitleMsg = Resource.String.CheckDBUpdateDialog_Title, int MessageMgs = Resource.String.CheckDBUpdateDialog_Message)
         {
-            string[] DBFiles = 
-            {
-                "Doll.gfs",
-                "Equipment.gfs",
-                "Fairy.gfs",
-                "Enemy.gfs",
-                "FST.gfs",
-                "MDSupportList.gfs",
-                "FreeOP.gfs",
-                "SkillTraining.gfs",
-                "FairyAttribution.gfs"
-            };
-
             ProgressDialog pd = new ProgressDialog(activity, DialogBG_Download);
             pd.SetProgressStyle(ProgressDialogStyle.Horizontal);
             pd.SetTitle(TitleMsg);

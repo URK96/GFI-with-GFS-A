@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 using System.Data;
-using System.Net;
-using System.Collections;
+using System.IO;
 
 namespace GFI_with_GFS_A
 {
@@ -56,22 +51,17 @@ namespace GFI_with_GFS_A
         public string GetDicNumberString { get { return string.Format("No. {0}", DicNumber); } }
         public string GetProductTimeToString { get { return ETC.CalcTime(ProductTime); } }
 
-        internal Doll(DataRow dr)
+        internal Doll(DataRow dr, bool basic_info = false)
         {
             if (ETC.Language.Language == "ko")
             {
                 Name = (string)dr["Name"];
-
-                if (ETC.IsDBNullOrBlank(dr, "ProductDialog") == true) ProductDialog = "";
-                else ProductDialog = (string)dr["ProductDialog"];
+                ProductDialog = ETC.IsDBNullOrBlank(dr, "ProductDialog") ? "" : (string)dr["ProductDialog"];
             }
             else
             {
-                if (ETC.IsDBNullOrBlank(dr, "Name_EN") == true) Name = (string)dr["Name"];
-                else Name = (string)dr["Name_EN"];
-
-                if (ETC.IsDBNullOrBlank(dr, "ProductDialog") == true) ProductDialog = "";
-                else ProductDialog = (string)dr["ProductDialog"];
+                Name = ETC.IsDBNullOrBlank(dr, "Name_EN") ? (string)dr["CodeName"] : (string)dr["Name_EN"];
+                ProductDialog = ETC.IsDBNullOrBlank(dr, "ProductDialog") ? "" : (string)dr["ProductDialog"];
             }
 
             krName = (string)dr["Name"];
@@ -86,18 +76,17 @@ namespace GFI_with_GFS_A
             DropEvent = ((string)dr["DropEvent"]).Split(',');
             HasMod = (bool)dr["HasMod"];
             HasVoice = (bool)dr["HasVoice"];
-            Illustrator = (string)dr["Illustrator"];
-            if (ETC.IsDBNullOrBlank(dr, "VoiceActor") == true) VoiceActor = "";
-            else VoiceActor = (string)dr["VoiceActor"];
+            Illustrator = ETC.IsDBNullOrBlank(dr, "Illustrator") ? "" : (string)dr["Illustrator"];
             HasCensored = (bool)dr["HasCensor"];
-            if (HasCensored == true) CensorType = ((string)dr["CensorType"]).Split(';');
+            CensorType = HasCensored ? ((string)dr["CensorType"]).Split(';') : null;
 
             if (ETC.IsDBNullOrBlank(dr, "Costume") == true) Costumes = null;
             else Costumes = ((string)dr["Costume"]).Split(';');
 
             string[] BuffFormation_Data = ((string)dr["EffectFormation"]).Split(',');
             BuffFormation = new int[9];
-            for (int i = 0; i < BuffFormation_Data.Length; ++i) BuffFormation[i] = int.Parse(BuffFormation_Data[i]);
+            for (int i = 0; i < BuffFormation_Data.Length; ++i)
+                BuffFormation[i] = int.Parse(BuffFormation_Data[i]);
 
             BuffInfo = ((string)dr["Effect"]).Split(';');
             BuffType = (string)dr["EffectType"];
@@ -112,36 +101,14 @@ namespace GFI_with_GFS_A
                 ModGrade = (int)dr["ModGrade"];
                 string[] ModBuffFormation_Data = ((string)dr["ModEffectFormation"]).Split(',');
                 ModBuffFormation = new int[9];
-                for (int i = 0; i < ModBuffFormation_Data.Length; ++i) ModBuffFormation[i] = int.Parse(ModBuffFormation_Data[i]);
+                for (int i = 0; i < ModBuffFormation_Data.Length; ++i)
+                    ModBuffFormation[i] = int.Parse(ModBuffFormation_Data[i]);
                 ModBuffInfo = ((string)dr["ModEffect"]).Split(';');
                 ModSkillName = (string)dr["ModSkill"];
                 ModSkillExplain = (string)dr["ModSkillExplain"];
                 ModSkillEffect = ((string)dr["ModSkillEffect"]).Split(';');
                 ModSkillMag = ((string)dr["ModSkillMag"]).Split(',');
                 SkillMagAfterMod = ((string)dr["SkillMagAfterMod"]).Split(',');
-            }
-
-            if (HasVoice == true)
-            {
-                Voices = ((string)dr["Voices"]).Split(';');
-
-                if (ETC.IsDBNullOrBlank(dr, "CostumeVoices") == false)
-                {
-                    string[] temp = ((string)dr["CostumeVoices"]).Split('/');
-
-                    CostumeVoices = new string[temp.Length, 2];
-
-                    for (int i = 0; i < temp.Length; ++i)
-                    {
-                        CostumeVoices[i, 0] = temp[i].Split(':')[0];
-                        CostumeVoices[i, 1] = temp[i].Split(':')[1];
-                    }
-                }
-            }
-            else
-            {
-                Voices = null;
-                CostumeVoices = null;
             }
 
             switch (Grade)
@@ -163,7 +130,34 @@ namespace GFI_with_GFS_A
                     break;
             }
 
-            SetAbility(ref dr);
+            if (basic_info == false)
+            {
+                if (HasVoice == true)
+                {
+                    Voices = ((string)dr["Voices"]).Split(';');
+                    VoiceActor = ETC.IsDBNullOrBlank(dr, "VoiceActor") ? "" : (string)dr["VoiceActor"];
+
+                    if (ETC.IsDBNullOrBlank(dr, "CostumeVoices") == false)
+                    {
+                        string[] temp = ((string)dr["CostumeVoices"]).Split('/');
+
+                        CostumeVoices = new string[temp.Length, 2];
+
+                        for (int i = 0; i < temp.Length; ++i)
+                        {
+                            CostumeVoices[i, 0] = temp[i].Split(':')[0];
+                            CostumeVoices[i, 1] = temp[i].Split(':')[1];
+                        }
+                    }
+                }
+                else
+                {
+                    Voices = null;
+                    CostumeVoices = null;
+                }
+
+                SetAbility(ref dr);
+            }
         }
 
         private void SetAbility(ref DataRow dr)
@@ -210,7 +204,7 @@ namespace GFI_with_GFS_A
         public string GetIdString { get { return string.Format("No. {0}", Id); } }
         public string GetProductTimeToString { get { return ETC.CalcTime(ProductTime); } }
 
-        internal Equip(DataRow dr)
+        internal Equip(DataRow dr, bool basic_info = false)
         {
             Name = (string)dr["Name"];
             Id = (int)dr["Id"];
@@ -218,18 +212,14 @@ namespace GFI_with_GFS_A
             ProductTime = (int)dr["ProductTime"];
             Category = (string)dr["Category"];
             Icon = (string)dr["Icon"];
-            if (dr["Note"] == DBNull.Value) Note = "";
-            else Note = (string)dr["Note"];
+            Note = ETC.IsDBNullOrBlank(dr, "Note") ? "" : (string)dr["Note"];
             Type = (string)dr["Type"];
 
             ImagePath = Path.Combine(ETC.CachePath, "Equip", "Normal", string.Format("{0}.gfdcache", Icon));
 
-            if (dr["OnlyUse"] == DBNull.Value) OnlyUse = null;
-            else OnlyUse = ((string)dr["OnlyUse"]).Split(';');
-            if (dr["DollType"] == DBNull.Value) DollType = null;
-            else DollType = ((string)dr["DollType"]).Split(';');
-            if (dr["SpecialDoll"] == DBNull.Value) SpecialDoll = null;
-            else SpecialDoll = ((string)dr["SpecialDoll"]).Split(';');
+            OnlyUse = ETC.IsDBNullOrBlank(dr, "OnlyUse") ? null : ((string)dr["OnlyUse"]).Split(';');
+            DollType = ETC.IsDBNullOrBlank(dr, "DollType") ? null : ((string)dr["DollType"]).Split(';');
+            SpecialDoll = ETC.IsDBNullOrBlank(dr, "SpecialDoll") ? null : ((string)dr["SpecialDoll"]).Split(';');
 
             switch (Grade)
             {
@@ -258,9 +248,7 @@ namespace GFI_with_GFS_A
             Abilities = ((string)dr["Ability"]).Split(';');
             InitMags = ((string)dr["InitialMagnification"]).Split(';');
             MaxMags = ((string)dr["MaxMagnification"]).Split(';');
-
-            if (MaxMags[0] == "강화불가") CanUpgrade = false;
-            else CanUpgrade = true;
+            CanUpgrade = MaxMags[0] == "강화불가";
         }
     }
 
@@ -283,15 +271,13 @@ namespace GFI_with_GFS_A
         public string GetDicNumberString { get { return string.Format("No. {0}", DicNumber); } }
         public string GetProductTimeToString { get { return ETC.CalcTime(ProductTime); } }
 
-        internal Fairy(DataRow dr)
+        internal Fairy(DataRow dr, bool basic_info = false)
         {
             Name = (string)dr["Name"];
             DicNumber = (int)dr["DicNumber"];
             Type = (string)dr["Type"];
             ProductTime = (int)dr["ProductTime"];
-
-            if (dr["Note"] == DBNull.Value) Note = "";
-            else Note = (string)dr["Note"];
+            Note = ETC.IsDBNullOrBlank(dr, "Note") ? "" : (string)dr["Note"];
 
             SkillName = (string)dr["SkillName"];
             SkillExplain = (string)dr["SkillExplain"];
@@ -327,7 +313,7 @@ namespace GFI_with_GFS_A
 
         public Dictionary<string, int>[] Abilities;
 
-        public Enemy(DataRow dr)
+        public Enemy(DataRow dr, bool basic_info = false)
         {
             Name = (string)dr["Name"];
             CodeName = (string)dr["CodeName"];

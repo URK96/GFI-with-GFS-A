@@ -11,22 +11,27 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/DollListType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:gravity="center" />
+            android:gravity="center"
+			android:id="@+id/DollListType"/>
         <ImageView
             android:id="@+id/DollListGrade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitCenter" />
     </LinearLayout>
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:scaleType="fitCenter"
+		android:id="@+id/DollListModIcon"/>
     <ImageView
-        android:id="@+id/DollListSmallImage"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:scaleType="fitCenter" />
+        android:scaleType="fitCenter"
+		android:id="@+id/DollListSmallImage"/>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"

@@ -95,15 +95,6 @@ namespace GFI_with_GFS_A
                 ETC.CheckInitFolder();
 
 
-                // Check Server
-
-                /*if (ETC.sharedPreferences.GetBoolean("EnableServerCheck", false) == true)
-                {
-                    await ETC.AnimateText(StatusText, "Check Server");
-                    await ETC.CheckServerNetwork();
-                }*/
-
-
                 // Check DB Update
 
                 if (CheckDBFiles() == false)
@@ -211,20 +202,7 @@ namespace GFI_with_GFS_A
 
         private bool CheckDBFiles()
         {
-            string[] DBFiles =
-            {
-                "Doll.gfs",
-                "Equipment.gfs",
-                "Fairy.gfs",
-                "Enemy.gfs",
-                "FST.gfs",
-                "MDSupportList.gfs",
-                "FreeOP.gfs",
-                "SkillTraining.gfs",
-                "FairyAttribution.gfs"
-            };
-
-            foreach (string s in DBFiles)
+            foreach (string s in ETC.DBFiles)
                 if (File.Exists(Path.Combine(ETC.DBPath, s)) == false)
                     return false;
 

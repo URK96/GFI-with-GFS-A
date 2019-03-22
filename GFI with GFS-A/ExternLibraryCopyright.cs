@@ -15,7 +15,7 @@ using Xamarin.Essentials;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "ExternLibraryCopyright", Theme = "@style/GFS")]
+    [Activity(Label = "Extern Library Copyright", Theme = "@style/GFS")]
     public class ExternLibraryCopyright : AppCompatActivity
     {
         private RecyclerView MainRecyclerView;

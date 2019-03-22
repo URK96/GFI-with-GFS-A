@@ -395,6 +395,7 @@
     <item>53 - 헬리안 구출작전</item>
     <item>54 - 지휘관의 친구</item>
     <item>55 - 전술인형, 변신! 합체!</item>
+    <item>56 - 오늘도 춘전이네 카페는 평화롭습니다</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -453,5 +454,6 @@
     <item>http://naver.me/xisTGYAh</item>
     <item>http://naver.me/xRMBSyen</item>
     <item>http://naver.me/xEBeTojt</item>
+    <item>http://naver.me/GbKVgSyK</item>
   </string-array>
 </resources>
