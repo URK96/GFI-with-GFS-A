@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <!--New String-->
-  <string name="app_name">소전사전</string>
+  <string name="App_TitleName">소전사전</string>
   
   <string name="Common_ExpItem">작전보고서</string>
   <string name="Common_Core">대체코어</string>
@@ -10,13 +10,9 @@
   <string name="Common_AreaExp">경험치 계산</string>
   <string name="TitleName_AreaExpCalc">지역별 경험치 계산</string>
   
-  
-  
   <string name="ComingSoon">Coming Soon...</string>
   <string name="Common_ServerMaintenance">서버 점검 중 입니다.</string>
 
-  
-  
   <!--New - Shortcut String-->
   <string name="Shortcut_GFNotification_ShortLabel">공지사항</string>
   <string name="Shortcut_GFNotification_LongLabel">공지사항</string>

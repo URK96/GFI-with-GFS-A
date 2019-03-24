@@ -16,7 +16,7 @@ using Xamarin.Essentials;
 namespace GFI_with_GFS_A
 {
     [MetaData("android.app.shortcuts", Resource = "@xml/appshortcut")]
-    [Activity(MainLauncher = true, Theme = "@style/GFS.Splash", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(MainLauncher = true, Label = "@string/App_TitleName", Theme = "@style/GFS.Splash", ScreenOrientation = ScreenOrientation.Portrait)]
     public class SplashScreen : AppCompatActivity
     {
         private CoordinatorLayout SnackbarLayout = null;
@@ -38,7 +38,6 @@ namespace GFI_with_GFS_A
                 if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Splash_Light);
 
                 SetContentView(Resource.Layout.SplashLayout);
-                SetTitle(Resource.String.app_name);
 
                 SplashImageView = FindViewById<ImageView>(Resource.Id.SplashImageView);
 

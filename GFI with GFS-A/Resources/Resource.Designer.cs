@@ -10398,11 +10398,8 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f0b0088
 			public const int Activity_EquipMainActivity = 2131427464;
 			
-			// aapt resource value: 0x7f0b0266
-			public const int Activity_EventListActivity = 2131427942;
-			
 			// aapt resource value: 0x7f0b008e
-			public const int Activity_EventMainActivity = 2131427470;
+			public const int Activity_EventListActivity = 2131427470;
 			
 			// aapt resource value: 0x7f0b008f
 			public const int Activity_ExternLibraryCopyrightActivity = 2131427471;
@@ -10457,6 +10454,9 @@ namespace GFI_with_GFS_A
 			
 			// aapt resource value: 0x7f0b00de
 			public const int Animation_Error = 2131427550;
+			
+			// aapt resource value: 0x7f0b005c
+			public const int App_TitleName = 2131427420;
 			
 			// aapt resource value: 0x7f0b0236
 			public const int Calc_AreaExp_AutoAddDummySettingCheckBox = 2131427894;
@@ -12062,9 +12062,6 @@ namespace GFI_with_GFS_A
 			
 			// aapt resource value: 0x7f0b0036
 			public const int abc_toolbar_collapse_description = 2131427382;
-			
-			// aapt resource value: 0x7f0b005c
-			public const int app_name = 2131427420;
 			
 			// aapt resource value: 0x7f0b0044
 			public const int appbar_scrolling_view_behavior = 2131427396;

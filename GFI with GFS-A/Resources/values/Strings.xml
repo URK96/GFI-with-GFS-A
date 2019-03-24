@@ -1,22 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <!--New String-->
-  <string name="app_name">GF Dictionary</string>
-  
-  
-  
-  
+  <string name="App_TitleName">GF Dictionary</string>
   <string name="Common_ExpItem">Battle Report</string>
   <string name="Common_Core">Core</string>
   <string name="Common_SkillTraining">Skill Training</string>
   <string name="Common_FSTGradeUp">FST GradeUP</string>
   <string name="Common_AreaExp">Area Exp</string>
   <string name="TitleName_AreaExpCalc">Calc Area Exp</string>
-  
-  
-  
-  
-  
   <string name="ComingSoon">Coming Soon...</string>
   <string name="Common_ServerMaintenance">Server is Maintenance...</string>
   
@@ -68,7 +59,7 @@
   <string name="Activity_FSTMainActivity">FST List</string>
   <string name="Activity_CalcMainActivity">Calculator</string>
   <string name="Activity_CartoonMainActivity">Cartoon</string>
-  <string name="Activity_EventMainActivity">Event</string>
+  <string name="Activity_EventListActivity">Event</string>
   <string name="Activity_ExternLibraryCopyrightActivity">Extern Library Copyright</string>
   <string name="Activity_SettingActivity">Setting</string>
   <string name="Activity_StoryActivity">Story</string>
