@@ -56,6 +56,19 @@
   <!--New - Cartoon String-->
   <string name="Cartoon_DownloadCartoonTitle">만화 다운로드</string>
   <string name="Cartoon_DownloadCartoonMessage">만화 파일을 다운로드 중...</string>
+
+  <!--Activity String-->
+  <string name="Activity_DollMainActivity">인형 목록</string>
+  <string name="Activity_EquipMainActivity">장비 목록</string>
+  <string name="Activity_FairyMainActivity">요정 목록</string>
+  <string name="Acticity_EnemyMainActivity">적 목록</string>
+  <string name="Activity_FSTMainActivity">화력소대 목록</string>
+  <string name="Activity_CalcMainActivity">계산기</string>
+  <string name="Activity_CartoonMainActivity">만화</string>
+  <string name="Activity_EventListActivity">이벤트 목록</string>
+  <string name="Activity_ExternLibraryCopyrightActivity">외부 라이브러리 라이선스</string>
+  <string name="Activity_SettingActivity">설정</string>
+  <string name="Activity_StoryActivity">스토리</string>
   
   <!--Solution String-->
   <string name="CheckingUpdate">업데이트 확인 중...</string>
@@ -611,8 +624,11 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.16 수정사항]\n\n
-- 만화 컨텐츠 추가
+    [2.3.17 수정사항]\n\n
+- 만화 컨텐츠 추가\n
+- 일부 레이아웃 수정\n
+- 데이터 로드 최적화\n
+- 일부 문자열 영문화 적용
   </string>
 
   <string name="RFBot_CommandHelp">

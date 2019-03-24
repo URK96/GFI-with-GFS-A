@@ -17,7 +17,7 @@ using System.Net;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Name = "com.gfl.dic.EventListActivity", Label = "Event", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.EventListActivity", Label = "@string/Activity_EventListActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class EventListActivity : AppCompatActivity
     {
         enum EventPeriodType { Now, Scheduled, Over }

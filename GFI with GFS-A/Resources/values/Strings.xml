@@ -56,8 +56,22 @@
   <string name="Tooltip_SideLink_36Base">36 Base</string>
   <string name="Tooltip_SideLink_GFDB">GF DB</string>
 
+  <!--New - Cartoon String-->
+  <string name="Cartoon_DownloadCartoonTitle">Download Cartoon</string>
+  <string name="Cartoon_DownloadCartoonMessage">Cartoon Downloading...</string>
+
   <!--Activity String-->
-  
+  <string name="Activity_DollMainActivity">T-Doll List</string>
+  <string name="Activity_EquipMainActivity">Equipment List</string>
+  <string name="Activity_FairyMainActivity">Fairy List</string>
+  <string name="Acticity_EnemyMainActivity">Enemy List</string>
+  <string name="Activity_FSTMainActivity">FST List</string>
+  <string name="Activity_CalcMainActivity">Calculator</string>
+  <string name="Activity_CartoonMainActivity">Cartoon</string>
+  <string name="Activity_EventMainActivity">Event</string>
+  <string name="Activity_ExternLibraryCopyrightActivity">Extern Library Copyright</string>
+  <string name="Activity_SettingActivity">Setting</string>
+  <string name="Activity_StoryActivity">Story</string>
   
   <!--Solution String-->
   <string name="CheckingUpdate">Checking Updates...</string>
@@ -614,8 +628,11 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.16 Update]\n\n
-- Add Cartoon Content
+    [2.3.17 Update]\n\n
+- Add Cartoon Content\n
+- Fix some layout\n
+- Optimize Data Load\n
+- Apply translation some string
   </string>
 
   <string name="RFBot_CommandHelp">

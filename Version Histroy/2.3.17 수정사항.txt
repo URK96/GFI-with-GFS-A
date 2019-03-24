@@ -1,0 +1,11 @@
+<2.3.17 수정사항>
+
+- 만화 컨텐츠 추가
+- 일부 레이아웃 수정
+- 데이터 로드 최적화
+- 일부 문자열 영문화 적용
+
+- Add Cartoon Content
+- Fix some layout
+- Optimize Data Load
+- Apply translation some string

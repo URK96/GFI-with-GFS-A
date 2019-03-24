@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Name = "com.gfl.dic.StoryActivity", Label = "Story", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.StoryActivity", Label = "@string/Activity_StoryActivity", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public partial class StoryActivity : AppCompatActivity
     {
         enum Category { Main, SubMain, Item }

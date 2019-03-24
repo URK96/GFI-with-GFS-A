@@ -15,7 +15,7 @@ using System.IO;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "철혈 목록", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/Acticity_EnemyMainActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class EnemyDBMainActivity : AppCompatActivity
     {
         delegate void DownloadProgress();

@@ -32,6 +32,9 @@
     <item>Xamarin.Build.Download</item>
     <item>Xamarin.Essentials</item>
     <item>Xamarin.PhotoView.Android</item>
+    <item>Microsoft.AppCenter</item>
+    <item>Microsoft.AppCenter.Analytics</item>
+    <item>Microsoft.AppCenter.Crashes</item>
   </string-array>
 
   <string-array name="ExternLibrary_Explain">
@@ -66,6 +69,9 @@
     <item>Support for downloading and unpacking archives when building MSBuild projects</item>
     <item>a kit of essential APIs for your apps</item>
     <item>PhotoView Binding For Xamarin.Android</item>
+    <item>This package contains the basic functionalities that all App Center services use to communicate with the backend.</item>
+    <item>This package contains functionalities to collect session, device properties, events etc... for your application.</item>
+    <item>This package contains functionalities to collect crash reports for your application.</item>
   </string-array>
   
   <string-array name="ExternLibrary_License">
@@ -100,6 +106,9 @@
     <item>Microsoft - MIT LICENSE</item>
     <item>Microsoft - MIT LICENSE</item>
     <item>chrisbanes - Unknown</item>
+    <item>Microsoft - MIT License</item>
+    <item>Microsoft - MIT License</item>
+    <item>Microsoft - MIT License</item>
   </string-array>
 
   <string-array name="ExternLibrary_URL">
@@ -134,5 +143,8 @@
     <item>https://go.microsoft.com/fwlink/?linkid=865061</item>
     <item>https://go.microsoft.com/fwlink/?linkid=868960</item>
     <item>https://www.nuget.org/packages/Xamarin.PhotoView.Android</item>
+    <item>https://github.com/Microsoft/AppCenter-SDK-DotNet/blob/master/license.txt</item>
+    <item>https://github.com/Microsoft/AppCenter-SDK-DotNet/blob/master/license.txt</item>
+    <item>https://github.com/Microsoft/AppCenter-SDK-DotNet/blob/master/license.txt</item>
   </string-array>
 </resources>

@@ -15,7 +15,7 @@ using Android.Support.V7.Widget;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "요정 목록", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/Activity_FairyMainActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class FairyDBMainActivity : AppCompatActivity
     {
         delegate void DownloadProgress();
