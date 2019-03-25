@@ -619,11 +619,8 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.17 Update]\n\n
-- Add Cartoon Content\n
-- Fix some layout\n
-- Optimize Data Load\n
-- Apply translation some string
+    [2.3.18 Update]\n\n
+- Fix T-Doll DB layout
   </string>
 
   <string name="RFBot_CommandHelp">
