@@ -620,8 +620,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.18 수정사항]\n\n
-- 인형 DB의 잘못된 레이아웃 수정
+    [2.3.19 수정사항]\n\n
+- 일부 레이아웃 수정\n
+- 만화 컨텐츠 추가
   </string>
 
   <string name="RFBot_CommandHelp">

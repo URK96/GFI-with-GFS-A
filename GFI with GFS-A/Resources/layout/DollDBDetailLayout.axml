@@ -1511,7 +1511,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:id="@+id/DollDBDetailAbilityRadarChartLayout">
-                            <Com.Syncfusion.Charts.SfChart
+                           <Com.Syncfusion.Charts.SfChart
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:id="@+id/DollDBDetailAbilityRadarChart" />

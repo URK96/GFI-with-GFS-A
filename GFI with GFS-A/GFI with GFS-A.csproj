@@ -16,7 +16,7 @@
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
-    <AndroidUseAapt2>True</AndroidUseAapt2>
+    <AndroidUseAapt2>False</AndroidUseAapt2>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
@@ -106,14 +106,14 @@
     <Reference Include="SkiaSharp">
       <HintPath>..\Dll\Xfinium.Pdf.View\SkiaSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=16.4.0.54, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Licensing.16.4.0.54\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
+    <Reference Include="Syncfusion.Licensing, Version=17.1.0.38, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.17.1.0.38\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfBusyIndicator.Android, Version=16.4451.0.54, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfBusyIndicator.Android.16.4.0.54\lib\MonoAndroid10\Syncfusion.SfBusyIndicator.Android.dll</HintPath>
+    <Reference Include="Syncfusion.SfBusyIndicator.Android, Version=17.1451.0.38, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfBusyIndicator.Android.17.1.0.38\lib\MonoAndroid10\Syncfusion.SfBusyIndicator.Android.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfChart.Android, Version=16.4451.0.54, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.Android.16.4.0.54\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
+    <Reference Include="Syncfusion.SfChart.Android, Version=17.1451.0.38, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.Android.17.1.0.38\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

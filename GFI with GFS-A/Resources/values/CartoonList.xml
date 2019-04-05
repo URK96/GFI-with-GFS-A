@@ -397,6 +397,8 @@
     <item>54 - 지휘관의 친구</item>
     <item>55 - 전술인형, 변신! 합체!</item>
     <item>56 - 오늘도 춘전이네 카페는 평화롭습니다</item>
+    <item>57 - 전술인형을 싫어하는 마을</item>
+    <item>58 - 스프링필드의 고민</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -456,5 +458,7 @@
     <item>http://naver.me/xRMBSyen</item>
     <item>http://naver.me/xEBeTojt</item>
     <item>http://naver.me/GbKVgSyK</item>
+    <item>http://naver.me/5GxuNdNA</item>
+    <item>http://naver.me/x5hXaZmh</item>
   </string-array>
 </resources>

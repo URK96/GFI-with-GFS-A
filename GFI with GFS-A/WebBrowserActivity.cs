@@ -106,9 +106,16 @@ namespace GFI_with_GFS_A
 
         private class WebBrowserWebClient : WebViewClient
         {
+            [Obsolete]
             public override bool ShouldOverrideUrlLoading(WebView view, string url)
             {
                 view.LoadUrl(url);
+                return false;
+            }
+
+            public override bool ShouldOverrideUrlLoading(WebView view, IWebResourceRequest request)
+            {
+                view.LoadUrl(request.Url.ToString());
                 return false;
             }
 

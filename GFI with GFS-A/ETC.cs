@@ -227,8 +227,10 @@ namespace GFI_with_GFS_A
             UseLightTheme = sharedPreferences.GetBoolean("UseLightTheme", false);
             SetDialogTheme();
             Language = Resources.Configuration.Locale;
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTQzNDRAMzEzNjJlMzQyZTMwZHNFSDUyRjdlWXZ6WXNtelNkRWV3QVh1WmR0Q3hSbTFqZ0dKTTVsQlBOQT0=");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("ODQwMjZAMzEzNzJlMzEyZTMwV3l1Q3FseVNBb1UvNjdXVG90ZzBDQXp4V3RNOWgrcVJheDJMMWd5bW4xST0=");
+#if RELEASE
             AppCenter.Start("aca0ed39-4b25-4548-bf2a-ac92ccee2977", typeof(Analytics), typeof(Crashes));
+#endif
             //client = new UptimeClient("m780844852-8bd2516bb93800a9eb7e3d58");
         }
 

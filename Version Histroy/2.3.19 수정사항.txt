@@ -1,0 +1,7 @@
+<2.3.19 수정사항>
+
+- 일부 레이아웃 수정
+- 만화 컨텐츠 추가
+
+- Edit some layout
+- Add Cartoon Content
