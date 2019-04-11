@@ -599,6 +599,10 @@
   <string name="GuideBookViewer_PDF_PartG">Part.G 가구/코스튬</string>
   <string name="GuideBookViewer_PDF_PartJ">Part.J 기타 정보</string>
   
+  <!--PDFViewer-->
+  <string name="PDFViewer_DownloadPDFTitle">PDF 다운로드</string>
+  <string name="PDFViewer_DownloadPDFMessage">PDF 다운로드 중...</string>
+  
   
   <!--Music Category-->
   <string name="Music_Category_ContinuumTurbulence">난류연속</string>

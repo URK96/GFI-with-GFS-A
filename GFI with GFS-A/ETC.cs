@@ -103,12 +103,90 @@ namespace GFI_with_GFS_A
             };
             
             int[] count = { 0, 0, 0, 0, 0, 0 };
-            int[,] total = new int[TypeCount, AbilityCount + 1];
+            int[,] total = new int[TypeCount, AbilityCount];
 
             for (int i = 0; i < TypeCount; ++i)
-                for (int j = 0; j < AbilityCount; ++j) total[i, j] = 0;
+                for (int j = 0; j < AbilityCount; ++j)
+                    total[i, j] = 0;
 
             for (int i = 0; i < DollList.Rows.Count; ++i)
+            {
+                Doll doll = new Doll(DollList.Rows[i]);
+                DollAbilitySet DAS = new DollAbilitySet(doll.Type);
+                int index = 0;
+
+                switch (doll.Type)
+                {
+                    case "HG":
+                        index = 0;
+                        break;
+                    case "SMG":
+                        index = 1;
+                        break;
+                    case "AR":
+                        index = 2;
+                        break;
+                    case "RF":
+                        index = 3;
+                        break;
+                    case "MG":
+                        index = 4;
+                        break;
+                    case "SG":
+                        index = 5;
+                        break;
+                }
+
+                count[index] += 1;
+
+                int grow_value = int.Parse(doll.Abilities["Grow"].Split(';')[0]);
+
+                for (int j = 0; j < AbilityList.Length; ++j)
+                {
+                    int ability_value = int.Parse(doll.Abilities[AbilityList[j]].Split(';')[0]);
+
+                    total[index, j] += DAS.CalcAbility(AbilityList[j], ability_value, grow_value, 100, 100, false);
+                }
+                    
+                if (doll.Type == "SG")
+                {
+                    int ability_value = int.Parse(doll.Abilities["Armor"].Split(';')[0]);
+
+                    total[index, 5] += DAS.CalcAbility("Armor", ability_value, grow_value, 100, 100, false);
+                }
+            }
+
+            for (int i = 0; i < TypeCount; ++i)
+            {
+                for (int j = 0; j < AbilityCount; ++j)
+                {
+                    int value = Convert.ToInt32(Math.Round((double)total[i, j] / count[i]));
+
+                    switch (j)
+                    {
+                        case 0:
+                            Avg_List[i].HP = value;
+                            break;
+                        case 1:
+                            Avg_List[i].FR = value;
+                            break;
+                        case 2:
+                            Avg_List[i].EV = value;
+                            break;
+                        case 3:
+                            Avg_List[i].AC = value;
+                            break;
+                        case 4:
+                            Avg_List[i].AS = value;
+                            break;
+                        case 5:
+                            Avg_List[i].AM = value;
+                            break;
+                    }
+                }
+            }
+
+            /*for (int i = 0; i < DollList.Rows.Count; ++i)
             {
                 Doll doll = new Doll(DollList.Rows[i]);
                 int index = 0;
@@ -199,7 +277,7 @@ namespace GFI_with_GFS_A
                             break;
                     }
                 }
-            }
+            }*/
 
             HasInitDollAvgAbility = true;
         }
@@ -222,15 +300,22 @@ namespace GFI_with_GFS_A
 
         internal static void BasicInitializeApp(Activity context)
         {
+            bool release_mode = true;
+#if DEBUG
+            release_mode = false;
+#endif
+
             sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(context);
             Resources = context.Resources;
             UseLightTheme = sharedPreferences.GetBoolean("UseLightTheme", false);
             SetDialogTheme();
             Language = Resources.Configuration.Locale;
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("ODQwMjZAMzEzNzJlMzEyZTMwV3l1Q3FseVNBb1UvNjdXVG90ZzBDQXp4V3RNOWgrcVJheDJMMWd5bW4xST0=");
-#if RELEASE
-            AppCenter.Start("aca0ed39-4b25-4548-bf2a-ac92ccee2977", typeof(Analytics), typeof(Crashes));
-#endif
+
+            if (release_mode == true)
+            {
+                AppCenter.Start("aca0ed39-4b25-4548-bf2a-ac92ccee2977", typeof(Analytics), typeof(Crashes));
+            }
             //client = new UptimeClient("m780844852-8bd2516bb93800a9eb7e3d58");
         }
 
@@ -458,38 +543,9 @@ namespace GFI_with_GFS_A
             return true;
         }
 
-        /*internal static bool LoadDBSync()
-        {
-            try
-            {
-                DollList.Clear();
-                DollList.ReadXml(Path.Combine(DBPath, "Doll.gfs"));
-                EquipmentList.Clear();
-                EquipmentList.ReadXml(Path.Combine(DBPath, "Equipment.gfs"));
-                FairyList.Clear();
-                FairyList.ReadXml(Path.Combine(DBPath, "Fairy.gfs"));
-                EnemyList.Clear();
-                EnemyList.ReadXml(Path.Combine(DBPath, "Enemy.gfs"));
-                FSTList.Clear();
-                FSTList.ReadXml(Path.Combine(DBPath, "FST.gfs"));
-                SkillTrainingList.Clear();
-                SkillTrainingList.ReadXml(Path.Combine(DBPath, "SkillTraining.gfs"));
-                MDSupportList.Clear();
-                MDSupportList.ReadXml(Path.Combine(DBPath, "MDSupportList.gfs"));
-                FreeOPList.Clear();
-                FreeOPList.ReadXml(Path.Combine(DBPath, "FreeOP.gfs"));
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-            return true;
-        }*/
-
         internal static async Task<bool> LoadDB(DataTable table, string DBFile, bool BeforeClear)
         {
-            await Task.Delay(1);
+            await Task.Delay(10);
 
             try
             {

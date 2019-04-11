@@ -539,7 +539,6 @@ namespace GFI_with_GFS_A
 
             try
             {
-                string message = Resources.GetString(Resource.String.Cartoon_DownloadCartoonMessage);
                 string ServerItemPath = Path.Combine(ETC.Server, "Data", "Images", "Cartoon", "ko", Category, Selected_Item_List[Item_Index]);
                 count = 1;
 
@@ -556,7 +555,11 @@ namespace GFI_with_GFS_A
 
                     using (WebClient wc = new WebClient())
                     {
-                        wc.DownloadProgressChanged += Wc_DownloadProgressChanged;
+                        wc.DownloadProgressChanged += (object sender, DownloadProgressChangedEventArgs e) =>
+                        {
+                            string message = Resources.GetString(Resource.String.Cartoon_DownloadCartoonMessage);
+                            Activity.RunOnUiThread(() => { ad.SetMessage($"{message}{count}({e.BytesReceived / 1024}KB)"); });
+                        };
                         await wc.DownloadFileTaskAsync(ContentPath, ContentPath_local);
                     }
 
@@ -571,12 +574,6 @@ namespace GFI_with_GFS_A
             {
                 dialog.Dismiss();
             }
-        }
-
-        private void Wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
-        {
-            string message = Resources.GetString(Resource.String.Cartoon_DownloadCartoonMessage);
-            Activity.RunOnUiThread(() => { dialog.SetMessage($"{message}{count}({e.ProgressPercentage}%)"); });
         }
 
         internal void ListItemURLs(int Category_Index, ref List<string> list)
