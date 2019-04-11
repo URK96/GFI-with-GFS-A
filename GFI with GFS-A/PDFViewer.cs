@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.Support.V7.App;
-using System.IO;
-using System.Threading.Tasks;
+using Android.Widget;
 using Syncfusion.SfPdfViewer.Android;
+using System;
+using System.IO;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
@@ -23,6 +17,7 @@ namespace GFI_with_GFS_A
         SfPdfViewer viewer;
 
         string pdf_path = "";
+        string pdf_name = "";
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
@@ -31,13 +26,14 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.PDFViewerLayout);
 
-            pdf_path = Intent.GetStringExtra("path");
+            pdf_path = Intent.GetStringExtra("Path");
+            pdf_name = Path.GetFileNameWithoutExtension(pdf_path);
 
             if (File.Exists(pdf_path) == false)
                 await DownloadPDF();
 
             viewer = FindViewById<SfPdfViewer>(Resource.Id.PDFViewer);
-            viewer.LoadDocument(new FileStream("", FileMode.Open, FileAccess.Read));
+            viewer.LoadDocument(new FileStream(pdf_path, FileMode.Open, FileAccess.Read));
         }
 
         private async Task DownloadPDF()
@@ -61,7 +57,7 @@ namespace GFI_with_GFS_A
                         string message = Resources.GetString(Resource.String.PDFViewer_DownloadPDFMessage);
                         RunOnUiThread(() => { ad.SetMessage($"{message}({e.BytesReceived / 1024}KB)"); });
                     };
-                    await wc.DownloadFileTaskAsync("", pdf_path); //URL 경로 추가
+                    await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "PDF", $"{pdf_name}.pdf"), pdf_path); //URL 경로 추가
                 }
             }
             catch (Exception ex)

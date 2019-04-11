@@ -499,6 +499,11 @@ namespace GFI_with_GFS_A
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
                         //StartActivity(typeof(GuideBookViewer));
                         //OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+#if DEBUG
+                        var intent3 = new Intent(this, typeof(PDFViewer));
+                        intent3.PutExtra("Path", Path.Combine(ETC.CachePath, "GuideBook", "PDFs", "PartA.pdf"));
+                        StartActivity(intent3);
+#endif
                         break;
                     case Resource.Id.AreaTipExtraButton:
                         string areatip_url = "https://cafe.naver.com/girlsfrontlinekr/235663";
