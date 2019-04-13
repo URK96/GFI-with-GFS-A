@@ -1,0 +1,9 @@
+<2.3.20 수정사항>
+
+- 다운로드 창 레이아웃 여백 수정
+- 인형 능력치 평균 계산 로직 최적화
+- 만화 컨텐츠 추가
+
+- Edit some layout
+- Optimize T-Dolls average ability calculating
+- Add Cartoon Content

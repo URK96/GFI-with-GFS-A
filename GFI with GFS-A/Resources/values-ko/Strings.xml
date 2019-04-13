@@ -624,8 +624,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.19 수정사항]\n\n
-- 일부 레이아웃 수정\n
+    [2.3.20 수정사항]\n\n
+- 다운로드 창 레이아웃 여백 수정\n
+- 인형 능력치 평균 계산 로직 최적화\n
 - 만화 컨텐츠 추가
   </string>
 
