@@ -110,6 +110,8 @@
     <item>문구점에 따라간 K2</item>
     <item>불시검열</item>
     <item>두 자매여신 이야기</item>
+    <item>WA2000의 요리 단편 1</item>
+    <item>WA2000의 요리 단편 2</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -393,7 +395,7 @@
     <item>49 - 스프링필드의 마음</item>
     <item>50 - WA2000의 필살기, 새로운 RF</item>
     <item>51 - 발렌타인 특집(내 초콜릿을 받아주세요!)</item>
-    <item>52 - 납치된 헬리안</item>
+    <item>52 - 납치된 헬리안</item>s
     <item>53 - 헬리안 구출작전</item>
     <item>54 - 지휘관의 친구</item>
     <item>55 - 전술인형, 변신! 합체!</item>
@@ -401,6 +403,7 @@
     <item>57 - 전술인형을 싫어하는 마을</item>
     <item>58 - 스프링필드의 고민</item>
     <item>59 - 그리폰 게임학교</item>
+    <item>60 - 코어 골든벨</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -463,5 +466,6 @@
     <item>http://naver.me/5GxuNdNA</item>
     <item>http://naver.me/x5hXaZmh</item>
     <item>http://naver.me/GLy5u61J</item>
+    <item>http://naver.me/FQmJ1kep</item>
   </string-array>
 </resources>
