@@ -622,10 +622,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.20 Update]\n\n
-- Edit some layout\n
-- Optimize T-Dolls average ability calculating\n
-- Add Cartoon Content
+    [2.3.21 Update]\n\n
+- Add Cartoon Content\n
+- Add New Story
   </string>
 
   <string name="RFBot_CommandHelp">
