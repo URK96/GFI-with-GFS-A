@@ -404,6 +404,7 @@
     <item>58 - 스프링필드의 고민</item>
     <item>59 - 그리폰 게임학교</item>
     <item>60 - 코어 골든벨</item>
+    <item>특별편 - Q&amp;A와 연재이야기</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -467,5 +468,6 @@
     <item>http://naver.me/x5hXaZmh</item>
     <item>http://naver.me/GLy5u61J</item>
     <item>http://naver.me/FQmJ1kep</item>
+    <item>http://naver.me/5utH2Hmh</item>
   </string-array>
 </resources>
