@@ -29,7 +29,7 @@ namespace GFI_with_GFS_A
         public int[] ModBuffFormation { get; private set; }
         public string[] BuffInfo { get; private set; }
         public string[] ModBuffInfo { get; private set; }
-        public string BuffType { get; private set; }
+        public string[] BuffType { get; private set; }
         public string SkillName { get; private set; }
         public string SkillExplain { get; private set; }
         public string[] SkillEffect { get; private set; }
@@ -89,7 +89,7 @@ namespace GFI_with_GFS_A
                 BuffFormation[i] = int.Parse(BuffFormation_Data[i]);
 
             BuffInfo = ((string)dr["Effect"]).Split(';');
-            BuffType = (string)dr["EffectType"];
+            BuffType = ((string)dr["EffectType"]).Split(',');
 
             SkillName = (string)dr["Skill"];
             SkillExplain = (string)dr["SkillExplain"];

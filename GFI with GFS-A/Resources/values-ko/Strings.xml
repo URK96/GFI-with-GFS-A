@@ -388,6 +388,7 @@
   <string name="OldGFDViewer_RecommendLeveling">추천 레벨링 루트</string>
   <string name="OldGFDViewer_DollPerformance">인형 성능표</string>
   <string name="OldGFDViewer_FairyAttribute">요정 특성표</string>
+  <string name="OldGFDViewer_RecommendBreeding">초반 인형 육성 추천</string>
   
   <!--ProductSimulator-->
   <string name="ProductSimulatorActivity_ProductStartError">제조 시작 오류</string>
@@ -624,9 +625,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.21 수정사항]\n\n
-- 만화 컨텐츠 추가\n
-- 신규 스토리 추가 (야간 9전역)
+    [2.3.22 수정사항]\n\n
+- 인형 신규 정보 대응 (다중 버프 효과)\n
+- 소전사전v1 항목 추가 (초반 인형 추천 육성표)
   </string>
 
   <string name="RFBot_CommandHelp">

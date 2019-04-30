@@ -131,6 +131,7 @@ namespace GFI_with_GFS_A
                     Resources.GetString(Resource.String.OldGFDViewer_RecommendEquipRecipe),
                     Resources.GetString(Resource.String.OldGFDViewer_RecommendMD),
                     Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling),
+                    Resources.GetString(Resource.String.OldGFDViewer_RecommendBreeding)
                 };
             }
             else
@@ -147,6 +148,7 @@ namespace GFI_with_GFS_A
                     Resources.GetString(Resource.String.OldGFDViewer_RecommendEquipRecipe),
                     //Resources.GetString(Resource.String.OldGFDViewer_RecommendMD),
                     Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling),
+                    //Resources.GetString(Resource.String.OldGFDViewer_RecommendBreeding)
                 };
             }
         }
@@ -252,7 +254,8 @@ namespace GFI_with_GFS_A
                     "RecommendDollRecipe",
                     "RecommendEquipmentRecipe",
                     "RecommendMD",
-                    "RecommendLeveling"
+                    "RecommendLeveling",
+                    "RecommendBreeding"
                 };
             }
             else
@@ -268,7 +271,8 @@ namespace GFI_with_GFS_A
                     "RecommendDollRecipe",
                     "RecommendEquipmentRecipe",
                     //"RecommendMD",
-                    "RecommendLeveling"
+                    "RecommendLeveling",
+                    //"RecommendBreeding"
                 };
             }
         }

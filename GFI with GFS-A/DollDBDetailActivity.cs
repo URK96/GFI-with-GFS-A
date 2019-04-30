@@ -49,7 +49,7 @@ namespace GFI_with_GFS_A
         private bool IsChartLoad = false;
 
         private ScrollView ScrollLayout;
-        private CoordinatorLayout SnackbarLayout = null;
+        private CoordinatorLayout SnackbarLayout;
 
         private ProgressBar InitLoadProgressBar;
         private Spinner VoiceCostumeSelector;
@@ -69,7 +69,6 @@ namespace GFI_with_GFS_A
 
         int[] ModButtonIds = { Resource.Id.DollDBDetailModSelect0, Resource.Id.DollDBDetailModSelect1, Resource.Id.DollDBDetailModSelect2, Resource.Id.DollDBDetailModSelect3 };
         internal static List<string> CompareList;
-        private List<string> V_Costume_List = new List<string>();
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
@@ -970,11 +969,18 @@ namespace GFI_with_GFS_A
                 for (int i = 0; i < BuffType.Length; ++i)
                     FindViewById<TextView>(BuffDetailIds[i]).Text = EffectString[i].ToString();
 
-                string EffectType = doll.BuffType;
-
                 var EffectTypeView = FindViewById<TextView>(Resource.Id.DollDBDetailEffectType);
-                if (EffectType == "ALL") EffectTypeView.Text = Resources.GetString(Resource.String.DollDBDetail_BuffType_All);
-                else EffectTypeView.Text = $"{EffectType} {Resources.GetString(Resource.String.DollDBDetail_BuffType_ConfirmString)}";
+
+                if (doll.BuffType[0] == "ALL")
+                    EffectTypeView.Text = Resources.GetString(Resource.String.DollDBDetail_BuffType_All);
+                else
+                {
+                    StringBuilder sb = new StringBuilder();
+
+                    foreach (string type in doll.BuffType)
+                        sb.Append($"{type} ");
+                    EffectTypeView.Text = $"{sb.ToString()} {Resources.GetString(Resource.String.DollDBDetail_BuffType_ConfirmString)}";
+                }
 
 
                 // 인형 스킬 정보 초기화

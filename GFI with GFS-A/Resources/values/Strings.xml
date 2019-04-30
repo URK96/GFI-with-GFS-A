@@ -385,6 +385,7 @@
   <string name="OldGFDViewer_RecommendLeveling">Recommend Leveling Route</string>
   <string name="OldGFDViewer_DollPerformance">Doll Performance</string>
   <string name="OldGFDViewer_FairyAttribute">Fairy Attribute</string>
+  <string name="OldGFDViewer_RecommendBreeding">Recommend T-Doll Breeding</string>
   
   <!--ProductSimulator-->
   <string name="ProductSimulatorActivity_ProductStartError">Production start error</string>
@@ -622,9 +623,8 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.21 Update]\n\n
-- Add Cartoon Content\n
-- Add New Story
+    [2.3.22 Update]\n\n
+- Compatible for new T-Doll ability
   </string>
 
   <string name="RFBot_CommandHelp">

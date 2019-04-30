@@ -99,7 +99,7 @@
     </Reference>
     <Reference Include="Mono.Android.Export" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PhotoViewBinding, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.PhotoView.Android.1.2.4\lib\PhotoViewBinding.dll</HintPath>
@@ -107,26 +107,26 @@
     <Reference Include="SkiaSharp">
       <HintPath>..\Dll\Xfinium.Pdf.View\SkiaSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Compression.Portable, Version=17.1451.0.41, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.Compression.17.1.0.41\lib\netstandard2.0\Syncfusion.Compression.Portable.dll</HintPath>
+    <Reference Include="Syncfusion.Compression.Portable, Version=17.1451.0.43, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.Compression.17.1.0.43\lib\netstandard2.0\Syncfusion.Compression.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=17.1.0.41, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Licensing.17.1.0.41\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
+    <Reference Include="Syncfusion.Licensing, Version=17.1.0.43, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.17.1.0.43\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Pdf.Portable, Version=17.1451.0.41, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.Pdf.17.1.0.41\lib\netstandard2.0\Syncfusion.Pdf.Portable.dll</HintPath>
+    <Reference Include="Syncfusion.Pdf.Portable, Version=17.1451.0.43, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.Pdf.17.1.0.43\lib\netstandard2.0\Syncfusion.Pdf.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfBusyIndicator.Android, Version=17.1451.0.41, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfBusyIndicator.Android.17.1.0.41\lib\MonoAndroid10\Syncfusion.SfBusyIndicator.Android.dll</HintPath>
+    <Reference Include="Syncfusion.SfBusyIndicator.Android, Version=17.1451.0.43, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfBusyIndicator.Android.17.1.0.43\lib\MonoAndroid10\Syncfusion.SfBusyIndicator.Android.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfChart.Android, Version=17.1451.0.41, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.Android.17.1.0.41\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
+    <Reference Include="Syncfusion.SfChart.Android, Version=17.1451.0.43, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.Android.17.1.0.43\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfPdfViewer.Android, Version=17.1451.0.41, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfPdfViewer.Android.17.1.0.41\lib\MonoAndroid10\Syncfusion.SfPdfViewer.Android.dll</HintPath>
+    <Reference Include="Syncfusion.SfPdfViewer.Android, Version=17.1451.0.43, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPdfViewer.Android.17.1.0.43\lib\MonoAndroid10\Syncfusion.SfPdfViewer.Android.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRangeSlider.Android, Version=17.1451.0.41, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfRangeSlider.Android.17.1.0.41\lib\MonoAndroid10\Syncfusion.SfRangeSlider.Android.dll</HintPath>
+    <Reference Include="Syncfusion.SfRangeSlider.Android, Version=17.1451.0.43, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRangeSlider.Android.17.1.0.43\lib\MonoAndroid10\Syncfusion.SfRangeSlider.Android.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
