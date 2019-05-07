@@ -71,7 +71,7 @@ namespace GFI_with_GFS_A
 
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EnemyDBDetailSnackbarLayout);
 
-                InitLoadProcess();
+                _ = InitLoadProcess();
             }
             catch (Exception ex)
             {
@@ -187,7 +187,7 @@ namespace GFI_with_GFS_A
         {
             EnemyTypeIndex = e.Position;
 
-            InitLoadProcess();
+            _ = InitLoadProcess();
         }
 
         private void EnemyDBDetailSmallImage_Click(object sender, EventArgs e)
@@ -291,13 +291,13 @@ namespace GFI_with_GFS_A
                 }
 
 
-                ShowCardViewAnimation();
+                _ = ShowCardViewAnimation();
             }
             catch (WebException ex)
             {
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
-                InitLoadProcess();
+                _ = InitLoadProcess();
                 return;
             }
             catch (Exception ex)
@@ -359,8 +359,12 @@ namespace GFI_with_GFS_A
 
         private async Task ShowCardViewAnimation()
         {
-            if (FindViewById<CardView>(Resource.Id.EnemyDBDetailBasicInfoCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.EnemyDBDetailBasicInfoCardLayout).Animate().Alpha(1.0f).SetDuration(500).Start();
-            if (FindViewById<CardView>(Resource.Id.EnemyDBDetailAbilityCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.EnemyDBDetailAbilityCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1000).Start();
+            await Task.Delay(100);
+
+            if (FindViewById<CardView>(Resource.Id.EnemyDBDetailBasicInfoCardLayout).Alpha == 0.0f)
+                FindViewById<CardView>(Resource.Id.EnemyDBDetailBasicInfoCardLayout).Animate().Alpha(1.0f).SetDuration(500).Start();
+            if (FindViewById<CardView>(Resource.Id.EnemyDBDetailAbilityCardLayout).Alpha == 0.0f)
+                FindViewById<CardView>(Resource.Id.EnemyDBDetailAbilityCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1000).Start();
         }
 
     }

@@ -51,8 +51,10 @@ namespace GFI_with_GFS_A
 
                 // Check Permission
 
-                if ((int.Parse(Build.VERSION.Release.Split('.')[0])) >= 6) CheckPermission();
-                else InitProcess();
+                if ((int.Parse(Build.VERSION.Release.Split('.')[0])) >= 6)
+                    CheckPermission();
+                else
+                    _ = InitProcess();
             }
             catch (Exception ex)
             {
@@ -150,13 +152,16 @@ namespace GFI_with_GFS_A
 
                 foreach (string permission in check)
                 {
-                    if (CheckSelfPermission(permission) == Permission.Denied) request.Add(permission);
+                    if (CheckSelfPermission(permission) == Permission.Denied)
+                        request.Add(permission);
                 }
 
                 request.TrimToSize();
 
-                if (request.Count == 0) InitProcess();
-                else RequestPermissions((string[])request.ToArray(typeof(string)), 0);
+                if (request.Count == 0)
+                    _ = InitProcess();
+                else
+                    RequestPermissions((string[])request.ToArray(typeof(string)), 0);
             }
             catch (Exception ex)
             {
@@ -176,7 +181,7 @@ namespace GFI_with_GFS_A
             }
             else
             {
-                InitProcess();
+                _ = InitProcess();
             }
         }
 

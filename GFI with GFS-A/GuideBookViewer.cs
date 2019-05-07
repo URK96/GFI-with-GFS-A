@@ -76,7 +76,7 @@ namespace GFI_with_GFS_A
             PDFViewer.ZoomMode = PdfZoomMode.FitWidth;
             PDFViewer.FitWidthOnDoubleTap = true;
 
-            InitProcess();
+            _ = InitProcess();
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -149,7 +149,7 @@ namespace GFI_with_GFS_A
 
                 if (CheckPDF() == true) await DownloadGuideBookPDF();
 
-                CheckUpdate();
+                _ = CheckUpdate();
             }
             catch (Exception ex)
             {

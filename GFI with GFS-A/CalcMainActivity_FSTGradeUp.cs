@@ -34,12 +34,16 @@ namespace GFI_with_GFS_A
             Result_Fragment = v.FindViewById<TextView>(Resource.Id.Calc_FSTGradeUp_ResultFragment);
             Result_DataPatch = v.FindViewById<TextView>(Resource.Id.Calc_FSTGradeUp_ResultDataPatch);
 
-            Result_Fragment.Text = $"0 {Resources.GetString(Resource.String.Calc_FSTGradeUp_DefaultFragmentResultText)}";
-            Result_DataPatch.Text = $"0 {Resources.GetString(Resource.String.Calc_FSTGradeUp_DefaultDataPatchText)}";
-
+            InitializeString();
             InitializeProcess();
 
             return v;
+        }
+
+        private void InitializeString()
+        {
+            Result_Fragment.Text = $"0 {Resources.GetString(Resource.String.Calc_FSTGradeUp_DefaultFragmentResultText)}";
+            Result_DataPatch.Text = $"0 {Resources.GetString(Resource.String.Calc_FSTGradeUp_DefaultDataPatchText)}";
         }
 
         private void NormalGrade_RatingBarChange(object sender, RatingBar.RatingBarChangeEventArgs e)
@@ -47,8 +51,10 @@ namespace GFI_with_GFS_A
             float now = NowGrade1.Rating;
             float target = TargetGrade1.Rating;
 
-            if (now <= target) CalcFragment(Convert.ToInt32(now), Convert.ToInt32(target));
-            else TargetGrade1.Rating = now;
+            if (now <= target)
+                CalcFragment(Convert.ToInt32(now), Convert.ToInt32(target));
+            else
+                TargetGrade1.Rating = now;
         }
 
         private void VersionUpGrade_RatingBarChange(object sender, RatingBar.RatingBarChangeEventArgs e)
@@ -56,8 +62,10 @@ namespace GFI_with_GFS_A
             float now = NowGrade2.Rating;
             float target = TargetGrade2.Rating;
 
-            if (now <= target) CalcDataPatch(Convert.ToInt32(now * 2), Convert.ToInt32(target * 2));
-            else TargetGrade2.Rating = now;
+            if (now <= target)
+                CalcDataPatch(Convert.ToInt32(now * 2), Convert.ToInt32(target * 2));
+            else
+                TargetGrade2.Rating = now;
         }
 
         private void InitializeProcess()

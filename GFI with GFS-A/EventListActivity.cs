@@ -53,7 +53,7 @@ namespace GFI_with_GFS_A
             EventListSubLayout = FindViewById<LinearLayout>(Resource.Id.EventListButtonSubLayout);
             EventListSubLayout2 = FindViewById<LinearLayout>(Resource.Id.EventListButtonSubLayout2);
 
-            InitLoad();
+            _ = InitLoad();
         }
 
         private async Task InitLoad()
@@ -62,7 +62,8 @@ namespace GFI_with_GFS_A
 
             try
             {
-                if (await ETC.CheckEventVersion() == true) await UpdateEvent();
+                if (await CheckEventVersion() == true)
+                    await UpdateEvent();
 
                 TextView period1 = FindViewById<TextView>(Resource.Id.EventPeriodText1);
                 Button button1 = FindViewById<Button>(Resource.Id.EventButton1);
@@ -95,7 +96,8 @@ namespace GFI_with_GFS_A
 
                     type = CheckEventPeriod(EventPeriod);
 
-                    if (type == EventPeriodType.Over) continue;
+                    if (type == EventPeriodType.Over)
+                        continue;
 
                     string text_period = EventPeriods[i];
                     Android.Graphics.Drawables.Drawable event_image = Android.Graphics.Drawables.Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Event", "Images", "Event_" + (i + 1) + ".png"));
@@ -211,6 +213,42 @@ namespace GFI_with_GFS_A
             }
         }
 
+        private static async Task<bool> CheckEventVersion()
+        {
+            await ETC.CheckServerNetwork();
+
+            if (ETC.IsServerDown == true)
+                return false;
+
+            string LocalEventVerPath = Path.Combine(ETC.CachePath, "Event", "EventVer.txt");
+            string ServerEventVerPath = Path.Combine(ETC.Server, "EventVer.txt");
+            string TempEventVerPath = Path.Combine(ETC.tempPath, "EventVer.txt");
+
+            bool HasEventUpdate = false;
+
+            if (File.Exists(LocalEventVerPath) == false)
+                HasEventUpdate = true;
+            else
+            {
+                using (WebClient wc = new WebClient())
+                    await wc.DownloadFileTaskAsync(ServerEventVerPath, TempEventVerPath);
+
+                await Task.Delay(1);
+
+                using (StreamReader sr1 = new StreamReader(new FileStream(LocalEventVerPath, FileMode.Open, FileAccess.Read)))
+                using (StreamReader sr2 = new StreamReader(new FileStream(TempEventVerPath, FileMode.Open, FileAccess.Read)))
+                {
+                    int localVer = int.Parse(sr1.ReadToEnd().Split(';')[1]);
+                    int serverVer = int.Parse(sr2.ReadToEnd().Split(';')[1]);
+
+                    if (localVer < serverVer)
+                        HasEventUpdate = true;
+                }
+            }
+
+            return HasEventUpdate;
+        }
+
         private EventPeriodType CheckEventPeriod(string[] period)
         {
             int start_year = int.Parse(period[0].Split('/')[0]);
@@ -254,54 +292,90 @@ namespace GFI_with_GFS_A
 
         private async Task UpdateEvent()
         {
-            ProgressDialog pd = new ProgressDialog(this, ETC.DialogBG_Download);
-            pd.SetProgressStyle(ProgressDialogStyle.Horizontal);
+            View v = LayoutInflater.Inflate(Resource.Layout.ProgressDialogLayout, null);
+
+            ProgressBar totalProgressBar = v.FindViewById<ProgressBar>(Resource.Id.TotalProgressBar);
+            TextView totalProgress = v.FindViewById<TextView>(Resource.Id.TotalProgressPercentage);
+            ProgressBar nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
+            TextView nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
+
+            Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG_Download);
             pd.SetTitle(Resource.String.UpdateEventDialog_Title);
             pd.SetMessage(Resources.GetString(Resource.String.UpdateEventDialog_Message));
+            pd.SetView(v);
             pd.SetCancelable(false);
-            pd.Max = 100;
-            pd.Show();
 
-            using (WebClient wc = new WebClient())
+            Dialog dialog = pd.Create();
+            dialog.Show();
+
+            await Task.Delay(100);
+
+            try
             {
-                string url = Path.Combine(ETC.Server, "EventVer.txt");
-                string target = Path.Combine(ETC.tempPath, "EventVer.txt");
-                await wc.DownloadFileTaskAsync(url, target);
-                await Task.Delay(100);
-            }
+                nowProgressBar.Indeterminate = true;
+                totalProgressBar.Indeterminate = true;
 
-            int image_count = 0;
+                if (Directory.Exists(ETC.tempPath) == false)
+                    Directory.CreateDirectory(ETC.tempPath);
+                if (Directory.Exists(Path.Combine(ETC.CachePath, "Event", "Images")) == false)
+                    Directory.CreateDirectory(Path.Combine(ETC.CachePath, "Event", "Images"));
 
-            using (StreamReader sr = new StreamReader(new FileStream(Path.Combine(ETC.tempPath, "EventVer.txt"), FileMode.Open, FileAccess.Read)))
-            {
-                image_count = int.Parse((sr.ReadToEnd()).Split(';')[2]);
-            }
-
-            pd.Max = image_count;
-
-            using (WebClient wc2 = new WebClient())
-            {
-                for (int i = 1; i <= image_count; ++i)
+                using (WebClient wc = new WebClient())
                 {
-                    string url2 = Path.Combine(ETC.Server, "Data", "Images", "Events", "Event_" + i + ".png");
-                    string target2 = Path.Combine(ETC.CachePath, "Event", "Images", "Event_" + i + ".png");
-                    await wc2.DownloadFileTaskAsync(url2, target2);
-                    pd.Progress = i;
-                    await Task.Delay(100);
+                    string url = Path.Combine(ETC.Server, "EventVer.txt");
+                    string target = Path.Combine(ETC.tempPath, "EventVer.txt");
+                    await wc.DownloadFileTaskAsync(url, target);
+                    await Task.Delay(500);
+
+                    nowProgressBar.Indeterminate = false;
+                    totalProgressBar.Indeterminate = false;
+                    totalProgressBar.Progress = 0;
+
+                    wc.DownloadProgressChanged += (object sender, DownloadProgressChangedEventArgs e) =>
+                    {
+                        nowProgressBar.Progress = e.ProgressPercentage;
+                        nowProgress.Text = e.BytesReceived > 2048 ? $"{e.BytesReceived / 1024}KB" : $"{e.BytesReceived}B";
+                    };
+                    wc.DownloadFileCompleted += (object sender, System.ComponentModel.AsyncCompletedEventArgs e) =>
+                    {
+                        totalProgressBar.Progress += 1;
+                        totalProgress.Text = $"{totalProgressBar.Progress} / {totalProgressBar.Max}";
+                    };
+
+                    int totalCount = 0;
+
+                    using (StreamReader sr = new StreamReader(new FileStream(Path.Combine(ETC.tempPath, "EventVer.txt"), FileMode.Open, FileAccess.Read)))
+                        totalCount += int.Parse(sr.ReadToEnd().Split(';')[2]);
+
+                    totalProgressBar.Max = totalCount;
+
+                    for (int i = 1; i <= totalCount; ++i)
+                    {
+                        string url2 = Path.Combine(ETC.Server, "Data", "Images", "Events", "Event_" + i + ".png");
+                        string target2 = Path.Combine(ETC.CachePath, "Event", "Images", "Event_" + i + ".png");
+                        await wc.DownloadFileTaskAsync(url2, target2);
+                        await Task.Delay(100);
+                    }
+
+                    await Task.Delay(500);
+
+                    RunOnUiThread(() => { pd.SetMessage(Resources.GetString(Resource.String.UpdateEventDialog_RefreshVersionMessage)); });
+
+                    string oldVersion = Path.Combine(ETC.CachePath, "Event", "EventVer.txt");
+                    string newVersion = Path.Combine(ETC.tempPath, "EventVer.txt");
+                    File.Copy(newVersion, oldVersion, true);
+
+                    await Task.Delay(1000);
                 }
             }
-
-            await Task.Delay(500);
-
-            this.RunOnUiThread(() => { pd.SetMessage(Resources.GetString(Resource.String.UpdateEventDialog_RefreshVersionMessage)); });
-
-            string oldVersion = Path.Combine(ETC.CachePath, "Event", "EventVer.txt");
-            string newVersion = Path.Combine(ETC.tempPath, "EventVer.txt");
-            File.Copy(newVersion, oldVersion, true);
-
-            await Task.Delay(1000);
-
-            pd.Dismiss();
+            catch (Exception ex)
+            {
+                ETC.LogError(this, ex.ToString());
+            }
+            finally
+            {
+                dialog.Dismiss();
+            }
         }
 
         public override void OnBackPressed()

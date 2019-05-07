@@ -142,7 +142,7 @@ namespace GFI_with_GFS_A
                 AbilityLevelSelector.ItemSelected += (object sender, AdapterView.ItemSelectedEventArgs e) => 
                 {
                     Ability_Level = Level_List[e.Position];
-                    LoadAbility();
+                    _ = LoadAbility();
                 };
                 AbilityFavorSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityFavorSelector);
                 AbilityFavorSelector.ItemSelected += (object sender, AdapterView.ItemSelectedEventArgs e) => 
@@ -165,7 +165,7 @@ namespace GFI_with_GFS_A
                             Ability_Favor = 195;
                             break;
                     }
-                    LoadAbility();
+                    _ = LoadAbility();
                 };
                 ChartCompareList = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityChartCompareList);
                 ChartCompareList.ItemSelected += ChartCompareList_ItemSelected;
@@ -191,7 +191,7 @@ namespace GFI_with_GFS_A
                 InitCompareList();
                 ListAbilityLevelFavor();
 
-                InitLoadProcess(false);
+                _ = InitLoadProcess(false);
 
                 if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DollDBDetail", true) == true)) ETC.RunHelpActivity(this, "DollDBDetail");
             }
@@ -365,7 +365,7 @@ namespace GFI_with_GFS_A
 
         private void ChartCompareList_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-            LoadChart(e.Position);
+            _ = LoadChart(e.Position);
         }
 
         private void ModelDataButton_Click(object sender, EventArgs e)
@@ -398,11 +398,13 @@ namespace GFI_with_GFS_A
 
         private void RefreshCacheFAB_Click(object sender, EventArgs e)
         {
-            InitLoadProcess(true);
+            _ = InitLoadProcess(true);
         }
 
         private async Task LoadChart(int CompareIndex)
         {
+            await Task.Delay(100);
+
             chart.Series.Clear();
 
             ChartZoomPanBehavior ZoomBehavior = new ChartZoomPanBehavior();
@@ -462,7 +464,9 @@ namespace GFI_with_GFS_A
             try
             {
                 base.OnResume();
-                if (IsChartLoad == true) LoadChart(ChartCompareList.SelectedItemPosition);
+
+                if (IsChartLoad == true)
+                    _ = LoadChart(ChartCompareList.SelectedItemPosition);
             }
             catch (Exception ex)
             {
@@ -1126,7 +1130,7 @@ namespace GFI_with_GFS_A
 
                 if (ETC.UseLightTheme == true) SetCardTheme();
 
-                LoadChart(ChartCompareList.SelectedItemPosition);
+                _ = LoadChart(ChartCompareList.SelectedItemPosition);
 
                 ShowCardViewVisibility();
                 ShowTitleSubLayout();
@@ -1138,7 +1142,7 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
-                InitLoadProcess(false);
+                _ = InitLoadProcess(false);
                 return;
             }
             catch (Exception ex)
@@ -1352,7 +1356,7 @@ namespace GFI_with_GFS_A
 
                 ListAbilityLevelFavor();
 
-                InitLoadProcess(false);
+                _ = InitLoadProcess(false);
             }
             catch (Exception ex)
             {

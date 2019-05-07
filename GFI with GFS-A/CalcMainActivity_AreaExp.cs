@@ -94,14 +94,18 @@ namespace GFI_with_GFS_A
             LastEnemy.LayoutParameters.Width = width;
             LastEnemy.LayoutParameters.Height = width;
 
+            InitializeString();
+            InitializeProcess();
+
+            return v;
+        }
+
+        private void InitializeString()
+        {
             Result_Normal.Text = $"{Resources.GetString(Resource.String.Calc_AreaExp_DefaultNormalResultText)} => 0";
             Result_Leader.Text = $"{Resources.GetString(Resource.String.Calc_AreaExp_DefaultLeaderResultText)} => 0";
             Result_MVP.Text = $"{Resources.GetString(Resource.String.Calc_AreaExp_DefaultMVPResultText)} => 0";
             Result_LeaderMVP.Text = $"{Resources.GetString(Resource.String.Calc_AreaExp_DefaultLeaderMVPResultText)} => 0";
-
-            InitializeProcess();
-
-            return v;
         }
 
         private void AreaList_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -109,7 +113,6 @@ namespace GFI_with_GFS_A
             try
             {
                 AreaDR = ETC.FreeOPList.Rows[e.Position];
-
                 CalcCount(NowLevel.Value, TargetLevel.Value, DollDummy.Value, WarCount.Value);
             }
             catch (Exception ex)
@@ -122,7 +125,8 @@ namespace GFI_with_GFS_A
         {
             List<string> Area_List = new List<string>();
 
-            foreach (DataRow dr in ETC.FreeOPList.Rows) Area_List.Add((string)dr["Location"]);
+            foreach (DataRow dr in ETC.FreeOPList.Rows)
+                Area_List.Add((string)dr["Location"]);
 
             var adapter = new ArrayAdapter(Activity, Resource.Layout.SpinnerListLayout, Area_List);
             adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
@@ -157,17 +161,25 @@ namespace GFI_with_GFS_A
                         NowExp.Text = LevelExp[np.Value - 1].ToString();
                         if (e.NewVal < e.OldVal)
                         {
-                            if (e.NewVal < 10) DollDummy.MaxValue = 1;
-                            else if (e.NewVal < 30) DollDummy.MaxValue = 2;
-                            else if (e.NewVal < 70) DollDummy.MaxValue = 3;
-                            else if (e.NewVal < 90) DollDummy.MaxValue = 4;
+                            if (e.NewVal < 10)
+                                DollDummy.MaxValue = 1;
+                            else if (e.NewVal < 30)
+                                DollDummy.MaxValue = 2;
+                            else if (e.NewVal < 70)
+                                DollDummy.MaxValue = 3;
+                            else if (e.NewVal < 90)
+                                DollDummy.MaxValue = 4;
                         }
                         else
                         {
-                            if (e.NewVal >= 90) DollDummy.MaxValue = 5;
-                            else if (e.NewVal >= 70) DollDummy.MaxValue = 4;
-                            else if (e.NewVal >= 30) DollDummy.MaxValue = 3;
-                            else if (e.NewVal >= 10) DollDummy.MaxValue = 2;
+                            if (e.NewVal >= 90)
+                                DollDummy.MaxValue = 5;
+                            else if (e.NewVal >= 70)
+                                DollDummy.MaxValue = 4;
+                            else if (e.NewVal >= 30)
+                                DollDummy.MaxValue = 3;
+                            else if (e.NewVal >= 10)
+                                DollDummy.MaxValue = 2;
                         }
                         break;
                 }
@@ -182,12 +194,13 @@ namespace GFI_with_GFS_A
 
         private void CalcCount(int start, int target, int dummy, int war_count)
         {
-            int EXP = (int)AreaDR["EXP"];
+            //int EXP = (int)AreaDR["EXP"];
             int[] ResultCount = { 0, 0, 0, 0 };
 
             try
             {
-                if (int.TryParse(NowExp.Text, out int now_exp) == false) return;
+                if (int.TryParse(NowExp.Text, out int now_exp) == false)
+                    return;
 
                 ResultCount[0] = CalcTotalCount(start, target, now_exp, dummy, war_count, false, false);
                 ResultCount[1] = CalcTotalCount(start, target, now_exp, dummy, war_count, true, false);
@@ -221,65 +234,88 @@ namespace GFI_with_GFS_A
 
                 while (nowExp < targetExp)
                 {
-                    while ((nowExp < LevelExp[NowLevel - 1]) || (nowExp >= LevelExp[NowLevel])) NowLevel += 1;
+                    while ((nowExp < LevelExp[NowLevel - 1]) || (nowExp >= LevelExp[NowLevel]))
+                        NowLevel += 1;
 
                     if (IsAutoAddDummy == true)
                     {
-                        if ((NowLevel >= 1) && (NowLevel < 10)) Dummy = 1;
-                        else if ((NowLevel >= 10) && (NowLevel < 30)) Dummy = 2;
-                        else if ((NowLevel >= 30) && (NowLevel < 70)) Dummy = 3;
-                        else if ((NowLevel >= 70) && (NowLevel < 90)) Dummy = 4;
-                        else if (NowLevel >= 90) Dummy = 5;
-                        else Dummy = 1;
+                        if ((NowLevel >= 1) && (NowLevel < 10))
+                            Dummy = 1;
+                        else if ((NowLevel >= 10) && (NowLevel < 30))
+                            Dummy = 2;
+                        else if ((NowLevel >= 30) && (NowLevel < 70))
+                            Dummy = 3;
+                        else if ((NowLevel >= 70) && (NowLevel < 90))
+                            Dummy = 4;
+                        else if (NowLevel >= 90)
+                            Dummy = 5;
+                        else
+                            Dummy = 1;
                     }
 
                     if (NowLevel >= (PaneltyLevel + 40))
                     {
                         EarnExp = 10;
-                        if (HasLastEnemy == true) LastEarnExp = EarnExp * 2;
+                        if (HasLastEnemy == true)
+                            LastEarnExp = EarnExp * 2;
                     }
                     else
                     {
                         EarnExp = (int)AreaDR["EXP"];
-                        if (HasLastEnemy == true) LastEarnExp = EarnExp * 2;
+                        if (HasLastEnemy == true)
+                            LastEarnExp = EarnExp * 2;
 
                         EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * (1 + (0.5 * (Dummy - 1)))));
-                        if (HasLastEnemy == true) LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * (1 + (0.5 * (Dummy - 1)))));
+                        if (HasLastEnemy == true)
+                            LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * (1 + (0.5 * (Dummy - 1)))));
 
                         double PaneltyRate = 1;
 
-                        if ((NowLevel >= (PaneltyLevel + 1)) && (NowLevel < (PaneltyLevel + 10))) PaneltyRate = 0.8;
-                        else if ((NowLevel >= (PaneltyLevel + 10)) && (NowLevel < (PaneltyLevel + 20))) PaneltyRate = 0.6;
-                        else if ((NowLevel >= (PaneltyLevel + 20)) && (NowLevel < (PaneltyLevel + 30))) PaneltyRate = 0.4;
-                        else if ((NowLevel >= (PaneltyLevel + 30)) && (NowLevel < (PaneltyLevel + 40))) PaneltyRate = 0.2;
+                        if ((NowLevel >= (PaneltyLevel + 1)) && (NowLevel < (PaneltyLevel + 10)))
+                            PaneltyRate = 0.8;
+                        else if ((NowLevel >= (PaneltyLevel + 10)) && (NowLevel < (PaneltyLevel + 20)))
+                            PaneltyRate = 0.6;
+                        else if ((NowLevel >= (PaneltyLevel + 20)) && (NowLevel < (PaneltyLevel + 30)))
+                            PaneltyRate = 0.4;
+                        else if ((NowLevel >= (PaneltyLevel + 30)) && (NowLevel < (PaneltyLevel + 40)))
+                            PaneltyRate = 0.2;
 
                         EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * PaneltyRate));
-                        if (HasLastEnemy == true) LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * PaneltyRate));
+                        if (HasLastEnemy == true)
+                            LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * PaneltyRate));
 
-                        if (IsLeader == true) EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * LeaderRate));
-                        if (IsMVP == true) EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * MVPRate));
+                        if (IsLeader == true)
+                            EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * LeaderRate));
+                        if (IsMVP == true)
+                            EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * MVPRate));
 
                         if (HasLastEnemy == true)
                         {
-                            if (IsLeader == true) LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * LeaderRate));
-                            if (IsMVP == true) LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * MVPRate));
+                            if (IsLeader == true)
+                                LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * LeaderRate));
+                            if (IsMVP == true)
+                                LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * MVPRate));
                         }
                     }
 
                     if (IsVow == true)
                     {
                         EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * VowRate));
-                        if (HasLastEnemy == true) LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * VowRate));
+                        if (HasLastEnemy == true)
+                            LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * VowRate));
                     }
 
                     if (IsExpEvent == true)
                     {
                         EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * ExpEventRate));
-                        if (HasLastEnemy == true) LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * ExpEventRate));
+                        if (HasLastEnemy == true)
+                            LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * ExpEventRate));
                     }
 
-                    if (HasLastEnemy == true) nowExp += (EarnExp * (WarCount - 1)) + LastEarnExp;
-                    else nowExp += EarnExp * WarCount;
+                    if (HasLastEnemy == true)
+                        nowExp += (EarnExp * (WarCount - 1)) + LastEarnExp;
+                    else
+                        nowExp += EarnExp * WarCount;
 
                     TotalCount += 1;
                 }

@@ -1,0 +1,13 @@
+<2.3.22 수정사항>
+
+- Android 4.4 에서 웹페이지가 제대로 뜨지 않는 현상 수정
+- Static Shortcut으로 이벤트 항목 진입 시 간헐적으로 발생하는 오류 수정
+- 일부 다운로드 창 교체
+- 제조 시뮬레이터 확률 알고리즘 변경 및 개선
+- 제조 시뮬레이터에서 일부 MG 인형이 등장하지 않는 문제 수정
+
+- Fix crash issue in web load on Android 4.4
+- Fix crash issue in event with static shortcut
+- Change some download dialog
+- Change algorithm of product simulator
+- Fix MG T-Doll issue in product simulator

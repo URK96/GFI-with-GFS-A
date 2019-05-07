@@ -87,7 +87,7 @@ namespace GFI_with_GFS_A
                     break;
             }
 
-            ProcessData();
+            _ = ProcessData();
         }
 
         private void ChangeModeButton_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ namespace GFI_with_GFS_A
                         break;
                 }
 
-                LoadList();
+                _ = LoadList();
             }
             catch (Exception ex)
             {
@@ -224,7 +224,6 @@ namespace GFI_with_GFS_A
         private async Task<double[,]> SortList(double[,] list)
         {
             await Task.Delay(100);
-
             try
             {
                 double[] temp = new double[TopViewIds.Length];
@@ -263,7 +262,7 @@ namespace GFI_with_GFS_A
 
                 return list;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -376,7 +375,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(500);
 
-                LoadList();
+                _ = LoadList();
             }
             catch (Exception ex)
             {

@@ -227,8 +227,10 @@ namespace GFI_with_GFS_A
             try
             {
                 int now_exp = 0;
-                if (string.IsNullOrWhiteSpace(NowExp.Text) == false) now_exp = int.Parse(NowExp.Text);
-                else now_exp = 0;
+                if (string.IsNullOrWhiteSpace(NowExp.Text) == false)
+                    now_exp = int.Parse(NowExp.Text);
+                else
+                    now_exp = 0;
 
                 int RequireExp = LevelExp[target - 1] - now_exp;
                 int RequireExpItem = 0;
@@ -264,8 +266,10 @@ namespace GFI_with_GFS_A
             try
             {
                 int now_exp = 0;
-                if (string.IsNullOrWhiteSpace(NowExp.Text) == false) now_exp = int.Parse(NowExp.Text);
-                else now_exp = 0;
+                if (string.IsNullOrWhiteSpace(NowExp.Text) == false)
+                    now_exp = int.Parse(NowExp.Text);
+                else
+                    now_exp = 0;
 
                 int RequireExp = LevelExp_Fairy[target - 1] - now_exp;
                 int RequireExpItem = 0;
@@ -292,8 +296,10 @@ namespace GFI_with_GFS_A
             try
             {
                 int now_exp = 0;
-                if (string.IsNullOrWhiteSpace(NowExp.Text) == false) now_exp = int.Parse(NowExp.Text);
-                else now_exp = 0;
+                if (string.IsNullOrWhiteSpace(NowExp.Text) == false)
+                    now_exp = int.Parse(NowExp.Text);
+                else
+                    now_exp = 0;
 
                 int RequireExp = LevelExp_FST[target - 1] - now_exp;
                 int RequireExpItem = 0;

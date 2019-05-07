@@ -57,7 +57,7 @@ namespace GFI_with_GFS_A
                 RefreshFAB = FindViewById<FloatingActionButton>(Resource.Id.OldGFDViewerRefreshFAB);
                 RefreshFAB.Click += delegate 
                 {
-                    ((OldGFDViewerScreen)OldGFDViewer_F).DownloadGFDImage();
+                    _ = ((OldGFDViewerScreen)OldGFDViewer_F).DownloadGFDImage();
                     ((OldGFDViewerScreen)OldGFDViewer_F).ShowImage(0);
                 };
 
@@ -192,15 +192,6 @@ namespace GFI_with_GFS_A
         private LinearLayout ImageContainer;
         private CoordinatorLayout SnackbarLayout_F;
 
-        private Dialog dialog = null;
-        private ProgressBar totalProgressBar = null;
-        private ProgressBar nowProgressBar = null;
-        private TextView totalProgress = null;
-        private TextView nowProgress = null;
-
-        int p_now = 0;
-        int p_total = 0;
-
         string[] ImageName = null;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -210,7 +201,7 @@ namespace GFI_with_GFS_A
             ImageContainer = v.FindViewById<LinearLayout>(Resource.Id.OldGFDImageContainer);
             SnackbarLayout_F = ((OldGFDViewer)Activity).SnackbarLayout;
 
-            InitProcess();
+            _ = InitProcess();
 
             return v;
         }
@@ -230,7 +221,7 @@ namespace GFI_with_GFS_A
                 if (CheckImage() == true) await DownloadGFDImage();
 
                 ShowImage(0);
-                CheckUpdate();
+                _ = CheckUpdate();
             }
             catch (Exception ex)
             {
@@ -388,30 +379,38 @@ namespace GFI_with_GFS_A
         {
             View v = LayoutInflater.Inflate(Resource.Layout.ProgressDialogLayout, null);
 
+            ProgressBar totalProgressBar = v.FindViewById<ProgressBar>(Resource.Id.TotalProgressBar);
+            TextView totalProgress = v.FindViewById<TextView>(Resource.Id.TotalProgressPercentage);
+            ProgressBar nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
+            TextView nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
+
             Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG_Download);
             builder.SetTitle(Resource.String.UpdateDownloadDialog_Title);
             builder.SetView(v);
+            builder.SetCancelable(false);
 
-            dialog = builder.Create();
+            Dialog dialog = builder.Create();
             dialog.Show();
 
             await Task.Delay(100);
 
             try
             {
-                totalProgressBar = v.FindViewById<ProgressBar>(Resource.Id.TotalProgressBar);
-                totalProgress = v.FindViewById<TextView>(Resource.Id.TotalProgressPercentage);
-                nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
-                nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
-
-                p_total = ImageName.Length;
-                totalProgressBar.Max = 100;
+                totalProgressBar.Max = ImageName.Length;
                 totalProgressBar.Progress = 0;
 
                 using (WebClient wc = new WebClient())
                 {
-                    wc.DownloadFileCompleted += Wc_DownloadFileCompleted;
-                    wc.DownloadProgressChanged += Wc_DownloadProgressChanged;
+                    wc.DownloadFileCompleted += (object sender, System.ComponentModel.AsyncCompletedEventArgs e) =>
+                    {
+                        totalProgressBar.Progress += 1;
+                        totalProgress.Text = $"{totalProgressBar.Progress} / {totalProgressBar.Max}";
+                    };
+                    wc.DownloadProgressChanged += (object sender, DownloadProgressChangedEventArgs e) =>
+                    {
+                        nowProgressBar.Progress = e.ProgressPercentage;
+                        nowProgress.Text = $"{e.BytesReceived / 1024}KB";
+                    };
 
                     foreach (string s in ImageName)
                     {
@@ -434,28 +433,9 @@ namespace GFI_with_GFS_A
             finally
             {
                 dialog.Dismiss();
-                dialog = null;
-                totalProgressBar = null;
-                totalProgress = null;
-                nowProgressBar = null;
-                nowProgress = null;
             }
 
-            //ShowImage(Image_Index);
-        }
-
-        private void Wc_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-            p_now += 1;
-
-            totalProgressBar.Progress = Convert.ToInt32(p_now / Convert.ToDouble(p_total) * 100);
-            totalProgress.Text = $"{totalProgressBar.Progress}%";
-        }
-
-        private void Wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
-        {
-            nowProgressBar.Progress = e.ProgressPercentage;
-            nowProgress.Text = $"{e.ProgressPercentage}%";
+            await Task.Delay(100);
         }
     }
 }

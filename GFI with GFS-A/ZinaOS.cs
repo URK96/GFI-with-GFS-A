@@ -233,7 +233,7 @@ namespace GFI_with_GFS_A
             ad.SetPositiveButton("Shutdown", delegate 
             {
                 IsBooting = true;
-                ShutdownZinaOS();
+                _ = ShutdownZinaOS();
             });
             ad.SetNegativeButton("Cancel", delegate { });
             ad.SetCancelable(true);

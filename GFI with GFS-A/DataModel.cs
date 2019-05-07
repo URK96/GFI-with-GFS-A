@@ -79,12 +79,11 @@ namespace GFI_with_GFS_A
             Illustrator = ETC.IsDBNullOrBlank(dr, "Illustrator") ? "" : (string)dr["Illustrator"];
             HasCensored = (bool)dr["HasCensor"];
             CensorType = HasCensored ? ((string)dr["CensorType"]).Split(';') : null;
-
-            if (ETC.IsDBNullOrBlank(dr, "Costume") == true) Costumes = null;
-            else Costumes = ((string)dr["Costume"]).Split(';');
+            Costumes = ETC.IsDBNullOrBlank(dr, "Costume") == true ? null : ((string)dr["Costume"]).Split(';');
 
             string[] BuffFormation_Data = ((string)dr["EffectFormation"]).Split(',');
             BuffFormation = new int[9];
+
             for (int i = 0; i < BuffFormation_Data.Length; ++i)
                 BuffFormation[i] = int.Parse(BuffFormation_Data[i]);
 
@@ -101,8 +100,10 @@ namespace GFI_with_GFS_A
                 ModGrade = (int)dr["ModGrade"];
                 string[] ModBuffFormation_Data = ((string)dr["ModEffectFormation"]).Split(',');
                 ModBuffFormation = new int[9];
+
                 for (int i = 0; i < ModBuffFormation_Data.Length; ++i)
                     ModBuffFormation[i] = int.Parse(ModBuffFormation_Data[i]);
+
                 ModBuffInfo = ((string)dr["ModEffect"]).Split(';');
                 ModSkillName = (string)dr["ModSkill"];
                 ModSkillExplain = (string)dr["ModSkillExplain"];
@@ -171,10 +172,15 @@ namespace GFI_with_GFS_A
 
             Abilities.Add("Grow", (string)dr["Grow"]);
 
-            if (ETC.IsDBNullOrBlank(dr, "Bullet") == true) Abilities.Add("Bullet", "0");
-            else Abilities.Add("Bullet", (string)dr["Bullet"]);
-            if (ETC.IsDBNullOrBlank(dr, "Armor") == true) Abilities.Add("Armor", "0");
-            else Abilities.Add("Armor", (string)dr["Armor"]);
+            if (ETC.IsDBNullOrBlank(dr, "Bullet") == true)
+                Abilities.Add("Bullet", "0");
+            else
+                Abilities.Add("Bullet", (string)dr["Bullet"]);
+
+            if (ETC.IsDBNullOrBlank(dr, "Armor") == true)
+                Abilities.Add("Armor", "0");
+            else
+                Abilities.Add("Armor", (string)dr["Armor"]);
 
             AbilityGrade = ((string)dr["AbilityGrade"]).Split(';');
         }

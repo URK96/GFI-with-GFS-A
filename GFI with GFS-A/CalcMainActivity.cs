@@ -28,7 +28,8 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_NoActionBar_Light);
+            if (ETC.UseLightTheme == true)
+                SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
             // Create your application here
             SetContentView(Resource.Layout.CalcMainLayout);
@@ -41,8 +42,10 @@ namespace GFI_with_GFS_A
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
-            if (ETC.UseLightTheme == true) SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.CalcIcon_WhiteTheme);
-            else SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.CalcIcon);
+            if (ETC.UseLightTheme == true)
+                SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.CalcIcon_WhiteTheme);
+            else
+                SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.CalcIcon);
             SupportActionBar.Title = Resources.GetString(Resource.String.TitleName_ExpItemCalc);
 
             ft = SupportFragmentManager.BeginTransaction();
@@ -109,10 +112,14 @@ namespace GFI_with_GFS_A
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    if (MainDrawerLayout.IsDrawerOpen(GravityCompat.Start) == false) MainDrawerLayout.OpenDrawer(GravityCompat.Start);
-                    else MainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                    if (MainDrawerLayout.IsDrawerOpen(GravityCompat.Start) == false)
+                        MainDrawerLayout.OpenDrawer(GravityCompat.Start);
+                    else
+                        MainDrawerLayout.CloseDrawer(GravityCompat.Start);
+
                     return true;
             }
+
             return base.OnOptionsItemSelected(item);
         }
 

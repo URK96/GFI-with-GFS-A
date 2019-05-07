@@ -54,13 +54,13 @@ namespace GFI_with_GFS_A
             NextButton = FindViewById<Button>(Resource.Id.StoryReaderNextButton);
             NextButton.Click += StatusButton_Click;
             RefreshButton = FindViewById<ImageButton>(Resource.Id.StoryReaderRefreshButton);
-            RefreshButton.Click += delegate { LoadProcess(true); };
+            RefreshButton.Click += delegate { _ = LoadProcess(true); };
             MainTextView = FindViewById<TextView>(Resource.Id.StoryReaderMainTextView);
 
             if (Item_Index == 1) PreviousButton.Enabled = false;
             if (Item_Index == Item_Count) NextButton.Enabled = false;
 
-            LoadProcess(false);
+            _ = LoadProcess(false);
         }
 
         private void StatusButton_Click(object sender, EventArgs e)
@@ -70,18 +70,30 @@ namespace GFI_with_GFS_A
             switch (b.Id)
             {
                 case Resource.Id.StoryReaderPreviousButton:
-                    if (Item_Index == 1) return;
-                    if (Item_Index == 2) PreviousButton.Enabled = false;
+                    if (Item_Index == 1)
+                        return;
+                    if (Item_Index == 2)
+                        PreviousButton.Enabled = false;
+
                     Item_Index -= 1;
-                    if (Item_Index != Item_Count) NextButton.Enabled = true;
-                    LoadProcess(false);
+
+                    if (Item_Index != Item_Count)
+                        NextButton.Enabled = true;
+
+                    _ = LoadProcess(false);
                     break;
                 case Resource.Id.StoryReaderNextButton:
-                    if (Item_Index == Item_Count) return;
-                    if (Item_Index == (Item_Count - 1)) NextButton.Enabled = false;
+                    if (Item_Index == Item_Count)
+                        return;
+                    if (Item_Index == (Item_Count - 1))
+                        NextButton.Enabled = false;
+
                     Item_Index += 1;
-                    if (Item_Index != 1) PreviousButton.Enabled = true;
-                    LoadProcess(false);
+
+                    if (Item_Index != 1)
+                        PreviousButton.Enabled = true;
+
+                    _ = LoadProcess(false);
                     break;
             }
         }

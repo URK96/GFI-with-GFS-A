@@ -623,8 +623,12 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.22 Update]\n\n
-- Compatible for new T-Doll ability
+    [2.3.23 Update]\n\n
+- Fix crash issue in web load on Android 4.4\n
+- Fix crash issue in event with static shortcut\n
+- Change some download dialog\n
+- Change algorithm of product simulator\n
+- Fix MG T-Doll issue in product simulator
   </string>
 
   <string name="RFBot_CommandHelp">

@@ -35,21 +35,27 @@ namespace GFI_with_GFS_A
             Result_MasterChip = v.FindViewById<TextView>(Resource.Id.CalcSkillTrainingResultMasterSkillChip);
             Result_Time = v.FindViewById<TextView>(Resource.Id.CalcSkillTrainingResultTime);
 
+            InitializeString();
+            InitializeProcess();
+
+            return v;
+        }
+
+        private void InitializeString()
+        {
             Result_BasicChip.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultBasicSkillChipResultText)}";
             Result_AdvanceChip.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultAdvanceSkillChipResultText)}";
             Result_MasterChip.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultMasterSkillChipResultText)}";
             Result_Time.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultTimeResultText)}";
-
-            InitializeProcess();
-
-            return v;
         }
 
         private void InitializeProcess()
         {
             List<string> list = new List<string>(3);
 
-            foreach (DataRow dr in ETC.SkillTrainingList.Rows) list.Add((string)dr["Type"]);
+            foreach (DataRow dr in ETC.SkillTrainingList.Rows)
+                list.Add((string)dr["Type"]);
+
             list.TrimExcess();
 
             var adapter = new ArrayAdapter(Activity, Resource.Layout.SpinnerListLayout, list);

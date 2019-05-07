@@ -48,7 +48,7 @@ namespace GFI_with_GFS_A
             web.Settings.BlockNetworkLoads = false;
             web.Settings.LoadsImagesAutomatically = true;
             web.Settings.DomStorageEnabled = true;
-            web.Settings.MixedContentMode = MixedContentHandling.AlwaysAllow;
+            //web.Settings.MixedContentMode = MixedContentHandling.AlwaysAllow;
             web.Settings.SetAppCacheEnabled(true);
             
             InitProcess();
@@ -66,8 +66,6 @@ namespace GFI_with_GFS_A
                 string url = Intent.GetStringExtra("url");
 
                 if (url == null) url = Intent.DataString;
-
-                //Toast.MakeText(this, url, ToastLength.Short).Show();
 
                 web.LoadUrl(url);
             }

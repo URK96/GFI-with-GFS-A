@@ -64,7 +64,7 @@ namespace GFI_with_GFS_A
                 FABTimer.Interval = 3000;
                 FABTimer.Elapsed += FABTimer_Elapsed;
 
-                InitLoadProcess(false);
+                _ = InitLoadProcess(false);
 
                 if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_EquipDBDetail", true) == true)) ETC.RunHelpActivity(this, "EquipDBDetail");
             }
@@ -103,7 +103,7 @@ namespace GFI_with_GFS_A
 
         private void RefreshCacheFAB_Click(object sender, EventArgs e)
         {
-            InitLoadProcess(true);
+            _ = InitLoadProcess(true);
         }
 
         private void FABTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
@@ -328,7 +328,7 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
-                InitLoadProcess(false);
+                _ = InitLoadProcess(false);
                 return;
             }
             catch (Exception ex)

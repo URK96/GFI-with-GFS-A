@@ -8,10 +8,8 @@ using Android.Widget;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+using System.Linq;
 
 namespace GFI_with_GFS_A
 {
@@ -161,21 +159,19 @@ namespace GFI_with_GFS_A
 
             try
             {
-                if (e.IsChecked == false) return;
-                int test = 1;
+                if (e.IsChecked == false)
+                    return;
+
                 switch (rb.Id)
                 {
                     case Resource.Id.PSAdvanceProductType1:
                         Adv_Type = AdvanceType._1;
-                        test = 1;
                         break;
                     case Resource.Id.PSAdvanceProductType2:
                         Adv_Type = AdvanceType._2;
-                        test = 2;
                         break;
                     case Resource.Id.PSAdvanceProductType3:
                         Adv_Type = AdvanceType._3;
-                        test = 3;
                         break;
                 }
             }
@@ -399,7 +395,7 @@ namespace GFI_with_GFS_A
                 for (int i = 0; i < result_dicnumbers.Length; ++i)
                 {
                     DataRow dr = null;
-                    
+
                     switch (Category)
                     {
                         case ProductCategory.Doll:
@@ -493,7 +489,8 @@ namespace GFI_with_GFS_A
 
                             if ((list_smg.Contains(doll.Name) == true) && (((Type == ProductType.Normal) && (pManPower >= 400) && (pAmmo >= 400) && (pFood >= 30) && (pParts >= 30)) || ((Type == ProductType.Advance) && (pManPower >= 4000) && (pAmmo >= 4000) && (pFood >= 1000) && (pParts >= 1000))))
                                 AvailableDoll.Add(doll);
-                            else if (list_smg.Contains(doll.Name) == false) AvailableDoll.Add(doll);
+                            else if (list_smg.Contains(doll.Name) == false)
+                                AvailableDoll.Add(doll);
                             else continue;
                             break;
                         case "HG":
@@ -503,7 +500,8 @@ namespace GFI_with_GFS_A
 
                                 if ((list_hg.Contains(doll.Name) == true) && (pManPower >= 130) && (pAmmo >= 130) && (pFood >= 130) && (pParts >= 30))
                                     AvailableDoll.Add(doll);
-                                else if (list_hg.Contains(doll.Name) == false) AvailableDoll.Add(doll);
+                                else if (list_hg.Contains(doll.Name) == false)
+                                    AvailableDoll.Add(doll);
                                 else continue;
                             }
                             break;
@@ -512,7 +510,8 @@ namespace GFI_with_GFS_A
 
                             if ((list_ar.Contains(doll.Name) == true) && (((Type == ProductType.Normal) && (pManPower >= 30) && (pAmmo >= 400) && (pFood >= 400) && (pParts >= 30)) || ((Type == ProductType.Advance) && (pManPower >= 1000) && (pAmmo >= 4000) && (pFood >= 4000) && (pParts >= 1000))))
                                 AvailableDoll.Add(doll);
-                            else if (list_ar.Contains(doll.Name) == false) AvailableDoll.Add(doll);
+                            else if (list_ar.Contains(doll.Name) == false)
+                                AvailableDoll.Add(doll);
                             else continue;
                             break;
                         case "RF":
@@ -520,7 +519,8 @@ namespace GFI_with_GFS_A
 
                             if ((list_rf.Contains(doll.Name) == true) && (((Type == ProductType.Normal) && (pManPower >= 400) && (pAmmo >= 30) && (pFood >= 400) && (pParts >= 30)) || ((Type == ProductType.Advance) && (pManPower >= 4000) && (pAmmo >= 1000) && (pFood >= 4000) && (pParts >= 1000))))
                                 AvailableDoll.Add(doll);
-                            else if (list_rf.Contains(doll.Name) == false) AvailableDoll.Add(doll);
+                            else if (list_rf.Contains(doll.Name) == false)
+                                AvailableDoll.Add(doll);
                             else continue;
                             break;
                         case "MG":
@@ -528,7 +528,8 @@ namespace GFI_with_GFS_A
 
                             if ((list_mg.Contains(doll.Name) == true) && (((Type == ProductType.Normal) && (pManPower >= 600) && (pAmmo >= 600) && (pFood >= 100) && (pParts >= 400)) || ((Type == ProductType.Advance) && (pManPower >= 6000) && (pAmmo >= 6000) && (pFood >= 1000) && (pParts >= 4000))))
                                 AvailableDoll.Add(doll);
-                            else if (list_mg.Contains(doll.Name) == false) AvailableDoll.Contains(doll);
+                            else if (list_mg.Contains(doll.Name) == false)
+                                AvailableDoll.Add(doll);
                             else continue;
                             break;
                         case "SG":
@@ -538,7 +539,8 @@ namespace GFI_with_GFS_A
 
                                 if ((list_sg.Contains(doll.Name) == true) && (pManPower >= 6000) && (pAmmo >= 1000) && (pFood >= 6000) && (pParts >= 4000))
                                     AvailableDoll.Add(doll);
-                                else if (list_sg.Contains(doll.Name) == false) AvailableDoll.Add(doll);
+                                else if (list_sg.Contains(doll.Name) == false)
+                                    AvailableDoll.Add(doll);
                                 else continue;
                             }
                             break;
@@ -546,7 +548,10 @@ namespace GFI_with_GFS_A
                 }
 
                 AvailableDoll.TrimExcess();
-                ProductProcess_Doll(AvailableDoll, pManPower, pAmmo, pFood, pParts, Count);
+                AvailableDoll.ShuffleList();
+                foreach (Doll d in AvailableDoll)
+                    System.Diagnostics.Debug.WriteLine(d.Name);
+                ProductProcess_Doll(ref AvailableDoll, pManPower, pAmmo, pFood, pParts, Count);
             }
             catch (Exception ex)
             {
@@ -555,7 +560,8 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ProductProcess_Doll(List<Doll> AvailableDoll, int num1, int num2, int num3, int num4, int LoopCount)
+
+        private void ProductProcess_Doll(ref List<Doll> AvailableDoll, int num1, int num2, int num3, int num4, int LoopCount)
         {
             if (AvailableDoll.Count == 0)
             {
@@ -566,23 +572,21 @@ namespace GFI_with_GFS_A
             try
             {
                 int[] Results_DicNumber = new int[LoopCount];
+                int seed_num1 = (num1 + num2 + num3 + num4) / AvailableDoll.Count;
+                int seed_num2 = num1 + num2 + num3 + num4;
+                int[] tP = { 60, 27, 10, 3 };
+                int[] tAP1 = { 40, 45, 15 };
+                int[] tAP2 = { 20, 60, 20 };
+                int[] tAP3 = { 0, 75, 25 };
+                int ConfirmGrade = 0;
 
-                Random R = new Random(DateTime.Now.Millisecond);
+                int mag = 10;
+                int[] P = null;
+
+                //Random R = new Random(DateTime.Now.Millisecond);
 
                 for (int i = 0; i < LoopCount; ++i)
                 {
-                    int seed_num1 = (num1 + num2 + num3 + num4) / AvailableDoll.Count;
-                    int seed_num2 = num1 + num2 + num3 + num4;
-
-                    int[] tP = { 60, 27, 10, 3 };
-                    int[] tAP1 = { 40, 45, 15 };
-                    int[] tAP2 = { 20, 60, 20 };
-                    int[] tAP3 = { 0, 75, 25 };
-                    int ConfirmGrade = 0;
-
-                    int mag = 10;
-                    int[] P = null;
-
                     switch (Type)
                     {
                         case ProductType.Normal:
@@ -606,9 +610,10 @@ namespace GFI_with_GFS_A
                             break;
                     }
 
-                    if (seed_num1 == 0) seed_num1 = 1;
+                    if (seed_num1 == 0)
+                        seed_num1 = 1;
 
-                    int num = R.Next(seed_num1, seed_num2 * mag) % (100 * mag);
+                    int num = ETC.CreateRandomNum(seed_num2) % (100 * mag);
 
                     switch (Type)
                     {
@@ -643,7 +648,7 @@ namespace GFI_with_GFS_A
 
                     FinalDoll.TrimExcess();
 
-                    int fnum = R.Next(1, FinalDoll.Count * 100) % FinalDoll.Count;
+                    int fnum = ETC.CreateRandomNum() % FinalDoll.Count;
 
                     Results_DicNumber[i] = FinalDoll[fnum].DicNumber;
                 }

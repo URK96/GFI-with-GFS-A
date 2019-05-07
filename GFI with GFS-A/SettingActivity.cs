@@ -97,6 +97,7 @@ namespace GFI_with_GFS_A
                 }
                 catch (Exception ex)
                 {
+                    ETC.LogError(Activity, ex.ToString());
                     ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_NotificationInitializeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
                 }
             };

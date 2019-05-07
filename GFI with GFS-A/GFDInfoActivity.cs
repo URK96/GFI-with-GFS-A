@@ -117,7 +117,7 @@ namespace GFI_with_GFS_A
             try
             {
                 InitDeveloperInfo();
-                CheckAppVersion();
+                _ = CheckAppVersion();
             }
             catch (Exception ex)
             {

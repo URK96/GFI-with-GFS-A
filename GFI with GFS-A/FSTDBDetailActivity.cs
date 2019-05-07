@@ -91,7 +91,7 @@ namespace GFI_with_GFS_A
                 FABTimer.Interval = 3000;
                 FABTimer.Elapsed += FABTimer_Elapsed;
 
-                InitLoadProcess(false);
+                _ = InitLoadProcess(false);
             }
             catch (Exception ex)
             {
@@ -152,7 +152,7 @@ namespace GFI_with_GFS_A
 
         private void RefreshCacheFAB_Click(object sender, EventArgs e)
         {
-            InitLoadProcess(true);
+            _ = InitLoadProcess(true);
         }
 
         private void FABTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
@@ -440,14 +440,14 @@ namespace GFI_with_GFS_A
 
                 if (ETC.UseLightTheme == true) SetCardTheme();
 
-                ShowCardViewAnimation();
+                _ = ShowCardViewAnimation();
                 HideFloatingActionButtonAnimation();
             }
             catch (WebException ex)
             {
                 ETC.LogError(this, ex.ToString());
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
-                InitLoadProcess(false);
+                _ = InitLoadProcess(false);
                 return;
             }
             catch (Exception ex)
@@ -612,12 +612,20 @@ namespace GFI_with_GFS_A
 
         private async Task ShowCardViewAnimation()
         {
-            if (FindViewById<CardView>(Resource.Id.FSTDBDetailBasicInfoCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.FSTDBDetailBasicInfoCardLayout).Animate().Alpha(1.0f).SetDuration(500).Start();
-            if (FindViewById<CardView>(Resource.Id.FSTDBDetailCircuitCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.FSTDBDetailCircuitCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(500).Start();
-            if (FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout1).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout1).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1000).Start();
-            if (FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout2).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout2).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1500).Start();
-            if (FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout3).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout3).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(2000).Start();
-            if (FindViewById<CardView>(Resource.Id.FSTDBDetailAbilityCardLayout).Alpha == 0.0f) FindViewById<CardView>(Resource.Id.FSTDBDetailAbilityCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(2500).Start();
+            await Task.Delay(100);
+
+            if (FindViewById<CardView>(Resource.Id.FSTDBDetailBasicInfoCardLayout).Alpha == 0.0f)
+                FindViewById<CardView>(Resource.Id.FSTDBDetailBasicInfoCardLayout).Animate().Alpha(1.0f).SetDuration(500).Start();
+            if (FindViewById<CardView>(Resource.Id.FSTDBDetailCircuitCardLayout).Alpha == 0.0f)
+                FindViewById<CardView>(Resource.Id.FSTDBDetailCircuitCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(500).Start();
+            if (FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout1).Alpha == 0.0f)
+                FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout1).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1000).Start();
+            if (FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout2).Alpha == 0.0f)
+                FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout2).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1500).Start();
+            if (FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout3).Alpha == 0.0f)
+                FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout3).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(2000).Start();
+            if (FindViewById<CardView>(Resource.Id.FSTDBDetailAbilityCardLayout).Alpha == 0.0f)
+                FindViewById<CardView>(Resource.Id.FSTDBDetailAbilityCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(2500).Start();
         }
 
         public override void OnBackPressed()

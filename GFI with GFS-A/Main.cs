@@ -52,7 +52,7 @@ namespace GFI_with_GFS_A
                 ExitTimer.Interval = 2000;
                 ExitTimer.Elapsed += ExitTimer_Elapsed;
 
-                InitializeProcess();
+                _ = InitializeProcess();
             }
             catch (Exception ex)
             {

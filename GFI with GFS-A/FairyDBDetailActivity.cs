@@ -84,7 +84,7 @@ namespace GFI_with_GFS_A
                 FABTimer.Interval = 3000;
                 FABTimer.Elapsed += FABTimer_Elapsed;
 
-                InitLoadProcess(false);
+                _ = InitLoadProcess(false);
 
                 if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_FairyDBDetail", true) == true))
                     ETC.RunHelpActivity(this, "FairyDBDetail");
@@ -153,7 +153,7 @@ namespace GFI_with_GFS_A
 
         private void RefreshCacheFAB_Click(object sender, EventArgs e)
         {
-            InitLoadProcess(true);
+            _ = InitLoadProcess(true);
         }
 
         private void PercentTableFAB_Click(object sender, EventArgs e)

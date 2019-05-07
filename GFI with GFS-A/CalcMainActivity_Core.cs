@@ -80,9 +80,7 @@ namespace GFI_with_GFS_A
                 int RequireDollCount = 0;
 
                 for (int i = 0; i < (target - start); ++i)
-                {
                     RequireDollCount += LevelLink_DollCount[start + i];
-                }
 
                 int ResultCore = RequireDollCount * GradeLinkCore[grade - 2];
 
