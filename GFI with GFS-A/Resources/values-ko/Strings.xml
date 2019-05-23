@@ -625,12 +625,8 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.23 수정사항]\n\n
-- Android 4.4 에서 웹페이지가 제대로 뜨지 않는 현상 수정\n
-- Static Shortcut으로 이벤트 항목 진입 시 간헐적으로 발생하는 오류 수정\n
-- 일부 다운로드 창 교체\n
-- 제조 시뮬레이터 확률 알고리즘 변경 및 개선\n
-- 제조 시뮬레이터에서 일부 MG 인형이 등장하지 않는 문제 수정
+    [2.3.24 수정사항]\n\n
+- 만화 컨텐츠 추가 (츠보우의 소녀전선)
   </string>
 
   <string name="RFBot_CommandHelp">

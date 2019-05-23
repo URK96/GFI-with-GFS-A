@@ -623,12 +623,8 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.23 Update]\n\n
-- Fix crash issue in web load on Android 4.4\n
-- Fix crash issue in event with static shortcut\n
-- Change some download dialog\n
-- Change algorithm of product simulator\n
-- Fix MG T-Doll issue in product simulator
+    [2.3.24 Update]\n\n
+- Add cartoon content
   </string>
 
   <string name="RFBot_CommandHelp">
