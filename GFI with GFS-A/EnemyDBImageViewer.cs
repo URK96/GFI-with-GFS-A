@@ -56,7 +56,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
         }
@@ -87,7 +87,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.ImageLoad_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
             finally

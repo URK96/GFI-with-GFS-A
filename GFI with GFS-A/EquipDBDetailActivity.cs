@@ -70,7 +70,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.Activity_OnCreateError, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
@@ -97,7 +97,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
             }
         }
 
@@ -137,7 +137,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeSubMenuError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
@@ -183,7 +183,7 @@ namespace GFI_with_GFS_A
                 }
                 catch (Exception ex)
                 {
-                    ETC.LogError(this, ex.ToString());
+                    ETC.LogError(ex, this);
                 }
 
                 FindViewById<TextView>(Resource.Id.EquipDBDetailEquipName).Text = equip.Name;
@@ -326,14 +326,14 @@ namespace GFI_with_GFS_A
             }
             catch (WebException ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
                 _ = InitLoadProcess(false);
                 return;
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
             finally

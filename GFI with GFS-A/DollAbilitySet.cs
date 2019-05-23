@@ -133,7 +133,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(ex.ToString());
+                ETC.LogError(ex);
             }
 
             return Convert.ToInt32(result);

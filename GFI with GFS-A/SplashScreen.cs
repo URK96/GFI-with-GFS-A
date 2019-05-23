@@ -58,7 +58,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
         }
@@ -117,7 +117,7 @@ namespace GFI_with_GFS_A
                     }
                     catch (Exception ex)
                     {
-                        ETC.LogError(this, ex.ToString());
+                        ETC.LogError(ex, this);
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.Splash_SkipCheckUpdate, 1000, Android.Graphics.Color.DarkBlue);
                     }
                 }
@@ -134,7 +134,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.InitLoad_Error, Snackbar.LengthIndefinite, Android.Graphics.Color.DarkRed);
             }
             finally
@@ -165,7 +165,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.Permission_Error, Snackbar.LengthIndefinite, Android.Graphics.Color.DarkMagenta);
             }
         }

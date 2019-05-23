@@ -75,7 +75,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
         }
@@ -156,12 +156,12 @@ namespace GFI_with_GFS_A
             }
             catch (WebException ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.VoiceStreaming_Error, Snackbar.LengthShort, Android.Graphics.Color.DarkViolet);
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.VoiceStreaming_PlayError, Snackbar.LengthShort, Android.Graphics.Color.DarkCyan);
             }
         }
@@ -178,7 +178,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 Toast.MakeText(this, Resource.String.VoiceList_InitError, ToastLength.Short).Show();
             }
         }
@@ -201,7 +201,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.ImageViewer_ActivityOpenError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
@@ -295,14 +295,14 @@ namespace GFI_with_GFS_A
             }
             catch (WebException ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
                 _ = InitLoadProcess();
                 return;
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
             finally

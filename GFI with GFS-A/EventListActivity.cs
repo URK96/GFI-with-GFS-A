@@ -208,7 +208,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.InitLoad_Error, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
@@ -285,7 +285,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.MenuAccess_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
@@ -370,7 +370,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
             }
             finally
             {

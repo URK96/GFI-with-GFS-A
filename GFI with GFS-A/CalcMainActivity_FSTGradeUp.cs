@@ -86,7 +86,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
                 Toast.MakeText(Activity, Resource.String.InternalCalc_Error, ToastLength.Long).Show();
             }
         }
@@ -101,7 +101,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
                 Toast.MakeText(Activity, Resource.String.InternalCalc_Error, ToastLength.Long).Show();
             }
         }

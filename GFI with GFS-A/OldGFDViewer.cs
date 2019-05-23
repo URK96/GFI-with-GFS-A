@@ -81,7 +81,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
         }
@@ -110,7 +110,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 Toast.MakeText(this, "Fail List Process", ToastLength.Short).Show();
             }
         }
@@ -162,7 +162,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
             }
         }
 
@@ -225,7 +225,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
                 ETC.ShowSnackbar(SnackbarLayout_F, "Error InitProcess", Snackbar.LengthShort);
             }
         }
@@ -310,7 +310,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
                 ETC.ShowSnackbar(SnackbarLayout_F, Resource.String.ImageLoad_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
@@ -370,7 +370,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
                 ETC.ShowSnackbar(SnackbarLayout_F, Resource.String.UpdateCheck_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
@@ -427,7 +427,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
                 ETC.ShowSnackbar(SnackbarLayout_F, Resource.String.UpdateDownload_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
             finally

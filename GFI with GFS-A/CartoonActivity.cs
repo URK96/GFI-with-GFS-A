@@ -113,7 +113,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
             }
         }
 
@@ -171,7 +171,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
             }
         }
 
@@ -450,7 +450,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
             }
             finally
             {
@@ -519,7 +519,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
             }
             finally
             {
@@ -578,7 +578,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
             }
             finally
             {

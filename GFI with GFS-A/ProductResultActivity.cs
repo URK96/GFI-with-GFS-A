@@ -99,7 +99,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthShort);
             }
         }
@@ -286,7 +286,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(context, ex.ToString());
+                ETC.LogError(ex, context);
                 Toast.MakeText(context, "Error Create View", ToastLength.Short).Show();
             }
         }

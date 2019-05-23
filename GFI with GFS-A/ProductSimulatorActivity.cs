@@ -177,7 +177,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
             }
         }
 
@@ -198,7 +198,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.ProductSimulatorActivity_ProductStartError, Snackbar.LengthShort);
             }
         }
@@ -256,7 +256,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
             }
         }
 
@@ -336,7 +336,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.ProductSimulatorActivity_InitRangeSetError, Snackbar.LengthShort);
             }
         }
@@ -373,7 +373,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.ProductSimulatorActivity_CalcResourceError, Snackbar.LengthShort);
                 return 0;
             }
@@ -427,7 +427,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.ProductSimulatorActivity_StartResultError, Snackbar.LengthShort);
             }
         }
@@ -555,7 +555,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.ProductSimulatorActivity_GroupDollError, Snackbar.LengthShort);
             }
         }
@@ -657,7 +657,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.ProductSimulatorActivity_ProductDollError, Snackbar.LengthShort);
             }
         }

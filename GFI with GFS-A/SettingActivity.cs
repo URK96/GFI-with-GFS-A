@@ -39,7 +39,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.Activity_OnCreateError, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
@@ -97,7 +97,7 @@ namespace GFI_with_GFS_A
                 }
                 catch (Exception ex)
                 {
-                    ETC.LogError(Activity, ex.ToString());
+                    ETC.LogError(ex, Activity);
                     ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_NotificationInitializeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
                 }
             };
@@ -255,7 +255,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
                 Toast.MakeText(Activity, Resource.String.UnableCheckUpdate, ToastLength.Short).Show();
             }
             finally
@@ -286,7 +286,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
                 Toast.MakeText(Activity, Resource.String.RepairDB_Fail, ToastLength.Short).Show();
             }
         }
@@ -313,7 +313,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
                 Toast.MakeText(Activity, Resource.String.RepairDB_Fail, ToastLength.Short).Show();
             }
             finally
@@ -366,7 +366,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
                 Toast.MakeText(Activity, Resource.String.SettingActivity_DeleteLogFile_Fail, ToastLength.Short).Show();
             }
         }
@@ -400,7 +400,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
                 Toast.MakeText(Activity, Resource.String.SettingActivity_DeleteLogFile_Fail, ToastLength.Short).Show();
             }
             finally
@@ -477,7 +477,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.SettingActivity_CheckFreeStorage_CheckFail, Snackbar.LengthLong);
             }
             finally
@@ -778,7 +778,7 @@ namespace GFI_with_GFS_A
             }
             catch (Java.Lang.Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
 
                 ad.SetTitle(Resource.String.SettingActivity_DownloadAllCache_FailDialogTitle);
                 ad.SetMessage(Resource.String.SettingActivity_DownloadAllCache_FailDialogMessage);
@@ -788,7 +788,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
 
                 ad.SetTitle(Resource.String.SettingActivity_DownloadAllCache_FailDialogTitle);
                 ad.SetMessage(Resource.String.SettingActivity_DownloadAllCache_FailDialogMessage);
@@ -989,7 +989,7 @@ namespace GFI_with_GFS_A
             }
             catch (Java.Lang.Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
 
                 ad.SetTitle(Resource.String.SettingActivity_DownloadAllCache_FailDialogTitle);
                 ad.SetMessage(Resource.String.SettingActivity_DownloadAllCache_FailDialogMessage);
@@ -999,7 +999,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.StackTrace);
+                ETC.LogError(ex, Activity);
 
                 ad.SetTitle(Resource.String.SettingActivity_DownloadAllCache_FailDialogTitle);
                 ad.SetMessage(Resource.String.SettingActivity_DownloadAllCache_FailDialogMessage);
@@ -1089,7 +1089,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(Activity, ex.ToString());
+                ETC.LogError(ex, Activity);
                 Toast.MakeText(Activity, Resource.String.SettingActivity_DeleteAllCache_Fail, ToastLength.Short).Show();
             }
             finally

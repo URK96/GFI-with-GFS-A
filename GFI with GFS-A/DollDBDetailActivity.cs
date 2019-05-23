@@ -197,7 +197,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
         }
@@ -222,7 +222,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
             }
         }
 
@@ -288,7 +288,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, "Error List Level", Snackbar.LengthShort);
             }
         }
@@ -328,7 +328,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
             }
         }
 
@@ -358,7 +358,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, "Test Error", Snackbar.LengthShort);
             }
         }
@@ -392,7 +392,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
             }
         }
 
@@ -470,7 +470,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
         }
@@ -491,7 +491,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.SideLinkOpen_Fail, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
@@ -551,12 +551,12 @@ namespace GFI_with_GFS_A
             }
             catch (WebException ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.VoiceStreaming_Error, Snackbar.LengthShort, Android.Graphics.Color.DarkViolet);
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.VoiceStreaming_PlayError, Snackbar.LengthShort, Android.Graphics.Color.DarkCyan);
             }
         }
@@ -605,7 +605,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 Toast.MakeText(this, Resource.String.VoiceList_InitError, ToastLength.Short).Show();
             }
         }
@@ -635,7 +635,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 Toast.MakeText(this, Resource.String.VoiceList_InitError, ToastLength.Short).Show();
             }
         }
@@ -668,7 +668,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.SideLinkOpen_Fail, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
             finally
@@ -735,7 +735,7 @@ namespace GFI_with_GFS_A
                 }
                 catch (Exception ex)
                 {
-                    ETC.LogError(this, ex.ToString());
+                    ETC.LogError(ex, this);
                     ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeSubMenuError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
                 }
             }
@@ -752,7 +752,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.ImageViewer_ActivityOpenError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
@@ -788,7 +788,7 @@ namespace GFI_with_GFS_A
                     }
                     catch (Exception ex)
                     {
-                        ETC.LogError(this, ex.ToString());
+                        ETC.LogError(ex, this);
                     }
                 }
 
@@ -813,7 +813,7 @@ namespace GFI_with_GFS_A
                 }
                 catch (Exception ex)
                 {
-                    ETC.LogError(this, ex.ToString());
+                    ETC.LogError(ex, this);
                 }
 
                 FindViewById<TextView>(Resource.Id.DollDBDetailDollName).Text = doll.Name;
@@ -1009,7 +1009,7 @@ namespace GFI_with_GFS_A
                 }
                 catch (Exception ex)
                 {
-                    ETC.LogError(this, ex.ToString());
+                    ETC.LogError(ex, this);
                 }
 
                 FindViewById<TextView>(Resource.Id.DollDBDetailSkillName).Text = SkillName;
@@ -1085,7 +1085,7 @@ namespace GFI_with_GFS_A
                     }
                     catch (Exception ex)
                     {
-                        ETC.LogError(this, ex.ToString());
+                        ETC.LogError(ex, this);
                     }
 
                     FindViewById<TextView>(Resource.Id.DollDBDetailModSkillName).Text = MSkillName;
@@ -1140,14 +1140,14 @@ namespace GFI_with_GFS_A
             }
             catch (WebException ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
                 _ = InitLoadProcess(false);
                 return;
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
             finally
@@ -1255,7 +1255,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, "Error Load Ability", Snackbar.LengthShort);
             }
         }
@@ -1360,7 +1360,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(this, ex.ToString());
+                ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.DollDBDetail_MODChangeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }

@@ -28,6 +28,7 @@ namespace GFI_with_GFS_A
         internal static string CachePath = Path.Combine(AppDataPath, "Cache");
         internal static string LogPath = Path.Combine(SystemPath, "Log");
 
+        internal static bool IsReleaseMode = true;
         internal static bool HasInitDollAvgAbility = false;
         internal static bool IsLowRAM = false;
         internal static bool UseLightTheme = false;
@@ -207,9 +208,8 @@ namespace GFI_with_GFS_A
 
         internal static void BasicInitializeApp(Activity context)
         {
-            bool release_mode = true;
 #if DEBUG
-            release_mode = false;
+            IsReleaseMode = false;
 #endif
             sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(context);
             Resources = context.Resources;
@@ -218,7 +218,7 @@ namespace GFI_with_GFS_A
             Language = Resources.Configuration.Locale;
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("ODQwMjZAMzEzNzJlMzEyZTMwV3l1Q3FseVNBb1UvNjdXVG90ZzBDQXp4V3RNOWgrcVJheDJMMWd5bW4xST0=");
 
-            if (release_mode == true)
+            if (IsReleaseMode == true)
             {
                 AppCenter.Start("aca0ed39-4b25-4548-bf2a-ac92ccee2977", typeof(Analytics), typeof(Crashes));
             }
@@ -263,7 +263,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                LogError(ex.ToString());
+                LogError(ex);
                 IsServerDown = true;
             }
             finally
@@ -588,7 +588,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        internal static void LogError(Activity activity, string error)
+        internal static void LogError(Exception ex, Activity activity = null)
         {
             try
             {
@@ -602,33 +602,12 @@ namespace GFI_with_GFS_A
                     di.Create();
 
                 using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
-                    sw.Write(error);
+                    sw.Write(ex.ToString());
             }
             catch (Exception)
             {
-                activity.RunOnUiThread(() => { Toast.MakeText(activity, "Error Write Log", ToastLength.Long).Show(); });
-            }
-        }
-
-        internal static void LogError(string error)
-        {
-            try
-            {
-                DateTime now = DateTime.Now;
-
-                string nowDateTime = $"{now.Year}{now.Month}{now.Day} {now.Hour}{now.Minute}{now.Second}";
-                string ErrorFileName = $"{nowDateTime}-ErrorLog.txt";
-
-                DirectoryInfo di = new DirectoryInfo(LogPath);
-                if (di.Exists == false)
-                    di.Create();
-
-                using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
-                    sw.Write(error);
-            }
-            catch (Exception)
-            {
-                
+                if (activity != null)
+                    activity.RunOnUiThread(() => { Toast.MakeText(activity, "Error Write Log", ToastLength.Long).Show(); });
             }
         }
 
