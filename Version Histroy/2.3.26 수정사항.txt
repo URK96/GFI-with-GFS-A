@@ -1,0 +1,7 @@
+<2.3.26 수정사항>
+
+- 만화 컨텐츠 추가
+- 앱 설치 후 처음 시작 시 서버가 연결되지 않으면 초기 로딩 실패 문구가 뜨며 진행되지 않는 현상 개선
+
+- Add cartoon content
+- Fix app initialize issue after install app with no connected server.

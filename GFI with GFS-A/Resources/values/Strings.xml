@@ -104,6 +104,7 @@
   <string name="Activity_LoadFail">Activity Load Error</string>
   <string name="DevMode">Hehehe~ Not yet!</string>
   <string name="AbnormalAccess">Abnormal approach</string>
+  <string name="NoDBFiles">No DB Files. Require DB Update.</string>
   <string name="MenuAccess_Fail">Failed to enter menu</string>
   <string name="NotifyCheckServer_Title">Server Check Notification</string>
   <string name="AlertDialog_Error">Dialog Error</string>
@@ -623,8 +624,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.24 Update]\n\n
-- Add cartoon content
+    [2.3.26 Update]\n\n
+- Add cartoon content\n
+- Fix app initialize issue after install app with no connected server.
   </string>
 
   <string name="RFBot_CommandHelp">

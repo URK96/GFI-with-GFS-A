@@ -35,7 +35,8 @@ namespace GFI_with_GFS_A
 
                 PreferenceEditor = ETC.sharedPreferences.Edit();
 
-                if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Splash_Light);
+                if (ETC.UseLightTheme == true)
+                    SetTheme(Resource.Style.GFS_Splash_Light);
 
                 SetContentView(Resource.Layout.SplashLayout);
 
@@ -45,7 +46,8 @@ namespace GFI_with_GFS_A
 
                 if ((ETC.sharedPreferences.GetInt("SplashBG_Index", 0) == 1) || ((r.Next() % 20) == 0))
                     SplashImageView.SetImageResource(Resource.Drawable.Splash_Special);
-                else SplashImageView.SetImageResource(Resource.Drawable.SplashBG2);
+                else
+                    SplashImageView.SetImageResource(Resource.Drawable.SplashBG2);
 
                 StatusText = FindViewById<TextView>(Resource.Id.SplashStatusText);
 
@@ -88,10 +90,13 @@ namespace GFI_with_GFS_A
 
                 await ETC.AnimateText(StatusText, "Initializing");
 
-                if (ETC.sharedPreferences.GetBoolean("CheckInitLowMemory", true) == true) CheckDeviceMemory();
+                if (ETC.sharedPreferences.GetBoolean("CheckInitLowMemory", true) == true)
+                    CheckDeviceMemory();
+
                 ETC.IsLowRAM = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);
 
-                if (VersionTracking.IsFirstLaunchForCurrentBuild == true) PreferenceEditor.PutBoolean("ShowNewFeatureDialog", true);
+                if (VersionTracking.IsFirstLaunchForCurrentBuild == true)
+                    PreferenceEditor.PutBoolean("ShowNewFeatureDialog", true);
                 
                 ETC.CheckInitFolder();
 
@@ -114,6 +119,8 @@ namespace GFI_with_GFS_A
                             FinishAffinity();
                             Process.KillProcess(Process.MyPid());
                         }
+
+                        
                     }
                     catch (Exception ex)
                     {
@@ -122,11 +129,18 @@ namespace GFI_with_GFS_A
                     }
                 }
 
+                try
+                {
+                    using (StreamReader sr = new StreamReader(new FileStream(Path.Combine(ETC.SystemPath, "DBVer.txt"), FileMode.Open, FileAccess.Read)))
+                        int.TryParse(sr.ReadToEnd(), out ETC.DBVersion);
+                }
+                catch (Exception)
+                {
+                    ETC.DBVersion = 0;
+                }
+
 
                 // Finalize & Start Main
-
-                using (StreamReader sr = new StreamReader(new FileStream(Path.Combine(ETC.SystemPath, "DBVer.txt"), FileMode.Open, FileAccess.Read)))
-                    int.TryParse(sr.ReadToEnd(), out ETC.DBVersion);
 
                 StartActivity(typeof(Main));
                 OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);

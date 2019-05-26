@@ -106,6 +106,7 @@
   <string name="Activity_LoadFail">Activity 로드 오류</string>
   <string name="DevMode">에헤헤~♪ 아직인 게야!</string>
   <string name="AbnormalAccess">비정상적인 접근</string>
+  <string name="NoDBFiles">DB 파일 없음. 업데이트 필요.</string>
   <string name="MenuAccess_Fail">메뉴 진입 실패</string>
   <string name="NotifyCheckServer_Title">서버 점검 안내</string>
   <string name="AlertDialog_Error">Dialog 오류</string>
@@ -625,8 +626,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.24 수정사항]\n\n
-- 만화 컨텐츠 추가 (츠보우의 소녀전선)
+    [2.3.26 수정사항]\n\n
+- 만화 컨텐츠 추가\n
+- 앱 설치 후 처음 시작 시 서버가 연결되지 않으면 초기 로딩 실패 문구가 뜨며 진행되지 않는 현상 개선
   </string>
 
   <string name="RFBot_CommandHelp">

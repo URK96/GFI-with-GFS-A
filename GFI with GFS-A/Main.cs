@@ -32,7 +32,8 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+                if (ETC.UseLightTheme == true)
+                    SetTheme(Resource.Style.GFS_Light);
 
                 // Create your application here
                 SetContentView(Resource.Layout.MainLayout);
@@ -45,8 +46,12 @@ namespace GFI_with_GFS_A
                 NotificationView.Click += NotificationView_Click;
 
                 SupportActionBar.SetIcon(int.Parse(ETC.sharedPreferences.GetString("MainActionbarIcon", Resource.Drawable.AppIcon2.ToString())));
-                if ((int.Parse(ETC.sharedPreferences.GetString("MainActionbarIcon", Resource.Drawable.AppIcon2.ToString())) == Resource.Drawable.AppIcon2) && (DateTime.Now.Month == 10) && (DateTime.Now.Day == 31)) SupportActionBar.SetIcon(Resource.Drawable.AppIcon2_Core);
-                else SupportActionBar.SetIcon(int.Parse(ETC.sharedPreferences.GetString("MainActionbarIcon", Resource.Drawable.AppIcon2.ToString())));
+
+                if ((int.Parse(ETC.sharedPreferences.GetString("MainActionbarIcon", Resource.Drawable.AppIcon2.ToString())) == Resource.Drawable.AppIcon2) && (DateTime.Now.Month == 10) && (DateTime.Now.Day == 31))
+                    SupportActionBar.SetIcon(Resource.Drawable.AppIcon2_Core);
+                else
+                    SupportActionBar.SetIcon(int.Parse(ETC.sharedPreferences.GetString("MainActionbarIcon", Resource.Drawable.AppIcon2.ToString())));
+
                 SupportActionBar.SetDisplayShowHomeEnabled(true);
 
                 ExitTimer.Interval = 2000;
@@ -156,29 +161,40 @@ namespace GFI_with_GFS_A
                     switch (ETC.sharedPreferences.GetString("MainButtonColor", "0"))
                     {
                         case "1":
-                            for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).SetBackgroundResource(MainMenuButtonBackgroundIds_Orange[i]);
-                            for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).SetBackgroundResource(DBSubMenuButtonBackgroundIds_Orange[i]);
-                            for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).SetBackgroundResource(ExtraMenuButtonBackgroundIds_Orange[i]);
+                            for (int i = 0; i < MainMenuButtonIds.Length; ++i)
+                                FindViewById<Button>(MainMenuButtonIds[i]).SetBackgroundResource(MainMenuButtonBackgroundIds_Orange[i]);
+                            for (int i = 0; i < DBSubMenuButtonIds.Length; ++i)
+                                FindViewById<Button>(DBSubMenuButtonIds[i]).SetBackgroundResource(DBSubMenuButtonBackgroundIds_Orange[i]);
+                            for (int i = 0; i < ExtraMenuButtonIds.Length; ++i)
+                                FindViewById<Button>(ExtraMenuButtonIds[i]).SetBackgroundResource(ExtraMenuButtonBackgroundIds_Orange[i]);
                             break;
                         case "0":
                         default:
-                            for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).SetBackgroundResource(MainMenuButtonBackgroundIds[i]);
-                            for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).SetBackgroundResource(DBSubMenuButtonBackgroundIds[i]);
-                            for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).SetBackgroundResource(ExtraMenuButtonBackgroundIds[i]);
+                            for (int i = 0; i < MainMenuButtonIds.Length; ++i)
+                                FindViewById<Button>(MainMenuButtonIds[i]).SetBackgroundResource(MainMenuButtonBackgroundIds[i]);
+                            for (int i = 0; i < DBSubMenuButtonIds.Length; ++i)
+                                FindViewById<Button>(DBSubMenuButtonIds[i]).SetBackgroundResource(DBSubMenuButtonBackgroundIds[i]);
+                            for (int i = 0; i < ExtraMenuButtonIds.Length; ++i)
+                                FindViewById<Button>(ExtraMenuButtonIds[i]).SetBackgroundResource(ExtraMenuButtonBackgroundIds[i]);
                             break;
                     }
                 }
                 else
                 {
-                    for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).Text = MainMenuButtonText[i];
-                    for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).Text = DBSubMenuButtonText[i];
-                    for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).Text = ExtraMenuButtonText[i];
+                    for (int i = 0; i < MainMenuButtonIds.Length; ++i)
+                        FindViewById<Button>(MainMenuButtonIds[i]).Text = MainMenuButtonText[i];
+                    for (int i = 0; i < DBSubMenuButtonIds.Length; ++i)
+                        FindViewById<Button>(DBSubMenuButtonIds[i]).Text = DBSubMenuButtonText[i];
+                    for (int i = 0; i < ExtraMenuButtonIds.Length; ++i)
+                        FindViewById<Button>(ExtraMenuButtonIds[i]).Text = ExtraMenuButtonText[i];
                 }
 
                 /*for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).Text = MainMenuButtonText[i];
                 for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).Text = DBSubMenuButtonText[i];
                 for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).Text = ExtraMenuButtonText[i];*/
 
+                CheckDBMenu();
+                
                 SetMainMenuEvent(1);
 
                 foreach (int id in MainMenuButtonIds)
@@ -190,12 +206,34 @@ namespace GFI_with_GFS_A
 
                 FindViewById<LinearLayout>(Resource.Id.MainMenuButtonLayout1).BringToFront();
 
-                if (ETC.sharedPreferences.GetString("StartAppMode", "0") != "0") RunStartMode();
+                if (ETC.sharedPreferences.GetString("StartAppMode", "0") != "0")
+                    RunStartMode();
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, "Init error", Snackbar.LengthShort);
+            }
+        }
+
+        private void CheckDBMenu()
+        {
+            try
+            {
+                if (ETC.DBVersion == 0)
+                {
+                    FindViewById<Button>(MainMenuButtonIds[0]).Enabled = false;
+                    RunOnUiThread(() => { FindViewById<Button>(MainMenuButtonIds[0]).Text = ETC.Resources.GetString(Resource.String.NoDBFiles); });
+                }
+                else
+                {
+                    FindViewById<Button>(MainMenuButtonIds[0]).Enabled = true;
+                    RunOnUiThread(() => { FindViewById<Button>(MainMenuButtonIds[0]).Text = ETC.Resources.GetString(Resource.String.Main_MainMenu_DBMenu); });
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
             }
         }
 
@@ -217,7 +255,8 @@ namespace GFI_with_GFS_A
                         foreach (int id in MainMenuButtonIds)
                         {
                             Button button = FindViewById<Button>(id);
-                            if (button.HasOnClickListeners == true) button.Click -= MainMenuButton_Click;
+                            if (button.HasOnClickListeners == true)
+                                button.Click -= MainMenuButton_Click;
                         }
                         break;
                 }              
@@ -346,7 +385,10 @@ namespace GFI_with_GFS_A
 
                         RunOnUiThread(() => { ad.Show(); });
                     }
-                    else tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})";
+                    else
+                        tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})";
+
+                    RunOnUiThread(() => { CheckDBMenu(); });
                 }
                 catch (Exception ex)
                 {
@@ -365,7 +407,10 @@ namespace GFI_with_GFS_A
                 switch (id)
                 {
                     case Resource.Id.DBSubMenuMainButton:
-                        SwitchDBSubMenu(1);
+                        if (ETC.DBVersion != 0)
+                            SwitchDBSubMenu(1);
+                        else
+                            ETC.ShowSnackbar(SnackbarLayout, Resource.String.NoDBFiles, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
                         break;
                     case Resource.Id.OldGFDMainButton:
                         StartActivity(typeof(OldGFDViewer));
@@ -479,8 +524,13 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.ProductSimulatorExtraButton:
-                        StartActivity(typeof(ProductSimulatorCategorySelectActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        if (ETC.DBVersion != 0)
+                        {
+                            StartActivity(typeof(ProductSimulatorCategorySelectActivity));
+                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        }
+                        else
+                            ETC.ShowSnackbar(SnackbarLayout, Resource.String.NoDBFiles, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
                         break;
                     case Resource.Id.GFOSTPlayerExtraButton:
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
@@ -628,7 +678,8 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                if (CheckSelfPermission(permission) == Permission.Denied) RequestPermissions(new string[] { permission }, 0);
+                if (CheckSelfPermission(permission) == Permission.Denied)
+                    RequestPermissions(new string[] { permission }, 0);
             }
             catch (Exception ex)
             {
