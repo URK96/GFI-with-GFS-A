@@ -42,11 +42,9 @@ namespace GFI_with_GFS_A
                 ServerVersion = FindViewById<TextView>(Resource.Id.GFDInfo_ServerAppVersion);
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.GFDInfoSnackbarLayout);
 
-                KakaoPlusFriendFAB = FindViewById<FloatingActionButton>(Resource.Id.KakaoPlusFriendFAB);
-                KakaoPlusFriendFAB.Click += HelpFAB_Click;
-                KakaoPlusFriendFAB.LongClick += HelpFAB_LongClick;
                 DiscordFAB = FindViewById<FloatingActionButton>(Resource.Id.DiscordFAB);
                 DiscordFAB.Click += HelpFAB_Click;
+                DiscordFAB.LongClick += HelpFAB_LongClick;
 
                 Initialize();
             }
@@ -67,9 +65,6 @@ namespace GFI_with_GFS_A
 
                 switch (fab.Id)
                 {
-                    case Resource.Id.KakaoPlusFriendFAB:
-                        tip = Resources.GetString(Resource.String.Tooltip_GFDInfo_KakaoPlus);
-                        break;
                     case Resource.Id.DiscordFAB:
                         tip = Resources.GetString(Resource.String.Tooltip_GFDInfo_Discord);
                         break;
@@ -94,9 +89,6 @@ namespace GFI_with_GFS_A
 
                 switch (fab.Id)
                 {
-                    case Resource.Id.KakaoPlusFriendFAB:
-                        url = "https://pf.kakao.com/_JEcmC/chat";
-                        break;
                     case Resource.Id.DiscordFAB:
                         url = "https://discord.gg/sWRw4MN";
                         break;
@@ -142,7 +134,9 @@ namespace GFI_with_GFS_A
                 sb.Append("잉여군\n");
                 sb.Append("MADCORE\n");
                 sb.Append("천솜향\n");
-                sb.Append("우용곡");
+                sb.Append("우용곡\n");
+                sb.Append("MMM\n");
+                sb.Append("Geo");
 
                 FindViewById<TextView>(Resource.Id.GFDInfoDeveloperInfo).Text = sb.ToString();
             }

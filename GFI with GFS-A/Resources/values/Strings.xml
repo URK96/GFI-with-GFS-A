@@ -398,6 +398,10 @@
   
   <!--ProductSimulatorCategorySelect-->
   <string name="ProductSimulatorCategorySelectActivity_Title">I.O.P Production</string>
+  <string name="ProductSimulatorCategorySelectActivity_DollNormalProduct">T-Doll Normal</string>
+  <string name="ProductSimulatorCategorySelectActivity_DollAdvancedProduct">T-Doll Advanced</string>
+  <string name="ProductSimulatorCategorySelectActivity_EquipNormalProduct">Equip Normal</string>
+  <string name="ProductSimulatorCategorySelectActivity_EquipAdvancedProduct">Equip Advanced</string>
   
   <!--RFBotMain-->
   <string name="RFBotMain_Title">RFBot</string>
@@ -627,7 +631,10 @@
     [2.3.28 Update]\n\n
 - Add cartoon content\n
 - Edit position text about no db files\n
-- Remove download all caches temporary
+- Remove download all caches temporary\n
+- Change splash image\n
+- 1st fix GFDv1 download issue\n
+- Remove kakao plus friend link
   </string>
 
   <string name="RFBot_CommandHelp">

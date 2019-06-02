@@ -20,27 +20,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_margin="20dp"
-                    android:background="@drawable/doll_normalproduct"
+                    android:text="@string/ProductSimulatorCategorySelectActivity_DollNormalProduct"
                     android:id="@+id/ProductSimulatorCategoryDollNormalButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_margin="20dp"
-                    android:background="@drawable/doll_advanceproduct"
+                    android:text="@string/ProductSimulatorCategorySelectActivity_DollAdvancedProduct"
                     android:id="@+id/ProductSimulatorCategoryDollAdvanceButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_margin="20dp"
 					android:visibility="gone"
-                    android:background="@drawable/equip_normalproduct"
+                    android:text="@string/ProductSimulatorCategorySelectActivity_EquipNormalProduct"
                     android:id="@+id/ProductSimulatorCategoryEquipNormalButton" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_margin="20dp"
 					android:visibility="gone"
-                    android:background="@drawable/equip_advanceproduct"
+                    android:text="@string/ProductSimulatorCategorySelectActivity_EquipAdvancedProduct"
                     android:id="@+id/ProductSimulatorCategoryEquipAdvanceButton" />
             </LinearLayout>
         </ScrollView>

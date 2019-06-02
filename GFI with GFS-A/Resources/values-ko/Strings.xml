@@ -401,6 +401,10 @@
   
   <!--ProductSimulatorCategorySelect-->
   <string name="ProductSimulatorCategorySelectActivity_Title">I.O.P Production</string>
+  <string name="ProductSimulatorCategorySelectActivity_DollNormalProduct">인형 일반제조</string>
+  <string name="ProductSimulatorCategorySelectActivity_DollAdvancedProduct">인형 중형제조</string>
+  <string name="ProductSimulatorCategorySelectActivity_EquipNormalProduct">장비 일반제조</string>
+  <string name="ProductSimulatorCategorySelectActivity_EquipAdvancedProduct">장비 중형제조</string>
   
   <!--RFBotMain-->
   <string name="RFBotMain_Title">RFBot</string>
@@ -629,7 +633,10 @@
     [2.3.28 수정사항]\n\n
 - 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 소녀전선, 학식전선, 그리폰 일상만화)\n
 - DB파일이 없을 경우 뜨는 문구 위치 수정\n
-- 캐시 전체 다운로드 기능 일시 제거
+- 캐시 전체 다운로드 기능 일시 제거\n
+- 스플래시 이미지 변경\n
+- 소전사전v1에서 파일이 다운로드 되지 않는 문제 1차 수정\n
+- 카카오 플러스 친구 링크 제거
   </string>
 
   <string name="RFBot_CommandHelp">

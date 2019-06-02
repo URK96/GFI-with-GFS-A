@@ -247,30 +247,26 @@ namespace GFI_with_GFS_A
         {
             await Task.Delay(100);
 
-            HttpWebRequest request = null;
-            HttpWebResponse response = null;
-
             try
             {
-                request = WebRequest.Create(ETC.Server) as HttpWebRequest;
+                HttpWebRequest request = WebRequest.Create(Server) as HttpWebRequest;
                 request.Method = "HEAD";
-                response = request.GetResponse() as HttpWebResponse;
 
-                if (response.StatusCode == HttpStatusCode.OK)
-                    IsServerDown = false;
-                else
-                    IsServerDown = true;
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                {
+                    if (response.StatusCode == HttpStatusCode.OK)
+                        IsServerDown = false;
+                    else
+                        IsServerDown = true;
+
+                    if (response != null)
+                        response.Close();
+                }
             }
             catch (Exception ex)
             {
                 LogError(ex);
                 IsServerDown = true;
-            }
-            finally
-            {
-                if (response != null)
-                    response.Close();
-                response.Dispose();
             }
         }
 

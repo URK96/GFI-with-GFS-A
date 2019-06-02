@@ -187,7 +187,6 @@ namespace GFI_with_GFS_A
         private View v;
 
         private bool HasUpdate = false;
-        private int Image_Index = 0;
 
         private LinearLayout ImageContainer;
         private CoordinatorLayout SnackbarLayout_F;
@@ -204,12 +203,6 @@ namespace GFI_with_GFS_A
             _ = InitProcess();
 
             return v;
-        }
-
-        private void ImageList_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
-        {
-            int index = e.Position;
-            ShowImage(index);
         }
 
         private async Task InitProcess()
@@ -272,7 +265,6 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                Image_Index = index;
                 ImageContainer.RemoveAllViews();
 
                 Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ImageName[index]}.gfdcache"));
@@ -340,7 +332,8 @@ namespace GFI_with_GFS_A
                     {
                         string LocalDBVerPath = Path.Combine(ETC.SystemPath, "OldGFDVer.txt");
 
-                        if (File.Exists(LocalDBVerPath) == false) HasUpdate = true;
+                        if (File.Exists(LocalDBVerPath) == false)
+                            HasUpdate = true;
                         else
                         {
                             int server_ver = int.Parse(await wc.DownloadStringTaskAsync(Path.Combine(ETC.Server, "OldGFDVer.txt")));
@@ -349,8 +342,10 @@ namespace GFI_with_GFS_A
                             using (StreamReader sr = new StreamReader(new FileStream(LocalDBVerPath, FileMode.Open, FileAccess.Read)))
                                 local_ver = int.Parse(sr.ReadToEnd());
 
-                            if (local_ver < server_ver) HasUpdate = true;
-                            else HasUpdate = false;
+                            if (local_ver < server_ver)
+                                HasUpdate = true;
+                            else
+                                HasUpdate = false;
                         }
                     }
                 }
