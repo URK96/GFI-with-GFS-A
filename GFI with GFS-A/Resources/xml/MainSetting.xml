@@ -36,10 +36,6 @@
   </android.support.v7.preference.PreferenceCategory>
   <android.support.v7.preference.PreferenceCategory
     android:title="@string/Setting_Category_DB">
-    <!--<android.support.v14.preference.SwitchPreference
-  android:key="DynamicDBLoad"
-  android:title="@string/Setting_DynamicDBLoad_Title"
-  android:summary="@string/Setting_DynamicDBLoad_Summary"/>-->
     <android.support.v14.preference.SwitchPreference
       android:key="AutoDBUpdate"
       android:title="@string/Setting_AutoDBUpdate_Title"
@@ -71,10 +67,10 @@
   </android.support.v7.preference.PreferenceCategory>
   <android.support.v7.preference.PreferenceCategory
     android:title="@string/Setting_Category_Cache">
-    <android.support.v7.preference.Preference
+    <!--<android.support.v7.preference.Preference
       android:key="DownloadAllCache"
       android:title="@string/Setting_DownloadAllCache_Title"
-      android:summary="@string/Setting_DownloadAllCache_Summary"/>
+      android:summary="@string/Setting_DownloadAllCache_Summary"/>-->
     <android.support.v7.preference.Preference
       android:key="CleanCache"
       android:title="@string/Setting_CleanCache_Title"

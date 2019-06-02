@@ -115,6 +115,7 @@
     <item>WA2000의 요리 단편 -완-</item>
     <item>잔머리</item>
     <item>루이스</item>
+    <item>누구나 똑같아</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -249,6 +250,20 @@
     <item>61화</item>
     <item>62화</item>
     <item>63화</item>
+    <item>64화</item>
+    <item>65화</item>
+    <item>66화</item>
+    <item>67화</item>
+    <item>68화</item>
+    <item>69화</item>
+    <item>70화</item>
+    <item>71화</item>
+    <item>72화</item>
+    <item>73화</item>
+    <item>74화</item>
+    <item>75화</item>
+    <item>76화</item>
+    <item>77화</item>
   </string-array>
 
   <string-array name="mota6nako_GF">
@@ -344,6 +359,8 @@
     <item>18화</item>
     <item>19화</item>
     <item>20화</item>
+    <item>S1화</item>
+    <item>S2화</item>
   </string-array>
 
   <string-array name="Geo_GF">
@@ -409,6 +426,7 @@
     <item>60 - 코어 골든벨</item>
     <item>특별편 - Q&amp;A와 연재이야기</item>
     <item>61 - 에이전트와 지휘관</item>
+    <item>62 - 협력과 탈출</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -474,5 +492,6 @@
     <item>http://naver.me/FQmJ1kep</item>
     <item>http://naver.me/5utH2Hmh</item>
     <item>http://naver.me/GseU3UKo</item>
+    <item>http://naver.me/FPTdk733</item>
   </string-array>
 </resources>

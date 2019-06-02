@@ -201,10 +201,10 @@ namespace GFI_with_GFS_A
                 SaveSetting.Apply();
             };
 
-            Preference DownloadAllCache = FindPreference("DownloadAllCache");
+            /*Preference DownloadAllCache = FindPreference("DownloadAllCache");
             if (ETC.UseLightTheme == true) DownloadAllCache.SetIcon(Resource.Drawable.DownloadAllCacheIcon_WhiteTheme);
             else DownloadAllCache.SetIcon(Resource.Drawable.DownloadAllCacheIcon);
-            DownloadAllCache.PreferenceClick += DownloadAllCache_PreferenceClick;
+            DownloadAllCache.PreferenceClick += DownloadAllCache_PreferenceClick;*/
 
             Preference CleanCache = FindPreference("CleanCache");
             if (ETC.UseLightTheme == true) CleanCache.SetIcon(Resource.Drawable.CleanCacheIcon_WhiteTheme);
@@ -291,37 +291,6 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task RepairDBProcess()
-        {
-            try
-            {
-                await ETC.CheckServerNetwork();
-
-                await Task.Delay(100);
-
-                if (ETC.IsServerDown == true) Toast.MakeText(Activity, Resource.String.Common_ServerMaintenance, ToastLength.Short).Show();
-                else
-                {
-                    await ETC.UpdateDB(Activity, false, Resource.String.RepairDBDialog_Title, Resource.String.RepairDBDialog_Message);
-
-                    await Task.Delay(500);
-
-                    await ETC.LoadDB();
-
-                    Toast.MakeText(Activity, Resource.String.RepairDB_Complete, ToastLength.Short).Show();
-                }
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, Activity);
-                Toast.MakeText(Activity, Resource.String.RepairDB_Fail, ToastLength.Short).Show();
-            }
-            finally
-            {
-                if (dialog.IsShowing == true) dialog.Dismiss();
-            }
-        }
-
         private void DeleteAllLogFile_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
         {
             try
@@ -373,13 +342,10 @@ namespace GFI_with_GFS_A
 
         private async void CleanLogFolderProcess()
         {
-            //View v = Activity.LayoutInflater.Inflate(Resource.Layout.SpinnerProgressDialogLayout, null);
-
             Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG_Download);
             ad.SetTitle(Resource.String.SettingActivity_DeleteLogFile_DialogTitle);
             ad.SetMessage(Resource.String.SettingActivity_DeleteLogFile_DialogMessage);
             ad.SetCancelable(false);
-            //ad.SetView(v);
             ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
 
             var dialog = ad.Show();
@@ -409,7 +375,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void DownloadAllCache_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
+        /*private void DownloadAllCache_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
         {
             Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
             alert.SetTitle(Resource.String.SettingActivity_DownloadAllCache_DialogTitle);
@@ -432,7 +398,7 @@ namespace GFI_with_GFS_A
             });
 
             alert.Show();
-        }
+        }*/
 
         private async Task<bool> CheckStorageCapacity()
         {
@@ -490,7 +456,7 @@ namespace GFI_with_GFS_A
             return false;
         }
 
-        private async Task DownloadAllCacheProcess()
+        /*private async Task DownloadAllCacheProcess()
         {
             View v = Activity.LayoutInflater.Inflate(Resource.Layout.ProgressDialogLayout, null);
 
@@ -1039,7 +1005,7 @@ namespace GFI_with_GFS_A
         {
             nowProgressBar.Progress = e.ProgressPercentage;
             nowProgress.Text = string.Format("{0}%", e.ProgressPercentage);
-        }
+        }*/
 
         private void CleanCache_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
         {

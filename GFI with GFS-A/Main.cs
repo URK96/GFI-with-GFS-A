@@ -193,8 +193,6 @@ namespace GFI_with_GFS_A
                 for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).Text = DBSubMenuButtonText[i];
                 for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).Text = ExtraMenuButtonText[i];*/
 
-                CheckDBMenu();
-                
                 SetMainMenuEvent(1);
 
                 foreach (int id in MainMenuButtonIds)
@@ -213,27 +211,6 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, "Init error", Snackbar.LengthShort);
-            }
-        }
-
-        private void CheckDBMenu()
-        {
-            try
-            {
-                if (ETC.DBVersion == 0)
-                {
-                    FindViewById<Button>(MainMenuButtonIds[0]).Enabled = false;
-                    RunOnUiThread(() => { FindViewById<Button>(MainMenuButtonIds[0]).Text = ETC.Resources.GetString(Resource.String.NoDBFiles); });
-                }
-                else
-                {
-                    FindViewById<Button>(MainMenuButtonIds[0]).Enabled = true;
-                    RunOnUiThread(() => { FindViewById<Button>(MainMenuButtonIds[0]).Text = ETC.Resources.GetString(Resource.String.Main_MainMenu_DBMenu); });
-                }
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
             }
         }
 
@@ -387,8 +364,6 @@ namespace GFI_with_GFS_A
                     }
                     else
                         tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})";
-
-                    RunOnUiThread(() => { CheckDBMenu(); });
                 }
                 catch (Exception ex)
                 {

@@ -624,9 +624,10 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.26 Update]\n\n
+    [2.3.28 Update]\n\n
 - Add cartoon content\n
-- Fix app initialize issue after install app with no connected server.
+- Edit position text about no db files\n
+- Remove download all caches temporary
   </string>
 
   <string name="RFBot_CommandHelp">
