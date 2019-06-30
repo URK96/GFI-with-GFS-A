@@ -1,40 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/WebBrowserMainLayout">
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-            android:progressTint="@color/ProgressBarColor"
-            android:id="@+id/WebBrowserProgressBar" />
-        <android.webkit.WebView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/WebBrowser" />
-    </LinearLayout>
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="15dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/exit_icon"
-        android:id="@+id/ExitWebFAB"
-        app:backgroundTint="@color/FABColor"
-        app:fabSize="mini"
-        app:rippleColor="#FF80AB" />
-    <android.support.design.widget.CoordinatorLayout
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/WebBrowserSnackbarLayout"
-        android:layout_alignTop="@id/WebBrowserMainLayout" />
-</RelativeLayout>
+        android:id="@+id/WebBrowserAppBar">
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:id="@+id/WebBrowserToolbar">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="100">
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="12"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/skipprevious"
+                    android:id="@+id/WebBrowserToolbarPrevious"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="12"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/skipnext"
+                    android:id="@+id/WebBrowserToolbarNext"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="60"
+                    android:enabled="false"
+                    android:id="@+id/WebBrowserAddressBar"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="12"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/close"
+                    android:id="@+id/WebBrowserToolbarClose"/>
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <android.webkit.WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/WebBrowser"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+</android.support.design.widget.CoordinatorLayout>

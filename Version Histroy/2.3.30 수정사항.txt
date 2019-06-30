@@ -1,0 +1,7 @@
+<2.3.30 수정사항>
+
+- 만화 컨텐츠 추가 (그리폰 일상만화, Geo의 소녀전선)
+- 일부 기기에서 특정 인형 열람 시 튕기는 현상 수정
+
+- Add cartoon content
+- Fix crash issue when open some T-Doll info

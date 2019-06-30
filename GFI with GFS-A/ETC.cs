@@ -32,7 +32,6 @@ namespace GFI_with_GFS_A
         internal static bool HasInitDollAvgAbility = false;
         internal static bool IsLowRAM = false;
         internal static bool UseLightTheme = false;
-        internal static bool HasEvent = false;
         internal static Java.Util.Locale Language; // ko, en
 
         internal static int DialogBG = 0;

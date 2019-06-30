@@ -19,12 +19,16 @@ namespace GFI_with_GFS_A
 
         private WebView web;
         private FloatingActionButton ExitFAB;
+        private ImageButton PreviousButton;
+        private ImageButton NextButton;
+        private ImageButton CloseButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+            if (ETC.UseLightTheme == true)
+                SetTheme(Resource.Style.GFS_Light);
 
             // Create your application here
             SetContentView(Resource.Layout.WebBrowserLayout);
@@ -35,10 +39,25 @@ namespace GFI_with_GFS_A
                 Finish();
             }
 
-            LoadProgress = FindViewById<ProgressBar>(Resource.Id.WebBrowserProgressBar);       
+            //LoadProgress = FindViewById<ProgressBar>(Resource.Id.WebBrowserProgressBar);       
             web = FindViewById<WebView>(Resource.Id.WebBrowser);
-            ExitFAB = FindViewById<FloatingActionButton>(Resource.Id.ExitWebFAB);
-            ExitFAB.Click += ExitFAB_Click;
+            //ExitFAB = FindViewById<FloatingActionButton>(Resource.Id.ExitWebFAB);
+            //ExitFAB.Click += ExitFAB_Click;
+            PreviousButton = FindViewById<ImageButton>(Resource.Id.WebBrowserToolbarPrevious);
+            NextButton = FindViewById<ImageButton>(Resource.Id.WebBrowserToolbarNext);
+            CloseButton = FindViewById<ImageButton>(Resource.Id.WebBrowserToolbarClose);
+
+            PreviousButton.Click += delegate
+            {
+                if (web.CanGoBack())
+                    web.GoBack();
+            };
+            NextButton.Click += delegate
+            {
+                if (web.CanGoForward())
+                    web.GoForward();
+            };
+            CloseButton.Click += delegate { Finish(); };
 
             web.Settings.JavaScriptEnabled = true;
             web.SetWebViewClient(new WebBrowserWebClient());
@@ -54,18 +73,14 @@ namespace GFI_with_GFS_A
             InitProcess();
         }
 
-        private void ExitFAB_Click(object sender, EventArgs e)
-        {
-            Finish();
-        }
-
         private void InitProcess()
         {
             try
             {
                 string url = Intent.GetStringExtra("url");
 
-                if (url == null) url = Intent.DataString;
+                if (url == null)
+                    url = Intent.DataString;
 
                 web.LoadUrl(url);
             }
@@ -93,7 +108,8 @@ namespace GFI_with_GFS_A
 
         public override void OnBackPressed()
         {
-            if (web.CanGoBack() == true) web.GoBack();
+            if (web.CanGoBack() == true)
+                web.GoBack();
             else
             {
                 base.OnBackPressed();

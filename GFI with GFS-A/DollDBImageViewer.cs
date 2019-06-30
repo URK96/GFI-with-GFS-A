@@ -137,25 +137,30 @@ namespace GFI_with_GFS_A
 
         private bool CheckCensorType()
         {
-            if (CensorType == null) return false;
+            if (CensorType == null)
+                return false;
 
-            string censor_type = "";
+            string censor_type;
 
             switch (CostumeIndex)
             {
                 case 0:
-                    if (IsDamage == true) censor_type = "D";
-                    else censor_type = "N";
+                    if (IsDamage == true)
+                        censor_type = "D";
+                    else
+                        censor_type = "N";
                     break;
                 default:
                     censor_type = $"C{CostumeIndex}";
-                    if (IsDamage == true) censor_type += "D";
+                    if (IsDamage == true)
+                        censor_type += "D";
                     break;
             }
 
             foreach (string type in CensorType)
             {
-                if (type == censor_type) return true;
+                if (type == censor_type)
+                    return true;
             }
 
             return false;

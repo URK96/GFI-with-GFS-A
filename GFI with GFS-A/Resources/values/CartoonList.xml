@@ -116,6 +116,8 @@
     <item>잔머리</item>
     <item>루이스</item>
     <item>누구나 똑같아</item>
+    <item>루이스 2</item>
+    <item>대리 지휘관의 하루</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -264,6 +266,7 @@
     <item>75화</item>
     <item>76화</item>
     <item>77화</item>
+    <item>78화</item>
   </string-array>
 
   <string-array name="mota6nako_GF">
@@ -427,6 +430,10 @@
     <item>특별편 - Q&amp;A와 연재이야기</item>
     <item>61 - 에이전트와 지휘관</item>
     <item>62 - 협력과 탈출</item>
+    <item>63 - 그리폰의 에이전트</item>
+    <item>64 - M99메이커 2</item>
+    <item>65 - 안마받는 지휘관</item>
+    <item>66 - 니토의 습격</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -493,5 +500,9 @@
     <item>http://naver.me/5utH2Hmh</item>
     <item>http://naver.me/GseU3UKo</item>
     <item>http://naver.me/FPTdk733</item>
+    <item>http://naver.me/xt9uvuJr</item>
+    <item>http://naver.me/GNnwodKb</item>
+    <item>http://naver.me/xtFwIuUu</item>
+    <item>http://naver.me/xbclVrN7</item>
   </string-array>
 </resources>

@@ -1,0 +1,9 @@
+<2.3.29 수정사항>
+
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 소녀전선)
+- 웹 브라우저 레이아웃 변경
+- 기동 이미지 변경
+
+- Add cartoon content
+- Change web browser layout
+- Change splash image

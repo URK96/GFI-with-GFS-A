@@ -628,13 +628,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.28 Update]\n\n
+    [2.3.30 Update]\n\n
 - Add cartoon content\n
-- Edit position text about no db files\n
-- Remove download all caches temporary\n
-- Change splash image\n
-- 1st fix GFDv1 download issue\n
-- Remove kakao plus friend link
+- Fix crash issue when open some T-Doll info
   </string>
 
   <string name="RFBot_CommandHelp">

@@ -3,14 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-
-namespace GFI_with_GFS_A
+namespace GFD_W
 {
     internal class DollAbilitySet
     {
@@ -93,7 +86,7 @@ namespace GFI_with_GFS_A
 
         internal int CalcAbility(string ability, int ability_value, int grow_ratio, int level, int favor, bool IsMod = false)
         {
-            double favor_ratio;
+            double favor_ratio = 0;
             double result = 0;
 
             try
@@ -102,7 +95,7 @@ namespace GFI_with_GFS_A
                 else if (favor < 90) favor_ratio = 0;
                 else if (favor < 140) favor_ratio = 0.05;
                 else if (favor < 190) favor_ratio = 0.1;
-                else if (favor <= 200) favor_ratio = 0.15;
+                else if (favor < 200) favor_ratio = 0.15;
                 else favor_ratio = 0;
 
                 double[] basic = null;
