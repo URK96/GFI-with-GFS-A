@@ -1,0 +1,9 @@
+<2.3.31 수정사항>
+
+- 중장비 부대 레이아웃 일부 개선
+- 일부 이미지 DPI 대응
+- 만화 컨텐츠 추가 (그리폰 일상만화, Geo의 소녀전선)
+
+- Edit FST Dic layout
+- Optimize some image resource
+- Add cartoon content

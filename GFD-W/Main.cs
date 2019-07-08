@@ -9,6 +9,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace GFD_W
 {
@@ -67,9 +68,28 @@ namespace GFD_W
             }
         }
 
+
+        // Event Functions
+
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void GFDW정보ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GFDWInfo info = new GFDWInfo();
+            info.ShowDialog();
+        }
+
+        private void Main_DiscordButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://discord.gg/acg983T");
+        }
+
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

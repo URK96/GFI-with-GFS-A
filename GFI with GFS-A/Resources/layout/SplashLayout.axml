@@ -3,13 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/SplashMainLayout">
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_alignParentTop="true"
-		android:layout_alignParentRight="true"
-		android:textAppearance="?android:attr/textAppearanceSmall"
-		android:id="@+id/SplashAppVersion"/>
 	<LinearLayout
 		android:orientation="vertical"
 		android:layout_width="match_parent"
@@ -22,6 +15,14 @@
 			android:alpha="0"
 			android:id="@+id/SplashImageView"/>
 	</LinearLayout>
+    <TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:textColor="#F2F2F2"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:id="@+id/SplashAppVersion"/>
 	<TextView
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content"
@@ -34,5 +35,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/SplashSnackbarLayout"
-        android:layout_alignTop="@id/SplashMainLayout" />
+        android:layout_alignTop="@id/SplashMainLayout"
+        android:foregroundGravity="fill_horizontal" />
 </RelativeLayout>

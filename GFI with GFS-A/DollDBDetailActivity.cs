@@ -514,7 +514,7 @@ namespace GFI_with_GFS_A
                         VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", "Doll", doll.krName, $"{doll.krName}_{voice}_JP.wav");
                         target = Path.Combine(ETC.CachePath, "Voices", "Doll", $"{doll.DicNumber}_{voice}_JP.gfdcache");
                         break;
-                    case 1:
+                    default:
                         VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", "Doll", $"{doll.krName}_{V_Costume_Index - 1}", $"{doll.krName}_{V_Costume_Index - 1}_{voice}_JP.wav");
                         target = Path.Combine(ETC.CachePath, "Voices", "Doll", $"{doll.DicNumber}_{V_Costume_Index - 1}_{voice}_JP.gfdcache");
                         break;
@@ -565,35 +565,14 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                /*V_Costume_List.Clear();
-                V_Costume_List.Add($"Default:{(string)DollInfoDR["Voices"]}");
-                if (DollInfoDR["CostumeVoices"] != DBNull.Value)
-                {
-                    if (ETC.IsDBNullOrBlank(DollInfoDR, "CostumeVoices") == false)
-                        V_Costume_List.AddRange(((string)DollInfoDR["CostumeVoices"]).Split(','));
-                }
-                V_Costume_List.TrimExcess();*/
-
                 List<string> V_C_List = new List<string>()
                 {
                     "Default"
                 };
 
                 if (doll.CostumeVoices != null)
-                {
                     for (int i = 0; i < (doll.CostumeVoices.Length / doll.CostumeVoices.Rank); ++i)
                         V_C_List.Add(doll.Costumes[int.Parse(doll.CostumeVoices[i, 0])]);
-                }
-
-                /*for (int i = 0; i < V_Costume_List.Count; ++i)
-                {
-                    if (i >= 1)
-                    {
-                        string[] Costumes = ((string)DollInfoDR["Costume"]).Split(';');
-                        V_C_List.Add(Costumes[int.Parse(V_Costume_List[i].Split(':')[0])]);
-                    }
-                    else V_C_List.Add(V_Costume_List[i].Split(':')[0]);
-                }*/
 
                 V_C_List.TrimExcess();
 

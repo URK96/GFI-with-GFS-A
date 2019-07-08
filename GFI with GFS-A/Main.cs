@@ -8,9 +8,11 @@ using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Widget;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace GFI_with_GFS_A
 {
@@ -521,13 +523,36 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.GuideBookViewerExtraButton:
-                        ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
+                        //ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
                         //StartActivity(typeof(GuideBookViewer));
                         //OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
 #if DEBUG
-                        var intent3 = new Intent(this, typeof(PDFViewer));
-                        intent3.PutExtra("Path", Path.Combine(ETC.CachePath, "GuideBook", "PDFs", "PartA.pdf"));
-                        StartActivity(intent3);
+                        string path = Path.Combine(ETC.CachePath, "GuideBook", "PDFs", "PartA.pdf");
+                        if (File.Exists(path) == false)
+                            using (WebClient wc = new WebClient())
+                                await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "PDF", $"PartA.pdf"), path);
+
+                        //await Launcher.OpenAsync(path);
+                        Intent intent3 = new Intent(Intent.ActionView, Android.Net.Uri.Parse(path));
+                        intent3.SetType("application/pdf");
+                        PackageManager pm = PackageManager;
+                        List<ResolveInfo> activities = new List<ResolveInfo>();
+                        Toast.MakeText(this, activities.Count.ToString(), ToastLength.Short).Show();
+                        
+                        
+                        activities.AddRange(PackageManager.QueryIntentActivities(intent3, 0));
+                        foreach (ResolveInfo info in activities)
+                        {
+                            Toast.MakeText(this, info.ToString(), ToastLength.Short).Show();
+                        }
+                        if (activities.Count > 0)
+                        {
+                            StartActivity(intent3);
+                        }
+                        else
+                        {
+                            ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
+                        }
 #endif
                         break;
                     case Resource.Id.AreaTipExtraButton:

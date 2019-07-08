@@ -6,6 +6,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
+using Android.Util;
 using Android.Widget;
 using System;
 using System.Collections;
@@ -83,7 +84,7 @@ namespace GFI_with_GFS_A
             try
             {
                 await Animation();
-                FindViewById<TextView>(Resource.Id.SplashAppVersion).Text = $"v{AppInfo.VersionString}({AppInfo.BuildString}";
+                FindViewById<TextView>(Resource.Id.SplashAppVersion).Text = $"v{AppInfo.VersionString}({AppInfo.BuildString})";
 
 
                 // Initialize

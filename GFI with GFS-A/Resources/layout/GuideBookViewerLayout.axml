@@ -16,14 +16,6 @@
 			android:layout_height="match_parent"
 			android:layout_below="@id/GuideBookViewerMainToolbar"
 			android:id="@+id/GuideBookViewerMainDrawerLayout">
-			<!--<Syncfusion.SfPdfViewer.Android.SfPdfViewer
-				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:id="@+id/GuidBookViewerPDFViewer" />-->
-			<xfinium.pdf.view.PdfCoreView
-				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:id="@+id/GuidBookViewerPDFViewer" />
 			<ListView
 			    android:layout_width="240dp"
 			    android:layout_height="match_parent"

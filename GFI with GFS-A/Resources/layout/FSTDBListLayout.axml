@@ -60,7 +60,7 @@
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/lineup_name_icon"
+        android:src="@drawable/refreshicon_whitetheme"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="80dp"
         android:layout_alignParentBottom="true"
@@ -68,7 +68,7 @@
         app:backgroundTint="@color/FABColor"
         app:fabSize="auto"
         app:rippleColor="#FF80AB"
-        android:id="@+id/FSTArrayFAB" />
+        android:id="@+id/FSTRefreshCacheFAB" />
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

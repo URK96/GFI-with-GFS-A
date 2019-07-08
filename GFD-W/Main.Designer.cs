@@ -34,24 +34,31 @@
             this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.도움말ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gFDW정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainTabControl = new System.Windows.Forms.TabControl();
             this.MainTabPage_Main = new System.Windows.Forms.TabPage();
-            this.MainStatusStrip = new System.Windows.Forms.StatusStrip();
-            this.StatusStrip_AppVerLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.StatusStrip_DBVerLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.Main_InquiryGroup = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Main_DiscordButton = new System.Windows.Forms.PictureBox();
             this.Main_NotificationGroup = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Main_NotificationRefreshButton = new System.Windows.Forms.Button();
             this.MainNotification = new System.Windows.Forms.RichTextBox();
             this.MainTabPage_TDoll = new System.Windows.Forms.TabPage();
             this.TDollDic_SplitContainer = new System.Windows.Forms.SplitContainer();
+            this.TDollDic_TDollInfo_ModSkillButton = new System.Windows.Forms.Button();
+            this.TDollDic_TDollInfo_SkillButton = new System.Windows.Forms.Button();
+            this.TDollDic_TDollInfo_GunDataButton = new System.Windows.Forms.Button();
+            this.TDollDic_TDollInfo_FullImageLoadProcessBar = new System.Windows.Forms.ProgressBar();
+            this.TDollDic_TDollInfo_VoiceGroup = new System.Windows.Forms.GroupBox();
+            this.TDollDic_TDollInfo_VoicePlayButton = new System.Windows.Forms.Button();
+            this.TDollDic_TDollInfo_VoiceSelector = new System.Windows.Forms.ComboBox();
+            this.TDollDic_TDollInfo_CostumeVoiceSelector = new System.Windows.Forms.ComboBox();
             this.TDollDic_TDollInfo_ModSelectorPanel = new System.Windows.Forms.Panel();
+            this.TDollDic_TDollInfo_ModStoryButton = new System.Windows.Forms.Button();
             this.TDollDic_TDollInfo_ModSelector3 = new System.Windows.Forms.RadioButton();
             this.TDollDic_TDollInfo_ModSelector2 = new System.Windows.Forms.RadioButton();
             this.TDollDic_TDollInfo_ModSelector1 = new System.Windows.Forms.RadioButton();
             this.TDollDic_TDollInfo_ModSelector0 = new System.Windows.Forms.RadioButton();
-            this.TDollDic_TDollInfo_ExtraInfoGroup = new System.Windows.Forms.GroupBox();
             this.TDollDic_TDollInfo_AbilityInfoGroup = new System.Windows.Forms.GroupBox();
             this.TDollDic_TDollInfo_AbilityReloadPanel = new System.Windows.Forms.Panel();
             this.TDollDic_TDollInfo_AbilityReloadMag = new System.Windows.Forms.Label();
@@ -83,6 +90,10 @@
             this.TDollDic_TDollInfo_AbilityFavorSelector = new System.Windows.Forms.ComboBox();
             this.TDollDic_TDollInfo_TypeIconImage = new System.Windows.Forms.PictureBox();
             this.TDollDic_TDollInfo_BasicInfoGroup = new System.Windows.Forms.GroupBox();
+            this.TDollDic_TDollInfo_NickNameInfo = new System.Windows.Forms.Label();
+            this.TDollDic_TDollInfo_IllustratorInfo = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.TDollDic_TDollInfo_FormationBuffIcon2 = new System.Windows.Forms.PictureBox();
             this.TDollDic_TDollInfo_FormationBuffMag2 = new System.Windows.Forms.Label();
             this.TDollDic_TDollInfo_FormationBuffIcon1 = new System.Windows.Forms.PictureBox();
@@ -126,23 +137,22 @@
             this.TDollGrade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TDollName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TDollHasMod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.MainTabPage_Equip = new System.Windows.Forms.TabPage();
-            this.MainTabPage_Fairy = new System.Windows.Forms.TabPage();
-            this.MainTabPage_FST = new System.Windows.Forms.TabPage();
-            this.MainTabPage_Enemy = new System.Windows.Forms.TabPage();
+            this.MainStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.StatusStrip_AppVerLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StatusStrip_DBVerLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.TDollDic_TDollInfo_GainTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.MainMenuStrip.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.MainTabPage_Main.SuspendLayout();
-            this.MainStatusStrip.SuspendLayout();
             this.Main_InquiryGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Main_DiscordButton)).BeginInit();
             this.Main_NotificationGroup.SuspendLayout();
             this.MainTabPage_TDoll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TDollDic_SplitContainer)).BeginInit();
             this.TDollDic_SplitContainer.Panel1.SuspendLayout();
             this.TDollDic_SplitContainer.Panel2.SuspendLayout();
             this.TDollDic_SplitContainer.SuspendLayout();
+            this.TDollDic_TDollInfo_VoiceGroup.SuspendLayout();
             this.TDollDic_TDollInfo_ModSelectorPanel.SuspendLayout();
             this.TDollDic_TDollInfo_AbilityInfoGroup.SuspendLayout();
             this.TDollDic_TDollInfo_AbilityReloadPanel.SuspendLayout();
@@ -167,12 +177,14 @@
             this.TDollDic_TDollFilterGroup_VoiceGroup.SuspendLayout();
             this.TDollDic_TDollFilterGroup_TypeGroup.SuspendLayout();
             this.TDollDic_TDollListGroup.SuspendLayout();
+            this.MainStatusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMenuStrip
             // 
             this.MainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.programToolStripMenuItem});
+            this.programToolStripMenuItem,
+            this.도움말ToolStripMenuItem});
             this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MainMenuStrip.Name = "MainMenuStrip";
             this.MainMenuStrip.Size = new System.Drawing.Size(886, 24);
@@ -185,8 +197,8 @@
             this.설정ToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.programToolStripMenuItem.Name = "programToolStripMenuItem";
-            this.programToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.programToolStripMenuItem.Text = "Program";
+            this.programToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.programToolStripMenuItem.Text = "프로그램";
             // 
             // 설정ToolStripMenuItem
             // 
@@ -199,64 +211,51 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.exitToolStripMenuItem.Text = "종료";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            // 
+            // 도움말ToolStripMenuItem
+            // 
+            this.도움말ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gFDW정보ToolStripMenuItem});
+            this.도움말ToolStripMenuItem.Name = "도움말ToolStripMenuItem";
+            this.도움말ToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.도움말ToolStripMenuItem.Text = "도움말";
+            // 
+            // gFDW정보ToolStripMenuItem
+            // 
+            this.gFDW정보ToolStripMenuItem.Name = "gFDW정보ToolStripMenuItem";
+            this.gFDW정보ToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.gFDW정보ToolStripMenuItem.Text = "GFD-W 정보";
+            this.gFDW정보ToolStripMenuItem.Click += new System.EventHandler(this.GFDW정보ToolStripMenuItem_Click);
             // 
             // MainTabControl
             // 
             this.MainTabControl.Controls.Add(this.MainTabPage_Main);
             this.MainTabControl.Controls.Add(this.MainTabPage_TDoll);
-            this.MainTabControl.Controls.Add(this.MainTabPage_Equip);
-            this.MainTabControl.Controls.Add(this.MainTabPage_Fairy);
-            this.MainTabControl.Controls.Add(this.MainTabPage_FST);
-            this.MainTabControl.Controls.Add(this.MainTabPage_Enemy);
-            this.MainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainTabControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.MainTabControl.Location = new System.Drawing.Point(0, 24);
             this.MainTabControl.Name = "MainTabControl";
             this.MainTabControl.SelectedIndex = 0;
-            this.MainTabControl.Size = new System.Drawing.Size(886, 778);
+            this.MainTabControl.Size = new System.Drawing.Size(886, 753);
             this.MainTabControl.TabIndex = 1;
             // 
             // MainTabPage_Main
             // 
-            this.MainTabPage_Main.Controls.Add(this.MainStatusStrip);
             this.MainTabPage_Main.Controls.Add(this.Main_InquiryGroup);
             this.MainTabPage_Main.Controls.Add(this.Main_NotificationGroup);
             this.MainTabPage_Main.Location = new System.Drawing.Point(4, 22);
             this.MainTabPage_Main.Name = "MainTabPage_Main";
             this.MainTabPage_Main.Padding = new System.Windows.Forms.Padding(3);
-            this.MainTabPage_Main.Size = new System.Drawing.Size(878, 752);
+            this.MainTabPage_Main.Size = new System.Drawing.Size(878, 727);
             this.MainTabPage_Main.TabIndex = 0;
             this.MainTabPage_Main.Text = "메인";
             this.MainTabPage_Main.UseVisualStyleBackColor = true;
             // 
-            // MainStatusStrip
-            // 
-            this.MainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusStrip_AppVerLabel,
-            this.StatusStrip_DBVerLabel});
-            this.MainStatusStrip.Location = new System.Drawing.Point(3, 727);
-            this.MainStatusStrip.Name = "MainStatusStrip";
-            this.MainStatusStrip.Size = new System.Drawing.Size(872, 22);
-            this.MainStatusStrip.SizingGrip = false;
-            this.MainStatusStrip.TabIndex = 2;
-            this.MainStatusStrip.Text = "statusStrip1";
-            // 
-            // StatusStrip_AppVerLabel
-            // 
-            this.StatusStrip_AppVerLabel.Name = "StatusStrip_AppVerLabel";
-            this.StatusStrip_AppVerLabel.Size = new System.Drawing.Size(428, 17);
-            this.StatusStrip_AppVerLabel.Spring = true;
-            this.StatusStrip_AppVerLabel.Text = "Ver 0.0.0";
-            // 
-            // StatusStrip_DBVerLabel
-            // 
-            this.StatusStrip_DBVerLabel.Name = "StatusStrip_DBVerLabel";
-            this.StatusStrip_DBVerLabel.Size = new System.Drawing.Size(428, 17);
-            this.StatusStrip_DBVerLabel.Spring = true;
-            this.StatusStrip_DBVerLabel.Text = "DB Ver : 0";
-            // 
             // Main_InquiryGroup
             // 
-            this.Main_InquiryGroup.Controls.Add(this.pictureBox1);
+            this.Main_InquiryGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Main_InquiryGroup.Controls.Add(this.Main_DiscordButton);
             this.Main_InquiryGroup.Location = new System.Drawing.Point(677, 532);
             this.Main_InquiryGroup.Name = "Main_InquiryGroup";
             this.Main_InquiryGroup.Size = new System.Drawing.Size(198, 192);
@@ -264,23 +263,25 @@
             this.Main_InquiryGroup.TabStop = false;
             this.Main_InquiryGroup.Text = "소전사전 문의";
             // 
-            // pictureBox1
+            // Main_DiscordButton
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = global::GFD_W.Properties.Resources.DiscordIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(181, 58);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.Main_DiscordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Main_DiscordButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Main_DiscordButton.Image = global::GFD_W.Properties.Resources.DiscordIcon;
+            this.Main_DiscordButton.Location = new System.Drawing.Point(6, 20);
+            this.Main_DiscordButton.Name = "Main_DiscordButton";
+            this.Main_DiscordButton.Size = new System.Drawing.Size(181, 58);
+            this.Main_DiscordButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Main_DiscordButton.TabIndex = 0;
+            this.Main_DiscordButton.TabStop = false;
+            this.Main_DiscordButton.Click += new System.EventHandler(this.Main_DiscordButton_Click);
             // 
             // Main_NotificationGroup
             // 
             this.Main_NotificationGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.Main_NotificationGroup.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Main_NotificationGroup.Controls.Add(this.button1);
+            this.Main_NotificationGroup.Controls.Add(this.Main_NotificationRefreshButton);
             this.Main_NotificationGroup.Controls.Add(this.MainNotification);
             this.Main_NotificationGroup.Location = new System.Drawing.Point(8, 6);
             this.Main_NotificationGroup.Name = "Main_NotificationGroup";
@@ -289,16 +290,16 @@
             this.Main_NotificationGroup.TabStop = false;
             this.Main_NotificationGroup.Text = "공지사항";
             // 
-            // button1
+            // Main_NotificationRefreshButton
             // 
-            this.button1.BackgroundImage = global::GFD_W.Properties.Resources.Refresh;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.Location = new System.Drawing.Point(3, 640);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(657, 75);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
+            this.Main_NotificationRefreshButton.BackgroundImage = global::GFD_W.Properties.Resources.Refresh;
+            this.Main_NotificationRefreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Main_NotificationRefreshButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Main_NotificationRefreshButton.Location = new System.Drawing.Point(3, 640);
+            this.Main_NotificationRefreshButton.Name = "Main_NotificationRefreshButton";
+            this.Main_NotificationRefreshButton.Size = new System.Drawing.Size(657, 75);
+            this.Main_NotificationRefreshButton.TabIndex = 1;
+            this.Main_NotificationRefreshButton.UseVisualStyleBackColor = true;
             // 
             // MainNotification
             // 
@@ -319,7 +320,7 @@
             this.MainTabPage_TDoll.Location = new System.Drawing.Point(4, 22);
             this.MainTabPage_TDoll.Name = "MainTabPage_TDoll";
             this.MainTabPage_TDoll.Padding = new System.Windows.Forms.Padding(3);
-            this.MainTabPage_TDoll.Size = new System.Drawing.Size(878, 752);
+            this.MainTabPage_TDoll.Size = new System.Drawing.Size(878, 727);
             this.MainTabPage_TDoll.TabIndex = 1;
             this.MainTabPage_TDoll.Text = "인형";
             this.MainTabPage_TDoll.UseVisualStyleBackColor = true;
@@ -332,8 +333,12 @@
             // 
             // TDollDic_SplitContainer.Panel1
             // 
+            this.TDollDic_SplitContainer.Panel1.Controls.Add(this.TDollDic_TDollInfo_ModSkillButton);
+            this.TDollDic_SplitContainer.Panel1.Controls.Add(this.TDollDic_TDollInfo_SkillButton);
+            this.TDollDic_SplitContainer.Panel1.Controls.Add(this.TDollDic_TDollInfo_GunDataButton);
+            this.TDollDic_SplitContainer.Panel1.Controls.Add(this.TDollDic_TDollInfo_FullImageLoadProcessBar);
+            this.TDollDic_SplitContainer.Panel1.Controls.Add(this.TDollDic_TDollInfo_VoiceGroup);
             this.TDollDic_SplitContainer.Panel1.Controls.Add(this.TDollDic_TDollInfo_ModSelectorPanel);
-            this.TDollDic_SplitContainer.Panel1.Controls.Add(this.TDollDic_TDollInfo_ExtraInfoGroup);
             this.TDollDic_SplitContainer.Panel1.Controls.Add(this.TDollDic_TDollInfo_AbilityInfoGroup);
             this.TDollDic_SplitContainer.Panel1.Controls.Add(this.TDollDic_TDollInfo_TypeIconImage);
             this.TDollDic_SplitContainer.Panel1.Controls.Add(this.TDollDic_TDollInfo_BasicInfoGroup);
@@ -344,20 +349,121 @@
             // 
             this.TDollDic_SplitContainer.Panel2.Controls.Add(this.TDollDic_TDollFilterGroup);
             this.TDollDic_SplitContainer.Panel2.Controls.Add(this.TDollDic_TDollListGroup);
-            this.TDollDic_SplitContainer.Size = new System.Drawing.Size(872, 746);
+            this.TDollDic_SplitContainer.Size = new System.Drawing.Size(872, 721);
             this.TDollDic_SplitContainer.SplitterDistance = 535;
             this.TDollDic_SplitContainer.TabIndex = 0;
             // 
+            // TDollDic_TDollInfo_ModSkillButton
+            // 
+            this.TDollDic_TDollInfo_ModSkillButton.Enabled = false;
+            this.TDollDic_TDollInfo_ModSkillButton.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TDollDic_TDollInfo_ModSkillButton.Location = new System.Drawing.Point(433, 601);
+            this.TDollDic_TDollInfo_ModSkillButton.Name = "TDollDic_TDollInfo_ModSkillButton";
+            this.TDollDic_TDollInfo_ModSkillButton.Size = new System.Drawing.Size(99, 48);
+            this.TDollDic_TDollInfo_ModSkillButton.TabIndex = 15;
+            this.TDollDic_TDollInfo_ModSkillButton.Tag = "Mod";
+            this.TDollDic_TDollInfo_ModSkillButton.Text = "Mod 스킬";
+            this.TDollDic_TDollInfo_ModSkillButton.UseVisualStyleBackColor = true;
+            this.TDollDic_TDollInfo_ModSkillButton.Click += new System.EventHandler(this.TDollDic_TDollInfo_SkillButton_Click);
+            // 
+            // TDollDic_TDollInfo_SkillButton
+            // 
+            this.TDollDic_TDollInfo_SkillButton.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TDollDic_TDollInfo_SkillButton.Location = new System.Drawing.Point(433, 547);
+            this.TDollDic_TDollInfo_SkillButton.Name = "TDollDic_TDollInfo_SkillButton";
+            this.TDollDic_TDollInfo_SkillButton.Size = new System.Drawing.Size(99, 48);
+            this.TDollDic_TDollInfo_SkillButton.TabIndex = 14;
+            this.TDollDic_TDollInfo_SkillButton.Tag = "Normal";
+            this.TDollDic_TDollInfo_SkillButton.Text = "스킬";
+            this.TDollDic_TDollInfo_SkillButton.UseVisualStyleBackColor = true;
+            this.TDollDic_TDollInfo_SkillButton.Click += new System.EventHandler(this.TDollDic_TDollInfo_SkillButton_Click);
+            // 
+            // TDollDic_TDollInfo_GunDataButton
+            // 
+            this.TDollDic_TDollInfo_GunDataButton.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TDollDic_TDollInfo_GunDataButton.Location = new System.Drawing.Point(321, 547);
+            this.TDollDic_TDollInfo_GunDataButton.Name = "TDollDic_TDollInfo_GunDataButton";
+            this.TDollDic_TDollInfo_GunDataButton.Size = new System.Drawing.Size(99, 48);
+            this.TDollDic_TDollInfo_GunDataButton.TabIndex = 13;
+            this.TDollDic_TDollInfo_GunDataButton.Text = "총기 제원";
+            this.TDollDic_TDollInfo_GunDataButton.UseVisualStyleBackColor = true;
+            this.TDollDic_TDollInfo_GunDataButton.Click += new System.EventHandler(this.TDollDic_TDollInfo_GunDataButton_Click);
+            // 
+            // TDollDic_TDollInfo_FullImageLoadProcessBar
+            // 
+            this.TDollDic_TDollInfo_FullImageLoadProcessBar.Location = new System.Drawing.Point(5, 445);
+            this.TDollDic_TDollInfo_FullImageLoadProcessBar.MarqueeAnimationSpeed = 10;
+            this.TDollDic_TDollInfo_FullImageLoadProcessBar.Name = "TDollDic_TDollInfo_FullImageLoadProcessBar";
+            this.TDollDic_TDollInfo_FullImageLoadProcessBar.Size = new System.Drawing.Size(310, 10);
+            this.TDollDic_TDollInfo_FullImageLoadProcessBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.TDollDic_TDollInfo_FullImageLoadProcessBar.TabIndex = 13;
+            this.TDollDic_TDollInfo_FullImageLoadProcessBar.Visible = false;
+            // 
+            // TDollDic_TDollInfo_VoiceGroup
+            // 
+            this.TDollDic_TDollInfo_VoiceGroup.Controls.Add(this.TDollDic_TDollInfo_VoicePlayButton);
+            this.TDollDic_TDollInfo_VoiceGroup.Controls.Add(this.TDollDic_TDollInfo_VoiceSelector);
+            this.TDollDic_TDollInfo_VoiceGroup.Controls.Add(this.TDollDic_TDollInfo_CostumeVoiceSelector);
+            this.TDollDic_TDollInfo_VoiceGroup.Location = new System.Drawing.Point(321, 461);
+            this.TDollDic_TDollInfo_VoiceGroup.Name = "TDollDic_TDollInfo_VoiceGroup";
+            this.TDollDic_TDollInfo_VoiceGroup.Size = new System.Drawing.Size(211, 80);
+            this.TDollDic_TDollInfo_VoiceGroup.TabIndex = 12;
+            this.TDollDic_TDollInfo_VoiceGroup.TabStop = false;
+            this.TDollDic_TDollInfo_VoiceGroup.Text = "보이스";
+            // 
+            // TDollDic_TDollInfo_VoicePlayButton
+            // 
+            this.TDollDic_TDollInfo_VoicePlayButton.BackgroundImage = global::GFD_W.Properties.Resources.Play;
+            this.TDollDic_TDollInfo_VoicePlayButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TDollDic_TDollInfo_VoicePlayButton.Location = new System.Drawing.Point(148, 48);
+            this.TDollDic_TDollInfo_VoicePlayButton.Name = "TDollDic_TDollInfo_VoicePlayButton";
+            this.TDollDic_TDollInfo_VoicePlayButton.Size = new System.Drawing.Size(57, 23);
+            this.TDollDic_TDollInfo_VoicePlayButton.TabIndex = 2;
+            this.TDollDic_TDollInfo_VoicePlayButton.UseVisualStyleBackColor = true;
+            this.TDollDic_TDollInfo_VoicePlayButton.Click += new System.EventHandler(this.TDollDic_TDollInfo_VoicePlayButton_Click);
+            // 
+            // TDollDic_TDollInfo_VoiceSelector
+            // 
+            this.TDollDic_TDollInfo_VoiceSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TDollDic_TDollInfo_VoiceSelector.FormattingEnabled = true;
+            this.TDollDic_TDollInfo_VoiceSelector.Location = new System.Drawing.Point(6, 50);
+            this.TDollDic_TDollInfo_VoiceSelector.Name = "TDollDic_TDollInfo_VoiceSelector";
+            this.TDollDic_TDollInfo_VoiceSelector.Size = new System.Drawing.Size(136, 20);
+            this.TDollDic_TDollInfo_VoiceSelector.TabIndex = 1;
+            // 
+            // TDollDic_TDollInfo_CostumeVoiceSelector
+            // 
+            this.TDollDic_TDollInfo_CostumeVoiceSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TDollDic_TDollInfo_CostumeVoiceSelector.FormattingEnabled = true;
+            this.TDollDic_TDollInfo_CostumeVoiceSelector.Location = new System.Drawing.Point(6, 17);
+            this.TDollDic_TDollInfo_CostumeVoiceSelector.Name = "TDollDic_TDollInfo_CostumeVoiceSelector";
+            this.TDollDic_TDollInfo_CostumeVoiceSelector.Size = new System.Drawing.Size(136, 20);
+            this.TDollDic_TDollInfo_CostumeVoiceSelector.TabIndex = 0;
+            this.TDollDic_TDollInfo_CostumeVoiceSelector.SelectedIndexChanged += new System.EventHandler(this.TDollDic_TDollInfo_CostumeVoiceSelector_SelectedIndexChanged);
+            // 
             // TDollDic_TDollInfo_ModSelectorPanel
             // 
+            this.TDollDic_TDollInfo_ModSelectorPanel.Controls.Add(this.TDollDic_TDollInfo_ModStoryButton);
             this.TDollDic_TDollInfo_ModSelectorPanel.Controls.Add(this.TDollDic_TDollInfo_ModSelector3);
             this.TDollDic_TDollInfo_ModSelectorPanel.Controls.Add(this.TDollDic_TDollInfo_ModSelector2);
             this.TDollDic_TDollInfo_ModSelectorPanel.Controls.Add(this.TDollDic_TDollInfo_ModSelector1);
             this.TDollDic_TDollInfo_ModSelectorPanel.Controls.Add(this.TDollDic_TDollInfo_ModSelector0);
             this.TDollDic_TDollInfo_ModSelectorPanel.Location = new System.Drawing.Point(321, 85);
             this.TDollDic_TDollInfo_ModSelectorPanel.Name = "TDollDic_TDollInfo_ModSelectorPanel";
-            this.TDollDic_TDollInfo_ModSelectorPanel.Size = new System.Drawing.Size(211, 56);
+            this.TDollDic_TDollInfo_ModSelectorPanel.Size = new System.Drawing.Size(211, 90);
             this.TDollDic_TDollInfo_ModSelectorPanel.TabIndex = 11;
+            // 
+            // TDollDic_TDollInfo_ModStoryButton
+            // 
+            this.TDollDic_TDollInfo_ModStoryButton.Enabled = false;
+            this.TDollDic_TDollInfo_ModStoryButton.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TDollDic_TDollInfo_ModStoryButton.Location = new System.Drawing.Point(3, 59);
+            this.TDollDic_TDollInfo_ModStoryButton.Name = "TDollDic_TDollInfo_ModStoryButton";
+            this.TDollDic_TDollInfo_ModStoryButton.Size = new System.Drawing.Size(206, 28);
+            this.TDollDic_TDollInfo_ModStoryButton.TabIndex = 14;
+            this.TDollDic_TDollInfo_ModStoryButton.Text = "개조(Mod) 이야기";
+            this.TDollDic_TDollInfo_ModStoryButton.UseVisualStyleBackColor = true;
+            this.TDollDic_TDollInfo_ModStoryButton.Click += new System.EventHandler(this.TDollDic_TDollInfo_ModStoryButton_Click);
             // 
             // TDollDic_TDollInfo_ModSelector3
             // 
@@ -415,15 +521,6 @@
             this.TDollDic_TDollInfo_ModSelector0.UseVisualStyleBackColor = true;
             this.TDollDic_TDollInfo_ModSelector0.CheckedChanged += new System.EventHandler(this.TDollDic_TDollInfo_ModSelector_CheckedChanged);
             // 
-            // TDollDic_TDollInfo_ExtraInfoGroup
-            // 
-            this.TDollDic_TDollInfo_ExtraInfoGroup.Location = new System.Drawing.Point(321, 461);
-            this.TDollDic_TDollInfo_ExtraInfoGroup.Name = "TDollDic_TDollInfo_ExtraInfoGroup";
-            this.TDollDic_TDollInfo_ExtraInfoGroup.Size = new System.Drawing.Size(211, 279);
-            this.TDollDic_TDollInfo_ExtraInfoGroup.TabIndex = 5;
-            this.TDollDic_TDollInfo_ExtraInfoGroup.TabStop = false;
-            this.TDollDic_TDollInfo_ExtraInfoGroup.Text = "기타";
-            // 
             // TDollDic_TDollInfo_AbilityInfoGroup
             // 
             this.TDollDic_TDollInfo_AbilityInfoGroup.Controls.Add(this.TDollDic_TDollInfo_AbilityReloadPanel);
@@ -440,7 +537,7 @@
             this.TDollDic_TDollInfo_AbilityInfoGroup.Controls.Add(this.TDollDic_TDollInfo_AbilityFavorSelector);
             this.TDollDic_TDollInfo_AbilityInfoGroup.Location = new System.Drawing.Point(5, 461);
             this.TDollDic_TDollInfo_AbilityInfoGroup.Name = "TDollDic_TDollInfo_AbilityInfoGroup";
-            this.TDollDic_TDollInfo_AbilityInfoGroup.Size = new System.Drawing.Size(310, 279);
+            this.TDollDic_TDollInfo_AbilityInfoGroup.Size = new System.Drawing.Size(310, 257);
             this.TDollDic_TDollInfo_AbilityInfoGroup.TabIndex = 4;
             this.TDollDic_TDollInfo_AbilityInfoGroup.TabStop = false;
             this.TDollDic_TDollInfo_AbilityInfoGroup.Text = "능력치";
@@ -449,7 +546,7 @@
             // 
             this.TDollDic_TDollInfo_AbilityReloadPanel.Controls.Add(this.TDollDic_TDollInfo_AbilityReloadMag);
             this.TDollDic_TDollInfo_AbilityReloadPanel.Controls.Add(this.label9);
-            this.TDollDic_TDollInfo_AbilityReloadPanel.Location = new System.Drawing.Point(94, 220);
+            this.TDollDic_TDollInfo_AbilityReloadPanel.Location = new System.Drawing.Point(94, 198);
             this.TDollDic_TDollInfo_AbilityReloadPanel.Name = "TDollDic_TDollInfo_AbilityReloadPanel";
             this.TDollDic_TDollInfo_AbilityReloadPanel.Size = new System.Drawing.Size(82, 53);
             this.TDollDic_TDollInfo_AbilityReloadPanel.TabIndex = 8;
@@ -478,7 +575,7 @@
             // 
             this.TDollDic_TDollInfo_AbilityBulletPanel.Controls.Add(this.TDollDic_TDollInfo_AbilityBulletMag);
             this.TDollDic_TDollInfo_AbilityBulletPanel.Controls.Add(this.label5);
-            this.TDollDic_TDollInfo_AbilityBulletPanel.Location = new System.Drawing.Point(6, 220);
+            this.TDollDic_TDollInfo_AbilityBulletPanel.Location = new System.Drawing.Point(6, 198);
             this.TDollDic_TDollInfo_AbilityBulletPanel.Name = "TDollDic_TDollInfo_AbilityBulletPanel";
             this.TDollDic_TDollInfo_AbilityBulletPanel.Size = new System.Drawing.Size(82, 53);
             this.TDollDic_TDollInfo_AbilityBulletPanel.TabIndex = 8;
@@ -741,6 +838,10 @@
             // 
             // TDollDic_TDollInfo_BasicInfoGroup
             // 
+            this.TDollDic_TDollInfo_BasicInfoGroup.Controls.Add(this.TDollDic_TDollInfo_NickNameInfo);
+            this.TDollDic_TDollInfo_BasicInfoGroup.Controls.Add(this.TDollDic_TDollInfo_IllustratorInfo);
+            this.TDollDic_TDollInfo_BasicInfoGroup.Controls.Add(this.label7);
+            this.TDollDic_TDollInfo_BasicInfoGroup.Controls.Add(this.label4);
             this.TDollDic_TDollInfo_BasicInfoGroup.Controls.Add(this.TDollDic_TDollInfo_FormationBuffIcon2);
             this.TDollDic_TDollInfo_BasicInfoGroup.Controls.Add(this.TDollDic_TDollInfo_FormationBuffMag2);
             this.TDollDic_TDollInfo_BasicInfoGroup.Controls.Add(this.TDollDic_TDollInfo_FormationBuffIcon1);
@@ -749,16 +850,56 @@
             this.TDollDic_TDollInfo_BasicInfoGroup.Controls.Add(this.TDollDic_TDollInfo_FormationBuffTable);
             this.TDollDic_TDollInfo_BasicInfoGroup.Controls.Add(this.pictureBox2);
             this.TDollDic_TDollInfo_BasicInfoGroup.Controls.Add(this.TDollDic_TDollInfo_ProductTimeLabel);
-            this.TDollDic_TDollInfo_BasicInfoGroup.Location = new System.Drawing.Point(321, 265);
+            this.TDollDic_TDollInfo_BasicInfoGroup.Location = new System.Drawing.Point(321, 203);
             this.TDollDic_TDollInfo_BasicInfoGroup.Name = "TDollDic_TDollInfo_BasicInfoGroup";
-            this.TDollDic_TDollInfo_BasicInfoGroup.Size = new System.Drawing.Size(211, 190);
+            this.TDollDic_TDollInfo_BasicInfoGroup.Size = new System.Drawing.Size(211, 252);
             this.TDollDic_TDollInfo_BasicInfoGroup.TabIndex = 2;
             this.TDollDic_TDollInfo_BasicInfoGroup.TabStop = false;
             this.TDollDic_TDollInfo_BasicInfoGroup.Text = "기본 정보";
             // 
+            // TDollDic_TDollInfo_NickNameInfo
+            // 
+            this.TDollDic_TDollInfo_NickNameInfo.AutoSize = true;
+            this.TDollDic_TDollInfo_NickNameInfo.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TDollDic_TDollInfo_NickNameInfo.Location = new System.Drawing.Point(54, 105);
+            this.TDollDic_TDollInfo_NickNameInfo.Name = "TDollDic_TDollInfo_NickNameInfo";
+            this.TDollDic_TDollInfo_NickNameInfo.Size = new System.Drawing.Size(0, 13);
+            this.TDollDic_TDollInfo_NickNameInfo.TabIndex = 11;
+            // 
+            // TDollDic_TDollInfo_IllustratorInfo
+            // 
+            this.TDollDic_TDollInfo_IllustratorInfo.AutoSize = true;
+            this.TDollDic_TDollInfo_IllustratorInfo.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TDollDic_TDollInfo_IllustratorInfo.Location = new System.Drawing.Point(54, 83);
+            this.TDollDic_TDollInfo_IllustratorInfo.Name = "TDollDic_TDollInfo_IllustratorInfo";
+            this.TDollDic_TDollInfo_IllustratorInfo.Size = new System.Drawing.Size(0, 13);
+            this.TDollDic_TDollInfo_IllustratorInfo.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Location = new System.Drawing.Point(8, 105);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "별명 : ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(8, 83);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "작화 : ";
+            // 
             // TDollDic_TDollInfo_FormationBuffIcon2
             // 
-            this.TDollDic_TDollInfo_FormationBuffIcon2.Location = new System.Drawing.Point(79, 164);
+            this.TDollDic_TDollInfo_FormationBuffIcon2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.TDollDic_TDollInfo_FormationBuffIcon2.Location = new System.Drawing.Point(79, 226);
             this.TDollDic_TDollInfo_FormationBuffIcon2.Name = "TDollDic_TDollInfo_FormationBuffIcon2";
             this.TDollDic_TDollInfo_FormationBuffIcon2.Size = new System.Drawing.Size(20, 20);
             this.TDollDic_TDollInfo_FormationBuffIcon2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -767,8 +908,10 @@
             // 
             // TDollDic_TDollInfo_FormationBuffMag2
             // 
+            this.TDollDic_TDollInfo_FormationBuffMag2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.TDollDic_TDollInfo_FormationBuffMag2.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TDollDic_TDollInfo_FormationBuffMag2.Location = new System.Drawing.Point(105, 164);
+            this.TDollDic_TDollInfo_FormationBuffMag2.Location = new System.Drawing.Point(105, 226);
             this.TDollDic_TDollInfo_FormationBuffMag2.Name = "TDollDic_TDollInfo_FormationBuffMag2";
             this.TDollDic_TDollInfo_FormationBuffMag2.Size = new System.Drawing.Size(100, 23);
             this.TDollDic_TDollInfo_FormationBuffMag2.TabIndex = 6;
@@ -776,7 +919,9 @@
             // 
             // TDollDic_TDollInfo_FormationBuffIcon1
             // 
-            this.TDollDic_TDollInfo_FormationBuffIcon1.Location = new System.Drawing.Point(79, 142);
+            this.TDollDic_TDollInfo_FormationBuffIcon1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.TDollDic_TDollInfo_FormationBuffIcon1.Location = new System.Drawing.Point(79, 204);
             this.TDollDic_TDollInfo_FormationBuffIcon1.Name = "TDollDic_TDollInfo_FormationBuffIcon1";
             this.TDollDic_TDollInfo_FormationBuffIcon1.Size = new System.Drawing.Size(20, 20);
             this.TDollDic_TDollInfo_FormationBuffIcon1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -785,8 +930,10 @@
             // 
             // TDollDic_TDollInfo_FormationBuffMag1
             // 
+            this.TDollDic_TDollInfo_FormationBuffMag1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.TDollDic_TDollInfo_FormationBuffMag1.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TDollDic_TDollInfo_FormationBuffMag1.Location = new System.Drawing.Point(105, 142);
+            this.TDollDic_TDollInfo_FormationBuffMag1.Location = new System.Drawing.Point(105, 204);
             this.TDollDic_TDollInfo_FormationBuffMag1.Name = "TDollDic_TDollInfo_FormationBuffMag1";
             this.TDollDic_TDollInfo_FormationBuffMag1.Size = new System.Drawing.Size(100, 23);
             this.TDollDic_TDollInfo_FormationBuffMag1.TabIndex = 4;
@@ -794,8 +941,10 @@
             // 
             // TDollDic_TDollInfo_FormationBuffType
             // 
+            this.TDollDic_TDollInfo_FormationBuffType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.TDollDic_TDollInfo_FormationBuffType.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TDollDic_TDollInfo_FormationBuffType.Location = new System.Drawing.Point(90, 116);
+            this.TDollDic_TDollInfo_FormationBuffType.Location = new System.Drawing.Point(90, 178);
             this.TDollDic_TDollInfo_FormationBuffType.Name = "TDollDic_TDollInfo_FormationBuffType";
             this.TDollDic_TDollInfo_FormationBuffType.Size = new System.Drawing.Size(100, 23);
             this.TDollDic_TDollInfo_FormationBuffType.TabIndex = 3;
@@ -803,12 +952,14 @@
             // 
             // TDollDic_TDollInfo_FormationBuffTable
             // 
+            this.TDollDic_TDollInfo_FormationBuffTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.TDollDic_TDollInfo_FormationBuffTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.TDollDic_TDollInfo_FormationBuffTable.ColumnCount = 3;
             this.TDollDic_TDollInfo_FormationBuffTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.TDollDic_TDollInfo_FormationBuffTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.TDollDic_TDollInfo_FormationBuffTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.TDollDic_TDollInfo_FormationBuffTable.Location = new System.Drawing.Point(6, 119);
+            this.TDollDic_TDollInfo_FormationBuffTable.Location = new System.Drawing.Point(6, 181);
             this.TDollDic_TDollInfo_FormationBuffTable.Name = "TDollDic_TDollInfo_FormationBuffTable";
             this.TDollDic_TDollInfo_FormationBuffTable.RowCount = 3;
             this.TDollDic_TDollInfo_FormationBuffTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -888,6 +1039,8 @@
             this.TDollDic_TDollInfo_FullImageView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.TDollDic_TDollInfo_FullImageView.TabIndex = 0;
             this.TDollDic_TDollInfo_FullImageView.TabStop = false;
+            this.TDollDic_TDollInfo_FullImageView.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.TDollDic_TDollInfo_FullImageView_LoadCompleted);
+            this.TDollDic_TDollInfo_FullImageView.LoadProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.TDollDic_TDollInfo_FullImageView_LoadProgressChanged);
             this.TDollDic_TDollInfo_FullImageView.Click += new System.EventHandler(this.TDollDic_TDollInfo_FullImageView_Click);
             // 
             // TDollDic_TDollFilterGroup
@@ -903,16 +1056,18 @@
             this.TDollDic_TDollFilterGroup.Controls.Add(this.TDollDic_TDollFilterGroup_TypeGroup);
             this.TDollDic_TDollFilterGroup.Location = new System.Drawing.Point(6, 4);
             this.TDollDic_TDollFilterGroup.Name = "TDollDic_TDollFilterGroup";
-            this.TDollDic_TDollFilterGroup.Size = new System.Drawing.Size(324, 475);
+            this.TDollDic_TDollFilterGroup.Size = new System.Drawing.Size(324, 445);
             this.TDollDic_TDollFilterGroup.TabIndex = 1;
             this.TDollDic_TDollFilterGroup.TabStop = false;
             this.TDollDic_TDollFilterGroup.Text = "필터";
             // 
             // TDollDic_SearchLabel
             // 
+            this.TDollDic_SearchLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.TDollDic_SearchLabel.AutoSize = true;
             this.TDollDic_SearchLabel.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TDollDic_SearchLabel.Location = new System.Drawing.Point(14, 450);
+            this.TDollDic_SearchLabel.Location = new System.Drawing.Point(14, 420);
             this.TDollDic_SearchLabel.Name = "TDollDic_SearchLabel";
             this.TDollDic_SearchLabel.Size = new System.Drawing.Size(50, 13);
             this.TDollDic_SearchLabel.TabIndex = 12;
@@ -920,7 +1075,9 @@
             // 
             // TDollDic_SearchTextBox
             // 
-            this.TDollDic_SearchTextBox.Location = new System.Drawing.Point(66, 446);
+            this.TDollDic_SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.TDollDic_SearchTextBox.Location = new System.Drawing.Point(66, 416);
             this.TDollDic_SearchTextBox.Name = "TDollDic_SearchTextBox";
             this.TDollDic_SearchTextBox.Size = new System.Drawing.Size(244, 21);
             this.TDollDic_SearchTextBox.TabIndex = 11;
@@ -1167,12 +1324,13 @@
             // 
             // TDollDic_TDollListGroup
             // 
-            this.TDollDic_TDollListGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TDollDic_TDollListGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TDollDic_TDollListGroup.Controls.Add(this.TDollDic_TDollListView);
-            this.TDollDic_TDollListGroup.Location = new System.Drawing.Point(3, 485);
+            this.TDollDic_TDollListGroup.Location = new System.Drawing.Point(6, 455);
             this.TDollDic_TDollListGroup.Name = "TDollDic_TDollListGroup";
-            this.TDollDic_TDollListGroup.Size = new System.Drawing.Size(327, 258);
+            this.TDollDic_TDollListGroup.Size = new System.Drawing.Size(327, 266);
             this.TDollDic_TDollListGroup.TabIndex = 0;
             this.TDollDic_TDollListGroup.TabStop = false;
             this.TDollDic_TDollListGroup.Text = "인형 목록";
@@ -1193,7 +1351,7 @@
             this.TDollDic_TDollListView.Location = new System.Drawing.Point(3, 17);
             this.TDollDic_TDollListView.MultiSelect = false;
             this.TDollDic_TDollListView.Name = "TDollDic_TDollListView";
-            this.TDollDic_TDollListView.Size = new System.Drawing.Size(321, 238);
+            this.TDollDic_TDollListView.Size = new System.Drawing.Size(321, 246);
             this.TDollDic_TDollListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.TDollDic_TDollListView.TabIndex = 0;
             this.TDollDic_TDollListView.UseCompatibleStateImageBehavior = false;
@@ -1232,41 +1390,31 @@
             this.TDollHasMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TDollHasMod.Width = 40;
             // 
-            // MainTabPage_Equip
+            // MainStatusStrip
             // 
-            this.MainTabPage_Equip.Location = new System.Drawing.Point(4, 22);
-            this.MainTabPage_Equip.Name = "MainTabPage_Equip";
-            this.MainTabPage_Equip.Size = new System.Drawing.Size(878, 752);
-            this.MainTabPage_Equip.TabIndex = 2;
-            this.MainTabPage_Equip.Text = "장비";
-            this.MainTabPage_Equip.UseVisualStyleBackColor = true;
+            this.MainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusStrip_AppVerLabel,
+            this.StatusStrip_DBVerLabel});
+            this.MainStatusStrip.Location = new System.Drawing.Point(0, 780);
+            this.MainStatusStrip.Name = "MainStatusStrip";
+            this.MainStatusStrip.Size = new System.Drawing.Size(886, 22);
+            this.MainStatusStrip.SizingGrip = false;
+            this.MainStatusStrip.TabIndex = 2;
+            this.MainStatusStrip.Text = "statusStrip1";
             // 
-            // MainTabPage_Fairy
+            // StatusStrip_AppVerLabel
             // 
-            this.MainTabPage_Fairy.Location = new System.Drawing.Point(4, 22);
-            this.MainTabPage_Fairy.Name = "MainTabPage_Fairy";
-            this.MainTabPage_Fairy.Size = new System.Drawing.Size(878, 752);
-            this.MainTabPage_Fairy.TabIndex = 3;
-            this.MainTabPage_Fairy.Text = "요정";
-            this.MainTabPage_Fairy.UseVisualStyleBackColor = true;
+            this.StatusStrip_AppVerLabel.Name = "StatusStrip_AppVerLabel";
+            this.StatusStrip_AppVerLabel.Size = new System.Drawing.Size(435, 17);
+            this.StatusStrip_AppVerLabel.Spring = true;
+            this.StatusStrip_AppVerLabel.Text = "Ver 0.0.0";
             // 
-            // MainTabPage_FST
+            // StatusStrip_DBVerLabel
             // 
-            this.MainTabPage_FST.Location = new System.Drawing.Point(4, 22);
-            this.MainTabPage_FST.Name = "MainTabPage_FST";
-            this.MainTabPage_FST.Size = new System.Drawing.Size(878, 752);
-            this.MainTabPage_FST.TabIndex = 4;
-            this.MainTabPage_FST.Text = "화력소대";
-            this.MainTabPage_FST.UseVisualStyleBackColor = true;
-            // 
-            // MainTabPage_Enemy
-            // 
-            this.MainTabPage_Enemy.Location = new System.Drawing.Point(4, 22);
-            this.MainTabPage_Enemy.Name = "MainTabPage_Enemy";
-            this.MainTabPage_Enemy.Size = new System.Drawing.Size(878, 752);
-            this.MainTabPage_Enemy.TabIndex = 5;
-            this.MainTabPage_Enemy.Text = "적대세력";
-            this.MainTabPage_Enemy.UseVisualStyleBackColor = true;
+            this.StatusStrip_DBVerLabel.Name = "StatusStrip_DBVerLabel";
+            this.StatusStrip_DBVerLabel.Size = new System.Drawing.Size(435, 17);
+            this.StatusStrip_DBVerLabel.Spring = true;
+            this.StatusStrip_DBVerLabel.Text = "DB Ver : 0";
             // 
             // TDollDic_TDollInfo_GainTooltip
             // 
@@ -1280,6 +1428,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 802);
+            this.Controls.Add(this.MainStatusStrip);
             this.Controls.Add(this.MainTabControl);
             this.Controls.Add(this.MainMenuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1292,17 +1441,15 @@
             this.MainMenuStrip.PerformLayout();
             this.MainTabControl.ResumeLayout(false);
             this.MainTabPage_Main.ResumeLayout(false);
-            this.MainTabPage_Main.PerformLayout();
-            this.MainStatusStrip.ResumeLayout(false);
-            this.MainStatusStrip.PerformLayout();
             this.Main_InquiryGroup.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Main_DiscordButton)).EndInit();
             this.Main_NotificationGroup.ResumeLayout(false);
             this.MainTabPage_TDoll.ResumeLayout(false);
             this.TDollDic_SplitContainer.Panel1.ResumeLayout(false);
             this.TDollDic_SplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TDollDic_SplitContainer)).EndInit();
             this.TDollDic_SplitContainer.ResumeLayout(false);
+            this.TDollDic_TDollInfo_VoiceGroup.ResumeLayout(false);
             this.TDollDic_TDollInfo_ModSelectorPanel.ResumeLayout(false);
             this.TDollDic_TDollInfo_AbilityInfoGroup.ResumeLayout(false);
             this.TDollDic_TDollInfo_AbilityInfoGroup.PerformLayout();
@@ -1334,6 +1481,8 @@
             this.TDollDic_TDollFilterGroup_TypeGroup.ResumeLayout(false);
             this.TDollDic_TDollFilterGroup_TypeGroup.PerformLayout();
             this.TDollDic_TDollListGroup.ResumeLayout(false);
+            this.MainStatusStrip.ResumeLayout(false);
+            this.MainStatusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1348,15 +1497,11 @@
         private System.Windows.Forms.TabPage MainTabPage_Main;
         private System.Windows.Forms.GroupBox Main_NotificationGroup;
         private System.Windows.Forms.RichTextBox MainNotification;
-        private System.Windows.Forms.TabPage MainTabPage_Equip;
-        private System.Windows.Forms.TabPage MainTabPage_Fairy;
-        private System.Windows.Forms.TabPage MainTabPage_FST;
-        private System.Windows.Forms.TabPage MainTabPage_Enemy;
         private System.Windows.Forms.GroupBox Main_InquiryGroup;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Main_DiscordButton;
         private System.Windows.Forms.StatusStrip MainStatusStrip;
         private System.Windows.Forms.ToolStripStatusLabel StatusStrip_DBVerLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Main_NotificationRefreshButton;
         private System.Windows.Forms.ToolStripStatusLabel StatusStrip_AppVerLabel;
         private System.Windows.Forms.TabPage MainTabPage_TDoll;
         private System.Windows.Forms.SplitContainer TDollDic_SplitContainer;
@@ -1402,7 +1547,6 @@
         private System.Windows.Forms.GroupBox TDollDic_TDollInfo_AbilityInfoGroup;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label TDollDic_TDollInfo_ProductTimeLabel;
-        private System.Windows.Forms.GroupBox TDollDic_TDollInfo_ExtraInfoGroup;
         private System.Windows.Forms.TableLayoutPanel TDollDic_TDollInfo_FormationBuffTable;
         private System.Windows.Forms.Label TDollDic_TDollInfo_FormationBuffMag1;
         private System.Windows.Forms.Label TDollDic_TDollInfo_FormationBuffType;
@@ -1442,5 +1586,20 @@
         private System.Windows.Forms.RadioButton TDollDic_TDollInfo_ModSelector2;
         private System.Windows.Forms.RadioButton TDollDic_TDollInfo_ModSelector1;
         private System.Windows.Forms.RadioButton TDollDic_TDollInfo_ModSelector0;
+        private System.Windows.Forms.GroupBox TDollDic_TDollInfo_VoiceGroup;
+        private System.Windows.Forms.Button TDollDic_TDollInfo_VoicePlayButton;
+        private System.Windows.Forms.ComboBox TDollDic_TDollInfo_VoiceSelector;
+        private System.Windows.Forms.ComboBox TDollDic_TDollInfo_CostumeVoiceSelector;
+        private System.Windows.Forms.Button TDollDic_TDollInfo_GunDataButton;
+        private System.Windows.Forms.Button TDollDic_TDollInfo_ModStoryButton;
+        private System.Windows.Forms.ProgressBar TDollDic_TDollInfo_FullImageLoadProcessBar;
+        private System.Windows.Forms.Label TDollDic_TDollInfo_NickNameInfo;
+        private System.Windows.Forms.Label TDollDic_TDollInfo_IllustratorInfo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripMenuItem 도움말ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gFDW정보ToolStripMenuItem;
+        private System.Windows.Forms.Button TDollDic_TDollInfo_SkillButton;
+        private System.Windows.Forms.Button TDollDic_TDollInfo_ModSkillButton;
     }
 }

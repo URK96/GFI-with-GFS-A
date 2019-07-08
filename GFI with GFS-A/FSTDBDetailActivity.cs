@@ -14,6 +14,7 @@ using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Android.Util;
 
 namespace GFI_with_GFS_A
 {
@@ -47,7 +48,8 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+                if (ETC.UseLightTheme == true)
+                    SetTheme(Resource.Style.GFS_Light);
 
                 // Create your application here
                 SetContentView(Resource.Layout.FSTDBDetailLayout);
@@ -314,15 +316,22 @@ namespace GFI_with_GFS_A
 
                 try
                 {
+                    ImageView smallImage = FindViewById<ImageView>(Resource.Id.FSTDBDetailSmallImage);
                     string cropimage_path = Path.Combine(ETC.CachePath, "FST", "Normal_Crop", $"{fst.CodeName}.gfdcache");
 
                     if ((File.Exists(cropimage_path) == false) || (IsRefresh == true))
-                    {
                         using (WebClient wc = new WebClient())
                             await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "FST", "Normal_Crop", $"{fst.CodeName}.png"), cropimage_path);
-                    }
 
-                    FindViewById<ImageView>(Resource.Id.FSTDBDetailSmallImage).SetImageDrawable(Drawable.CreateFromPath(cropimage_path));
+                    DisplayMetrics dm = ApplicationContext.Resources.DisplayMetrics;
+
+                    int width = dm.WidthPixels;
+                    int height = dm.HeightPixels;
+
+                    Drawable drawable = Drawable.CreateFromPath(cropimage_path);
+                    smallImage.SetImageDrawable(drawable);
+                    FrameLayout.LayoutParams param = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, drawable.IntrinsicHeight * (width / drawable.IntrinsicWidth));
+                    smallImage.LayoutParameters = param;
                 }
                 catch (Exception ex)
                 {

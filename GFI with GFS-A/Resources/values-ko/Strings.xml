@@ -630,9 +630,10 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.30 수정사항]\n\n
-- 만화 컨텐츠 추가 (그리폰 일상만화, Geo의 소녀전선)\n
-- 일부 기기에서 특정 인형 열람 시 튕기는 현상 수정
+    [2.3.31 수정사항]\n\n
+- 중장비 부대 레이아웃 일부 개선\n
+- 일부 이미지 DPI 대응\n
+- 만화 컨텐츠 추가 (그리폰 일상만화, Geo의 소녀전선)
   </string>
 
   <string name="RFBot_CommandHelp">

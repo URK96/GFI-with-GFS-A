@@ -118,6 +118,8 @@
     <item>누구나 똑같아</item>
     <item>루이스 2</item>
     <item>대리 지휘관의 하루</item>
+    <item>지휘관 찾아 몇십KM</item>
+    <item>아동절 UMP자매 1</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -267,6 +269,8 @@
     <item>76화</item>
     <item>77화</item>
     <item>78화</item>
+    <item>79화</item>
+    <item>80화</item>
   </string-array>
 
   <string-array name="mota6nako_GF">
@@ -434,6 +438,7 @@
     <item>64 - M99메이커 2</item>
     <item>65 - 안마받는 지휘관</item>
     <item>66 - 니토의 습격</item>
+    <item>67 - 지휘관을 구하라</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -504,5 +509,6 @@
     <item>http://naver.me/GNnwodKb</item>
     <item>http://naver.me/xtFwIuUu</item>
     <item>http://naver.me/xbclVrN7</item>
+    <item>http://naver.me/xHHub5c0</item>
   </string-array>
 </resources>

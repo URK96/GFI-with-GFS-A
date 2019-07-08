@@ -102,14 +102,15 @@ namespace GFI_with_GFS_A
         {
             LoadProgressBar.Visibility = ViewStates.Visible;
 
-            string file = "";
+            string file;
 
             if (Category == "ModStory")
                 file = Path.Combine(ETC.CachePath, "Story", Category, $"{Doll_DicNumber}_{Item_Index}.gfdcache");
             else
                 file = Path.Combine(ETC.CachePath, "Story", Category, $"{Item_Index}.gfdcache");
 
-            if ((File.Exists(file) == false) || (IsRefresh == true)) await DownloadStory();
+            if ((File.Exists(file) == false) || (IsRefresh == true))
+                await DownloadStory();
 
             await LoadText(file);
 

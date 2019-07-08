@@ -2,24 +2,27 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
+using System.Media;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 
 namespace GFD_W
 {
     partial class Main
     {
         List<Doll> dollRootList = new List<Doll>();
+        List<string> voiceList = new List<string>();
 
         Doll doll;
 
         DollAbilitySet das;
+
+        SoundPlayer sPlayer = new SoundPlayer();
 
         bool isLoad = false;
         // Type, Voice, Mod, Grade
@@ -29,6 +32,7 @@ namespace GFD_W
         int abilityLv = 1;
         int abilityFavor = 0;
         int[] abilityValues = new int[6];
+        int vCostumeIndex = 0;
 
         private async Task InitailizeTDollDic()
         {
@@ -164,6 +168,19 @@ namespace GFD_W
             try
             {
                 TDollDic_SplitContainer.Panel1.Show();
+                TDollDic_TDollInfo_FullImageLoadProcessBar.Visible = true;
+                TDollDic_TDollInfo_FullImageLoadProcessBar.Style = ProgressBarStyle.Marquee;
+
+                if (doll.HasMod)
+                {
+                    TDollDic_TDollInfo_ModStoryButton.Enabled = true;
+                    TDollDic_TDollInfo_ModSkillButton.Enabled = true;
+                }
+                else
+                {
+                    TDollDic_TDollInfo_ModStoryButton.Enabled = false;
+                    TDollDic_TDollInfo_ModSkillButton.Enabled = false;
+                }
 
                 das = new DollAbilitySet(doll.Type);
 
@@ -187,6 +204,8 @@ namespace GFD_W
                 TDollDic_TDollInfo_CodeName.Text = doll.CodeName;
                 TDollDic_TDollInfo_ProductTimeLabel.Text = 
                     $"{(doll.GetProductTimeToString == "None" ? "제조 불가" : doll.GetProductTimeToString)}";
+                TDollDic_TDollInfo_IllustratorInfo.Text = doll.Illustrator;
+                TDollDic_TDollInfo_NickNameInfo.Text = doll.NickName;
 
                 await LoadImages(isRefresh);
 
@@ -246,6 +265,14 @@ namespace GFD_W
                     TDollDic_TDollInfo_AbilityFavorSelector.SelectedIndex = 1;
                 else
                     _ = LoadAbility();
+
+                if (doll.HasVoice)
+                {
+                    TDollDic_TDollInfo_VoiceGroup.Visible = true;
+                    LoadCostumeVoiceList();
+                }
+                else
+                    TDollDic_TDollInfo_VoiceGroup.Visible = false;
 
                 TDollDic_TDollInfo_GainTooltip.SetToolTip(TDollDic_TDollInfo_FullImageView, doll.ProductDialog);
             }
@@ -544,6 +571,33 @@ namespace GFD_W
             }
         }
 
+        private void LoadCostumeVoiceList()
+        {
+            try
+            {
+                TDollDic_TDollInfo_CostumeVoiceSelector.Items.Clear();
+
+                List<string> vcList = new List<string>()
+                {
+                    "기본"
+                };
+
+                if (doll.CostumeVoices != null)
+                    for (int i = 0; i < (doll.CostumeVoices.Length / doll.CostumeVoices.Rank); ++i)
+                        vcList.Add(doll.Costumes[int.Parse(doll.CostumeVoices[i, 0])]);
+
+                vcList.TrimExcess();
+
+                TDollDic_TDollInfo_CostumeVoiceSelector.Items.AddRange(vcList.ToArray());
+                TDollDic_TDollInfo_CostumeVoiceSelector.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex);
+                ETC.ShowErrorMessage("인형 불러오기 오류", "코스튬 보이스 목록을 불러오는 동안 오류가 발생했습니다.");
+            }
+        }
+
         private double CalcReloadTime(Doll doll, string type, int AttackSpeed)
         {
             double result = 0;
@@ -563,6 +617,61 @@ namespace GFD_W
 
             return result;
         }
+
+        private async Task PlayVoice(string voiceName)
+        {
+            try
+            {
+                string server = "";
+                string target = "";
+
+                switch (vCostumeIndex)
+                {
+                    case 0:
+                        server = Path.Combine(ETC.server, "Data", "Voice", "Doll", doll.krName, $"{doll.krName}_{voiceName}_JP.wav");
+                        target = Path.Combine(ETC.cachePath, "Voices", "Doll", $"{doll.DicNumber}_{voiceName}_JP.gfdcache");
+                        break;
+                    default:
+                        server = Path.Combine(ETC.server, "Data", "Voice", "Doll", $"{doll.krName}_{vCostumeIndex - 1}", $"{doll.krName}_{vCostumeIndex - 1}_{voiceName}_JP.wav");
+                        target = Path.Combine(ETC.cachePath, "Voices", "Doll", $"{doll.DicNumber}_{vCostumeIndex - 1}_{voiceName}_JP.gfdcache");
+                        break;
+                }
+
+                await Task.Delay(100);
+
+                if (!File.Exists(target))
+                    try
+                    {
+                        using (WebClient wc = new WebClient())
+                        {
+                            wc.DownloadProgressChanged += (object s, DownloadProgressChangedEventArgs args) =>
+                            {
+
+                            };
+                            await wc.DownloadFileTaskAsync(server, target);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        ETC.LogError(ex);
+                    }
+
+                sPlayer.SoundLocation = target;
+                sPlayer.Play();
+            }
+            catch (WebException ex)
+            {
+                ETC.LogError(ex);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex);
+            }
+        }
+
+
+
+        // Event Functions
 
         private void TDollDic_TDollFilter_CheckedChanged(object sender, EventArgs e)
         {
@@ -625,6 +734,7 @@ namespace GFD_W
                 if (e.IsSelected)
                 {
                     doll = new Doll(ETC.FindDataRow(ETC.dollList, "DicNumber", int.Parse(e.Item.Text)));
+                    vCostumeIndex = 0;
 
                     _ = LoadTDollInfo();
                 }
@@ -694,6 +804,87 @@ namespace GFD_W
                         break;
                 }
             }
+        }
+
+        private void TDollDic_TDollInfo_GunDataButton_Click(object sender, EventArgs e)
+        {
+            string url = Path.Combine(ETC.server, "Data", "Text", "Gun", "ModelData", $"{doll.DicNumber}.txt");
+
+            TextViewer tv = new TextViewer($"총기 제원 - {doll.Name}", url, true);
+            tv.Show();
+        }
+
+        private void TDollDic_TDollInfo_ModStoryButton_Click(object sender, EventArgs e)
+        {
+            TextViewer tv = new TextViewer(doll);
+            tv.Show();
+        }
+
+        private void TDollDic_TDollInfo_FullImageView_LoadProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            TDollDic_TDollInfo_FullImageLoadProcessBar.Visible = true;
+            TDollDic_TDollInfo_FullImageLoadProcessBar.Style = ProgressBarStyle.Continuous;
+            TDollDic_TDollInfo_FullImageLoadProcessBar.Value = e.ProgressPercentage;
+        }
+
+        private void TDollDic_TDollInfo_FullImageView_LoadCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            TDollDic_TDollInfo_FullImageLoadProcessBar.Visible = false;
+        }
+
+        private void TDollDic_TDollInfo_CostumeVoiceSelector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                vCostumeIndex = (sender as ComboBox).SelectedIndex;
+
+                voiceList.Clear();
+                TDollDic_TDollInfo_VoiceSelector.Items.Clear();
+
+                switch (vCostumeIndex)
+                {
+                    case 0:
+                        voiceList.AddRange(doll.Voices);
+                        break;
+                    default:
+                        voiceList.AddRange(doll.CostumeVoices[vCostumeIndex - 1, 1].Split(';'));
+                        break;
+                }
+                voiceList.TrimExcess();
+
+                TDollDic_TDollInfo_VoiceSelector.Items.AddRange(voiceList.ToArray());
+                TDollDic_TDollInfo_VoiceSelector.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex);
+                ETC.ShowErrorMessage("인형 불러오기 오류", "보이스 목록을 불러오는 중 오류가 발생했습니다.");
+            }
+        }
+
+        private void TDollDic_TDollInfo_VoicePlayButton_Click(object sender, EventArgs e)
+        {
+            int vIndex = TDollDic_TDollInfo_VoiceSelector.SelectedIndex;
+
+            _ = PlayVoice(voiceList[vIndex]);
+        }
+
+        private void TDollDic_TDollInfo_SkillButton_Click(object sender, EventArgs e)
+        {
+            SkillViewer sv;
+
+            switch ((string)(sender as Button).Tag)
+            {
+                default:
+                case "Normal":
+                    sv = new SkillViewer(doll, false);
+                    break;
+                case "Mod":
+                    sv = new SkillViewer(doll, true);
+                    break;
+            }
+
+            sv.Show();
         }
     }
 }
