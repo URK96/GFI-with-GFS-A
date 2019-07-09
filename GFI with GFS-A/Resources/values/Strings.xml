@@ -628,10 +628,8 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.31 Update]\n\n
-- Edit FST Dic layout\n
-- Optimize some image resource\n
-- Add cartoon content
+    [2.3.32 Update]\n\n
+- Fix WebView issue on Android OS 9 Pie
   </string>
 
   <string name="RFBot_CommandHelp">

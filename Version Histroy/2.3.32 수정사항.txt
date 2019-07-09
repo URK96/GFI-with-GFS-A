@@ -1,0 +1,5 @@
+<2.3.32 수정사항>
+
+- Android OS 9 Pie 에서 일부 웹페이지가 정상적으로 뜨지 않는 문제 수정
+
+- Fix WebView issue on Android OS 9 Pie

@@ -630,10 +630,8 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.31 수정사항]\n\n
-- 중장비 부대 레이아웃 일부 개선\n
-- 일부 이미지 DPI 대응\n
-- 만화 컨텐츠 추가 (그리폰 일상만화, Geo의 소녀전선)
+    [2.3.32 수정사항]\n\n
+- Android OS 9 Pie 에서 일부 웹페이지가 정상적으로 뜨지 않는 문제 수정
   </string>
 
   <string name="RFBot_CommandHelp">
