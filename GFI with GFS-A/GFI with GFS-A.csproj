@@ -109,11 +109,11 @@
     <Reference Include="SkiaSharp">
       <HintPath>..\Dll\Xfinium.Pdf.View\SkiaSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=17.1.0.53, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Licensing.17.1.0.53\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
+    <Reference Include="Syncfusion.Licensing, Version=17.2.0.34, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.17.2.0.34\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfChart.Android, Version=17.1451.0.53, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.Android.17.1.0.53\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
+    <Reference Include="Syncfusion.SfChart.Android, Version=17.2451.0.34, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.Android.17.2.0.34\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -253,7 +253,7 @@
       <HintPath>..\packages\Xamarin.Android.Support.ViewPager.28.0.0.1\lib\monoandroid90\Xamarin.Android.Support.ViewPager.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Essentials.1.1.0\lib\monoandroid90\Xamarin.Essentials.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Essentials.1.2.0\lib\monoandroid90\Xamarin.Essentials.dll</HintPath>
     </Reference>
     <Reference Include="Xfinium.Graphics.Xamarin.Android.Skia">
       <HintPath>..\Dll\Xfinium.Pdf.View\Xfinium.Graphics.Xamarin.Android.Skia.dll</HintPath>

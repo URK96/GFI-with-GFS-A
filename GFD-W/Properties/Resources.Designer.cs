@@ -293,6 +293,16 @@ namespace GFD_W.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap OldGFD_Logo {
+            get {
+                object obj = ResourceManager.GetObject("OldGFD_Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Play {
             get {
                 object obj = ResourceManager.GetObject("Play", resourceCulture);
@@ -386,6 +396,16 @@ namespace GFD_W.Properties {
         internal static System.Drawing.Bitmap SMG2 {
             get {
                 object obj = ResourceManager.GetObject("SMG2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap StatusBar_UpdateIcon {
+            get {
+                object obj = ResourceManager.GetObject("StatusBar_UpdateIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

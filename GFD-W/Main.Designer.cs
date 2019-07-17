@@ -43,6 +43,18 @@
             this.Main_NotificationGroup = new System.Windows.Forms.GroupBox();
             this.Main_NotificationRefreshButton = new System.Windows.Forms.Button();
             this.MainNotification = new System.Windows.Forms.RichTextBox();
+            this.MainTabPage_GFDv1 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.OldGFD_LevelRouteButton = new System.Windows.Forms.Button();
+            this.OldGFD_DollBreedButton = new System.Windows.Forms.Button();
+            this.OldGFD_MDRecipeButton = new System.Windows.Forms.Button();
+            this.OldGFD_EquipRecipeButton = new System.Windows.Forms.Button();
+            this.OldGFD_DollRecipeButton = new System.Windows.Forms.Button();
+            this.OldGFD_FairyAttributionButton = new System.Windows.Forms.Button();
+            this.OldGFD_FairyPTButton = new System.Windows.Forms.Button();
+            this.OldGFD_MDTableButton = new System.Windows.Forms.Button();
+            this.OldGFD_EquipPTButton = new System.Windows.Forms.Button();
+            this.OldGFD_DollPTButton = new System.Windows.Forms.Button();
             this.MainTabPage_TDoll = new System.Windows.Forms.TabPage();
             this.TDollDic_SplitContainer = new System.Windows.Forms.SplitContainer();
             this.TDollDic_TDollInfo_ModSkillButton = new System.Windows.Forms.Button();
@@ -140,13 +152,17 @@
             this.MainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusStrip_AppVerLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusStrip_DBVerLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StatusStrip_OldGFDVerLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.TDollDic_TDollInfo_GainTooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.UpdateCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.MainMenuStrip.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.MainTabPage_Main.SuspendLayout();
             this.Main_InquiryGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Main_DiscordButton)).BeginInit();
             this.Main_NotificationGroup.SuspendLayout();
+            this.MainTabPage_GFDv1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainTabPage_TDoll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TDollDic_SplitContainer)).BeginInit();
             this.TDollDic_SplitContainer.Panel1.SuspendLayout();
@@ -231,6 +247,7 @@
             // MainTabControl
             // 
             this.MainTabControl.Controls.Add(this.MainTabPage_Main);
+            this.MainTabControl.Controls.Add(this.MainTabPage_GFDv1);
             this.MainTabControl.Controls.Add(this.MainTabPage_TDoll);
             this.MainTabControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.MainTabControl.Location = new System.Drawing.Point(0, 24);
@@ -300,6 +317,7 @@
             this.Main_NotificationRefreshButton.Size = new System.Drawing.Size(657, 75);
             this.Main_NotificationRefreshButton.TabIndex = 1;
             this.Main_NotificationRefreshButton.UseVisualStyleBackColor = true;
+            this.Main_NotificationRefreshButton.Click += new System.EventHandler(this.Main_NotificationRefreshButton_Click);
             // 
             // MainNotification
             // 
@@ -313,6 +331,137 @@
             this.MainNotification.Size = new System.Drawing.Size(657, 617);
             this.MainNotification.TabIndex = 0;
             this.MainNotification.Text = "";
+            // 
+            // MainTabPage_GFDv1
+            // 
+            this.MainTabPage_GFDv1.Controls.Add(this.pictureBox1);
+            this.MainTabPage_GFDv1.Controls.Add(this.OldGFD_LevelRouteButton);
+            this.MainTabPage_GFDv1.Controls.Add(this.OldGFD_DollBreedButton);
+            this.MainTabPage_GFDv1.Controls.Add(this.OldGFD_MDRecipeButton);
+            this.MainTabPage_GFDv1.Controls.Add(this.OldGFD_EquipRecipeButton);
+            this.MainTabPage_GFDv1.Controls.Add(this.OldGFD_DollRecipeButton);
+            this.MainTabPage_GFDv1.Controls.Add(this.OldGFD_FairyAttributionButton);
+            this.MainTabPage_GFDv1.Controls.Add(this.OldGFD_FairyPTButton);
+            this.MainTabPage_GFDv1.Controls.Add(this.OldGFD_MDTableButton);
+            this.MainTabPage_GFDv1.Controls.Add(this.OldGFD_EquipPTButton);
+            this.MainTabPage_GFDv1.Controls.Add(this.OldGFD_DollPTButton);
+            this.MainTabPage_GFDv1.Location = new System.Drawing.Point(4, 22);
+            this.MainTabPage_GFDv1.Name = "MainTabPage_GFDv1";
+            this.MainTabPage_GFDv1.Padding = new System.Windows.Forms.Padding(3);
+            this.MainTabPage_GFDv1.Size = new System.Drawing.Size(878, 727);
+            this.MainTabPage_GFDv1.TabIndex = 2;
+            this.MainTabPage_GFDv1.Text = "소전사전v1";
+            this.MainTabPage_GFDv1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GFD_W.Properties.Resources.OldGFD_Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(233, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(400, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // OldGFD_LevelRouteButton
+            // 
+            this.OldGFD_LevelRouteButton.Enabled = false;
+            this.OldGFD_LevelRouteButton.Location = new System.Drawing.Point(74, 566);
+            this.OldGFD_LevelRouteButton.Name = "OldGFD_LevelRouteButton";
+            this.OldGFD_LevelRouteButton.Size = new System.Drawing.Size(155, 65);
+            this.OldGFD_LevelRouteButton.TabIndex = 9;
+            this.OldGFD_LevelRouteButton.Text = "추천 레벨링 루트";
+            this.OldGFD_LevelRouteButton.UseVisualStyleBackColor = true;
+            // 
+            // OldGFD_DollBreedButton
+            // 
+            this.OldGFD_DollBreedButton.Enabled = false;
+            this.OldGFD_DollBreedButton.Location = new System.Drawing.Point(269, 566);
+            this.OldGFD_DollBreedButton.Name = "OldGFD_DollBreedButton";
+            this.OldGFD_DollBreedButton.Size = new System.Drawing.Size(155, 65);
+            this.OldGFD_DollBreedButton.TabIndex = 8;
+            this.OldGFD_DollBreedButton.Text = "초반 인형 육성표";
+            this.OldGFD_DollBreedButton.UseVisualStyleBackColor = true;
+            // 
+            // OldGFD_MDRecipeButton
+            // 
+            this.OldGFD_MDRecipeButton.Enabled = false;
+            this.OldGFD_MDRecipeButton.Location = new System.Drawing.Point(653, 430);
+            this.OldGFD_MDRecipeButton.Name = "OldGFD_MDRecipeButton";
+            this.OldGFD_MDRecipeButton.Size = new System.Drawing.Size(155, 65);
+            this.OldGFD_MDRecipeButton.TabIndex = 7;
+            this.OldGFD_MDRecipeButton.Text = "군수지원 효율표";
+            this.OldGFD_MDRecipeButton.UseVisualStyleBackColor = true;
+            // 
+            // OldGFD_EquipRecipeButton
+            // 
+            this.OldGFD_EquipRecipeButton.Enabled = false;
+            this.OldGFD_EquipRecipeButton.Location = new System.Drawing.Point(461, 430);
+            this.OldGFD_EquipRecipeButton.Name = "OldGFD_EquipRecipeButton";
+            this.OldGFD_EquipRecipeButton.Size = new System.Drawing.Size(155, 65);
+            this.OldGFD_EquipRecipeButton.TabIndex = 6;
+            this.OldGFD_EquipRecipeButton.Text = "장비 추천 제조식";
+            this.OldGFD_EquipRecipeButton.UseVisualStyleBackColor = true;
+            // 
+            // OldGFD_DollRecipeButton
+            // 
+            this.OldGFD_DollRecipeButton.Enabled = false;
+            this.OldGFD_DollRecipeButton.Location = new System.Drawing.Point(269, 430);
+            this.OldGFD_DollRecipeButton.Name = "OldGFD_DollRecipeButton";
+            this.OldGFD_DollRecipeButton.Size = new System.Drawing.Size(155, 65);
+            this.OldGFD_DollRecipeButton.TabIndex = 5;
+            this.OldGFD_DollRecipeButton.Text = "인형 추천 제조식";
+            this.OldGFD_DollRecipeButton.UseVisualStyleBackColor = true;
+            // 
+            // OldGFD_FairyAttributionButton
+            // 
+            this.OldGFD_FairyAttributionButton.Enabled = false;
+            this.OldGFD_FairyAttributionButton.Location = new System.Drawing.Point(74, 430);
+            this.OldGFD_FairyAttributionButton.Name = "OldGFD_FairyAttributionButton";
+            this.OldGFD_FairyAttributionButton.Size = new System.Drawing.Size(155, 65);
+            this.OldGFD_FairyAttributionButton.TabIndex = 4;
+            this.OldGFD_FairyAttributionButton.Text = "요정 특성표";
+            this.OldGFD_FairyAttributionButton.UseVisualStyleBackColor = true;
+            // 
+            // OldGFD_FairyPTButton
+            // 
+            this.OldGFD_FairyPTButton.Enabled = false;
+            this.OldGFD_FairyPTButton.Location = new System.Drawing.Point(461, 294);
+            this.OldGFD_FairyPTButton.Name = "OldGFD_FairyPTButton";
+            this.OldGFD_FairyPTButton.Size = new System.Drawing.Size(155, 65);
+            this.OldGFD_FairyPTButton.TabIndex = 3;
+            this.OldGFD_FairyPTButton.Text = "요정 제조시간표 \r\n&&\r\n제조식";
+            this.OldGFD_FairyPTButton.UseVisualStyleBackColor = true;
+            // 
+            // OldGFD_MDTableButton
+            // 
+            this.OldGFD_MDTableButton.Enabled = false;
+            this.OldGFD_MDTableButton.Location = new System.Drawing.Point(653, 294);
+            this.OldGFD_MDTableButton.Name = "OldGFD_MDTableButton";
+            this.OldGFD_MDTableButton.Size = new System.Drawing.Size(155, 65);
+            this.OldGFD_MDTableButton.TabIndex = 2;
+            this.OldGFD_MDTableButton.Text = "군수지원 목록표";
+            this.OldGFD_MDTableButton.UseVisualStyleBackColor = true;
+            // 
+            // OldGFD_EquipPTButton
+            // 
+            this.OldGFD_EquipPTButton.Enabled = false;
+            this.OldGFD_EquipPTButton.Location = new System.Drawing.Point(269, 294);
+            this.OldGFD_EquipPTButton.Name = "OldGFD_EquipPTButton";
+            this.OldGFD_EquipPTButton.Size = new System.Drawing.Size(155, 65);
+            this.OldGFD_EquipPTButton.TabIndex = 1;
+            this.OldGFD_EquipPTButton.Text = "장비 제조시간표";
+            this.OldGFD_EquipPTButton.UseVisualStyleBackColor = true;
+            // 
+            // OldGFD_DollPTButton
+            // 
+            this.OldGFD_DollPTButton.Enabled = false;
+            this.OldGFD_DollPTButton.Location = new System.Drawing.Point(74, 294);
+            this.OldGFD_DollPTButton.Name = "OldGFD_DollPTButton";
+            this.OldGFD_DollPTButton.Size = new System.Drawing.Size(155, 65);
+            this.OldGFD_DollPTButton.TabIndex = 0;
+            this.OldGFD_DollPTButton.Text = "인형 제조시간표";
+            this.OldGFD_DollPTButton.UseVisualStyleBackColor = true;
             // 
             // MainTabPage_TDoll
             // 
@@ -1394,34 +1543,68 @@
             // 
             this.MainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusStrip_AppVerLabel,
-            this.StatusStrip_DBVerLabel});
-            this.MainStatusStrip.Location = new System.Drawing.Point(0, 780);
+            this.StatusStrip_DBVerLabel,
+            this.StatusStrip_OldGFDVerLabel});
+            this.MainStatusStrip.Location = new System.Drawing.Point(0, 777);
             this.MainStatusStrip.Name = "MainStatusStrip";
-            this.MainStatusStrip.Size = new System.Drawing.Size(886, 22);
+            this.MainStatusStrip.Size = new System.Drawing.Size(886, 25);
             this.MainStatusStrip.SizingGrip = false;
             this.MainStatusStrip.TabIndex = 2;
             this.MainStatusStrip.Text = "statusStrip1";
             // 
             // StatusStrip_AppVerLabel
             // 
+            this.StatusStrip_AppVerLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.StatusStrip_AppVerLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.StatusStrip_AppVerLabel.Image = global::GFD_W.Properties.Resources.StatusBar_UpdateIcon;
+            this.StatusStrip_AppVerLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.StatusStrip_AppVerLabel.Name = "StatusStrip_AppVerLabel";
-            this.StatusStrip_AppVerLabel.Size = new System.Drawing.Size(435, 17);
+            this.StatusStrip_AppVerLabel.Size = new System.Drawing.Size(280, 20);
             this.StatusStrip_AppVerLabel.Spring = true;
-            this.StatusStrip_AppVerLabel.Text = "Ver 0.0.0";
+            this.StatusStrip_AppVerLabel.Text = "App Ver : 0.0.0";
+            this.StatusStrip_AppVerLabel.Click += new System.EventHandler(this.StatusStrip_AppVerLabel_Click);
             // 
             // StatusStrip_DBVerLabel
             // 
+            this.StatusStrip_DBVerLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.StatusStrip_DBVerLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.StatusStrip_DBVerLabel.Image = global::GFD_W.Properties.Resources.StatusBar_UpdateIcon;
+            this.StatusStrip_DBVerLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.StatusStrip_DBVerLabel.Name = "StatusStrip_DBVerLabel";
-            this.StatusStrip_DBVerLabel.Size = new System.Drawing.Size(435, 17);
+            this.StatusStrip_DBVerLabel.Size = new System.Drawing.Size(280, 20);
             this.StatusStrip_DBVerLabel.Spring = true;
             this.StatusStrip_DBVerLabel.Text = "DB Ver : 0";
             // 
+            // StatusStrip_OldGFDVerLabel
+            // 
+            this.StatusStrip_OldGFDVerLabel.AutoSize = false;
+            this.StatusStrip_OldGFDVerLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.StatusStrip_OldGFDVerLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.StatusStrip_OldGFDVerLabel.Image = global::GFD_W.Properties.Resources.StatusBar_UpdateIcon;
+            this.StatusStrip_OldGFDVerLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.StatusStrip_OldGFDVerLabel.Name = "StatusStrip_OldGFDVerLabel";
+            this.StatusStrip_OldGFDVerLabel.Size = new System.Drawing.Size(280, 20);
+            this.StatusStrip_OldGFDVerLabel.Spring = true;
+            this.StatusStrip_OldGFDVerLabel.Text = "GFDv1 Ver : 0";
+            // 
             // TDollDic_TDollInfo_GainTooltip
             // 
+            this.TDollDic_TDollInfo_GainTooltip.AutomaticDelay = 100;
             this.TDollDic_TDollInfo_GainTooltip.AutoPopDelay = 10000;
-            this.TDollDic_TDollInfo_GainTooltip.InitialDelay = 500;
+            this.TDollDic_TDollInfo_GainTooltip.InitialDelay = 100;
             this.TDollDic_TDollInfo_GainTooltip.IsBalloon = true;
-            this.TDollDic_TDollInfo_GainTooltip.ReshowDelay = 100;
+            this.TDollDic_TDollInfo_GainTooltip.ReshowDelay = 20;
+            // 
+            // UpdateCheckTimer
+            // 
+            this.UpdateCheckTimer.Interval = 60000;
+            this.UpdateCheckTimer.Tick += new System.EventHandler(this.UpdateCheckTimer_Tick);
             // 
             // Main
             // 
@@ -1444,6 +1627,8 @@
             this.Main_InquiryGroup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Main_DiscordButton)).EndInit();
             this.Main_NotificationGroup.ResumeLayout(false);
+            this.MainTabPage_GFDv1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.MainTabPage_TDoll.ResumeLayout(false);
             this.TDollDic_SplitContainer.Panel1.ResumeLayout(false);
             this.TDollDic_SplitContainer.Panel2.ResumeLayout(false);
@@ -1601,5 +1786,19 @@
         private System.Windows.Forms.ToolStripMenuItem gFDW정보ToolStripMenuItem;
         private System.Windows.Forms.Button TDollDic_TDollInfo_SkillButton;
         private System.Windows.Forms.Button TDollDic_TDollInfo_ModSkillButton;
+        private System.Windows.Forms.TabPage MainTabPage_GFDv1;
+        private System.Windows.Forms.Button OldGFD_LevelRouteButton;
+        private System.Windows.Forms.Button OldGFD_DollBreedButton;
+        private System.Windows.Forms.Button OldGFD_MDRecipeButton;
+        private System.Windows.Forms.Button OldGFD_EquipRecipeButton;
+        private System.Windows.Forms.Button OldGFD_DollRecipeButton;
+        private System.Windows.Forms.Button OldGFD_FairyAttributionButton;
+        private System.Windows.Forms.Button OldGFD_FairyPTButton;
+        private System.Windows.Forms.Button OldGFD_MDTableButton;
+        private System.Windows.Forms.Button OldGFD_EquipPTButton;
+        private System.Windows.Forms.Button OldGFD_DollPTButton;
+        private System.Windows.Forms.ToolStripStatusLabel StatusStrip_OldGFDVerLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer UpdateCheckTimer;
     }
 }

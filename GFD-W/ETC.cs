@@ -28,6 +28,7 @@ namespace GFD_W
         internal static bool isServerDown = false;
 
         internal static int dbVer = 0;
+        internal static int oldGFDVer = 0;
 
         internal static DataTable dollList = new DataTable();
         internal static DataTable equipmentList = new DataTable();
@@ -227,36 +228,41 @@ namespace GFD_W
 
         internal static async Task<bool> CheckDBVersion()
         {
-            if (isServerDown == true)
-                return false;
-
-            string localDBVerPath = Path.Combine(systemPath, "DBVer.txt");
-            string serverDBVerPath = Path.Combine(server, "DBVer.txt");
-            string tempDBVerPath = Path.Combine(tempPath, "DBVer.txt");
-
-            bool hasDBUpdate = false;
-
-            if (File.Exists(localDBVerPath) == false)
-                hasDBUpdate = true;
-            else
+            try
             {
-                using (WebClient wc = new WebClient())
-                    await wc.DownloadFileTaskAsync(serverDBVerPath, tempDBVerPath);
+                if (isServerDown == true)
+                    return false;
 
-                using (StreamReader sr1 = new StreamReader(new FileStream(localDBVerPath, FileMode.Open, FileAccess.Read)))
-                using (StreamReader sr2 = new StreamReader(new FileStream(tempDBVerPath, FileMode.Open, FileAccess.Read)))
+                string localDBVerPath = Path.Combine(systemPath, "DBVer.txt");
+                string serverDBVerPath = Path.Combine(server, "DBVer.txt");
+                string tempDBVerPath = Path.Combine(tempPath, "DBVer.txt");
+
+                if (File.Exists(localDBVerPath) == false)
+                    return true;
+                else
                 {
-                    int localVer = int.Parse(sr1.ReadToEnd());
-                    int serverVer = int.Parse(sr2.ReadToEnd());
+                    using (WebClient wc = new WebClient())
+                        await wc.DownloadFileTaskAsync(serverDBVerPath, tempDBVerPath);
 
-                    dbVer = localVer;
+                    using (StreamReader sr1 = new StreamReader(new FileStream(localDBVerPath, FileMode.Open, FileAccess.Read)))
+                    using (StreamReader sr2 = new StreamReader(new FileStream(tempDBVerPath, FileMode.Open, FileAccess.Read)))
+                    {
+                        int localVer = int.Parse(sr1.ReadToEnd());
+                        int serverVer = int.Parse(sr2.ReadToEnd());
 
-                    if (localVer < serverVer)
-                        hasDBUpdate = true;
+                        dbVer = localVer;
+
+                        if (localVer < serverVer)
+                            return true;
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                LogError(ex);
+            }
 
-            return hasDBUpdate;
+            return false;
         }
 
         internal static async Task UpdateDB(Label status)
@@ -340,8 +346,75 @@ namespace GFD_W
             catch (Exception ex)
             {
                 LogError(ex);
-                return false;
             }
+
+            return false;
+        }
+
+        internal static async Task<bool> CheckOldGFDVersion()
+        {
+            await Task.Delay(100);
+
+            try
+            {
+                if (CheckImage())
+                    return true;
+                else
+                {
+                    string localVerPath = Path.Combine(systemPath, "OldGFDVer.txt");
+                    string tempServerVerPath = Path.Combine(tempPath, "OldGFDVer.txt");
+
+                    if (!File.Exists(localVerPath))
+                        return true;
+                    else
+                    {
+                        string serverVerFile = Path.Combine(server, "OldGFDVer.txt");
+
+                        int serverVer = 0;
+                        int localVer = 0;
+
+                        using (WebClient wc = new WebClient())
+                            await wc.DownloadFileTaskAsync(serverVerFile, tempServerVerPath);
+
+                        using (StreamReader sr = new StreamReader(new FileStream(localVerPath, FileMode.Open, FileAccess.Read)))
+                            localVer = int.Parse(sr.ReadToEnd());
+
+                        using (StreamReader sr2 = new StreamReader(new FileStream(tempServerVerPath, FileMode.Open, FileAccess.Read)))
+                            serverVer = int.Parse(sr2.ReadToEnd());
+
+                        if (localVer < serverVer)
+                            return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+            }
+
+            return false;
+        }
+
+        private static bool CheckImage()
+        {
+            string[] ImageName =
+            {
+                "ProductTable_Doll",
+                "ProductTable_Equipment",
+                "ProductTable_Fairy",
+                "MD_Table",
+                //"DollPerformance",
+                "FairyAttribute",
+                "RecommendDollRecipe",
+                "RecommendEquipmentRecipe",
+                "RecommendMD",
+                "RecommendLeveling",
+                "RecommendBreeding"
+            };
+
+            foreach (string s in ImageName)
+                if (!File.Exists(Path.Combine(cachePath, "OldGFD", "Images", $"{s}.gfdcache")))
+                    return true;
 
             return false;
         }

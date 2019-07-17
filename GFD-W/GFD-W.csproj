@@ -318,6 +318,8 @@
     <None Include="Resources\GFD-W Splash.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\StatusBar_UpdateIcon.png" />
+    <None Include="Resources\OldGFD_Logo.png" />
     <None Include="Resources\cancel.png" />
     <None Include="Resources\play.png" />
     <None Include="Resources\MOD_III.png" />

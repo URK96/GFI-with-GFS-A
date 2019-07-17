@@ -25,9 +25,21 @@ namespace GFD_W
         {
             try
             {
-                StatusStrip_AppVerLabel.Text = $"Ver. {ETC.appVer}";
+                StatusStrip_AppVerLabel.Text = $"App Ver : {ETC.appVer}";
                 StatusStrip_AppVerLabel.Text += ETC.isReleaseMode ? "R" : "D";
-                StatusStrip_DBVerLabel.Text = $"DB Ver. {ETC.dbVer}";
+                StatusStrip_DBVerLabel.Text = $"DB Ver : {ETC.dbVer}";
+
+                try
+                {
+                    using (StreamReader sr = new StreamReader(new FileStream(Path.Combine(ETC.systemPath, "OldGFDVer.txt"), FileMode.Open, FileAccess.Read)))
+                        int.TryParse(sr.ReadToEnd(), out ETC.oldGFDVer);
+                }
+                catch { }
+
+                StatusStrip_OldGFDVerLabel.Text = $"GFDv1 Ver : {ETC.oldGFDVer}";
+
+                UpdateCheckTimer.Start();
+                UpdateCheckTimer_Tick(UpdateCheckTimer, new EventArgs());
 
                 await LoadNotification();
 
@@ -90,6 +102,44 @@ namespace GFD_W
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Main_NotificationRefreshButton_Click(object sender, EventArgs e)
+        {
+            _ = LoadNotification();
+        }
+
+        private async void UpdateCheckTimer_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (await ETC.CheckAppVersion())
+                    StatusStrip_AppVerLabel.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+                else
+                    StatusStrip_AppVerLabel.DisplayStyle = ToolStripItemDisplayStyle.Text;
+
+                if (await ETC.CheckDBVersion())
+                    StatusStrip_DBVerLabel.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+                else
+                    StatusStrip_DBVerLabel.DisplayStyle = ToolStripItemDisplayStyle.Text;
+
+                if (await ETC.CheckOldGFDVersion())
+                    StatusStrip_OldGFDVerLabel.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+                else
+                    StatusStrip_OldGFDVerLabel.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex);
+            }
+        }
+
+        private void StatusStrip_AppVerLabel_Click(object sender, EventArgs e)
+        {
+            ToolStripStatusLabel label = sender as ToolStripStatusLabel;
+
+            //if (label.DisplayStyle == ToolStripItemDisplayStyle.ImageAndText)
+                
         }
     }
 }
