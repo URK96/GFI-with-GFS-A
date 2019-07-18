@@ -71,6 +71,9 @@
     <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AndHUD">
+      <HintPath>C:\Users\chlwl\Desktop\Xamarin.PDFView-master\Components\AndHUD-1.3.1\lib\android\AndHUD.dll</HintPath>
+    </Reference>
     <Reference Include="Java.Interop" />
     <Reference Include="Live2D">
       <HintPath>C:\Users\chlwl\Downloads\Live2D.dll</HintPath>
@@ -1656,6 +1659,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\Splash_2019Kid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\StoryList_Event_VA.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

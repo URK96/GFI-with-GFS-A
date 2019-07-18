@@ -45,6 +45,7 @@
     <item>콜라보 이벤트</item>
     <item>이벤트</item>
     <item>이벤트</item>
+    <item>콜라보 이벤트</item>
   </string-array>
 
   <string-array name="Story_Main_Main">
@@ -77,6 +78,7 @@
     <item>영광의 날 : Dreaming on You</item>
     <item>난류연속</item>
     <item>이성질체</item>
+    <item>VA-11 HALL-A</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Caption">
@@ -109,6 +111,7 @@
     <item>Dreaming on You</item>
     <item>난류연속</item>
     <item>이성질체</item>
+    <item>발할라</item>
   </string-array>
 
   <string-array name="Story_Main_Sub">

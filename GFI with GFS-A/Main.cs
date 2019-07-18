@@ -526,40 +526,13 @@ namespace GFI_with_GFS_A
                         //ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
                         //StartActivity(typeof(GuideBookViewer));
                         //OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-#if DEBUG
-                        string path = Path.Combine(ETC.CachePath, "GuideBook", "PDFs", "PartA.pdf");
-                        if (File.Exists(path) == false)
-                            using (WebClient wc = new WebClient())
-                                await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "PDF", $"PartA.pdf"), path);
-
-                        //await Launcher.OpenAsync(path);
-                        Intent intent3 = new Intent(Intent.ActionView, Android.Net.Uri.Parse(path));
-                        intent3.SetType("application/pdf");
-                        PackageManager pm = PackageManager;
-                        List<ResolveInfo> activities = new List<ResolveInfo>();
-                        Toast.MakeText(this, activities.Count.ToString(), ToastLength.Short).Show();
-                        
-                        
-                        activities.AddRange(PackageManager.QueryIntentActivities(intent3, 0));
-                        foreach (ResolveInfo info in activities)
-                        {
-                            Toast.MakeText(this, info.ToString(), ToastLength.Short).Show();
-                        }
-                        if (activities.Count > 0)
-                        {
-                            StartActivity(intent3);
-                        }
-                        else
-                        {
-                            ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
-                        }
-#endif
                         break;
                     case Resource.Id.AreaTipExtraButton:
                         string areatip_url = "https://cafe.naver.com/girlsfrontlinekr/235663";
                         var intent2 = new Intent(this, typeof(WebBrowserActivity));
                         intent2.PutExtra("url", areatip_url);
                         StartActivity(intent2);
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     default:
                         ETC.ShowSnackbar(SnackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);

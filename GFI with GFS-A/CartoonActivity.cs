@@ -222,6 +222,8 @@ namespace GFI_with_GFS_A
             }
             else
             {
+                GC.Collect();
+
                 base.OnBackPressed();
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }

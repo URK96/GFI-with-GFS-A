@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Story_Main_Main_Event_VA_TopTitle">
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>카페 스토리</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>카페 스토리</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>카페 스토리</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>카페 스토리</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>카페 스토리</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>카페 스토리</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>카페 스토리</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>카페 스토리</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_VA">
+    <item>디제리두 연주법</item>
+    <item>디제리두 연주법</item>
+    <item>카페 스토리</item>
+    <item>사춘기</item>
+    <item>사춘기</item>
+    <item>카페 스토리</item>
+    <item>선구자</item>
+    <item>선구자</item>
+    <item>카페 스토리</item>
+    <item>소닉붐</item>
+    <item>소닉붐</item>
+    <item>카페 스토리</item>
+    <item>닭가슴살</item>
+    <item>닭가슴살</item>
+    <item>카페 스토리</item>
+    <item>무대 울렁증</item>
+    <item>무대 울렁증</item>
+    <item>카페 스토리</item>
+    <item>진실게임</item>
+    <item>진실게임</item>
+    <item>카페 스토리</item>
+    <item>이 세상 마지막 비</item>
+    <item>이 세상 마지막 비</item>
+    <item>이 세상 마지막 비</item>
+    <item>이 세상 마지막 비</item>
+    <item>카페 스토리</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_VA_Caption">
+    <item>전편</item>
+    <item>후편</item>
+    <item>1화</item>
+    <item>전편</item>
+    <item>후편</item>
+    <item>2화</item>
+    <item>전편</item>
+    <item>후편</item>
+    <item>3화</item>
+    <item>전편</item>
+    <item>후편</item>
+    <item>4화</item>
+    <item>전편</item>
+    <item>후편</item>
+    <item>5화</item>
+    <item>전편</item>
+    <item>후편</item>
+    <item>6화</item>
+    <item>전편</item>
+    <item>후편</item>
+    <item>7화</item>
+    <item>전편</item>
+    <item>분기점</item>
+    <item>엔딩1</item>
+    <item>엔딩2</item>
+    <item>8화</item>
+  </string-array>
+</resources>

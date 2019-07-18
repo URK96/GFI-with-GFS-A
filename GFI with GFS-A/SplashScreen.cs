@@ -20,7 +20,7 @@ namespace GFI_with_GFS_A
     [Activity(MainLauncher = true, Label = "@string/App_TitleName", Theme = "@style/GFS.Splash", ScreenOrientation = ScreenOrientation.Portrait)]
     public class SplashScreen : AppCompatActivity
     {
-        private CoordinatorLayout SnackbarLayout = null;
+        private CoordinatorLayout SnackbarLayout;
         private ImageView SplashImageView;
         private TextView StatusText;
 
@@ -142,6 +142,11 @@ namespace GFI_with_GFS_A
 
 
                 // Finalize & Start Main
+
+                SnackbarLayout?.Dispose();
+                SplashImageView?.Dispose();
+                StatusText?.Dispose();
+                PreferenceEditor?.Dispose();
 
                 StartActivity(typeof(Main));
                 OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);

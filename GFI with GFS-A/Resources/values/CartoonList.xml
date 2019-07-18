@@ -120,6 +120,7 @@
     <item>대리 지휘관의 하루</item>
     <item>지휘관 찾아 몇십KM</item>
     <item>아동절 UMP자매 1</item>
+    <item>아동절 HK416</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -439,6 +440,8 @@
     <item>65 - 안마받는 지휘관</item>
     <item>66 - 니토의 습격</item>
     <item>67 - 지휘관을 구하라</item>
+    <item>68 - 그로자의 약점</item>
+    <item>69 - 이상한 지휘관</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -510,5 +513,7 @@
     <item>http://naver.me/xtFwIuUu</item>
     <item>http://naver.me/xbclVrN7</item>
     <item>http://naver.me/xHHub5c0</item>
+    <item>http://naver.me/5aFOw7wO</item>
+    <item>http://naver.me/G8ZYlJkQ</item>
   </string-array>
 </resources>
