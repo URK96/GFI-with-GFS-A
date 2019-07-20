@@ -262,6 +262,9 @@ namespace GFI_with_GFS_A
                     case 28:
                         Category = "Isomer";
                         break;
+                    case 29:
+                        Category = "VA";
+                        break;
                 }
             }
             else if (TopType == StoryActivity.Top.Sub)

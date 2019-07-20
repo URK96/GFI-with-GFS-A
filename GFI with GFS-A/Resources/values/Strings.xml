@@ -374,6 +374,7 @@
   <string name="Main_ExtraMenu_Cartoon">Cartoon</string>
   <string name="Main_ExtraMenu_Story">Story</string>
   <string name="Main_ExtraMenu_GuideBookViewer">Guide Book</string>
+  <string name="Main_ExtraMenu_ShortGuideBookViewer">Beginner Guide</string>
   
   <!--OldGFD-->
   <string name="OldGFDViewer_ProductDollTable">T-Doll Production Timetable</string>
@@ -604,6 +605,19 @@
   <string name="GuideBookViewer_PDF_PartG">Part.G 가구/코스튬</string>
   <string name="GuideBookViewer_PDF_PartJ">Part.J 기타 정보</string>
 
+  <!--ShortGuideBookViewer-->
+  <string name="ShortGuideBookViewer_A0">소개</string>
+  <string name="ShortGuideBookViewer_A1">추천 인형</string>
+  <string name="ShortGuideBookViewer_A2_1">제대 편성1</string>
+  <string name="ShortGuideBookViewer_A2_2">제대 편성2</string>
+  <string name="ShortGuideBookViewer_A3">전술인형</string>
+  <string name="ShortGuideBookViewer_A4_1">작전 임무1</string>
+  <string name="ShortGuideBookViewer_A4_2">작전 임무2</string>
+  <string name="ShortGuideBookViewer_A5_1">인형 육성1</string>
+  <string name="ShortGuideBookViewer_A5_2">인형 육성2</string>
+  <string name="ShortGuideBookViewer_A6_1">장비</string>
+  <string name="ShortGuideBookViewer_A6_2">요정 &amp; 중장비제대</string>
+
   <!--PDFViewer-->
   <string name="PDFViewer_DownloadPDFTitle">Download PDF</string>
   <string name="PDFViewer_DownloadPDFMessage">Downloading PDF...</string>
@@ -628,8 +642,11 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.32 Update]\n\n
-- Fix WebView issue on Android OS 9 Pie
+    [2.3.33 Update]\n\n
+- Add beginner guide book viewer feature\n
+- Add cartoon content\n
+- Add story content (VA-11 Collaboration)\n
+- Optimize memory usage
   </string>
 
   <string name="RFBot_CommandHelp">

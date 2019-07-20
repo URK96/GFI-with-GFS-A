@@ -1,5 +1,4 @@
 ﻿using Android.App;
-using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V4.View;
@@ -11,28 +10,42 @@ using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using UK.CO.Senab.Photoview;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Name = "com.gfl.dic.OldGFDActivity", Label = "GFD v1", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class OldGFDViewer : AppCompatActivity
+    [Activity(Label = "요약 가이드북", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class ShortGuideBookViewer : AppCompatActivity
     {
-        private ArrayAdapter Image_Adapter;
+        private ArrayAdapter ImageAdapter;
         private Android.Support.V4.App.FragmentTransaction ft;
-        private Android.Support.V4.App.Fragment OldGFDViewer_F;
+        private Android.Support.V4.App.Fragment ShortGuideBook_F;
 
         internal DrawerLayout MainDrawerLayout;
         private ListView DrawerListView;
         internal CoordinatorLayout SnackbarLayout;
         private FloatingActionButton RefreshFAB;
 
-        string[] OldGFDImageList;
+        string[] ShortGuideImageList = new string[]
+            {
+                ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A0),
+                ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A1),
+                ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A2_1),
+                ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A2_2),
+                ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A3),
+                ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A4_1),
+                ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A4_2),
+                ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A5_1),
+                ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A5_2),
+                ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A6_1),
+                ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A6_2)
+            };
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             try
             {
-                ETC.BasicInitializeApp(this);
+                //ETC.BasicInitializeApp(this);
 
                 base.OnCreate(savedInstanceState);
 
@@ -40,11 +53,11 @@ namespace GFI_with_GFS_A
                     SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
                 // Create your application here
-                SetContentView(Resource.Layout.OldGFDLayout);
+                SetContentView(Resource.Layout.ShortGuideBookLayout);
 
-                SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.OldGFDViewerSnackbarLayout);
+                SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.ShortGuideBookSnackbarLayout);
 
-                MainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.OldGFDViewerMainDrawerLayout);
+                MainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.ShortGuideBookMainDrawerLayout);
                 MainDrawerLayout.DrawerOpened += delegate
                 {
                     if (ETC.UseLightTheme)
@@ -59,14 +72,14 @@ namespace GFI_with_GFS_A
                     else
                         SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
                 };
-                RefreshFAB = FindViewById<FloatingActionButton>(Resource.Id.OldGFDViewerRefreshFAB);
-                RefreshFAB.Click += delegate 
+                RefreshFAB = FindViewById<FloatingActionButton>(Resource.Id.ShortGuideBookRefreshFAB);
+                RefreshFAB.Click += delegate
                 {
-                    _ = ((OldGFDViewerScreen)OldGFDViewer_F).DownloadGFDImage();
-                    ((OldGFDViewerScreen)OldGFDViewer_F).ShowImage(0);
+                    _ = ((ShortGuideBookScreen)ShortGuideBook_F).DownloadShortGuideImage();
+                    ((ShortGuideBookScreen)ShortGuideBook_F).ShowImage(0);
                 };
 
-                SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.OldGFDViewerMainToolbar));
+                SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.ShortGuideBookMainToolbar));
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
                 SupportActionBar.SetDisplayShowTitleEnabled(true);
                 SupportActionBar.SetHomeButtonEnabled(true);
@@ -75,13 +88,13 @@ namespace GFI_with_GFS_A
                 else
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
 
-                DrawerListView = FindViewById<ListView>(Resource.Id.OldGFDImageListView);
+                DrawerListView = FindViewById<ListView>(Resource.Id.ShortGuideBookImageListView);
                 DrawerListView.ItemClick += DrawerListView_ItemClick;
 
-                OldGFDViewer_F = new OldGFDViewerScreen();
+                ShortGuideBook_F = new ShortGuideBookScreen();
 
                 ft = SupportFragmentManager.BeginTransaction();
-                ft.Add(Resource.Id.OldGFDViewerContainer, OldGFDViewer_F, "OldGFDViewerScreen");
+                ft.Add(Resource.Id.ShortGuideBookContainer, ShortGuideBook_F, "ShortGuideBookScreen");
                 ft.Commit();
 
                 InitList();
@@ -112,10 +125,8 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                ListImageList();
-
-                Image_Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, OldGFDImageList);
-                DrawerListView.Adapter = Image_Adapter;
+                ImageAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, ShortGuideImageList);
+                DrawerListView.Adapter = ImageAdapter;
             }
             catch (Exception ex)
             {
@@ -124,49 +135,11 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ListImageList()
-        {
-            if (ETC.Language.Language == "ko")
-            {
-                OldGFDImageList = new string[]
-                {
-                    Resources.GetString(Resource.String.OldGFDViewer_ProductDollTable),
-                    Resources.GetString(Resource.String.OldGFDViewer_ProductEquipTable),
-                    Resources.GetString(Resource.String.OldGFDViewer_ProductFairyTable),
-                    Resources.GetString(Resource.String.OldGFDViewer_MDTable),
-                    //Resources.GetString(Resource.String.OldGFDViewer_DollPerformance),
-                    Resources.GetString(Resource.String.OldGFDViewer_FairyAttribute),
-                    Resources.GetString(Resource.String.OldGFDViewer_RecommendDollRecipe),
-                    Resources.GetString(Resource.String.OldGFDViewer_RecommendEquipRecipe),
-                    Resources.GetString(Resource.String.OldGFDViewer_RecommendMD),
-                    Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling),
-                    Resources.GetString(Resource.String.OldGFDViewer_RecommendBreeding)
-                };
-            }
-            else
-            {
-                OldGFDImageList = new string[]
-                {
-                    Resources.GetString(Resource.String.OldGFDViewer_ProductDollTable),
-                    Resources.GetString(Resource.String.OldGFDViewer_ProductEquipTable),
-                    //Resources.GetString(Resource.String.OldGFDViewer_ProductFairyTable),
-                    Resources.GetString(Resource.String.OldGFDViewer_MDTable),
-                    //Resources.GetString(Resource.String.OldGFDViewer_DollPerformance),
-                    //Resources.GetString(Resource.String.OldGFDViewer_FairyAttribute),
-                    Resources.GetString(Resource.String.OldGFDViewer_RecommendDollRecipe),
-                    Resources.GetString(Resource.String.OldGFDViewer_RecommendEquipRecipe),
-                    //Resources.GetString(Resource.String.OldGFDViewer_RecommendMD),
-                    Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling),
-                    //Resources.GetString(Resource.String.OldGFDViewer_RecommendBreeding)
-                };
-            }
-        }
-
         private void DrawerListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             try
             {
-                ((OldGFDViewerScreen)OldGFDViewer_F).ShowImage(e.Position);
+                ((ShortGuideBookScreen)ShortGuideBook_F).ShowImage(e.Position);
                 MainDrawerLayout.CloseDrawer(GravityCompat.Start);
             }
             catch (Exception ex)
@@ -191,23 +164,36 @@ namespace GFI_with_GFS_A
         }
     }
 
-    public class OldGFDViewerScreen : Android.Support.V4.App.Fragment
+    public class ShortGuideBookScreen : Android.Support.V4.App.Fragment
     {
         private View v;
 
         private bool HasUpdate = false;
 
-        private LinearLayout ImageContainer;
+        private PhotoView GuideBookImageView;
         private CoordinatorLayout SnackbarLayout_F;
 
-        string[] ImageName = null;
+        string[] ImageName = new string[]
+            {
+                "SA0",
+                "SA1",
+                "SA2-1",
+                "SA2-2",
+                "SA3",
+                "SA4-1",
+                "SA4-2",
+                "SA5-1",
+                "SA5-2",
+                "SA6-1",
+                "SA6-2"
+            };
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            v = inflater.Inflate(Resource.Layout.OldGFDScreenLayout, container, false);
+            v = inflater.Inflate(Resource.Layout.ShortGuideBookScreenLayout, container, false);
 
-            ImageContainer = v.FindViewById<LinearLayout>(Resource.Id.OldGFDImageContainer);
-            SnackbarLayout_F = ((OldGFDViewer)Activity).SnackbarLayout;
+            GuideBookImageView = v.FindViewById<PhotoView>(Resource.Id.ShortGuideBookImageView);
+            SnackbarLayout_F = ((ShortGuideBookViewer)Activity).SnackbarLayout;
 
             _ = InitProcess();
 
@@ -218,9 +204,8 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                InitializeImageList();
-
-                if (CheckImage() == true) await DownloadGFDImage();
+                if (CheckImage())
+                    await DownloadShortGuideImage();
 
                 ShowImage(0);
                 _ = CheckUpdate();
@@ -232,81 +217,13 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void InitializeImageList()
-        {
-            if (ETC.Language.Language == "ko")
-            {
-                ImageName = new string[]
-                {
-                    "ProductTable_Doll",
-                    "ProductTable_Equipment",
-                    "ProductTable_Fairy",
-                    "MD_Table",
-                    //"DollPerformance",
-                    "FairyAttribute",
-                    "RecommendDollRecipe",
-                    "RecommendEquipmentRecipe",
-                    "RecommendMD",
-                    "RecommendLeveling",
-                    "RecommendBreeding"
-                };
-            }
-            else
-            {
-                ImageName = new string[]
-                {
-                    "ProductTable_Doll",
-                    "ProductTable_Equipment",
-                    //"ProductTable_Fairy",
-                    "MD_Table",
-                    //"DollPerformance",
-                    //"FairyAttribute",
-                    "RecommendDollRecipe",
-                    "RecommendEquipmentRecipe",
-                    //"RecommendMD",
-                    "RecommendLeveling",
-                    //"RecommendBreeding"
-                };
-            }
-        }
-
         internal void ShowImage(int index)
         {
+            string ImagePath = Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{ImageName[index]}.gfdcache");
+
             try
             {
-                ImageContainer.RemoveAllViews();
-
-                Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ImageName[index]}.gfdcache"));
-                Android.Graphics.Bitmap bitmap = ((BitmapDrawable)drawable).Bitmap;
-
-                int height = 0;
-
-                while (height < bitmap.Height)
-                {
-                    int remain_height = bitmap.Height - height;
-
-                    Android.Graphics.Bitmap bitmap_fix;
-
-                    if (remain_height >= 1000)
-                    {
-                        bitmap_fix = Android.Graphics.Bitmap.CreateBitmap(bitmap, 0, height, bitmap.Width, 1000);
-                        height += 1000;
-                    }
-                    else
-                    {
-                        bitmap_fix = Android.Graphics.Bitmap.CreateBitmap(bitmap, 0, height, bitmap.Width, remain_height);
-                        height += remain_height;
-                    }
-
-                    ImageView iv = new ImageView(Activity);
-                    iv.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent);
-                    iv.SetImageBitmap(bitmap_fix);
-                    iv.SetScaleType(ImageView.ScaleType.FitXy);
-                    iv.SetAdjustViewBounds(true);
-
-                    ImageContainer.AddView(iv);
-                }
-
+                GuideBookImageView.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(ImagePath));
                 GC.Collect();
             }
             catch (Exception ex)
@@ -319,7 +236,7 @@ namespace GFI_with_GFS_A
         private bool CheckImage()
         {
             foreach (string s in ImageName)
-                if (File.Exists(Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{s}.gfdcache")) == false)
+                if (!File.Exists(Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{s}.gfdcache")))
                     return true;
 
             return false;
@@ -335,20 +252,20 @@ namespace GFI_with_GFS_A
             {
                 IsMissing = CheckImage();
 
-                if (IsMissing == false)
+                if (!IsMissing)
                 {
                     using (WebClient wc = new WebClient())
                     {
-                        string LocalDBVerPath = Path.Combine(ETC.SystemPath, "OldGFDVer.txt");
+                        string LocalVerPath = Path.Combine(ETC.SystemPath, "ShortGuideVer.txt");
 
-                        if (File.Exists(LocalDBVerPath) == false)
+                        if (!File.Exists(LocalVerPath))
                             HasUpdate = true;
                         else
                         {
-                            int server_ver = int.Parse(await wc.DownloadStringTaskAsync(Path.Combine(ETC.Server, "OldGFDVer.txt")));
+                            int server_ver = int.Parse(await wc.DownloadStringTaskAsync(Path.Combine(ETC.Server, "ShortGuideVer.txt")));
                             int local_ver = 0;
 
-                            using (StreamReader sr = new StreamReader(new FileStream(LocalDBVerPath, FileMode.Open, FileAccess.Read)))
+                            using (StreamReader sr = new StreamReader(new FileStream(LocalVerPath, FileMode.Open, FileAccess.Read)))
                                 local_ver = int.Parse(sr.ReadToEnd());
 
                             if (local_ver < server_ver)
@@ -359,13 +276,13 @@ namespace GFI_with_GFS_A
                     }
                 }
 
-                if ((HasUpdate == true) || (IsMissing == true))
+                if (HasUpdate || IsMissing)
                 {
                     Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(Activity);
                     builder.SetTitle(Resource.String.UpdateDialog_Title);
                     builder.SetMessage(Resource.String.UpdateDialog_Message);
                     builder.SetCancelable(true);
-                    builder.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate { await DownloadGFDImage(); });
+                    builder.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate { await DownloadShortGuideImage(); });
                     builder.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
 
                     var dialog = builder.Create();
@@ -379,7 +296,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        internal async Task DownloadGFDImage()
+        internal async Task DownloadShortGuideImage()
         {
             View v = LayoutInflater.Inflate(Resource.Layout.ProgressDialogLayout, null);
 
@@ -418,13 +335,13 @@ namespace GFI_with_GFS_A
 
                     foreach (string s in ImageName)
                     {
-                        string url = Path.Combine(ETC.Server, "Data", "Images", "OldGFD", "Images", ETC.Language.Language, $"{s}.png");
-                        string target = Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{s}.gfdcache");
+                        string url = Path.Combine(ETC.Server, "Data", "PDF", "ShortGuideBook", "Image", $"{s}.png");
+                        string target = Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{s}.gfdcache");
 
                         await wc.DownloadFileTaskAsync(url, target);
                     }
 
-                    wc.DownloadFile(Path.Combine(ETC.Server, "OldGFDVer.txt"), Path.Combine(ETC.SystemPath, "OldGFDVer.txt"));
+                    wc.DownloadFile(Path.Combine(ETC.Server, "ShortGuideVer.txt"), Path.Combine(ETC.SystemPath, "ShortGuideVer.txt"));
                 }
 
                 ETC.ShowSnackbar(SnackbarLayout_F, Resource.String.UpdateDownload_Complete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);

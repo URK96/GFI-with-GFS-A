@@ -23,7 +23,7 @@ namespace GFI_with_GFS_A
     {
         bool IsCategory = true;
 
-        private ArrayAdapter Category_Adapter;
+        private ArrayAdapter CategoryAdapter;
         private Android.Support.V4.App.FragmentTransaction ft;
         private Android.Support.V4.App.Fragment CartoonScreen_F;
 
@@ -106,8 +106,8 @@ namespace GFI_with_GFS_A
             {
                 Category_List = Resources.GetStringArray(Resource.Array.Cartoon_Category);
 
-                Category_Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, Category_List);
-                DrawerListView.Adapter = Category_Adapter;
+                CategoryAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, Category_List);
+                DrawerListView.Adapter = CategoryAdapter;
 
                 MainDrawerLayout.OpenDrawer(GravityCompat.Start);
             }
@@ -143,7 +143,7 @@ namespace GFI_with_GFS_A
                     switch (e.Position)
                     {
                         case 0:
-                            DrawerListView.Adapter = Category_Adapter;
+                            DrawerListView.Adapter = CategoryAdapter;
                             IsCategory = true;
                             break;
                         default:
@@ -494,6 +494,7 @@ namespace GFI_with_GFS_A
                 Selected_Item_URL_List.Clear();
 
                 WebViewLayout.RemoveAllViews();
+                CopyrightLayout.RemoveAllViews();
 
                 await Task.Delay(100);
 

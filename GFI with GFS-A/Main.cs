@@ -522,10 +522,10 @@ namespace GFI_with_GFS_A
                         StartActivity(typeof(CartoonActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
-                    case Resource.Id.GuideBookViewerExtraButton:
+                    case Resource.Id.ShortGuideBookViewerExtraButton:
                         //ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
-                        //StartActivity(typeof(GuideBookViewer));
-                        //OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        StartActivity(typeof(ShortGuideBookViewer));
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.AreaTipExtraButton:
                         string areatip_url = "https://cafe.naver.com/girlsfrontlinekr/235663";

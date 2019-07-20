@@ -215,7 +215,7 @@ namespace GFI_with_GFS_A
             UseLightTheme = sharedPreferences.GetBoolean("UseLightTheme", false);
             SetDialogTheme();
             Language = Resources.Configuration.Locale;
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("ODQwMjZAMzEzNzJlMzEyZTMwV3l1Q3FseVNBb1UvNjdXVG90ZzBDQXp4V3RNOWgrcVJheDJMMWd5bW4xST0=");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTIzMTQ0QDMxMzcyZTMyMmUzMFJMNjNnc21iaFgwSHpLMVFrWGp4dnhxVFNrZGU3NHo2WWVGaVM0ZFhqV2M9");
 
             if (IsReleaseMode == true)
             {
@@ -395,7 +395,9 @@ namespace GFI_with_GFS_A
                 Path.Combine(CachePath, "Voices"),
                 Path.Combine(CachePath, "Voices", "Doll"),
                 Path.Combine(CachePath, "Voices", "Enemy"),
-                Path.Combine(CachePath, "GuideBook", "PDFs")
+                Path.Combine(CachePath, "GuideBook"),
+                Path.Combine(CachePath, "GuideBook", "PDFs"),
+                Path.Combine(CachePath, "GuideBook", "Images"),
             };
 
             foreach (string path in MainPaths)

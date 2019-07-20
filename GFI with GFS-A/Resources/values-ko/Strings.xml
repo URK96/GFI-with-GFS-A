@@ -377,6 +377,7 @@
   <string name="Main_ExtraMenu_Cartoon">만화</string>
   <string name="Main_ExtraMenu_Story">스토리</string>
   <string name="Main_ExtraMenu_GuideBookViewer">가이드북</string>
+  <string name="Main_ExtraMenu_ShortGuideBookViewer">초보자 가이드북</string>
   
   <!--OldGFD-->
   <string name="OldGFDViewer_ProductDollTable">인형 제조 시간표</string>
@@ -604,6 +605,20 @@
   <string name="GuideBookViewer_PDF_PartE_3">Part.E 작전임무 (전역 7 ~ 9)</string>
   <string name="GuideBookViewer_PDF_PartG">Part.G 가구/코스튬</string>
   <string name="GuideBookViewer_PDF_PartJ">Part.J 기타 정보</string>
+
+  <!--ShortGuideBookViewer-->
+  <string name="ShortGuideBookViewer_A0">소개</string>
+  <string name="ShortGuideBookViewer_A1">추천 인형</string>
+  <string name="ShortGuideBookViewer_A2_1">제대 편성1</string>
+  <string name="ShortGuideBookViewer_A2_2">제대 편성2</string>
+  <string name="ShortGuideBookViewer_A3">전술인형</string>
+  <string name="ShortGuideBookViewer_A4_1">작전 임무1</string>
+  <string name="ShortGuideBookViewer_A4_2">작전 임무2</string>
+  <string name="ShortGuideBookViewer_A5_1">인형 육성1</string>
+  <string name="ShortGuideBookViewer_A5_2">인형 육성2</string>
+  <string name="ShortGuideBookViewer_A6_1">장비</string>
+  <string name="ShortGuideBookViewer_A6_2">요정 &amp; 중장비제대</string>
+
   
   <!--PDFViewer-->
   <string name="PDFViewer_DownloadPDFTitle">PDF 다운로드</string>
@@ -630,8 +645,11 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.32 수정사항]\n\n
-- Android OS 9 Pie 에서 일부 웹페이지가 정상적으로 뜨지 않는 문제 수정
+    [2.3.33 수정사항]\n\n
+- 초보자 가이드북 요약본 뷰어 추가\n
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 소녀전선)\n
+- 스토리 추가 (VA-11 콜라보)\n
+- 메모리 최적화
   </string>
 
   <string name="RFBot_CommandHelp">

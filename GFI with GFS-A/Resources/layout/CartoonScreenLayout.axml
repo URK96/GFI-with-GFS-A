@@ -62,15 +62,4 @@
 		android:layout_height="match_parent"
 		android:visibility="gone"
 		android:id="@+id/CartoonScreenWebViewLayout"/>
-<!--<ScrollView 
-	android:layout_width="match_parent"
-	android:layout_height="match_parent">
-	<LinearLayout 
-	    android:orientation="vertical"
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-		android:id="@+id/CartoonScreenMainLayout">
-
-	</LinearLayout>
-</ScrollView>-->
 </LinearLayout>
