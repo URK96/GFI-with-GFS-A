@@ -6176,22 +6176,22 @@ namespace GFI_with_GFS_A
 			public const int Splash = 2130838104;
 			
 			// aapt resource value: 0x7f020259
-			public const int Splash_2019Kid = 2130838105;
+			public const int Splash_DataBuild = 2130838105;
 			
 			// aapt resource value: 0x7f02025a
-			public const int Splash_DataBuild = 2130838106;
+			public const int Splash_DataLoad = 2130838106;
 			
 			// aapt resource value: 0x7f02025b
-			public const int Splash_DataLoad = 2130838107;
+			public const int Splash_Special = 2130838107;
 			
 			// aapt resource value: 0x7f02025c
-			public const int Splash_Special = 2130838108;
+			public const int SplashBG2 = 2130838108;
 			
 			// aapt resource value: 0x7f02025d
-			public const int SplashBG2 = 2130838109;
+			public const int SplashImage = 2130838109;
 			
 			// aapt resource value: 0x7f02025e
-			public const int SplashImage = 2130838110;
+			public const int SplashImage_2019Swim = 2130838110;
 			
 			// aapt resource value: 0x7f02025f
 			public const int SplashImage_vh = 2130838111;
@@ -10472,11 +10472,11 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f0b0094
 			public const int Activity_StoryActivity = 2131427476;
 			
-			// aapt resource value: 0x7f0b0277
-			public const int AdMob_ID = 2131427959;
+			// aapt resource value: 0x7f0b027a
+			public const int AdMob_ID = 2131427962;
 			
-			// aapt resource value: 0x7f0b0276
-			public const int AdMob_TestID = 2131427958;
+			// aapt resource value: 0x7f0b0279
+			public const int AdMob_TestID = 2131427961;
 			
 			// aapt resource value: 0x7f0b0163
 			public const int AlertDialog_Cancel = 2131427683;
@@ -11204,14 +11204,14 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f0b00da
 			public const int FilterBox_InitError = 2131427546;
 			
-			// aapt resource value: 0x7f0b0279
-			public const int Firewall = 2131427961;
+			// aapt resource value: 0x7f0b027c
+			public const int Firewall = 2131427964;
 			
-			// aapt resource value: 0x7f0b0278
-			public const int Firewall_Category = 2131427960;
+			// aapt resource value: 0x7f0b027b
+			public const int Firewall_Category = 2131427963;
 			
-			// aapt resource value: 0x7f0b027a
-			public const int Firewall_Message = 2131427962;
+			// aapt resource value: 0x7f0b027d
+			public const int Firewall_Message = 2131427965;
 			
 			// aapt resource value: 0x7f0b0250
 			public const int GFDInfoLayout_DeveloperInfo = 2131427920;
@@ -11411,38 +11411,38 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f0b00bd
 			public const int MenuAccess_Fail = 2131427517;
 			
-			// aapt resource value: 0x7f0b026d
-			public const int Music_Category_ContinuumTurbulence = 2131427949;
-			
-			// aapt resource value: 0x7f0b026e
-			public const int Music_Category_Cube = 2131427950;
-			
 			// aapt resource value: 0x7f0b0270
-			public const int Music_Category_DJMAX = 2131427952;
-			
-			// aapt resource value: 0x7f0b026f
-			public const int Music_Category_DeepDive = 2131427951;
+			public const int Music_Category_ContinuumTurbulence = 2131427952;
 			
 			// aapt resource value: 0x7f0b0271
-			public const int Music_Category_GuiltyGear = 2131427953;
-			
-			// aapt resource value: 0x7f0b0272
-			public const int Music_Category_Houkai2 = 2131427954;
-			
-			// aapt resource value: 0x7f0b0274
-			public const int Music_Category_Hypothermia = 2131427956;
-			
-			// aapt resource value: 0x7f0b0275
-			public const int Music_Category_Normal = 2131427957;
+			public const int Music_Category_Cube = 2131427953;
 			
 			// aapt resource value: 0x7f0b0273
-			public const int Music_Category_Singularity = 2131427955;
+			public const int Music_Category_DJMAX = 2131427955;
+			
+			// aapt resource value: 0x7f0b0272
+			public const int Music_Category_DeepDive = 2131427954;
+			
+			// aapt resource value: 0x7f0b0274
+			public const int Music_Category_GuiltyGear = 2131427956;
+			
+			// aapt resource value: 0x7f0b0275
+			public const int Music_Category_Houkai2 = 2131427957;
+			
+			// aapt resource value: 0x7f0b0277
+			public const int Music_Category_Hypothermia = 2131427959;
+			
+			// aapt resource value: 0x7f0b0278
+			public const int Music_Category_Normal = 2131427960;
+			
+			// aapt resource value: 0x7f0b0276
+			public const int Music_Category_Singularity = 2131427958;
 			
 			// aapt resource value: 0x7f0b00c6
 			public const int NetworkDelay = 2131427526;
 			
-			// aapt resource value: 0x7f0b027b
-			public const int NewFeature = 2131427963;
+			// aapt resource value: 0x7f0b027e
+			public const int NewFeature = 2131427966;
 			
 			// aapt resource value: 0x7f0b00d5
 			public const int NewFeatureDialog_Title = 2131427541;
@@ -11489,11 +11489,11 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f0b01ad
 			public const int OldGFDViewer_RecommendMD = 2131427757;
 			
-			// aapt resource value: 0x7f0b026c
-			public const int PDFViewer_DownloadPDFMessage = 2131427948;
+			// aapt resource value: 0x7f0b026f
+			public const int PDFViewer_DownloadPDFMessage = 2131427951;
 			
-			// aapt resource value: 0x7f0b026b
-			public const int PDFViewer_DownloadPDFTitle = 2131427947;
+			// aapt resource value: 0x7f0b026e
+			public const int PDFViewer_DownloadPDFTitle = 2131427950;
 			
 			// aapt resource value: 0x7f0b00e4
 			public const int PermissionDeny_Message = 2131427556;
@@ -11591,8 +11591,8 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f0b01bd
 			public const int RFBotMain_Title = 2131427773;
 			
-			// aapt resource value: 0x7f0b027c
-			public const int RFBot_CommandHelp = 2131427964;
+			// aapt resource value: 0x7f0b027f
+			public const int RFBot_CommandHelp = 2131427967;
 			
 			// aapt resource value: 0x7f0b00c3
 			public const int RFBot_DisunderstandInput = 2131427523;
@@ -11843,38 +11843,47 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7f0b01f6
 			public const int Setting_UseLightTheme_Title = 2131427830;
 			
-			// aapt resource value: 0x7f0b0260
-			public const int ShortGuideBookViewer_A0 = 2131427936;
-			
 			// aapt resource value: 0x7f0b0261
-			public const int ShortGuideBookViewer_A1 = 2131427937;
+			public const int ShortGuideBookViewer_A0 = 2131427937;
 			
 			// aapt resource value: 0x7f0b0262
-			public const int ShortGuideBookViewer_A2_1 = 2131427938;
+			public const int ShortGuideBookViewer_A1 = 2131427938;
 			
 			// aapt resource value: 0x7f0b0263
-			public const int ShortGuideBookViewer_A2_2 = 2131427939;
+			public const int ShortGuideBookViewer_A2_1 = 2131427939;
 			
 			// aapt resource value: 0x7f0b0264
-			public const int ShortGuideBookViewer_A3 = 2131427940;
+			public const int ShortGuideBookViewer_A2_2 = 2131427940;
 			
 			// aapt resource value: 0x7f0b0265
-			public const int ShortGuideBookViewer_A4_1 = 2131427941;
+			public const int ShortGuideBookViewer_A3 = 2131427941;
 			
 			// aapt resource value: 0x7f0b0266
-			public const int ShortGuideBookViewer_A4_2 = 2131427942;
+			public const int ShortGuideBookViewer_A4_1 = 2131427942;
 			
 			// aapt resource value: 0x7f0b0267
-			public const int ShortGuideBookViewer_A5_1 = 2131427943;
+			public const int ShortGuideBookViewer_A4_2 = 2131427943;
 			
 			// aapt resource value: 0x7f0b0268
-			public const int ShortGuideBookViewer_A5_2 = 2131427944;
+			public const int ShortGuideBookViewer_A5_1 = 2131427944;
 			
 			// aapt resource value: 0x7f0b0269
-			public const int ShortGuideBookViewer_A6_1 = 2131427945;
+			public const int ShortGuideBookViewer_A5_2 = 2131427945;
 			
 			// aapt resource value: 0x7f0b026a
-			public const int ShortGuideBookViewer_A6_2 = 2131427946;
+			public const int ShortGuideBookViewer_A6_1 = 2131427946;
+			
+			// aapt resource value: 0x7f0b026b
+			public const int ShortGuideBookViewer_A6_2 = 2131427947;
+			
+			// aapt resource value: 0x7f0b026c
+			public const int ShortGuideBookViewer_A7 = 2131427948;
+			
+			// aapt resource value: 0x7f0b026d
+			public const int ShortGuideBookViewer_EP = 2131427949;
+			
+			// aapt resource value: 0x7f0b0260
+			public const int ShortGuideBookViewer_OP = 2131427936;
 			
 			// aapt resource value: 0x7f0b007c
 			public const int Shortcut_Cartoon_DisabledLabel = 2131427452;

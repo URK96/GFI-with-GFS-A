@@ -155,6 +155,7 @@
             this.StatusStrip_OldGFDVerLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.TDollDic_TDollInfo_GainTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.UpdateCheckTimer = new System.Windows.Forms.Timer(this.components);
+            this.MainTabPage_Equipment = new System.Windows.Forms.TabPage();
             this.MainMenuStrip.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.MainTabPage_Main.SuspendLayout();
@@ -249,6 +250,7 @@
             this.MainTabControl.Controls.Add(this.MainTabPage_Main);
             this.MainTabControl.Controls.Add(this.MainTabPage_GFDv1);
             this.MainTabControl.Controls.Add(this.MainTabPage_TDoll);
+            this.MainTabControl.Controls.Add(this.MainTabPage_Equipment);
             this.MainTabControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.MainTabControl.Location = new System.Drawing.Point(0, 24);
             this.MainTabControl.Name = "MainTabControl";
@@ -1561,7 +1563,7 @@
             this.StatusStrip_AppVerLabel.Image = global::GFD_W.Properties.Resources.StatusBar_UpdateIcon;
             this.StatusStrip_AppVerLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.StatusStrip_AppVerLabel.Name = "StatusStrip_AppVerLabel";
-            this.StatusStrip_AppVerLabel.Size = new System.Drawing.Size(280, 20);
+            this.StatusStrip_AppVerLabel.Size = new System.Drawing.Size(290, 20);
             this.StatusStrip_AppVerLabel.Spring = true;
             this.StatusStrip_AppVerLabel.Text = "App Ver : 0.0.0";
             this.StatusStrip_AppVerLabel.Click += new System.EventHandler(this.StatusStrip_AppVerLabel_Click);
@@ -1575,7 +1577,7 @@
             this.StatusStrip_DBVerLabel.Image = global::GFD_W.Properties.Resources.StatusBar_UpdateIcon;
             this.StatusStrip_DBVerLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.StatusStrip_DBVerLabel.Name = "StatusStrip_DBVerLabel";
-            this.StatusStrip_DBVerLabel.Size = new System.Drawing.Size(280, 20);
+            this.StatusStrip_DBVerLabel.Size = new System.Drawing.Size(290, 20);
             this.StatusStrip_DBVerLabel.Spring = true;
             this.StatusStrip_DBVerLabel.Text = "DB Ver : 0";
             // 
@@ -1589,7 +1591,7 @@
             this.StatusStrip_OldGFDVerLabel.Image = global::GFD_W.Properties.Resources.StatusBar_UpdateIcon;
             this.StatusStrip_OldGFDVerLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.StatusStrip_OldGFDVerLabel.Name = "StatusStrip_OldGFDVerLabel";
-            this.StatusStrip_OldGFDVerLabel.Size = new System.Drawing.Size(280, 20);
+            this.StatusStrip_OldGFDVerLabel.Size = new System.Drawing.Size(290, 20);
             this.StatusStrip_OldGFDVerLabel.Spring = true;
             this.StatusStrip_OldGFDVerLabel.Text = "GFDv1 Ver : 0";
             // 
@@ -1605,6 +1607,16 @@
             // 
             this.UpdateCheckTimer.Interval = 60000;
             this.UpdateCheckTimer.Tick += new System.EventHandler(this.UpdateCheckTimer_Tick);
+            // 
+            // MainTabPage_Equipment
+            // 
+            this.MainTabPage_Equipment.Location = new System.Drawing.Point(4, 22);
+            this.MainTabPage_Equipment.Name = "MainTabPage_Equipment";
+            this.MainTabPage_Equipment.Padding = new System.Windows.Forms.Padding(3);
+            this.MainTabPage_Equipment.Size = new System.Drawing.Size(878, 727);
+            this.MainTabPage_Equipment.TabIndex = 3;
+            this.MainTabPage_Equipment.Text = "장비";
+            this.MainTabPage_Equipment.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -1800,5 +1812,6 @@
         private System.Windows.Forms.ToolStripStatusLabel StatusStrip_OldGFDVerLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer UpdateCheckTimer;
+        private System.Windows.Forms.TabPage MainTabPage_Equipment;
     }
 }

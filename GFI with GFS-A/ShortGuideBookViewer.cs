@@ -38,7 +38,9 @@ namespace GFI_with_GFS_A
                 ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A5_1),
                 ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A5_2),
                 ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A6_1),
-                ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A6_2)
+                ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A6_2),
+                ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_A7),
+                ETC.Resources.GetString(Resource.String.ShortGuideBookViewer_EP)
             };
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -175,6 +177,7 @@ namespace GFI_with_GFS_A
 
         string[] ImageName = new string[]
             {
+                "OP",
                 "SA0",
                 "SA1",
                 "SA2-1",
@@ -185,7 +188,9 @@ namespace GFI_with_GFS_A
                 "SA5-1",
                 "SA5-2",
                 "SA6-1",
-                "SA6-2"
+                "SA6-2",
+                "SA7",
+                "EP"
             };
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -219,7 +224,7 @@ namespace GFI_with_GFS_A
 
         internal void ShowImage(int index)
         {
-            string ImagePath = Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{ImageName[index]}.gfdcache");
+            string ImagePath = Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{ETC.Language.Language}_{ImageName[index]}.gfdcache");
 
             try
             {
@@ -236,7 +241,7 @@ namespace GFI_with_GFS_A
         private bool CheckImage()
         {
             foreach (string s in ImageName)
-                if (!File.Exists(Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{s}.gfdcache")))
+                if (!File.Exists(Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{ETC.Language.Language}_{s}.gfdcache")))
                     return true;
 
             return false;
@@ -335,8 +340,8 @@ namespace GFI_with_GFS_A
 
                     foreach (string s in ImageName)
                     {
-                        string url = Path.Combine(ETC.Server, "Data", "PDF", "ShortGuideBook", "Image", $"{s}.png");
-                        string target = Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{s}.gfdcache");
+                        string url = Path.Combine(ETC.Server, "Data", "PDF", "ShortGuideBook", "Image", ETC.Language.Language, $"{s}.png");
+                        string target = Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{ETC.Language.Language}_{s}.gfdcache");
 
                         await wc.DownloadFileTaskAsync(url, target);
                     }

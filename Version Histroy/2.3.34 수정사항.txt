@@ -1,0 +1,12 @@
+<2.3.34 수정사항>
+
+- 기동 이미지 변경
+- 초보자 가이드북 요약본 항목 추가 및 언어 지원 추가 (영어)
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 소녀전선)
+- 소전사전 정보 화면에서 문자가 겹치는 문제 수정
+
+- Change Splash Image
+- Add beginner guide book content
+- Add beginner guide book language support (en)
+- Add cartoon content
+- Fix GFD info string issue

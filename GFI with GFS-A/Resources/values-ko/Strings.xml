@@ -607,17 +607,20 @@
   <string name="GuideBookViewer_PDF_PartJ">Part.J 기타 정보</string>
 
   <!--ShortGuideBookViewer-->
+  <string name="ShortGuideBookViewer_OP">표지</string>
   <string name="ShortGuideBookViewer_A0">소개</string>
   <string name="ShortGuideBookViewer_A1">추천 인형</string>
-  <string name="ShortGuideBookViewer_A2_1">제대 편성1</string>
-  <string name="ShortGuideBookViewer_A2_2">제대 편성2</string>
+  <string name="ShortGuideBookViewer_A2_1">제대 편성 1</string>
+  <string name="ShortGuideBookViewer_A2_2">제대 편성 2</string>
   <string name="ShortGuideBookViewer_A3">전술인형</string>
-  <string name="ShortGuideBookViewer_A4_1">작전 임무1</string>
-  <string name="ShortGuideBookViewer_A4_2">작전 임무2</string>
-  <string name="ShortGuideBookViewer_A5_1">인형 육성1</string>
-  <string name="ShortGuideBookViewer_A5_2">인형 육성2</string>
+  <string name="ShortGuideBookViewer_A4_1">작전 임무 1</string>
+  <string name="ShortGuideBookViewer_A4_2">작전 임무 2</string>
+  <string name="ShortGuideBookViewer_A5_1">인형 육성 1</string>
+  <string name="ShortGuideBookViewer_A5_2">인형 육성 2</string>
   <string name="ShortGuideBookViewer_A6_1">장비</string>
   <string name="ShortGuideBookViewer_A6_2">요정 &amp; 중장비제대</string>
+  <string name="ShortGuideBookViewer_A7">군수지원</string>
+  <string name="ShortGuideBookViewer_EP">가이드북 제작자</string>
 
   
   <!--PDFViewer-->

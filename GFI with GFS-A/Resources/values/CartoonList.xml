@@ -121,6 +121,7 @@
     <item>지휘관 찾아 몇십KM</item>
     <item>아동절 UMP자매 1</item>
     <item>아동절 HK416</item>
+    <item>WA2000의 사과</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -442,6 +443,7 @@
     <item>67 - 지휘관을 구하라</item>
     <item>68 - 그로자의 약점</item>
     <item>69 - 이상한 지휘관</item>
+    <item>70 - 스프링필드의 고백, 그리고......</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -515,5 +517,6 @@
     <item>http://naver.me/xHHub5c0</item>
     <item>http://naver.me/5aFOw7wO</item>
     <item>http://naver.me/G8ZYlJkQ</item>
+    <item>http://naver.me/58O9NVvn</item>
   </string-array>
 </resources>

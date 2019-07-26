@@ -220,7 +220,8 @@ namespace GFI_with_GFS_A
             {
                 InitializeImageList();
 
-                if (CheckImage() == true) await DownloadGFDImage();
+                if (CheckImage() == true)
+                    await DownloadGFDImage();
 
                 ShowImage(0);
                 _ = CheckUpdate();
@@ -276,7 +277,7 @@ namespace GFI_with_GFS_A
             {
                 ImageContainer.RemoveAllViews();
 
-                Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ImageName[index]}.gfdcache"));
+                Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ETC.Language.Language}_{ImageName[index]}.gfdcache"));
                 Android.Graphics.Bitmap bitmap = ((BitmapDrawable)drawable).Bitmap;
 
                 int height = 0;
@@ -319,7 +320,7 @@ namespace GFI_with_GFS_A
         private bool CheckImage()
         {
             foreach (string s in ImageName)
-                if (File.Exists(Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{s}.gfdcache")) == false)
+                if (File.Exists(Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ETC.Language.Language}_{s}.gfdcache")) == false)
                     return true;
 
             return false;
@@ -419,7 +420,7 @@ namespace GFI_with_GFS_A
                     foreach (string s in ImageName)
                     {
                         string url = Path.Combine(ETC.Server, "Data", "Images", "OldGFD", "Images", ETC.Language.Language, $"{s}.png");
-                        string target = Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{s}.gfdcache");
+                        string target = Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ETC.Language.Language}_{s}.gfdcache");
 
                         await wc.DownloadFileTaskAsync(url, target);
                     }

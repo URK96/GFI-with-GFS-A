@@ -21,7 +21,6 @@ namespace GFI_with_GFS_A
         TextView ServerVersion;
         CoordinatorLayout SnackbarLayout;
 
-        FloatingActionButton KakaoPlusFriendFAB;
         FloatingActionButton DiscordFAB;
 
 
@@ -130,12 +129,12 @@ namespace GFI_with_GFS_A
                 sb.AppendFormat("{0}\n", Resources.GetString(Resource.String.GFDInfo_Developer_Bibitjyadame));
                 sb.Append("bibitjyadame@gmail.com");
                 sb.Append("\n\n## Special Thanks ##\n\n");
-                sb.Append("츠보우\n");
-                sb.Append("잉여군\n");
+                sb.Append("츠보우, ");
+                sb.Append("잉여군, ");
                 sb.Append("MADCORE\n");
-                sb.Append("천솜향\n");
-                sb.Append("우용곡\n");
-                sb.Append("MMM\n");
+                sb.Append("천솜향, ");
+                sb.Append("우용곡, ");
+                sb.Append("MMM, ");
                 sb.Append("Geo");
 
                 FindViewById<TextView>(Resource.Id.GFDInfoDeveloperInfo).Text = sb.ToString();
