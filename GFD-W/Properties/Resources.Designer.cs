@@ -83,9 +83,29 @@ namespace GFD_W.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap AR2 {
+        internal static System.Drawing.Bitmap AR {
             get {
-                object obj = ResourceManager.GetObject("AR2", resourceCulture);
+                object obj = ResourceManager.GetObject("AR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap AR_N {
+            get {
+                object obj = ResourceManager.GetObject("AR_N", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap AR_R {
+            get {
+                object obj = ResourceManager.GetObject("AR_R", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +283,29 @@ namespace GFD_W.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap HG2 {
+        internal static System.Drawing.Bitmap HG {
             get {
-                object obj = ResourceManager.GetObject("HG2", resourceCulture);
+                object obj = ResourceManager.GetObject("HG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap HG_N {
+            get {
+                object obj = ResourceManager.GetObject("HG_N", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap HG_R {
+            get {
+                object obj = ResourceManager.GetObject("HG_R", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +323,29 @@ namespace GFD_W.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap MG2 {
+        internal static System.Drawing.Bitmap MG {
             get {
-                object obj = ResourceManager.GetObject("MG2", resourceCulture);
+                object obj = ResourceManager.GetObject("MG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap MG_N {
+            get {
+                object obj = ResourceManager.GetObject("MG_N", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap MG_R {
+            get {
+                object obj = ResourceManager.GetObject("MG_R", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,9 +473,9 @@ namespace GFD_W.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap RF2 {
+        internal static System.Drawing.Bitmap RF {
             get {
-                object obj = ResourceManager.GetObject("RF2", resourceCulture);
+                object obj = ResourceManager.GetObject("RF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +483,9 @@ namespace GFD_W.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap SG2 {
+        internal static System.Drawing.Bitmap RF_N {
             get {
-                object obj = ResourceManager.GetObject("SG2", resourceCulture);
+                object obj = ResourceManager.GetObject("RF_N", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -433,9 +493,69 @@ namespace GFD_W.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap SMG2 {
+        internal static System.Drawing.Bitmap RF_R {
             get {
-                object obj = ResourceManager.GetObject("SMG2", resourceCulture);
+                object obj = ResourceManager.GetObject("RF_R", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap SG {
+            get {
+                object obj = ResourceManager.GetObject("SG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap SG_N {
+            get {
+                object obj = ResourceManager.GetObject("SG_N", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap SG_R {
+            get {
+                object obj = ResourceManager.GetObject("SG_R", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap SMG {
+            get {
+                object obj = ResourceManager.GetObject("SMG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap SMG_N {
+            get {
+                object obj = ResourceManager.GetObject("SMG_N", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap SMG_R {
+            get {
+                object obj = ResourceManager.GetObject("SMG_R", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

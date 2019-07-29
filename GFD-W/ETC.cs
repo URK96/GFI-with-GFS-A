@@ -13,7 +13,7 @@ namespace GFD_W
 {
     internal static class ETC
     {
-        internal static readonly string appVer = "0.0.1";
+        internal static readonly string appVer = "0.0.2";
         internal static readonly string server = "http://chlwlsgur96.ipdisk.co.kr/publist/HDD1/Data/Project/GFS/";
         internal static readonly string currentPath = Environment.CurrentDirectory;
         internal static readonly string tempPath = Path.Combine(currentPath, "GFD_Temp");

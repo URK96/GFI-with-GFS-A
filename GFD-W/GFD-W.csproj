@@ -321,6 +321,24 @@
     <None Include="Resources\GFD-W Splash.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\SMG_R.png" />
+    <None Include="Resources\SMG_N.png" />
+    <None Include="Resources\SMG.png" />
+    <None Include="Resources\SG_R.png" />
+    <None Include="Resources\SG_N.png" />
+    <None Include="Resources\SG.png" />
+    <None Include="Resources\RF_R.png" />
+    <None Include="Resources\RF_N.png" />
+    <None Include="Resources\RF.png" />
+    <None Include="Resources\MG_R.png" />
+    <None Include="Resources\MG_N.png" />
+    <None Include="Resources\MG.png" />
+    <None Include="Resources\HG_R.png" />
+    <None Include="Resources\HG_N.png" />
+    <None Include="Resources\HG.png" />
+    <None Include="Resources\AR_R.png" />
+    <None Include="Resources\AR_N.png" />
+    <None Include="Resources\AR.png" />
     <None Include="Resources\EquipBG_5.png" />
     <None Include="Resources\EquipBG_4.png" />
     <None Include="Resources\EquipBG_3.png" />
@@ -349,12 +367,6 @@
     <None Include="Resources\PSGrade_3.png" />
     <None Include="Resources\PSGrade_2.png" />
     <None Include="Resources\PSGrade_0.png" />
-    <None Include="Resources\SMG2.png" />
-    <None Include="Resources\SG2.png" />
-    <None Include="Resources\RF2.png" />
-    <None Include="Resources\MG2.png" />
-    <None Include="Resources\HG2.png" />
-    <None Include="Resources\AR2.png" />
     <None Include="Resources\LineUp_ProductTime_Icon.png" />
     <None Include="Resources\DiscordIcon.png" />
     <None Include="Resources\CheckDBUpdate_WhiteTheme.png" />

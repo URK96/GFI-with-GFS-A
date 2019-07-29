@@ -153,6 +153,23 @@ namespace GFD_W
 
                 EquipDic_EquipInfo_FullImageView.BackgroundImage = gBitmap;
 
+                EquipDic_EquipInfo_ProductTimeLabel.Text = equip.GetProductTimeToString;
+
+                if (equip.OnlyUse == null)
+                {
+                    EquipDic_EquipInfo_OnlyUseDollPanel.Visible = false;
+                    EquipDic_EquipInfo_DollTypePanel.Visible = true;
+                    LoadEquipDollType();
+                }
+                else
+                {
+                    EquipDic_EquipInfo_DollTypePanel.Visible = false;
+                    EquipDic_EquipInfo_OnlyUseDollPanel.Visible = true;
+                    LoadEquipOnlyUseDoll();
+                }
+
+                LoadAbilityInfo();
+
                 EquipDic_EquipInfo_GainTooltip.SetToolTip(EquipDic_EquipInfo_FullImageView, equip.ProductDialog);
             }
             catch (Exception ex)
@@ -194,18 +211,147 @@ namespace GFD_W
                 ETC.ShowErrorMessage("장비 불러오기 오류", "이미지를 불러오는 동안 오류가 발생했습니다.");            }
         }
 
+        private void LoadEquipDollType()
+        {
+            PictureBox[] typeControls =
+            {
+                EquipDic_EquipInfo_DollTypeHG,
+                EquipDic_EquipInfo_DollTypeSMG,
+                EquipDic_EquipInfo_DollTypeAR,
+                EquipDic_EquipInfo_DollTypeRF,
+                EquipDic_EquipInfo_DollTypeMG,
+                EquipDic_EquipInfo_DollTypeSG
+            };
+            Bitmap[] typeN =
+            {
+                Resources.HG_N,
+                Resources.SMG_N,
+                Resources.AR_N,
+                Resources.RF_N,
+                Resources.MG_N,
+                Resources.SG_N
+            };
+            Bitmap[] type =
+            {
+                Resources.HG,
+                Resources.SMG,
+                Resources.AR,
+                Resources.RF,
+                Resources.MG,
+                Resources.SG
+            };
+            Bitmap[] typeR =
+            {
+                Resources.HG_R,
+                Resources.SMG_R,
+                Resources.AR_R,
+                Resources.RF_R,
+                Resources.MG_R,
+                Resources.SG_R
+            };
+
+            Bitmap icon;
+            string tooltip = "";
+
+            for (int i = 0; i < typeControls.Length; ++i)
+            {
+                string[] temp = equip.DollType[i].Split(',');
+
+                switch (temp[1])
+                {
+                    default:
+                    case "N":
+                        icon = typeN[i];
+                        tooltip = $"{temp[0]} 사용불가";
+                        break;
+                    case "U":
+                        icon = type[i];
+                        tooltip = $"{temp[0]} 사용가능";
+                        break;
+                    case "F":
+                        icon = typeR[i];
+                        tooltip = $"{temp[0]} 사용권장";
+                        break;
+                }
+
+                typeControls[i].Image = icon;
+                EquipDic_EquipInfo_DollTypeToolTip.SetToolTip(typeControls[i], tooltip);
+            }
+        }
+
+        private void LoadEquipOnlyUseDoll()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < equip.OnlyUse.Length; ++i)
+            {
+                sb.Append(equip.OnlyUse[i]);
+
+                if (i < (equip.OnlyUse.Length - 1))
+                    sb.Append("   ");
+            }
+
+            EquipDic_EquipInfo_OnlyUseDollName.Text = sb.ToString();
+        }
+
+        private void LoadAbilityInfo()
+        {
+            Label[] abilityControls =
+            {
+                EquipDic_EquipInfo_Ability1,
+                EquipDic_EquipInfo_Ability2,
+                EquipDic_EquipInfo_Ability3,
+                EquipDic_EquipInfo_Ability4
+            };
+            Label[] initMagControls =
+            {
+                EquipDic_EquipInfo_InitMag1,
+                EquipDic_EquipInfo_InitMag2,
+                EquipDic_EquipInfo_InitMag3,
+                EquipDic_EquipInfo_InitMag4
+            };
+            Label[] maxMagControls =
+            {
+                EquipDic_EquipInfo_MaxMag1,
+                EquipDic_EquipInfo_MaxMag2,
+                EquipDic_EquipInfo_MaxMag3,
+                EquipDic_EquipInfo_MaxMag4
+            };
+
+            try
+            {
+                for (int i = 0; i < equip.Abilities.Length; ++i)
+                {
+                    abilityControls[i].Text = equip.Abilities[i];
+                    initMagControls[i].Text = equip.InitMags[i];
+                    maxMagControls[i].Text = equip.MaxMags[i];
+                }
+
+                for (int i = equip.Abilities.Length; i < abilityControls.Length; ++i)
+                {
+                    abilityControls[i].Text = "";
+                    initMagControls[i].Text = "";
+                    maxMagControls[i].Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex);
+                ETC.ShowErrorMessage("장비 능력치 오류", "장비 능력치를 불러오는 중 오류가 발생했습니다.");
+            }
+        }
 
 
         // Event Functions
 
         private void EquipDic_EquipFilter_CheckedChanged(object sender, EventArgs e)
         {
-            _ = ListDoll(EquipDic_SearchTextBox.Text);
+            _ = ListEquip(EquipDic_SearchTextBox.Text);
         }
 
         private void EquipDic_SearchTextBox_TextChanged(object sender, EventArgs e)
         {
-            _ = ListDoll((sender as TextBox).Text);
+            _ = ListEquip((sender as TextBox).Text);
         }
 
         private void EquipDic_EquipProductTimeButton_Click(object sender, EventArgs e)

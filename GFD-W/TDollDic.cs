@@ -236,22 +236,22 @@ namespace GFD_W
                 {
                     default:
                     case "HG":
-                        TDollDic_TDollInfo_TypeIconImage.Image = Resources.HG2;
+                        TDollDic_TDollInfo_TypeIconImage.Image = Resources.HG;
                         break;
                     case "SMG":
-                        TDollDic_TDollInfo_TypeIconImage.Image = Resources.SMG2;
+                        TDollDic_TDollInfo_TypeIconImage.Image = Resources.SMG;
                         break;
                     case "AR":
-                        TDollDic_TDollInfo_TypeIconImage.Image = Resources.AR2;
+                        TDollDic_TDollInfo_TypeIconImage.Image = Resources.AR;
                         break;
                     case "RF":
-                        TDollDic_TDollInfo_TypeIconImage.Image = Resources.RF2;
+                        TDollDic_TDollInfo_TypeIconImage.Image = Resources.RF;
                         break;
                     case "MG":
-                        TDollDic_TDollInfo_TypeIconImage.Image = Resources.MG2;
+                        TDollDic_TDollInfo_TypeIconImage.Image = Resources.MG;
                         break;
                     case "SG":
-                        TDollDic_TDollInfo_TypeIconImage.Image = Resources.SG2;
+                        TDollDic_TDollInfo_TypeIconImage.Image = Resources.SG;
                         break;
                 }
 
