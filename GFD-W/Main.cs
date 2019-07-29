@@ -10,11 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Media;
 
 namespace GFD_W
 {
     public partial class Main : Form
     {
+        SoundPlayer soundPlayer = new SoundPlayer();
+
         public Main()
         {
             InitializeComponent();
@@ -28,14 +31,6 @@ namespace GFD_W
                 StatusStrip_AppVerLabel.Text = $"App Ver : {ETC.appVer}";
                 StatusStrip_AppVerLabel.Text += ETC.isReleaseMode ? "R" : "D";
                 StatusStrip_DBVerLabel.Text = $"DB Ver : {ETC.dbVer}";
-
-                try
-                {
-                    using (StreamReader sr = new StreamReader(new FileStream(Path.Combine(ETC.systemPath, "OldGFDVer.txt"), FileMode.Open, FileAccess.Read)))
-                        int.TryParse(sr.ReadToEnd(), out ETC.oldGFDVer);
-                }
-                catch { }
-
                 StatusStrip_OldGFDVerLabel.Text = $"GFDv1 Ver : {ETC.oldGFDVer}";
 
                 UpdateCheckTimer.Start();
@@ -45,7 +40,8 @@ namespace GFD_W
 
                 CreateObject();
 
-                await InitailizeTDollDic();
+                await InitializeTDollDic();
+                await InitializeEquipDic();
             }
             catch (Exception ex)
             {
@@ -71,8 +67,17 @@ namespace GFD_W
         {
             try
             {
+                dollRootList.Clear();
+                equipRootList.Clear();
+
                 foreach (DataRow dr in ETC.dollList.Rows)
                     dollRootList.Add(new Doll(dr));
+
+                foreach (DataRow dr in ETC.equipmentList.Rows)
+                    equipRootList.Add(new Equip(dr));
+
+                dollRootList.TrimExcess();
+                equipRootList.TrimExcess();
             }
             catch (Exception ex)
             {
@@ -127,6 +132,9 @@ namespace GFD_W
                     StatusStrip_OldGFDVerLabel.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
                 else
                     StatusStrip_OldGFDVerLabel.DisplayStyle = ToolStripItemDisplayStyle.Text;
+
+                StatusStrip_DBVerLabel.Text = $"DB Ver : {ETC.dbVer}";
+                StatusStrip_OldGFDVerLabel.Text = $"GFDv1 Ver : {ETC.oldGFDVer}";
             }
             catch (Exception ex)
             {
@@ -134,12 +142,67 @@ namespace GFD_W
             }
         }
 
-        private void StatusStrip_AppVerLabel_Click(object sender, EventArgs e)
+        private async void StatusStrip_AppVerLabel_Click(object sender, EventArgs e)
         {
-            ToolStripStatusLabel label = sender as ToolStripStatusLabel;
+            var label = sender as ToolStripStatusLabel;
 
-            //if (label.DisplayStyle == ToolStripItemDisplayStyle.ImageAndText)
-                
+            if (label.DisplayStyle == ToolStripItemDisplayStyle.ImageAndText)
+                if (MessageBox.Show("프로그램 업데이트가 확인되었습니다. 계속 진행할까요?", "프로그램 업데이트 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    UpdateCheckTimer.Stop();
+                    GFDStatusLabel.Visible = true;
+
+                    if (!await ETC.UpdateProgram(GFDStatusLabel))
+                        GFDStatusLabel.Visible = false;
+                }
+        }
+
+        private async void StatusStrip_DBVerLabel_Click(object sender, EventArgs e)
+        {
+            var label = sender as ToolStripStatusLabel;
+
+            if (label.DisplayStyle == ToolStripItemDisplayStyle.ImageAndText)
+                if (MessageBox.Show("DB 업데이트가 확인되었습니다. 계속 진행할까요?", "DB 업데이트 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    UpdateCheckTimer.Stop();
+                    Enabled = false;
+                    GFDStatusLabel.Visible = true;
+
+                    await ETC.UpdateDB(GFDStatusLabel);
+
+                    GFDStatusLabel.Text = "Reload GFD...";
+
+                    await ETC.CheckDBVersion();
+                    await InitializeMain();
+
+                    Enabled = true;
+                    UpdateCheckTimer.Start();
+                    GFDStatusLabel.Visible = false;
+                }
+        }
+
+        private async void StatusStrip_OldGFDVerLabel_Click(object sender, EventArgs e)
+        {
+            var label = sender as ToolStripStatusLabel;
+
+            /*if (label.DisplayStyle == ToolStripItemDisplayStyle.ImageAndText)
+                if (MessageBox.Show("소전사전v1 업데이트가 확인되었습니다. 계속 진행할까요?", "소전사전v1 업데이트 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    UpdateCheckTimer.Stop();
+                    Enabled = false;
+                    GFDStatusLabel.Visible = true;
+
+                    await ETC.CheckOldGFDVersion();
+
+                    GFDStatusLabel.Text = "Reload GFD...";
+
+                    await ETC.CheckDBVersion();
+                    await InitializeMain();
+
+                    Enabled = true;
+                    UpdateCheckTimer.Start();
+                    GFDStatusLabel.Visible = false;
+                }*/
         }
     }
 }

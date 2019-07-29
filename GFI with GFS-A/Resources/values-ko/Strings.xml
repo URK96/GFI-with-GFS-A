@@ -648,11 +648,11 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.33 수정사항]\n\n
-- 초보자 가이드북 요약본 뷰어 추가\n
+    [2.3.34 수정사항]\n\n
+- 기동 이미지 변경\n
+- 초보자 가이드북 요약본 항목 추가 및 언어 지원 추가 (영어)\n
 - 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 소녀전선)\n
-- 스토리 추가 (VA-11 콜라보)\n
-- 메모리 최적화
+- 소전사전 정보 화면에서 문자가 겹치는 문제 수정
   </string>
 
   <string name="RFBot_CommandHelp">

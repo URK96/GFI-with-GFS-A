@@ -16,17 +16,15 @@ namespace GFD_W
     partial class Main
     {
         List<Doll> dollRootList = new List<Doll>();
-        List<string> voiceList = new List<string>();
+        List<string> dollVoiceList = new List<string>();
 
         Doll doll;
 
         DollAbilitySet das;
 
-        SoundPlayer sPlayer = new SoundPlayer();
-
-        bool isLoad = false;
+        bool isDollLoad = false;
         // Type, Voice, Mod, Grade
-        bool[] applyFilters = { false, false, false, false };
+        bool[] applyDollFilters = { false, false, false, false };
 
         int modIndex = 0;
         int abilityLv = 1;
@@ -34,7 +32,7 @@ namespace GFD_W
         int[] abilityValues = new int[6];
         int vCostumeIndex = 0;
 
-        private async Task InitailizeTDollDic()
+        private async Task InitializeTDollDic()
         {
             await Task.Delay(1);
 
@@ -68,7 +66,7 @@ namespace GFD_W
             {
                 TDollDic_TDollListView.Items.Clear();
 
-                CheckApplyFilter();
+                CheckApplyDollFilter();
 
                 foreach (Doll doll in dollRootList)
                 {
@@ -98,13 +96,14 @@ namespace GFD_W
             catch (Exception ex)
             {
                 ETC.LogError(ex);
+                ETC.ShowErrorMessage("리스트 오류", "인형 리스트를 생성하는 중 오류가 발생했습니다.");
             }
         }
 
-        private void CheckApplyFilter()
+        private void CheckApplyDollFilter()
         {
-            for (int i = 0; i < applyFilters.Length; ++i)
-                applyFilters[i] = false;
+            for (int i = 0; i < applyDollFilters.Length; ++i)
+                applyDollFilters[i] = false;
 
             var typeCollection = TDollDic_TDollFilterGroup_TypeGroup.Controls;
             var voiceCollection = TDollDic_TDollFilterGroup_VoiceGroup.Controls;
@@ -112,20 +111,20 @@ namespace GFD_W
             var gradeCollection = TDollDic_TDollFilterGroup_GradeGroup.Controls;
 
             foreach (CheckBox c in typeCollection)
-                if (c.Checked == true)
-                    applyFilters[0] = true;
+                if (c.Checked)
+                    applyDollFilters[0] = true;
 
             foreach (CheckBox c in voiceCollection)
-                if (c.Checked == true)
-                    applyFilters[1] = true;
+                if (c.Checked)
+                    applyDollFilters[1] = true;
 
             foreach (CheckBox c in modCollection)
-                if (c.Checked == true)
-                    applyFilters[2] = true;
+                if (c.Checked)
+                    applyDollFilters[2] = true;
 
             foreach (CheckBox c in gradeCollection)
-                if (c.Checked == true)
-                    applyFilters[3] = true;
+                if (c.Checked)
+                    applyDollFilters[3] = true;
         }
 
         private bool CheckFilter(Doll doll)
@@ -135,24 +134,24 @@ namespace GFD_W
             var modCollection = TDollDic_TDollFilterGroup_ModGroup.Controls;
             var gradeCollection = TDollDic_TDollFilterGroup_GradeGroup.Controls;
 
-            if (applyFilters[0])
+            if (applyDollFilters[0])
                 foreach (CheckBox c in typeCollection)
                     if ((doll.Type == c.Text) && !c.Checked)
                         return false;
 
-            if (applyFilters[1])
+            if (applyDollFilters[1])
                 foreach (CheckBox c in voiceCollection)
                     if ((doll.HasVoice && (int.Parse(c.Tag.ToString()) == 1)) || (!doll.HasVoice && (int.Parse(c.Tag.ToString()) == 0)))
                         if (!c.Checked)
                             return false;
 
-            if (applyFilters[2])
+            if (applyDollFilters[2])
                 foreach (CheckBox c in modCollection)
                     if ((doll.HasMod && (int.Parse(c.Tag.ToString()) == 1)) || (!doll.HasMod && (int.Parse(c.Tag.ToString()) == 0)))
                         if (!c.Checked)
                             return false;
 
-            if (applyFilters[3])
+            if (applyDollFilters[3])
                 foreach (CheckBox c in gradeCollection)
                     if ((doll.Grade == int.Parse(c.Tag.ToString())) && !c.Checked)
                         return false;
@@ -163,7 +162,7 @@ namespace GFD_W
         private async Task LoadTDollInfo(bool isRefresh = false)
         {
             await Task.Delay(10);
-            isLoad = true;
+            isDollLoad = true;
 
             try
             {
@@ -207,7 +206,7 @@ namespace GFD_W
                 TDollDic_TDollInfo_IllustratorInfo.Text = doll.Illustrator;
                 TDollDic_TDollInfo_NickNameInfo.Text = doll.NickName;
 
-                await LoadImages(isRefresh);
+                await LoadDollImages(isRefresh);
 
                 Bitmap gBitmap;
 
@@ -279,14 +278,15 @@ namespace GFD_W
             catch (Exception ex)
             {
                 ETC.LogError(ex);
+                ETC.ShowErrorMessage("인형 불러오기 오류", "인형 정보를 불러오는 중 오류가 발생했습니다.");
             }
             finally
             {
-                isLoad = false;
+                isDollLoad = false;
             }
         }
 
-        private async Task LoadImages(bool isRefresh)
+        private async Task LoadDollImages(bool isRefresh)
         {
             try
             {
@@ -297,7 +297,7 @@ namespace GFD_W
                     string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal", $"{fileName}.png");
                     string target = Path.Combine(ETC.cachePath, "Doll", "Normal", $"{fileName}.gfdcache");
 
-                    if ((File.Exists(target) == false) || (isRefresh == true))
+                    if (!File.Exists(target) || isRefresh)
                         using (WebClient wc = new WebClient())
                             await wc.DownloadFileTaskAsync(url, target);
 
@@ -307,25 +307,6 @@ namespace GFD_W
                 {
                     ETC.LogError(ex);
                 }
-
-                /*string FileName = doll.DicNumber.ToString();
-
-                if (modIndex == 3)
-                    FileName += "_M";
-
-                try
-                {
-                    string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal_Crop", $"{FileName}.png");
-                    string target = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{FileName}.gfdcache");
-
-                    if ((File.Exists(target) == false) || (isRefresh == true))
-                        using (WebClient wc = new WebClient())
-                            await wc.DownloadFileTaskAsync(url, target);
-                }
-                catch (Exception ex)
-                {
-                    ETC.LogError(ex);
-                }*/
             }
             catch (Exception ex)
             {
@@ -656,8 +637,8 @@ namespace GFD_W
                         ETC.LogError(ex);
                     }
 
-                sPlayer.SoundLocation = target;
-                sPlayer.Play();
+                soundPlayer.SoundLocation = target;
+                soundPlayer.Play();
             }
             catch (WebException ex)
             {
@@ -785,9 +766,9 @@ namespace GFD_W
 
             modIndex = Convert.ToInt32((sender as RadioButton).Tag);
 
-            if (!isLoad)
+            if (!isDollLoad)
             {
-                await LoadImages(false);
+                await LoadDollImages(false);
                 await LoadAbility();
                 LoadFormationBuff();
 
@@ -838,21 +819,21 @@ namespace GFD_W
             {
                 vCostumeIndex = (sender as ComboBox).SelectedIndex;
 
-                voiceList.Clear();
+                dollVoiceList.Clear();
                 TDollDic_TDollInfo_VoiceSelector.Items.Clear();
 
                 switch (vCostumeIndex)
                 {
                     case 0:
-                        voiceList.AddRange(doll.Voices);
+                        dollVoiceList.AddRange(doll.Voices);
                         break;
                     default:
-                        voiceList.AddRange(doll.CostumeVoices[vCostumeIndex - 1, 1].Split(';'));
+                        dollVoiceList.AddRange(doll.CostumeVoices[vCostumeIndex - 1, 1].Split(';'));
                         break;
                 }
-                voiceList.TrimExcess();
+                dollVoiceList.TrimExcess();
 
-                TDollDic_TDollInfo_VoiceSelector.Items.AddRange(voiceList.ToArray());
+                TDollDic_TDollInfo_VoiceSelector.Items.AddRange(dollVoiceList.ToArray());
                 TDollDic_TDollInfo_VoiceSelector.SelectedIndex = 0;
             }
             catch (Exception ex)
@@ -866,7 +847,7 @@ namespace GFD_W
         {
             int vIndex = TDollDic_TDollInfo_VoiceSelector.SelectedIndex;
 
-            _ = PlayVoice(voiceList[vIndex]);
+            _ = PlayVoice(dollVoiceList[vIndex]);
         }
 
         private void TDollDic_TDollInfo_SkillButton_Click(object sender, EventArgs e)

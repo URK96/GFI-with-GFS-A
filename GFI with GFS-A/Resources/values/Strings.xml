@@ -645,11 +645,12 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.33 Update]\n\n
-- Add beginner guide book viewer feature\n
+    [2.3.34 Update]\n\n
+- Change Splash Image\n
+- Add beginner guide book content\n
+- Add beginner guide book language support (en)\n
 - Add cartoon content\n
-- Add story content (VA-11 Collaboration)\n
-- Optimize memory usage
+- Fix GFD info string issue
   </string>
 
   <string name="RFBot_CommandHelp">

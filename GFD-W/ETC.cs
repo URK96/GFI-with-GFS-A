@@ -50,6 +50,20 @@ namespace GFD_W
             "SkillTraining.gfs",
             "FairyAttribution.gfs"
         };
+        internal static string[] oldGFDImageName =
+            {
+                "ProductTable_Doll",
+                "ProductTable_Equipment",
+                "ProductTable_Fairy",
+                "MD_Table",
+                //"DollPerformance",
+                "FairyAttribute",
+                "RecommendDollRecipe",
+                "RecommendEquipmentRecipe",
+                "RecommendMD",
+                "RecommendLeveling",
+                "RecommendBreeding"
+            };
 
         internal static AverageAbility[] Avg_List;
 
@@ -265,7 +279,7 @@ namespace GFD_W
             return false;
         }
 
-        internal static async Task UpdateDB(Label status)
+        internal static async Task<bool> UpdateDB(Label status)
         {
             await Task.Delay(100);
 
@@ -317,7 +331,17 @@ namespace GFD_W
             catch (Exception ex)
             {
                 LogError(ex);
+
+                for (int i = 3; i >= 0; --i)
+                {
+                    status.Text = $"Update DB Fail!...Skip after {i}s";
+                    await Task.Delay(1000);
+                }
+
+                return false;
             }
+
+            return true;
         }
 
         internal static async Task<bool> CheckAppVersion()
@@ -351,6 +375,44 @@ namespace GFD_W
             return false;
         }
 
+        internal static async Task<bool> UpdateOldGFD(Label status = null)
+        {
+            await Task.Delay(100);
+
+            try
+            {
+                if (status == null)
+                    status = new Label();
+
+                using (WebClient wc = new WebClient())
+                {
+                    foreach (string s in oldGFDImageName)
+                    {
+                        string url = Path.Combine(server, "Data", "Images", "OldGFD", "Images", "ko", $"{s}.png");
+                        string target = Path.Combine(cachePath, "OldGFD", "Images", $"{s}.gfdcache");
+
+                        await wc.DownloadFileTaskAsync(url, target);
+                    }
+
+                    wc.DownloadFile(Path.Combine(server, "OldGFDVer.txt"), Path.Combine(systemPath, "OldGFDVer.txt"));
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+
+                for (int i = 3; i >= 0; --i)
+                {
+                    status.Text = $"Update GFDv1 Fail!...Skip after {i}s";
+                    await Task.Delay(1000);
+                }
+
+                return false;
+            }
+
+            return true;
+        }
+
         internal static async Task<bool> CheckOldGFDVersion()
         {
             await Task.Delay(100);
@@ -371,18 +433,17 @@ namespace GFD_W
                         string serverVerFile = Path.Combine(server, "OldGFDVer.txt");
 
                         int serverVer = 0;
-                        int localVer = 0;
 
                         using (WebClient wc = new WebClient())
                             await wc.DownloadFileTaskAsync(serverVerFile, tempServerVerPath);
 
                         using (StreamReader sr = new StreamReader(new FileStream(localVerPath, FileMode.Open, FileAccess.Read)))
-                            localVer = int.Parse(sr.ReadToEnd());
+                            oldGFDVer = int.Parse(sr.ReadToEnd());
 
                         using (StreamReader sr2 = new StreamReader(new FileStream(tempServerVerPath, FileMode.Open, FileAccess.Read)))
                             serverVer = int.Parse(sr2.ReadToEnd());
 
-                        if (localVer < serverVer)
+                        if (oldGFDVer < serverVer)
                             return true;
                     }
                 }
@@ -478,14 +539,14 @@ namespace GFD_W
             }
         }
 
-        internal static async Task AppUpdate(Label statusLabel = null)
+        internal static async Task<bool> UpdateProgram(Label status = null)
         {
-            if (statusLabel == null)
-                statusLabel = new Label();
+            if (status == null)
+                status = new Label();
 
             using (WebClient wc = new WebClient())
             {
-                statusLabel.Text = "App Update Process - Check Server Network";
+                status.Text = "App Update Process - Check Server Network";
 
                 await CheckServerNetwork();
 
@@ -493,18 +554,18 @@ namespace GFD_W
                 {
                     try
                     {
-                        statusLabel.Text = "App Update Process - Download Updater";
+                        status.Text = "App Update Process - Download Updater";
 
                         wc.DownloadProgressChanged += (object sender, DownloadProgressChangedEventArgs e) =>
                         {
-                            statusLabel.Text = $"App Update Process - Download Updater - {e.ProgressPercentage}%";
+                            status.Text = $"App Update Process - Download Updater - {e.ProgressPercentage}%";
                         };
 
                         await wc.DownloadFileTaskAsync(Path.Combine(server, "GFDW Updater.exe"), Path.Combine(currentPath, "Updater.exe"));
 
                         await Task.Delay(500);
 
-                        statusLabel.Text = "App Update Process - Run Updater";
+                        status.Text = "App Update Process - Run Updater";
 
                         await Task.Delay(500);
 
@@ -517,12 +578,26 @@ namespace GFD_W
 
                         for (int i = 3; i >= 0; --i)
                         {
-                            statusLabel.Text = $"Download App Updater Fail!...Skip after {i}s";
+                            status.Text = $"Update Program Fail!...Skip after {i}s";
                             await Task.Delay(1000);
                         }
+
+                        return false;
                     }
                 }
+                else
+                {
+                    for (int i = 3; i >= 0; --i)
+                    {
+                        status.Text = $"Server is not working!...Skip after {i}s";
+                        await Task.Delay(1000);
+                    }
+
+                    return false;
+                }
             }
+
+            return true;
         }
 
         internal static async Task<bool> LoadDB()

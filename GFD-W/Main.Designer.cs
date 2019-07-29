@@ -149,13 +149,42 @@
             this.TDollGrade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TDollName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TDollHasMod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MainTabPage_Equipment = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.EquipDic_EquipInfo_TypeCategory = new System.Windows.Forms.Label();
+            this.EquipDic_EquipInfo_Name = new System.Windows.Forms.Label();
+            this.EquipDic_EquipInfo_DicNumber = new System.Windows.Forms.Label();
+            this.EquipDic_SplitContainer = new System.Windows.Forms.SplitContainer();
+            this.EquipDic_EquipInfo_FullImageView = new System.Windows.Forms.PictureBox();
+            this.EquipDic_EquipFilterGroup = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.EquipDic_SearchTextBox = new System.Windows.Forms.TextBox();
+            this.EquipDic_EquipProductTimeButton = new System.Windows.Forms.Button();
+            this.EquipDic_EquipFilterGroup_GradeGroup = new System.Windows.Forms.GroupBox();
+            this.EquipDic_EquipFilter_Grade5 = new System.Windows.Forms.CheckBox();
+            this.EquipDic_EquipFilter_GradeEx = new System.Windows.Forms.CheckBox();
+            this.EquipDic_EquipFilter_Grade4 = new System.Windows.Forms.CheckBox();
+            this.EquipDic_EquipFilter_Grade3 = new System.Windows.Forms.CheckBox();
+            this.EquipDic_EquipFilter_Grade2 = new System.Windows.Forms.CheckBox();
+            this.EquipDic_EquipFilterGroup_CategoryGroup = new System.Windows.Forms.GroupBox();
+            this.EquipDic_EquipFilter_CategoryBullet = new System.Windows.Forms.CheckBox();
+            this.EquipDic_EquipFilter_CategoryDoll = new System.Windows.Forms.CheckBox();
+            this.EquipDic_EquipFilter_CategoryAttach = new System.Windows.Forms.CheckBox();
+            this.EquipDic_EquipListGroup = new System.Windows.Forms.GroupBox();
+            this.EquipDic_EquipListView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusStrip_AppVerLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusStrip_DBVerLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusStrip_OldGFDVerLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.TDollDic_TDollInfo_GainTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.UpdateCheckTimer = new System.Windows.Forms.Timer(this.components);
-            this.MainTabPage_Equipment = new System.Windows.Forms.TabPage();
+            this.EquipDic_EquipInfo_GainTooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.GFDStatusLabel = new System.Windows.Forms.Label();
             this.MainMenuStrip.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.MainTabPage_Main.SuspendLayout();
@@ -194,6 +223,17 @@
             this.TDollDic_TDollFilterGroup_VoiceGroup.SuspendLayout();
             this.TDollDic_TDollFilterGroup_TypeGroup.SuspendLayout();
             this.TDollDic_TDollListGroup.SuspendLayout();
+            this.MainTabPage_Equipment.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EquipDic_SplitContainer)).BeginInit();
+            this.EquipDic_SplitContainer.Panel1.SuspendLayout();
+            this.EquipDic_SplitContainer.Panel2.SuspendLayout();
+            this.EquipDic_SplitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EquipDic_EquipInfo_FullImageView)).BeginInit();
+            this.EquipDic_EquipFilterGroup.SuspendLayout();
+            this.EquipDic_EquipFilterGroup_GradeGroup.SuspendLayout();
+            this.EquipDic_EquipFilterGroup_CategoryGroup.SuspendLayout();
+            this.EquipDic_EquipListGroup.SuspendLayout();
             this.MainStatusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1541,6 +1581,329 @@
             this.TDollHasMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TDollHasMod.Width = 40;
             // 
+            // MainTabPage_Equipment
+            // 
+            this.MainTabPage_Equipment.Controls.Add(this.panel2);
+            this.MainTabPage_Equipment.Controls.Add(this.EquipDic_SplitContainer);
+            this.MainTabPage_Equipment.Location = new System.Drawing.Point(4, 22);
+            this.MainTabPage_Equipment.Name = "MainTabPage_Equipment";
+            this.MainTabPage_Equipment.Padding = new System.Windows.Forms.Padding(3);
+            this.MainTabPage_Equipment.Size = new System.Drawing.Size(878, 727);
+            this.MainTabPage_Equipment.TabIndex = 3;
+            this.MainTabPage_Equipment.Text = "장비";
+            this.MainTabPage_Equipment.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.EquipDic_EquipInfo_TypeCategory);
+            this.panel2.Controls.Add(this.EquipDic_EquipInfo_Name);
+            this.panel2.Controls.Add(this.EquipDic_EquipInfo_DicNumber);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(535, 79);
+            this.panel2.TabIndex = 2;
+            // 
+            // EquipDic_EquipInfo_TypeCategory
+            // 
+            this.EquipDic_EquipInfo_TypeCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.EquipDic_EquipInfo_TypeCategory.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.EquipDic_EquipInfo_TypeCategory.Location = new System.Drawing.Point(0, 51);
+            this.EquipDic_EquipInfo_TypeCategory.Name = "EquipDic_EquipInfo_TypeCategory";
+            this.EquipDic_EquipInfo_TypeCategory.Size = new System.Drawing.Size(535, 28);
+            this.EquipDic_EquipInfo_TypeCategory.TabIndex = 2;
+            this.EquipDic_EquipInfo_TypeCategory.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // EquipDic_EquipInfo_Name
+            // 
+            this.EquipDic_EquipInfo_Name.Dock = System.Windows.Forms.DockStyle.Top;
+            this.EquipDic_EquipInfo_Name.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.EquipDic_EquipInfo_Name.Location = new System.Drawing.Point(0, 24);
+            this.EquipDic_EquipInfo_Name.Name = "EquipDic_EquipInfo_Name";
+            this.EquipDic_EquipInfo_Name.Size = new System.Drawing.Size(535, 27);
+            this.EquipDic_EquipInfo_Name.TabIndex = 1;
+            this.EquipDic_EquipInfo_Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // EquipDic_EquipInfo_DicNumber
+            // 
+            this.EquipDic_EquipInfo_DicNumber.Dock = System.Windows.Forms.DockStyle.Top;
+            this.EquipDic_EquipInfo_DicNumber.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.EquipDic_EquipInfo_DicNumber.Location = new System.Drawing.Point(0, 0);
+            this.EquipDic_EquipInfo_DicNumber.Name = "EquipDic_EquipInfo_DicNumber";
+            this.EquipDic_EquipInfo_DicNumber.Size = new System.Drawing.Size(535, 24);
+            this.EquipDic_EquipInfo_DicNumber.TabIndex = 0;
+            this.EquipDic_EquipInfo_DicNumber.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // EquipDic_SplitContainer
+            // 
+            this.EquipDic_SplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EquipDic_SplitContainer.Location = new System.Drawing.Point(3, 3);
+            this.EquipDic_SplitContainer.Name = "EquipDic_SplitContainer";
+            // 
+            // EquipDic_SplitContainer.Panel1
+            // 
+            this.EquipDic_SplitContainer.Panel1.Controls.Add(this.EquipDic_EquipInfo_FullImageView);
+            // 
+            // EquipDic_SplitContainer.Panel2
+            // 
+            this.EquipDic_SplitContainer.Panel2.Controls.Add(this.EquipDic_EquipFilterGroup);
+            this.EquipDic_SplitContainer.Panel2.Controls.Add(this.EquipDic_EquipListGroup);
+            this.EquipDic_SplitContainer.Size = new System.Drawing.Size(872, 721);
+            this.EquipDic_SplitContainer.SplitterDistance = 535;
+            this.EquipDic_SplitContainer.TabIndex = 0;
+            // 
+            // EquipDic_EquipInfo_FullImageView
+            // 
+            this.EquipDic_EquipInfo_FullImageView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.EquipDic_EquipInfo_FullImageView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.EquipDic_EquipInfo_FullImageView.Location = new System.Drawing.Point(5, 85);
+            this.EquipDic_EquipInfo_FullImageView.Name = "EquipDic_EquipInfo_FullImageView";
+            this.EquipDic_EquipInfo_FullImageView.Size = new System.Drawing.Size(200, 200);
+            this.EquipDic_EquipInfo_FullImageView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.EquipDic_EquipInfo_FullImageView.TabIndex = 1;
+            this.EquipDic_EquipInfo_FullImageView.TabStop = false;
+            // 
+            // EquipDic_EquipFilterGroup
+            // 
+            this.EquipDic_EquipFilterGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.EquipDic_EquipFilterGroup.Controls.Add(this.label11);
+            this.EquipDic_EquipFilterGroup.Controls.Add(this.EquipDic_SearchTextBox);
+            this.EquipDic_EquipFilterGroup.Controls.Add(this.EquipDic_EquipProductTimeButton);
+            this.EquipDic_EquipFilterGroup.Controls.Add(this.EquipDic_EquipFilterGroup_GradeGroup);
+            this.EquipDic_EquipFilterGroup.Controls.Add(this.EquipDic_EquipFilterGroup_CategoryGroup);
+            this.EquipDic_EquipFilterGroup.Location = new System.Drawing.Point(6, 4);
+            this.EquipDic_EquipFilterGroup.Name = "EquipDic_EquipFilterGroup";
+            this.EquipDic_EquipFilterGroup.Size = new System.Drawing.Size(324, 445);
+            this.EquipDic_EquipFilterGroup.TabIndex = 2;
+            this.EquipDic_EquipFilterGroup.TabStop = false;
+            this.EquipDic_EquipFilterGroup.Text = "필터";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Location = new System.Drawing.Point(14, 420);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "검색 : ";
+            // 
+            // EquipDic_SearchTextBox
+            // 
+            this.EquipDic_SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.EquipDic_SearchTextBox.Location = new System.Drawing.Point(66, 416);
+            this.EquipDic_SearchTextBox.Name = "EquipDic_SearchTextBox";
+            this.EquipDic_SearchTextBox.Size = new System.Drawing.Size(244, 21);
+            this.EquipDic_SearchTextBox.TabIndex = 11;
+            this.EquipDic_SearchTextBox.WordWrap = false;
+            this.EquipDic_SearchTextBox.TextChanged += new System.EventHandler(this.EquipDic_SearchTextBox_TextChanged);
+            // 
+            // EquipDic_EquipProductTimeButton
+            // 
+            this.EquipDic_EquipProductTimeButton.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.EquipDic_EquipProductTimeButton.Image = global::GFD_W.Properties.Resources.LineUp_ProductTime_Icon;
+            this.EquipDic_EquipProductTimeButton.Location = new System.Drawing.Point(186, 20);
+            this.EquipDic_EquipProductTimeButton.Name = "EquipDic_EquipProductTimeButton";
+            this.EquipDic_EquipProductTimeButton.Size = new System.Drawing.Size(132, 143);
+            this.EquipDic_EquipProductTimeButton.TabIndex = 10;
+            this.EquipDic_EquipProductTimeButton.Text = "제조 시간표";
+            this.EquipDic_EquipProductTimeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.EquipDic_EquipProductTimeButton.UseVisualStyleBackColor = true;
+            this.EquipDic_EquipProductTimeButton.Click += new System.EventHandler(this.EquipDic_EquipProductTimeButton_Click);
+            // 
+            // EquipDic_EquipFilterGroup_GradeGroup
+            // 
+            this.EquipDic_EquipFilterGroup_GradeGroup.Controls.Add(this.EquipDic_EquipFilter_Grade5);
+            this.EquipDic_EquipFilterGroup_GradeGroup.Controls.Add(this.EquipDic_EquipFilter_GradeEx);
+            this.EquipDic_EquipFilterGroup_GradeGroup.Controls.Add(this.EquipDic_EquipFilter_Grade4);
+            this.EquipDic_EquipFilterGroup_GradeGroup.Controls.Add(this.EquipDic_EquipFilter_Grade3);
+            this.EquipDic_EquipFilterGroup_GradeGroup.Controls.Add(this.EquipDic_EquipFilter_Grade2);
+            this.EquipDic_EquipFilterGroup_GradeGroup.Location = new System.Drawing.Point(6, 113);
+            this.EquipDic_EquipFilterGroup_GradeGroup.Name = "EquipDic_EquipFilterGroup_GradeGroup";
+            this.EquipDic_EquipFilterGroup_GradeGroup.Size = new System.Drawing.Size(174, 143);
+            this.EquipDic_EquipFilterGroup_GradeGroup.TabIndex = 6;
+            this.EquipDic_EquipFilterGroup_GradeGroup.TabStop = false;
+            this.EquipDic_EquipFilterGroup_GradeGroup.Text = "등급";
+            // 
+            // EquipDic_EquipFilter_Grade5
+            // 
+            this.EquipDic_EquipFilter_Grade5.AutoSize = true;
+            this.EquipDic_EquipFilter_Grade5.Location = new System.Drawing.Point(51, 86);
+            this.EquipDic_EquipFilter_Grade5.Name = "EquipDic_EquipFilter_Grade5";
+            this.EquipDic_EquipFilter_Grade5.Size = new System.Drawing.Size(84, 16);
+            this.EquipDic_EquipFilter_Grade5.TabIndex = 5;
+            this.EquipDic_EquipFilter_Grade5.Tag = "5";
+            this.EquipDic_EquipFilter_Grade5.Text = "☆☆☆☆☆";
+            this.EquipDic_EquipFilter_Grade5.UseVisualStyleBackColor = true;
+            this.EquipDic_EquipFilter_Grade5.CheckedChanged += new System.EventHandler(this.EquipDic_EquipFilter_CheckedChanged);
+            // 
+            // EquipDic_EquipFilter_GradeEx
+            // 
+            this.EquipDic_EquipFilter_GradeEx.AutoSize = true;
+            this.EquipDic_EquipFilter_GradeEx.Location = new System.Drawing.Point(51, 108);
+            this.EquipDic_EquipFilter_GradeEx.Name = "EquipDic_EquipFilter_GradeEx";
+            this.EquipDic_EquipFilter_GradeEx.Size = new System.Drawing.Size(36, 16);
+            this.EquipDic_EquipFilter_GradeEx.TabIndex = 4;
+            this.EquipDic_EquipFilter_GradeEx.Tag = "0";
+            this.EquipDic_EquipFilter_GradeEx.Text = "★";
+            this.EquipDic_EquipFilter_GradeEx.UseVisualStyleBackColor = true;
+            this.EquipDic_EquipFilter_GradeEx.CheckedChanged += new System.EventHandler(this.EquipDic_EquipFilter_CheckedChanged);
+            // 
+            // EquipDic_EquipFilter_Grade4
+            // 
+            this.EquipDic_EquipFilter_Grade4.AutoSize = true;
+            this.EquipDic_EquipFilter_Grade4.Location = new System.Drawing.Point(51, 64);
+            this.EquipDic_EquipFilter_Grade4.Name = "EquipDic_EquipFilter_Grade4";
+            this.EquipDic_EquipFilter_Grade4.Size = new System.Drawing.Size(72, 16);
+            this.EquipDic_EquipFilter_Grade4.TabIndex = 2;
+            this.EquipDic_EquipFilter_Grade4.Tag = "4";
+            this.EquipDic_EquipFilter_Grade4.Text = "☆☆☆☆";
+            this.EquipDic_EquipFilter_Grade4.UseVisualStyleBackColor = true;
+            this.EquipDic_EquipFilter_Grade4.CheckedChanged += new System.EventHandler(this.EquipDic_EquipFilter_CheckedChanged);
+            // 
+            // EquipDic_EquipFilter_Grade3
+            // 
+            this.EquipDic_EquipFilter_Grade3.AutoSize = true;
+            this.EquipDic_EquipFilter_Grade3.Location = new System.Drawing.Point(51, 42);
+            this.EquipDic_EquipFilter_Grade3.Name = "EquipDic_EquipFilter_Grade3";
+            this.EquipDic_EquipFilter_Grade3.Size = new System.Drawing.Size(60, 16);
+            this.EquipDic_EquipFilter_Grade3.TabIndex = 1;
+            this.EquipDic_EquipFilter_Grade3.Tag = "3";
+            this.EquipDic_EquipFilter_Grade3.Text = "☆☆☆";
+            this.EquipDic_EquipFilter_Grade3.UseVisualStyleBackColor = true;
+            this.EquipDic_EquipFilter_Grade3.CheckedChanged += new System.EventHandler(this.EquipDic_EquipFilter_CheckedChanged);
+            // 
+            // EquipDic_EquipFilter_Grade2
+            // 
+            this.EquipDic_EquipFilter_Grade2.AutoSize = true;
+            this.EquipDic_EquipFilter_Grade2.Location = new System.Drawing.Point(51, 20);
+            this.EquipDic_EquipFilter_Grade2.Name = "EquipDic_EquipFilter_Grade2";
+            this.EquipDic_EquipFilter_Grade2.Size = new System.Drawing.Size(48, 16);
+            this.EquipDic_EquipFilter_Grade2.TabIndex = 0;
+            this.EquipDic_EquipFilter_Grade2.Tag = "2";
+            this.EquipDic_EquipFilter_Grade2.Text = "☆☆";
+            this.EquipDic_EquipFilter_Grade2.UseVisualStyleBackColor = true;
+            this.EquipDic_EquipFilter_Grade2.CheckedChanged += new System.EventHandler(this.EquipDic_EquipFilter_CheckedChanged);
+            // 
+            // EquipDic_EquipFilterGroup_CategoryGroup
+            // 
+            this.EquipDic_EquipFilterGroup_CategoryGroup.Controls.Add(this.EquipDic_EquipFilter_CategoryBullet);
+            this.EquipDic_EquipFilterGroup_CategoryGroup.Controls.Add(this.EquipDic_EquipFilter_CategoryDoll);
+            this.EquipDic_EquipFilterGroup_CategoryGroup.Controls.Add(this.EquipDic_EquipFilter_CategoryAttach);
+            this.EquipDic_EquipFilterGroup_CategoryGroup.Location = new System.Drawing.Point(6, 20);
+            this.EquipDic_EquipFilterGroup_CategoryGroup.Name = "EquipDic_EquipFilterGroup_CategoryGroup";
+            this.EquipDic_EquipFilterGroup_CategoryGroup.Size = new System.Drawing.Size(174, 87);
+            this.EquipDic_EquipFilterGroup_CategoryGroup.TabIndex = 8;
+            this.EquipDic_EquipFilterGroup_CategoryGroup.TabStop = false;
+            this.EquipDic_EquipFilterGroup_CategoryGroup.Text = "분류";
+            // 
+            // EquipDic_EquipFilter_CategoryBullet
+            // 
+            this.EquipDic_EquipFilter_CategoryBullet.AutoSize = true;
+            this.EquipDic_EquipFilter_CategoryBullet.Location = new System.Drawing.Point(51, 61);
+            this.EquipDic_EquipFilter_CategoryBullet.Name = "EquipDic_EquipFilter_CategoryBullet";
+            this.EquipDic_EquipFilter_CategoryBullet.Size = new System.Drawing.Size(48, 16);
+            this.EquipDic_EquipFilter_CategoryBullet.TabIndex = 4;
+            this.EquipDic_EquipFilter_CategoryBullet.Tag = "Bullet";
+            this.EquipDic_EquipFilter_CategoryBullet.Text = "탄환";
+            this.EquipDic_EquipFilter_CategoryBullet.UseVisualStyleBackColor = true;
+            this.EquipDic_EquipFilter_CategoryBullet.CheckedChanged += new System.EventHandler(this.EquipDic_EquipFilter_CheckedChanged);
+            // 
+            // EquipDic_EquipFilter_CategoryDoll
+            // 
+            this.EquipDic_EquipFilter_CategoryDoll.AutoSize = true;
+            this.EquipDic_EquipFilter_CategoryDoll.Location = new System.Drawing.Point(51, 39);
+            this.EquipDic_EquipFilter_CategoryDoll.Name = "EquipDic_EquipFilter_CategoryDoll";
+            this.EquipDic_EquipFilter_CategoryDoll.Size = new System.Drawing.Size(48, 16);
+            this.EquipDic_EquipFilter_CategoryDoll.TabIndex = 3;
+            this.EquipDic_EquipFilter_CategoryDoll.Tag = "Doll";
+            this.EquipDic_EquipFilter_CategoryDoll.Text = "인형";
+            this.EquipDic_EquipFilter_CategoryDoll.UseVisualStyleBackColor = true;
+            this.EquipDic_EquipFilter_CategoryDoll.CheckedChanged += new System.EventHandler(this.EquipDic_EquipFilter_CheckedChanged);
+            // 
+            // EquipDic_EquipFilter_CategoryAttach
+            // 
+            this.EquipDic_EquipFilter_CategoryAttach.AutoSize = true;
+            this.EquipDic_EquipFilter_CategoryAttach.Location = new System.Drawing.Point(51, 17);
+            this.EquipDic_EquipFilter_CategoryAttach.Name = "EquipDic_EquipFilter_CategoryAttach";
+            this.EquipDic_EquipFilter_CategoryAttach.Size = new System.Drawing.Size(48, 16);
+            this.EquipDic_EquipFilter_CategoryAttach.TabIndex = 1;
+            this.EquipDic_EquipFilter_CategoryAttach.Tag = "Attach";
+            this.EquipDic_EquipFilter_CategoryAttach.Text = "부속";
+            this.EquipDic_EquipFilter_CategoryAttach.UseVisualStyleBackColor = true;
+            this.EquipDic_EquipFilter_CategoryAttach.CheckedChanged += new System.EventHandler(this.EquipDic_EquipFilter_CheckedChanged);
+            // 
+            // EquipDic_EquipListGroup
+            // 
+            this.EquipDic_EquipListGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.EquipDic_EquipListGroup.Controls.Add(this.EquipDic_EquipListView);
+            this.EquipDic_EquipListGroup.Location = new System.Drawing.Point(6, 455);
+            this.EquipDic_EquipListGroup.Name = "EquipDic_EquipListGroup";
+            this.EquipDic_EquipListGroup.Size = new System.Drawing.Size(327, 266);
+            this.EquipDic_EquipListGroup.TabIndex = 1;
+            this.EquipDic_EquipListGroup.TabStop = false;
+            this.EquipDic_EquipListGroup.Text = "장비 목록";
+            // 
+            // EquipDic_EquipListView
+            // 
+            this.EquipDic_EquipListView.AllowColumnReorder = true;
+            this.EquipDic_EquipListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader2});
+            this.EquipDic_EquipListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EquipDic_EquipListView.FullRowSelect = true;
+            this.EquipDic_EquipListView.GridLines = true;
+            this.EquipDic_EquipListView.HideSelection = false;
+            this.EquipDic_EquipListView.Location = new System.Drawing.Point(3, 17);
+            this.EquipDic_EquipListView.MultiSelect = false;
+            this.EquipDic_EquipListView.Name = "EquipDic_EquipListView";
+            this.EquipDic_EquipListView.Size = new System.Drawing.Size(321, 246);
+            this.EquipDic_EquipListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.EquipDic_EquipListView.TabIndex = 0;
+            this.EquipDic_EquipListView.UseCompatibleStateImageBehavior = false;
+            this.EquipDic_EquipListView.View = System.Windows.Forms.View.Details;
+            this.EquipDic_EquipListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.EquipDic_EquipListView_ColumnClick);
+            this.EquipDic_EquipListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.EquipDic_EquipListView_ItemSelectionChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Tag = "Numeric";
+            this.columnHeader1.Text = "No.";
+            this.columnHeader1.Width = 40;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Tag = "";
+            this.columnHeader3.Text = "등급";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 50;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "이름";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 120;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "분류";
+            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader5.Width = 50;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "타입";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 50;
+            // 
             // MainStatusStrip
             // 
             this.MainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1563,7 +1926,7 @@
             this.StatusStrip_AppVerLabel.Image = global::GFD_W.Properties.Resources.StatusBar_UpdateIcon;
             this.StatusStrip_AppVerLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.StatusStrip_AppVerLabel.Name = "StatusStrip_AppVerLabel";
-            this.StatusStrip_AppVerLabel.Size = new System.Drawing.Size(290, 20);
+            this.StatusStrip_AppVerLabel.Size = new System.Drawing.Size(280, 20);
             this.StatusStrip_AppVerLabel.Spring = true;
             this.StatusStrip_AppVerLabel.Text = "App Ver : 0.0.0";
             this.StatusStrip_AppVerLabel.Click += new System.EventHandler(this.StatusStrip_AppVerLabel_Click);
@@ -1577,9 +1940,10 @@
             this.StatusStrip_DBVerLabel.Image = global::GFD_W.Properties.Resources.StatusBar_UpdateIcon;
             this.StatusStrip_DBVerLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.StatusStrip_DBVerLabel.Name = "StatusStrip_DBVerLabel";
-            this.StatusStrip_DBVerLabel.Size = new System.Drawing.Size(290, 20);
+            this.StatusStrip_DBVerLabel.Size = new System.Drawing.Size(280, 20);
             this.StatusStrip_DBVerLabel.Spring = true;
             this.StatusStrip_DBVerLabel.Text = "DB Ver : 0";
+            this.StatusStrip_DBVerLabel.Click += new System.EventHandler(this.StatusStrip_DBVerLabel_Click);
             // 
             // StatusStrip_OldGFDVerLabel
             // 
@@ -1591,9 +1955,10 @@
             this.StatusStrip_OldGFDVerLabel.Image = global::GFD_W.Properties.Resources.StatusBar_UpdateIcon;
             this.StatusStrip_OldGFDVerLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.StatusStrip_OldGFDVerLabel.Name = "StatusStrip_OldGFDVerLabel";
-            this.StatusStrip_OldGFDVerLabel.Size = new System.Drawing.Size(290, 20);
+            this.StatusStrip_OldGFDVerLabel.Size = new System.Drawing.Size(280, 20);
             this.StatusStrip_OldGFDVerLabel.Spring = true;
             this.StatusStrip_OldGFDVerLabel.Text = "GFDv1 Ver : 0";
+            this.StatusStrip_OldGFDVerLabel.Click += new System.EventHandler(this.StatusStrip_OldGFDVerLabel_Click);
             // 
             // TDollDic_TDollInfo_GainTooltip
             // 
@@ -1608,21 +1973,29 @@
             this.UpdateCheckTimer.Interval = 60000;
             this.UpdateCheckTimer.Tick += new System.EventHandler(this.UpdateCheckTimer_Tick);
             // 
-            // MainTabPage_Equipment
+            // EquipDic_EquipInfo_GainTooltip
             // 
-            this.MainTabPage_Equipment.Location = new System.Drawing.Point(4, 22);
-            this.MainTabPage_Equipment.Name = "MainTabPage_Equipment";
-            this.MainTabPage_Equipment.Padding = new System.Windows.Forms.Padding(3);
-            this.MainTabPage_Equipment.Size = new System.Drawing.Size(878, 727);
-            this.MainTabPage_Equipment.TabIndex = 3;
-            this.MainTabPage_Equipment.Text = "장비";
-            this.MainTabPage_Equipment.UseVisualStyleBackColor = true;
+            this.EquipDic_EquipInfo_GainTooltip.AutomaticDelay = 100;
+            this.EquipDic_EquipInfo_GainTooltip.AutoPopDelay = 10000;
+            this.EquipDic_EquipInfo_GainTooltip.InitialDelay = 100;
+            this.EquipDic_EquipInfo_GainTooltip.IsBalloon = true;
+            this.EquipDic_EquipInfo_GainTooltip.ReshowDelay = 20;
+            // 
+            // GFDStatusLabel
+            // 
+            this.GFDStatusLabel.Location = new System.Drawing.Point(543, 1);
+            this.GFDStatusLabel.Name = "GFDStatusLabel";
+            this.GFDStatusLabel.Size = new System.Drawing.Size(343, 23);
+            this.GFDStatusLabel.TabIndex = 3;
+            this.GFDStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GFDStatusLabel.Visible = false;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 802);
+            this.Controls.Add(this.GFDStatusLabel);
             this.Controls.Add(this.MainStatusStrip);
             this.Controls.Add(this.MainTabControl);
             this.Controls.Add(this.MainMenuStrip);
@@ -1678,6 +2051,20 @@
             this.TDollDic_TDollFilterGroup_TypeGroup.ResumeLayout(false);
             this.TDollDic_TDollFilterGroup_TypeGroup.PerformLayout();
             this.TDollDic_TDollListGroup.ResumeLayout(false);
+            this.MainTabPage_Equipment.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.EquipDic_SplitContainer.Panel1.ResumeLayout(false);
+            this.EquipDic_SplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.EquipDic_SplitContainer)).EndInit();
+            this.EquipDic_SplitContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.EquipDic_EquipInfo_FullImageView)).EndInit();
+            this.EquipDic_EquipFilterGroup.ResumeLayout(false);
+            this.EquipDic_EquipFilterGroup.PerformLayout();
+            this.EquipDic_EquipFilterGroup_GradeGroup.ResumeLayout(false);
+            this.EquipDic_EquipFilterGroup_GradeGroup.PerformLayout();
+            this.EquipDic_EquipFilterGroup_CategoryGroup.ResumeLayout(false);
+            this.EquipDic_EquipFilterGroup_CategoryGroup.PerformLayout();
+            this.EquipDic_EquipListGroup.ResumeLayout(false);
             this.MainStatusStrip.ResumeLayout(false);
             this.MainStatusStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -1813,5 +2200,34 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer UpdateCheckTimer;
         private System.Windows.Forms.TabPage MainTabPage_Equipment;
+        private System.Windows.Forms.SplitContainer EquipDic_SplitContainer;
+        private System.Windows.Forms.GroupBox EquipDic_EquipListGroup;
+        private System.Windows.Forms.ListView EquipDic_EquipListView;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.GroupBox EquipDic_EquipFilterGroup;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox EquipDic_SearchTextBox;
+        private System.Windows.Forms.Button EquipDic_EquipProductTimeButton;
+        private System.Windows.Forms.GroupBox EquipDic_EquipFilterGroup_GradeGroup;
+        private System.Windows.Forms.CheckBox EquipDic_EquipFilter_Grade5;
+        private System.Windows.Forms.CheckBox EquipDic_EquipFilter_GradeEx;
+        private System.Windows.Forms.CheckBox EquipDic_EquipFilter_Grade4;
+        private System.Windows.Forms.CheckBox EquipDic_EquipFilter_Grade3;
+        private System.Windows.Forms.CheckBox EquipDic_EquipFilter_Grade2;
+        private System.Windows.Forms.GroupBox EquipDic_EquipFilterGroup_CategoryGroup;
+        private System.Windows.Forms.CheckBox EquipDic_EquipFilter_CategoryDoll;
+        private System.Windows.Forms.CheckBox EquipDic_EquipFilter_CategoryAttach;
+        private System.Windows.Forms.CheckBox EquipDic_EquipFilter_CategoryBullet;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label EquipDic_EquipInfo_TypeCategory;
+        private System.Windows.Forms.Label EquipDic_EquipInfo_Name;
+        private System.Windows.Forms.Label EquipDic_EquipInfo_DicNumber;
+        private System.Windows.Forms.PictureBox EquipDic_EquipInfo_FullImageView;
+        private System.Windows.Forms.ToolTip EquipDic_EquipInfo_GainTooltip;
+        private System.Windows.Forms.Label GFDStatusLabel;
     }
 }

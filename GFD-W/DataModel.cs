@@ -178,6 +178,7 @@ namespace GFD_W
         public string[] InitMags { get; private set; }
         public string[] MaxMags { get; private set; }
         public bool CanUpgrade { get; private set; }
+        public string ProductDialog { get; private set; }
 
         public string GetIdString { get { return string.Format("No. {0}", Id); } }
         public string GetProductTimeToString { get { return ETC.CalcTime(ProductTime); } }
@@ -192,6 +193,7 @@ namespace GFD_W
             Icon = (string)dr["Icon"];
             Note = ETC.IsDBNullOrBlank(dr, "Note") ? "" : (string)dr["Note"];
             Type = (string)dr["Type"];
+            ProductDialog = (string)dr["ProductDialog"];
 
             ImagePath = Path.Combine(ETC.cachePath, "Equip", "Normal", string.Format("{0}.gfdcache", Icon));
 

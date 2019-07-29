@@ -51,7 +51,7 @@ namespace GFD_W
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question
                     ) == DialogResult.Yes)
-                    await ETC.AppUpdate(SplashProgressLabel);
+                    await ETC.UpdateProgram(SplashProgressLabel);
 
             SplashProgressLabel.Text = "Checking DB Version";
 

@@ -220,6 +220,9 @@
     <Compile Include="DataModel.cs" />
     <Compile Include="DataModel_Doll_Partial.cs" />
     <Compile Include="DollAbilitySet.cs" />
+    <Compile Include="EquipDic.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ETC.cs" />
     <Compile Include="GFDWInfo.cs">
       <SubType>Form</SubType>
@@ -318,6 +321,14 @@
     <None Include="Resources\GFD-W Splash.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\EquipBG_5.png" />
+    <None Include="Resources\EquipBG_4.png" />
+    <None Include="Resources\EquipBG_3.png" />
+    <None Include="Resources\EquipBG_2.png" />
+    <None Include="Resources\5starE.png" />
+    <None Include="Resources\4starE.png" />
+    <None Include="Resources\3starE.png" />
+    <None Include="Resources\2starE.png" />
     <None Include="Resources\StatusBar_UpdateIcon.png" />
     <None Include="Resources\OldGFD_Logo.png" />
     <None Include="Resources\cancel.png" />
