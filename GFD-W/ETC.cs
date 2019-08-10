@@ -51,19 +51,19 @@ namespace GFD_W
             "FairyAttribution.gfs"
         };
         internal static string[] oldGFDImageName =
-            {
-                "ProductTable_Doll",
-                "ProductTable_Equipment",
-                "ProductTable_Fairy",
-                "MD_Table",
-                //"DollPerformance",
-                "FairyAttribute",
-                "RecommendDollRecipe",
-                "RecommendEquipmentRecipe",
-                "RecommendMD",
-                "RecommendLeveling",
-                "RecommendBreeding"
-            };
+        {
+            "ProductTable_Doll",
+            "ProductTable_Equipment",
+            "ProductTable_Fairy",
+            "MD_Table",
+            //"DollPerformance",
+            "FairyAttribute",
+            "RecommendDollRecipe",
+            "RecommendEquipmentRecipe",
+            "RecommendMD",
+            "RecommendLeveling",
+            "RecommendBreeding"
+        };
 
         internal static AverageAbility[] Avg_List;
 

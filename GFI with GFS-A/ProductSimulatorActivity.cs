@@ -24,9 +24,9 @@ namespace GFI_with_GFS_A
         private ProductType Type;
         private AdvanceType Adv_Type = AdvanceType._1;
 
-        private int Count = 0;
+        private int pCount = 0;
 
-        private CoordinatorLayout SnackbarLayout = null;
+        private CoordinatorLayout SnackbarLayout;
 
         private NumberPicker[] ManPower_NPs = new NumberPicker[4];
         private NumberPicker[] Ammo_NPs = new NumberPicker[4];
@@ -90,14 +90,29 @@ namespace GFI_with_GFS_A
 
             SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.ProductSimulatorSnackbarLayout);
 
-            string[] InfoData = Intent.GetStringExtra("Info").Split('/');
+            string[] infoData = Intent.GetStringExtra("Info").Split('/'); // index 0 : Product Category, index 1 : Product Type
 
-            for (int i = 0; i < ManPower_NPs.Length; ++i) ManPower_NPs[i] = FindViewById<NumberPicker>(ManPower_NP_Ids[i]);
-            for (int i = 0; i < Ammo_NPs.Length; ++i) Ammo_NPs[i] = FindViewById<NumberPicker>(Ammo_NP_Ids[i]);
-            for (int i = 0; i < Food_NPs.Length; ++i) Food_NPs[i] = FindViewById<NumberPicker>(Food_NP_Ids[i]);
-            for (int i = 0; i < Parts_NPs.Length; ++i) Parts_NPs[i] = FindViewById<NumberPicker>(Parts_NP_Ids[i]);
+            for (int i = 0; i < ManPower_NPs.Length; ++i)
+                ManPower_NPs[i] = FindViewById<NumberPicker>(ManPower_NP_Ids[i]);
+            for (int i = 0; i < Ammo_NPs.Length; ++i)
+                Ammo_NPs[i] = FindViewById<NumberPicker>(Ammo_NP_Ids[i]);
+            for (int i = 0; i < Food_NPs.Length; ++i)
+                Food_NPs[i] = FindViewById<NumberPicker>(Food_NP_Ids[i]);
+            for (int i = 0; i < Parts_NPs.Length; ++i)
+                Parts_NPs[i] = FindViewById<NumberPicker>(Parts_NP_Ids[i]);
 
-            switch (InfoData[1])
+            switch (infoData[0])
+            {
+                default:
+                case "Doll":
+                    Category = ProductCategory.Doll;
+                    break;
+                case "Equip":
+                    Category = ProductCategory.Equip;
+                    break;
+            }
+
+            switch (infoData[1])
             {
                 default:
                 case "Normal":
@@ -112,17 +127,6 @@ namespace GFI_with_GFS_A
                     break;
             }
 
-            switch (InfoData[0])
-            {
-                default:
-                case "Doll":
-                    Category = ProductCategory.Doll;
-                    break;
-                case "Equip":
-                    Category = ProductCategory.Equip;
-                    break;
-            }
-
             if (Type == ProductType.Advance)
             {
                 for (int i = 0; i < Adv_Type_RBs.Length; ++i)
@@ -130,11 +134,13 @@ namespace GFI_with_GFS_A
                     Adv_Type_RBs[i] = FindViewById<RadioButton>(Adv_Type_Ids[i]);
                     Adv_Type_RBs[i].CheckedChange += Adv_Type_RBs_CheckedChange;
                 }
+
                 Adv_Type_RBs[0].Checked = true;
                 Adv_Type_RBs[1].Checked = false;
                 Adv_Type_RBs[2].Checked = false;
             }
-            else FindViewById<LinearLayout>(Resource.Id.PSAdvanceProductTypeLayout).Visibility = ViewStates.Gone;
+            else
+                FindViewById<LinearLayout>(Resource.Id.PSAdvanceProductTypeLayout).Visibility = ViewStates.Gone;
 
             InitNumberPickerRange();
 
@@ -185,12 +191,12 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                Count = ProductCount.Value;
+                pCount = ProductCount.Value;
 
                 switch (Category)
                 {
                     case ProductCategory.Doll:
-                        ListProductAvailable();
+                        ListProductAvailableDoll();
                         break;
                     case ProductCategory.Equip:
                         break;
@@ -211,9 +217,11 @@ namespace GFI_with_GFS_A
                 bool IsZero = false;
                 int minValue = 0;
 
-                if (e.NewVal == 0) IsZero = true;
+                if (e.NewVal == 0)
+                    IsZero = true;
 
-                if (IsZero == false) minValue = 0;
+                if (IsZero == false)
+                    minValue = 0;
                 else if (Category == ProductCategory.Doll)
                 {
                     switch (Type)
@@ -348,26 +356,33 @@ namespace GFI_with_GFS_A
                 int[] values = null;
                 int result = 0;
 
-                if (Type == ProductType.Normal) values = new int[3];
-                else values = new int[4];
+                if (Type == ProductType.Normal)
+                    values = new int[3];
+                else
+                    values = new int[4];
 
                 switch (ResourceType)
                 {
                     case "ManPower":
-                        for (int i = 0; i < values.Length; ++i) values[i] = ManPower_NPs[i].Value;
+                        for (int i = 0; i < values.Length; ++i)
+                            values[i] = ManPower_NPs[i].Value;
                         break;
                     case "Ammo":
-                        for (int i = 0; i < values.Length; ++i) values[i] = Ammo_NPs[i].Value;
+                        for (int i = 0; i < values.Length; ++i)
+                            values[i] = Ammo_NPs[i].Value;
                         break;
                     case "Food":
-                        for (int i = 0; i < values.Length; ++i) values[i] = Food_NPs[i].Value;
+                        for (int i = 0; i < values.Length; ++i)
+                            values[i] = Food_NPs[i].Value;
                         break;
                     case "Parts":
-                        for (int i = 0; i < values.Length; ++i) values[i] = Parts_NPs[i].Value;
+                        for (int i = 0; i < values.Length; ++i)
+                            values[i] = Parts_NPs[i].Value;
                         break;
                 }
 
-                for (int i = 0; i < values.Length; ++i) result += (values[i] * Convert.ToInt32(Math.Pow(10, (values.Length - (i + 1)))));
+                for (int i = 0; i < values.Length; ++i)
+                    result += (values[i] * Convert.ToInt32(Math.Pow(10, (values.Length - (i + 1)))));
 
                 return result;
             }
@@ -432,7 +447,8 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ListProductAvailable()
+        // Create list of production available T-Doll by resources
+        private void ListProductAvailableDoll()
         {
             try
             {
@@ -456,19 +472,28 @@ namespace GFI_with_GFS_A
                     else Toast.MakeText(this, "Image Censor Option already unlock", ToastLength.Short).Show();
 
                 AvailableType.Add("SMG");
+
                 switch (Type)
                 {
                     case ProductType.Normal:
-                        if ((pManPower + pAmmo + pFood + pParts) <= 920) AvailableType.Add("HG");
-                        if ((pManPower + pAmmo + pFood + pParts) >= 800) AvailableType.Add("AR");
-                        if ((pManPower >= 300) && (pFood >= 300)) AvailableType.Add("RF");
-                        if ((pManPower >= 400) && (pAmmo >= 600) && (pParts > 300)) AvailableType.Add("MG");
+                        if ((pManPower + pAmmo + pFood + pParts) <= 920)
+                            AvailableType.Add("HG");
+                        if ((pManPower + pAmmo + pFood + pParts) >= 800)
+                            AvailableType.Add("AR");
+                        if ((pManPower >= 300) && (pFood >= 300))
+                            AvailableType.Add("RF");
+                        if ((pManPower >= 400) && (pAmmo >= 600) && (pParts > 300))
+                            AvailableType.Add("MG");
                         break;
                     case ProductType.Advance:
-                        if ((pManPower + pAmmo + pFood + pParts) >= 800) AvailableType.Add("AR");
-                        if ((pManPower >= 3000) && (pFood >= 3000)) AvailableType.Add("RF");
-                        if ((pManPower >= 4000) && (pAmmo >= 6000) && (pParts >= 3000)) AvailableType.Add("MG");
-                        if ((pManPower >= 4000) && (pFood >= 6000) && (pParts >= 3000)) AvailableType.Add("SG");
+                        if ((pManPower + pAmmo + pFood + pParts) >= 800)
+                            AvailableType.Add("AR");
+                        if ((pManPower >= 3000) && (pFood >= 3000))
+                            AvailableType.Add("RF");
+                        if ((pManPower >= 4000) && (pAmmo >= 6000) && (pParts >= 3000))
+                            AvailableType.Add("MG");
+                        if ((pManPower >= 4000) && (pFood >= 6000) && (pParts >= 3000))
+                            AvailableType.Add("SG");
                         break;
                 }
 
@@ -476,11 +501,15 @@ namespace GFI_with_GFS_A
 
                 for (int i = 0; i < ETC.DollList.Rows.Count; ++i)
                 {
-                    Doll doll = new Doll(ETC.DollList.Rows[i]);
+                    Doll doll = new Doll(ETC.DollList.Rows[i], true);
 
-                    if (AvailableType.Contains(doll.Type) == false) continue;
-                    if ((Type == ProductType.Normal) && (doll.DropEvent[0] == "중형제조")) continue;
-                    if (doll.ProductTime == 0) continue;
+                    if ((Type == ProductType.Normal))
+                    if (AvailableType.Contains(doll.Type) == false)
+                        continue;
+                    if ((Type == ProductType.Normal) && (doll.DropEvent[0] == "중형제조"))
+                        continue;
+                    if (doll.ProductTime == 0)
+                        continue;
 
                     switch (doll.Type)
                     {
@@ -491,7 +520,8 @@ namespace GFI_with_GFS_A
                                 AvailableDoll.Add(doll);
                             else if (list_smg.Contains(doll.Name) == false)
                                 AvailableDoll.Add(doll);
-                            else continue;
+                            else
+                                continue;
                             break;
                         case "HG":
                             if (Type == ProductType.Normal)
@@ -502,7 +532,8 @@ namespace GFI_with_GFS_A
                                     AvailableDoll.Add(doll);
                                 else if (list_hg.Contains(doll.Name) == false)
                                     AvailableDoll.Add(doll);
-                                else continue;
+                                else
+                                    continue;
                             }
                             break;
                         case "AR":
@@ -512,7 +543,8 @@ namespace GFI_with_GFS_A
                                 AvailableDoll.Add(doll);
                             else if (list_ar.Contains(doll.Name) == false)
                                 AvailableDoll.Add(doll);
-                            else continue;
+                            else
+                                continue;
                             break;
                         case "RF":
                             string[] list_rf = { "Kar98k", "리엔필드", "M99", "IWS2000", "카르카노 M1938", "SVD", "T-5000", "한양조88식" };
@@ -521,7 +553,8 @@ namespace GFI_with_GFS_A
                                 AvailableDoll.Add(doll);
                             else if (list_rf.Contains(doll.Name) == false)
                                 AvailableDoll.Add(doll);
-                            else continue;
+                            else
+                                continue;
                             break;
                         case "MG":
                             string[] list_mg = { "네게브", "MG4", "PKP", "PK" };
@@ -530,7 +563,8 @@ namespace GFI_with_GFS_A
                                 AvailableDoll.Add(doll);
                             else if (list_mg.Contains(doll.Name) == false)
                                 AvailableDoll.Add(doll);
-                            else continue;
+                            else
+                                continue;
                             break;
                         case "SG":
                             if (Type == ProductType.Advance)
@@ -541,7 +575,8 @@ namespace GFI_with_GFS_A
                                     AvailableDoll.Add(doll);
                                 else if (list_sg.Contains(doll.Name) == false)
                                     AvailableDoll.Add(doll);
-                                else continue;
+                                else
+                                    continue;
                             }
                             break;
                     }
@@ -549,9 +584,8 @@ namespace GFI_with_GFS_A
 
                 AvailableDoll.TrimExcess();
                 AvailableDoll.ShuffleList();
-                foreach (Doll d in AvailableDoll)
-                    System.Diagnostics.Debug.WriteLine(d.Name);
-                ProductProcess_Doll(ref AvailableDoll, pManPower, pAmmo, pFood, pParts, Count);
+
+                ProductProcess_Doll(ref AvailableDoll, pManPower, pAmmo, pFood, pParts, pCount);
             }
             catch (Exception ex)
             {
@@ -572,17 +606,17 @@ namespace GFI_with_GFS_A
             try
             {
                 int[] Results_DicNumber = new int[LoopCount];
-                int seed_num1 = (num1 + num2 + num3 + num4) / AvailableDoll.Count;
-                int seed_num2 = num1 + num2 + num3 + num4;
+                
                 int[] tP = { 60, 27, 10, 3 };
                 int[] tAP1 = { 40, 45, 15 };
                 int[] tAP2 = { 20, 60, 20 };
                 int[] tAP3 = { 0, 75, 25 };
-                int ConfirmGrade = 0;
-
-                int mag = 10;
                 int[] P = null;
 
+                int ConfirmGrade = 0;
+                int mag = 10;
+                int seedNum = (num1 + num2 + num3 + num4) / AvailableDoll.Count;
+                
                 //Random R = new Random(DateTime.Now.Millisecond);
 
                 for (int i = 0; i < LoopCount; ++i)
@@ -591,51 +625,64 @@ namespace GFI_with_GFS_A
                     {
                         case ProductType.Normal:
                             P = new int[4];
-                            for (int k = 0; k < tP.Length; ++k) P[k] = tP[k] * mag;
+                            for (int k = 0; k < tP.Length; ++k)
+                                P[k] = tP[k] * mag;
                             break;
                         case ProductType.Advance:
                             P = new int[3];
                             switch (Adv_Type)
                             {
                                 case AdvanceType._1:
-                                    for (int k = 0; k < tAP1.Length; ++k) P[k] = tAP1[k] * mag;
+                                    for (int k = 0; k < tAP1.Length; ++k)
+                                        P[k] = tAP1[k] * mag;
                                     break;
                                 case AdvanceType._2:
-                                    for (int k = 0; k < tAP2.Length; ++k) P[k] = tAP2[k] * mag;
+                                    for (int k = 0; k < tAP2.Length; ++k)
+                                        P[k] = tAP2[k] * mag;
                                     break;
                                 case AdvanceType._3:
-                                    for (int k = 0; k < tAP3.Length; ++k) P[k] = tAP3[k] * mag;
+                                    for (int k = 0; k < tAP3.Length; ++k)
+                                        P[k] = tAP3[k] * mag;
                                     break;
                             }
                             break;
                     }
 
-                    if (seed_num1 == 0)
-                        seed_num1 = 1;
+                    if (seedNum == 0)
+                        seedNum = 1;
 
-                    int num = ETC.CreateRandomNum(seed_num2) % (100 * mag);
+                    int num = ETC.CreateRandomNum(seedNum) % (100 * mag);
 
                     switch (Type)
                     {
                         case ProductType.Normal:
-                            if ((num >= 0) && (num < P[0])) ConfirmGrade = 2;
-                            else if ((num >= P[0]) && (num < (P[0] + P[1]))) ConfirmGrade = 3;
-                            else if ((num >= (P[0] + P[1])) && (num >= (P[0] + P[1] + P[2]))) ConfirmGrade = 4;
-                            else ConfirmGrade = 5;
+                            if ((num >= 0) && (num < P[0]))
+                                ConfirmGrade = 2;
+                            else if ((num >= P[0]) && (num < (P[0] + P[1])))
+                                ConfirmGrade = 3;
+                            else if ((num >= (P[0] + P[1])) && (num >= (P[0] + P[1] + P[2])))
+                                ConfirmGrade = 4;
+                            else
+                                ConfirmGrade = 5;
                             break;
                         case ProductType.Advance:
-                            if ((num >= 0) && (num < P[0])) ConfirmGrade = 3;
-                            else if ((num >= P[0]) && (num < (P[0] + P[1]))) ConfirmGrade = 4;
-                            else ConfirmGrade = 5;
+                            if ((num >= 0) && (num < P[0]))
+                                ConfirmGrade = 3;
+                            else if ((num >= P[0]) && (num < (P[0] + P[1])))
+                                ConfirmGrade = 4;
+                            else
+                                ConfirmGrade = 5;
                             break;
                     }
 
-
                     if (ConfirmGrade == 0)
                     {
-                        if (Type == ProductType.Normal) ConfirmGrade = 2;
-                        else if ((Type == ProductType.Advance) && (Adv_Type == AdvanceType._3)) ConfirmGrade = 4;
-                        else ConfirmGrade = 3;
+                        if (Type == ProductType.Normal)
+                            ConfirmGrade = 2;
+                        else if ((Type == ProductType.Advance) && (Adv_Type == AdvanceType._3))
+                            ConfirmGrade = 4;
+                        else
+                            ConfirmGrade = 3;
                     }
 
                     List<Doll> FinalDoll = new List<Doll>();

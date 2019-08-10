@@ -12,6 +12,7 @@
   
   <string name="ComingSoon">Coming Soon...</string>
   <string name="Common_ServerMaintenance">서버 점검 중 입니다.</string>
+  <string name="FeatureTemporaryDisable">해당 기능은 잠시 비활성화 되었습니다.</string>
 
   <!--New - Shortcut String-->
   <string name="Shortcut_GFNotification_ShortLabel">공지사항</string>
@@ -648,11 +649,10 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.34 수정사항]\n\n
-- 기동 이미지 변경\n
-- 초보자 가이드북 요약본 항목 추가 및 언어 지원 추가 (영어)\n
-- 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 소녀전선)\n
-- 소전사전 정보 화면에서 문자가 겹치는 문제 수정
+    [2.3.35 수정사항]\n\n
+- 인형 중형제조 시뮬레이터에서 특정 등급만 나오는 현상 수정\n
+- 라이브러리 문제로 인한 인형 능력치 비교 그래프 일시적 비활성화\n
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 소녀전선)
   </string>
 
   <string name="RFBot_CommandHelp">

@@ -66,15 +66,6 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task Animation()
-        {
-            while (SplashImageView.Alpha < 1.0f)
-            {
-                SplashImageView.Alpha += 0.1f;
-                await Task.Delay(10);
-            }
-        }
-
         private async Task InitProcess()
         {
             SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.SplashSnackbarLayout);
@@ -83,11 +74,9 @@ namespace GFI_with_GFS_A
 
             try
             {
-                await Animation();
-                FindViewById<TextView>(Resource.Id.SplashAppVersion).Text = $"v{AppInfo.VersionString}({AppInfo.BuildString})";
-
-
                 // Initialize
+
+                FindViewById<TextView>(Resource.Id.SplashAppVersion).Text = $"v{AppInfo.VersionString}({AppInfo.BuildString})";
 
                 await ETC.AnimateText(StatusText, "Initializing");
 

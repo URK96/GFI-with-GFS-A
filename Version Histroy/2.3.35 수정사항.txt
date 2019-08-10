@@ -1,0 +1,9 @@
+<2.3.35 수정사항>
+
+- 인형 중형제조 시뮬레이터에서 특정 등급만 나오는 현상 수정
+- 라이브러리 문제로 인한 인형 능력치 비교 그래프 일시적 비활성화
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 소녀전선)
+
+- Fix T-Doll heavy production simulator issue
+- T-Doll radar graph feature disable temporary
+- Add cartoon content

@@ -50,7 +50,7 @@
     <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
     <MandroidI18n />
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
-    <AndroidUseAapt2>false</AndroidUseAapt2>
+    <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidPackageFormat>aab</AndroidPackageFormat>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -119,11 +119,11 @@
     <Reference Include="SkiaSharp">
       <HintPath>..\Dll\Xfinium.Pdf.View\SkiaSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=17.2.0.36, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Licensing.17.2.0.36\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
+    <Reference Include="Syncfusion.Licensing, Version=17.2.0.40, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.17.2.0.40\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfChart.Android, Version=17.2451.0.36, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.Android.17.2.0.36\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
+    <Reference Include="Syncfusion.SfChart.Android, Version=17.2451.0.40, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.Android.17.2.0.40\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -1706,9 +1706,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\SplashImage_2019Swim.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <LinkDescription Include="linker.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

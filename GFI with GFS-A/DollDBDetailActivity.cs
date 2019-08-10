@@ -421,8 +421,10 @@ namespace GFI_with_GFS_A
             chart.SecondaryAxis = new NumericalAxis();
             chart.Legend.Visibility = Visibility.Visible;
 
-            if (ETC.UseLightTheme == true) chart.Legend.LabelStyle.TextColor = Android.Graphics.Color.DarkGray;
-            else chart.Legend.LabelStyle.TextColor = Android.Graphics.Color.LightGray;
+            if (ETC.UseLightTheme == true)
+                chart.Legend.LabelStyle.TextColor = Android.Graphics.Color.DarkGray;
+            else
+                chart.Legend.LabelStyle.TextColor = Android.Graphics.Color.LightGray;
 
             RadarSeries radar = new RadarSeries();
 
@@ -449,8 +451,10 @@ namespace GFI_with_GFS_A
             radar2.Color = Android.Graphics.Color.Magenta;
             radar2.EnableAnimation = true;
 
-            if (CompareIndex == 0) radar2.Label = $"{doll.Type}{Resources.GetString(Resource.String.DollDBDetail_RadarAverageString)}";
-            else radar2.Label = c_doll.Name;
+            if (CompareIndex == 0)
+                radar2.Label = $"{doll.Type}{Resources.GetString(Resource.String.DollDBDetail_RadarAverageString)}";
+            else
+                radar2.Label = c_doll.Name;
 
             radar2.TooltipEnabled = true;
 
@@ -1301,6 +1305,10 @@ namespace GFI_with_GFS_A
 
             FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout).Visibility = ViewStates.Visible;
             FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout).Visibility = ViewStates.Visible;
+
+            FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityChartCompareList).Visibility = ViewStates.Gone;
+            FindViewById<FrameLayout>(Resource.Id.DollDBDetailAbilityRadarChartLayout).Visibility = ViewStates.Gone;
+            FindViewById<TextView>(Resource.Id.DollDBDetailChartMessage).Visibility = ViewStates.Visible;
         }
 
         private void DollDBDetailModSelectButton_Click(object sender, EventArgs e)

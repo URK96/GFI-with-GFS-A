@@ -26,8 +26,6 @@ namespace GFI_with_GFS_A
         private RecyclerView.LayoutManager MainLayoutManager;
         private ProductResultAdapter adapter;
 
-        private MediaPlayer ResultEffect;
-
         private CoordinatorLayout SnackbarLayout;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -84,16 +82,18 @@ namespace GFI_with_GFS_A
                 {
                     case "Doll":
                         ResultInfo = new Intent(this, typeof(DollDBDetailActivity));
+                        ResultInfo.PutExtra("DicNum", (int)DRs[e]["DicNumber"]);
                         break;
                     case "Equip":
                         ResultInfo = new Intent(this, typeof(EquipDBDetailActivity));
+                        ResultInfo.PutExtra("Keyword", (string)DRs[e]["Name"]);
                         break;
                     case "Fairy":
                         ResultInfo = new Intent(this, typeof(FairyDBDetailActivity));
+                        ResultInfo.PutExtra("Keyword", (string)DRs[e]["Name"]);
                         break;
                 }
 
-                ResultInfo.PutExtra("Keyword", (string)DRs[e]["Name"]);
                 StartActivity(ResultInfo);
                 OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
             }
