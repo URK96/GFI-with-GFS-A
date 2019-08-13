@@ -1707,6 +1707,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\SplashImage_2019Swim.png" />
   </ItemGroup>
+  <ItemGroup>
+    <LinkDescription Include="linker.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

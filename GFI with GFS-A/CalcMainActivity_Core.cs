@@ -9,7 +9,9 @@ namespace GFI_with_GFS_A
     {
         private View v;
 
+        // T-Doll Require Core by Link Dummy
         private readonly int[] LevelLink_DollCount = { 0, 1, 1, 2, 3 };
+        // T-Doll Require Core by Grade
         private readonly int[] GradeLinkCore = { 1, 3, 9, 15 };
 
         private NumberPicker DollGradeSelector;
@@ -21,6 +23,8 @@ namespace GFI_with_GFS_A
         {
             v = inflater.Inflate(Resource.Layout.Calc_Core, container, false);
 
+            // Find View & Connect Event
+
             DollGradeSelector = v.FindViewById<NumberPicker>(Resource.Id.CalcCoreDollGrade);
             DollGradeSelector.ValueChanged += delegate (object sender, NumberPicker.ValueChangeEventArgs e) { CalcCore(e.NewVal, DollDummyStart.Value, DollDummyTarget.Value); };
             DollDummyStart = v.FindViewById<NumberPicker>(Resource.Id.CalcCoreStartDollCount);
@@ -29,7 +33,6 @@ namespace GFI_with_GFS_A
             DollDummyTarget.ValueChanged += DollDummySelector_ValueChanged;
             Result = v.FindViewById<TextView>(Resource.Id.CalcCoreResult);
 
-            Result.Text = $"0 {Resources.GetString(Resource.String.Calc_Core_DefaultCoreCountResultText)}";
 
             InitializeProcess();
 
@@ -38,6 +41,8 @@ namespace GFI_with_GFS_A
 
         private void InitializeProcess()
         {
+            Result.Text = $"0 {Resources.GetString(Resource.String.Calc_Core_DefaultCoreCountResultText)}";
+
             DollGradeSelector.MinValue = 2;
             DollGradeSelector.MaxValue = 5;
             DollGradeSelector.Value = 2;
@@ -73,6 +78,12 @@ namespace GFI_with_GFS_A
             }
         }
 
+        /// <summary>
+        /// Calculate require core count by T-Doll's Link
+        /// </summary>
+        /// <param name="grade">T-Doll's grade</param>
+        /// <param name="start">Set start link count</param>
+        /// <param name="target">Set target link count</param>
         private void CalcCore(int grade, int start, int target)
         {
             try

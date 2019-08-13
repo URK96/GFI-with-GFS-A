@@ -21,9 +21,9 @@ namespace GFI_with_GFS_A
     {
         System.Timers.Timer ExitTimer = new System.Timers.Timer();
 
-        CoordinatorLayout SnackbarLayout = null;
+        CoordinatorLayout SnackbarLayout;
 
-        private TextView NotificationView = null;
+        private TextView NotificationView;
 
         private bool ExtraSubMenuMode = false;
         private bool DBSubMenuMode = false;
@@ -39,25 +39,34 @@ namespace GFI_with_GFS_A
 
                 // Create your application here
                 SetContentView(Resource.Layout.MainLayout);
-
                 SetTitle(Resource.String.MainActivity_Title);
+
+
+                // Find View & Connect Event
 
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.MainSnackbarLayout);
 
                 NotificationView = FindViewById<TextView>(Resource.Id.MainNotificationText);
                 NotificationView.Click += NotificationView_Click;
 
-                SupportActionBar.SetIcon(int.Parse(ETC.sharedPreferences.GetString("MainActionbarIcon", Resource.Drawable.AppIcon2.ToString())));
+                
+                // Set ActionBar Title Icon
 
-                if ((int.Parse(ETC.sharedPreferences.GetString("MainActionbarIcon", Resource.Drawable.AppIcon2.ToString())) == Resource.Drawable.AppIcon2) && (DateTime.Now.Month == 10) && (DateTime.Now.Day == 31))
+                if ((DateTime.Now.Month == 10) && (DateTime.Now.Day == 31))
                     SupportActionBar.SetIcon(Resource.Drawable.AppIcon2_Core);
                 else
                     SupportActionBar.SetIcon(int.Parse(ETC.sharedPreferences.GetString("MainActionbarIcon", Resource.Drawable.AppIcon2.ToString())));
 
                 SupportActionBar.SetDisplayShowHomeEnabled(true);
 
+
+                // Set Program Exit Timer
+
                 ExitTimer.Interval = 2000;
                 ExitTimer.Elapsed += ExitTimer_Elapsed;
+
+
+                // Load Init Process
 
                 _ = InitializeProcess();
             }
@@ -74,6 +83,9 @@ namespace GFI_with_GFS_A
             {
                 base.OnResume();
 
+
+                // Refresh Notification Data
+
                 CheckNetworkData();
             }
             catch (Exception ex)
@@ -82,6 +94,7 @@ namespace GFI_with_GFS_A
             }
         }
 
+        // Auto Run Mode
         private void RunStartMode()
         {
             switch (ETC.sharedPreferences.GetString("StartAppMode", "0"))
@@ -123,15 +136,14 @@ namespace GFI_with_GFS_A
 
             try
             {
-                if (ETC.IsServerDown == true) ad.SetMessage(Resource.String.Main_NotificationLoadFail);
+                if (ETC.IsServerDown)
+                    ad.SetMessage(Resource.String.Main_NotificationLoadFail);
                 else
                 {
                     string url = Path.Combine(ETC.Server, "Android_Notification.txt");
 
                     using (WebClient wc = new WebClient())
-                    {
                         notification = wc.DownloadString(url);
-                    }
 
                     ad.SetMessage(notification);
                 }
@@ -158,8 +170,10 @@ namespace GFI_with_GFS_A
 
             try
             {
-                if ((ETC.sharedPreferences.GetBoolean("LowMemoryOption", false) == false) && (ETC.Language.Language == "ko"))
+                if (!ETC.sharedPreferences.GetBoolean("LowMemoryOption", false) && (ETC.Language.Language == "ko"))
                 {
+                    // Set Main Menu Button Color (1 = Orange, 0 = Default)
+                    
                     switch (ETC.sharedPreferences.GetString("MainButtonColor", "0"))
                     {
                         case "1":
@@ -191,9 +205,14 @@ namespace GFI_with_GFS_A
                         FindViewById<Button>(ExtraMenuButtonIds[i]).Text = ExtraMenuButtonText[i];
                 }
 
+                // Temporary Remove Button Images
+
                 /*for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).Text = MainMenuButtonText[i];
                 for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).Text = DBSubMenuButtonText[i];
                 for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).Text = ExtraMenuButtonText[i];*/
+
+
+                // Connect Main Menu Button Event
 
                 SetMainMenuEvent(1);
 
@@ -206,6 +225,9 @@ namespace GFI_with_GFS_A
 
                 FindViewById<LinearLayout>(Resource.Id.MainMenuButtonLayout1).BringToFront();
 
+                
+                // Check Auto Run Mode
+
                 if (ETC.sharedPreferences.GetString("StartAppMode", "0") != "0")
                     RunStartMode();
             }
@@ -216,6 +238,10 @@ namespace GFI_with_GFS_A
             }
         }
 
+        /// <summary>
+        /// Connect & Disconnect main menu button event.
+        /// </summary>
+        /// <param name="mode"> mode = 1 is Connect & mode = 0 is Disconnect</param>
         private void SetMainMenuEvent(int mode)
         {
             try
@@ -234,7 +260,8 @@ namespace GFI_with_GFS_A
                         foreach (int id in MainMenuButtonIds)
                         {
                             Button button = FindViewById<Button>(id);
-                            if (button.HasOnClickListeners == true)
+
+                            if (button.HasOnClickListeners)
                                 button.Click -= MainMenuButton_Click;
                         }
                         break;
@@ -247,6 +274,10 @@ namespace GFI_with_GFS_A
             }
         }
 
+        /// <summary>
+        /// Connect & Disconnect DB sub menu button event.
+        /// </summary>
+        /// <param name="mode"> mode = 1 is Connect & mode = 0 is Disconnect</param>
         private void SetDBSubMenuEvent(int mode)
         {
             try
@@ -265,7 +296,9 @@ namespace GFI_with_GFS_A
                         foreach (int id in DBSubMenuButtonIds)
                         {
                             Button button = FindViewById<Button>(id);
-                            if (button.HasOnClickListeners == true) button.Click -= DBSubMenuButton_Click;
+
+                            if (button.HasOnClickListeners)
+                                button.Click -= DBSubMenuButton_Click;
                         }
                         break;
                 }
@@ -277,6 +310,10 @@ namespace GFI_with_GFS_A
             }
         }
 
+        /// <summary>
+        /// Connect & Disconnect Extra sub menu button event.
+        /// </summary>
+        /// <param name="mode"> mode = 1 is Connect & mode = 0 is Disconnect</param>
         private void SetExtraMenuEvent(int mode)
         {
             try
@@ -295,7 +332,9 @@ namespace GFI_with_GFS_A
                         foreach (int id in ExtraMenuButtonIds)
                         {
                             Button button = FindViewById<Button>(id);
-                            if (button.HasOnClickListeners == true) button.Click -= ExtraMenuButton_Click;
+
+                            if (button.HasOnClickListeners)
+                                button.Click -= ExtraMenuButton_Click;
                         }
                         break;
                 }
@@ -307,72 +346,76 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void CheckNetworkData()
+        /// <summary>
+        /// Check DB version & Refresh notification data
+        /// </summary>
+        private async Task CheckNetworkData()
         {
+            await Task.Delay(100);
+
             TextView tv = FindViewById<TextView>(Resource.Id.MainNowDBVersion);
             tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBChecking)})";
 
-            Task.Run(async () =>
+            try
             {
-                try
+                // Check Server Status
+
+                await ETC.CheckServerNetwork();
+
+
+                // Get Notification
+
+                string url = "";
+                if (ETC.Language.Language == "ko")
+                    url = Path.Combine(ETC.Server, "Android_Notification.txt");
+                else
+                    url = Path.Combine(ETC.Server, "Android_Notification_en.txt");
+
+                string notification = "";
+
+                if (ETC.IsServerDown)
+                    NotificationView.Text = "& Server is Maintenance &";
+                else
                 {
-                    // Check Server Status
+                    using (WebClient wc = new WebClient())
+                        notification = await wc.DownloadStringTaskAsync(url);
 
-                    await ETC.CheckServerNetwork();
-
-
-                    // Get Notification
-
-                    string url = "";
-                    if (ETC.Language.Language == "ko")
-                        url = Path.Combine(ETC.Server, "Android_Notification.txt");
-                    else
-                        url = Path.Combine(ETC.Server, "Android_Notification_en.txt");
-
-                    string notification = "";
-
-                    if (ETC.IsServerDown == true) NotificationView.Text = "& Server is Maintenance &";
-                    else
-                    {
-                        using (WebClient wc = new WebClient())
-                            notification = wc.DownloadString(url);
-
-                        RunOnUiThread(() => { NotificationView.Text = notification; });
-                    }
-
-
-                    // Check DB Version
-
-                    if (await ETC.CheckDBVersion() == true)
-                    {
-                        tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})";
-
-                        Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
-                        ad.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
-                        ad.SetMessage(Resource.String.CheckDBUpdateDialog_Question);
-                        ad.SetCancelable(true);
-                        ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                        ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate 
-                        {
-                            await ETC.UpdateDB(this, true);
-                            if (await ETC.CheckDBVersion() == false)
-                                tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})";
-                            else
-                                tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})";
-
-                        });
-
-                        RunOnUiThread(() => { ad.Show(); });
-                    }
-                    else
-                        tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})";
+                    NotificationView.Text = notification;
                 }
-                catch (Exception ex)
+
+
+                // Check DB Version
+
+                if (await ETC.CheckDBVersion())
                 {
-                    ETC.LogError(ex, this);
-                    ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_NotificationInitializeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                    tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})";
+
+                    Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
+                    ad.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
+                    ad.SetMessage(Resource.String.CheckDBUpdateDialog_Question);
+                    ad.SetCancelable(true);
+                    ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                    ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate
+                    {
+                        await ETC.UpdateDB(this, true);
+
+                        if (!await ETC.CheckDBVersion())
+                            tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})";
+                        else
+                            tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})";
+
+                    });
+
+                    RunOnUiThread(() => { ad.Show(); });
                 }
-            });
+                else
+                    tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})";
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_NotificationInitializeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+            }
         }
 
         private void MainMenuButton_Click(object sender, EventArgs e)
@@ -394,9 +437,9 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.MDMainButton:
-                        string md_url = "https://tempkaridc.github.io/gf/";
+                        string mdURL = "https://tempkaridc.github.io/gf/";
                         var intent = new Intent(this, typeof(WebBrowserActivity));
-                        intent.PutExtra("url", md_url);
+                        intent.PutExtra("url", mdURL);
                         StartActivity(intent);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
@@ -436,29 +479,45 @@ namespace GFI_with_GFS_A
                         {
                             if (ETC.DollList.TableName == "")
                                 ETC.LoadDBSync(ETC.DollList, "Doll.gfs", false);
-                            if (ETC.HasInitDollAvgAbility == false)
+                            if (!ETC.HasInitDollAvgAbility)
                                 ETC.InitializeAverageAbility();
                         });
                         StartActivity(typeof(DollDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.EquipDBButton:
-                        await Task.Run(() => { if (ETC.EquipmentList.TableName == "") ETC.LoadDBSync(ETC.EquipmentList, "Equipment.gfs", false); });
+                        await Task.Run(() => 
+                        {
+                            if (ETC.EquipmentList.TableName == "")
+                                ETC.LoadDBSync(ETC.EquipmentList, "Equipment.gfs", false);
+                        });
                         StartActivity(typeof(EquipDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.FairyDBButton:
-                        await Task.Run(() => { if (ETC.FairyList.TableName == "") ETC.LoadDBSync(ETC.FairyList, "Fairy.gfs", false); });
+                        await Task.Run(() => 
+                        {
+                            if (ETC.FairyList.TableName == "")
+                                ETC.LoadDBSync(ETC.FairyList, "Fairy.gfs", false);
+                        });
                         StartActivity(typeof(FairyDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.EnemyDBButton:
-                        await Task.Run(() => { if (ETC.EnemyList.TableName == "") ETC.LoadDBSync(ETC.EnemyList, "Enemy.gfs", false); });
+                        await Task.Run(() => 
+                        {
+                            if (ETC.EnemyList.TableName == "")
+                                ETC.LoadDBSync(ETC.EnemyList, "Enemy.gfs", false);
+                        });
                         StartActivity(typeof(EnemyDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.FSTDBButton:
-                        await Task.Run(() => { if (ETC.FSTList.TableName == "") ETC.LoadDBSync(ETC.FSTList, "FST.gfs", false); });
+                        await Task.Run(() => 
+                        {
+                            if (ETC.FSTList.TableName == "")
+                                ETC.LoadDBSync(ETC.FSTList, "FST.gfs", false);
+                        });
                         StartActivity(typeof(FSTDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
@@ -485,9 +544,9 @@ namespace GFI_with_GFS_A
                 switch (id)
                 {
                     case Resource.Id.GFNewsExtraButton:
-                        string news_url = "http://www.girlsfrontline.co.kr/archives/category/news";
+                        string newsURL = "http://www.girlsfrontline.co.kr/archives/category/news";
                         var intent = new Intent(this, typeof(WebBrowserActivity));
-                        intent.PutExtra("url", news_url);
+                        intent.PutExtra("url", newsURL);
                         StartActivity(intent);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
@@ -496,7 +555,8 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.EventExtraButton:
-                        if ((int.Parse(Build.VERSION.Release.Split('.')[0])) >= 6) CheckPermission(Manifest.Permission.Internet);
+                        if (int.Parse(Build.VERSION.Release.Split('.')[0]) >= 6)
+                            CheckPermission(Manifest.Permission.Internet);
                         StartActivity(typeof(EventListActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
@@ -528,9 +588,9 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case Resource.Id.AreaTipExtraButton:
-                        string areatip_url = "https://cafe.naver.com/girlsfrontlinekr/235663";
+                        string areatipURL = "https://cafe.naver.com/girlsfrontlinekr/235663";
                         var intent2 = new Intent(this, typeof(WebBrowserActivity));
-                        intent2.PutExtra("url", areatip_url);
+                        intent2.PutExtra("url", areatipURL);
                         StartActivity(intent2);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
@@ -623,18 +683,18 @@ namespace GFI_with_GFS_A
 
         public override void OnBackPressed()
         {
-            if (ExtraSubMenuMode == true)
+            if (ExtraSubMenuMode)
             {
                 SwitchExtraMenu(0);
                 return;
             }
-            else if (DBSubMenuMode == true)
+            else if (DBSubMenuMode)
             {
                 SwitchDBSubMenu(0);
                 return;
             }
 
-            if (ExitTimer.Enabled == false)
+            if (!ExitTimer.Enabled)
             {
                 ExitTimer.Start();
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_CheckExit, Snackbar.LengthLong, Android.Graphics.Color.DarkOrange);

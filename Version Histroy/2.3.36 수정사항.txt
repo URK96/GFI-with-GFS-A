@@ -1,0 +1,9 @@
+<2.3.36 수정사항>
+
+- 경험치 계산기에서 현재 경험치 입력 시 무조건 인형 기준으로 계산되는 현상 수정
+- 특정 삼성 기기에서 내부 파일 관련 작업 시 앱이 비정상적으로 종료되는 문제 수정
+- 만화 컨텐츠 추가 (Geo의 소녀전선)
+
+- Fix exp item count calculation issue
+- Fix unexpected termination issue on Samsung devices
+- Add cartoon content

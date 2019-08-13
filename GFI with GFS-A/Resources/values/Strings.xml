@@ -646,9 +646,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.35 Update]\n\n
-- Fix T-Doll heavy production simulator issue\n
-- T-Doll radar graph feature disable temporary\n
+    [2.3.36 Update]\n\n
+- Fix exp item count calculation issue\n
+- Fix unexpected termination issue on Samsung devices\n
 - Add cartoon content
   </string>
 

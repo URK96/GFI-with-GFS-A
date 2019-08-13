@@ -410,7 +410,7 @@ namespace GFI_with_GFS_A
 
         internal static async Task<bool> LoadDB()
         {
-            await Task.Delay(1);
+            await Task.Delay(100);
 
             try
             {
@@ -555,7 +555,10 @@ namespace GFI_with_GFS_A
 
                 for (int i = 0; i < DBFiles.Length; ++i)
                 {
-                    File.Copy(Path.Combine(tempPath, DBFiles[i]), Path.Combine(DBPath, DBFiles[i]), true);
+                    //File.Copy(Path.Combine(tempPath, DBFiles[i]), Path.Combine(DBPath, DBFiles[i]), true);
+
+                    var dbfileBytes = File.ReadAllBytes(Path.Combine(tempPath, DBFiles[i]));
+                    File.WriteAllBytes(Path.Combine(DBPath, DBFiles[i]), dbfileBytes);
                     await Task.Delay(100);
                 }
 
@@ -565,14 +568,17 @@ namespace GFI_with_GFS_A
 
                 string oldVersion = Path.Combine(SystemPath, "DBVer.txt");
                 string newVersion = Path.Combine(tempPath, "DBVer.txt");
-                File.Copy(newVersion, oldVersion, true);
+                //File.Copy(newVersion, oldVersion, true);
+
+                var fileBytes = File.ReadAllBytes(newVersion);
+                File.WriteAllBytes(oldVersion, fileBytes);
 
                 using (StreamReader sr = new StreamReader(new FileStream(oldVersion, FileMode.Open, FileAccess.Read)))
                     int.TryParse(sr.ReadToEnd(), out DBVersion);
 
                 await Task.Delay(500);
 
-                if (DBLoad == true)
+                if (DBLoad)
                 {
                     activity.RunOnUiThread(() => { pd.SetMessage(Resources.GetString(Resource.String.UpdateDBDialog_LoadDB)); });
                     await Task.Delay(200);

@@ -32,14 +32,13 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                ETC.BasicInitializeApp(this);
-
-                PreferenceEditor = ETC.sharedPreferences.Edit();
-
                 if (ETC.UseLightTheme == true)
                     SetTheme(Resource.Style.GFS_Splash_Light);
 
                 SetContentView(Resource.Layout.SplashLayout);
+
+                ETC.BasicInitializeApp(this);
+                PreferenceEditor = ETC.sharedPreferences.Edit();
 
                 SplashImageView = FindViewById<ImageView>(Resource.Id.SplashImageView);
 
@@ -54,7 +53,7 @@ namespace GFI_with_GFS_A
 
                 // Check Permission
 
-                if ((int.Parse(Build.VERSION.Release.Split('.')[0])) >= 6)
+                if (int.Parse(Build.VERSION.Release.Split('.')[0]) >= 6)
                     CheckPermission();
                 else
                     _ = InitProcess();
@@ -84,16 +83,13 @@ namespace GFI_with_GFS_A
                     CheckDeviceMemory();
 
                 ETC.IsLowRAM = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);
-
-                if (VersionTracking.IsFirstLaunchForCurrentBuild == true)
-                    PreferenceEditor.PutBoolean("ShowNewFeatureDialog", true);
-                
+              
                 ETC.CheckInitFolder();
 
 
                 // Check DB Update
 
-                if (CheckDBFiles() == false)
+                if (!CheckDBFiles())
                 {
                     await ETC.AnimateText(StatusText, "Download DB First");
 
@@ -101,7 +97,7 @@ namespace GFI_with_GFS_A
                     {
                         await ETC.CheckServerNetwork();
 
-                        if (ETC.IsServerDown == false)
+                        if (!ETC.IsServerDown)
                             await ETC.UpdateDB(this);
                         else
                         {
@@ -109,8 +105,6 @@ namespace GFI_with_GFS_A
                             FinishAffinity();
                             Process.KillProcess(Process.MyPid());
                         }
-
-                        
                     }
                     catch (Exception ex)
                     {
@@ -160,10 +154,8 @@ namespace GFI_with_GFS_A
                 ArrayList request = new ArrayList();
 
                 foreach (string permission in check)
-                {
                     if (CheckSelfPermission(permission) == Permission.Denied)
                         request.Add(permission);
-                }
 
                 request.TrimToSize();
 
@@ -216,7 +208,7 @@ namespace GFI_with_GFS_A
         private bool CheckDBFiles()
         {
             foreach (string s in ETC.DBFiles)
-                if (File.Exists(Path.Combine(ETC.DBPath, s)) == false)
+                if (!File.Exists(Path.Combine(ETC.DBPath, s)))
                     return false;
 
             return true;

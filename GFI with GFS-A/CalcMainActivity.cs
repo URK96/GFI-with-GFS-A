@@ -28,30 +28,40 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme == true)
+            if (ETC.UseLightTheme)
                 SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
             // Create your application here
             SetContentView(Resource.Layout.CalcMainLayout);
 
+            ETC.LoadDBSync(ETC.SkillTrainingList, "SkillTraining.gfs", true);
+            ETC.LoadDBSync(ETC.FreeOPList, "FreeOP.gfs", true);
+
+
+            // Set Main Drawer
+
             MainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.Calc_MainDrawerLayout);
             MainNavigationView = FindViewById<NavigationView>(Resource.Id.Calc_NavigationView);
             MainNavigationView.NavigationItemSelected += MainNavigationView_NavigationItemSelected;
+
+
+            // Set ActionBar
 
             SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.Calc_Toolbar));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
-            if (ETC.UseLightTheme == true)
+            SupportActionBar.Title = Resources.GetString(Resource.String.TitleName_ExpItemCalc);
+
+            if (ETC.UseLightTheme)
                 SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.CalcIcon_WhiteTheme);
             else
                 SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.CalcIcon);
-            SupportActionBar.Title = Resources.GetString(Resource.String.TitleName_ExpItemCalc);
+
+
+            // Set Fragment
 
             ft = SupportFragmentManager.BeginTransaction();
-
-            ETC.LoadDBSync(ETC.SkillTrainingList, "SkillTraining.gfs", true);
-            ETC.LoadDBSync(ETC.FreeOPList, "FreeOP.gfs", true);
 
             ExpItemCalc_F = new ExpItemCalc();
             CoreCalc_F = new Core();
@@ -60,7 +70,6 @@ namespace GFI_with_GFS_A
             AreaExpCalc_F = new AreaExpCalc();
 
             ft.Add(Resource.Id.CalcFragmentContainer, ExpItemCalc_F, "ExpItemCalc");
-
             ft.Commit();
         }
 
@@ -69,6 +78,7 @@ namespace GFI_with_GFS_A
             try
             {
                 string title = "";
+
                 ft = SupportFragmentManager.BeginTransaction();
 
                 switch (e.MenuItem.ItemId)
@@ -112,7 +122,7 @@ namespace GFI_with_GFS_A
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    if (MainDrawerLayout.IsDrawerOpen(GravityCompat.Start) == false)
+                    if (!MainDrawerLayout.IsDrawerOpen(GravityCompat.Start))
                         MainDrawerLayout.OpenDrawer(GravityCompat.Start);
                     else
                         MainDrawerLayout.CloseDrawer(GravityCompat.Start);
