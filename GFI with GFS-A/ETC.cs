@@ -557,8 +557,10 @@ namespace GFI_with_GFS_A
                 {
                     //File.Copy(Path.Combine(tempPath, DBFiles[i]), Path.Combine(DBPath, DBFiles[i]), true);
 
-                    var dbfileBytes = File.ReadAllBytes(Path.Combine(tempPath, DBFiles[i]));
-                    File.WriteAllBytes(Path.Combine(DBPath, DBFiles[i]), dbfileBytes);
+                    CopyFile(Path.Combine(tempPath, DBFiles[i]), Path.Combine(DBPath, DBFiles[i]));
+
+                    //var dbfileBytes = File.ReadAllBytes(Path.Combine(tempPath, DBFiles[i]));
+                    //File.WriteAllBytes(Path.Combine(DBPath, DBFiles[i]), dbfileBytes);
                     await Task.Delay(100);
                 }
 
@@ -570,8 +572,10 @@ namespace GFI_with_GFS_A
                 string newVersion = Path.Combine(tempPath, "DBVer.txt");
                 //File.Copy(newVersion, oldVersion, true);
 
-                var fileBytes = File.ReadAllBytes(newVersion);
-                File.WriteAllBytes(oldVersion, fileBytes);
+                //var fileBytes = File.ReadAllBytes(newVersion);
+                //File.WriteAllBytes(oldVersion, fileBytes);
+
+                CopyFile(newVersion, oldVersion);
 
                 using (StreamReader sr = new StreamReader(new FileStream(oldVersion, FileMode.Open, FileAccess.Read)))
                     int.TryParse(sr.ReadToEnd(), out DBVersion);
@@ -660,6 +664,28 @@ namespace GFI_with_GFS_A
                 return true;
 
             return false;
+        }
+
+        /// <summary>
+        /// File Copy Temporary Replace Method
+        /// </summary>
+        /// <param name="source">Source file path</param>
+        /// <param name="target">Target file path</param>
+        /// <returns></returns>
+        internal static bool CopyFile(string source, string target)
+        {
+            try
+            {
+                var fileBytes = File.ReadAllBytes(source);
+                File.WriteAllBytes(target, fileBytes);
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                return false;
+            }
+
+            return true;
         }
 
         internal static double[] CalcDPS(int FireRate, int AttackSpeed, int Enemy_Armor, int Accuracy, int Enemy_Evasion, int Critical, int Dummy, int Penetration = 10, int Critical_Rate = 150)

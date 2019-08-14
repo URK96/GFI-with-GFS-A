@@ -177,7 +177,6 @@ namespace GFI_with_GFS_A
 
         string[] ImageName = new string[]
             {
-                "OP",
                 "SA0",
                 "SA1",
                 "SA2-1",

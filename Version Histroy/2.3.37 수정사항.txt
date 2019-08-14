@@ -1,0 +1,7 @@
+<2.3.37 수정사항>
+
+- 가이드북 요약본에서 목록에 맞지 않는 이미지가 나오는 현상 수정
+- 만화 컨텐츠 추가 (Geo의 소녀전선)
+
+- Fix Short Guide Book image index issue
+- Add cartoon content
