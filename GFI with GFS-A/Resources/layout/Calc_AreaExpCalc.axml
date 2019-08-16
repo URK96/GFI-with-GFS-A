@@ -93,7 +93,7 @@
 					android:layout_height="match_parent"
 					android:layout_marginRight="10dp"
 					android:textAppearance="?android:attr/textAppearanceMedium"
-					android:text="@string/Calc_ExpItem_NowTotalExpSettingText"
+					android:text="@string/Calc_AreaExp_NowTotalExpSettingText"
 					android:textColor="@color/Calc_TextColor_WhiteTheme"
 					android:gravity="center" />
 				<EditText
@@ -102,6 +102,34 @@
 					android:inputType="number"
 					android:text="0"
 					android:id="@+id/CalcAreaExpNowExp" />
+			</LinearLayout>
+            <LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_marginRight="10dp"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text="@string/Calc_AreaExp_CommanderCostumeBonusText"
+					android:textColor="@color/Calc_TextColor_WhiteTheme"
+					android:gravity="center" />
+				<EditText
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:inputType="number"
+					android:text="0"
+					android:id="@+id/CalcAreaExpCommanderCostumeBonus" />
+                <TextView
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_marginRight="10dp"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:text="%"
+					android:textColor="@color/Calc_TextColor_WhiteTheme"
+					android:gravity="center" />
 			</LinearLayout>
 			<View
 				android:layout_width="300dp"

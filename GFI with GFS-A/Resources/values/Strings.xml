@@ -557,6 +557,7 @@
   <string name="Calc_AreaExp_CountResult">* Total Count (Normal / Leader / MVP / Leader,MVP) *</string>
   <string name="Calc_AreaExp_LevelSettingText">Level</string>
   <string name="Calc_AreaExp_NowTotalExpSettingText">Now Exp</string>
+  <string name="Calc_AreaExp_CommanderCostumeBonusText">Commander Costume Bonus</string>
   <string name="Calc_AreaExp_VowSettingCheckBox">Apply Oath (Marry)</string>
   <string name="Calc_AreaExp_ExpEventSettingCheckBox">Apply Exp Event(x1.5)</string>
   <string name="Calc_AreaExp_AutoAddDummySettingCheckBox">Auto Dummy Link Up</string>

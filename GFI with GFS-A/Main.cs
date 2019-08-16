@@ -52,10 +52,10 @@ namespace GFI_with_GFS_A
                 
                 // Set ActionBar Title Icon
 
-                if ((DateTime.Now.Month == 10) && (DateTime.Now.Day == 31))
+                /*if ((DateTime.Now.Month == 10) && (DateTime.Now.Day == 31))
                     SupportActionBar.SetIcon(Resource.Drawable.AppIcon2_Core);
                 else
-                    SupportActionBar.SetIcon(int.Parse(ETC.sharedPreferences.GetString("MainActionbarIcon", Resource.Drawable.AppIcon2.ToString())));
+                    SupportActionBar.SetIcon(int.Parse(ETC.sharedPreferences.GetString("MainActionbarIcon", Resource.Drawable.AppIcon2.ToString())));*/
 
                 SupportActionBar.SetDisplayShowHomeEnabled(true);
 

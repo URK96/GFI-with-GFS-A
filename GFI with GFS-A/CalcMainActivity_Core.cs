@@ -41,6 +41,8 @@ namespace GFI_with_GFS_A
 
         private void InitializeProcess()
         {
+            // Set Init Value
+
             Result.Text = $"0 {Resources.GetString(Resource.String.Calc_Core_DefaultCoreCountResultText)}";
 
             DollGradeSelector.MinValue = 2;
@@ -88,14 +90,14 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                int RequireDollCount = 0;
+                int requireDollCount = 0;
 
                 for (int i = 0; i < (target - start); ++i)
-                    RequireDollCount += LevelLink_DollCount[start + i];
+                    requireDollCount += LevelLink_DollCount[start + i];
 
-                int ResultCore = RequireDollCount * GradeLinkCore[grade - 2];
+                int resultCore = requireDollCount * GradeLinkCore[grade - 2];
 
-                Result.Text = $"{ResultCore} {Resources.GetString(Resource.String.Calc_Core_DefaultCoreCountResultText)}";
+                Result.Text = $"{resultCore} {Resources.GetString(Resource.String.Calc_Core_DefaultCoreCountResultText)}";
             }
             catch (Exception ex)
             {

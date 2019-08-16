@@ -26,6 +26,7 @@ namespace GFI_with_GFS_A
         private NumberPicker DollDummy;
         private NumberPicker WarCount;
         private EditText NowExp;
+        private EditText CommanderCostumeBonus;
         private TextView Result_Normal;
         private TextView Result_Leader;
         private TextView Result_MVP;
@@ -33,10 +34,10 @@ namespace GFI_with_GFS_A
 
         private DataRow AreaDR;
 
-        private bool IsVow = false;
-        private bool IsExpEvent = false;
-        private bool IsAutoAddDummy = false;
-        private bool HasLastEnemy = false;
+        private bool isVow = false;
+        private bool isExpEvent = false;
+        private bool isAutoAddDummy = false;
+        private bool hasLastEnemy = false;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -56,28 +57,30 @@ namespace GFI_with_GFS_A
             WarCount.ValueChanged += LevelSelector_ValueChanged;
             NowExp = v.FindViewById<EditText>(Resource.Id.CalcAreaExpNowExp);
             NowExp.TextChanged += delegate { CalcCount(NowLevel.Value, TargetLevel.Value, DollDummy.Value, WarCount.Value); };
+            CommanderCostumeBonus = v.FindViewById<EditText>(Resource.Id.CalcAreaExpCommanderCostumeBonus);
+            CommanderCostumeBonus.TextChanged += delegate { CalcCount(NowLevel.Value, TargetLevel.Value, DollDummy.Value, WarCount.Value); };
             ApplyVow = v.FindViewById<ToggleButton>(Resource.Id.CalcAreaExpVowSelector);
             ApplyVow.CheckedChange += delegate
             {
-                IsVow = ApplyVow.Checked;
+                isVow = ApplyVow.Checked;
                 CalcCount(NowLevel.Value, TargetLevel.Value, DollDummy.Value, WarCount.Value);
             };
             ApplyExpEvent = v.FindViewById<ToggleButton>(Resource.Id.CalcAreaExpExpEventSelector);
             ApplyExpEvent.CheckedChange += delegate
             {
-                IsExpEvent = ApplyExpEvent.Checked;
+                isExpEvent = ApplyExpEvent.Checked;
                 CalcCount(NowLevel.Value, TargetLevel.Value, DollDummy.Value, WarCount.Value);
             };
             ApplyAutoAddDummy = v.FindViewById<ToggleButton>(Resource.Id.CalcAreaExpAutoAddDummySelector);
             ApplyAutoAddDummy.CheckedChange += delegate
             {
-                IsAutoAddDummy = ApplyAutoAddDummy.Checked;
+                isAutoAddDummy = ApplyAutoAddDummy.Checked;
                 CalcCount(NowLevel.Value, TargetLevel.Value, DollDummy.Value, WarCount.Value);
             };
             LastEnemy = v.FindViewById<ToggleButton>(Resource.Id.CalcAreaExpLastEnemySelector);
             LastEnemy.CheckedChange += delegate
             {
-                HasLastEnemy = LastEnemy.Checked;
+                hasLastEnemy = LastEnemy.Checked;
                 CalcCount(NowLevel.Value, TargetLevel.Value, DollDummy.Value, WarCount.Value);
             };
             Result_Normal = v.FindViewById<TextView>(Resource.Id.CalcAreaExpResult_Normal);
@@ -200,20 +203,30 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void CalcCount(int start, int target, int dummy, int war_count)
+        /// <summary>
+        /// Calculate Count of Clear Area. This method contains all case of MVP and Leader option.
+        /// </summary>
+        /// <param name="start">Set start level of T-Doll</param>
+        /// <param name="target">Set target level of T-Doll</param>
+        /// <param name="dummy">Set dummy of T-Doll</param>
+        /// <param name="warCount">Set combat count in clearing area once</param>
+        private void CalcCount(int start, int target, int dummy, int warCount)
         {
-            //int EXP = (int)AreaDR["EXP"];
             int[] ResultCount = { 0, 0, 0, 0 };
 
             try
             {
-                if (!int.TryParse(NowExp.Text, out int now_exp))
+                if (!int.TryParse(NowExp.Text, out int nowExp))
+                    return;
+                if (!int.TryParse(CommanderCostumeBonus.Text, out int commanderCostumeBonus))
                     return;
 
-                ResultCount[0] = CalcTotalCount(start, target, now_exp, dummy, war_count, false, false);
-                ResultCount[1] = CalcTotalCount(start, target, now_exp, dummy, war_count, true, false);
-                ResultCount[2] = CalcTotalCount(start, target, now_exp, dummy, war_count, false, true);
-                ResultCount[3] = CalcTotalCount(start, target, now_exp, dummy, war_count, true, true);
+                int costumeBonus = commanderCostumeBonus + 0;
+
+                ResultCount[0] = CalcTotalCount(start, target, nowExp, dummy, warCount, costumeBonus,  false, false);
+                ResultCount[1] = CalcTotalCount(start, target, nowExp, dummy, warCount, costumeBonus, true, false);
+                ResultCount[2] = CalcTotalCount(start, target, nowExp, dummy, warCount, costumeBonus, false, true);
+                ResultCount[3] = CalcTotalCount(start, target, nowExp, dummy, warCount, costumeBonus, true, true);
 
                 Result_Normal.Text = $"{Resources.GetString(Resource.String.Calc_AreaExp_DefaultNormalResultText)} => {ResultCount[0]}";
                 Result_Leader.Text = $"{Resources.GetString(Resource.String.Calc_AreaExp_DefaultLeaderResultText)} => {ResultCount[1]}";
@@ -226,115 +239,86 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private int CalcTotalCount(int NowLevel, int TargetLevel, int nowExp, int Dummy, int WarCount, bool IsLeader, bool IsMVP)
+        /// <summary>
+        /// Calculate Count of each case
+        /// </summary>
+        /// <param name="nowLevel">Set now level of T-Doll</param>
+        /// <param name="targetLevel">Set target level of T-Doll</param>
+        /// <param name="nowExp">Set now exp of T-Doll</param>
+        /// <param name="dummy">Set dummy of T-Doll</param>
+        /// <param name="warCount">Set combat count in clearing area once</param>
+        /// <param name="costumeBonus">Set costume bonus percentage</param>
+        /// <param name="isLeader">Set leader option</param>
+        /// <param name="isMVP">Set MVP option</param>
+        /// <returns></returns>
+        private int CalcTotalCount(int nowLevel, int targetLevel, int nowExp, int dummy, int warCount, int costumeBonus = 0, bool isLeader = false, bool isMVP = false)
         {
             try
             {
-                const double LeaderRate = 1.2;
-                const double MVPRate = 1.3;
-                const double VowRate = 2.0;
-                const double ExpEventRate = 1.5;
-                int PaneltyLevel = (int)AreaDR["PaneltyLevel"];
-                int targetExp = LevelExp[TargetLevel - 1];
-                int EarnExp = 0;
-                int LastEarnExp = 0;
-                int TotalCount = 0;
+                const double leaderRate = 1.2;
+                const double mvpRate = 1.3;
+                const double vowRate = 2.0;
+                const double expEventRate = 1.5;
+                int paneltyLevel = (int)AreaDR["PaneltyLevel"];
+                int targetExp = LevelExp[targetLevel - 1];
+                double earnExp = 0;
+                int totalCount = 0;
 
                 while (nowExp < targetExp)
                 {
-                    while ((nowExp < LevelExp[NowLevel - 1]) || (nowExp >= LevelExp[NowLevel]))
-                        NowLevel += 1;
+                    while ((nowExp < LevelExp[nowLevel - 1]) || (nowExp >= LevelExp[nowLevel]))
+                        nowLevel += 1;
 
-                    if (IsAutoAddDummy)
+                    if (isAutoAddDummy)
                     {
-                        if ((NowLevel >= 1) && (NowLevel < 10))
-                            Dummy = 1;
-                        else if ((NowLevel >= 10) && (NowLevel < 30))
-                            Dummy = 2;
-                        else if ((NowLevel >= 30) && (NowLevel < 70))
-                            Dummy = 3;
-                        else if ((NowLevel >= 70) && (NowLevel < 90))
-                            Dummy = 4;
-                        else if (NowLevel >= 90)
-                            Dummy = 5;
+                        if ((nowLevel >= 1) && (nowLevel < 10))
+                            dummy = 1;
+                        else if ((nowLevel >= 10) && (nowLevel < 30))
+                            dummy = 2;
+                        else if ((nowLevel >= 30) && (nowLevel < 70))
+                            dummy = 3;
+                        else if ((nowLevel >= 70) && (nowLevel < 90))
+                            dummy = 4;
+                        else if (nowLevel >= 90)
+                            dummy = 5;
                         else
-                            Dummy = 1;
+                            dummy = 1;
                     }
 
-                    if (NowLevel >= (PaneltyLevel + 40))
-                    {
-                        EarnExp = 10;
-
-                        if (HasLastEnemy)
-                            LastEarnExp = EarnExp * 2;
-                    }
+                    if (nowLevel >= (paneltyLevel + 40))
+                        earnExp = 10;
                     else
                     {
                         double PaneltyRate = 1;
 
-                        if ((NowLevel >= (PaneltyLevel + 1)) && (NowLevel < (PaneltyLevel + 10)))
+                        if ((nowLevel >= (paneltyLevel + 1)) && (nowLevel < (paneltyLevel + 10)))
                             PaneltyRate = 0.8;
-                        else if ((NowLevel >= (PaneltyLevel + 10)) && (NowLevel < (PaneltyLevel + 20)))
+                        else if ((nowLevel >= (paneltyLevel + 10)) && (nowLevel < (paneltyLevel + 20)))
                             PaneltyRate = 0.6;
-                        else if ((NowLevel >= (PaneltyLevel + 20)) && (NowLevel < (PaneltyLevel + 30)))
+                        else if ((nowLevel >= (paneltyLevel + 20)) && (nowLevel < (paneltyLevel + 30)))
                             PaneltyRate = 0.4;
-                        else if ((NowLevel >= (PaneltyLevel + 30)) && (NowLevel < (PaneltyLevel + 40)))
+                        else if ((nowLevel >= (paneltyLevel + 30)) && (nowLevel < (paneltyLevel + 40)))
                             PaneltyRate = 0.2;
 
-                        EarnExp = (int)AreaDR["EXP"];
+                        earnExp = (int)AreaDR["EXP"];
 
-                        if (HasLastEnemy)
-                            LastEarnExp = EarnExp * 2;
-
-                        EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * (1 + (0.5 * (Dummy - 1)))));
-
-                        if (HasLastEnemy)
-                            LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * (1 + (0.5 * (Dummy - 1)))));
-
-                        EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * PaneltyRate));
-
-                        if (HasLastEnemy)
-                            LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * PaneltyRate));
-
-                        if (IsLeader)
-                            EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * LeaderRate));
-                        if (IsMVP)
-                            EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * MVPRate));
-
-                        if (HasLastEnemy)
-                        {
-                            if (IsLeader)
-                                LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * LeaderRate));
-                            if (IsMVP)
-                                LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * MVPRate));
-                        }
+                        earnExp *= PaneltyRate;
                     }
 
-                    if (IsVow)
-                    {
-                        EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * VowRate));
+                    earnExp *= 1 + (0.5 * (dummy - 1));
 
-                        if (HasLastEnemy)
-                            LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * VowRate));
-                    }
+                    earnExp = isLeader ? earnExp * leaderRate : earnExp;
+                    earnExp = isMVP ? earnExp * mvpRate : earnExp;
+                    earnExp = isVow ? earnExp * vowRate : earnExp;
+                    earnExp = isExpEvent ? earnExp * expEventRate : earnExp;
+                    earnExp = costumeBonus != 0 ? earnExp * (1 + (0.01 * costumeBonus)) : earnExp;
 
-                    if (IsExpEvent)
-                    {
-                        EarnExp = Convert.ToInt32(Math.Ceiling(EarnExp * ExpEventRate));
+                    nowExp += hasLastEnemy ? Convert.ToInt32(Math.Ceiling(earnExp * (warCount - 1)) + earnExp * 2) : Convert.ToInt32(Math.Ceiling(earnExp * warCount));
 
-                        if (HasLastEnemy)
-                            LastEarnExp = Convert.ToInt32(Math.Ceiling(LastEarnExp * ExpEventRate));
-                    }
-
-                    if (HasLastEnemy)
-                        nowExp += (EarnExp * (WarCount - 1)) + LastEarnExp;
-                    else
-                        nowExp += EarnExp * WarCount;
-
-                    TotalCount += 1;
+                    totalCount += 1;
                 }
 
-                return TotalCount;
+                return totalCount;
             }
             catch (Exception ex)
             {

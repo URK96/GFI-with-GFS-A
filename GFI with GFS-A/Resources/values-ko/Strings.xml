@@ -558,6 +558,7 @@
   <string name="Calc_AreaExp_CountResult">* 총 횟수 (일반 / 리더 / MVP / 리더,MVP) *</string>
   <string name="Calc_AreaExp_LevelSettingText">레벨</string>
   <string name="Calc_AreaExp_NowTotalExpSettingText">현재 경험치</string>
+  <string name="Calc_AreaExp_CommanderCostumeBonusText">지휘관 복장 보너스</string>
   <string name="Calc_AreaExp_VowSettingCheckBox">서약 적용</string>
   <string name="Calc_AreaExp_ExpEventSettingCheckBox">경험치 이벤트(x1.5) 적용</string>
   <string name="Calc_AreaExp_AutoAddDummySettingCheckBox">자동 편제확대</string>

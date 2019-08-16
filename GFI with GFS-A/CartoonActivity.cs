@@ -21,19 +21,19 @@ namespace GFI_with_GFS_A
     [Activity(Name = "com.gfl.dic.CartoonActivity", Label = "Cartoon", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public partial class CartoonActivity : AppCompatActivity
     {
-        bool IsCategory = true;
+        bool isCategory = true;
 
-        private ArrayAdapter CategoryAdapter;
+        private ArrayAdapter categoryAdapter;
         private Android.Support.V4.App.FragmentTransaction ft;
         private Android.Support.V4.App.Fragment CartoonScreen_F;
 
         internal DrawerLayout MainDrawerLayout;
         private ListView DrawerListView;
 
-        private string[] Category_List;
-        private List<string> Item_List = new List<string>();
+        private string[] categoryList;
+        private List<string> itemList = new List<string>();
 
-        private int Category_Index = 0;
+        private int categoryIndex = 0;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -41,7 +41,7 @@ namespace GFI_with_GFS_A
 
             ETC.SetDialogTheme();
 
-            if (ETC.UseLightTheme == true)
+            if (ETC.UseLightTheme)
                 SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
             // Create your application here
@@ -50,14 +50,14 @@ namespace GFI_with_GFS_A
             MainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.CartoonMainDrawerLayout);
             MainDrawerLayout.DrawerOpened += delegate
             {
-                if (ETC.UseLightTheme == true)
+                if (ETC.UseLightTheme)
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen_WhiteTheme);
                 else
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen);
             };
             MainDrawerLayout.DrawerClosed += delegate
             {
-                if (ETC.UseLightTheme == true)
+                if (ETC.UseLightTheme)
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
                 else
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
@@ -67,7 +67,7 @@ namespace GFI_with_GFS_A
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
-            if (ETC.UseLightTheme == true)
+            if (ETC.UseLightTheme)
                 SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
             else
                 SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
@@ -84,12 +84,29 @@ namespace GFI_with_GFS_A
             LoadCategoryList();
         }
 
+        private void LoadCategoryList()
+        {
+            try
+            {
+                categoryList = Resources.GetStringArray(Resource.Array.Cartoon_Category);
+
+                categoryAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, categoryList);
+                DrawerListView.Adapter = categoryAdapter;
+
+                MainDrawerLayout.OpenDrawer(GravityCompat.Start);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+            }
+        }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    if (MainDrawerLayout.IsDrawerOpen(GravityCompat.Start) == false)
+                    if (!MainDrawerLayout.IsDrawerOpen(GravityCompat.Start))
                         MainDrawerLayout.OpenDrawer(GravityCompat.Start);
                     else
                         MainDrawerLayout.CloseDrawer(GravityCompat.Start);
@@ -100,54 +117,37 @@ namespace GFI_with_GFS_A
             return base.OnOptionsItemSelected(item);
         }
 
-        private void LoadCategoryList()
-        {
-            try
-            {
-                Category_List = Resources.GetStringArray(Resource.Array.Cartoon_Category);
-
-                CategoryAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, Category_List);
-                DrawerListView.Adapter = CategoryAdapter;
-
-                MainDrawerLayout.OpenDrawer(GravityCompat.Start);
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-            }
-        }
-
         private void DrawerListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             try
             {
-                if (IsCategory == true)
+                if (isCategory)
                 {
-                    Category_Index = e.Position;
+                    categoryIndex = e.Position;
 
-                    Item_List.Clear();
-                    Item_List.Add("...");
+                    itemList.Clear();
+                    itemList.Add("...");
 
-                    ListItems(Category_Index, ref Item_List);
-                    Item_List.TrimExcess();
+                    ListItems(categoryIndex, ref itemList);
+                    itemList.TrimExcess();
 
-                    var Item_Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, Item_List);
+                    var itemAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, itemList);
 
                     DrawerListView.Adapter = null;
-                    DrawerListView.Adapter = Item_Adapter;
+                    DrawerListView.Adapter = itemAdapter;
 
-                    IsCategory = false;
+                    isCategory = false;
                 }
                 else
                 {
                     switch (e.Position)
                     {
                         case 0:
-                            DrawerListView.Adapter = CategoryAdapter;
-                            IsCategory = true;
+                            DrawerListView.Adapter = categoryAdapter;
+                            isCategory = true;
                             break;
                         default:
-                            switch (Category_Index)
+                            switch (categoryIndex)
                             {
                                 case 0:
                                 case 1:
@@ -156,12 +156,12 @@ namespace GFI_with_GFS_A
                                 case 4:
                                 case 5:
                                 case 8:
-                                    _ = ((CartoonScreen)CartoonScreen_F).LoadProcess(Category_List[Category_Index], Category_Index, (e.Position - 1), false);
+                                    _ = ((CartoonScreen)CartoonScreen_F).LoadProcess(categoryList[categoryIndex], categoryIndex, e.Position - 1, false);
                                     break;
                                 case 6:
                                 case 7:
                                 case 9:
-                                    _ = ((CartoonScreen)CartoonScreen_F).LoadProcess_Web(Category_List[Category_Index], Category_Index, (e.Position - 1), false);
+                                    _ = ((CartoonScreen)CartoonScreen_F).LoadProcess_Web(categoryList[categoryIndex], categoryIndex, e.Position - 1, false);
                                     break;
                             }
                             MainDrawerLayout.CloseDrawer(GravityCompat.Start);

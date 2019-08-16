@@ -24,6 +24,8 @@ namespace GFI_with_GFS_A
         {
             v = inflater.Inflate(Resource.Layout.Calc_SkillTraining, container, false);
 
+            // Find View & Connect Event
+
             TrainingTypeList = v.FindViewById<Spinner>(Resource.Id.CalcSkillTrainingType);
             TrainingTypeList.ItemSelected += delegate { CalcSkillTraining(TrainingStartLevel.Value, TrainingTargetLevel.Value); };
             TrainingStartLevel = v.FindViewById<NumberPicker>(Resource.Id.CalcSkillTrainingStartLevel);
@@ -35,22 +37,15 @@ namespace GFI_with_GFS_A
             Result_MasterChip = v.FindViewById<TextView>(Resource.Id.CalcSkillTrainingResultMasterSkillChip);
             Result_Time = v.FindViewById<TextView>(Resource.Id.CalcSkillTrainingResultTime);
 
-            InitializeString();
             InitializeProcess();
 
             return v;
         }
 
-        private void InitializeString()
-        {
-            Result_BasicChip.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultBasicSkillChipResultText)}";
-            Result_AdvanceChip.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultAdvanceSkillChipResultText)}";
-            Result_MasterChip.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultMasterSkillChipResultText)}";
-            Result_Time.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultTimeResultText)}";
-        }
-
         private void InitializeProcess()
         {
+            // Set List Adapter
+
             List<string> list = new List<string>(3);
 
             foreach (DataRow dr in ETC.SkillTrainingList.Rows)
@@ -61,6 +56,13 @@ namespace GFI_with_GFS_A
             var adapter = new ArrayAdapter(Activity, Resource.Layout.SpinnerListLayout, list);
             adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
             TrainingTypeList.Adapter = adapter;
+
+            // Set Init Value
+
+            Result_BasicChip.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultBasicSkillChipResultText)}";
+            Result_AdvanceChip.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultAdvanceSkillChipResultText)}";
+            Result_MasterChip.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultMasterSkillChipResultText)}";
+            Result_Time.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultTimeResultText)}";
 
             TrainingStartLevel.MinValue = 1;
             TrainingStartLevel.MaxValue = 1;
@@ -94,43 +96,48 @@ namespace GFI_with_GFS_A
             }
         }
 
+        /// <summary>
+        /// Calculate require chips of T-Doll & Fairy skill
+        /// </summary>
+        /// <param name="start">Set now skill level</param>
+        /// <param name="target">Set target skill level</param>
         private void CalcSkillTraining(int start, int target)
         {
             try
             {
                 DataRow dr = ETC.SkillTrainingList.Rows[TrainingTypeList.SelectedItemPosition];
 
-                string[] ItemConsume = ((string)dr["Consumption"]).Split(';');
-                string[] Time = ((string)dr["Time"]).Split(';');
-                string[] ItemType = ((string)dr["DataType"]).Split(';');
+                string[] itemConsume = ((string)dr["Consumption"]).Split(';');
+                string[] time = ((string)dr["Time"]).Split(';');
+                string[] itemType = ((string)dr["DataType"]).Split(';');
 
-                int[] ItemCount = { 0, 0, 0 };
-                int TimeCount = 0;
+                int[] itemCount = { 0, 0, 0 };
+                int timeCount = 0;
 
                 for (int i = start; i < target; ++i)
                 {
-                    int count = int.Parse(ItemConsume[i - 1]);
+                    int count = int.Parse(itemConsume[i - 1]);
 
-                    switch (ItemType[i - 1])
+                    switch (itemType[i - 1])
                     {
                         case "B":
-                            ItemCount[0] += count;
+                            itemCount[0] += count;
                             break;
                         case "A":
-                            ItemCount[1] += count;
+                            itemCount[1] += count;
                             break;
                         case "M":
-                            ItemCount[2] += count;
+                            itemCount[2] += count;
                             break;
                     }
 
-                    TimeCount += int.Parse(Time[i - 1]);
+                    timeCount += int.Parse(time[i - 1]);
                 }
 
-                Result_BasicChip.Text = $"{ItemCount[0]} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultBasicSkillChipResultText)}";
-                Result_AdvanceChip.Text = $"{ItemCount[1]} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultAdvanceSkillChipResultText)}";
-                Result_MasterChip.Text = $"{ItemCount[2]} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultMasterSkillChipResultText)}";
-                Result_Time.Text = $"{TimeCount} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultTimeResultText)}";
+                Result_BasicChip.Text = $"{itemCount[0]} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultBasicSkillChipResultText)}";
+                Result_AdvanceChip.Text = $"{itemCount[1]} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultAdvanceSkillChipResultText)}";
+                Result_MasterChip.Text = $"{itemCount[2]} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultMasterSkillChipResultText)}";
+                Result_Time.Text = $"{timeCount} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultTimeResultText)}";
             }
             catch (Exception ex)
             {

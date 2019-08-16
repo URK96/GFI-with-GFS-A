@@ -52,7 +52,8 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+            if (ETC.UseLightTheme)
+                SetTheme(Resource.Style.GFS_Light);
 
             // Create your application here
             SetContentView(Resource.Layout.ProductPercentTableLayout);
@@ -73,20 +74,20 @@ namespace GFI_with_GFS_A
             {
                 case "Doll":
                     ProductCategory = Category.Doll;
-                    TopURL = "https://ipick.baka.pw:444/stats/tdoll/id/";
+                    TopURL = "http://db.baka.pw:9999/stats/tdoll/id/";
                     break;
                 case "Equip":
                     ProductCategory = Category.Equip;
-                    TopURL = "https://ipick.baka.pw:444/stats/equip/id/";
+                    TopURL = "http://db.baka.pw:9999/stats/equip/id/";
                     break;
                 case "Fairy":
                     ProductCategory = Category.Fairy;
-                    TopURL = "https://ipick.baka.pw:444/stats/fairy/id/";
+                    TopURL = "http://db.baka.pw:9999/stats/fairy/id/";
                     Show_Mode = ShowMode.Advance;
                     ChangeShowMode.Text = Resources.GetString(Resource.String.Common_AdvanceProduct);
                     break;
             }
-
+            
             _ = ProcessData();
         }
 

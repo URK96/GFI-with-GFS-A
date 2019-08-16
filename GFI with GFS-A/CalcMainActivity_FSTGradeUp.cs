@@ -9,7 +9,9 @@ namespace GFI_with_GFS_A
     {
         private View v;
 
+        // FST Require Fragment by Grade
         private readonly int[] FragmentCount = { 0, 5, 15, 30, 50, 80 };
+        // FST Require Data Patch by Version
         private readonly int[] DataPatchCount = { 0, 5, 13, 23, 38, 58, 83, 113, 143, 173, 203 };
 
         private RatingBar NowGrade1;
@@ -23,6 +25,8 @@ namespace GFI_with_GFS_A
         {
             v = inflater.Inflate(Resource.Layout.Calc_FSTGradeUp, container, false);
 
+            // Find View & Connect Event
+
             NowGrade1 = v.FindViewById<RatingBar>(Resource.Id.Calc_FSTGradeUp_NowGradeControl1);
             NowGrade1.RatingBarChange += NormalGrade_RatingBarChange;
             NowGrade2 = v.FindViewById<RatingBar>(Resource.Id.Calc_FSTGradeUp_NowGradeControl2);
@@ -34,16 +38,20 @@ namespace GFI_with_GFS_A
             Result_Fragment = v.FindViewById<TextView>(Resource.Id.Calc_FSTGradeUp_ResultFragment);
             Result_DataPatch = v.FindViewById<TextView>(Resource.Id.Calc_FSTGradeUp_ResultDataPatch);
 
-            InitializeString();
             InitializeProcess();
 
             return v;
         }
 
-        private void InitializeString()
+        private void InitializeProcess()
         {
             Result_Fragment.Text = $"0 {Resources.GetString(Resource.String.Calc_FSTGradeUp_DefaultFragmentResultText)}";
             Result_DataPatch.Text = $"0 {Resources.GetString(Resource.String.Calc_FSTGradeUp_DefaultDataPatchText)}";
+
+            NowGrade1.Rating = 0;
+            NowGrade2.Rating = 0;
+            TargetGrade1.Rating = 0;
+            TargetGrade2.Rating = 0;
         }
 
         private void NormalGrade_RatingBarChange(object sender, RatingBar.RatingBarChangeEventArgs e)
@@ -68,14 +76,11 @@ namespace GFI_with_GFS_A
                 TargetGrade2.Rating = now;
         }
 
-        private void InitializeProcess()
-        {
-            NowGrade1.Rating = 0;
-            NowGrade2.Rating = 0;
-            TargetGrade1.Rating = 0;
-            TargetGrade2.Rating = 0;
-        }
-
+        /// <summary>
+        /// Calculate require fragment
+        /// </summary>
+        /// <param name="start">Set FST now grade</param>
+        /// <param name="target">Set FST target grade</param>
         private void CalcFragment(int start, int target)
         {
             try
@@ -91,6 +96,11 @@ namespace GFI_with_GFS_A
             }
         }
 
+        /// <summary>
+        /// Calculate require data patch
+        /// </summary>
+        /// <param name="start">Set FST now version</param>
+        /// <param name="target">Set FST target version</param>
         private void CalcDataPatch(int start, int target)
         {
             try
