@@ -58,6 +58,7 @@ namespace GFI_with_GFS_A
                     SupportActionBar.SetIcon(int.Parse(ETC.sharedPreferences.GetString("MainActionbarIcon", Resource.Drawable.AppIcon2.ToString())));*/
 
                 SupportActionBar.SetDisplayShowHomeEnabled(true);
+                SupportActionBar.SetIcon(Resource.Mipmap.ic_launcher);
 
 
                 // Set Program Exit Timer
