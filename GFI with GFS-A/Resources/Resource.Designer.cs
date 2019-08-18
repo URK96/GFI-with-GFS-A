@@ -6157,14 +6157,11 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7F080260
 			public const int Splash = 2131231328;
 			
-			// aapt resource value: 0x7F080264
-			public const int SplashBG2 = 2131231332;
-			
 			// aapt resource value: 0x7F080265
-			public const int SplashImage = 2131231333;
+			public const int SplashBG2 = 2131231333;
 			
 			// aapt resource value: 0x7F080266
-			public const int SplashImage_2019Swim = 2131231334;
+			public const int SplashImage = 2131231334;
 			
 			// aapt resource value: 0x7F080267
 			public const int SplashImage_vh = 2131231335;
@@ -6176,7 +6173,10 @@ namespace GFI_with_GFS_A
 			public const int Splash_DataLoad = 2131231330;
 			
 			// aapt resource value: 0x7F080263
-			public const int Splash_Special = 2131231331;
+			public const int Splash_ShatteredConnexion = 2131231331;
+			
+			// aapt resource value: 0x7F080264
+			public const int Splash_Special = 2131231332;
 			
 			// aapt resource value: 0x7F080268
 			public const int tooltip_frame_dark = 2131231336;

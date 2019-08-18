@@ -216,10 +216,15 @@ namespace GFI_with_GFS_A
 
             try
             {
-                if (!int.TryParse(NowExp.Text, out int nowExp))
+                if (!int.TryParse(NowExp.Text, out int nowExp) || 
+                    !int.TryParse(CommanderCostumeBonus.Text, out int commanderCostumeBonus))
+                {
+                    Result_Normal.Text = $"{Resources.GetString(Resource.String.Calc_AreaExp_DefaultNormalResultText)} => NaN";
+                    Result_Leader.Text = $"{Resources.GetString(Resource.String.Calc_AreaExp_DefaultLeaderResultText)} => NaN";
+                    Result_MVP.Text = $"{Resources.GetString(Resource.String.Calc_AreaExp_DefaultMVPResultText)} => NaN";
+                    Result_LeaderMVP.Text = $"{Resources.GetString(Resource.String.Calc_AreaExp_DefaultLeaderMVPResultText)} => NaN";
                     return;
-                if (!int.TryParse(CommanderCostumeBonus.Text, out int commanderCostumeBonus))
-                    return;
+                }
 
                 int costumeBonus = commanderCostumeBonus + 0;
 

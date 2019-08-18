@@ -647,9 +647,13 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.36 Update]\n\n
-- Fix exp item count calculation issue\n
-- Fix unexpected termination issue on Samsung devices\n
+    [2.3.37 Update]\n\n
+- Change App icon\n
+- Change Splash image\n
+- Fix Short Guide Book image index issue\n
+- Add option in Area Calc feature\n
+- Optimize Calc algorithm\n
+- Fix production percentage table feature issue\n
 - Add cartoon content
   </string>
 

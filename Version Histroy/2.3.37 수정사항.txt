@@ -1,5 +1,7 @@
 <2.3.37 수정사항>
 
+- 앱 아이콘 변경
+- 기동 이미지 변경
 - 가이드북 요약본에서 목록에 맞지 않는 이미지가 나오는 현상 수정
 - 경험치 계산기 내부 계산 알고리즘 변경 및 최적화
 - 경험치 계산기에 지휘관 복장에 따른 추가 경험치 설정 항목 추가
@@ -7,5 +9,10 @@
 - 모수 제조 확률표 서버 주소 변경 및 작동 문제 수정
 - 만화 컨텐츠 추가 (Geo의 소녀전선)
 
+- Change App icon
+- Change Splash image
 - Fix Short Guide Book image index issue
+- Add option in Area Calc feature
+- Optimize Calc algorithm
+- Fix production percentage table feature issue
 - Add cartoon content
