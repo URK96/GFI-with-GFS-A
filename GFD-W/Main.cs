@@ -38,10 +38,11 @@ namespace GFD_W
 
                 await LoadNotification();
 
-                CreateObject();
+                await CreateObject();
 
                 await InitializeTDollDic();
                 await InitializeEquipDic();
+                await InitializeFairyDic();
             }
             catch (Exception ex)
             {
@@ -63,12 +64,15 @@ namespace GFD_W
             }
         }
 
-        private void CreateObject()
+        private async Task CreateObject()
         {
+            await Task.Delay(10);
+
             try
             {
                 dollRootList.Clear();
                 equipRootList.Clear();
+                fairyRootList.Clear();
 
                 foreach (DataRow dr in ETC.dollList.Rows)
                     dollRootList.Add(new Doll(dr));
@@ -76,8 +80,12 @@ namespace GFD_W
                 foreach (DataRow dr in ETC.equipmentList.Rows)
                     equipRootList.Add(new Equip(dr));
 
+                foreach (DataRow dr in ETC.fairyList.Rows)
+                    fairyRootList.Add(new Fairy(dr));
+
                 dollRootList.TrimExcess();
                 equipRootList.TrimExcess();
+                fairyRootList.TrimExcess();
             }
             catch (Exception ex)
             {
@@ -204,6 +212,5 @@ namespace GFD_W
                     GFDStatusLabel.Visible = false;
                 }*/
         }
-
     }
 }

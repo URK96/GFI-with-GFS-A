@@ -235,6 +235,9 @@
     <Compile Include="DataModel.cs" />
     <Compile Include="DataModel_Doll_Partial.cs" />
     <Compile Include="DollAbilitySet.cs" />
+    <Compile Include="FairyDic.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EquipDic.cs">
       <SubType>Form</SubType>
     </Compile>

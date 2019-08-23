@@ -155,7 +155,27 @@
             this.EquipDic_EquipInfo_Name = new System.Windows.Forms.Label();
             this.EquipDic_EquipInfo_DicNumber = new System.Windows.Forms.Label();
             this.EquipDic_SplitContainer = new System.Windows.Forms.SplitContainer();
+            this.EquipDic_EquipInfo_AbilityGroup = new System.Windows.Forms.GroupBox();
+            this.EquipDic_EquipInfo_AbilityTableLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.EquipDic_EquipInfo_MaxMag4 = new System.Windows.Forms.Label();
+            this.EquipDic_EquipInfo_InitMag4 = new System.Windows.Forms.Label();
+            this.EquipDic_EquipInfo_Ability4 = new System.Windows.Forms.Label();
+            this.EquipDic_EquipInfo_MaxMag3 = new System.Windows.Forms.Label();
+            this.EquipDic_EquipInfo_InitMag3 = new System.Windows.Forms.Label();
+            this.EquipDic_EquipInfo_Ability3 = new System.Windows.Forms.Label();
+            this.EquipDic_EquipInfo_MaxMag2 = new System.Windows.Forms.Label();
+            this.EquipDic_EquipInfo_InitMag2 = new System.Windows.Forms.Label();
+            this.EquipDic_EquipInfo_Ability2 = new System.Windows.Forms.Label();
+            this.EquipDic_EquipInfo_MaxMag1 = new System.Windows.Forms.Label();
+            this.EquipDic_EquipInfo_InitMag1 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.EquipDic_EquipInfo_Ability1 = new System.Windows.Forms.Label();
             this.EquipDic_EquipInfo_BasicInfoGroup = new System.Windows.Forms.GroupBox();
+            this.EquipDic_EquipInfo_OnlyUseDollPanel = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.EquipDic_EquipInfo_OnlyUseDollName = new System.Windows.Forms.Label();
             this.EquipDic_EquipInfo_DollTypePanel = new System.Windows.Forms.Panel();
             this.EquipDic_EquipInfo_DollTypeSG = new System.Windows.Forms.PictureBox();
             this.EquipDic_EquipInfo_DollTypeMG = new System.Windows.Forms.PictureBox();
@@ -187,6 +207,45 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MainTabPage_Fairy = new System.Windows.Forms.TabPage();
+            this.FairyDic_SplitContainer = new System.Windows.Forms.SplitContainer();
+            this.FairyDic_FairyInfo_SkillButton = new System.Windows.Forms.Button();
+            this.FairyDic_FairyInfo_AbilityInfoGroup = new System.Windows.Forms.GroupBox();
+            this.FairyDic_FairyInfo_AbilityAMPanel = new System.Windows.Forms.Panel();
+            this.FairyDic_FairyInfo_AbilityAMMag = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.FairyDic_FairyInfo_AbilityCRPanel = new System.Windows.Forms.Panel();
+            this.FairyDic_FairyInfo_AbilityCRMag = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.FairyDic_FairyInfo_AbilityACPanel = new System.Windows.Forms.Panel();
+            this.FairyDic_FairyInfo_AbilityACMag = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.FairyDic_FairyInfo_AbilityEVPanel = new System.Windows.Forms.Panel();
+            this.FairyDic_FairyInfo_AbilityEVMag = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.FairyDic_FairyInfo_AbilityFRPanel = new System.Windows.Forms.Panel();
+            this.FairyDic_FairyInfo_AbilityFRMag = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.FairyDic_FairyInfo_BasicInfoGroup = new System.Windows.Forms.GroupBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.FairyDic_FairyInfo_ProductTimeLabel = new System.Windows.Forms.Label();
+            this.FairyDic_FairyInfo_FullImageView = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.FairyDic_FairyInfo_Type = new System.Windows.Forms.Label();
+            this.FairyDic_FairyInfo_Name = new System.Windows.Forms.Label();
+            this.FairyDic_FairyInfo_DicNumber = new System.Windows.Forms.Label();
+            this.FairyDic_FairyListGroup = new System.Windows.Forms.GroupBox();
+            this.FairyDic_FairyListView = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FairyDic_FairyFilterGroup = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.FairyDic_SearchTextBox = new System.Windows.Forms.TextBox();
+            this.FairyDic_FairyProductTimeButton = new System.Windows.Forms.Button();
+            this.FairyDic_FairyFilterGroup_TypeGroup = new System.Windows.Forms.GroupBox();
+            this.FairyDic_FairyFilter_TypeStrategy = new System.Windows.Forms.CheckBox();
+            this.FairyDic_FairyFilter_TypeCombat = new System.Windows.Forms.CheckBox();
             this.MainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusStrip_AppVerLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusStrip_DBVerLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -195,27 +254,8 @@
             this.UpdateCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.EquipDic_EquipInfo_GainTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.GFDStatusLabel = new System.Windows.Forms.Label();
-            this.EquipDic_EquipInfo_OnlyUseDollPanel = new System.Windows.Forms.Panel();
-            this.EquipDic_EquipInfo_OnlyUseDollName = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.EquipDic_EquipInfo_DollTypeToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.EquipDic_EquipInfo_AbilityGroup = new System.Windows.Forms.GroupBox();
-            this.EquipDic_EquipInfo_AbilityTableLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.EquipDic_EquipInfo_Ability1 = new System.Windows.Forms.Label();
-            this.EquipDic_EquipInfo_InitMag1 = new System.Windows.Forms.Label();
-            this.EquipDic_EquipInfo_MaxMag1 = new System.Windows.Forms.Label();
-            this.EquipDic_EquipInfo_Ability2 = new System.Windows.Forms.Label();
-            this.EquipDic_EquipInfo_InitMag2 = new System.Windows.Forms.Label();
-            this.EquipDic_EquipInfo_MaxMag2 = new System.Windows.Forms.Label();
-            this.EquipDic_EquipInfo_Ability3 = new System.Windows.Forms.Label();
-            this.EquipDic_EquipInfo_InitMag3 = new System.Windows.Forms.Label();
-            this.EquipDic_EquipInfo_MaxMag3 = new System.Windows.Forms.Label();
-            this.EquipDic_EquipInfo_Ability4 = new System.Windows.Forms.Label();
-            this.EquipDic_EquipInfo_InitMag4 = new System.Windows.Forms.Label();
-            this.EquipDic_EquipInfo_MaxMag4 = new System.Windows.Forms.Label();
+            this.FairyDic_FairyInfo_GainToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.MainMenuStrip.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.MainTabPage_Main.SuspendLayout();
@@ -260,7 +300,10 @@
             this.EquipDic_SplitContainer.Panel1.SuspendLayout();
             this.EquipDic_SplitContainer.Panel2.SuspendLayout();
             this.EquipDic_SplitContainer.SuspendLayout();
+            this.EquipDic_EquipInfo_AbilityGroup.SuspendLayout();
+            this.EquipDic_EquipInfo_AbilityTableLayout.SuspendLayout();
             this.EquipDic_EquipInfo_BasicInfoGroup.SuspendLayout();
+            this.EquipDic_EquipInfo_OnlyUseDollPanel.SuspendLayout();
             this.EquipDic_EquipInfo_DollTypePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EquipDic_EquipInfo_DollTypeSG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EquipDic_EquipInfo_DollTypeMG)).BeginInit();
@@ -274,10 +317,25 @@
             this.EquipDic_EquipFilterGroup_GradeGroup.SuspendLayout();
             this.EquipDic_EquipFilterGroup_CategoryGroup.SuspendLayout();
             this.EquipDic_EquipListGroup.SuspendLayout();
+            this.MainTabPage_Fairy.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FairyDic_SplitContainer)).BeginInit();
+            this.FairyDic_SplitContainer.Panel1.SuspendLayout();
+            this.FairyDic_SplitContainer.Panel2.SuspendLayout();
+            this.FairyDic_SplitContainer.SuspendLayout();
+            this.FairyDic_FairyInfo_AbilityInfoGroup.SuspendLayout();
+            this.FairyDic_FairyInfo_AbilityAMPanel.SuspendLayout();
+            this.FairyDic_FairyInfo_AbilityCRPanel.SuspendLayout();
+            this.FairyDic_FairyInfo_AbilityACPanel.SuspendLayout();
+            this.FairyDic_FairyInfo_AbilityEVPanel.SuspendLayout();
+            this.FairyDic_FairyInfo_AbilityFRPanel.SuspendLayout();
+            this.FairyDic_FairyInfo_BasicInfoGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FairyDic_FairyInfo_FullImageView)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.FairyDic_FairyListGroup.SuspendLayout();
+            this.FairyDic_FairyFilterGroup.SuspendLayout();
+            this.FairyDic_FairyFilterGroup_TypeGroup.SuspendLayout();
             this.MainStatusStrip.SuspendLayout();
-            this.EquipDic_EquipInfo_OnlyUseDollPanel.SuspendLayout();
-            this.EquipDic_EquipInfo_AbilityGroup.SuspendLayout();
-            this.EquipDic_EquipInfo_AbilityTableLayout.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMenuStrip
@@ -334,6 +392,7 @@
             this.MainTabControl.Controls.Add(this.MainTabPage_GFDv1);
             this.MainTabControl.Controls.Add(this.MainTabPage_TDoll);
             this.MainTabControl.Controls.Add(this.MainTabPage_Equipment);
+            this.MainTabControl.Controls.Add(this.MainTabPage_Fairy);
             this.MainTabControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.MainTabControl.Location = new System.Drawing.Point(0, 24);
             this.MainTabControl.Name = "MainTabControl";
@@ -1696,6 +1755,192 @@
             this.EquipDic_SplitContainer.SplitterDistance = 535;
             this.EquipDic_SplitContainer.TabIndex = 0;
             // 
+            // EquipDic_EquipInfo_AbilityGroup
+            // 
+            this.EquipDic_EquipInfo_AbilityGroup.Controls.Add(this.EquipDic_EquipInfo_AbilityTableLayout);
+            this.EquipDic_EquipInfo_AbilityGroup.Location = new System.Drawing.Point(211, 291);
+            this.EquipDic_EquipInfo_AbilityGroup.Name = "EquipDic_EquipInfo_AbilityGroup";
+            this.EquipDic_EquipInfo_AbilityGroup.Size = new System.Drawing.Size(321, 185);
+            this.EquipDic_EquipInfo_AbilityGroup.TabIndex = 4;
+            this.EquipDic_EquipInfo_AbilityGroup.TabStop = false;
+            this.EquipDic_EquipInfo_AbilityGroup.Text = "능력치";
+            // 
+            // EquipDic_EquipInfo_AbilityTableLayout
+            // 
+            this.EquipDic_EquipInfo_AbilityTableLayout.ColumnCount = 3;
+            this.EquipDic_EquipInfo_AbilityTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.EquipDic_EquipInfo_AbilityTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.EquipDic_EquipInfo_AbilityTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_MaxMag4, 2, 4);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_InitMag4, 1, 4);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_Ability4, 0, 4);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_MaxMag3, 2, 3);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_InitMag3, 1, 3);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_Ability3, 0, 3);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_MaxMag2, 2, 2);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_InitMag2, 1, 2);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_Ability2, 0, 2);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_MaxMag1, 2, 1);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_InitMag1, 1, 1);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.label17, 2, 0);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.label16, 1, 0);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.label13, 0, 0);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_Ability1, 0, 1);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Location = new System.Drawing.Point(12, 22);
+            this.EquipDic_EquipInfo_AbilityTableLayout.Name = "EquipDic_EquipInfo_AbilityTableLayout";
+            this.EquipDic_EquipInfo_AbilityTableLayout.RowCount = 5;
+            this.EquipDic_EquipInfo_AbilityTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.EquipDic_EquipInfo_AbilityTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.EquipDic_EquipInfo_AbilityTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.EquipDic_EquipInfo_AbilityTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.EquipDic_EquipInfo_AbilityTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.EquipDic_EquipInfo_AbilityTableLayout.Size = new System.Drawing.Size(303, 150);
+            this.EquipDic_EquipInfo_AbilityTableLayout.TabIndex = 0;
+            // 
+            // EquipDic_EquipInfo_MaxMag4
+            // 
+            this.EquipDic_EquipInfo_MaxMag4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EquipDic_EquipInfo_MaxMag4.Location = new System.Drawing.Point(204, 120);
+            this.EquipDic_EquipInfo_MaxMag4.Name = "EquipDic_EquipInfo_MaxMag4";
+            this.EquipDic_EquipInfo_MaxMag4.Size = new System.Drawing.Size(96, 30);
+            this.EquipDic_EquipInfo_MaxMag4.TabIndex = 14;
+            this.EquipDic_EquipInfo_MaxMag4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // EquipDic_EquipInfo_InitMag4
+            // 
+            this.EquipDic_EquipInfo_InitMag4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EquipDic_EquipInfo_InitMag4.Location = new System.Drawing.Point(103, 120);
+            this.EquipDic_EquipInfo_InitMag4.Name = "EquipDic_EquipInfo_InitMag4";
+            this.EquipDic_EquipInfo_InitMag4.Size = new System.Drawing.Size(95, 30);
+            this.EquipDic_EquipInfo_InitMag4.TabIndex = 13;
+            this.EquipDic_EquipInfo_InitMag4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // EquipDic_EquipInfo_Ability4
+            // 
+            this.EquipDic_EquipInfo_Ability4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EquipDic_EquipInfo_Ability4.Location = new System.Drawing.Point(3, 120);
+            this.EquipDic_EquipInfo_Ability4.Name = "EquipDic_EquipInfo_Ability4";
+            this.EquipDic_EquipInfo_Ability4.Size = new System.Drawing.Size(94, 30);
+            this.EquipDic_EquipInfo_Ability4.TabIndex = 12;
+            this.EquipDic_EquipInfo_Ability4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // EquipDic_EquipInfo_MaxMag3
+            // 
+            this.EquipDic_EquipInfo_MaxMag3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EquipDic_EquipInfo_MaxMag3.Location = new System.Drawing.Point(204, 90);
+            this.EquipDic_EquipInfo_MaxMag3.Name = "EquipDic_EquipInfo_MaxMag3";
+            this.EquipDic_EquipInfo_MaxMag3.Size = new System.Drawing.Size(96, 30);
+            this.EquipDic_EquipInfo_MaxMag3.TabIndex = 11;
+            this.EquipDic_EquipInfo_MaxMag3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // EquipDic_EquipInfo_InitMag3
+            // 
+            this.EquipDic_EquipInfo_InitMag3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EquipDic_EquipInfo_InitMag3.Location = new System.Drawing.Point(103, 90);
+            this.EquipDic_EquipInfo_InitMag3.Name = "EquipDic_EquipInfo_InitMag3";
+            this.EquipDic_EquipInfo_InitMag3.Size = new System.Drawing.Size(95, 30);
+            this.EquipDic_EquipInfo_InitMag3.TabIndex = 10;
+            this.EquipDic_EquipInfo_InitMag3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // EquipDic_EquipInfo_Ability3
+            // 
+            this.EquipDic_EquipInfo_Ability3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EquipDic_EquipInfo_Ability3.Location = new System.Drawing.Point(3, 90);
+            this.EquipDic_EquipInfo_Ability3.Name = "EquipDic_EquipInfo_Ability3";
+            this.EquipDic_EquipInfo_Ability3.Size = new System.Drawing.Size(94, 30);
+            this.EquipDic_EquipInfo_Ability3.TabIndex = 9;
+            this.EquipDic_EquipInfo_Ability3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // EquipDic_EquipInfo_MaxMag2
+            // 
+            this.EquipDic_EquipInfo_MaxMag2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EquipDic_EquipInfo_MaxMag2.Location = new System.Drawing.Point(204, 60);
+            this.EquipDic_EquipInfo_MaxMag2.Name = "EquipDic_EquipInfo_MaxMag2";
+            this.EquipDic_EquipInfo_MaxMag2.Size = new System.Drawing.Size(96, 30);
+            this.EquipDic_EquipInfo_MaxMag2.TabIndex = 8;
+            this.EquipDic_EquipInfo_MaxMag2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // EquipDic_EquipInfo_InitMag2
+            // 
+            this.EquipDic_EquipInfo_InitMag2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EquipDic_EquipInfo_InitMag2.Location = new System.Drawing.Point(103, 60);
+            this.EquipDic_EquipInfo_InitMag2.Name = "EquipDic_EquipInfo_InitMag2";
+            this.EquipDic_EquipInfo_InitMag2.Size = new System.Drawing.Size(95, 30);
+            this.EquipDic_EquipInfo_InitMag2.TabIndex = 7;
+            this.EquipDic_EquipInfo_InitMag2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // EquipDic_EquipInfo_Ability2
+            // 
+            this.EquipDic_EquipInfo_Ability2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EquipDic_EquipInfo_Ability2.Location = new System.Drawing.Point(3, 60);
+            this.EquipDic_EquipInfo_Ability2.Name = "EquipDic_EquipInfo_Ability2";
+            this.EquipDic_EquipInfo_Ability2.Size = new System.Drawing.Size(94, 30);
+            this.EquipDic_EquipInfo_Ability2.TabIndex = 6;
+            this.EquipDic_EquipInfo_Ability2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // EquipDic_EquipInfo_MaxMag1
+            // 
+            this.EquipDic_EquipInfo_MaxMag1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EquipDic_EquipInfo_MaxMag1.Location = new System.Drawing.Point(204, 30);
+            this.EquipDic_EquipInfo_MaxMag1.Name = "EquipDic_EquipInfo_MaxMag1";
+            this.EquipDic_EquipInfo_MaxMag1.Size = new System.Drawing.Size(96, 30);
+            this.EquipDic_EquipInfo_MaxMag1.TabIndex = 5;
+            this.EquipDic_EquipInfo_MaxMag1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // EquipDic_EquipInfo_InitMag1
+            // 
+            this.EquipDic_EquipInfo_InitMag1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EquipDic_EquipInfo_InitMag1.Location = new System.Drawing.Point(103, 30);
+            this.EquipDic_EquipInfo_InitMag1.Name = "EquipDic_EquipInfo_InitMag1";
+            this.EquipDic_EquipInfo_InitMag1.Size = new System.Drawing.Size(95, 30);
+            this.EquipDic_EquipInfo_InitMag1.TabIndex = 4;
+            this.EquipDic_EquipInfo_InitMag1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label17.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label17.Location = new System.Drawing.Point(204, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(96, 30);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "최대";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.PaleGreen;
+            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label16.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label16.Location = new System.Drawing.Point(103, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(95, 30);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "기본";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.Khaki;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label13.Location = new System.Drawing.Point(3, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(94, 30);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "능력";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // EquipDic_EquipInfo_Ability1
+            // 
+            this.EquipDic_EquipInfo_Ability1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EquipDic_EquipInfo_Ability1.Location = new System.Drawing.Point(3, 30);
+            this.EquipDic_EquipInfo_Ability1.Name = "EquipDic_EquipInfo_Ability1";
+            this.EquipDic_EquipInfo_Ability1.Size = new System.Drawing.Size(94, 30);
+            this.EquipDic_EquipInfo_Ability1.TabIndex = 3;
+            this.EquipDic_EquipInfo_Ability1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // EquipDic_EquipInfo_BasicInfoGroup
             // 
             this.EquipDic_EquipInfo_BasicInfoGroup.Controls.Add(this.EquipDic_EquipInfo_OnlyUseDollPanel);
@@ -1708,6 +1953,35 @@
             this.EquipDic_EquipInfo_BasicInfoGroup.TabIndex = 3;
             this.EquipDic_EquipInfo_BasicInfoGroup.TabStop = false;
             this.EquipDic_EquipInfo_BasicInfoGroup.Text = "기본 정보";
+            // 
+            // EquipDic_EquipInfo_OnlyUseDollPanel
+            // 
+            this.EquipDic_EquipInfo_OnlyUseDollPanel.Controls.Add(this.label15);
+            this.EquipDic_EquipInfo_OnlyUseDollPanel.Controls.Add(this.EquipDic_EquipInfo_OnlyUseDollName);
+            this.EquipDic_EquipInfo_OnlyUseDollPanel.Location = new System.Drawing.Point(6, 77);
+            this.EquipDic_EquipInfo_OnlyUseDollPanel.Name = "EquipDic_EquipInfo_OnlyUseDollPanel";
+            this.EquipDic_EquipInfo_OnlyUseDollPanel.Size = new System.Drawing.Size(310, 120);
+            this.EquipDic_EquipInfo_OnlyUseDollPanel.TabIndex = 10;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label15.Location = new System.Drawing.Point(123, 22);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(59, 24);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Only";
+            // 
+            // EquipDic_EquipInfo_OnlyUseDollName
+            // 
+            this.EquipDic_EquipInfo_OnlyUseDollName.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.EquipDic_EquipInfo_OnlyUseDollName.Location = new System.Drawing.Point(3, 67);
+            this.EquipDic_EquipInfo_OnlyUseDollName.Name = "EquipDic_EquipInfo_OnlyUseDollName";
+            this.EquipDic_EquipInfo_OnlyUseDollName.Size = new System.Drawing.Size(304, 32);
+            this.EquipDic_EquipInfo_OnlyUseDollName.TabIndex = 1;
+            this.EquipDic_EquipInfo_OnlyUseDollName.Text = "Doll";
+            this.EquipDic_EquipInfo_OnlyUseDollName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EquipDic_EquipInfo_DollTypePanel
             // 
@@ -2056,6 +2330,431 @@
             this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader2.Width = 50;
             // 
+            // MainTabPage_Fairy
+            // 
+            this.MainTabPage_Fairy.Controls.Add(this.FairyDic_SplitContainer);
+            this.MainTabPage_Fairy.Location = new System.Drawing.Point(4, 22);
+            this.MainTabPage_Fairy.Name = "MainTabPage_Fairy";
+            this.MainTabPage_Fairy.Padding = new System.Windows.Forms.Padding(3);
+            this.MainTabPage_Fairy.Size = new System.Drawing.Size(878, 727);
+            this.MainTabPage_Fairy.TabIndex = 4;
+            this.MainTabPage_Fairy.Text = "요정";
+            this.MainTabPage_Fairy.UseVisualStyleBackColor = true;
+            // 
+            // FairyDic_SplitContainer
+            // 
+            this.FairyDic_SplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FairyDic_SplitContainer.Location = new System.Drawing.Point(3, 3);
+            this.FairyDic_SplitContainer.Name = "FairyDic_SplitContainer";
+            // 
+            // FairyDic_SplitContainer.Panel1
+            // 
+            this.FairyDic_SplitContainer.Panel1.Controls.Add(this.FairyDic_FairyInfo_SkillButton);
+            this.FairyDic_SplitContainer.Panel1.Controls.Add(this.FairyDic_FairyInfo_AbilityInfoGroup);
+            this.FairyDic_SplitContainer.Panel1.Controls.Add(this.FairyDic_FairyInfo_BasicInfoGroup);
+            this.FairyDic_SplitContainer.Panel1.Controls.Add(this.FairyDic_FairyInfo_FullImageView);
+            this.FairyDic_SplitContainer.Panel1.Controls.Add(this.panel3);
+            // 
+            // FairyDic_SplitContainer.Panel2
+            // 
+            this.FairyDic_SplitContainer.Panel2.Controls.Add(this.FairyDic_FairyListGroup);
+            this.FairyDic_SplitContainer.Panel2.Controls.Add(this.FairyDic_FairyFilterGroup);
+            this.FairyDic_SplitContainer.Size = new System.Drawing.Size(872, 721);
+            this.FairyDic_SplitContainer.SplitterDistance = 535;
+            this.FairyDic_SplitContainer.TabIndex = 0;
+            // 
+            // FairyDic_FairyInfo_SkillButton
+            // 
+            this.FairyDic_FairyInfo_SkillButton.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.FairyDic_FairyInfo_SkillButton.Location = new System.Drawing.Point(297, 298);
+            this.FairyDic_FairyInfo_SkillButton.Name = "FairyDic_FairyInfo_SkillButton";
+            this.FairyDic_FairyInfo_SkillButton.Size = new System.Drawing.Size(99, 48);
+            this.FairyDic_FairyInfo_SkillButton.TabIndex = 15;
+            this.FairyDic_FairyInfo_SkillButton.Tag = "Normal";
+            this.FairyDic_FairyInfo_SkillButton.Text = "스킬";
+            this.FairyDic_FairyInfo_SkillButton.UseVisualStyleBackColor = true;
+            // 
+            // FairyDic_FairyInfo_AbilityInfoGroup
+            // 
+            this.FairyDic_FairyInfo_AbilityInfoGroup.Controls.Add(this.FairyDic_FairyInfo_AbilityAMPanel);
+            this.FairyDic_FairyInfo_AbilityInfoGroup.Controls.Add(this.FairyDic_FairyInfo_AbilityCRPanel);
+            this.FairyDic_FairyInfo_AbilityInfoGroup.Controls.Add(this.FairyDic_FairyInfo_AbilityACPanel);
+            this.FairyDic_FairyInfo_AbilityInfoGroup.Controls.Add(this.FairyDic_FairyInfo_AbilityEVPanel);
+            this.FairyDic_FairyInfo_AbilityInfoGroup.Controls.Add(this.FairyDic_FairyInfo_AbilityFRPanel);
+            this.FairyDic_FairyInfo_AbilityInfoGroup.Location = new System.Drawing.Point(5, 291);
+            this.FairyDic_FairyInfo_AbilityInfoGroup.Name = "FairyDic_FairyInfo_AbilityInfoGroup";
+            this.FairyDic_FairyInfo_AbilityInfoGroup.Size = new System.Drawing.Size(286, 195);
+            this.FairyDic_FairyInfo_AbilityInfoGroup.TabIndex = 6;
+            this.FairyDic_FairyInfo_AbilityInfoGroup.TabStop = false;
+            this.FairyDic_FairyInfo_AbilityInfoGroup.Text = "능력치";
+            // 
+            // FairyDic_FairyInfo_AbilityAMPanel
+            // 
+            this.FairyDic_FairyInfo_AbilityAMPanel.Controls.Add(this.FairyDic_FairyInfo_AbilityAMMag);
+            this.FairyDic_FairyInfo_AbilityAMPanel.Controls.Add(this.label24);
+            this.FairyDic_FairyInfo_AbilityAMPanel.Location = new System.Drawing.Point(9, 100);
+            this.FairyDic_FairyInfo_AbilityAMPanel.Name = "FairyDic_FairyInfo_AbilityAMPanel";
+            this.FairyDic_FairyInfo_AbilityAMPanel.Size = new System.Drawing.Size(82, 53);
+            this.FairyDic_FairyInfo_AbilityAMPanel.TabIndex = 7;
+            // 
+            // FairyDic_FairyInfo_AbilityAMMag
+            // 
+            this.FairyDic_FairyInfo_AbilityAMMag.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FairyDic_FairyInfo_AbilityAMMag.Location = new System.Drawing.Point(0, 29);
+            this.FairyDic_FairyInfo_AbilityAMMag.Name = "FairyDic_FairyInfo_AbilityAMMag";
+            this.FairyDic_FairyInfo_AbilityAMMag.Size = new System.Drawing.Size(82, 24);
+            this.FairyDic_FairyInfo_AbilityAMMag.TabIndex = 1;
+            this.FairyDic_FairyInfo_AbilityAMMag.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label24
+            // 
+            this.label24.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label24.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label24.Location = new System.Drawing.Point(0, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(82, 29);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "장갑";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FairyDic_FairyInfo_AbilityCRPanel
+            // 
+            this.FairyDic_FairyInfo_AbilityCRPanel.Controls.Add(this.FairyDic_FairyInfo_AbilityCRMag);
+            this.FairyDic_FairyInfo_AbilityCRPanel.Controls.Add(this.label26);
+            this.FairyDic_FairyInfo_AbilityCRPanel.Location = new System.Drawing.Point(94, 100);
+            this.FairyDic_FairyInfo_AbilityCRPanel.Name = "FairyDic_FairyInfo_AbilityCRPanel";
+            this.FairyDic_FairyInfo_AbilityCRPanel.Size = new System.Drawing.Size(82, 53);
+            this.FairyDic_FairyInfo_AbilityCRPanel.TabIndex = 5;
+            // 
+            // FairyDic_FairyInfo_AbilityCRMag
+            // 
+            this.FairyDic_FairyInfo_AbilityCRMag.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FairyDic_FairyInfo_AbilityCRMag.Location = new System.Drawing.Point(0, 29);
+            this.FairyDic_FairyInfo_AbilityCRMag.Name = "FairyDic_FairyInfo_AbilityCRMag";
+            this.FairyDic_FairyInfo_AbilityCRMag.Size = new System.Drawing.Size(82, 24);
+            this.FairyDic_FairyInfo_AbilityCRMag.TabIndex = 1;
+            this.FairyDic_FairyInfo_AbilityCRMag.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label26
+            // 
+            this.label26.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label26.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label26.Location = new System.Drawing.Point(0, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(82, 29);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "치명타";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FairyDic_FairyInfo_AbilityACPanel
+            // 
+            this.FairyDic_FairyInfo_AbilityACPanel.Controls.Add(this.FairyDic_FairyInfo_AbilityACMag);
+            this.FairyDic_FairyInfo_AbilityACPanel.Controls.Add(this.label28);
+            this.FairyDic_FairyInfo_AbilityACPanel.Location = new System.Drawing.Point(97, 41);
+            this.FairyDic_FairyInfo_AbilityACPanel.Name = "FairyDic_FairyInfo_AbilityACPanel";
+            this.FairyDic_FairyInfo_AbilityACPanel.Size = new System.Drawing.Size(82, 53);
+            this.FairyDic_FairyInfo_AbilityACPanel.TabIndex = 6;
+            // 
+            // FairyDic_FairyInfo_AbilityACMag
+            // 
+            this.FairyDic_FairyInfo_AbilityACMag.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FairyDic_FairyInfo_AbilityACMag.Location = new System.Drawing.Point(0, 29);
+            this.FairyDic_FairyInfo_AbilityACMag.Name = "FairyDic_FairyInfo_AbilityACMag";
+            this.FairyDic_FairyInfo_AbilityACMag.Size = new System.Drawing.Size(82, 24);
+            this.FairyDic_FairyInfo_AbilityACMag.TabIndex = 1;
+            this.FairyDic_FairyInfo_AbilityACMag.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            this.label28.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label28.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label28.Location = new System.Drawing.Point(0, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(82, 29);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "명중";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FairyDic_FairyInfo_AbilityEVPanel
+            // 
+            this.FairyDic_FairyInfo_AbilityEVPanel.Controls.Add(this.FairyDic_FairyInfo_AbilityEVMag);
+            this.FairyDic_FairyInfo_AbilityEVPanel.Controls.Add(this.label30);
+            this.FairyDic_FairyInfo_AbilityEVPanel.Location = new System.Drawing.Point(182, 41);
+            this.FairyDic_FairyInfo_AbilityEVPanel.Name = "FairyDic_FairyInfo_AbilityEVPanel";
+            this.FairyDic_FairyInfo_AbilityEVPanel.Size = new System.Drawing.Size(82, 53);
+            this.FairyDic_FairyInfo_AbilityEVPanel.TabIndex = 5;
+            // 
+            // FairyDic_FairyInfo_AbilityEVMag
+            // 
+            this.FairyDic_FairyInfo_AbilityEVMag.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FairyDic_FairyInfo_AbilityEVMag.Location = new System.Drawing.Point(0, 29);
+            this.FairyDic_FairyInfo_AbilityEVMag.Name = "FairyDic_FairyInfo_AbilityEVMag";
+            this.FairyDic_FairyInfo_AbilityEVMag.Size = new System.Drawing.Size(82, 24);
+            this.FairyDic_FairyInfo_AbilityEVMag.TabIndex = 1;
+            this.FairyDic_FairyInfo_AbilityEVMag.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            this.label30.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label30.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label30.Location = new System.Drawing.Point(0, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(82, 29);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "회피";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FairyDic_FairyInfo_AbilityFRPanel
+            // 
+            this.FairyDic_FairyInfo_AbilityFRPanel.Controls.Add(this.FairyDic_FairyInfo_AbilityFRMag);
+            this.FairyDic_FairyInfo_AbilityFRPanel.Controls.Add(this.label32);
+            this.FairyDic_FairyInfo_AbilityFRPanel.Location = new System.Drawing.Point(9, 41);
+            this.FairyDic_FairyInfo_AbilityFRPanel.Name = "FairyDic_FairyInfo_AbilityFRPanel";
+            this.FairyDic_FairyInfo_AbilityFRPanel.Size = new System.Drawing.Size(82, 53);
+            this.FairyDic_FairyInfo_AbilityFRPanel.TabIndex = 5;
+            // 
+            // FairyDic_FairyInfo_AbilityFRMag
+            // 
+            this.FairyDic_FairyInfo_AbilityFRMag.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FairyDic_FairyInfo_AbilityFRMag.Location = new System.Drawing.Point(0, 29);
+            this.FairyDic_FairyInfo_AbilityFRMag.Name = "FairyDic_FairyInfo_AbilityFRMag";
+            this.FairyDic_FairyInfo_AbilityFRMag.Size = new System.Drawing.Size(82, 24);
+            this.FairyDic_FairyInfo_AbilityFRMag.TabIndex = 1;
+            this.FairyDic_FairyInfo_AbilityFRMag.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label32
+            // 
+            this.label32.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label32.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label32.Location = new System.Drawing.Point(0, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(82, 29);
+            this.label32.TabIndex = 0;
+            this.label32.Text = "화력";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FairyDic_FairyInfo_BasicInfoGroup
+            // 
+            this.FairyDic_FairyInfo_BasicInfoGroup.Controls.Add(this.pictureBox10);
+            this.FairyDic_FairyInfo_BasicInfoGroup.Controls.Add(this.FairyDic_FairyInfo_ProductTimeLabel);
+            this.FairyDic_FairyInfo_BasicInfoGroup.Location = new System.Drawing.Point(211, 82);
+            this.FairyDic_FairyInfo_BasicInfoGroup.Name = "FairyDic_FairyInfo_BasicInfoGroup";
+            this.FairyDic_FairyInfo_BasicInfoGroup.Size = new System.Drawing.Size(321, 203);
+            this.FairyDic_FairyInfo_BasicInfoGroup.TabIndex = 5;
+            this.FairyDic_FairyInfo_BasicInfoGroup.TabStop = false;
+            this.FairyDic_FairyInfo_BasicInfoGroup.Text = "기본 정보";
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::GFD_W.Properties.Resources.LineUp_ProductTime_Icon;
+            this.pictureBox10.Location = new System.Drawing.Point(6, 18);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 1;
+            this.pictureBox10.TabStop = false;
+            // 
+            // FairyDic_FairyInfo_ProductTimeLabel
+            // 
+            this.FairyDic_FairyInfo_ProductTimeLabel.AutoSize = true;
+            this.FairyDic_FairyInfo_ProductTimeLabel.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.FairyDic_FairyInfo_ProductTimeLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.FairyDic_FairyInfo_ProductTimeLabel.Location = new System.Drawing.Point(52, 27);
+            this.FairyDic_FairyInfo_ProductTimeLabel.Name = "FairyDic_FairyInfo_ProductTimeLabel";
+            this.FairyDic_FairyInfo_ProductTimeLabel.Size = new System.Drawing.Size(0, 21);
+            this.FairyDic_FairyInfo_ProductTimeLabel.TabIndex = 0;
+            this.FairyDic_FairyInfo_ProductTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FairyDic_FairyInfo_FullImageView
+            // 
+            this.FairyDic_FairyInfo_FullImageView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FairyDic_FairyInfo_FullImageView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FairyDic_FairyInfo_FullImageView.Location = new System.Drawing.Point(5, 85);
+            this.FairyDic_FairyInfo_FullImageView.Name = "FairyDic_FairyInfo_FullImageView";
+            this.FairyDic_FairyInfo_FullImageView.Size = new System.Drawing.Size(200, 200);
+            this.FairyDic_FairyInfo_FullImageView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.FairyDic_FairyInfo_FullImageView.TabIndex = 4;
+            this.FairyDic_FairyInfo_FullImageView.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.FairyDic_FairyInfo_Type);
+            this.panel3.Controls.Add(this.FairyDic_FairyInfo_Name);
+            this.panel3.Controls.Add(this.FairyDic_FairyInfo_DicNumber);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(535, 79);
+            this.panel3.TabIndex = 3;
+            // 
+            // FairyDic_FairyInfo_Type
+            // 
+            this.FairyDic_FairyInfo_Type.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.FairyDic_FairyInfo_Type.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.FairyDic_FairyInfo_Type.Location = new System.Drawing.Point(0, 51);
+            this.FairyDic_FairyInfo_Type.Name = "FairyDic_FairyInfo_Type";
+            this.FairyDic_FairyInfo_Type.Size = new System.Drawing.Size(535, 28);
+            this.FairyDic_FairyInfo_Type.TabIndex = 2;
+            this.FairyDic_FairyInfo_Type.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // FairyDic_FairyInfo_Name
+            // 
+            this.FairyDic_FairyInfo_Name.Dock = System.Windows.Forms.DockStyle.Top;
+            this.FairyDic_FairyInfo_Name.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.FairyDic_FairyInfo_Name.Location = new System.Drawing.Point(0, 24);
+            this.FairyDic_FairyInfo_Name.Name = "FairyDic_FairyInfo_Name";
+            this.FairyDic_FairyInfo_Name.Size = new System.Drawing.Size(535, 27);
+            this.FairyDic_FairyInfo_Name.TabIndex = 1;
+            this.FairyDic_FairyInfo_Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FairyDic_FairyInfo_DicNumber
+            // 
+            this.FairyDic_FairyInfo_DicNumber.Dock = System.Windows.Forms.DockStyle.Top;
+            this.FairyDic_FairyInfo_DicNumber.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.FairyDic_FairyInfo_DicNumber.Location = new System.Drawing.Point(0, 0);
+            this.FairyDic_FairyInfo_DicNumber.Name = "FairyDic_FairyInfo_DicNumber";
+            this.FairyDic_FairyInfo_DicNumber.Size = new System.Drawing.Size(535, 24);
+            this.FairyDic_FairyInfo_DicNumber.TabIndex = 0;
+            this.FairyDic_FairyInfo_DicNumber.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // FairyDic_FairyListGroup
+            // 
+            this.FairyDic_FairyListGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FairyDic_FairyListGroup.Controls.Add(this.FairyDic_FairyListView);
+            this.FairyDic_FairyListGroup.Location = new System.Drawing.Point(6, 455);
+            this.FairyDic_FairyListGroup.Name = "FairyDic_FairyListGroup";
+            this.FairyDic_FairyListGroup.Size = new System.Drawing.Size(327, 266);
+            this.FairyDic_FairyListGroup.TabIndex = 4;
+            this.FairyDic_FairyListGroup.TabStop = false;
+            this.FairyDic_FairyListGroup.Text = "요정 목록";
+            // 
+            // FairyDic_FairyListView
+            // 
+            this.FairyDic_FairyListView.AllowColumnReorder = true;
+            this.FairyDic_FairyListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader10,
+            this.columnHeader8});
+            this.FairyDic_FairyListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FairyDic_FairyListView.FullRowSelect = true;
+            this.FairyDic_FairyListView.GridLines = true;
+            this.FairyDic_FairyListView.HideSelection = false;
+            this.FairyDic_FairyListView.Location = new System.Drawing.Point(3, 17);
+            this.FairyDic_FairyListView.MultiSelect = false;
+            this.FairyDic_FairyListView.Name = "FairyDic_FairyListView";
+            this.FairyDic_FairyListView.Size = new System.Drawing.Size(321, 246);
+            this.FairyDic_FairyListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.FairyDic_FairyListView.TabIndex = 0;
+            this.FairyDic_FairyListView.UseCompatibleStateImageBehavior = false;
+            this.FairyDic_FairyListView.View = System.Windows.Forms.View.Details;
+            this.FairyDic_FairyListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.FairyDic_FairyListView_ColumnClick);
+            this.FairyDic_FairyListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.FairyDic_FairyListView_ItemSelectionChanged);
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Tag = "Numeric";
+            this.columnHeader6.Text = "No.";
+            this.columnHeader6.Width = 40;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "타입";
+            this.columnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader10.Width = 73;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "이름";
+            this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader8.Width = 175;
+            // 
+            // FairyDic_FairyFilterGroup
+            // 
+            this.FairyDic_FairyFilterGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FairyDic_FairyFilterGroup.Controls.Add(this.label18);
+            this.FairyDic_FairyFilterGroup.Controls.Add(this.FairyDic_SearchTextBox);
+            this.FairyDic_FairyFilterGroup.Controls.Add(this.FairyDic_FairyProductTimeButton);
+            this.FairyDic_FairyFilterGroup.Controls.Add(this.FairyDic_FairyFilterGroup_TypeGroup);
+            this.FairyDic_FairyFilterGroup.Location = new System.Drawing.Point(6, 4);
+            this.FairyDic_FairyFilterGroup.Name = "FairyDic_FairyFilterGroup";
+            this.FairyDic_FairyFilterGroup.Size = new System.Drawing.Size(324, 445);
+            this.FairyDic_FairyFilterGroup.TabIndex = 3;
+            this.FairyDic_FairyFilterGroup.TabStop = false;
+            this.FairyDic_FairyFilterGroup.Text = "필터";
+            // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label18.Location = new System.Drawing.Point(14, 420);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(50, 13);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "검색 : ";
+            // 
+            // FairyDic_SearchTextBox
+            // 
+            this.FairyDic_SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.FairyDic_SearchTextBox.Location = new System.Drawing.Point(66, 416);
+            this.FairyDic_SearchTextBox.Name = "FairyDic_SearchTextBox";
+            this.FairyDic_SearchTextBox.Size = new System.Drawing.Size(244, 21);
+            this.FairyDic_SearchTextBox.TabIndex = 11;
+            this.FairyDic_SearchTextBox.WordWrap = false;
+            this.FairyDic_SearchTextBox.TextChanged += new System.EventHandler(this.FairyDic_SearchTextBox_TextChanged);
+            // 
+            // FairyDic_FairyProductTimeButton
+            // 
+            this.FairyDic_FairyProductTimeButton.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.FairyDic_FairyProductTimeButton.Image = global::GFD_W.Properties.Resources.LineUp_ProductTime_Icon;
+            this.FairyDic_FairyProductTimeButton.Location = new System.Drawing.Point(186, 20);
+            this.FairyDic_FairyProductTimeButton.Name = "FairyDic_FairyProductTimeButton";
+            this.FairyDic_FairyProductTimeButton.Size = new System.Drawing.Size(132, 143);
+            this.FairyDic_FairyProductTimeButton.TabIndex = 10;
+            this.FairyDic_FairyProductTimeButton.Text = "제조 시간표";
+            this.FairyDic_FairyProductTimeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.FairyDic_FairyProductTimeButton.UseVisualStyleBackColor = true;
+            this.FairyDic_FairyProductTimeButton.Click += new System.EventHandler(this.FairyDic_FairyProductTimeButton_Click);
+            // 
+            // FairyDic_FairyFilterGroup_TypeGroup
+            // 
+            this.FairyDic_FairyFilterGroup_TypeGroup.Controls.Add(this.FairyDic_FairyFilter_TypeStrategy);
+            this.FairyDic_FairyFilterGroup_TypeGroup.Controls.Add(this.FairyDic_FairyFilter_TypeCombat);
+            this.FairyDic_FairyFilterGroup_TypeGroup.Location = new System.Drawing.Point(6, 20);
+            this.FairyDic_FairyFilterGroup_TypeGroup.Name = "FairyDic_FairyFilterGroup_TypeGroup";
+            this.FairyDic_FairyFilterGroup_TypeGroup.Size = new System.Drawing.Size(174, 40);
+            this.FairyDic_FairyFilterGroup_TypeGroup.TabIndex = 8;
+            this.FairyDic_FairyFilterGroup_TypeGroup.TabStop = false;
+            this.FairyDic_FairyFilterGroup_TypeGroup.Text = "분류";
+            // 
+            // FairyDic_FairyFilter_TypeStrategy
+            // 
+            this.FairyDic_FairyFilter_TypeStrategy.AutoSize = true;
+            this.FairyDic_FairyFilter_TypeStrategy.Location = new System.Drawing.Point(87, 16);
+            this.FairyDic_FairyFilter_TypeStrategy.Name = "FairyDic_FairyFilter_TypeStrategy";
+            this.FairyDic_FairyFilter_TypeStrategy.Size = new System.Drawing.Size(48, 16);
+            this.FairyDic_FairyFilter_TypeStrategy.TabIndex = 3;
+            this.FairyDic_FairyFilter_TypeStrategy.Tag = "Strategy";
+            this.FairyDic_FairyFilter_TypeStrategy.Text = "책략";
+            this.FairyDic_FairyFilter_TypeStrategy.UseVisualStyleBackColor = true;
+            this.FairyDic_FairyFilter_TypeStrategy.CheckedChanged += new System.EventHandler(this.FairyDic_FairyFilter_CheckedChanged);
+            // 
+            // FairyDic_FairyFilter_TypeCombat
+            // 
+            this.FairyDic_FairyFilter_TypeCombat.AutoSize = true;
+            this.FairyDic_FairyFilter_TypeCombat.Location = new System.Drawing.Point(30, 16);
+            this.FairyDic_FairyFilter_TypeCombat.Name = "FairyDic_FairyFilter_TypeCombat";
+            this.FairyDic_FairyFilter_TypeCombat.Size = new System.Drawing.Size(48, 16);
+            this.FairyDic_FairyFilter_TypeCombat.TabIndex = 1;
+            this.FairyDic_FairyFilter_TypeCombat.Tag = "Combat";
+            this.FairyDic_FairyFilter_TypeCombat.Text = "전투";
+            this.FairyDic_FairyFilter_TypeCombat.UseVisualStyleBackColor = true;
+            this.FairyDic_FairyFilter_TypeCombat.CheckedChanged += new System.EventHandler(this.FairyDic_FairyFilter_CheckedChanged);
+            // 
             // MainStatusStrip
             // 
             this.MainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2142,35 +2841,6 @@
             this.GFDStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.GFDStatusLabel.Visible = false;
             // 
-            // EquipDic_EquipInfo_OnlyUseDollPanel
-            // 
-            this.EquipDic_EquipInfo_OnlyUseDollPanel.Controls.Add(this.label15);
-            this.EquipDic_EquipInfo_OnlyUseDollPanel.Controls.Add(this.EquipDic_EquipInfo_OnlyUseDollName);
-            this.EquipDic_EquipInfo_OnlyUseDollPanel.Location = new System.Drawing.Point(6, 77);
-            this.EquipDic_EquipInfo_OnlyUseDollPanel.Name = "EquipDic_EquipInfo_OnlyUseDollPanel";
-            this.EquipDic_EquipInfo_OnlyUseDollPanel.Size = new System.Drawing.Size(310, 120);
-            this.EquipDic_EquipInfo_OnlyUseDollPanel.TabIndex = 10;
-            // 
-            // EquipDic_EquipInfo_OnlyUseDollName
-            // 
-            this.EquipDic_EquipInfo_OnlyUseDollName.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.EquipDic_EquipInfo_OnlyUseDollName.Location = new System.Drawing.Point(3, 67);
-            this.EquipDic_EquipInfo_OnlyUseDollName.Name = "EquipDic_EquipInfo_OnlyUseDollName";
-            this.EquipDic_EquipInfo_OnlyUseDollName.Size = new System.Drawing.Size(304, 32);
-            this.EquipDic_EquipInfo_OnlyUseDollName.TabIndex = 1;
-            this.EquipDic_EquipInfo_OnlyUseDollName.Text = "Doll";
-            this.EquipDic_EquipInfo_OnlyUseDollName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.Location = new System.Drawing.Point(123, 22);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(59, 24);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "Only";
-            // 
             // EquipDic_EquipInfo_DollTypeToolTip
             // 
             this.EquipDic_EquipInfo_DollTypeToolTip.AutomaticDelay = 100;
@@ -2178,191 +2848,13 @@
             this.EquipDic_EquipInfo_DollTypeToolTip.InitialDelay = 100;
             this.EquipDic_EquipInfo_DollTypeToolTip.ReshowDelay = 20;
             // 
-            // EquipDic_EquipInfo_AbilityGroup
+            // FairyDic_FairyInfo_GainToolTip
             // 
-            this.EquipDic_EquipInfo_AbilityGroup.Controls.Add(this.EquipDic_EquipInfo_AbilityTableLayout);
-            this.EquipDic_EquipInfo_AbilityGroup.Location = new System.Drawing.Point(211, 291);
-            this.EquipDic_EquipInfo_AbilityGroup.Name = "EquipDic_EquipInfo_AbilityGroup";
-            this.EquipDic_EquipInfo_AbilityGroup.Size = new System.Drawing.Size(321, 185);
-            this.EquipDic_EquipInfo_AbilityGroup.TabIndex = 4;
-            this.EquipDic_EquipInfo_AbilityGroup.TabStop = false;
-            this.EquipDic_EquipInfo_AbilityGroup.Text = "능력치";
-            // 
-            // EquipDic_EquipInfo_AbilityTableLayout
-            // 
-            this.EquipDic_EquipInfo_AbilityTableLayout.ColumnCount = 3;
-            this.EquipDic_EquipInfo_AbilityTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.EquipDic_EquipInfo_AbilityTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.EquipDic_EquipInfo_AbilityTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_MaxMag4, 2, 4);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_InitMag4, 1, 4);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_Ability4, 0, 4);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_MaxMag3, 2, 3);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_InitMag3, 1, 3);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_Ability3, 0, 3);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_MaxMag2, 2, 2);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_InitMag2, 1, 2);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_Ability2, 0, 2);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_MaxMag1, 2, 1);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_InitMag1, 1, 1);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.label17, 2, 0);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.label16, 1, 0);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.label13, 0, 0);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Controls.Add(this.EquipDic_EquipInfo_Ability1, 0, 1);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Location = new System.Drawing.Point(12, 22);
-            this.EquipDic_EquipInfo_AbilityTableLayout.Name = "EquipDic_EquipInfo_AbilityTableLayout";
-            this.EquipDic_EquipInfo_AbilityTableLayout.RowCount = 5;
-            this.EquipDic_EquipInfo_AbilityTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.EquipDic_EquipInfo_AbilityTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.EquipDic_EquipInfo_AbilityTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.EquipDic_EquipInfo_AbilityTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.EquipDic_EquipInfo_AbilityTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.EquipDic_EquipInfo_AbilityTableLayout.Size = new System.Drawing.Size(303, 150);
-            this.EquipDic_EquipInfo_AbilityTableLayout.TabIndex = 0;
-            // 
-            // label13
-            // 
-            this.label13.BackColor = System.Drawing.Color.Khaki;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label13.Location = new System.Drawing.Point(3, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(94, 30);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "능력";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label16
-            // 
-            this.label16.BackColor = System.Drawing.Color.PaleGreen;
-            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label16.Location = new System.Drawing.Point(103, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(95, 30);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "기본";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label17
-            // 
-            this.label17.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label17.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label17.Location = new System.Drawing.Point(204, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(96, 30);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "최대";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // EquipDic_EquipInfo_Ability1
-            // 
-            this.EquipDic_EquipInfo_Ability1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EquipDic_EquipInfo_Ability1.Location = new System.Drawing.Point(3, 30);
-            this.EquipDic_EquipInfo_Ability1.Name = "EquipDic_EquipInfo_Ability1";
-            this.EquipDic_EquipInfo_Ability1.Size = new System.Drawing.Size(94, 30);
-            this.EquipDic_EquipInfo_Ability1.TabIndex = 3;
-            this.EquipDic_EquipInfo_Ability1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // EquipDic_EquipInfo_InitMag1
-            // 
-            this.EquipDic_EquipInfo_InitMag1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EquipDic_EquipInfo_InitMag1.Location = new System.Drawing.Point(103, 30);
-            this.EquipDic_EquipInfo_InitMag1.Name = "EquipDic_EquipInfo_InitMag1";
-            this.EquipDic_EquipInfo_InitMag1.Size = new System.Drawing.Size(95, 30);
-            this.EquipDic_EquipInfo_InitMag1.TabIndex = 4;
-            this.EquipDic_EquipInfo_InitMag1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // EquipDic_EquipInfo_MaxMag1
-            // 
-            this.EquipDic_EquipInfo_MaxMag1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EquipDic_EquipInfo_MaxMag1.Location = new System.Drawing.Point(204, 30);
-            this.EquipDic_EquipInfo_MaxMag1.Name = "EquipDic_EquipInfo_MaxMag1";
-            this.EquipDic_EquipInfo_MaxMag1.Size = new System.Drawing.Size(96, 30);
-            this.EquipDic_EquipInfo_MaxMag1.TabIndex = 5;
-            this.EquipDic_EquipInfo_MaxMag1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // EquipDic_EquipInfo_Ability2
-            // 
-            this.EquipDic_EquipInfo_Ability2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EquipDic_EquipInfo_Ability2.Location = new System.Drawing.Point(3, 60);
-            this.EquipDic_EquipInfo_Ability2.Name = "EquipDic_EquipInfo_Ability2";
-            this.EquipDic_EquipInfo_Ability2.Size = new System.Drawing.Size(94, 30);
-            this.EquipDic_EquipInfo_Ability2.TabIndex = 6;
-            this.EquipDic_EquipInfo_Ability2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // EquipDic_EquipInfo_InitMag2
-            // 
-            this.EquipDic_EquipInfo_InitMag2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EquipDic_EquipInfo_InitMag2.Location = new System.Drawing.Point(103, 60);
-            this.EquipDic_EquipInfo_InitMag2.Name = "EquipDic_EquipInfo_InitMag2";
-            this.EquipDic_EquipInfo_InitMag2.Size = new System.Drawing.Size(95, 30);
-            this.EquipDic_EquipInfo_InitMag2.TabIndex = 7;
-            this.EquipDic_EquipInfo_InitMag2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // EquipDic_EquipInfo_MaxMag2
-            // 
-            this.EquipDic_EquipInfo_MaxMag2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EquipDic_EquipInfo_MaxMag2.Location = new System.Drawing.Point(204, 60);
-            this.EquipDic_EquipInfo_MaxMag2.Name = "EquipDic_EquipInfo_MaxMag2";
-            this.EquipDic_EquipInfo_MaxMag2.Size = new System.Drawing.Size(96, 30);
-            this.EquipDic_EquipInfo_MaxMag2.TabIndex = 8;
-            this.EquipDic_EquipInfo_MaxMag2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // EquipDic_EquipInfo_Ability3
-            // 
-            this.EquipDic_EquipInfo_Ability3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EquipDic_EquipInfo_Ability3.Location = new System.Drawing.Point(3, 90);
-            this.EquipDic_EquipInfo_Ability3.Name = "EquipDic_EquipInfo_Ability3";
-            this.EquipDic_EquipInfo_Ability3.Size = new System.Drawing.Size(94, 30);
-            this.EquipDic_EquipInfo_Ability3.TabIndex = 9;
-            this.EquipDic_EquipInfo_Ability3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // EquipDic_EquipInfo_InitMag3
-            // 
-            this.EquipDic_EquipInfo_InitMag3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EquipDic_EquipInfo_InitMag3.Location = new System.Drawing.Point(103, 90);
-            this.EquipDic_EquipInfo_InitMag3.Name = "EquipDic_EquipInfo_InitMag3";
-            this.EquipDic_EquipInfo_InitMag3.Size = new System.Drawing.Size(95, 30);
-            this.EquipDic_EquipInfo_InitMag3.TabIndex = 10;
-            this.EquipDic_EquipInfo_InitMag3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // EquipDic_EquipInfo_MaxMag3
-            // 
-            this.EquipDic_EquipInfo_MaxMag3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EquipDic_EquipInfo_MaxMag3.Location = new System.Drawing.Point(204, 90);
-            this.EquipDic_EquipInfo_MaxMag3.Name = "EquipDic_EquipInfo_MaxMag3";
-            this.EquipDic_EquipInfo_MaxMag3.Size = new System.Drawing.Size(96, 30);
-            this.EquipDic_EquipInfo_MaxMag3.TabIndex = 11;
-            this.EquipDic_EquipInfo_MaxMag3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // EquipDic_EquipInfo_Ability4
-            // 
-            this.EquipDic_EquipInfo_Ability4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EquipDic_EquipInfo_Ability4.Location = new System.Drawing.Point(3, 120);
-            this.EquipDic_EquipInfo_Ability4.Name = "EquipDic_EquipInfo_Ability4";
-            this.EquipDic_EquipInfo_Ability4.Size = new System.Drawing.Size(94, 30);
-            this.EquipDic_EquipInfo_Ability4.TabIndex = 12;
-            this.EquipDic_EquipInfo_Ability4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // EquipDic_EquipInfo_InitMag4
-            // 
-            this.EquipDic_EquipInfo_InitMag4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EquipDic_EquipInfo_InitMag4.Location = new System.Drawing.Point(103, 120);
-            this.EquipDic_EquipInfo_InitMag4.Name = "EquipDic_EquipInfo_InitMag4";
-            this.EquipDic_EquipInfo_InitMag4.Size = new System.Drawing.Size(95, 30);
-            this.EquipDic_EquipInfo_InitMag4.TabIndex = 13;
-            this.EquipDic_EquipInfo_InitMag4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // EquipDic_EquipInfo_MaxMag4
-            // 
-            this.EquipDic_EquipInfo_MaxMag4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EquipDic_EquipInfo_MaxMag4.Location = new System.Drawing.Point(204, 120);
-            this.EquipDic_EquipInfo_MaxMag4.Name = "EquipDic_EquipInfo_MaxMag4";
-            this.EquipDic_EquipInfo_MaxMag4.Size = new System.Drawing.Size(96, 30);
-            this.EquipDic_EquipInfo_MaxMag4.TabIndex = 14;
-            this.EquipDic_EquipInfo_MaxMag4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FairyDic_FairyInfo_GainToolTip.AutomaticDelay = 100;
+            this.FairyDic_FairyInfo_GainToolTip.AutoPopDelay = 10000;
+            this.FairyDic_FairyInfo_GainToolTip.InitialDelay = 100;
+            this.FairyDic_FairyInfo_GainToolTip.IsBalloon = true;
+            this.FairyDic_FairyInfo_GainToolTip.ReshowDelay = 20;
             // 
             // Main
             // 
@@ -2431,8 +2923,12 @@
             this.EquipDic_SplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.EquipDic_SplitContainer)).EndInit();
             this.EquipDic_SplitContainer.ResumeLayout(false);
+            this.EquipDic_EquipInfo_AbilityGroup.ResumeLayout(false);
+            this.EquipDic_EquipInfo_AbilityTableLayout.ResumeLayout(false);
             this.EquipDic_EquipInfo_BasicInfoGroup.ResumeLayout(false);
             this.EquipDic_EquipInfo_BasicInfoGroup.PerformLayout();
+            this.EquipDic_EquipInfo_OnlyUseDollPanel.ResumeLayout(false);
+            this.EquipDic_EquipInfo_OnlyUseDollPanel.PerformLayout();
             this.EquipDic_EquipInfo_DollTypePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.EquipDic_EquipInfo_DollTypeSG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EquipDic_EquipInfo_DollTypeMG)).EndInit();
@@ -2449,12 +2945,29 @@
             this.EquipDic_EquipFilterGroup_CategoryGroup.ResumeLayout(false);
             this.EquipDic_EquipFilterGroup_CategoryGroup.PerformLayout();
             this.EquipDic_EquipListGroup.ResumeLayout(false);
+            this.MainTabPage_Fairy.ResumeLayout(false);
+            this.FairyDic_SplitContainer.Panel1.ResumeLayout(false);
+            this.FairyDic_SplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.FairyDic_SplitContainer)).EndInit();
+            this.FairyDic_SplitContainer.ResumeLayout(false);
+            this.FairyDic_FairyInfo_AbilityInfoGroup.ResumeLayout(false);
+            this.FairyDic_FairyInfo_AbilityAMPanel.ResumeLayout(false);
+            this.FairyDic_FairyInfo_AbilityCRPanel.ResumeLayout(false);
+            this.FairyDic_FairyInfo_AbilityACPanel.ResumeLayout(false);
+            this.FairyDic_FairyInfo_AbilityEVPanel.ResumeLayout(false);
+            this.FairyDic_FairyInfo_AbilityFRPanel.ResumeLayout(false);
+            this.FairyDic_FairyInfo_BasicInfoGroup.ResumeLayout(false);
+            this.FairyDic_FairyInfo_BasicInfoGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FairyDic_FairyInfo_FullImageView)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.FairyDic_FairyListGroup.ResumeLayout(false);
+            this.FairyDic_FairyFilterGroup.ResumeLayout(false);
+            this.FairyDic_FairyFilterGroup.PerformLayout();
+            this.FairyDic_FairyFilterGroup_TypeGroup.ResumeLayout(false);
+            this.FairyDic_FairyFilterGroup_TypeGroup.PerformLayout();
             this.MainStatusStrip.ResumeLayout(false);
             this.MainStatusStrip.PerformLayout();
-            this.EquipDic_EquipInfo_OnlyUseDollPanel.ResumeLayout(false);
-            this.EquipDic_EquipInfo_OnlyUseDollPanel.PerformLayout();
-            this.EquipDic_EquipInfo_AbilityGroup.ResumeLayout(false);
-            this.EquipDic_EquipInfo_AbilityTableLayout.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2648,5 +3161,45 @@
         private System.Windows.Forms.Label EquipDic_EquipInfo_MaxMag1;
         private System.Windows.Forms.Label EquipDic_EquipInfo_InitMag1;
         private System.Windows.Forms.Label EquipDic_EquipInfo_Ability1;
+        private System.Windows.Forms.TabPage MainTabPage_Fairy;
+        private System.Windows.Forms.SplitContainer FairyDic_SplitContainer;
+        private System.Windows.Forms.GroupBox FairyDic_FairyListGroup;
+        private System.Windows.Forms.ListView FairyDic_FairyListView;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.GroupBox FairyDic_FairyFilterGroup;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox FairyDic_SearchTextBox;
+        private System.Windows.Forms.Button FairyDic_FairyProductTimeButton;
+        private System.Windows.Forms.GroupBox FairyDic_FairyFilterGroup_TypeGroup;
+        private System.Windows.Forms.CheckBox FairyDic_FairyFilter_TypeStrategy;
+        private System.Windows.Forms.CheckBox FairyDic_FairyFilter_TypeCombat;
+        private System.Windows.Forms.PictureBox FairyDic_FairyInfo_FullImageView;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label FairyDic_FairyInfo_Type;
+        private System.Windows.Forms.Label FairyDic_FairyInfo_Name;
+        private System.Windows.Forms.Label FairyDic_FairyInfo_DicNumber;
+        private System.Windows.Forms.GroupBox FairyDic_FairyInfo_BasicInfoGroup;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label FairyDic_FairyInfo_ProductTimeLabel;
+        private System.Windows.Forms.GroupBox FairyDic_FairyInfo_AbilityInfoGroup;
+        private System.Windows.Forms.Panel FairyDic_FairyInfo_AbilityAMPanel;
+        private System.Windows.Forms.Label FairyDic_FairyInfo_AbilityAMMag;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Panel FairyDic_FairyInfo_AbilityCRPanel;
+        private System.Windows.Forms.Label FairyDic_FairyInfo_AbilityCRMag;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Panel FairyDic_FairyInfo_AbilityACPanel;
+        private System.Windows.Forms.Label FairyDic_FairyInfo_AbilityACMag;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Panel FairyDic_FairyInfo_AbilityEVPanel;
+        private System.Windows.Forms.Label FairyDic_FairyInfo_AbilityEVMag;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Panel FairyDic_FairyInfo_AbilityFRPanel;
+        private System.Windows.Forms.Label FairyDic_FairyInfo_AbilityFRMag;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button FairyDic_FairyInfo_SkillButton;
+        private System.Windows.Forms.ToolTip FairyDic_FairyInfo_GainToolTip;
     }
 }

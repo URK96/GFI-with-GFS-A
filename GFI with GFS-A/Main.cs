@@ -84,7 +84,6 @@ namespace GFI_with_GFS_A
             {
                 base.OnResume();
 
-
                 // Refresh Notification Data
 
                 _ = CheckNetworkData();

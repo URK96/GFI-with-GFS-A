@@ -168,7 +168,7 @@ namespace GFD_W
                     LoadEquipOnlyUseDoll();
                 }
 
-                LoadAbilityInfo();
+                LoadAbilityEquip();
 
                 EquipDic_EquipInfo_GainTooltip.SetToolTip(EquipDic_EquipInfo_FullImageView, equip.ProductDialog);
             }
@@ -294,7 +294,7 @@ namespace GFD_W
             EquipDic_EquipInfo_OnlyUseDollName.Text = sb.ToString();
         }
 
-        private void LoadAbilityInfo()
+        private void LoadAbilityEquip()
         {
             Label[] abilityControls =
             {
@@ -406,7 +406,7 @@ namespace GFD_W
             catch (Exception ex)
             {
                 ETC.LogError(ex);
-                ETC.ShowErrorMessage("인형 불러오기 오류", "인형 정보를 불러오는 동안 오류가 발생했습니다.");
+                ETC.ShowErrorMessage("장비 불러오기 오류", "장비 정보를 불러오는 동안 오류가 발생했습니다.");
             }
         }
 

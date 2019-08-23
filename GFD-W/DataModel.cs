@@ -193,7 +193,7 @@ namespace GFD_W
             Icon = (string)dr["Icon"];
             Note = ETC.IsDBNullOrBlank(dr, "Note") ? "" : (string)dr["Note"];
             Type = (string)dr["Type"];
-            ProductDialog = (string)dr["ProductDialog"];
+            ProductDialog = ETC.IsDBNullOrBlank(dr, "ProductDialog") ? "" : (string)dr["ProductDialog"];
 
             ImagePath = Path.Combine(ETC.cachePath, "Equip", "Normal", string.Format("{0}.gfdcache", Icon));
 
@@ -220,6 +220,7 @@ namespace GFD_W
         public string Type { get; private set; }
         public int ProductTime { get; private set; }
         public string Note { get; private set; }
+        public string ProductDialog { get; private set; }
         public string SkillName { get; private set; }
         public string SkillExplain { get; private set; }
         public string[] SkillEffect { get; private set; }
@@ -239,6 +240,7 @@ namespace GFD_W
             Type = (string)dr["Type"];
             ProductTime = (int)dr["ProductTime"];
             Note = ETC.IsDBNullOrBlank(dr, "Note") ? "" : (string)dr["Note"];
+            ProductDialog = ETC.IsDBNullOrBlank(dr, "ProductDialog") ? "" : (string)dr["ProductDialog"];
 
             SkillName = (string)dr["SkillName"];
             SkillExplain = (string)dr["SkillExplain"];
