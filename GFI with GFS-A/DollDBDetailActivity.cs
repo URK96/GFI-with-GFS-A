@@ -94,7 +94,7 @@ namespace GFI_with_GFS_A
 
                 FindViewById<Button>(Resource.Id.DollDBExtraFeatureButton).Click += ExtraMenuButton_Click;
                 
-                if (doll.HasMod == true)
+                if (doll.HasMod)
                 {
                     foreach (int id in ModButtonIds)
                     {
@@ -112,7 +112,7 @@ namespace GFI_with_GFS_A
                 FindViewById<ImageView>(Resource.Id.DollDBDetailSmallImage).Click += DollDBDetailSmallImage_Click;
 
                 
-                if (doll.HasVoice == true)
+                if (doll.HasVoice)
                 {
                     VoiceCostumeSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailVoiceCostumeSelector);
                     VoiceCostumeSelector.ItemSelected += VoiceCostumeSelector_ItemSelected;
@@ -193,7 +193,8 @@ namespace GFI_with_GFS_A
 
                 _ = InitLoadProcess(false);
 
-                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DollDBDetail", true) == true)) ETC.RunHelpActivity(this, "DollDBDetail");
+                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DollDBDetail", true)))
+                    ETC.RunHelpActivity(this, "DollDBDetail");
             }
             catch (Exception ex)
             {
@@ -609,7 +610,6 @@ namespace GFI_with_GFS_A
                         VoiceList.AddRange(doll.CostumeVoices[V_Costume_Index - 1, 1].Split(';'));
                         break;
                 }
-                //VoiceList.AddRange(V_Costume_List[e.Position].Split(':')[1].Split(';'));
                 VoiceList.TrimExcess();
 
                 var adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, VoiceList);
@@ -807,21 +807,35 @@ namespace GFI_with_GFS_A
 
                 // 인형 기본 정보 초기화
 
-                int[] GradeStarIds = { Resource.Id.DollDBDetailInfoGrade1, Resource.Id.DollDBDetailInfoGrade2, Resource.Id.DollDBDetailInfoGrade3, Resource.Id.DollDBDetailInfoGrade4, Resource.Id.DollDBDetailInfoGrade5 };
+                int[] GradeStarIds = 
+                {
+                    Resource.Id.DollDBDetailInfoGrade1,
+                    Resource.Id.DollDBDetailInfoGrade2,
+                    Resource.Id.DollDBDetailInfoGrade3,
+                    Resource.Id.DollDBDetailInfoGrade4,
+                    Resource.Id.DollDBDetailInfoGrade5,
+                    Resource.Id.DollDBDetailInfoGrade6
+                };
 
                 int Grade = 0;
 
-                if (ModIndex > 0) Grade = doll.ModGrade;
-                else Grade = doll.Grade;
+                if (ModIndex > 0)
+                    Grade = doll.ModGrade;
+                else
+                    Grade = doll.Grade;
 
                 if (Grade == 0)
                 {
-                    for (int i = 1; i < GradeStarIds.Length; ++i) FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
+                    for (int i = 1; i < GradeStarIds.Length; ++i)
+                        FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
+
                     FindViewById<ImageView>(GradeStarIds[0]).SetImageResource(Resource.Drawable.Grade_Star_EX);
                 }
                 else
                 {
-                    for (int i = Grade; i < GradeStarIds.Length; ++i) FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
+                    for (int i = Grade; i < GradeStarIds.Length; ++i)
+                        FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
+
                     for (int i = 0; i < Grade; ++i)
                     {
                         FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Visible;
@@ -878,13 +892,17 @@ namespace GFI_with_GFS_A
                 string[] Buff;
                 string[] BuffType;
 
-                if (ModIndex >= 1) Buff = doll.ModBuffInfo;
-                else Buff = doll.BuffInfo;
+                if (ModIndex >= 1)
+                    Buff = doll.ModBuffInfo;
+                else
+                    Buff = doll.BuffInfo;
 
                 BuffType = Buff[0].Split(',');
 
-                if (BuffType.Length == 1) FindViewById<LinearLayout>(Resource.Id.DollDBDetailBuffLayout2).Visibility = ViewStates.Gone;
-                else FindViewById<LinearLayout>(Resource.Id.DollDBDetailBuffLayout2).Visibility = ViewStates.Visible;
+                if (BuffType.Length == 1)
+                    FindViewById<LinearLayout>(Resource.Id.DollDBDetailBuffLayout2).Visibility = ViewStates.Gone;
+                else
+                    FindViewById<LinearLayout>(Resource.Id.DollDBDetailBuffLayout2).Visibility = ViewStates.Visible;
 
                 for (int i = 0; i < BuffType.Length; ++i)
                 {
@@ -1245,8 +1263,11 @@ namespace GFI_with_GFS_A
 
         private void ShowTitleSubLayout()
         {
-            if (doll.HasVoice == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailVoiceLayout).Visibility = ViewStates.Visible;
-            if (doll.HasMod == true) FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSelectLayout).Visibility = ViewStates.Visible;
+            if (doll.HasVoice)
+                FindViewById<LinearLayout>(Resource.Id.DollDBDetailVoiceLayout).Visibility = ViewStates.Visible;
+            if (doll.HasMod)
+                FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSelectLayout).Visibility = ViewStates.Visible;
+
             FindViewById<LinearLayout>(Resource.Id.DollDBDetailExtraButtonLayout).Visibility = ViewStates.Visible;
         }
 
@@ -1306,9 +1327,9 @@ namespace GFI_with_GFS_A
             FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout).Visibility = ViewStates.Visible;
             FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout).Visibility = ViewStates.Visible;
 
-            FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityChartCompareList).Visibility = ViewStates.Gone;
-            FindViewById<FrameLayout>(Resource.Id.DollDBDetailAbilityRadarChartLayout).Visibility = ViewStates.Gone;
-            FindViewById<TextView>(Resource.Id.DollDBDetailChartMessage).Visibility = ViewStates.Visible;
+            //FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityChartCompareList).Visibility = ViewStates.Gone;
+            //FindViewById<FrameLayout>(Resource.Id.DollDBDetailAbilityRadarChartLayout).Visibility = ViewStates.Gone;
+            //FindViewById<TextView>(Resource.Id.DollDBDetailChartMessage).Visibility = ViewStates.Visible;
         }
 
         private void DollDBDetailModSelectButton_Click(object sender, EventArgs e)

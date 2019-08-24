@@ -61,7 +61,8 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+                if (ETC.UseLightTheme)
+                    SetTheme(Resource.Style.GFS_Light);
 
                 // Create your application here
                 SetContentView(Resource.Layout.FairyDBListLayout);
@@ -85,7 +86,7 @@ namespace GFI_with_GFS_A
 
                 InitializeView();
 
-                if (ETC.UseLightTheme == true)
+                if (ETC.UseLightTheme)
                 {
                     FindViewById<LinearLayout>(Resource.Id.FairySearchLayout).SetBackgroundColor(Android.Graphics.Color.LightGray);
                     FindViewById<ImageButton>(Resource.Id.FairySearchResetButton).SetBackgroundResource(Resource.Drawable.SearchIcon_WhiteTheme);
@@ -96,7 +97,7 @@ namespace GFI_with_GFS_A
 
                 ListFairy(SearchText.Text, new int[] { Filter_ProductTime[0], Filter_ProductTime[1] });
 
-                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true) == true))
+                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true)))
                     ETC.RunHelpActivity(this, "DBList");
             }
             catch (Exception ex)
@@ -378,7 +379,7 @@ namespace GFI_with_GFS_A
                 FilterBox.SetView(v);
                 FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
                 FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(v); });
+                FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(); });
 
                 FilterBox.Show();
             }
@@ -393,8 +394,10 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                for (int i = 0; i < TypeFilters.Length; ++i) Filter_Type[i] = view.FindViewById<CheckBox>(TypeFilters[i]).Checked;
-                for (int i = 0; i < ProductTimeFilters.Length; ++i) Filter_ProductTime[i] = view.FindViewById<NumberPicker>(ProductTimeFilters[i]).Value;
+                for (int i = 0; i < TypeFilters.Length; ++i)
+                    Filter_Type[i] = view.FindViewById<CheckBox>(TypeFilters[i]).Checked;
+                for (int i = 0; i < ProductTimeFilters.Length; ++i)
+                    Filter_ProductTime[i] = view.FindViewById<NumberPicker>(ProductTimeFilters[i]).Value;
 
                 CheckApplyFilter();
 
@@ -417,20 +420,22 @@ namespace GFI_with_GFS_A
                 }
                 else HasApplyFilter[0] = false;
             for (int i = 0; i < TypeFilters.Length; ++i)
-                if (Filter_Type[i] == true)
+                if (Filter_Type[i])
                 {
-                    HasApplyFilter[2] = true;
+                    HasApplyFilter[1] = true;
                     break;
                 }
-                else HasApplyFilter[2] = false;
+                else HasApplyFilter[1] = false;
         }
 
-        private void ResetFilter(View view)
+        private void ResetFilter()
         {
             try
             {
-                for (int i = 0; i < TypeFilters.Length; ++i) Filter_Type[i] = true;
-                for (int i = 0; i < ProductTimeFilters.Length; ++i) Filter_ProductTime[i] = 0;
+                for (int i = 0; i < TypeFilters.Length; ++i)
+                    Filter_Type[i] = true;
+                for (int i = 0; i < ProductTimeFilters.Length; ++i)
+                    Filter_ProductTime[i] = 0;
 
                 for (int i = 0; i < HasApplyFilter.Length; ++i)
                     HasApplyFilter[i] = false;

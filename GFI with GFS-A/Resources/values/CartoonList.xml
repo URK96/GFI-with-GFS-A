@@ -448,6 +448,7 @@
     <item>71 - 소전삼국지(장판파전투)</item>
     <item>72 - 여름특집, 더울 때는 바다로!</item>
     <item>73 - 여름특집, 친목을 위한 피구</item>
+    <item>74 - 헬리안의 습격</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -525,5 +526,6 @@
     <item>http://naver.me/Fo9gJ1FY</item>
     <item>http://naver.me/G4yyAoko</item>
     <item>http://naver.me/5PRieK63</item>
+    <item>http://naver.me/xrxP7UrU</item>
   </string-array>
 </resources>

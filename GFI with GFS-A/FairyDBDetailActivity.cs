@@ -43,7 +43,8 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+                if (ETC.UseLightTheme)
+                    SetTheme(Resource.Style.GFS_Light);
 
                 // Create your application here
                 SetContentView(Resource.Layout.FairyDBDetailLayout);
@@ -65,7 +66,7 @@ namespace GFI_with_GFS_A
                 BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB3);
                 BaseFAB.SetImageResource(Resource.Drawable.Base36_Logo);
 
-                RefreshCacheFAB.Click += RefreshCacheFAB_Click;
+                RefreshCacheFAB.Click += delegate { _ = InitLoadProcess(true); };
                 PercentTableFAB.Click += PercentTableFAB_Click;
                 MainFAB.Click += MainFAB_Click;
                 GFDBFAB.Click += MainSubFAB_Click;
@@ -82,11 +83,11 @@ namespace GFI_with_GFS_A
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FairyDBSnackbarLayout);
 
                 FABTimer.Interval = 3000;
-                FABTimer.Elapsed += FABTimer_Elapsed;
+                FABTimer.Elapsed += delegate { HideFloatingActionButtonAnimation(); };
 
                 _ = InitLoadProcess(false);
 
-                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_FairyDBDetail", true) == true))
+                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_FairyDBDetail", true)))
                     ETC.RunHelpActivity(this, "FairyDBDetail");
             }
             catch (Exception ex)
@@ -135,11 +136,6 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void FABTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
-        {
-            HideFloatingActionButtonAnimation();
-        }
-
         private void HideFloatingActionButtonAnimation()
         {
             FABTimer.Stop();
@@ -149,11 +145,6 @@ namespace GFI_with_GFS_A
             RefreshCacheFAB.Hide();
             MainFAB.Alpha = 0.3f;
             MainFAB.SetImageResource(Resource.Drawable.HideFloating_Icon);
-        }
-
-        private void RefreshCacheFAB_Click(object sender, EventArgs e)
-        {
-            _ = InitLoadProcess(true);
         }
 
         private void PercentTableFAB_Click(object sender, EventArgs e)
@@ -178,30 +169,29 @@ namespace GFI_with_GFS_A
             {
                 FloatingActionButton fab = sender as FloatingActionButton;
 
+                string url = "";
+                Intent intent = null;
+
                 switch (fab.Id)
                 {
+                    default:
                     case Resource.Id.SideLinkFAB1:
-                        string uri = string.Format("http://gfl.zzzzz.kr/fairy.php?id={0}&lang=ko", fairy.DicNumber);
-                        var intent = new Intent(this, typeof(WebBrowserActivity));
-                        intent.PutExtra("url", uri);
-                        StartActivity(intent);
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        url = string.Format("http://gfl.zzzzz.kr/fairy.php?id={0}&lang=ko", fairy.DicNumber);
+                        intent = new Intent(this, typeof(WebBrowserActivity));               
                         break;
                     case Resource.Id.SideLinkFAB2:
-                        string uri2 = string.Format("http://girlsfrontline.inven.co.kr/dataninfo/fairy/?d=133&c={0}", fairy.DicNumber);
-                        var intent2 = new Intent(this, typeof(WebBrowserActivity));
-                        intent2.PutExtra("url", uri2);
-                        StartActivity(intent2);
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        url = string.Format("http://girlsfrontline.inven.co.kr/dataninfo/fairy/?d=133&c={0}", fairy.DicNumber);
+                        intent = new Intent(this, typeof(WebBrowserActivity));
                         break;
                     case Resource.Id.SideLinkFAB3:
-                        string uri3 = string.Format("https://girlsfrontline.kr/doll/{0}", fairy.DicNumber);
-                        var intent3 = new Intent(this, typeof(WebBrowserActivity));
-                        intent3.PutExtra("url", uri3);
-                        StartActivity(intent3);
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        url = string.Format("https://girlsfrontline.kr/doll/{0}", fairy.DicNumber);
+                        intent = new Intent(this, typeof(WebBrowserActivity));
                         break;
                 }
+
+                intent.PutExtra("url", url);
+                StartActivity(intent);
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
             catch (Exception ex)
             {
@@ -216,7 +206,7 @@ namespace GFI_with_GFS_A
 
         private void MainFAB_Click(object sender, EventArgs e)
         {
-            if (IsEnableFABMenu == false)
+            if (!IsEnableFABMenu)
             {
                 MainFAB.SetImageResource(Resource.Drawable.SideLinkIcon);
                 IsEnableFABMenu = true;

@@ -262,7 +262,7 @@
       <HintPath>..\packages\Xamarin.Android.Support.ViewPager.28.0.0.1\lib\monoandroid90\Xamarin.Android.Support.ViewPager.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Essentials.1.2.0\lib\monoandroid90\Xamarin.Essentials.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Essentials.1.3.0\lib\monoandroid90\Xamarin.Essentials.dll</HintPath>
     </Reference>
     <Reference Include="Xfinium.Graphics.Xamarin.Android.Skia">
       <HintPath>..\Dll\Xfinium.Pdf.View\Xfinium.Graphics.Xamarin.Android.Skia.dll</HintPath>
@@ -423,12 +423,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\anim\Activity_SlideInLeft.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-nodpi\Splash_DataBuild.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-nodpi\Splash_DataLoad.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\DBSub_DollDBSelector.xml" />
@@ -1655,9 +1649,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-nodpi\Close_WhiteTheme.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-nodpi\SplashImage_vh.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\StoryList_Event_VA.xml">
