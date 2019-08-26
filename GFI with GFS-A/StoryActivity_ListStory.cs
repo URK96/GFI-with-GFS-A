@@ -178,6 +178,100 @@ namespace GFI_with_GFS_A
             adapter.ItemClick += Adapter_ItemClick;
         }
 
+        private void ListStoryItem_Sub()
+        {
+            Item_List.Clear();
+
+            int Title_res = 0;
+            int Caption_res = 0;
+            int TopTitle_res = 0;
+
+            switch (SubMain_Index)
+            {
+                case 0:
+                    Title_res = Resource.Array.Story_Main_Sub_2016MessyHalloween;
+                    Caption_res = Resource.Array.Story_Main_Sub_2016MessyHalloween_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Sub_2016MessyHalloween_TopTitle;
+                    break;
+                case 1:
+                    Title_res = Resource.Array.Story_Main_Sub_2016TacticalChristmas;
+                    Caption_res = Resource.Array.Story_Main_Sub_2016TacticalChristmas_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Sub_2016TacticalChristmas_TopTitle;
+                    break;
+                case 2:
+                    Title_res = Resource.Array.Story_Main_Sub_2017Anniversary;
+                    Caption_res = Resource.Array.Story_Main_Sub_2017Anniversary_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Sub_2017Anniversary_TopTitle;
+                    break;
+                case 3:
+                    Title_res = Resource.Array.Story_Main_Sub_2017OperaPrinces;
+                    Caption_res = Resource.Array.Story_Main_Sub_2017OperaPrinces_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Sub_2017OperaPrinces_TopTitle;
+                    break;
+                case 4:
+                    Title_res = Resource.Array.Story_Main_Sub_2018LunaNewYear;
+                    Caption_res = Resource.Array.Story_Main_Sub_2018LunaNewYear_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Sub_2018LunaNewYear_TopTitle;
+                    break;
+                case 5:
+                    Title_res = Resource.Array.Story_Main_Sub_2018SweetWedding;
+                    Caption_res = Resource.Array.Story_Main_Sub_2018SweetWedding_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Sub_2018SweetWedding_TopTitle;
+                    break;
+                case 6:
+                    Title_res = Resource.Array.Story_Main_Sub_2018Anniversary;
+                    Caption_res = Resource.Array.Story_Main_Sub_2018Anniversary_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Sub_2018Anniversary_TopTitle;
+                    break;
+                case 7:
+                    Title_res = Resource.Array.Story_Main_Sub_2018MaidTraining;
+                    Caption_res = Resource.Array.Story_Main_Sub_2018MaidTraining_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Sub_2018MaidTraining_TopTitle;
+                    break;
+                case 8:
+                    Title_res = Resource.Array.Story_Main_Sub_2018BeachParty;
+                    Caption_res = Resource.Array.Story_Main_Sub_2018BeachParty_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Sub_2018BeachParty_TopTitle;
+                    break;
+                case 9:
+                    Title_res = Resource.Array.Story_Main_Sub_2018RiseoftheWitches;
+                    Caption_res = Resource.Array.Story_Main_Sub_2018RiseoftheWitches_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Sub_2018RiseoftheWitches_TopTitle;
+                    break;
+                case 10:
+                    Title_res = Resource.Array.Story_Main_Sub_2018AnotherChristmas;
+                    Caption_res = Resource.Array.Story_Main_Sub_2018AnotherChristmas_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Sub_2018AnotherChristmas_TopTitle;
+                    break;
+                case 11:
+                    Title_res = Resource.Array.Story_Main_Sub_2019LunaNewYear;
+                    Caption_res = Resource.Array.Story_Main_Sub_2019LunaNewYear_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Sub_2019LunaNewYear_TopTitle;
+                    break;
+                case 12:
+                    Title_res = Resource.Array.Story_Main_Sub_2019GunRose;
+                    Caption_res = Resource.Array.Story_Main_Sub_2019GunRose_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Sub_2019GunRose_TopTitle;
+                    break;
+                case 13:
+                    Title_res = Resource.Array.Story_Main_Sub_2019Anniversary;
+                    Caption_res = Resource.Array.Story_Main_Sub_2019Anniversary_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Sub_2019Anniversary_TopTitle;
+                    break;
+            }
+
+            Item_List.AddRange(Resources.GetStringArray(Title_res));
+            Caption_List.AddRange(Resources.GetStringArray(Caption_res));
+            TopTitle_List.AddRange(Resources.GetStringArray(TopTitle_res));
+            Item_List.TrimExcess();
+            Caption_List.TrimExcess();
+            TopTitle_List.TrimExcess();
+
+            adapter = new StoryListAdapter(Item_List.ToArray(), TopTitle_List.ToArray(), Caption_List.ToArray());
+            adapter.ItemClick += Adapter_ItemClick;
+        }
+
+
         private void RunReader()
         {
             string Top = "";
@@ -269,7 +363,51 @@ namespace GFI_with_GFS_A
             }
             else if (TopType == StoryActivity.Top.Sub)
             {
-
+                switch (SubMain_Index)
+                {
+                    case 0:
+                        Category = "2016MessyHalloween";
+                        break;
+                    case 1:
+                        Category = "2016TacticalChristmas";
+                        break;
+                    case 2:
+                        Category = "2017Anniversary";
+                        break;
+                    case 3:
+                        Category = "2017OperaPrinces";
+                        break;
+                    case 4:
+                        Category = "2018LunaNewYear";
+                        break;
+                    case 5:
+                        Category = "2018SweetWedding";
+                        break;
+                    case 6:
+                        Category = "2018Anniversary";
+                        break;
+                    case 7:
+                        Category = "2018MaidTraining";
+                        break;
+                    case 8:
+                        Category = "2018BeachParty";
+                        break;
+                    case 9:
+                        Category = "2018RiseoftheWitches";
+                        break;
+                    case 10:
+                        Category = "2018AnotherChristmas";
+                        break;
+                    case 11:
+                        Category = "2019LunaNewYear";
+                        break;
+                    case 12:
+                        Category = "2019GunRose";
+                        break;
+                    case 13:
+                        Category = "2019Anniversary";
+                        break;
+                }
             }
 
             var intent = new Intent(this, typeof(StoryReaderActivity));

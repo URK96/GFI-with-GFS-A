@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Story_Main_Sub_2016MessyHalloween_TopTitle">
+    <item>마카로프</item>
+    <item>Vector</item>
+    <item>MP5</item>
+    <item>m45</item>
+    <item>스프링필드</item>
+    <item>WA2000</item>
+    <item>M1919A4</item>
+    <item>Mk23</item>
+    <item>G11</item>
+    <item>64식</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Sub_2016MessyHalloween">
+    <item>잭오랜턴</item>
+    <item>고양이 발바닥</item>
+    <item>드라큘라</item>
+    <item>과자 배달부</item>
+    <item>정통파 마녀</item>
+    <item>고성에서의 모험</item>
+    <item>카밀라</item>
+    <item>스위트 데빌</item>
+    <item>은톨이 좀비</item>
+    <item>떠돌이 마녀</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2016MessyHalloween_Caption">
+    <item>모두 어디에 숨었을까? 장난쳐버릴 거야~\n이 세상에는 귀신이나 괴물은 없지만, 너희들이 지휘관이랑 보낼 할로윈을 조금이라도 방해하면...</item>
+    <item>뭐야뭐야? ...나는 이런 거 매우 좋아해. 계~속 이런 분위기라면 좋을 텐데.\n음, 내가 쓰일 곳이라도 있는 거야?</item>
+    <item>지휘관님. 오늘은 제가 1년 중에서 가~장 좋아하는 날이에요! 모두가 잔~뜩 과자를 주는 날이에요! 에헤헷!\n네, 알겠습니다!</item>
+    <item>핼러윈은 어쩐지 조금 무섭네요. 네? 코스튬 플레이? 그건 조금 흥미가 있을지도? 에헤헤~\n이번에는 그냥 넘어가 드릴테니, 다음번에 가장 좋은 베이킹 파우더를 주세요.</item>
+    <item>후훗. 핼러윈이네요. M14가 들떠있어요.\n그…지휘관님……너무 빤히 쳐다 보지는 말으셨으면 좋겠는데요…</item>
+    <item>히익! 벼, 별로 무서워하는 거 아니거든! 히야악!! 호박 머리 가져오지 마!\n가짜인 거 다알아, 하나도 안 무섭거든! 세상에 있지도 않은......</item>
+    <item>과자 주는 거야? 기뻐...지휘관, 너~무 좋아!</item>
+    <item>오늘 밤은 모두, 분장하고 노는 거네~ 아, 그래도 달링의 곁은 절~대로 양보하지 않을 거니까!\n어때? 달링, 기쁘지? 당신을 위해서 특별히 준비했다구~</item>
+    <item>과자를 받을 수 있다면, 조금은 참가하고 싶을지도... 뭐? 조건부라고? 으음...됐어.\n으, 인생에서 십중팔구는......뜻대로 되지 않는 법이랬던가......</item>
+    <item>에? 밖에 있는 건 누구?! 해, 핼러윈? 하아...캔디는 없지만, 차를 내와도 괜찮을까?\n아……그건 뭐 취미라고 해두죠, 그리고 그 찻주전자는 무게추 역할이에요.</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2016TacticalChristmas_TopTitle">
+    <item>콜트 리볼버</item>
+    <item>스프링필드</item>
+    <item>M14</item>
+    <item>M21</item>
+    <item>SVD</item>
+    <item>WA2000</item>
+    <item>NTW-20</item>
+    <item>FAL</item>
+    <item>MG5</item>
+    <item>수오미</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Sub_2016TacticalChristmas">
+    <item>별똥별의 소원</item>
+    <item>성스러운 밤의 축복</item>
+    <item>성탄절 퍼레이드 의상</item>
+    <item>성탄절 실내복</item>
+    <item>겨울 선녀</item>
+    <item>겨울날 그대를 기다리며</item>
+    <item>루돌프</item>
+    <item>겨울 보급 작전</item>
+    <item>새빨간 야간경비원</item>
+    <item>코트바툰투리의 눈 요정</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2016TacticalChristmas_Caption">
+    <item>메리~크리스마스! 트리가 예쁜걸!\n콜라는 인생의 필수품이라구! 그러니까......지휘관도 같이 콜라 마시자~</item>
+    <item>우후훗. 크리스마스니까, 팔을 걷어 부치고 요리해볼까요.\n크리스마스엔 예상하지 못했던 기쁨들이 찾아오네요. 정말 특별한 기념일인 것 같아요.</item>
+    <item>메리~크리스마~스! 지휘관, 산타씨 오시는 거죠? 오시는 거 맞죠?!\n실수로 선물을 잃어버렸다해도 걱정마세요, 제가 찾아드릴테니까요!</item>
+    <item>메리~크리스마스, 지휘관! 산타클로스 사냥이라도 갈래? 그렇지만, 사실은 집에서 따뜻하게 지내는 게 더 좋지만 말이야~\n개그는 정말 어려운 것 같아...하지만 지휘관이랑 한 약속을 지키기 위해서 포기하지 않을 거야!</item>
+    <item>내 크리스마스 복장 어때? ...최고인게 당연하지! 이 아름다운 기념일 덕이니, 잘 감상해두라고.\n제대로 만든 크바스는 훌륭하지, 다만 구하기가 힘들어. 기회가 된다면 마음껏 마셔보고 싶은걸.</item>
+    <item>너는 어차피 한가하지? 혼자는 불쌍해 보이니까 어울려줄게!\n와인 라벨을 모으는 건, 단지 고향의 것들보다 희귀해서 그런 거야, 절대 지휘관한테 고마워서 그런 거 아니라고!</item>
+    <item>크리스마스엔 눈이 내리는 건가. 눈은 본 적이 없다. 기대되는군.\n처음으로 보는 눈, 정말 아름답고....매우 차갑군.</item>
+    <item>메리 크리스마스. 지휘관, 얼른 무도회를 끝내자고. 이 드레스를 입고 있으니, 좀 추운걸.\n고풍스런 취향의 소유자는 쇼핑에서 색다른 즐거움을 느끼지. 지휘관, 품위도 체력도 잘 가꿔두는 편이 좋을 거야.</item>
+    <item>메리 크리스마스. 창문은 내가 닦아 놓을게. 오늘정도는 지휘관이 움직이지 않아도 괜찮아.\n모두와 함께 보내는 크리스마스는 정말 즐거운 걸, 앞으로도 기념일엔 이렇게 보냈으면 좋겠군.</item>
+    <item>지휘관님. 메리크리스마스... 오늘 밤 제가 입은 옷 괜찮나요? 산타클로스를 만날 거니까, 잘 차려입는 게 좋겠죠?\n크리스마스 캐럴 공연은 대성공 이었어요! 저희 고향의 노래는 언제쯤 캐럴처럼 모두에게 사랑받을 수 있을까요......</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2017Anniversary_TopTitle">
+    <item>스콜피온</item>
+    <item>스프링필드</item>
+    <item>모신나강</item>
+    <item>WA2000</item>
+    <item>HK416</item>
+    <item>M1918</item>
+    <item>SR-3MP</item>
+    <item>M950A</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Sub_2017Anniversary">
+    <item>붉은 은하수</item>
+    <item>등불 아래의 여왕</item>
+    <item>달빛 바다</item>
+    <item>무도회의 쉼표</item>
+    <item>별에 감싸이다</item>
+    <item>준비된 세레나데</item>
+    <item>검은토끼 마키아또</item>
+    <item>"축제 시작이야!"</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2017Anniversary_Caption">
+    <item>스콜피온의 장미꽃에는 독이 있을까? 나랑 함께해온 지휘관이라면 이제는 알고 있겠지?\n다음 파티에서는, 꼭 내가 주인공이 될 거야!</item>
+    <item>오늘 밤 연회의 스포트 라이트...분명 가장 아름다운 시간이란 증거겠지요.\n정말 즐겁게 1년이 지난 것 같아요, 내년엔 더 많은 아이들이 정식 연회에 참가할 수 있었으면 좋겠어요.</item>
+    <item>우리가 벌써 이렇게 많은 일들을 겪었을 줄이야...앞으로도 지금처럼 언제나 우리의 곁에 있어줘.\n어제 밤에 어떻게 숙소로 돌아왔지? 기억이 잘 나지 않아…… 아무렴 어때? 그렇게 기분 좋게 마신 건 오랜만이었어.</item>
+    <item>무도회의 파트너가 되어준다면서, 왜 안 오는 거냐고......읏, 뭐, 뭐야! 늦었으면 얌전히 입다물고 있어!\n첼로 케이스에 총을 넣고 다니는 것이, 보기에는 예쁜데 생각보다 번거롭단 말이지…… 다음엔 어떻게 해야 좋을까?</item>
+    <item>지휘관, 오늘 밤의 무대는...저희 둘 만을 위한 장소로 변할 거예요.\n모두들 왜 이렇게 두려워하는 눈빛으로 저를 보는거죠…… 어제 무슨 일 있었나요?</item>
+    <item>레드 카펫은 준비됐죠? 다른 사람들이 넘어지지 않도록 신경써주세요.\n후…… 어제 파티가 그렇게 힘들지는 않았지만, 그래도 너무 피곤해요. 조금 더 자는 것이 좋겠어요……</item>
+    <item>진수성찬에 귀여운 나까지, 오늘을 기념하며 특별 선물 대 방출이라구!\n언젠가는 정식 연회 심사를 통과할 수 있을만큼 성장할 수 있을거야! 흐응, 그날이 오면, 모두들 날 부러워할 거야!</item>
+    <item>마지막 무대를 장식해볼까? 자, 이제 내 차례라고!\n아하하…… 호텔 매니저가 치우는 걸 깜빡했나봐. 스태프들을 귀찮게 하긴 싫은데……</item>  
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2017OperaPrinces_TopTitle">
+    <item>톰슨</item>
+    <item>컨텐더</item>
+    <item>PKP</item>
+    <item>MG5</item>
+    <item>AEK-999</item>
+    <item>PzB39</item>
+    <item>G36</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Sub_2017OperaPrinces">
+    <item>데빌 헌터</item>
+    <item>오페라의 유령</item>
+    <item>걸 프롬 UNCLE</item>
+    <item>황야의 사냥꾼</item>
+    <item>광란의 질주</item>
+    <item>열혈 라이더</item>
+    <item>"바텐더"</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2017OperaPrinces_Caption">
+    <item>고급스러운 장소를 드나들 땐, 옷차림도 갖춰야겠지. 이것도 업계의 불문율이니까. 오페라를 끝까지 볼 수 없던 건 아쉬운 걸. 다음에 기회를 봐서 느긋하게 즐기러 오자고.</item>
+    <item>세련된 의상도 무대 공연 성공에 있어서 큰 부분을 차지하지, 음...그렇다는 건 의상도 실력의 한 부분이란 걸까? 임무 종료 후, 극장에서 사진을 한 장 찍어 보냈다는데. 잘 나왔으면 좋겠네......</item>
+    <item>흥, 갖춰입은 옷은 내 승리를 더욱 빛나게 해줄 뿐이지. 영수증을 받을 때 안색이 안 좋아 보이던데...무슨 일이지?</item>
+    <item>이렇게 입으면 야외 전투의 적응성이 높아진다라...음, 더 많은 동료를 지킬 수 있겠군. 격전 중 짤막한 휴식시간에 마시는 한 잔의 즉석커피야말로, 인생의 참맛이지</item>
+    <item>하핫! 색다른 멜로디를 들려줄게, 난 여전히 강하다고♪ 음...다음에 탈 땐, 새로운 리듬을 시험해보자고♪</item>
+    <item>저기...이 옷도 비싼 거라고요, 손상되지 않도록 조심해주세요! 지휘관, 오토바이 열쇠를 하나 드릴테니, 우리 연습하는 거 잊지 마세요!</item>
+    <item>Guten Tag 지휘관님, G36 당신을 위해 최선을 다하겠습니다. 이 선물은......마치 한 명의 집사 같네요? 이건 폭탄의 도화선…정말 위험하네요, 하지만 제가 모두를 지키겠습니다.</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2018LunaNewYear_TopTitle">
+    <item>DSR-50</item>
+    <item>S.A.T.8</item>
+    <item>ART556</item>
+    <item>JS05</item>
+    <item>Mk23</item>
+    <item>M590</item>
+    <item>81식 카빈</item>
+    <item>LWMMG</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Sub_2018LunaNewYear">
+    <item>비목단</item>
+    <item>매화 도장</item>
+    <item>양배추 소녀</item>
+    <item>제피란테스</item>
+    <item>브랜디시아</item>
+    <item>흰나팔꽃</item>
+    <item>백산차</item>
+    <item>센토레아</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2018LunaNewYear_Caption">
+    <item>지휘관... 당신의 신년계획에는...... 제가 활약할 기회도 있으려나요?\n제가 바라던 세뱃돈 포장을 할 수 없어서 조금 아쉽지만...... 그래도 꽤나 흥미로운 풍경을 볼 수 있었네요......</item>
+    <item>어느덧 또다시 새해가 밝았어, 지휘관. 우리들은 이상적인 미래에 또 한 걸음 가까워진 걸까?\n앗...... 이렇게 포장이 귀여우면 불을 붙일 수 없잖아! 하나 남겨두는 편이 좋겠어...... 부디 ART556한테 들키지 않기를!</item>
+    <item>지휘관, 새해인데 집에만 있으면 재미 없다구, 나랑 동네에서 모험하러 가자!\n우으...... 지휘관! 살려줘! 털북숭이 몬스터에게 잡아먹히겠어──!</item>
+    <item>올해에는 어떤 신년 행사가 준비되어 있어? 내가 재미있게 즐길 수 있도록 해줘.\n인간은 금방 금방 잊어버리는 구나...... 이 스페어 단추처럼, 내가 지휘관이 기억할 수 있도록 도와주겠어!</item>
+    <item>달링, 눈치챘어? 오늘 나 어딘가 달라 보이지 않아? 헤헷 평소보다 꼼꼼히 메이크 업 했다구, 새해 복 많이 받아~!\n이건 " 교자 "라는 음식인데 달링 입에 맞는 것 같네. 레시피 남겨 뒀으니까, 나중에 또 달링에게 만들어 줄게~</item>
+    <item>새해 복 많이받으십시오, 지휘관. 휴일이라고 해도, 너무 풀어지지 않도록 해주십시오.\n종이로 이런 장식을 만드는 건 상당히 흥미롭고, 인내심도 기를 수 있습니다. 이번 명절 행사를 도울 수 있어, 정말 보람찼습니다.</item>
+    <item>지휘관님, 오늘은 어디로 가실 예정이신가요? 제가 지휘관님 곁에서 계속 함께 있을게요.\n이 구시대의 골동품 가게에서 찾아낸 기차표 양식...... 정말 옛생각을 나게하는 물건이죠. 잘 간직해야겠어요.</item>
+    <item>지휘관, 새해 복 많이받으세요. 작년의 재무 현황표가 나왔는데, 그다지 큰 낭비는 없었어. 올해도 힘내자.\n명절이라고 이렇게 흥청망청...... 비록 모두와 함께 즐겁게 보내고 있지만... 평소에는 절약해야 하는 걸 잊어선 안 돼.</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2018SweetWedding_TopTitle">
+    <item>Vector</item>
+    <item>Five-seveN</item>
+    <item>MP5</item>
+    <item>G36</item>
+    <item>56-1식</item>
+    <item>SV-98</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Sub_2018SweetWedding">
+    <item>맹목적인 믿음</item>
+    <item>꿈꿔왔던 미소</item>
+    <item>작은 한 걸음</item>
+    <item>순백의 수레국화</item>
+    <item>마음을 엮는 매듭</item>
+    <item>하트를 꿰뚫어주지!</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2018SweetWedding_Caption">
+    <item>잔뜩 괴롭혔으니까, 가끔은 괴롭힘 당해도 괜찮으려나.\n분위기 깨는 사진을 남겨서 정말 미안. 근데 사진 찍을땐 솔직히 이런 기분이었어…… 아마도.</item>
+    <item>고마워, 앞으로도 곁에 있게 해줘. 가장 믿을 수 있는 파트너가 되어 줄 테니까.\n만약 청첩장을 보내게 될 날이 온다면…… 이 봉랍을 쓰면 되겠는걸.</item>
+    <item>이것은... 저에게?! 여기저기 작은 저입니다만... 곁에 있어도 괜찮은 건가요?\n역시 다른 사람들처럼 기다란 드레스를 입고 싶었요…… 그렇게 되기 위해 앞으로도 키가 커질 수 있게 노력할게요!</item>
+    <item>앞으로도 당신의 전속 메이드로서 곁에 있을 수 있도록 해주세요.\n복귀한 후 머리카락 사이에서 장식을 발견했어요. 기념으로 삼아야겠군요.</item>
+    <item>아니면... 아무튼! 나중에 후회해도 모른다구. 에헤헤~ 이제 놓지 않을 거니까!\n이 도장은 꽤 노골적인걸, 혹시 나중에라도 쓸 기회가 있다면 좋겠네…… 하하, 그럴 일은 없을 테지만.</item>
+    <item>메모해둘 필요는 없겠네요. 그야, 한 번이면 충분하니까요.\n스튜디오에서 축하 선물을 준 건가요? 진짜 결혼식이 어떤 느낌인지는 모르겠지만, 이걸 받자니 조금 미안한 기분이 들어요……</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2018Anniversary_TopTitle">
+    <item>DSR-50</item>
+    <item>그리즐리</item>
+    <item>웰로드 Mk Ⅱ</item>
+    <item>Zas M21</item>
+    <item>콜트 리볼버</item>
+    <item>UMP9</item>
+    <item>UMP45</item>
+    <item>IDW</item>
+    <item>EVO</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Sub_2018Anniversary">
+    <item>베스트 오퍼</item>
+    <item>별이 빛나는 밤의 무도회</item>
+    <item>해 질 무렵의 위기</item>
+    <item>화이트 퀸</item>
+    <item>기적의 여왕</item>
+    <item>세계의 노래</item>
+    <item>다이아몬드의 꽃</item>
+    <item>상자 속 고양이</item>
+    <item>백야의 별 이야기</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2018Anniversary_Caption">
+    <item>오늘 밤의 기억을 잊지 않기로 해요, 이 달콤한 술이 당신에게 큰 여운을 남길거에요, 흐응……\n비밀을 지닌 여자야 말로 매력 있는 법이야... 자기는 호기심과 위기감 중 어느 쪽이 더 강할까?</item>
+    <item>지휘관, 저기 스테이지 같이 춤 출까? 잘 출 필요 없어, 열정적인 스텝만 있으면 된다고!\n이번 일은 도저히 영문을 모르겠네... 뭐 어때, 이런 걸 고민할 바엔 지휘관한테 보너스 없냐고 물어봐야지!</item>
+    <item>이런 어둠 속의 파티가 열릴 때, 불청객이 있을지도 모르는 일이야, 절대 경계를 늦춰선 안돼.\n비록 죄악의 늪에 빠진 상대라해도 늪가의 있는 자는 그에게 밧줄을 건내 주게 되죠. 이런 유치하면서도 억누를 수 없는 충동을 "우정"이라 부르죠.</item>
+    <item>다시 원점으로 돌아왔어, 우리가 겪었던 모든 일들은, 우리로 하여금 새로이 한걸음 나아가게 해줄거야…… 그렇지?\n진실은 참으로 값진 물건이군요, 지휘관. 그럼 제 매니큐어는 사오셨나요?</item>
+    <item>모두들! 손에 든 콜라를 높이 올려봐! 오늘 펼쳐질 기적을 위해 원샷!\n콜라를 건 순간부터 너의 패배는 정해졌어.</item>
+    <item>연회장이 엄청 핫하잖아! 45언니를 못 찾겠어, 혼자 몰래 맛있는 거 먹고 있는 건 아니겠지?\n올해의 소망 말이야? 으음, 앞으로도 항상 이렇게 재미있고 편한 임무 뿐이면 좋겠어!</item>
+    <item>연회라…… 이런 분위기는, 나한텐 좀 많이 생소한 것 같아, 지휘관은 이런 분위기가 즐거워?\n"불행을 선사하러 왔습니다."... 다만 내가 이런 대사를 꺼낼 수 있는 것도 어쩌면 행운이겠지.</item>
+    <item>냥하하! 이 연회장의 보석을 가져 가고싶은 사람은, 먼저 나를 물리쳐야 할 거다냥!\n이번엔 물러가지만, 다시 오겠다냥!... 뭐? 이건 악역의 대사냥? 안 속는다냥!</item>
+    <item>지휘관, 술자리가 끝난 뒤에, 뒷풀이가 있겠지?\n우리의 모습이야 말로 진정으로 중요한 거라니... 정말이지, 그렇게 듣고나니 정말 한 순간 내 몸이 반짝이는 듯한 느낌이었어.</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2018MaidTraining_TopTitle">
+    <item>NTW-20</item>
+    <item>컨텐더</item>
+    <item>M950A</item>
+    <item>G28</item>
+    <item>게파드 M1</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Sub_2018MaidTraining">
+    <item>VIP 체험관</item>
+    <item>백화집사</item>
+    <item>집안일 테스트</item>
+    <item>맥주목장</item>
+    <item>1일 계약</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2018MaidTraining_Caption">
+    <item>음... 너무 달았나? 좀 더 쓰게하면 괜찮으려나, 주인님의 입맛은 어느 쪽이야?\n차를 끓이는 건 참 번거롭지만... 꽤 재미있어. 쉴 때 가끔씩 해도 되겠어.</item>
+    <item>저, 다녀... 다녀오셨어요, 지휘... 아니라! 주, 주인님! ... 죄송합니다, 좀 더 잘할 수 있었는데.\n네? 기념 사진 말입니까? 꼭 찍을 필요는 없지 않을까요... 으으... 이런 모습으로 어떻게 찍으라는 거죠...</item>
+    <item>비켜 비켜! 땅에서 발 떼고, 여기가 거울처럼 빛날 때까지 발자국 하나 남기지 말라고.\n대청소를 하고나니 방도 인형의 정신 상태도 전부 말끔해졌어! 음음! 이번 훈련 성과는 숙소에서 파급하기에 딱 좋겠어! 시간나면 지휘관에게 건의해 봐야지~</item>
+    <item>헤헤~ 주인님, 주문하신 맥주예요! ... 한 잔만 시켰다고요? 아, 이건 균형을 잡기위해 가져온 거예요!\n아하하... G36 언니, 미안! 한번만 용서해줘, 저번에 비결노트를 빌릴 때 약속했잖아? 다시는 게으름 안 피울 테니까!</item>
+    <item>이 서류들 왜 정리해도 끝이 없는 걸까요, 메이드에게 휴가는 없다는 것을 빨리 알아챘어야 했는데...\n지휘관님이 약속하신 휴가는 언제 올까요? 아아... 힘들어...</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2018BeachParty_TopTitle">
+    <item>G41</item>
+    <item>AK-12</item>
+    <item>AA-12</item>
+    <item>AN-94</item>
+    <item>MP7</item>
+    <item>FAL</item>
+    <item>G36</item>
+    <item>SPAS-12</item>
+    <item>아멜리</item>
+    <item>P38</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Sub_2018BeachParty">
+    <item>비치펑크2064</item>
+    <item>빙수시대</item>
+    <item>태양을 피하는 방법</item>
+    <item>잠수종과 인형</item>
+    <item>사탕발린 총알</item>
+    <item>FAL의 여름</item>
+    <item>50일의 메이드</item>
+    <item>한여름의 열매</item>
+    <item>아멜리의 리시브</item>
+    <item>여름보다 뜨거운 인형</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2018BeachParty_Caption">
+    <item>네? 물놀이요...? 하지만 그럼 귀가 젖는데... 옷도 젖을 거고...\n해변 재미있어요! 바다도 재미있어요! ... 그 검은 판자가 어디에 쓰이는 것인지는 모르지만, 발리볼도 재미있었어요!</item>
+    <item>잔잔한 물건은 볼 가치가 없어요. 지휘관님, 과연 당신께서 이 바다에 파도와 광풍을 가져다주실 수 있으실까요?\n찬 것을 먹으면 머리가 아픈 건 확실히 성능 결함이네요, 언제 더 이상 싸울 일이 없어지면 정비를 받아 보죠.</item>
+    <item>난 태양이 싫어... 그리고 싫어하면서도 바다에 놀어 온 내가 더 싫어...\n사탕을 너무 많이 먹으면 문제가 생기지만... 그렇게 진지한 말을 많이 해도, 사탕을 안 먹어도 문제가 생기겠지. 우읍, 빨리 당분을 더 보충해야겠어...</item>
+    <item>착복 완료, 이제 무엇을 바닷속에서 건져 올릴지 아니면 영원히 물속에 묻을지는 지휘관님의 명령에 달렸습니다.\n바닷 속에선 모든 것이 멈춰있습니다, AK12가 저 보고 "쉬라고" 할 때도 이런 느낌이었는데... 그래도 싫은 느낌은 아닙니다.</item>
+    <item>뭐야 그 표정은, “사육사씨”.... 수영쯤이야... 물에 들어간 다음에 배우면 되잖아?\n설마 신 사탕을 좋아하는 사람이 또 있을 줄이야, 어쩌면 서로 말이 더 통할지도 모르겠네...? "사육사씨"도 좀 보고 배웠으면 좋을 텐데.</item>
+    <item>이럴 때까지 57 얘기를 꺼내면 너무 속상하잖아. 그럼, 지휘관이 “빨간색”을 어떻게 생각하는지 말해 봐... 응? 또 따로 할 말 있어?\n후훗, 이 물총은 "평화"의 상징이야, 거기에 지휘관의 "포용"도 가져다 주었다고! 일단 이 태그를 잘 보관해 두자... 이것도 여름의 보물이니까.</item>
+    <item>빙수, 과일, 아니면 음료수를 드릴까요? 어느 거든 좋지만, 이런 날씨에 더위 먹지 않도록 주의하세요.\n으으... 쓰러진 것도 모자라, 모두에게 폐를 끼쳤군요... 다음엔 꼭 과열 방지 대책을 준비해야 되겠어요.</item>
+    <item>해변이니까, 서핑보드로 개조한 이 방패가 쓸모있겠지? 수박 말이야...? 여름이잖아!\n낡은 방패를 서핑보드로 개조한 건 확실히 도전성이 있었지만, 이래선 여름에만 쓸 수 있을 것 같네...</item>
+    <item>정말요...? 같이 공놀이해주시는 건가요? 이번엔 준비만전이에요!\n인내심 가지고 기다리면 분명 좋은 일이 생기겠죠? 오, 오늘도 단추를 선물하는 데 성공했어요!</item>
+    <item>지금 아니면 볼 수 없는 여름 서비스예요! 촬영은 물론이고 녹음도 금지예요!\n어쩌면 그건 물귀신이 아니라, 바다의 수호신이 아니었을까요? 분명 그 가호를 받아서, 공연도 순조로웠던 거겠죠!</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2018RiseoftheWitches_TopTitle">
+    <item>S.A.T.8</item>
+    <item>TAC-50</item>
+    <item>MDR</item>
+    <item>FAMAS</item>
+    <item>브렌</item>
+    <item>F1</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Sub_2018RiseoftheWitches">
+    <item>호박꼬치</item>
+    <item>엘프 악마사냥꾼</item>
+    <item>고스트랩</item>
+    <item>총포와 사이드박스</item>
+    <item>잭 트리니티</item>
+    <item>블랙 위치 아카데미</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2018RiseoftheWitches_Caption">
+    <item>핼러윈엔 역시 호박이 빠질 수 없죠~ 하지만 이 꼬치는 호박으로 만든 거가 아니에요. 지휘관님 하나 먹어 보실래요?\n계획대로 잘 진행하진 못했어요... 그저 할 수 있을 만큼 했어요.</item>
+    <item>이렇게 개조하면 마력을 주입해야 유령을 맞힐 수 있다고 하는데... 일단 메이플 시럽을 넣어 볼까요?\n모두 살아남기 위해 노력하죠, 인간이든 인형이든 다 그런 거죠?</item>
+    <item>진짜 유령들은 매혹적인 함정 속에서 호기심 많은 녀석들을 기다리고 있어... 어머머, 게시판에 벌써 생방 시작했네?\n"죄송합니다. 앞으로 장난이나 농담할 때에는 조심하겠습니다."... 흐으윽 훌쩍...</item>
+    <item>악령들은 자신이 지옥을 잘 안다고 말하지만, 이곳에 오면 그런 말은 쏙 들어가겠죠... 놈들의 비명을 듣고 싶군요.\n용기를 내서 마주해야 할 일이 많지만, 제자리걸음만 안 하면 돼. 그렇지? 호박 귀신.</item>
+    <item>사탕, 호박, 귀신, 이런 날에 빠질 수 없는 것들이지.\n밸런스를 맞추는 건 참 어렵군... 그래도 강해질 수 있는 방법을 하나 더 알았으니, 나쁘진 않아.</item>
+    <item>"밤 하늘 별똥별은~ 믿음의 마법~" 지휘관! 빗자루 준비 됐어?</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2018AnotherChristmas_TopTitle">
+    <item>Px4 스톰</item>
+    <item>P90</item>
+    <item>ART556</item>
+    <item>FP-6</item>
+    <item>Five-seveN</item>
+    <item>G36</item>
+    <item>TMP</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Sub_2018AnotherChristmas">
+    <item>크리스마스 모닝퀸</item>
+    <item>스칼렛 터보</item>
+    <item>굴뚝 청소부</item>
+    <item>사랑의 위성</item>
+    <item>푸르고 푸른 성탄절</item>
+    <item>아이들의 성탄절</item>
+    <item>매우 반짝이는 귀</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2018AnotherChristmas_Caption">
+    <item>성탄절 세일이야말로 성탄절의 존재 의미지, 가격이 절반이면 행복이 두 배~\n지금의 나에겐 이게 가장 최고의 이익이야. 메리 크리스마스, 같이 힘내자, 그리폰 친구들.</item>
+    <item>사실은 산타 할아버지 코스프레할 생각이었는데, 하지만 선물을 나눠줄 때 다 자고 있을 테니까, 보는 사람이 없으면 의미가 없잖아.\n메리 크리스마스, 지휘관. 이건 내 진심이야.</item>
+    <item>크리스마스 선물로 숯검댕이를 받기 싫으면 굴뚝을 비워두라고~\n아무리 좁은 세상에서도 나는 즐거움을 찾을 수 있어. 나 정말 행운아지?</item>
+    <item>설마 산타의 임무가 이렇게 까다로울 줄이야... 그 배불뚝이 영감은 어떻게 들어갔대?\n좋아, 다음은 누구 차례지? 가면서 생각해 보자고, 후훗...</item>
+    <item>지휘관, 이렇게나 많은 선물 중에서 날 고른 거야? 후훗... 아무렴 나니까~\n기지에는 바보들만 있는 줄 알았는데, 이거 어쩌면 다시 봐야겠는걸.</item>
+    <item>저 이거하고! 저거하고! 그리고... 그리고... 모두의 소원이 이루어졌으면 좋겠어요!\n저... 방금 저만의 성탄절을 겪었어요.</item>
+    <item>선물이 참 많네... 시간 절약을 위해서 좀 얇게 입는 편이 좋겠지? 빨리 모두에게 기쁨을 전달해주자.\n그럼... 인간을 닮지 않은 인형이 더 자유롭다는 건가요?</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2019LunaNewYear_TopTitle">
+    <item>OTs-14</item>
+    <item>AK-74U</item>
+    <item>88식</item>
+    <item>IWS 2000</item>
+    <item>CZ75</item>
+    <item>MP5</item>
+    <item>CZ52</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Sub_2019LunaNewYear">
+    <item>크라슐라</item>
+    <item>은방울</item>
+    <item>봄 난초</item>
+    <item>에델바이스</item>
+    <item>금련화</item>
+    <item>야지마</item>
+    <item>네모필라</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2019LunaNewYear_Caption">
+    <item>새해 축하해, 새해에도 같이 잘해 보자.\n사치를 부릴 시간을 희생했지만, 그 대신 꽤 괜찮은 수확을 거둔 것 같네.</item>
+    <item>새해에도 잘해 보라고, BOSS. 형식상 한 말이니까 오해하지 마, 알았지?\n나 한명밖에 안 남는다 하여도 계속 힘낼 거야. 그리고... 지금의 난 혼자가 아니니까.</item>
+    <item>지휘관님, 새해 복 많이 받으세요! 혹시 어디 바람쐬러 갈 생각 있으신가요...? 같이 가도 괜찮을까요?\n여... 역시 바깥은 무서워요...</item>
+    <item>앞으로도 저를 많이 의지해 주세요! 승리는 물론 새해의 소원도 이루어 드릴 테니까요!\n만사형통... 네, 저를 빼고 모두 만사형통...</item>
+    <item>지휘관 새해 축하해! 겨울이라고 해서 너무 껴입은 거 아냐? 정말 약골이네.\n봤지? 내 발엔 아무것도 없어!</item>
+    <item>올해야 말로 가... 가슴이 성장할 수 있도록 힘낼게요!\n올해엔 나도 더 강해져서, 더 대단한 임무를 맡고 싶다.</item>
+    <item>시간은 반드시 새로운 해답을 가져오죠. 그러니 새해에도 계속 함께 힘내요.\n저... 95식 씨, 저도 다시 인사 행렬에 들어가도 될까요?</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2019GunRose_TopTitle">
+    <item>수오미</item>
+    <item>PKP</item>
+    <item>G36C</item>
+    <item>Mk23</item>
+    <item>T-5000</item>
+    <item>게파드 M1</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Sub_2019GunRose">
+    <item>행복한 사명</item>
+    <item>실버 스타</item>
+    <item>행복을 향해서</item>
+    <item>전해진 마음</item>
+    <item>웨딩 레인저</item>
+    <item>기대되는 내일</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2019GunRose_Caption">
+    <item>드디어 이 날이 온 건가요..., 언제나 곁에 있어 주셔서 고마워요, 지휘관님. 제 사명을 드디어 이루게 됐어요...\n으으... 언제 이런 사진을 찍은 건가요?! 이런 나약한 모습, 너무 부끄러워요... 만약 지휘관님이 몰래 찍은 거라면 당장 지우세요!</item>
+    <item>난 과연 강해진 걸까 아니면 약해진 걸까... 그 정답을 말해줘.\n이번 임무도 완벽하게 마쳤다. 엘리트 인형의 차이가 무엇인지 이것으로 똑똑히 봤겠지?</item>
+    <item>저도 좀 더 믿음직해져서 지휘관님의 기대에 보답하겠어요♪\n사전에 정리한 주의사항, 결국엔 도움이 되지 않았네... 기념으로 남기자. 또 이런 임무를 받을 수 있다면 좋을 텐데...</item>
+    <item>이제 새로운 영혼을 받았으니까, 다시 한 번 불러볼게, 달링...\n헤헤~ 달링과 단둘이 사진 찍었다♥ 달링은 누구에게도 양보하지 않을 거라고!</item>
+    <item>아마도 전......지휘관의 그 눈빛에 완전히 빠져버린 것 같아요...\n이런 변신도 괜찮지만, 그래도 버닝 피버처럼 진정한 히어로로 변신해보고 싶다...</item>
+    <item>하지만, 지휘관이 곁에 있어준다면, 이 정도 부담쯤...... 그렇게 두렵지는 않아.\n아... 힘들어. 그래도 이번엔 꽤 즐거웠어... 아마 예쁜 드레스 덕분이겠지? 월급을 모아서 새 옷을 한 벌 사볼까?</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2019Anniversary_TopTitle">
+    <item>K2</item>
+    <item>AK-12</item>
+    <item>AN-94</item>
+    <item>M99</item>
+    <item>MDR</item>
+    <item>79식</item>
+    <item>G28</item>
+    <item>K5</item>
+    <item>썬더</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Sub_2019Anniversary">
+    <item>해뜨기 전에</item>
+    <item>프리징 블루</item>
+    <item>사일런트 레드</item>
+    <item>흰토끼 축제</item>
+    <item>연회 관측자</item>
+    <item>별빛의 폭스트롯</item>
+    <item>달빛과 에메랄드</item>
+    <item>운명의 왈츠</item>
+    <item>블랙 스완의 꿈</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_2019Anniversary_Caption">
+    <item>오늘은 반드시 후배들보다 멋진 모습을 보여줄 거니까 지켜보라고, 지휘관!\n노래하며 춤추는 거라 해도, 후배에게 모범을 보여줄 거야! 잠깐... 지휘관 사진 찍으면 안 돼!</item>
+    <item>오늘은 마음껏 즐기자. 음... 재밌는 일이 있다면 더 좋고.\n후훗, 혹시 모르지. 정말로 지휘관이 내게 초대장을 건넬 날이 올지도.</item>
+    <item>내게 주는 건가? 이건 조금... 아, 아무것도 아니다. 당신과 AK-12가 괜찮다면 나도 불만 없다.\n또 이렇게 날 놀래키지 않길 바란다, AK12. 정말 널 어디에 잃어버린 줄... 하지만 오늘 네 덕분에 재밌었다. 고맙다.</item>
+    <item>지휘관님, 제게 맡기실 일이 있나요? 아... 오늘은 푹 쉬라고 말씀하셨죠. 그럼... 지휘관님, 케이크 한 조각 드셔보실래요?\n지휘관님께서 날 더 보살펴줘야겠다는 게 무슨 뜻이지? 흥, 그것보단 요리사 보고 실력 좀 더 닦으라 말하시지.</item>
+    <item>연회에 녹아들기 위해 정성껏 꾸며야지~ 흐흥, 오늘 독점 뉴스를 얻어 게시판 홈페이지에 오르고야 말겠어!\n나는 포커의 신이다! 하하하! 뭐야, 누가 또 악플 다는 거야!? 삭제 삭제!</item>
+    <item>이것이 여성스러운 복장인가... 아, 마음에 안 드는 것이 아니라, 조금 익숙하지 않을 뿐입니다. 지휘관, 앞으로도 잘 부탁드립니다!\n저 오늘 정말로 매력 있어 보이나요? 그래도 지휘관께서 봐주신 것만으로도 만족해요...</item>
+    <item>지휘관, 오늘 내 스타일 나쁘지 않지? 헤헤, 노력한 보람이 있었네.\n오늘은 만전의 준비를 해왔다고!... 그래서 서프라이즈가 더 즐거운 거고.</item>
+    <item>후훗, 나의 점괘가 들어맞았어! 지휘관, 보답으로 내가 지휘관의 운세를 봐줄까?\n굳이 말하자면.... 난 운세고 뭐고 안 믿어, 난 지휘관만을 믿어.</item>
+    <item>이런 장소이니까... 조용히 지켜보고 있을게요. 그러니 안심하세요.\n연회 정말 즐거웠어. 그리고 디저트에 너에게서 딴 이름을 붙여줬어. 다음엔 같이 갈 수 있을까?</item>
+  </string-array>
+</resources>

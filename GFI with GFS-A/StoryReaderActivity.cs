@@ -44,7 +44,8 @@ namespace GFI_with_GFS_A
             Item_Index = int.Parse(info[2]) + 1;
             Item_Count = int.Parse(info[3]);
 
-            if (Category == "ModStory") Doll_DicNumber = int.Parse(info[4]);
+            if (Category == "ModStory")
+                Doll_DicNumber = int.Parse(info[4]);
 
             Item_List = Intent.GetStringArrayExtra("List");
 
@@ -57,8 +58,10 @@ namespace GFI_with_GFS_A
             RefreshButton.Click += delegate { _ = LoadProcess(true); };
             MainTextView = FindViewById<TextView>(Resource.Id.StoryReaderMainTextView);
 
-            if (Item_Index == 1) PreviousButton.Enabled = false;
-            if (Item_Index == Item_Count) NextButton.Enabled = false;
+            if (Item_Index == 1)
+                PreviousButton.Enabled = false;
+            if (Item_Index == Item_Count)
+                NextButton.Enabled = false;
 
             _ = LoadProcess(false);
         }
@@ -150,7 +153,9 @@ namespace GFI_with_GFS_A
                 }
 
                 DirectoryInfo di = new DirectoryInfo(Path.Combine(ETC.CachePath, "Story", Category));
-                if (di.Exists == false) di.Create();
+
+                if (di.Exists == false)
+                    di.Create();
 
                 using (WebClient wc = new WebClient())
                     await wc.DownloadFileTaskAsync(server, target);

@@ -63,7 +63,8 @@ namespace GFI_with_GFS_A
             switch (CategoryType)
             {
                 case Category.Main:
-                    if (position == 0) TopType = Top.Main;
+                    if (position == 0)
+                        TopType = Top.Main;
                     else return;
                     break;
                 case Category.SubMain:
@@ -94,7 +95,7 @@ namespace GFI_with_GFS_A
             Caption_List.Clear();
             TopTitle_List.Clear();
 
-            if (IsPrevious == true)
+            if (IsPrevious)
             {
                 switch (CategoryType)
                 {
@@ -103,9 +104,9 @@ namespace GFI_with_GFS_A
                         TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_TopTitle));
                         Caption_List.TrimExcess();
                         TopTitle_List.TrimExcess();
-                        adapter = new StoryListAdapter(Main_List, TopTitle_List.ToArray(), Caption_List.ToArray());
                         CategoryType = Category.Main;
                         PreviousButton.Enabled = false;
+                        adapter = new StoryListAdapter(Main_List, TopTitle_List.ToArray(), Caption_List.ToArray());
                         break;
                     case Category.Item:
                         if (TopType == Top.Main)
@@ -122,7 +123,7 @@ namespace GFI_with_GFS_A
                         {
                             SubMain_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub));
                             Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_Caption));
-                            TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_Caption));
+                            TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_TopTitle));
                             SubMain_List.TrimExcess();
                             Caption_List.TrimExcess();
                             TopTitle_List.TrimExcess();
@@ -153,7 +154,7 @@ namespace GFI_with_GFS_A
                         {
                             SubMain_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub));
                             Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_Caption));
-                            TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_Caption));
+                            TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_TopTitle));
                             SubMain_List.TrimExcess();
                             Caption_List.TrimExcess();
                             TopTitle_List.TrimExcess();
@@ -162,8 +163,11 @@ namespace GFI_with_GFS_A
                         CategoryType = Category.SubMain;
                         break;
                     case Category.SubMain:
-                        if (TopType == Top.Main) ListStoryItem_Main();
-                        //else if (TopType == Top.Sub) ListStoryItem_Sub();
+                        if (TopType == Top.Main)
+                            ListStoryItem_Main();
+                        else if (TopType == Top.Sub)
+                            ListStoryItem_Sub();
+
                         CategoryType = Category.Item;
                         break;
                     case Category.Item:

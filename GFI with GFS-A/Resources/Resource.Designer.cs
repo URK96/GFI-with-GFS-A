@@ -770,17 +770,17 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7F030014
 			public const int ImmortalityFront_GF_URL = 2130903060;
 			
-			// aapt resource value: 0x7F03007A
-			public const int kazensky_GF = 2130903162;
+			// aapt resource value: 0x7F0300A5
+			public const int kazensky_GF = 2130903205;
 			
 			// aapt resource value: 0x7F030015
 			public const int MMM_GF = 2130903061;
 			
-			// aapt resource value: 0x7F03007B
-			public const int mota6nako_GF = 2130903163;
+			// aapt resource value: 0x7F0300A6
+			public const int mota6nako_GF = 2130903206;
 			
-			// aapt resource value: 0x7F03007C
-			public const int mota6nako_GF_URL = 2130903164;
+			// aapt resource value: 0x7F0300A7
+			public const int mota6nako_GF_URL = 2130903207;
 			
 			// aapt resource value: 0x7F030016
 			public const int Normal = 2130903062;
@@ -1077,10 +1077,139 @@ namespace GFI_with_GFS_A
 			public const int Story_Main_Sub = 2130903159;
 			
 			// aapt resource value: 0x7F030078
-			public const int Story_Main_Sub_Caption = 2130903160;
+			public const int Story_Main_Sub_2016MessyHalloween = 2130903160;
 			
 			// aapt resource value: 0x7F030079
-			public const int Story_Main_TopTitle = 2130903161;
+			public const int Story_Main_Sub_2016MessyHalloween_Caption = 2130903161;
+			
+			// aapt resource value: 0x7F03007A
+			public const int Story_Main_Sub_2016MessyHalloween_TopTitle = 2130903162;
+			
+			// aapt resource value: 0x7F03007B
+			public const int Story_Main_Sub_2016TacticalChristmas = 2130903163;
+			
+			// aapt resource value: 0x7F03007C
+			public const int Story_Main_Sub_2016TacticalChristmas_Caption = 2130903164;
+			
+			// aapt resource value: 0x7F03007D
+			public const int Story_Main_Sub_2016TacticalChristmas_TopTitle = 2130903165;
+			
+			// aapt resource value: 0x7F03007E
+			public const int Story_Main_Sub_2017Anniversary = 2130903166;
+			
+			// aapt resource value: 0x7F03007F
+			public const int Story_Main_Sub_2017Anniversary_Caption = 2130903167;
+			
+			// aapt resource value: 0x7F030080
+			public const int Story_Main_Sub_2017Anniversary_TopTitle = 2130903168;
+			
+			// aapt resource value: 0x7F030081
+			public const int Story_Main_Sub_2017OperaPrinces = 2130903169;
+			
+			// aapt resource value: 0x7F030082
+			public const int Story_Main_Sub_2017OperaPrinces_Caption = 2130903170;
+			
+			// aapt resource value: 0x7F030083
+			public const int Story_Main_Sub_2017OperaPrinces_TopTitle = 2130903171;
+			
+			// aapt resource value: 0x7F030084
+			public const int Story_Main_Sub_2018Anniversary = 2130903172;
+			
+			// aapt resource value: 0x7F030085
+			public const int Story_Main_Sub_2018Anniversary_Caption = 2130903173;
+			
+			// aapt resource value: 0x7F030086
+			public const int Story_Main_Sub_2018Anniversary_TopTitle = 2130903174;
+			
+			// aapt resource value: 0x7F030087
+			public const int Story_Main_Sub_2018AnotherChristmas = 2130903175;
+			
+			// aapt resource value: 0x7F030088
+			public const int Story_Main_Sub_2018AnotherChristmas_Caption = 2130903176;
+			
+			// aapt resource value: 0x7F030089
+			public const int Story_Main_Sub_2018AnotherChristmas_TopTitle = 2130903177;
+			
+			// aapt resource value: 0x7F03008A
+			public const int Story_Main_Sub_2018BeachParty = 2130903178;
+			
+			// aapt resource value: 0x7F03008B
+			public const int Story_Main_Sub_2018BeachParty_Caption = 2130903179;
+			
+			// aapt resource value: 0x7F03008C
+			public const int Story_Main_Sub_2018BeachParty_TopTitle = 2130903180;
+			
+			// aapt resource value: 0x7F03008D
+			public const int Story_Main_Sub_2018LunaNewYear = 2130903181;
+			
+			// aapt resource value: 0x7F03008E
+			public const int Story_Main_Sub_2018LunaNewYear_Caption = 2130903182;
+			
+			// aapt resource value: 0x7F03008F
+			public const int Story_Main_Sub_2018LunaNewYear_TopTitle = 2130903183;
+			
+			// aapt resource value: 0x7F030090
+			public const int Story_Main_Sub_2018MaidTraining = 2130903184;
+			
+			// aapt resource value: 0x7F030091
+			public const int Story_Main_Sub_2018MaidTraining_Caption = 2130903185;
+			
+			// aapt resource value: 0x7F030092
+			public const int Story_Main_Sub_2018MaidTraining_TopTitle = 2130903186;
+			
+			// aapt resource value: 0x7F030093
+			public const int Story_Main_Sub_2018RiseoftheWitches = 2130903187;
+			
+			// aapt resource value: 0x7F030094
+			public const int Story_Main_Sub_2018RiseoftheWitches_Caption = 2130903188;
+			
+			// aapt resource value: 0x7F030095
+			public const int Story_Main_Sub_2018RiseoftheWitches_TopTitle = 2130903189;
+			
+			// aapt resource value: 0x7F030096
+			public const int Story_Main_Sub_2018SweetWedding = 2130903190;
+			
+			// aapt resource value: 0x7F030097
+			public const int Story_Main_Sub_2018SweetWedding_Caption = 2130903191;
+			
+			// aapt resource value: 0x7F030098
+			public const int Story_Main_Sub_2018SweetWedding_TopTitle = 2130903192;
+			
+			// aapt resource value: 0x7F030099
+			public const int Story_Main_Sub_2019Anniversary = 2130903193;
+			
+			// aapt resource value: 0x7F03009A
+			public const int Story_Main_Sub_2019Anniversary_Caption = 2130903194;
+			
+			// aapt resource value: 0x7F03009B
+			public const int Story_Main_Sub_2019Anniversary_TopTitle = 2130903195;
+			
+			// aapt resource value: 0x7F03009C
+			public const int Story_Main_Sub_2019GunRose = 2130903196;
+			
+			// aapt resource value: 0x7F03009D
+			public const int Story_Main_Sub_2019GunRose_Caption = 2130903197;
+			
+			// aapt resource value: 0x7F03009E
+			public const int Story_Main_Sub_2019GunRose_TopTitle = 2130903198;
+			
+			// aapt resource value: 0x7F03009F
+			public const int Story_Main_Sub_2019LunaNewYear = 2130903199;
+			
+			// aapt resource value: 0x7F0300A0
+			public const int Story_Main_Sub_2019LunaNewYear_Caption = 2130903200;
+			
+			// aapt resource value: 0x7F0300A1
+			public const int Story_Main_Sub_2019LunaNewYear_TopTitle = 2130903201;
+			
+			// aapt resource value: 0x7F0300A2
+			public const int Story_Main_Sub_Caption = 2130903202;
+			
+			// aapt resource value: 0x7F0300A3
+			public const int Story_Main_Sub_TopTitle = 2130903203;
+			
+			// aapt resource value: 0x7F0300A4
+			public const int Story_Main_TopTitle = 2130903204;
 			
 			static Array()
 			{
