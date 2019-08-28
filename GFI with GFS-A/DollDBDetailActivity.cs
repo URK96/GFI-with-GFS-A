@@ -1129,7 +1129,8 @@ namespace GFI_with_GFS_A
                 double[] DPS = ETC.CalcDPS(AbilityValues[1], AbilityValues[4], 0, AbilityValues[3], 3, int.Parse(doll.Abilities["Critical"]), 5);
                 FindViewById<TextView>(Resource.Id.DollInfoDPSStatus).Text = $"{DPS[0].ToString("F2")} ~ {DPS[1].ToString("F2")}";
 
-                if (ETC.UseLightTheme == true) SetCardTheme();
+                if (ETC.UseLightTheme)
+                    SetCardTheme();
 
                 _ = LoadChart(ChartCompareList.SelectedItemPosition);
 

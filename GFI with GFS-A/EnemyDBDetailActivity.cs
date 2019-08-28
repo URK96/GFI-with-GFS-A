@@ -21,8 +21,8 @@ namespace GFI_with_GFS_A
     {
         Enemy enemy = null;
 
-        private int EnemyTypeIndex = 0;
-        private bool IsExtraFeatureOpen = false;
+        private int enemyTypeIndex = 0;
+        private bool isExtraFeatureOpen = false;
 
         private CoordinatorLayout SnackbarLayout;
 
@@ -38,7 +38,8 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+                if (ETC.UseLightTheme)
+                    SetTheme(Resource.Style.GFS_Light);
 
                 // Create your application here
                 SetContentView(Resource.Layout.EnemyDBDetailLayout);
@@ -46,20 +47,17 @@ namespace GFI_with_GFS_A
                 enemy = new Enemy(ETC.FindDataRow(ETC.EnemyList, "CodeName", Intent.GetStringExtra("Keyword")));
 
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.EnemyDBDetailInitLoadProgress);
-
                 FindViewById<ImageView>(Resource.Id.EnemyDBDetailSmallImage).Click += EnemyDBDetailSmallImage_Click;
-
                 TypeSelector = FindViewById<Spinner>(Resource.Id.EnemyDBDetailEnemyTypeSelector);
                 TypeSelector.ItemSelected += TypeSelector_ItemSelected;
+                ExtraMenuButton = FindViewById<Button>(Resource.Id.EnemyDBDetailExtraFeatureButton);
+                ExtraMenuButton.Click += ExtraMenuButton_Click;
 
                 var t_adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, enemy.Types);
                 t_adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
                 TypeSelector.Adapter = t_adapter;
 
-                ExtraMenuButton = FindViewById<Button>(Resource.Id.EnemyDBDetailExtraFeatureButton);
-                ExtraMenuButton.Click += ExtraMenuButton_Click;
-
-                if (enemy.HasVoice == true)
+                if (enemy.HasVoice)
                 {
                     ExtraMenuButton.Visibility = ViewStates.Visible;
                     FindViewById<LinearLayout>(Resource.Id.EnemyDBDetailVoiceLayout).Visibility = ViewStates.Visible;
@@ -84,15 +82,15 @@ namespace GFI_with_GFS_A
         {
             Button b = sender as Button;
 
-            switch (IsExtraFeatureOpen)
+            switch (isExtraFeatureOpen)
             {
                 case false:
-                    IsExtraFeatureOpen = true;
+                    isExtraFeatureOpen = true;
                     b.Text = "△△△";
                     FindViewById<LinearLayout>(Resource.Id.EnemyDBDetailExtraFeatureLayout).Visibility = ViewStates.Visible;
                     break;
                 case true:
-                    IsExtraFeatureOpen = false;
+                    isExtraFeatureOpen = false;
                     b.Text = "▽▽▽";
                     FindViewById<LinearLayout>(Resource.Id.EnemyDBDetailExtraFeatureLayout).Visibility = ViewStates.Gone;
                     break;
@@ -112,18 +110,6 @@ namespace GFI_with_GFS_A
 
                 string VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", "Enemy", enemy.CodeName, $"{enemy.CodeName}_{voice}_JP.wav");
                 string target = Path.Combine(ETC.CachePath, "Voices", "Enemy", $"{enemy.CodeName}_{voice}_JP.gfdcache");
-
-                /*switch (V_Costume_Index)
-                {
-                    case 0:
-                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", doll.krName, $"{doll.krName}_{voice}_JP.wav");
-                        target = Path.Combine(ETC.CachePath, "Voices", $"{doll.DicNumber}_{voice}_JP.gfdcache");
-                        break;
-                    case 1:
-                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", $"{doll.krName}_{V_Costume_Index - 1}", $"{doll.krName}_{V_Costume_Index - 1}_{voice}_JP.wav");
-                        target = Path.Combine(ETC.CachePath, "Voices", $"{doll.DicNumber}_{V_Costume_Index - 1}_{voice}_JP.gfdcache");
-                        break;
-                }*/
 
                 MediaPlayer SoundPlayer = new MediaPlayer();
                 SoundPlayer.Completion += delegate { SoundPlayer.Release(); };
@@ -185,7 +171,7 @@ namespace GFI_with_GFS_A
 
         private void TypeSelector_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-            EnemyTypeIndex = e.Position;
+            enemyTypeIndex = e.Position;
 
             _ = InitLoadProcess();
         }
@@ -214,35 +200,36 @@ namespace GFI_with_GFS_A
 
             try
             {
-                //if (ListingComplete == false) await InitializeTypeList();
-
                 // 철혈 타이틀 바 초기화
 
-                if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false) == true)
+                if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false))
                 {
-                    string image_path = Path.Combine(ETC.CachePath, "Enemy", "Normal", $"{enemy.CodeName}.gfdcache");
+                    string imagePath = Path.Combine(ETC.CachePath, "Enemy", "Normal", $"{enemy.CodeName}.gfdcache");
 
-                    if (File.Exists(image_path) == false)
+                    if (!File.Exists(imagePath))
                         using (WebClient wc = new WebClient())
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Enemy", "Normal", $"{enemy.CodeName}.png"), image_path);
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Enemy", "Normal", $"{enemy.CodeName}.png"), imagePath);
 
-                    Drawable drawable = Drawable.CreateFromPath(image_path);
+                    Drawable drawable = Drawable.CreateFromPath(imagePath);
                     drawable.SetAlpha(40);
                     FindViewById<RelativeLayout>(Resource.Id.EnemyDBDetailMainLayout).Background = drawable;
                 }
 
-                string cropimage_path = Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", $"{enemy.CodeName}.gfdcache");
+                string cropImagePath = Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", $"{enemy.CodeName}.gfdcache");
 
-                if (File.Exists(cropimage_path) == false)
+                if (!File.Exists(cropImagePath))
                     using (WebClient wc = new WebClient())
-                        await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Enemy", "Normal_Crop", $"{enemy.CodeName}.png"), cropimage_path);
+                        await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Enemy", "Normal_Crop", $"{enemy.CodeName}.png"), cropImagePath);
 
-                FindViewById<ImageView>(Resource.Id.EnemyDBDetailSmallImage).SetImageDrawable(Drawable.CreateFromPath(cropimage_path));
+                FindViewById<ImageView>(Resource.Id.EnemyDBDetailSmallImage).SetImageDrawable(Drawable.CreateFromPath(cropImagePath));
 
-                if (enemy.IsBoss == true)
+                TextView type = FindViewById<TextView>(Resource.Id.EnemyDBDetailType);
+
+                if (enemy.IsBoss)
                     FindViewById<TextView>(Resource.Id.EnemyDBDetailType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Boss);
                 else
                     FindViewById<TextView>(Resource.Id.EnemyDBDetailType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Normal);
+
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailEnemyName).Text = enemy.Name;
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailEnemyCodeName).Text = enemy.CodeName;
 
@@ -260,18 +247,12 @@ namespace GFI_with_GFS_A
                         GradeIconId = Resource.Drawable.Type_Normal;
                         break;
                 }
+
                 FindViewById<ImageView>(Resource.Id.EnemyDBDetailInfoGrade).SetImageResource(GradeIconId);
-
-                if (enemy.IsBoss == true)
-                    FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoEnemyType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Boss);
-                else
-                    FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoEnemyType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Normal);
+                FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoEnemyAffiliation).Text = enemy.Affiliation;
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoName).Text = enemy.Name;
-                FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoCodeName).Text = enemy.CodeName;
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoVoiceActor).Text = "";
-                if (enemy.IsBoss == true)
-                    FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoAppearPlace).Text = enemy.Types[EnemyTypeIndex];
-
+                FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoETC).Text = enemy.Note;
 
                 // 철혈 능력치 초기화
 
@@ -284,14 +265,13 @@ namespace GFI_with_GFS_A
                 {
                     FindViewById<TextView>(ProgressMaxTexts[i]).Text = FindViewById<ProgressBar>(Progresses[i]).Max.ToString();
 
-                    int value = enemy.Abilities[EnemyTypeIndex][abilities[i]];
+                    int value = enemy.Abilities[enemyTypeIndex][abilities[i]];
 
                     FindViewById<ProgressBar>(Progresses[i]).Progress = value;
                     FindViewById<TextView>(StatusTexts[i]).Text = value.ToString();
                 }
 
-
-                _ = ShowCardViewAnimation();
+                ShowCardViewVisibility();
             }
             catch (WebException ex)
             {
@@ -311,60 +291,11 @@ namespace GFI_with_GFS_A
             }
         }
 
-        /*private async Task InitializeTypeList()
+        private void ShowCardViewVisibility()
         {
-            List<string> TypeList = new List<string>();
-            List<int> row_index = new List<int>();
-
-            for (int i = 0; i < ETC.EnemyList.Rows.Count; ++i)
-            {
-                DataRow dr = ETC.EnemyList.Rows[i];
-
-                if ((string)dr["CodeName"] != EnemyCodeName) continue;
-
-                row_index.Add(i);
-                TypeList.Add((string)dr["Type"]);
-            }
-
-            row_index.TrimExcess();
-            TypeList.TrimExcess();
-
-            EnemyInfoDRs = new DataRow[row_index.Count];
-
-            for (int i = 0; i < EnemyInfoDRs.Length; ++i) EnemyInfoDRs[i] = ETC.EnemyList.Rows[row_index[i]];
-
-            EnemyName = (string)EnemyInfoDRs[0]["Name"];
-            IsBoss = (bool)EnemyInfoDRs[0]["IsBoss"];
-
-            var TypeListAdapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, TypeList);
-            TypeListAdapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
-
-            TypeSelector.Adapter = TypeListAdapter;
-
-            ListingComplete = true;
-        }*/
-
-        private void SetCardTheme()
-        {
-            int[] CardViewIds = { Resource.Id.EnemyDBDetailBasicInfoCardLayout, Resource.Id.EnemyDBDetailAbilityCardLayout };
-
-            foreach (int id in CardViewIds)
-            {
-                CardView cv = FindViewById<CardView>(id);
-
-                cv.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
-                cv.Radius = 15.0f;
-            }
-        }
-
-        private async Task ShowCardViewAnimation()
-        {
-            await Task.Delay(100);
-
-            if (FindViewById<CardView>(Resource.Id.EnemyDBDetailBasicInfoCardLayout).Alpha == 0.0f)
-                FindViewById<CardView>(Resource.Id.EnemyDBDetailBasicInfoCardLayout).Animate().Alpha(1.0f).SetDuration(500).Start();
-            if (FindViewById<CardView>(Resource.Id.EnemyDBDetailAbilityCardLayout).Alpha == 0.0f)
-                FindViewById<CardView>(Resource.Id.EnemyDBDetailAbilityCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1000).Start();
+            FindViewById<CardView>(Resource.Id.EnemyDBDetailEnemyTypeSelectCardLayout).Visibility = ViewStates.Visible;
+            FindViewById<CardView>(Resource.Id.EnemyDBDetailBasicInfoCardLayout).Visibility = ViewStates.Visible;
+            FindViewById<CardView>(Resource.Id.EnemyDBDetailAbilityCardLayout).Visibility = ViewStates.Visible;
         }
 
     }

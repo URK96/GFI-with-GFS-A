@@ -188,6 +188,7 @@
   <string name="Common_EquipType">Equip Type</string>
   <string name="Common_FairyType">Fairy Type</string>
   <string name="Common_EnemyType">Enemy Type</string>
+  <string name="Common_Affiliation">Affiliation</string>
   <string name="Common_FSTType">FST Type</string>
   <string name="Common_ProductTime">Product Time</string>
   <string name="Common_SkillName">Skill Name</string>
@@ -239,6 +240,13 @@
   <string name="Common_Next">Next</string>
   <string name="Common_PreviousList">Previous List</string>
   <string name="Common_NonProduct">Non-Manufacturing</string>
+  <string name="Common_Affiliation_SF">S.F.</string>
+  <string name="Common_Affiliation_IOP">I.O.P</string>
+  <string name="Common_Affiliation_MindMapSystem">Mind Map</string>
+  <string name="Common_Affiliation_KCCO">KCCO</string>
+  <string name="Common_Affiliation_Paradeus">Paradeus</string>
+  <string name="Common_Affiliation_ELID">E.L.I.D.</string>
+  <string name="Common_GFDNotification">GFD Notification</string>
 
   <!--Country String-->
   <string name="Country_Australia">Australia</string>
@@ -321,6 +329,7 @@
   <!--EnemyDBDetail-->
   <string name="EnemyDBDetail_Boss">Boss</string>
   <string name="EnemyDBDetail_Normal">Normal</string>
+  <string name="EnemyDBDetail_EnemyVersionType">Version Type</string>
   
   <!--EnemyDBMain-->
   <string name="EnemyDBMainActivity_Title">Enemy List</string>
@@ -356,7 +365,6 @@
   <!--Main-->
   <string name="MainActivity_Title">GFD</string>
   <string name="Main_MainMenu_DBMenu">DB Menu</string>
-  <string name="Main_MainMenu_MDSupport">Logistic Support</string>
   <string name="Main_MainMenu_OldGFD">GFD v1</string>
   <string name="Main_MainMenu_GFDInfo">Info</string>
   <string name="Main_MainMenu_Extras">Extras</string>
@@ -370,6 +378,7 @@
   <string name="Main_ExtraMenu_OfficialNotification">GF Notification</string>
   <string name="Main_ExtraMenu_Calc">Calculator</string>
   <string name="Main_ExtraMenu_AreaTip">Area Tip</string>
+  <string name="Main_ExtraMenu_MDSupport">Logistic Support</string>
   <string name="Main_ExtraMenu_ProductSimulator">Manufacturing Simulation</string>
   <string name="Main_ExtraMenu_GFOSTPlayer">OST Player</string>
   <string name="Main_ExtraMenu_Cartoon">Cartoon</string>

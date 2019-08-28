@@ -311,11 +311,13 @@ namespace GFI_with_GFS_A
     {
         public string Name { get; private set; }
         public string CodeName { get; private set; }
+        public string Affiliation { get; private set; }
         public string[] Types { get; private set; }
         public bool IsBoss { get; private set; }
         public bool HasVoice { get; private set; }
         public string VoiceActor { get; private set; }
         public string[] Voices { get; private set; }
+        public string Note { get; private set; }
 
         public Dictionary<string, int>[] Abilities;
 
@@ -323,6 +325,8 @@ namespace GFI_with_GFS_A
         {
             Name = (string)dr["Name"];
             CodeName = (string)dr["CodeName"];
+            Affiliation = (string)dr["Affiliation"];
+            Note = ETC.IsDBNullOrBlank(dr, "Note") ? "" : (string)dr["Note"];
 
             List<DataRow> drs = new List<DataRow>();
 
@@ -338,7 +342,8 @@ namespace GFI_with_GFS_A
 
             IsBoss = (bool)dr["IsBoss"];
             HasVoice = (bool)dr["HasVoice"];
-            if (HasVoice == true)
+
+            if (HasVoice)
             {
                 VoiceActor = (string)dr["VoiceActor"];
                 Voices = ((string)dr["Voices"]).Split(';');

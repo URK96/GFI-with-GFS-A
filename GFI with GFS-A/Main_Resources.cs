@@ -4,7 +4,7 @@ namespace GFI_with_GFS_A
 {
     public partial class Main : AppCompatActivity
     {
-        readonly int[] MainMenuButtonIds =
+        /*readonly int[] MainMenuButtonIds =
 {
             Resource.Id.DBSubMenuMainButton,
             Resource.Id.OldGFDMainButton,
@@ -12,7 +12,7 @@ namespace GFI_with_GFS_A
             Resource.Id.GFDInfoMainButton,
             Resource.Id.ExtraMainButton,
             Resource.Id.SettingMainButton
-        };
+        };*/
         readonly int[] MainMenuButtonBackgroundIds =
         {
             Resource.Drawable.Main_DBMenuSelector,
@@ -35,20 +35,20 @@ namespace GFI_with_GFS_A
         {
             ETC.Resources.GetString(Resource.String.Main_MainMenu_DBMenu),
             ETC.Resources.GetString(Resource.String.Main_MainMenu_OldGFD),
-            ETC.Resources.GetString(Resource.String.Main_MainMenu_MDSupport),
+            //ETC.Resources.GetString(Resource.String.Main_MainMenu_MDSupport),
             ETC.Resources.GetString(Resource.String.Main_MainMenu_GFDInfo),
             ETC.Resources.GetString(Resource.String.Main_MainMenu_Extras),
             ETC.Resources.GetString(Resource.String.Main_MainMenu_Setting)
         };
 
-        readonly int[] DBSubMenuButtonIds =
+        /*readonly int[] DBSubMenuButtonIds =
         {
             Resource.Id.DollDBButton,
             Resource.Id.EquipDBButton,
             Resource.Id.FairyDBButton,
             Resource.Id.EnemyDBButton,
             Resource.Id.FSTDBButton
-        };
+        };*/
         readonly int[] DBSubMenuButtonBackgroundIds =
         {
             Resource.Drawable.DBSub_DollDBSelector,
@@ -74,7 +74,7 @@ namespace GFI_with_GFS_A
             ETC.Resources.GetString(Resource.String.Main_DBMenu_FSTDB)
         };
 
-        readonly int[] ExtraMenuButtonIds =
+        /*readonly int[] ExtraMenuButtonIds =
         {
             Resource.Id.EventExtraButton,
             Resource.Id.GFNewsExtraButton,
@@ -85,7 +85,7 @@ namespace GFI_with_GFS_A
             Resource.Id.StoryExtraButton,
             Resource.Id.CartoonExtraButton,
             Resource.Id.GFOSTPlayerExtraButton
-        };
+        };*/
         readonly int[] ExtraMenuButtonBackgroundIds =
         {
             Resource.Drawable.Extra_EventSelector,
@@ -116,11 +116,41 @@ namespace GFI_with_GFS_A
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_OfficialNotification),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_Calc),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_AreaTip),
+            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_MDSupport),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_ShortGuideBookViewer),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_ProductSimulator),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_Story),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_Cartoon),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_GFOSTPlayer)
+        };
+
+        readonly string[] oldGFDListText_ko =
+        {
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_ProductDollTable),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_ProductEquipTable),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_ProductFairyTable),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_MDTable),
+            //ETC.Resources.GetString(Resource.String.OldGFDViewer_DollPerformance),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_FairyAttribute),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendDollRecipe),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendEquipRecipe),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendMD),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendBreeding)
+        };
+        readonly string[] oldGFDListText_etc =
+        {
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_ProductDollTable),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_ProductEquipTable),
+            //ETC.Resources.GetString(Resource.String.OldGFDViewer_ProductFairyTable),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_MDTable),
+            //ETC.Resources.GetString(Resource.String.OldGFDViewer_DollPerformance),
+            //ETC.Resources.GetString(Resource.String.OldGFDViewer_FairyAttribute),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendDollRecipe),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendEquipRecipe),
+            //ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendMD),
+            ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendLeveling),
+            //ETC.Resources.GetString(Resource.String.OldGFDViewer_RecommendBreeding)
         };
     }
 }

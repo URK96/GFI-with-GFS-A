@@ -190,6 +190,7 @@
   <string name="Common_EquipType">장비 종류</string>
   <string name="Common_FairyType">요정 종류</string>
   <string name="Common_EnemyType">철혈 종류</string>
+  <string name="Common_Affiliation">소속</string>
   <string name="Common_FSTType">중화기 종류</string>
   <string name="Common_ProductTime">제조 시간</string>
   <string name="Common_SkillName">스킬명</string>
@@ -241,6 +242,13 @@
   <string name="Common_Next">다음</string>
   <string name="Common_PreviousList">이전 목록으로</string>
   <string name="Common_NonProduct">제조 불가</string>
+  <string name="Common_Affiliation_SF">철혈</string>
+  <string name="Common_Affiliation_IOP">I.O.P</string>
+  <string name="Common_Affiliation_MindMapSystem">마인드 맵</string>
+  <string name="Common_Affiliation_KCCO">정규군</string>
+  <string name="Common_Affiliation_Paradeus">패러데우스</string>
+  <string name="Common_Affiliation_ELID">E.L.I.D.</string>
+  <string name="Common_GFDNotification">소전사전 공지사항</string>
   
   <!--Country String-->
   <string name="Country_Australia">호주</string>
@@ -324,6 +332,7 @@
   <!--EnemyDBDetail-->
   <string name="EnemyDBDetail_Boss">보스</string>
   <string name="EnemyDBDetail_Normal">일반</string>
+  <string name="EnemyDBDetail_EnemyVersionType">적군 유형</string>
   
   <!--EnemyDBMain-->
   <string name="EnemyDBMainActivity_Title">철혈 목록</string>
@@ -359,7 +368,6 @@
   <!--Main-->
   <string name="MainActivity_Title">소전사전</string>
   <string name="Main_MainMenu_DBMenu">DB 메뉴</string>
-  <string name="Main_MainMenu_MDSupport">군수지원</string>
   <string name="Main_MainMenu_OldGFD">소전사전v1</string>
   <string name="Main_MainMenu_GFDInfo">정보</string>
   <string name="Main_MainMenu_Extras">추가 기능</string>
@@ -373,6 +381,7 @@
   <string name="Main_ExtraMenu_OfficialNotification">소전 공지사항</string>
   <string name="Main_ExtraMenu_Calc">계산기</string>
   <string name="Main_ExtraMenu_AreaTip">지역 공략</string>
+  <string name="Main_ExtraMenu_MDSupport">군수지원</string>
   <string name="Main_ExtraMenu_ProductSimulator">제조 시뮬레이터</string>
   <string name="Main_ExtraMenu_GFOSTPlayer">OST Player</string>
   <string name="Main_ExtraMenu_Cartoon">만화</string>

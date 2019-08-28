@@ -15,25 +15,25 @@ namespace GFI_with_GFS_A
     [Activity(Name = "com.gfl.dic.WebViewActivity", Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class WebBrowserActivity : FragmentActivity
     {
-        private static ProgressBar LoadProgress;
+        private static ProgressBar loadProgress;
 
         private WebView web;
-        private FloatingActionButton ExitFAB;
-        private ImageButton PreviousButton;
-        private ImageButton NextButton;
-        private ImageButton CloseButton;
+        private ImageButton previousButton;
+        private ImageButton nextButton;
+        private ImageButton closeButton;
+        private static EditText webAddressEditText;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme == true)
+            if (ETC.UseLightTheme)
                 SetTheme(Resource.Style.GFS_Light);
 
             // Create your application here
             SetContentView(Resource.Layout.WebBrowserLayout);
 
-            if (CheckDeviceNetwork() == false)
+            if (!CheckDeviceNetwork())
             {
                 Toast.MakeText(this, Resource.String.Web_NetworkNotInternet, ToastLength.Short).Show();
                 Finish();
@@ -41,23 +41,35 @@ namespace GFI_with_GFS_A
 
             //LoadProgress = FindViewById<ProgressBar>(Resource.Id.WebBrowserProgressBar);       
             web = FindViewById<WebView>(Resource.Id.WebBrowser);
-            //ExitFAB = FindViewById<FloatingActionButton>(Resource.Id.ExitWebFAB);
-            //ExitFAB.Click += ExitFAB_Click;
-            PreviousButton = FindViewById<ImageButton>(Resource.Id.WebBrowserToolbarPrevious);
-            NextButton = FindViewById<ImageButton>(Resource.Id.WebBrowserToolbarNext);
-            CloseButton = FindViewById<ImageButton>(Resource.Id.WebBrowserToolbarClose);
+            webAddressEditText = FindViewById<EditText>(Resource.Id.WebBrowserAddressBar);
+            webAddressEditText.EditorAction += (object sender, TextView.EditorActionEventArgs e) =>
+            {
+                string url = (sender as EditText).Text;
 
-            PreviousButton.Click += delegate
+                if (e.ActionId == Android.Views.InputMethods.ImeAction.Done)
+                    if (url.StartsWith("http"))
+                        web.LoadUrl(url);
+                    else
+                        web.LoadUrl($"http://{url}");
+            };
+            previousButton = FindViewById<ImageButton>(Resource.Id.WebBrowserToolbarPrevious);
+            nextButton = FindViewById<ImageButton>(Resource.Id.WebBrowserToolbarNext);
+            closeButton = FindViewById<ImageButton>(Resource.Id.WebBrowserToolbarClose);
+            previousButton.Click += delegate
             {
                 if (web.CanGoBack())
                     web.GoBack();
             };
-            NextButton.Click += delegate
+            nextButton.Click += delegate
             {
                 if (web.CanGoForward())
                     web.GoForward();
             };
-            CloseButton.Click += delegate { Finish(); };
+            closeButton.Click += delegate 
+            {
+                Finish();
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+            };
 
             web.Settings.JavaScriptEnabled = true;
             web.SetWebViewClient(new WebBrowserWebClient());
@@ -79,14 +91,14 @@ namespace GFI_with_GFS_A
             {
                 string url = Intent.GetStringExtra("url");
 
-                if (url == null)
-                    url = Intent.DataString;
+                url = url ?? Intent.DataString;
 
                 web.LoadUrl(url);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
+                Toast.MakeText(this, "Cannot Load Web URL", ToastLength.Short).Show();
             }
         }
 
@@ -95,7 +107,9 @@ namespace GFI_with_GFS_A
             try
             {
                 var network = Connectivity.NetworkAccess;
-                if (network != NetworkAccess.Internet) return false;
+
+                if (network != NetworkAccess.Internet)
+                    return false;
             }
             catch (Exception ex)
             {
@@ -108,7 +122,7 @@ namespace GFI_with_GFS_A
 
         public override void OnBackPressed()
         {
-            if (web.CanGoBack() == true)
+            if (web.CanGoBack())
                 web.GoBack();
             else
             {
@@ -124,31 +138,40 @@ namespace GFI_with_GFS_A
             public override bool ShouldOverrideUrlLoading(WebView view, string url)
             {
                 view.LoadUrl(url);
+
                 return false;
             }
 
             public override bool ShouldOverrideUrlLoading(WebView view, IWebResourceRequest request)
             {
                 view.LoadUrl(request.Url.ToString());
+
                 return false;
             }
 
             public override void OnLoadResource(WebView view, string url)
             {
                 base.OnLoadResource(view, url);
-                if (LoadProgress != null) LoadProgress.Progress = view.Progress;
+
+                if (loadProgress != null)
+                    loadProgress.Progress = view.Progress;
             }
 
             public override void OnPageStarted(WebView view, string url, Bitmap favicon)
             {
                 base.OnPageStarted(view, url, favicon);
-                if (LoadProgress != null) LoadProgress.Visibility = ViewStates.Visible;
+                webAddressEditText.Text = url;
+
+                if (loadProgress != null)
+                    loadProgress.Visibility = ViewStates.Visible;
             }
 
             public override void OnPageFinished(WebView view, string url)
             {
                 base.OnPageFinished(view, url);
-                if (LoadProgress != null) LoadProgress.Visibility = ViewStates.Gone;
+
+                if (loadProgress != null)
+                    loadProgress.Visibility = ViewStates.Gone;
             }
         }
     }

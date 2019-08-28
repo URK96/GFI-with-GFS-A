@@ -15,63 +15,65 @@ namespace GFI_with_GFS_A
         enum Category { Main, SubMain, Item }
         enum Top { Main, Sub }
 
-        private Category CategoryType = Category.Main;
-        private Top TopType = Top.Main;
+        private Category categoryType = Category.Main;
+        private Top topType = Top.Main;
 
-        private RecyclerView MainRecyclerView;
-        private Button PreviousButton;
-        private RecyclerView.LayoutManager MainRecyclerManager;
+        private RecyclerView mainRecyclerView;
+        private Button previousButton;
+        private RecyclerView.LayoutManager mainRecyclerManager;
 
-        private string[] Main_List;
-        private List<string> SubMain_List = new List<string>();
-        private List<string> Item_List = new List<string>();
-        private List<string> TopTitle_List = new List<string>();
-        private List<string> Caption_List = new List<string>();
+        private string[] mainList;
+        private List<string> subMainList = new List<string>();
+        private List<string> itemList = new List<string>();
+        private List<string> topTitleList = new List<string>();
+        private List<string> captionList = new List<string>();
 
         private StoryListAdapter adapter;
 
-        private int SubMain_Index = 0;
-        private int Item_Index = 0;
+        private int subMainIndex = 0;
+        private int itemIndex = 0;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_NoActionBar_Light);
+            if (ETC.UseLightTheme)
+                SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
             // Create your application here
             SetContentView(Resource.Layout.StoryMainLayout);
 
             SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.StoryMainToolbar));
 
-            MainRecyclerView = FindViewById<RecyclerView>(Resource.Id.StoryRecyclerView);
-            MainRecyclerManager = new LinearLayoutManager(this);
-            MainRecyclerView.SetLayoutManager(MainRecyclerManager);
-
-            PreviousButton = FindViewById<Button>(Resource.Id.StoryMainPreviousButton);
-            PreviousButton.Click += delegate { ChangeAdapter(true); };
+            mainRecyclerView = FindViewById<RecyclerView>(Resource.Id.StoryRecyclerView);
+            mainRecyclerManager = new LinearLayoutManager(this);
+            mainRecyclerView.SetLayoutManager(mainRecyclerManager);
+            previousButton = FindViewById<Button>(Resource.Id.StoryMainPreviousButton);
+            previousButton.Click += delegate { ChangeAdapter(true); };
 
             InitializeList();
 
-            adapter = new StoryListAdapter(Main_List, TopTitle_List.ToArray(), Caption_List.ToArray());
+            adapter = new StoryListAdapter(mainList, topTitleList.ToArray(), captionList.ToArray());
             adapter.ItemClick += Adapter_ItemClick;
-            MainRecyclerView.SetAdapter(adapter);
+            mainRecyclerView.SetAdapter(adapter);
         }
 
         private void Adapter_ItemClick(object sender, int position)
         {
-            switch (CategoryType)
+            switch (categoryType)
             {
                 case Category.Main:
                     if (position == 0)
-                        TopType = Top.Main;
+                        topType = Top.Main;
+                    else if (position == 1)
+                        topType = Top.Sub;
                     else return;
                     break;
                 case Category.SubMain:
-                    SubMain_Index = position;
+                    subMainIndex = position;
                     break;
                 case Category.Item:
-                    Item_Index = position;
+                    itemIndex = position;
                     break;
             }
 
@@ -80,95 +82,95 @@ namespace GFI_with_GFS_A
 
         private void InitializeList()
         {
-            Main_List = Resources.GetStringArray(Resource.Array.Story_Main);
+            mainList = Resources.GetStringArray(Resource.Array.Story_Main);
 
-            TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_TopTitle));
-            TopTitle_List.TrimExcess();
-            Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Caption));
-            Caption_List.TrimExcess();
+            topTitleList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_TopTitle));
+            topTitleList.TrimExcess();
+            captionList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Caption));
+            captionList.TrimExcess();
         }
 
         private void ChangeAdapter(bool IsPrevious)
         {
             adapter = null;
-            SubMain_List.Clear();
-            Caption_List.Clear();
-            TopTitle_List.Clear();
+            subMainList.Clear();
+            captionList.Clear();
+            topTitleList.Clear();
 
             if (IsPrevious)
             {
-                switch (CategoryType)
+                switch (categoryType)
                 {
                     case Category.SubMain:
-                        Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Caption));
-                        TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_TopTitle));
-                        Caption_List.TrimExcess();
-                        TopTitle_List.TrimExcess();
-                        CategoryType = Category.Main;
-                        PreviousButton.Enabled = false;
-                        adapter = new StoryListAdapter(Main_List, TopTitle_List.ToArray(), Caption_List.ToArray());
+                        captionList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Caption));
+                        topTitleList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_TopTitle));
+                        captionList.TrimExcess();
+                        topTitleList.TrimExcess();
+                        categoryType = Category.Main;
+                        previousButton.Enabled = false;
+                        adapter = new StoryListAdapter(mainList, topTitleList.ToArray(), captionList.ToArray());
                         break;
                     case Category.Item:
-                        if (TopType == Top.Main)
+                        if (topType == Top.Main)
                         {
-                            SubMain_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main));
-                            Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main_Caption));
-                            TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main_TopTitle));
-                            SubMain_List.TrimExcess();
-                            Caption_List.TrimExcess();
-                            TopTitle_List.TrimExcess();
-                            adapter = new StoryListAdapter(SubMain_List.ToArray(), TopTitle_List.ToArray(), Caption_List.ToArray());
+                            subMainList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main));
+                            captionList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main_Caption));
+                            topTitleList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main_TopTitle));
+                            subMainList.TrimExcess();
+                            captionList.TrimExcess();
+                            topTitleList.TrimExcess();
+                            adapter = new StoryListAdapter(subMainList.ToArray(), topTitleList.ToArray(), captionList.ToArray());
                         }
-                        else if (TopType == Top.Sub)
+                        else if (topType == Top.Sub)
                         {
-                            SubMain_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub));
-                            Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_Caption));
-                            TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_TopTitle));
-                            SubMain_List.TrimExcess();
-                            Caption_List.TrimExcess();
-                            TopTitle_List.TrimExcess();
-                            adapter = new StoryListAdapter(SubMain_List.ToArray(), TopTitle_List.ToArray(), Caption_List.ToArray());
+                            subMainList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub));
+                            captionList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_Caption));
+                            topTitleList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_TopTitle));
+                            subMainList.TrimExcess();
+                            captionList.TrimExcess();
+                            topTitleList.TrimExcess();
+                            adapter = new StoryListAdapter(subMainList.ToArray(), topTitleList.ToArray(), captionList.ToArray());
                         }
-                        CategoryType = Category.SubMain;
+                        categoryType = Category.SubMain;
                         break;
                 }
             }
             else
             {
-                PreviousButton.Enabled = true;
+                previousButton.Enabled = true;
 
-                switch (CategoryType)
+                switch (categoryType)
                 {
                     case Category.Main:
-                        if (TopType == Top.Main)
+                        if (topType == Top.Main)
                         {
-                            SubMain_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main));
-                            Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main_Caption));
-                            TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main_TopTitle));
-                            SubMain_List.TrimExcess();
-                            Caption_List.TrimExcess();
-                            TopTitle_List.TrimExcess();
-                            adapter = new StoryListAdapter(SubMain_List.ToArray(), TopTitle_List.ToArray(), Caption_List.ToArray());
+                            subMainList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main));
+                            captionList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main_Caption));
+                            topTitleList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Main_TopTitle));
+                            subMainList.TrimExcess();
+                            captionList.TrimExcess();
+                            topTitleList.TrimExcess();
+                            adapter = new StoryListAdapter(subMainList.ToArray(), topTitleList.ToArray(), captionList.ToArray());
                         }
-                        else if (TopType == Top.Sub)
+                        else if (topType == Top.Sub)
                         {
-                            SubMain_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub));
-                            Caption_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_Caption));
-                            TopTitle_List.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_TopTitle));
-                            SubMain_List.TrimExcess();
-                            Caption_List.TrimExcess();
-                            TopTitle_List.TrimExcess();
-                            adapter = new StoryListAdapter(SubMain_List.ToArray(), TopTitle_List.ToArray(), Caption_List.ToArray());
+                            subMainList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub));
+                            captionList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_Caption));
+                            topTitleList.AddRange(Resources.GetStringArray(Resource.Array.Story_Main_Sub_TopTitle));
+                            subMainList.TrimExcess();
+                            captionList.TrimExcess();
+                            topTitleList.TrimExcess();
+                            adapter = new StoryListAdapter(subMainList.ToArray(), topTitleList.ToArray(), captionList.ToArray());
                         }
-                        CategoryType = Category.SubMain;
+                        categoryType = Category.SubMain;
                         break;
                     case Category.SubMain:
-                        if (TopType == Top.Main)
+                        if (topType == Top.Main)
                             ListStoryItem_Main();
-                        else if (TopType == Top.Sub)
+                        else if (topType == Top.Sub)
                             ListStoryItem_Sub();
 
-                        CategoryType = Category.Item;
+                        categoryType = Category.Item;
                         break;
                     case Category.Item:
                         RunReader();
@@ -176,13 +178,15 @@ namespace GFI_with_GFS_A
                 }
             }
 
-            if (adapter.HasOnItemClick() == false) adapter.ItemClick += Adapter_ItemClick;
-            MainRecyclerView.SetAdapter(adapter);
+            if (!adapter.HasOnItemClick())
+                adapter.ItemClick += Adapter_ItemClick;
+
+            mainRecyclerView.SetAdapter(adapter);
         }
 
         public override void OnBackPressed()
         {
-            switch (CategoryType)
+            switch (categoryType)
             {
                 case Category.Item:
                 case Category.SubMain:
@@ -214,26 +218,26 @@ namespace GFI_with_GFS_A
 
     public class StoryListAdapter : RecyclerView.Adapter
     {
-        private string[] TitleList;
-        private string[] TopTitleList;
-        private string[] CaptionList;
+        private string[] titleList;
+        private string[] topTitleList;
+        private string[] captionList;
 
         public event EventHandler<int> ItemClick;
 
         public StoryListAdapter(string[] title, string[] toptitle, string[] caption)
         {
-            TitleList = title;
-            TopTitleList = toptitle;
-            CaptionList = caption;
+            titleList = title;
+            topTitleList = toptitle;
+            captionList = caption;
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             StoryListViewHolder vh = holder as StoryListViewHolder;
 
-            vh.TopTitle.Text = TopTitleList[position];
-            vh.Title.Text = TitleList[position];
-            vh.Caption.Text = CaptionList[position];
+            vh.TopTitle.Text = topTitleList[position];
+            vh.Title.Text = titleList[position];
+            vh.Caption.Text = captionList[position];
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
@@ -246,21 +250,20 @@ namespace GFI_with_GFS_A
 
         public override int ItemCount
         {
-            get { return TitleList.Length; }
+            get { return titleList.Length; }
         }
 
         void OnClick(int position)
         {
-            if (ItemClick != null)
-            {
-                ItemClick(this, position);
-            }
+            ItemClick?.Invoke(this, position);
         }
 
         public bool HasOnItemClick()
         {
-            if (ItemClick == null) return false;
-            else return true;
+            if (ItemClick == null)
+                return false;
+            else
+                return true;
         }
     }
 }

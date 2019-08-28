@@ -7,13 +7,13 @@ namespace GFI_with_GFS_A
     {
         private void ListStoryItem_Main()
         {
-            Item_List.Clear();
+            itemList.Clear();
 
             int Title_res = 0;
             int Caption_res = 0;
             int TopTitle_res = 0;
 
-            switch (SubMain_Index)
+            switch (subMainIndex)
             {
                 case 0:
                     Title_res = Resource.Array.Story_Main_Main_Prologue;
@@ -167,26 +167,26 @@ namespace GFI_with_GFS_A
                     break;
             }
 
-            Item_List.AddRange(Resources.GetStringArray(Title_res));
-            Caption_List.AddRange(Resources.GetStringArray(Caption_res));
-            TopTitle_List.AddRange(Resources.GetStringArray(TopTitle_res));
-            Item_List.TrimExcess();
-            Caption_List.TrimExcess();
-            TopTitle_List.TrimExcess();
+            itemList.AddRange(Resources.GetStringArray(Title_res));
+            captionList.AddRange(Resources.GetStringArray(Caption_res));
+            topTitleList.AddRange(Resources.GetStringArray(TopTitle_res));
+            itemList.TrimExcess();
+            captionList.TrimExcess();
+            topTitleList.TrimExcess();
 
-            adapter = new StoryListAdapter(Item_List.ToArray(), TopTitle_List.ToArray(), Caption_List.ToArray());
+            adapter = new StoryListAdapter(itemList.ToArray(), topTitleList.ToArray(), captionList.ToArray());
             adapter.ItemClick += Adapter_ItemClick;
         }
 
         private void ListStoryItem_Sub()
         {
-            Item_List.Clear();
+            itemList.Clear();
 
             int Title_res = 0;
             int Caption_res = 0;
             int TopTitle_res = 0;
 
-            switch (SubMain_Index)
+            switch (subMainIndex)
             {
                 case 0:
                     Title_res = Resource.Array.Story_Main_Sub_2016MessyHalloween;
@@ -260,14 +260,14 @@ namespace GFI_with_GFS_A
                     break;
             }
 
-            Item_List.AddRange(Resources.GetStringArray(Title_res));
-            Caption_List.AddRange(Resources.GetStringArray(Caption_res));
-            TopTitle_List.AddRange(Resources.GetStringArray(TopTitle_res));
-            Item_List.TrimExcess();
-            Caption_List.TrimExcess();
-            TopTitle_List.TrimExcess();
+            itemList.AddRange(Resources.GetStringArray(Title_res));
+            captionList.AddRange(Resources.GetStringArray(Caption_res));
+            topTitleList.AddRange(Resources.GetStringArray(TopTitle_res));
+            itemList.TrimExcess();
+            captionList.TrimExcess();
+            topTitleList.TrimExcess();
 
-            adapter = new StoryListAdapter(Item_List.ToArray(), TopTitle_List.ToArray(), Caption_List.ToArray());
+            adapter = new StoryListAdapter(itemList.ToArray(), topTitleList.ToArray(), captionList.ToArray());
             adapter.ItemClick += Adapter_ItemClick;
         }
 
@@ -277,7 +277,7 @@ namespace GFI_with_GFS_A
             string Top = "";
             string Category = "";
 
-            switch (TopType)
+            switch (topType)
             {
                 case StoryActivity.Top.Main:
                     Top = "Main";
@@ -287,9 +287,9 @@ namespace GFI_with_GFS_A
                     break;
             }
 
-            if (TopType == StoryActivity.Top.Main)
+            if (topType == StoryActivity.Top.Main)
             {
-                switch (SubMain_Index)
+                switch (subMainIndex)
                 {
                     case 0:
                         Category = "Prologue";
@@ -306,7 +306,7 @@ namespace GFI_with_GFS_A
                     case 10:
                     case 11:
                     case 12:
-                        Category = $"Area_{SubMain_Index - 1}";
+                        Category = $"Area_{subMainIndex - 1}";
                         break;
                     case 13:
                         Category = "Cube";
@@ -361,9 +361,9 @@ namespace GFI_with_GFS_A
                         break;
                 }
             }
-            else if (TopType == StoryActivity.Top.Sub)
+            else if (topType == StoryActivity.Top.Sub)
             {
-                switch (SubMain_Index)
+                switch (subMainIndex)
                 {
                     case 0:
                         Category = "2016MessyHalloween";
@@ -411,8 +411,8 @@ namespace GFI_with_GFS_A
             }
 
             var intent = new Intent(this, typeof(StoryReaderActivity));
-            intent.PutExtra("Info", new string[] { Top, Category, Item_Index.ToString(), Item_List.Count.ToString() });
-            intent.PutExtra("List", Item_List.ToArray());
+            intent.PutExtra("Info", new string[] { Top, Category, itemIndex.ToString(), itemList.Count.ToString() });
+            intent.PutExtra("List", itemList.ToArray());
             StartActivity(intent);
             OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }

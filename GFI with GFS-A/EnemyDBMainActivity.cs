@@ -20,32 +20,42 @@ namespace GFI_with_GFS_A
     {
         delegate void DownloadProgress();
 
-        private List<Enemy> RootList = new List<Enemy>();
-        private List<Enemy> SubList = new List<Enemy>();
-        private List<string> Download_List = new List<string>();
+        private List<Enemy> rootList = new List<Enemy>();
+        private List<Enemy> subList = new List<Enemy>();
+        private List<string> downloadList = new List<string>();
 
-        int[] EnemyTypeFilters = { Resource.Id.EnemyFilterNormalEnemy, Resource.Id.EnemyFilterBossEnemy };
+        int[] enemyTypeFilters = { Resource.Id.EnemyFilterNormalEnemy, Resource.Id.EnemyFilterBossEnemy };
+        int[] enemyAffiliationFilters =
+        {
+            Resource.Id.EnemyFilterAffiliationSF,
+            Resource.Id.EnemyFilterAffiliationIOP,
+            Resource.Id.EnemyFilterAffiliationKCCO,
+            Resource.Id.EnemyFilterAffiliationParadeus,
+            Resource.Id.EnemyFilterAffiliationMindMapSystem,
+            Resource.Id.EnemyFilterAffiliationELID
+        };
 
-        int p_now = 0;
-        int p_total = 0;
+        int pNow = 0;
+        int pTotal = 0;
 
-        private bool[] HasApplyFilter = { false };
-        private bool[] Filter_EnemyType = { false, false };
-        private bool CanRefresh = false;
+        private bool[] hasApplyFilter = { false, false };
+        private bool[] filter_EnemyType = { false, false };
+        private bool[] filter_EnemyAffiliation = { false, false, false, false, false, false };
+        private bool canRefresh = false;
 
         private RecyclerView mEnemyListView;
-        private RecyclerView.LayoutManager MainLayoutManager;
-        private CoordinatorLayout SnackbarLayout;
+        private RecyclerView.LayoutManager mainLayoutManager;
+        private CoordinatorLayout snackbarLayout;
 
-        private EditText SearchText;
+        private EditText searchText;
 
         private Dialog dialog;
         private ProgressBar totalProgressBar;
         private ProgressBar nowProgressBar;
         private TextView totalProgress;
         private TextView nowProgress;
-        private FloatingActionButton refresh_fab;
-        private FloatingActionButton filter_fab;
+        private FloatingActionButton refreshFAB;
+        private FloatingActionButton filterFAB;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -53,25 +63,27 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+                if (ETC.UseLightTheme)
+                    SetTheme(Resource.Style.GFS_Light);
 
                 // Create your application here
                 SetContentView(Resource.Layout.EnemyDBListLayout);
 
                 SetTitle(Resource.String.EnemyDBMainActivity_Title);
 
-                CanRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
+                canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
                 mEnemyListView = FindViewById<RecyclerView>(Resource.Id.EnemyDBRecyclerView);
-                MainLayoutManager = new LinearLayoutManager(this);
-                mEnemyListView.SetLayoutManager(MainLayoutManager);
-                SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EnemyDBSnackbarLayout);
-
-                SearchText = FindViewById<EditText>(Resource.Id.EnemySearchText);
+                mainLayoutManager = new LinearLayoutManager(this);
+                mEnemyListView.SetLayoutManager(mainLayoutManager);
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EnemyDBSnackbarLayout);
+                searchText = FindViewById<EditText>(Resource.Id.EnemySearchText);
+                refreshFAB = FindViewById<FloatingActionButton>(Resource.Id.EnemyRefreshCacheFAB);
+                filterFAB = FindViewById<FloatingActionButton>(Resource.Id.EnemyFilterFAB);
 
                 InitializeView();
 
-                if (ETC.UseLightTheme == true)
+                if (ETC.UseLightTheme)
                 {
                     FindViewById<LinearLayout>(Resource.Id.EnemySearchLayout).SetBackgroundColor(Android.Graphics.Color.LightGray);
                     FindViewById<ImageButton>(Resource.Id.EnemySearchResetButton).SetBackgroundResource(Resource.Drawable.SearchIcon_WhiteTheme);
@@ -80,15 +92,15 @@ namespace GFI_with_GFS_A
 
                 InitProcess();
 
-                ListEnemy(SearchText.Text);
+                ListEnemy(searchText.Text);
 
-                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true) == true))
+                if ((ETC.Language.Language == "ko") && ETC.sharedPreferences.GetBoolean("Help_DBList", true))
                     ETC.RunHelpActivity(this, "DBList");
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Activity_OnCreateError, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.Activity_OnCreateError, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
             }
         }
 
@@ -99,19 +111,23 @@ namespace GFI_with_GFS_A
                 switch (e.ScrollState)
                 {
                     case ScrollState.TouchScroll:
-                        if (CanRefresh == true) refresh_fab.Hide();
-                        filter_fab.Hide();
+                        if (canRefresh)
+                            refreshFAB.Hide();
+
+                        filterFAB.Hide();
                         break;
                     case ScrollState.Idle:
-                        if (CanRefresh == true) refresh_fab.Show();
-                        filter_fab.Show();
+                        if (canRefresh)
+                            refreshFAB.Show();
+
+                        filterFAB.Show();
                         break;
                 }
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeStatusError, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.FAB_ChangeStatusError, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
             }
         }
 
@@ -119,37 +135,44 @@ namespace GFI_with_GFS_A
         {
             await Task.Delay(100);
             var EnemyInfo = new Intent(this, typeof(EnemyDBDetailActivity));
-            EnemyInfo.PutExtra("Keyword", SubList[position].CodeName);
+            EnemyInfo.PutExtra("Keyword", subList[position].CodeName);
             StartActivity(EnemyInfo);
             OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }
 
         private void InitializeView()
         {
-            refresh_fab = FindViewById<FloatingActionButton>(Resource.Id.EnemyRefreshCacheFAB);
-            if (CanRefresh == false) refresh_fab.Hide();
+            if (!canRefresh)
+                refreshFAB.Hide();
             else
             {
-                if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate 
-                {
-                    Download_List.Clear();
-                    foreach (DataRow dr in ETC.EnemyList.Rows) Download_List.Add((string)dr["CodeName"]);
-                    Download_List.TrimExcess();
+                if (!refreshFAB.HasOnClickListeners)
+                    refreshFAB.Click += delegate
+                    {
+                        downloadList.Clear();
 
-                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EnemyCropImageDownloadProcess));
-                };
+                        foreach (DataRow dr in ETC.EnemyList.Rows)
+                            downloadList.Add((string)dr["CodeName"]);
 
-                refresh_fab.LongClick += MainFAB_fab_LongClick;
+                        downloadList.TrimExcess();
+
+                        ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EnemyCropImageDownloadProcess));
+                    };
+
+                refreshFAB.LongClick += MainFAB_fab_LongClick;
             }
 
-            filter_fab = FindViewById<FloatingActionButton>(Resource.Id.EnemyFilterFAB);
-            if (filter_fab.HasOnClickListeners == false) filter_fab.Click += Filter_Fab_Click;
-            filter_fab.LongClick += MainFAB_fab_LongClick;
+            if (!filterFAB.HasOnClickListeners)
+                filterFAB.Click += delegate { InitFilterBox(); };
+
+            filterFAB.LongClick += MainFAB_fab_LongClick;
 
             ImageButton SearchResetButton = FindViewById<ImageButton>(Resource.Id.EnemySearchResetButton);
-            if (SearchResetButton.HasOnClickListeners == false) SearchResetButton.Click += SearchResetButton_Click;
 
-            SearchText.TextChanged += SearchText_TextChanged;
+            if (!SearchResetButton.HasOnClickListeners)
+                SearchResetButton.Click += delegate { searchText.Text = ""; };
+
+            searchText.TextChanged += delegate { ListEnemy(searchText.Text); };
         }
 
         private void MainFAB_fab_LongClick(object sender, View.LongClickEventArgs e)
@@ -182,10 +205,9 @@ namespace GFI_with_GFS_A
         {
             CreateListObject();
 
-            if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
-            {
-                if (CheckEnemyCropImage() == true) ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(EnemyCropImageDownloadProcess));
-            }
+            if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false))
+                if (CheckEnemyCropImage())
+                    ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(EnemyCropImageDownloadProcess));
         }
 
         private void CreateListObject()
@@ -196,40 +218,44 @@ namespace GFI_with_GFS_A
                 {
                     bool IsCreate = false;
 
-                    foreach (Enemy enemy in RootList)
+                    foreach (Enemy enemy in rootList)
                         if (enemy.CodeName == (string)dr["CodeName"])
                         {
                             IsCreate = true;
                             break;
                         }
 
-                    if (IsCreate == false)
-                        RootList.Add(new Enemy(dr));
+                    if (!IsCreate)
+                        rootList.Add(new Enemy(dr));
                 }
 
-                RootList.TrimExcess();
+                rootList.TrimExcess();
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Initialize_List_Fail, Snackbar.LengthShort);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.Initialize_List_Fail, Snackbar.LengthShort);
             }
         }
 
         private bool CheckEnemyCropImage()
         {
-            Download_List.Clear();
+            downloadList.Clear();
 
-            foreach (Enemy enemy in RootList)
+            foreach (Enemy enemy in rootList)
             {
                 string FilePath = Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", $"{enemy.CodeName}.gfdcache");
-                if (File.Exists(FilePath) == false) Download_List.Add(enemy.CodeName);
+
+                if (!File.Exists(FilePath))
+                    downloadList.Add(enemy.CodeName);
             }
 
-            Download_List.TrimExcess();
+            downloadList.TrimExcess();
 
-            if (Download_List.Count == 0) return false;
-            else return true;
+            if (downloadList.Count == 0)
+                return false;
+            else
+                return true;
         }
 
         private void ShowDownloadCheckMessage(int title, int message, DownloadProgress method)
@@ -263,8 +289,8 @@ namespace GFI_with_GFS_A
                 nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
                 nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
 
-                p_total = 0;
-                p_total = Download_List.Count;
+                pTotal = 0;
+                pTotal = downloadList.Count;
                 totalProgressBar.Max = 100;
                 totalProgressBar.Progress = 0;
 
@@ -273,24 +299,25 @@ namespace GFI_with_GFS_A
                     wc.DownloadProgressChanged += Wc_DownloadProgressChanged;
                     wc.DownloadFileCompleted += Wc_DownloadFileCompleted;
 
-                    for (int i = 0; i < p_total; ++i)
+                    for (int i = 0; i < pTotal; ++i)
                     {
-                        string url = Path.Combine(ETC.Server, "Data", "Images", "Enemy", "Normal_Crop", $"{Download_List[i]}.png");
-                        string target = Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", $"{Download_List[i]}.gfdcache");
+                        string url = Path.Combine(ETC.Server, "Data", "Images", "Enemy", "Normal_Crop", $"{downloadList[i]}.png");
+                        string target = Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", $"{downloadList[i]}.gfdcache");
+
                         await wc.DownloadFileTaskAsync(url, target);
                     }
                 }
 
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_DownloadCropImageComplete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_DownloadCropImageComplete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);
 
                 await Task.Delay(500);
 
-                ListEnemy(SearchText.Text);
+                ListEnemy(searchText.Text);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_DownloadCropImageFail, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_DownloadCropImageFail, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
             }
             finally
             {
@@ -305,9 +332,9 @@ namespace GFI_with_GFS_A
 
         private void Wc_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            p_now += 1;
+            pNow += 1;
 
-            totalProgressBar.Progress = Convert.ToInt32((p_now / Convert.ToDouble(p_total)) * 100);
+            totalProgressBar.Progress = Convert.ToInt32(pNow / Convert.ToDouble(pTotal) * 100);
             totalProgress.Text = $"{totalProgressBar.Progress}%";
         }
 
@@ -315,21 +342,6 @@ namespace GFI_with_GFS_A
         {
             nowProgressBar.Progress = e.ProgressPercentage;
             nowProgress.Text = $"{e.ProgressPercentage}%";
-        }
-
-        private void SearchText_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
-        {
-            ListEnemy(SearchText.Text);
-        }
-
-        private void SearchResetButton_Click(object sender, EventArgs e)
-        {
-            SearchText.Text = "";
-        }
-
-        private void Filter_Fab_Click(object sender, EventArgs e)
-        {
-            InitFilterBox();
         }
 
         private void InitFilterBox()
@@ -340,21 +352,22 @@ namespace GFI_with_GFS_A
             {
                 View v = inflater.Inflate(Resource.Layout.EnemyFilterLayout, null);
 
-                for (int i = 0; i < EnemyTypeFilters.Length; ++i) v.FindViewById<CheckBox>(EnemyTypeFilters[i]).Checked = Filter_EnemyType[i];
+                for (int i = 0; i < enemyTypeFilters.Length; ++i)
+                    v.FindViewById<CheckBox>(enemyTypeFilters[i]).Checked = filter_EnemyType[i];
 
                 Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG_Vertical);
                 FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
                 FilterBox.SetView(v);
                 FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
                 FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(v); });
+                FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(); });
 
                 FilterBox.Show();
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FilterBox_InitError, Snackbar.LengthLong);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.FilterBox_InitError, Snackbar.LengthLong);
             }
         }
 
@@ -362,77 +375,83 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                for (int i = 0; i < EnemyTypeFilters.Length; ++i)
-                    Filter_EnemyType[i] = view.FindViewById<CheckBox>(EnemyTypeFilters[i]).Checked;
+                for (int i = 0; i < enemyTypeFilters.Length; ++i)
+                    filter_EnemyType[i] = view.FindViewById<CheckBox>(enemyTypeFilters[i]).Checked;
 
                 CheckApplyFilter();
 
-                ListEnemy(SearchText.Text);
+                ListEnemy(searchText.Text);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_FilterBoxApplyFail, Snackbar.LengthLong);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_FilterBoxApplyFail, Snackbar.LengthLong);
             }
         }
 
         private void CheckApplyFilter()
         {
-            for (int i = 0; i < Filter_EnemyType.Length; ++i)
-                if (Filter_EnemyType[i] == true)
+            for (int i = 0; i < filter_EnemyType.Length; ++i)
+                if (filter_EnemyType[i])
                 {
-                    HasApplyFilter[0] = true;
+                    hasApplyFilter[0] = true;
                     break;
                 }
-                else HasApplyFilter[0] = false;
+                else
+                    hasApplyFilter[0] = false;
         }
 
-        private void ResetFilter(View view)
+        private void ResetFilter()
         {
             try
             {
-                for (int i = 0; i < EnemyTypeFilters.Length; ++i) Filter_EnemyType[i] = false;
+                for (int i = 0; i < enemyTypeFilters.Length; ++i)
+                    filter_EnemyType[i] = false;
 
-                for (int i = 0; i < HasApplyFilter.Length; ++i) HasApplyFilter[i] = false;
+                for (int i = 0; i < hasApplyFilter.Length; ++i)
+                    hasApplyFilter[i] = false;
 
-                ListEnemy(SearchText.Text);
+                ListEnemy(searchText.Text);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_FilterBoxResetFail, Snackbar.LengthLong);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_FilterBoxResetFail, Snackbar.LengthLong);
             }
         }
 
         private async void ListEnemy(string searchText)
         {
-            SubList.Clear();
+            subList.Clear();
 
             searchText = searchText.ToUpper();
 
             try
             {
-                for (int i = 0; i < RootList.Count; ++i)
+                for (int i = 0; i < rootList.Count; ++i)
                 {
-                    Enemy enemy = RootList[i];
+                    Enemy enemy = rootList[i];
 
-                    if (CheckFilter(enemy) == true) continue;
+                    if (CheckFilter(enemy))
+                        continue;
 
                     if (searchText != "")
                     {
                         string name = enemy.Name.ToUpper();
 
-                        if (name.Contains(searchText) == false) continue;
+                        if (!name.Contains(searchText))
+                            continue;
                     }
 
-                    SubList.Add(enemy);
+                    subList.Add(enemy);
                 }
 
-                SubList.Sort(SortEnemy);
+                subList.Sort(SortEnemy);
 
-                var adapter = new EnemyListAdapter(SubList, this);
+                var adapter = new EnemyListAdapter(subList, this);
 
-                if (adapter.HasOnItemClick() == false) adapter.ItemClick += Adapter_ItemClick;
+                if (!adapter.HasOnItemClick())
+                    adapter.ItemClick += Adapter_ItemClick;
 
                 await Task.Delay(100);
 
@@ -441,7 +460,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_ListingFail, Snackbar.LengthLong);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_ListingFail, Snackbar.LengthLong);
             }
         }
 
@@ -452,15 +471,17 @@ namespace GFI_with_GFS_A
 
         private bool CheckFilter(Enemy enemy)
         {
-            if (HasApplyFilter[0] == true)
+            if (hasApplyFilter[0])
             {
                 switch (enemy.IsBoss)
                 {
                     case false:
-                        if (Filter_EnemyType[0] == false) return true;
+                        if (!filter_EnemyType[0])
+                            return true;
                         break;
                     case true:
-                        if (Filter_EnemyType[1] == false) return true;
+                        if (!filter_EnemyType[1])
+                            return true;
                         break;
                 }
             }
@@ -481,14 +502,18 @@ namespace GFI_with_GFS_A
         public TextView Type { get; private set; }
         public ImageView TypeIcon { get; private set; }
         public ImageView SmallImage { get; private set; }
+        public ImageView AffiliationImage { get; private set; }
+        public TextView Affiliation { get; private set; }
         public TextView Name { get; private set; }
         public TextView CodeName { get; private set; }
 
         public EnemyListViewHolder(View view, Action<int> listener) : base(view)
         {
             Type = view.FindViewById<TextView>(Resource.Id.EnemyListType);
-            TypeIcon = view.FindViewById<ImageView>(Resource.Id.EnemyListTypeIcon);
+            //TypeIcon = view.FindViewById<ImageView>(Resource.Id.EnemyListTypeIcon);
             SmallImage = view.FindViewById<ImageView>(Resource.Id.EnemyListSmallImage);
+            AffiliationImage = view.FindViewById<ImageView>(Resource.Id.EnemyListAffiliationImage);
+            Affiliation = view.FindViewById<TextView>(Resource.Id.EnemyListAffiliation);
             Name = view.FindViewById<TextView>(Resource.Id.EnemyListName);
             CodeName = view.FindViewById<TextView>(Resource.Id.EnemyListCodeName);
 
@@ -514,6 +539,7 @@ namespace GFI_with_GFS_A
             View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.EnemyListLayout, parent, false);
 
             EnemyListViewHolder vh = new EnemyListViewHolder(view, OnClick);
+
             return vh;
         }
 
@@ -524,16 +550,15 @@ namespace GFI_with_GFS_A
 
         void OnClick(int position)
         {
-            if (ItemClick != null)
-            {
-                ItemClick(this, position);
-            }
+            ItemClick?.Invoke(this, position);
         }
 
         public bool HasOnItemClick()
         {
-            if (ItemClick == null) return false;
-            else return true;
+            if (ItemClick == null)
+                return false;
+            else
+                return true;
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
@@ -544,34 +569,64 @@ namespace GFI_with_GFS_A
 
             try
             {
-                int TypeIconId = 0;
+                int typeIconId = 0;
                 string enemy_type = "";
+
                 switch (item.IsBoss)
                 {
                     default:
                     case false:
-                        TypeIconId = Resource.Drawable.Grade_N;
+                        typeIconId = Resource.Drawable.Grade_N;
                         enemy_type = "NM";
                         break;
                     case true:
-                        TypeIconId = Resource.Drawable.Grade_S;
+                        typeIconId = Resource.Drawable.Grade_S;
                         enemy_type = "Boss";
                         break;
                 }
-                vh.TypeIcon.SetImageResource(TypeIconId);
+                //vh.TypeIcon.SetImageResource(typeIconId);
 
                 vh.Type.Text = enemy_type;
 
-                if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
+                if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false))
                 {
                     vh.SmallImage.Visibility = ViewStates.Visible;
                     string FilePath = Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", $"{item.CodeName}.gfdcache");
-                    if (File.Exists(FilePath) == true) vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(FilePath));
+
+                    if (File.Exists(FilePath))
+                        vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(FilePath));
                 }
                 else vh.SmallImage.Visibility = ViewStates.Gone;
 
+                int affiliationIconId = 0;
+
+                switch (item.Affiliation)
+                {
+                    case "SANGVIS FERRI":
+                        affiliationIconId = Resource.Drawable.SFLogo;
+                        break;
+                    default:
+                    case "I.O.P Manufacturing Company":
+                        affiliationIconId = Resource.Drawable.IOPLogo;
+                        break;
+                    case "Mind Map System":
+                        affiliationIconId = Resource.Drawable.IOPLogo;
+                        break;
+                    case "KCCO":
+                        affiliationIconId = Resource.Drawable.KCCOLogo;
+                        break;
+                    case "Paradeus":
+                        affiliationIconId = Resource.Drawable.ParadeusLogo;
+                        break;
+                    case "E.L.I.D.":
+                        affiliationIconId = Resource.Drawable.ELIDLogo;
+                        break;
+                }
+                vh.AffiliationImage.SetImageResource(affiliationIconId);
+
                 vh.Name.Text = item.Name;
                 vh.CodeName.Text = item.CodeName;
+                vh.Affiliation.Text = item.Affiliation;
             }
             catch (Exception ex)
             {
