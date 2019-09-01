@@ -217,8 +217,6 @@ namespace GFI_with_GFS_A
                 collapseParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, 0, 1);
                 collapseParams.SetMargins(20, 20, 20, 20);
 
-                Toast.MakeText(this, ((LinearLayout.LayoutParams)mainCardViewList[1].LayoutParameters).TopMargin.ToString(), ToastLength.Short).Show();
-
                 // Set Sub Menu Adapter
 
                 var dbSubAdapter = new MainListAdapter(DBSubMenuButtonText, this);

@@ -11,4 +11,13 @@
 - 요정 필터링 오류 수정
 - 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 소녀전선)
 
+- Adaptive 6 grade MOD T-Doll
+- Re-Enable T-Doll ability chart
+- Add costume story
+- Change story text default size
+- Add setting contents for text viewer
+- Change main menu layout
+- Change web browser layout
+- Fix Enemy Dic
+- Fix Fairy Dic filter option
 - Add cartoon content

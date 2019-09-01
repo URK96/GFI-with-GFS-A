@@ -492,9 +492,9 @@
   <string name="Setting_TextSize_Title">Set Text Size</string>
   <string name="Setting_TextSize_Summary">Set text size of text viewer</string>
   <string name="Setting_TextColor_Title">Set Text Color</string>
-  <string name="Setting_TextColor_Summary">Set text color of text viewer. Long press to restore default color.</string>
+  <string name="Setting_TextColor_Summary">Set text color of text viewer.</string>
   <string name="Setting_BackgroundColor_Title">Set Background Color</string>
-  <string name="Setting_BackgroundColor_Summary">Set background color of text viewer. Long press to restore default color.</string>
+  <string name="Setting_BackgroundColor_Summary">Set background color of text viewer.</string>
   <string name="Setting_Category_Cache">Cache</string>
   <string name="Setting_DownloadAllCache_Title">Download Part-All Cache</string>
   <string name="Setting_DownloadAllCache_Summary">The database cache files used in the small dictionary are downloaded in advance. Use this feature to download the cache and you can use some features of app on offline.</string>
@@ -647,13 +647,16 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.3.37 Update]\n\n
-- Change App icon\n
-- Change Splash image\n
-- Fix Short Guide Book image index issue\n
-- Add option in Area Calc feature\n
-- Optimize Calc algorithm\n
-- Fix production percentage table feature issue\n
+    [2.4.0 Update]\n\n
+- Adaptive 6 grade MOD T-Doll
+- Re-Enable T-Doll ability chart
+- Add costume story
+- Change story text default size
+- Add setting contents for text viewer
+- Change main menu layout
+- Change web browser layout
+- Fix Enemy Dic
+- Fix Fairy Dic filter option
 - Add cartoon content
   </string>
 </resources>
