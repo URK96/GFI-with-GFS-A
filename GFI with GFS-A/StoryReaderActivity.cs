@@ -14,14 +14,18 @@ namespace GFI_with_GFS_A
     [Activity(Label = "StoryReaderActivity", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class StoryReaderActivity : AppCompatActivity
     {
-        private string Top = "";
-        private string Category = "";
-        private int Item_Index = 0;
-        private int Item_Count = 0;
-        private int Doll_DicNumber = 0;
-        private string[] Item_List;
+        private string top = "";
+        private string category = "";
+        private int itemIndex = 0;
+        private int itemCount = 0;
+        private int dollDicNumber = 0;
+        private string[] itemList;
 
         private string Language = "ko";
+
+        private string textColor;
+        private string backgroundColor;
+        private int textSize = 12;
 
         private ProgressBar LoadProgressBar;
         private Button PreviousButton;
@@ -33,21 +37,26 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_NoActionBar_Light);
+            if (ETC.UseLightTheme)
+                SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
             // Create your application here
             SetContentView(Resource.Layout.StoryReaderLayout);
 
             string[] info = Intent.GetStringArrayExtra("Info");
-            Top = info[0];
-            Category = info[1];
-            Item_Index = int.Parse(info[2]) + 1;
-            Item_Count = int.Parse(info[3]);
+            top = info[0];
+            category = info[1];
+            itemIndex = int.Parse(info[2]) + 1;
+            itemCount = int.Parse(info[3]);
 
-            if (Category == "ModStory")
-                Doll_DicNumber = int.Parse(info[4]);
+            if (category == "ModStory")
+                dollDicNumber = int.Parse(info[4]);
 
-            Item_List = Intent.GetStringArrayExtra("List");
+            itemList = Intent.GetStringArrayExtra("List");
+
+            textSize = ETC.sharedPreferences.GetInt("TextViewerTextSize", 12);
+            textColor = ETC.sharedPreferences.GetString("TextViewerTextColorHex", "None");
+            backgroundColor = ETC.sharedPreferences.GetString("TextViewerBackgroundColorHex", "None");
 
             LoadProgressBar = FindViewById<ProgressBar>(Resource.Id.StoryReaderLoadProgress);
             PreviousButton = FindViewById<Button>(Resource.Id.StoryReaderPreviousButton);
@@ -58,9 +67,15 @@ namespace GFI_with_GFS_A
             RefreshButton.Click += delegate { _ = LoadProcess(true); };
             MainTextView = FindViewById<TextView>(Resource.Id.StoryReaderMainTextView);
 
-            if (Item_Index == 1)
+            MainTextView.TextSize = textSize;
+            if (textColor != "None")
+                MainTextView.SetTextColor(Android.Graphics.Color.ParseColor(textColor));
+            if (backgroundColor != "None")
+                MainTextView.SetBackgroundColor(Android.Graphics.Color.ParseColor(backgroundColor));
+
+            if (itemIndex == 1)
                 PreviousButton.Enabled = false;
-            if (Item_Index == Item_Count)
+            if (itemIndex == itemCount)
                 NextButton.Enabled = false;
 
             _ = LoadProcess(false);
@@ -73,27 +88,27 @@ namespace GFI_with_GFS_A
             switch (b.Id)
             {
                 case Resource.Id.StoryReaderPreviousButton:
-                    if (Item_Index == 1)
+                    if (itemIndex == 1)
                         return;
-                    if (Item_Index == 2)
+                    if (itemIndex == 2)
                         PreviousButton.Enabled = false;
 
-                    Item_Index -= 1;
+                    itemIndex -= 1;
 
-                    if (Item_Index != Item_Count)
+                    if (itemIndex != itemCount)
                         NextButton.Enabled = true;
 
                     _ = LoadProcess(false);
                     break;
                 case Resource.Id.StoryReaderNextButton:
-                    if (Item_Index == Item_Count)
+                    if (itemIndex == itemCount)
                         return;
-                    if (Item_Index == (Item_Count - 1))
+                    if (itemIndex == (itemCount - 1))
                         NextButton.Enabled = false;
 
-                    Item_Index += 1;
+                    itemIndex += 1;
 
-                    if (Item_Index != 1)
+                    if (itemIndex != 1)
                         PreviousButton.Enabled = true;
 
                     _ = LoadProcess(false);
@@ -107,17 +122,17 @@ namespace GFI_with_GFS_A
 
             string file;
 
-            if (Category == "ModStory")
-                file = Path.Combine(ETC.CachePath, "Story", Category, $"{Doll_DicNumber}_{Item_Index}.gfdcache");
+            if (category == "ModStory")
+                file = Path.Combine(ETC.CachePath, "Story", category, $"{dollDicNumber}_{itemIndex}.gfdcache");
             else
-                file = Path.Combine(ETC.CachePath, "Story", Category, $"{Item_Index}.gfdcache");
+                file = Path.Combine(ETC.CachePath, "Story", category, $"{itemIndex}.gfdcache");
 
             if ((File.Exists(file) == false) || (IsRefresh == true))
                 await DownloadStory();
 
             await LoadText(file);
 
-            FindViewById<TextView>(Resource.Id.StoryReaderNowStoryText).Text = Item_List[Item_Index - 1];
+            FindViewById<TextView>(Resource.Id.StoryReaderNowStoryText).Text = itemList[itemIndex - 1];
 
             LoadProgressBar.Visibility = ViewStates.Invisible;
         }
@@ -141,18 +156,18 @@ namespace GFI_with_GFS_A
                 string server = "";
                 string target = "";
 
-                if (Category == "ModStory")
+                if (category == "ModStory")
                 {
-                    server = Path.Combine(ETC.Server, "Data", "Text", "Story", Language, Top, Category, $"{Doll_DicNumber}_{Item_Index}.txt");
-                    target = Path.Combine(ETC.CachePath, "Story", Category, $"{Doll_DicNumber}_{Item_Index}.gfdcache");
+                    server = Path.Combine(ETC.Server, "Data", "Text", "Story", Language, top, category, $"{dollDicNumber}_{itemIndex}.txt");
+                    target = Path.Combine(ETC.CachePath, "Story", category, $"{dollDicNumber}_{itemIndex}.gfdcache");
                 }
                 else
                 {
-                    server = Path.Combine(ETC.Server, "Data", "Text", "Story", Language, Top, Category, $"{Item_Index}.txt");
-                    target = Path.Combine(ETC.CachePath, "Story", Category, $"{Item_Index}.gfdcache");
+                    server = Path.Combine(ETC.Server, "Data", "Text", "Story", Language, top, category, $"{itemIndex}.txt");
+                    target = Path.Combine(ETC.CachePath, "Story", category, $"{itemIndex}.gfdcache");
                 }
 
-                DirectoryInfo di = new DirectoryInfo(Path.Combine(ETC.CachePath, "Story", Category));
+                DirectoryInfo di = new DirectoryInfo(Path.Combine(ETC.CachePath, "Story", category));
 
                 if (di.Exists == false)
                     di.Create();

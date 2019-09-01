@@ -10,10 +10,6 @@
       android:key="StartAppMode"
       android:title="@string/Setting_StartAppMode_Title"
       android:summary="@string/Setting_StartAppMode_Summary"/>
-    <!--<android.support.v14.preference.SwitchPreference
-      android:key="NotificationAnimationOption"
-      android:title="@string/Setting_NotificationAnimationOption_Title"
-      android:summary="@string/Setting_NotificationAnimationOption_Summary"/>-->
     <android.support.v14.preference.SwitchPreference
       android:key="LowMemoryOption"
       android:title="@string/Setting_LowMemoryOption_Title"
@@ -64,6 +60,24 @@
       android:title="@string/Setting_DBDetailBackgroundImage_Title"
       android:summary="@string/Setting_DBDetailBackgroundImage_Summary"
       android:defaultValue="true"/>
+  </android.support.v7.preference.PreferenceCategory>
+  <android.support.v7.preference.PreferenceCategory
+    android:title="@string/Setting_Category_TextViewer">
+    <android.support.v7.preference.Preference
+      android:key="TextViewerTextSize"
+      android:title="@string/Setting_TextSize_Title"
+      android:summary="@string/Setting_TextSize_Summary"
+      android:defaultValue="12"/>
+    <android.support.v7.preference.Preference
+      android:key="TextViewerTextColor"
+      android:title="@string/Setting_TextColor_Title"
+      android:summary="@string/Setting_TextColor_Summary"
+      android:defaultValue="0"/>
+    <android.support.v7.preference.Preference
+      android:key="TextViewerBackgroundColor"
+      android:title="@string/Setting_BackgroundColor_Title"
+      android:summary="@string/Setting_BackgroundColor_Summary"
+      android:defaultValue="0"/>
   </android.support.v7.preference.PreferenceCategory>
   <android.support.v7.preference.PreferenceCategory
     android:title="@string/Setting_Category_Cache">

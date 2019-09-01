@@ -22,19 +22,18 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:weightSum="100">
+                android:layout_height="match_parent">
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="12"
+                    android:layout_weight="10"
                     android:scaleType="fitCenter"
                     android:src="@drawable/skipprevious"
                     android:id="@+id/WebBrowserToolbarPrevious"/>
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="12"
+                    android:layout_weight="10"
                     android:scaleType="fitCenter"
                     android:src="@drawable/skipnext"
                     android:id="@+id/WebBrowserToolbarNext"/>
@@ -42,7 +41,7 @@
                     android:descendantFocusability="beforeDescendants"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="60"
+                    android:layout_weight="50"
                     android:enabled="true"
                     android:selectAllOnFocus="true"
                     android:inputType="text"
@@ -51,7 +50,7 @@
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="12"
+                    android:layout_weight="10"
                     android:scaleType="fitCenter"
                     android:src="@drawable/close"
                     android:id="@+id/WebBrowserToolbarClose"/>

@@ -39,7 +39,7 @@ namespace GFI_with_GFS_A
                 Finish();
             }
 
-            //LoadProgress = FindViewById<ProgressBar>(Resource.Id.WebBrowserProgressBar);       
+            //loadProgress = FindViewById<ProgressBar>(Resource.Id.WebBrowserToolbarLoadProgress);
             web = FindViewById<WebView>(Resource.Id.WebBrowser);
             webAddressEditText = FindViewById<EditText>(Resource.Id.WebBrowserAddressBar);
             webAddressEditText.EditorAction += (object sender, TextView.EditorActionEventArgs e) =>
@@ -79,7 +79,6 @@ namespace GFI_with_GFS_A
             web.Settings.BlockNetworkLoads = false;
             web.Settings.LoadsImagesAutomatically = true;
             web.Settings.DomStorageEnabled = true;
-            //web.Settings.MixedContentMode = MixedContentHandling.AlwaysAllow;
             web.Settings.SetAppCacheEnabled(true);
             
             InitProcess();
@@ -171,7 +170,7 @@ namespace GFI_with_GFS_A
                 base.OnPageFinished(view, url);
 
                 if (loadProgress != null)
-                    loadProgress.Visibility = ViewStates.Gone;
+                    loadProgress.Visibility = ViewStates.Invisible;
             }
         }
     }

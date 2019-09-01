@@ -247,6 +247,7 @@
   <string name="Common_Affiliation_Paradeus">Paradeus</string>
   <string name="Common_Affiliation_ELID">E.L.I.D.</string>
   <string name="Common_GFDNotification">GFD Notification</string>
+  <string name="Common_TextSize">Text Size</string>
 
   <!--Country String-->
   <string name="Country_Australia">Australia</string>
@@ -414,23 +415,6 @@
   <string name="ProductSimulatorCategorySelectActivity_EquipNormalProduct">Equip Normal</string>
   <string name="ProductSimulatorCategorySelectActivity_EquipAdvancedProduct">Equip Advanced</string>
   
-  <!--RFBotMain-->
-  <string name="RFBotMain_Title">RFBot</string>
-  <string name="RFBotMain_InputTextHint">명령어를 입력하세요</string>
-  <string name="RFBotMain_Command_DollProduct">인형제조</string>
-  <string name="RFBotMain_Command_EquipProduct">장비제조</string>
-  <string name="RFBotMain_Command_Detail">상세정보</string>
-  <string name="RFBotMain_Reply_DollProductTimeNotMatch">해당 제조시간에 맞는 인형이 없습니다.</string>
-  <string name="RFBotMain_Reply_EquipProductTimeNotMatch">해당 제조시간에 맞는 장비/요정이 없습니다.</string>
-  <string name="RFBotMain_Reply_CommandNotMatch">잘못된 명령어를 입력하셨습니다.</string>
-  <string name="RFBotMain_DollInfo_Title">인형 요약 정보</string>
-  <string name="RFBotMain_DollInfo_ReferDollInfoError">인형 데이터 참조 오류</string>
-  <string name="RFBotMain_EquipInfo_Title">장비 요약 정보</string>
-  <string name="RFBotMain_EquipInfo_ReferEquipInfoError">장비 데이터 참조 오류</string>
-  <string name="RFBotMain_FairyInfo_Title">요정 요약 정보</string>
-  <string name="RFBotMain_FairyInfo_ReferFairyInfoError">요정 데이터 참조 오류</string>
-  <string name="RFBotMain_MultipleResult">여러 개의 검색 결과가 있습니다. 다음 중 하나만 선택해서 명령어를 입력하세요.</string>
-  
   <!--Setting-->
   <string name="SettingActivity_Title">Settings</string>
   <string name="SettingActivity_DeleteLogFile_DialogTitle">Delete log files</string>
@@ -468,7 +452,7 @@
   <string name="SettingActivity_CheckFreeStorage_FailDialogTitle">Cannot proceed downloading</string>
   <string name="SettingActivity_CheckFreeStorage_FailDialogMessage">There is not enough free space to proceed with the download... The capacity you have left </string>
   <string name="SettingActivity_CheckFreeStorage_CheckFail">Failed to check free space on the storage device</string>
-
+  
 
 
 
@@ -504,6 +488,13 @@
   <string name="Setting_Category_DBDetail">DB Detail</string>
   <string name="Setting_DBDetailBackgroundImage_Title">Enable Detail Page Background Image</string>
   <string name="Setting_DBDetailBackgroundImage_Summary">Set image displayed in the background on the DB Details page. On devices with less than 2GB of RAM, app may crash when activated.</string>
+  <string name="Setting_Category_TextViewer">Text Viewer</string>
+  <string name="Setting_TextSize_Title">Set Text Size</string>
+  <string name="Setting_TextSize_Summary">Set text size of text viewer</string>
+  <string name="Setting_TextColor_Title">Set Text Color</string>
+  <string name="Setting_TextColor_Summary">Set text color of text viewer. Long press to restore default color.</string>
+  <string name="Setting_BackgroundColor_Title">Set Background Color</string>
+  <string name="Setting_BackgroundColor_Summary">Set background color of text viewer. Long press to restore default color.</string>
   <string name="Setting_Category_Cache">Cache</string>
   <string name="Setting_DownloadAllCache_Title">Download Part-All Cache</string>
   <string name="Setting_DownloadAllCache_Summary">The database cache files used in the small dictionary are downloaded in advance. Use this feature to download the cache and you can use some features of app on offline.</string>
@@ -664,21 +655,5 @@
 - Optimize Calc algorithm\n
 - Fix production percentage table feature issue\n
 - Add cartoon content
-  </string>
-
-  <string name="RFBot_CommandHelp">
-    [RFBot Command List]\n\n
-    번호 [상세정보] : 입력한 도감번호에 해당하는 인형의 요약 정보를 출력합니다. [상세정보] 옵션을 붙이면 해당 인형의 상세정보 화면으로 넘어갑니다.\n
-    usage ex) 2 상세정보\n\n
-    인형 이름 [상세정보] : 입력한 이름에 맞는 인형의 요약 정보를 출력합니다. 이름은 띄어쓰기를 허용하지 않습니다. [상세정보] 옵션을 붙이면 해당 결과의 상세정보 화면으로 넘어갑니다. 이름 명령어에 해당하는 항목이 2개 이상인 경우 [상세정보]옵션은 무시되며 포함되는 항목의 리스트를 출력합니다.\n
-    usage ex) 인형 80식 상세정보
-    장비 이름 [상세정보] : 입력한 이름에 맞는 장비의 요약 정보를 출력합니다. 이름은 띄어쓰기를 허용하지 않습니다. [상세정보] 옵션을 붙이면 해당 결과의 상세정보 화면으로 넘어갑니다. 이름 명령어에 해당하는 항목이 2개 이상인 경우 [상세정보]옵션은 무시되며 포함되는 항목의 리스트를 출력합니다.\n
-    usage ex) 장비 무한탄창 상세정보
-    요정 이름 [상세정보] : 입력한 이름에 맞는 요정의 요약 정보를 출력합니다. 이름은 띄어쓰기를 허용하지 않습니다. [상세정보] 옵션을 붙이면 해당 결과의 상세정보 화면으로 넘어갑니다. 이름 명령어에 해당하는 항목이 2개 이상인 경우 [상세정보]옵션은 무시되며 포함되는 항목의 리스트를 출력합니다.\n
-    usage ex) 요정 수색요정 상세정보
-    인형제조 제조시간 : 입력한 시간에 해당하는 인형의 요약 정보를 출력합니다. 제조시간 형식은 3~4자리로 이루어지며 (시간)(분)으로 입력합니다. 중형제조의 구분 없이 통합적으로 사용 가능합니다.\n
-    usage ex) 인형제조 020, 인형제조 225\n\n
-    장비제조 제조시간 : 입력한 시간에 해당하는 장비 또는 요정의 요약 정보를 출력합니다. 제조시간 형식은 3~4자리로 이루어지며 (시간)(분)으로 입력합니다. 중형제조의 구분 없이 통합적으로 사용 가능합니다.\n
-    usage ex) 장비제조 005, 장비제조 013, 장비제조 305
   </string>
 </resources>
