@@ -425,7 +425,7 @@ namespace GFI_with_GFS_A
 
         private void TextViewerTextSize_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
         {
-            View view = LayoutInflater.Inflate(Resource.Layout.NumberPickerDialogLayout, null);
+            View view = Activity.LayoutInflater.Inflate(Resource.Layout.NumberPickerDialogLayout, null);
 
             NumberPicker np = view.FindViewById<NumberPicker>(Resource.Id.NumberPickerControl);
             np.MaxValue = 30;
@@ -455,7 +455,7 @@ namespace GFI_with_GFS_A
 
         private void TextViewerTextColor_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
         {
-            View view = LayoutInflater.Inflate(Resource.Layout.ColorPickerDialogLayout, null);
+            View view = Activity.LayoutInflater.Inflate(Resource.Layout.ColorPickerDialogLayout, null);
 
             ColorPickerView cp = view.FindViewById<ColorPickerView>(Resource.Id.ColorPickerControl);
 
@@ -482,7 +482,7 @@ namespace GFI_with_GFS_A
 
         private void TextViewerBackgroundColor_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
         {
-            View view = LayoutInflater.Inflate(Resource.Layout.ColorPickerDialogLayout, null);
+            View view = Activity.LayoutInflater.Inflate(Resource.Layout.ColorPickerDialogLayout, null);
 
             ColorPickerView cp = view.FindViewById<ColorPickerView>(Resource.Id.ColorPickerControl);
 

@@ -1,0 +1,7 @@
+<2.4.1 수정사항>
+
+- 일부 기기에서 설정 항목이 튕기는 현상 수정
+- 일부 텍스트 수정
+
+- Fix setting crash issue on some device
+- Fix some text

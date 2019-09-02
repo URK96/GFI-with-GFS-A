@@ -250,6 +250,8 @@
   <string name="Common_Affiliation_ELID">E.L.I.D.</string>
   <string name="Common_GFDNotification">소전사전 공지사항</string>
   <string name="Common_TextSize">글자 크기</string>
+  <string name="Common_TextColor">글자 색상</string>
+  <string name="Common_BackgroundColor">배경 색상</string>
   
   <!--Country String-->
   <string name="Country_Australia">호주</string>
@@ -650,6 +652,9 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
+    [2.4.1 수정사항]\n\n
+- 일부 기기에서 설정 항목이 튕기는 현상 수정\n
+- 일부 텍스트 수정\n\n\n
     [2.4.0 수정사항]\n\n
 - 개조 6성 인형 대응\n
 - 인형 능력치 비교 그래프 재활성화\n
@@ -660,6 +665,6 @@
 - 웹 브라우저 디자인 일부 변경\n
 - 철혈 DB -> 적 DB로 변경 및 레이아웃 변경\n
 - 요정 필터링 오류 수정\n
-- 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 소녀전선)
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 소녀전선)\n
   </string>
 </resources>
