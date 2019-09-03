@@ -278,6 +278,7 @@
     <Compile Include="FSTDBMainActivity.cs" />
     <Compile Include="DollDBImageViewer.cs" />
     <Compile Include="HelpImageActivity.cs" />
+    <Compile Include="LicenseViewer.cs" />
     <Compile Include="Main_Resources.cs" />
     <Compile Include="ProductPercentTableActivity.cs" />
     <Compile Include="EnemyDBDetailActivity.cs" />
@@ -311,7 +312,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <AndroidAsset Include="Assets\pdfviewer\data.json" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -1639,27 +1639,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pdfviewer\compatibility.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\pdfviewer\customview.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\pdfviewer\index.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\pdfviewer\minimal.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\pdfviewer\pdf.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\pdfviewer\pdf.worker.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\pdfviewer\pdffile.js" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\ShortGuideBookLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -1738,6 +1717,36 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\DotNET_Foundation_and_Contributors_MIT_License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\DotNET_Foundation_Contributors_MIT_License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Arcana_Studio_License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ESSENTIAL STUDIO SOFTWARE LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\MICROSOFT_SOFTWARE_LICENSE_TERMS.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\MIT_License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\NewtonSoft_MIT_License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Xamarin.Essentials_MIT_License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Xamarin_MIT_License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Unknown.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -2181,10 +2181,10 @@ namespace GFI_with_GFS_A
 			public const int ExternLibrary_License = 2130903046;
 			
 			// aapt resource value: 0x7F030007
-			public const int ExternLibrary_Name = 2130903047;
+			public const int ExternLibrary_LicenseType = 2130903047;
 			
 			// aapt resource value: 0x7F030008
-			public const int ExternLibrary_URL = 2130903048;
+			public const int ExternLibrary_Name = 2130903048;
 			
 			// aapt resource value: 0x7F03000E
 			public const int Geo_GF = 2130903054;
