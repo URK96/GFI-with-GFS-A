@@ -1,0 +1,5019 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Enemy" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Enemy">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="CodeName" type="xs:string" minOccurs="0" />
+                <xs:element name="Affiliation" type="xs:string" minOccurs="0" />
+                <xs:element name="Type" type="xs:string" minOccurs="0" />
+                <xs:element name="HP" type="xs:int" minOccurs="0" />
+                <xs:element name="FireRate" type="xs:int" minOccurs="0" />
+                <xs:element name="Accuracy" type="xs:int" minOccurs="0" />
+                <xs:element name="Evasion" type="xs:int" minOccurs="0" />
+                <xs:element name="AttackSpeed" type="xs:int" minOccurs="0" />
+                <xs:element name="MoveSpeed" type="xs:int" minOccurs="0" />
+                <xs:element name="Penetration" type="xs:int" minOccurs="0" />
+                <xs:element name="Armor" type="xs:int" minOccurs="0" />
+                <xs:element name="Range" type="xs:int" minOccurs="0" />
+                <xs:element name="Shield" type="xs:int" minOccurs="0" />
+                <xs:element name="ShieldP" type="xs:int" minOccurs="0" />
+                <xs:element name="Note" type="xs:string" minOccurs="0" />
+                <xs:element name="IsBoss" type="xs:boolean" default="false" minOccurs="0" />
+                <xs:element name="HasVoice" type="xs:boolean" default="false" minOccurs="0" />
+                <xs:element name="VoiceActor" type="xs:string" minOccurs="0" />
+                <xs:element name="Voices" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Enemy>
+    <Name>리퍼</Name>
+    <CodeName>Ripper</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>초기형</Type>
+    <HP>720</HP>
+    <FireRate>6</FireRate>
+    <Accuracy>20</Accuracy>
+    <Evasion>13</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>리퍼</Name>
+    <CodeName>Ripper</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>후기형</Type>
+    <HP>794</HP>
+    <FireRate>21</FireRate>
+    <Accuracy>23</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>리퍼</Name>
+    <CodeName>Ripper</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>1695</HP>
+    <FireRate>24</FireRate>
+    <Accuracy>23</Accuracy>
+    <Evasion>18</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>리퍼</Name>
+    <CodeName>Ripper</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>일반</Type>
+    <HP>1140</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>46</Accuracy>
+    <Evasion>50</Evasion>
+    <AttackSpeed>36</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>신형 기체</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>리퍼</Name>
+    <CodeName>Ripper</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 소란속에서 Ⅴ</Type>
+    <HP>2047</HP>
+    <FireRate>14</FireRate>
+    <Accuracy>64</Accuracy>
+    <Evasion>70</Evasion>
+    <AttackSpeed>36</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>신형 기체</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>베스피드</Name>
+    <CodeName>Vespid</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>초기형</Type>
+    <HP>900</HP>
+    <FireRate>9</FireRate>
+    <Accuracy>20</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>베스피드</Name>
+    <CodeName>Vespid</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>후기형</Type>
+    <HP>397</HP>
+    <FireRate>42</FireRate>
+    <Accuracy>23</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>베스피드</Name>
+    <CodeName>Vespid</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>848</HP>
+    <FireRate>47</FireRate>
+    <Accuracy>23</Accuracy>
+    <Evasion>18</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>베스피드</Name>
+    <CodeName>Vespid</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체</Type>
+    <HP>960</HP>
+    <FireRate>22</FireRate>
+    <Accuracy>70</Accuracy>
+    <Evasion>32</Evasion>
+    <AttackSpeed>24</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>7</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>신형 기체</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>베스피드</Name>
+    <CodeName>Vespid</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 소란속에서 Ⅴ</Type>
+    <HP>1724</HP>
+    <FireRate>25</FireRate>
+    <Accuracy>98</Accuracy>
+    <Evasion>32</Evasion>
+    <AttackSpeed>24</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>7</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>신형 기체</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>스트라이커</Name>
+    <CodeName>Striker</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>일반형</Type>
+    <HP>567</HP>
+    <FireRate>21</FireRate>
+    <Accuracy>20</Accuracy>
+    <Evasion>5</Evasion>
+    <AttackSpeed>100</AttackSpeed>
+    <MoveSpeed>20</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>7</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>스트라이커</Name>
+    <CodeName>Striker</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>1211</HP>
+    <FireRate>24</FireRate>
+    <Accuracy>20</Accuracy>
+    <Evasion>6</Evasion>
+    <AttackSpeed>100</AttackSpeed>
+    <MoveSpeed>20</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>7</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>스트라이커 EX</Name>
+    <CodeName>Striker_SWAP</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>일반</Type>
+    <HP>1140</HP>
+    <FireRate>26</FireRate>
+    <Accuracy>28</Accuracy>
+    <Evasion>18</Evasion>
+    <AttackSpeed>80</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>35</Penetration>
+    <Armor>0</Armor>
+    <Range>7</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>스트라이커 EX</Name>
+    <CodeName>Striker_SWAP</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 소란속에서 Ⅴ</Type>
+    <HP>2047</HP>
+    <FireRate>29</FireRate>
+    <Accuracy>39</Accuracy>
+    <Evasion>25</Evasion>
+    <AttackSpeed>80</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>47</Penetration>
+    <Armor>0</Armor>
+    <Range>7</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>예거</Name>
+    <CodeName>Jaeger</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>초기형</Type>
+    <HP>450</HP>
+    <FireRate>18</FireRate>
+    <Accuracy>40</Accuracy>
+    <Evasion>5</Evasion>
+    <AttackSpeed>25</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>7</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>예거</Name>
+    <CodeName>Jaeger</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>후기형</Type>
+    <HP>397</HP>
+    <FireRate>42</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>20</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>7</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>예거</Name>
+    <CodeName>Jaeger</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>연습전용</Type>
+    <HP>397</HP>
+    <FireRate>42</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>20</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>예거</Name>
+    <CodeName>Jaeger</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>848</HP>
+    <FireRate>47</FireRate>
+    <Accuracy>143</Accuracy>
+    <Evasion>18</Evasion>
+    <AttackSpeed>20</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>7</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>예거 EX</Name>
+    <CodeName>Jaeger_SWAP</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>일반</Type>
+    <HP>600</HP>
+    <FireRate>46</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>18</Evasion>
+    <AttackSpeed>18</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>35</Penetration>
+    <Armor>0</Armor>
+    <Range>9</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>예거 EX</Name>
+    <CodeName>Jaeger_SWAP</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 소란속에서 Ⅴ</Type>
+    <HP>1077</HP>
+    <FireRate>52</FireRate>
+    <Accuracy>196</Accuracy>
+    <Evasion>25</Evasion>
+    <AttackSpeed>18</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>47</Penetration>
+    <Armor>0</Armor>
+    <Range>9</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>가드</Name>
+    <CodeName>Guard</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>초기형</Type>
+    <HP>1800</HP>
+    <FireRate>7</FireRate>
+    <Accuracy>34</Accuracy>
+    <Evasion>3</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>가드</Name>
+    <CodeName>Guard</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>후기형</Type>
+    <HP>2269</HP>
+    <FireRate>11</FireRate>
+    <Accuracy>23</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>가드</Name>
+    <CodeName>Guard</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>4843</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>23</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>가드 EX</Name>
+    <CodeName>Guard_SWAP</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>일반</Type>
+    <HP>2535</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>28</Accuracy>
+    <Evasion>8</Evasion>
+    <AttackSpeed>24</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>가드 EX</Name>
+    <CodeName>Guard_SWAP</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 소란속에서 Ⅴ</Type>
+    <HP>4551</HP>
+    <FireRate>14</FireRate>
+    <Accuracy>39</Accuracy>
+    <Evasion>11</Evasion>
+    <AttackSpeed>24</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>드라군</Name>
+    <CodeName>Dragoon</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>초기형</Type>
+    <HP>1080</HP>
+    <FireRate>11</FireRate>
+    <Accuracy>36</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>45</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>드라군</Name>
+    <CodeName>Dragoon</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>후기형</Type>
+    <HP>1588</HP>
+    <FireRate>42</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>4</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>드라군</Name>
+    <CodeName>Dragoon</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>3390</HP>
+    <FireRate>47</FireRate>
+    <Accuracy>143</Accuracy>
+    <Evasion>18</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>4</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>드라군</Name>
+    <CodeName>Dragoon</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>저지자</Type>
+    <HP>9860</HP>
+    <FireRate>87</FireRate>
+    <Accuracy>60</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>55</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>드라군</Name>
+    <CodeName>Dragoon</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>저지자 - 이성질체</Type>
+    <HP>16041</HP>
+    <FireRate>98</FireRate>
+    <Accuracy>79</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>55</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>드라군 EX</Name>
+    <CodeName>Dragoon_SWAP</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>일반</Type>
+    <HP>1500</HP>
+    <FireRate>26</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>18</Evasion>
+    <AttackSpeed>28</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>드라군 EX</Name>
+    <CodeName>Dragoon_SWAP</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 소란속에서 Ⅴ</Type>
+    <HP>2693</HP>
+    <FireRate>29</FireRate>
+    <Accuracy>196</Accuracy>
+    <Evasion>25</Evasion>
+    <AttackSpeed>28</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>브루트</Name>
+    <CodeName>Brute</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>일반형</Type>
+    <HP>472</HP>
+    <FireRate>63</FireRate>
+    <Accuracy>10</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>80</MoveSpeed>
+    <Penetration>80</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>브루트</Name>
+    <CodeName>Brute</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>1008</HP>
+    <FireRate>71</FireRate>
+    <Accuracy>10</Accuracy>
+    <Evasion>18</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>80</MoveSpeed>
+    <Penetration>102</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>브루트</Name>
+    <CodeName>Brute</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체</Type>
+    <HP>960</HP>
+    <FireRate>58</FireRate>
+    <Accuracy>70</Accuracy>
+    <Evasion>18</Evasion>
+    <AttackSpeed>18</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>35</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>신형 기체</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>브루트</Name>
+    <CodeName>Brute</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 소란속에서 Ⅴ</Type>
+    <HP>1724</HP>
+    <FireRate>65</FireRate>
+    <Accuracy>98</Accuracy>
+    <Evasion>25</Evasion>
+    <AttackSpeed>18</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>47</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>신형 기체</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>드론</Name>
+    <CodeName>Drone</CodeName>
+    <Affiliation>I.O.P Manufacturing Company</Affiliation>
+    <Type>일반형</Type>
+    <HP>50</HP>
+    <FireRate>0</FireRate>
+    <Accuracy>1</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>1</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>4</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>민수용 표적기. 공격 없음.</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>드론</Name>
+    <CodeName>Drone</CodeName>
+    <Affiliation>I.O.P Manufacturing Company</Affiliation>
+    <Type>자료추출 초급</Type>
+    <HP>10000</HP>
+    <FireRate>0</FireRate>
+    <Accuracy>1</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>1</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>4</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>민수용 표적기. 공격 없음.</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>드론</Name>
+    <CodeName>Drone</CodeName>
+    <Affiliation>I.O.P Manufacturing Company</Affiliation>
+    <Type>자료추출 중급</Type>
+    <HP>20000</HP>
+    <FireRate>0</FireRate>
+    <Accuracy>1</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>1</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>4</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>민수용 표적기. 공격 없음.</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>드론</Name>
+    <CodeName>Drone</CodeName>
+    <Affiliation>I.O.P Manufacturing Company</Affiliation>
+    <Type>자료추출 고급</Type>
+    <HP>40000</HP>
+    <FireRate>0</FireRate>
+    <Accuracy>1</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>1</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>4</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>민수용 표적기. 공격 없음.</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>프롤러</Name>
+    <CodeName>Prowler</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>초기형</Type>
+    <HP>225</HP>
+    <FireRate>3</FireRate>
+    <Accuracy>18</Accuracy>
+    <Evasion>3</Evasion>
+    <AttackSpeed>30</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>4</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>프롤러</Name>
+    <CodeName>Prowler</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>후기형</Type>
+    <HP>397</HP>
+    <FireRate>11</FireRate>
+    <Accuracy>23</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>30</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>4</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>프롤러</Name>
+    <CodeName>Prowler</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>848</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>23</Accuracy>
+    <Evasion>18</Evasion>
+    <AttackSpeed>30</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>4</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>프롤러 EX</Name>
+    <CodeName>Prowler_SWAP</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>일반</Type>
+    <HP>360</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>46</Accuracy>
+    <Evasion>32</Evasion>
+    <AttackSpeed>36</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>프롤러 EX</Name>
+    <CodeName>Prowler_SWAP</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 소란속에서 Ⅴ</Type>
+    <HP>647</HP>
+    <FireRate>14</FireRate>
+    <Accuracy>64</Accuracy>
+    <Evasion>45</Evasion>
+    <AttackSpeed>36</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>디너게이트</Name>
+    <CodeName>Dinergate</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>초기형</Type>
+    <HP>54</HP>
+    <FireRate>9</FireRate>
+    <Accuracy>25</Accuracy>
+    <Evasion>5</Evasion>
+    <AttackSpeed>45</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>디너게이트</Name>
+    <CodeName>Dinergate</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>후기형</Type>
+    <HP>65</HP>
+    <FireRate>84</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>디너게이트</Name>
+    <CodeName>Dinergate</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>139</HP>
+    <FireRate>91</FireRate>
+    <Accuracy>143</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>디너게이트</Name>
+    <CodeName>Dinergate</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체</Type>
+    <HP>65</HP>
+    <FireRate>84</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>24</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>신형 기체</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>디너게이트</Name>
+    <CodeName>Dinergate</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 소란속에서 Ⅴ</Type>
+    <HP>117</HP>
+    <FireRate>95</FireRate>
+    <Accuracy>196</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>24</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>신형 기체</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>스카우트</Name>
+    <CodeName>Scouts</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>초기형</Type>
+    <HP>270</HP>
+    <FireRate>6</FireRate>
+    <Accuracy>18</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>45</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>스카우트</Name>
+    <CodeName>Scouts</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>후기형</Type>
+    <HP>829</HP>
+    <FireRate>11</FireRate>
+    <Accuracy>23</Accuracy>
+    <Evasion>80</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>4</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>스카우트</Name>
+    <CodeName>Scouts</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>1770</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>23</Accuracy>
+    <Evasion>95</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>4</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>스카우트</Name>
+    <CodeName>Scouts</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체</Type>
+    <HP>960</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>28</Accuracy>
+    <Evasion>80</Evasion>
+    <AttackSpeed>24</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>신형 기체</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>스카우트</Name>
+    <CodeName>Scouts</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 소란속에서 Ⅴ</Type>
+    <HP>1724</HP>
+    <FireRate>14</FireRate>
+    <Accuracy>39</Accuracy>
+    <Evasion>112</Evasion>
+    <AttackSpeed>24</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>신형 기체</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>재규어</Name>
+    <CodeName>Jaguar</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>초기형</Type>
+    <HP>720</HP>
+    <FireRate>27</FireRate>
+    <Accuracy>300</Accuracy>
+    <Evasion>8</Evasion>
+    <AttackSpeed>350</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>후열 우선 공격</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>재규어</Name>
+    <CodeName>Jaguar</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>후기형</Type>
+    <HP>794</HP>
+    <FireRate>168</FireRate>
+    <Accuracy>350</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>350</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>후열 우선 공격</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>재규어</Name>
+    <CodeName>Jaguar</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>1695</HP>
+    <FireRate>189</FireRate>
+    <Accuracy>356</Accuracy>
+    <Evasion>18</Evasion>
+    <AttackSpeed>350</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>후열 우선 공격</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>주피터 (마르두크)</Name>
+    <CodeName>Jupiter</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>일반형</Type>
+    <HP>25000</HP>
+    <FireRate>250</FireRate>
+    <Accuracy>200</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>20</Armor>
+    <Range>18</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>필중</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>골리앗</Name>
+    <CodeName>Golyat</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>검은색(약체)</Type>
+    <HP>1500</HP>
+    <FireRate>1000</FireRate>
+    <Accuracy>10000</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>150</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>1</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>자폭 공격</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>골리앗</Name>
+    <CodeName>Golyat</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>검은색</Type>
+    <HP>15000</HP>
+    <FireRate>1000</FireRate>
+    <Accuracy>10000</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>150</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>1</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>자폭 공격</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>골리앗</Name>
+    <CodeName>Golyat</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>35001</HP>
+    <FireRate>1126</FireRate>
+    <Accuracy>10201</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>150</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>1</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>자폭 공격</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>골리앗플러스</Name>
+    <CodeName>GolyatPlus</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>붉은색</Type>
+    <HP>150000</HP>
+    <FireRate>1000</FireRate>
+    <Accuracy>10000</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>150</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>1</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>자폭 공격</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>골리앗플러스</Name>
+    <CodeName>GolyatPlus</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>350013</HP>
+    <FireRate>1126</FireRate>
+    <Accuracy>10201</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>150</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>1</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>자폭 공격</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>이지스</Name>
+    <CodeName>Aegis</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>일반형</Type>
+    <HP>1550</HP>
+    <FireRate>11</FireRate>
+    <Accuracy>18</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>90</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>이지스</Name>
+    <CodeName>Aegis</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>3227</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>23</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>134</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>이지스</Name>
+    <CodeName>Aegis</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체</Type>
+    <HP>1920</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>28</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>28</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>35</Penetration>
+    <Armor>145</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>이지스 EX</Name>
+    <CodeName>Aegis</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>일반</Type>
+    <HP>2305</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>28</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>28</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>35</Penetration>
+    <Armor>145</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>이지스 EX</Name>
+    <CodeName>Aegis</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 상어와 바다 Ⅳ</Type>
+    <HP>3750</HP>
+    <FireRate>14</FireRate>
+    <Accuracy>37</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>28</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>44</Penetration>
+    <Armor>211</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>네메움</Name>
+    <CodeName>Nemeum</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>일반형</Type>
+    <HP>567</HP>
+    <FireRate>84</FireRate>
+    <Accuracy>60</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>15</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>90</Armor>
+    <Range>7</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>네메움</Name>
+    <CodeName>Nemeum</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>연습전용</Type>
+    <HP>567</HP>
+    <FireRate>84</FireRate>
+    <Accuracy>60</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>15</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>90</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>네메움</Name>
+    <CodeName>Nemeum</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>1211</HP>
+    <FireRate>95</FireRate>
+    <Accuracy>61</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>15</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>134</Armor>
+    <Range>7</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>네메움</Name>
+    <CodeName>Nemeum</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 ver.1</Type>
+    <HP>680</HP>
+    <FireRate>42</FireRate>
+    <Accuracy>16</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>24</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>90</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>신형 기체 ver.1</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>네메움</Name>
+    <CodeName>Nemeum</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 ver.1 - 상어와 바다 Ⅳ</Type>
+    <HP>1107</HP>
+    <FireRate>47</FireRate>
+    <Accuracy>21</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>24</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>90</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>신형 기체 ver.1</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>네메움</Name>
+    <CodeName>Nemeum</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 ver.2</Type>
+    <HP>1320</HP>
+    <FireRate>46</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>18</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>50</Penetration>
+    <Armor>60</Armor>
+    <Range>7</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>신형 기체 ver.2</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>맨티코어</Name>
+    <CodeName>Manticore</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>호위형</Type>
+    <HP>2550</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>30</Accuracy>
+    <Evasion>12</Evasion>
+    <AttackSpeed>45</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>22</Armor>
+    <Range>10</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>맨티코어</Name>
+    <CodeName>Manticore</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>1-4N</Type>
+    <HP>6000</HP>
+    <FireRate>30</FireRate>
+    <Accuracy>30</Accuracy>
+    <Evasion>14</Evasion>
+    <AttackSpeed>45</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>22</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>맨티코어</Name>
+    <CodeName>Manticore</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>3-4N, 큐브+ 2-4</Type>
+    <HP>11500</HP>
+    <FireRate>132</FireRate>
+    <Accuracy>60</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>42</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>42</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>맨티코어</Name>
+    <CodeName>Manticore</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>4-4N, 5-4N</Type>
+    <HP>10200</HP>
+    <FireRate>95</FireRate>
+    <Accuracy>40</Accuracy>
+    <Evasion>12</Evasion>
+    <AttackSpeed>55</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>25</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>맨티코어</Name>
+    <CodeName>Manticore</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>9-1N</Type>
+    <HP>15059</HP>
+    <FireRate>107</FireRate>
+    <Accuracy>41</Accuracy>
+    <Evasion>12</Evasion>
+    <AttackSpeed>55</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>32</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>맨티코어</Name>
+    <CodeName>Manticore</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전 ver.1</Type>
+    <HP>26835</HP>
+    <FireRate>149</FireRate>
+    <Accuracy>61</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>42</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>64</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>맨티코어</Name>
+    <CodeName>Manticore</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전 ver.2</Type>
+    <HP>17075</HP>
+    <FireRate>91</FireRate>
+    <Accuracy>46</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>42</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>51</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>타란튤라</Name>
+    <CodeName>Tarantula</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>후기형</Type>
+    <HP>65</HP>
+    <FireRate>84</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>90</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>타란튤라</Name>
+    <CodeName>Tarantula</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 랭킹전</Type>
+    <HP>139</HP>
+    <FireRate>95</FireRate>
+    <Accuracy>143</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>134</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>타란튤라</Name>
+    <CodeName>Tarantula</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체</Type>
+    <HP>65</HP>
+    <FireRate>84</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>24</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>100</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>언노운 (사념체)</Name>
+    <CodeName>Unknown</CodeName>
+    <Affiliation>Mind Map System</Affiliation>
+    <Type>일반형</Type>
+    <HP>924</HP>
+    <FireRate>21</FireRate>
+    <Accuracy>23</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>2</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>스케어크로우</Name>
+    <CodeName>Scarecrow</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>1-6</Type>
+    <HP>500</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>4</Accuracy>
+    <Evasion>2</Evasion>
+    <AttackSpeed>45</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>스케어크로우</Name>
+    <CodeName>Scarecrow</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>1-4E</Type>
+    <HP>2400</HP>
+    <FireRate>22</FireRate>
+    <Accuracy>5</Accuracy>
+    <Evasion>2</Evasion>
+    <AttackSpeed>55</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>스케어크로우</Name>
+    <CodeName>Scarecrow</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>0-4</Type>
+    <HP>40000</HP>
+    <FireRate>155</FireRate>
+    <Accuracy>30</Accuracy>
+    <Evasion>16</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>스케어크로우</Name>
+    <CodeName>Scarecrow</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>방어전 10층, 100층</Type>
+    <HP>3000</HP>
+    <FireRate>22</FireRate>
+    <Accuracy>5</Accuracy>
+    <Evasion>2</Evasion>
+    <AttackSpeed>55</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>스케어크로우</Name>
+    <CodeName>Scarecrow</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>저체온증 히든, 딥 다이브 히든</Type>
+    <HP>40000</HP>
+    <FireRate>200</FireRate>
+    <Accuracy>125</Accuracy>
+    <Evasion>40</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>스케어크로우</Name>
+    <CodeName>Scarecrow</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브 + 랭킹전</Type>
+    <HP>85000</HP>
+    <FireRate>160</FireRate>
+    <Accuracy>180</Accuracy>
+    <Evasion>80</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>스케어크로우</Name>
+    <CodeName>Scarecrow</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>특이점 2-H, 3-4, 히든</Type>
+    <HP>55000</HP>
+    <FireRate>48</FireRate>
+    <Accuracy>50</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>10</Penetration>
+    <Armor>0</Armor>
+    <Range>9</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>스케어크로우</Name>
+    <CodeName>Scarecrow</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>난류연속 1-분기, 난류연속 2-1</Type>
+    <HP>17200</HP>
+    <FireRate>32</FireRate>
+    <Accuracy>80</Accuracy>
+    <Evasion>40</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>엑스큐셔너</Name>
+    <CodeName>Excutioner</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>2-6</Type>
+    <HP>4200</HP>
+    <FireRate>35</FireRate>
+    <Accuracy>10</Accuracy>
+    <Evasion>2</Evasion>
+    <AttackSpeed>55</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Shizuka Ito</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>엑스큐셔너</Name>
+    <CodeName>Excutioner</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>2-4E</Type>
+    <HP>6000</HP>
+    <FireRate>45</FireRate>
+    <Accuracy>12</Accuracy>
+    <Evasion>4</Evasion>
+    <AttackSpeed>55</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Shizuka Ito</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>엑스큐셔너 엘리트</Name>
+    <CodeName>ExcutionerElite</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>큐브 3, 큐브+ 1-3</Type>
+    <HP>9000</HP>
+    <FireRate>88</FireRate>
+    <Accuracy>18</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>45</AttackSpeed>
+    <MoveSpeed>55</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>24</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Shizuka Ito</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>엑스큐셔너 엘리트</Name>
+    <CodeName>ExcutionerElite</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>큐브+ 2-2</Type>
+    <HP>30000</HP>
+    <FireRate>180</FireRate>
+    <Accuracy>70</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>55</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>35</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Shizuka Ito</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>엑스큐셔너 엘리트</Name>
+    <CodeName>ExcutionerElite</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>큐브+ 2-4</Type>
+    <HP>15000</HP>
+    <FireRate>180</FireRate>
+    <Accuracy>70</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>55</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>35</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Shizuka Ito</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>엑스큐셔너</Name>
+    <CodeName>Excutioner</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>방어훈련 20층</Type>
+    <HP>6000</HP>
+    <FireRate>35</FireRate>
+    <Accuracy>10</Accuracy>
+    <Evasion>2</Evasion>
+    <AttackSpeed>55</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Shizuka Ito</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>엑스큐셔너</Name>
+    <CodeName>Excutioner</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>방어훈련 30층, 100층</Type>
+    <HP>8000</HP>
+    <FireRate>45</FireRate>
+    <Accuracy>12</Accuracy>
+    <Evasion>4</Evasion>
+    <AttackSpeed>55</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Shizuka Ito</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>엑스큐셔너</Name>
+    <CodeName>Excutioner</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>저체온증 히든, 딥 다이브 히든</Type>
+    <HP>40000</HP>
+    <FireRate>240</FireRate>
+    <Accuracy>90</Accuracy>
+    <Evasion>20</Evasion>
+    <AttackSpeed>55</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>40</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Shizuka Ito</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>엑스큐셔너</Name>
+    <CodeName>Excutioner</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>저체온증+ 히든</Type>
+    <HP>80000</HP>
+    <FireRate>240</FireRate>
+    <Accuracy>90</Accuracy>
+    <Evasion>20</Evasion>
+    <AttackSpeed>55</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>40</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Shizuka Ito</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>엑스큐셔너</Name>
+    <CodeName>Excutioner</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 히든</Type>
+    <HP>96000</HP>
+    <FireRate>240</FireRate>
+    <Accuracy>110</Accuracy>
+    <Evasion>30</Evasion>
+    <AttackSpeed>65</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>40</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Shizuka Ito</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>엑스큐셔너 엘리트</Name>
+    <CodeName>ExcutionerElite</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>특이점 1-6, 1-10</Type>
+    <HP>18000</HP>
+    <FireRate>65</FireRate>
+    <Accuracy>70</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>55</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>35</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Shizuka Ito</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>엑스큐셔너</Name>
+    <CodeName>Excutioner</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>특이점 2-H, 3-4, 히든</Type>
+    <HP>40000</HP>
+    <FireRate>66</FireRate>
+    <Accuracy>80</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>30</Penetration>
+    <Armor>0</Armor>
+    <Range>7</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Shizuka Ito</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>헌터</Name>
+    <CodeName>Hunter</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>3-6</Type>
+    <HP>8000</HP>
+    <FireRate>65</FireRate>
+    <Accuracy>12</Accuracy>
+    <Evasion>4</Evasion>
+    <AttackSpeed>65</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Ami Hagihara</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>헌터</Name>
+    <CodeName>Hunter</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>3-4E</Type>
+    <HP>10000</HP>
+    <FireRate>85</FireRate>
+    <Accuracy>18</Accuracy>
+    <Evasion>8</Evasion>
+    <AttackSpeed>65</AttackSpeed>
+    <MoveSpeed>55</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Ami Hagihara</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>헌터 엘리트</Name>
+    <CodeName>HunterElite</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>큐브 2, 큐브+ 1-2</Type>
+    <HP>6800</HP>
+    <FireRate>67</FireRate>
+    <Accuracy>38</Accuracy>
+    <Evasion>3</Evasion>
+    <AttackSpeed>55</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>30</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Ami Hagihara</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>헌터 엘리트</Name>
+    <CodeName>HunterElite</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>큐브+ 2-1</Type>
+    <HP>20000</HP>
+    <FireRate>160</FireRate>
+    <Accuracy>60</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>30</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Ami Hagihara</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>헌터 엘리트</Name>
+    <CodeName>HunterElite</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>큐브+ 2-4</Type>
+    <HP>12000</HP>
+    <FireRate>160</FireRate>
+    <Accuracy>60</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>30</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Ami Hagihara</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>헌터</Name>
+    <CodeName>Hunter</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>방어훈련 40층</Type>
+    <HP>10000</HP>
+    <FireRate>65</FireRate>
+    <Accuracy>12</Accuracy>
+    <Evasion>4</Evasion>
+    <AttackSpeed>65</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Ami Hagihara</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>헌터</Name>
+    <CodeName>Hunter</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>방어훈련 50층, 100층</Type>
+    <HP>12500</HP>
+    <FireRate>85</FireRate>
+    <Accuracy>18</Accuracy>
+    <Evasion>8</Evasion>
+    <AttackSpeed>65</AttackSpeed>
+    <MoveSpeed>55</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Ami Hagihara</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>헌터</Name>
+    <CodeName>Hunter</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>저체온증 히든, 딥 다이브 히든</Type>
+    <HP>40000</HP>
+    <FireRate>180</FireRate>
+    <Accuracy>100</Accuracy>
+    <Evasion>30</Evasion>
+    <AttackSpeed>65</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>30</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Ami Hagihara</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>헌터</Name>
+    <CodeName>Hunter</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>저체온증+ 히든</Type>
+    <HP>80000</HP>
+    <FireRate>180</FireRate>
+    <Accuracy>100</Accuracy>
+    <Evasion>30</Evasion>
+    <AttackSpeed>65</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>30</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Ami Hagihara</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>헌터</Name>
+    <CodeName>Hunter</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 히든</Type>
+    <HP>105000</HP>
+    <FireRate>140</FireRate>
+    <Accuracy>100</Accuracy>
+    <Evasion>40</Evasion>
+    <AttackSpeed>65</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>30</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Ami Hagihara</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>헌터</Name>
+    <CodeName>Hunter</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>특이점 2-H, 3-4, 히든</Type>
+    <HP>40000</HP>
+    <FireRate>42</FireRate>
+    <Accuracy>60</Accuracy>
+    <Evasion>20</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>20</Penetration>
+    <Armor>0</Armor>
+    <Range>7</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Ami Hagihara</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>인트루더</Name>
+    <CodeName>Intruder</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>4-6</Type>
+    <HP>12000</HP>
+    <FireRate>95</FireRate>
+    <Accuracy>18</Accuracy>
+    <Evasion>8</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuka Ootsubo</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>인트루더</Name>
+    <CodeName>Intruder</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>4-4E</Type>
+    <HP>14000</HP>
+    <FireRate>105</FireRate>
+    <Accuracy>22</Accuracy>
+    <Evasion>9</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuka Ootsubo</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>인트루더</Name>
+    <CodeName>Intruder</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>헌팅래빗 1-2</Type>
+    <HP>8000</HP>
+    <FireRate>65</FireRate>
+    <Accuracy>30</Accuracy>
+    <Evasion>6</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuka Ootsubo</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>인트루더</Name>
+    <CodeName>Intruder</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>방어훈련 60층</Type>
+    <HP>15000</HP>
+    <FireRate>95</FireRate>
+    <Accuracy>18</Accuracy>
+    <Evasion>8</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuka Ootsubo</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>인트루더</Name>
+    <CodeName>Intruder</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>저체온증 히든, 딥 다이브 히든</Type>
+    <HP>40000</HP>
+    <FireRate>220</FireRate>
+    <Accuracy>75</Accuracy>
+    <Evasion>50</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuka Ootsubo</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>인트루더</Name>
+    <CodeName>Intruder</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>저체온증+ 히든</Type>
+    <HP>80000</HP>
+    <FireRate>220</FireRate>
+    <Accuracy>75</Accuracy>
+    <Evasion>50</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuka Ootsubo</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>인트루더</Name>
+    <CodeName>Intruder</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 히든</Type>
+    <HP>105000</HP>
+    <FireRate>210</FireRate>
+    <Accuracy>90</Accuracy>
+    <Evasion>60</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>60</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuka Ootsubo</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>인트루더</Name>
+    <CodeName>Intruder</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>특이점 2-9, 2-13</Type>
+    <HP>52000</HP>
+    <FireRate>200</FireRate>
+    <Accuracy>80</Accuracy>
+    <Evasion>20</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuka Ootsubo</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>디스트로이어</Name>
+    <CodeName>Destroyer</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>5-6</Type>
+    <HP>15000</HP>
+    <FireRate>236</FireRate>
+    <Accuracy>24</Accuracy>
+    <Evasion>12</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuuki Takada</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>디스트로이어</Name>
+    <CodeName>Destroyer</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>5-4E</Type>
+    <HP>17500</HP>
+    <FireRate>294</FireRate>
+    <Accuracy>30</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuuki Takada</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>디스트로이어</Name>
+    <CodeName>Destroyer</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>8-6</Type>
+    <HP>30000</HP>
+    <FireRate>300</FireRate>
+    <Accuracy>45</Accuracy>
+    <Evasion>30</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>20</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuuki Takada</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>디스트로이어</Name>
+    <CodeName>Destroyer</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>8-4E</Type>
+    <HP>35000</HP>
+    <FireRate>300</FireRate>
+    <Accuracy>60</Accuracy>
+    <Evasion>35</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>30</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuuki Takada</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>디스트로이어</Name>
+    <CodeName>Destroyer</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>방어훈련 70층, 100층</Type>
+    <HP>17500</HP>
+    <FireRate>236</FireRate>
+    <Accuracy>24</Accuracy>
+    <Evasion>12</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuuki Takada</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>디스트로이어</Name>
+    <CodeName>Destroyer</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>방어훈련 80층, 100층</Type>
+    <HP>22500</HP>
+    <FireRate>294</FireRate>
+    <Accuracy>30</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuuki Takada</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>알케미스트</Name>
+    <CodeName>Alchemist</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>6-6, 6-4E</Type>
+    <HP>20000</HP>
+    <FireRate>162</FireRate>
+    <Accuracy>40</Accuracy>
+    <Evasion>22</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Arise Satou</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>알케미스트</Name>
+    <CodeName>Alchemist</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>방어훈련 90층, 100층</Type>
+    <HP>25000</HP>
+    <FireRate>162</FireRate>
+    <Accuracy>40</Accuracy>
+    <Evasion>22</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Arise Satou</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>알케미스트</Name>
+    <CodeName>Alchemist</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>6-4N, 딥 다이브 히든</Type>
+    <HP>40000</HP>
+    <FireRate>250</FireRate>
+    <Accuracy>90</Accuracy>
+    <Evasion>30</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Arise Satou</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>알케미스트</Name>
+    <CodeName>Alchemist</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 히든</Type>
+    <HP>115000</HP>
+    <FireRate>180</FireRate>
+    <Accuracy>70</Accuracy>
+    <Evasion>40</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Arise Satou</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>드리머</Name>
+    <CodeName>Dreamer</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>7-6</Type>
+    <HP>27500</HP>
+    <FireRate>200</FireRate>
+    <Accuracy>65</Accuracy>
+    <Evasion>35</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>0</Armor>
+    <Range>16</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>드리머</Name>
+    <CodeName>Dreamer</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>7-4E</Type>
+    <HP>35000</HP>
+    <FireRate>240</FireRate>
+    <Accuracy>70</Accuracy>
+    <Evasion>50</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>0</Armor>
+    <Range>16</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>드리머</Name>
+    <CodeName>Dreamer</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>8-6</Type>
+    <HP>38000</HP>
+    <FireRate>240</FireRate>
+    <Accuracy>80</Accuracy>
+    <Evasion>50</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>0</Armor>
+    <Range>16</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>드리머</Name>
+    <CodeName>Dreamer</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>8-4E, 딥 다이브 히든</Type>
+    <HP>45000</HP>
+    <FireRate>260</FireRate>
+    <Accuracy>100</Accuracy>
+    <Evasion>60</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>0</Armor>
+    <Range>16</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>드리머</Name>
+    <CodeName>Dreamer</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 히든, 혼돈폐막 (하드)</Type>
+    <HP>108000</HP>
+    <FireRate>220</FireRate>
+    <Accuracy>80</Accuracy>
+    <Evasion>60</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>0</Armor>
+    <Range>16</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>드리머</Name>
+    <CodeName>Dreamer</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>7-4N</Type>
+    <HP>56000</HP>
+    <FireRate>245</FireRate>
+    <Accuracy>70</Accuracy>
+    <Evasion>30</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>0</Armor>
+    <Range>16</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>드리머</Name>
+    <CodeName>Dreamer</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>8-4N</Type>
+    <HP>82000</HP>
+    <FireRate>185</FireRate>
+    <Accuracy>90</Accuracy>
+    <Evasion>30</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>0</Armor>
+    <Range>16</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>드리머</Name>
+    <CodeName>Dreamer</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>특이점 3-6, 특이점 히든</Type>
+    <HP>36000</HP>
+    <FireRate>180</FireRate>
+    <Accuracy>80</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>0</Armor>
+    <Range>16</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Kaya Okuno</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>우로보로스</Name>
+    <CodeName>Weaver</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>큐브 4, 큐브+ 1-4</Type>
+    <HP>15000</HP>
+    <FireRate>120</FireRate>
+    <Accuracy>20</Accuracy>
+    <Evasion>12</Evasion>
+    <AttackSpeed>55</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>23</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Rumi Ookubo</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>우로보로스 엘리트</Name>
+    <CodeName>WeaverElite</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>큐브+ 2-4</Type>
+    <HP>40000</HP>
+    <FireRate>200</FireRate>
+    <Accuracy>80</Accuracy>
+    <Evasion>35</Evasion>
+    <AttackSpeed>65</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>40</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Rumi Ookubo</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>게이저</Name>
+    <CodeName>Gager</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>저체온증 1-4</Type>
+    <HP>15000</HP>
+    <FireRate>100</FireRate>
+    <Accuracy>20</Accuracy>
+    <Evasion>12</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yui Ishikawa</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>게이저</Name>
+    <CodeName>Gager</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>저체온증 3-4</Type>
+    <HP>25000</HP>
+    <FireRate>160</FireRate>
+    <Accuracy>60</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yui Ishikawa</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>게이저</Name>
+    <CodeName>Gager</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브 히든</Type>
+    <HP>40000</HP>
+    <FireRate>200</FireRate>
+    <Accuracy>80</Accuracy>
+    <Evasion>30</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yui Ishikawa</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>게이저</Name>
+    <CodeName>Gager</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 히든</Type>
+    <HP>98000</HP>
+    <FireRate>200</FireRate>
+    <Accuracy>80</Accuracy>
+    <Evasion>50</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yui Ishikawa</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>게이저</Name>
+    <CodeName>Gager</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>특이점 2-9, 특이점 2-13</Type>
+    <HP>46000</HP>
+    <FireRate>120</FireRate>
+    <Accuracy>80</Accuracy>
+    <Evasion>20</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yui Ishikawa</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>아키텍트</Name>
+    <CodeName>Architect</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>저체온증 2-4</Type>
+    <HP>18000</HP>
+    <FireRate>120</FireRate>
+    <Accuracy>25</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>20</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuka Ootsubo</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>아키텍트</Name>
+    <CodeName>Architect</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>저체온증 3-4, 딥 다이브 히든</Type>
+    <HP>40000</HP>
+    <FireRate>200</FireRate>
+    <Accuracy>100</Accuracy>
+    <Evasion>40</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>35</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuka Ootsubo</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>아키텍트</Name>
+    <CodeName>Architect</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>큐브+ 2-3</Type>
+    <HP>36000</HP>
+    <FireRate>200</FireRate>
+    <Accuracy>100</Accuracy>
+    <Evasion>30</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>35</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuka Ootsubo</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>아키텍트</Name>
+    <CodeName>Architect</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>큐브+ 2-4</Type>
+    <HP>20000</HP>
+    <FireRate>200</FireRate>
+    <Accuracy>100</Accuracy>
+    <Evasion>30</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>35</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuka Ootsubo</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>아키텍트</Name>
+    <CodeName>Architect</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>발할라 디제리두 연주법 EX</Type>
+    <HP>95000</HP>
+    <FireRate>135</FireRate>
+    <Accuracy>120</Accuracy>
+    <Evasion>25</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>35</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Yuka Ootsubo</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>가름</Name>
+    <CodeName>Cerberus</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브 2-4, 딥 다이브 3-4</Type>
+    <HP>30000</HP>
+    <FireRate>25</FireRate>
+    <Accuracy>50</Accuracy>
+    <Evasion>5</Evasion>
+    <AttackSpeed>150</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>20</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>가름</Name>
+    <CodeName>Cerberus</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브 히든</Type>
+    <HP>200000</HP>
+    <FireRate>60</FireRate>
+    <Accuracy>100</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>150</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>30</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>가름</Name>
+    <CodeName>Cerberus</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 히든</Type>
+    <HP>300000</HP>
+    <FireRate>60</FireRate>
+    <Accuracy>100</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>150</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>30</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>에이전트</Name>
+    <CodeName>Agent</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>특이점 2-17, 특이점 2-18</Type>
+    <HP>180000</HP>
+    <FireRate>65</FireRate>
+    <Accuracy>40</Accuracy>
+    <Evasion>20</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>에이전트</Name>
+    <CodeName>Agent</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>특이점 2-H, 특이점 3-4, 특이점 히든</Type>
+    <HP>220000</HP>
+    <FireRate>45</FireRate>
+    <Accuracy>80</Accuracy>
+    <Evasion>30</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>14</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>가이아</Name>
+    <CodeName>Gaia</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브 3-4</Type>
+    <HP>35000</HP>
+    <FireRate>300</FireRate>
+    <Accuracy>40</Accuracy>
+    <Evasion>30</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>60</Penetration>
+    <Armor>20</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>가이아</Name>
+    <CodeName>Gaia</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브 히든</Type>
+    <HP>75000</HP>
+    <FireRate>300</FireRate>
+    <Accuracy>75</Accuracy>
+    <Evasion>50</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>80</Penetration>
+    <Armor>30</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>가이아</Name>
+    <CodeName>Gaia</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>딥 다이브+ 히든</Type>
+    <HP>105000</HP>
+    <FireRate>180</FireRate>
+    <Accuracy>75</Accuracy>
+    <Evasion>50</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>80</Penetration>
+    <Armor>30</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>저지</Name>
+    <CodeName>Justice</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>9-6, 이성질체 소란 속에서 II (노말)</Type>
+    <HP>52000</HP>
+    <FireRate>30</FireRate>
+    <Accuracy>100</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>150</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>25</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Aki Toyosaki</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>저지</Name>
+    <CodeName>Justice</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>9-4E</Type>
+    <HP>65000</HP>
+    <FireRate>42</FireRate>
+    <Accuracy>100</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>150</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>25</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Aki Toyosaki</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>저지</Name>
+    <CodeName>Justice</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>10-6</Type>
+    <HP>68000</HP>
+    <FireRate>50</FireRate>
+    <Accuracy>100</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>150</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>25</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Aki Toyosaki</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>저지</Name>
+    <CodeName>Justice</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>특이점 히든</Type>
+    <HP>46000</HP>
+    <FireRate>45</FireRate>
+    <Accuracy>80</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>150</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>25</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Aki Toyosaki</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>저지</Name>
+    <CodeName>Justice</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>특이점 히든(+드리머), 이성질체 소란 속에서II (하드)</Type>
+    <HP>72000</HP>
+    <FireRate>58</FireRate>
+    <Accuracy>100</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>150</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>25</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Aki Toyosaki</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>저지</Name>
+    <CodeName>Justice</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>9-3N, 9-4N</Type>
+    <HP>56000</HP>
+    <FireRate>55</FireRate>
+    <Accuracy>100</Accuracy>
+    <Evasion>5</Evasion>
+    <AttackSpeed>150</AttackSpeed>
+    <MoveSpeed>45</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>25</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Aki Toyosaki</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>M16A1</Name>
+    <CodeName>M16A1</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>특이점 1-P, 특이점 3-6</Type>
+    <HP>360000</HP>
+    <FireRate>90</FireRate>
+    <Accuracy>999</Accuracy>
+    <Evasion>60</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>20</Penetration>
+    <Armor>0</Armor>
+    <Range>10</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>M16A1</Name>
+    <CodeName>M16A1</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>특이점 3-H, 특이점 히든</Type>
+    <HP>320000</HP>
+    <FireRate>95</FireRate>
+    <Accuracy>60</Accuracy>
+    <Evasion>30</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>20</Penetration>
+    <Armor>10</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>M16A1</Name>
+    <CodeName>M16A1</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 상어와 바다IV (노말), 이성질체 소란 속에서V (노말)</Type>
+    <HP>92000</HP>
+    <FireRate>62</FireRate>
+    <Accuracy>60</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>20</MoveSpeed>
+    <Penetration>10</Penetration>
+    <Armor>10</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>M16A1</Name>
+    <CodeName>M16A1</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 상어와 바다IV (하드), 이성질체 소란 속에서V (하드)</Type>
+    <HP>320000</HP>
+    <FireRate>85</FireRate>
+    <Accuracy>80</Accuracy>
+    <Evasion>30</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>20</Penetration>
+    <Armor>15</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>M16A1</Name>
+    <CodeName>M16A1</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 히든 (노말)</Type>
+    <HP>69876</HP>
+    <FireRate>53</FireRate>
+    <Accuracy>45</Accuracy>
+    <Evasion>11</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>7</Penetration>
+    <Armor>8</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>M16A1</Name>
+    <CodeName>M16A1</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체 히든 (하드)</Type>
+    <HP>260000</HP>
+    <FireRate>78</FireRate>
+    <Accuracy>120</Accuracy>
+    <Evasion>40</Evasion>
+    <AttackSpeed>45</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>20</Penetration>
+    <Armor>20</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>엘리샤</Name>
+    <CodeName>Elisa</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>?</Type>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Accuracy>0</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>0</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>철혈 최고 권한 인형</Note>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+    <VoiceActor>Rie Takahashi</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>비크</Name>
+    <CodeName>Beak</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이성질체</Type>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Accuracy>0</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>0</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note />
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+    <VoiceActor>Ami Hagihara</VoiceActor>
+    <Voices>APPEAR1;APPEAR2;DEAD1;DEAD2;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUE4;DIALOGUE5;FEED1;FEED2;FEED3;FORMATION1;FORMATION2;FORMATION3;GAIN;PROVOCATIVE1;PROVOCATIVE2;SKILL1;SKILL2</Voices>
+  </Enemy>
+  <Enemy>
+    <Name>히드라</Name>
+    <CodeName>Hydra</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>적대 버전</Type>
+    <HP>9000</HP>
+    <FireRate>280</FireRate>
+    <Accuracy>55</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>42</AttackSpeed>
+    <MoveSpeed>20</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>199</Armor>
+    <Range>4</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>히드라</Name>
+    <CodeName>Hydra</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>아군 버전</Type>
+    <HP>1650</HP>
+    <FireRate>280</FireRate>
+    <Accuracy>55</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>42</AttackSpeed>
+    <MoveSpeed>20</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>199</Armor>
+    <Range>4</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>케리니티스</Name>
+    <CodeName>Cerynitis</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>적대 버전</Type>
+    <HP>680</HP>
+    <FireRate>126</FireRate>
+    <Accuracy>60</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>30</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>90</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>케리니티스</Name>
+    <CodeName>Cerynitis</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>난류연속</Type>
+    <HP>1202</HP>
+    <FireRate>142</FireRate>
+    <Accuracy>61</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>30</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>125</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>케리니티스</Name>
+    <CodeName>Cerynitis</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>이성질체</Type>
+    <HP>1320</HP>
+    <FireRate>58</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>18</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>50</Penetration>
+    <Armor>60</Armor>
+    <Range>7</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>티폰</Name>
+    <CodeName>Typhon</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>적대 버전</Type>
+    <HP>15876</HP>
+    <FireRate>229</FireRate>
+    <Accuracy>408</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>350</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>90</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>티폰</Name>
+    <CodeName>Typhon</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>난류연속</Type>
+    <HP>30992</HP>
+    <FireRate>258</FireRate>
+    <Accuracy>419</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>350</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>131</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>다크틸</Name>
+    <CodeName>Dactyl</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>적대 버전</Type>
+    <HP>800</HP>
+    <FireRate>100</FireRate>
+    <Accuracy>100</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>150</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>오르트로스</Name>
+    <CodeName>Beast</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>연쇄분열 ver.1</Type>
+    <HP>2800</HP>
+    <FireRate>36</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>45</AttackSpeed>
+    <MoveSpeed>100</MoveSpeed>
+    <Penetration>30</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>오르트로스</Name>
+    <CodeName>Beast</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>연쇄분열 ver.2</Type>
+    <HP>3200</HP>
+    <FireRate>36</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>18</Evasion>
+    <AttackSpeed>45</AttackSpeed>
+    <MoveSpeed>100</MoveSpeed>
+    <Penetration>30</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>정찰 센터</Name>
+    <CodeName>RecceCentre</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>연쇄분열 ver.1</Type>
+    <HP>25000</HP>
+    <FireRate>10</FireRate>
+    <Accuracy>15</Accuracy>
+    <Evasion>4</Evasion>
+    <AttackSpeed>25</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>150</Armor>
+    <Range>15</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>패스파인더 생성</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>정찰 센터</Name>
+    <CodeName>RecceCentre</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>연쇄분열 ver.2</Type>
+    <HP>35000</HP>
+    <FireRate>10</FireRate>
+    <Accuracy>15</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>25</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>150</Armor>
+    <Range>15</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>패스파인더 생성</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>패스파인더</Name>
+    <CodeName>Pathfinder</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>연쇄분열 ver.1</Type>
+    <HP>100</HP>
+    <FireRate>26</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>25</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>100</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>60</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>패스파인더</Name>
+    <CodeName>Pathfinder</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>연쇄분열 ver.2</Type>
+    <HP>100</HP>
+    <FireRate>26</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>150</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>100</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>60</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>패스파인더</Name>
+    <CodeName>Pathfinder</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>소환 ver.1</Type>
+    <HP>125</HP>
+    <FireRate>10</FireRate>
+    <Accuracy>150</Accuracy>
+    <Evasion>150</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>18</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>45</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>정찰 센터 연쇄분열 ver.1에서 2초마다 5링크씩 생성</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>패스파인더</Name>
+    <CodeName>Pathfinder</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>소환 ver.2</Type>
+    <HP>175</HP>
+    <FireRate>10</FireRate>
+    <Accuracy>150</Accuracy>
+    <Evasion>150</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>18</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>45</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>정찰 센터 연쇄분열 ver.2에서 2초마다 5링크씩 생성</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>키클롭스A</Name>
+    <CodeName>Cyclops</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>적대 버전</Type>
+    <HP>476</HP>
+    <FireRate>13</FireRate>
+    <Accuracy>23</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>30</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>키클롭스A</Name>
+    <CodeName>Cyclops</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>이성질체</Type>
+    <HP>1140</HP>
+    <FireRate>22</FireRate>
+    <Accuracy>46</Accuracy>
+    <Evasion>32</Evasion>
+    <AttackSpeed>28</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>키클롭스A</Name>
+    <CodeName>Cyclops</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>아군 버전</Type>
+    <HP>550</HP>
+    <FireRate>22</FireRate>
+    <Accuracy>46</Accuracy>
+    <Evasion>32</Evasion>
+    <AttackSpeed>28</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>키클롭스SG</Name>
+    <CodeName>Cyclops_SG</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>적대 버전</Type>
+    <HP>595</HP>
+    <FireRate>11</FireRate>
+    <Accuracy>23</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>30</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>4</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>키클롭스SG</Name>
+    <CodeName>Cyclops_SG</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>이성질체</Type>
+    <HP>1320</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>28</Accuracy>
+    <Evasion>8</Evasion>
+    <AttackSpeed>18</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>50</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>아이기스-GA</Name>
+    <CodeName>Aegis-GA</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>적대 버전</Type>
+    <HP>2325</HP>
+    <FireRate>11</FireRate>
+    <Accuracy>18</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>90</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>아이기스-GA</Name>
+    <CodeName>Aegis-GA</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>적대 버전(특이점)</Type>
+    <HP>2325</HP>
+    <FireRate>11</FireRate>
+    <Accuracy>18</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>109</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>아이기스-GA</Name>
+    <CodeName>Aegis-GA</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>난류연속</Type>
+    <HP>4109</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>18</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>125</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>아이기스-GA</Name>
+    <CodeName>Aegis-GA</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>이성질체</Type>
+    <HP>1440</HP>
+    <FireRate>16</FireRate>
+    <Accuracy>28</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>28</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>35</Penetration>
+    <Armor>145</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>켄타우로스</Name>
+    <CodeName>Archer</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>연쇄분열 ver.1</Type>
+    <HP>1050</HP>
+    <FireRate>26</FireRate>
+    <Accuracy>50</Accuracy>
+    <Evasion>50</Evasion>
+    <AttackSpeed>36</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>30</Penetration>
+    <Armor>0</Armor>
+    <Range>10</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>켄타우로스</Name>
+    <CodeName>Archer</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>연쇄분열 ver.2</Type>
+    <HP>1100</HP>
+    <FireRate>26</FireRate>
+    <Accuracy>50</Accuracy>
+    <Evasion>50</Evasion>
+    <AttackSpeed>36</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>30</Penetration>
+    <Armor>0</Armor>
+    <Range>10</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>미노타우로스</Name>
+    <CodeName>TeslaTrooper</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>연쇄분열 ver.1</Type>
+    <HP>19000</HP>
+    <FireRate>46</FireRate>
+    <Accuracy>46</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>5</AttackSpeed>
+    <MoveSpeed>20</MoveSpeed>
+    <Penetration>30</Penetration>
+    <Armor>150</Armor>
+    <Range>2</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>미노타우로스</Name>
+    <CodeName>TeslaTrooper</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>연쇄분열 ver.2</Type>
+    <HP>22000</HP>
+    <FireRate>46</FireRate>
+    <Accuracy>46</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>10</AttackSpeed>
+    <MoveSpeed>20</MoveSpeed>
+    <Penetration>30</Penetration>
+    <Armor>150</Armor>
+    <Range>2</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>구스타프</Name>
+    <CodeName>Gustaf1</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>일반형</Type>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Accuracy>0</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>0</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>지원 유닛</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>구스타프</Name>
+    <CodeName>Gustaf2</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>일반형</Type>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Accuracy>0</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>0</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>지원 유닛</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>구스타프</Name>
+    <CodeName>Gustaf3</CodeName>
+    <Affiliation>KCCO</Affiliation>
+    <Type>일반형</Type>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Accuracy>0</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>0</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>지원 유닛</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>스트렐치</Name>
+    <CodeName>Strelet</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>난류연속</Type>
+    <HP>1050</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>20</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>스트렐치</Name>
+    <CodeName>Strelet</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>이성질체</Type>
+    <HP>950</HP>
+    <FireRate>8</FireRate>
+    <Accuracy>15</Accuracy>
+    <Evasion>35</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>500</Shield>
+    <ShieldP>20</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>스트렐치</Name>
+    <CodeName>Strelet</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>중립 버전</Type>
+    <HP>1050</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>20</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>6</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>로델레로</Name>
+    <CodeName>Rodelero</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>난류연속</Type>
+    <HP>5600</HP>
+    <FireRate>25</FireRate>
+    <Accuracy>40</Accuracy>
+    <Evasion>20</Evasion>
+    <AttackSpeed>15</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>40</Armor>
+    <Range>7</Range>
+    <Shield>300</Shield>
+    <ShieldP>30</ShieldP>
+    <Note>필중, 장갑 무시, 링크 피해 증폭</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>로델레로</Name>
+    <CodeName>Rodelero</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>이성질체</Type>
+    <HP>3500</HP>
+    <FireRate>18</FireRate>
+    <Accuracy>40</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>15</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>40</Armor>
+    <Range>7</Range>
+    <Shield>600</Shield>
+    <ShieldP>30</ShieldP>
+    <Note>필중, 장갑 무시, 링크 피해 증폭</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>로델레로</Name>
+    <CodeName>Rodelero</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>중립 버전</Type>
+    <HP>5600</HP>
+    <FireRate>25</FireRate>
+    <Accuracy>40</Accuracy>
+    <Evasion>20</Evasion>
+    <AttackSpeed>15</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>40</Armor>
+    <Range>7</Range>
+    <Shield>300</Shield>
+    <ShieldP>30</ShieldP>
+    <Note>필중, 장갑 무시, 링크 피해 증폭</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>도펠죌트너</Name>
+    <CodeName>Doppelsoldner</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>난류연속</Type>
+    <HP>9200</HP>
+    <FireRate>18</FireRate>
+    <Accuracy>36</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>35</AttackSpeed>
+    <MoveSpeed>20</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>90</Armor>
+    <Range>6</Range>
+    <Shield>500</Shield>
+    <ShieldP>50</ShieldP>
+    <Note>필중, 장갑 무시</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>도펠죌트너</Name>
+    <CodeName>Doppelsoldner</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>이성질체</Type>
+    <HP>9800</HP>
+    <FireRate>12</FireRate>
+    <Accuracy>36</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>30</AttackSpeed>
+    <MoveSpeed>20</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>150</Armor>
+    <Range>6</Range>
+    <Shield>2250</Shield>
+    <ShieldP>50</ShieldP>
+    <Note>필중, 장갑 무시</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>도펠죌트너</Name>
+    <CodeName>Doppelsoldner</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>중립 버전</Type>
+    <HP>9200</HP>
+    <FireRate>18</FireRate>
+    <Accuracy>36</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>35</AttackSpeed>
+    <MoveSpeed>20</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>90</Armor>
+    <Range>6</Range>
+    <Shield>500</Shield>
+    <ShieldP>50</ShieldP>
+    <Note>필중, 장갑 무시</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>버려진 헤비거너</Name>
+    <CodeName>StreletPlus</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>연쇄분열 ver.1</Type>
+    <HP>1150</HP>
+    <FireRate>46</FireRate>
+    <Accuracy>46</Accuracy>
+    <Evasion>50</Evasion>
+    <AttackSpeed>30</AttackSpeed>
+    <MoveSpeed>25</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>7</Range>
+    <Shield>1500</Shield>
+    <ShieldP>20</ShieldP>
+    <Note>명중, 회피 디버프</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>버려진 헤비거너</Name>
+    <CodeName>StreletPlus</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>연쇄분열 ver.2</Type>
+    <HP>1350</HP>
+    <FireRate>46</FireRate>
+    <Accuracy>46</Accuracy>
+    <Evasion>50</Evasion>
+    <AttackSpeed>30</AttackSpeed>
+    <MoveSpeed>25</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>7</Range>
+    <Shield>1500</Shield>
+    <ShieldP>20</ShieldP>
+    <Note>명중, 회피 디버프</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>버려진 글래디에이터</Name>
+    <CodeName>Roarer</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>연쇄분열 ver.1</Type>
+    <HP>22000</HP>
+    <FireRate>46</FireRate>
+    <Accuracy>46</Accuracy>
+    <Evasion>4</Evasion>
+    <AttackSpeed>24</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>60</Armor>
+    <Range>3</Range>
+    <Shield>6000</Shield>
+    <ShieldP>20</ShieldP>
+    <Note>왜곡방벽 회복 스킬, 섬광 면역</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>버려진 글래디에이터</Name>
+    <CodeName>Roarer</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>연쇄분열 ver.2</Type>
+    <HP>26000</HP>
+    <FireRate>46</FireRate>
+    <Accuracy>46</Accuracy>
+    <Evasion>8</Evasion>
+    <AttackSpeed>24</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>60</Armor>
+    <Range>3</Range>
+    <Shield>6000</Shield>
+    <ShieldP>20</ShieldP>
+    <Note>왜곡방벽 회복 스킬, 섬광 면역</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>버려진 니토</Name>
+    <CodeName>Isomer</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>연쇄분열</Type>
+    <HP>2000</HP>
+    <FireRate>10</FireRate>
+    <Accuracy>10</Accuracy>
+    <Evasion>50</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>25</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>20</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>주변 스턴 공격. 넉백 무의미</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>울란</Name>
+    <CodeName>Uhlan</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>난류연속</Type>
+    <HP>8200</HP>
+    <FireRate>48</FireRate>
+    <Accuracy>90</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>30</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>90</Armor>
+    <Range>7</Range>
+    <Shield>800</Shield>
+    <ShieldP>10</ShieldP>
+    <Note>돌진 로드킬 시 포스실드 무시. 엘리트 판정</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>울란</Name>
+    <CodeName>Uhlan</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>이성질체</Type>
+    <HP>28000</HP>
+    <FireRate>35</FireRate>
+    <Accuracy>90</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>30</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>150</Armor>
+    <Range>7</Range>
+    <Shield>3750</Shield>
+    <ShieldP>10</ShieldP>
+    <Note>돌진 로드킬 시 포스실드 무시. 엘리트 판정</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>울란</Name>
+    <CodeName>Uhlan</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>중립 버전</Type>
+    <HP>8200</HP>
+    <FireRate>48</FireRate>
+    <Accuracy>90</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>30</AttackSpeed>
+    <MoveSpeed>35</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>90</Armor>
+    <Range>7</Range>
+    <Shield>800</Shield>
+    <ShieldP>100</ShieldP>
+    <Note>돌진 로드킬 시 포스실드 무시. 엘리트 판정</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>픽시스</Name>
+    <CodeName>Pyxis</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>연쇄분열 ver.1</Type>
+    <HP>16000</HP>
+    <FireRate>46</FireRate>
+    <Accuracy>46</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>80</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>30</Armor>
+    <Range>15</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>철혈공조 제조</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>픽시스</Name>
+    <CodeName>Pyxis</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>연쇄분열 ver.2</Type>
+    <HP>22000</HP>
+    <FireRate>46</FireRate>
+    <Accuracy>46</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>80</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>30</Armor>
+    <Range>15</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>철혈공조 제조</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>버려진 패트롤러</Name>
+    <CodeName>Thunder</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>연쇄분열 ver.1</Type>
+    <HP>28000</HP>
+    <FireRate>60</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>90</Armor>
+    <Range>9</Range>
+    <Shield>5000</Shield>
+    <ShieldP>50</ShieldP>
+    <Note>전투 개시에 보호막 적용. 10초 후 보호막 해제 및 회피 1900% 상승과 동시에 2회 점프. 이 상태로 6초 후 보호막 모드 가동</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>버려진 패트롤러</Name>
+    <CodeName>Thunder</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>연쇄분열 ver.2</Type>
+    <HP>36000</HP>
+    <FireRate>60</FireRate>
+    <Accuracy>140</Accuracy>
+    <Evasion>50</Evasion>
+    <AttackSpeed>40</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>90</Armor>
+    <Range>9</Range>
+    <Shield>5000</Shield>
+    <ShieldP>50</ShieldP>
+    <Note>전투 개시에 보호막 적용. 10초 후 보호막 해제 및 회피 1900% 상승과 동시에 2회 점프. 이 상태로 6초 후 보호막 모드 가동</Note>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>니토 블랙</Name>
+    <CodeName>NytoBlack</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>난류연속 - 그리폰 결사대</Type>
+    <HP>38000</HP>
+    <FireRate>26</FireRate>
+    <Accuracy>60</Accuracy>
+    <Evasion>20</Evasion>
+    <AttackSpeed>90</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>40</Armor>
+    <Range>10</Range>
+    <Shield>0</Shield>
+    <ShieldP>30</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>니토 블랙</Name>
+    <CodeName>NytoBlack</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>난류연속 - 총공격</Type>
+    <HP>150000</HP>
+    <FireRate>76</FireRate>
+    <Accuracy>150</Accuracy>
+    <Evasion>25</Evasion>
+    <AttackSpeed>80</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>30</Armor>
+    <Range>10</Range>
+    <Shield>800</Shield>
+    <ShieldP>50</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>니토 블랙</Name>
+    <CodeName>NytoBlack</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>난류연속 - 하얀 인형 ver.1</Type>
+    <HP>150000</HP>
+    <FireRate>76</FireRate>
+    <Accuracy>150</Accuracy>
+    <Evasion>25</Evasion>
+    <AttackSpeed>80</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>30</Armor>
+    <Range>10</Range>
+    <Shield>800</Shield>
+    <ShieldP>50</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>니토 블랙</Name>
+    <CodeName>NytoBlack</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>난류연속 - 하얀 인형 ver.2</Type>
+    <HP>150000</HP>
+    <FireRate>62</FireRate>
+    <Accuracy>120</Accuracy>
+    <Evasion>35</Evasion>
+    <AttackSpeed>90</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>40</Penetration>
+    <Armor>30</Armor>
+    <Range>10</Range>
+    <Shield>1000</Shield>
+    <ShieldP>50</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>니토 블랙</Name>
+    <CodeName>NytoBlack</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>난류연속 - 돌풍구출</Type>
+    <HP>95000</HP>
+    <FireRate>48</FireRate>
+    <Accuracy>120</Accuracy>
+    <Evasion>25</Evasion>
+    <AttackSpeed>90</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>30</Penetration>
+    <Armor>40</Armor>
+    <Range>10</Range>
+    <Shield>1000</Shield>
+    <ShieldP>50</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>니토 화이트</Name>
+    <CodeName>NytoWhite</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>난류연속 - 하얀 인형</Type>
+    <HP>190000</HP>
+    <FireRate>82</FireRate>
+    <Accuracy>250</Accuracy>
+    <Evasion>20</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>20</Penetration>
+    <Armor>60</Armor>
+    <Range>9</Range>
+    <Shield>1500</Shield>
+    <ShieldP>50</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>니토 화이트</Name>
+    <CodeName>NytoWhite</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>난류연속 - 돌풍구출</Type>
+    <HP>120000</HP>
+    <FireRate>68</FireRate>
+    <Accuracy>250</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>20</Penetration>
+    <Armor>60</Armor>
+    <Range>9</Range>
+    <Shield>1500</Shield>
+    <ShieldP>50</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>니토</Name>
+    <CodeName>Nyto</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>난류연속 스토리</Type>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Accuracy>0</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>0</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>심문용으로 스토리 등장</Note>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>니모겐</Name>
+    <CodeName>Nimogen</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>이성질체 - 노멀</Type>
+    <HP>45000</HP>
+    <FireRate>32</FireRate>
+    <Accuracy>120</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>10</Penetration>
+    <Armor>15</Armor>
+    <Range>10</Range>
+    <Shield>0</Shield>
+    <ShieldP>100</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>니모겐</Name>
+    <CodeName>Nimogen</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>이성질체 - 하드</Type>
+    <HP>160000</HP>
+    <FireRate>70</FireRate>
+    <Accuracy>250</Accuracy>
+    <Evasion>40</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>20</Penetration>
+    <Armor>30</Armor>
+    <Range>10</Range>
+    <Shield>6000</Shield>
+    <ShieldP>50</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>니모겐</Name>
+    <CodeName>Nimogen</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>발할라 이벤트</Type>
+    <HP>42000</HP>
+    <FireRate>32</FireRate>
+    <Accuracy>120</Accuracy>
+    <Evasion>15</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>20</Penetration>
+    <Armor>25</Armor>
+    <Range>10</Range>
+    <Shield>0</Shield>
+    <ShieldP>50</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>니모겐</Name>
+    <CodeName>Nimogen</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>발할라 이벤트 EX</Type>
+    <HP>175000</HP>
+    <FireRate>65</FireRate>
+    <Accuracy>250</Accuracy>
+    <Evasion>40</Evasion>
+    <AttackSpeed>60</AttackSpeed>
+    <MoveSpeed>50</MoveSpeed>
+    <Penetration>20</Penetration>
+    <Armor>30</Armor>
+    <Range>10</Range>
+    <Shield>7000</Shield>
+    <ShieldP>100</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>머큐로스</Name>
+    <CodeName>Mercurows</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>이성질체 - 노멀</Type>
+    <HP>42000</HP>
+    <FireRate>42</FireRate>
+    <Accuracy>80</Accuracy>
+    <Evasion>20</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>5</Penetration>
+    <Armor>15</Armor>
+    <Range>15</Range>
+    <Shield>0</Shield>
+    <ShieldP>50</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>머큐로스</Name>
+    <CodeName>Mercurows</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>이성질체 - 하드 ver.1</Type>
+    <HP>42000</HP>
+    <FireRate>42</FireRate>
+    <Accuracy>80</Accuracy>
+    <Evasion>20</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>5</Penetration>
+    <Armor>15</Armor>
+    <Range>15</Range>
+    <Shield>0</Shield>
+    <ShieldP>50</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>머큐로스</Name>
+    <CodeName>Mercurows</CodeName>
+    <Affiliation>Paradeus</Affiliation>
+    <Type>이성질체 - 하드 ver.2</Type>
+    <HP>120000</HP>
+    <FireRate>62</FireRate>
+    <Accuracy>120</Accuracy>
+    <Evasion>60</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>40</MoveSpeed>
+    <Penetration>5</Penetration>
+    <Armor>30</Armor>
+    <Range>30</Range>
+    <Shield>3000</Shield>
+    <ShieldP>100</ShieldP>
+    <IsBoss>true</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>좀비</Name>
+    <CodeName>Zombie1</CodeName>
+    <Affiliation>E.L.I.D.</Affiliation>
+    <Type>일반</Type>
+    <HP>1260</HP>
+    <FireRate>7</FireRate>
+    <Accuracy>60</Accuracy>
+    <Evasion>3</Evasion>
+    <AttackSpeed>90</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>3</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>무장 좀비</Name>
+    <CodeName>Zombie2</CodeName>
+    <Affiliation>E.L.I.D.</Affiliation>
+    <Type>일반</Type>
+    <HP>720</HP>
+    <FireRate>26</FireRate>
+    <Accuracy>30</Accuracy>
+    <Evasion>13</Evasion>
+    <AttackSpeed>30</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>5</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+  <Enemy>
+    <Name>스매셔</Name>
+    <CodeName>Smasher</CodeName>
+    <Affiliation>E.L.I.D.</Affiliation>
+    <Type>일반</Type>
+    <HP>265000</HP>
+    <FireRate>32</FireRate>
+    <Accuracy>60</Accuracy>
+    <Evasion>10</Evasion>
+    <AttackSpeed>50</AttackSpeed>
+    <MoveSpeed>30</MoveSpeed>
+    <Penetration>20</Penetration>
+    <Armor>0</Armor>
+    <Range>12</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <IsBoss>false</IsBoss>
+    <HasVoice>false</HasVoice>
+  </Enemy>
+</NewDataSet>

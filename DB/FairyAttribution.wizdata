@@ -1,0 +1,110 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="FairyAttribution" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="FairyAttribution">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="InvokePercent" type="xs:string" minOccurs="0" />
+                <xs:element name="Effect" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <FairyAttribution>
+    <Name>살상계 1</Name>
+    <InvokePercent>40/60/80/90/100</InvokePercent>
+    <Effect>전투 중 아군 제대 화력 12%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>살상계 2</Name>
+    <InvokePercent>20/40/60/80/100</InvokePercent>
+    <Effect>전투 중 아군 제대 화력 15%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>정밀계 1</Name>
+    <InvokePercent>40/60/80/90/100</InvokePercent>
+    <Effect>전투 중 아군 제대 명중 20%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>정밀계 2</Name>
+    <InvokePercent>20/40/60/80/100</InvokePercent>
+    <Effect>전투 중 아군 제대 명중 25%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>회피계 1</Name>
+    <InvokePercent>40/60/80/90/100</InvokePercent>
+    <Effect>전투 중 아군 제대 회피 15%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>회피계 2</Name>
+    <InvokePercent>20/40/60/80/100</InvokePercent>
+    <Effect>전투 중 아군 제대 회피 20%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>장갑계 1</Name>
+    <InvokePercent>40/60/80/90/100</InvokePercent>
+    <Effect>전투 중 아군 제대 장갑 8%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>장갑계 2</Name>
+    <InvokePercent>20/40/60/80/100</InvokePercent>
+    <Effect>전투 중 아군 제대 장갑 10%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>필살계 1</Name>
+    <InvokePercent>40/60/80/90/100</InvokePercent>
+    <Effect>전투 중 아군 제대 치명률 40%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>필살계 2</Name>
+    <InvokePercent>20/40/60/80/100</InvokePercent>
+    <Effect>전투 중 아군 제대 치명률 50%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>선봉계</Name>
+    <InvokePercent>30/50/70/90/100</InvokePercent>
+    <Effect>전투 중 아군 SMG 화력 8% 회피 12%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>돌격계</Name>
+    <InvokePercent>30/50/70/90/100</InvokePercent>
+    <Effect>전투 중 아군 AR 화력 10% 공속 8%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>조준계</Name>
+    <InvokePercent>30/50/70/90/100</InvokePercent>
+    <Effect>전투 중 아군 RF 화력 8% 공속 10%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>완강계</Name>
+    <InvokePercent>30/50/70/90/100</InvokePercent>
+    <Effect>전투 중 아군 SG 장갑 8% 치명률 20%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>진압계</Name>
+    <InvokePercent>30/50/70/90/100</InvokePercent>
+    <Effect>전투 중 아군 MG 화력 10% 명중 15%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>예민계</Name>
+    <InvokePercent>30/50/70/90/100</InvokePercent>
+    <Effect>전투 중 아군 HG 회피 10% 치명률 30%</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>격앙계</Name>
+    <InvokePercent>20/40/60/80/100</InvokePercent>
+    <Effect>전투 중 아군 제대 8초마다 화력 10 % (최대 3중첩, 복리)</Effect>
+  </FairyAttribution>
+  <FairyAttribution>
+    <Name>황금계</Name>
+    <InvokePercent>40/60/80/90/100</InvokePercent>
+    <Effect>귀금속 제작에 재료로 쓰는 것 외에는 딱히 전술용도로는 쓸 수 없겠네요. 그래도 좋아보여요!</Effect>
+  </FairyAttribution>
+</NewDataSet>

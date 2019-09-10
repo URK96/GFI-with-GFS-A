@@ -1,0 +1,792 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Doll_Skill" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Doll_Skill">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="CodeName" type="xs:string" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Name_EN" type="xs:string" minOccurs="0" />
+                <xs:element name="Name_JP" type="xs:string" minOccurs="0" />
+                <xs:element name="Explain" type="xs:string" minOccurs="0" />
+                <xs:element name="Explain_EN" type="xs:string" minOccurs="0" />
+                <xs:element name="Explain_JP" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillEffect" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Doll_Skill>
+    <CodeName>hunting_signal</CodeName>
+    <Name>사냥신호</Name>
+    <Name_EN>Annihilation Command</Name_EN>
+    <Explain>지속시간 동안 아군 전원의 화력과 치명률을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>smoke_grenade</CodeName>
+    <Name>연막탄</Name>
+    <Name_EN>Smoke Grenade</Name_EN>
+    <Explain>폭발한 위치의 2.5 반경에 적의 사속과 이동속도를 감소시키는 연막을 발생시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>firepower_supp_n</CodeName>
+    <Name>기선제압N</Name>
+    <Name_EN>Firepower Supression N</Name_EN>
+    <Explain>지속시간 동안 적 전체의 화력을 감소시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>flare</CodeName>
+    <Name>조명탄</Name>
+    <Name_EN>Flare</Name_EN>
+    <Explain>지속시간 동안 아군 전체의 명중을 상승시킨다. (야간작전 전용)</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>retreat_block</CodeName>
+    <Name>퇴로차단</Name>
+    <Name_EN>Cover Suppression</Name_EN>
+    <Explain>지속시간 동안 적 전체의 회피를 감소시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>assault_supp</CodeName>
+    <Name>격발차단</Name>
+    <Name_EN>Assault Suppression</Name_EN>
+    <Explain>지속시간 동안 적 전체의 사속을 감소시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>check_target</CodeName>
+    <Name>목표확인</Name>
+    <Name_EN>Precision Command</Name_EN>
+    <Explain>지속시간 동안 아군 전원의 명중을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>cover_command</CodeName>
+    <Name>엄호개시</Name>
+    <Name_EN>Cover Command</Name_EN>
+    <Explain>지속시간 동안 아군 전체의 회피를 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>supp_signal</CodeName>
+    <Name>진압신호</Name>
+    <Name_EN>Assault Command</Name_EN>
+    <Explain>지속시간 동안 아군 전체의 사속을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>cover_command_n</CodeName>
+    <Name>엄호개시N</Name>
+    <Name_EN>Cover Command N</Name_EN>
+    <Explain>지속시간 동안 아군 전체의 회피를 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>stun_grenade</CodeName>
+    <Name>섬광탄</Name>
+    <Name_EN>Stun Grenade</Name_EN>
+    <Explain>폭발한 위치의 2.5 반경 내의 적에게 기절을 건다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>blindfold</CodeName>
+    <Name>시야봉쇄</Name>
+    <Name_EN>Precision Suppression</Name_EN>
+    <Explain>지속시간 동안 적 전체의 명중을 감소시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>assualt_launch</CodeName>
+    <Name>돌격개시</Name>
+    <Name_EN>Charge Command</Name_EN>
+    <Explain>지속시간 동안 아군 전원의 화력과 사속을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>firepower_supp</CodeName>
+    <Name>기선제압</Name>
+    <Name_EN>Firepower Supression</Name_EN>
+    <Explain>지속시간 동안 적 전체의 화력을 감소시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>retreat_block_n</CodeName>
+    <Name>퇴로차단N</Name>
+    <Name_EN>Cover Suppression N</Name_EN>
+    <Explain>지속시간 동안 적 전체의 회피를 감소시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>conceal_command</CodeName>
+    <Name>엄폐지시</Name>
+    <Name_EN>Conceal Command</Name_EN>
+    <Explain>지속시간 동안 아군 전체의 명중과 회피를 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>hit_run_raid</CodeName>
+    <Name>기습작전</Name>
+    <Name_EN>Raid Command</Name_EN>
+    <Explain>지속시간 동안 아군 전원의 화력과 명중을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>fire_command</CodeName>
+    <Name>일제사격</Name>
+    <Name_EN>Fire Command</Name_EN>
+    <Explain>지속시간 동안 아군 전체의 화력을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>fire_command_n</CodeName>
+    <Name>일제사격N</Name>
+    <Name_EN>Fire Command N</Name_EN>
+    <Explain>지속시간 동안 아군 전체의 화력을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>extermination_command</CodeName>
+    <Name>소멸지시</Name>
+    <Name_EN>Piercing Command</Name_EN>
+    <Explain>지속시간 동안 아군 전원의 사속과 치명률을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>tomahawk_attack</CodeName>
+    <Name>토마호크 어택</Name>
+    <Name_EN>Observer's Strike</Name_EN>
+    <Explain>투척용 도끼를 던져 대상에게 피해를 준다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>inquisitor_bullet</CodeName>
+    <Name>단죄의 마탄</Name>
+    <Name_EN>Inquisitor's Bullet</Name_EN>
+    <Explain>1초간 조준한 후에 자신의 위치에 따라 지정된 적에게 피해를 준다. 보스 존재시 보스급의 적을 우선 조준하고 조준대상은 추가 대미지 디버프를 받으며 아군의 화력이 대상에게 집중된다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>fenrir</CodeName>
+    <Name>영총-펜릴/오모히가네</Name>
+    <Name_EN>Zero-Gun: Fenrir</Name_EN>
+    <Explain>일정 범위 내에 적들에게 8회 공격을 한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>incendiary_grenade</CodeName>
+    <Name>소이탄</Name>
+    <Name_EN>Incendiary Grenade</Name_EN>
+    <Explain>소이탄을 던져 1.5 반경에 피해를 주고 매 0.33초마다 화상 대미지를 입히는 구간을 생성한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>hand_grenade</CodeName>
+    <Name>수류탄</Name>
+    <Name_EN>Hand Grenade</Name_EN>
+    <Explain>폭발한 위치의 2.5 반경 내의 적에게 피해를 준다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>evasion_maneuver</CodeName>
+    <Name>회피기동</Name>
+    <Name_EN>Evasion Focus</Name_EN>
+    <Explain>지속시간 동안 자신의 회피를 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>rapid_disposal</CodeName>
+    <Name>신속처분</Name>
+    <Name_EN>Maneuver Focus</Name_EN>
+    <Explain>지속시간 동안 자신의 화력과 회피를 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>force_shield</CodeName>
+    <Name>포스실드</Name>
+    <Name_EN>Force Shield</Name_EN>
+    <Explain>자신에게 9999의 왜곡방벽을 생성한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>evasion_maneuver_t</CodeName>
+    <Name>회피기동T</Name>
+    <Name_EN>Evasion Focus T</Name_EN>
+    <Explain>지속시간 동안 자신의 회피를 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>overweight_load</CodeName>
+    <Name>과중부하</Name>
+    <Name_EN>Etching Overload</Name_EN>
+    <Explain>2초마다 자신에게 이하의 효과를 주는 스택을 쌓는다. 최대 5스택. &lt;발동 전&gt; 회피 상승/화력 감소  &lt;발동 후&gt; 회피 감소/ 화력 상승</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>firepower_spread</CodeName>
+    <Name>화력전개</Name>
+    <Name_EN>Damage Focus</Name_EN>
+    <Explain>지속시간 동안 자신의 화력을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>mental_disturbance</CodeName>
+    <Name>정신교란</Name>
+    <Name_EN>Mental Deterrence</Name_EN>
+    <Explain>지속시간 동안 적 전체의 화력을 감소시키고 자신의 회피를 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>charge_focus</CodeName>
+    <Name>강행돌파</Name>
+    <Name_EN>Charge Focus</Name_EN>
+    <Explain>지속시간 동안 자신의 화력과 사속이 증가한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>anti_personal_grenade</CodeName>
+    <Name>살상류탄</Name>
+    <Name_EN>Anti-Personnel Grenade</Name_EN>
+    <Explain>폭발한 위치의 1.5 반경 내의 적에게 피해를 준다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>breath_control</CodeName>
+    <Name>호흡조절</Name>
+    <Name_EN>Precision Focus</Name_EN>
+    <Explain>지속시간 동안 자신의 명중을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>high_explosive_grenade</CodeName>
+    <Name>파열류탄</Name>
+    <Name_EN>High-Explosive Grenade</Name_EN>
+    <Explain>유탄을 발사하여 폭발한 위치의 1/2.5/4 반경 내의 적에게 피해를 준다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>assault_focus_t</CodeName>
+    <Name>고속사격T</Name>
+    <Name_EN>Assault Focus T</Name_EN>
+    <Explain>지속시간 동안 자신의 사속을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>sneak_attack</CodeName>
+    <Name>기습공격</Name>
+    <Name_EN>Strike Focus</Name_EN>
+    <Explain>지속시간 동안 자신의 화력과 명중을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>collective_fire</CodeName>
+    <Name>집중사격</Name>
+    <Name_EN>Annihilation Focus</Name_EN>
+    <Explain>지속시간 동안 자신의 화력과 치명률을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>firepower_spread_n</CodeName>
+    <Name>화력전개N</Name>
+    <Name_EN>Damage Focus N</Name_EN>
+    <Explain>야간작전 시 지속시간 동안 자신의 화력을 증가시킨다. 주간에는 효과치가 감소한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>firepower_spread_t</CodeName>
+    <Name>화력전개T</Name>
+    <Name_EN>Damage Focus T</Name_EN>
+    <Explain>지속시간 동안 자신의 화력을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>blood_wave</CodeName>
+    <Name>선혈의 파도</Name>
+    <Name_EN>Crimson Echoes</Name_EN>
+    <Explain>발동 시 버프진형에 있는 인형에게 화력, 사속, 명중을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>grenade_salvo</CodeName>
+    <Name>유탄폭격</Name>
+    <Name_EN>Grenade Salvo</Name_EN>
+    <Explain>3발의 유탄을 연속으로 발사하여 각 발당 반경 1.5 범위 내의 적들에게 피해를 입힌다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>hawk_eye</CodeName>
+    <Name>호크아이</Name>
+    <Name_EN>Eye of the Assaulter</Name_EN>
+    <Explain>지속시간 동안 공격시 타격횟수를 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>snipe_support</CodeName>
+    <Name>저격 지원</Name>
+    <Name_EN>Ammo Supremacy</Name_EN>
+    <Explain>자신의 화력, 명증 증가와 함께 공격 대상을 후방 우선으로 한다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>collective_fire_n</CodeName>
+    <Name>집중사격N</Name>
+    <Name_EN>Annihilation Focus N</Name_EN>
+    <Explain>야간작전에서 지속시간 동안 자신의 화력과 치명률을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>remove_target</CodeName>
+    <Name>목표제거</Name>
+    <Name_EN>Aimed Shot</Name_EN>
+    <Explain>1.5초간 조준한 후에 특정 적에게 피해를 준다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>assault_focus_n</CodeName>
+    <Name>고속사격N</Name>
+    <Name_EN>Assault Focus N</Name_EN>
+    <Explain>야간작전에서 지속시간 동안 자신의 사속을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>assault_focus</CodeName>
+    <Name>고속사격</Name>
+    <Name_EN>Assault Focus</Name_EN>
+    <Explain>지속시간 동안 자신의 사속을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>precision_snipe</CodeName>
+    <Name>정밀저격</Name>
+    <Name_EN>Locked Shot</Name_EN>
+    <Explain>2초간 조준한 후에 공격하던 적에게 피해를 준다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>confirmed_death</CodeName>
+    <Name>확인사살</Name>
+    <Explain>2초간 조준한 후에 최전방의 적에게 피해를 준다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>snipe_shot</CodeName>
+    <Name>저격개시</Name>
+    <Name_EN>Steady Shot</Name_EN>
+    <Explain>2초간 조준한 후에 가장 멀리 있는 적에게 피해를 준다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>piercing_shot</CodeName>
+    <Name>관통사격</Name>
+    <Name_EN>Piercing Shot</Name_EN>
+    <Explain>2초간 조준한 후에 가장 멀리 있는 적을 향해 관통 효과가 있는 탄을 쏜다. 뚫고 지나간 모든 적에게 피해를 입히며 목표 대상에겐 추가로 피해를 입힌다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>agility_shoot</CodeName>
+    <Name>민첩사격</Name>
+    <Name_EN>Lock-on Focus</Name_EN>
+    <Explain>지속시간 동안 자신의 사속과 명중을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>chain_shot</CodeName>
+    <Name>이중저격</Name>
+    <Name_EN>Chain Shot</Name_EN>
+    <Explain>1초씩 두 번 조준 사격하며 각각 현재 목표에게 대미지를 입힌다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>eagle_assault</CodeName>
+    <Name>육참골단</Name>
+    <Name_EN>Giant Eagle Assault</Name_EN>
+    <Explain>지속시간 동안 자신의 사속을 감소시키고 화력을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>armor_break</CodeName>
+    <Name>장갑파괴</Name>
+    <Name_EN>Armor Breaking Shot</Name_EN>
+    <Explain>2초간 조준한 후에 가장 체력이 높은 적에게 피해를 준다. 대상에게 장갑이 있으면 피해량이 증가한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>firepower_spread_mg</CodeName>
+    <Name>화력전개MG</Name>
+    <Name_EN>Damage Focus MG</Name_EN>
+    <Explain>지속시간 동안 자신의 화력을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>lock_load</CodeName>
+    <Name>준비만전</Name>
+    <Name_EN>Lock and Load</Name_EN>
+    <Explain>지속시간 동안 자신의 화력을 증가시키고 발사 중인 탄띠에 탄을 추가한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>firepower_spread_n_mg</CodeName>
+    <Name>화력전개N-MG</Name>
+    <Name_EN>Damage Focus N-MG</Name_EN>
+    <Explain>야간작전 시 지속시간 동안 자신의 화력을 증가시킨다. 주간에는 효과치가 감소한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>hunting_impulse</CodeName>
+    <Name>사냥충동</Name>
+    <Name_EN>Hunting Impulse</Name_EN>
+    <Explain>지속시간 동안 자신의 명중을 상승시키고 모든 공격이 치명타가 된다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>terminate_barrage</CodeName>
+    <Name>사중극점</Name>
+    <Name_EN>Terminating Barrage</Name_EN>
+    <Explain>&lt;패시브&gt; 3회 일반 공격 후 4회째 공격을 강화한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>lock_load_n</CodeName>
+    <Name>준비만전N</Name>
+    <Name_EN>Lock and Load N</Name_EN>
+    <Explain>야간작전에서 지속시간 동안 자신의 화력을 증가시키고 발사 중인 탄띠에 탄을 추가한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>hunting_impulse_n</CodeName>
+    <Name>사냥충동N</Name>
+    <Name_EN>Hunting Impulse N</Name_EN>
+    <Explain>지속시간 동안 자신의 화력과 명중을 상승시키고 모든 공격이 치명타가 된다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>blood_acceleration</CodeName>
+    <Name>혈류가속</Name>
+    <Name_EN>Manic Blood</Name_EN>
+    <Explain>&lt;패시브&gt; 재장전 할 때마다 화력 증가하고 이 효과는 곱연산으로 중첩된다. 중첩 지속시간은 25초.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>ultimatum</CodeName>
+    <Name>선전포고</Name>
+    <Name_EN>Ultimatum</Name_EN>
+    <Explain>&lt;패시브&gt; 공격할 때마다 일정 확률로 치명타 탄이 추가로 발사된다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>intensive_defense</CodeName>
+    <Name>집중방어</Name>
+    <Name_EN>Protection Focus</Name_EN>
+    <Explain>지속시간 동안 자신의 장갑을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>firepower_spread_sg</CodeName>
+    <Name>화력전개SG</Name>
+    <Name_EN>Damage Focus SG</Name_EN>
+    <Explain>지속시간 동안 자신의 화력을 증가시키고 발동 중 동시 타격 수를 5로 증가시킨다. (슬러그 효과 중복 X)</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>formaion_break</CodeName>
+    <Name>진형붕괴</Name>
+    <Name_EN>Burst Impact</Name_EN>
+    <Explain>공격력의 X배의 피해를 주는 추가탄을 발사하고 거리 N칸만큼 적을 밀어낸다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>survival_instinct</CodeName>
+    <Name>생존본능</Name>
+    <Name_EN>Survival Instinct</Name_EN>
+    <Explain>지속시간 동안 자신의 장갑과 회피를 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>frenzied_assault</CodeName>
+    <Name>광란의 파티</Name>
+    <Name_EN>Frenzied Assault</Name_EN>
+    <Explain>지속시간 동안 자신의 사속 상승 및 발사 수가 증가하고 재장전 시간 1초 증가한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>finish_attack</CodeName>
+    <Name>피니쉬 어택</Name>
+    <Name_EN>Terminating Shot</Name_EN>
+    <Explain>하나의 대상에게 고정피해를 입히고 넉백시킨다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>weak_regulation</CodeName>
+    <Name>약점조준</Name>
+    <Name_EN>Big Antelope's Horn</Name_EN>
+    <Explain>점점 강해지는 추가 공격을 3회 때린다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>fortification_theory</CodeName>
+    <Name>철벽 이론</Name>
+    <Name_EN>Theory of Fortification</Name_EN>
+    <Explain>최전열의 아군 전원에게 피해를 흡수하는 방어막을 추가한다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>genoise</CodeName>
+    <Name>제누와즈</Name>
+    <Name_EN>Genoise</Name_EN>
+    <Explain>단일 대상에게 공격 후 1.5배 범위에 광역 공격을 시전한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>overhit</CodeName>
+    <Name>오버히트</Name>
+    <Explain>피버모드/노트모드를 전환한다. 전투 진입시 피버모드로 시작한다. &lt;피버모드&gt; 낮은 화력 배율로 3점사를 하며 매 점사시마다 온도가 1도 증가한다. 온도 15도 초과시 현재 온도에 따라 화력과 명중이 감소한다. 최대 온도 20도.   &lt;노트모드&gt; 단발 발사에 단일 타겟팅으로 적을 공격한다. 회피와 기동력이 감소하지만 매 사격마다 온도가 1도 감소한다. 동일 대상 타격시 횟수에 따라 화력이 상승한다. 최대 10중첩.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>asgard_anger</CodeName>
+    <Name>아스가르드의 분노</Name>
+    <Explain>번개를 쏘아 1.5 반경 내의 적에게 크리티컬 대미지를 주고 피격 대상을 마비&amp;취약 상태로 만든다 (보스 무효)</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>torch_judgment</CodeName>
+    <Name>성화의 심판</Name>
+    <Explain>지속시간 동안 자신 주위 5 반경 내의 적에게 주는 대미지가 증가하고 매 공격시마다 일정 확률로 대상을 처벌 상태로 만든다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>superelectron_snipe</CodeName>
+    <Name>초전자 스나이핑</Name>
+    <Explain>1.5초간 조준한 후 최후열의 적을 저격하고 마비 상태로 만든다 (보스 무효)</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>blackhole</CodeName>
+    <Name>블랙홀</Name>
+    <Explain>폭발 후 일정 시간 지속되는 블랙홀을 생성하는 수류탄을 던진다. 블랙홀은 2.5반경 내의 적을 끌어당기며 1.5반경 내의 적은 매 초 피해를 받는다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>scareness_night</CodeName>
+    <Name>밤의 공포</Name>
+    <Explain>최전열의 적 3명을 매혹&amp;공포 상태로 만든다. 공포 상태의 적을 공격시 자신의 대미지가 추가된다</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>quantum_inverse</CodeName>
+    <Name>양자역행</Name>
+    <Explain>탄창의 마지막 공격을 강화하고 그 공격 직후 즉시 재장전된다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>yahyooran</CodeName>
+    <Name>야효오란</Name>
+    <Explain>폭발한 위치의 2.5 반경 내의 적에게 피해를 주고 3기 이상이 맞았을 경우 추가 대미지 디버프를 부여한다. 3기 미만이 맞았을 경우 지속시간 동안 자신의 화력을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>mars_trumpet</CodeName>
+    <Name>마르스의 나팔</Name>
+    <Explain>&lt;패시브&gt; 공격시 40% 확률로 2초간 같은 열 아군의 치명률과 사속을 상승시킨다. (최대 3중첩)  &lt;액티브&gt; 지속 시간 동안 제대에 배속된 RF 인형 1기당 자신의 치명률과 사속을 상승시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>morse_mask</CodeName>
+    <Name>모르스의 가면</Name>
+    <Explain>&lt;패시브&gt; 공격시 일정 확률로 각인 2개 획득한다. 일정 개수 도달 시 다음 공격을 강화한 후 각인을 초기화시킨다. 특정 대상에게는 대미지 하락 효과를 부여한다.  &lt;액티브&gt; 즉시 각인을 일정량 획득한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>baekrang_eye</CodeName>
+    <Name>백랑의 눈</Name>
+    <Explain>지속시간 동안 자신의 화력, 사속, 명중, 치명률을 상승시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>twin_burst</CodeName>
+    <Name>트윈 버스트</Name>
+    <Explain>공격 목표를 바꿀 때 2번 타격하고, 지속시간 동안 모든 공격이 2번 타격한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>battlefield_philosophy</CodeName>
+    <Name>전장의 철학관</Name>
+    <Explain>스킬 발동시 버프 진형 내에 있는 인형에게 병종에 따른 버프 부여한다. (HG/SMG : 회피, RF/AR : 화력, MG/SG : 명중)</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>mind_chain</CodeName>
+    <Name>마인드 체인</Name>
+    <Explain>자신에게 상시 스텟 증가 버프를 부여하고 스킬 발동시 탄약을 바꿔 효과를 변경한다. (아음속 : 회피, HP : 화력, 일반 : 명중)</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>danger_scout</CodeName>
+    <Name>데인저 스카우트</Name>
+    <Explain>지속시간 동안 자신의 앞칸에 아군 인형이 있으면 대상에게 방어막을 부여하고 회피를 증가시킨다. 없으면 자신의 화력과 사속 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>moon_dancer</CodeName>
+    <Name>현월무희</Name>
+    <Explain>지속시간 동안 자신의 사속과 명중이 감소하는 대신 기동력과 회피를 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>dawn_enthusiasm</CodeName>
+    <Name>여명의 기염</Name>
+    <Explain>지속시간 동안 자신의 능력치를 증가시킨다. (주간 : 화력&amp;치명률, 야간 : 명중&amp;사속)</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>hunting_basic</CodeName>
+    <Name>사냥의 기본</Name>
+    <Explain>지속시간 동안 자신의 화력과 명중을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>random_fire</CodeName>
+    <Name>무차별 난사</Name>
+    <Explain>지속시간 동안 속사 모드로 전환하여 매 공격이 목표를 바꾸고 자신의 화력과 명중 증가시키며 발사중인 탄띠의 탄 추가 버프를 받는다. 단, 이동속도가 감소된다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>critical_point_fire</CodeName>
+    <Name>임계점 사격</Name>
+    <Explain>1초 조준한 후에 가장 가까운 적에게 피해를 준다. 빗나갈 수 있으며 사격 후 2초의 재장전 필요하다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>execution_mark</CodeName>
+    <Name>처형의 표식</Name>
+    <Explain>&lt;패시브&gt; 주기마다 적에게 표식을 1회 부여한다.   &lt;액티브&gt; 매 공격시 표식이 있는 적에게 1회의 추가 공격을 하고 표식을 1개 지운다. 지속시간이 끝나거나 표식이 전부 없어질 때까지 지속된다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>el_claer</CodeName>
+    <Name>"조금 더 완벽하게!"</Name>
+    <Explain>사격을 멈추고 5회 연주한다. 매 연주마다 랜덤한 아군 한 명의 화력과 명중이 상승된다. (효과 중첩 불가, 지속시간만 갱신)</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>el_fail</CodeName>
+    <Name>"서두르지 마~"</Name>
+    <Explain>사격을 멈추고 5회 연주한다. 매 연주마다 랜덤한 적 3명의 사속과 명중이 감소한다. (최대 2중첩)</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>funeral_rain</CodeName>
+    <Name>장례식의 비</Name>
+    <Explain>자신의 명중을 감소시키지만 사속을 상승시키고 난사한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>chain_strike</CodeName>
+    <Name>체인 스트라이크</Name>
+    <Explain>지속시간 동안 쌍총으로 공격하여 2회의 피해를 입히며 반드시 치명타가 된다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>maple_firefly</CodeName>
+    <Name>단풍과 반디</Name>
+    <Explain>&lt;패시브&gt; 스킬 쿨타임 종료 후 TAC의 드론이 무작위 적에게 표식을 새긴다. 표식은 1초마다 대상이 변경된다. &lt;액티브&gt; 표식된 적에게 크리티컬이 적용되는 저격을 발사한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>lost_eden</CodeName>
+    <Name>로스트 에덴</Name>
+    <Explain>자신이 있는 열에서 랜덤 2칸에 방패를 설치하고 좁은 범위에 폭발 피해와 넉백을 준다. 방패가 있는 칸에 속한 아군은 받는 피해가 감소한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>sugar_phenomenon</CodeName>
+    <Name>금당현상</Name>
+    <Explain>지속시간 동안 자신의 장탄수/사속/넉백 확률이 상승하고 화력은 감소한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>excess_defense</CodeName>
+    <Name>과잉방위</Name>
+    <Explain>지속시간 동안 자신의 화력과 장갑이 상승한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>ballistic_prediction_n</CodeName>
+    <Name>탄도예측N</Name>
+    <Explain>지속시간 동안 자신의 회피와 명중을 상승시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>unafraid</CodeName>
+    <Name>겁없는 녀석들</Name>
+    <Explain>&lt;패시브&gt; 화력, 사속, 회피, 치명, 명중 버프를 받을 시 버프 진형의 아군에게 해당 스텟 버프를 부여한다. &lt;액티브&gt; 지속시간 동안 자신이 공격할 때마다 일정 확률로 자신의 화력이 상승한다. 최대 6중첩</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>ballistic_prediction</CodeName>
+    <Name>탄도예측</Name>
+    <Explain>지속시간 동안 자신의 회피와 명중을 상승시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>rejection</CodeName>
+    <Name>거부반응</Name>
+    <Explain>지속시간 동안 자신이 공격한 적은 일정 시간 동안 화력과 명중이 감소한다. 단, 엘리트 적은 효과가 반감된다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>anger_idea</CodeName>
+    <Name>분노의 발상</Name>
+    <Explain>지속시간 동안 자신의 사속과 치명피해를 상승시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>liar_god</CodeName>
+    <Name>거짓신의 계시</Name>
+    <Explain>각 전투당 특수탄을 3발 보유한다. 스킬 사용시 1발 소비하여 1초 조준 후 피해를 준다. 마지막 3번째 특수탄은 피해량 2배 및 지속시간 동안 대상의 화력이 감소한다. 전역 내에서 전투 승리기 스킬 피해량이 상승한다. 최대 3중첩.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>anti_personal_grenade_n</CodeName>
+    <Name>살상류탄N</Name>
+    <Name_EN>Anti-Personnel Grenade N</Name_EN>
+    <Explain>폭발한 위치의 1.5 반경 내의 적에게 피해를 준다. 야간작전시 추가로 지속시간 동안 자신의 화력과 명중이 상승한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>afterlife_hipass</CodeName>
+    <Name>저승길 하이패스</Name>
+    <Explain>지속시간 동안 자신에게 왜곡방벽을 두른다. 초당 일정 수치가 감소한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>fatal_gambling</CodeName>
+    <Name>치명적 도박</Name>
+    <Explain>지속시간 동안 버프진형 내의 아군의 치명률을 감소시키고 치명피해를 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>vapor_eruption</CodeName>
+    <Name>기염 분출</Name>
+    <Explain>현재 공격 대상을 1.5초간 조준 후에 피해를 준다. 해당 적이 5초 안에 사망하면 5초간 자신의 사속을 상승시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>meteorite_rain</CodeName>
+    <Name>유성폭우</Name>
+    <Explain>지속시간 동안 자신의 명중을 감소시키지만 사속을 150까지 증가시켜 난사한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>grenade_horror</CodeName>
+    <Name>유탄 호러</Name>
+    <Explain>더미 인형과 함께 유탄을 발사하여 반경 1 범위 내 적에게 피해를 준다. 유탄에 맞은 적이 3초 안에 K11의 유탄에 피해를 받을 경우 화력의 2배의 추가 피해를 입힌다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>lazy_anger</CodeName>
+    <Name>게으른 분노</Name>
+    <Explain>&lt;액티브&gt; 지속시간 동안 자신의 화력을 증가시킨다. &lt;패시브&gt; 일반적인 경기관총 모드에서는 이동속도가 증가하며 명중이 감소한다. 6초간 정지하면 중기관총 모드로 전환되어 장탄수와 명중이 증가한다. 단, 이동이 시작되면 다시 경기관총 모드로 전환된다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>cramming</CodeName>
+    <Name>벼락치기</Name>
+    <Explain>발동 시점의 적의 수에 따라 지속시간동안 유지되는 스택을 쌓는다. 적 n기에 화력 (4-n)스택, 회피 (n-1)스택 버프를 얻는다. 회피 버프는 최대 6스택까지만 얻을 수 있다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>sneak_attack_mg</CodeName>
+    <Name>기습공격MG</Name>
+    <Name_EN>Strike Focus MG</Name_EN>
+    <Explain>지속시간 동안 자신의 화력과 명중을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>mirror_blossom</CodeName>
+    <Name>거울 속 벚꽃</Name>
+    <Explain>자신에게 5초간 보호막을 생성한다. 파괴될 경우 지속시간동안 자신의 회피를 상승시키고 파괴되지 않으면 자신의 화력을 상승시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>blood_eclipse</CodeName>
+    <Name>핏빛 월식</Name>
+    <Explain>&lt;패시브&gt; 버프 진형 내의 아군은 재장전 시 15초간 화력과 명중이 5% 상승한다. 최대 3중첩. &lt;액티브&gt; 버프 진형 내의 아군의 화력을 상승시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>future_prediction</CodeName>
+    <Name>미래 예지</Name>
+    <Explain>스킬 발동 시점에 적의 수가 6기 이상일 경우 3초간 자신의 사속과 명중을 상승시킨다. 6기 미만일 경우 3초간 자신의 화력을 상승시킨다. 3초 뒤 적의 수가 3기 이상일 경우 5초간 버프 진형 내의 아군에게 보호막을 부여한다. 만약 3기 미만일 경우 5초간 버프 진형 내 아군과 자신의 화력을 상승시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>squirrel_girl</CodeName>
+    <Name>다람쥐 소녀</Name>
+    <Explain>&lt;잔상&gt; 회피 20% 상승 버프를 발동 직후와 1초당 1중첩씩 자신에게 부여한다. 스킬 발동 후의 4번의 공격은 치명타로 반드시 들어간다. &lt;패시브&gt; 쿨타임 6초. 패시브 쿨타임이 끝난 동안 체력을 5% 이상 잃을 시 잔상 효과를 3초간 발동한다. &lt;액티브&gt; 잔상 효과를 5초간 발동하고 체력 3, 장갑 999의 분신을 3초간 편제 수 만큼 생성한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>emergency_fire</CodeName>
+    <Name>비상사격</Name>
+    <Explain>자신의 명중을 감소시키고 사속을 상승시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>decision_code</CodeName>
+    <Name>결전 코드</Name>
+    <Explain>아군에게 진형에 따라 버프를 부여한다. (전열 : 보호막 생성 / 중열 : 명중과 회피 상승 / 후열 : 화력 상승)</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>counter_fortress</CodeName>
+    <Name>반격의 요새</Name>
+    <Explain>아군에게 6초간 지속되는 보호막을 부여한다. 3초 후에도 보호막이 남아있는 경우 해당 인형은 화력과 명중이 상승한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>flower_lock</CodeName>
+    <Name>꽃의 자물쇠</Name>
+    <Explain>지속시간 동안 체력이 제일 적은 적을 공격하고 해당 적이 손실한 체력 비율에 따라 화력이 상승한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>vibration_shock_bomb</CodeName>
+    <Name>진동 충격탄</Name>
+    <Explain>가장 최근에 공격한 적을 1.5초 조준한 뒤에 피해를 입히고 피해를 입은 적 주변 2 범위 내의 적에게 0.5배의 피해와 함께 명중과 사속을 감소시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>whitenight_music</CodeName>
+    <Name>백야의 독주곡</Name>
+    <Explain>야간작전에서 지속시간동안 명중을 상승시킨다. 주간을 제외한 야간에서는 동시에 재장전 시간도 감소시킨다. 또한 발사중인 탄띠에 탄을 추가한다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>dunamis</CodeName>
+    <Name>듀나미스</Name>
+    <Explain>&lt;패시브&gt; 재장전시 재장전시간이 감소하고 발사수가 1발 증가한다. 최대 3중첩.   &lt;액티브&gt; 지속시간 동안 자신의 화력을 증가시킨다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>silent_kill</CodeName>
+    <Name>무언의 살의</Name>
+    <Name_EN>Killing Intent of the Silent</Name_EN>
+    <Explain>&lt;패시브&gt; 장갑이 없는 적에게 1.05배의 데미지를 준다.    &lt;액티브&gt; 조준시간이 지날 때마다 가장 먼 적을 공격하고 3초간 대상의 화력을 감소시키는 저격모드를 9초동안 발동한다. 단, 저격공격은 치명타가 적용되지만 장갑의 영향을 받는다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>sunset_falcon</CodeName>
+    <Name>석양의 송골매</Name>
+    <Explain>&lt;일반공격&gt; 1초마다 제일 뒤에 있는 적에게 1.5배의 피해를 준다. 2발 사격 후 재장전하며 사속이 높을수록 재장선이 빨라진다.   &lt;패시브&gt; 전투 개시 후 6초, 전투 중 8초마다 특수 탄환 1발을 얻는다. 최대 2발 보유 가능하며 보유한 특수 탄환 1발 당 화력과 명중이 상승한다.   &lt;액티브&gt; 특수 탄환을 1발 소모해 2초간 조준 후, 체력이 가장 많은 적에게 피해를 준다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>mirage_shoot</CodeName>
+    <Name>미라지 슈팅</Name>
+    <Explain>자신의 회피가 100% 상승하고, 화력과 명중이 30% 감소한다. 또한 1회 공격 당 동시에 2회 피해를 입히게 된다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>thrill_shot</CodeName>
+    <Name>짜릿한 한방!</Name>
+    <Explain>체력이 가장 많은 적을 기절시키고 피해를 준다. 만약 목표 적에서 가로 거리 2.5 범위 내에 다른 적이 있는 경우 2.5 범위 안의 적을 기절시키고 피해를 준다. 이 경우 목표 적도 중복 기절 및 피해가 적용된다. 반드시 명중하며 장갑의 영향을 받는다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>shock_explosive</CodeName>
+    <Name>충격작렬탄</Name>
+    <Explain>&lt;패시브&gt; 같은 적에게 연속 공격시 3발마다 좁은 범위의 폭발 피해를 추가한다.   &lt;액티브&gt; 1.5초간 조준 후, 체력이 가장 높은 적에게 피해를 주고 반경 1.5 범위 내의 적에게 폭발 피해를 준다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>cracker_shoot</CodeName>
+    <Name>크래커 슛</Name>
+    <Explain>무작위 3명의 적에게 빠르게 저격한다. 반드시 명중하고 장갑 영향을 받는다.</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>light_tent</CodeName>
+    <Name>빛의 장막</Name>
+    <Explain>&lt;패시브&gt; 재장전 중일 때 버프칸에 위치한 아군이 받는 피해량을 20% 감소시킨다.   &lt;액티브&gt; 자신의 화력을 증가시키며 버프칸에 위치한 아군의 병종에 따라 추가 버프를 제공한다. [AR : 명중 25% 증가] [SMG : 다음 재장전 시간 25% 감소] [SG : 장탄수 1발 추가]</Explain>
+  </Doll_Skill>
+  <Doll_Skill>
+    <CodeName>lily_pattern</CodeName>
+    <Name>백합 문양</Name>
+    <Explain>&lt;패시브&gt; 전투 시작 시와 일정 주기마다 1개의 백합 문양을 얻는다. 최대 4개 보유 가능.   &lt;액티브&gt; 백합 문양을 1개 소비하여 다음 재장전 시간을 감소시킨다. 최대 2회 중첩 가능.</Explain>
+  </Doll_Skill>
+</NewDataSet>

@@ -1,0 +1,640 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Fairy" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Fairy">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Name_EN" type="xs:string" minOccurs="0" />
+                <xs:element name="Type" type="xs:string" minOccurs="0" />
+                <xs:element name="DicNumber" type="xs:int" minOccurs="0" />
+                <xs:element name="ProductTime" type="xs:int" minOccurs="0" />
+                <xs:element name="FireRate" type="xs:string" minOccurs="0" />
+                <xs:element name="Accuracy" type="xs:string" minOccurs="0" />
+                <xs:element name="Evasion" type="xs:string" minOccurs="0" />
+                <xs:element name="Armor" type="xs:string" minOccurs="0" />
+                <xs:element name="Critical" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillName" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillExplain" type="xs:string" minOccurs="0" />
+                <xs:element name="OrderConsume" type="xs:int" minOccurs="0" />
+                <xs:element name="CoolDown" type="xs:int" minOccurs="0" />
+                <xs:element name="SkillEffect" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillRate" type="xs:string" minOccurs="0" />
+                <xs:element name="Note" type="xs:string" minOccurs="0" />
+                <xs:element name="ProductionPercent" type="xs:int" minOccurs="0" />
+                <xs:element name="RecommendProduction" type="xs:string" minOccurs="0" />
+                <xs:element name="AdvanceProductionPercent" type="xs:int" minOccurs="0" />
+                <xs:element name="AdvanceRecommendProduction" type="xs:string" minOccurs="0" />
+                <xs:element name="ProductDialog" type="xs:string" minOccurs="0" />
+                <xs:element name="ProductDialog_EN" type="xs:string" minOccurs="0" />
+                <xs:element name="FairyExplain" type="xs:string" minOccurs="0" />
+                <xs:element name="FairyExplain_EN" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Fairy>
+    <Name>용사요정</Name>
+    <Name_EN>Warrior Fairy</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>1</DicNumber>
+    <ProductTime>270</ProductTime>
+    <FireRate>4.8/25</FireRate>
+    <Accuracy>16/80</Accuracy>
+    <Evasion>8/40</Evasion>
+    <Armor>2/10</Armor>
+    <Critical>0/0</Critical>
+    <SkillName>전투효율</SkillName>
+    <SkillExplain>다음 전투에서 제대의 모든 인형의 화력과 공속을 증가시킨다. (중첩불가)</SkillExplain>
+    <OrderConsume>1</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>화력;공속</SkillEffect>
+    <SkillRate>5/7/8/10/12/13/15/17/18/20;5/6/6/7/7/8/8/9/9/10</SkillRate>
+    <ProductDialog>"아무것도 끝나지 않았어! 휴가 외에는 아무것도 없어!"</ProductDialog>
+    <ProductDialog_EN>"Nothing's over! Nothing will ever be, unless you're on holiday!"</ProductDialog_EN>
+    <FairyExplain>공격 효율을 높여주는 능력을 지니고 있습니다. 평소에는 장비를 정비하는데 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Boosts attack effectiveness. Can be used to organize equipment on regular days.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>격노요정</Name>
+    <Name_EN>Fury Fairy</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>2</DicNumber>
+    <ProductTime>275</ProductTime>
+    <FireRate>2.8/15</FireRate>
+    <Accuracy>0/0</Accuracy>
+    <Evasion>8/40</Evasion>
+    <Armor>2/10</Armor>
+    <Critical>8/40</Critical>
+    <SkillName>살의분출</SkillName>
+    <SkillExplain>다음 전투에서 제대의 모든 인형의 명중과 치명타 확률을 증가시킨다. (중첩불가)</SkillExplain>
+    <OrderConsume>1</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>명중;치명타</SkillEffect>
+    <SkillRate>10/14/19/23/28/32/37/41/46/50;10/12/13/15/17/18/20/22/23/25</SkillRate>
+    <ProductDialog>"마귀야 오너라! 이몸이 진짜 지옥으로 보내주겠다!"</ProductDialog>
+    <ProductDialog_EN>"Come at me, you devil! I'mma send you smack in the middle of Hell!"</ProductDialog_EN>
+    <FairyExplain>치명타 효율을 높여주는 능력을 지니고 있습니다. 평소에는 적을 도발하는데 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Boosts critical rate. Can be used for shouting messages and as an aid in arguments.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>방패요정</Name>
+    <Name_EN>Armor Fairy</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>3</DicNumber>
+    <ProductTime>180</ProductTime>
+    <FireRate>4.4/22</FireRate>
+    <Accuracy>0/0</Accuracy>
+    <Evasion>0/0</Evasion>
+    <Armor>5.2/25</Armor>
+    <Critical>4.4/22</Critical>
+    <SkillName>진압강화</SkillName>
+    <SkillExplain>다음 전투에서 제대의 산탄총의 진압능력을 강화하여 20초간 장갑을 증가시킨다.</SkillExplain>
+    <OrderConsume>3</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>장갑</SkillEffect>
+    <SkillRate>15/19/23/27/31/34/38/42/46/50</SkillRate>
+    <ProductDialog>"러시아어로 이야기하지 말아 주세요, 꼭이에요!...그게, 제가 못 알아들어요…"</ProductDialog>
+    <ProductDialog_EN>"Remember, no Russian...because I-I don't understand Russian..."</ProductDialog_EN>
+    <FairyExplain>산탄총의 장갑을 강화하는 능력을 지니고 있습니다. 평소에는 지상의 경비에 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Strengthens shotguns' armor. Can be used as ground security on regular days.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>수호요정</Name>
+    <Name_EN>Shield Fairy</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>4</DicNumber>
+    <ProductTime>185</ProductTime>
+    <FireRate>4/20</FireRate>
+    <Accuracy>12/60</Accuracy>
+    <Evasion>16/80</Evasion>
+    <Armor>0/0</Armor>
+    <Critical>0/0</Critical>
+    <SkillName>에너지 쉴드</SkillName>
+    <SkillExplain>다음 전투에서 제대의 모든 기관단총에게 피해를 흡수하는 방어막을 생성한다.</SkillExplain>
+    <OrderConsume>3</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>쉴드체력</SkillEffect>
+    <SkillRate>40/50/60/70/80/90/100/110/130/150</SkillRate>
+    <ProductDialog>"이제 무서워하지 않아도 괜찮아요."</ProductDialog>
+    <ProductDialog_EN>"There's nothing to be afraid of anymore."</ProductDialog_EN>
+    <FairyExplain>포스실드를 펼치는 능력을 지니고 있습니다. 평소에는 방수, 방진, 반재밍에 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Puts up a magnetic shield. Can provide shelter against rain, dust, and nuisance in general.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>방어요정</Name>
+    <Name_EN>Defense Fairy</Name_EN>
+    <Type>책략</Type>
+    <DicNumber>5</DicNumber>
+    <ProductTime>250</ProductTime>
+    <FireRate>4/22</FireRate>
+    <Accuracy>0/0</Accuracy>
+    <Evasion>14.4/80</Evasion>
+    <Armor>3.6/20</Armor>
+    <Critical>0/0</Critical>
+    <SkillName>임시방호</SkillName>
+    <SkillExplain>1턴 동안 제대가 받는 피해를 감소시킨다. (20초 지속)</SkillExplain>
+    <OrderConsume>5</OrderConsume>
+    <CoolDown>1</CoolDown>
+    <SkillEffect>피해감소</SkillEffect>
+    <SkillRate>10/12/14/17/19/21/23/26/28/30</SkillRate>
+    <ProductDialog>"너희들 정말로…거짓말 하는 거 아니지?"</ProductDialog>
+    <ProductDialog_EN>"You really aren't...lying?"</ProductDialog_EN>
+    <FairyExplain>방어 성능을 높여주는 능력을 지니고 있습니다. 평소에는 기밀 보호와 긴급 수리에 사용할 수 있을 것 같습니다. </FairyExplain>
+    <FairyExplain_EN>Boosts defense. Can be used for keeping secrets and in emergency medical treatment on regular days.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>도발요정</Name>
+    <Name_EN>Taunt Fairy</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>6</DicNumber>
+    <ProductTime>190</ProductTime>
+    <FireRate>3.2/18</FireRate>
+    <Accuracy>10/58</Accuracy>
+    <Evasion>4.8/28</Evasion>
+    <Armor>1.6/8</Armor>
+    <Critical>4.4/25</Critical>
+    <SkillName>도발표적</SkillName>
+    <SkillExplain>다음 전투에서 적의 공격을 끌어당기는 표적을 설치한다.</SkillExplain>
+    <OrderConsume>2</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>표적체력</SkillEffect>
+    <SkillRate>250/300/350/400/500/600/700/800/900/1000</SkillRate>
+    <ProductDialog>"꺄아! 꺄아~! 바보~! 멍청이~!"</ProductDialog>
+    <ProductDialog_EN>"Gah! Gah! Idiot! Moron!"</ProductDialog_EN>
+    <FairyExplain>도발 표적을 만들어 내는 능력을 지니고 있습니다. 평소에는 짖궃은 장난을 치는데 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Produces taunting target drones. Can be used in practical jokes on regular days.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>저격요정</Name>
+    <Name_EN>Sniper Fairy</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>7</DicNumber>
+    <ProductTime>210</ProductTime>
+    <FireRate>0/0</FireRate>
+    <Accuracy>17.6/88</Accuracy>
+    <Evasion>5.6/28</Evasion>
+    <Armor>3.2/15</Armor>
+    <Critical>7.2/36</Critical>
+    <SkillName>저격명령</SkillName>
+    <SkillExplain>다음 전투에서 가장 체력이 많은 적을 조준하여 피해를 입힌다.</SkillExplain>
+    <OrderConsume>2</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>피해량</SkillEffect>
+    <SkillRate>2500/4000/5500/7000/8000/10000/12500/15000/17500/20000</SkillRate>
+    <ProductDialog>"인형을 구할 수 있는지는, 결국 스스로에게 달려있다구."</ProductDialog>
+    <ProductDialog_EN>"T-Dolls can only salvage things on their end."</ProductDialog_EN>
+    <FairyExplain>적을 저격하는 능력을 지니고 있습니다. 평소에는 무기 교정에 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Snipes the enemy. Can be used for calibrating weapons on regular days.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>포격요정</Name>
+    <Name_EN>Artillery Fairy</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>8</DicNumber>
+    <ProductTime>215</ProductTime>
+    <FireRate>10.8/55</FireRate>
+    <Accuracy>0/0</Accuracy>
+    <Evasion>11.2/56</Evasion>
+    <Armor>1.2/6</Armor>
+    <Critical>0/0</Critical>
+    <SkillName>포격명령</SkillName>
+    <SkillExplain>다음 전투에서 박격포를 발사하여 2.5 범위의 적들에게 피해를 입힌다.</SkillExplain>
+    <OrderConsume>3</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>피해량</SkillEffect>
+    <SkillRate>200/300/400/500/600/700/800/900/1000/1200</SkillRate>
+    <ProductDialog>"헤헤, 그리폰을 위하여!"</ProductDialog>
+    <ProductDialog_EN>"Tee-hee! For Grifon!"</ProductDialog_EN>
+    <FairyExplain>박격포를 발사하는 능력을 지니고 있습니다. 평소에는 대청소에 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Fires mortar bombs. Can be used in clean-ups on regular days.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>공습요정</Name>
+    <Name_EN>Airstrike Fairy</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>9</DicNumber>
+    <ProductTime>220</ProductTime>
+    <FireRate>4.8/30</FireRate>
+    <Accuracy>8/50</Accuracy>
+    <Evasion>6.4/40</Evasion>
+    <Armor>1.6/10</Armor>
+    <Critical>0/0</Critical>
+    <SkillName>공습발령</SkillName>
+    <SkillExplain>다음 전투 진입 시 공습지원을 호출하여 적 전체에 피해를 입힌다.</SkillExplain>
+    <OrderConsume>3</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>피해량</SkillEffect>
+    <SkillRate>80/120/160/200/240/280/320/360/400/500</SkillRate>
+    <ProductDialog>"히히, 도망치는 것 말고는, 아무것도 배운 게 없군요."</ProductDialog>
+    <ProductDialog_EN>"Heheh. You don't seem to have learned anything other than running away."</ProductDialog_EN>
+    <FairyExplain>공습 지원을 호출하는 능력을 지니고 있습니다. 평소에는 높은 곳에서 작업할 때 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Conducts airstrikes. Can be used in overhead work on regular days.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>증원요정</Name>
+    <Name_EN>Reinforcement Fairy</Name_EN>
+    <Type>책략</Type>
+    <DicNumber>10</DicNumber>
+    <ProductTime>240</ProductTime>
+    <FireRate>2/12</FireRate>
+    <Accuracy>0/0</Accuracy>
+    <Evasion>14/88</Evasion>
+    <Armor>2/12</Armor>
+    <Critical>2.4/15</Critical>
+    <SkillName>증원호출</SkillName>
+    <SkillExplain>제대 중 체력이 가장 적은 전술인형의 편제를 1기 증원, 1턴 동안 모든 인형의 회피를 20초 동안 증가시킨다.</SkillExplain>
+    <OrderConsume>2</OrderConsume>
+    <CoolDown>1</CoolDown>
+    <SkillEffect>회피증가</SkillEffect>
+    <SkillRate>3/3.5/4/4.5/5/6/7/8/9/10</SkillRate>
+    <ProductDialog>"승리만을 향해 가자! 동정심은 나약함에 지나지 않는다고!"</ProductDialog>
+    <ProductDialog_EN>"Go for the win! To show mercy is a weakness!"</ProductDialog_EN>
+    <FairyExplain>증원 인형을 호출하는 능력을 지니고 있습니다. 평소에는 통신과 긴급 호출에 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Calls for reinforcement T-Dolls. Can be used for communication and sending emergency distress signals on regular days.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>공수요정</Name>
+    <Name_EN>Parachute Fairy</Name_EN>
+    <Type>책략</Type>
+    <DicNumber>11</DicNumber>
+    <ProductTime>245</ProductTime>
+    <FireRate>5.6/36</FireRate>
+    <Accuracy>0/0</Accuracy>
+    <Evasion>5.2/32</Evasion>
+    <Armor>1.2/8</Armor>
+    <Critical>6.4/40</Critical>
+    <SkillName>공수낙하</SkillName>
+    <SkillExplain>제대를 일정 범위 내의 헬리포트로 이동시킬 수 있지만 이동 후 2턴간 화력, 명중, 회피, 장갑, 치명타 확률이 감소한다.</SkillExplain>
+    <OrderConsume>5</OrderConsume>
+    <CoolDown>5</CoolDown>
+    <SkillEffect>능력감소</SkillEffect>
+    <SkillRate>90/85/80/75/70/65/60/55/50/40</SkillRate>
+    <ProductDialog>"먼저 뛰어내려! 아니면 내가 먼저 뛰어내릴까?"</ProductDialog>
+    <ProductDialog_EN>"You jump, I jump, right?"</ProductDialog_EN>
+    <FairyExplain>헬리포트를 제어하는 능력을 지니고 있습니다. 평소에는 부지를 세우는데 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Controls Heliports. Can be used in decorating event venues on regular days.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>매설요정</Name>
+    <Name_EN>Landmine Fairy</Name_EN>
+    <Type>책략</Type>
+    <DicNumber>12</DicNumber>
+    <ProductTime>330</ProductTime>
+    <FireRate>5.6/25</FireRate>
+    <Accuracy>10/44</Accuracy>
+    <Evasion>19.6/85</Evasion>
+    <Armor>0/0</Armor>
+    <Critical>0/0</Critical>
+    <SkillName>지뢰매설</SkillName>
+    <SkillExplain>적이 없는 인접거점에 2턴간 유지되는 지뢰를 매설한다. 적이 밟을 시 현재 체력에 비례한 피해를 준다. (보스무효)</SkillExplain>
+    <OrderConsume>5</OrderConsume>
+    <CoolDown>3</CoolDown>
+    <SkillEffect>피해율</SkillEffect>
+    <SkillRate>20/23/26/30/33/36/40/43/46/50</SkillRate>
+    <ProductDialog>"우후후, 전투에 약간 자극을 줄 시간이네요."</ProductDialog>
+    <ProductDialog_EN>"Humph. Time to make the fight a bit more explosive."</ProductDialog_EN>
+    <FairyExplain>지뢰를 설치하는 능력을 지니고 있습니다. 평소에는 작물을 심는데 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Buries landmines. Can be used for planting on regular days.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>로켓요정</Name>
+    <Name_EN>Rocket Fairy</Name_EN>
+    <Type>책략</Type>
+    <DicNumber>13</DicNumber>
+    <ProductTime>335</ProductTime>
+    <FireRate>0/0</FireRate>
+    <Accuracy>10/44</Accuracy>
+    <Evasion>0/0</Evasion>
+    <Armor>5.2/22</Armor>
+    <Critical>8/35</Critical>
+    <SkillName>터렛설치</SkillName>
+    <SkillExplain>터렛을 설치하여 3발 장전 후 2턴간 2범위 내의 적이 이동 시 발사하여 현재 체력에 비례한 피해를 준다. (보스무효)</SkillExplain>
+    <OrderConsume>5</OrderConsume>
+    <CoolDown>3</CoolDown>
+    <SkillEffect>피해율</SkillEffect>
+    <SkillRate>10/11/12/13/14/15/16/17/18/20</SkillRate>
+    <ProductDialog>"히히…위에는 내가 있다고…."</ProductDialog>
+    <ProductDialog_EN>"Heheh... Up here..."</ProductDialog_EN>
+    <FairyExplain>로켓포를 발사하는 능력을 지니고 있습니다. 평소에는 행사 날에 불꽃놀이를 쏘아 올리는데 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Fires rockets. Can be used for firing festive fireworks on regular days.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>공사요정</Name>
+    <Name_EN>Construction Fairy</Name_EN>
+    <Type>책략</Type>
+    <DicNumber>14</DicNumber>
+    <ProductTime>340</ProductTime>
+    <FireRate>3.6/15</FireRate>
+    <Accuracy>12/50</Accuracy>
+    <Evasion>9.6/40</Evasion>
+    <Armor>2.4/10</Armor>
+    <Critical>4.8/20</Critical>
+    <SkillName>요새구축</SkillName>
+    <SkillExplain>현재 거점에 고정요새를 건설한다. 3턴간 요새에서 전투 시 화력, 명중, 회피, 장갑, 치명타 확률이 증가한다.</SkillExplain>
+    <OrderConsume>5</OrderConsume>
+    <CoolDown>3</CoolDown>
+    <SkillEffect>능력증가</SkillEffect>
+    <SkillRate>10/12/14/16/18/20/22/24/27/30</SkillRate>
+    <ProductDialog>"일하자! 일!"</ProductDialog>
+    <ProductDialog_EN>"Work! Work!"</ProductDialog_EN>
+    <FairyExplain>요새를 구축하는 능력을 지니고 있습니다. 평소에는 유지 보수와 작은 시설물을 만드는데 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Builds fortresses. Can be used in maintenance and construction of small facilities on regular days.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>지휘요정</Name>
+    <Name_EN>Command Fairy</Name_EN>
+    <Type>책략</Type>
+    <DicNumber>15</DicNumber>
+    <ProductTime>300</ProductTime>
+    <FireRate>8/36</FireRate>
+    <Accuracy>0/0</Accuracy>
+    <Evasion>7.6/32</Evasion>
+    <Armor>2/8</Armor>
+    <Critical>8.4/36</Critical>
+    <SkillName>초월경험</SkillName>
+    <SkillExplain>다음 전투에세 제대의 경험치 획득량이 증가한다. (경험특훈 사용불가)</SkillExplain>
+    <OrderConsume>1</OrderConsume>
+    <CoolDown>1</CoolDown>
+    <SkillEffect>경험치증가</SkillEffect>
+    <SkillRate>5/8/10/12/14/16/18/20/22/25</SkillRate>
+    <ProductDialog>"나를 다룰 수 있게 되었다면, 남은 건 달려나가는 것 뿐이라구!"</ProductDialog>
+    <ProductDialog_EN>"Learn my MO and simply breeze past everything!"</ProductDialog_EN>
+    <FairyExplain>작전 경험을 높여주는 능력을 지니고 있습니다. 평소에는 훈련과 교육에 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Boosts EXP. Can be used as a drill and teaching aid on regular days.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>수색요정</Name>
+    <Name_EN>Rescue Fairy</Name_EN>
+    <Type>책략</Type>
+    <DicNumber>16</DicNumber>
+    <ProductTime>305</ProductTime>
+    <FireRate>7.6/32</FireRate>
+    <Accuracy>20/80</Accuracy>
+    <Evasion>16/64</Evasion>
+    <Armor>0/0</Armor>
+    <Critical>0/0</Critical>
+    <SkillName>효율수색</SkillName>
+    <SkillExplain>다음 전투에서 제대가 희귀 인형을 발견할 확률이 증가한다.</SkillExplain>
+    <OrderConsume>1</OrderConsume>
+    <CoolDown>1</CoolDown>
+    <SkillEffect>드랍증가</SkillEffect>
+    <SkillRate>아주조금/조금/조금많이/많이/아주많이</SkillRate>
+    <ProductDialog>"RFB, 너 또 오락실이지!"</ProductDialog>
+    <ProductDialog_EN>"RFB, you're gaming again!"</ProductDialog_EN>
+    <FairyExplain>인형을 수색하고 구조하는 능력을 지니고 있습니다. 평소에는 모두를 집합시켜 외출하거나 밥을 먹는데 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Rescues T-Dolls. Can be used in assembling everyone for an outing or a meal on regular days.</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>조명요정</Name>
+    <Name_EN>Illumination Fairy</Name_EN>
+    <Type>책략</Type>
+    <DicNumber>17</DicNumber>
+    <ProductTime>310</ProductTime>
+    <FireRate>0/0</FireRate>
+    <Accuracy>20/90</Accuracy>
+    <Evasion>7.2/32</Evasion>
+    <Armor>1.6/8</Armor>
+    <Critical>8.4/38</Critical>
+    <SkillName>야간조명</SkillName>
+    <SkillExplain>아간작전 시 2턴 동안 모든 인형의 명중을 20초 동안 증가시키며 시야를 늘려준다. (3레벨 1칸, 10레벨 2칸)</SkillExplain>
+    <OrderConsume>5</OrderConsume>
+    <CoolDown>5</CoolDown>
+    <SkillEffect>명중증가</SkillEffect>
+    <SkillRate>10/12/14/16/18/20/22/24/27/30</SkillRate>
+    <ProductDialog>"도움이 필요한 사람…터널의…반대편에 있을려나요?"</ProductDialog>
+    <ProductDialog_EN>"The abducted is...on the other side...of the tunnel?"</ProductDialog_EN>
+    <FairyExplain>야간작전 중 제대에 추가 시야를 제공하는 능력을 지니고 있습니다. 평소에는 야간탐험이나 암구호에 사용할 수 있을 것 같습니다.</FairyExplain>
+    <FairyExplain_EN>Provides additional scope of vision in night battles. Can be used in nighttime adventures and sending signals</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>황금요정</Name>
+    <Name_EN>Golden Fairy</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>18</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>2/20</FireRate>
+    <Accuracy>6/62</Accuracy>
+    <Evasion>4.8/50</Evasion>
+    <Armor>1.2/12</Armor>
+    <Critical>2.4/35</Critical>
+    <SkillName>황금율법</SkillName>
+    <SkillExplain>운명으로부터 온 계시가 당신의 의지를 충만하게 합니다.</SkillExplain>
+    <OrderConsume>0</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>효과</SkillEffect>
+    <SkillRate>다음 전투에서 인형이 반짝반짝 빛납니다.</SkillRate>
+    <Note>Deep Dive 히든 랭킹보</Note>
+    <ProductDialog>"이 세상은, 돈과 지혜만 있으면 된다구!"</ProductDialog>
+    <ProductDialog_EN>"In this world, there's only money and wisdom!"</ProductDialog_EN>
+    <FairyExplain>가지고 있는 거...반짝반짝 빛나는 능력을 가지고 있는 것 같아! 평소에도 이렇게 할 수 있는 걸!</FairyExplain>
+    <FairyExplain_EN>Provides the ability to show off. At least it's something!</FairyExplain_EN>
+  </Fairy>
+  <Fairy>
+    <Name>클로에</Name>
+    <Name_EN>Chloe</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>1001</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>4/18</FireRate>
+    <Accuracy>14/55</Accuracy>
+    <Evasion>16/64</Evasion>
+    <Armor>2/6</Armor>
+    <Critical>0/0</Critical>
+    <SkillName>통곡의 인형</SkillName>
+    <SkillExplain>다음 전투에서 적의 공격을 끌어당기는 인형을 2개 설치한다. 인형은 2초마다 모든 적에게 공격한다.</SkillExplain>
+    <OrderConsume>2</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>인형체력;대미지</SkillEffect>
+    <SkillRate>150/175/200/250/300/350/400/450/500/600;15/22/30/40/50/60/70/80/90/100</SkillRate>
+    <Note>붕괴학원 2 콜라보</Note>
+  </Fairy>
+  <Fairy>
+    <Name>야에사쿠라</Name>
+    <Name_EN>Yae Sakura</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>1002</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>6/26</FireRate>
+    <Accuracy>0/0</Accuracy>
+    <Evasion>6/24</Evasion>
+    <Armor>2/6</Armor>
+    <Critical>8/32</Critical>
+    <SkillName>비옥환세</SkillName>
+    <SkillExplain>붉은 기둥이 적 위치에 생성되어 2초 동안 0.5초마다 대미지를 준다.</SkillExplain>
+    <OrderConsume>3</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>대미지</SkillEffect>
+    <SkillRate>20/30/40/50/60/70/80/90/100/120</SkillRate>
+    <Note>붕괴학원 2 콜라보</Note>
+  </Fairy>
+  <Fairy>
+    <Name>카구야</Name>
+    <Name_EN>Kaguya Hime</Name_EN>
+    <Type>책략</Type>
+    <DicNumber>1003</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>0/0</FireRate>
+    <Accuracy>?/70</Accuracy>
+    <Evasion>?/24</Evasion>
+    <Armor>?/15</Armor>
+    <Critical>?/32</Critical>
+    <SkillName>야타의 휘광</SkillName>
+    <SkillExplain>자신 주변 범위 2 구역에 야타의 거울을 설치하여 레이저를 발사한다. 레이저는 구역 내 무작위 3기의 적에게 현재 체력 비율로 피해를 준다. 보스는 효과를 받지 않는다.</SkillExplain>
+    <OrderConsume>8</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>대미지</SkillEffect>
+    <SkillRate>10/11/12/13/14/15/16/17/18/20</SkillRate>
+    <Note>붕괴학원 2 콜라보</Note>
+  </Fairy>
+  <Fairy>
+    <Name>취사요정</Name>
+    <Type>전투</Type>
+    <DicNumber>19</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>1.2/10</FireRate>
+    <Accuracy>2.4/20</Accuracy>
+    <Evasion>9.2/80</Evasion>
+    <Armor>2.4/20</Armor>
+    <Critical>1.2/10</Critical>
+    <SkillName>식사추진!</SkillName>
+    <SkillExplain>다음 전투에서 30초동안, 화력상승/사속상승/명중상승/회피상승/화력감소 중 랜덤한 효과를 아군제대에 부여합니다.</SkillExplain>
+    <OrderConsume>1</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>효과</SkillEffect>
+    <SkillRate>다음 전투에서 30초동안, 화력상승/사속상승/명중상승/회피상승/화력감소 중 랜덤한 효과를 아군제대에 부여합니다.</SkillRate>
+    <Note>특이점 히든 20만점, 랭킹보상</Note>
+    <ProductDialog>"자자자 어서 와, 사양말고. 내집처럼 편하게 있어도 괜찮아!"</ProductDialog>
+    <FairyExplain>제대에 랜덤한 버프를 부여하는 능력을 지니고 있습니다. 평소에는 요리를 만드는데 사용할 수 있을 것 같습니다. (기분에 따라 맛있는 요리가 되거나 독극물이 됩니다.)</FairyExplain>
+  </Fairy>
+  <Fairy>
+    <Name>스이</Name>
+    <Name_EN>Suee</Name_EN>
+    <Type>책략</Type>
+    <DicNumber>1004</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>0/0</FireRate>
+    <Accuracy>0/0</Accuracy>
+    <Evasion>14/70</Evasion>
+    <Armor>3.6/18</Armor>
+    <Critical>6/30</Critical>
+    <SkillName>I Want You</SkillName>
+    <SkillExplain>적이 없는 특별한 지점에 꽃잎을 뿌리고 2턴간 해당 지점에서 전투하는 아군의 화력, 명중, 회피, 장갑, 치명타율을 상승시킨다.</SkillExplain>
+    <OrderConsume>3</OrderConsume>
+    <CoolDown>2</CoolDown>
+    <SkillEffect>상승치</SkillEffect>
+    <SkillRate>8/9/10/11/12/13/14/16/18/20</SkillRate>
+    <Note>DJMAX RESPECT 콜라보 이벤트 상점 구매 (교환권 80개)</Note>
+    <ProductDialog>“전 당신이 필요해요, 제 곁에 있어주세요！”</ProductDialog>
+    <FairyExplain>지정 위치에 이로운 효과를 부여하는 능력을 가지고 있습니다, 평소에는 동료들을 몰래 관찰하거나 데이트를 미행하곤 합니다.</FairyExplain>
+  </Fairy>
+  <Fairy>
+    <Name>세라&amp;니나</Name>
+    <Name_EN>Sehra &amp; Nina</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>1005</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>2.8/15</FireRate>
+    <Accuracy>8/40</Accuracy>
+    <Evasion>10/50</Evasion>
+    <Armor>0/0</Armor>
+    <Critical>4/20</Critical>
+    <SkillName>LadyMade Star</SkillName>
+    <SkillExplain>다음 전투에서 20초 동안 소속 제대 전체의 화력 상승, 적군 전체의 명중을 감소시킨다.</SkillExplain>
+    <OrderConsume>1</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>화력 상승치;명중 감소치</SkillEffect>
+    <SkillRate>5/7/8/10/12/13/15/17/18/20;5/5/6/6/7/7/8/8/9/10</SkillRate>
+    <Note>DJMAX RESPECT 콜라보 이벤트 1-3 클리어 보상</Note>
+    <ProductDialog>“하얀 우주에서, 반짝반짝 빛나는 저희를 찾아보세요！”</ProductDialog>
+    <FairyExplain>아군의 화력을 상승시키고 적군의 명중을 감소시키는 능력을 가지고 있습니다, 평소에는 동료들을 응원하거나 상대 팀을 헐뜯습니다(어느 쪽에 고용됐는지에 따라서요).</FairyExplain>
+  </Fairy>
+  <Fairy>
+    <Name>프레이야&amp;카밀리아</Name>
+    <Name_EN>Preiya &amp; Camilia</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>1006</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>4.4/22</FireRate>
+    <Accuracy>10/50</Accuracy>
+    <Evasion>2/10</Evasion>
+    <Armor>2/10</Armor>
+    <Critical>4.4/22</Critical>
+    <SkillName>OblivioN</SkillName>
+    <SkillExplain>다음 전투에서 30초 동안 붉은 칸에 있는 아군 인형은 화력과 명중 상승, 회피와 장갑 감소시키고 노란 칸은 회피와 장갑 증가, 화력과 명중 감소시킨다.</SkillExplain>
+    <OrderConsume>1</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>상승치;감소치</SkillEffect>
+    <SkillRate>10/12/14/16/18/20/22/24/27/30;10/11/12/13/14/15/16/17/18/20</SkillRate>
+    <Note>DJMAX RESPECT 콜라보 이벤트 상점 구매(교환권 80개)</Note>
+    <ProductDialog>“최후의 밤이 되었습니다, 당신은 어떤 ‘저’를 원하시나요？”</ProductDialog>
+    <FairyExplain>특정 위치에 패널티가 있는 각기 다른 이로운 효과를 부여하는 능력을 가지고 있습니다, 평소에는 동료들에게 예측할 수 없는 예언과 교훈을 전합니다, 하지만 공짜라는 건 자주 좋지만은 않죠.</FairyExplain>
+  </Fairy>
+  <Fairy>
+    <Name>폭죽요정</Name>
+    <Type>전투</Type>
+    <DicNumber>20</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>4/32</FireRate>
+    <Accuracy>8/75</Accuracy>
+    <Evasion>4/32</Evasion>
+    <Armor>1/8</Armor>
+    <Critical>0/0</Critical>
+    <SkillName>늦여름 폭죽</SkillName>
+    <SkillExplain>다음 전투에서 10초동안 제대의 모든 인형의 명중이 상승한다.</SkillExplain>
+    <OrderConsume>3</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>명중 상승치</SkillEffect>
+    <SkillRate>35/40/45/50/55/60/65/70/75/80</SkillRate>
+    <Note>난류연속 랭킹전 88888점, 랭킹보상</Note>
+    <ProductDialog>"자아! 불꽃이 만발하는 하늘 아래서 여러분의 마음을 고백하세요!"</ProductDialog>
+    <FairyExplain>폭죽을 쏘는 능력을 지니고 있습니다. 평소에는 행사를 축하하거나 사람을 놀래는데 사용할 수 있을 것 같습니다. 밤낮을 안 가리고요.</FairyExplain>
+  </Fairy>
+  <Fairy>
+    <Name>도깨비요정</Name>
+    <Type>전투</Type>
+    <DicNumber>21</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>3.2/25</FireRate>
+    <Accuracy>0/0</Accuracy>
+    <Evasion>2.8/20</Evasion>
+    <Armor>2.8/20</Armor>
+    <Critical>3.2/25</Critical>
+    <SkillName>귀신 쫓기</SkillName>
+    <SkillExplain>다음 전투에서 폭죽을 터트려 목표 유닛을 기절시키고 지속시간 동안 반경 4 범위 내의 적에게 초당 피해를 줍니다.</SkillExplain>
+    <OrderConsume>3</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>기절 지속시간;피해 지속시간;피해량</SkillEffect>
+    <SkillRate>1 / 1.1 / ? / ? / ? / ? / ? / ? / ? / 2;3 / 3.2 / ? / ? / ? / ? / ? / ? / ? / 5;10 / 14 / ? / ? / ? / ? / ? / ? / ? / 50</SkillRate>
+    <Note>이성질체 랭킹전 300000점, 랭킹보상</Note>
+    <ProductDialog>"동에 번쩍, 서에 번쩍, 세뱃돈 내놔라! 어흥!!"</ProductDialog>
+    <FairyExplain>살상력을 지닌 폭죽을 터트리는 능력을 지니고 있습니다. 평소에는 명절을 축하하거나, 물고기를 잡거나, 게시판에서 보이스 메시지로 사용할 수 있을 것 같습니다.</FairyExplain>
+  </Fairy>
+  <Fairy>
+    <Name>안나 그램</Name>
+    <Name_EN>Anna Gram</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>1007</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>?/25</FireRate>
+    <Accuracy>?/30</Accuracy>
+    <Evasion>?/65</Evasion>
+    <Armor>?/8</Armor>
+    <Critical>0/0</Critical>
+    <SkillName>나노 유령</SkillName>
+    <SkillExplain>다음 전투에서 20초 동안 가장 앞에 배치한 인형은 회피 상승, 화력 감소가 적용되며 나머지 인형들은 화력 상승, 회피 감소가 적용된다.</SkillExplain>
+    <OrderConsume>0</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>회피 변동치;화력 변동치</SkillEffect>
+    <SkillRate>10 / ? / ? / ? / ? / ? / ? / ? / ? / 30;10 / ? / ? / ? / ? / ? / ? / ? / ? / 20</SkillRate>
+    <Note>발할라 콜라보 흰 장갑 파편 80개 교환 보상</Note>
+    <ProductDialog>"...뭐든지 다 이유가 있는 법이니까, 그치?"</ProductDialog>
+    <FairyExplain>제대의 회피와 화력을 조정하는 능력을 가지고 있습니다. 당신이 보신 건 그녀의 모습일 수도 있고, 그저 재미있는 먼지일 수도 있습니다.</FairyExplain>
+  </Fairy>
+</NewDataSet>

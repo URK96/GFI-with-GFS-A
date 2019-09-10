@@ -1,0 +1,240 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="FSTList" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="FSTList">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="CodeName" type="xs:string" minOccurs="0" />
+                <xs:element name="NickName" type="xs:string" minOccurs="0" />
+                <xs:element name="Model" type="xs:string" minOccurs="0" />
+                <xs:element name="Country" type="xs:string" minOccurs="0" />
+                <xs:element name="Type" type="xs:string" minOccurs="0" />
+                <xs:element name="Kill" type="xs:string" minOccurs="0" />
+                <xs:element name="Crush" type="xs:string" minOccurs="0" />
+                <xs:element name="Accuracy" type="xs:string" minOccurs="0" />
+                <xs:element name="Reload" type="xs:string" minOccurs="0" />
+                <xs:element name="ForceSize" type="xs:int" minOccurs="0" />
+                <xs:element name="Distance" type="xs:string" minOccurs="0" />
+                <xs:element name="ConsumeAmmo" type="xs:int" minOccurs="0" />
+                <xs:element name="ConsumeFood" type="xs:int" minOccurs="0" />
+                <xs:element name="VersionUp" type="xs:string" minOccurs="0" />
+                <xs:element name="CircuitType" type="xs:string" minOccurs="0" />
+                <xs:element name="Circuit1" type="xs:string" minOccurs="0" />
+                <xs:element name="Circuit2" type="xs:string" minOccurs="0" />
+                <xs:element name="Circuit3" type="xs:string" minOccurs="0" />
+                <xs:element name="Circuit4" type="xs:string" minOccurs="0" />
+                <xs:element name="Circuit5" type="xs:string" minOccurs="0" />
+                <xs:element name="CeilingRestriction" type="xs:string" minOccurs="0" />
+                <xs:element name="ChipsetBonusCount" type="xs:string" minOccurs="0" />
+                <xs:element name="ChipsetBonusMag" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillName1" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillExplain1" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillEffect1" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillMag1" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillName2" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillExplain2" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillEffect2" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillMag2" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillName3" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillExplain3" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillEffect3" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillMag3" type="xs:string" minOccurs="0" />
+                <xs:element name="VoiceActor" type="xs:string" minOccurs="0" />
+                <xs:element name="Illustrator" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <FSTList>
+    <Name>BGM-71</Name>
+    <CodeName>TOW</CodeName>
+    <Model>BGM-71 TOW</Model>
+    <Country>미국</Country>
+    <Type>ATW</Type>
+    <Kill>52/155</Kill>
+    <Crush>135/402</Crush>
+    <Accuracy>118/349</Accuracy>
+    <Reload>28/83</Reload>
+    <ForceSize>2</ForceSize>
+    <Distance>1~2</Distance>
+    <ConsumeAmmo>500</ConsumeAmmo>
+    <ConsumeFood>500</ConsumeFood>
+    <VersionUp>4,0,6,0;0,10,9,0;5,0,0,6;0,12,10,0;7,15,0,0;8,0,12,0;0,16,14,0;10,0,0,9;0,18,18,0;12,24,0,0</VersionUp>
+    <CircuitType>Blue</CircuitType>
+    <Circuit1>0;0;36;36;36;36;0;0</Circuit1>
+    <Circuit2>0;0;37;27;27;26;0;0</Circuit2>
+    <Circuit3>0;57;37;27;27;26;24;0</Circuit3>
+    <Circuit4>0;27;27;27;27;26;24;0</Circuit4>
+    <Circuit5>0;27;27;27;27;27;27;0</Circuit5>
+    <CeilingRestriction>95,165,96,23;114,198,115,28;133,231,134,32;162,280,162,39;190,329,191,46</CeilingRestriction>
+    <ChipsetBonusCount>4,10,16,22,28,32,36</ChipsetBonusCount>
+    <ChipsetBonusMag>16,0,6,0;0,8,0,3;36,0,8,0;0,16,12,0;46,0,0,6;0,18,14,0;60,26,0,0</ChipsetBonusMag>
+    <SkillName1>충전 미사일</SkillName1>
+    <SkillExplain1>2발마다 강화 미사일을 발사하여 추가 피해와 파쇄 효과를 준다.</SkillExplain1>
+    <SkillEffect1>추가 피해량;추가 파쇄량</SkillEffect1>
+    <SkillMag1>1.8배,60%</SkillMag1>
+    <SkillName2>장전 프로세스</SkillName2>
+    <SkillExplain2>장전할 때마다 장전 속도가 상승한다.</SkillExplain2>
+    <SkillEffect2>장전 속도 상승치</SkillEffect2>
+    <SkillMag2>8%</SkillMag2>
+    <SkillName3>사냥 취미</SkillName3>
+    <SkillExplain3>같은 대상에게 공격할 시 피해량이 증가한다. 최대 5중첩.</SkillExplain3>
+    <SkillEffect3>피해량 증가치</SkillEffect3>
+    <SkillMag3>10%</SkillMag3>
+  </FSTList>
+  <FSTList>
+    <Name>AGS-30</Name>
+    <CodeName>AGS30</CodeName>
+    <Model>AGS-30</Model>
+    <Country>러시아</Country>
+    <Type>AGL</Type>
+    <Kill>27/78</Kill>
+    <Crush>49/144</Crush>
+    <Accuracy>67/198</Accuracy>
+    <Reload>130/386</Reload>
+    <ForceSize>2</ForceSize>
+    <Distance>1~2</Distance>
+    <ConsumeAmmo>400</ConsumeAmmo>
+    <ConsumeFood>600</ConsumeFood>
+    <VersionUp>2,0,5,0;0,4,0,8;3,0,8,0;0,6,0,12;3,0,0,13;4,0,12,0;0,10,0,12;4,0,16,0;0,16,0,16;8,0,0,18</VersionUp>
+    <CircuitType>Orange</CircuitType>
+    <Circuit1>0;0;36;36;36;36;0;0</Circuit1>
+    <Circuit2>0;45;36;27;27;36;45;0</Circuit2>
+    <Circuit3>0;25;26;27;27;37;47;0</Circuit3>
+    <Circuit4>0;25;16;17;28;38;47;0</Circuit4>
+    <Circuit5>34;25;16;17;28;38;47;56</Circuit5>
+    <CeilingRestriction>53,65,60,117;64,78,72,140;75,91,84,163;90,111,102,198;106,130,120,233</CeilingRestriction>
+    <ChipsetBonusCount>4,10,16,24,30,34,38</ChipsetBonusCount>
+    <ChipsetBonusMag>8,0,4,0;0,4,0,8;14,0,6,0;0,8,0,10;26,0,12,0;0,14,0,12;36,0,0,16</ChipsetBonusMag>
+    <SkillName1>슈퍼 그레네이드</SkillName1>
+    <SkillExplain1>3발마다 강화된 유탄을 발사한다.</SkillExplain1>
+    <SkillEffect1>피해량</SkillEffect1>
+    <SkillMag1>2.2배</SkillMag1>
+    <SkillName2>영점조절</SkillName2>
+    <SkillExplain2>지원 전투시 정밀도가 증가한다.</SkillExplain2>
+    <SkillEffect2>정밀도 증가치</SkillEffect2>
+    <SkillMag2>30%</SkillMag2>
+    <SkillName3>관통 충격파</SkillName3>
+    <SkillExplain3>각 유탄마다 40% 확률로 지속시간 동안 초당 파쇄 효과가 발생한다.</SkillExplain3>
+    <SkillEffect3>지속시간;파쇄량</SkillEffect3>
+    <SkillMag3>6초,20%</SkillMag3>
+  </FSTList>
+  <FSTList>
+    <Name>2B14</Name>
+    <CodeName>2B14</CodeName>
+    <Model>2B14 Podnos</Model>
+    <Country>소련</Country>
+    <Type>MTR</Type>
+    <Kill>51/152</Kill>
+    <Crush>20/58</Crush>
+    <Accuracy>46/135</Accuracy>
+    <Reload>54/160</Reload>
+    <ForceSize>2</ForceSize>
+    <Distance>1~3</Distance>
+    <ConsumeAmmo>600</ConsumeAmmo>
+    <ConsumeFood>400</ConsumeFood>
+    <VersionUp>2,0,4,0;2,3,0,4;3,0,6,0;4,4,0,4;5,0,0,5;6,0,9,0;7,3,0,6;7,0,10,0;4,5,0,9;10,0,0,6</VersionUp>
+    <CircuitType>Orange</CircuitType>
+    <Circuit1>0;0;36;36;36;36;0;0</Circuit1>
+    <Circuit2>0;0;26;26;26;26;0;0</Circuit2>
+    <Circuit3>0;0;27;27;27;27;0;0</Circuit3>
+    <Circuit4>0;0;27;18;18;27;0;0</Circuit4>
+    <Circuit5>0;3,6;27;18;18;27;3,6;0</Circuit5>
+    <CeilingRestriction>114,29,45,54;136,35,54,64;159,41,63,75;193,49,77,91;227,58,90,107</CeilingRestriction>
+    <ChipsetBonusCount>4,10,16,20,24,28,32</ChipsetBonusCount>
+    <ChipsetBonusMag>16,0,6,0;0,3,0,5;36,0,0,0;0,4,8,0;58,0,0,7;0,8,0,10;82,0,8,0</ChipsetBonusMag>
+    <SkillName1>진지 폭격</SkillName1>
+    <SkillExplain1>주기적으로 강화 포탄을 발사하여 4반경 내에 모든 적에게 피해를 준다.</SkillExplain1>
+    <SkillEffect1>발사 주기;피해량</SkillEffect1>
+    <SkillMag1>10초,1.8배</SkillMag1>
+    <SkillName2>살을 찢는 교훈</SkillName2>
+    <SkillExplain2>왜곡방벽이 없는 적에게 피해량이 증가한다.</SkillExplain2>
+    <SkillEffect2>추가 피해량</SkillEffect2>
+    <SkillMag2>0.25배</SkillMag2>
+    <SkillName3>교란장막</SkillName3>
+    <SkillExplain3>명중시 40% 확률로 지속시간 동안 대상의 화력과 명중이 감소한다.</SkillExplain3>
+    <SkillEffect3>지속시간;화력 감소량;명중 감소량</SkillEffect3>
+    <SkillMag3>5초,12%,12%</SkillMag3>
+  </FSTList>
+  <FSTList>
+    <Name>M2</Name>
+    <CodeName>M2</CodeName>
+    <Model>M2</Model>
+    <Country>미국</Country>
+    <Type>MTR</Type>
+    <Kill>38/113</Kill>
+    <Crush>17/49</Crush>
+    <Accuracy>40/119</Accuracy>
+    <Reload>61/182</Reload>
+    <ForceSize>2</ForceSize>
+    <Distance>1~3</Distance>
+    <ConsumeAmmo>600</ConsumeAmmo>
+    <ConsumeFood>400</ConsumeFood>
+    <VersionUp>2,0,4,0;1,3,0,5;3,0,6,0;3,4,0,5;4,0,0,6;5,0,9,0;6,2,0,8;6,0,9,0;3,5,0,11;8,0,0,8</VersionUp>
+    <CircuitType>Blue</CircuitType>
+    <Circuit1>0;34;34;36;36;56;56;0</Circuit1>
+    <Circuit2>0;34,7;34,67;37;26;23,56;2,56;0</Circuit2>
+    <Circuit3>23;24,7;34,67;37;26;23,56;2,57;67</Circuit3>
+    <Circuit4>23;24,78;34,68;37;26;13,56;12,57;67</Circuit4>
+    <Circuit5>13,8;24,78;34,68;37;26;13,56;12,57;1,68</Circuit5>
+    <CeilingRestriction>103,30,49,74;124,36,59,89;145,42,68,104;176,51,83,126;206,60,97,149</CeilingRestriction>
+    <ChipsetBonusCount>4,10,16,20,24,28,32</ChipsetBonusCount>
+    <ChipsetBonusMag>13,0,6,0;0,3,0,6;30,0,0,0;0,4,8,0;48,0,0,9;0,8,0,13;68,0,8,0</ChipsetBonusMag>
+    <SkillName1>곡사 폭격</SkillName1>
+    <SkillExplain1>2발 간격으로 가장 멀리 있는 적에게 추가로 포탄을 쏘아 반경 2 범위에 피해를 준다.</SkillExplain1>
+    <SkillEffect1>피해량</SkillEffect1>
+    <SkillMag1>1.2배</SkillMag1>
+    <SkillName2>엄호 포격</SkillName2>
+    <SkillExplain2>매번 공격의 폭발 범위 안에 있는 적 하나마다 임의의 아군 유닛의 명중과 회피를 증가시킨다. 한 유닛마다 최대 3중첩</SkillExplain2>
+    <SkillEffect2>지속시간;명중 상승치;회피 상승치</SkillEffect2>
+    <SkillMag2>5초,10%,10%</SkillMag2>
+    <SkillName3>오차 수정</SkillName3>
+    <SkillExplain3>공격할 때마다 정밀도가 증가한다. 최대 3중첩.</SkillExplain3>
+    <SkillEffect3>지속시간;정밀도 상승치</SkillEffect3>
+    <SkillMag3>8초,10%</SkillMag3>
+  </FSTList>
+  <FSTList>
+    <Name>AT4</Name>
+    <CodeName>AT4</CodeName>
+    <Model>AT4</Model>
+    <Country>스웨덴</Country>
+    <Type>ATW</Type>
+    <Kill>38/113</Kill>
+    <Crush>88/261</Crush>
+    <Accuracy>96/284</Accuracy>
+    <Reload>45/134</Reload>
+    <ForceSize>2</ForceSize>
+    <Distance>1~2</Distance>
+    <ConsumeAmmo>500</ConsumeAmmo>
+    <ConsumeFood>500</ConsumeFood>
+    <VersionUp>3,0,5,0;0,7,8,0;4,0,0,10;0,8,9,0;5,10,0,0;6,0,10,0;0,11,12,0;7,0,0,17;0,12,15,0;9,16,0,0</VersionUp>
+    <CircuitType>Blue</CircuitType>
+    <Circuit1>45;36;27;23,67;0;0;0;0</Circuit1>
+    <Circuit2>45;36;27;13,67;13;23;0;0</Circuit2>
+    <Circuit3>45;36;27;13,68;13,68;23,67;0</Circuit3>
+    <Circuit4>45;36;27;13,68;13,68;27;45</Circuit4>
+    <Circuit5>45;36;27;13,68;13,68;27;36;45</Circuit5>
+    <CeilingRestriction>85,131,95,45;102,157,114,54;118,183,133,63;144,222,161,76;169,261,190,90</CeilingRestriction>
+    <ChipsetBonusCount>4,10,16,22,28,32,36</ChipsetBonusCount>
+    <ChipsetBonusMag>12,0,5,0;0,5,0,5;27,0,7,0;0,10,9,0;35,0,0,10;0,12,12,0;46,18,0,0</ChipsetBonusMag>
+    <SkillName1>충격 확산</SkillName1>
+    <SkillExplain1>왜곡방벽을 보유한 적을 공격할 때 일정 확률로 반경 2.5 범위에 추가 피해를 준다.</SkillExplain1>
+    <SkillEffect1>확률;추가 피해량</SkillEffect1>
+    <SkillMag1>100%,2배</SkillMag1>
+    <SkillName2>눈부신 섬광</SkillName2>
+    <SkillExplain2>일반 공격시 공격 범위 안의 적은 일정 시간동안 명중이 감소된다.</SkillExplain2>
+    <SkillEffect2>지속시간;명중 감소치</SkillEffect2>
+    <SkillMag2>6초,20%</SkillMag2>
+    <SkillName3>고폭소이탄</SkillName3>
+    <SkillExplain3>일반 공격시 범위 내의 적에게 지속시간동안 0.5초마다 피해를 입힌다.</SkillExplain3>
+    <SkillEffect3>지속시간;피해량</SkillEffect3>
+    <SkillMag3>5초,0.2배</SkillMag3>
+  </FSTList>
+</NewDataSet>

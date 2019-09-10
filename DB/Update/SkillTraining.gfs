@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="SkillTraining" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="SkillTraining">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Type" type="xs:string" minOccurs="0" />
+                <xs:element name="Consumption" type="xs:string" minOccurs="0" />
+                <xs:element name="Time" type="xs:string" minOccurs="0" />
+                <xs:element name="DataType" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <SkillTraining>
+    <Type>인형</Type>
+    <Consumption>100;200;300;120;200;300;400;200;300</Consumption>
+    <Time>1;2;3;4;6;9;12;18;24</Time>
+    <DataType>B;B;B;A;A;A;A;M;M</DataType>
+  </SkillTraining>
+  <SkillTraining>
+    <Type>전략요정</Type>
+    <Consumption>200;400;600;240;400;600;800;400;600</Consumption>
+    <Time>2;6;10;14;20;26;32;40;48</Time>
+    <DataType>B;B;B;A;A;A;A;M;M</DataType>
+  </SkillTraining>
+  <SkillTraining>
+    <Type>전투요정</Type>
+    <Consumption>200;400;600;200;400;600;200;400;600</Consumption>
+    <Time>2;6;10;14;20;26;32;40;48</Time>
+    <DataType>B;B;B;A;A;A;M;M;M</DataType>
+  </SkillTraining>
+</NewDataSet>
