@@ -404,7 +404,8 @@ namespace GFI_with_GFS_A
             {
                 await Task.Run(() =>
                 {
-                    if (Directory.Exists(ETC.LogPath) == true) Directory.Delete(ETC.LogPath, true);
+                    if (Directory.Exists(ETC.LogPath))
+                        Directory.Delete(ETC.LogPath, true);
 
                     Directory.CreateDirectory(ETC.LogPath);
                     ETC.CheckInitFolder();
@@ -461,7 +462,7 @@ namespace GFI_with_GFS_A
 
             using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG))
             {
-                ad.SetTitle(Resource.String.Common_TextSize);
+                ad.SetTitle(Resource.String.Common_TextColor);
                 ad.SetCancelable(true);
                 ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
                 ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate
@@ -488,7 +489,7 @@ namespace GFI_with_GFS_A
 
             using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG))
             {
-                ad.SetTitle(Resource.String.Common_TextSize);
+                ad.SetTitle(Resource.String.Common_BackgroundColor);
                 ad.SetCancelable(true);
                 ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
                 ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate
