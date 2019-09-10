@@ -111,5 +111,9 @@
       android:key="ExternalLibraryLicense"
       android:title="@string/Setting_ExternalLibraryLicense_Title"
       android:summary="@string/Setting_ExternalLibraryLicense_Summary"/>
+    <android.support.v7.preference.Preference
+      android:key="GFDSourceCode"
+      android:title="@string/Setting_GFDSourceCode_Title"
+      android:summary="@string/Setting_GFDSourceCode_Summary"/>
   </android.support.v7.preference.PreferenceCategory>
 </android.support.v7.preference.PreferenceScreen>

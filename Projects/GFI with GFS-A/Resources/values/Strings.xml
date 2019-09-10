@@ -151,6 +151,7 @@
   <string name="Main_DBUpdateAvailable">Update Available</string>
   <string name="Main_DBUpdateNewest">Up To Date</string>
   <string name="Web_NetworkNotInternet">Network is not available. This feature use network. Check device network status and try again.</string>
+  <string name="Switch_ExternalBrowser">Switch to external web browser.</string>
   
   <!--Common String-->
   <string name="Common_AC">Accurace</string>
@@ -510,6 +511,8 @@
   <string name="Setting_Category_ETC">ETC</string>
   <string name="Setting_ExternalLibraryLicense_Title">External Library License</string>
   <string name="Setting_ExternalLibraryLicense_Summary">Check license of external library applied on this app</string>
+  <string name="Setting_GFDSourceCode_Title">Source Code of GFD</string>
+  <string name="Setting_GFDSourceCode_Summary">Go to website repository of GFD source code.</string>
   
   
     

@@ -13,6 +13,7 @@ using System.Data;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace GFI_with_GFS_A
 {
@@ -268,6 +269,13 @@ namespace GFI_with_GFS_A
 
             Preference ExternalLibraryLicense = FindPreference("ExternalLibraryLicense");
             ExternalLibraryLicense.PreferenceClick += delegate { Activity.StartActivity(typeof(ExternLibraryCopyright)); };
+
+            Preference GFDSourceCode = FindPreference("GFDSourceCode");
+            GFDSourceCode.PreferenceClick += async delegate
+            {
+                Toast.MakeText(Activity, Resource.String.Switch_ExternalBrowser, ToastLength.Short).Show();
+                await Browser.OpenAsync("https://github.com/URK96/GFI-with-GFS-A.git", BrowserLaunchMode.External);
+            };
         }
 
         private async void CheckDBUpdate_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
