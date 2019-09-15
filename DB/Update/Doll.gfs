@@ -2749,12 +2749,12 @@
     <ProductTime>140</ProductTime>
     <HasMod>true</HasMod>
     <AbilityGrade>B;A;A;A;A;B</AbilityGrade>
-    <Grow>105;0</Grow>
-    <HP>95;0</HP>
-    <FireRate>115;0</FireRate>
-    <Evasion>115;0</Evasion>
-    <Accuracy>115;0</Accuracy>
-    <AttackSpeed>115;0</AttackSpeed>
+    <Grow>105;105</Grow>
+    <HP>95;100</HP>
+    <FireRate>115;120</FireRate>
+    <Evasion>115;115</Evasion>
+    <Accuracy>115;115</Accuracy>
+    <AttackSpeed>115;115</AttackSpeed>
     <MoveSpeed>12</MoveSpeed>
     <Critical>5</Critical>
     <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
@@ -2807,12 +2807,12 @@
     <ProductTime>135</ProductTime>
     <HasMod>true</HasMod>
     <AbilityGrade>B;B;S;A;A;A</AbilityGrade>
-    <Grow>110;0</Grow>
-    <HP>100;0</HP>
-    <FireRate>95;0</FireRate>
-    <Evasion>125;0</Evasion>
-    <Accuracy>120;0</Accuracy>
-    <AttackSpeed>110;0</AttackSpeed>
+    <Grow>110;110</Grow>
+    <HP>100;100</HP>
+    <FireRate>95;105</FireRate>
+    <Evasion>125;130</Evasion>
+    <Accuracy>120;135</Accuracy>
+    <AttackSpeed>110;110</AttackSpeed>
     <MoveSpeed>12</MoveSpeed>
     <Critical>5</Critical>
     <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
@@ -4728,12 +4728,12 @@
     <ProductTime>235</ProductTime>
     <HasMod>true</HasMod>
     <AbilityGrade>A;A;A;A;A;A</AbilityGrade>
-    <Grow>115;0</Grow>
-    <HP>110;0</HP>
-    <FireRate>115;0</FireRate>
-    <Evasion>110;0</Evasion>
-    <Accuracy>115;0</Accuracy>
-    <AttackSpeed>115;0</AttackSpeed>
+    <Grow>115;118</Grow>
+    <HP>110;110</HP>
+    <FireRate>115;118</FireRate>
+    <Evasion>110;110</Evasion>
+    <Accuracy>115;120</Accuracy>
+    <AttackSpeed>115;116</AttackSpeed>
     <MoveSpeed>10</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
@@ -5560,12 +5560,12 @@
     <ProductTime>230</ProductTime>
     <HasMod>true</HasMod>
     <AbilityGrade>A;B;A;C;C;A</AbilityGrade>
-    <Grow>120;0</Grow>
-    <HP>115;0</HP>
-    <FireRate>100;0</FireRate>
-    <Evasion>110;0</Evasion>
-    <Accuracy>90;0</Accuracy>
-    <AttackSpeed>90;0</AttackSpeed>
+    <Grow>120;120</Grow>
+    <HP>115;115</HP>
+    <FireRate>100;105</FireRate>
+    <Evasion>110;110</Evasion>
+    <Accuracy>90;100</Accuracy>
+    <AttackSpeed>90;108</AttackSpeed>
     <MoveSpeed>7</MoveSpeed>
     <Critical>40</Critical>
     <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
@@ -12576,7 +12576,7 @@
     <Critical>40</Critical>
     <ConsumeAmmo>10/15/20/25/30</ConsumeAmmo>
     <ConsumeFood>10/15/20/25/30</ConsumeFood>
-    <EffectFormation>0,1,1,1,1,0,1,0,0</EffectFormation>
+    <EffectFormation>2,1,1,1,1,0,1,0,0</EffectFormation>
     <Effect>FR,CR;30,20</Effect>
     <EffectType>ALL</EffectType>
     <DropEvent>연쇄분열 이벤트 '잘 있어라 탈린 1 - 전투 1' 클리어 보상</DropEvent>

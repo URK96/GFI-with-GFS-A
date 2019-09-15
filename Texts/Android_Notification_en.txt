@@ -1,0 +1,30 @@
+﻿# T-Doll DB Update 2019/09/12
+
+- Add ability info (HK416, MP5, UMP9, 88type)
+
+
+# Enemy DB Update 2019/09/01
+
+- Add New Enemy (Paradeus, KCCO, E.L.I.D., Upgrade SF)
+- Edit some Enemy info
+
+
+# Equip DB Update 2019/08/14
+
+- Add equipment of 6th MOD T-Doll
+
+
+
+# Fairy DB Update 2019/03/01
+
+- Add new fairy (Anna Gram)
+- Edit some fairy info
+
+
+
+# FST DB Update 2019/05/08
+
+- Add new FST (AT4)
+
+
+
