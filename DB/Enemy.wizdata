@@ -805,7 +805,7 @@
     <HasVoice>false</HasVoice>
   </Enemy>
   <Enemy>
-    <Name>프롤러</Name>
+    <Name>프라울러</Name>
     <CodeName>Prowler</CodeName>
     <Affiliation>SANGVIS FERRI</Affiliation>
     <Type>초기형</Type>
@@ -824,7 +824,7 @@
     <HasVoice>false</HasVoice>
   </Enemy>
   <Enemy>
-    <Name>프롤러</Name>
+    <Name>프라울러</Name>
     <CodeName>Prowler</CodeName>
     <Affiliation>SANGVIS FERRI</Affiliation>
     <Type>후기형</Type>
@@ -843,7 +843,7 @@
     <HasVoice>false</HasVoice>
   </Enemy>
   <Enemy>
-    <Name>프롤러</Name>
+    <Name>프라울러</Name>
     <CodeName>Prowler</CodeName>
     <Affiliation>SANGVIS FERRI</Affiliation>
     <Type>딥 다이브+ 랭킹전</Type>
@@ -862,7 +862,7 @@
     <HasVoice>false</HasVoice>
   </Enemy>
   <Enemy>
-    <Name>프롤러 EX</Name>
+    <Name>프라울러 EX</Name>
     <CodeName>Prowler_SWAP</CodeName>
     <Affiliation>SANGVIS FERRI</Affiliation>
     <Type>일반</Type>
@@ -881,7 +881,7 @@
     <HasVoice>false</HasVoice>
   </Enemy>
   <Enemy>
-    <Name>프롤러 EX</Name>
+    <Name>프라울러 EX</Name>
     <CodeName>Prowler_SWAP</CodeName>
     <Affiliation>SANGVIS FERRI</Affiliation>
     <Type>이성질체 소란속에서 Ⅴ</Type>
