@@ -1,0 +1,11 @@
+<2.4.2 수정사항>
+
+- 일부 텍스트 수정
+- 오픈소스 라이선스 고지 방식 수정
+- 소전사전 앱 오픈소스 사이트 이동기능 추가
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 코믹전선)
+
+- Fix some text
+- Change display open source license
+- Add GFD github page link
+- Add cartoon content

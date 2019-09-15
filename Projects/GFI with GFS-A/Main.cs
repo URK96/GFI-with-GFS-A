@@ -167,6 +167,7 @@ namespace GFI_with_GFS_A
         private async Task InitializeProcess()
         {
             GC.Collect();
+            await Task.Delay(100);
 
             try
             {

@@ -124,6 +124,7 @@
     <item>WA2000의 사과</item>
     <item>파견근무 끝</item>
     <item>선배와 후배</item>
+    <item>어느 골짜기 이야기</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -451,6 +452,8 @@
     <item>73 - 여름특집, 친목을 위한 피구</item>
     <item>74 - 헬리안의 습격</item>
     <item>75 - 슈퍼쇼티의 하루</item>
+    <item>76 - 빼앗긴 3코어</item>
+    <item>77 - 강력해진 춘전이</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -530,5 +533,7 @@
     <item>http://naver.me/5PRieK63</item>
     <item>http://naver.me/xrxP7UrU</item>
     <item>http://naver.me/GmH9Varu</item>
+    <item>http://naver.me/5jdjTjnt</item>
+    <item>http://naver.me/5VfmgvK9</item>
   </string-array>
 </resources>

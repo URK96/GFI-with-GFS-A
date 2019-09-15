@@ -654,8 +654,10 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.4.1 Update]\n\n
-- Fix setting crash issue on some device\n
-- Fix some text\n\n\n
+    [2.4.2 Update]\n\n
+- Fix some text\n
+- Change display open source license\n
+- Add GFD github page link\n
+- Add cartoon content
   </string>
 </resources>

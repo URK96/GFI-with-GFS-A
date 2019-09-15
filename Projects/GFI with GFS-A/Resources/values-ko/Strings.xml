@@ -657,8 +657,10 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.4.1 수정사항]\n\n
-- 일부 기기에서 설정 항목이 튕기는 현상 수정\n
-- 일부 텍스트 수정\n\n\n
+    [2.4.2 수정사항]\n\n
+- 일부 텍스트 수정\n
+- 오픈소스 라이선스 고지 방식 수정\n
+- 소전사전 앱 오픈소스 사이트 이동기능 추가\n
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 코믹전선)
   </string>
 </resources>
