@@ -5,12 +5,12 @@ using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using ImageViews.Photo;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
-using UK.CO.Senab.Photoview;
 
 namespace GFI_with_GFS_A
 {

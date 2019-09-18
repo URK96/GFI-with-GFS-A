@@ -48,7 +48,7 @@
 				android:textOn="@string/DollDBImageViewer_ImageCensored"
 				android:id="@+id/DollDBImageViewerCensoredOption"/>
         </LinearLayout>
-		<uk.co.senab.photoview.PhotoView
+		<com.github.chrisbanes.photoview.PhotoView
 			android:layout_width="match_parent"
             android:layout_height="match_parent"
 			android:isScrollContainer="true"

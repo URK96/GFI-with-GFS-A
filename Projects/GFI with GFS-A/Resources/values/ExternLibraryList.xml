@@ -20,6 +20,8 @@
     <item>Xamarin.Android.Arch.Lifecycle.LiveData</item>
     <item>Xamarin.Android.Arch.Lifecycle.LiveData.Core</item>
     <item>Xamarin.Android.Arch.Lifecycle.Runtime</item>
+    <item>Xamarin.Android.Arch.Lifecycle.ViewModel</item>
+    <item>Xamarin.Android.PhotoView</item>
     <item>Xamarin.Android.Support.Animated.Vector.Drawable</item>
     <item>Xamarin.Android.Support.Annotations</item>
     <item>Xamarin.Android.Support.AsyncLayoutInflater</item>
@@ -56,7 +58,6 @@
     <item>Xamarin.Android.Support.ViewPager</item>
     <item>Xamarin.Build.Download</item>
     <item>Xamarin.Essentials</item>
-    <item>Xamarin.PhotoView.Android</item>
   </string-array>
 
   <string-array name="ExternLibrary_Explain">
@@ -79,6 +80,8 @@
     <item>Xamarin.Android bindings for Android Support Library - livedata</item>
     <item>Xamarin.Android bindings for Android Support Library - livedata-core</item>
     <item>Xamarin.Android bindings for Android Support Library - runtime</item>
+    <item>Xamarin.Android bindings for Android Support Library - viewmodel</item>
+    <item>Xamarin.Android binding for PhotoView - Implementation of ImageView for Android that supports zooming, by various touch gestures.</item>
     <item>Xamarin.Android bindings for Android Support Library - animated-vector-drawable</item>
     <item>Xamarin.Android bindings for Android Support Library - support-annotations</item>
     <item>Xamarin.Android bindings for Android Support Library - asynclayoutinflater</item>
@@ -115,7 +118,6 @@
     <item>Xamarin.Android bindings for Android Support Library - viewpager</item>
     <item>Support for downloading and unpacking archives when building MSBuild projects</item>
     <item>Xamarin.Essentials - a kit of essential APIs for your apps</item>
-    <item>PhotoView Binding For Xamarin.Android</item>
   </string-array>
   
   <string-array name="ExternLibrary_License">
@@ -172,9 +174,10 @@
     <item>.NET Foundation Contributor - MIT LICENSE</item>
     <item>.NET Foundation Contributor - MIT LICENSE</item>
     <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
     <item>Xamarin - MIT LICENSE</item>
     <item>Microsoft Corporation - MIT LICENSE</item>
-    <item>chrisbanes - Unknown</item>
   </string-array>
 
   <string-array name="ExternLibrary_LicenseType">
@@ -231,8 +234,9 @@
     <item>MIT_.NET Foundation Contributor</item>
     <item>MIT_.NET Foundation Contributor</item>
     <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
     <item>MIT_Xamarin</item>
     <item>MIT_Microsoft Corporation</item>
-    <item>Unknown</item>
   </string-array>
 </resources>
