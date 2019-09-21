@@ -440,7 +440,7 @@
     <Name>클로에</Name>
     <Name_EN>Chloe</Name_EN>
     <Type>전투</Type>
-    <DicNumber>1001</DicNumber>
+    <DicNumber>1003</DicNumber>
     <ProductTime>0</ProductTime>
     <FireRate>4/18</FireRate>
     <Accuracy>14/55</Accuracy>
@@ -454,12 +454,14 @@
     <SkillEffect>인형체력;대미지</SkillEffect>
     <SkillRate>150/175/200/250/300/350/400/450/500/600;15/22/30/40/50/60/70/80/90/100</SkillRate>
     <Note>붕괴학원 2 콜라보</Note>
+    <ProductDialog>“Re Mi Re Mi Fa So Mi Mi Re”</ProductDialog>
+    <FairyExplain>환영을 만드는 능력을 지니고 있습니다. 전투 중 체력을 지닌 환영을 2개 생성하고 일정 시간마다 모든 적에게 피해를 줍니다.</FairyExplain>
   </Fairy>
   <Fairy>
     <Name>야에사쿠라</Name>
     <Name_EN>Yae Sakura</Name_EN>
     <Type>전투</Type>
-    <DicNumber>1002</DicNumber>
+    <DicNumber>1001</DicNumber>
     <ProductTime>0</ProductTime>
     <FireRate>6/26</FireRate>
     <Accuracy>0/0</Accuracy>
@@ -473,18 +475,20 @@
     <SkillEffect>대미지</SkillEffect>
     <SkillRate>20/30/40/50/60/70/80/90/100/120</SkillRate>
     <Note>붕괴학원 2 콜라보</Note>
+    <ProductDialog>"피어나라 이 슬픈 세상이여."</ProductDialog>
+    <FairyExplain>범위 피해를 주는 능력을 지니고 있습니다. 전투 중 불기둥이 솟아나 닿은 적에게 피해를 줍니다.</FairyExplain>
   </Fairy>
   <Fairy>
     <Name>카구야</Name>
     <Name_EN>Kaguya Hime</Name_EN>
     <Type>책략</Type>
-    <DicNumber>1003</DicNumber>
+    <DicNumber>1002</DicNumber>
     <ProductTime>0</ProductTime>
     <FireRate>0/0</FireRate>
-    <Accuracy>?/70</Accuracy>
-    <Evasion>?/24</Evasion>
-    <Armor>?/15</Armor>
-    <Critical>?/32</Critical>
+    <Accuracy>17.6/70</Accuracy>
+    <Evasion>6/24</Evasion>
+    <Armor>3.6/15</Armor>
+    <Critical>8/32</Critical>
     <SkillName>야타의 휘광</SkillName>
     <SkillExplain>자신 주변 범위 2 구역에 야타의 거울을 설치하여 레이저를 발사한다. 레이저는 구역 내 무작위 3기의 적에게 현재 체력 비율로 피해를 준다. 보스는 효과를 받지 않는다.</SkillExplain>
     <OrderConsume>8</OrderConsume>
@@ -492,6 +496,8 @@
     <SkillEffect>대미지</SkillEffect>
     <SkillRate>10/11/12/13/14/15/16/17/18/20</SkillRate>
     <Note>붕괴학원 2 콜라보</Note>
+    <ProductDialog>"달빛 속에서 이름 없는 춤을 추리라."</ProductDialog>
+    <FairyExplain>맵병기. 전역 지도에서 거리 2칸 이내의 최대 3부대 적에게 피해를 줍니다.</FairyExplain>
   </Fairy>
   <Fairy>
     <Name>취사요정</Name>
@@ -611,7 +617,7 @@
     <OrderConsume>3</OrderConsume>
     <CoolDown>0</CoolDown>
     <SkillEffect>기절 지속시간;피해 지속시간;피해량</SkillEffect>
-    <SkillRate>1 / 1.1 / ? / ? / ? / ? / ? / ? / ? / 2;3 / 3.2 / ? / ? / ? / ? / ? / ? / ? / 5;10 / 14 / ? / ? / ? / ? / ? / ? / ? / 50</SkillRate>
+    <SkillRate>1 / 1.1 / 1.2 / 1.3 / 1.4 / 1.6 / 1.7 / 1.8 / 1.9 / 2;3 / 3.2 / 3.4 / 3.7 / 3.9 / 4.1 / 4.3 / 4.6 / 4.8 / 5;10 / 14 / 19 / 23 / 28 / 32 / 37 / 41 / 46 / 50</SkillRate>
     <Note>이성질체 랭킹전 300000점, 랭킹보상</Note>
     <ProductDialog>"동에 번쩍, 서에 번쩍, 세뱃돈 내놔라! 어흥!!"</ProductDialog>
     <FairyExplain>살상력을 지닌 폭죽을 터트리는 능력을 지니고 있습니다. 평소에는 명절을 축하하거나, 물고기를 잡거나, 게시판에서 보이스 메시지로 사용할 수 있을 것 같습니다.</FairyExplain>
@@ -622,19 +628,96 @@
     <Type>전투</Type>
     <DicNumber>1007</DicNumber>
     <ProductTime>0</ProductTime>
-    <FireRate>?/25</FireRate>
-    <Accuracy>?/30</Accuracy>
-    <Evasion>?/65</Evasion>
-    <Armor>?/8</Armor>
+    <FireRate>5.2/25</FireRate>
+    <Accuracy>6.8/30</Accuracy>
+    <Evasion>14.4/65</Evasion>
+    <Armor>1.6/8</Armor>
     <Critical>0/0</Critical>
     <SkillName>나노 유령</SkillName>
     <SkillExplain>다음 전투에서 20초 동안 가장 앞에 배치한 인형은 회피 상승, 화력 감소가 적용되며 나머지 인형들은 화력 상승, 회피 감소가 적용된다.</SkillExplain>
     <OrderConsume>0</OrderConsume>
     <CoolDown>0</CoolDown>
     <SkillEffect>회피 변동치;화력 변동치</SkillEffect>
-    <SkillRate>10 / ? / ? / ? / ? / ? / ? / ? / ? / 30;10 / ? / ? / ? / ? / ? / ? / ? / ? / 20</SkillRate>
+    <SkillRate>10 / 12 / 14 / 16 / ? / ? / ? / ? / ? / 30;10 / 11 / 12 / 13 / ? / ? / ? / ? / ? / 20</SkillRate>
     <Note>발할라 콜라보 흰 장갑 파편 80개 교환 보상</Note>
     <ProductDialog>"...뭐든지 다 이유가 있는 법이니까, 그치?"</ProductDialog>
     <FairyExplain>제대의 회피와 화력을 조정하는 능력을 가지고 있습니다. 당신이 보신 건 그녀의 모습일 수도 있고, 그저 재미있는 먼지일 수도 있습니다.</FairyExplain>
+  </Fairy>
+  <Fairy>
+    <Name>해변요정</Name>
+    <Type>전투</Type>
+    <DicNumber>22</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>3.2/32</FireRate>
+    <Accuracy>0/0</Accuracy>
+    <Evasion>4/40</Evasion>
+    <Armor>0/0</Armor>
+    <Critical>3.2/32</Critical>
+    <SkillName>나른한 파도</SkillName>
+    <SkillExplain>다음 전투 개시에 파도를 소환하여 적을 거리 2만큼 밀어내고 5초동안 사속과 이속을 감소시킨다.</SkillExplain>
+    <OrderConsume>1</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>사속 감소치;이속 감소치</SkillEffect>
+    <SkillRate>10 / 12 / 13 / 15 / 17 / 18 / 20 / 22 / 23 / 25;10 / 12 / 13 / 15 / 17 / 18 / 20 / 22 / 23 / 25</SkillRate>
+    <Note>연쇄분열 랭킹전 랭킹보상</Note>
+    <ProductDialog>"휴일을 즐길 줄 모르는 사람은 화난 유니콘에게 치일 거예요!"</ProductDialog>
+    <FairyExplain>적을 약간 밀어내는 능력을 지니고 있습니다. 평소에는 바닥 청소에 사용할 수 있을 것 같습니다.</FairyExplain>
+  </Fairy>
+  <Fairy>
+    <Name>연타요정</Name>
+    <Type>책략</Type>
+    <DicNumber>23</DicNumber>
+    <ProductTime>315</ProductTime>
+    <FireRate>6,4/30</FireRate>
+    <Accuracy>18.8/85</Accuracy>
+    <Evasion>0/0</Evasion>
+    <Armor>0/0</Armor>
+    <Critical>3.2/15</Critical>
+    <SkillName>필살 콤보</SkillName>
+    <SkillExplain>해당 턴 동안 전투 시작 전에 20초간 화력과 명중을 증가시키는 연타 효과를 1회 부여하며 최대 3번까지 중첩 가능하다.</SkillExplain>
+    <OrderConsume>2</OrderConsume>
+    <CoolDown>2</CoolDown>
+    <SkillEffect>화력 상승치;명중 상승치</SkillEffect>
+    <SkillRate>5 / 6 / 7 / 8 / 9 / 11 / 12 / 13 / 14 / 15;10 / 12 / 14 / 17 / 19 / 21 / 23 / 26 / 28 / 30</SkillRate>
+    <ProductDialog>"아직이다! 멈추지 말라고! 제길!"</ProductDialog>
+    <FairyExplain>버프 효과를 연속 부여하는 능력을 지니고 있습니다. 평소에는 타짜룰 추격하고 징벌하는 데 사용할 수 있을 것 같습니다.</FairyExplain>
+  </Fairy>
+  <Fairy>
+    <Name>장벽요정</Name>
+    <Type>전투</Type>
+    <DicNumber>24</DicNumber>
+    <ProductTime>255</ProductTime>
+    <FireRate>0/0</FireRate>
+    <Accuracy>?/72</Accuracy>
+    <Evasion>?/32</Evasion>
+    <Armor>?/22</Armor>
+    <Critical>0/0</Critical>
+    <SkillName>추가 장갑</SkillName>
+    <SkillExplain>다음 전투에서 장갑을 지닌 아군에게 장갑 수치에 비례해 보호막을 부여한다.</SkillExplain>
+    <OrderConsume>3</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>보호막 배율</SkillEffect>
+    <SkillRate>? / ? / ? / ? / ? / ? / ? / ? / ? / 150</SkillRate>
+    <ProductDialog>"좌현의 탄막이... 아니라 장갑이 너무 얇아!"</ProductDialog>
+    <FairyExplain>장갑을 지닌 인형에게 보호막을 씌우는 능력을 지니고 있습니다. 평소에는 아령이나 택배 요정으로 사용할 수 있을 것 같습니다.</FairyExplain>
+  </Fairy>
+  <Fairy>
+    <Name>쌍둥이요정</Name>
+    <Type>전투</Type>
+    <DicNumber>25</DicNumber>
+    <ProductTime>280</ProductTime>
+    <FireRate>3.2/18</FireRate>
+    <Accuracy>11.2/60</Accuracy>
+    <Evasion>8.8/48</Evasion>
+    <Armor>2.4/12</Armor>
+    <Critical>0/0</Critical>
+    <SkillName>2중수호</SkillName>
+    <SkillExplain>다음 전투에서 방패 분신과 미사일 분신을 소환한다. 방패 분신은 장갑 20을 지니며 2초마다 최전열의 적 주위 2반경에 피해를 준다. 미사일 분신은 회피 30을 지니며 2초마다 최후열의 적에게 피해를 준다. 두 분신 중 한 명 사망 시 다른 분신도 사망한다.</SkillExplain>
+    <OrderConsume>3</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>분신 체력;방패분신 피해량;미사일분신 피해량</SkillEffect>
+    <SkillRate>300 / 350 / 400 / 450 / 500 / 550 / 600 / 650 / 700 / 750;42 / 54 / 66 / 78 / 90 / 102 / 114 / 126 / 138 / 150;126 / 162 / 198 / 234 / 270 / 306 / 342 / 378 / 414 / 450</SkillRate>
+    <ProductDialog>"우리는 운명의 공동체예요. 편애하면 안 돼요!"</ProductDialog>
+    <FairyExplain>공생체 쌍둥이를 소환하는 능력을 지니고 있습니다. 평소에는 편제확대한 인형의 적응 훈련을 돕거나 만담 공연에 쓸 수 있을 것 같습니다.</FairyExplain>
   </Fairy>
 </NewDataSet>

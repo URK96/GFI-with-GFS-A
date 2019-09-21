@@ -1,0 +1,28 @@
+﻿# Fairy DB Update 2019/09/22
+
+- Add new fairies
+- Edit some fairy info
+
+
+# T-Doll DB Update 2019/09/12
+
+- Add ability info (HK416, MP5, UMP9, 88type)
+
+
+# Enemy DB Update 2019/09/15
+
+- Edit some Enemy info
+
+
+# Equip DB Update 2019/08/14
+
+- Add equipment of 6th MOD T-Doll
+
+
+
+# FST DB Update 2019/05/08
+
+- Add new FST (AT4)
+
+
+
