@@ -1499,9 +1499,6 @@
     <AndroidResource Include="Resources\drawable\Splash.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\values\StoryList_Event_ContinuumTurbulence.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\GuideBookViewerLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -1747,6 +1744,15 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Unknown.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\StoryList_Event_ShatteredConnexion.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\StoryList_Event_ContinuumTurbulence.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
