@@ -711,7 +711,7 @@
     <Evasion>8.8/48</Evasion>
     <Armor>2.4/12</Armor>
     <Critical>0/0</Critical>
-    <SkillName>2중수호</SkillName>
+    <SkillName>2중 수호</SkillName>
     <SkillExplain>다음 전투에서 방패 분신과 미사일 분신을 소환한다. 방패 분신은 장갑 20을 지니며 2초마다 최전열의 적 주위 2반경에 피해를 준다. 미사일 분신은 회피 30을 지니며 2초마다 최후열의 적에게 피해를 준다. 두 분신 중 한 명 사망 시 다른 분신도 사망한다.</SkillExplain>
     <OrderConsume>3</OrderConsume>
     <CoolDown>0</CoolDown>

@@ -165,6 +165,11 @@ namespace GFI_with_GFS_A
                     Caption_res = Resource.Array.Story_Main_Main_Event_VA_Caption;
                     TopTitle_res = Resource.Array.Story_Main_Main_Event_VA_TopTitle;
                     break;
+                case 30:
+                    Title_res = Resource.Array.Story_Main_Main_Event_ShatteredConnexion;
+                    Caption_res = Resource.Array.Story_Main_Main_Event_ShatteredConnexion_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Main_Event_ShatteredConnexion_TopTitle;
+                    break;
             }
 
             itemList.AddRange(Resources.GetStringArray(Title_res));
@@ -358,6 +363,9 @@ namespace GFI_with_GFS_A
                         break;
                     case 29:
                         Category = "VA";
+                        break;
+                    case 30:
+                        Category = "ShatteredConnexion";
                         break;
                 }
             }

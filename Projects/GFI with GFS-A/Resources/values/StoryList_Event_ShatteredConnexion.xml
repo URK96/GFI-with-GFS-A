@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
-  <string-array name="Story_Main_Main_Event_ContinuumTurbulence_TopTitle">
+  <string-array name="Story_Main_Main_Event_ShatteredConnexion_TopTitle">
     <item>연쇄분열 : 1지역</item>
     <item>연쇄분열 : 1지역</item>
     <item>연쇄분열 : 1지역</item>
@@ -47,7 +47,7 @@
     <item>연쇄분열 : 5지역</item>
   </string-array>
 
-  <string-array name="Story_Main_Main_Event_ContinuumTurbulence">
+  <string-array name="Story_Main_Main_Event_ShatteredConnexion">
     <item>정적의 기운</item>
     <item>파트 타임</item>
     <item>뿌리를 찾아서</item>
@@ -94,7 +94,7 @@
     <item>기밀 정보 XV</item>
   </string-array>
 
-  <string-array name="Story_Main_Main_Event_ContinuumTurbulence_Caption">
+  <string-array name="Story_Main_Main_Event_ShatteredConnexion_Caption">
     <item>메인 스토리</item>
     <item>메인 스토리</item>
     <item>메인 스토리</item>
