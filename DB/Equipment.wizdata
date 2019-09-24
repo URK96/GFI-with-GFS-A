@@ -36,7 +36,7 @@
   <Equipment>
     <Name>BM 3-12X40</Name>
     <Id>1</Id>
-    <Type>옵티컬(광학조준경)</Type>
+    <Type>옵티컬</Type>
     <Category>부속</Category>
     <Grade>2</Grade>
     <Ability>치명타율</Ability>
@@ -50,7 +50,7 @@
   <Equipment>
     <Name>LRA 2-12x50</Name>
     <Id>2</Id>
-    <Type>옵티컬(광학조준경)</Type>
+    <Type>옵티컬</Type>
     <Category>부속</Category>
     <Grade>3</Grade>
     <Ability>치명타율</Ability>
@@ -64,7 +64,7 @@
   <Equipment>
     <Name>PSO-1</Name>
     <Id>3</Id>
-    <Type>옵티컬(광학조준경)</Type>
+    <Type>옵티컬</Type>
     <Category>부속</Category>
     <Grade>4</Grade>
     <Ability>치명타율</Ability>
@@ -78,7 +78,7 @@
   <Equipment>
     <Name>VFL 6-24X56</Name>
     <Id>4</Id>
-    <Type>옵티컬(광학조준경)</Type>
+    <Type>옵티컬</Type>
     <Category>부속</Category>
     <Grade>5</Grade>
     <Ability>치명타율</Ability>
@@ -92,7 +92,7 @@
   <Equipment>
     <Name>EOT 506</Name>
     <Id>5</Id>
-    <Type>이오텍(홀로그래픽 조준기)</Type>
+    <Type>이오텍</Type>
     <Category>부속</Category>
     <Grade>2</Grade>
     <Ability>명중;화력;사속</Ability>
@@ -106,7 +106,7 @@
   <Equipment>
     <Name>EOT 512</Name>
     <Id>6</Id>
-    <Type>이오텍(홀로그래픽 조준기)</Type>
+    <Type>이오텍</Type>
     <Category>부속</Category>
     <Grade>3</Grade>
     <Ability>명중;화력;사속</Ability>
@@ -120,7 +120,7 @@
   <Equipment>
     <Name>EOT 516</Name>
     <Id>7</Id>
-    <Type>이오텍(홀로그래픽 조준기)</Type>
+    <Type>이오텍</Type>
     <Category>부속</Category>
     <Grade>4</Grade>
     <Ability>명중;화력;사속</Ability>
@@ -134,7 +134,7 @@
   <Equipment>
     <Name>EOT 518</Name>
     <Id>8</Id>
-    <Type>이오텍(홀로그래픽 조준기)</Type>
+    <Type>이오텍</Type>
     <Category>부속</Category>
     <Grade>5</Grade>
     <Ability>명중;화력;사속</Ability>
@@ -1008,7 +1008,7 @@
   <Equipment>
     <Name>KSTSP</Name>
     <Id>83</Id>
-    <Type>옵티컬(광학조준기)</Type>
+    <Type>옵티컬</Type>
     <Category>부속</Category>
     <Grade>0</Grade>
     <Ability>치명타율;치명피해</Ability>
@@ -1023,7 +1023,7 @@
   <Equipment>
     <Name>KST1P8</Name>
     <Id>84</Id>
-    <Type>옵티컬(광학조준기)</Type>
+    <Type>옵티컬</Type>
     <Category>부속</Category>
     <Grade>0</Grade>
     <Ability>치명타율;치명피해</Ability>
@@ -1038,7 +1038,7 @@
   <Equipment>
     <Name>KST1P7</Name>
     <Id>85</Id>
-    <Type>옵티컬(광학조준기)</Type>
+    <Type>옵티컬</Type>
     <Category>부속</Category>
     <Grade>0</Grade>
     <Ability>치명타율;치명피해</Ability>
@@ -1248,7 +1248,7 @@
   <Equipment>
     <Name>16Lab6-24X56</Name>
     <Id>109</Id>
-    <Type>옵티컬 (광학조준경)</Type>
+    <Type>옵티컬</Type>
     <Category>부속</Category>
     <Grade>5</Grade>
     <Ability>치명타율</Ability>
@@ -1428,7 +1428,7 @@
   <Equipment>
     <Name>FÉLIN 조준경</Name>
     <Id>119</Id>
-    <Type>옵티컬(광학조준경)</Type>
+    <Type>옵티컬</Type>
     <Category>부속</Category>
     <Grade>0</Grade>
     <Ability>치명타율;화력;명중</Ability>
@@ -1578,7 +1578,7 @@
   <Equipment>
     <Name>G36 복합조준경</Name>
     <Id>130</Id>
-    <Type>옵티컬(광학조준경)</Type>
+    <Type>옵티컬</Type>
     <Category>인형</Category>
     <Grade>0</Grade>
     <Ability>명중;치명타율</Ability>
@@ -1877,7 +1877,7 @@
   </Equipment>
   <Equipment>
     <Name>AMP COMPSP</Name>
-    <Id>150</Id>
+    <Id>156</Id>
     <Type>이오텍</Type>
     <Category>부속</Category>
     <Grade>0</Grade>
@@ -1888,10 +1888,11 @@
     <OnlyUse>UMP9</OnlyUse>
     <Note>마인드맵 업그레이드 추가</Note>
     <Icon>UMP9_Only</Icon>
+    <ProductDialog>AMP에서 선보이는 UMP9 특별 조준경입니다. 주요 특징으로 내부의 4MOA 가늠자가 9이 좋아하는 연황색입니다. UMP9 전용</ProductDialog>
   </Equipment>
   <Equipment>
     <Name>LED 플래시</Name>
-    <Id>151</Id>
+    <Id>157</Id>
     <Type>이오텍</Type>
     <Category>부속</Category>
     <Grade>0</Grade>
@@ -1902,11 +1903,12 @@
     <OnlyUse>MP5</OnlyUse>
     <Note>마인드맵 업그레이드 추가</Note>
     <Icon>MP5_Only_2</Icon>
+    <ProductDialog>매우 밝은 LED 플래시를 총열 덮개와 일체화하고, 리튬 전지를 내장하여, 총열 덮개의 스위치로 켜고 끌 수 있습니다. MP5 전용。</ProductDialog>
   </Equipment>
   <Equipment>
     <Name>가속 코일</Name>
-    <Id>152</Id>
-    <Type>특수</Type>
+    <Id>158</Id>
+    <Type>옵티컬</Type>
     <Category>부속</Category>
     <Grade>0</Grade>
     <Ability>화력;치명타율</Ability>
@@ -1916,11 +1918,12 @@
     <OnlyUse>한양조 88식</OnlyUse>
     <Note>마인드맵 업그레이드 추가</Note>
     <Icon>88type_Only</Icon>
+    <ProductDialog>오래된 화약 추진 방식을 버리고, 완전 리뉴얼된 한양조는 고성능 가속 코일을 탑재하여, 탄자를 한순간에 마하5까지 가속할 수 있습니다. 너무 심한 거 아냐?</ProductDialog>
   </Equipment>
   <Equipment>
     <Name>전술 머리띠</Name>
-    <Id>153</Id>
-    <Type>특수</Type>
+    <Id>159</Id>
+    <Type>외골격X, 슈트</Type>
     <Category>부속</Category>
     <Grade>0</Grade>
     <Ability>회피;치명피해</Ability>
@@ -1930,5 +1933,111 @@
     <OnlyUse>HK416</OnlyUse>
     <Note>마인드맵 업그레이드 추가</Note>
     <Icon>HK416_Only</Icon>
+    <ProductDialog>416은 개조하며 최신형 강화 센서 시스템을 탑재하였습니다. 겉보기에는 평범한 머리띠지만, 22가지 센서와 안테나가 내장되어 있어 HK416의 작전 효율을 크게 상승시켰습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>ZFG42</Name>
+    <Id>150</Id>
+    <Type>레드 닷 조준기, 옵티컬</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>명중;치명타율;사속</Ability>
+    <InitialMagnification>+13~17;+13~16;-4~1</InitialMagnification>
+    <MaxMagnification>+32;+24;-1</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>FG42</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>FG42_Only</Icon>
+    <ProductDialog>ZF사가 FG42를 위해 특수 제작한 옵티컬 사이트입니다. 100년의 세월이 흘러 외각은 색이 바랬지만 렌즈는 여전히 선명합니다. 이 조준경을 들여다보면 마치 매그넘의 기분이 듭니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>20GA 벅샷</Name>
+    <Id>151</Id>
+    <Type>벅샷</Type>
+    <Category>탄환</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중;치명피해</Ability>
+    <InitialMagnification>+8~12;+1~2;+14~18</InitialMagnification>
+    <MaxMagnification>+18;+4;+27</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>KS-23</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>KS23_Only</Icon>
+    <ProductDialog>노란 셸에 납탄을 20개 담은 산탄으로 뛰어난 초기 속도와 지향성을 자랑합니다. KS23의 살상력을 크게 상승시킵니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>SIG510 트리거셋</Name>
+    <Id>152</Id>
+    <Type>옵티컬, 이오텍</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중;치명타율</Ability>
+    <InitialMagnification>+3~5;+1~2+18~25</InitialMagnification>
+    <MaxMagnification>+9;+4;+50</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>SIG-510</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>SIG510_Only</Icon>
+    <ProductDialog>SIG510을 위해 특수 제작한 트리거셋으로 단발, 점사 및 전자동 사격을 자유 전환할 수 있어 다양한 전투 상황에 대응할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>BM59 중형 총열</Name>
+    <Id>153</Id>
+    <Type>옵티컬</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>명중;사속;치명타율</Ability>
+    <InitialMagnification>+4~6;+2~4;+18~25</InitialMagnification>
+    <MaxMagnification>+8;+6;+50</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>BM59</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>BM59_Only</Icon>
+    <ProductDialog>중형 총열을 장착한 BM59 Mark IV는 장시간 연사에도 과열되지 않아 BM59를 분대 지원화기로 응용할 수 있게 만듭니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>OSS 소음기</Name>
+    <Id>154</Id>
+    <Type>소음기</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;회피;치명타율</Ability>
+    <InitialMagnification>+1~2;+12~14;+15~20</InitialMagnification>
+    <MaxMagnification>+4;+21;+28</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>M3</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>M3_Only</Icon>
+    <ProductDialog>당시 전략 사무국에서 잠입 작전을 위해 특수 제작한 소음기로 M3의 은밀성을 높였을 뿐만이 아니라 소가죽 덮개는 유사시 비상식량으로 끓여 먹을 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>PPK 소음기</Name>
+    <Id>155</Id>
+    <Type>소음기</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>회피;치명타율</Ability>
+    <InitialMagnification>+11~13;+15~20</InitialMagnification>
+    <MaxMagnification>+18,+30</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>PPK</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>PPK_Only</Icon>
+    <ProductDialog>숙녀의 핸드백 안엔 립스틱 말고도 소음기가 빠질 수 없습니다. 전자는 입에 침이 마르지 않게 하고, 후자는 입을 영원히 다물게 만들죠.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>No32 MLI</Name>
+    <Id>160</Id>
+    <Type>옵티컬</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>사속;치명타율</Ability>
+    <InitialMagnification>+2;+24</InitialMagnification>
+    <MaxMagnification>+4;+48</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>리엔필드</OnlyUse>
+    <Note>연쇄분열 랭킹전 보상</Note>
+    <Icon>Lee_Only</Icon>
+    <ProductDialog>저번 세기 세계대전 초기에서 리-엔필드 No.4 MKI(T) 소총만을 위해 제작된 광학 조준경으로 화려한 황동 외피가 인상적입니다. 색이 약간 바랜 렌즈는 무수한 생명의 끝을 지켜봤습니다. 리-엔필드 전용.</ProductDialog>
   </Equipment>
 </NewDataSet>
