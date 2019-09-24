@@ -1,0 +1,9 @@
+<2.4.3 수정사항>
+
+- 스토리 추가 (연쇄분열)
+- PhotoView 컴포넌트 교체
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 코믹전선)
+
+- Add new story
+- Change PhotoView component
+- Add cartoon content
