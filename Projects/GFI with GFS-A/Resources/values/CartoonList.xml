@@ -125,6 +125,7 @@
     <item>파견근무 끝</item>
     <item>선배와 후배</item>
     <item>어느 골짜기 이야기</item>
+    <item>지나간 명절 이야기</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -454,6 +455,8 @@
     <item>75 - 슈퍼쇼티의 하루</item>
     <item>76 - 빼앗긴 3코어</item>
     <item>77 - 강력해진 춘전이</item>
+    <item>78 - 파견 나온 아키텍트</item>
+    <item>79 - 이상한 중제조</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -535,5 +538,7 @@
     <item>http://naver.me/GmH9Varu</item>
     <item>http://naver.me/5jdjTjnt</item>
     <item>http://naver.me/5VfmgvK9</item>
+    <item>http://naver.me/5GbGwHHU</item>
+    <item>http://naver.me/FPX8lRgC</item>
   </string-array>
 </resources>
