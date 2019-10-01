@@ -1226,7 +1226,7 @@
     <SkillExplain>지속시간 동안 아군 전체의 화력을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간(야간);지속시간(주간);화력 증가치(야간);화력 증가치(주간)</SkillEffect>
     <SkillMag>6초,12초,8초,5초,35%,20%</SkillMag>
-    <Costume>스위트 데빌;브랜디시아;전해진 마음</Costume>
+    <Costume>스위트 데빌;브랜디시아;전해진 마음;개학을 알리는 고양이 노래</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Hikaru Akao</VoiceActor>
@@ -2640,7 +2640,7 @@
     <SkillExplain>지속시간 동안 자신의 회피를 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;회피 증가치</SkillEffect>
     <SkillMag>6초,8초,5초,120%</SkillMag>
-    <Costume>매우 반짝이는 귀</Costume>
+    <Costume>매우 반짝이는 귀;냥 프리즘 파워</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Kibune Sachiho</VoiceActor>
@@ -3405,7 +3405,7 @@
     <SkillExplain>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect>
     <SkillMag>4초,8초,5초,260%</SkillMag>
-    <Costume>검은토끼 마키아또</Costume>
+    <Costume>검은토끼 마키아또;토끼 특공대장</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Takada Yuuki</VoiceActor>
@@ -4937,7 +4937,7 @@
     <SkillExplain>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect>
     <SkillMag>2초,16초,15초,50%</SkillMag>
-    <Costume>영롱한 옥;여름의 풍류</Costume>
+    <Costume>영롱한 옥;여름의 풍류;순백의 졸업식</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Kami Daimon</VoiceActor>
@@ -4982,7 +4982,7 @@
     <SkillExplain>지속시간 동안 자신의 사속을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치</SkillEffect>
     <SkillMag>2초,16초,15초,50%</SkillMag>
-    <Costume>화려한 모란</Costume>
+    <Costume>화려한 모란;지각 시츄에이션</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Ayane Sakura</VoiceActor>
@@ -7720,6 +7720,7 @@
     <SkillExplain>지속시간 동안 자신의 장갑을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;장갑 증가치</SkillEffect>
     <SkillMag>10초,16초,6초,60%</SkillMag>
+    <Costume>수업 중 낮잠</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Ruriko Aoki</VoiceActor>
@@ -7994,7 +7995,7 @@
     <SkillExplain>지속시간 동안 자신의 장갑을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;장갑 증가치</SkillEffect>
     <SkillMag>10초,16초,6초,70%</SkillMag>
-    <Costume>흰나팔꽃</Costume>
+    <Costume>흰나팔꽃;방과 후 심심풀이</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Ruriko Aoki</VoiceActor>
@@ -11843,6 +11844,7 @@
     <SkillExplain>체력이 가장 많은 적을 기절시키고 피해를 준다. 만약 목표 적에서 가로 거리 2.5 범위 내에 다른 적이 있는 경우 2.5 범위 안의 적을 기절시키고 피해를 준다. 이 경우 목표 적도 중복 기절 및 피해가 적용된다. 반드시 명중하며 장갑의 영향을 받는다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;목표 기절 시간;목표 피해량;범위 기절 시간;범위 피해량</SkillEffect>
     <SkillMag>6초,12초,3초,4배,2초,2배</SkillMag>
+    <Costume>두근두근 하이스쿨</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>山药</Illustrator>
     <HasCensor>false</HasCensor>
@@ -12749,6 +12751,7 @@
   <Doll>
     <Name>VP70</Name>
     <Name_EN>VP70</Name_EN>
+    <Name_JP>Gr VP70</Name_JP>
     <CodeName>VP70</CodeName>
     <Nickname>VP70</Nickname>
     <Model>H&amp;K VP70</Model>
@@ -12757,7 +12760,7 @@
     <Grade>3</Grade>
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
-    <AbilityGrade>?;?;?;?;?;?</AbilityGrade>
+    <AbilityGrade>B;A;B;B;A;A</AbilityGrade>
     <Grow>122</Grow>
     <HP>100</HP>
     <FireRate>112</FireRate>
@@ -12769,7 +12772,7 @@
     <ConsumeAmmo>10/15/20/25/30</ConsumeAmmo>
     <ConsumeFood>10/15/20/25/30</ConsumeFood>
     <EffectFormation>1,1,0,0,2,0,1,1,0</EffectFormation>
-    <Effect>AS,AC;8,37;11,41;14,44;17,47;20,50</Effect>
+    <Effect>AS,AC;10,25;12,31;15,37;17,43;20,50</Effect>
     <EffectType>ALL</EffectType>
     <DropEvent>2019년 9월 출석보상</DropEvent>
     <DicNumber>277</DicNumber>
@@ -12780,8 +12783,9 @@
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 감소치</SkillEffect>
     <SkillMag>6초,12초,8초,25%</SkillMag>
     <HasVoice>false</HasVoice>
-    <Illustrator>?</Illustrator>
+    <Illustrator>原子Dan</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
+    <ProductDialog>...스캔 완료. 프로그램이 안정적이고, 버그 발생률도 낮군. 지휘관으로서 최적이야.</ProductDialog>
   </Doll>
 </NewDataSet>
