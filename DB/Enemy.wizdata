@@ -5016,4 +5016,26 @@
     <IsBoss>false</IsBoss>
     <HasVoice>false</HasVoice>
   </Enemy>
+  <Enemy>
+    <Name>엘펠트 밸런타인</Name>
+    <CodeName>GG_Elfeldt_SF</CodeName>
+    <Affiliation>SANGVIS FERRI</Affiliation>
+    <Type>이벤트 보스</Type>
+    <HP>12000</HP>
+    <FireRate>0</FireRate>
+    <Accuracy>0</Accuracy>
+    <Evasion>0</Evasion>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Penetration>0</Penetration>
+    <Armor>0</Armor>
+    <Range>0</Range>
+    <Shield>0</Shield>
+    <ShieldP>0</ShieldP>
+    <Note>길티기어 콜라보 이벤트 '헌팅래빗' 이벤트 보스</Note>
+    <IsBoss>true</IsBoss>
+    <HasVoice>true</HasVoice>
+    <VoiceActor>Aya Suzaki</VoiceActor>
+    <Voices>APPEAR1;DEAD1;PROVOCATIVE1</Voices>
+  </Enemy>
 </NewDataSet>

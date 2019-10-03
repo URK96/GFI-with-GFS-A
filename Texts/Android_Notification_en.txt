@@ -1,12 +1,16 @@
-﻿# T-Doll DB Update 2019/09/12
+﻿# T-Doll DB Update 2019/10/02
 
-- Add ability info (HK416, MP5, UMP9, 88type)
+- Add new costumes
+- Add new voices
+- Add missing voices data
+- Add missing voice actor info
+- Fix some T-Doll info
 
 
-# Enemy DB Update 2019/09/01
+# Enemy DB Update 2019/10/2
 
-- Add New Enemy (Paradeus, KCCO, E.L.I.D., Upgrade SF)
-- Edit some Enemy info
+- Add new enemy
+- Add new voice
 
 
 # Equip DB Update 2019/08/14
