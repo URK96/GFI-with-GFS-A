@@ -172,12 +172,12 @@ namespace GFI_with_GFS_A
 
             Abilities.Add("Grow", (string)dr["Grow"]);
 
-            if (ETC.IsDBNullOrBlank(dr, "Bullet") == true)
+            if (ETC.IsDBNullOrBlank(dr, "Bullet"))
                 Abilities.Add("Bullet", "0");
             else
                 Abilities.Add("Bullet", (string)dr["Bullet"]);
 
-            if (ETC.IsDBNullOrBlank(dr, "Armor") == true)
+            if (ETC.IsDBNullOrBlank(dr, "Armor"))
                 Abilities.Add("Armor", "0");
             else
                 Abilities.Add("Armor", (string)dr["Armor"]);

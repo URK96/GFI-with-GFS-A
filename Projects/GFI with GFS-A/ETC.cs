@@ -87,6 +87,9 @@ namespace GFI_with_GFS_A
             const int TypeCount = 6;
             const int AbilityCount = 6;
 
+            Doll doll;
+            DollAbilitySet DAS;
+
             AverageAbility Avg_HG = new AverageAbility();
             AverageAbility Avg_SMG = new AverageAbility();
             AverageAbility Avg_AR = new AverageAbility();
@@ -113,10 +116,11 @@ namespace GFI_with_GFS_A
 
             for (int i = 0; i < DollList.Rows.Count; ++i)
             {
-                Doll doll = new Doll(DollList.Rows[i]);
-                DollAbilitySet DAS = new DollAbilitySet(doll.Type);
                 int index = 0;
 
+                doll = new Doll(DollList.Rows[i]);
+                DAS = new DollAbilitySet(doll.Type);
+                
                 switch (doll.Type)
                 {
                     case "HG":
@@ -141,20 +145,20 @@ namespace GFI_with_GFS_A
 
                 count[index] += 1;
 
-                int grow_value = int.Parse(doll.Abilities["Grow"].Split(';')[0]);
+                int growValue = int.Parse(doll.Abilities["Grow"].Split(';')[0]);
 
                 for (int j = 0; j < AbilityList.Length; ++j)
                 {
-                    int ability_value = int.Parse(doll.Abilities[AbilityList[j]].Split(';')[0]);
+                    int abilityValue = int.Parse(doll.Abilities[AbilityList[j]].Split(';')[0]);
 
-                    total[index, j] += DAS.CalcAbility(AbilityList[j], ability_value, grow_value, 100, 100, false);
+                    total[index, j] += DAS.CalcAbility(AbilityList[j], abilityValue, growValue, 100, 100, false);
                 }
                     
                 if (doll.Type == "SG")
                 {
-                    int ability_value = int.Parse(doll.Abilities["Armor"].Split(';')[0]);
+                    int abilityValue = int.Parse(doll.Abilities["Armor"].Split(';')[0]);
 
-                    total[index, 5] += DAS.CalcAbility("Armor", ability_value, grow_value, 100, 100, false);
+                    total[index, 5] += DAS.CalcAbility("Armor", abilityValue, growValue, 100, 100, false);
                 }
             }
 
@@ -191,7 +195,11 @@ namespace GFI_with_GFS_A
 
         internal static void SetDialogTheme()
         {
-            if (UseLightTheme == true)
+            DialogBG = UseLightTheme ? Resource.Style.GFD_Dialog_Light : Resource.Style.GFD_Dialog;
+            DialogBG_Vertical = UseLightTheme ? Resource.Style.GFD_Dialog_Vertical_Light : Resource.Style.GFD_Dialog_Vertical;
+            DialogBG_Download = UseLightTheme ? Resource.Style.GFD_Dialog_Download_Light : Resource.Style.GFD_Dialog_Download;
+
+            /*if (UseLightTheme)
             {
                 DialogBG = Resource.Style.GFD_Dialog_Light;
                 DialogBG_Vertical = Resource.Style.GFD_Dialog_Vertical_Light;
@@ -202,7 +210,7 @@ namespace GFI_with_GFS_A
                 DialogBG = Resource.Style.GFD_Dialog;
                 DialogBG_Vertical = Resource.Style.GFD_Dialog_Vertical;
                 DialogBG_Download = Resource.Style.GFD_Dialog_Download;
-            }
+            }*/
         }
 
         internal static void BasicInitializeApp(Activity context)
@@ -217,7 +225,7 @@ namespace GFI_with_GFS_A
             Language = Resources.Configuration.Locale;
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTIzMTQ0QDMxMzcyZTMyMmUzMFJMNjNnc21iaFgwSHpLMVFrWGp4dnhxVFNrZGU3NHo2WWVGaVM0ZFhqV2M9");
 
-            if (IsReleaseMode == true)
+            if (IsReleaseMode)
             {
                 AppCenter.Start("aca0ed39-4b25-4548-bf2a-ac92ccee2977", typeof(Analytics), typeof(Crashes));
             }
@@ -253,10 +261,7 @@ namespace GFI_with_GFS_A
 
                 using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
                 {
-                    if (response.StatusCode == HttpStatusCode.OK)
-                        IsServerDown = false;
-                    else
-                        IsServerDown = true;
+                    IsServerDown = !(response.StatusCode == HttpStatusCode.OK);
 
                     if (response != null)
                         response.Close();
@@ -343,7 +348,7 @@ namespace GFI_with_GFS_A
 
         internal static void CheckInitFolder()
         {
-            if (Directory.Exists(tempPath) == false)
+            if (!Directory.Exists(tempPath))
                 Directory.CreateDirectory(tempPath);
             else
             {
@@ -353,7 +358,7 @@ namespace GFI_with_GFS_A
 
             DirectoryInfo AppDataDI = new DirectoryInfo(AppDataPath);
 
-            if (AppDataDI.Exists == false)
+            if (!AppDataDI.Exists)
                 AppDataDI.Create();
 
             string[] MainPaths =
@@ -401,10 +406,10 @@ namespace GFI_with_GFS_A
             };
 
             foreach (string path in MainPaths)
-                if (Directory.Exists(path) == false)
+                if (!Directory.Exists(path))
                     Directory.CreateDirectory(path);
             foreach (string path in SubPaths)
-                if (Directory.Exists(path) == false)
+                if (!Directory.Exists(path))
                     Directory.CreateDirectory(path);
         }
 
@@ -445,8 +450,9 @@ namespace GFI_with_GFS_A
 
             try
             {
-                if (BeforeClear == true)
+                if (BeforeClear)
                     table.Clear();
+
                 table.ReadXml(Path.Combine(DBPath, DBFile));
             }
             catch (Exception)
@@ -461,8 +467,9 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                if (BeforeClear == true)
+                if (BeforeClear)
                     table.Clear();
+
                 table.ReadXml(Path.Combine(DBPath, DBFile));
             }
             catch (Exception)
@@ -475,7 +482,7 @@ namespace GFI_with_GFS_A
 
         internal static async Task<bool> CheckDBVersion()
         {
-            if (IsServerDown == true)
+            if (IsServerDown)
                 return false;
 
             string LocalDBVerPath = Path.Combine(SystemPath, "DBVer.txt");
@@ -484,7 +491,7 @@ namespace GFI_with_GFS_A
 
             bool HasDBUpdate = false;
 
-            if (File.Exists(LocalDBVerPath) == false)
+            if (!File.Exists(LocalDBVerPath))
                 HasDBUpdate = true;
             else
             {
@@ -499,8 +506,7 @@ namespace GFI_with_GFS_A
 
                         DBVersion = localVer;
 
-                        if (localVer < serverVer)
-                            HasDBUpdate = true;
+                        HasDBUpdate = (localVer < serverVer);
                     }
             }
 
@@ -537,7 +543,7 @@ namespace GFI_with_GFS_A
                     wc.DownloadProgressChanged += (object sender, DownloadProgressChangedEventArgs e) =>
                     {
                         nowProgressBar.Progress = e.ProgressPercentage;
-                        nowProgress.Text = e.BytesReceived > 2048 ? $"{e.BytesReceived / 1024}KB" : $"{e.BytesReceived}B";
+                        nowProgress.Text = (e.BytesReceived > 2048) ? $"{e.BytesReceived / 1024}KB" : $"{e.BytesReceived}B";
                     };
                     wc.DownloadFileCompleted += (object sender, System.ComponentModel.AsyncCompletedEventArgs e) =>
                     {
@@ -556,11 +562,8 @@ namespace GFI_with_GFS_A
                 for (int i = 0; i < DBFiles.Length; ++i)
                 {
                     //File.Copy(Path.Combine(tempPath, DBFiles[i]), Path.Combine(DBPath, DBFiles[i]), true);
-
                     CopyFile(Path.Combine(tempPath, DBFiles[i]), Path.Combine(DBPath, DBFiles[i]));
 
-                    //var dbfileBytes = File.ReadAllBytes(Path.Combine(tempPath, DBFiles[i]));
-                    //File.WriteAllBytes(Path.Combine(DBPath, DBFiles[i]), dbfileBytes);
                     await Task.Delay(100);
                 }
 
@@ -570,11 +573,8 @@ namespace GFI_with_GFS_A
 
                 string oldVersion = Path.Combine(SystemPath, "DBVer.txt");
                 string newVersion = Path.Combine(tempPath, "DBVer.txt");
+
                 //File.Copy(newVersion, oldVersion, true);
-
-                //var fileBytes = File.ReadAllBytes(newVersion);
-                //File.WriteAllBytes(oldVersion, fileBytes);
-
                 CopyFile(newVersion, oldVersion);
 
                 using (StreamReader sr = new StreamReader(new FileStream(oldVersion, FileMode.Open, FileAccess.Read)))
@@ -585,7 +585,8 @@ namespace GFI_with_GFS_A
                 if (DBLoad)
                 {
                     activity.RunOnUiThread(() => { pd.SetMessage(Resources.GetString(Resource.String.UpdateDBDialog_LoadDB)); });
-                    await Task.Delay(200);
+
+                    await Task.Delay(100);
                     await LoadDB();
                 }
             }
@@ -605,7 +606,7 @@ namespace GFI_with_GFS_A
                 string ErrorFileName = $"{nowDateTime}-ErrorLog.txt";
 
                 DirectoryInfo di = new DirectoryInfo(LogPath);
-                if (di.Exists == false)
+                if (!di.Exists)
                     di.Create();
 
                 using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
@@ -650,20 +651,24 @@ namespace GFI_with_GFS_A
 
         internal static string CalcTime(int minute)
         {
-            if (minute != 0)
+            return (minute != 0) ? $"{minute / 60} : {(minute % 60).ToString("D2")}" : Resources.GetString(Resource.String.Common_NonProduct);
+
+            /*if (minute != 0)
                 return $"{minute / 60} : {(minute % 60).ToString("D2")}";
             else
-                return Resources.GetString(Resource.String.Common_NonProduct);
+                return Resources.GetString(Resource.String.Common_NonProduct);*/
         }
 
         internal static bool IsDBNullOrBlank(DataRow dr, string index)
         {
-            if (dr[index] == DBNull.Value)
+            return ((dr[index] == DBNull.Value) || (string.IsNullOrWhiteSpace((string)dr[index])));
+
+            /*if (dr[index] == DBNull.Value)
                 return true;
             if (string.IsNullOrWhiteSpace((string)dr[index]) == true)
                 return true;
 
-            return false;
+            return false;*/
         }
 
         /// <summary>
