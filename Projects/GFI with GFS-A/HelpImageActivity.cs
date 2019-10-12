@@ -14,7 +14,7 @@ using Android.Support.V4.App;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "HelpImageActivity", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class HelpImageActivity : FragmentActivity
+    public class HelpImageActivity : BaseFragmentActivity
     {
         private ImageView HelpImageView;
 

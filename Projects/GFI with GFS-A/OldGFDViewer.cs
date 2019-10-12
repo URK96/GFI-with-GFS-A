@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace GFI_with_GFS_A
 {
     [Activity(Name = "com.gfl.dic.OldGFDActivity", Label = "GFD v1", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class OldGFDViewer : AppCompatActivity
+    public class OldGFDViewer : BaseAppCompatActivity
     {
         private ArrayAdapter imageAdapter;
         private Android.Support.V4.App.FragmentTransaction ft;
@@ -40,7 +40,7 @@ namespace GFI_with_GFS_A
 
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme)
+                if (ETC.useLightTheme)
                     SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
                 // Create your application here
@@ -54,14 +54,14 @@ namespace GFI_with_GFS_A
                 mainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.OldGFDViewerMainDrawerLayout);
                 mainDrawerLayout.DrawerOpened += delegate
                 {
-                    if (ETC.UseLightTheme)
+                    if (ETC.useLightTheme)
                         SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen_WhiteTheme);
                     else
                         SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen);
                 };
                 mainDrawerLayout.DrawerClosed += delegate
                 {
-                    if (ETC.UseLightTheme)
+                    if (ETC.useLightTheme)
                         SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
                     else
                         SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
@@ -82,7 +82,7 @@ namespace GFI_with_GFS_A
                 SupportActionBar.SetDisplayShowTitleEnabled(true);
                 SupportActionBar.SetHomeButtonEnabled(true);
 
-                if (ETC.UseLightTheme)
+                if (ETC.useLightTheme)
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
                 else
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
@@ -138,7 +138,7 @@ namespace GFI_with_GFS_A
 
         private void ListImageList()
         {
-            if (ETC.Language.Language == "ko")
+            if (ETC.locale.Language == "ko")
             {
                 oldGFDImageList = new string[]
                 {
@@ -247,7 +247,7 @@ namespace GFI_with_GFS_A
 
         private void InitializeImageList()
         {
-            if (ETC.Language.Language == "ko")
+            if (ETC.locale.Language == "ko")
             {
                 imageName = new string[]
                 {
@@ -292,7 +292,7 @@ namespace GFI_with_GFS_A
             {
                 imageContainer.RemoveAllViews();
 
-                drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ETC.Language.Language}_{imageName[index]}.gfdcache"));
+                drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ETC.locale.Language}_{imageName[index]}.gfdcache"));
                 Android.Graphics.Bitmap bitmap = ((BitmapDrawable)drawable).Bitmap;
 
                 while (height < bitmap.Height)
@@ -338,7 +338,7 @@ namespace GFI_with_GFS_A
         private bool CheckImage()
         {
             foreach (string s in imageName)
-                if (!File.Exists(Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ETC.Language.Language}_{s}.gfdcache")))
+                if (!File.Exists(Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ETC.locale.Language}_{s}.gfdcache")))
                     return true;
 
             return false;
@@ -437,8 +437,8 @@ namespace GFI_with_GFS_A
 
                         foreach (string s in imageName)
                         {
-                            string url = Path.Combine(ETC.Server, "Data", "Images", "OldGFD", "Images", ETC.Language.Language, $"{s}.png");
-                            string target = Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ETC.Language.Language}_{s}.gfdcache");
+                            string url = Path.Combine(ETC.Server, "Data", "Images", "OldGFD", "Images", ETC.locale.Language, $"{s}.png");
+                            string target = Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ETC.locale.Language}_{s}.gfdcache");
 
                             await wc.DownloadFileTaskAsync(url, target);
                         }

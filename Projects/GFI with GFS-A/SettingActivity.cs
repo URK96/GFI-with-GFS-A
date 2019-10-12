@@ -18,7 +18,7 @@ using Xamarin.Essentials;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "@string/Activity_SettingActivity", Theme = "@style/GFS.Setting", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class SettingActivity : Activity
+    public class SettingActivity : BaseActivity
     {
         private CoordinatorLayout SnackbarLayout;
 
@@ -28,7 +28,7 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme)
+                if (ETC.useLightTheme)
                     SetTheme(Resource.Style.GFS_Setting_Light);
 
                 // Create your application here
@@ -107,7 +107,7 @@ namespace GFI_with_GFS_A
             };
 
             ListPreference StartAppMode = (ListPreference)FindPreference("StartAppMode");
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 StartAppMode.SetIcon(Resource.Drawable.AppStartModeIcon_WhiteTheme);
             else
                 StartAppMode.SetIcon(Resource.Drawable.AppStartModeIcon);
@@ -126,7 +126,7 @@ namespace GFI_with_GFS_A
             StartAppMode.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("StartAppMode", "0")));
 
             SwitchPreference LowMemoryOption = (SwitchPreference)FindPreference("LowMemoryOption");
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 LowMemoryOption.SetIcon(Resource.Drawable.LowMemoryOptionIcon_WhiteTheme);
             else
                 LowMemoryOption.SetIcon(Resource.Drawable.LowMemoryOptionIcon);
@@ -138,20 +138,20 @@ namespace GFI_with_GFS_A
             };
 
             SwitchPreference UseLightTheme = (SwitchPreference)FindPreference("UseLightTheme");
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 UseLightTheme.SetIcon(Resource.Drawable.UseLightThemeIcon_WhiteTheme);
             else
                 UseLightTheme.SetIcon(Resource.Drawable.UseLightThemeIcon);
             UseLightTheme.Checked = ETC.sharedPreferences.GetBoolean("UseLightTheme", false);
             UseLightTheme.PreferenceChange += delegate
             {
-                ETC.UseLightTheme = UseLightTheme.Checked;
+                ETC.useLightTheme = UseLightTheme.Checked;
                 SaveSetting.PutBoolean("UseLightTheme", UseLightTheme.Checked);
                 SaveSetting.Apply();
             };
 
             SwitchPreference EnableServerCheck = (SwitchPreference)FindPreference("EnableServerCheck");
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 EnableServerCheck.SetIcon(Resource.Drawable.UseLightThemeIcon_WhiteTheme);
             else
                 EnableServerCheck.SetIcon(Resource.Drawable.UseLightThemeIcon);
@@ -162,7 +162,7 @@ namespace GFI_with_GFS_A
                 SaveSetting.Apply();
             };
 
-            ListPreference MainButtonColor = (ListPreference)FindPreference("MainButtonColor");
+            /*ListPreference MainButtonColor = (ListPreference)FindPreference("MainButtonColor");
             if (ETC.UseLightTheme)
                 MainButtonColor.SetIcon(Resource.Drawable.AppStartModeIcon_WhiteTheme);
             else
@@ -173,10 +173,24 @@ namespace GFI_with_GFS_A
                 "Orange"
             });
             MainButtonColor.SetEntryValues(new string[] { "0", "1" });
-            MainButtonColor.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("MainButtonColor", "0")));
+            MainButtonColor.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("MainButtonColor", "0")));*/
+
+            ListPreference AppLanguage = (ListPreference)FindPreference("AppLanguage");
+            if (ETC.useLightTheme)
+                AppLanguage.SetIcon(Resource.Drawable.LanguageIcon_WhiteTheme);
+            else
+                AppLanguage.SetIcon(Resource.Drawable.LanguageIcon);
+            AppLanguage.SetEntries(new string[]
+            {
+                "System Default",
+                Resources.GetString(Resource.String.Common_Language_KR),
+                Resources.GetString(Resource.String.Common_Language_EN)
+            });
+            AppLanguage.SetEntryValues(new string[] { "0", "1", "2" });
+            AppLanguage.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("AppLanguage", "0")));
 
             SwitchPreference AutoDBUpdate = (SwitchPreference)FindPreference("AutoDBUpdate");
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 AutoDBUpdate.SetIcon(Resource.Drawable.AutoDBUpdate_WhiteTheme);
             else
                 AutoDBUpdate.SetIcon(Resource.Drawable.AutoDBUpdate);
@@ -188,21 +202,21 @@ namespace GFI_with_GFS_A
             };
 
             Preference CheckDBUpdate = FindPreference("CheckDBUpdate");
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 CheckDBUpdate.SetIcon(Resource.Drawable.CheckDBUpdate_WhiteTheme);
             else
                 CheckDBUpdate.SetIcon(Resource.Drawable.CheckDBUpdate);
             CheckDBUpdate.PreferenceClick += CheckDBUpdate_PreferenceClick;
 
             Preference RepairDB = FindPreference("RepairDB");
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 RepairDB.SetIcon(Resource.Drawable.RepairDB_WhiteTheme);
             else
                 RepairDB.SetIcon(Resource.Drawable.RepairDB);
             RepairDB.PreferenceClick += RepairDB_PreferenceClick; ;
 
             SwitchPreference DBListImage = (SwitchPreference)FindPreference("DBListImageShow");
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 DBListImage.SetIcon(Resource.Drawable.DBListImageIcon_WhiteTheme);
             else
                 DBListImage.SetIcon(Resource.Drawable.DBListImageIcon);
@@ -214,7 +228,7 @@ namespace GFI_with_GFS_A
             };
 
             SwitchPreference DBDetailBackgroundImage = (SwitchPreference)FindPreference("DBDetailBackgroundImage");
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 DBDetailBackgroundImage.SetIcon(Resource.Drawable.DBDetailBackgroundImageIcon_WhiteTheme);
             else
                 DBDetailBackgroundImage.SetIcon(Resource.Drawable.DBDetailBackgroundImageIcon);
@@ -226,21 +240,21 @@ namespace GFI_with_GFS_A
             };
 
             Preference TextViewerTextSize = FindPreference("TextViewerTextSize");
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 TextViewerTextSize.SetIcon(Resource.Drawable.FontSizeIcon_WhiteTheme);
             else
                 TextViewerTextSize.SetIcon(Resource.Drawable.FontSizeIcon);
             TextViewerTextSize.PreferenceClick += TextViewerTextSize_PreferenceClick;
 
             Preference TextViewerTextColor = FindPreference("TextViewerTextColor");
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 TextViewerTextColor.SetIcon(Resource.Drawable.FontColorPickIcon_WhiteTheme);
             else
                 TextViewerTextColor.SetIcon(Resource.Drawable.FontColorPickIcon);
             TextViewerTextColor.PreferenceClick += TextViewerTextColor_PreferenceClick;
 
             Preference TextViewerBackgroundColor = FindPreference("TextViewerBackgroundColor");
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 TextViewerBackgroundColor.SetIcon(Resource.Drawable.ColorPickIcon_WhiteTheme);
             else
                 TextViewerBackgroundColor.SetIcon(Resource.Drawable.ColorPickIcon);
@@ -252,7 +266,7 @@ namespace GFI_with_GFS_A
             DownloadAllCache.PreferenceClick += DownloadAllCache_PreferenceClick;*/
 
             Preference CleanCache = FindPreference("CleanCache");
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 CleanCache.SetIcon(Resource.Drawable.CleanCacheIcon_WhiteTheme);
             else
                 CleanCache.SetIcon(Resource.Drawable.CleanCacheIcon);
@@ -261,7 +275,7 @@ namespace GFI_with_GFS_A
             //Preference OpenLogFolder = FindPreference("OpenLogFolder");
 
             Preference DeleteAllLogFile = FindPreference("DeleteAllLogFile");
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 DeleteAllLogFile.SetIcon(Resource.Drawable.DeleteAllLogFileIcon_WhiteTheme);
             else
                 DeleteAllLogFile.SetIcon(Resource.Drawable.DeleteAllLogFileIcon);
@@ -296,7 +310,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(100);
 
-                if (ETC.IsServerDown == true) Toast.MakeText(Activity, Resource.String.Common_ServerMaintenance, ToastLength.Short).Show();
+                if (ETC.isServerDown == true) Toast.MakeText(Activity, Resource.String.Common_ServerMaintenance, ToastLength.Short).Show();
                 else if (await ETC.CheckDBVersion() == true)
                 {
                     await ETC.UpdateDB(Activity);
@@ -328,7 +342,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(100);
 
-                if (ETC.IsServerDown == true) Toast.MakeText(Activity, Resource.String.Common_ServerMaintenance, ToastLength.Short).Show();
+                if (ETC.isServerDown == true) Toast.MakeText(Activity, Resource.String.Common_ServerMaintenance, ToastLength.Short).Show();
                 else
                 {
                     await ETC.UpdateDB(Activity, false, Resource.String.RepairDBDialog_Title, Resource.String.RepairDBDialog_Message);
@@ -359,7 +373,7 @@ namespace GFI_with_GFS_A
 
                     p.SetTitle(Resource.String.Firewall);
                     p.SetSummary(Resource.String.Firewall_Message);
-                    if (ETC.UseLightTheme == true) p.SetIcon(Resource.Drawable.Hack_WhiteTheme);
+                    if (ETC.useLightTheme == true) p.SetIcon(Resource.Drawable.Hack_WhiteTheme);
                     else p.SetIcon(Resource.Drawable.Hack);
                 }
                 else if (count > 5)

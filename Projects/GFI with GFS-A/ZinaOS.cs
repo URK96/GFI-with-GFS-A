@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "ZinaOS", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class ZinaOS : FragmentActivity
+    public class ZinaOS : BaseFragmentActivity
     {
         private TextView BootView;
 

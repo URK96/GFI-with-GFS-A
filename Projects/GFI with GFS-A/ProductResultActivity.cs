@@ -17,7 +17,7 @@ using Android.Support.V7.Widget;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "ProductResultActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class ProductResultActivity : FragmentActivity
+    public class ProductResultActivity : BaseFragmentActivity
     {
         private string[] Types;
         private DataRow[] DRs;
@@ -32,7 +32,7 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+            if (ETC.useLightTheme == true) SetTheme(Resource.Style.GFS_Light);
 
             // Create your application here
             SetContentView(Resource.Layout.ProductResultLayout);
@@ -267,7 +267,7 @@ namespace GFI_with_GFS_A
                 switch (type)
                 {
                     case "Doll":
-                        if (ETC.Language.Language == "ko") name = (string)item["Name"];
+                        if (ETC.locale.Language == "ko") name = (string)item["Name"];
                         else
                         {
                             if (item["Name_EN"] == DBNull.Value) name = (string)item["Name"];

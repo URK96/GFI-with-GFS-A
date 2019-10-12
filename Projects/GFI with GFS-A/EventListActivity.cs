@@ -18,7 +18,7 @@ using System.Net;
 namespace GFI_with_GFS_A
 {
     [Activity(Name = "com.gfl.dic.EventListActivity", Label = "@string/Activity_EventListActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class EventListActivity : AppCompatActivity
+    public class EventListActivity : BaseAppCompatActivity
     {
         enum EventPeriodType { Now, Scheduled, Over }
 
@@ -39,7 +39,7 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+            if (ETC.useLightTheme == true) SetTheme(Resource.Style.GFS_Light);
 
             // Create your application here
             SetContentView(Resource.Layout.EventListLayout);
@@ -217,7 +217,7 @@ namespace GFI_with_GFS_A
         {
             await ETC.CheckServerNetwork();
 
-            if (ETC.IsServerDown == true)
+            if (ETC.isServerDown == true)
                 return false;
 
             string LocalEventVerPath = Path.Combine(ETC.CachePath, "Event", "EventVer.txt");

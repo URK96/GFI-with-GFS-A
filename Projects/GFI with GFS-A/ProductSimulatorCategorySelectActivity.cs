@@ -8,13 +8,13 @@ using System;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class ProductSimulatorCategorySelectActivity : AppCompatActivity
+    public class ProductSimulatorCategorySelectActivity : BaseAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+            if (ETC.useLightTheme == true) SetTheme(Resource.Style.GFS_Light);
 
             // Create your application here
             SetContentView(Resource.Layout.ProductSimulatorSelectLayout);

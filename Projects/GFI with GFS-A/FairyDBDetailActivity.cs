@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class FairyDBDetailActivity : FragmentActivity
+    public class FairyDBDetailActivity : BaseFragmentActivity
     {
         System.Timers.Timer FABTimer = new System.Timers.Timer();
 
@@ -43,7 +43,7 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme)
+                if (ETC.useLightTheme)
                     SetTheme(Resource.Style.GFS_Light);
 
                 // Create your application here
@@ -87,7 +87,7 @@ namespace GFI_with_GFS_A
 
                 _ = InitLoadProcess(false);
 
-                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_FairyDBDetail", true)))
+                if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_FairyDBDetail", true)))
                     ETC.RunHelpActivity(this, "FairyDBDetail");
             }
             catch (Exception ex)
@@ -352,7 +352,7 @@ namespace GFI_with_GFS_A
 
                 FindViewById<TextView>(Resource.Id.FairyDBDetailSkillName).Text = fairy.SkillName;
 
-                if (ETC.UseLightTheme == true)
+                if (ETC.useLightTheme == true)
                 {
                     FindViewById<ImageView>(Resource.Id.FairyDBDetailSkillTicketIcon).SetImageResource(Resource.Drawable.FairyTicket_Icon_WhiteTheme);
                     FindViewById<ImageView>(Resource.Id.FairyDBDetailSkillCoolTimeIcon).SetImageResource(Resource.Drawable.CoolTime_Icon_WhiteTheme);
@@ -401,7 +401,7 @@ namespace GFI_with_GFS_A
                     FindViewById<TextView>(StatusTexts[i]).Text = fairy.Abilities[abilities[i]];
                 }
 
-                if (ETC.UseLightTheme == true) SetCardTheme();
+                if (ETC.useLightTheme == true) SetCardTheme();
                 ShowCardViewVisibility();
                 HideFloatingActionButtonAnimation();
             }

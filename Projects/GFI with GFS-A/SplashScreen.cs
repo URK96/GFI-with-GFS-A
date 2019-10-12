@@ -18,7 +18,7 @@ namespace GFI_with_GFS_A
 {
     [MetaData("android.app.shortcuts", Resource = "@xml/appshortcut")]
     [Activity(MainLauncher = true, Label = "@string/App_TitleName", Theme = "@style/GFS.Splash", ScreenOrientation = ScreenOrientation.Portrait)]
-    public class SplashScreen : AppCompatActivity
+    public class SplashScreen : BaseAppCompatActivity
     {
         private CoordinatorLayout SnackbarLayout;
         private ImageView SplashImageView;
@@ -26,18 +26,25 @@ namespace GFI_with_GFS_A
 
         private ISharedPreferencesEditor PreferenceEditor;
 
+        protected override void AttachBaseContext(Context @base)
+        {
+            ETC.BasicInitializeApp(@base);
+
+            base.AttachBaseContext(ETC.baseContext);
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             try
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme == true)
+                if (ETC.useLightTheme == true)
                     SetTheme(Resource.Style.GFS_Splash_Light);
 
                 SetContentView(Resource.Layout.SplashLayout);
 
-                ETC.BasicInitializeApp(this);
+                //ETC.BasicInitializeApp(this);
                 PreferenceEditor = ETC.sharedPreferences.Edit();
 
                 SplashImageView = FindViewById<ImageView>(Resource.Id.SplashImageView);
@@ -82,7 +89,7 @@ namespace GFI_with_GFS_A
                 if (ETC.sharedPreferences.GetBoolean("CheckInitLowMemory", true) == true)
                     CheckDeviceMemory();
 
-                ETC.IsLowRAM = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);
+                ETC.isLowRAM = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);
               
                 ETC.CheckInitFolder();
 
@@ -97,7 +104,7 @@ namespace GFI_with_GFS_A
                     {
                         await ETC.CheckServerNetwork();
 
-                        if (!ETC.IsServerDown)
+                        if (!ETC.isServerDown)
                             await ETC.UpdateDB(this);
                         else
                         {

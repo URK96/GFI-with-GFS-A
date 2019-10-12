@@ -231,7 +231,7 @@ namespace GFI_with_GFS_A
     }
 
     [Activity(Name = "com.gfl.dic.OSTPlayer", Label = "OST (Beta)", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class GFOSTPlayerActivity : AppCompatActivity
+    public class GFOSTPlayerActivity : BaseAppCompatActivity
     {
         private bool IsCategory = true;
 
@@ -246,7 +246,7 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_NoActionBar_Light);
+            if (ETC.useLightTheme == true) SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
             // Create your application here
             SetContentView(Resource.Layout.GFOSTPlayer);
@@ -257,7 +257,7 @@ namespace GFI_with_GFS_A
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
-            if (ETC.UseLightTheme == true) SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.OSTPlayer_WhiteTheme);
+            if (ETC.useLightTheme == true) SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.OSTPlayer_WhiteTheme);
             else SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.OSTPlayer);
 
             DrawerListView = FindViewById<ListView>(Resource.Id.GFOSTPlayerNavigationListView);
@@ -406,7 +406,7 @@ namespace GFI_with_GFS_A
             SkipNextButton.Clickable = true;
             SkipNextButton.Click += MusicControlButton_Click;
 
-            if (ETC.UseLightTheme == true)
+            if (ETC.useLightTheme == true)
             {
                 SkipPreviousButton.SetImageResource(Resource.Drawable.SkipPrevious_WhiteTheme);
                 PlayPauseButton.SetImageResource(Resource.Drawable.PlayPause_WhiteTheme);

@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "", Theme="@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class FairyDBImageViewer : AppCompatActivity
+    public class FairyDBImageViewer : BaseAppCompatActivity
     {
         private DataRow FairyInfoDR = null;
         private string FairyName = "";
@@ -38,7 +38,7 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_NoActionBar_Light);
+                if (ETC.useLightTheme == true) SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
                 // Create your application here
                 SetContentView(Resource.Layout.FairyDB_ImageViewer);

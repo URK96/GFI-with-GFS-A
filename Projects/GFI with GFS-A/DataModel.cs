@@ -53,7 +53,7 @@ namespace GFI_with_GFS_A
 
         internal Doll(DataRow dr, bool basic_info = false)
         {
-            if (ETC.Language.Language == "ko")
+            if (ETC.locale.Language == "ko")
             {
                 Name = (string)dr["Name"];
                 ProductDialog = ETC.IsDBNullOrBlank(dr, "ProductDialog") ? "" : (string)dr["ProductDialog"];

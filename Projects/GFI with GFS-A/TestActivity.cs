@@ -19,7 +19,7 @@ using Android.Support.V7.App;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "TestActivity", Theme = "@style/GFS")]
-    public class TestActivity : AppCompatActivity
+    public class TestActivity : BaseAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

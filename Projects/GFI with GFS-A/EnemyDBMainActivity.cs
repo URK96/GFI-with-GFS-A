@@ -16,7 +16,7 @@ using System.IO;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "@string/Acticity_EnemyMainActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class EnemyDBMainActivity : AppCompatActivity
+    public class EnemyDBMainActivity : BaseAppCompatActivity
     {
         delegate void DownloadProgress();
 
@@ -63,7 +63,7 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme)
+                if (ETC.useLightTheme)
                     SetTheme(Resource.Style.GFS_Light);
 
                 // Create your application here
@@ -83,7 +83,7 @@ namespace GFI_with_GFS_A
 
                 InitializeView();
 
-                if (ETC.UseLightTheme)
+                if (ETC.useLightTheme)
                 {
                     FindViewById<LinearLayout>(Resource.Id.EnemySearchLayout).SetBackgroundColor(Android.Graphics.Color.LightGray);
                     FindViewById<ImageButton>(Resource.Id.EnemySearchResetButton).SetBackgroundResource(Resource.Drawable.SearchIcon_WhiteTheme);
@@ -94,7 +94,7 @@ namespace GFI_with_GFS_A
 
                 ListEnemy(searchText.Text);
 
-                if ((ETC.Language.Language == "ko") && ETC.sharedPreferences.GetBoolean("Help_DBList", true))
+                if ((ETC.locale.Language == "ko") && ETC.sharedPreferences.GetBoolean("Help_DBList", true))
                     ETC.RunHelpActivity(this, "DBList");
             }
             catch (Exception ex)

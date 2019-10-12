@@ -24,16 +24,16 @@
       android:summary="@string/Setting_ServerCheck_Summary"/>
     <android.support.v7.preference.ListPreference
       android:key="AppLanguage"
-      android:title="@string/Setting_MainButtonColor_Title"
-      android:summary="@string/Setting_MainButtonColor_Summary"/>
+      android:title="@string/Setting_AppLanguage_Title"
+      android:summary="@string/Setting_AppLanguage_Summary"/>
   </android.support.v7.preference.PreferenceCategory>
-  <android.support.v7.preference.PreferenceCategory
+  <!--<android.support.v7.preference.PreferenceCategory
   android:title="@string/Setting_Category_MainMenu">
     <android.support.v7.preference.ListPreference
       android:key="MainButtonColor"
       android:title="@string/Setting_MainButtonColor_Title"
       android:summary="@string/Setting_MainButtonColor_Summary"/>
-  </android.support.v7.preference.PreferenceCategory>
+  </android.support.v7.preference.PreferenceCategory>-->
   <android.support.v7.preference.PreferenceCategory
     android:title="@string/Setting_Category_DB">
     <android.support.v14.preference.SwitchPreference

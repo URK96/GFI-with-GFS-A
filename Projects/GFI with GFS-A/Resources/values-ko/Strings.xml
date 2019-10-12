@@ -253,6 +253,9 @@
   <string name="Common_TextSize">글자 크기</string>
   <string name="Common_TextColor">글자 색상</string>
   <string name="Common_BackgroundColor">배경 색상</string>
+  <string name="Common_Language_KR">한국어</string>
+  <string name="Common_Language_EN">영어</string>
+  <string name="Common_Language_JP">일본어</string>
   
   <!--Country String-->
   <string name="Country_Australia">호주</string>

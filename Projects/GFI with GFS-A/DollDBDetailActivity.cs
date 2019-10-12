@@ -22,7 +22,7 @@ using System.Collections.Generic;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class DollDBDetailActivity : FragmentActivity
+    public class DollDBDetailActivity : BaseFragmentActivity
     {
         System.Timers.Timer FABTimer = new System.Timers.Timer();
 
@@ -76,7 +76,7 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme)
+                if (ETC.useLightTheme)
                     SetTheme(Resource.Style.GFS_Light);
 
                 // Create your application here
@@ -193,7 +193,7 @@ namespace GFI_with_GFS_A
 
                 _ = InitLoadProcess(false);
 
-                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DollDBDetail", true)))
+                if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DollDBDetail", true)))
                     ETC.RunHelpActivity(this, "DollDBDetail");
             }
             catch (Exception ex)
@@ -432,7 +432,7 @@ namespace GFI_with_GFS_A
             chart.SecondaryAxis = new NumericalAxis();
             chart.Legend.Visibility = Visibility.Visible;
 
-            chart.Legend.LabelStyle.TextColor = ETC.UseLightTheme ? Android.Graphics.Color.DarkGray : Android.Graphics.Color.LightGray;
+            chart.Legend.LabelStyle.TextColor = ETC.useLightTheme ? Android.Graphics.Color.DarkGray : Android.Graphics.Color.LightGray;
 
             /*if (ETC.UseLightTheme == true)
                 chart.Legend.LabelStyle.TextColor = Android.Graphics.Color.DarkGray;
@@ -913,31 +913,31 @@ namespace GFI_with_GFS_A
                     switch (buffType[i])
                     {
                         case "AC":
-                            id = ETC.UseLightTheme ? Resource.Drawable.AC_Icon_WhiteTheme : Resource.Drawable.AC_Icon;
+                            id = ETC.useLightTheme ? Resource.Drawable.AC_Icon_WhiteTheme : Resource.Drawable.AC_Icon;
                             name = Resources.GetString(Resource.String.Common_AC);
                             break;
                         case "AM":
-                            id = ETC.UseLightTheme ? Resource.Drawable.AM_Icon_WhiteTheme : Resource.Drawable.AM_Icon;
+                            id = ETC.useLightTheme ? Resource.Drawable.AM_Icon_WhiteTheme : Resource.Drawable.AM_Icon;
                             name = Resources.GetString(Resource.String.Common_AM);
                             break;
                         case "AS":
-                            id = ETC.UseLightTheme ? Resource.Drawable.AS_Icon_WhiteTheme : Resource.Drawable.AS_Icon;
+                            id = ETC.useLightTheme ? Resource.Drawable.AS_Icon_WhiteTheme : Resource.Drawable.AS_Icon;
                             name = Resources.GetString(Resource.String.Common_AS);
                             break;
                         case "CR":
-                            id = ETC.UseLightTheme ? Resource.Drawable.CR_Icon_WhiteTheme : Resource.Drawable.CR_Icon;
+                            id = ETC.useLightTheme ? Resource.Drawable.CR_Icon_WhiteTheme : Resource.Drawable.CR_Icon;
                             name = Resources.GetString(Resource.String.Common_CR);
                             break;
                         case "EV":
-                            id = ETC.UseLightTheme ? Resource.Drawable.EV_Icon_WhiteTheme : Resource.Drawable.EV_Icon;
+                            id = ETC.useLightTheme ? Resource.Drawable.EV_Icon_WhiteTheme : Resource.Drawable.EV_Icon;
                             name = Resources.GetString(Resource.String.Common_EV);
                             break;
                         case "FR":
-                            id = ETC.UseLightTheme ? Resource.Drawable.FR_Icon_WhiteTheme : Resource.Drawable.FR_Icon;
+                            id = ETC.useLightTheme ? Resource.Drawable.FR_Icon_WhiteTheme : Resource.Drawable.FR_Icon;
                             name = Resources.GetString(Resource.String.Common_FR);
                             break;
                         case "CL":
-                            id = ETC.UseLightTheme ? Resource.Drawable.CL_Icon_WhiteTheme : Resource.Drawable.CL_Icon;
+                            id = ETC.useLightTheme ? Resource.Drawable.CL_Icon_WhiteTheme : Resource.Drawable.CL_Icon;
                             name = Resources.GetString(Resource.String.Common_CL);
                             break;
                         default:
@@ -1007,7 +1007,7 @@ namespace GFI_with_GFS_A
 
                 FindViewById<TextView>(Resource.Id.DollDBDetailSkillName).Text = SkillName;
 
-                if (ETC.UseLightTheme)
+                if (ETC.useLightTheme)
                 {
                     FindViewById<ImageView>(Resource.Id.DollDBDetailSkillInitCoolTimeIcon).SetImageResource(Resource.Drawable.FirstCoolTime_Icon_WhiteTheme);
                     FindViewById<ImageView>(Resource.Id.DollDBDetailSkillCoolTimeIcon).SetImageResource(Resource.Drawable.CoolTime_Icon_WhiteTheme);
@@ -1124,7 +1124,7 @@ namespace GFI_with_GFS_A
                 double[] DPS = ETC.CalcDPS(AbilityValues[1], AbilityValues[4], 0, AbilityValues[3], 3, int.Parse(doll.Abilities["Critical"]), 5);
                 FindViewById<TextView>(Resource.Id.DollInfoDPSStatus).Text = $"{DPS[0].ToString("F2")} ~ {DPS[1].ToString("F2")}";
 
-                if (ETC.UseLightTheme)
+                if (ETC.useLightTheme)
                     SetCardTheme();
 
                 _ = LoadChart(ChartCompareList.SelectedItemPosition);

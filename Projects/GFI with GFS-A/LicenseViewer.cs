@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "Open Source License", Theme = "@style/GFS")]
-    public class LicenseViewer : AppCompatActivity
+    public class LicenseViewer : BaseAppCompatActivity
     {
         TextView licenseView;
 

@@ -251,6 +251,9 @@
   <string name="Common_TextSize">Text Size</string>
   <string name="Common_TextColor">Text Color</string>
   <string name="Common_BackgroundColor">Background Color</string>
+  <string name="Common_Language_KR">Korean</string>
+  <string name="Common_Language_EN">English</string>
+  <string name="Common_Language_JP">Japanese</string>
 
   <!--Country String-->
   <string name="Country_Australia">Australia</string>

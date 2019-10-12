@@ -28,11 +28,11 @@ namespace GFI_with_GFS_A
         internal static string CachePath = Path.Combine(AppDataPath, "Cache");
         internal static string LogPath = Path.Combine(SystemPath, "Log");
 
-        internal static bool IsReleaseMode = true;
-        internal static bool HasInitDollAvgAbility = false;
-        internal static bool IsLowRAM = false;
-        internal static bool UseLightTheme = false;
-        internal static Java.Util.Locale Language; // ko, en
+        internal static bool isReleaseMode = true;
+        internal static bool hasInitDollAvgAbility = false;
+        internal static bool hasBasicInit = false;
+        internal static bool isLowRAM = false;
+        internal static bool useLightTheme = false;
 
         internal static int DialogBG = 0;
         internal static int DialogBG_Vertical = 0;
@@ -65,11 +65,13 @@ namespace GFI_with_GFS_A
         internal static Android.Media.MediaPlayer OSTPlayer = null;
         internal static int[] OST_Index = { 0, 0 };
 
+        internal static Java.Util.Locale locale; // ko, en
         internal static Android.Content.Res.Resources Resources = null;
+        internal static Context baseContext;
 
         internal static ISharedPreferences sharedPreferences;
 
-        internal static bool IsServerDown = false;
+        internal static bool isServerDown = false;
 
         internal struct AverageAbility
         {
@@ -190,14 +192,14 @@ namespace GFI_with_GFS_A
                     }
                 }
 
-            HasInitDollAvgAbility = true;
+            hasInitDollAvgAbility = true;
         }
 
         internal static void SetDialogTheme()
         {
-            DialogBG = UseLightTheme ? Resource.Style.GFD_Dialog_Light : Resource.Style.GFD_Dialog;
-            DialogBG_Vertical = UseLightTheme ? Resource.Style.GFD_Dialog_Vertical_Light : Resource.Style.GFD_Dialog_Vertical;
-            DialogBG_Download = UseLightTheme ? Resource.Style.GFD_Dialog_Download_Light : Resource.Style.GFD_Dialog_Download;
+            DialogBG = useLightTheme ? Resource.Style.GFD_Dialog_Light : Resource.Style.GFD_Dialog;
+            DialogBG_Vertical = useLightTheme ? Resource.Style.GFD_Dialog_Vertical_Light : Resource.Style.GFD_Dialog_Vertical;
+            DialogBG_Download = useLightTheme ? Resource.Style.GFD_Dialog_Download_Light : Resource.Style.GFD_Dialog_Download;
 
             /*if (UseLightTheme)
             {
@@ -213,22 +215,49 @@ namespace GFI_with_GFS_A
             }*/
         }
 
-        internal static void BasicInitializeApp(Activity context)
+        internal static void BasicInitializeApp(Context context)
         {
 #if DEBUG
-            IsReleaseMode = false;
+            isReleaseMode = false;
 #endif
-            sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(context);
-            Resources = context.Resources;
-            UseLightTheme = sharedPreferences.GetBoolean("UseLightTheme", false);
-            SetDialogTheme();
-            Language = Resources.Configuration.Locale;
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTIzMTQ0QDMxMzcyZTMyMmUzMFJMNjNnc21iaFgwSHpLMVFrWGp4dnhxVFNrZGU3NHo2WWVGaVM0ZFhqV2M9");
 
-            if (IsReleaseMode)
+            sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(context);
+            useLightTheme = sharedPreferences.GetBoolean("UseLightTheme", false);
+            SetDialogTheme();
+            SetLanguage(context);
+            Resources = baseContext.Resources;
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTU2MTM3QDMxMzcyZTMzMmUzMFQzNnlVTCtEVkxvYVUwYWdGUWczTnVyemdLREV6NGdKK1JmejFZRzN0WGs9");
+
+            if (isReleaseMode)
             {
                 AppCenter.Start("aca0ed39-4b25-4548-bf2a-ac92ccee2977", typeof(Analytics), typeof(Crashes));
             }
+        }
+
+        internal static void SetLanguage(Context context)
+        {
+            int langIndex = int.Parse(ETC.sharedPreferences.GetString("AppLanguage", "0"));
+            Java.Util.Locale locale;
+
+            switch (langIndex)
+            {
+                default:
+                case 0:
+                    locale = Java.Util.Locale.Default;
+                    break;
+                case 1:
+                    locale = Java.Util.Locale.Korea;
+                    break;
+                case 2:
+                    locale = Java.Util.Locale.Us;
+                    break;
+            }
+
+            Android.Content.Res.Configuration config = new Android.Content.Res.Configuration();
+            config.Locale = locale;
+            //Resources.UpdateConfiguration(config, Resources.DisplayMetrics);
+            ETC.locale = locale;
+            baseContext = context.CreateConfigurationContext(config);
         }
 
         internal static void RunHelpActivity(Activity activity, string type)
@@ -261,7 +290,7 @@ namespace GFI_with_GFS_A
 
                 using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
                 {
-                    IsServerDown = !(response.StatusCode == HttpStatusCode.OK);
+                    isServerDown = !(response.StatusCode == HttpStatusCode.OK);
 
                     if (response != null)
                         response.Close();
@@ -270,7 +299,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 LogError(ex);
-                IsServerDown = true;
+                isServerDown = true;
             }
         }
 
@@ -482,7 +511,7 @@ namespace GFI_with_GFS_A
 
         internal static async Task<bool> CheckDBVersion()
         {
-            if (IsServerDown)
+            if (isServerDown)
                 return false;
 
             string LocalDBVerPath = Path.Combine(SystemPath, "DBVer.txt");

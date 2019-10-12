@@ -13,7 +13,7 @@ using Xamarin.Essentials;
 namespace GFI_with_GFS_A
 {
     [Activity(Name = "com.gfl.dic.WebViewActivity", Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class WebBrowserActivity : FragmentActivity
+    public class WebBrowserActivity : BaseFragmentActivity
     {
         private static ProgressBar loadProgress;
 
@@ -27,7 +27,7 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 SetTheme(Resource.Style.GFS_Light);
 
             // Create your application here

@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "요약 가이드북", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class ShortGuideBookViewer : AppCompatActivity
+    public class ShortGuideBookViewer : BaseAppCompatActivity
     {
         private ArrayAdapter ImageAdapter;
         private Android.Support.V4.App.FragmentTransaction ft;
@@ -51,7 +51,7 @@ namespace GFI_with_GFS_A
 
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme)
+                if (ETC.useLightTheme)
                     SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
                 // Create your application here
@@ -62,14 +62,14 @@ namespace GFI_with_GFS_A
                 MainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.ShortGuideBookMainDrawerLayout);
                 MainDrawerLayout.DrawerOpened += delegate
                 {
-                    if (ETC.UseLightTheme)
+                    if (ETC.useLightTheme)
                         SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen_WhiteTheme);
                     else
                         SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen);
                 };
                 MainDrawerLayout.DrawerClosed += delegate
                 {
-                    if (ETC.UseLightTheme)
+                    if (ETC.useLightTheme)
                         SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
                     else
                         SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
@@ -85,7 +85,7 @@ namespace GFI_with_GFS_A
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
                 SupportActionBar.SetDisplayShowTitleEnabled(true);
                 SupportActionBar.SetHomeButtonEnabled(true);
-                if (ETC.UseLightTheme)
+                if (ETC.useLightTheme)
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
                 else
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
@@ -223,7 +223,7 @@ namespace GFI_with_GFS_A
 
         internal void ShowImage(int index)
         {
-            string ImagePath = Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{ETC.Language.Language}_{ImageName[index]}.gfdcache");
+            string ImagePath = Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{ETC.locale.Language}_{ImageName[index]}.gfdcache");
 
             try
             {
@@ -240,7 +240,7 @@ namespace GFI_with_GFS_A
         private bool CheckImage()
         {
             foreach (string s in ImageName)
-                if (!File.Exists(Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{ETC.Language.Language}_{s}.gfdcache")))
+                if (!File.Exists(Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{ETC.locale.Language}_{s}.gfdcache")))
                     return true;
 
             return false;
@@ -339,8 +339,8 @@ namespace GFI_with_GFS_A
 
                     foreach (string s in ImageName)
                     {
-                        string url = Path.Combine(ETC.Server, "Data", "PDF", "ShortGuideBook", "Image", ETC.Language.Language, $"{s}.png");
-                        string target = Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{ETC.Language.Language}_{s}.gfdcache");
+                        string url = Path.Combine(ETC.Server, "Data", "PDF", "ShortGuideBook", "Image", ETC.locale.Language, $"{s}.png");
+                        string target = Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{ETC.locale.Language}_{s}.gfdcache");
 
                         await wc.DownloadFileTaskAsync(url, target);
                     }

@@ -11,7 +11,7 @@ using System;
 namespace GFI_with_GFS_A
 {
     [Activity(Name = "com.gfl.dic.CalcActivity", Label = "계산기", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class CalcMainActivity : AppCompatActivity
+    public class CalcMainActivity : BaseAppCompatActivity
     {
         Android.Support.V4.App.Fragment ExpItemCalc_F;
         Android.Support.V4.App.Fragment CoreCalc_F;
@@ -28,7 +28,7 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
             // Create your application here
@@ -53,7 +53,7 @@ namespace GFI_with_GFS_A
             SupportActionBar.SetHomeButtonEnabled(true);
             SupportActionBar.Title = Resources.GetString(Resource.String.TitleName_ExpItemCalc);
 
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.CalcIcon_WhiteTheme);
             else
                 SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.CalcIcon);

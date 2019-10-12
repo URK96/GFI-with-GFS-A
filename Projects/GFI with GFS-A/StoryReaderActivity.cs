@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "StoryReaderActivity", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class StoryReaderActivity : AppCompatActivity
+    public class StoryReaderActivity : BaseAppCompatActivity
     {
         private string top = "";
         private string category = "";
@@ -37,7 +37,7 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
             // Create your application here

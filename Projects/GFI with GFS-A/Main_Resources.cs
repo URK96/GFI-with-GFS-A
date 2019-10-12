@@ -2,7 +2,7 @@
 
 namespace GFI_with_GFS_A
 {
-    public partial class Main : AppCompatActivity
+    public partial class Main : BaseAppCompatActivity
     {
         /*readonly int[] MainMenuButtonIds =
 {

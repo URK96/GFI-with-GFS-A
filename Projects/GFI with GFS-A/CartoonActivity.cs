@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 namespace GFI_with_GFS_A
 {
     [Activity(Name = "com.gfl.dic.CartoonActivity", Label = "Cartoon", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public partial class CartoonActivity : AppCompatActivity
+    public partial class CartoonActivity : BaseAppCompatActivity
     {
         bool isCategory = true;
 
@@ -41,7 +41,7 @@ namespace GFI_with_GFS_A
 
             ETC.SetDialogTheme();
 
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
             // Create your application here
@@ -52,14 +52,14 @@ namespace GFI_with_GFS_A
             MainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.CartoonMainDrawerLayout);
             MainDrawerLayout.DrawerOpened += delegate
             {
-                if (ETC.UseLightTheme)
+                if (ETC.useLightTheme)
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen_WhiteTheme);
                 else
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen);
             };
             MainDrawerLayout.DrawerClosed += delegate
             {
-                if (ETC.UseLightTheme)
+                if (ETC.useLightTheme)
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
                 else
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
@@ -74,7 +74,7 @@ namespace GFI_with_GFS_A
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
 
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
             else
                 SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);

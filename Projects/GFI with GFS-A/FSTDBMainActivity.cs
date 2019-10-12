@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "@string/Activity_FSTMainActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class FSTDBMainActivity : AppCompatActivity
+    public class FSTDBMainActivity : BaseAppCompatActivity
     {
         delegate void DownloadProgress();
 
@@ -56,7 +56,7 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+                if (ETC.useLightTheme == true) SetTheme(Resource.Style.GFS_Light);
 
                 // Create your application here
                 SetContentView(Resource.Layout.FSTDBListLayout);
@@ -74,7 +74,7 @@ namespace GFI_with_GFS_A
 
                 InitializeView();
 
-                if (ETC.UseLightTheme == true)
+                if (ETC.useLightTheme == true)
                 {
                     FindViewById<LinearLayout>(Resource.Id.FSTSearchLayout).SetBackgroundColor(Android.Graphics.Color.LightGray);
                     FindViewById<ImageButton>(Resource.Id.FSTSearchResetButton).SetBackgroundResource(Resource.Drawable.SearchIcon_WhiteTheme);
@@ -85,7 +85,7 @@ namespace GFI_with_GFS_A
 
                 ListFST(SearchText.Text);
 
-                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true) == true)) ETC.RunHelpActivity(this, "DBList");
+                if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true) == true)) ETC.RunHelpActivity(this, "DBList");
             }
             catch (Exception ex)
             {

@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class EquipDBDetailActivity : FragmentActivity
+    public class EquipDBDetailActivity : BaseFragmentActivity
     {
         System.Timers.Timer FABTimer = new System.Timers.Timer();
 
@@ -41,7 +41,7 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+                if (ETC.useLightTheme == true) SetTheme(Resource.Style.GFS_Light);
 
                 // Create your application here
                 SetContentView(Resource.Layout.EquipDBDetailLayout);
@@ -66,7 +66,7 @@ namespace GFI_with_GFS_A
 
                 _ = InitLoadProcess(false);
 
-                if ((ETC.Language.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_EquipDBDetail", true) == true)) ETC.RunHelpActivity(this, "EquipDBDetail");
+                if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_EquipDBDetail", true) == true)) ETC.RunHelpActivity(this, "EquipDBDetail");
             }
             catch (Exception ex)
             {
@@ -320,7 +320,7 @@ namespace GFI_with_GFS_A
                     AbilityTableSubLayout.AddView(layout);
                 }
 
-                if (ETC.UseLightTheme == true) SetCardTheme();
+                if (ETC.useLightTheme == true) SetCardTheme();
                 ShowCardViewVisibility();
                 HideFloatingActionButtonAnimation();
             }

@@ -21,7 +21,7 @@ using Xamarin.Essentials;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "GFD", Theme = "@style/GFS", ScreenOrientation = ScreenOrientation.Portrait)]
-    public partial class Main : AppCompatActivity
+    public partial class Main : BaseAppCompatActivity
     {
         System.Timers.Timer exitTimer = new System.Timers.Timer();
 
@@ -42,13 +42,18 @@ namespace GFI_with_GFS_A
 
         private CardView[] mainCardViewList;
 
+        protected override void AttachBaseContext(Context @base)
+        {
+            base.AttachBaseContext(ETC.baseContext);
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             try
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme)
+                if (ETC.useLightTheme)
                     SetTheme(Resource.Style.GFS_Light);
 
                 // Create your application here
@@ -232,7 +237,7 @@ namespace GFI_with_GFS_A
 
                 string[] oldGFDList;
 
-                switch (ETC.Language.Language)
+                switch (ETC.locale.Language)
                 {
                     case "ko":
                         oldGFDList = oldGFDListText_ko;
@@ -312,12 +317,12 @@ namespace GFI_with_GFS_A
 
                     string url = "";
 
-                    if (ETC.Language.Language == "ko")
+                    if (ETC.locale.Language == "ko")
                         url = Path.Combine(ETC.Server, "Android_Notification.txt");
                     else
                         url = Path.Combine(ETC.Server, "Android_Notification_en.txt");
 
-                    if (ETC.IsServerDown)
+                    if (ETC.isServerDown)
                         notificationText = "& Server is Maintenance &";
                     else
                         using (WebClient wc = new WebClient())
@@ -348,7 +353,7 @@ namespace GFI_with_GFS_A
                             if (ETC.DollList.TableName == "")
                                 ETC.LoadDBSync(ETC.DollList, "Doll.gfs", false);
 
-                            if (!ETC.HasInitDollAvgAbility)
+                            if (!ETC.hasInitDollAvgAbility)
                                 ETC.InitializeAverageAbility();
                         });
                         StartActivity(typeof(DollDBMainActivity));

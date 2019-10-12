@@ -3,7 +3,7 @@ using Android.Support.V7.App;
 
 namespace GFI_with_GFS_A
 {
-    public partial class StoryActivity : AppCompatActivity
+    public partial class StoryActivity : BaseAppCompatActivity
     {
         private void ListStoryItem_Main()
         {

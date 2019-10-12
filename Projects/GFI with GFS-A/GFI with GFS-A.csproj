@@ -260,6 +260,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseActivity.cs" />
     <Compile Include="CalcMainActivity_Core.cs" />
     <Compile Include="CalcMainActivity_SkillTraining.cs" />
     <Compile Include="CalcMainActivity_FSTGradeUp.cs" />
@@ -1753,6 +1754,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\StoryList_Event_ContinuumTurbulence.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\LanguageIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\LanguageIcon_WhiteTheme.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

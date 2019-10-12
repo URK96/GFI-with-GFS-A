@@ -10,7 +10,7 @@ using System.Collections.Generic;
 namespace GFI_with_GFS_A
 {
     [Activity(Name = "com.gfl.dic.StoryActivity", Label = "@string/Activity_StoryActivity", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public partial class StoryActivity : AppCompatActivity
+    public partial class StoryActivity : BaseAppCompatActivity
     {
         enum Category { Main, SubMain, Item }
         enum Top { Main, Sub }
@@ -37,7 +37,7 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
             // Create your application here

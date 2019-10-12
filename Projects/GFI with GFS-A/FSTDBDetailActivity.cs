@@ -19,7 +19,7 @@ using Android.Util;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class FSTDBDetailActivity : FragmentActivity
+    public class FSTDBDetailActivity : BaseFragmentActivity
     {
         System.Timers.Timer FABTimer = new System.Timers.Timer();
 
@@ -48,7 +48,7 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme == true)
+                if (ETC.useLightTheme == true)
                     SetTheme(Resource.Style.GFS_Light);
 
                 // Create your application here
@@ -397,7 +397,7 @@ namespace GFI_with_GFS_A
 
                     FindViewById<TextView>(SkillNameIds[i]).Text = SkillName;
 
-                    if (ETC.UseLightTheme == true)
+                    if (ETC.useLightTheme == true)
                     {
                         FindViewById<ImageView>(SkillInitCoolTimeIconIds[i]).SetImageResource(Resource.Drawable.FirstCoolTime_Icon_WhiteTheme);
                         FindViewById<ImageView>(SkillCoolTimeIconIds[i]).SetImageResource(Resource.Drawable.CoolTime_Icon_WhiteTheme);
@@ -447,7 +447,7 @@ namespace GFI_with_GFS_A
 
                 CalcAbility();
 
-                if (ETC.UseLightTheme == true) SetCardTheme();
+                if (ETC.useLightTheme == true) SetCardTheme();
 
                 _ = ShowCardViewAnimation();
                 HideFloatingActionButtonAnimation();

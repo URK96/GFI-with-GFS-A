@@ -10,7 +10,7 @@ using System;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "@string/Activity_ExternLibraryCopyrightActivity", Theme = "@style/GFS")]
-    public class ExternLibraryCopyright : AppCompatActivity
+    public class ExternLibraryCopyright : BaseAppCompatActivity
     {
         private RecyclerView mainRecyclerView;
         private RecyclerView.LayoutManager mainLayoutManager;

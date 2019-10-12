@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "ProductPercentTableActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class ProductPercentTableActivity : FragmentActivity
+    public class ProductPercentTableActivity : BaseFragmentActivity
     {
         enum Category { Doll, Equip, Fairy }
         enum ShowMode { Normal, Advance }
@@ -52,7 +52,7 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.UseLightTheme)
+            if (ETC.useLightTheme)
                 SetTheme(Resource.Style.GFS_Light);
 
             // Create your application here

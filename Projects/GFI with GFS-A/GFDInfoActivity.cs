@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "GFDInfoActivity", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class GFDInfoActivity : AppCompatActivity
+    public class GFDInfoActivity : BaseAppCompatActivity
     {
         Button UpdateButton;
         TextView NowVersion;
@@ -30,7 +30,7 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.UseLightTheme == true) SetTheme(Resource.Style.GFS_NoActionBar_Light);
+                if (ETC.useLightTheme == true) SetTheme(Resource.Style.GFS_NoActionBar_Light);
 
                 // Create your application here
                 SetContentView(Resource.Layout.GFDInfoLayout);
