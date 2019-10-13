@@ -46,7 +46,7 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.EquipDBDetailLayout);
 
-                EquipInfoDR = ETC.FindDataRow(ETC.EquipmentList, "Id", Intent.GetIntExtra("Id", 0));
+                EquipInfoDR = ETC.FindDataRow(ETC.equipmentList, "Id", Intent.GetIntExtra("Id", 0));
                 equip = new Equip(EquipInfoDR);
                 
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.EquipDBDetailInitLoadProgress);
@@ -164,22 +164,22 @@ namespace GFI_with_GFS_A
 
                 try
                 {
-                    if ((File.Exists(Path.Combine(ETC.CachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache")) == false) || (IsRefresh == true))
+                    if ((File.Exists(Path.Combine(ETC.cachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache")) == false) || (IsRefresh == true))
                     {
                         using (WebClient wc = new WebClient())
                         {
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Equipments", $"{equip.Icon}.png"), Path.Combine(ETC.CachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache"));
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "Equipments", $"{equip.Icon}.png"), Path.Combine(ETC.cachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache"));
                         }
                     }
 
                     if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", true) == true)
                     {
-                        Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache"));
+                        Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache"));
                         drawable.SetAlpha(40);
                         FindViewById<RelativeLayout>(Resource.Id.EquipDBDetailMainLayout).Background = drawable;
                     }
 
-                    FindViewById<ImageView>(Resource.Id.EquipDBDetailImage).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache")));
+                    FindViewById<ImageView>(Resource.Id.EquipDBDetailImage).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache")));
                 }
                 catch (Exception ex)
                 {

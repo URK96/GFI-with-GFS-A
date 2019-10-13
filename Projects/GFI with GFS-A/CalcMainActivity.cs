@@ -34,8 +34,8 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.CalcMainLayout);
 
-            ETC.LoadDBSync(ETC.SkillTrainingList, "SkillTraining.gfs", true);
-            ETC.LoadDBSync(ETC.FreeOPList, "FreeOP.gfs", true);
+            ETC.LoadDBSync(ETC.skillTrainingList, "SkillTraining.gfs", true);
+            ETC.LoadDBSync(ETC.freeOPList, "FreeOP.gfs", true);
 
 
             // Set Main Drawer

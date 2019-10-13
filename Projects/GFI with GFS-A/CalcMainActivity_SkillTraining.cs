@@ -48,7 +48,7 @@ namespace GFI_with_GFS_A
 
             List<string> list = new List<string>(3);
 
-            foreach (DataRow dr in ETC.SkillTrainingList.Rows)
+            foreach (DataRow dr in ETC.skillTrainingList.Rows)
                 list.Add((string)dr["Type"]);
 
             list.TrimExcess();
@@ -105,7 +105,7 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                DataRow dr = ETC.SkillTrainingList.Rows[TrainingTypeList.SelectedItemPosition];
+                DataRow dr = ETC.skillTrainingList.Rows[TrainingTypeList.SelectedItemPosition];
 
                 string[] itemConsume = ((string)dr["Consumption"]).Split(';');
                 string[] time = ((string)dr["Time"]).Split(';');

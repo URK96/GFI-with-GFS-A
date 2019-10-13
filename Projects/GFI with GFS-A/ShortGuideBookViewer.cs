@@ -223,7 +223,7 @@ namespace GFI_with_GFS_A
 
         internal void ShowImage(int index)
         {
-            string ImagePath = Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{ETC.locale.Language}_{ImageName[index]}.gfdcache");
+            string ImagePath = Path.Combine(ETC.cachePath, "GuideBook", "Images", $"{ETC.locale.Language}_{ImageName[index]}.gfdcache");
 
             try
             {
@@ -240,7 +240,7 @@ namespace GFI_with_GFS_A
         private bool CheckImage()
         {
             foreach (string s in ImageName)
-                if (!File.Exists(Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{ETC.locale.Language}_{s}.gfdcache")))
+                if (!File.Exists(Path.Combine(ETC.cachePath, "GuideBook", "Images", $"{ETC.locale.Language}_{s}.gfdcache")))
                     return true;
 
             return false;
@@ -260,13 +260,13 @@ namespace GFI_with_GFS_A
                 {
                     using (WebClient wc = new WebClient())
                     {
-                        string LocalVerPath = Path.Combine(ETC.SystemPath, "ShortGuideVer.txt");
+                        string LocalVerPath = Path.Combine(ETC.systemPath, "ShortGuideVer.txt");
 
                         if (!File.Exists(LocalVerPath))
                             HasUpdate = true;
                         else
                         {
-                            int server_ver = int.Parse(await wc.DownloadStringTaskAsync(Path.Combine(ETC.Server, "ShortGuideVer.txt")));
+                            int server_ver = int.Parse(await wc.DownloadStringTaskAsync(Path.Combine(ETC.server, "ShortGuideVer.txt")));
                             int local_ver = 0;
 
                             using (StreamReader sr = new StreamReader(new FileStream(LocalVerPath, FileMode.Open, FileAccess.Read)))
@@ -309,7 +309,7 @@ namespace GFI_with_GFS_A
             ProgressBar nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
             TextView nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
 
-            Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG_Download);
+            Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload);
             builder.SetTitle(Resource.String.UpdateDownloadDialog_Title);
             builder.SetView(v);
             builder.SetCancelable(false);
@@ -339,13 +339,13 @@ namespace GFI_with_GFS_A
 
                     foreach (string s in ImageName)
                     {
-                        string url = Path.Combine(ETC.Server, "Data", "PDF", "ShortGuideBook", "Image", ETC.locale.Language, $"{s}.png");
-                        string target = Path.Combine(ETC.CachePath, "GuideBook", "Images", $"{ETC.locale.Language}_{s}.gfdcache");
+                        string url = Path.Combine(ETC.server, "Data", "PDF", "ShortGuideBook", "Image", ETC.locale.Language, $"{s}.png");
+                        string target = Path.Combine(ETC.cachePath, "GuideBook", "Images", $"{ETC.locale.Language}_{s}.gfdcache");
 
                         await wc.DownloadFileTaskAsync(url, target);
                     }
 
-                    wc.DownloadFile(Path.Combine(ETC.Server, "ShortGuideVer.txt"), Path.Combine(ETC.SystemPath, "ShortGuideVer.txt"));
+                    wc.DownloadFile(Path.Combine(ETC.server, "ShortGuideVer.txt"), Path.Combine(ETC.systemPath, "ShortGuideVer.txt"));
                 }
 
                 ETC.ShowSnackbar(SnackbarLayout_F, Resource.String.UpdateDownload_Complete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);

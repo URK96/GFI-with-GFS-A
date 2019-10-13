@@ -372,6 +372,7 @@
   <!--Main-->
   <string name="MainActivity_Title">GFD</string>
   <string name="Main_MainMenu_DBMenu">DB Menu</string>
+  <string name="Main_ManiMenu_GFUtil">GF Util</string>
   <string name="Main_MainMenu_OldGFD">GFD v1</string>
   <string name="Main_MainMenu_GFDInfo">Info</string>
   <string name="Main_MainMenu_Extras">Extras</string>
@@ -381,17 +382,17 @@
   <string name="Main_DBMenu_FairyDB">Fairy DB</string>
   <string name="Main_DBMenu_EnemyDB">Enemy DB</string>
   <string name="Main_DBMenu_FSTDB">FST DB</string>
-  <string name="Main_ExtraMenu_Event">GF Event</string>
-  <string name="Main_ExtraMenu_OfficialNotification">GF Notification</string>
-  <string name="Main_ExtraMenu_Calc">Calculator</string>
-  <string name="Main_ExtraMenu_AreaTip">Area Tip</string>
-  <string name="Main_ExtraMenu_MDSupport">Logistic Support</string>
+  <string name="Main_GFUtil_Event">GF Event</string>
+  <string name="Main_GFUtil_OfficialNotification">GF Notification</string>
+  <string name="Main_GFUtil_Calc">Calculator</string>
+  <string name="Main_GFUtil_AreaTip">Area Tip</string>
+  <string name="Main_GFUtil_MDSupport">Logistic Support</string>
+  <string name="Main_GFUtil_Story">Story</string>
+  <string name="Main_GFUtil_GuideBookViewer">Guide Book</string>
+  <string name="Main_GFUtil_ShortGuideBookViewer">Beginner Guide</string>
   <string name="Main_ExtraMenu_ProductSimulator">Manufacturing Simulation</string>
   <string name="Main_ExtraMenu_GFOSTPlayer">OST Player</string>
   <string name="Main_ExtraMenu_Cartoon">Cartoon</string>
-  <string name="Main_ExtraMenu_Story">Story</string>
-  <string name="Main_ExtraMenu_GuideBookViewer">Guide Book</string>
-  <string name="Main_ExtraMenu_ShortGuideBookViewer">Beginner Guide</string>
   
   <!--OldGFD-->
   <string name="OldGFDViewer_ProductDollTable">T-Doll Production Timetable</string>
@@ -657,9 +658,10 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.4.3 Update]\n\n
-- Add new story\n
-- Change PhotoView component\n
-- Add cartoon content
+    [2.4.4 Update]\n\n
+- Add app language setting\n
+- Change sub main menu layout\n
+- Fix app termiante when network connection fail\n
+- Optimize memory usuage
   </string>
 </resources>

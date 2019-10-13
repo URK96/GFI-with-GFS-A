@@ -13,7 +13,7 @@ namespace GFI_with_GFS_A
             Resource.Id.ExtraMainButton,
             Resource.Id.SettingMainButton
         };*/
-        readonly int[] MainMenuButtonBackgroundIds =
+        /*readonly int[] MainMenuButtonBackgroundIds =
         {
             Resource.Drawable.Main_DBMenuSelector,
             Resource.Drawable.Main_OldGFDSelector,
@@ -30,7 +30,7 @@ namespace GFI_with_GFS_A
             Resource.Drawable.Main_GFDInfoSelector_Orange,
             Resource.Drawable.Main_ExtraSelector_Orange,
             Resource.Drawable.Main_SettingSelector_Orange
-        };
+        };*/
         readonly string[] MainMenuButtonText =
         {
             ETC.Resources.GetString(Resource.String.Main_MainMenu_DBMenu),
@@ -49,7 +49,7 @@ namespace GFI_with_GFS_A
             Resource.Id.EnemyDBButton,
             Resource.Id.FSTDBButton
         };*/
-        readonly int[] DBSubMenuButtonBackgroundIds =
+        /*readonly int[] DBSubMenuButtonBackgroundIds =
         {
             Resource.Drawable.DBSub_DollDBSelector,
             Resource.Drawable.DBSub_EquipDBSelector,
@@ -64,7 +64,7 @@ namespace GFI_with_GFS_A
             Resource.Drawable.DBSub_FairyDBSelector_Orange,
             Resource.Drawable.DBSub_EnemyDBSelector_Orange,
             Resource.Drawable.DBSub_FSTDBSelector_Orange
-        };
+        };*/
         readonly string[] DBSubMenuButtonText =
         {
             ETC.Resources.GetString(Resource.String.Main_DBMenu_DollDB),
@@ -72,6 +72,33 @@ namespace GFI_with_GFS_A
             ETC.Resources.GetString(Resource.String.Main_DBMenu_FairyDB),
             ETC.Resources.GetString(Resource.String.Main_DBMenu_EnemyDB),
             ETC.Resources.GetString(Resource.String.Main_DBMenu_FSTDB)
+        };
+
+        /*readonly int[] GFUtilMenuButtonBackgroundIds =
+        {
+            Resource.Drawable.Extra_GFNewsSelector,
+            Resource.Drawable.Extra_EventSelector,
+            Resource.Drawable.DBSub_FairyDBSelector,
+            Resource.Drawable.DBSub_EnemyDBSelector,
+            Resource.Drawable.DBSub_FSTDBSelector
+        };
+        readonly int[] GFUtilMenuButtonBackgroundIds_Orange =
+        {
+            Resource.Drawable.DBSub_DollDBSelector_Orange,
+            Resource.Drawable.DBSub_EquipDBSelector_Orange,
+            Resource.Drawable.DBSub_FairyDBSelector_Orange,
+            Resource.Drawable.DBSub_EnemyDBSelector_Orange,
+            Resource.Drawable.DBSub_FSTDBSelector_Orange
+        };*/
+        readonly string[] GFUtilMenuButtonText =
+        {
+            ETC.Resources.GetString(Resource.String.Main_GFUtil_OfficialNotification),
+            ETC.Resources.GetString(Resource.String.Main_GFUtil_Event),
+            ETC.Resources.GetString(Resource.String.Main_GFUtil_MDSupport),
+            ETC.Resources.GetString(Resource.String.Main_GFUtil_Calc),
+            ETC.Resources.GetString(Resource.String.Main_GFUtil_AreaTip),
+            ETC.Resources.GetString(Resource.String.Main_GFUtil_ShortGuideBookViewer),
+            ETC.Resources.GetString(Resource.String.Main_GFUtil_Story)
         };
 
         /*readonly int[] ExtraMenuButtonIds =
@@ -86,9 +113,9 @@ namespace GFI_with_GFS_A
             Resource.Id.CartoonExtraButton,
             Resource.Id.GFOSTPlayerExtraButton
         };*/
-        readonly int[] ExtraMenuButtonBackgroundIds =
+        /*readonly int[] ExtraMenuButtonBackgroundIds =
         {
-            Resource.Drawable.Extra_EventSelector,
+            
             Resource.Drawable.Extra_GFNewsSelector,
             Resource.Drawable.Extra_CalcSelector,
             Resource.Drawable.Extra_AreaTipSelector,
@@ -109,17 +136,10 @@ namespace GFI_with_GFS_A
             Resource.Drawable.Extra_StorySelector_Orange,
             Resource.Drawable.Extra_CartoonSelector_Orange,
             Resource.Drawable.Extra_OSTPlayerSelector_Orange
-        };
+        };*/
         readonly string[] ExtraMenuButtonText =
         {
-            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_Event),
-            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_OfficialNotification),
-            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_Calc),
-            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_AreaTip),
-            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_MDSupport),
-            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_ShortGuideBookViewer),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_ProductSimulator),
-            ETC.Resources.GetString(Resource.String.Main_ExtraMenu_Story),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_Cartoon),
             ETC.Resources.GetString(Resource.String.Main_ExtraMenu_GFOSTPlayer)
         };

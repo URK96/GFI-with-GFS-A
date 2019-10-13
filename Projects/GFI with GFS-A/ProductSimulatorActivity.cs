@@ -84,9 +84,9 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.ProductSimulatorLayout);
 
-            ETC.LoadDBSync(ETC.DollList, Path.Combine(ETC.DBPath, "Doll.gfs"), true);
-            ETC.LoadDBSync(ETC.EquipmentList, Path.Combine(ETC.DBPath, "Equipment.gfs"), true);
-            ETC.LoadDBSync(ETC.FairyList, Path.Combine(ETC.DBPath, "Fairy.gfs"), true);
+            ETC.LoadDBSync(ETC.dollList, Path.Combine(ETC.dbPath, "Doll.gfs"), true);
+            ETC.LoadDBSync(ETC.equipmentList, Path.Combine(ETC.dbPath, "Equipment.gfs"), true);
+            ETC.LoadDBSync(ETC.fairyList, Path.Combine(ETC.dbPath, "Fairy.gfs"), true);
 
             SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.ProductSimulatorSnackbarLayout);
 
@@ -415,18 +415,18 @@ namespace GFI_with_GFS_A
                     {
                         case ProductCategory.Doll:
                             type[i] = "Doll";
-                            dr = ETC.FindDataRow(ETC.DollList, "DicNumber", result_dicnumbers[i]);
+                            dr = ETC.FindDataRow(ETC.dollList, "DicNumber", result_dicnumbers[i]);
                             break;
                         case ProductCategory.Equip:
                             if ((int)dr["ProductTime"] <= 60)
                             {
                                 type[i] = "Equip";
-                                dr = ETC.FindDataRow(ETC.EquipmentList, "DicNumber", result_dicnumbers[i]);
+                                dr = ETC.FindDataRow(ETC.equipmentList, "DicNumber", result_dicnumbers[i]);
                             }
                             else
                             {
                                 type[i] = "Fairy";
-                                dr = ETC.FindDataRow(ETC.FairyList, "DicNumber", result_dicnumbers[i]);
+                                dr = ETC.FindDataRow(ETC.fairyList, "DicNumber", result_dicnumbers[i]);
                             }
                             break;
                     }
@@ -499,9 +499,9 @@ namespace GFI_with_GFS_A
 
                 AvailableType.TrimExcess();
 
-                for (int i = 0; i < ETC.DollList.Rows.Count; ++i)
+                for (int i = 0; i < ETC.dollList.Rows.Count; ++i)
                 {
-                    Doll doll = new Doll(ETC.DollList.Rows[i], true);
+                    Doll doll = new Doll(ETC.dollList.Rows[i], true);
 
                     if ((Type == ProductType.Normal))
                     if (AvailableType.Contains(doll.Type) == false)

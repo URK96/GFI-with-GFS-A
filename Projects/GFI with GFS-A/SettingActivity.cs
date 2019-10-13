@@ -18,7 +18,7 @@ using Xamarin.Essentials;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "@string/Activity_SettingActivity", Theme = "@style/GFS.Setting", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class SettingActivity : BaseActivity
+    public class SettingActivity : BaseAppCompatActivity
     {
         private CoordinatorLayout SnackbarLayout;
 
@@ -33,12 +33,11 @@ namespace GFI_with_GFS_A
 
                 // Create your application here
                 SetContentView(Resource.Layout.SettingMainLayout);
-
                 SetTitle(Resource.String.SettingActivity_Title);
 
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.SettingSnackbarLayout);
 
-                FragmentManager.BeginTransaction().Replace(Resource.Id.SettingFragmentContainer, new MainSettingFragment(), null).Commit();
+                SupportFragmentManager.BeginTransaction().Replace(Resource.Id.SettingFragmentContainer, new MainSettingFragment(), null).Commit();
             }
             catch (Exception ex)
             {
@@ -54,7 +53,7 @@ namespace GFI_with_GFS_A
         }
     }
 
-    public class MainSettingFragment : PreferenceFragment
+    public class MainSettingFragment : PreferenceFragmentCompat
     {
         private ISharedPreferencesEditor SaveSetting;
 
@@ -89,7 +88,7 @@ namespace GFI_with_GFS_A
             Preference UpdateLog = FindPreference("UpdateLog");
             UpdateLog.PreferenceClick += delegate
             {
-                Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG_Vertical);
+                Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGVertical);
                 ad.SetTitle(Resource.String.NewFeatureDialog_Title);
                 ad.SetMessage(Resource.String.NewFeature);
                 ad.SetCancelable(true);
@@ -116,10 +115,10 @@ namespace GFI_with_GFS_A
                 Resources.GetString(Resource.String.Common_Default),
                 Resources.GetString(Resource.String.Main_MainMenu_DBMenu),
                 Resources.GetString(Resource.String.Main_MainMenu_OldGFD),
-                Resources.GetString(Resource.String.Main_ExtraMenu_AreaTip),
-                Resources.GetString(Resource.String.Main_ExtraMenu_Calc),
-                Resources.GetString(Resource.String.Main_ExtraMenu_Event),
-                Resources.GetString(Resource.String.Main_ExtraMenu_OfficialNotification),
+                Resources.GetString(Resource.String.Main_GFUtil_AreaTip),
+                Resources.GetString(Resource.String.Main_GFUtil_Calc),
+                Resources.GetString(Resource.String.Main_GFUtil_Event),
+                Resources.GetString(Resource.String.Main_GFUtil_OfficialNotification),
                 Resources.GetString(Resource.String.Main_ExtraMenu_GFOSTPlayer)
             });
             StartAppMode.SetEntryValues(new string[] { "0", "1", "2", "3", "4", "5", "6", "7" });
@@ -296,7 +295,7 @@ namespace GFI_with_GFS_A
         {
             Dialog dialog = null;
 
-            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
+            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG);
             ad.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
             ad.SetMessage(Resource.String.CheckDBUpdateDialog_Message);
             ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
@@ -378,7 +377,7 @@ namespace GFI_with_GFS_A
                 }
                 else if (count > 5)
                 {
-                    Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
+                    Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG);
                     ad.SetTitle("¿Quiere neutralizar el cortafuegos?");
                     ad.SetMessage("SANGVIS FERRI, Annulation - Chaos, OK - Inscrire cachée");
                     ad.SetCancelable(true);
@@ -393,7 +392,7 @@ namespace GFI_with_GFS_A
                 }
                 else
                 {
-                    Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
+                    Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG);
                     ad.SetTitle(Resource.String.SettingActivity_DeleteLogFile_DialogTitle);
                     ad.SetMessage(Resource.String.SettingActivity_DeleteLogFile_DialogCheckMessage);
                     ad.SetCancelable(true);
@@ -412,7 +411,7 @@ namespace GFI_with_GFS_A
 
         private async void CleanLogFolderProcess()
         {
-            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG_Download);
+            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload);
             ad.SetTitle(Resource.String.SettingActivity_DeleteLogFile_DialogTitle);
             ad.SetMessage(Resource.String.SettingActivity_DeleteLogFile_DialogMessage);
             ad.SetCancelable(false);
@@ -426,10 +425,10 @@ namespace GFI_with_GFS_A
             {
                 await Task.Run(() =>
                 {
-                    if (Directory.Exists(ETC.LogPath))
-                        Directory.Delete(ETC.LogPath, true);
+                    if (Directory.Exists(ETC.logPath))
+                        Directory.Delete(ETC.logPath, true);
 
-                    Directory.CreateDirectory(ETC.LogPath);
+                    Directory.CreateDirectory(ETC.logPath);
                     ETC.CheckInitFolder();
                 });
 
@@ -455,7 +454,7 @@ namespace GFI_with_GFS_A
             np.MinValue = 4;
             np.Value = ETC.sharedPreferences.GetInt("TextViewerTextSize", 12);
 
-            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG))
+            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG))
             {
                 ad.SetTitle(Resource.String.Common_TextSize);
                 ad.SetCancelable(true);
@@ -482,7 +481,7 @@ namespace GFI_with_GFS_A
 
             ColorPickerView cp = view.FindViewById<ColorPickerView>(Resource.Id.ColorPickerControl);
 
-            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG))
+            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG))
             {
                 ad.SetTitle(Resource.String.Common_TextColor);
                 ad.SetCancelable(true);
@@ -509,7 +508,7 @@ namespace GFI_with_GFS_A
 
             ColorPickerView cp = view.FindViewById<ColorPickerView>(Resource.Id.ColorPickerControl);
 
-            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG))
+            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG))
             {
                 ad.SetTitle(Resource.String.Common_BackgroundColor);
                 ad.SetCancelable(true);
@@ -557,7 +556,7 @@ namespace GFI_with_GFS_A
 
         private async Task<bool> CheckStorageCapacity()
         {
-            ProgressDialog pd = new ProgressDialog(Activity, ETC.DialogBG);
+            ProgressDialog pd = new ProgressDialog(Activity, ETC.dialogBG);
             pd.SetTitle(Resource.String.SettingActivity_CheckFreeStorage_DialogTitle);
             pd.SetMessage(Resources.GetString(Resource.String.SettingActivity_CheckFreeStorage_DialogMessage));
             pd.SetCancelable(false);
@@ -1165,7 +1164,7 @@ namespace GFI_with_GFS_A
         private void CleanCache_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
         {
             long tTotalSize = 0;
-            foreach (string s in Directory.GetFiles(ETC.CachePath, "*.*", SearchOption.AllDirectories))
+            foreach (string s in Directory.GetFiles(ETC.cachePath, "*.*", SearchOption.AllDirectories))
             {
                 FileInfo fi = new FileInfo(s);
                 tTotalSize += fi.Length;
@@ -1173,7 +1172,7 @@ namespace GFI_with_GFS_A
 
             int TotalSize = Convert.ToInt32(tTotalSize / 1024 / 1024);
 
-            using (Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG))
+            using (Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG))
             {
                 alert.SetTitle(Resource.String.SettingActivity_DeleteAllCache_DialogTitle);
                 alert.SetMessage(string.Format("{0} {1}{2}", Resources.GetString(Resource.String.SettingActivity_DeleteAllCache_DialogCheckMessage), TotalSize, "MB"));
@@ -1187,7 +1186,7 @@ namespace GFI_with_GFS_A
 
         private async void CleanCacheProcess()
         {
-            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG_Download);
+            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload);
             ad.SetTitle(Resource.String.SettingActivity_DeleteAllCache_DialogTitle);
             ad.SetMessage(Resource.String.SettingActivity_DeleteAllCache_DialogMessage);
             ad.SetCancelable(false);
@@ -1201,10 +1200,10 @@ namespace GFI_with_GFS_A
             {
                 await Task.Run(() =>
                 {
-                    if (Directory.Exists(ETC.CachePath) == true) Directory.Delete(ETC.CachePath, true);
-                    if (File.Exists(Path.Combine(ETC.SystemPath, "OldGFDVer.txt")) == true) File.Delete(Path.Combine(ETC.SystemPath, "OldGFDVer.txt"));
+                    if (Directory.Exists(ETC.cachePath) == true) Directory.Delete(ETC.cachePath, true);
+                    if (File.Exists(Path.Combine(ETC.systemPath, "OldGFDVer.txt")) == true) File.Delete(Path.Combine(ETC.systemPath, "OldGFDVer.txt"));
 
-                    Directory.CreateDirectory(ETC.CachePath);
+                    Directory.CreateDirectory(ETC.cachePath);
                     ETC.CheckInitFolder();
                 });
 

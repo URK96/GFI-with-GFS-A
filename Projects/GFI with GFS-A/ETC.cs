@@ -19,14 +19,14 @@ namespace GFI_with_GFS_A
 {
     internal static class ETC
     {
-        internal static string Server = "http://chlwlsgur96.ipdisk.co.kr/publist/HDD1/Data/Project/GFS/";
-        internal static string SDCardPath = (string)Android.OS.Environment.ExternalStorageDirectory;
-        internal static string tempPath = Path.Combine(SDCardPath, "GFDTemp");
-        internal static string AppDataPath = Path.Combine(SDCardPath, "Android", "data", "com.gfl.dic");
-        internal static string DBPath = Path.Combine(AppDataPath, "DB");
-        internal static string SystemPath = Path.Combine(AppDataPath, "System");
-        internal static string CachePath = Path.Combine(AppDataPath, "Cache");
-        internal static string LogPath = Path.Combine(SystemPath, "Log");
+        internal static string server = "http://chlwlsgur96.ipdisk.co.kr/publist/HDD1/Data/Project/GFS/";
+        internal static string sdCardPath = (string)Android.OS.Environment.ExternalStorageDirectory;
+        internal static string tempPath = Path.Combine(sdCardPath, "GFDTemp");
+        internal static string appDataPath = Path.Combine(sdCardPath, "Android", "data", "com.gfl.dic");
+        internal static string dbPath = Path.Combine(appDataPath, "DB");
+        internal static string systemPath = Path.Combine(appDataPath, "System");
+        internal static string cachePath = Path.Combine(appDataPath, "Cache");
+        internal static string logPath = Path.Combine(systemPath, "Log");
 
         internal static bool isReleaseMode = true;
         internal static bool hasInitDollAvgAbility = false;
@@ -34,20 +34,20 @@ namespace GFI_with_GFS_A
         internal static bool isLowRAM = false;
         internal static bool useLightTheme = false;
 
-        internal static int DialogBG = 0;
-        internal static int DialogBG_Vertical = 0;
-        internal static int DialogBG_Download = 0;
-        internal static int DBVersion = 0;
+        internal static int dialogBG = 0;
+        internal static int dialogBGVertical = 0;
+        internal static int dialogBGDownload = 0;
+        internal static int dbVersion = 0;
 
-        internal static DataTable DollList = new DataTable();
-        internal static DataTable EquipmentList = new DataTable();
-        internal static DataTable FairyList = new DataTable();
-        internal static DataTable EnemyList = new DataTable();
+        internal static DataTable dollList = new DataTable();
+        internal static DataTable equipmentList = new DataTable();
+        internal static DataTable fairyList = new DataTable();
+        internal static DataTable enemyList = new DataTable();
         internal static DataTable FSTList = new DataTable();
-        internal static DataTable SkillTrainingList = new DataTable();
-        internal static DataTable MDSupportList = new DataTable();
-        internal static DataTable FreeOPList = new DataTable();
-        internal static string[] DBFiles =
+        internal static DataTable skillTrainingList = new DataTable();
+        internal static DataTable mdSupportList = new DataTable();
+        internal static DataTable freeOPList = new DataTable();
+        internal static string[] dbFiles =
         {
             "Doll.gfs",
             "Equipment.gfs",
@@ -60,10 +60,10 @@ namespace GFI_with_GFS_A
             "FairyAttribution.gfs"
         };
 
-        internal static AverageAbility[] Avg_List;
+        internal static AverageAbility[] avgList;
 
-        internal static Android.Media.MediaPlayer OSTPlayer = null;
-        internal static int[] OST_Index = { 0, 0 };
+        internal static Android.Media.MediaPlayer ostPlayer = null;
+        internal static int[] ostIndex = { 0, 0 };
 
         internal static Java.Util.Locale locale; // ko, en
         internal static Android.Content.Res.Resources Resources = null;
@@ -85,43 +85,43 @@ namespace GFI_with_GFS_A
 
         internal static void InitializeAverageAbility()
         {
-            string[] AbilityList = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
-            const int TypeCount = 6;
-            const int AbilityCount = 6;
+            string[] abilityList = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
+            const int typeCount = 6;
+            const int abilityCount = 6;
 
             Doll doll;
-            DollAbilitySet DAS;
+            DollAbilitySet das;
 
-            AverageAbility Avg_HG = new AverageAbility();
-            AverageAbility Avg_SMG = new AverageAbility();
-            AverageAbility Avg_AR = new AverageAbility();
-            AverageAbility Avg_RF = new AverageAbility();
-            AverageAbility Avg_MG = new AverageAbility();
-            AverageAbility Avg_SG = new AverageAbility();
+            AverageAbility avg_HG = new AverageAbility();
+            AverageAbility avg_SMG = new AverageAbility();
+            AverageAbility avg_AR = new AverageAbility();
+            AverageAbility avg_RF = new AverageAbility();
+            AverageAbility avg_MG = new AverageAbility();
+            AverageAbility avg_SG = new AverageAbility();
 
-            Avg_List = new AverageAbility[TypeCount]
+            avgList = new AverageAbility[typeCount]
             {
-                Avg_HG,
-                Avg_SMG,
-                Avg_AR,
-                Avg_RF,
-                Avg_MG,
-                Avg_SG
+                avg_HG,
+                avg_SMG,
+                avg_AR,
+                avg_RF,
+                avg_MG,
+                avg_SG
             };
             
             int[] count = { 0, 0, 0, 0, 0, 0 };
-            int[,] total = new int[TypeCount, AbilityCount];
+            int[,] total = new int[typeCount, abilityCount];
 
-            for (int i = 0; i < TypeCount; ++i)
-                for (int j = 0; j < AbilityCount; ++j)
+            for (int i = 0; i < typeCount; ++i)
+                for (int j = 0; j < abilityCount; ++j)
                     total[i, j] = 0;
 
-            for (int i = 0; i < DollList.Rows.Count; ++i)
+            for (int i = 0; i < dollList.Rows.Count; ++i)
             {
                 int index = 0;
 
-                doll = new Doll(DollList.Rows[i]);
-                DAS = new DollAbilitySet(doll.Type);
+                doll = new Doll(dollList.Rows[i]);
+                das = new DollAbilitySet(doll.Type);
                 
                 switch (doll.Type)
                 {
@@ -148,46 +148,47 @@ namespace GFI_with_GFS_A
                 count[index] += 1;
 
                 int growValue = int.Parse(doll.Abilities["Grow"].Split(';')[0]);
+                int abilityValue;
 
-                for (int j = 0; j < AbilityList.Length; ++j)
+                for (int j = 0; j < abilityList.Length; ++j)
                 {
-                    int abilityValue = int.Parse(doll.Abilities[AbilityList[j]].Split(';')[0]);
-
-                    total[index, j] += DAS.CalcAbility(AbilityList[j], abilityValue, growValue, 100, 100, false);
+                    abilityValue = int.Parse(doll.Abilities[abilityList[j]].Split(';')[0]);
+                    total[index, j] += das.CalcAbility(abilityList[j], abilityValue, growValue, 100, 100, false);
                 }
                     
                 if (doll.Type == "SG")
                 {
-                    int abilityValue = int.Parse(doll.Abilities["Armor"].Split(';')[0]);
-
-                    total[index, 5] += DAS.CalcAbility("Armor", abilityValue, growValue, 100, 100, false);
+                    abilityValue = int.Parse(doll.Abilities["Armor"].Split(';')[0]);
+                    total[index, 5] += das.CalcAbility("Armor", abilityValue, growValue, 100, 100, false);
                 }
             }
 
-            for (int i = 0; i < TypeCount; ++i)
-                for (int j = 0; j < AbilityCount; ++j)
+            int value;
+
+            for (int i = 0; i < typeCount; ++i)
+                for (int j = 0; j < abilityCount; ++j)
                 {
-                    int value = Convert.ToInt32(Math.Round((double)total[i, j] / count[i]));
+                    value = Convert.ToInt32(Math.Round((double)total[i, j] / count[i]));
 
                     switch (j)
                     {
                         case 0:
-                            Avg_List[i].HP = value;
+                            avgList[i].HP = value;
                             break;
                         case 1:
-                            Avg_List[i].FR = value;
+                            avgList[i].FR = value;
                             break;
                         case 2:
-                            Avg_List[i].EV = value;
+                            avgList[i].EV = value;
                             break;
                         case 3:
-                            Avg_List[i].AC = value;
+                            avgList[i].AC = value;
                             break;
                         case 4:
-                            Avg_List[i].AS = value;
+                            avgList[i].AS = value;
                             break;
                         case 5:
-                            Avg_List[i].AM = value;
+                            avgList[i].AM = value;
                             break;
                     }
                 }
@@ -197,22 +198,9 @@ namespace GFI_with_GFS_A
 
         internal static void SetDialogTheme()
         {
-            DialogBG = useLightTheme ? Resource.Style.GFD_Dialog_Light : Resource.Style.GFD_Dialog;
-            DialogBG_Vertical = useLightTheme ? Resource.Style.GFD_Dialog_Vertical_Light : Resource.Style.GFD_Dialog_Vertical;
-            DialogBG_Download = useLightTheme ? Resource.Style.GFD_Dialog_Download_Light : Resource.Style.GFD_Dialog_Download;
-
-            /*if (UseLightTheme)
-            {
-                DialogBG = Resource.Style.GFD_Dialog_Light;
-                DialogBG_Vertical = Resource.Style.GFD_Dialog_Vertical_Light;
-                DialogBG_Download = Resource.Style.GFD_Dialog_Download_Light;
-            }
-            else
-            {
-                DialogBG = Resource.Style.GFD_Dialog;
-                DialogBG_Vertical = Resource.Style.GFD_Dialog_Vertical;
-                DialogBG_Download = Resource.Style.GFD_Dialog_Download;
-            }*/
+            dialogBG = useLightTheme ? Resource.Style.GFD_Dialog_Light : Resource.Style.GFD_Dialog;
+            dialogBGVertical = useLightTheme ? Resource.Style.GFD_Dialog_Vertical_Light : Resource.Style.GFD_Dialog_Vertical;
+            dialogBGDownload = useLightTheme ? Resource.Style.GFD_Dialog_Download_Light : Resource.Style.GFD_Dialog_Download;
         }
 
         internal static void BasicInitializeApp(Context context)
@@ -237,6 +225,7 @@ namespace GFI_with_GFS_A
         internal static void SetLanguage(Context context)
         {
             int langIndex = int.Parse(ETC.sharedPreferences.GetString("AppLanguage", "0"));
+
             Java.Util.Locale locale;
 
             switch (langIndex)
@@ -253,9 +242,10 @@ namespace GFI_with_GFS_A
                     break;
             }
 
-            Android.Content.Res.Configuration config = new Android.Content.Res.Configuration();
-            config.Locale = locale;
-            //Resources.UpdateConfiguration(config, Resources.DisplayMetrics);
+            Android.Content.Res.Configuration config = new Android.Content.Res.Configuration
+            {
+                Locale = locale
+            };
             ETC.locale = locale;
             baseContext = context.CreateConfigurationContext(config);
         }
@@ -285,7 +275,7 @@ namespace GFI_with_GFS_A
 
             try
             {
-                HttpWebRequest request = WebRequest.Create(Server) as HttpWebRequest;
+                HttpWebRequest request = WebRequest.Create(server) as HttpWebRequest;
                 request.Method = "HEAD";
 
                 using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
@@ -385,53 +375,53 @@ namespace GFI_with_GFS_A
                 Directory.CreateDirectory(tempPath);
             }
 
-            DirectoryInfo AppDataDI = new DirectoryInfo(AppDataPath);
+            DirectoryInfo AppDataDI = new DirectoryInfo(appDataPath);
 
             if (!AppDataDI.Exists)
                 AppDataDI.Create();
 
             string[] MainPaths =
             {
-                DBPath,
-                SystemPath,
-                LogPath,
-                CachePath
+                dbPath,
+                systemPath,
+                logPath,
+                cachePath
             };
 
             string[] SubPaths =
             {
-                Path.Combine(CachePath, "Doll"),
-                Path.Combine(CachePath, "Doll", "SD"),
-                Path.Combine(CachePath, "Doll", "SD", "Animation"),
-                Path.Combine(CachePath, "Doll", "Normal_Crop"),
-                Path.Combine(CachePath, "Doll", "Normal"),
-                Path.Combine(CachePath, "Doll", "Skill"),
-                Path.Combine(CachePath, "Equip"),
-                Path.Combine(CachePath, "Equip", "Normal"),
-                Path.Combine(CachePath, "Fairy"),
-                Path.Combine(CachePath, "Fairy", "Normal"),
-                Path.Combine(CachePath, "Fairy", "Normal_Crop"),
-                Path.Combine(CachePath, "Fairy", "Skill"),
-                Path.Combine(CachePath, "Enemy"),
-                Path.Combine(CachePath, "Enemy", "SD"),
-                Path.Combine(CachePath, "Enemy", "Normal_Crop"),
-                Path.Combine(CachePath, "Enemy", "Normal"),
-                Path.Combine(CachePath, "FST"),
-                Path.Combine(CachePath, "FST", "SD"),
-                Path.Combine(CachePath, "FST", "Normal_Crop"),
-                Path.Combine(CachePath, "FST", "Normal"),
-                Path.Combine(CachePath, "FST", "Normal_Icon"),
-                Path.Combine(CachePath, "FST", "Skill"),
-                Path.Combine(CachePath, "OldGFD"),
-                Path.Combine(CachePath, "OldGFD", "Images"),
-                Path.Combine(CachePath, "Event"),
-                Path.Combine(CachePath, "Event", "Images"),
-                Path.Combine(CachePath, "Voices"),
-                Path.Combine(CachePath, "Voices", "Doll"),
-                Path.Combine(CachePath, "Voices", "Enemy"),
-                Path.Combine(CachePath, "GuideBook"),
-                Path.Combine(CachePath, "GuideBook", "PDFs"),
-                Path.Combine(CachePath, "GuideBook", "Images"),
+                Path.Combine(cachePath, "Doll"),
+                Path.Combine(cachePath, "Doll", "SD"),
+                Path.Combine(cachePath, "Doll", "SD", "Animation"),
+                Path.Combine(cachePath, "Doll", "Normal_Crop"),
+                Path.Combine(cachePath, "Doll", "Normal"),
+                Path.Combine(cachePath, "Doll", "Skill"),
+                Path.Combine(cachePath, "Equip"),
+                Path.Combine(cachePath, "Equip", "Normal"),
+                Path.Combine(cachePath, "Fairy"),
+                Path.Combine(cachePath, "Fairy", "Normal"),
+                Path.Combine(cachePath, "Fairy", "Normal_Crop"),
+                Path.Combine(cachePath, "Fairy", "Skill"),
+                Path.Combine(cachePath, "Enemy"),
+                Path.Combine(cachePath, "Enemy", "SD"),
+                Path.Combine(cachePath, "Enemy", "Normal_Crop"),
+                Path.Combine(cachePath, "Enemy", "Normal"),
+                Path.Combine(cachePath, "FST"),
+                Path.Combine(cachePath, "FST", "SD"),
+                Path.Combine(cachePath, "FST", "Normal_Crop"),
+                Path.Combine(cachePath, "FST", "Normal"),
+                Path.Combine(cachePath, "FST", "Normal_Icon"),
+                Path.Combine(cachePath, "FST", "Skill"),
+                Path.Combine(cachePath, "OldGFD"),
+                Path.Combine(cachePath, "OldGFD", "Images"),
+                Path.Combine(cachePath, "Event"),
+                Path.Combine(cachePath, "Event", "Images"),
+                Path.Combine(cachePath, "Voices"),
+                Path.Combine(cachePath, "Voices", "Doll"),
+                Path.Combine(cachePath, "Voices", "Enemy"),
+                Path.Combine(cachePath, "GuideBook"),
+                Path.Combine(cachePath, "GuideBook", "PDFs"),
+                Path.Combine(cachePath, "GuideBook", "Images"),
             };
 
             foreach (string path in MainPaths)
@@ -448,22 +438,22 @@ namespace GFI_with_GFS_A
 
             try
             {
-                DollList.Clear();
-                DollList.ReadXml(Path.Combine(DBPath, "Doll.gfs"));
-                EquipmentList.Clear();
-                EquipmentList.ReadXml(Path.Combine(DBPath, "Equipment.gfs"));
-                FairyList.Clear();
-                FairyList.ReadXml(Path.Combine(DBPath, "Fairy.gfs"));
-                EnemyList.Clear();
-                EnemyList.ReadXml(Path.Combine(DBPath, "Enemy.gfs"));
+                dollList.Clear();
+                dollList.ReadXml(Path.Combine(dbPath, "Doll.gfs"));
+                equipmentList.Clear();
+                equipmentList.ReadXml(Path.Combine(dbPath, "Equipment.gfs"));
+                fairyList.Clear();
+                fairyList.ReadXml(Path.Combine(dbPath, "Fairy.gfs"));
+                enemyList.Clear();
+                enemyList.ReadXml(Path.Combine(dbPath, "Enemy.gfs"));
                 FSTList.Clear();
-                FSTList.ReadXml(Path.Combine(DBPath, "FST.gfs"));
-                SkillTrainingList.Clear();
-                SkillTrainingList.ReadXml(Path.Combine(DBPath, "SkillTraining.gfs"));
-                MDSupportList.Clear();
-                MDSupportList.ReadXml(Path.Combine(DBPath, "MDSupportList.gfs"));
-                FreeOPList.Clear();
-                FreeOPList.ReadXml(Path.Combine(DBPath, "FreeOP.gfs"));
+                FSTList.ReadXml(Path.Combine(dbPath, "FST.gfs"));
+                skillTrainingList.Clear();
+                skillTrainingList.ReadXml(Path.Combine(dbPath, "SkillTraining.gfs"));
+                mdSupportList.Clear();
+                mdSupportList.ReadXml(Path.Combine(dbPath, "MDSupportList.gfs"));
+                freeOPList.Clear();
+                freeOPList.ReadXml(Path.Combine(dbPath, "FreeOP.gfs"));
             }
             catch (Exception)
             {
@@ -482,7 +472,7 @@ namespace GFI_with_GFS_A
                 if (BeforeClear)
                     table.Clear();
 
-                table.ReadXml(Path.Combine(DBPath, DBFile));
+                table.ReadXml(Path.Combine(dbPath, DBFile));
             }
             catch (Exception)
             {
@@ -499,7 +489,7 @@ namespace GFI_with_GFS_A
                 if (BeforeClear)
                     table.Clear();
 
-                table.ReadXml(Path.Combine(DBPath, DBFile));
+                table.ReadXml(Path.Combine(dbPath, DBFile));
             }
             catch (Exception)
             {
@@ -514,8 +504,8 @@ namespace GFI_with_GFS_A
             if (isServerDown)
                 return false;
 
-            string LocalDBVerPath = Path.Combine(SystemPath, "DBVer.txt");
-            string ServerDBVerPath = Path.Combine(Server, "DBVer.txt");
+            string LocalDBVerPath = Path.Combine(systemPath, "DBVer.txt");
+            string ServerDBVerPath = Path.Combine(server, "DBVer.txt");
             string TempDBVerPath = Path.Combine(tempPath, "DBVer.txt");
 
             bool HasDBUpdate = false;
@@ -533,7 +523,7 @@ namespace GFI_with_GFS_A
                         int localVer = int.Parse(sr1.ReadToEnd());
                         int serverVer = int.Parse(sr2.ReadToEnd());
 
-                        DBVersion = localVer;
+                        dbVersion = localVer;
 
                         HasDBUpdate = (localVer < serverVer);
                     }
@@ -551,7 +541,7 @@ namespace GFI_with_GFS_A
             ProgressBar nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
             TextView nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
 
-            Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(activity, DialogBG_Download);
+            Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(activity, dialogBGDownload);
             pd.SetTitle(TitleMsg);
             pd.SetMessage(Resources.GetString(MessageMgs));
             pd.SetView(v);
@@ -564,7 +554,7 @@ namespace GFI_with_GFS_A
 
             try
             {
-                totalProgressBar.Max = DBFiles.Length;
+                totalProgressBar.Max = dbFiles.Length;
                 totalProgressBar.Progress = 0;
 
                 using (WebClient wc = new WebClient())
@@ -580,18 +570,18 @@ namespace GFI_with_GFS_A
                         totalProgress.Text = $"{totalProgressBar.Progress} / {totalProgressBar.Max}";
                     };
 
-                    for (int i = 0; i < DBFiles.Length; ++i)
-                        await wc.DownloadFileTaskAsync(Path.Combine(Server, "Data", "DB", DBFiles[i]), Path.Combine(tempPath, DBFiles[i]));
+                    for (int i = 0; i < dbFiles.Length; ++i)
+                        await wc.DownloadFileTaskAsync(Path.Combine(server, "Data", "DB", dbFiles[i]), Path.Combine(tempPath, dbFiles[i]));
 
-                    await wc.DownloadFileTaskAsync(Path.Combine(Server, "DBVer.txt"), Path.Combine(tempPath, "DBVer.txt"));
+                    await wc.DownloadFileTaskAsync(Path.Combine(server, "DBVer.txt"), Path.Combine(tempPath, "DBVer.txt"));
 
                     await Task.Delay(100);
                 }
 
-                for (int i = 0; i < DBFiles.Length; ++i)
+                for (int i = 0; i < dbFiles.Length; ++i)
                 {
                     //File.Copy(Path.Combine(tempPath, DBFiles[i]), Path.Combine(DBPath, DBFiles[i]), true);
-                    CopyFile(Path.Combine(tempPath, DBFiles[i]), Path.Combine(DBPath, DBFiles[i]));
+                    CopyFile(Path.Combine(tempPath, dbFiles[i]), Path.Combine(dbPath, dbFiles[i]));
 
                     await Task.Delay(100);
                 }
@@ -600,14 +590,14 @@ namespace GFI_with_GFS_A
 
                 activity.RunOnUiThread(() => { pd.SetMessage(Resources.GetString(Resource.String.UpdateDBDialog_RefreshVersionMessage)); });
 
-                string oldVersion = Path.Combine(SystemPath, "DBVer.txt");
+                string oldVersion = Path.Combine(systemPath, "DBVer.txt");
                 string newVersion = Path.Combine(tempPath, "DBVer.txt");
 
                 //File.Copy(newVersion, oldVersion, true);
                 CopyFile(newVersion, oldVersion);
 
                 using (StreamReader sr = new StreamReader(new FileStream(oldVersion, FileMode.Open, FileAccess.Read)))
-                    int.TryParse(sr.ReadToEnd(), out DBVersion);
+                    int.TryParse(sr.ReadToEnd(), out dbVersion);
 
                 await Task.Delay(500);
 
@@ -634,11 +624,11 @@ namespace GFI_with_GFS_A
                 string nowDateTime = $"{now.Year}{now.Month}{now.Day} {now.Hour}{now.Minute}{now.Second}";
                 string ErrorFileName = $"{nowDateTime}-ErrorLog.txt";
 
-                DirectoryInfo di = new DirectoryInfo(LogPath);
+                DirectoryInfo di = new DirectoryInfo(logPath);
                 if (!di.Exists)
                     di.Create();
 
-                using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(LogPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
+                using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(logPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
                     sw.Write(ex.ToString());
             }
             catch (Exception)

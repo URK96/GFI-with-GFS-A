@@ -375,6 +375,7 @@
   <!--Main-->
   <string name="MainActivity_Title">소전사전</string>
   <string name="Main_MainMenu_DBMenu">DB 메뉴</string>
+  <string name="Main_ManiMenu_GFUtil">소전기능</string>
   <string name="Main_MainMenu_OldGFD">소전사전v1</string>
   <string name="Main_MainMenu_GFDInfo">정보</string>
   <string name="Main_MainMenu_Extras">추가 기능</string>
@@ -384,17 +385,18 @@
   <string name="Main_DBMenu_FairyDB">요정 DB</string>
   <string name="Main_DBMenu_EnemyDB">적 DB</string>
   <string name="Main_DBMenu_FSTDB">화력소대 DB</string>
-  <string name="Main_ExtraMenu_Event">이벤트</string>
-  <string name="Main_ExtraMenu_OfficialNotification">소전 공지사항</string>
-  <string name="Main_ExtraMenu_Calc">계산기</string>
-  <string name="Main_ExtraMenu_AreaTip">지역 공략</string>
-  <string name="Main_ExtraMenu_MDSupport">군수지원</string>
+  <string name="Main_GFUtil_Event">이벤트</string>
+  <string name="Main_GFUtil_OfficialNotification">소전 공지사항</string>
+  <string name="Main_GFUtil_Calc">계산기</string>
+  <string name="Main_GFUtil_AreaTip">지역 공략</string>
+  <string name="Main_GFUtil_MDSupport">군수지원</string>
+  <string name="Main_GFUtil_Story">스토리</string>
+  <string name="Main_GFUtil_GuideBookViewer">가이드북</string>
+  <string name="Main_GFUtil_ShortGuideBookViewer">초보자 가이드북</string>
   <string name="Main_ExtraMenu_ProductSimulator">제조 시뮬레이터</string>
   <string name="Main_ExtraMenu_GFOSTPlayer">OST Player</string>
   <string name="Main_ExtraMenu_Cartoon">만화</string>
-  <string name="Main_ExtraMenu_Story">스토리</string>
-  <string name="Main_ExtraMenu_GuideBookViewer">가이드북</string>
-  <string name="Main_ExtraMenu_ShortGuideBookViewer">초보자 가이드북</string>
+  
   
   <!--OldGFD-->
   <string name="OldGFDViewer_ProductDollTable">인형 제조 시간표</string>
@@ -660,9 +662,10 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.4.3 수정사항]\n\n
-- 스토리 추가 (연쇄분열)\n
-- PhotoView 컴포넌트 교체\n
-- 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 코믹전선)
+    [2.4.4 수정사항]\n\n
+- 앱 언어 설정 추가\n
+- 메인 메뉴 구성 일부 변경\n
+- 앱 설치 후 초기 기동 시 네트워크 연결에 무관하게 앱이 실행되도록 수정\n
+- 메모리 최적화
   </string>
 </resources>

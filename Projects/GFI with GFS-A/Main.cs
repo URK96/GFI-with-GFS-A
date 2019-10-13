@@ -30,6 +30,7 @@ namespace GFI_with_GFS_A
         private TextView notificationView;
 
         private RecyclerView dbDictionarySubMenu;
+        private RecyclerView gfUtilSubMenu;
         private RecyclerView extrasSubMenu;
         private RecyclerView oldGFDSubMenu;
 
@@ -67,6 +68,7 @@ namespace GFI_with_GFS_A
                 {
                     FindViewById<CardView>(Resource.Id.MainNotificationCardLayout),
                     FindViewById<CardView>(Resource.Id.MainDBDictionaryCardLayout),
+                    FindViewById<CardView>(Resource.Id.MainGFUtilCardLayout),
                     FindViewById<CardView>(Resource.Id.MainExtrasCardLayout),
                     FindViewById<CardView>(Resource.Id.MainOldGFDCardLayout),
                     FindViewById<CardView>(Resource.Id.MainGFDInfoCardLayout),
@@ -75,20 +77,22 @@ namespace GFI_with_GFS_A
 
                 mainCardViewList[0].Click += MainNotificationCardLayout_Click;
                 mainCardViewList[1].Click += MainDBDictionaryCardLayout_Click;
-                mainCardViewList[2].Click += MainExtrasCardLayout_Click;
-                mainCardViewList[3].Click += MainOldGFDCardLayout_Click;
-                mainCardViewList[4].Click += delegate
+                mainCardViewList[2].Click += MainGFUtilCardLayout_Click;
+                mainCardViewList[3].Click += MainExtrasCardLayout_Click;
+                mainCardViewList[4].Click += MainOldGFDCardLayout_Click;
+                mainCardViewList[5].Click += delegate
                 {
                     StartActivity(typeof(GFDInfoActivity));
                     OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
                 };
-                mainCardViewList[5].Click += delegate
+                mainCardViewList[6].Click += delegate
                 {
                     StartActivity(typeof(SettingActivity));
                     OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
                 };
 
                 dbDictionarySubMenu = FindViewById<RecyclerView>(Resource.Id.MainDBDictionaryRecyclerView);
+                gfUtilSubMenu = FindViewById<RecyclerView>(Resource.Id.MainGFUtilRecyclerView);
                 extrasSubMenu = FindViewById<RecyclerView>(Resource.Id.MainExtrasRecyclerView);
                 oldGFDSubMenu = FindViewById<RecyclerView>(Resource.Id.MainOldGFDRecyclerView);
                 snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.MainSnackbarLayout);
@@ -230,6 +234,11 @@ namespace GFI_with_GFS_A
                 dbDictionarySubMenu.SetLayoutManager(new LinearLayoutManager(this));
                 dbDictionarySubMenu.SetAdapter(dbSubAdapter);
 
+                var gfUtilSubAdapter = new MainListAdapter(GFUtilMenuButtonText, this);
+                gfUtilSubAdapter.ItemClick += MainGFUtilSubMenu_Click;
+                gfUtilSubMenu.SetLayoutManager(new LinearLayoutManager(this));
+                gfUtilSubMenu.SetAdapter(gfUtilSubAdapter);
+
                 var extrasSubAdapter = new MainListAdapter(ExtraMenuButtonText, this);
                 extrasSubAdapter.ItemClick += MainExtrasSubMenu_Click;
                 extrasSubMenu.SetLayoutManager(new LinearLayoutManager(this));
@@ -272,7 +281,7 @@ namespace GFI_with_GFS_A
             await Task.Delay(100);
 
             TextView tv = FindViewById<TextView>(Resource.Id.MainNowDBVersion);
-            tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBChecking)})";
+            tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBChecking)})";
 
             string notificationText = "";
 
@@ -289,9 +298,9 @@ namespace GFI_with_GFS_A
 
                     if (await ETC.CheckDBVersion())
                     {
-                        RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})"; });
+                        RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})"; });
 
-                        Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
+                        Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
                         ad.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
                         ad.SetMessage(Resource.String.CheckDBUpdateDialog_Question);
                         ad.SetCancelable(true);
@@ -301,16 +310,16 @@ namespace GFI_with_GFS_A
                             await ETC.UpdateDB(this, true);
 
                             if (!await ETC.CheckDBVersion())
-                                RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})"; });
+                                RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})"; });
                             else
-                                RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})"; });
+                                RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})"; });
 
                         });
 
                         RunOnUiThread(() => { ad.Show(); });
                     }
                     else
-                        RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.DBVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})"; });
+                        RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})"; });
 
 
                     // Get Notification
@@ -318,9 +327,9 @@ namespace GFI_with_GFS_A
                     string url = "";
 
                     if (ETC.locale.Language == "ko")
-                        url = Path.Combine(ETC.Server, "Android_Notification.txt");
+                        url = Path.Combine(ETC.server, "Android_Notification.txt");
                     else
-                        url = Path.Combine(ETC.Server, "Android_Notification_en.txt");
+                        url = Path.Combine(ETC.server, "Android_Notification_en.txt");
 
                     if (ETC.isServerDown)
                         notificationText = "& Server is Maintenance &";
@@ -350,8 +359,8 @@ namespace GFI_with_GFS_A
                     case 0:
                         await Task.Run(() =>
                         {
-                            if (ETC.DollList.TableName == "")
-                                ETC.LoadDBSync(ETC.DollList, "Doll.gfs", false);
+                            if (ETC.dollList.TableName == "")
+                                ETC.LoadDBSync(ETC.dollList, "Doll.gfs", false);
 
                             if (!ETC.hasInitDollAvgAbility)
                                 ETC.InitializeAverageAbility();
@@ -362,8 +371,8 @@ namespace GFI_with_GFS_A
                     case 1:
                         await Task.Run(() => 
                         {
-                            if (ETC.EquipmentList.TableName == "")
-                                ETC.LoadDBSync(ETC.EquipmentList, "Equipment.gfs", false);
+                            if (ETC.equipmentList.TableName == "")
+                                ETC.LoadDBSync(ETC.equipmentList, "Equipment.gfs", false);
                         });
                         StartActivity(typeof(EquipDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
@@ -371,8 +380,8 @@ namespace GFI_with_GFS_A
                     case 2:
                         await Task.Run(() => 
                         {
-                            if (ETC.FairyList.TableName == "")
-                                ETC.LoadDBSync(ETC.FairyList, "Fairy.gfs", false);
+                            if (ETC.fairyList.TableName == "")
+                                ETC.LoadDBSync(ETC.fairyList, "Fairy.gfs", false);
                         });
                         StartActivity(typeof(FairyDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
@@ -380,8 +389,8 @@ namespace GFI_with_GFS_A
                     case 3:
                         await Task.Run(() => 
                         {
-                            if (ETC.EnemyList.TableName == "")
-                                ETC.LoadDBSync(ETC.EnemyList, "Enemy.gfs", false);
+                            if (ETC.enemyList.TableName == "")
+                                ETC.LoadDBSync(ETC.enemyList, "Enemy.gfs", false);
                         });
                         StartActivity(typeof(EnemyDBMainActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
@@ -407,6 +416,63 @@ namespace GFI_with_GFS_A
             }
         }
 
+        private async void MainGFUtilSubMenu_Click(object sender, int position)
+        {
+            await Task.Delay(10);
+
+            try
+            {
+                switch (position)
+                {
+                    case 0:
+                        var newsIntent = new Intent(this, typeof(WebBrowserActivity));
+                        newsIntent.PutExtra("url", "http://www.girlsfrontline.co.kr/archives/category/news");
+                        StartActivity(newsIntent);
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    case 1:
+                        if (int.Parse(Build.VERSION.Release.Split('.')[0]) >= 6)
+                            CheckPermission(Manifest.Permission.Internet);
+                        StartActivity(typeof(EventListActivity));
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    case 2:
+                        var mdIntent = new Intent(this, typeof(WebBrowserActivity));
+                        mdIntent.PutExtra("url", "https://tempkaridc.github.io/gf/");
+                        StartActivity(mdIntent);
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    case 3:
+                        StartActivity(typeof(CalcMainActivity));
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    case 4:
+                        var areaTipIntent = new Intent(this, typeof(WebBrowserActivity));
+                        areaTipIntent.PutExtra("url", "https://cafe.naver.com/girlsfrontlinekr/235663");
+                        StartActivity(areaTipIntent);
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    case 5:
+                        //ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
+                        StartActivity(typeof(ShortGuideBookViewer));
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    case 6:
+                        StartActivity(typeof(StoryActivity));
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        break;
+                    default:
+                        ETC.ShowSnackbar(snackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.MenuAccess_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+            }
+        }
+
         private async void MainExtrasSubMenu_Click(object sender, int position)
         {
             await Task.Delay(10);
@@ -416,40 +482,7 @@ namespace GFI_with_GFS_A
                 switch (position)
                 {
                     case 0:
-                        if (int.Parse(Build.VERSION.Release.Split('.')[0]) >= 6)
-                            CheckPermission(Manifest.Permission.Internet);
-                        StartActivity(typeof(EventListActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case 1:
-                        var newsIntent = new Intent(this, typeof(WebBrowserActivity));
-                        newsIntent.PutExtra("url", "http://www.girlsfrontline.co.kr/archives/category/news");
-                        StartActivity(newsIntent);
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case 2:
-                        StartActivity(typeof(CalcMainActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case 3:
-                        var areaTipIntent = new Intent(this, typeof(WebBrowserActivity));
-                        areaTipIntent.PutExtra("url", "https://cafe.naver.com/girlsfrontlinekr/235663");
-                        StartActivity(areaTipIntent);
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case 4:
-                        var mdIntent = new Intent(this, typeof(WebBrowserActivity));
-                        mdIntent.PutExtra("url", "https://tempkaridc.github.io/gf/");
-                        StartActivity(mdIntent);
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case 5:
-                        //ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
-                        StartActivity(typeof(ShortGuideBookViewer));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case 6:
-                        if (ETC.DBVersion != 0)
+                        if (ETC.dbVersion != 0)
                         {
                             StartActivity(typeof(ProductSimulatorCategorySelectActivity));
                             OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
@@ -457,15 +490,11 @@ namespace GFI_with_GFS_A
                         else
                             ETC.ShowSnackbar(snackbarLayout, Resource.String.NoDBFiles, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
                         break;
-                    case 7:
-                        StartActivity(typeof(StoryActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case 8:
+                    case 1:
                         StartActivity(typeof(CartoonActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
-                    case 9:
+                    case 2:
                         ETC.ShowSnackbar(snackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
                         //StartActivity(typeof(GFOSTPlayerActivity));
                         //OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
@@ -511,9 +540,12 @@ namespace GFI_with_GFS_A
                         MainDBDictionaryCardLayout_Click(mainCardViewList[openCardIndex], new EventArgs());
                         break;
                     case 2:
-                        MainExtrasCardLayout_Click(mainCardViewList[openCardIndex], new EventArgs());
+                        MainGFUtilCardLayout_Click(mainCardViewList[openCardIndex], new EventArgs());
                         break;
                     case 3:
+                        MainExtrasCardLayout_Click(mainCardViewList[openCardIndex], new EventArgs());
+                        break;
+                    case 4:
                         MainOldGFDCardLayout_Click(mainCardViewList[openCardIndex], new EventArgs());
                         break;
                 }
@@ -621,6 +653,55 @@ namespace GFI_with_GFS_A
             }
         }
 
+        private void MainGFUtilCardLayout_Click(object sender, EventArgs e)
+        {
+            var card = sender as CardView;
+
+            try
+            {
+                TransitionManager.BeginDelayedTransition(card);
+
+                if (gfUtilSubMenu.Visibility == ViewStates.Gone)
+                {
+                    card.LayoutParameters = expandParams;
+                    card.CardElevation = 16;
+
+                    for (int i = 0; i < mainCardViewList.Length; ++i)
+                    {
+                        if (mainCardViewList[i].Id == card.Id)
+                            continue;
+
+                        mainCardViewList[i].Visibility = ViewStates.Gone;
+                        mainCardViewList[i].CardElevation = 8;
+                    }
+
+                    gfUtilSubMenu.Visibility = ViewStates.Visible;
+                    isCardOpen = true;
+                    openCardIndex = 2;
+                }
+                else
+                {
+                    card.LayoutParameters = collapseParams;
+
+                    for (int i = 0; i < mainCardViewList.Length; ++i)
+                    {
+                        if (mainCardViewList[i].Id == card.Id)
+                            continue;
+
+                        mainCardViewList[i].Visibility = ViewStates.Visible;
+                    }
+
+                    gfUtilSubMenu.Visibility = ViewStates.Gone;
+                    isCardOpen = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                Toast.MakeText(this, "Main GF Util transition error", ToastLength.Short).Show();
+            }
+        }
+
         private void MainExtrasCardLayout_Click(object sender, EventArgs e)
         {
             var card = sender as CardView;
@@ -645,7 +726,7 @@ namespace GFI_with_GFS_A
 
                     extrasSubMenu.Visibility = ViewStates.Visible;
                     isCardOpen = true;
-                    openCardIndex = 2;
+                    openCardIndex = 3;
                 }
                 else
                 {
@@ -695,7 +776,7 @@ namespace GFI_with_GFS_A
 
                     oldGFDSubMenu.Visibility = ViewStates.Visible;
                     isCardOpen = true;
-                    openCardIndex = 3;
+                    openCardIndex = 4;
                 }
                 else
                 {

@@ -84,7 +84,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(100);
 
-                DollInfoDR = ETC.FindDataRow(ETC.DollList, "DicNumber", Intent.GetIntExtra("DicNum", 0));
+                DollInfoDR = ETC.FindDataRow(ETC.dollList, "DicNumber", Intent.GetIntExtra("DicNum", 0));
                 doll = new Doll(DollInfoDR);
 
                 DAS = new DollAbilitySet(doll.Type);
@@ -350,7 +350,7 @@ namespace GFI_with_GFS_A
                 CompareList = new List<string>();
                 CompareList.Add("Type Average");
 
-                foreach (DataRow dr in ETC.DollList.Rows)
+                foreach (DataRow dr in ETC.dollList.Rows)
                 {
                     cDoll = new Doll(dr);
 
@@ -388,14 +388,14 @@ namespace GFI_with_GFS_A
 
             try
             {
-                Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
+                Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
                 ad.SetTitle(Resource.String.DollDBDetailLayout_ModelData);
                 ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
 
                 Task.Run(async () =>
                 {
                     using (WebClient wc = new WebClient())
-                        data = await wc.DownloadStringTaskAsync(Path.Combine(ETC.Server, "Data", "Text", "Gun", "ModelData", FileName));
+                        data = await wc.DownloadStringTaskAsync(Path.Combine(ETC.server, "Data", "Text", "Gun", "ModelData", FileName));
                 }).Wait();
 
                 ad.SetMessage(data);
@@ -529,12 +529,12 @@ namespace GFI_with_GFS_A
                 switch (vCostumeIndex)
                 {
                     case 0:
-                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", "Doll", doll.krName, $"{doll.krName}_{voice}_JP.wav");
-                        target = Path.Combine(ETC.CachePath, "Voices", "Doll", $"{doll.DicNumber}_{voice}_JP.gfdcache");
+                        VoiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Doll", doll.krName, $"{doll.krName}_{voice}_JP.wav");
+                        target = Path.Combine(ETC.cachePath, "Voices", "Doll", $"{doll.DicNumber}_{voice}_JP.gfdcache");
                         break;
                     default:
-                        VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", "Doll", $"{doll.krName}_{vCostumeIndex - 1}", $"{doll.krName}_{vCostumeIndex - 1}_{voice}_JP.wav");
-                        target = Path.Combine(ETC.CachePath, "Voices", "Doll", $"{doll.DicNumber}_{vCostumeIndex - 1}_{voice}_JP.gfdcache");
+                        VoiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Doll", $"{doll.krName}_{vCostumeIndex - 1}", $"{doll.krName}_{vCostumeIndex - 1}_{voice}_JP.wav");
+                        target = Path.Combine(ETC.cachePath, "Voices", "Doll", $"{doll.DicNumber}_{vCostumeIndex - 1}_{voice}_JP.gfdcache");
                         break;
                 }
 
@@ -770,8 +770,8 @@ namespace GFI_with_GFS_A
                 {
                     try
                     {
-                        string url = Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", $"{doll.DicNumber}.png");
-                        string target = Path.Combine(ETC.CachePath, "Doll", "Normal", $"{doll.DicNumber}.gfdcache");
+                        string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal", $"{doll.DicNumber}.png");
+                        string target = Path.Combine(ETC.cachePath, "Doll", "Normal", $"{doll.DicNumber}.gfdcache");
 
                         if (!File.Exists(target) || IsRefresh)
                         {
@@ -797,8 +797,8 @@ namespace GFI_with_GFS_A
 
                 try
                 {
-                    string url = Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal_Crop", $"{FileName}.png");
-                    string target = Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", $"{FileName}.gfdcache");
+                    string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal_Crop", $"{FileName}.png");
+                    string target = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{FileName}.gfdcache");
 
                     if (!File.Exists(target) || IsRefresh == true)
                     {
@@ -989,8 +989,8 @@ namespace GFI_with_GFS_A
 
                 try
                 {
-                    string url = Path.Combine(ETC.Server, "Data", "Images", "SkillIcons", $"{SkillName}.png");
-                    string target = Path.Combine(ETC.CachePath, "Doll", "Skill", $"{SkillName}.gfdcache");
+                    string url = Path.Combine(ETC.server, "Data", "Images", "SkillIcons", $"{SkillName}.png");
+                    string target = Path.Combine(ETC.cachePath, "Doll", "Skill", $"{SkillName}.gfdcache");
 
                     if (!File.Exists(target) || IsRefresh)
                     {
@@ -1064,8 +1064,8 @@ namespace GFI_with_GFS_A
 
                     try
                     {
-                        string url = Path.Combine(ETC.Server, "Data", "Images", "SkillIcons", $"{mSkillName}.png");
-                        string target = Path.Combine(ETC.CachePath, "Doll", "Skill", $"{mSkillName}.gfdcache");
+                        string url = Path.Combine(ETC.server, "Data", "Images", "SkillIcons", $"{mSkillName}.png");
+                        string target = Path.Combine(ETC.cachePath, "Doll", "Skill", $"{mSkillName}.gfdcache");
 
                         if (!File.Exists(target) || IsRefresh)
                         {
@@ -1427,17 +1427,17 @@ namespace GFI_with_GFS_A
 
                     CompareAbilityList = new ObservableCollection<DollMaxAbility>()
                     {
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_HP), ETC.Avg_List[index].HP),
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_FR), ETC.Avg_List[index].FR),
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_EV), ETC.Avg_List[index].EV),
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AC), ETC.Avg_List[index].AC),
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AS), ETC.Avg_List[index].AS),
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AM), ETC.Avg_List[index].AM)
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_HP), ETC.avgList[index].HP),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_FR), ETC.avgList[index].FR),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_EV), ETC.avgList[index].EV),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AC), ETC.avgList[index].AC),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AS), ETC.avgList[index].AS),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AM), ETC.avgList[index].AM)
                     };
                 }
                 else
                 {
-                    cDoll = new Doll(ETC.FindDataRow(ETC.DollList, "Name", CompareList[CompareIndex]));
+                    cDoll = new Doll(ETC.FindDataRow(ETC.dollList, "Name", CompareList[CompareIndex]));
 
                     string[] abilities = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
                     int[] compareAbilityValues = { 0, 0, 0, 0, 0, 0 };

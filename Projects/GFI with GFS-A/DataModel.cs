@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.IO;
 
@@ -51,7 +50,7 @@ namespace GFI_with_GFS_A
         public string GetDicNumberString { get { return string.Format("No. {0}", DicNumber); } }
         public string GetProductTimeToString { get { return ETC.CalcTime(ProductTime); } }
 
-        internal Doll(DataRow dr, bool basic_info = false)
+        internal Doll(DataRow dr, bool basicInfo = false)
         {
             if (ETC.locale.Language == "ko")
             {
@@ -95,7 +94,7 @@ namespace GFI_with_GFS_A
             SkillEffect = ((string)dr["SkillEffect"]).Split(';');
             SkillMag = ((string)dr["SkillMag"]).Split(',');
 
-            if (HasMod == true)
+            if (HasMod)
             {
                 ModGrade = (int)dr["ModGrade"];
                 string[] ModBuffFormation_Data = ((string)dr["ModEffectFormation"]).Split(',');
@@ -131,14 +130,14 @@ namespace GFI_with_GFS_A
                     break;
             }
 
-            if (basic_info == false)
+            if (!basicInfo)
             {
-                if (HasVoice == true)
+                if (HasVoice)
                 {
                     Voices = ((string)dr["Voices"]).Split(';');
                     VoiceActor = ETC.IsDBNullOrBlank(dr, "VoiceActor") ? "" : (string)dr["VoiceActor"];
 
-                    if (ETC.IsDBNullOrBlank(dr, "CostumeVoices") == false)
+                    if (!ETC.IsDBNullOrBlank(dr, "CostumeVoices"))
                     {
                         string[] temp = ((string)dr["CostumeVoices"]).Split('/');
 
@@ -210,7 +209,7 @@ namespace GFI_with_GFS_A
         public string GetIdString { get { return string.Format("No. {0}", Id); } }
         public string GetProductTimeToString { get { return ETC.CalcTime(ProductTime); } }
 
-        internal Equip(DataRow dr, bool basic_info = false)
+        internal Equip(DataRow dr, bool basicInfo = false)
         {
             Name = (string)dr["Name"];
             Id = (int)dr["Id"];
@@ -221,7 +220,7 @@ namespace GFI_with_GFS_A
             Note = ETC.IsDBNullOrBlank(dr, "Note") ? "" : (string)dr["Note"];
             Type = (string)dr["Type"];
 
-            ImagePath = Path.Combine(ETC.CachePath, "Equip", "Normal", string.Format("{0}.gfdcache", Icon));
+            ImagePath = Path.Combine(ETC.cachePath, "Equip", "Normal", string.Format("{0}.gfdcache", Icon));
 
             OnlyUse = ETC.IsDBNullOrBlank(dr, "OnlyUse") ? null : ((string)dr["OnlyUse"]).Split(';');
             DollType = ETC.IsDBNullOrBlank(dr, "DollType") ? null : ((string)dr["DollType"]).Split(';');
@@ -254,7 +253,7 @@ namespace GFI_with_GFS_A
             Abilities = ((string)dr["Ability"]).Split(';');
             InitMags = ((string)dr["InitialMagnification"]).Split(';');
             MaxMags = ((string)dr["MaxMagnification"]).Split(';');
-            CanUpgrade = MaxMags[0] == "강화불가";
+            CanUpgrade = (MaxMags[0] == "강화불가");
         }
     }
 
@@ -277,7 +276,7 @@ namespace GFI_with_GFS_A
         public string GetDicNumberString { get { return string.Format("No. {0}", DicNumber); } }
         public string GetProductTimeToString { get { return ETC.CalcTime(ProductTime); } }
 
-        internal Fairy(DataRow dr, bool basic_info = false)
+        internal Fairy(DataRow dr, bool basicInfo = false)
         {
             Name = (string)dr["Name"];
             DicNumber = (int)dr["DicNumber"];
@@ -321,7 +320,7 @@ namespace GFI_with_GFS_A
 
         public Dictionary<string, int>[] Abilities;
 
-        public Enemy(DataRow dr, bool basic_info = false)
+        public Enemy(DataRow dr, bool basicInfo = false)
         {
             Name = (string)dr["Name"];
             CodeName = (string)dr["CodeName"];
@@ -330,7 +329,7 @@ namespace GFI_with_GFS_A
 
             List<DataRow> drs = new List<DataRow>();
 
-            foreach (DataRow t_dr in ETC.EnemyList.Rows)
+            foreach (DataRow t_dr in ETC.enemyList.Rows)
                 if ((string)t_dr["CodeName"] == CodeName)
                     drs.Add(t_dr);
 
@@ -399,7 +398,7 @@ namespace GFI_with_GFS_A
         public int CircuitLength = 8;
         public int CircuitHeight = 8;
 
-        public FST(DataRow dr, bool basic_info = false)
+        public FST(DataRow dr, bool basicInfo = false)
         {
             Name = (string)dr["Name"];
             CodeName = (string)dr["CodeName"];
@@ -413,7 +412,7 @@ namespace GFI_with_GFS_A
             ForceSize = (int)dr["ForceSize"];
             Distance = (string)dr["Distance"];
 
-            if (basic_info == false)
+            if (basicInfo == false)
             {
                 InitializeVersionUpPlus(ref dr);
                 InitializeChipsetCircuit(ref dr);

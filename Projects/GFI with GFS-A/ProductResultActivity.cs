@@ -49,13 +49,13 @@ namespace GFI_with_GFS_A
                 switch (Types[i])
                 {
                     case "Doll":
-                        ResultDR = ETC.FindDataRow(ETC.DollList, "Name", names[i]);
+                        ResultDR = ETC.FindDataRow(ETC.dollList, "Name", names[i]);
                         break;
                     case "Equip":
-                        ResultDR = ETC.FindDataRow(ETC.EquipmentList, "Name", names[i]);
+                        ResultDR = ETC.FindDataRow(ETC.equipmentList, "Name", names[i]);
                         break;
                     case "Fairy":
-                        ResultDR = ETC.FindDataRow(ETC.FairyList, "Name", names[i]);
+                        ResultDR = ETC.FindDataRow(ETC.fairyList, "Name", names[i]);
                         break;
                 }
 
@@ -197,16 +197,16 @@ namespace GFI_with_GFS_A
                 switch (type)
                 {
                     case "Doll":
-                        URL = Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal_Crop", $"{(int)item["DicNumber"]}.png");
-                        FilePath = Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", $"{(int)item["DicNumber"]}.gfdcache");
+                        URL = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal_Crop", $"{(int)item["DicNumber"]}.png");
+                        FilePath = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{(int)item["DicNumber"]}.gfdcache");
                         break;
                     case "Equip":
-                        URL = Path.Combine(ETC.Server, "Data", "Images", "Equipments", $"{(string)item["Icon"]}.png");
-                        FilePath = Path.Combine(ETC.CachePath, "Equip", "Normal", $"{(string)item["Icon"]}.gfdcache");
+                        URL = Path.Combine(ETC.server, "Data", "Images", "Equipments", $"{(string)item["Icon"]}.png");
+                        FilePath = Path.Combine(ETC.cachePath, "Equip", "Normal", $"{(string)item["Icon"]}.gfdcache");
                         break;
                     case "Fairy":
-                        URL = Path.Combine(ETC.Server, "Data", "Images", "Fairy", $"{(int)item["Name"]}_1.png");
-                        FilePath = Path.Combine(ETC.CachePath, "Fairy", "Normal_Crop", $"{(int)item["DicNumber"]}.gfdcache");
+                        URL = Path.Combine(ETC.server, "Data", "Images", "Fairy", $"{(int)item["Name"]}_1.png");
+                        FilePath = Path.Combine(ETC.cachePath, "Fairy", "Normal_Crop", $"{(int)item["DicNumber"]}.gfdcache");
                         break;
                 }
 

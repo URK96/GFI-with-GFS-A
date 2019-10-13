@@ -52,7 +52,7 @@ namespace GFI_with_GFS_A
 
                 ModIndex = int.Parse(temp[1]);
 
-                doll = new Doll(ETC.FindDataRow(ETC.DollList, "DicNumber", int.Parse(temp[0])));
+                doll = new Doll(ETC.FindDataRow(ETC.dollList, "DicNumber", int.Parse(temp[0])));
 
                 HasCensored = doll.HasCensored;
                 if (HasCensored == true) CensorType = doll.CensorType;
@@ -181,8 +181,8 @@ namespace GFI_with_GFS_A
                 if ((HasCensored == true) && (EnableCensored == true) && (ModIndex != 3))
                     if (CheckCensorType() == true) ImageName += "_C";
 
-                string ImagePath = Path.Combine(ETC.CachePath, "Doll", "Normal", $"{ImageName}.gfdcache");
-                string URL = Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal", $"{ImageName}.png");
+                string ImagePath = Path.Combine(ETC.cachePath, "Doll", "Normal", $"{ImageName}.gfdcache");
+                string URL = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal", $"{ImageName}.png");
 
                 if ((File.Exists(ImagePath) == false) || (IsRefresh == true))
                 {

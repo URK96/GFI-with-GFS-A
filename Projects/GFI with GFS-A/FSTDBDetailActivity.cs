@@ -317,11 +317,11 @@ namespace GFI_with_GFS_A
                 try
                 {
                     ImageView smallImage = FindViewById<ImageView>(Resource.Id.FSTDBDetailSmallImage);
-                    string cropimage_path = Path.Combine(ETC.CachePath, "FST", "Normal_Crop", $"{fst.CodeName}.gfdcache");
+                    string cropimage_path = Path.Combine(ETC.cachePath, "FST", "Normal_Crop", $"{fst.CodeName}.gfdcache");
 
                     if ((File.Exists(cropimage_path) == false) || (IsRefresh == true))
                         using (WebClient wc = new WebClient())
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "FST", "Normal_Crop", $"{fst.CodeName}.png"), cropimage_path);
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "FST", "Normal_Crop", $"{fst.CodeName}.png"), cropimage_path);
 
                     DisplayMetrics dm = ApplicationContext.Resources.DisplayMetrics;
 
@@ -380,12 +380,12 @@ namespace GFI_with_GFS_A
 
                     try
                     {
-                        string skillicon_path = Path.Combine(ETC.CachePath, "FST", "Skill", $"{SkillName}.gfdcache");
+                        string skillicon_path = Path.Combine(ETC.cachePath, "FST", "Skill", $"{SkillName}.gfdcache");
 
                         if ((File.Exists(skillicon_path) == false) || (IsRefresh == true))
                         {
                             using (WebClient wc = new WebClient())
-                                wc.DownloadFile(Path.Combine(ETC.Server, "Data", "Images", "SkillIcons", "FST", SkillName + ".png"), skillicon_path);
+                                wc.DownloadFile(Path.Combine(ETC.server, "Data", "Images", "SkillIcons", "FST", SkillName + ".png"), skillicon_path);
                         }
 
                         FindViewById<ImageView>(SkillIconIds[i]).SetImageDrawable(Drawable.CreateFromPath(skillicon_path));

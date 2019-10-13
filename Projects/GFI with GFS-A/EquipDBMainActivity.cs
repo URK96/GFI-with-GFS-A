@@ -239,7 +239,7 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                foreach (DataRow dr in ETC.EquipmentList.Rows)
+                foreach (DataRow dr in ETC.equipmentList.Rows)
                     RootList.Add(new Equip(dr));
 
                 RootList.TrimExcess();
@@ -258,7 +258,7 @@ namespace GFI_with_GFS_A
             for (int i = 0; i < RootList.Count; ++i)
             {
                 Equip equip = RootList[i];
-                string FilePath = System.IO.Path.Combine(ETC.CachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache");
+                string FilePath = System.IO.Path.Combine(ETC.cachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache");
                 if (System.IO.File.Exists(FilePath) == false)
                     if (Download_List.Contains(equip.Icon) == false)
                         Download_List.Add(equip.Icon);
@@ -272,7 +272,7 @@ namespace GFI_with_GFS_A
 
         private void ShowDownloadCheckMessage(int title, int message, DownloadProgress method)
         {
-            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
+            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
             ad.SetTitle(title);
             ad.SetMessage(message);
             ad.SetCancelable(true);
@@ -286,7 +286,7 @@ namespace GFI_with_GFS_A
         {
             View v = LayoutInflater.Inflate(Resource.Layout.ProgressDialogLayout, null);
 
-            Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG_Download);
+            Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload);
             pd.SetTitle(Resource.String.DBList_DownloadCropImageTitle);
             pd.SetCancelable(false);
             pd.SetView(v);
@@ -313,8 +313,8 @@ namespace GFI_with_GFS_A
 
                     for (int i = 0; i < p_total; ++i)
                     {
-                        string url = System.IO.Path.Combine(ETC.Server, "Data", "Images", "Equipments", $"{Download_List[i]}.png");
-                        string target = System.IO.Path.Combine(ETC.CachePath, "Equip", "Normal", $"{Download_List[i]}.gfdcache");
+                        string url = System.IO.Path.Combine(ETC.server, "Data", "Images", "Equipments", $"{Download_List[i]}.png");
+                        string target = System.IO.Path.Combine(ETC.cachePath, "Equip", "Normal", $"{Download_List[i]}.gfdcache");
                         await wc.DownloadFileTaskAsync(url, target);
                     }
                 }
@@ -404,7 +404,7 @@ namespace GFI_with_GFS_A
                 for (int i = 0; i < GradeFilters.Length; ++i) v.FindViewById<CheckBox>(GradeFilters[i]).Checked = Filter_Grade[i];
                 for (int i = 0; i < CategoryFilters.Length; ++i) v.FindViewById<CheckBox>(CategoryFilters[i]).Checked = Filter_Category[i];
 
-                Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG_Vertical);
+                Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical);
                 FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
                 FilterBox.SetView(v);
                 FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
@@ -664,7 +664,7 @@ namespace GFI_with_GFS_A
                 if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
                 {
                     vh.SmallImage.Visibility = ViewStates.Visible;
-                    string FilePath = System.IO.Path.Combine(ETC.CachePath, "Equip", "Normal", $"{item.Icon}.gfdcache");
+                    string FilePath = System.IO.Path.Combine(ETC.cachePath, "Equip", "Normal", $"{item.Icon}.gfdcache");
                     if (System.IO.File.Exists(FilePath) == true)
                         vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(FilePath));
                 }

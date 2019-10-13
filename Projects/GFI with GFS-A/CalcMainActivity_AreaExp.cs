@@ -111,7 +111,7 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                AreaDR = ETC.FreeOPList.Rows[e.Position];
+                AreaDR = ETC.freeOPList.Rows[e.Position];
                 CalcCount(NowLevel.Value, TargetLevel.Value, DollDummy.Value, WarCount.Value);
             }
             catch (Exception ex)
@@ -128,7 +128,7 @@ namespace GFI_with_GFS_A
 
             List<string> areaList = new List<string>();
 
-            foreach (DataRow dr in ETC.FreeOPList.Rows)
+            foreach (DataRow dr in ETC.freeOPList.Rows)
                 areaList.Add((string)dr["Location"]);
 
             var adapter = new ArrayAdapter(Activity, Resource.Layout.SpinnerListLayout, areaList);

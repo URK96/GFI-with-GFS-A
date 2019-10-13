@@ -43,7 +43,7 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.FairyDB_ImageViewer);
 
-                FairyInfoDR = ETC.FindDataRow(ETC.FairyList, "Name", Intent.GetStringExtra("Keyword"));
+                FairyInfoDR = ETC.FindDataRow(ETC.fairyList, "Name", Intent.GetStringExtra("Keyword"));
                 FairyName = (string)FairyInfoDR["Name"];
                 FairyDicNumber = (int)FairyInfoDR["DicNumber"];
 
@@ -122,13 +122,13 @@ namespace GFI_with_GFS_A
 
                 string ImageName = string.Format("{0}_{1}", FairyDicNumber, ImageNum);
 
-                string ImagePath = Path.Combine(ETC.CachePath, "Fairy", "Normal", ImageName + ".gfdcache");
+                string ImagePath = Path.Combine(ETC.cachePath, "Fairy", "Normal", ImageName + ".gfdcache");
 
                 if (File.Exists(ImagePath) == false)
                 {
                     using (WebClient wc = new WebClient())
                     {
-                        await Task.Run(async () => { await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Fairy", ImageName + ".png"), ImagePath); });
+                        await Task.Run(async () => { await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "Fairy", ImageName + ".png"), ImagePath); });
                     }
                 }
 

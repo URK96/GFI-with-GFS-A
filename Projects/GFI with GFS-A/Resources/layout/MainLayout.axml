@@ -85,6 +85,39 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_margin="10dp"
+            android:id="@+id/MainGFUtilCardLayout"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:backgroundTint="#BA2974"
+            android:animateLayoutChanges="true"
+            app:cardElevation="4dp"
+            app:cardMaxElevation="4dp"
+            app:cardCornerRadius="5dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/Main_ManiMenu_GFUtil"
+                    android:gravity="center"/>
+                <android.support.v7.widget.RecyclerView
+			        android:layout_width="match_parent"
+			        android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone"
+			        android:scrollbars="vertical"
+			        app:fastScrollEnabled="false"
+                    android:id="@+id/MainGFUtilRecyclerView" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
             android:id="@+id/MainExtrasCardLayout"
             android:foreground="?android:attr/selectableItemBackground"
             android:backgroundTint="#80EB34EB"

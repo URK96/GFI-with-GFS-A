@@ -146,7 +146,7 @@ namespace GFI_with_GFS_A
                 if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate 
                 {
                     Download_List.Clear();
-                    foreach (DataRow dr in ETC.DollList.Rows) Download_List.Add((int)dr["DicNumber"]);
+                    foreach (DataRow dr in ETC.dollList.Rows) Download_List.Add((int)dr["DicNumber"]);
                     Download_List.TrimExcess();
                     ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(DollCropImageDownloadProcess));
                 };
@@ -243,7 +243,7 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                foreach (DataRow dr in ETC.DollList.Rows)
+                foreach (DataRow dr in ETC.dollList.Rows)
                     RootList.Add(new Doll(dr));
 
                 RootList.TrimExcess();
@@ -262,7 +262,7 @@ namespace GFI_with_GFS_A
             for (int i = 0; i < RootList.Count; ++i)
             {
                 Doll doll = RootList[i];
-                string FilePath = Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", $"{doll.DicNumber}.gfdcache");
+                string FilePath = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{doll.DicNumber}.gfdcache");
                 if (File.Exists(FilePath) == false) Download_List.Add(doll.DicNumber);
             }
 
@@ -274,7 +274,7 @@ namespace GFI_with_GFS_A
 
         private void ShowDownloadCheckMessage(int title, int message, DownloadProgress method)
         {
-            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG);
+            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
             ad.SetTitle(title);
             ad.SetMessage(message);
             ad.SetCancelable(true);
@@ -288,7 +288,7 @@ namespace GFI_with_GFS_A
         {
             View v = LayoutInflater.Inflate(Resource.Layout.ProgressDialogLayout, null);
 
-            Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG_Download);
+            Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload);
             pd.SetTitle(Resource.String.DBList_DownloadCropImageTitle);
             pd.SetCancelable(false);
             pd.SetView(v);
@@ -316,8 +316,8 @@ namespace GFI_with_GFS_A
 
                     for (int i = 0; i < p_total; ++i)
                     {
-                        string url = Path.Combine(ETC.Server, "Data", "Images", "Guns", "Normal_Crop", $"{Download_List[i]}.png");
-                        string target = Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", $"{Download_List[i]}.gfdcache");
+                        string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal_Crop", $"{Download_List[i]}.png");
+                        string target = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{Download_List[i]}.gfdcache");
                         await wc.DownloadFileTaskAsync(url, target);
                     }
                 }
@@ -390,7 +390,7 @@ namespace GFI_with_GFS_A
                 for (int i = 0; i < ProductTimeFilters.Length; ++i) v.FindViewById<NumberPicker>(ProductTimeFilters[i]).Value = Filter_ProductTime[i];
                 v.FindViewById<CheckBox>(ModFilter).Checked = Filter_Mod;
 
-                Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG_Vertical);
+                Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical);
                 FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
                 FilterBox.SetView(v);
                 FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
@@ -696,8 +696,8 @@ namespace GFI_with_GFS_A
                 if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
                 {
                     vh.SmallImage.Visibility = ViewStates.Visible;
-                    if (File.Exists(Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", $"{item.DicNumber}.gfdcache")) == true)
-                        vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Doll", "Normal_Crop", $"{item.DicNumber}.gfdcache")));
+                    if (File.Exists(Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{item.DicNumber}.gfdcache")) == true)
+                        vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{item.DicNumber}.gfdcache")));
                 }
                 else vh.SmallImage.Visibility = ViewStates.Gone;
 

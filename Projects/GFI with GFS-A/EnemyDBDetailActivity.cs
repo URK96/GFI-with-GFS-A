@@ -44,7 +44,7 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.EnemyDBDetailLayout);
 
-                enemy = new Enemy(ETC.FindDataRow(ETC.EnemyList, "CodeName", Intent.GetStringExtra("Keyword")));
+                enemy = new Enemy(ETC.FindDataRow(ETC.enemyList, "CodeName", Intent.GetStringExtra("Keyword")));
 
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.EnemyDBDetailInitLoadProgress);
                 FindViewById<ImageView>(Resource.Id.EnemyDBDetailSmallImage).Click += EnemyDBDetailSmallImage_Click;
@@ -108,8 +108,8 @@ namespace GFI_with_GFS_A
 
                 string voice = enemy.Voices[VoiceSelector.SelectedItemPosition];
 
-                string VoiceServerURL = Path.Combine(ETC.Server, "Data", "Voice", "Enemy", enemy.CodeName, $"{enemy.CodeName}_{voice}_JP.wav");
-                string target = Path.Combine(ETC.CachePath, "Voices", "Enemy", $"{enemy.CodeName}_{voice}_JP.gfdcache");
+                string VoiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Enemy", enemy.CodeName, $"{enemy.CodeName}_{voice}_JP.wav");
+                string target = Path.Combine(ETC.cachePath, "Voices", "Enemy", $"{enemy.CodeName}_{voice}_JP.gfdcache");
 
                 MediaPlayer SoundPlayer = new MediaPlayer();
                 SoundPlayer.Completion += delegate { SoundPlayer.Release(); };
@@ -204,22 +204,22 @@ namespace GFI_with_GFS_A
 
                 if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false))
                 {
-                    string imagePath = Path.Combine(ETC.CachePath, "Enemy", "Normal", $"{enemy.CodeName}.gfdcache");
+                    string imagePath = Path.Combine(ETC.cachePath, "Enemy", "Normal", $"{enemy.CodeName}.gfdcache");
 
                     if (!File.Exists(imagePath))
                         using (WebClient wc = new WebClient())
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Enemy", "Normal", $"{enemy.CodeName}.png"), imagePath);
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "Enemy", "Normal", $"{enemy.CodeName}.png"), imagePath);
 
                     Drawable drawable = Drawable.CreateFromPath(imagePath);
                     drawable.SetAlpha(40);
                     FindViewById<RelativeLayout>(Resource.Id.EnemyDBDetailMainLayout).Background = drawable;
                 }
 
-                string cropImagePath = Path.Combine(ETC.CachePath, "Enemy", "Normal_Crop", $"{enemy.CodeName}.gfdcache");
+                string cropImagePath = Path.Combine(ETC.cachePath, "Enemy", "Normal_Crop", $"{enemy.CodeName}.gfdcache");
 
                 if (!File.Exists(cropImagePath))
                     using (WebClient wc = new WebClient())
-                        await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Enemy", "Normal_Crop", $"{enemy.CodeName}.png"), cropImagePath);
+                        await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "Enemy", "Normal_Crop", $"{enemy.CodeName}.png"), cropImagePath);
 
                 FindViewById<ImageView>(Resource.Id.EnemyDBDetailSmallImage).SetImageDrawable(Drawable.CreateFromPath(cropImagePath));
 

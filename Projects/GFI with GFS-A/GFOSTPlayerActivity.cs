@@ -26,7 +26,7 @@ namespace GFI_with_GFS_A
         internal static Android.Support.V4.App.Fragment PlayerScreenFragment;
         internal static bool IsPlayerPlaying = false;
 
-        private static readonly string Server_MusicPath = Path.Combine(ETC.Server, "Data", "Music");
+        private static readonly string Server_MusicPath = Path.Combine(ETC.server, "Data", "Music");
 
         internal static string MusicServerPath = "";
         internal static int CategoryIndex = 0;
@@ -53,12 +53,12 @@ namespace GFI_with_GFS_A
         {
             if (Category_List == null) ListCategory();
 
-            if (ETC.OSTPlayer == null)
+            if (ETC.ostPlayer == null)
             {
                 player = new MediaPlayer();
-                ETC.OSTPlayer = player;
+                ETC.ostPlayer = player;
             }
-            else player = ETC.OSTPlayer;
+            else player = ETC.ostPlayer;
 
             player.Prepared += delegate 
             {
@@ -355,9 +355,9 @@ namespace GFI_with_GFS_A
             }
             else
             {
-                ETC.OSTPlayer = MusicRepository.player;
-                ETC.OST_Index[0] = MusicRepository.CategoryIndex;
-                ETC.OST_Index[1] = MusicRepository.ItemIndex;
+                ETC.ostPlayer = MusicRepository.player;
+                ETC.ostIndex[0] = MusicRepository.CategoryIndex;
+                ETC.ostIndex[1] = MusicRepository.ItemIndex;
 
                 base.OnBackPressed();
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
@@ -419,11 +419,11 @@ namespace GFI_with_GFS_A
                 SkipNextButton.SetImageResource(Resource.Drawable.SkipNext);
             }
 
-            if (ETC.OSTPlayer != null)
+            if (ETC.ostPlayer != null)
             {
                 MusicRepository.PlayerInitialize();
-                MusicRepository.CategoryIndex = ETC.OST_Index[0];
-                MusicRepository.ItemIndex = ETC.OST_Index[1];
+                MusicRepository.CategoryIndex = ETC.ostIndex[0];
+                MusicRepository.ItemIndex = ETC.ostIndex[1];
                 MusicRepository.StartSeekBarTask();
             }
 
@@ -572,8 +572,8 @@ namespace GFI_with_GFS_A
             MusicRepository.IsPlayerPlaying = false;
             MusicRepository.player.Release();
             MusicRepository.player.Dispose();
-            ETC.OSTPlayer.Release();
-            ETC.OSTPlayer = null;
+            ETC.ostPlayer.Release();
+            ETC.ostPlayer = null;
         }
 
         private void LoadMusic(string path, bool IsChange)

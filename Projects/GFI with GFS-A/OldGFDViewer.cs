@@ -292,7 +292,7 @@ namespace GFI_with_GFS_A
             {
                 imageContainer.RemoveAllViews();
 
-                drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ETC.locale.Language}_{imageName[index]}.gfdcache"));
+                drawable = Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "OldGFD", "Images", $"{ETC.locale.Language}_{imageName[index]}.gfdcache"));
                 Android.Graphics.Bitmap bitmap = ((BitmapDrawable)drawable).Bitmap;
 
                 while (height < bitmap.Height)
@@ -338,7 +338,7 @@ namespace GFI_with_GFS_A
         private bool CheckImage()
         {
             foreach (string s in imageName)
-                if (!File.Exists(Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ETC.locale.Language}_{s}.gfdcache")))
+                if (!File.Exists(Path.Combine(ETC.cachePath, "OldGFD", "Images", $"{ETC.locale.Language}_{s}.gfdcache")))
                     return true;
 
             return false;
@@ -358,13 +358,13 @@ namespace GFI_with_GFS_A
                 {
                     using (WebClient wc = new WebClient())
                     {
-                        string LocalDBVerPath = Path.Combine(ETC.SystemPath, "OldGFDVer.txt");
+                        string LocalDBVerPath = Path.Combine(ETC.systemPath, "OldGFDVer.txt");
 
                         if (!File.Exists(LocalDBVerPath))
                             hasUpdate = true;
                         else
                         {
-                            int serverVer = int.Parse(await wc.DownloadStringTaskAsync(Path.Combine(ETC.Server, "OldGFDVer.txt")));
+                            int serverVer = int.Parse(await wc.DownloadStringTaskAsync(Path.Combine(ETC.server, "OldGFDVer.txt")));
                             int localVer = 0;
 
                             using (StreamReader sr = new StreamReader(new FileStream(LocalDBVerPath, FileMode.Open, FileAccess.Read)))
@@ -406,7 +406,7 @@ namespace GFI_with_GFS_A
             ProgressBar nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
             TextView nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
 
-            using (var builder = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG_Download))
+            using (var builder = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload))
             {
                 builder.SetTitle(Resource.String.UpdateDownloadDialog_Title);
                 builder.SetView(v);
@@ -437,13 +437,13 @@ namespace GFI_with_GFS_A
 
                         foreach (string s in imageName)
                         {
-                            string url = Path.Combine(ETC.Server, "Data", "Images", "OldGFD", "Images", ETC.locale.Language, $"{s}.png");
-                            string target = Path.Combine(ETC.CachePath, "OldGFD", "Images", $"{ETC.locale.Language}_{s}.gfdcache");
+                            string url = Path.Combine(ETC.server, "Data", "Images", "OldGFD", "Images", ETC.locale.Language, $"{s}.png");
+                            string target = Path.Combine(ETC.cachePath, "OldGFD", "Images", $"{ETC.locale.Language}_{s}.gfdcache");
 
                             await wc.DownloadFileTaskAsync(url, target);
                         }
 
-                        wc.DownloadFile(Path.Combine(ETC.Server, "OldGFDVer.txt"), Path.Combine(ETC.SystemPath, "OldGFDVer.txt"));
+                        wc.DownloadFile(Path.Combine(ETC.server, "OldGFDVer.txt"), Path.Combine(ETC.systemPath, "OldGFDVer.txt"));
                     }
 
                     ETC.ShowSnackbar(snackbarLayout_F, Resource.String.UpdateDownload_Complete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);

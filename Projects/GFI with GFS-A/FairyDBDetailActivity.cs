@@ -49,7 +49,7 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.FairyDBDetailLayout);
 
-                FairyInfoDR = ETC.FindDataRow(ETC.FairyList, "DicNumber", Intent.GetIntExtra("DicNum", 0));
+                FairyInfoDR = ETC.FindDataRow(ETC.fairyList, "DicNumber", Intent.GetIntExtra("DicNum", 0));
                 fairy = new Fairy(FairyInfoDR);
 
                 InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.FairyDBDetailInitLoadProgress);
@@ -295,23 +295,23 @@ namespace GFI_with_GFS_A
                 // 요정 타이틀 바 초기화
                 try
                 {
-                    if ((File.Exists(Path.Combine(ETC.CachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache")) == false) || (IsRefresh == true))
+                    if ((File.Exists(Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache")) == false) || (IsRefresh == true))
                     {
                         using (WebClient wc = new WebClient())
                         {
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Fairy", $"{fairy.DicNumber}_1.png"), Path.Combine(ETC.CachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache"));
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "Fairy", $"{fairy.DicNumber}_1.png"), Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache"));
                         }
                     }
 
                     if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", true) == true)
                     {
-                        Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache"));
+                        Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache"));
                         drawable.SetAlpha(40);
                         FindViewById<RelativeLayout>(Resource.Id.FairyDBDetailMainLayout).Background = drawable;
                     }
 
                     ImageView FairySmallImage = FindViewById<ImageView>(Resource.Id.FairyDBDetailSmallImage);
-                    FairySmallImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache")));
+                    FairySmallImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache")));
                 }
                 catch (Exception ex)
                 {
@@ -335,15 +335,15 @@ namespace GFI_with_GFS_A
 
                 try
                 {
-                    if ((File.Exists(Path.Combine(ETC.CachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache")) == false) || (IsRefresh == true))
+                    if ((File.Exists(Path.Combine(ETC.cachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache")) == false) || (IsRefresh == true))
                     {
                         using (WebClient wc = new WebClient())
                         {
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "FairySkill", $"{fairy.SkillName}.png"), Path.Combine(ETC.CachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache"));
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "FairySkill", $"{fairy.SkillName}.png"), Path.Combine(ETC.cachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache"));
                         }
                     }
 
-                    FindViewById<ImageView>(Resource.Id.FairyDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache")));
+                    FindViewById<ImageView>(Resource.Id.FairyDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache")));
                 }
                 catch (Exception ex)
                 {

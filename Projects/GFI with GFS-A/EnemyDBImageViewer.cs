@@ -40,7 +40,7 @@ namespace GFI_with_GFS_A
 
                 string temp = Intent.GetStringExtra("Data");
 
-                EnemyInfoDR = ETC.FindDataRow(ETC.EnemyList, "CodeName", temp);
+                EnemyInfoDR = ETC.FindDataRow(ETC.enemyList, "CodeName", temp);
                 EnemyCodeName = (string)EnemyInfoDR["CodeName"];
                 EnemyName = (string)EnemyInfoDR["Name"];
 
@@ -69,13 +69,13 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(100);
 
-                string ImagePath = Path.Combine(ETC.CachePath, "Enemy", "Normal", EnemyCodeName + ".gfdcache");
+                string ImagePath = Path.Combine(ETC.cachePath, "Enemy", "Normal", EnemyCodeName + ".gfdcache");
 
                 if ((File.Exists(ImagePath) == false) || (IsRefresh == true))
                 {
                     using (WebClient wc = new WebClient())
                     {
-                        await Task.Run(async () => { await wc.DownloadFileTaskAsync(Path.Combine(ETC.Server, "Data", "Images", "Enemy", "Normal", EnemyCodeName + ".png"), ImagePath); });
+                        await Task.Run(async () => { await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "Enemy", "Normal", EnemyCodeName + ".png"), ImagePath); });
                     }
                 }
 

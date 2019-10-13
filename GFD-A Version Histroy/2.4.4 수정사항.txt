@@ -1,0 +1,11 @@
+<2.4.4 수정사항>
+
+- 앱 언어 설정 추가
+- 메인 메뉴 구성 일부 변경
+- 앱 설치 후 초기 기동 시 네트워크 연결에 무관하게 앱이 실행되도록 수정
+- 메모리 최적화
+
+- Add app language setting
+- Change sub main menu layout
+- Fix app termiante when network connection fail
+- Optimize memory usuage

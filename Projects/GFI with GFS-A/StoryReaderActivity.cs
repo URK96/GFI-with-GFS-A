@@ -123,9 +123,9 @@ namespace GFI_with_GFS_A
             string file;
 
             if (category == "ModStory")
-                file = Path.Combine(ETC.CachePath, "Story", category, $"{dollDicNumber}_{itemIndex}.gfdcache");
+                file = Path.Combine(ETC.cachePath, "Story", category, $"{dollDicNumber}_{itemIndex}.gfdcache");
             else
-                file = Path.Combine(ETC.CachePath, "Story", category, $"{itemIndex}.gfdcache");
+                file = Path.Combine(ETC.cachePath, "Story", category, $"{itemIndex}.gfdcache");
 
             if ((File.Exists(file) == false) || (IsRefresh == true))
                 await DownloadStory();
@@ -158,16 +158,16 @@ namespace GFI_with_GFS_A
 
                 if (category == "ModStory")
                 {
-                    server = Path.Combine(ETC.Server, "Data", "Text", "Story", Language, top, category, $"{dollDicNumber}_{itemIndex}.txt");
-                    target = Path.Combine(ETC.CachePath, "Story", category, $"{dollDicNumber}_{itemIndex}.gfdcache");
+                    server = Path.Combine(ETC.server, "Data", "Text", "Story", Language, top, category, $"{dollDicNumber}_{itemIndex}.txt");
+                    target = Path.Combine(ETC.cachePath, "Story", category, $"{dollDicNumber}_{itemIndex}.gfdcache");
                 }
                 else
                 {
-                    server = Path.Combine(ETC.Server, "Data", "Text", "Story", Language, top, category, $"{itemIndex}.txt");
-                    target = Path.Combine(ETC.CachePath, "Story", category, $"{itemIndex}.gfdcache");
+                    server = Path.Combine(ETC.server, "Data", "Text", "Story", Language, top, category, $"{itemIndex}.txt");
+                    target = Path.Combine(ETC.cachePath, "Story", category, $"{itemIndex}.gfdcache");
                 }
 
-                DirectoryInfo di = new DirectoryInfo(Path.Combine(ETC.CachePath, "Story", category));
+                DirectoryInfo di = new DirectoryInfo(Path.Combine(ETC.cachePath, "Story", category));
 
                 if (di.Exists == false)
                     di.Create();

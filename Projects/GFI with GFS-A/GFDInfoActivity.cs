@@ -162,7 +162,7 @@ namespace GFI_with_GFS_A
 #else
                 NowVersion.Text += "Release";
 #endif
-                string url = Path.Combine(ETC.Server, "GFD_AppVer.txt");
+                string url = Path.Combine(ETC.server, "GFD_AppVer.txt");
                 string target = Path.Combine(ETC.tempPath, "AppVer.txt");
 
                 using (WebClient wc = new WebClient())

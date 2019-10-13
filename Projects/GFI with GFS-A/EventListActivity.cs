@@ -30,7 +30,7 @@ namespace GFI_with_GFS_A
         private int ScheduledEventCount = 0;
         private string[] EventURLs;
         private string[] EventPeriods;
-        private string EventFilePath = Path.Combine(ETC.CachePath, "Event", "EventVer.txt");
+        private string EventFilePath = Path.Combine(ETC.cachePath, "Event", "EventVer.txt");
        
 
         private CoordinatorLayout SnackbarLayout;
@@ -100,7 +100,7 @@ namespace GFI_with_GFS_A
                         continue;
 
                     string text_period = EventPeriods[i];
-                    Android.Graphics.Drawables.Drawable event_image = Android.Graphics.Drawables.Drawable.CreateFromPath(Path.Combine(ETC.CachePath, "Event", "Images", "Event_" + (i + 1) + ".png"));
+                    Android.Graphics.Drawables.Drawable event_image = Android.Graphics.Drawables.Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Event", "Images", "Event_" + (i + 1) + ".png"));
 
                     if (type == EventPeriodType.Now)
                     {
@@ -220,8 +220,8 @@ namespace GFI_with_GFS_A
             if (ETC.isServerDown == true)
                 return false;
 
-            string LocalEventVerPath = Path.Combine(ETC.CachePath, "Event", "EventVer.txt");
-            string ServerEventVerPath = Path.Combine(ETC.Server, "EventVer.txt");
+            string LocalEventVerPath = Path.Combine(ETC.cachePath, "Event", "EventVer.txt");
+            string ServerEventVerPath = Path.Combine(ETC.server, "EventVer.txt");
             string TempEventVerPath = Path.Combine(ETC.tempPath, "EventVer.txt");
 
             bool HasEventUpdate = false;
@@ -299,7 +299,7 @@ namespace GFI_with_GFS_A
             ProgressBar nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
             TextView nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
 
-            Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.DialogBG_Download);
+            Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload);
             pd.SetTitle(Resource.String.UpdateEventDialog_Title);
             pd.SetMessage(Resources.GetString(Resource.String.UpdateEventDialog_Message));
             pd.SetView(v);
@@ -317,12 +317,12 @@ namespace GFI_with_GFS_A
 
                 if (Directory.Exists(ETC.tempPath) == false)
                     Directory.CreateDirectory(ETC.tempPath);
-                if (Directory.Exists(Path.Combine(ETC.CachePath, "Event", "Images")) == false)
-                    Directory.CreateDirectory(Path.Combine(ETC.CachePath, "Event", "Images"));
+                if (Directory.Exists(Path.Combine(ETC.cachePath, "Event", "Images")) == false)
+                    Directory.CreateDirectory(Path.Combine(ETC.cachePath, "Event", "Images"));
 
                 using (WebClient wc = new WebClient())
                 {
-                    string url = Path.Combine(ETC.Server, "EventVer.txt");
+                    string url = Path.Combine(ETC.server, "EventVer.txt");
                     string target = Path.Combine(ETC.tempPath, "EventVer.txt");
                     await wc.DownloadFileTaskAsync(url, target);
                     await Task.Delay(500);
@@ -351,8 +351,8 @@ namespace GFI_with_GFS_A
 
                     for (int i = 1; i <= totalCount; ++i)
                     {
-                        string url2 = Path.Combine(ETC.Server, "Data", "Images", "Events", "Event_" + i + ".png");
-                        string target2 = Path.Combine(ETC.CachePath, "Event", "Images", "Event_" + i + ".png");
+                        string url2 = Path.Combine(ETC.server, "Data", "Images", "Events", "Event_" + i + ".png");
+                        string target2 = Path.Combine(ETC.cachePath, "Event", "Images", "Event_" + i + ".png");
                         await wc.DownloadFileTaskAsync(url2, target2);
                         await Task.Delay(100);
                     }
@@ -361,7 +361,7 @@ namespace GFI_with_GFS_A
 
                     RunOnUiThread(() => { pd.SetMessage(Resources.GetString(Resource.String.UpdateEventDialog_RefreshVersionMessage)); });
 
-                    string oldVersion = Path.Combine(ETC.CachePath, "Event", "EventVer.txt");
+                    string oldVersion = Path.Combine(ETC.cachePath, "Event", "EventVer.txt");
                     string newVersion = Path.Combine(ETC.tempPath, "EventVer.txt");
                     File.Copy(newVersion, oldVersion, true);
 

@@ -5,13 +5,13 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
-using Android.Support.V7.App;
-using Android.Util;
 using Android.Widget;
+
 using System;
 using System.Collections;
 using System.IO;
 using System.Threading.Tasks;
+
 using Xamarin.Essentials;
 
 namespace GFI_with_GFS_A
@@ -86,7 +86,7 @@ namespace GFI_with_GFS_A
 
                 await ETC.AnimateText(StatusText, "Initializing");
 
-                if (ETC.sharedPreferences.GetBoolean("CheckInitLowMemory", true) == true)
+                if (ETC.sharedPreferences.GetBoolean("CheckInitLowMemory", true))
                     CheckDeviceMemory();
 
                 ETC.isLowRAM = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);
@@ -107,11 +107,7 @@ namespace GFI_with_GFS_A
                         if (!ETC.isServerDown)
                             await ETC.UpdateDB(this);
                         else
-                        {
-                            Toast.MakeText(this, Resource.String.NoDBFileFound_Message, ToastLength.Long).Show();
-                            FinishAffinity();
-                            Process.KillProcess(Process.MyPid());
-                        }
+                            throw new Exception("Server is down");
                     }
                     catch (Exception ex)
                     {
@@ -122,12 +118,12 @@ namespace GFI_with_GFS_A
 
                 try
                 {
-                    using (StreamReader sr = new StreamReader(new FileStream(Path.Combine(ETC.SystemPath, "DBVer.txt"), FileMode.Open, FileAccess.Read)))
-                        int.TryParse(sr.ReadToEnd(), out ETC.DBVersion);
+                    using (StreamReader sr = new StreamReader(new FileStream(Path.Combine(ETC.systemPath, "DBVer.txt"), FileMode.Open, FileAccess.Read)))
+                        int.TryParse(sr.ReadToEnd(), out ETC.dbVersion);
                 }
                 catch (Exception)
                 {
-                    ETC.DBVersion = 0;
+                    ETC.dbVersion = 0;
                 }
 
 
@@ -214,8 +210,8 @@ namespace GFI_with_GFS_A
 
         private bool CheckDBFiles()
         {
-            foreach (string s in ETC.DBFiles)
-                if (!File.Exists(Path.Combine(ETC.DBPath, s)))
+            foreach (string s in ETC.dbFiles)
+                if (!File.Exists(Path.Combine(ETC.dbPath, s)))
                     return false;
 
             return true;
