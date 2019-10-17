@@ -365,7 +365,9 @@ namespace GFI_with_GFS_A
                             if (!ETC.hasInitDollAvgAbility)
                                 ETC.InitializeAverageAbility();
                         });
-                        StartActivity(typeof(DollDBMainActivity));
+                        //StartActivity(typeof(DollDBMainActivity));
+                        //OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        StartActivity(typeof(DollDBMainActivity_Beta));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case 1:

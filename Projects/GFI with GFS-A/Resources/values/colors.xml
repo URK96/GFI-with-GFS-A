@@ -8,6 +8,7 @@
   <color name="secondaryDarkColor">#8e0000</color>
   <color name="primaryTextColor">#ffffff</color>
   <color name="secondaryTextColor">#ffffff</color>
+  <color name="MainColor">#54A716</color>
   <color name="FABColor">#54A716</color>
   <color name="ProgressBarColor">#54A716</color>
   <color name="CardViewBackground_WhiteTheme">#FF7043</color>

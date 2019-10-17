@@ -14,6 +14,7 @@
     <item>Syncfusion.Xamarin.SfChart.Android</item>
     <item>System.Collections.NonGeneric</item>
     <item>System.Numerics.Vectors</item>
+    <item>System.Threading.Tasks.Parallel</item>
     <item>Xamarin.Android.Arch.Core.Common</item>
     <item>Xamarin.Android.Arch.Core.Runtime</item>
     <item>Xamarin.Android.Arch.Lifecycle.Common</item>
@@ -74,6 +75,7 @@
     <item>Syncfusion Charts for Xamarin.Android provides a perfect way to visualize data with a high level of user interactivity that focuses on development, productivity, and simplicity of use.</item>
     <item>Provides classes that define older non-generic collections of objects, such as lists, queues, hash tables and dictionaries. Developers should prefer the generic collections in the System.Collections package.</item>
     <item>Provides hardware-accelerated numeric types, suitable for high-performance processing and graphics application.</item>
+    <item>Provides the System.Threading.Tasks.Parallel class, which adds support for running loops and iterators in parallel.</item>
     <item>Xamarin.Android bindings for Android Support Library - common</item>
     <item>Xamarin.Android bindings for Android Support Library - runtime</item>
     <item>Xamarin.Android bindings for Android Support Library - common</item>
@@ -134,6 +136,7 @@
     <item>Syncfusion Inc. - ESSENTIAL STUDIO SOFTWARE LICENSE</item>
     <item>Microsoft - MICROSOFT SOFTWARE LICENSE TERMS</item>
     <item>.NET Foundation and Contributors - MIT License</item>
+    <item>Microsoft - MICROSOFT SOFTWARE LICENSE TERMS</item>
     <item>.NET Foundation Contributor - MIT LICENSE</item>
     <item>.NET Foundation Contributor - MIT LICENSE</item>
     <item>.NET Foundation Contributor - MIT LICENSE</item>

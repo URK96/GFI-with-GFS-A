@@ -112,11 +112,11 @@
     <Reference Include="PhotoView, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Android.PhotoView.2.1.4\lib\MonoAndroid\PhotoView.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=17.3.0.14, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Licensing.17.3.0.14\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
+    <Reference Include="Syncfusion.Licensing, Version=17.3.0.17, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.17.3.0.17\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfChart.Android, Version=17.3451.0.14, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.Android.17.3.0.14\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
+    <Reference Include="Syncfusion.SfChart.Android, Version=17.3451.0.17, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.Android.17.3.0.17\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -271,6 +271,7 @@
     <Compile Include="DataModel_Doll_Partial.cs" />
     <Compile Include="DataModel.cs" />
     <Compile Include="DollAbilitySet.cs" />
+    <Compile Include="DollDBMainActivity_Beta.cs" />
     <Compile Include="DollDBMainActivity.cs" />
     <Compile Include="EnemyDBImageViewer.cs" />
     <Compile Include="ExternLibraryCopyright.cs" />
@@ -1762,7 +1763,10 @@
     <AndroidResource Include="Resources\drawable-nodpi\LanguageIcon_WhiteTheme.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\MainLayout.xml" />
+    <AndroidResource Include="Resources\layout\DollDBListLayout_Beta.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
