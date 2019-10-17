@@ -17,6 +17,12 @@
             android:background="@color/MainColor"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:id="@+id/bDollDBMainToolbar"/>
+        <android.support.v7.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:iconifiedByDefault="false"
+            app:queryHint="@string/DollDBMainActivity_SearchHint"
+            android:id="@+id/bDollDBSearchView"/>
 		<android.support.v7.widget.RecyclerView
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"

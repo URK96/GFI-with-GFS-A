@@ -254,6 +254,20 @@
   <string name="Common_Language_KR">Korean</string>
   <string name="Common_Language_EN">English</string>
   <string name="Common_Language_JP">Japanese</string>
+  
+  <!--Sort String-->
+  <string name="Sort_SortMethod">Sort Method</string>
+  <string name="Sort_SortOrder">Sort Order</string>
+  <string name="Sort_SortMethod_Name">Name</string>
+  <string name="Sort_SortMethod_Number">Number</string>
+  <string name="Sort_SortMethod_ProductTime">ProductTime</string>
+  <string name="Sort_SortMethod_FR">Damage</string>
+  <string name="Sort_SortMethod_EV">Evasion</string>
+  <string name="Sort_SortMethod_AC">Accuracy</string>
+  <string name="Sort_SortMethod_HP">HP</string>
+  <string name="Sort_SortMethod_AS">Attack Speed</string>
+  <string name="Sort_SortOrder_Ascending">Ascending</string>
+  <string name="Sort_SortOrder_Descending">Descending</string>
 
   <!--Country String-->
   <string name="Country_Australia">Australia</string>
@@ -328,6 +342,7 @@
   
   <!--DollDBMain-->
   <string name="DollDBMainActivity_Title">T-Doll List</string>
+  <string name="DollDBMainActivity_SearchHint">Search T-Doll Name</string>
   
   <!--ProductPercentTable-->
   <string name="ProductPercentTable_List_TotalCount">Prioritize attempt</string>

@@ -3,8 +3,18 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:local="http://schemas.android.com/apk/res-auto">
   <item
+    android:id="@+id/DollDBMainFilter"
+    android:icon="@drawable/FilterIconNew"
+    android:title="Filter"
+    local:showAsAction="ifRoom"/>
+  <item
+    android:id="@+id/DollDBMainSort"
+    android:icon="@drawable/SortIcon"
+    android:title="Sort"
+    local:showAsAction="ifRoom"/>
+  <item
     android:id="@+id/RefreshDollCropImageCache"
-    android:icon="@drawable/RefreshIcon"
-    local:showAsAction="always"
-    android:title="이미지 캐시 업데이트"/>
+    android:icon="@drawable/CachedIcon"
+    android:title="Update Cache"
+    local:showAsAction="ifRoom"/>
 </menu>

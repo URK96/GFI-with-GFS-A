@@ -2,6 +2,8 @@
 using Android.Content;
 using Android.OS;
 using Android.Support.Design.Widget;
+using Android.Support.Transitions;
+using Android.Support.V4.View;
 using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Views;
@@ -22,6 +24,9 @@ namespace GFI_with_GFS_A
     {
         delegate void DownloadProgress();
 
+        private enum SortType { Name, Number, ProductTime }
+        private SortType sortType = SortType.Name;
+
         private List<Doll> rootList = new List<Doll>();
         private List<Doll> subList = new List<Doll>();
         private List<int> downloadList = new List<int>();
@@ -38,17 +43,13 @@ namespace GFI_with_GFS_A
         private bool filterMod = false;
         private bool canRefresh = false;
 
-        private enum LineUp { Name, Number, ProductTime }
-        private LineUp lineUpStyle = LineUp.Name;
+        private string searchText = "";
 
+        private Android.Support.V7.Widget.SearchView searchView;
         private RecyclerView mDollListView;
         private RecyclerView.LayoutManager mainLayoutManager;
         private CoordinatorLayout snackbarLayout;
         private Android.Support.V7.Widget.Toolbar toolbar;
-
-        private EditText searchText;
-
-        
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -64,25 +65,26 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.DollDBListLayout_Beta);
 
-                //SetTitle(Resource.String.DollDBMainActivity_Title);
-
                 canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
                 toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.bDollDBMainToolbar);
+                searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.bDollDBSearchView);
+                searchView.QueryTextChange += (sender, e) =>
+                {
+                    searchText = e.NewText;
+                    _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchText);
+                };
                 mDollListView = FindViewById<RecyclerView>(Resource.Id.bDollDBRecyclerView);
                 mainLayoutManager = new LinearLayoutManager(this);
                 mDollListView.SetLayoutManager(mainLayoutManager);
                 snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.bDollDBSnackbarLayout);
-                //searchText = FindViewById<EditText>(Resource.Id.bDollSearchText);
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.SetTitle(Resource.String.DollDBMainActivity_Title);
 
-                //InitializeView();
-
                 InitProcess();
 
-                ListDoll("", new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2]);
+                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2]);
 
                 /*if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true) == true))
                 {
@@ -96,25 +98,40 @@ namespace GFI_with_GFS_A
             }
         }
 
-       /* private void InitializeView()
+        public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            refresh_fab = FindViewById<FloatingActionButton>(Resource.Id.DollRefreshCacheFAB);
-            if (canRefresh == false) refresh_fab.Hide();
-            else
+            MenuInflater.Inflate(Resource.Menu.DollDBMenu, menu);
+
+            var cacheItem = menu.FindItem(Resource.Id.RefreshDollCropImageCache);
+            _ = canRefresh ? cacheItem.SetVisible(true) : cacheItem.SetVisible(false);
+
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
             {
-                if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate 
-                {
+                case Resource.Id.DollDBMainFilter:
+                    InitFilterBox();
+                    break;
+                case Resource.Id.DollDBMainSort:
+                    break;
+                case Resource.Id.RefreshDollCropImageCache:
                     downloadList.Clear();
-                    foreach (DataRow dr in ETC.dollList.Rows) downloadList.Add((int)dr["DicNumber"]);
+
+                    foreach (DataRow dr in ETC.dollList.Rows)
+                    {
+                        downloadList.Add((int)dr["DicNumber"]);
+                    }
+
                     downloadList.TrimExcess();
                     ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(DollCropImageDownloadProcess));
-                };
-
-                refresh_fab.LongClick += MainFAB_LongClick;
+                    break;
             }
 
-            searchText.TextChanged += SearchText_TextChanged;
-        }*/
+            return base.OnOptionsItemSelected(item);
+        }
 
         private void InitProcess()
         {
@@ -131,33 +148,12 @@ namespace GFI_with_GFS_A
 
         private void CreateListObject()
         {
-            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
-            TimeSpan ts;
-
             try
             {
-                /*foreach (DataRow dr in ETC.dollList.Rows)
+                foreach (DataRow dr in ETC.dollList.Rows)
                 {
                     rootList.Add(new Doll(dr));
-                }*/
-
-                //Parallel.For(0, ETC.dollList.Rows.Count, (i) => { rootList.Add(new Doll(ETC.dollList.Rows[i])); });
-
-                sw.Start();
-
-                Parallel.ForEach(Partitioner.Create(0, ETC.dollList.Rows.Count), (range, loopState) =>
-                {
-                    for (int i = range.Item1; i < range.Item2; ++i)
-                    {
-                        rootList.Add(new Doll(ETC.dollList.Rows[i]));
-                    }
-                });
-
-                sw.Stop();
-                ts = sw.Elapsed;
-
-
-                Toast.MakeText(this, $"{ts.Seconds}.{ts.Milliseconds}", ToastLength.Long).Show();
+                }
 
                 rootList.TrimExcess();
             }
@@ -172,27 +168,16 @@ namespace GFI_with_GFS_A
         {
             downloadList.Clear();
 
-            /*for (int i = 0; i < rootList.Count; ++i)
+            for (int i = 0; i < rootList.Count; ++i)
             {
                 Doll doll = rootList[i];
-                string FilePath = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{doll.DicNumber}.gfdcache");
+                string filePath = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{doll.DicNumber}.gfdcache");
 
-                if (!File.Exists(FilePath))
+                if (!File.Exists(filePath))
                 {
                     downloadList.Add(doll.DicNumber);
                 }
-            }*/
-
-            Parallel.For(0, rootList.Count, (i) =>
-            {
-                Doll doll = rootList[i];
-                string FilePath = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{doll.DicNumber}.gfdcache");
-
-                if (!File.Exists(FilePath))
-                {
-                    downloadList.Add(doll.DicNumber);
-                }
-            });
+            }
 
             downloadList.TrimExcess();
 
@@ -275,7 +260,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(500);
 
-                ListDoll(searchText.Text, new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2]);
+                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchText);
             }
             catch (Exception ex)
             {
@@ -288,18 +273,11 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void SearchText_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
-        {
-            ListDoll(searchText.Text, new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2]);
-        }
-
         private void InitFilterBox()
         {
-            var inflater = LayoutInflater;
-
             try
             {
-                View v = inflater.Inflate(Resource.Layout.DollFilterLayout, null);
+                View v = LayoutInflater.Inflate(Resource.Layout.DollFilterLayout, null);
 
                 v.FindViewById<NumberPicker>(Resource.Id.DollFilterProductHour).MaxValue = 12;
                 v.FindViewById<NumberPicker>(Resource.Id.DollFilterProductMinute).MaxValue = 59;
@@ -357,7 +335,7 @@ namespace GFI_with_GFS_A
 
                 CheckApplyFilter();
 
-                ListDoll(searchText.Text, new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2]);
+                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchText);
             }
             catch (Exception ex)
             {
@@ -421,7 +399,7 @@ namespace GFI_with_GFS_A
                     hasApplyFilter[i] = false;
                 }
 
-                ListDoll(searchText.Text, new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2]);
+                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchText);
             }
             catch (Exception ex)
             {
@@ -430,7 +408,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async void ListDoll(string searchText, int[] pTime, int pRange)
+        private async Task ListDoll(int[] pTime, int pRange, string searchText = "")
         {
             subList.Clear();
 
@@ -438,7 +416,7 @@ namespace GFI_with_GFS_A
 
             try
             {
-                /*for (int i = 0; i < rootList.Count; ++i)
+                for (int i = 0; i < rootList.Count; ++i)
                 {
                     Doll doll = rootList[i];
 
@@ -466,51 +444,20 @@ namespace GFI_with_GFS_A
                     }
 
                     subList.Add(doll);
-                }*/
-
-                Parallel.For(0, rootList.Count, (i) =>
-                {
-                    Doll doll = rootList[i];
-
-                    if ((pTime[0] + pTime[1]) != 0)
-                    {
-                        if (!CheckDollByProductTime(pTime, pRange, doll.ProductTime))
-                        {
-                            return;
-                        }
-                    }
-
-                    if (CheckFilter(doll))
-                    {
-                        return;
-                    }
-
-                    if (searchText != "")
-                    {
-                        string name = doll.Name.ToUpper();
-
-                        if (!name.Contains(searchText))
-                        {
-                            return;
-                        }
-                    }
-
-                    subList.Add(doll);
-                });
+                }
 
                 subList.Sort(SortDoll);
 
-                using (var adapter = new DollListAdapter(subList, this))
+                var adapter = new DollListAdapter(subList, this);
+
+                if (!adapter.HasOnItemClick())
                 {
-                    if (!adapter.HasOnItemClick())
-                    {
-                        adapter.ItemClick += Adapter_ItemClick;
-                    }
-
-                    await Task.Delay(100);
-
-                    RunOnUiThread(() => { mDollListView.SetAdapter(adapter); });
+                    adapter.ItemClick += Adapter_ItemClick;
                 }
+
+                await Task.Delay(100);
+
+                RunOnUiThread(() => { mDollListView.SetAdapter(adapter); });
             }
             catch (Exception ex)
             {
@@ -545,11 +492,11 @@ namespace GFI_with_GFS_A
 
         private int SortDoll(Doll x, Doll y)
         {
-            switch (lineUpStyle)
+            switch (sortType)
             {
-                case LineUp.Number:
+                case SortType.Number:
                     return x.DicNumber.CompareTo(y.DicNumber);
-                case LineUp.ProductTime:
+                case SortType.ProductTime:
                     int xTime = x.ProductTime;
                     int yTime = y.ProductTime;
 
@@ -569,7 +516,7 @@ namespace GFI_with_GFS_A
                     {
                         return xTime.CompareTo(yTime);
                     }
-                case LineUp.Name:
+                case SortType.Name:
                 default:
                     return x.Name.CompareTo(y.Name);
             }

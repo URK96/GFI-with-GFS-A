@@ -256,6 +256,20 @@
   <string name="Common_Language_KR">한국어</string>
   <string name="Common_Language_EN">영어</string>
   <string name="Common_Language_JP">일본어</string>
+
+  <!--Sort String-->
+  <string name="Sort_SortMethod">정렬 방법</string>
+  <string name="Sort_SortOrder">정렬 순서</string>
+  <string name="Sort_SortMethod_Name">이름</string>
+  <string name="Sort_SortMethod_Number">번호</string>
+  <string name="Sort_SortMethod_ProductTime">제조시간</string>
+  <string name="Sort_SortMethod_FR">화력</string>
+  <string name="Sort_SortMethod_EV">회피</string>
+  <string name="Sort_SortMethod_AC">명중</string>
+  <string name="Sort_SortMethod_HP">체력</string>
+  <string name="Sort_SortMethod_AS">사속</string>
+  <string name="Sort_SortOrder_Ascending">오름차순</string>
+  <string name="Sort_SortOrder_Descending">내림차순</string>
   
   <!--Country String-->
   <string name="Country_Australia">호주</string>
@@ -331,6 +345,7 @@
   
   <!--DollDBMain-->
   <string name="DollDBMainActivity_Title">인형 목록</string>
+  <string name="DollDBMainActivity_SearchHint">인형 이름 검색</string>
   
   <!--ProductPercentTable-->
   <string name="ProductPercentTable_List_TotalCount">시도 횟수 우선</string>
