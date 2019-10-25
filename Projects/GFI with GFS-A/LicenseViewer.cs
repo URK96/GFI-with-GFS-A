@@ -44,53 +44,63 @@ namespace GFI_with_GFS_A
         {
             string assetName = "";
 
-            switch (licenseType)
+            try
             {
-                case "MIT":
-                    assetName = "MIT_License.txt";
-                    break;
-                case "Microsoft_License":
-                    assetName = "MICROSOFT_SOFTWARE_LICENSE_TERMS.txt";
-                    break;
-                case "Arcana_Studio_License":
-                    assetName = "Arcana_Studio_License.txt";
-                    break;
-                case "MIT_NewtonSoft":
-                    assetName = "NewtonSoft_MIT_License.txt";
-                    break;
-                case "Syncfusion_License":
-                    assetName = "ESSENTIAL STUDIO SOFTWARE LICENSE.txt";
-                    break;
-                case "MIT_.NET Foundation and Contributor":
-                    assetName = "DotNET_Foundation_and_Contributors_MIT_License.txt";
-                    break;
-                case "MIT_.NET Foundation Contributor":
-                    assetName = "DotNET_Foundation_Contributors_MIT_License.txt";
-                    break;
-                case "MIT_Xamarin":
-                    assetName = "Xamarin_MIT_License.txt";
-                    break;
-                case "MIT_Microsoft Corporation":
-                    assetName = "Xamarin.Essentials_MIT_License.txt";
-                    break;
-                case "Unknown":
-                    assetName = "Unknown.txt";
-                    break;
-            }
+                switch (licenseType)
+                {
+                    case "MIT":
+                        assetName = "MIT_License.txt";
+                        break;
+                    case "Microsoft_License":
+                        assetName = "MICROSOFT_SOFTWARE_LICENSE_TERMS.txt";
+                        break;
+                    case "Arcana_Studio_License":
+                        assetName = "Arcana_Studio_License.txt";
+                        break;
+                    case "MIT_NewtonSoft":
+                        assetName = "NewtonSoft_MIT_License.txt";
+                        break;
+                    case "Syncfusion_License":
+                        assetName = "ESSENTIAL STUDIO SOFTWARE LICENSE.txt";
+                        break;
+                    case "MIT_.NET Foundation and Contributor":
+                        assetName = "DotNET_Foundation_and_Contributors_MIT_License.txt";
+                        break;
+                    case "MIT_.NET Foundation Contributor":
+                        assetName = "DotNET_Foundation_Contributors_MIT_License.txt";
+                        break;
+                    case "MIT_Xamarin":
+                        assetName = "Xamarin_MIT_License.txt";
+                        break;
+                    case "MIT_Microsoft Corporation":
+                        assetName = "Xamarin.Essentials_MIT_License.txt";
+                        break;
+                    case "Apache-2.0":
+                        assetName = "Apache2.0.txt";
+                        break;
+                    case "Unknown":
+                        assetName = "Unknown.txt";
+                        break;
+                }
 
-            await Task.Run(() =>
+                await Task.Run(() =>
+                {
+                    try
+                    {
+                        using (StreamReader sr = new StreamReader(Assets.Open(assetName)))
+                            licenseView.Text = sr.ReadToEnd();
+                    }
+                    catch (Exception ex)
+                    {
+                        ETC.LogError(ex, this);
+                        Toast.MakeText(this, "Cannot Read License Raw Data", ToastLength.Short).Show();
+                    }
+                }).ConfigureAwait(true);
+            }
+            catch (Exception ex)
             {
-                try
-                {
-                    using (StreamReader sr = new StreamReader(Assets.Open(assetName)))
-                        licenseView.Text = sr.ReadToEnd();
-                }
-                catch (Exception ex)
-                {
-                    ETC.LogError(ex, this);
-                    Toast.MakeText(this, "Cannot Read License Raw Data", ToastLength.Short).Show();
-                }
-            });
+                ETC.LogError(ex, this);
+            }
         }
     }
 }

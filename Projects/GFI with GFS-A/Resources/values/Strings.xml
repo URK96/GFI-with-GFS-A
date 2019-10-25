@@ -84,9 +84,12 @@
   <string name="DBList_Listing">Configuring List...</string>
   <string name="DBList_ListingFail">List Configuration Failed</string>
   <string name="DBList_DownloadCropImageFail">Fail to download List Image</string>
-  <string name="DBList_FilterBoxTitle">Setting Filter</string>
+  <string name="DBList_FilterBoxTitle">Filter Setting</string>
   <string name="DBList_FilterBoxApplyFail">Failed to set filter</string>
   <string name="DBList_FilterBoxResetFail">Failed to initialize filter</string>
+  <string name="DBList_SortBoxTitle">Sort Setting</string>
+  <string name="DBList_SortBoxApplyFail">Failed to set sort</string>
+  <string name="DBList_SortBoxResetFail">Failed to initialize sort</string>
   <string name="DBDetail_LoadDetailFail">Failed to load detail</string>
   <string name="DollDBDetail_MODChangeFail">Failed to change Mod</string>
   <string name="RetryLoad_CauseNetwork">Reloading due to the network error</string>
@@ -136,6 +139,7 @@
   <string name="ImageViewer_ActivityOpenError">Failed to run Image Viewer</string>
   <string name="LineUp_Error">Alignment Error Occurred</string>
   <string name="FilterBox_InitError">Filter box initialization error</string>
+  <string name="SortBox_InitError">Sort box initialization error</string>
   <string name="Category_InitError">Category initialization error</string>
   <string name="List_InitError">List Initialization Error</string>
   <string name="UpdateEventDialog_Title">Update Events</string>
@@ -254,6 +258,9 @@
   <string name="Common_Language_KR">Korean</string>
   <string name="Common_Language_EN">English</string>
   <string name="Common_Language_JP">Japanese</string>
+  <string name="Common_Filter">Filter</string>
+  <string name="Common_Sort">Sort</string>
+  <string name="Common_UpdateImageCache">Update Image Cache</string>
   
   <!--Sort String-->
   <string name="Sort_SortMethod">Sort Method</string>
@@ -358,6 +365,7 @@
   
   <!--EquipDBMain-->
   <string name="EquipDBMainActivity_Title">Equip List</string>
+  <string name="EquipDBMainActivity_SearchHint">Search Equipment Name</string>
   
   <!--EventList-->
   <string name="EventListActivity_Title">Event List</string>
@@ -365,6 +373,7 @@
   
   <!--FairyDBMain-->
   <string name="FairyDBMainActivity_Title">Fairy List</string>
+  <string name="FairyDBMainActivity_SearchHint">Search Fairy Name</string>
   
   <!--FSTDBDetail-->
   <string name="FSTDBDetail_Chipset_Default">Default</string>

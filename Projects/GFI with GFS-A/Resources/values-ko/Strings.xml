@@ -89,6 +89,9 @@
   <string name="DBList_FilterBoxTitle">필터링 설정</string>
   <string name="DBList_FilterBoxApplyFail">필터 적용 실패</string>
   <string name="DBList_FilterBoxResetFail">필터 초기화 실패</string>
+  <string name="DBList_SortBoxTitle">정렬 설정</string>
+  <string name="DBList_SortBoxApplyFail">정렬 적용 실패</string>
+  <string name="DBList_SortBoxResetFail">정렬 초기화 실패</string>
   <string name="DBDetail_LoadDetailFail">세부내용 로드 실패</string>
   <string name="DollDBDetail_MODChangeFail">Mod 변경 실패</string>
   <string name="RetryLoad_CauseNetwork">네트워크 문제로 재로드 중...</string>
@@ -138,6 +141,7 @@
   <string name="ImageViewer_ActivityOpenError">이미지 뷰어 실행 실패</string>
   <string name="LineUp_Error">정렬 오류 발생</string>
   <string name="FilterBox_InitError">필터 박스 초기화 오류</string>
+  <string name="SortBox_InitError">정렬 박스 초기화 오류</string>
   <string name="Category_InitError">카테고리 초기화 오류</string>
   <string name="List_InitError">리스트 초기화 오류</string>
   <string name="UpdateEventDialog_Title">이벤트 업데이트</string>
@@ -256,6 +260,9 @@
   <string name="Common_Language_KR">한국어</string>
   <string name="Common_Language_EN">영어</string>
   <string name="Common_Language_JP">일본어</string>
+  <string name="Common_Filter">필터</string>
+  <string name="Common_Sort">정렬</string>
+  <string name="Common_UpdateImageCache">이미지 캐시 갱신</string>
 
   <!--Sort String-->
   <string name="Sort_SortMethod">정렬 방법</string>
@@ -361,6 +368,7 @@
   
   <!--EquipDBMain-->
   <string name="EquipDBMainActivity_Title">장비 목록</string>
+  <string name="EquipDBMainActivity_SearchHint">장비 이름 검색</string>
   
   <!--EventList-->
   <string name="EventListActivity_Title">이벤트 목록</string>
@@ -368,6 +376,7 @@
   
   <!--FairyDBMain-->
   <string name="FairyDBMainActivity_Title">요정 목록</string>
+  <string name="FairyDBMainActivity_SearchHint">요정 이름 검색</string>
   
   <!--FSTDBDetail-->
   <string name="FSTDBDetail_Chipset_Default">기본</string>

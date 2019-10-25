@@ -8,7 +8,7 @@
     <ScrollView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:id="@+id/DollFilterMainLayout">
+        android:id="@+id/CommonSorterMainLayout">
         <LinearLayout
             android:layout_height="match_parent"
             android:layout_width="match_parent"
@@ -23,7 +23,7 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="@string/Common_SortMethod"
+                    android:text="@string/Sort_SortMethod"
                     android:textStyle="bold"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:layout_marginRight="8dp"
@@ -40,16 +40,17 @@
                     <Space
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:layout_weight="2" />
+                        android:layout_weight="1" />
                     <Spinner
                         android:layout_height="match_parent"
                         android:minHeight="50dp"
                         android:layout_width="0dp"
-                        android:layout_weight="2" />
+                        android:layout_weight="2"
+                        android:id="@+id/CommonSortSpinner"/>
                     <Space
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:layout_weight="2" />
+                        android:layout_weight="1" />
                 </LinearLayout>
             </LinearLayout>
             <View
@@ -70,7 +71,7 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="@string/Common_SortOrder"
+                    android:text="@string/Sort_SortOrder"
                     android:textStyle="bold"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:layout_marginRight="8dp"
@@ -82,32 +83,28 @@
                     android:gravity="center" />
                 <RadioGroup
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <Space
-                            android:layout_height="match_parent"
-                            android:layout_width="0dp"
-                            android:layout_weight="1" />
-                        <RadioButton
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:text="@string/Sort_SortOrder_Ascending"
-                            android:id="@+id/DollSortOrderAscending"/>
-                        <RadioButton
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:text="@string/Sort_SortOrder_Descending"
-                            android:id="@+id/DollSortOrderDescending"/>
-                        <Space
-                            android:layout_height="match_parent"
-                            android:layout_width="0dp"
-                            android:layout_weight="1" />
-                    </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Space
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:text="@string/Sort_SortOrder_Ascending"
+                        android:id="@+id/CommonSortOrderAscending"/>
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:text="@string/Sort_SortOrder_Descending"
+                        android:id="@+id/CommonSortOrderDescending"/>
+                    <Space
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
                 </RadioGroup>
             </LinearLayout>
         </LinearLayout>

@@ -376,7 +376,9 @@ namespace GFI_with_GFS_A
                             if (ETC.equipmentList.TableName == "")
                                 ETC.LoadDBSync(ETC.equipmentList, "Equipment.gfs", false);
                         });
-                        StartActivity(typeof(EquipDBMainActivity));
+                        //StartActivity(typeof(EquipDBMainActivity));
+                        //OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        StartActivity(typeof(EquipDBMainActivity_Beta));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case 2:

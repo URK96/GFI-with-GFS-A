@@ -1,0 +1,10 @@
+﻿[*.cs]
+
+# CA1031: 일반적인 예외 형식을 catch하지 마세요.
+dotnet_diagnostic.CA1031.severity = suggestion
+
+# CA2007: 대기된 작업에 대해 ConfigureAwait 호출 고려
+dotnet_diagnostic.CA2007.severity = suggestion
+
+# CA1304: CultureInfo를 지정하세요.
+dotnet_diagnostic.CA1304.severity = suggestion

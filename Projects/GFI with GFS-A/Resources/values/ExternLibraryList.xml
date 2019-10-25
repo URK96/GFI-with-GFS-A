@@ -8,6 +8,7 @@
     <item>Microsoft.Bcl.Async</item>
     <item>Microsoft.Bcl.Build</item>
     <item>Microsoft.Net.Http</item>
+    <item>Microsoft.CodeAnalysis.FxCopAnalyzers</item>
     <item>Net.ArcanaStudio.ColorPicker</item>
     <item>Newtonsoft.Json</item>
     <item>Syncfusion.Licensing</item>
@@ -69,6 +70,7 @@
     <item>Enables usage of the async and await keywords from projects targeting .NET Framework 4, Silverlight 4, and Windows Phone Siverlight 7.5.</item>
     <item>Provides build infrastructure components for Microsoft packages.</item>
     <item>This package provides a programming interface for modern HTTP/REST based applications.</item>
+    <item>Microsoft recommended code quality rules and .NET API usage rules, including the most important FxCop rules, implemented as analyzers using the .NET Compiler Platform (Roslyn). These analyzers check your code for security, performance, and design issues, among others.</item>
     <item>Color picker library for Xamarin Android</item>
     <item>Json.NET is a popular high-performance JSON framework for .NET</item>
     <item>Syncfusion licensing is a .NET library for validating the registered Syncfusion license in an application at runtime.</item>
@@ -130,6 +132,7 @@
     <item>Microsoft - MICROSOFT SOFTWARE LICENSE TERMS</item>
     <item>Microsoft - MICROSOFT SOFTWARE LICENSE TERMS</item>
     <item>Microsoft - MICROSOFT SOFTWARE LICENSE TERMS</item>
+    <item>Apache-2.0</item>
     <item>Arcana Studio - Arcana Studio License</item>
     <item>NewtonSoft - MIT LICENSE</item>
     <item>Syncfusion Inc. - ESSENTIAL STUDIO SOFTWARE LICENSE</item>

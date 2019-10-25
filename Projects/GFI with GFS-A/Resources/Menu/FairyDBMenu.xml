@@ -3,8 +3,18 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:local="http://schemas.android.com/apk/res-auto">
   <item
+    android:id="@+id/FairyDBMainFilter"
+    android:icon="@drawable/FilterIconNew"
+    android:title="@string/Common_Filter"
+    local:showAsAction="ifRoom"/>
+  <item
+    android:id="@+id/FairyDBMainSort"
+    android:icon="@drawable/SortIcon"
+    android:title="@string/Common_Sort"
+    local:showAsAction="ifRoom"/>
+  <item
     android:id="@+id/RefreshFairyCropImageCache"
-    android:icon="@drawable/RefreshIcon"
-    local:showAsAction="always"
-    android:title="이미지 캐시 업데이트"/>
+    android:icon="@drawable/CachedIcon"
+    android:title="@string/Common_UpdateImageCache"
+    local:showAsAction="ifRoom"/>
 </menu>

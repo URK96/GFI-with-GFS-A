@@ -5,16 +5,16 @@
   <item
     android:id="@+id/DollDBMainFilter"
     android:icon="@drawable/FilterIconNew"
-    android:title="Filter"
+    android:title="@string/Common_Filter"
     local:showAsAction="ifRoom"/>
   <item
     android:id="@+id/DollDBMainSort"
     android:icon="@drawable/SortIcon"
-    android:title="Sort"
+    android:title="@string/Common_Sort"
     local:showAsAction="ifRoom"/>
   <item
     android:id="@+id/RefreshDollCropImageCache"
     android:icon="@drawable/CachedIcon"
-    android:title="Update Cache"
+    android:title="@string/Common_UpdateImageCache"
     local:showAsAction="ifRoom"/>
 </menu>

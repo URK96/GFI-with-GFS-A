@@ -2,19 +2,15 @@
 using Android.Content;
 using Android.OS;
 using Android.Support.Design.Widget;
-using Android.Support.Transitions;
-using Android.Support.V4.View;
-using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
@@ -24,8 +20,10 @@ namespace GFI_with_GFS_A
     {
         delegate void DownloadProgress();
 
-        private enum SortType { Name, Number, ProductTime }
+        private enum SortType { Name, Number, ProductTime, HP, FR, EV, AC, AS }
+        private enum SortOrder { Ascending, Descending }
         private SortType sortType = SortType.Name;
+        private SortOrder sortOrder = SortOrder.Ascending;
 
         private List<Doll> rootList = new List<Doll>();
         private List<Doll> subList = new List<Doll>();
@@ -36,6 +34,18 @@ namespace GFI_with_GFS_A
         readonly int[] productTimeFilters = { Resource.Id.DollFilterProductHour, Resource.Id.DollFilterProductMinute, Resource.Id.DollFilterProductNearRange };
         readonly int modFilter = Resource.Id.DollFilterOnlyMod;
 
+        readonly string[] sortTypeList =
+        {
+            ETC.Resources.GetString(Resource.String.Sort_SortMethod_Name),
+            ETC.Resources.GetString(Resource.String.Sort_SortMethod_Number),
+            ETC.Resources.GetString(Resource.String.Sort_SortMethod_ProductTime),
+            ETC.Resources.GetString(Resource.String.Sort_SortMethod_HP),
+            ETC.Resources.GetString(Resource.String.Sort_SortMethod_FR),
+            ETC.Resources.GetString(Resource.String.Sort_SortMethod_EV),
+            ETC.Resources.GetString(Resource.String.Sort_SortMethod_AC),
+            ETC.Resources.GetString(Resource.String.Sort_SortMethod_AS),
+        };
+
         private bool[] hasApplyFilter = { false, false, false, false };
         private int[] filterProductTime = { 0, 0, 0 };
         private bool[] filterGrade = { false, false, false, false, false };
@@ -43,14 +53,14 @@ namespace GFI_with_GFS_A
         private bool filterMod = false;
         private bool canRefresh = false;
 
-        private string searchText = "";
+        private string searchViewText = "";
 
+        private Android.Support.V7.Widget.Toolbar toolbar;
         private Android.Support.V7.Widget.SearchView searchView;
         private RecyclerView mDollListView;
         private RecyclerView.LayoutManager mainLayoutManager;
         private CoordinatorLayout snackbarLayout;
-        private Android.Support.V7.Widget.Toolbar toolbar;
-
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             try
@@ -59,7 +69,7 @@ namespace GFI_with_GFS_A
 
                 if (ETC.useLightTheme)
                 {
-                    SetTheme(Resource.Style.GFS_Light);
+                    SetTheme(Resource.Style.GFS_Toolbar_Light);
                 }
 
                 // Create your application here
@@ -71,8 +81,8 @@ namespace GFI_with_GFS_A
                 searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.bDollDBSearchView);
                 searchView.QueryTextChange += (sender, e) =>
                 {
-                    searchText = e.NewText;
-                    _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchText);
+                    searchViewText = e.NewText;
+                    _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
                 };
                 mDollListView = FindViewById<RecyclerView>(Resource.Id.bDollDBRecyclerView);
                 mainLayoutManager = new LinearLayoutManager(this);
@@ -81,12 +91,13 @@ namespace GFI_with_GFS_A
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.SetTitle(Resource.String.DollDBMainActivity_Title);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
                 InitProcess();
 
                 _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2]);
 
-                /*if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true) == true))
+                /*if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true)))
                 {
                     ETC.RunHelpActivity(this, "DBList");
                 }*/
@@ -112,10 +123,14 @@ namespace GFI_with_GFS_A
         {
             switch (item.ItemId)
             {
+                case Android.Resource.Id.Home:
+                    OnBackPressed();
+                    break;
                 case Resource.Id.DollDBMainFilter:
                     InitFilterBox();
                     break;
                 case Resource.Id.DollDBMainSort:
+                    InitSortBox();
                     break;
                 case Resource.Id.RefreshDollCropImageCache:
                     downloadList.Clear();
@@ -234,12 +249,12 @@ namespace GFI_with_GFS_A
 
                 using (WebClient wc = new WebClient())
                 {
-                    wc.DownloadProgressChanged += (object sender, DownloadProgressChangedEventArgs e) =>
+                    wc.DownloadProgressChanged += (sender, e) =>
                     {
                         nowProgressBar.Progress = e.ProgressPercentage;
                         nowProgress.Text = $"{e.ProgressPercentage}%";
                     };
-                    wc.DownloadFileCompleted += (object sender, System.ComponentModel.AsyncCompletedEventArgs e) =>
+                    wc.DownloadFileCompleted += (sender, e) =>
                     {
                         pNow += 1;
 
@@ -260,7 +275,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(500);
 
-                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchText);
+                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
             }
             catch (Exception ex)
             {
@@ -270,6 +285,105 @@ namespace GFI_with_GFS_A
             finally
             {
                 dialog.Dismiss();
+            }
+        }
+
+        private void InitSortBox()
+        {
+            string[] sortTypeList =
+            {
+                Resources.GetString(Resource.String.Sort_SortMethod_Name),
+                Resources.GetString(Resource.String.Sort_SortMethod_Number),
+                Resources.GetString(Resource.String.Sort_SortMethod_ProductTime),
+                Resources.GetString(Resource.String.Sort_SortMethod_HP),
+                Resources.GetString(Resource.String.Sort_SortMethod_FR),
+                Resources.GetString(Resource.String.Sort_SortMethod_EV),
+                Resources.GetString(Resource.String.Sort_SortMethod_AC),
+                Resources.GetString(Resource.String.Sort_SortMethod_AS),
+            };
+
+            try
+            {
+                View v = LayoutInflater.Inflate(Resource.Layout.CommonSorterLayout, null);
+
+                var adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, sortTypeList);
+                adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
+
+                var sortSpinner = v.FindViewById<Spinner>(Resource.Id.CommonSortSpinner);
+
+                sortSpinner.Adapter = adapter;
+                sortSpinner.SetSelection((int)sortType);
+
+                switch (sortOrder)
+                {
+                    default:
+                    case SortOrder.Ascending:
+                        v.FindViewById<RadioButton>(Resource.Id.CommonSortOrderAscending).Checked = true;
+                        break;
+                    case SortOrder.Descending:
+                        v.FindViewById<RadioButton>(Resource.Id.CommonSortOrderDescending).Checked = true;
+                        break;
+                }
+
+                using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
+                {
+                    FilterBox.SetTitle(Resource.String.DBList_SortBoxTitle);
+                    FilterBox.SetView(v);
+                    FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplySort(v); });
+                    FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                    FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetSort(); });
+
+                    FilterBox.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.SortBox_InitError, Snackbar.LengthLong);
+            }
+        }
+
+        private void ApplySort(View view)
+        {
+            try
+            {
+                sortType = (SortType)view.FindViewById<Spinner>(Resource.Id.CommonSortSpinner).SelectedItemPosition;
+
+                if (view.FindViewById<RadioButton>(Resource.Id.CommonSortOrderAscending).Checked)
+                {
+                    sortOrder = SortOrder.Ascending;
+                }
+                else if (view.FindViewById<RadioButton>(Resource.Id.CommonSortOrderDescending).Checked)
+                {
+                    sortOrder = SortOrder.Descending;
+                }
+                else
+                {
+                    sortOrder = SortOrder.Ascending;
+                }
+
+                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_FilterBoxApplyFail, Snackbar.LengthLong);
+            }
+        }
+
+        private void ResetSort()
+        {
+            try
+            {
+                sortType = SortType.Name;
+                sortOrder = SortOrder.Ascending;
+
+                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_FilterBoxResetFail, Snackbar.LengthLong);
             }
         }
 
@@ -335,7 +449,7 @@ namespace GFI_with_GFS_A
 
                 CheckApplyFilter();
 
-                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchText);
+                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
             }
             catch (Exception ex)
             {
@@ -399,7 +513,7 @@ namespace GFI_with_GFS_A
                     hasApplyFilter[i] = false;
                 }
 
-                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchText);
+                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
             }
             catch (Exception ex)
             {
@@ -492,8 +606,18 @@ namespace GFI_with_GFS_A
 
         private int SortDoll(Doll x, Doll y)
         {
+            if (sortOrder == SortOrder.Descending)
+            {
+                Doll temp = x;
+                x = y;
+                y = temp;
+            }
+
             switch (sortType)
             {
+                default:
+                case SortType.Name:
+                    return x.Name.CompareTo(y.Name);
                 case SortType.Number:
                     return x.DicNumber.CompareTo(y.DicNumber);
                 case SortType.ProductTime:
@@ -516,9 +640,6 @@ namespace GFI_with_GFS_A
                     {
                         return xTime.CompareTo(yTime);
                     }
-                case SortType.Name:
-                default:
-                    return x.Name.CompareTo(y.Name);
             }
         }
 
