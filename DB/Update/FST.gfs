@@ -237,4 +237,41 @@
     <SkillEffect3>지속시간;피해량</SkillEffect3>
     <SkillMag3>5초,0.2배</SkillMag3>
   </FSTList>
+  <FSTList>
+    <Name>QLZ-04</Name>
+    <CodeName>QLZ04</CodeName>
+    <Model>QLZ-04</Model>
+    <Country>중국</Country>
+    <Type>AGL</Type>
+    <Kill>26/77</Kill>
+    <Crush>46/136</Crush>
+    <Accuracy>63/188</Accuracy>
+    <Reload>112/331</Reload>
+    <ForceSize>2</ForceSize>
+    <Distance>1~3</Distance>
+    <ConsumeAmmo>400</ConsumeAmmo>
+    <ConsumeFood>600</ConsumeFood>
+    <VersionUp>3,0,3,0;2,3,0,4;4,0,6,0;3,3,0,4;5,0,0,5;5,0,10,0;6,4,0,6;6,0,10,0;4,6,0,10;8,0,0,8</VersionUp>
+    <CircuitType>Orange</CircuitType>
+    <Circuit1>0;0;0;27;27;23,67;0;0</Circuit1>
+    <Circuit2>0;0;0;27;27;27;36;45</Circuit2>
+    <Circuit3>0;2,7;23,67;27;27;27;36;45</Circuit3>
+    <Circuit4>0;2,7;23,67;18;18;27;36;45</Circuit4>
+    <Circuit5>0;12,78;13,68;18;18;27;36;45</Circuit5>
+    <CeilingRestriction>61,72,66,117;73,86,79,140;85,100,93,163;103,122,112,198;122,143,132,233</CeilingRestriction>
+    <ChipsetBonusCount>4,10,16,24,30,34,38</ChipsetBonusCount>
+    <ChipsetBonusMag>9,0,6,0;0,6,0,6;15,0,6,0;0,9,0,9;28,0,12,0;0,15,0,10;38,0,0,14</ChipsetBonusMag>
+    <SkillName1>연막 간섭</SkillName1>
+    <SkillExplain1>2발 간격으로 지속시간 동안 공격 중심 대상의 회피와 명중을 감소시킨다.</SkillExplain1>
+    <SkillEffect1>지속시간;회피 감소치;명중 감소치</SkillEffect1>
+    <SkillMag1>5초,25%,25%</SkillMag1>
+    <SkillName2>열성 파편</SkillName2>
+    <SkillExplain2>특수 탄약을 쏘아 공격 중심 대상에게 특수 디버프를 부여한다.  &lt;디버프&gt; 5초간 대상이 받는 모든 공격에 추가 피해가 붙는다. 단, 피해량 감소를 무시하지만 왜곡방벽과 피해량 상한 효과는 유효하다.</SkillExplain2>
+    <SkillEffect2>선쿨타임;쿨타임;추가 피해량</SkillEffect2>
+    <SkillMag2>3초,4초,12</SkillMag2>
+    <SkillName3>활성 조준</SkillName3>
+    <SkillExplain3>2발 간격으로 20초동안 자신의 피해량과 정밀도가 증가한다. 최대 3중첩.</SkillExplain3>
+    <SkillEffect3>피해량 증가치;정밀도 증가치</SkillEffect3>
+    <SkillMag3>15%,15%</SkillMag3>
+  </FSTList>
 </NewDataSet>

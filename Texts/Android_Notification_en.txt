@@ -1,10 +1,19 @@
-﻿# T-Doll DB Update 2019/10/02
+﻿# T-Doll DB Update 2019/10/26
 
-- Add new costumes
-- Add new voices
-- Add missing voices data
-- Add missing voice actor info
-- Fix some T-Doll info
+- Add new T-Doll (Six12)
+
+
+
+# Equip DB Update 2019/10/26
+
+- Add only use equipment (Type95/97, RPD, MAC-10, M9)
+
+
+
+# FST DB Update 2019/10/26
+
+- Add new FST (QLZ-04)
+
 
 
 # Enemy DB Update 2019/10/2
@@ -13,22 +22,12 @@
 - Add new voice
 
 
-# Equip DB Update 2019/08/14
-
-- Add equipment of 6th MOD T-Doll
-
-
 
 # Fairy DB Update 2019/03/01
 
 - Add new fairy (Anna Gram)
 - Edit some fairy info
 
-
-
-# FST DB Update 2019/05/08
-
-- Add new FST (AT4)
 
 
 

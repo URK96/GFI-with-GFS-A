@@ -2040,4 +2040,64 @@
     <Icon>Lee_Only</Icon>
     <ProductDialog>저번 세기 세계대전 초기에서 리-엔필드 No.4 MKI(T) 소총만을 위해 제작된 광학 조준경으로 화려한 황동 외피가 인상적입니다. 색이 약간 바랜 렌즈는 무수한 생명의 끝을 지켜봤습니다. 리-엔필드 전용.</ProductDialog>
   </Equipment>
+  <Equipment>
+    <Name>첨단 복합 조준경</Name>
+    <Id>161</Id>
+    <Type>옵티컬</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;치명타율</Ability>
+    <InitialMagnification>+2~3;+17~24</InitialMagnification>
+    <MaxMagnification>+5;+48</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>95식;97식</OnlyUse>
+    <Note>2019년 건국절 출석 이벤트, 탐색시설 상점 구입</Note>
+    <Icon>Type95_Type97_Only</Icon>
+    <ProductDialog>95/97식의 탐지 능력과 전장 적응성을 높이기 위해 설계된 일체형 조준경으로 유선 연결한 전자 조준경과 거리측정 장치를 통해 95/97식이 엄폐 상태에서 노출하지 않고 공격이 가능하게 합니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>RPD 특수 군장</Name>
+    <Id>162</Id>
+    <Type>특수</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>화력;회피;장탄수</Ability>
+    <InitialMagnification>+2~3;-3~2;+2~3</InitialMagnification>
+    <MaxMagnification>+6;-2;+5</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>RPD</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>RPD_Only</Icon>
+    <ProductDialog>전쟁 이전 어느 동부 진영에서 생산한 특수 보병 장비로 실용적이고 간편합니다. 일부 매니아층에서 인기가 있어 치안 임무 도중 비싼 값에 사겠다는 사람이 많아 RPD를 골치 아프게 합니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>MAC10 레일 총몸</Name>
+    <Id>163</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>회피;사속;치명타율</Ability>
+    <InitialMagnification>+10~12;-6~4;+15~20</InitialMagnification>
+    <MaxMagnification>+20;-4;+35</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>MAC-10</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>MAC10_Only</Icon>
+    <ProductDialog>MAC10 전용인 개조 윗총몸으로 부착물을 달 수 있는 레일과 사속을 줄여 반동을 제어하기 쉽게 되었습니다. 그리고 뭐니 뭐니 해도 보기 멋지죠.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>M9 BC2 손잡이</Name>
+    <Id>164</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>명중;회피;치명타율</Ability>
+    <InitialMagnification>+1~2;+10~12;+12~15</InitialMagnification>
+    <MaxMagnification>+3;+20;+20</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>M9</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>M9_Only</Icon>
+    <ProductDialog>M9 전용인 개조 합성수지 손잡이입니다. 피카티니 레일과 함께 제어가 쉬워지는 동시에 다양한 부착물을 달 수 있습니다.</ProductDialog>
+  </Equipment>
 </NewDataSet>

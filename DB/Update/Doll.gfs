@@ -12842,4 +12842,45 @@
     <HasAnimation>false</HasAnimation>
     <ProductDialog>...스캔 완료. 프로그램이 안정적이고, 버그 발생률도 낮군. 지휘관으로서 최적이야.</ProductDialog>
   </Doll>
+  <Doll>
+    <Name>Six12</Name>
+    <Name_EN>Six12</Name_EN>
+    <Name_JP>Six12</Name_JP>
+    <CodeName>Six12</CodeName>
+    <Nickname>Six12</Nickname>
+    <Model>SIX12</Model>
+    <Country>United States of America</Country>
+    <Type>SG</Type>
+    <Grade>3</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>A;A;B;A;A;B;B</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>6</MoveSpeed>
+    <Critical>40</Critical>
+    <Bullet>4</Bullet>
+    <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
+    <ConsumeFood>40/65/90/115/140</ConsumeFood>
+    <EffectFormation>0,0,0,1,0,2,1,0,0</EffectFormation>
+    <Effect>FR,AC;10,20</Effect>
+    <EffectType>MG</EffectType>
+    <DropEvent>2019년 10월 출석보상</DropEvent>
+    <DicNumber>278</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <SkillCode>formaion_break</SkillCode>
+    <Skill>진형붕괴</Skill>
+    <SkillExplain>공격력의 X배의 피해를 주는 추가탄을 발사하고 거리 N칸만큼 적을 밀어낸다</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;피해량;넉백 거리</SkillEffect>
+    <SkillMag>8초,16초,2배,3</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>受菟</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>Six12, 신고합니다! 물론 지휘관님께 복종하겠습니다.</ProductDialog>
+  </Doll>
 </NewDataSet>
