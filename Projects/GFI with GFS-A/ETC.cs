@@ -273,9 +273,12 @@ namespace GFI_with_GFS_A
         {
             await Task.Delay(100);
 
+            Uri uri;
+
             try
             {
-                HttpWebRequest request = WebRequest.Create(server) as HttpWebRequest;
+                _ = Uri.TryCreate(server, UriKind.RelativeOrAbsolute, out uri);
+                HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
                 request.Method = "HEAD";
 
                 using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
@@ -283,7 +286,9 @@ namespace GFI_with_GFS_A
                     isServerDown = !(response.StatusCode == HttpStatusCode.OK);
 
                     if (response != null)
+                    {
                         response.Close();
+                    }
                 }
             }
             catch (Exception ex)
@@ -342,8 +347,11 @@ namespace GFI_with_GFS_A
             for (int i = 0; i < table.Rows.Count; ++i)
             {
                 DataRow dr = table.Rows[i];
+
                 if (((T)dr[index]).Equals(value))
+                {
                     return dr;
+                }
             }
 
             return null;
@@ -354,6 +362,7 @@ namespace GFI_with_GFS_A
             for (int i = 0; i < table.Rows.Count; ++i)
             {
                 DataRow dr = table.Rows[i];
+
                 if (((T)dr[index]).Equals(value))
                 {
                     row = dr;
@@ -368,17 +377,21 @@ namespace GFI_with_GFS_A
         internal static void CheckInitFolder()
         {
             if (!Directory.Exists(tempPath))
+            {
                 Directory.CreateDirectory(tempPath);
+            }
             else
             {
                 Directory.Delete(tempPath, true);
                 Directory.CreateDirectory(tempPath);
             }
 
-            DirectoryInfo AppDataDI = new DirectoryInfo(appDataPath);
+            DirectoryInfo appDataDI = new DirectoryInfo(appDataPath);
 
-            if (!AppDataDI.Exists)
-                AppDataDI.Create();
+            if (!appDataDI.Exists)
+            {
+                appDataDI.Create();
+            }
 
             string[] MainPaths =
             {
@@ -425,11 +438,19 @@ namespace GFI_with_GFS_A
             };
 
             foreach (string path in MainPaths)
+            {
                 if (!Directory.Exists(path))
+                {
                     Directory.CreateDirectory(path);
+                }
+            }
             foreach (string path in SubPaths)
+            {
                 if (!Directory.Exists(path))
+                {
                     Directory.CreateDirectory(path);
+                }
+            }
         }
 
         internal static async Task<bool> LoadDB()
@@ -439,21 +460,21 @@ namespace GFI_with_GFS_A
             try
             {
                 dollList.Clear();
-                dollList.ReadXml(Path.Combine(dbPath, "Doll.gfs"));
+                _ = dollList.ReadXml(Path.Combine(dbPath, "Doll.gfs"));
                 equipmentList.Clear();
-                equipmentList.ReadXml(Path.Combine(dbPath, "Equipment.gfs"));
+                _ = equipmentList.ReadXml(Path.Combine(dbPath, "Equipment.gfs"));
                 fairyList.Clear();
-                fairyList.ReadXml(Path.Combine(dbPath, "Fairy.gfs"));
+                _ = fairyList.ReadXml(Path.Combine(dbPath, "Fairy.gfs"));
                 enemyList.Clear();
-                enemyList.ReadXml(Path.Combine(dbPath, "Enemy.gfs"));
+                _ = enemyList.ReadXml(Path.Combine(dbPath, "Enemy.gfs"));
                 FSTList.Clear();
-                FSTList.ReadXml(Path.Combine(dbPath, "FST.gfs"));
+                _ = FSTList.ReadXml(Path.Combine(dbPath, "FST.gfs"));
                 skillTrainingList.Clear();
-                skillTrainingList.ReadXml(Path.Combine(dbPath, "SkillTraining.gfs"));
+                _ = skillTrainingList.ReadXml(Path.Combine(dbPath, "SkillTraining.gfs"));
                 mdSupportList.Clear();
-                mdSupportList.ReadXml(Path.Combine(dbPath, "MDSupportList.gfs"));
+                _ = mdSupportList.ReadXml(Path.Combine(dbPath, "MDSupportList.gfs"));
                 freeOPList.Clear();
-                freeOPList.ReadXml(Path.Combine(dbPath, "FreeOP.gfs"));
+                _ = freeOPList.ReadXml(Path.Combine(dbPath, "FreeOP.gfs"));
             }
             catch (Exception)
             {
@@ -463,16 +484,18 @@ namespace GFI_with_GFS_A
             return true;
         }
 
-        internal static async Task<bool> LoadDB(DataTable table, string DBFile, bool BeforeClear)
+        internal static async Task<bool> LoadDB(DataTable table, string dbFile, bool beforeClear)
         {
             await Task.Delay(10);
 
             try
             {
-                if (BeforeClear)
+                if (beforeClear)
+                {
                     table.Clear();
+                }
 
-                table.ReadXml(Path.Combine(dbPath, DBFile));
+                _ = table.ReadXml(Path.Combine(dbPath, dbFile));
             }
             catch (Exception)
             {
@@ -482,14 +505,16 @@ namespace GFI_with_GFS_A
             return true;
         }
 
-        internal static bool LoadDBSync(DataTable table, string DBFile, bool BeforeClear)
+        internal static bool LoadDBSync(DataTable table, string dbFile, bool beforeClear)
         {
             try
             {
-                if (BeforeClear)
+                if (beforeClear)
+                {
                     table.Clear();
+                }
 
-                table.ReadXml(Path.Combine(dbPath, DBFile));
+                _ = table.ReadXml(Path.Combine(dbPath, dbFile));
             }
             catch (Exception)
             {
@@ -502,53 +527,65 @@ namespace GFI_with_GFS_A
         internal static async Task<bool> CheckDBVersion()
         {
             if (isServerDown)
+            {
                 return false;
+            }
 
-            string LocalDBVerPath = Path.Combine(systemPath, "DBVer.txt");
-            string ServerDBVerPath = Path.Combine(server, "DBVer.txt");
-            string TempDBVerPath = Path.Combine(tempPath, "DBVer.txt");
+            string localDBVerPath = Path.Combine(systemPath, "DBVer.txt");
+            string serverDBVerPath = Path.Combine(server, "DBVer.txt");
+            string tempDBVerPath = Path.Combine(tempPath, "DBVer.txt");
 
-            bool HasDBUpdate = false;
+            bool hasDBUpdate = false;
 
-            if (!File.Exists(LocalDBVerPath))
-                HasDBUpdate = true;
+            if (!File.Exists(localDBVerPath))
+            {
+                hasDBUpdate = true;
+            }
             else
             {
                 using (WebClient wc = new WebClient())
-                    await wc.DownloadFileTaskAsync(ServerDBVerPath, TempDBVerPath);
+                {
+                    await wc.DownloadFileTaskAsync(serverDBVerPath, tempDBVerPath);
+                }
 
-                using (StreamReader sr1 = new StreamReader(new FileStream(LocalDBVerPath, FileMode.Open, FileAccess.Read)))
-                    using (StreamReader sr2 = new StreamReader(new FileStream(TempDBVerPath, FileMode.Open, FileAccess.Read)))
+                using (StreamReader sr1 = new StreamReader(new FileStream(localDBVerPath, FileMode.Open, FileAccess.Read)))
+                {
+                    using (StreamReader sr2 = new StreamReader(new FileStream(tempDBVerPath, FileMode.Open, FileAccess.Read)))
                     {
                         int localVer = int.Parse(sr1.ReadToEnd());
                         int serverVer = int.Parse(sr2.ReadToEnd());
 
                         dbVersion = localVer;
 
-                        HasDBUpdate = (localVer < serverVer);
+                        hasDBUpdate = (localVer < serverVer);
                     }
+                }
             }
 
-            return HasDBUpdate;
+            return hasDBUpdate;
         }
 
-        internal static async Task UpdateDB(Activity activity, bool DBLoad = false, int TitleMsg = Resource.String.CheckDBUpdateDialog_Title, int MessageMgs = Resource.String.CheckDBUpdateDialog_Message)
+        internal static async Task UpdateDB(Activity activity, bool dbLoad = false, int titleMsg = Resource.String.CheckDBUpdateDialog_Title, int messageMgs = Resource.String.CheckDBUpdateDialog_Message)
         {
+            Dialog dialog;
             View v = activity.LayoutInflater.Inflate(Resource.Layout.ProgressDialogLayout, null);
 
+            TextView status = v.FindViewById<TextView>(Resource.Id.ProgressStatusMessage);
             ProgressBar totalProgressBar = v.FindViewById<ProgressBar>(Resource.Id.TotalProgressBar);
             TextView totalProgress = v.FindViewById<TextView>(Resource.Id.TotalProgressPercentage);
             ProgressBar nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
             TextView nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
 
-            Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(activity, dialogBGDownload);
-            pd.SetTitle(TitleMsg);
-            pd.SetMessage(Resources.GetString(MessageMgs));
-            pd.SetView(v);
-            pd.SetCancelable(false);
+            using (Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(activity, dialogBGDownload))
+            {
+                pd.SetTitle(titleMsg);
+                pd.SetMessage(Resources.GetString(messageMgs));
+                pd.SetView(v);
+                pd.SetCancelable(false);
 
-            Dialog dialog = pd.Create();
-            dialog.Show();
+                dialog = pd.Create();
+                dialog.Show();
+            }
 
             await Task.Delay(100);
 
@@ -571,7 +608,9 @@ namespace GFI_with_GFS_A
                     };
 
                     for (int i = 0; i < dbFiles.Length; ++i)
+                    {
                         await wc.DownloadFileTaskAsync(Path.Combine(server, "Data", "DB", dbFiles[i]), Path.Combine(tempPath, dbFiles[i]));
+                    }
 
                     await wc.DownloadFileTaskAsync(Path.Combine(server, "DBVer.txt"), Path.Combine(tempPath, "DBVer.txt"));
 
@@ -588,7 +627,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(500);
 
-                activity.RunOnUiThread(() => { pd.SetMessage(Resources.GetString(Resource.String.UpdateDBDialog_RefreshVersionMessage)); });
+                activity.RunOnUiThread(() => { status.Text = Resources.GetString(Resource.String.UpdateDBDialog_RefreshVersionMessage); });
 
                 string oldVersion = Path.Combine(systemPath, "DBVer.txt");
                 string newVersion = Path.Combine(tempPath, "DBVer.txt");
@@ -597,17 +636,23 @@ namespace GFI_with_GFS_A
                 CopyFile(newVersion, oldVersion);
 
                 using (StreamReader sr = new StreamReader(new FileStream(oldVersion, FileMode.Open, FileAccess.Read)))
-                    int.TryParse(sr.ReadToEnd(), out dbVersion);
+                {
+                    _ = int.TryParse(sr.ReadToEnd(), out dbVersion);
+                }
 
                 await Task.Delay(500);
 
-                if (DBLoad)
+                if (dbLoad)
                 {
-                    activity.RunOnUiThread(() => { pd.SetMessage(Resources.GetString(Resource.String.UpdateDBDialog_LoadDB)); });
+                    activity.RunOnUiThread(() => { status.Text = Resources.GetString(Resource.String.UpdateDBDialog_LoadDB); });
 
                     await Task.Delay(100);
                     await LoadDB();
                 }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex, activity);
             }
             finally
             {
@@ -625,11 +670,16 @@ namespace GFI_with_GFS_A
                 string ErrorFileName = $"{nowDateTime}-ErrorLog.txt";
 
                 DirectoryInfo di = new DirectoryInfo(logPath);
+
                 if (!di.Exists)
+                {
                     di.Create();
+                }
 
                 using (StreamWriter sw = new StreamWriter(new FileStream(Path.Combine(logPath, ErrorFileName), FileMode.Create, FileAccess.ReadWrite)))
+                {
                     sw.Write(ex.ToString());
+                }
             }
             catch (Exception)
             {
@@ -653,16 +703,16 @@ namespace GFI_with_GFS_A
             sb.Show();
         }
 
-        internal static void ShowSnackbar(View v, int StringResource, int time)
+        internal static void ShowSnackbar(View v, int stringResource, int time)
         {
-            Snackbar sb = Snackbar.Make(v, StringResource, time);
+            Snackbar sb = Snackbar.Make(v, stringResource, time);
             v.BringToFront();
             sb.Show();
         }
 
-        internal static void ShowSnackbar(View v, int StringResource, int time, Android.Graphics.Color color)
+        internal static void ShowSnackbar(View v, int stringResource, int time, Android.Graphics.Color color)
         {
-            Snackbar sb = Snackbar.Make(v, StringResource, time);
+            Snackbar sb = Snackbar.Make(v, stringResource, time);
             v.BringToFront();
             sb.View.SetBackgroundColor(color);
             sb.Show();
@@ -712,24 +762,24 @@ namespace GFI_with_GFS_A
             return true;
         }
 
-        internal static double[] CalcDPS(int FireRate, int AttackSpeed, int Enemy_Armor, int Accuracy, int Enemy_Evasion, int Critical, int Dummy, int Penetration = 10, int Critical_Rate = 150)
+        internal static double[] CalcDPS(int fireRate, int attackSpeed, int enemyArmor, int accuracy, int enemyEvasion, int critical, int dummy, int penetration = 20, int criticalRate = 150)
         {
-            double dAccuracy = Accuracy / 100.0;
-            double dCritical_Rate = Critical_Rate / 100.0;
-            double APS = 29.999994 / Math.Floor(1500.0 / AttackSpeed);
+            double dAccuracy = accuracy / 100.0;
+            double dCriticalRate = criticalRate / 100.0;
+            double aps = 29.999994 / Math.Floor(1500.0 / attackSpeed);
 
-            double[] Power = { 0, 0 };
-            Power[0] = Math.Max(FireRate * 0.85 + Math.Min(Penetration - Enemy_Armor, 2), 1);
-            Power[1] = Math.Max(FireRate * 1.15 + Math.Min(Penetration - Enemy_Armor, 2), 1);
+            double[] power = { 0, 0 };
+            power[0] = Math.Max(fireRate * 0.85 + Math.Min(penetration - enemyArmor, 2), 1);
+            power[1] = Math.Max(fireRate * 1.15 + Math.Min(penetration - enemyArmor, 2), 1);
 
-            double[] Normal_Damage = { Math.Round(Power[0]), Math.Round(Power[1]) };
-            double[] Critical_Damage = { Math.Round(Power[0] * dCritical_Rate), Math.Round(Power[1] * dCritical_Rate) };
-            double Accuracy_Rate = (double)Accuracy / (Accuracy + Enemy_Evasion);
+            double[] normalDamage = { Math.Round(power[0]), Math.Round(power[1]) };
+            double[] criticalDamage = { Math.Round(power[0] * dCriticalRate), Math.Round(power[1] * dCriticalRate) };
+            double accuracyRate = (double)accuracy / (accuracy + enemyEvasion);
 
             double[] DPS =
             {
-                (Normal_Damage[0] * (1 - dAccuracy) + Critical_Damage[0] * dAccuracy) * APS * Accuracy_Rate * Dummy,
-                (Normal_Damage[1] * (1 - dAccuracy) + Critical_Damage[1] * dAccuracy) * APS * Accuracy_Rate * Dummy
+                (normalDamage[0] * (1 - dAccuracy) + criticalDamage[0] * dAccuracy) * aps * accuracyRate * dummy,
+                (normalDamage[1] * (1 - dAccuracy) + criticalDamage[1] * dAccuracy) * aps * accuracyRate * dummy
             };
 
             return DPS;
@@ -738,14 +788,14 @@ namespace GFI_with_GFS_A
         internal static void ShuffleList<T>(this IList<T> list)
         {
             RNGCryptoServiceProvider provider = new RNGCryptoServiceProvider();
-            byte[] r_num = new byte[1];
+            byte[] rNum = new byte[1];
             T temp;
-            int r = 0;
+            int r;
 
             for (int i = 0; i < list.Count; ++i)
             {
-                provider.GetBytes(r_num);
-                r = r_num[0] % list.Count;
+                provider.GetBytes(rNum);
+                r = rNum[0] % list.Count;
 
                 temp = list[i];
                 list[i] = list[r];
@@ -758,13 +808,12 @@ namespace GFI_with_GFS_A
         internal static int CreateRandomNum(int mag = 1)
         {
             RNGCryptoServiceProvider provider = new RNGCryptoServiceProvider();
-            byte[] r_num = new byte[1];
+            byte[] rNum = new byte[1];
 
-            provider.GetBytes(r_num);
-
+            provider.GetBytes(rNum);
             provider.Dispose();
 
-            return r_num[0] * mag;
+            return rNum[0] * mag;
         }
     }
 }

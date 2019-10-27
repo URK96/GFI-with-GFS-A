@@ -47,19 +47,19 @@ namespace GFI_with_GFS_A
         private RecyclerView.LayoutManager mainRecyclerManager;
         private CoordinatorLayout snackbarLayout;
 
-        
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             try
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.useLightTheme) 
+                if (ETC.useLightTheme)
+                {
                     SetTheme(Resource.Style.GFS_Toolbar_Light);
+                }
 
                 // Create your application here
-                SetContentView(Resource.Layout.EquipDBListLayout);
+                SetContentView(Resource.Layout.EquipDBListLayout_Beta);
 
                 canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
@@ -70,10 +70,10 @@ namespace GFI_with_GFS_A
                     searchViewText = e.NewText;
                     _ = ListEquip(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
                 };
-                mEquipListView = FindViewById<RecyclerView>(Resource.Id.EquipDBRecyclerView);
+                mEquipListView = FindViewById<RecyclerView>(Resource.Id.bEquipDBRecyclerView);
                 mainRecyclerManager = new LinearLayoutManager(this);
                 mEquipListView.SetLayoutManager(mainRecyclerManager);
-                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EquipDBSnackbarLayout);
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.bEquipDBSnackbarLayout);
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.SetTitle(Resource.String.EquipDBMainActivity_Title);
@@ -99,7 +99,7 @@ namespace GFI_with_GFS_A
         {
             MenuInflater.Inflate(Resource.Menu.EquipDBMenu, menu);
 
-            var cacheItem = menu.FindItem(Resource.Id.RefreshEquipCropImageCache);
+            var cacheItem = menu?.FindItem(Resource.Id.RefreshEquipCropImageCache);
             _ = canRefresh ? cacheItem.SetVisible(true) : cacheItem.SetVisible(false);
 
             return base.OnCreateOptionsMenu(menu);

@@ -365,10 +365,16 @@ namespace GFI_with_GFS_A
                             if (!ETC.hasInitDollAvgAbility)
                                 ETC.InitializeAverageAbility();
                         });
-                        //StartActivity(typeof(DollDBMainActivity));
-                        //OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        StartActivity(typeof(DollDBMainActivity_Beta));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
+                        {
+                            StartActivity(typeof(DollDBMainActivity_Beta));
+                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        }
+                        else
+                        {
+                            StartActivity(typeof(DollDBMainActivity));
+                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        }
                         break;
                     case 1:
                         await Task.Run(() => 
@@ -376,10 +382,16 @@ namespace GFI_with_GFS_A
                             if (ETC.equipmentList.TableName == "")
                                 ETC.LoadDBSync(ETC.equipmentList, "Equipment.gfs", false);
                         });
-                        //StartActivity(typeof(EquipDBMainActivity));
-                        //OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        StartActivity(typeof(EquipDBMainActivity_Beta));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
+                        {
+                            StartActivity(typeof(EquipDBMainActivity_Beta));
+                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        }
+                        else
+                        {
+                            StartActivity(typeof(EquipDBMainActivity));
+                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        }
                         break;
                     case 2:
                         await Task.Run(() => 
@@ -387,8 +399,16 @@ namespace GFI_with_GFS_A
                             if (ETC.fairyList.TableName == "")
                                 ETC.LoadDBSync(ETC.fairyList, "Fairy.gfs", false);
                         });
-                        StartActivity(typeof(FairyDBMainActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
+                        {
+                            StartActivity(typeof(FairyDBMainActivity_Beta));
+                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        }
+                        else
+                        {
+                            StartActivity(typeof(FairyDBMainActivity));
+                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        }
                         break;
                     case 3:
                         await Task.Run(() => 

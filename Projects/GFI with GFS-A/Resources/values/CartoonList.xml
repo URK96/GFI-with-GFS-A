@@ -5,6 +5,7 @@
     <item>그리폰 &amp; 철혈</item>
     <item>그리폰 &amp; 철혈 2</item>
     <item>그리폰 &amp; 철혈 2 외전</item>
+    <item>분열 후 전선</item>
     <item>그리폰 안내서</item>
     <item>그리폰 일상만화</item>
     <item>천솜향의 소녀전선</item>
@@ -173,6 +174,13 @@
     <item>솦모챠 &amp; 드리머 1화</item>
     <item>솦모챠 &amp; 드리머 2화</item>
     <item>AR 소대 1화</item>
+  </string-array>
+
+  <string-array name="GF_INGUKOON_Frontline">
+    <item>1화</item>
+    <item>2화</item>
+    <item>3화</item>
+    <item>4화</item>
   </string-array>
 
   <string-array name="GF_Guide">

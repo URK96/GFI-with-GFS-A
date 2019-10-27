@@ -518,6 +518,8 @@
   <string name="Setting_Category_DBList">DB List</string>
   <string name="Setting_DBListImageShow_Title">Activate List Image</string>
   <string name="Setting_DBListImageShow_Summary">Set the DB list to display the corresponding image for each item. On devices with less than 2GB of RAM, app may crash when activated.</string>
+  <string name="Setting_PreviewDBListLayout_Title">Preview DB List Layout</string>
+  <string name="Setting_PreviewDBListLayout_Summary">Apply preview beta layout. This setting only affect T-Doll, Equip, Fairy DB list.</string>
   <string name="Setting_Category_DBDetail">DB Detail</string>
   <string name="Setting_DBDetailBackgroundImage_Title">Enable Detail Page Background Image</string>
   <string name="Setting_DBDetailBackgroundImage_Summary">Set image displayed in the background on the DB Details page. On devices with less than 2GB of RAM, app may crash when activated.</string>
@@ -682,10 +684,13 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.4.4 Update]\n\n
-- Add app language setting\n
-- Change sub main menu layout\n
-- Fix app termiante when network connection fail\n
+    [2.4.5 Update]\n\n
+- Add DB list beta layout\n
+- Change DB sort layout\n
+- Add cartoon category\n
+- Fix string issue on download dialog\n
+- Fix exception process on DB update\n
+- Fix error message issue on T-Doll image download\n
 - Optimize memory usuage
   </string>
 </resources>

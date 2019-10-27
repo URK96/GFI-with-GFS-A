@@ -25,10 +25,10 @@ namespace GFI_with_GFS_A
 
         private ArrayAdapter categoryAdapter;
         private Android.Support.V4.App.FragmentTransaction ft;
-        private Android.Support.V4.App.Fragment CartoonScreen_F;
+        private Android.Support.V4.App.Fragment cartoonScreenF;
 
-        internal DrawerLayout MainDrawerLayout;
-        private ListView DrawerListView;
+        internal DrawerLayout mainDrawerLayout;
+        private ListView drawerListView;
 
         private string[] categoryList;
         private List<string> itemList = new List<string>();
@@ -42,30 +42,40 @@ namespace GFI_with_GFS_A
             ETC.SetDialogTheme();
 
             if (ETC.useLightTheme)
+            {
                 SetTheme(Resource.Style.GFS_NoActionBar_Light);
+            }
 
             // Create your application here
             SetContentView(Resource.Layout.CartoonMainLayout);
 
             // Find View & Connect Event
 
-            MainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.CartoonMainDrawerLayout);
-            MainDrawerLayout.DrawerOpened += delegate
+            mainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.CartoonMainDrawerLayout);
+            mainDrawerLayout.DrawerOpened += delegate
             {
                 if (ETC.useLightTheme)
+                {
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen_WhiteTheme);
+                }
                 else
+                {
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen);
+                }
             };
-            MainDrawerLayout.DrawerClosed += delegate
+            mainDrawerLayout.DrawerClosed += delegate
             {
                 if (ETC.useLightTheme)
+                {
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
+                }
                 else
+                {
                     SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
+                }
             };
-            DrawerListView = FindViewById<ListView>(Resource.Id.CartoonMainNavigationListView);
-            DrawerListView.ItemClick += DrawerListView_ItemClick;
+            drawerListView = FindViewById<ListView>(Resource.Id.CartoonMainNavigationListView);
+            drawerListView.ItemClick += DrawerListView_ItemClick;
 
             // Set ActionBar
 
@@ -75,16 +85,20 @@ namespace GFI_with_GFS_A
             SupportActionBar.SetHomeButtonEnabled(true);
 
             if (ETC.useLightTheme)
+            {
                 SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
+            }
             else
+            {
                 SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
+            }
 
             // Set Fragment
 
-            CartoonScreen_F = new CartoonScreen();
+            cartoonScreenF = new CartoonScreen();
 
             ft = SupportFragmentManager.BeginTransaction();
-            ft.Add(Resource.Id.CartoonContainer, CartoonScreen_F, "CartoonScreen");
+            ft.Add(Resource.Id.CartoonContainer, cartoonScreenF, "CartoonScreen");
             ft.Commit();
 
             LoadCategoryList();
@@ -97,9 +111,9 @@ namespace GFI_with_GFS_A
                 categoryList = Resources.GetStringArray(Resource.Array.Cartoon_Category);
 
                 categoryAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, categoryList);
-                DrawerListView.Adapter = categoryAdapter;
+                drawerListView.Adapter = categoryAdapter;
 
-                MainDrawerLayout.OpenDrawer(GravityCompat.Start);
+                mainDrawerLayout.OpenDrawer(GravityCompat.Start);
             }
             catch (Exception ex)
             {
@@ -110,13 +124,17 @@ namespace GFI_with_GFS_A
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            switch (item.ItemId)
+            switch (item?.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    if (!MainDrawerLayout.IsDrawerOpen(GravityCompat.Start))
-                        MainDrawerLayout.OpenDrawer(GravityCompat.Start);
+                    if (!mainDrawerLayout.IsDrawerOpen(GravityCompat.Start))
+                    {
+                        mainDrawerLayout.OpenDrawer(GravityCompat.Start);
+                    }
                     else
-                        MainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                    {
+                        mainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                    }
 
                     return true;
             }
@@ -139,7 +157,7 @@ namespace GFI_with_GFS_A
                     itemList.TrimExcess();
 
                     var itemAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, itemList);
-                    DrawerListView.Adapter = itemAdapter;
+                    drawerListView.Adapter = itemAdapter;
 
                     isCategory = false;
                 }
@@ -148,7 +166,7 @@ namespace GFI_with_GFS_A
                     switch (e.Position)
                     {
                         case 0:
-                            DrawerListView.Adapter = categoryAdapter;
+                            drawerListView.Adapter = categoryAdapter;
                             isCategory = true;
                             break;
                         default:
@@ -161,15 +179,15 @@ namespace GFI_with_GFS_A
                                 case 4:
                                 case 5:
                                 case 8:
-                                    _ = ((CartoonScreen)CartoonScreen_F).LoadProcess(categoryList[categoryIndex], categoryIndex, e.Position - 1, false);
+                                    _ = ((CartoonScreen)cartoonScreenF).LoadProcess(categoryList[categoryIndex], categoryIndex, e.Position - 1, false);
                                     break;
                                 case 6:
                                 case 7:
                                 case 9:
-                                    _ = ((CartoonScreen)CartoonScreen_F).LoadProcess_Web(categoryList[categoryIndex], categoryIndex, e.Position - 1, false);
+                                    _ = ((CartoonScreen)cartoonScreenF).LoadProcessWeb(categoryList[categoryIndex], categoryIndex, e.Position - 1, false);
                                     break;
                             }
-                            MainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                            mainDrawerLayout.CloseDrawer(GravityCompat.Start);
                             break;
                     }
                 }
@@ -181,9 +199,9 @@ namespace GFI_with_GFS_A
             }
         }
 
-        internal void ListItems(int Category_Index, ref List<string> list)
+        internal void ListItems(int categoryIndex, ref List<string> list)
         {
-            switch (Category_Index)
+            switch (categoryIndex)
             {
                 case 0:
                     list.AddRange(Resources.GetStringArray(Resource.Array.kazensky_GF));
@@ -198,21 +216,24 @@ namespace GFI_with_GFS_A
                     list.AddRange(Resources.GetStringArray(Resource.Array.GF_SF2_After));
                     break;
                 case 4:
-                    list.AddRange(Resources.GetStringArray(Resource.Array.GF_Guide));
+                    list.AddRange(Resources.GetStringArray(Resource.Array.GF_INGUKOON_Frontline));
                     break;
                 case 5:
-                    list.AddRange(Resources.GetStringArray(Resource.Array.GF_DailyComic));
+                    list.AddRange(Resources.GetStringArray(Resource.Array.GF_Guide));
                     break;
                 case 6:
-                    list.AddRange(Resources.GetStringArray(Resource.Array.mota6nako_GF));
+                    list.AddRange(Resources.GetStringArray(Resource.Array.GF_DailyComic));
                     break;
                 case 7:
-                    list.AddRange(Resources.GetStringArray(Resource.Array.ImmortalityFront_GF));
+                    list.AddRange(Resources.GetStringArray(Resource.Array.mota6nako_GF));
                     break;
                 case 8:
-                    list.AddRange(Resources.GetStringArray(Resource.Array.MMM_GF));
+                    list.AddRange(Resources.GetStringArray(Resource.Array.ImmortalityFront_GF));
                     break;
                 case 9:
+                    list.AddRange(Resources.GetStringArray(Resource.Array.MMM_GF));
+                    break;
+                case 10:
                     list.AddRange(Resources.GetStringArray(Resource.Array.Geo_GF));
                     break;
             }
@@ -220,9 +241,9 @@ namespace GFI_with_GFS_A
 
         public override void OnBackPressed()
         {
-            if (MainDrawerLayout.IsDrawerOpen(GravityCompat.Start))
+            if (mainDrawerLayout.IsDrawerOpen(GravityCompat.Start))
             {
-                MainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                mainDrawerLayout.CloseDrawer(GravityCompat.Start);
 
                 return;
             }
@@ -242,15 +263,15 @@ namespace GFI_with_GFS_A
 
         private View v;
 
-        private LinearLayout CopyrightLayout;
-        private FrameLayout WebViewLayout;
-        private ProgressBar LoadProgress;
-        private Button PreviousButton;
-        private Button NextButton;
-        private ImageButton RefreshButton;
-        private TextView NowCartoonText;
-        private RecyclerView MainRecyclerView;
-        private RecyclerView.LayoutManager MainLayoutManager;
+        private LinearLayout copyrightLayout;
+        private FrameLayout webViewLayout;
+        private ProgressBar loadProgress;
+        private Button previousButton;
+        private Button nextButton;
+        private ImageButton refreshButton;
+        private TextView nowCartoonText;
+        private RecyclerView mainRecyclerView;
+        private RecyclerView.LayoutManager mainLayoutManager;
 
         private CartoonType cartoonType = CartoonType.Image;
 
@@ -261,23 +282,21 @@ namespace GFI_with_GFS_A
         private string nowCategory = "";
         private int nowCategoryIndex = 0;
         private int nowItemIndex = 0;
-
-        private string cartoonTopPath = Path.Combine(ETC.cachePath, "Cartoon");
-
-        private Android.Support.V7.App.AlertDialog dialog;
         private int count = 0;
+
+        private readonly string cartoonTopPath = Path.Combine(ETC.cachePath, "Cartoon");
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            v = inflater.Inflate(Resource.Layout.CartoonScreenLayout, container, false);
+            v = inflater?.Inflate(Resource.Layout.CartoonScreenLayout, container, false);
 
             // Find View & Connect Event
 
-            CopyrightLayout = v.FindViewById<LinearLayout>(Resource.Id.CartoonScreenCopyrightLayout);
-            WebViewLayout = v.FindViewById<FrameLayout>(Resource.Id.CartoonScreenWebViewLayout);
-            LoadProgress = v.FindViewById<ProgressBar>(Resource.Id.CartoonScreenLoadProgress);
-            PreviousButton = v.FindViewById<Button>(Resource.Id.CartoonScreenPreviousButton);
-            PreviousButton.Click += delegate
+            copyrightLayout = v.FindViewById<LinearLayout>(Resource.Id.CartoonScreenCopyrightLayout);
+            webViewLayout = v.FindViewById<FrameLayout>(Resource.Id.CartoonScreenWebViewLayout);
+            loadProgress = v.FindViewById<ProgressBar>(Resource.Id.CartoonScreenLoadProgress);
+            previousButton = v.FindViewById<Button>(Resource.Id.CartoonScreenPreviousButton);
+            previousButton.Click += delegate
             {
                 switch (cartoonType)
                 {
@@ -286,12 +305,12 @@ namespace GFI_with_GFS_A
                         _ = LoadProcess(nowCategory, nowCategoryIndex, nowItemIndex - 1, false);
                         break;
                     case CartoonType.Web:
-                        _ = LoadProcess_Web(nowCategory, nowCategoryIndex, nowItemIndex - 1, false);
+                        _ = LoadProcessWeb(nowCategory, nowCategoryIndex, nowItemIndex - 1, false);
                         break;
                 }
             };
-            NextButton = v.FindViewById<Button>(Resource.Id.CartoonScreenNextButton);
-            NextButton.Click += delegate 
+            nextButton = v.FindViewById<Button>(Resource.Id.CartoonScreenNextButton);
+            nextButton.Click += delegate 
             {
                 switch (cartoonType)
                 {
@@ -300,12 +319,12 @@ namespace GFI_with_GFS_A
                         _ = LoadProcess(nowCategory, nowCategoryIndex, nowItemIndex + 1, false);
                         break;
                     case CartoonType.Web:
-                        _ = LoadProcess_Web(nowCategory, nowCategoryIndex, nowItemIndex + 1, false);
+                        _ = LoadProcessWeb(nowCategory, nowCategoryIndex, nowItemIndex + 1, false);
                         break;
                 }
             };
-            RefreshButton = v.FindViewById<ImageButton>(Resource.Id.CartoonScreenRefreshButton);
-            RefreshButton.Click += delegate 
+            refreshButton = v.FindViewById<ImageButton>(Resource.Id.CartoonScreenRefreshButton);
+            refreshButton.Click += delegate 
             {
                 switch (cartoonType)
                 {
@@ -314,14 +333,14 @@ namespace GFI_with_GFS_A
                         _ = LoadProcess(nowCategory, nowCategoryIndex, nowItemIndex, true);
                         break;
                     case CartoonType.Web:
-                        _ = LoadProcess_Web(nowCategory, nowCategoryIndex, nowItemIndex, true);
+                        _ = LoadProcessWeb(nowCategory, nowCategoryIndex, nowItemIndex, true);
                         break;
                 }
             };
-            NowCartoonText = v.FindViewById<TextView>(Resource.Id.CartoonScreenNowCartoonText);
-            MainRecyclerView = v.FindViewById<RecyclerView>(Resource.Id.CartoonScreenMainRecyclerView);
-            MainLayoutManager = new LinearLayoutManager(Activity);
-            MainRecyclerView.SetLayoutManager(MainLayoutManager);
+            nowCartoonText = v.FindViewById<TextView>(Resource.Id.CartoonScreenNowCartoonText);
+            mainRecyclerView = v.FindViewById<RecyclerView>(Resource.Id.CartoonScreenMainRecyclerView);
+            mainLayoutManager = new LinearLayoutManager(Activity);
+            mainRecyclerView.SetLayoutManager(mainLayoutManager);
 
             return v;
         }
@@ -339,25 +358,25 @@ namespace GFI_with_GFS_A
             {
                 if (itemIndex == 0)
                 {
-                    PreviousButton.Enabled = false;
-                    NextButton.Enabled = true;
+                    previousButton.Enabled = false;
+                    nextButton.Enabled = true;
                 }
                 else if (itemIndex == (selectedItemList.Count - 1))
                 {
-                    PreviousButton.Enabled = true;
-                    NextButton.Enabled = false;
+                    previousButton.Enabled = true;
+                    nextButton.Enabled = false;
                 }
                 else
                 {
-                    PreviousButton.Enabled = true;
-                    NextButton.Enabled = true;
+                    previousButton.Enabled = true;
+                    nextButton.Enabled = true;
                 }
 
-                LoadProgress.Visibility = ViewStates.Visible;
-                ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
+                loadProgress.Visibility = ViewStates.Visible;
+                ((CartoonActivity)Activity).mainDrawerLayout.Enabled = false;
                 selectedItemList.Clear();
 
-                CopyrightLayout.RemoveAllViews();
+                copyrightLayout.RemoveAllViews();
 
                 await Task.Delay(100);
 
@@ -368,10 +387,14 @@ namespace GFI_with_GFS_A
                 string itemPath = Path.Combine(categoryPath, itemIndex.ToString());
 
                 if (isRefresh)
+                {
                     Directory.Delete(itemPath, true);
+                }
 
                 if (!Directory.Exists(categoryPath))
+                {
                     Directory.CreateDirectory(categoryPath);
+                }
 
                 if (!Directory.Exists(itemPath))
                 {
@@ -379,8 +402,12 @@ namespace GFI_with_GFS_A
                     await DownloadCartoon(category, itemIndex);
                 }
                 else
+                {
                     if (Directory.GetFiles(itemPath).Length == 0)
+                    {
                         await DownloadCartoon(category, itemIndex);
+                    }
+                }
 
                 LinearLayout layout = new LinearLayout(Activity);
                 TextView tv1 = new TextView(Activity);
@@ -396,15 +423,16 @@ namespace GFI_with_GFS_A
                     case 1:
                     case 2:
                     case 3:
+                    case 4:
                         tv1.Text = "Creator : 잉여군";
                         tv2.Text = "https://twitter.com/INGUKOON";
                         break;
-                    case 4:
                     case 5:
+                    case 6:
                         tv1.Text = "Creator : MADCORE";
                         tv2.Text = "https://www.pixiv.net/member.php?id=455690";
                         break;
-                    case 8:
+                    case 9:
                         tv1.Text = "Creator : MMM";
                         tv2.Text = "https://www.pixiv.net/member.php?id=25683341";
                         break;
@@ -417,14 +445,14 @@ namespace GFI_with_GFS_A
                 layout.AddView(tv1);
                 layout.AddView(tv2);
 
-                CopyrightLayout.AddView(layout);
+                copyrightLayout.AddView(layout);
 
                 List<string> Files = Directory.GetFiles(itemPath).ToList();
                 Files.TrimExcess();
                 Files.Sort(SortCartoonList);
                 bitmapList.Clear();
 
-                const int Image_Size = 500;
+                const int imageSize = 500;
 
                 foreach (string file in Files)
                 {
@@ -435,22 +463,22 @@ namespace GFI_with_GFS_A
 
                     while (height < bitmap.Height)
                     {
-                        int remain_height = bitmap.Height - height;
+                        int remainHeight = bitmap.Height - height;
 
-                        Android.Graphics.Bitmap bitmap_fix;
+                        Android.Graphics.Bitmap bitmapFix;
 
-                        if (remain_height >= Image_Size)
+                        if (remainHeight >= imageSize)
                         {
-                            bitmap_fix = Android.Graphics.Bitmap.CreateBitmap(bitmap, 0, height, bitmap.Width, Image_Size);
-                            height += Image_Size;
+                            bitmapFix = Android.Graphics.Bitmap.CreateBitmap(bitmap, 0, height, bitmap.Width, imageSize);
+                            height += imageSize;
                         }
                         else
                         {
-                            bitmap_fix = Android.Graphics.Bitmap.CreateBitmap(bitmap, 0, height, bitmap.Width, remain_height);
-                            height += remain_height;
+                            bitmapFix = Android.Graphics.Bitmap.CreateBitmap(bitmap, 0, height, bitmap.Width, remainHeight);
+                            height += remainHeight;
                         }
 
-                        bitmapList.Add(bitmap_fix);
+                        bitmapList.Add(bitmapFix);
                     }
 
                     await Task.Delay(10);
@@ -458,11 +486,11 @@ namespace GFI_with_GFS_A
 
                 bitmapList.TrimExcess();
 
-                MainRecyclerView.SetAdapter(new CartoonScreenAdapter(bitmapList.ToArray()));
+                mainRecyclerView.SetAdapter(new CartoonScreenAdapter(bitmapList.ToArray()));
 
                 GC.Collect();
 
-                LoadProgress.Visibility = ViewStates.Invisible;
+                loadProgress.Visibility = ViewStates.Invisible;
             }
             catch (Exception ex)
             {
@@ -470,50 +498,50 @@ namespace GFI_with_GFS_A
             }
             finally
             {
-                ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
-                NowCartoonText.Text = selectedItemList[itemIndex];
-                WebViewLayout.Visibility = ViewStates.Gone;
-                MainRecyclerView.Visibility = ViewStates.Visible;
+                ((CartoonActivity)Activity).mainDrawerLayout.Enabled = false;
+                nowCartoonText.Text = selectedItemList[itemIndex];
+                webViewLayout.Visibility = ViewStates.Gone;
+                mainRecyclerView.Visibility = ViewStates.Visible;
             }
         }
 
-        internal async Task LoadProcess_Web(string Category, int Category_Index, int Item_Index, bool IsRefresh)
+        internal async Task LoadProcessWeb(string category, int categoryIndex, int itemIndex, bool IsRefresh = false)
         {
             cartoonType = CartoonType.Web;
-            nowItemIndex = Item_Index;
-            nowCategoryIndex = Category_Index;
-            nowCategory = Category;
+            nowItemIndex = itemIndex;
+            nowCategoryIndex = categoryIndex;
+            nowCategory = category;
 
             try
             {              
-                if (Item_Index == 0)
+                if (itemIndex == 0)
                 {
-                    PreviousButton.Enabled = false;
-                    NextButton.Enabled = true;
+                    previousButton.Enabled = false;
+                    nextButton.Enabled = true;
                 }
-                else if (Item_Index == (selectedItemList.Count - 1))
+                else if (itemIndex == (selectedItemList.Count - 1))
                 {
-                    PreviousButton.Enabled = true;
-                    NextButton.Enabled = false;
+                    previousButton.Enabled = true;
+                    nextButton.Enabled = false;
                 }
                 else
                 {
-                    PreviousButton.Enabled = true;
-                    NextButton.Enabled = true;
+                    previousButton.Enabled = true;
+                    nextButton.Enabled = true;
                 }
 
-                LoadProgress.Visibility = ViewStates.Visible;
-                ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
+                loadProgress.Visibility = ViewStates.Visible;
+                ((CartoonActivity)Activity).mainDrawerLayout.Enabled = false;
                 selectedItemList.Clear();
                 selectedItemURLList.Clear();
 
-                WebViewLayout.RemoveAllViews();
-                CopyrightLayout.RemoveAllViews();
+                webViewLayout.RemoveAllViews();
+                copyrightLayout.RemoveAllViews();
 
                 await Task.Delay(100);
 
-                ((CartoonActivity)Activity).ListItems(Category_Index, ref selectedItemList);
-                ListItemURLs(Category_Index, ref selectedItemURLList);
+                ((CartoonActivity)Activity).ListItems(categoryIndex, ref selectedItemList);
+                ListItemURLs(categoryIndex, ref selectedItemURLList);
                 selectedItemList.TrimExcess();
                 selectedItemURLList.TrimExcess();
 
@@ -529,10 +557,10 @@ namespace GFI_with_GFS_A
                 webview.Settings.SetAppCacheEnabled(true);
                 webview.Settings.JavaScriptEnabled = true;
 
-                WebViewLayout.AddView(webview);
+                webViewLayout.AddView(webview);
                 webview.LoadUrl(selectedItemURLList[nowItemIndex]);
 
-                LoadProgress.Visibility = ViewStates.Invisible;
+                loadProgress.Visibility = ViewStates.Invisible;
             }
             catch (Exception ex)
             {
@@ -540,10 +568,10 @@ namespace GFI_with_GFS_A
             }
             finally
             {
-                ((CartoonActivity)Activity).MainDrawerLayout.Enabled = false;
-                NowCartoonText.Text = selectedItemList[Item_Index];
-                MainRecyclerView.Visibility = ViewStates.Gone;
-                WebViewLayout.Visibility = ViewStates.Visible;
+                ((CartoonActivity)Activity).mainDrawerLayout.Enabled = false;
+                nowCartoonText.Text = selectedItemList[itemIndex];
+                mainRecyclerView.Visibility = ViewStates.Gone;
+                webViewLayout.Visibility = ViewStates.Visible;
             }
         }
 
@@ -555,51 +583,64 @@ namespace GFI_with_GFS_A
             return a.CompareTo(b);
         }
 
-        private async Task DownloadCartoon(string Category, int Item_Index)
+        private async Task DownloadCartoon(string category, int itemIndex)
         {
-            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload);
-            ad.SetTitle(Resource.String.Cartoon_DownloadCartoonTitle);
-            ad.SetMessage(Resource.String.Cartoon_DownloadCartoonMessage);
-            ad.SetCancelable(false);
-            ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
+            Uri uri;
 
-            dialog = ad.Show();
+            Android.Support.V7.App.AlertDialog dialog;
 
-            try
+            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload))
             {
-                string ServerItemPath = Path.Combine(ETC.server, "Data", "Images", "Cartoon", "ko", Category, selectedItemList[Item_Index]);
-                count = 1;
+                ad.SetTitle(Resource.String.Cartoon_DownloadCartoonTitle);
+                ad.SetMessage(Resource.String.Cartoon_DownloadCartoonMessage);
+                ad.SetCancelable(false);
+                ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
 
-                while (true)
+                dialog = ad.Show();
+
+                try
                 {
-                    string ContentPath = Path.Combine(ServerItemPath, $"{count}.png");
-                    string ContentPath_local = Path.Combine(cartoonTopPath, Category, Item_Index.ToString(), $"{count}.gfdcache");
-                    WebRequest request = WebRequest.Create(ContentPath);
+                    string ServerItemPath = Path.Combine(ETC.server, "Data", "Images", "Cartoon", "ko", category, selectedItemList[itemIndex]);
 
-                    using (WebResponse response = await request.GetResponseAsync())
-                        if (response.ContentType != "image/png")
-                            break;
+                    count = 1;
 
-                    using (WebClient wc = new WebClient())
+                    while (true)
                     {
-                        wc.DownloadProgressChanged += (object sender, DownloadProgressChangedEventArgs e) =>
-                        {
-                            string message = Resources.GetString(Resource.String.Cartoon_DownloadCartoonMessage);
-                            Activity.RunOnUiThread(() => { ad.SetMessage($"{message}{count}({e.BytesReceived / 1024}KB)"); });
-                        };
-                        await wc.DownloadFileTaskAsync(ContentPath, ContentPath_local);
-                    }
+                        string contentPath = Path.Combine(ServerItemPath, $"{count}.png");
+                        string localContentPath = Path.Combine(cartoonTopPath, category, itemIndex.ToString(), $"{count}.gfdcache");
 
-                    count += 1;
+                        Uri.TryCreate(contentPath, UriKind.RelativeOrAbsolute, out uri);
+                        WebRequest request = WebRequest.Create(uri);
+
+                        using (WebResponse response = await request.GetResponseAsync().ConfigureAwait(false))
+                        {
+                            if (response.ContentType != "image/png")
+                            {
+                                break;
+                            }
+                        }
+
+                        using (WebClient wc = new WebClient())
+                        {
+                            wc.DownloadProgressChanged += (sender, e) =>
+                            {
+                                string message = Resources.GetString(Resource.String.Cartoon_DownloadCartoonMessage);
+                                Activity.RunOnUiThread(() => { ad.SetMessage($"{message}{count}({e.BytesReceived / 1024}KB)"); });
+                            };
+                            await wc.DownloadFileTaskAsync(contentPath, localContentPath);
+                        }
+
+                        count += 1;
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, Activity);
-            }
-            finally
-            {
-                dialog.Dismiss();
+                catch (Exception ex)
+                {
+                    ETC.LogError(ex, Activity);
+                }
+                finally
+                {
+                    dialog.Dismiss();
+                }
             }
         }
 
@@ -607,13 +648,13 @@ namespace GFI_with_GFS_A
         {
             switch (Category_Index)
             {
-                case 6:
+                case 7:
                     list.AddRange(Resources.GetStringArray(Resource.Array.mota6nako_GF_URL));
                     break;
-                case 7:
+                case 8:
                     list.AddRange(Resources.GetStringArray(Resource.Array.ImmortalityFront_GF_URL));
                     break;
-                case 9:
+                case 10:
                     list.AddRange(Resources.GetStringArray(Resource.Array.Geo_GF_URL));
                     break;
             }
@@ -651,7 +692,7 @@ namespace GFI_with_GFS_A
 
         public CartoonScreenViewHolder(View view) : base(view)
         {
-            CartoonImageView = view.FindViewById<ImageView>(Resource.Id.CartoonScreenImageView);
+            CartoonImageView = view?.FindViewById<ImageView>(Resource.Id.CartoonScreenImageView);
         }
     }
 
@@ -668,12 +709,12 @@ namespace GFI_with_GFS_A
         {
             CartoonScreenViewHolder vh = holder as CartoonScreenViewHolder;
 
-            vh.CartoonImageView.SetImageBitmap(Image[position]);
+            vh?.CartoonImageView.SetImageBitmap(Image[position]);
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.CartoonScreenListLayout, parent, false);
+            View view = LayoutInflater.From(parent?.Context).Inflate(Resource.Layout.CartoonScreenListLayout, parent, false);
 
             CartoonScreenViewHolder vh = new CartoonScreenViewHolder(view);
 

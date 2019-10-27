@@ -32,11 +32,11 @@
 			app:fastScrollHorizontalTrackDrawable="@drawable/fastscroll_linedrawable"
 			app:fastScrollVerticalThumbDrawable="@drawable/fastscroll_thumbdrawable"
 			app:fastScrollVerticalTrackDrawable="@drawable/fastscroll_linedrawable"
-            android:id="@+id/dFairyDBRecyclerView" />
+            android:id="@+id/bFairyDBRecyclerView" />
     </LinearLayout>
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/dFairyDBSnackbarLayout"
-        android:layout_alignTop="@id/dFairyDBMainLayout" />
+        android:id="@+id/bFairyDBSnackbarLayout"
+        android:layout_alignTop="@id/bFairyDBMainLayout" />
 </RelativeLayout>

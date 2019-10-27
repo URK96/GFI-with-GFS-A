@@ -1,66 +1,51 @@
 ﻿using Android.App;
-using Android.Content;
 using Android.OS;
+using Android.Support.V7.App;
 using Android.Support.Design.Widget;
-using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using Android.Text;
+using Android.Content;
+using Android.Support.V7.Widget;
+using System.IO;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "@string/Activity_DollMainActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class DollDBMainActivity_Beta : BaseAppCompatActivity
+    [Activity(Label = "@string/Activity_FairyMainActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class FairyDBMainActivity_Beta : BaseAppCompatActivity
     {
         delegate void DownloadProgress();
 
-        private enum SortType { Name, Number, ProductTime, HP, FR, EV, AC, AS }
+        private enum SortType { Name, Number, ProductTime }
         private enum SortOrder { Ascending, Descending }
         private SortType sortType = SortType.Name;
         private SortOrder sortOrder = SortOrder.Ascending;
 
-        private List<Doll> rootList = new List<Doll>();
-        private List<Doll> subList = new List<Doll>();
+        private List<Fairy> rootList = new List<Fairy>();
+        private List<Fairy> subList = new List<Fairy>();
         private List<int> downloadList = new List<int>();
 
-        readonly int[] gradeFilters = { Resource.Id.DollFilterGrade2, Resource.Id.DollFilterGrade3, Resource.Id.DollFilterGrade4, Resource.Id.DollFilterGrade5, Resource.Id.DollFilterGradeExtra };
-        readonly int[] typeFilters = { Resource.Id.DollFilterTypeHG, Resource.Id.DollFilterTypeSMG, Resource.Id.DollFilterTypeAR, Resource.Id.DollFilterTypeRF, Resource.Id.DollFilterTypeMG, Resource.Id.DollFilterTypeSG};
-        readonly int[] productTimeFilters = { Resource.Id.DollFilterProductHour, Resource.Id.DollFilterProductMinute, Resource.Id.DollFilterProductNearRange };
-        readonly int modFilter = Resource.Id.DollFilterOnlyMod;
+        int[] typeFilters = { Resource.Id.FairyFilterTypeCombat, Resource.Id.FairyFilterTypeStrategy };
+        int[] productTimeFilters = { Resource.Id.FairyFilterProductHour, Resource.Id.FairyFilterProductMinute };
 
-        readonly string[] sortTypeList =
-        {
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_Name),
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_Number),
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_ProductTime),
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_HP),
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_FR),
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_EV),
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_AC),
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_AS),
-        };
-
-        private bool[] hasApplyFilter = { false, false, false, false };
-        private int[] filterProductTime = { 0, 0, 0 };
-        private bool[] filterGrade = { false, false, false, false, false };
-        private bool[] filterType = { false, false, false, false, false, false };
-        private bool filterMod = false;
+        private bool[] hasApplyFilter = { false, false };
+        private int[] filterProductTime = { 0, 0 };
+        private bool[] filterType = { true, true };
         private bool canRefresh = false;
 
         private string searchViewText = "";
 
         private Android.Support.V7.Widget.Toolbar toolbar;
         private Android.Support.V7.Widget.SearchView searchView;
-        private RecyclerView mDollListView;
+        private RecyclerView mFairyListView;
         private RecyclerView.LayoutManager mainLayoutManager;
         private CoordinatorLayout snackbarLayout;
-        
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             try
@@ -69,35 +54,37 @@ namespace GFI_with_GFS_A
 
                 if (ETC.useLightTheme)
                 {
-                    SetTheme(Resource.Style.GFS_Toolbar_Light);
+                    SetTheme(Resource.Style.GFS_Light);
                 }
 
                 // Create your application here
-                SetContentView(Resource.Layout.DollDBListLayout_Beta);
+                SetContentView(Resource.Layout.FairyDBListLayout_Beta);
+
+                SetTitle(Resource.String.FairyDBMainActivity_Title);
 
                 canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
-                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.bDollDBMainToolbar);
-                searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.bDollDBSearchView);
+                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.bFairyDBMainToolbar);
+                searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.bFairyDBSearchView);
                 searchView.QueryTextChange += (sender, e) =>
                 {
                     searchViewText = e.NewText;
-                    _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                    _ = ListFairy(new int[] { filterProductTime[0], filterProductTime[1] }, searchViewText);
                 };
-                mDollListView = FindViewById<RecyclerView>(Resource.Id.bDollDBRecyclerView);
+                mFairyListView = FindViewById<RecyclerView>(Resource.Id.bFairyDBRecyclerView);
                 mainLayoutManager = new LinearLayoutManager(this);
-                mDollListView.SetLayoutManager(mainLayoutManager);
-                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.bDollDBSnackbarLayout);
+                mFairyListView.SetLayoutManager(mainLayoutManager);
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.bFairyDBSnackbarLayout);
 
                 SetSupportActionBar(toolbar);
-                SupportActionBar.SetTitle(Resource.String.DollDBMainActivity_Title);
+                SupportActionBar.SetTitle(Resource.String.FairyDBMainActivity_Title);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
                 InitProcess();
 
-                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2]);
+                _ = ListFairy(new int[] { filterProductTime[0], filterProductTime[1] });
 
-                /*if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true)))
+                /*if ((ETC.locale.Language == "ko") && ETC.sharedPreferences.GetBoolean("Help_DBList", true))
                 {
                     ETC.RunHelpActivity(this, "DBList");
                 }*/
@@ -105,15 +92,15 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(snackbarLayout, Resource.String.Activity_OnCreateError, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
+                Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.DollDBMenu, menu);
+            MenuInflater.Inflate(Resource.Menu.FairyDBMenu, menu);
 
-            var cacheItem = menu.FindItem(Resource.Id.RefreshDollCropImageCache);
+            var cacheItem = menu.FindItem(Resource.Id.RefreshFairyCropImageCache);
             _ = canRefresh ? cacheItem.SetVisible(true) : cacheItem.SetVisible(false);
 
             return base.OnCreateOptionsMenu(menu);
@@ -126,22 +113,27 @@ namespace GFI_with_GFS_A
                 case Android.Resource.Id.Home:
                     OnBackPressed();
                     break;
-                case Resource.Id.DollDBMainFilter:
+                case Resource.Id.FairyDBMainFilter:
                     InitFilterBox();
                     break;
-                case Resource.Id.DollDBMainSort:
+                case Resource.Id.FairyDBMainSort:
                     InitSortBox();
                     break;
-                case Resource.Id.RefreshDollCropImageCache:
+                case Resource.Id.RefreshEquipCropImageCache:
                     downloadList.Clear();
 
-                    foreach (DataRow dr in ETC.dollList.Rows)
+                    for (int i = 0; i < rootList.Count; ++i)
                     {
-                        downloadList.Add((int)dr["DicNumber"]);
+                        string FilePath = Path.Combine(ETC.cachePath, "Fairy", "Normal_Crop", $"{rootList[i].DicNumber}.gfdcache");
+
+                        if (!File.Exists(FilePath))
+                        {
+                            downloadList.Add(rootList[i].DicNumber);
+                        }
                     }
 
                     downloadList.TrimExcess();
-                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(DollCropImageDownloadProcess));
+                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(FairyCropImageDownloadProcess));
                     break;
             }
 
@@ -154,9 +146,9 @@ namespace GFI_with_GFS_A
 
             if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false))
             {
-                if (CheckCropImage())
+                if (CheckFairyCropImage())
                 {
-                    ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(DollCropImageDownloadProcess));
+                    ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(FairyCropImageDownloadProcess));
                 }
             }
         }
@@ -165,9 +157,9 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                foreach (DataRow dr in ETC.dollList.Rows)
+                foreach (DataRow dr in ETC.fairyList.Rows)
                 {
-                    rootList.Add(new Doll(dr));
+                    rootList.Add(new Fairy(dr));
                 }
 
                 rootList.TrimExcess();
@@ -179,18 +171,17 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private bool CheckCropImage()
+        private bool CheckFairyCropImage()
         {
             downloadList.Clear();
 
             for (int i = 0; i < rootList.Count; ++i)
             {
-                Doll doll = rootList[i];
-                string filePath = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{doll.DicNumber}.gfdcache");
+                string FilePath = Path.Combine(ETC.cachePath, "Fairy", "Normal_Crop", $"{rootList[i].DicNumber}.gfdcache");
 
-                if (!File.Exists(filePath))
+                if (!File.Exists(FilePath))
                 {
-                    downloadList.Add(doll.DicNumber);
+                    downloadList.Add(rootList[i].DicNumber);
                 }
             }
 
@@ -213,7 +204,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async void DollCropImageDownloadProcess()
+        private async void FairyCropImageDownloadProcess()
         {
             Dialog dialog;
             ProgressBar totalProgressBar;
@@ -264,10 +255,10 @@ namespace GFI_with_GFS_A
 
                     for (int i = 0; i < pTotal; ++i)
                     {
-                        string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal_Crop", $"{downloadList[i]}.png");
-                        string target = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{downloadList[i]}.gfdcache");
-
-                        await wc.DownloadFileTaskAsync(url, target);
+                        string url = Path.Combine(ETC.server, "Data", "Images", "Fairy", "Normal_Crop", $"{downloadList[i]}.png");
+                        string target = Path.Combine(ETC.cachePath, "Fairy", "Normal_Crop", $"{downloadList[i]}.gfdcache");
+                       
+                        await wc.DownloadFileTaskAsync(url, target).ConfigureAwait(false);
                     }
                 }
 
@@ -275,7 +266,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(500);
 
-                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                _ = ListFairy( new int[] { filterProductTime[0], filterProductTime[1] }, searchViewText);
             }
             catch (Exception ex)
             {
@@ -295,11 +286,6 @@ namespace GFI_with_GFS_A
                 Resources.GetString(Resource.String.Sort_SortMethod_Name),
                 Resources.GetString(Resource.String.Sort_SortMethod_Number),
                 Resources.GetString(Resource.String.Sort_SortMethod_ProductTime),
-                Resources.GetString(Resource.String.Sort_SortMethod_HP),
-                Resources.GetString(Resource.String.Sort_SortMethod_FR),
-                Resources.GetString(Resource.String.Sort_SortMethod_EV),
-                Resources.GetString(Resource.String.Sort_SortMethod_AC),
-                Resources.GetString(Resource.String.Sort_SortMethod_AS),
             };
 
             try
@@ -362,7 +348,7 @@ namespace GFI_with_GFS_A
                     sortOrder = SortOrder.Ascending;
                 }
 
-                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                _ = ListFairy(new int[] { filterProductTime[0], filterProductTime[1] }, searchViewText);
             }
             catch (Exception ex)
             {
@@ -378,7 +364,7 @@ namespace GFI_with_GFS_A
                 sortType = SortType.Name;
                 sortOrder = SortOrder.Ascending;
 
-                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                _ = ListFairy(new int[] { filterProductTime[0], filterProductTime[1] }, searchViewText);
             }
             catch (Exception ex)
             {
@@ -387,20 +373,24 @@ namespace GFI_with_GFS_A
             }
         }
 
+        private async void Adapter_ItemClick(object sender, int position)
+        {
+            await Task.Delay(100);
+            var FairyInfo = new Intent(this, typeof(FairyDBDetailActivity));
+            FairyInfo.PutExtra("DicNum", subList[position].DicNumber);
+            StartActivity(FairyInfo);
+            OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
+        }
+
         private void InitFilterBox()
         {
             try
             {
-                View v = LayoutInflater.Inflate(Resource.Layout.DollFilterLayout, null);
+                View v = LayoutInflater.Inflate(Resource.Layout.FairyFilterLayout, null);
 
-                v.FindViewById<NumberPicker>(Resource.Id.DollFilterProductHour).MaxValue = 12;
-                v.FindViewById<NumberPicker>(Resource.Id.DollFilterProductMinute).MaxValue = 59;
-                v.FindViewById<NumberPicker>(Resource.Id.DollFilterProductNearRange).MaxValue = 20;
+                v.FindViewById<NumberPicker>(Resource.Id.FairyFilterProductHour).MaxValue = 12;
+                v.FindViewById<NumberPicker>(Resource.Id.FairyFilterProductMinute).MaxValue = 59;
 
-                for (int i = 0; i < gradeFilters.Length; ++i)
-                {
-                    v.FindViewById<CheckBox>(gradeFilters[i]).Checked = filterGrade[i];
-                }
                 for (int i = 0; i < typeFilters.Length; ++i)
                 {
                     v.FindViewById<CheckBox>(typeFilters[i]).Checked = filterType[i];
@@ -409,7 +399,6 @@ namespace GFI_with_GFS_A
                 {
                     v.FindViewById<NumberPicker>(productTimeFilters[i]).Value = filterProductTime[i];
                 }
-                v.FindViewById<CheckBox>(modFilter).Checked = filterMod;
 
                 using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
                 {
@@ -433,10 +422,6 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                for (int i = 0; i < gradeFilters.Length; ++i)
-                {
-                    filterGrade[i] = view.FindViewById<CheckBox>(gradeFilters[i]).Checked;
-                }
                 for (int i = 0; i < typeFilters.Length; ++i)
                 {
                     filterType[i] = view.FindViewById<CheckBox>(typeFilters[i]).Checked;
@@ -445,11 +430,10 @@ namespace GFI_with_GFS_A
                 {
                     filterProductTime[i] = view.FindViewById<NumberPicker>(productTimeFilters[i]).Value;
                 }
-                filterMod = view.FindViewById<CheckBox>(modFilter).Checked;
 
                 CheckApplyFilter();
 
-                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                _ = ListFairy(new int[] { filterProductTime[0], filterProductTime[1] }, searchViewText);
             }
             catch (Exception ex)
             {
@@ -467,53 +451,38 @@ namespace GFI_with_GFS_A
                 if (hasApplyFilter[0])
                 {
                     break;
-                }   
+                }
             }
-            for (int i = 0; i < gradeFilters.Length; ++i)
+            for (int i = 0; i < typeFilters.Length; ++i)
             {
-                hasApplyFilter[1] = filterGrade[i];
+                hasApplyFilter[1] = filterType[i];
 
                 if (hasApplyFilter[1])
                 {
                     break;
                 }
             }
-            for (int i = 0; i < typeFilters.Length; ++i)
-            {
-                hasApplyFilter[2] = filterType[i];
-
-                if (hasApplyFilter[2])
-                {
-                    break;
-                }
-            }
-            hasApplyFilter[3] = filterMod;
         }
 
         private void ResetFilter()
         {
             try
             {
-                for (int i = 0; i < gradeFilters.Length; ++i)
-                {
-                    filterGrade[i] = false;
-                }
                 for (int i = 0; i < typeFilters.Length; ++i)
                 {
-                    filterType[i] = false;
+                    filterType[i] = true;
                 }
                 for (int i = 0; i < productTimeFilters.Length; ++i)
                 {
                     filterProductTime[i] = 0;
                 }
-                filterMod = false;
 
                 for (int i = 0; i < hasApplyFilter.Length; ++i)
                 {
                     hasApplyFilter[i] = false;
                 }
 
-                _ = ListDoll(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                _ = ListFairy(new int[] { filterProductTime[0], filterProductTime[1] }, searchViewText);
             }
             catch (Exception ex)
             {
@@ -522,7 +491,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task ListDoll(int[] pTime, int pRange, string searchText = "")
+        private async Task ListFairy(int[] pTime, string searchText = "")
         {
             subList.Clear();
 
@@ -532,24 +501,24 @@ namespace GFI_with_GFS_A
             {
                 for (int i = 0; i < rootList.Count; ++i)
                 {
-                    Doll doll = rootList[i];
+                    Fairy fairy = rootList[i];
 
                     if ((pTime[0] + pTime[1]) != 0)
                     {
-                        if (!CheckDollByProductTime(pTime, pRange, doll.ProductTime))
+                        if (fairy.ProductTime != ((pTime[0] * 60) + pTime[1]))
                         {
                             continue;
                         }
                     }
 
-                    if (CheckFilter(doll))
+                    if (CheckFilter(fairy))
                     {
                         continue;
                     }
 
-                    if (searchText != "")
+                    if (!string.IsNullOrWhiteSpace(searchText))
                     {
-                        string name = doll.Name.ToUpper();
+                        string name = fairy.Name.ToUpper();
 
                         if (!name.Contains(searchText))
                         {
@@ -557,12 +526,12 @@ namespace GFI_with_GFS_A
                         }
                     }
 
-                    subList.Add(doll);
+                    subList.Add(fairy);
                 }
 
-                subList.Sort(SortDoll);
+                subList.Sort(SortFairyName);
 
-                var adapter = new DollListAdapter(subList, this);
+                var adapter = new FairyListAdapter(subList, this);
 
                 if (!adapter.HasOnItemClick())
                 {
@@ -571,7 +540,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(100);
 
-                RunOnUiThread(() => { mDollListView.SetAdapter(adapter); });
+                RunOnUiThread(() => { mFairyListView.SetAdapter(adapter); });
             }
             catch (Exception ex)
             {
@@ -580,46 +549,44 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async void Adapter_ItemClick(object sender, int position)
+        private bool CheckFilter(Fairy fairy)
         {
-            await Task.Delay(100);
-            var DollInfo = new Intent(this, typeof(DollDBDetailActivity));
-            DollInfo.PutExtra("DicNum", subList[position].DicNumber);
-            StartActivity(DollInfo);
-            OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
-        }
-
-        private bool CheckDollByProductTime(int[] pTime, int range, int dTime)
-        {
-            int pTimeM = (pTime[0] * 60) + pTime[1];
-
-            for (int i = (pTimeM - range); i <= (pTimeM + range); ++i)
+            if (hasApplyFilter[1])
             {
-                if (dTime == i)
+                switch (fairy.Type)
                 {
-                    return true;
+                    case "전투":
+                        if (!filterType[0])
+                        {
+                            return true;
+                        }
+                        break;
+                    case "책략":
+                        if (!filterType[1])
+                        {
+                            return true;
+                        }
+                        break;
                 }
             }
 
             return false;
         }
 
-        private int SortDoll(Doll x, Doll y)
+        private int SortFairyName(Fairy x, Fairy y)
         {
             if (sortOrder == SortOrder.Descending)
             {
-                Doll temp = x;
+                Fairy temp = x;
                 x = y;
                 y = temp;
             }
 
             switch (sortType)
             {
-                default:
                 case SortType.Name:
+                default:
                     return x.Name.CompareTo(y.Name);
-                case SortType.Number:
-                    return x.DicNumber.CompareTo(y.DicNumber);
                 case SortType.ProductTime:
                     int xTime = x.ProductTime;
                     int yTime = y.ProductTime;
@@ -640,127 +607,14 @@ namespace GFI_with_GFS_A
                     {
                         return xTime.CompareTo(yTime);
                     }
-                case SortType.HP:
-                case SortType.FR:
-                case SortType.EV:
-                case SortType.AC:
-                case SortType.AS:
-                    if (x.Type != y.Type)
-                    {
-                        return x.Type.CompareTo(y.Type);
-                    }
-                    else
-                    {
-                        string[] abilities = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
-                        DollAbilitySet DAS = new DollAbilitySet(x.Type);
-
-                        string[] xGrowRatio = x.Abilities["Grow"].Split(';');
-                        string[] xBasicRatio = x.Abilities[abilities[(int)sortType - 3]].Split(';');
-                        int xValue = DAS.CalcAbility(abilities[(int)sortType - 3], int.Parse(xBasicRatio[0]), int.Parse(xGrowRatio[0]), 100, 90, false);
-
-                        string[] yGrowRatio = y.Abilities["Grow"].Split(';');
-                        string[] yBasicRatio = y.Abilities[abilities[(int)sortType - 3]].Split(';');
-                        int yValue = DAS.CalcAbility(abilities[(int)sortType - 3], int.Parse(yBasicRatio[0]), int.Parse(yGrowRatio[0]), 100, 90, false);
-
-                        return xValue.CompareTo(yValue);
-                    }
+                case SortType.Number:
+                    return x.DicNumber.CompareTo(y.DicNumber);
             }
-        }
-
-        private bool CheckFilter(Doll doll)
-        {
-            if (hasApplyFilter[1])
-            {
-                switch (doll.Grade)
-                {
-                    case 2:
-                        if (!filterGrade[0])
-                        {
-                            return true;
-                        }
-                        break;
-                    case 3:
-                        if (!filterGrade[1])
-                        {
-                            return true;
-                        }
-                        break;
-                    case 4:
-                        if (!filterGrade[2])
-                        {
-                            return true;
-                        }
-                        break;
-                    case 5:
-                        if (!filterGrade[3])
-                        {
-                            return true;
-                        }
-                        break;
-                    case 0:
-                        if (!filterGrade[4])
-                        {
-                            return true;
-                        }
-                        break;
-                }
-            }
-
-            if (hasApplyFilter[2])
-            {
-                switch (doll.Type)
-                {
-                    case "HG":
-                        if (!filterType[0])
-                        {
-                            return true;
-                        }
-                        break;
-                    case "SMG":
-                        if (!filterType[0])
-                        {
-                            return true;
-                        }
-                        break;
-                    case "AR":
-                        if (!filterType[0])
-                        {
-                            return true;
-                        }
-                        break;
-                    case "RF":
-                        if (!filterType[0])
-                        {
-                            return true;
-                        }
-                        break;
-                    case "MG":
-                        if (!filterType[0])
-                        {
-                            return true;
-                        }
-                        break;
-                    case "SG":
-                        if (!filterType[0])
-                        {
-                            return true;
-                        }
-                        break;
-                }
-            }
-
-            if (!doll.HasMod && filterMod)
-            {
-                return true;
-            }
-
-            return false;
         }
 
         public override void OnBackPressed()
         {
             base.OnBackPressed();
-            Finish();
             OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             GC.Collect();
         }

@@ -56,6 +56,11 @@
        android:title="@string/Setting_DBListImageShow_Title"
        android:summary="@string/Setting_DBListImageShow_Summary"
        android:defaultValue="false" />
+    <android.support.v14.preference.SwitchPreference
+       android:key="PreviewDBListLayout"
+       android:title="@string/Setting_PreviewDBListLayout_Title"
+       android:summary="@string/Setting_PreviewDBListLayout_Summary"
+       android:defaultValue="false" />
   </android.support.v7.preference.PreferenceCategory>
   <android.support.v7.preference.PreferenceCategory
     android:title="@string/Setting_Category_DBDetail">

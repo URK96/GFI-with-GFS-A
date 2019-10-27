@@ -1,0 +1,17 @@
+<2.4.5 수정사항>
+
+- DB 리스트 베타 레이아웃 추가 (On/Off 가능)
+- DB 정렬 레이아웃 수정 
+- 만화 카테고리 추가 (분열 후 전선<잉여군>)
+- 다운로드 창에서 일부 메시지가 뜨지 않는 현상 수정
+- DB 업데이트 시 예외 처리가 되지 않는 문제 수정
+- 인형 이미지 다운로드 시 필요없는 오류 메시지가 뜨는 현상 수정
+- 메모리 최적화
+
+- Add DB list beta layout
+- Change DB sort layout
+- Add cartoon category
+- Fix string issue on download dialog
+- Fix exception process on DB update
+- Fix error message issue on T-Doll image download
+- Optimize memory usuage

@@ -520,6 +520,8 @@
   <string name="Setting_Category_DBList">DB 리스트 설정</string>
   <string name="Setting_DBListImageShow_Title">리스트 이미지 보기 활성화</string>
   <string name="Setting_DBListImageShow_Summary">DB 리스트에서 각 항목에 해당하는 이미지를 표시/비표시 하도록 설정합니다. RAM이 2GB 이하인 기기에서 활성화 시 소전사전이 튕길 수 있습니다.</string>
+  <string name="Setting_PreviewDBListLayout_Title">신규 레이아웃 미리보기</string>
+  <string name="Setting_PreviewDBListLayout_Summary">다음 업데이트 때 변경될 레이아웃을 미리 적용합니다. 해당 설정은 인형, 장비, 요정 DB에만 적용됩니다.</string>
   <string name="Setting_Category_DBDetail">DB 세부페이지 설정</string> 
   <string name="Setting_DBDetailBackgroundImage_Title">세부페이지 배경 이미지 활성화</string>
   <string name="Setting_DBDetailBackgroundImage_Summary">DB 세부페이지에서 배경에 표시되는 이미지의 활성화 여부를 설정합니다. RAM이 2GB 이하인 기기에서 활성화 시 소전사전이 튕길 수 있습니다.</string>
@@ -686,10 +688,13 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.4.4 수정사항]\n\n
-- 앱 언어 설정 추가\n
-- 메인 메뉴 구성 일부 변경\n
-- 앱 설치 후 초기 기동 시 네트워크 연결에 무관하게 앱이 실행되도록 수정\n
+    [2.4.5 수정사항]\n\n
+- DB 리스트 베타 레이아웃 추가 (On/Off 가능)\n
+- DB 정렬 레이아웃 수정 \n
+- 만화 카테고리 추가 (분열 후 전선)\n
+- 다운로드 창에서 일부 메시지가 뜨지 않는 현상 수정\n
+- DB 업데이트 시 예외 처리가 되지 않는 문제 수정\n
+- 인형 이미지 다운로드 시 필요없는 오류 메시지가 뜨는 현상 수정\n
 - 메모리 최적화
   </string>
 </resources>

@@ -19,23 +19,22 @@ namespace GFI_with_GFS_A
     {
         private Doll doll;
 
-        private CoordinatorLayout SnackbarLayout;
-        private Spinner CostumeList;
-        private ProgressBar LoadProgressBar;
-        private Button RefreshCacheButton;
-        private ToggleButton ChangeStateButton;
-        private ToggleButton CensoredOption;
-        private PhotoView DollImageView;
-        private TextView ImageStatus;
+        private CoordinatorLayout snackbarLayout;
+        private Spinner costumeList;
+        private ProgressBar loadProgressBar;
+        private Button refreshCacheButton;
+        private ToggleButton changeStateButton;
+        private ToggleButton censoredOption;
+        private PhotoView dollImageView;
+        private TextView imageStatus;
 
-        private List<string> Costumes;
+        private List<string> costumes;
 
-        private bool IsDamage = false;
-        private int CostumeIndex = 0;
-        private int ModIndex = 0;
-        private bool HasCensored = false;
-        private bool EnableCensored = true;
-        private string[] CensorType;
+        private bool isDamage = false;
+        private int costumeIndex = 0;
+        private int modIndex = 0;
+        private bool enableCensored = true;
+        private string[] censorType;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -43,50 +42,55 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.useLightTheme == true) SetTheme(Resource.Style.GFS_NoActionBar_Light);
+                if (ETC.useLightTheme)
+                {
+                    SetTheme(Resource.Style.GFS_NoActionBar_Light);
+                }
 
                 // Create your application here
                 SetContentView(Resource.Layout.DollDB_ImageViewer);
 
                 string[] temp = Intent.GetStringExtra("Data").Split(';');
 
-                ModIndex = int.Parse(temp[1]);
-
+                modIndex = int.Parse(temp[1]);
                 doll = new Doll(ETC.FindDataRow(ETC.dollList, "DicNumber", int.Parse(temp[0])));
+                censorType = doll.HasCensored ? doll.CensorType : null;
 
-                HasCensored = doll.HasCensored;
-                if (HasCensored == true) CensorType = doll.CensorType;
-
-                DollImageView = FindViewById<PhotoView>(Resource.Id.DollDBImageViewerImageView);
-                SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBImageViewerSnackbarLayout);
-                CostumeList = FindViewById<Spinner>(Resource.Id.DollDBImageViewerCostumeList);
-                CostumeList.ItemSelected += CostumeList_ItemSelected;
-                LoadProgressBar = FindViewById<ProgressBar>(Resource.Id.DollDBImageViewerLoadProgress);
-                LoadProgressBar.Visibility = ViewStates.Visible;
-                RefreshCacheButton = FindViewById<Button>(Resource.Id.DollDBImageViewerRefreshImageCacheButton);
-                RefreshCacheButton.Click += delegate { LoadImage(CostumeIndex, true); };
-                ChangeStateButton = FindViewById<ToggleButton>(Resource.Id.DollDBImageViewerChangeStateButton);
-                ChangeStateButton.CheckedChange += (object sender, CompoundButton.CheckedChangeEventArgs e) =>
+                dollImageView = FindViewById<PhotoView>(Resource.Id.DollDBImageViewerImageView);
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBImageViewerSnackbarLayout);
+                costumeList = FindViewById<Spinner>(Resource.Id.DollDBImageViewerCostumeList);
+                costumeList.ItemSelected += (sender , e) =>
                 {
-                    IsDamage = e.IsChecked;
-                    CensoredOption.Enabled = CheckCensorType();
-                    if (CensoredOption.Enabled == true) CensoredOption.Checked = true;
-                    LoadImage(CostumeIndex, false);
-                };
-                CensoredOption = FindViewById<ToggleButton>(Resource.Id.DollDBImageViewerCensoredOption);
-                if (HasCensored == true) CensoredOption.Checked = true;
-                else CensoredOption.Checked = false;
-                CensoredOption.CheckedChange += (object sender, CompoundButton.CheckedChangeEventArgs e) =>
-                {
-                    EnableCensored = e.IsChecked;
-                    LoadImage(CostumeIndex, false);
-                };
-                ImageStatus = FindViewById<TextView>(Resource.Id.DollDBImageViewerImageStatus);
+                    isDamage = false;
+                    costumeIndex = e.Position;
+                    changeStateButton.Checked = false;
+                    censoredOption.Checked = censoredOption.Enabled = CheckCensorType();
 
-                if (ETC.sharedPreferences.GetBoolean("ImageCensoredUnlock", false) == true)
-                    CensoredOption.Visibility = ViewStates.Visible;
-                else
-                    CensoredOption.Visibility = ViewStates.Gone;
+                    LoadImage(costumeIndex, false);
+                };
+                loadProgressBar = FindViewById<ProgressBar>(Resource.Id.DollDBImageViewerLoadProgress);
+                loadProgressBar.Visibility = ViewStates.Visible;
+                refreshCacheButton = FindViewById<Button>(Resource.Id.DollDBImageViewerRefreshImageCacheButton);
+                refreshCacheButton.Click += delegate { LoadImage(costumeIndex, true); };
+                changeStateButton = FindViewById<ToggleButton>(Resource.Id.DollDBImageViewerChangeStateButton);
+                changeStateButton.CheckedChange += (sender, e) =>
+                {
+                    isDamage = e.IsChecked;
+                    censoredOption.Checked = censoredOption.Enabled = CheckCensorType();
+
+                    LoadImage(costumeIndex, false);
+                };
+                censoredOption = FindViewById<ToggleButton>(Resource.Id.DollDBImageViewerCensoredOption);
+                censoredOption.Checked = doll.HasCensored;
+                censoredOption.CheckedChange += (sender, e) =>
+                {
+                    enableCensored = e.IsChecked;
+
+                    LoadImage(costumeIndex, false);
+                };
+                imageStatus = FindViewById<TextView>(Resource.Id.DollDBImageViewerImageStatus);
+
+                censoredOption.Visibility = ETC.sharedPreferences.GetBoolean("ImageCensoredUnlock", false) ? ViewStates.Visible : ViewStates.Gone;
 
                 LoadCostumeList();
                 LoadImage(0, false);
@@ -98,128 +102,123 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void CostumeList_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
-        {
-            IsDamage = false;
-            CostumeIndex = e.Position;
-            ChangeStateButton.Checked = false;
-            CensoredOption.Enabled = CheckCensorType();
-            if (CensoredOption.Enabled == true) CensoredOption.Checked = true;
-
-            LoadImage(CostumeIndex, false);
-        }
-
         private void LoadCostumeList()
         {
             try
             {
-                Costumes = new List<string>()
+                costumes = new List<string>()
                 {
                     Resources.GetString(Resource.String.DollDBImageViewer_DefaultCostume)
                 };
 
-                if (doll.Costumes != null) Costumes.AddRange(doll.Costumes);
+                if (doll.Costumes != null)
+                {
+                    costumes.AddRange(doll.Costumes);
+                }
 
-                Costumes.TrimExcess();
+                costumes.TrimExcess();
 
-                var CostumeListAdapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, Costumes);
+                var CostumeListAdapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, costumes);
                 CostumeListAdapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
 
-                CostumeList.Adapter = CostumeListAdapter;
+                costumeList.Adapter = CostumeListAdapter;
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Initialize_List_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.Initialize_List_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
 
         private bool CheckCensorType()
         {
-            if (CensorType == null)
+            if (censorType == null)
+            {
                 return false;
+            }
 
-            string censor_type;
+            string cType;
 
-            switch (CostumeIndex)
+            switch (costumeIndex)
             {
                 case 0:
-                    if (IsDamage == true)
-                        censor_type = "D";
-                    else
-                        censor_type = "N";
+                    cType = isDamage ? "D" : "N";
                     break;
                 default:
-                    censor_type = $"C{CostumeIndex}";
-                    if (IsDamage == true)
-                        censor_type += "D";
+                    cType = $"C{costumeIndex}";
+                    cType += isDamage ? "D" : "";
                     break;
             }
 
-            foreach (string type in CensorType)
+            foreach (string type in censorType)
             {
-                if (type == censor_type)
+                if (type == cType)
+                {
                     return true;
+                }
             }
 
             return false;
         }
 
-        private async void LoadImage(int CostumeIndex, bool IsRefresh)
+        private async Task LoadImage(int costumeIndex, bool isRefresh = false)
         {
+            await Task.Delay(100);
+
             try
             {
-                LoadProgressBar.Visibility = ViewStates.Visible;
+                loadProgressBar.Visibility = ViewStates.Visible;
 
-                await Task.Delay(100);
+                string imageName = doll.DicNumber.ToString();
 
-                string ImageName = doll.DicNumber.ToString();
-                if (CostumeIndex >= 1) ImageName += $"_{CostumeIndex + 1}";
-                else if ((CostumeIndex == 0) && (ModIndex == 3)) ImageName += "_M";
-                if (IsDamage == true) ImageName += "_D";
+                if (costumeIndex >= 1)
+                {
+                    imageName += $"_{costumeIndex + 1}";
+                }
+                else if ((costumeIndex == 0) && (modIndex == 3))
+                {
+                    imageName += "_M";
+                }
 
-                if ((HasCensored == true) && (EnableCensored == true) && (ModIndex != 3))
-                    if (CheckCensorType() == true) ImageName += "_C";
+                imageName += isDamage ? "_D" : "";
 
-                string ImagePath = Path.Combine(ETC.cachePath, "Doll", "Normal", $"{ImageName}.gfdcache");
-                string URL = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal", $"{ImageName}.png");
+                if (doll.HasCensored && enableCensored && (modIndex != 3))
+                {
+                    imageName += CheckCensorType() ? "_C" : "";
+                }
 
-                if ((File.Exists(ImagePath) == false) || (IsRefresh == true))
+                string imagePath = Path.Combine(ETC.cachePath, "Doll", "Normal", $"{imageName}.gfdcache");
+                string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal", $"{imageName}.png");
+
+                if (!File.Exists(imagePath) || isRefresh)
                 {
                     using (WebClient wc = new WebClient())
                     {
-                        await Task.Run(async () => { await wc.DownloadFileTaskAsync(URL, ImagePath); });
+                        await Task.Run(async () => { await wc.DownloadFileTaskAsync(url, imagePath); });
                     }
                 }
 
                 await Task.Delay(100);
 
-                DollImageView.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(ImagePath));
+                dollImageView.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(imagePath));
 
-                string DamageText = "";
+                string damageText = isDamage ? Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusDamage) : Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusNormal);
 
-                switch (IsDamage)
-                {
-                    case true:
-                        DamageText = Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusDamage);
-                        break;
-                    case false:
-                        DamageText = Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusNormal);
-                        break;
-                }
-
-                ChangeStateButton.Text = DamageText;
-                ImageStatus.Text = $"{doll.Name} - {Costumes[CostumeIndex]} - {DamageText}";
+                changeStateButton.Text = damageText;
+                imageStatus.Text = $"{doll.Name} - {costumes[costumeIndex]} - {damageText}";
+            }
+            catch (WebException ex) when (ex.Message.Contains("System.IO"))
+            {
+                ETC.LogError(ex, this);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ImageLoad_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.ImageLoad_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
             finally
             {
-                LoadProgressBar.Visibility = ViewStates.Invisible;
-                IsRefresh = false;
+                loadProgressBar.Visibility = ViewStates.Invisible;
             }
         }
 
