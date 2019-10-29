@@ -364,7 +364,8 @@
   <string name="EnemyDBDetail_EnemyVersionType">적군 유형</string>
   
   <!--EnemyDBMain-->
-  <string name="EnemyDBMainActivity_Title">철혈 목록</string>
+  <string name="EnemyDBMainActivity_Title">적 목록</string>
+  <string name="EnemyDBMainActivity_SearchHint">적 이름 검색</string>
   
   <!--EquipDBMain-->
   <string name="EquipDBMainActivity_Title">장비 목록</string>

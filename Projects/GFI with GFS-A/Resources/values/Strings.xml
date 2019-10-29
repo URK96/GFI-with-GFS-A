@@ -362,6 +362,7 @@
   
   <!--EnemyDBMain-->
   <string name="EnemyDBMainActivity_Title">Enemy List</string>
+  <string name="EnemyDBMainActivity_SearchHint">Search Enemy Name</string>
   
   <!--EquipDBMain-->
   <string name="EquipDBMainActivity_Title">Equip List</string>

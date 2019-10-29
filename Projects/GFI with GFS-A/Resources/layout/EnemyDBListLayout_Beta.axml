@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/bEnemyDBMainLayout">
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?android:attr/actionBarSize"
+            android:background="@color/MainColor"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:id="@+id/bEnemyDBMainToolbar"/>
+        <android.support.v7.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:iconifiedByDefault="false"
+            app:queryHint="@string/EnemyDBMainActivity_SearchHint"
+            android:id="@+id/bEnemyDBSearchView"/>
+        <android.support.v7.widget.RecyclerView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:scrollbars="vertical"
+			app:fastScrollEnabled="true"
+			app:fastScrollHorizontalThumbDrawable="@drawable/fastscroll_thumbdrawable"
+			app:fastScrollHorizontalTrackDrawable="@drawable/fastscroll_linedrawable"
+			app:fastScrollVerticalThumbDrawable="@drawable/fastscroll_thumbdrawable"
+			app:fastScrollVerticalTrackDrawable="@drawable/fastscroll_linedrawable"
+            android:id="@+id/bEnemyDBRecyclerView" />
+    </LinearLayout>
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bEnemyDBSnackbarLayout"
+        android:layout_alignTop="@id/bEnemyDBMainLayout" />
+</RelativeLayout>

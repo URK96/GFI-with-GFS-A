@@ -15,37 +15,43 @@ using System.IO;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "@string/Activity_EquipMainActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class EquipDBMainActivity_Beta : BaseAppCompatActivity
+    [Activity(Label = "@string/Acticity_EnemyMainActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class EnemyDBMainActivity_Beta : BaseAppCompatActivity
     {
-        delegate void DownloadProgress();
+        delegate Task DownloadProgress();
 
-        private enum SortType { Name, ProductTime }
+        private enum SortType { Name }
         private enum SortOrder { Ascending, Descending }
         private SortType sortType = SortType.Name;
         private SortOrder sortOrder = SortOrder.Ascending;
 
-        private List<Equip> rootList = new List<Equip>();
-        private List<Equip> subList = new List<Equip>();
+        private List<Enemy> rootList = new List<Enemy>();
+        private List<Enemy> subList = new List<Enemy>();
         private List<string> downloadList = new List<string>();
 
-        int[] gradeFilters = { Resource.Id.EquipFilterGrade2, Resource.Id.EquipFilterGrade3, Resource.Id.EquipFilterGrade4, Resource.Id.EquipFilterGrade5, Resource.Id.EquipFilterGradeExtra };
-        int[] categoryFilters = { Resource.Id.EquipFilterCategoryAttach, Resource.Id.EquipFilterCategoryBullet, Resource.Id.EquipFilterCategoryDoll };
-        int[] productTimeFilters = { Resource.Id.EquipFilterProductHour, Resource.Id.EquipFilterProductMinute, Resource.Id.EquipFilterProductNearRange };
+        int[] enemyTypeFilters = { Resource.Id.EnemyFilterNormalEnemy, Resource.Id.EnemyFilterBossEnemy };
+        int[] enemyAffiliationFilters =
+        {
+            Resource.Id.EnemyFilterAffiliationSF,
+            Resource.Id.EnemyFilterAffiliationIOP,
+            Resource.Id.EnemyFilterAffiliationKCCO,
+            Resource.Id.EnemyFilterAffiliationParadeus,
+            Resource.Id.EnemyFilterAffiliationMindMapSystem,
+            Resource.Id.EnemyFilterAffiliationELID
+        };
 
-        private bool[] hasApplyFilter = { false, false, false };
-        private int[] filterProductTime = { 0, 0, 0 };
-        private bool[] filterGrade = { false, false, false, false, false };
-        private bool[] filterCategory = { false, false, false };
+        private bool[] hasApplyFilter = { false, false };
+        private bool[] filterEnemyType = { false, false };
+        private bool[] filterEnemyAffiliation = { false, false, false, false, false, false };
         private bool canRefresh = false;
-
-        private string searchViewText = "";
 
         private Android.Support.V7.Widget.Toolbar toolbar;
         private Android.Support.V7.Widget.SearchView searchView;
-        private RecyclerView mEquipListView;
-        private RecyclerView.LayoutManager mainRecyclerManager;
+        private RecyclerView mEnemyRecyclerView;
+        private RecyclerView.LayoutManager mainLayoutManager;
         private CoordinatorLayout snackbarLayout;
+
+        string searchViewText;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -55,35 +61,35 @@ namespace GFI_with_GFS_A
 
                 if (ETC.useLightTheme)
                 {
-                    SetTheme(Resource.Style.GFS_Toolbar_Light);
+                    SetTheme(Resource.Style.GFS_Light);
                 }
 
                 // Create your application here
-                SetContentView(Resource.Layout.EquipDBListLayout_Beta);
+                SetContentView(Resource.Layout.EnemyDBListLayout_Beta);
 
                 canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
-                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.bEquipDBMainToolbar);
-                searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.bEquipDBSearchView);
+                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.bEnemyDBMainToolbar);
+                searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.bEnemyDBSearchView);
                 searchView.QueryTextChange += (sender, e) =>
                 {
                     searchViewText = e.NewText;
-                    _ = ListEquip(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                    _ = ListEnemy(searchViewText);
                 };
-                mEquipListView = FindViewById<RecyclerView>(Resource.Id.bEquipDBRecyclerView);
-                mainRecyclerManager = new LinearLayoutManager(this);
-                mEquipListView.SetLayoutManager(mainRecyclerManager);
-                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.bEquipDBSnackbarLayout);
+                mEnemyRecyclerView = FindViewById<RecyclerView>(Resource.Id.EnemyDBRecyclerView);
+                mainLayoutManager = new LinearLayoutManager(this);
+                mEnemyRecyclerView.SetLayoutManager(mainLayoutManager);
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EnemyDBSnackbarLayout);
 
                 SetSupportActionBar(toolbar);
-                SupportActionBar.SetTitle(Resource.String.EquipDBMainActivity_Title);
+                SupportActionBar.SetTitle(Resource.String.EnemyDBMainActivity_Title);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
                 InitProcess();
 
-                _ = ListEquip(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2]);
+                _ = ListEnemy();
 
-                /*if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true)))
+                /*if ((ETC.locale.Language == "ko") && ETC.sharedPreferences.GetBoolean("Help_DBList", true))
                 {
                     ETC.RunHelpActivity(this, "DBList");
                 }*/
@@ -91,15 +97,15 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.Activity_OnCreateError, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
             }
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.EquipDBMenu, menu);
+            MenuInflater.Inflate(Resource.Menu.EnemyDBMenu, menu);
 
-            var cacheItem = menu?.FindItem(Resource.Id.RefreshEquipCropImageCache);
+            var cacheItem = menu?.FindItem(Resource.Id.RefreshEnemyCropImageCache);
             _ = canRefresh ? cacheItem.SetVisible(true) : cacheItem.SetVisible(false);
 
             return base.OnCreateOptionsMenu(menu);
@@ -112,27 +118,23 @@ namespace GFI_with_GFS_A
                 case Android.Resource.Id.Home:
                     OnBackPressed();
                     break;
-                case Resource.Id.EquipDBMainFilter:
+                case Resource.Id.EnemyDBMainFilter:
                     InitFilterBox();
                     break;
-                case Resource.Id.EquipDBMainSort:
+                case Resource.Id.EnemyDBMainSort:
                     InitSortBox();
                     break;
                 case Resource.Id.RefreshEquipCropImageCache:
                     downloadList.Clear();
 
-                    foreach (Equip equip in rootList)
+                    foreach (Enemy enemy in rootList)
                     {
-                        string iconName = equip.Icon;
-
-                        if (!downloadList.Contains(iconName))
-                        {
-                            downloadList.Add(iconName);
-                        }
+                        downloadList.Add(enemy.CodeName);
                     }
 
                     downloadList.TrimExcess();
-                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EquipCropImageDownloadProcess));
+
+                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EnemyCropImageDownloadProcess));
                     break;
             }
 
@@ -145,20 +147,34 @@ namespace GFI_with_GFS_A
 
             if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false))
             {
-                if (CheckCropImage())
+                if (CheckEnemyCropImage())
                 {
-                    ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(EquipCropImageDownloadProcess));
+                    ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(EnemyCropImageDownloadProcess));
                 }
-            }
+            }     
         }
 
         private void CreateListObject()
         {
             try
             {
-                foreach (DataRow dr in ETC.equipmentList.Rows)
+                foreach (DataRow dr in ETC.enemyList.Rows)
                 {
-                    rootList.Add(new Equip(dr));
+                    bool isCreate = false;
+
+                    foreach (Enemy enemy in rootList)
+                    {
+                        if (enemy.CodeName == (string)dr["CodeName"])
+                        {
+                            isCreate = true;
+                            break;
+                        }
+                    }
+
+                    if (!isCreate)
+                    {
+                        rootList.Add(new Enemy(dr));
+                    }
                 }
 
                 rootList.TrimExcess();
@@ -170,21 +186,17 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private bool CheckCropImage()
+        private bool CheckEnemyCropImage()
         {
             downloadList.Clear();
 
-            for (int i = 0; i < rootList.Count; ++i)
+            foreach (Enemy enemy in rootList)
             {
-                Equip equip = rootList[i];
-                string filePath = Path.Combine(ETC.cachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache");
+                string filePath = Path.Combine(ETC.cachePath, "Enemy", "Normal_Crop", $"{enemy.CodeName}.gfdcache");
 
                 if (!File.Exists(filePath))
                 {
-                    if (!downloadList.Contains(equip.Icon))
-                    {
-                        downloadList.Add(equip.Icon);
-                    }
+                    downloadList.Add(enemy.CodeName);
                 }
             }
 
@@ -207,7 +219,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async void EquipCropImageDownloadProcess()
+        private async Task EnemyCropImageDownloadProcess()
         {
             Dialog dialog;
             ProgressBar totalProgressBar;
@@ -252,14 +264,14 @@ namespace GFI_with_GFS_A
                     {
                         pNow += 1;
 
-                        totalProgressBar.Progress = Convert.ToInt32((pNow / Convert.ToDouble(pTotal)) * 100);
+                        totalProgressBar.Progress = Convert.ToInt32(pNow / Convert.ToDouble(pTotal) * 100);
                         totalProgress.Text = $"{totalProgressBar.Progress}%";
                     };
 
                     for (int i = 0; i < pTotal; ++i)
                     {
-                        string url = Path.Combine(ETC.server, "Data", "Images", "Equipments", $"{downloadList[i]}.png");
-                        string target = Path.Combine(ETC.cachePath, "Equip", "Normal", $"{downloadList[i]}.gfdcache");
+                        string url = Path.Combine(ETC.server, "Data", "Images", "Enemy", "Normal_Crop", $"{downloadList[i]}.png");
+                        string target = Path.Combine(ETC.cachePath, "Enemy", "Normal_Crop", $"{downloadList[i]}.gfdcache");
 
                         await wc.DownloadFileTaskAsync(url, target).ConfigureAwait(false);
                     }
@@ -269,7 +281,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(500);
 
-                _ = ListEquip(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                _ = ListEnemy(searchViewText);
             }
             catch (Exception ex)
             {
@@ -286,9 +298,7 @@ namespace GFI_with_GFS_A
         {
             string[] sortTypeList =
             {
-                Resources.GetString(Resource.String.Sort_SortMethod_Name),
-                Resources.GetString(Resource.String.Sort_SortMethod_Number),
-                Resources.GetString(Resource.String.Sort_SortMethod_ProductTime)
+                Resources.GetString(Resource.String.Sort_SortMethod_Name)
             };
 
             try
@@ -351,7 +361,7 @@ namespace GFI_with_GFS_A
                     sortOrder = SortOrder.Ascending;
                 }
 
-                _ = ListEquip(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                _ = ListEnemy(searchViewText);
             }
             catch (Exception ex)
             {
@@ -367,7 +377,7 @@ namespace GFI_with_GFS_A
                 sortType = SortType.Name;
                 sortOrder = SortOrder.Ascending;
 
-                _ = ListEquip(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                _ = ListEnemy(searchViewText);
             }
             catch (Exception ex)
             {
@@ -376,27 +386,18 @@ namespace GFI_with_GFS_A
             }
         }
 
+
         private void InitFilterBox()
         {
+            var inflater = LayoutInflater;
+
             try
             {
-                View v = LayoutInflater.Inflate(Resource.Layout.EquipFilterLayout, null);
+                View v = inflater.Inflate(Resource.Layout.EnemyFilterLayout, null);
 
-                v.FindViewById<NumberPicker>(Resource.Id.EquipFilterProductHour).MaxValue = 0;
-                v.FindViewById<NumberPicker>(Resource.Id.EquipFilterProductMinute).MaxValue = 59;
-                v.FindViewById<NumberPicker>(Resource.Id.EquipFilterProductNearRange).MaxValue = 10;
-
-                for (int i = 0; i < productTimeFilters.Length; ++i)
+                for (int i = 0; i < enemyTypeFilters.Length; ++i)
                 {
-                    v.FindViewById<NumberPicker>(productTimeFilters[i]).Value = filterProductTime[i];
-                }
-                for (int i = 0; i < gradeFilters.Length; ++i)
-                {
-                    v.FindViewById<CheckBox>(gradeFilters[i]).Checked = filterGrade[i];
-                }
-                for (int i = 0; i < categoryFilters.Length; ++i)
-                {
-                    v.FindViewById<CheckBox>(categoryFilters[i]).Checked = filterCategory[i];
+                    v.FindViewById<CheckBox>(enemyTypeFilters[i]).Checked = filterEnemyType[i];
                 }
 
                 using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
@@ -413,7 +414,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(snackbarLayout, Resource.String.FilterBox_InitError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.FilterBox_InitError, Snackbar.LengthLong);
             }
         }
 
@@ -421,22 +422,14 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                for (int i = 0; i < productTimeFilters.Length; ++i)
+                for (int i = 0; i < enemyTypeFilters.Length; ++i)
                 {
-                    filterProductTime[i] = view.FindViewById<NumberPicker>(productTimeFilters[i]).Value;
-                }
-                for (int i = 0; i < gradeFilters.Length; ++i)
-                {
-                    filterGrade[i] = view.FindViewById<CheckBox>(gradeFilters[i]).Checked;
-                }
-                for (int i = 0; i < categoryFilters.Length; ++i)
-                {
-                    filterCategory[i] = view.FindViewById<CheckBox>(categoryFilters[i]).Checked;
+                    filterEnemyType[i] = view.FindViewById<CheckBox>(enemyTypeFilters[i]).Checked;
                 }
 
                 CheckApplyFilter();
 
-                _ = ListEquip(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                _ = ListEnemy(searchViewText);
             }
             catch (Exception ex)
             {
@@ -447,29 +440,11 @@ namespace GFI_with_GFS_A
 
         private void CheckApplyFilter()
         {
-            for (int i = 0; i < productTimeFilters.Length; ++i)
+            for (int i = 0; i < filterEnemyType.Length; ++i)
             {
-                hasApplyFilter[0] = filterProductTime[i] != 0;
+                hasApplyFilter[0] = filterEnemyType[i];
 
                 if (hasApplyFilter[0])
-                {
-                    break;
-                }
-            }
-            for (int i = 0; i < gradeFilters.Length; ++i)
-            {
-                hasApplyFilter[1] = filterGrade[i];
-
-                if (hasApplyFilter[1])
-                {
-                    break;
-                }
-            }
-            for (int i = 0; i < categoryFilters.Length; ++i)
-            {
-                hasApplyFilter[2] = filterCategory[i];
-
-                if (hasApplyFilter[2])
                 {
                     break;
                 }
@@ -480,17 +455,9 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                for (int i = 0; i < productTimeFilters.Length; ++i)
+                for (int i = 0; i < enemyTypeFilters.Length; ++i)
                 {
-                    filterProductTime[i] = 0;
-                }
-                for (int i = 0; i < gradeFilters.Length; ++i)
-                {
-                    filterGrade[i] = false;
-                }
-                for (int i = 0; i < categoryFilters.Length; ++i)
-                {
-                    filterCategory[i] = false;
+                    filterEnemyType[i] = false;
                 }
 
                 for (int i = 0; i < hasApplyFilter.Length; ++i)
@@ -498,7 +465,7 @@ namespace GFI_with_GFS_A
                     hasApplyFilter[i] = false;
                 }
 
-                _ = ListEquip(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                _ = ListEnemy(searchViewText);
             }
             catch (Exception ex)
             {
@@ -507,7 +474,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task ListEquip(int[] pTime, int pRange, string searchText = "")
+        private async Task ListEnemy(string searchText = "")
         {
             subList.Clear();
 
@@ -517,24 +484,16 @@ namespace GFI_with_GFS_A
             {
                 for (int i = 0; i < rootList.Count; ++i)
                 {
-                    Equip equip = rootList[i];
+                    Enemy enemy = rootList[i];
 
-                    if ((pTime[0] + pTime[1]) != 0)
-                    {
-                        if (!CheckEquipByProductTime(pTime, pRange, equip.ProductTime))
-                        {
-                            continue;
-                        }
-                    }
-
-                    if (CheckFilter(equip))
+                    if (CheckFilter(enemy))
                     {
                         continue;
                     }
 
                     if (!string.IsNullOrWhiteSpace(searchText))
                     {
-                        string name = equip.Name.ToUpper();
+                        string name = enemy.Name.ToUpper();
 
                         if (!name.Contains(searchText))
                         {
@@ -542,12 +501,12 @@ namespace GFI_with_GFS_A
                         }
                     }
 
-                    subList.Add(equip);
+                    subList.Add(enemy);
                 }
 
-                subList.Sort(SortEquip);
+                subList.Sort(SortEnemy);
 
-                var adapter = new EquipListAdapter(subList, this);
+                var adapter = new EnemyListAdapter(subList, this);
 
                 if (!adapter.HasOnItemClick())
                 {
@@ -556,7 +515,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(100);
 
-                RunOnUiThread(() => { mEquipListView.SetAdapter(adapter); });
+                RunOnUiThread(() => { mEnemyRecyclerView.SetAdapter(adapter); });
             }
             catch (Exception ex)
             {
@@ -568,121 +527,38 @@ namespace GFI_with_GFS_A
         private async void Adapter_ItemClick(object sender, int position)
         {
             await Task.Delay(100);
-            var EquipInfo = new Intent(this, typeof(EquipDBDetailActivity));
-            EquipInfo.PutExtra("Id", subList[position].Id);
-            StartActivity(EquipInfo);
+            var EnemyInfo = new Intent(this, typeof(EnemyDBDetailActivity));
+            EnemyInfo.PutExtra("Keyword", subList[position].CodeName);
+            StartActivity(EnemyInfo);
             OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }
 
-        private static bool CheckEquipByProductTime(int[] pTime, int range, int dTime)
-        {
-            int pTimeM = (pTime[0] * 60) + pTime[1];
-
-            for (int i = (pTimeM - range); i <= (pTimeM + range); ++i)
-            {
-                if (dTime == i)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        private int SortEquip(Equip x, Equip y)
+        private int SortEnemy(Enemy x, Enemy y)
         {
             if (sortOrder == SortOrder.Descending)
             {
-                Equip temp = x;
+                Enemy temp = x;
                 x = y;
                 y = temp;
             }
 
-            switch (sortType)
-            {
-                default:
-                case SortType.Name:
-                    return x.Name.CompareTo(y.Name);
-                case SortType.ProductTime:
-                    int xTime = x.ProductTime;
-                    int yTime = y.ProductTime;
-
-                    if ((xTime == 0) && (yTime != 0))
-                    {
-                        return 1;
-                    }
-                    else if ((yTime == 0) && (xTime != 0))
-                    {
-                        return -1;
-                    }
-                    else if (xTime == yTime)
-                    {
-                        return x.Name.CompareTo(y.Name);
-                    }
-                    else
-                    {
-                        return xTime.CompareTo(yTime);
-                    }
-            }
+            return x.Name.CompareTo(y.Name);
         }
 
-        private bool CheckFilter(Equip equip)
+        private bool CheckFilter(Enemy enemy)
         {
-            if (hasApplyFilter[1])
+            if (hasApplyFilter[0])
             {
-                switch (equip.Grade)
+                switch (enemy.IsBoss)
                 {
-                    case 2:
-                        if (!filterGrade[0])
+                    case false:
+                        if (!filterEnemyType[0])
                         {
                             return true;
                         }
                         break;
-                    case 3:
-                        if (!filterGrade[1])
-                        {
-                            return true;
-                        }
-                        break;
-                    case 4:
-                        if (!filterGrade[2])
-                        {
-                            return true;
-                        }
-                        break;
-                    case 5:
-                        if (!filterGrade[3])
-                        {
-                            return true;
-                        }
-                        break;
-                    case 0:
-                        if (!filterGrade[4])
-                        {
-                            return true;
-                        }
-                        break;
-                }
-            }
-
-            if (hasApplyFilter[2])
-            {
-                switch (equip.Category)
-                {
-                    case string s when s == Resources.GetString(Resource.String.Common_Accessories):
-                        if (!filterCategory[0])
-                        {
-                            return true;
-                        }
-                        break;
-                    case string s when s == Resources.GetString(Resource.String.Common_Magazine):
-                        if (!filterCategory[1])
-                        {
-                            return true;
-                        }
-                        break;
-                    case string s when s == Resources.GetString(Resource.String.Common_TDoll):
-                        if (!filterCategory[2])
+                    case true:
+                        if (!filterEnemyType[1])
                         {
                             return true;
                         }

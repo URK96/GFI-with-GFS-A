@@ -279,6 +279,7 @@
     <Compile Include="DollDBMainActivity_Beta.cs" />
     <Compile Include="DollDBMainActivity.cs" />
     <Compile Include="EnemyDBImageViewer.cs" />
+    <Compile Include="EnemyDBMainActivity_Beta.cs" />
     <Compile Include="EquipDBMainActivity_Beta.cs" />
     <Compile Include="ExternLibraryCopyright.cs" />
     <Compile Include="FairyDBMainActivity.cs" />
@@ -1809,13 +1810,25 @@
     <AndroidAsset Include="Assets\Apache2.0.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ProgressDialogLayout.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-nodpi\BetaIcon_WhiteTheme.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-nodpi\BetaIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\FSTDBListLayout_Beta.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\EnemyDBListLayout_Beta.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Menu\EnemyDBMenu.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
