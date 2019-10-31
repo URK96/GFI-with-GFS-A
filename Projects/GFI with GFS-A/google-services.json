@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "455397102735",
+    "firebase_url": "https://gf-dictionary.firebaseio.com",
+    "project_id": "gf-dictionary",
+    "storage_bucket": "gf-dictionary.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455397102735:android:ee31cc11f0786f37",
+        "android_client_info": {
+          "package_name": "com.gfl.dic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "455397102735-rr03venfgt6ph8bovtsql438e6osts3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaYYwcBz9EuRkHQHwIuGmxJ7ZuhG2cs-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "455397102735-rr03venfgt6ph8bovtsql438e6osts3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

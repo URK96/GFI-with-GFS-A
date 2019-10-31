@@ -12,8 +12,11 @@ using System.Threading.Tasks;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Push;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Xamarin.Essentials;
+using Plugin.SimpleAudioPlayer;
 
 namespace GFI_with_GFS_A
 {
@@ -62,7 +65,8 @@ namespace GFI_with_GFS_A
 
         internal static AverageAbility[] avgList;
 
-        internal static Android.Media.MediaPlayer ostPlayer = null;
+        internal static ISimpleAudioPlayer ostPlayer;
+        internal static Service ostService;
         internal static int[] ostIndex = { 0, 0 };
 
         internal static Java.Util.Locale locale; // ko, en
@@ -218,7 +222,7 @@ namespace GFI_with_GFS_A
 
             if (isReleaseMode)
             {
-                AppCenter.Start("aca0ed39-4b25-4548-bf2a-ac92ccee2977", typeof(Analytics), typeof(Crashes));
+                AppCenter.Start("aca0ed39-4b25-4548-bf2a-ac92ccee2977", typeof(Analytics), typeof(Crashes), typeof(Push));
             }
         }
 
@@ -692,7 +696,7 @@ namespace GFI_with_GFS_A
         {
             Snackbar sb = Snackbar.Make(v, message, time);
             v.BringToFront();
-            sb.Show();
+            MainThread.BeginInvokeOnMainThread(() => { sb.Show(); });
         }
         
         internal static void ShowSnackbar(View v, string message, int time, Android.Graphics.Color color)
@@ -700,14 +704,14 @@ namespace GFI_with_GFS_A
             Snackbar sb = Snackbar.Make(v, message, time);
             v.BringToFront();
             sb.View.SetBackgroundColor(color);
-            sb.Show();
+            MainThread.BeginInvokeOnMainThread(() => { sb.Show(); });
         }
 
         internal static void ShowSnackbar(View v, int stringResource, int time)
         {
             Snackbar sb = Snackbar.Make(v, stringResource, time);
             v.BringToFront();
-            sb.Show();
+            MainThread.BeginInvokeOnMainThread(() => { sb.Show(); });
         }
 
         internal static void ShowSnackbar(View v, int stringResource, int time, Android.Graphics.Color color)
@@ -715,7 +719,7 @@ namespace GFI_with_GFS_A
             Snackbar sb = Snackbar.Make(v, stringResource, time);
             v.BringToFront();
             sb.View.SetBackgroundColor(color);
-            sb.Show();
+            MainThread.BeginInvokeOnMainThread(() => { sb.Show(); });
         }
 
         internal static string CalcTime(int minute)
@@ -730,15 +734,7 @@ namespace GFI_with_GFS_A
 
         internal static bool IsDBNullOrBlank(DataRow dr, string index)
         {
-            return ((dr[index] == DBNull.Value) || (string.IsNullOrWhiteSpace((string)dr[index])));
-
-            /*if (dr[index] == DBNull.Value)
-                return true;
-            if (string.IsNullOrWhiteSpace((string)dr[index]) == true)
-                return true;
-
-            return false;*/
-        }
+            return ((dr[index] == DBNull.Value) || (string.IsNullOrWhiteSpace((string)dr[index])));        }
 
         /// <summary>
         /// File Copy Temporary Replace Method

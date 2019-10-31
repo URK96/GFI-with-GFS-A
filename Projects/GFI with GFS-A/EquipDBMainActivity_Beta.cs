@@ -12,6 +12,7 @@ using System.Data;
 using System.Net;
 using System.Threading.Tasks;
 using System.IO;
+using Xamarin.Essentials;
 
 namespace GFI_with_GFS_A
 {
@@ -246,14 +247,14 @@ namespace GFI_with_GFS_A
                     wc.DownloadProgressChanged += (sender, e) =>
                     {
                         nowProgressBar.Progress = e.ProgressPercentage;
-                        nowProgress.Text = $"{e.ProgressPercentage}%";
+                        MainThread.BeginInvokeOnMainThread(() => { nowProgress.Text = $"{e.ProgressPercentage}%"; });
                     };
                     wc.DownloadFileCompleted += (sender, e) =>
                     {
                         pNow += 1;
 
                         totalProgressBar.Progress = Convert.ToInt32((pNow / Convert.ToDouble(pTotal)) * 100);
-                        totalProgress.Text = $"{totalProgressBar.Progress}%";
+                        MainThread.BeginInvokeOnMainThread(() => { totalProgress.Text = $"{totalProgressBar.Progress}%"; });
                     };
 
                     for (int i = 0; i < pTotal; ++i)
