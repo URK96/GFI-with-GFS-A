@@ -10,48 +10,40 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Net;
+using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "@string/Acticity_EnemyMainActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class EnemyDBMainActivity_Beta : BaseAppCompatActivity
+    [Activity(Label = "@string/Activity_FSTMainActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class FSTDBMainActivity_Beta : BaseAppCompatActivity
     {
         delegate Task DownloadProgress();
 
-        private enum SortType { Name }
+        private enum SortType { Name, Number }
         private enum SortOrder { Ascending, Descending }
         private SortType sortType = SortType.Name;
         private SortOrder sortOrder = SortOrder.Ascending;
 
-        private List<Enemy> rootList = new List<Enemy>();
-        private List<Enemy> subList = new List<Enemy>();
+        private List<FST> rootList = new List<FST>();
+        private List<FST> subList = new List<FST>();
         private List<string> downloadList = new List<string>();
 
-        int[] enemyTypeFilters = { Resource.Id.EnemyFilterNormalEnemy, Resource.Id.EnemyFilterBossEnemy };
-        int[] enemyAffiliationFilters =
-        {
-            Resource.Id.EnemyFilterAffiliationSF,
-            Resource.Id.EnemyFilterAffiliationIOP,
-            Resource.Id.EnemyFilterAffiliationKCCO,
-            Resource.Id.EnemyFilterAffiliationParadeus,
-            Resource.Id.EnemyFilterAffiliationMindMapSystem,
-            Resource.Id.EnemyFilterAffiliationELID
-        };
+        int[] typeFilters = { Resource.Id.FSTFilterTypeATW, Resource.Id.FSTFilterTypeAGL, Resource.Id.FSTFilterTypeMTR};
 
-        private bool[] hasApplyFilter = { false, false };
-        private bool[] filterEnemyType = { false, false };
-        private bool[] filterEnemyAffiliation = { false, false, false, false, false, false };
+        private bool[] hasApplyFilter = { false };
+        private bool[] filterType = { false, false, false };
         private bool canRefresh = false;
+
+        private string searchViewText;
 
         private Android.Support.V7.Widget.Toolbar toolbar;
         private Android.Support.V7.Widget.SearchView searchView;
-        private RecyclerView mEnemyRecyclerView;
-        private RecyclerView.LayoutManager mainLayoutManager;
+        private RecyclerView mFSTListView;
+        private RecyclerView.LayoutManager mainRecyclerManager;
         private CoordinatorLayout snackbarLayout;
 
-        string searchViewText;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -65,29 +57,29 @@ namespace GFI_with_GFS_A
                 }
 
                 // Create your application here
-                SetContentView(Resource.Layout.EnemyDBListLayout_Beta);
+                SetContentView(Resource.Layout.FSTDBListLayout);
 
                 canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
-                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.bEnemyDBMainToolbar);
-                searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.bEnemyDBSearchView);
+                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.bFSTDBMainToolbar);
+                searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.bFSTDBSearchView);
                 searchView.QueryTextChange += (sender, e) =>
                 {
                     searchViewText = e.NewText;
-                    _ = ListEnemy(searchViewText);
+                    _ = ListFST(searchViewText);
                 };
-                mEnemyRecyclerView = FindViewById<RecyclerView>(Resource.Id.EnemyDBRecyclerView);
-                mainLayoutManager = new LinearLayoutManager(this);
-                mEnemyRecyclerView.SetLayoutManager(mainLayoutManager);
-                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EnemyDBSnackbarLayout);
+                mFSTListView = FindViewById<RecyclerView>(Resource.Id.FSTDBRecyclerView);
+                mainRecyclerManager = new LinearLayoutManager(this);
+                mFSTListView.SetLayoutManager(mainRecyclerManager);
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FSTDBSnackbarLayout);
 
                 SetSupportActionBar(toolbar);
-                SupportActionBar.SetTitle(Resource.String.EnemyDBMainActivity_Title);
+                SupportActionBar.SetTitle(Resource.String.FSTDBMainActivity_Title);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
                 InitProcess();
 
-                _ = ListEnemy();
+                _ = ListFST();
 
                 /*if ((ETC.locale.Language == "ko") && ETC.sharedPreferences.GetBoolean("Help_DBList", true))
                 {
@@ -103,9 +95,9 @@ namespace GFI_with_GFS_A
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.EnemyDBMenu, menu);
+            MenuInflater.Inflate(Resource.Menu.FSTDBMenu, menu);
 
-            var cacheItem = menu?.FindItem(Resource.Id.RefreshEnemyCropImageCache);
+            var cacheItem = menu?.FindItem(Resource.Id.RefreshFSTCropImageCache);
             _ = canRefresh ? cacheItem.SetVisible(true) : cacheItem.SetVisible(false);
 
             return base.OnCreateOptionsMenu(menu);
@@ -118,23 +110,23 @@ namespace GFI_with_GFS_A
                 case Android.Resource.Id.Home:
                     OnBackPressed();
                     break;
-                case Resource.Id.EnemyDBMainFilter:
+                case Resource.Id.FSTDBMainFilter:
                     InitFilterBox();
                     break;
-                case Resource.Id.EnemyDBMainSort:
+                case Resource.Id.FSTDBMainSort:
                     InitSortBox();
                     break;
-                case Resource.Id.RefreshEnemyCropImageCache:
+                case Resource.Id.RefreshFSTCropImageCache:
                     downloadList.Clear();
 
-                    foreach (Enemy enemy in rootList)
+                    foreach (DataRow dr in ETC.enemyList.Rows)
                     {
-                        downloadList.Add(enemy.CodeName);
+                        downloadList.Add((string)dr["CodeName"]);
                     }
 
                     downloadList.TrimExcess();
 
-                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EnemyCropImageDownloadProcess));
+                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(FSTCropImageDownloadProcess));
                     break;
             }
 
@@ -147,34 +139,20 @@ namespace GFI_with_GFS_A
 
             if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false))
             {
-                if (CheckEnemyCropImage())
+                if (CheckFSTCropImage())
                 {
-                    ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(EnemyCropImageDownloadProcess));
+                    ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(FSTCropImageDownloadProcess));
                 }
-            }     
+            }
         }
 
         private void CreateListObject()
         {
             try
             {
-                foreach (DataRow dr in ETC.enemyList.Rows)
+                foreach (DataRow dr in ETC.FSTList.Rows)
                 {
-                    bool isCreate = false;
-
-                    foreach (Enemy enemy in rootList)
-                    {
-                        if (enemy.CodeName == (string)dr["CodeName"])
-                        {
-                            isCreate = true;
-                            break;
-                        }
-                    }
-
-                    if (!isCreate)
-                    {
-                        rootList.Add(new Enemy(dr));
-                    }
+                    rootList.Add(new FST(dr, true));
                 }
 
                 rootList.TrimExcess();
@@ -186,17 +164,18 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private bool CheckEnemyCropImage()
+        private bool CheckFSTCropImage()
         {
             downloadList.Clear();
 
-            foreach (Enemy enemy in rootList)
+            for (int i = 0; i < rootList.Count; ++i)
             {
-                string filePath = Path.Combine(ETC.cachePath, "Enemy", "Normal_Crop", $"{enemy.CodeName}.gfdcache");
+                FST fst = rootList[i];
+                string filePath = Path.Combine(ETC.cachePath, "FST", "Normal_Icon", $"{fst.CodeName}.gfdcache");
 
                 if (!File.Exists(filePath))
                 {
-                    downloadList.Add(enemy.CodeName);
+                    downloadList.Add(fst.CodeName);
                 }
             }
 
@@ -219,7 +198,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task EnemyCropImageDownloadProcess()
+        private async Task FSTCropImageDownloadProcess()
         {
             Dialog dialog;
             ProgressBar totalProgressBar;
@@ -264,16 +243,16 @@ namespace GFI_with_GFS_A
                     {
                         pNow += 1;
 
-                        totalProgressBar.Progress = Convert.ToInt32(pNow / Convert.ToDouble(pTotal) * 100);
+                        totalProgressBar.Progress = Convert.ToInt32((pNow / Convert.ToDouble(pTotal)) * 100);
                         totalProgress.Text = $"{totalProgressBar.Progress}%";
                     };
 
                     for (int i = 0; i < pTotal; ++i)
                     {
-                        string url = Path.Combine(ETC.server, "Data", "Images", "Enemy", "Normal_Crop", $"{downloadList[i]}.png");
-                        string target = Path.Combine(ETC.cachePath, "Enemy", "Normal_Crop", $"{downloadList[i]}.gfdcache");
-
-                        await wc.DownloadFileTaskAsync(url, target).ConfigureAwait(false);
+                        string url = Path.Combine(ETC.server, "Data", "Images", "FST", "Normal_Icon", $"{downloadList[i]}_icon.png");
+                        string target = Path.Combine(ETC.cachePath, "FST", "Normal_Icon", $"{downloadList[i]}.gfdcache");
+                        
+                        await wc.DownloadFileTaskAsync(url, target);
                     }
                 }
 
@@ -281,7 +260,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(500);
 
-                _ = ListEnemy(searchViewText);
+                _ = ListFST(searchViewText);
             }
             catch (Exception ex)
             {
@@ -298,7 +277,8 @@ namespace GFI_with_GFS_A
         {
             string[] sortTypeList =
             {
-                Resources.GetString(Resource.String.Sort_SortMethod_Name)
+                Resources.GetString(Resource.String.Sort_SortMethod_Name),
+                Resources.GetString(Resource.String.Sort_SortMethod_Number)
             };
 
             try
@@ -361,7 +341,7 @@ namespace GFI_with_GFS_A
                     sortOrder = SortOrder.Ascending;
                 }
 
-                _ = ListEnemy(searchViewText);
+                _ = ListFST(searchViewText);
             }
             catch (Exception ex)
             {
@@ -377,7 +357,7 @@ namespace GFI_with_GFS_A
                 sortType = SortType.Name;
                 sortOrder = SortOrder.Ascending;
 
-                _ = ListEnemy(searchViewText);
+                _ = ListFST(searchViewText);
             }
             catch (Exception ex)
             {
@@ -392,15 +372,11 @@ namespace GFI_with_GFS_A
 
             try
             {
-                View v = inflater.Inflate(Resource.Layout.EnemyFilterLayout, null);
+                View v = inflater.Inflate(Resource.Layout.FSTFilterLayout, null);
 
-                for (int i = 0; i < enemyTypeFilters.Length; ++i)
+                for (int i = 0; i < typeFilters.Length; ++i)
                 {
-                    v.FindViewById<CheckBox>(enemyTypeFilters[i]).Checked = filterEnemyType[i];
-                }
-                for (int i = 0; i < enemyAffiliationFilters.Length; ++i)
-                {
-                    v.FindViewById<CheckBox>(enemyAffiliationFilters[i]).Checked = filterEnemyAffiliation[i];
+                    v.FindViewById<CheckBox>(typeFilters[i]).Checked = filterType[i];
                 }
 
                 using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
@@ -425,18 +401,14 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                for (int i = 0; i < enemyTypeFilters.Length; ++i)
+                for (int i = 0; i < typeFilters.Length; ++i)
                 {
-                    filterEnemyType[i] = view.FindViewById<CheckBox>(enemyTypeFilters[i]).Checked;
-                }
-                for (int i = 0; i < enemyAffiliationFilters.Length; ++i)
-                {
-                    filterEnemyAffiliation[i] = view.FindViewById<CheckBox>(enemyAffiliationFilters[i]).Checked;
+                    filterType[i] = view.FindViewById<CheckBox>(typeFilters[i]).Checked;
                 }
 
                 CheckApplyFilter();
 
-                _ = ListEnemy(searchViewText);
+                _ = ListFST(searchViewText);
             }
             catch (Exception ex)
             {
@@ -447,20 +419,11 @@ namespace GFI_with_GFS_A
 
         private void CheckApplyFilter()
         {
-            for (int i = 0; i < filterEnemyType.Length; ++i)
+            for (int i = 0; i < typeFilters.Length; ++i)
             {
-                hasApplyFilter[0] = filterEnemyType[i];
+                hasApplyFilter[0] = filterType[i];
 
                 if (hasApplyFilter[0])
-                {
-                    break;
-                }
-            }
-            for (int i = 0; i < filterEnemyAffiliation.Length; ++i)
-            {
-                hasApplyFilter[1] = filterEnemyAffiliation[i];
-
-                if (hasApplyFilter[1])
                 {
                     break;
                 }
@@ -471,13 +434,9 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                for (int i = 0; i < enemyTypeFilters.Length; ++i)
+                for (int i = 0; i < typeFilters.Length; ++i)
                 {
-                    filterEnemyType[i] = false;
-                }
-                for (int i = 0; i < enemyAffiliationFilters.Length; ++i)
-                {
-                    filterEnemyAffiliation[i] = false;
+                    filterType[i] = true;
                 }
 
                 for (int i = 0; i < hasApplyFilter.Length; ++i)
@@ -485,7 +444,7 @@ namespace GFI_with_GFS_A
                     hasApplyFilter[i] = false;
                 }
 
-                _ = ListEnemy(searchViewText);
+                _ = ListFST(searchViewText);
             }
             catch (Exception ex)
             {
@@ -494,7 +453,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task ListEnemy(string searchText = "")
+        private async Task ListFST(string searchText = "")
         {
             subList.Clear();
 
@@ -504,16 +463,16 @@ namespace GFI_with_GFS_A
             {
                 for (int i = 0; i < rootList.Count; ++i)
                 {
-                    Enemy enemy = rootList[i];
+                    FST fst = rootList[i];
 
-                    if (CheckFilter(enemy))
+                    if (CheckFilter(fst))
                     {
                         continue;
                     }
 
                     if (!string.IsNullOrWhiteSpace(searchText))
                     {
-                        string name = enemy.Name.ToUpper();
+                        string name = fst.Name.ToUpper();
 
                         if (!name.Contains(searchText))
                         {
@@ -521,12 +480,12 @@ namespace GFI_with_GFS_A
                         }
                     }
 
-                    subList.Add(enemy);
+                    subList.Add(fst);
                 }
 
-                subList.Sort(SortEnemy);
+                subList.Sort(SortFST);
 
-                var adapter = new EnemyListAdapter(subList, this);
+                var adapter = new FSTListAdapter(subList, this);
 
                 if (!adapter.HasOnItemClick())
                 {
@@ -535,7 +494,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(100);
 
-                RunOnUiThread(() => { mEnemyRecyclerView.SetAdapter(adapter); });
+                RunOnUiThread(() => { mFSTListView.SetAdapter(adapter); });
             }
             catch (Exception ex)
             {
@@ -547,81 +506,51 @@ namespace GFI_with_GFS_A
         private async void Adapter_ItemClick(object sender, int position)
         {
             await Task.Delay(100);
-            var EnemyInfo = new Intent(this, typeof(EnemyDBDetailActivity));
-            EnemyInfo.PutExtra("Keyword", subList[position].CodeName);
-            StartActivity(EnemyInfo);
+            var FSTInfo = new Intent(this, typeof(FSTDBDetailActivity));
+            FSTInfo.PutExtra("Keyword", subList[position].CodeName);
+            StartActivity(FSTInfo);
             OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }
 
-        private int SortEnemy(Enemy x, Enemy y)
+        private int SortFST(FST x, FST y)
         {
             if (sortOrder == SortOrder.Descending)
             {
-                Enemy temp = x;
+                FST temp = x;
                 x = y;
                 y = temp;
             }
 
-            return x.Name.CompareTo(y.Name);
+            switch (sortType)
+            {
+                case SortType.Name:
+                default:
+                    return x.Name.CompareTo(y.Name);
+                case SortType.Number:
+                    return x.DicNumber.CompareTo(y.DicNumber); 
+            }
         }
 
-        private bool CheckFilter(Enemy enemy)
+        private bool CheckFilter(FST fst)
         {
             if (hasApplyFilter[0])
             {
-                switch (enemy.IsBoss)
+                switch (fst.Type)
                 {
-                    case false:
-                        if (!filterEnemyType[0])
+                    case "ATW":
+                        if (!filterType[0])
                         {
                             return true;
                         }
                         break;
-                    case true:
-                        if (!filterEnemyType[1])
+                    case "AGL":
+                        if (!filterType[1])
                         {
                             return true;
                         }
                         break;
-                }
-            }
-
-            if (hasApplyFilter[1])
-            {
-                switch (enemy.Affiliation)
-                {
-                    case "SANGVIS FERRI":
-                        if (!filterEnemyAffiliation[0])
-                        {
-                            return true;
-                        }
-                        break;
-                    case "I.O.P Manufacturing Company":
-                        if (!filterEnemyAffiliation[1])
-                        {
-                            return true;
-                        }
-                        break;
-                    case "KCCO":
-                        if (!filterEnemyAffiliation[2])
-                        {
-                            return true;
-                        }
-                        break;
-                    case "Paradeus":
-                        if (!filterEnemyAffiliation[3])
-                        {
-                            return true;
-                        }
-                        break;
-                    case "Mind Map System":
-                        if (!filterEnemyAffiliation[4])
-                        {
-                            return true;
-                        }
-                        break;
-                    case "E.L.I.D.":
-                        if (!filterEnemyAffiliation[5])
+                    case "MTR":
+                        if (!filterType[2])
                         {
                             return true;
                         }

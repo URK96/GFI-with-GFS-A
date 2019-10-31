@@ -384,6 +384,7 @@
   
   <!--FSTMain-->
   <string name="FSTDBMainActivity_Title">FST List</string>
+  <string name="FSTDBMainActivity_SearchHint">Search FST Name</string>
   
   <!--GFDInfo-->
   <string name="GFDInfo_Developer_Soomae">Lead &amp; Designer : 수매 (Soomae)</string>

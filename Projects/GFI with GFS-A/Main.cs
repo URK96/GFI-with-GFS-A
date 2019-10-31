@@ -55,7 +55,9 @@ namespace GFI_with_GFS_A
                 base.OnCreate(savedInstanceState);
 
                 if (ETC.useLightTheme)
+                {
                     SetTheme(Resource.Style.GFS_Light);
+                }
 
                 // Create your application here
                 SetContentView(Resource.Layout.MainLayout);
@@ -264,7 +266,9 @@ namespace GFI_with_GFS_A
                 // Check Auto Run Mode
 
                 if (ETC.sharedPreferences.GetString("StartAppMode", "0") != "0")
+                {
                     RunStartMode();
+                }
             }
             catch (Exception ex)
             {
@@ -289,34 +293,35 @@ namespace GFI_with_GFS_A
             {
                 // Check Server Status
 
-                await ETC.CheckServerNetwork();
+                await ETC.CheckServerNetwork().ConfigureAwait(false);
 
                 await Task.Run(async () =>
                 {
-                    
                     // Check DB Version
 
                     if (await ETC.CheckDBVersion())
                     {
                         RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})"; });
 
-                        Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
-                        ad.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
-                        ad.SetMessage(Resource.String.CheckDBUpdateDialog_Question);
-                        ad.SetCancelable(true);
-                        ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                        ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate
+                        using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG))
                         {
-                            await ETC.UpdateDB(this, true);
+                            ad.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
+                            ad.SetMessage(Resource.String.CheckDBUpdateDialog_Question);
+                            ad.SetCancelable(true);
+                            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                            ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate
+                            {
+                                await ETC.UpdateDB(this, true);
 
-                            if (!await ETC.CheckDBVersion())
-                                RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})"; });
-                            else
-                                RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})"; });
+                                if (!await ETC.CheckDBVersion())
+                                    RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})"; });
+                                else
+                                    RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})"; });
 
-                        });
+                            });
 
-                        RunOnUiThread(() => { ad.Show(); });
+                            RunOnUiThread(() => { ad.Show(); });
+                        }
                     }
                     else
                         RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})"; });
@@ -327,15 +332,25 @@ namespace GFI_with_GFS_A
                     string url = "";
 
                     if (ETC.locale.Language == "ko")
+                    {
                         url = Path.Combine(ETC.server, "Android_Notification.txt");
+                    }
                     else
+                    {
                         url = Path.Combine(ETC.server, "Android_Notification_en.txt");
+                    }
 
                     if (ETC.isServerDown)
+                    {
                         notificationText = "& Server is Maintenance &";
+                    }
                     else
+                    {
                         using (WebClient wc = new WebClient())
+                        {
                             notificationText = await wc.DownloadStringTaskAsync(url);
+                        }
+                    }
                 });
             }
             catch (Exception ex)
@@ -359,11 +374,15 @@ namespace GFI_with_GFS_A
                     case 0:
                         await Task.Run(() =>
                         {
-                            if (ETC.dollList.TableName == "")
+                            if (!string.IsNullOrEmpty(ETC.dollList.TableName))
+                            {
                                 ETC.LoadDBSync(ETC.dollList, "Doll.gfs", false);
+                            }
 
                             if (!ETC.hasInitDollAvgAbility)
+                            {
                                 ETC.InitializeAverageAbility();
+                            }
                         });
                         if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
                         {
@@ -379,8 +398,10 @@ namespace GFI_with_GFS_A
                     case 1:
                         await Task.Run(() => 
                         {
-                            if (ETC.equipmentList.TableName == "")
+                            if (!string.IsNullOrEmpty(ETC.equipmentList.TableName))
+                            {
                                 ETC.LoadDBSync(ETC.equipmentList, "Equipment.gfs", false);
+                            }
                         });
                         if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
                         {
@@ -396,8 +417,10 @@ namespace GFI_with_GFS_A
                     case 2:
                         await Task.Run(() => 
                         {
-                            if (ETC.fairyList.TableName == "")
+                            if (!string.IsNullOrEmpty(ETC.fairyList.TableName))
+                            {
                                 ETC.LoadDBSync(ETC.fairyList, "Fairy.gfs", false);
+                            }
                         });
                         if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
                         {
@@ -413,20 +436,40 @@ namespace GFI_with_GFS_A
                     case 3:
                         await Task.Run(() => 
                         {
-                            if (ETC.enemyList.TableName == "")
+                            if (!string.IsNullOrEmpty(ETC.enemyList.TableName))
+                            {
                                 ETC.LoadDBSync(ETC.enemyList, "Enemy.gfs", false);
+                            }
                         });
-                        StartActivity(typeof(EnemyDBMainActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
+                        {
+                            StartActivity(typeof(EnemyDBMainActivity_Beta));
+                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        }
+                        else
+                        {
+                            StartActivity(typeof(EnemyDBMainActivity));
+                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        }
                         break;
                     case 4:
                         await Task.Run(() => 
                         {
-                            if (ETC.FSTList.TableName == "")
+                            if (!string.IsNullOrEmpty(ETC.FSTList.TableName))
+                            {
                                 ETC.LoadDBSync(ETC.FSTList, "FST.gfs", false);
+                            }
                         });
-                        StartActivity(typeof(FSTDBMainActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
+                        {
+                            StartActivity(typeof(FSTDBMainActivity_Beta));
+                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        }
+                        else
+                        {
+                            StartActivity(typeof(FSTDBMainActivity));
+                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        }
                         break;
                     default:
                         ETC.ShowSnackbar(snackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
@@ -456,11 +499,17 @@ namespace GFI_with_GFS_A
                         break;
                     case 1:
                         if (int.Parse(Build.VERSION.Release.Split('.')[0]) >= 6)
+                        {
                             CheckPermission(Manifest.Permission.Internet);
+                        }
                         StartActivity(typeof(EventListActivity));
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case 2:
+                        if (int.Parse(Build.VERSION.Release.Split('.')[0]) >= 6)
+                        {
+                            CheckPermission(Manifest.Permission.Internet);
+                        }
                         var mdIntent = new Intent(this, typeof(WebBrowserActivity));
                         mdIntent.PutExtra("url", "https://tempkaridc.github.io/gf/");
                         StartActivity(mdIntent);
@@ -471,6 +520,10 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case 4:
+                        if (int.Parse(Build.VERSION.Release.Split('.')[0]) >= 6)
+                        {
+                            CheckPermission(Manifest.Permission.Internet);
+                        }
                         var areaTipIntent = new Intent(this, typeof(WebBrowserActivity));
                         areaTipIntent.PutExtra("url", "https://cafe.naver.com/girlsfrontlinekr/235663");
                         StartActivity(areaTipIntent);
@@ -512,7 +565,9 @@ namespace GFI_with_GFS_A
                             OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         }
                         else
+                        {
                             ETC.ShowSnackbar(snackbarLayout, Resource.String.NoDBFiles, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                        }
                         break;
                     case 1:
                         StartActivity(typeof(CartoonActivity));
@@ -615,7 +670,9 @@ namespace GFI_with_GFS_A
                 else
                 {
                     for (int i = 1; i < mainCardViewList.Length; ++i)
+                    {
                         mainCardViewList[i].Visibility = ViewStates.Visible;
+                    }
 
                     notificationView.SetMaxLines(1);
                     isCardOpen = false;
@@ -644,7 +701,9 @@ namespace GFI_with_GFS_A
                     for (int i = 0; i < mainCardViewList.Length; ++i)
                     {
                         if (mainCardViewList[i].Id == card.Id)
+                        {
                             continue;
+                        }
 
                         mainCardViewList[i].Visibility = ViewStates.Gone;
                         mainCardViewList[i].CardElevation = 8;
@@ -661,7 +720,9 @@ namespace GFI_with_GFS_A
                     for (int i = 0; i < mainCardViewList.Length; ++i)
                     {
                         if (mainCardViewList[i].Id == card.Id)
+                        {
                             continue;
+                        }
 
                         mainCardViewList[i].Visibility = ViewStates.Visible;
                     }
@@ -693,7 +754,9 @@ namespace GFI_with_GFS_A
                     for (int i = 0; i < mainCardViewList.Length; ++i)
                     {
                         if (mainCardViewList[i].Id == card.Id)
+                        {
                             continue;
+                        }
 
                         mainCardViewList[i].Visibility = ViewStates.Gone;
                         mainCardViewList[i].CardElevation = 8;
@@ -710,7 +773,9 @@ namespace GFI_with_GFS_A
                     for (int i = 0; i < mainCardViewList.Length; ++i)
                     {
                         if (mainCardViewList[i].Id == card.Id)
+                        {
                             continue;
+                        }
 
                         mainCardViewList[i].Visibility = ViewStates.Visible;
                     }
@@ -742,7 +807,9 @@ namespace GFI_with_GFS_A
                     for (int i = 0; i < mainCardViewList.Length; ++i)
                     {
                         if (mainCardViewList[i].Id == card.Id)
+                        {
                             continue;
+                        }
 
                         mainCardViewList[i].Visibility = ViewStates.Gone;
                         mainCardViewList[i].CardElevation = 8;
@@ -759,7 +826,9 @@ namespace GFI_with_GFS_A
                     for (int i = 0; i < mainCardViewList.Length; ++i)
                     {
                         if (mainCardViewList[i].Id == card.Id)
+                        {
                             continue;
+                        }
 
                         mainCardViewList[i].Visibility = ViewStates.Visible;
                     }
@@ -792,7 +861,9 @@ namespace GFI_with_GFS_A
                     for (int i = 0; i < mainCardViewList.Length; ++i)
                     {
                         if (mainCardViewList[i].Id == card.Id)
+                        {
                             continue;
+                        }
 
                         mainCardViewList[i].Visibility = ViewStates.Gone;
                         mainCardViewList[i].CardElevation = 8;
@@ -809,7 +880,9 @@ namespace GFI_with_GFS_A
                     for (int i = 0; i < mainCardViewList.Length; ++i)
                     {
                         if (mainCardViewList[i].Id == card.Id)
+                        {
                             continue;
+                        }
 
                         mainCardViewList[i].Visibility = ViewStates.Visible;
                     }
@@ -830,7 +903,9 @@ namespace GFI_with_GFS_A
             try
             {
                 if (CheckSelfPermission(permission) == Permission.Denied)
+                {
                     RequestPermissions(new string[] { permission }, 0);
+                }
             }
             catch (Exception ex)
             {
@@ -894,10 +969,7 @@ namespace GFI_with_GFS_A
 
         public bool HasOnItemClick()
         {
-            if (ItemClick == null)
-                return false;
-            else
-                return true;
+            return !(ItemClick == null);
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)

@@ -387,6 +387,7 @@
   
   <!--FSTMain-->
   <string name="FSTDBMainActivity_Title">화력소대 목록</string>
+  <string name="FSTDBMainActivity_SearchHint">화력소대 이름 검색</string>
   
   <!--GFDInfo-->
   <string name="GFDInfo_Developer_Soomae">총괄 &amp; 디자인 : 수매</string>
