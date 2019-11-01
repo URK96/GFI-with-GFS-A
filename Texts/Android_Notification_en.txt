@@ -1,6 +1,6 @@
-﻿# T-Doll DB Update 2019/10/26
+﻿# T-Doll DB Update 2019/11/01
 
-- Add new T-Doll (Six12)
+- Add new costumes (QBU-88, G36C, M870, MG3, PSG-1, Model L, Type97S)
 
 
 

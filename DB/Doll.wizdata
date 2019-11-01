@@ -3308,7 +3308,7 @@
     <SkillExplain>자신에게 9999의 왜곡방벽을 생성한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간</SkillEffect>
     <SkillMag>8초,16초,4초</SkillMag>
-    <Costume>여름·불꽃놀이·양지의 시;행복을 향해서</Costume>
+    <Costume>여름·불꽃놀이·양지의 시;행복을 향해서;적안의 G36C</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Akane Fujita</VoiceActor>
@@ -6122,6 +6122,7 @@
     <SkillExplain>1.5초간 조준한 후에 가장 멀리 있는 적에게 피해를 준다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
     <SkillMag>10초,16초,6배</SkillMag>
+    <Costume>한밤중의 습격</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Asami Imai</VoiceActor>
@@ -7254,7 +7255,7 @@
     <SkillExplain>지속시간 동안 자신의 화력을 증가시키고 발사 중인 탄띠에 탄을 추가한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;발사 수 증가치</SkillEffect>
     <SkillMag>8초,18초,8초,30%,4발</SkillMag>
-    <Costume>휴일의 거리 풍경</Costume>
+    <Costume>휴일의 거리 풍경;밤이 되었습니다</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Risa Taneda</VoiceActor>
@@ -8045,6 +8046,7 @@
     <SkillExplain>지속시간 동안 자신의 화력을 증가시키고 발동 중 동시 타격 수를 5로 증가시킨다. (슬러그 효과 중복 X)</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect>
     <SkillMag>8초,16초,8초,120%</SkillMag>
+    <Costume>97계 병법</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Yuka Ootsubo</VoiceActor>
@@ -10319,6 +10321,7 @@
     <SkillExplain>지속시간 동안 자신의 사속과 명중을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치;명중 증가치</SkillEffect>
     <SkillMag>5초,8초,5초,40%,90%</SkillMag>
+    <Costume>흑야연옥찰</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Motoyoshi Yukiko</VoiceActor>
@@ -10700,6 +10703,7 @@
     <SkillExplain>지속시간 동안 자신에게 왜곡방벽을 두른다. 초당 일정 수치가 감소한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;방벽 수치;초당 감소량</SkillEffect>
     <SkillMag>10초,16초,6초,1000,100</SkillMag>
+    <Costume>펌킨 포트리스</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Morohoshi Sumire</VoiceActor>
@@ -11938,6 +11942,7 @@
     <SkillExplain>&lt;패시브&gt; 같은 적에게 연속 공격시 3발마다 좁은 범위의 폭발 피해를 추가한다.   &lt;액티브&gt; 1.5초간 조준 후, 체력이 가장 높은 적에게 피해를 주고 반경 1.5 범위 내의 적에게 폭발 피해를 준다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;저격 피해량;폭발 피해량</SkillEffect>
     <SkillMag>8초,16초,5배,1.5배</SkillMag>
+    <Costume>사탕 내놔라!</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>薯子Imoko</Illustrator>
     <HasCensor>false</HasCensor>
@@ -12855,15 +12860,16 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>A;A;B;A;A;B;B</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>108</Grow>
+    <HP>110</HP>
+    <FireRate>115</FireRate>
+    <Evasion>105</Evasion>
+    <Accuracy>110</Accuracy>
+    <AttackSpeed>115</AttackSpeed>
     <MoveSpeed>6</MoveSpeed>
     <Critical>40</Critical>
     <Bullet>4</Bullet>
+    <Armor>106</Armor>
     <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
     <ConsumeFood>40/65/90/115/140</ConsumeFood>
     <EffectFormation>0,0,0,1,0,2,1,0,0</EffectFormation>

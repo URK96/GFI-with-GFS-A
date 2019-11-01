@@ -14,4 +14,4 @@
 - Fix string issue on download dialog
 - Fix exception process on DB update
 - Fix error message issue on T-Doll image download
-- Optimize memory usuage
+- Optimize memory usage
