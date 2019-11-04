@@ -16,7 +16,7 @@ using Plugin.SimpleAudioPlayer;
 
 namespace GFI_with_GFS_A
 {
-    internal static class MusicRepository
+    /*internal static class MusicRepository
     {
         private static readonly string serverMusicPath = Path.Combine(ETC.server, "Data", "Music");
 
@@ -495,10 +495,10 @@ namespace GFI_with_GFS_A
                     MusicRepository.IsPlayerPlaying = false;
                 }
 
-                /*using (TimeOutWebClient wc = new TimeOutWebClient())
+                using (TimeOutWebClient wc = new TimeOutWebClient())
                 {
                     await wc.DownloadFileTaskAsync(path, Path.Combine(ETC.CachePath, "test.mp3"));
-                }*/
+                }
 
                 MusicRepository.player.SetDataSource(path);
                 MusicRepository.player.Prepare();
@@ -508,5 +508,5 @@ namespace GFI_with_GFS_A
                 ETC.LogError(ex);
             }
         }
-    }
+    }*/
 }

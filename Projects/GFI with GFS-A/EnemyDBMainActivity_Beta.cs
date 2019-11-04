@@ -76,10 +76,10 @@ namespace GFI_with_GFS_A
                     searchViewText = e.NewText;
                     _ = ListEnemy(searchViewText);
                 };
-                mEnemyRecyclerView = FindViewById<RecyclerView>(Resource.Id.EnemyDBRecyclerView);
+                mEnemyRecyclerView = FindViewById<RecyclerView>(Resource.Id.bEnemyDBRecyclerView);
                 mainLayoutManager = new LinearLayoutManager(this);
                 mEnemyRecyclerView.SetLayoutManager(mainLayoutManager);
-                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EnemyDBSnackbarLayout);
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.bEnemyDBSnackbarLayout);
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.SetTitle(Resource.String.EnemyDBMainActivity_Title);
@@ -113,7 +113,7 @@ namespace GFI_with_GFS_A
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            switch (item.ItemId)
+            switch (item?.ItemId)
             {
                 case Android.Resource.Id.Home:
                     OnBackPressed();

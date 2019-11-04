@@ -374,7 +374,7 @@ namespace GFI_with_GFS_A
                     case 0:
                         await Task.Run(() =>
                         {
-                            if (!string.IsNullOrEmpty(ETC.dollList.TableName))
+                            if (string.IsNullOrEmpty(ETC.dollList.TableName))
                             {
                                 ETC.LoadDBSync(ETC.dollList, "Doll.gfs", false);
                             }
@@ -398,7 +398,7 @@ namespace GFI_with_GFS_A
                     case 1:
                         await Task.Run(() => 
                         {
-                            if (!string.IsNullOrEmpty(ETC.equipmentList.TableName))
+                            if (string.IsNullOrEmpty(ETC.equipmentList.TableName))
                             {
                                 ETC.LoadDBSync(ETC.equipmentList, "Equipment.gfs", false);
                             }
@@ -417,7 +417,7 @@ namespace GFI_with_GFS_A
                     case 2:
                         await Task.Run(() => 
                         {
-                            if (!string.IsNullOrEmpty(ETC.fairyList.TableName))
+                            if (string.IsNullOrEmpty(ETC.fairyList.TableName))
                             {
                                 ETC.LoadDBSync(ETC.fairyList, "Fairy.gfs", false);
                             }
@@ -436,7 +436,7 @@ namespace GFI_with_GFS_A
                     case 3:
                         await Task.Run(() => 
                         {
-                            if (!string.IsNullOrEmpty(ETC.enemyList.TableName))
+                            if (string.IsNullOrEmpty(ETC.enemyList.TableName))
                             {
                                 ETC.LoadDBSync(ETC.enemyList, "Enemy.gfs", false);
                             }
@@ -455,7 +455,7 @@ namespace GFI_with_GFS_A
                     case 4:
                         await Task.Run(() => 
                         {
-                            if (!string.IsNullOrEmpty(ETC.FSTList.TableName))
+                            if (string.IsNullOrEmpty(ETC.FSTList.TableName))
                             {
                                 ETC.LoadDBSync(ETC.FSTList, "FST.gfs", false);
                             }

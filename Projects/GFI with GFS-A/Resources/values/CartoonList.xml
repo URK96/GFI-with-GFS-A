@@ -465,6 +465,8 @@
     <item>77 - 강력해진 춘전이</item>
     <item>78 - 파견 나온 아키텍트</item>
     <item>79 - 이상한 중제조</item>
+    <item>80 - 야한언니 에이전트</item>
+    <item>81 - 미인계</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -548,5 +550,7 @@
     <item>http://naver.me/5VfmgvK9</item>
     <item>http://naver.me/5GbGwHHU</item>
     <item>http://naver.me/FPX8lRgC</item>
+    <item>http://naver.me/FkbhF1lR</item>
+    <item>http://naver.me/GaQVGoFM</item>
   </string-array>
 </resources>

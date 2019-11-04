@@ -32,7 +32,7 @@ namespace GFI_with_GFS_A
         internal static Doll doll;
         internal static Doll cDoll;
         private DataRow DollInfoDR = null;
-        private int modIndex = 0;
+        internal static int modIndex = 0;
         private int vCostumeIndex = 0;
         private List<string> VoiceList = new List<string>();
 
@@ -165,6 +165,7 @@ namespace GFI_with_GFS_A
                             abilityFavor = 195;
                             break;
                     }
+
                     _ = LoadAbility();
                 };
                 ChartCompareList = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityChartCompareList);
@@ -253,9 +254,9 @@ namespace GFI_with_GFS_A
                 Level_List.Clear();
                 Favor_List.Clear();
 
-                Favor_List.Add("0 ~ 10");
-                Favor_List.Add("11 ~ 90");
-                Favor_List.Add("91 ~ 140");
+                Favor_List.Add("0 ~ 9");
+                Favor_List.Add("10 ~ 89");
+                Favor_List.Add("90 ~ 139");
 
                 switch (modIndex)
                 {
@@ -263,26 +264,26 @@ namespace GFI_with_GFS_A
                         for (int i = 1; i <= 100; ++i)
                             Level_List.Add(i);
 
-                        Favor_List.Add("141 ~ 150");
+                        Favor_List.Add("140 ~ 150");
                         break;
                     case 1:
                         for (int i = 100; i <= 110; ++i)
                             Level_List.Add(i);
 
-                        Favor_List.Add("141 ~ 150");
+                        Favor_List.Add("140 ~ 150");
                         break;
                     case 2:
                         for (int i = 110; i <= 115; ++i)
                             Level_List.Add(i);
 
-                        Favor_List.Add("141 ~ 150");
+                        Favor_List.Add("140 ~ 150");
                         break;
                     case 3:
                         for (int i = 115; i <= 120; ++i)
                             Level_List.Add(i);
 
-                        Favor_List.Add("141 ~ 190");
-                        Favor_List.Add("191 ~ 200");
+                        Favor_List.Add("140 ~ 189");
+                        Favor_List.Add("190 ~ 200");
                         break;
                 }
 
@@ -294,6 +295,8 @@ namespace GFI_with_GFS_A
 
                 AbilityLevelSelector.Adapter = adapter;
                 AbilityFavorSelector.Adapter = adapter2;
+
+                AbilityFavorSelector.SetSelection(1);
             }
             catch (Exception ex)
             {
@@ -1174,7 +1177,7 @@ namespace GFI_with_GFS_A
 
                     string[] basicRatio = doll.Abilities[abilities[i]].Split(';');
                     int value = (modIndex == 0) ? DAS.CalcAbility(abilities[i], int.Parse(basicRatio[0]), int.Parse(growRatio[0]), abilityLevel, abilityFavor, false) :
-                        DAS.CalcAbility(abilities[i], int.Parse(basicRatio[1]), int.Parse(growRatio[1]), abilityLevel, abilityFavor, false);
+                        DAS.CalcAbility(abilities[i], int.Parse(basicRatio[1]), int.Parse(growRatio[1]), abilityLevel, abilityFavor, true);
 
                     ProgressBar pb = FindViewById<ProgressBar>(progresses[i]);
                     pb.Progress = value;
@@ -1335,6 +1338,7 @@ namespace GFI_with_GFS_A
                 ListAbilityLevelFavor();
 
                 _ = InitLoadProcess(false);
+                _ = LoadChart(ChartCompareList.SelectedItemPosition);
             }
             catch (Exception ex)
             {
@@ -1441,20 +1445,20 @@ namespace GFI_with_GFS_A
 
                     string[] abilities = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
                     int[] compareAbilityValues = { 0, 0, 0, 0, 0, 0 };
-                    int growRatio = int.Parse(cDoll.Abilities["Grow"].Split(';')[0]);
+                    int growRatio = (modIndex == 0) ? int.Parse(cDoll.Abilities["Grow"].Split(';')[0]) : int.Parse(cDoll.Abilities["Grow"].Split(';')[1]);
 
                     for (int i = 0; i < abilities.Length; ++i)
                     {
-                        int baseRatio = int.Parse(cDoll.Abilities[abilities[i]].Split(';')[0]);
+                        int baseRatio = (modIndex == 0) ? int.Parse(cDoll.Abilities[abilities[i]].Split(';')[0]) : int.Parse(cDoll.Abilities[abilities[i]].Split(';')[1]);
 
-                        compareAbilityValues[i] = DAS.CalcAbility(abilities[i], baseRatio, growRatio, abilityLevel, abilityFavor, false);
+                        compareAbilityValues[i] = DAS.CalcAbility(abilities[i], baseRatio, growRatio, 100, 50, false);
                     }
 
                     if (doll.Type == "SG")
                     {
-                        int baseRatio = int.Parse(cDoll.Abilities["Armor"].Split(';')[0]);
+                        int baseRatio = (modIndex == 0) ? int.Parse(cDoll.Abilities["Armor"].Split(';')[0]) : int.Parse(cDoll.Abilities["Armor"].Split(';')[1]);
 
-                        compareAbilityValues[5] = DAS.CalcAbility("Armor", baseRatio, growRatio, abilityLevel, abilityFavor, false);
+                        compareAbilityValues[5] = DAS.CalcAbility("Armor", baseRatio, growRatio, 100, 50, false);
                     }
                     else compareAbilityValues[5] = 0;
 

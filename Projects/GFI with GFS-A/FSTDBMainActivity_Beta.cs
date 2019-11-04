@@ -68,10 +68,10 @@ namespace GFI_with_GFS_A
                     searchViewText = e.NewText;
                     _ = ListFST(searchViewText);
                 };
-                mFSTListView = FindViewById<RecyclerView>(Resource.Id.FSTDBRecyclerView);
+                mFSTListView = FindViewById<RecyclerView>(Resource.Id.bFSTDBRecyclerView);
                 mainRecyclerManager = new LinearLayoutManager(this);
                 mFSTListView.SetLayoutManager(mainRecyclerManager);
-                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FSTDBSnackbarLayout);
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.bFSTDBSnackbarLayout);
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.SetTitle(Resource.String.FSTDBMainActivity_Title);
