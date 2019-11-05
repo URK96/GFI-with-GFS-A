@@ -26,3 +26,6 @@ dotnet_diagnostic.CA2000.severity = suggestion
 
 # CA1707: 식별자에는 밑줄을 사용할 수 없습니다.
 dotnet_diagnostic.CA1707.severity = suggestion
+
+# CA1814: 다차원 배열보다 가변 배열을 사용하세요.
+dotnet_diagnostic.CA1814.severity = suggestion

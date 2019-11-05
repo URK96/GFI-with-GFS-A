@@ -2,6 +2,7 @@
 using Android.Content;
 using Android.OS;
 using Android.Support.Design.Widget;
+using Android.Support.V4.App;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
@@ -33,18 +34,6 @@ namespace GFI_with_GFS_A
         readonly int[] typeFilters = { Resource.Id.DollFilterTypeHG, Resource.Id.DollFilterTypeSMG, Resource.Id.DollFilterTypeAR, Resource.Id.DollFilterTypeRF, Resource.Id.DollFilterTypeMG, Resource.Id.DollFilterTypeSG};
         readonly int[] productTimeFilters = { Resource.Id.DollFilterProductHour, Resource.Id.DollFilterProductMinute, Resource.Id.DollFilterProductNearRange };
         readonly int modFilter = Resource.Id.DollFilterOnlyMod;
-
-        readonly string[] sortTypeList =
-        {
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_Name),
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_Number),
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_ProductTime),
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_HP),
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_FR),
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_EV),
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_AC),
-            ETC.Resources.GetString(Resource.String.Sort_SortMethod_AS),
-        };
 
         private bool[] hasApplyFilter = { false, false, false, false };
         private int[] filterProductTime = { 0, 0, 0 };
@@ -582,11 +571,16 @@ namespace GFI_with_GFS_A
 
         private async void Adapter_ItemClick(object sender, int position)
         {
+            LinearLayout layout = FindViewById<LinearLayout>(Resource.Id.DollListMainLayout);
+            ArrayAdapter adapter = sender as ArrayAdapter;
+            View view = adapter.GetView(position, layout, null);
+
             await Task.Delay(100);
             var DollInfo = new Intent(this, typeof(DollDBDetailActivity));
             DollInfo.PutExtra("DicNum", subList[position].DicNumber);
-            StartActivity(DollInfo);
-            OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
+            ActivityOptionsCompat options = ActivityOptionsCompat.MakeSceneTransitionAnimation(this, view, view.TransitionName);
+            StartActivity(DollInfo, options.ToBundle()) ;
+            //OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }
 
         private bool CheckDollByProductTime(int[] pTime, int range, int dTime)
