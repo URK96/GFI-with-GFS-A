@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <android.support.v4.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
@@ -126,24 +126,28 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:background="@android:color/transparent"
                             android:src="@drawable/mod_0"
                             android:id="@+id/bDollDBDetailModSelect0" />
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:background="@android:color/transparent"
                             android:src="@drawable/mod_1"
                             android:id="@+id/bDollDBDetailModSelect1" />
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:background="@android:color/transparent"
                             android:src="@drawable/mod_2"
                             android:id="@+id/bDollDBDetailModSelect2" />
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:background="@android:color/transparent"
                             android:src="@drawable/mod_3"
                             android:id="@+id/bDollDBDetailModSelect3" />
                     </LinearLayout>
@@ -182,7 +186,7 @@
                 android:background="@android:color/transparent"
                 android:src="@drawable/ArrowDown"
                 android:scaleType="fitCenter"
-			    android:layout_alignBottom="@id/bDollDBDetailBasicLayout"
+			    android:layout_below="@id/bDollDBExtraFeatureLayout"
 			    android:id="@+id/bDollDBExtraFeatureButton"/>
         </RelativeLayout>
         <android.support.design.widget.CoordinatorLayout

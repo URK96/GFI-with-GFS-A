@@ -571,16 +571,11 @@ namespace GFI_with_GFS_A
 
         private async void Adapter_ItemClick(object sender, int position)
         {
-            LinearLayout layout = FindViewById<LinearLayout>(Resource.Id.DollListMainLayout);
-            ArrayAdapter adapter = sender as ArrayAdapter;
-            View view = adapter.GetView(position, layout, null);
-
             await Task.Delay(100);
             var DollInfo = new Intent(this, typeof(DollDBDetailActivity));
             DollInfo.PutExtra("DicNum", subList[position].DicNumber);
-            ActivityOptionsCompat options = ActivityOptionsCompat.MakeSceneTransitionAnimation(this, view, view.TransitionName);
-            StartActivity(DollInfo, options.ToBundle()) ;
-            //OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
+            StartActivity(DollInfo) ;
+            OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }
 
         private bool CheckDollByProductTime(int[] pTime, int range, int dTime)

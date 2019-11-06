@@ -1,0 +1,13 @@
+<2.4.6 수정사항>
+
+- 화력소대, 적 DB 리스트 베타 레이아웃 추가
+- 만화 컨텐츠 추가
+- 앱 알림 기능 추가
+- 개조 인형 능력치 계산 오류 수정
+- 만화 다운로드 시 오류가 발생하는 현상 수정
+
+- Add FST, Enemy DB list beta layout
+- Add cartoon content
+- Add app notification feature
+- Fix MOD T-Doll ability issue
+- Fix cartoon download issue

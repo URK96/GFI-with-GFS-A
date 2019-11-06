@@ -686,13 +686,12 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.4.5 Update]\n\n
-- Add DB list beta layout\n
-- Change DB sort layout\n
-- Add cartoon category\n
-- Fix string issue on download dialog\n
-- Fix exception process on DB update\n
-- Fix error message issue on T-Doll image download\n
-- Optimize memory usuage
+    [2.4.6 Update]\n\n
+- Add FST, Enemy DB list beta layout\n
+- Add cartoon content\n
+- Add app notification feature\n
+- Fix MOD T-Doll ability issue\n
+- Fix cartoon download issue
+
   </string>
 </resources>

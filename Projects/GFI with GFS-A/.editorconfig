@@ -29,3 +29,6 @@ dotnet_diagnostic.CA1707.severity = suggestion
 
 # CA1814: 다차원 배열보다 가변 배열을 사용하세요.
 dotnet_diagnostic.CA1814.severity = suggestion
+
+# CA1822: 멤버를 static으로 표시하세요.
+dotnet_diagnostic.CA1822.severity = suggestion

@@ -224,6 +224,10 @@ namespace GFI_with_GFS_A
             {
                 AppCenter.Start("aca0ed39-4b25-4548-bf2a-ac92ccee2977", typeof(Analytics), typeof(Crashes), typeof(Push));
             }
+            else
+            {
+                AppCenter.Start("aca0ed39-4b25-4548-bf2a-ac92ccee2977", typeof(Push));
+            }
         }
 
         internal static void SetLanguage(Context context)

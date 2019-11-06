@@ -589,64 +589,63 @@ namespace GFI_with_GFS_A
 
             Android.Support.V7.App.AlertDialog dialog;
 
-            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload))
+            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload);
+            ad.SetTitle(Resource.String.Cartoon_DownloadCartoonTitle);
+            ad.SetMessage(Resource.String.Cartoon_DownloadCartoonMessage);
+            ad.SetCancelable(false);
+            ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
+
+            dialog = ad.Show();
+
+            try
             {
-                ad.SetTitle(Resource.String.Cartoon_DownloadCartoonTitle);
-                ad.SetMessage(Resource.String.Cartoon_DownloadCartoonMessage);
-                ad.SetCancelable(false);
-                ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
+                string ServerItemPath = Path.Combine(ETC.server, "Data", "Images", "Cartoon", "ko", category, selectedItemList[itemIndex]);
 
-                dialog = ad.Show();
+                count = 1;
 
-                try
+                while (true)
                 {
-                    string ServerItemPath = Path.Combine(ETC.server, "Data", "Images", "Cartoon", "ko", category, selectedItemList[itemIndex]);
+                    string contentPath = Path.Combine(ServerItemPath, $"{count}.png");
+                    string localContentPath = Path.Combine(cartoonTopPath, category, itemIndex.ToString(), $"{count}.gfdcache");
 
-                    count = 1;
+                    Uri.TryCreate(contentPath, UriKind.RelativeOrAbsolute, out uri);
+                    WebRequest request = WebRequest.Create(uri);
 
-                    while (true)
+                    using (WebResponse response = await request.GetResponseAsync().ConfigureAwait(false))
                     {
-                        string contentPath = Path.Combine(ServerItemPath, $"{count}.png");
-                        string localContentPath = Path.Combine(cartoonTopPath, category, itemIndex.ToString(), $"{count}.gfdcache");
-
-                        Uri.TryCreate(contentPath, UriKind.RelativeOrAbsolute, out uri);
-                        WebRequest request = WebRequest.Create(uri);
-
-                        using (WebResponse response = await request.GetResponseAsync().ConfigureAwait(false))
+                        if (response.ContentType != "image/png")
                         {
-                            if (response.ContentType != "image/png")
-                            {
-                                break;
-                            }
+                            break;
                         }
-
-                        using (WebClient wc = new WebClient())
-                        {
-                            wc.DownloadProgressChanged += (sender, e) =>
-                            {
-                                string message = Resources.GetString(Resource.String.Cartoon_DownloadCartoonMessage);
-                                Activity.RunOnUiThread(() => { ad.SetMessage($"{message}{count}({e.BytesReceived / 1024}KB)"); });
-                            };
-                            await wc.DownloadFileTaskAsync(contentPath, localContentPath);
-                        }
-
-                        count += 1;
                     }
-                }
-                catch (Exception ex)
-                {
-                    ETC.LogError(ex, Activity);
-                }
-                finally
-                {
-                    dialog.Dismiss();
+
+                    using (WebClient wc = new WebClient())
+                    {
+                        wc.DownloadProgressChanged += (sender, e) =>
+                        {
+                            string message = Resources.GetString(Resource.String.Cartoon_DownloadCartoonMessage);
+                            Activity.RunOnUiThread(() => { ad.SetMessage($"{message}{count}({e.BytesReceived / 1024}KB)"); });
+                        };
+                        await wc.DownloadFileTaskAsync(contentPath, localContentPath);
+                    }
+
+                    count += 1;
                 }
             }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, Activity);
+            }
+            finally
+            {
+                dialog.Dismiss();
+            }
+            
         }
 
-        internal void ListItemURLs(int Category_Index, ref List<string> list)
+        internal void ListItemURLs(int categoryIndex, ref List<string> list)
         {
-            switch (Category_Index)
+            switch (categoryIndex)
             {
                 case 7:
                     list.AddRange(Resources.GetStringArray(Resource.Array.mota6nako_GF_URL));
