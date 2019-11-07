@@ -22,8 +22,8 @@ using Android.Support.Transitions;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class DollDBDetailActivity_Beta : BaseFragmentActivity
+    [Activity(Label = "", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class DollDBDetailActivity_Beta : BaseAppCompatActivity
     {
         private LinearLayout skillTableSubLayout;
         private LinearLayout modSkillTableSubLayout;
@@ -47,6 +47,7 @@ namespace GFI_with_GFS_A
         private bool isEnableFABMenu = false;
         private bool isChartLoad = false;
 
+        private Android.Support.V7.Widget.Toolbar toolbar;
         private SwipeRefreshLayout refreshMainLayout;
         private ScrollView scrollLayout;
         private CoordinatorLayout snackbarLayout;
@@ -83,6 +84,12 @@ namespace GFI_with_GFS_A
                 dollInfoDR = ETC.FindDataRow(ETC.dollList, "DicNumber", Intent.GetIntExtra("DicNum", 0));
                 doll = new Doll(dollInfoDR);
                 das = new DollAbilitySet(doll.Type);
+
+                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.bDollDBDetailMainToolbar);
+
+                SetSupportActionBar(toolbar);
+                SupportActionBar.Title = $"No.{doll.DicNumber} {doll.Name}";
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
                 refreshMainLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.bDollDBDetailMainRefreshLayout);
                 snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBDetailSnackbarLayout);
@@ -673,17 +680,40 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task InitLoadProcess(bool IsRefresh)
+        private async Task InitLoadProcess(bool isRefresh)
         {
-            
-
             await Task.Delay(100);
 
             try
             {
                 refreshMainLayout.Refreshing = true;
+                TransitionManager.BeginDelayedTransition(refreshMainLayout);
 
                 // 인형 타이틀 바 초기화
+
+                Android.Graphics.Color toolbarColor;
+
+                switch (doll.Grade)
+                {
+                    case 2:
+                        toolbarColor = Android.Graphics.Color.SlateGray;
+                        break;
+                    case 3:
+                        toolbarColor = Android.Graphics.Color.AliceBlue;
+                        break;
+                    case 4:
+                        toolbarColor = Android.Graphics.Color.LawnGreen;
+                        break;
+                    case 5:
+                        toolbarColor = Android.Graphics.Color.Gold;
+                        break;
+                    default:
+                    case 0:
+                        toolbarColor = Android.Graphics.Color.Violet;
+                        break;
+                }
+
+                toolbar.SetBackgroundColor(toolbarColor);
 
                 if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false))
                 {
@@ -692,7 +722,7 @@ namespace GFI_with_GFS_A
                         string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal", $"{doll.DicNumber}.png");
                         string target = Path.Combine(ETC.cachePath, "Doll", "Normal", $"{doll.DicNumber}.gfdcache");
 
-                        if (!File.Exists(target) || IsRefresh)
+                        if (!File.Exists(target) || isRefresh)
                         {
                             using (WebClient wc = new WebClient())
                             {
@@ -703,7 +733,7 @@ namespace GFI_with_GFS_A
                         Drawable drawable = Drawable.CreateFromPath(target);
                         drawable.SetAlpha(40);
 
-                        FindViewById<RelativeLayout>(Resource.Id.DollDBDetailMainLayout).Background = drawable;
+                        FindViewById<ImageView>(Resource.Id.bDollDBDetailBackgroundImageView).SetImageDrawable(drawable);
                     }
                     catch (Exception ex)
                     {
@@ -711,24 +741,22 @@ namespace GFI_with_GFS_A
                     }
                 }
 
-                string FileName = doll.DicNumber.ToString();
-
-                if (modIndex == 3)
-                    FileName += "_M";
+                string fileName = (modIndex == 3) ? doll.DicNumber.ToString() : $"{doll.DicNumber.ToString()}_M";
 
                 try
                 {
-                    string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal_Crop", $"{FileName}.png");
-                    string target = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{FileName}.gfdcache");
+                    string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal_Crop", $"{fileName}.png");
+                    string target = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{fileName}.gfdcache");
 
-                    if (!File.Exists(target) || IsRefresh == true)
+                    if (!File.Exists(target) || isRefresh)
                     {
                         using (WebClient wc = new WebClient())
+                        {
                             await wc.DownloadFileTaskAsync(url, target);
+                        }
                     }
 
-                    ImageView DollSmallImage = FindViewById<ImageView>(Resource.Id.bDollDBDetailSmallImage);
-                    DollSmallImage.SetImageDrawable(Drawable.CreateFromPath(target));
+                    FindViewById<ImageView>(Resource.Id.bDollDBDetailSmallImage).SetImageDrawable(Drawable.CreateFromPath(target));
                 }
                 catch (Exception ex)
                 {
@@ -743,14 +771,14 @@ namespace GFI_with_GFS_A
 
                 // 인형 기본 정보 초기화
 
-                /*int[] GradeStarIds = 
+                int[] GradeStarIds = 
                 {
-                    Resource.Id.DollDBDetailInfoGrade1,
-                    Resource.Id.DollDBDetailInfoGrade2,
-                    Resource.Id.DollDBDetailInfoGrade3,
-                    Resource.Id.DollDBDetailInfoGrade4,
-                    Resource.Id.DollDBDetailInfoGrade5,
-                    Resource.Id.DollDBDetailInfoGrade6
+                    Resource.Id.bDollDBDetailInfoGrade1,
+                    Resource.Id.bDollDBDetailInfoGrade2,
+                    Resource.Id.bDollDBDetailInfoGrade3,
+                    Resource.Id.bDollDBDetailInfoGrade4,
+                    Resource.Id.bDollDBDetailInfoGrade5,
+                    Resource.Id.bDollDBDetailInfoGrade6
                 };
 
                 int Grade = (modIndex > 0) ? doll.ModGrade : doll.Grade;
@@ -758,14 +786,18 @@ namespace GFI_with_GFS_A
                 if (Grade == 0)
                 {
                     for (int i = 1; i < GradeStarIds.Length; ++i)
+                    {
                         FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
+                    }
 
                     FindViewById<ImageView>(GradeStarIds[0]).SetImageResource(Resource.Drawable.Grade_Star_EX);
                 }
                 else
                 {
                     for (int i = Grade; i < GradeStarIds.Length; ++i)
+                    {
                         FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
+                    }
 
                     for (int i = 0; i < Grade; ++i)
                     {
@@ -788,9 +820,9 @@ namespace GFI_with_GFS_A
 
                 int[] buffIds = 
                 {
-                    Resource.Id.DollDBDetailBuff1, Resource.Id.DollDBDetailBuff2, Resource.Id.DollDBDetailBuff3,
-                    Resource.Id.DollDBDetailBuff4, Resource.Id.DollDBDetailBuff5, Resource.Id.DollDBDetailBuff6,
-                    Resource.Id.DollDBDetailBuff7, Resource.Id.DollDBDetailBuff8, Resource.Id.DollDBDetailBuff9
+                    Resource.Id.bDollDBDetailBuff1, Resource.Id.bDollDBDetailBuff2, Resource.Id.bDollDBDetailBuff3,
+                    Resource.Id.bDollDBDetailBuff4, Resource.Id.bDollDBDetailBuff5, Resource.Id.bDollDBDetailBuff6,
+                    Resource.Id.bDollDBDetailBuff7, Resource.Id.bDollDBDetailBuff8, Resource.Id.bDollDBDetailBuff9
                 };
                 int[] buffData = (modIndex == 0) ? doll.BuffFormation : doll.ModBuffFormation;
 
@@ -817,9 +849,9 @@ namespace GFI_with_GFS_A
                     FindViewById<View>(buffIds[i]).SetBackgroundColor(color);
                 }
 
-                int[] buffIconIds = { Resource.Id.DollDBDetailBuffIcon1, Resource.Id.DollDBDetailBuffIcon2 };
-                int[] buffIconNameIds = { Resource.Id.DollDBDetailBuffName1, Resource.Id.DollDBDetailBuffName2 };
-                int[] buffDetailIds = { Resource.Id.DollDBDetailBuffDetail1, Resource.Id.DollDBDetailBuffDetail2 };
+                int[] buffIconIds = { Resource.Id.bDollDBDetailBuffIcon1, Resource.Id.bDollDBDetailBuffIcon2 };
+                int[] buffIconNameIds = { Resource.Id.bDollDBDetailBuffName1, Resource.Id.bDollDBDetailBuffName2 };
+                int[] buffDetailIds = { Resource.Id.bDollDBDetailBuffDetail1, Resource.Id.bDollDBDetailBuffDetail2 };
 
                 string[] buff = (modIndex >= 1) ? doll.ModBuffInfo : doll.BuffInfo;
                 string[] buffType = buff[0].Split(',');
@@ -883,30 +915,39 @@ namespace GFI_with_GFS_A
                         EffectString[j].Append("%");
 
                         if (i < (buff.Length - 1))
+                        {
                             EffectString[j].Append(" | ");
+                        }
                     }
                 }
 
                 for (int i = 0; i < buffType.Length; ++i)
+                {
                     FindViewById<TextView>(buffDetailIds[i]).Text = EffectString[i].ToString();
+                }
 
                 var EffectTypeView = FindViewById<TextView>(Resource.Id.DollDBDetailEffectType);
 
                 if (doll.BuffType[0] == "ALL")
+                {
                     EffectTypeView.Text = Resources.GetString(Resource.String.DollDBDetail_BuffType_All);
+                }
                 else
                 {
                     StringBuilder sb = new StringBuilder();
 
                     foreach (string type in doll.BuffType)
+                    {
                         sb.Append($"{type} ");
+                    }
+
                     EffectTypeView.Text = $"{sb.ToString()} {Resources.GetString(Resource.String.DollDBDetail_BuffType_ConfirmString)}";
                 }
 
 
                 // 인형 스킬 정보 초기화
 
-                string SkillName = doll.SkillName;
+                /*string SkillName = doll.SkillName;
 
                 try
                 {
@@ -1045,15 +1086,16 @@ namespace GFI_with_GFS_A
                 double[] DPS = ETC.CalcDPS(abilityValues[1], abilityValues[4], 0, abilityValues[3], 3, int.Parse(doll.Abilities["Critical"]), 5);
                 FindViewById<TextView>(Resource.Id.DollInfoDPSStatus).Text = $"{DPS[0].ToString("F2")} ~ {DPS[1].ToString("F2")}";
 
-                if (ETC.useLightTheme)
-                    SetCardTheme();
+                
 
-                _ = LoadChart(chartCompareList.SelectedItemPosition);
+                _ = LoadChart(chartCompareList.SelectedItemPosition);*/
+
+                if (ETC.useLightTheme)
+                {
+                    SetCardTheme();
+                }
 
                 ShowCardViewVisibility();
-                
-                HideFloatingActionButtonAnimation();*/
-
                 ShowTitleSubLayout();
 
                 //LoadAD();

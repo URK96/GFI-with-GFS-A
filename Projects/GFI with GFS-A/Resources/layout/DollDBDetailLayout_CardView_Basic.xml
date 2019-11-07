@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto">
+<android.support.v7.widget.CardView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+	android:visibility="gone"
+    android:id="@+id/bDollDBDetailBasicInfoCardLayout"
+    cardview:cardElevation="4dp"
+    cardview:cardCornerRadius="5dp"
+    cardview:cardBackgroundColor="@color/background_material_dark">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bDollDBDetailBasicInfoLayout">
+    <!--Doll Basic Info - Grade Part-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/Common_Grade"
+                android:gravity="center" />
+            <include layout="@layout/seperatebar_vertical"/>
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal">
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/bDollDBDetailInfoGrade1" />
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/bDollDBDetailInfoGrade2" />
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/bDollDBDetailInfoGrade3" />
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/bDollDBDetailInfoGrade4" />
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/bDollDBDetailInfoGrade5" />
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/bDollDBDetailInfoGrade6" />
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+    <!--Doll Basic Info - Type Part-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/Common_GunType"
+                android:gravity="center" />
+            <include layout="@layout/seperatebar_vertical"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/bDollDBDetailInfoType"
+                android:gravity="center" />
+        </LinearLayout>
+    <!--Doll Basic Info - Name Part-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/Common_Name"
+                android:gravity="center" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/bDollDBDetailInfoName"
+                android:gravity="center" />
+        </LinearLayout>
+    <!--Doll Basic Info - NickName Part-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/Common_NickName"
+                android:gravity="center" />
+            <include layout="@layout/seperatebar_vertical"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/bDollDBDetailInfoNickName"
+                android:gravity="center" />
+        </LinearLayout>
+    <!--Doll Basic Info - RealModel Part-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/Common_RealGunModel"
+                android:gravity="center" />
+            <include layout="@layout/seperatebar_vertical"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/bDollDBDetailInfoRealModel"
+                android:gravity="center" />
+        </LinearLayout>
+    <!--Doll Basic Info - Country Part-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/Common_ProductCountry"
+                android:gravity="center" />
+            <include layout="@layout/seperatebar_vertical"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/bDollDBDetailInfoCountry"
+                android:gravity="center" />
+        </LinearLayout>
+    <!--Doll Basic Info - Illustrator Part-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/Common_Illustrator"
+                android:gravity="center" />
+            <include layout="@layout/seperatebar_vertical"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/bDollDBDetailInfoIllustrator"
+                android:gravity="center" />
+        </LinearLayout>
+    <!--Doll Basic Info - VoiceActor Part-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/Common_VoiceActor"
+                android:gravity="center" />
+            <include layout="@layout/seperatebar_vertical"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/bDollDBDetailInfoVoiceActor"
+                android:gravity="center" />
+        </LinearLayout>
+    <!--Doll Basic Info - Gain Part-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/Common_HowToGain"
+                android:gravity="center" />
+            <include layout="@layout/seperatebar_vertical"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/bDollDBDetailInfoHowToGain"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+</merge>
