@@ -4,7 +4,7 @@
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/bDollDBDetailMainRefreshLayout">
+    android:id="@+id/DollDBDetailMainRefreshLayout">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
             android:minHeight="?android:attr/actionBarSize"
             android:background="@color/MainColor"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            android:id="@+id/bDollDBDetailMainToolbar"/>
+            android:id="@+id/DollDBDetailMainToolbar"/>
         <RelativeLayout 
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -23,38 +23,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitCenter"
-                android:id="@+id/bDollDBDetailBackgroundImageView" />
+                android:id="@+id/DollDBDetailBackgroundImageView" />
             <!--Doll Title Layout-->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/bDollDBDetailBasicLayout">
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                android:id="@+id/DollDBDetailBasicLayout">
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_margin="10dp"
-                    android:layout_alignParentLeft="true"
-                    android:id="@+id/bDollDBDetailSmallImageLayout">
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:id="@+id/bDollDBDetailSmallImage" />
-                </FrameLayout>
+                    android:id="@+id/DollDBDetailSmallImage" />
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:layout_toRightOf="@id/bDollDBDetailSmallImageLayout"
+                    android:layout_toRightOf="@id/DollDBDetailSmallImage"
                     android:gravity="center"
-                    android:id="@+id/bDollDBDetailBasicInfoLayout">
+                    android:id="@+id/DollDBDetailBasicInfoLayout">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:gravity="center"
                         android:layout_marginBottom="2dp"
-                        android:id="@+id/bDollDBDetailDollDicNumber" />
+                        android:id="@+id/DollDBDetailDollDicNumber" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -62,40 +56,41 @@
                         android:gravity="center"
                         android:layout_marginTop="2dp"
                         android:layout_marginBottom="2dp"
-                        android:id="@+id/bDollDBDetailDollName" />
+                        android:id="@+id/DollDBDetailDollName" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:layout_marginTop="2dp"
-                        android:id="@+id/bDollDBDetailDollProductTime" />
+                        android:id="@+id/DollDBDetailDollProductTime" />
                 </LinearLayout>
 			    <TextView
 				    android:layout_width="match_parent"
 				    android:layout_height="wrap_content"
-				    android:layout_below="@id/bDollDBDetailSmallImageLayout"
+                    android:layout_marginTop="10dp"
+				    android:layout_below="@id/DollDBDetailSmallImage"
 				    android:gravity="center"
-				    android:id="@+id/bDollDBDetailDollProductDialog"/>
+				    android:id="@+id/DollDBDetailDollProductDialog"/>
 			    <LinearLayout
 				    android:orientation="vertical"
 				    android:layout_width="match_parent"
 				    android:layout_height="wrap_content"
-				    android:layout_below="@id/bDollDBDetailDollProductDialog"
+				    android:layout_below="@id/DollDBDetailDollProductDialog"
 				    android:layout_margin="10dp"
 				    android:visibility="gone"
-				    android:id="@+id/bDollDBExtraFeatureLayout">
+				    android:id="@+id/DollDBExtraFeatureLayout">
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:visibility="gone"
-                        android:id="@+id/bDollDBDetailVoiceLayout">
+                        android:id="@+id/DollDBDetailVoiceLayout">
 				        <Spinner
 					        android:layout_width="match_parent"
 					        android:layout_height="wrap_content"
 					        android:gravity="center"
-					        android:id="@+id/bDollDBDetailVoiceCostumeSelector"/>
+					        android:id="@+id/DollDBDetailVoiceCostumeSelector"/>
                         <LinearLayout
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
@@ -104,13 +99,13 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="4"
-                                android:id="@+id/bDollDBDetailVoiceSelector" />
+                                android:id="@+id/DollDBDetailVoiceSelector" />
                             <Button
                                 android:layout_width="20dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/Common_Play"
-                                android:id="@+id/bDollDBDetailVoicePlayButton" />
+                                android:id="@+id/DollDBDetailVoicePlayButton" />
                         </LinearLayout>
                         <ProgressBar
                             android:layout_width="match_parent"
@@ -118,16 +113,16 @@
                             style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
                             android:progressTint="@color/ProgressBarColor"
                             android:visibility="invisible"
-                            android:id="@+id/bDollDBDetailVoiceDownloadProgress" />
+                            android:id="@+id/DollDBDetailVoiceDownloadProgress" />
                     </LinearLayout>
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:layout_below="@id/bDollDBDetailVoiceLayout"
+                        android:layout_below="@id/DollDBDetailVoiceLayout"
                         android:visibility="gone"
-                        android:id="@+id/bDollDBDetailModSelectLayout">
+                        android:id="@+id/DollDBDetailModSelectLayout">
                         <LinearLayout
                             android:orientation="horizontal"
                             android:layout_height="wrap_content"
@@ -137,34 +132,34 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:src="@drawable/mod_0"
-                                android:id="@+id/bDollDBDetailModSelect0" />
+                                android:id="@+id/DollDBDetailModSelect0" />
                             <ImageButton
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:src="@drawable/mod_1"
-                                android:id="@+id/bDollDBDetailModSelect1" />
+                                android:id="@+id/DollDBDetailModSelect1" />
                             <ImageButton
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:src="@drawable/mod_2"
-                                android:id="@+id/bDollDBDetailModSelect2" />
+                                android:id="@+id/DollDBDetailModSelect2" />
                             <ImageButton
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:src="@drawable/mod_3"
-                                android:id="@+id/bDollDBDetailModSelect3" />
+                                android:id="@+id/DollDBDetailModSelect3" />
                         </LinearLayout>
                     </LinearLayout>
 			        <LinearLayout
 				        android:orientation="horizontal"
 				        android:layout_width="match_parent"
 				        android:layout_height="wrap_content"
-				        android:layout_below="@id/bDollDBDetailModSelectLayout"
+				        android:layout_below="@id/DollDBDetailModSelectLayout"
 				        android:visibility="gone"
-				        android:id="@+id/bDollDBDetailExtraButtonLayout">
+				        android:id="@+id/DollDBDetailExtraButtonLayout">
                         <Button
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -173,7 +168,7 @@
 				            android:layout_marginRight="5dp"
 				            android:visibility="gone"
                             android:text="@string/DollDBDetailLayout_ModStory"
-                            android:id="@+id/bDollDBDetailModStoryButton" />
+                            android:id="@+id/DollDBDetailModStoryButton" />
 			            <Button
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -181,7 +176,7 @@
 				            android:layout_marginLeft="5dp"
 				            android:layout_marginRight="5dp"
                             android:text="@string/DollDBDetailLayout_ModelData"
-                            android:id="@+id/bDollDBDetailModelDataButton"/>
+                            android:id="@+id/DollDBDetailModelDataButton"/>
 			        </LinearLayout>
 		        </LinearLayout>
                 <ImageButton
@@ -192,29 +187,33 @@
                     android:background="@android:color/transparent"
                     android:src="@drawable/ArrowDown"
                     android:scaleType="fitCenter"
-			        android:layout_alignBottom="@id/bDollDBDetailBasicLayout"
-			        android:id="@+id/bDollDBExtraFeatureButton"/>
+			        android:layout_below="@id/DollDBExtraFeatureLayout"
+			        android:id="@+id/DollDBExtraFeatureButton"/>
             </RelativeLayout>
             <!--Scroll Part-->
-            <ScrollView
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_below="@id/bDollDBDetailBasicLayout"
-                android:id="@+id/bDollDBDetailScrollLayout">
+                android:layout_below="@id/DollDBDetailBasicLayout"
+                android:id="@+id/DollDBDetailScrollLayout">
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                     <include layout="@layout/dolldbdetaillayout_cardview_basic"/>
                     <include layout="@layout/dolldbdetaillayout_cardview_buff"/>
+                    <include layout="@layout/dolldbdetaillayout_cardview_skill"/>
+                    <include layout="@layout/dolldbdetaillayout_cardview_modskill"/>
+                    <include layout="@layout/dolldbdetaillayout_cardview_ability"/>
+                    <include layout="@layout/dolldbdetaillayout_cardview_abilitychart"/>
                 </LinearLayout>
-            </ScrollView>
+            </android.support.v4.widget.NestedScrollView>
             <android.support.design.widget.CoordinatorLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/bDollDBDetailSnackbarLayout"
-                android:layout_alignTop="@id/bDollDBDetailMainToolbar" />
+                android:id="@+id/DollDBDetailSnackbarLayout"
+                android:layout_alignTop="@id/DollDBDetailMainToolbar" />
         </RelativeLayout>
     </LinearLayout>
 </android.support.v4.widget.SwipeRefreshLayout>

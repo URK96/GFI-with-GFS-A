@@ -12,48 +12,39 @@ using System.Threading.Tasks;
 using Android.Text;
 using Android.Content;
 using Android.Support.V7.Widget;
+using System.IO;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "@string/Activity_FairyMainActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/Activity_FairyMainActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class FairyDBMainActivity : BaseAppCompatActivity
     {
         delegate void DownloadProgress();
 
-        private List<Fairy> RootList = new List<Fairy>();
-        private List<Fairy> SubList = new List<Fairy>();
-        private List<int> Download_List = new List<int>();
+        private enum SortType { Name, Number, ProductTime }
+        private enum SortOrder { Ascending, Descending }
+        private SortType sortType = SortType.Name;
+        private SortOrder sortOrder = SortOrder.Ascending;
 
-        int[] TypeFilters = { Resource.Id.FairyFilterTypeCombat, Resource.Id.FairyFilterTypeStrategy };
-        int[] ProductTimeFilters = { Resource.Id.FairyFilterProductHour, Resource.Id.FairyFilterProductMinute };
+        private List<Fairy> rootList = new List<Fairy>();
+        private List<Fairy> subList = new List<Fairy>();
+        private List<int> downloadList = new List<int>();
 
-        int p_now = 0;
-        int p_total = 0;
+        int[] typeFilters = { Resource.Id.FairyFilterTypeCombat, Resource.Id.FairyFilterTypeStrategy };
+        int[] productTimeFilters = { Resource.Id.FairyFilterProductHour, Resource.Id.FairyFilterProductMinute };
 
-        private enum LineUp { Name, ProductTime }
-        private LineUp LineUpStyle = LineUp.Name;
+        private bool[] hasApplyFilter = { false, false };
+        private int[] filterProductTime = { 0, 0 };
+        private bool[] filterType = { true, true };
+        private bool canRefresh = false;
 
-        private bool[] HasApplyFilter = { false, false };
-        private int[] Filter_ProductTime = { 0, 0 };
-        private bool[] Filter_Type = { true, true };
-        private bool CanRefresh = false;
+        private string searchViewText = "";
 
+        private Android.Support.V7.Widget.Toolbar toolbar;
+        private Android.Support.V7.Widget.SearchView searchView;
         private RecyclerView mFairyListView;
-        private RecyclerView.LayoutManager MainLayoutManager;
-        private CoordinatorLayout SnackbarLayout;
-
-        private TextView LineUp_Name;
-        private TextView LineUp_Time;
-
-        private EditText SearchText;
-
-        private Dialog dialog;
-        private ProgressBar totalProgressBar;
-        private ProgressBar nowProgressBar;
-        private TextView totalProgress;
-        private TextView nowProgress;
-        private FloatingActionButton refresh_fab;
-        private FloatingActionButton filter_fab;
+        private RecyclerView.LayoutManager mainLayoutManager;
+        private CoordinatorLayout snackbarLayout;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -62,43 +53,41 @@ namespace GFI_with_GFS_A
                 base.OnCreate(savedInstanceState);
 
                 if (ETC.useLightTheme)
+                {
                     SetTheme(Resource.Style.GFS_Light);
+                }
 
                 // Create your application here
                 SetContentView(Resource.Layout.FairyDBListLayout);
 
                 SetTitle(Resource.String.FairyDBMainActivity_Title);
 
-                CanRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
+                canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
-                mFairyListView = FindViewById<RecyclerView>(Resource.Id.FairyDBRecyclerView);
-                MainLayoutManager = new LinearLayoutManager(this);
-                mFairyListView.SetLayoutManager(MainLayoutManager);
-                SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FairyDBSnackbarLayout);
-
-                LineUp_Name = FindViewById<TextView>(Resource.Id.FairyDBLineUp_Name);
-                LineUp_Name.SetBackgroundColor(Android.Graphics.Color.ParseColor("#54A716"));
-                LineUp_Name.Click += LineUp_Text_Click;
-                LineUp_Time = FindViewById<TextView>(Resource.Id.FairyDBLineUp_Time);
-                LineUp_Time.Click += LineUp_Text_Click;
-
-                SearchText = FindViewById<EditText>(Resource.Id.FairySearchText);
-
-                InitializeView();
-
-                if (ETC.useLightTheme)
+                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.FairyDBMainToolbar);
+                searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.FairyDBSearchView);
+                searchView.QueryTextChange += (sender, e) =>
                 {
-                    FindViewById<LinearLayout>(Resource.Id.FairySearchLayout).SetBackgroundColor(Android.Graphics.Color.LightGray);
-                    FindViewById<ImageButton>(Resource.Id.FairySearchResetButton).SetBackgroundResource(Resource.Drawable.SearchIcon_WhiteTheme);
-                    FindViewById<View>(Resource.Id.FairySearchSeperateBar).SetBackgroundColor(Android.Graphics.Color.DarkGreen);
-                }
+                    searchViewText = e.NewText;
+                    _ = ListFairy(new int[] { filterProductTime[0], filterProductTime[1] }, searchViewText);
+                };
+                mFairyListView = FindViewById<RecyclerView>(Resource.Id.FairyDBRecyclerView);
+                mainLayoutManager = new LinearLayoutManager(this);
+                mFairyListView.SetLayoutManager(mainLayoutManager);
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FairyDBSnackbarLayout);
+
+                SetSupportActionBar(toolbar);
+                SupportActionBar.SetTitle(Resource.String.FairyDBMainActivity_Title);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
                 InitProcess();
 
-                ListFairy(SearchText.Text, new int[] { Filter_ProductTime[0], Filter_ProductTime[1] });
+                _ = ListFairy(new int[] { filterProductTime[0], filterProductTime[1] });
 
-                if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true)))
+                /*if ((ETC.locale.Language == "ko") && ETC.sharedPreferences.GetBoolean("Help_DBList", true))
+                {
                     ETC.RunHelpActivity(this, "DBList");
+                }*/
             }
             catch (Exception ex)
             {
@@ -107,138 +96,60 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void LineUp_Text_Click(object sender, EventArgs e)
+        public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            try
-            {
-                TextView tv = sender as TextView;
+            MenuInflater.Inflate(Resource.Menu.FairyDBMenu, menu);
 
-                switch (tv.Id)
-                {
-                    case Resource.Id.FairyDBLineUp_Time:
-                        LineUpStyle = LineUp.ProductTime;
-                        LineUp_Name.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        LineUp_Time.SetBackgroundColor(Android.Graphics.Color.ParseColor("#54A716"));
-                        break;
-                    case Resource.Id.FairyDBLineUp_Name:
-                    default:
-                        LineUpStyle = LineUp.Name;
-                        LineUp_Time.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        LineUp_Name.SetBackgroundColor(Android.Graphics.Color.ParseColor("#54A716"));
-                        break;
-                }
+            var cacheItem = menu.FindItem(Resource.Id.RefreshFairyCropImageCache);
+            _ = canRefresh ? cacheItem.SetVisible(true) : cacheItem.SetVisible(false);
 
-                ListFairy(SearchText.Text, new int[] { Filter_ProductTime[0], Filter_ProductTime[1] });
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.LineUp_Error, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
-            }
+            return base.OnCreateOptionsMenu(menu);
         }
 
-        private void MFairyListView_ScrollStateChanged(object sender, AbsListView.ScrollStateChangedEventArgs e)
+        public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            try
+            switch (item.ItemId)
             {
-                switch (e.ScrollState)
-                {
-                    case ScrollState.TouchScroll:
-                        if (CanRefresh == true) refresh_fab.Hide();
-                        filter_fab.Hide();
-                        break;
-                    case ScrollState.Idle:
-                        if (CanRefresh == true) refresh_fab.Show();
-                        filter_fab.Show();
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeStatusError, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
-            }
-        }
+                case Android.Resource.Id.Home:
+                    OnBackPressed();
+                    break;
+                case Resource.Id.FairyDBMainFilter:
+                    InitFilterBox();
+                    break;
+                case Resource.Id.FairyDBMainSort:
+                    InitSortBox();
+                    break;
+                case Resource.Id.RefreshEquipCropImageCache:
+                    downloadList.Clear();
 
-        private async void Adapter_ItemClick(object sender, int position)
-        {
-            await Task.Delay(100);
-            var FairyInfo = new Intent(this, typeof(FairyDBDetailActivity));
-            FairyInfo.PutExtra("DicNum", SubList[position].DicNumber);
-            StartActivity(FairyInfo);
-            OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
-        }
+                    for (int i = 0; i < rootList.Count; ++i)
+                    {
+                        string FilePath = Path.Combine(ETC.cachePath, "Fairy", "Normal_Crop", $"{rootList[i].DicNumber}.gfdcache");
 
-        private void InitializeView()
-        {
-            refresh_fab = FindViewById<FloatingActionButton>(Resource.Id.FairyRefreshCacheFAB);
-            if (CanRefresh == false) refresh_fab.Hide();
-            else
-            {
-                if (refresh_fab.HasOnClickListeners == false) refresh_fab.Click += delegate { ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(FairyCropImageDownloadProcess)); };
+                        if (!File.Exists(FilePath))
+                        {
+                            downloadList.Add(rootList[i].DicNumber);
+                        }
+                    }
 
-                refresh_fab.LongClick += MainFAB_fab_LongClick;
+                    downloadList.TrimExcess();
+                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(FairyCropImageDownloadProcess));
+                    break;
             }
 
-            filter_fab = FindViewById<FloatingActionButton>(Resource.Id.FairyFilterFAB);
-            if (filter_fab.HasOnClickListeners == false) filter_fab.Click += Filter_Fab_Click;
-            filter_fab.LongClick += MainFAB_fab_LongClick;
-
-            ImageButton SearchResetButton = FindViewById<ImageButton>(Resource.Id.FairySearchResetButton);
-            if (SearchResetButton.HasOnClickListeners == false) SearchResetButton.Click += SearchResetButton_Click;
-
-            SearchText.TextChanged += SearchText_TextChanged;
-        }
-
-        private void MainFAB_fab_LongClick(object sender, View.LongClickEventArgs e)
-        {
-            try
-            {
-                FloatingActionButton fab = sender as FloatingActionButton;
-
-                string tip = "";
-
-                switch (fab.Id)
-                {
-                    case Resource.Id.FairyRefreshCacheFAB:
-                        tip = Resources.GetString(Resource.String.Tooltip_DB_CacheRefresh);
-                        break;
-                    case Resource.Id.FairyFilterFAB:
-                        tip = Resources.GetString(Resource.String.Tooltip_DB_Filter);
-                        break;
-                }
-
-                Toast.MakeText(this, tip, ToastLength.Short).Show();
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-            }
-        }
-
-        private void SearchText_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            ListFairy(SearchText.Text, new int[] { Filter_ProductTime[0], Filter_ProductTime[1] });
-        }
-
-        private void SearchResetButton_Click(object sender, EventArgs e)
-        {
-            SearchText.Text = "";
-        }
-
-        private void Filter_Fab_Click(object sender, EventArgs e)
-        {
-            InitFilterBox();
+            return base.OnOptionsItemSelected(item);
         }
 
         private void InitProcess()
         {
             CreateListObject();
 
-            if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
+            if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false))
             {
-                if (CheckFairyCropImage() == true)
+                if (CheckFairyCropImage())
+                {
                     ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(FairyCropImageDownloadProcess));
+                }
             }
         }
 
@@ -247,56 +158,74 @@ namespace GFI_with_GFS_A
             try
             {
                 foreach (DataRow dr in ETC.fairyList.Rows)
-                    RootList.Add(new Fairy(dr));
+                {
+                    rootList.Add(new Fairy(dr));
+                }
 
-                RootList.TrimExcess();
+                rootList.TrimExcess();
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Initialize_List_Fail, Snackbar.LengthShort);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.Initialize_List_Fail, Snackbar.LengthShort);
             }
         }
 
         private bool CheckFairyCropImage()
         {
-            Download_List.Clear();
+            downloadList.Clear();
 
-            for (int i = 0; i < RootList.Count; ++i)
+            for (int i = 0; i < rootList.Count; ++i)
             {
-                string FilePath = System.IO.Path.Combine(ETC.cachePath, "Fairy", "Normal_Crop", $"{RootList[i].DicNumber}.gfdcache");
-                if (System.IO.File.Exists(FilePath) == false) Download_List.Add(RootList[i].DicNumber);
+                string FilePath = Path.Combine(ETC.cachePath, "Fairy", "Normal_Crop", $"{rootList[i].DicNumber}.gfdcache");
+
+                if (!File.Exists(FilePath))
+                {
+                    downloadList.Add(rootList[i].DicNumber);
+                }
             }
 
-            Download_List.TrimExcess();
+            downloadList.TrimExcess();
 
-            if (Download_List.Count == 0) return false;
-            else return true;
+            return !(downloadList.Count == 0);
         }
 
         private void ShowDownloadCheckMessage(int title, int message, DownloadProgress method)
         {
-            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
-            ad.SetTitle(title);
-            ad.SetMessage(message);
-            ad.SetCancelable(true);
-            ad.SetPositiveButton(Resource.String.AlertDialog_Download, delegate { method(); });
-            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG))
+            {
+                ad.SetTitle(title);
+                ad.SetMessage(message);
+                ad.SetCancelable(true);
+                ad.SetPositiveButton(Resource.String.AlertDialog_Download, delegate { method(); });
+                ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
 
-            ad.Show();
+                ad.Show();
+            }
         }
 
         private async void FairyCropImageDownloadProcess()
         {
+            Dialog dialog;
+            ProgressBar totalProgressBar;
+            ProgressBar nowProgressBar;
+            TextView totalProgress;
+            TextView nowProgress;
+
             View v = LayoutInflater.Inflate(Resource.Layout.ProgressDialogLayout, null);
 
-            Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload);
-            pd.SetTitle(Resource.String.DBList_DownloadCropImageTitle);
-            pd.SetCancelable(false);
-            pd.SetView(v);
+            int pNow = 0;
+            int pTotal = 0;
 
-            dialog = pd.Create();
-            dialog.Show();
+            using (Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload))
+            {
+                pd.SetTitle(Resource.String.DBList_DownloadCropImageTitle);
+                pd.SetCancelable(false);
+                pd.SetView(v);
+
+                dialog = pd.Create();
+                dialog.Show();
+            }
 
             try
             {
@@ -305,88 +234,187 @@ namespace GFI_with_GFS_A
                 nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
                 nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
 
-                p_total = 0;
-                p_total = Download_List.Count;
+                pTotal = downloadList.Count;
                 totalProgressBar.Max = 100;
-                totalProgressBar.Progress = 0;
+                totalProgressBar.Progress = pNow;
 
                 using (WebClient wc = new WebClient())
                 {
-                    wc.DownloadProgressChanged += Wc_DownloadProgressChanged;
-                    wc.DownloadFileCompleted += Wc_DownloadFileCompleted;
-
-                    for (int i = 0; i < p_total; ++i)
+                    wc.DownloadProgressChanged += (sender, e) =>
                     {
-                        int filename = Download_List[i];
-                        string url = System.IO.Path.Combine(ETC.server, "Data", "Images", "Fairy", "Normal_Crop", $"{filename}.png");
-                        string target = System.IO.Path.Combine(ETC.cachePath, "Fairy", "Normal_Crop", $"{filename}.gfdcache");
-                        await wc.DownloadFileTaskAsync(url, target);
+                        nowProgressBar.Progress = e.ProgressPercentage;
+                        nowProgress.Text = $"{e.ProgressPercentage}%";
+                    };
+                    wc.DownloadFileCompleted += (sender, e) =>
+                    {
+                        pNow += 1;
+
+                        totalProgressBar.Progress = Convert.ToInt32((pNow / Convert.ToDouble(pTotal)) * 100);
+                        totalProgress.Text = $"{totalProgressBar.Progress}%";
+                    };
+
+                    for (int i = 0; i < pTotal; ++i)
+                    {
+                        string url = Path.Combine(ETC.server, "Data", "Images", "Fairy", "Normal_Crop", $"{downloadList[i]}.png");
+                        string target = Path.Combine(ETC.cachePath, "Fairy", "Normal_Crop", $"{downloadList[i]}.gfdcache");
+                       
+                        await wc.DownloadFileTaskAsync(url, target).ConfigureAwait(false);
                     }
                 }
 
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_DownloadCropImageComplete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_DownloadCropImageComplete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);
 
                 await Task.Delay(500);
 
-                ListFairy(SearchText.Text, new int[] { Filter_ProductTime[0], Filter_ProductTime[1] });
+                _ = ListFairy( new int[] { filterProductTime[0], filterProductTime[1] }, searchViewText);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_DownloadCropImageFail, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_DownloadCropImageFail, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
             }
             finally
             {
                 dialog.Dismiss();
-                dialog = null;
-                totalProgressBar = null;
-                totalProgress = null;
-                nowProgressBar = null;
-                nowProgress = null;
             }
         }
 
-        private void Wc_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        private void InitSortBox()
         {
-            p_now += 1;
-
-            totalProgressBar.Progress = Convert.ToInt32((p_now / Convert.ToDouble(p_total)) * 100);
-            totalProgress.Text = $"{totalProgressBar.Progress}%";
-        }
-
-        private void Wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
-        {
-            nowProgressBar.Progress = e.ProgressPercentage;
-            nowProgress.Text = $"{e.ProgressPercentage}%";
-        }
-
-        private void InitFilterBox()
-        {
-            var inflater = LayoutInflater;
+            string[] sortTypeList =
+            {
+                Resources.GetString(Resource.String.Sort_SortMethod_Name),
+                Resources.GetString(Resource.String.Sort_SortMethod_Number),
+                Resources.GetString(Resource.String.Sort_SortMethod_ProductTime),
+            };
 
             try
             {
-                View v = inflater.Inflate(Resource.Layout.FairyFilterLayout, null);
+                View v = LayoutInflater.Inflate(Resource.Layout.CommonSorterLayout, null);
 
-                v.FindViewById<NumberPicker>(Resource.Id.FairyFilterProductHour).MaxValue = 12;
-                v.FindViewById<NumberPicker>(Resource.Id.FairyFilterProductMinute).MaxValue = 59;
+                var adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, sortTypeList);
+                adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
 
-                for (int i = 0; i < TypeFilters.Length; ++i) v.FindViewById<CheckBox>(TypeFilters[i]).Checked = Filter_Type[i];
-                for (int i = 0; i < ProductTimeFilters.Length; ++i) v.FindViewById<NumberPicker>(ProductTimeFilters[i]).Value = Filter_ProductTime[i];
+                var sortSpinner = v.FindViewById<Spinner>(Resource.Id.CommonSortSpinner);
 
-                Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical);
-                FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
-                FilterBox.SetView(v);
-                FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
-                FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(); });
+                sortSpinner.Adapter = adapter;
+                sortSpinner.SetSelection((int)sortType);
 
-                FilterBox.Show();
+                switch (sortOrder)
+                {
+                    default:
+                    case SortOrder.Ascending:
+                        v.FindViewById<RadioButton>(Resource.Id.CommonSortOrderAscending).Checked = true;
+                        break;
+                    case SortOrder.Descending:
+                        v.FindViewById<RadioButton>(Resource.Id.CommonSortOrderDescending).Checked = true;
+                        break;
+                }
+
+                using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
+                {
+                    FilterBox.SetTitle(Resource.String.DBList_SortBoxTitle);
+                    FilterBox.SetView(v);
+                    FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplySort(v); });
+                    FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                    FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetSort(); });
+
+                    FilterBox.Show();
+                }
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FilterBox_InitError, Snackbar.LengthLong);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.SortBox_InitError, Snackbar.LengthLong);
+            }
+        }
+
+        private void ApplySort(View view)
+        {
+            try
+            {
+                sortType = (SortType)view.FindViewById<Spinner>(Resource.Id.CommonSortSpinner).SelectedItemPosition;
+
+                if (view.FindViewById<RadioButton>(Resource.Id.CommonSortOrderAscending).Checked)
+                {
+                    sortOrder = SortOrder.Ascending;
+                }
+                else if (view.FindViewById<RadioButton>(Resource.Id.CommonSortOrderDescending).Checked)
+                {
+                    sortOrder = SortOrder.Descending;
+                }
+                else
+                {
+                    sortOrder = SortOrder.Ascending;
+                }
+
+                _ = ListFairy(new int[] { filterProductTime[0], filterProductTime[1] }, searchViewText);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_FilterBoxApplyFail, Snackbar.LengthLong);
+            }
+        }
+
+        private void ResetSort()
+        {
+            try
+            {
+                sortType = SortType.Name;
+                sortOrder = SortOrder.Ascending;
+
+                _ = ListFairy(new int[] { filterProductTime[0], filterProductTime[1] }, searchViewText);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_FilterBoxResetFail, Snackbar.LengthLong);
+            }
+        }
+
+        private async void Adapter_ItemClick(object sender, int position)
+        {
+            await Task.Delay(100);
+            var FairyInfo = new Intent(this, typeof(FairyDBDetailActivity));
+            FairyInfo.PutExtra("DicNum", subList[position].DicNumber);
+            StartActivity(FairyInfo);
+            OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
+        }
+
+        private void InitFilterBox()
+        {
+            try
+            {
+                View v = LayoutInflater.Inflate(Resource.Layout.FairyFilterLayout, null);
+
+                v.FindViewById<NumberPicker>(Resource.Id.FairyFilterProductHour).MaxValue = 12;
+                v.FindViewById<NumberPicker>(Resource.Id.FairyFilterProductMinute).MaxValue = 59;
+
+                for (int i = 0; i < typeFilters.Length; ++i)
+                {
+                    v.FindViewById<CheckBox>(typeFilters[i]).Checked = filterType[i];
+                }
+                for (int i = 0; i < productTimeFilters.Length; ++i)
+                {
+                    v.FindViewById<NumberPicker>(productTimeFilters[i]).Value = filterProductTime[i];
+                }
+
+                using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
+                {
+                    FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
+                    FilterBox.SetView(v);
+                    FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
+                    FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                    FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(); });
+
+                    FilterBox.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.FilterBox_InitError, Snackbar.LengthLong);
             }
         }
 
@@ -394,95 +422,121 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                for (int i = 0; i < TypeFilters.Length; ++i)
-                    Filter_Type[i] = view.FindViewById<CheckBox>(TypeFilters[i]).Checked;
-                for (int i = 0; i < ProductTimeFilters.Length; ++i)
-                    Filter_ProductTime[i] = view.FindViewById<NumberPicker>(ProductTimeFilters[i]).Value;
+                for (int i = 0; i < typeFilters.Length; ++i)
+                {
+                    filterType[i] = view.FindViewById<CheckBox>(typeFilters[i]).Checked;
+                }
+                for (int i = 0; i < productTimeFilters.Length; ++i)
+                {
+                    filterProductTime[i] = view.FindViewById<NumberPicker>(productTimeFilters[i]).Value;
+                }
 
                 CheckApplyFilter();
 
-                ListFairy(SearchText.Text, new int[] { Filter_ProductTime[0], Filter_ProductTime[1] });
+                _ = ListFairy(new int[] { filterProductTime[0], filterProductTime[1] }, searchViewText);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_FilterBoxApplyFail, Snackbar.LengthLong);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_FilterBoxApplyFail, Snackbar.LengthLong);
             }
         }
 
         private void CheckApplyFilter()
         {
-            for (int i = 0; i < ProductTimeFilters.Length; ++i)
-                if (Filter_ProductTime[i] != 0)
+            for (int i = 0; i < productTimeFilters.Length; ++i)
+            {
+                hasApplyFilter[0] = filterProductTime[i] != 0;
+
+                if (hasApplyFilter[0])
                 {
-                    HasApplyFilter[0] = true;
                     break;
                 }
-                else HasApplyFilter[0] = false;
-            for (int i = 0; i < TypeFilters.Length; ++i)
-                if (Filter_Type[i])
+            }
+            for (int i = 0; i < typeFilters.Length; ++i)
+            {
+                hasApplyFilter[1] = filterType[i];
+
+                if (hasApplyFilter[1])
                 {
-                    HasApplyFilter[1] = true;
                     break;
                 }
-                else HasApplyFilter[1] = false;
+            }
         }
 
         private void ResetFilter()
         {
             try
             {
-                for (int i = 0; i < TypeFilters.Length; ++i)
-                    Filter_Type[i] = true;
-                for (int i = 0; i < ProductTimeFilters.Length; ++i)
-                    Filter_ProductTime[i] = 0;
+                for (int i = 0; i < typeFilters.Length; ++i)
+                {
+                    filterType[i] = true;
+                }
+                for (int i = 0; i < productTimeFilters.Length; ++i)
+                {
+                    filterProductTime[i] = 0;
+                }
 
-                for (int i = 0; i < HasApplyFilter.Length; ++i)
-                    HasApplyFilter[i] = false;
+                for (int i = 0; i < hasApplyFilter.Length; ++i)
+                {
+                    hasApplyFilter[i] = false;
+                }
 
-                ListFairy(SearchText.Text, new int[] { Filter_ProductTime[0], Filter_ProductTime[1] });
+                _ = ListFairy(new int[] { filterProductTime[0], filterProductTime[1] }, searchViewText);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_FilterBoxResetFail, Snackbar.LengthLong);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_FilterBoxResetFail, Snackbar.LengthLong);
             }
         }
 
-        private async void ListFairy(string searchText, int[] p_time)
+        private async Task ListFairy(int[] pTime, string searchText = "")
         {
-            //ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_Listing, Snackbar.LengthShort, Android.Graphics.Color.DarkViolet);
-
-            SubList.Clear();
+            subList.Clear();
 
             searchText = searchText.ToUpper();
 
             try
             {
-                for (int i = 0; i < RootList.Count; ++i)
+                for (int i = 0; i < rootList.Count; ++i)
                 {
-                    Fairy fairy = RootList[i];
+                    Fairy fairy = rootList[i];
 
-                    if ((p_time[0] + p_time[1]) != 0)
-                        if (fairy.ProductTime != ((p_time[0] * 60) + p_time[1])) continue;
+                    if ((pTime[0] + pTime[1]) != 0)
+                    {
+                        if (fairy.ProductTime != ((pTime[0] * 60) + pTime[1]))
+                        {
+                            continue;
+                        }
+                    }
 
-                    if (CheckFilter(fairy) == true) continue;
+                    if (CheckFilter(fairy))
+                    {
+                        continue;
+                    }
 
-                    if (searchText != "")
+                    if (!string.IsNullOrWhiteSpace(searchText))
                     {
                         string name = fairy.Name.ToUpper();
 
-                        if (name.Contains(searchText) == false) continue;
+                        if (!name.Contains(searchText))
+                        {
+                            continue;
+                        }
                     }
 
-                    SubList.Add(fairy);
+                    subList.Add(fairy);
                 }
 
-                SubList.Sort(SortFairyName);
+                subList.Sort(SortFairyName);
 
-                var adapter = new FairyListAdapter(SubList, this);
+                var adapter = new FairyListAdapter(subList, this);
 
-                if (adapter.HasOnItemClick() == false) adapter.ItemClick += Adapter_ItemClick;
+                if (!adapter.HasOnItemClick())
+                {
+                    adapter.ItemClick += Adapter_ItemClick;
+                }
 
                 await Task.Delay(100);
 
@@ -491,44 +545,71 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_ListingFail, Snackbar.LengthLong);
-            }
-        }
-
-        private int SortFairyName(Fairy x, Fairy y)
-        {
-            switch (LineUpStyle)
-            {
-                case LineUp.ProductTime:
-                    int x_time = x.ProductTime;
-                    int y_time = y.ProductTime;
-
-                    if ((x_time == 0) && (y_time != 0)) return 1;
-                    else if ((y_time == 0) && (x_time != 0)) return -1;
-                    else if (x_time == y_time) return x.Name.CompareTo(y.Name);
-                    else return x_time.CompareTo(y_time);
-                case LineUp.Name:
-                default:
-                    return x.Name.CompareTo(y.Name);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_ListingFail, Snackbar.LengthLong);
             }
         }
 
         private bool CheckFilter(Fairy fairy)
         {
-            if (HasApplyFilter[1] == true)
+            if (hasApplyFilter[1])
             {
                 switch (fairy.Type)
                 {
                     case "전투":
-                        if (Filter_Type[0] == false) return true;
+                        if (!filterType[0])
+                        {
+                            return true;
+                        }
                         break;
                     case "책략":
-                        if (Filter_Type[1] == false) return true;
+                        if (!filterType[1])
+                        {
+                            return true;
+                        }
                         break;
                 }
             }
 
             return false;
+        }
+
+        private int SortFairyName(Fairy x, Fairy y)
+        {
+            if (sortOrder == SortOrder.Descending)
+            {
+                Fairy temp = x;
+                x = y;
+                y = temp;
+            }
+
+            switch (sortType)
+            {
+                case SortType.Name:
+                default:
+                    return x.Name.CompareTo(y.Name);
+                case SortType.ProductTime:
+                    int xTime = x.ProductTime;
+                    int yTime = y.ProductTime;
+
+                    if ((xTime == 0) && (yTime != 0))
+                    {
+                        return 1;
+                    }
+                    else if ((yTime == 0) && (xTime != 0))
+                    {
+                        return -1;
+                    }
+                    else if (xTime == yTime)
+                    {
+                        return x.Name.CompareTo(y.Name);
+                    }
+                    else
+                    {
+                        return xTime.CompareTo(yTime);
+                    }
+                case SortType.Number:
+                    return x.DicNumber.CompareTo(y.DicNumber);
+            }
         }
 
         public override void OnBackPressed()
@@ -641,4 +722,5 @@ namespace GFI_with_GFS_A
             }
         }
     }
+
 }

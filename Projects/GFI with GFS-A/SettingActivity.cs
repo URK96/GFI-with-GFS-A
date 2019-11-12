@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V14.Preferences;
 using Android.Support.V7.Preferences;
+using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using Net.ArcanaStudio.ColorPicker;
@@ -35,9 +36,12 @@ namespace GFI_with_GFS_A
 
                 // Create your application here
                 SetContentView(Resource.Layout.SettingMainLayout);
-                SetTitle(Resource.String.SettingActivity_Title);
 
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.SettingSnackbarLayout);
+
+                SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.SettingMainToolbar));
+                SupportActionBar.SetTitle(Resource.String.SettingActivity_Title);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
                 SupportFragmentManager.BeginTransaction().Replace(Resource.Id.SettingFragmentContainer, new MainSettingFragment(), null).Commit();
             }
@@ -46,6 +50,18 @@ namespace GFI_with_GFS_A
                 ETC.LogError(ex, this);
                 ETC.ShowSnackbar(SnackbarLayout, Resource.String.Activity_OnCreateError, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item?.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    OnBackPressed();
+                    break;
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
 
         public override void OnBackPressed()

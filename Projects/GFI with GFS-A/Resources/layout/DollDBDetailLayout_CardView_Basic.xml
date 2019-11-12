@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
 	android:visibility="gone"
-    android:id="@+id/bDollDBDetailBasicInfoCardLayout"
+    android:id="@+id/DollDBDetailBasicInfoCardLayout"
     cardview:cardElevation="4dp"
     cardview:cardCornerRadius="5dp"
     cardview:cardBackgroundColor="@color/background_material_dark">
@@ -14,7 +14,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/bDollDBDetailBasicInfoLayout">
+        android:id="@+id/DollDBDetailBasicInfoLayout">
     <!--Doll Basic Info - Grade Part-->
         <LinearLayout
             android:orientation="horizontal"
@@ -43,32 +43,32 @@
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:id="@+id/bDollDBDetailInfoGrade1" />
+                    android:id="@+id/DollDBDetailInfoGrade1" />
                 <ImageView
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:id="@+id/bDollDBDetailInfoGrade2" />
+                    android:id="@+id/DollDBDetailInfoGrade2" />
                 <ImageView
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:id="@+id/bDollDBDetailInfoGrade3" />
+                    android:id="@+id/DollDBDetailInfoGrade3" />
                 <ImageView
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:id="@+id/bDollDBDetailInfoGrade4" />
+                    android:id="@+id/DollDBDetailInfoGrade4" />
                 <ImageView
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:id="@+id/bDollDBDetailInfoGrade5" />
+                    android:id="@+id/DollDBDetailInfoGrade5" />
                 <ImageView
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:id="@+id/bDollDBDetailInfoGrade6" />
+                    android:id="@+id/DollDBDetailInfoGrade6" />
                 <Space
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -93,7 +93,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/bDollDBDetailInfoType"
+                android:id="@+id/DollDBDetailInfoType"
                 android:gravity="center" />
         </LinearLayout>
     <!--Doll Basic Info - Name Part-->
@@ -113,7 +113,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/bDollDBDetailInfoName"
+                android:id="@+id/DollDBDetailInfoName"
                 android:gravity="center" />
         </LinearLayout>
     <!--Doll Basic Info - NickName Part-->
@@ -134,7 +134,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/bDollDBDetailInfoNickName"
+                android:id="@+id/DollDBDetailInfoNickName"
                 android:gravity="center" />
         </LinearLayout>
     <!--Doll Basic Info - RealModel Part-->
@@ -155,7 +155,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/bDollDBDetailInfoRealModel"
+                android:id="@+id/DollDBDetailInfoRealModel"
                 android:gravity="center" />
         </LinearLayout>
     <!--Doll Basic Info - Country Part-->
@@ -176,7 +176,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/bDollDBDetailInfoCountry"
+                android:id="@+id/DollDBDetailInfoCountry"
                 android:gravity="center" />
         </LinearLayout>
     <!--Doll Basic Info - Illustrator Part-->
@@ -197,7 +197,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/bDollDBDetailInfoIllustrator"
+                android:id="@+id/DollDBDetailInfoIllustrator"
                 android:gravity="center" />
         </LinearLayout>
     <!--Doll Basic Info - VoiceActor Part-->
@@ -218,7 +218,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/bDollDBDetailInfoVoiceActor"
+                android:id="@+id/DollDBDetailInfoVoiceActor"
                 android:gravity="center" />
         </LinearLayout>
     <!--Doll Basic Info - Gain Part-->
@@ -239,7 +239,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/bDollDBDetailInfoHowToGain"
+                android:id="@+id/DollDBDetailInfoHowToGain"
                 android:gravity="center" />
         </LinearLayout>
     </LinearLayout>

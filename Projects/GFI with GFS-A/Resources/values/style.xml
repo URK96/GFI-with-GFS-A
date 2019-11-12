@@ -5,21 +5,27 @@
     <item name="android:windowFullscreen">false</item>
     <item name="android:colorPrimary">#101010</item>
     <item name="android:textColorPrimary">#E4E4E4</item>
+    <item name="colorPrimaryDark">@color/MainColor</item>
   </style>
   <style name="GFS.Light" parent="Theme.AppCompat.Light">
     <item name="android:windowNoTitle">true</item>
     <item name="android:windowFullscreen">false</item>
     <item name="android:colorPrimary">#D0D0D0</item>
     <item name="android:textColorPrimary">#393939</item>
+    <item name="colorPrimaryDark">@color/MainColor</item>
   </style>
-  <style name="GFS.Setting" parent="Theme.AppCompat">
+  <style name="GFS.Setting" parent="Theme.AppCompat.NoActionBar">
     <item name="android:windowNoTitle">true</item>
     <item name="android:windowFullscreen">false</item>
+    <item name="android:windowActionBar">false</item>
+    <item name="colorPrimaryDark">@color/MainColor</item>
     <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
   </style>
-  <style name="GFS.Setting.Light" parent="Theme.AppCompat.Light">
+  <style name="GFS.Setting.Light" parent="Theme.AppCompat.Light.NoActionBar">
     <item name="android:windowNoTitle">true</item>
     <item name="android:windowFullscreen">false</item>
+    <item name="android:windowActionBar">false</item>
+    <item name="colorPrimaryDark">@color/MainColor</item>
     <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
   </style>
   <style name="GFS.NoActionBar" parent="Theme.AppCompat.NoActionBar">
@@ -35,11 +41,13 @@
     <item name="android:windowNoTitle">true</item>
     <item name="android:windowActionBar">false</item>
     <item name="android:windowFullscreen">false</item>
+    <item name="colorPrimaryDark">@color/MainColor</item>
   </style>
   <style name="GFS.Toolbar.Light" parent="Theme.AppCompat.Light.NoActionBar">
     <item name="android:windowNoTitle">true</item>
     <item name="android:windowActionBar">false</item>
     <item name="android:windowFullscreen">false</item>
+    <item name="colorPrimaryDark">@color/MainColor</item>
   </style>
   <style name="GFS.Splash" parent ="Theme.AppCompat.NoActionBar">
     <item name="android:windowBackground">@drawable/splash</item>

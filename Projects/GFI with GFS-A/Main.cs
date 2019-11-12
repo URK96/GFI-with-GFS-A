@@ -386,7 +386,7 @@ namespace GFI_with_GFS_A
                         });
                         if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
                         {
-                            StartActivity(typeof(DollDBMainActivity_Beta));
+                            StartActivity(typeof(DollDBMainActivity));
                             OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         }
                         else
@@ -405,7 +405,7 @@ namespace GFI_with_GFS_A
                         });
                         if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
                         {
-                            StartActivity(typeof(EquipDBMainActivity_Beta));
+                            StartActivity(typeof(EquipDBMainActivity));
                             OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         }
                         else
@@ -424,7 +424,7 @@ namespace GFI_with_GFS_A
                         });
                         if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
                         {
-                            StartActivity(typeof(FairyDBMainActivity_Beta));
+                            StartActivity(typeof(FairyDBMainActivity));
                             OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         }
                         else
@@ -443,7 +443,7 @@ namespace GFI_with_GFS_A
                         });
                         if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
                         {
-                            StartActivity(typeof(EnemyDBMainActivity_Beta));
+                            StartActivity(typeof(EnemyDBMainActivity));
                             OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         }
                         else
@@ -462,7 +462,7 @@ namespace GFI_with_GFS_A
                         });
                         if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
                         {
-                            StartActivity(typeof(FSTDBMainActivity_Beta));
+                            StartActivity(typeof(FSTDBMainActivity));
                             OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         }
                         else

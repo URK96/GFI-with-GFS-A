@@ -263,6 +263,7 @@
   <string name="Common_Filter">필터</string>
   <string name="Common_Sort">정렬</string>
   <string name="Common_UpdateImageCache">이미지 캐시 갱신</string>
+  <string name="Common_Link">링크</string>
 
   <!--Sort String-->
   <string name="Sort_SortMethod">정렬 방법</string>

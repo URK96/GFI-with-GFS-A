@@ -6,14 +6,14 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:visibility="gone"
-    android:id="@+id/bDollDBDetailBuffCardLayout"
+    android:id="@+id/DollDBDetailBuffCardLayout"
     cardview:cardElevation="4dp"
     cardview:cardCornerRadius="5dp"
     cardview:cardBackgroundColor="@color/background_material_dark">
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/bDollDBDetailBuffLayout">
+        android:id="@+id/DollDBDetailBuffLayout">
     <!--Doll Buff Part - Doll Buff Image-->
         <LinearLayout
             android:orientation="vertical"
@@ -21,7 +21,7 @@
             android:layout_width="70dp"
             android:layout_margin="5dp"
             android:layout_alignParentLeft="true"
-            android:id="@+id/bDollDBDetailBuffImageLayout">
+            android:id="@+id/DollDBDetailBuffImageLayout">
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -32,19 +32,19 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:layout_margin="1dp"
-                    android:id="@+id/bDollDBDetailBuff1" />
+                    android:id="@+id/DollDBDetailBuff1" />
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:layout_margin="1dp"
-                    android:id="@+id/bDollDBDetailBuff2" />
+                    android:id="@+id/DollDBDetailBuff2" />
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:layout_margin="1dp"
-                    android:id="@+id/bDollDBDetailBuff3" />
+                    android:id="@+id/DollDBDetailBuff3" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -56,19 +56,19 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:layout_margin="1dp"
-                    android:id="@+id/bDollDBDetailBuff4" />
+                    android:id="@+id/DollDBDetailBuff4" />
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:layout_margin="1dp"
-                    android:id="@+id/bDollDBDetailBuff5" />
+                    android:id="@+id/DollDBDetailBuff5" />
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:layout_margin="1dp"
-                    android:id="@+id/bDollDBDetailBuff6" />
+                    android:id="@+id/DollDBDetailBuff6" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -80,19 +80,19 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:layout_margin="1dp"
-                    android:id="@+id/bDollDBDetailBuff7" />
+                    android:id="@+id/DollDBDetailBuff7" />
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:layout_margin="1dp"
-                    android:id="@+id/bDollDBDetailBuff8" />
+                    android:id="@+id/DollDBDetailBuff8" />
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:layout_margin="1dp"
-                    android:id="@+id/bDollDBDetailBuff9" />
+                    android:id="@+id/DollDBDetailBuff9" />
             </LinearLayout>
         </LinearLayout>
     <!--Doll Buff Part - Doll Buff Detail-->
@@ -101,30 +101,30 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:layout_toRightOf="@id/bDollDBDetailBuffImageLayout"
-            android:id="@+id/bDollDBDetailBuffDetailLayout">
+            android:layout_toRightOf="@id/DollDBDetailBuffImageLayout"
+            android:id="@+id/DollDBDetailBuffDetailLayout">
         <!--Doll Buff Part - Doll Buff Detail - Buff Icon & Detail-->
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:id="@+id/bDollDBDetailBuffLayout1">
+                android:id="@+id/DollDBDetailBuffLayout1">
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:id="@+id/bDollDBDetailBuffIcon1" />
+                    android:id="@+id/DollDBDetailBuffIcon1" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="10dp"
                     android:gravity="center"
-                    android:id="@+id/bDollDBDetailBuffName1" />
+                    android:id="@+id/DollDBDetailBuffName1" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:id="@+id/bDollDBDetailBuffDetail1" />
+                    android:id="@+id/DollDBDetailBuffDetail1" />
             </LinearLayout>
             <LinearLayout
 				android:orientation="horizontal"
@@ -132,23 +132,23 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:visibility="gone"
-                android:id="@+id/bDollDBDetailBuffLayout2">
+                android:id="@+id/DollDBDetailBuffLayout2">
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:id="@+id/bDollDBDetailBuffIcon2" />
+                    android:id="@+id/DollDBDetailBuffIcon2" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="10dp"
                     android:gravity="center"
-                    android:id="@+id/bDollDBDetailBuffName2" />
+                    android:id="@+id/DollDBDetailBuffName2" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:layout_toRightOf="@id/bDollDBDetailBuffIcon2"
-                    android:id="@+id/bDollDBDetailBuffDetail2" />
+                    android:layout_toRightOf="@id/DollDBDetailBuffIcon2"
+                    android:id="@+id/DollDBDetailBuffDetail2" />
             </LinearLayout>
         </LinearLayout>
     <!--Doll Buff Part - Buff Type-->
@@ -156,8 +156,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:layout_below="@id/bDollDBDetailBuffImageLayout"
-            android:id="@+id/bDollDBDetailEffectType" />
+            android:layout_below="@id/DollDBDetailBuffImageLayout"
+            android:id="@+id/DollDBDetailEffectType" />
     </RelativeLayout>
 </android.support.v7.widget.CardView>
 </merge>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:local="http://schemas.android.com/apk/res-auto">
+  <item
+    android:id="@+id/DBLinkNamu"
+    android:icon="@drawable/LinkIcon"
+    android:title="@string/Tooltip_SideLink_NamuWiki"
+    local:showAsAction="ifRoom"/>
+  <item
+    android:id="@+id/DBLinkInven"
+    android:icon="@drawable/LinkIcon"
+    android:title="@string/Tooltip_SideLink_Inven"
+    local:showAsAction="ifRoom"/>
+  <item
+    android:id="@+id/DBLink36Base"
+    android:icon="@drawable/LinkIcon"
+    android:title="@string/Tooltip_SideLink_36Base"
+    local:showAsAction="ifRoom"/>
+  <item
+    android:id="@+id/DBLinkGFDB"
+    android:icon="@drawable/LinkIcon"
+    android:title="@string/Tooltip_SideLink_GFDB"
+    local:showAsAction="ifRoom"/>
+</menu>

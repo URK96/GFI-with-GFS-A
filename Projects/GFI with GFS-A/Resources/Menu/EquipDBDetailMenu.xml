@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:local="http://schemas.android.com/apk/res-auto">
+  <item
+    android:id="@+id/EquipDBDetailLink"
+    android:icon="@drawable/LinkIcon"
+    android:title="@string/Common_Link"
+    local:showAsAction="ifRoom"/>
+  <item
+    android:id="@+id/EquipDBDetailProductPercentage"
+    android:icon="@drawable/ProductPercentTable_Icon"
+    android:title="@string/Tooltip_DB_ProductPercentage"
+    local:showAsAction="ifRoom"/>
+</menu>

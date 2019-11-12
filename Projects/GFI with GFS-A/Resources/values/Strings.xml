@@ -261,6 +261,7 @@
   <string name="Common_Filter">Filter</string>
   <string name="Common_Sort">Sort</string>
   <string name="Common_UpdateImageCache">Update Image Cache</string>
+  <string name="Common_Link">Link</string>
   
   <!--Sort String-->
   <string name="Sort_SortMethod">Sort Method</string>

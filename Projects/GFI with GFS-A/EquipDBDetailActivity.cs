@@ -1,13 +1,13 @@
-﻿using Android;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Support.Design.Widget;
-using Android.Support.V4.App;
+using Android.Support.V4.Widget;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,149 +18,196 @@ using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class EquipDBDetailActivity : BaseFragmentActivity
+    [Activity(Label = "", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class EquipDBDetailActivity : BaseAppCompatActivity
     {
-        System.Timers.Timer FABTimer = new System.Timers.Timer();
-
-        private LinearLayout AbilityTableSubLayout;
+        private LinearLayout abilityTableSubLayout;
 
         private Equip equip;
-        private DataRow EquipInfoDR = null;
+        private DataRow equipInfoDR = null;
 
-        private bool IsEnableFABMenu = false;
+        private SwipeRefreshLayout refreshMainLayout;
+        private Android.Support.V7.Widget.Toolbar toolbar;
+        private CoordinatorLayout snackbarLayout;
 
-        private ProgressBar InitLoadProgressBar;
-        private FloatingActionButton RefreshCacheFAB;
-        private FloatingActionButton PercentTableFAB;
-        private CoordinatorLayout SnackbarLayout = null;
-
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             try
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.useLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+                if (ETC.useLightTheme)
+                {
+                    SetTheme(Resource.Style.GFS_Light);
+                }
 
                 // Create your application here
                 SetContentView(Resource.Layout.EquipDBDetailLayout);
 
-                EquipInfoDR = ETC.FindDataRow(ETC.equipmentList, "Id", Intent.GetIntExtra("Id", 0));
-                equip = new Equip(EquipInfoDR);
-                
-                InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.EquipDBDetailInitLoadProgress);
-                AbilityTableSubLayout = FindViewById<LinearLayout>(Resource.Id.EquipDBDetailAbilitySubLayout);
+                equipInfoDR = ETC.FindDataRow(ETC.equipmentList, "Id", Intent.GetIntExtra("Id", 0));
+                equip = new Equip(equipInfoDR);
 
-                RefreshCacheFAB = FindViewById<FloatingActionButton>(Resource.Id.EquipDBDetailRefreshCacheFAB);
-                RefreshCacheFAB.Click += RefreshCacheFAB_Click;
-                RefreshCacheFAB.LongClick += DBDetailFAB_LongClick;
-                PercentTableFAB = FindViewById<FloatingActionButton>(Resource.Id.EquipDBDetailProductPercentFAB);
-                PercentTableFAB.Click += PercentTableFAB_Click;
-                PercentTableFAB.LongClick += DBDetailFAB_LongClick;
+                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.EquipDBDetailMainToolbar);
 
-                SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EquipDBDetailSnackbarLayout);
+                SetSupportActionBar(toolbar);
+                SupportActionBar.Title = $"No.{equip.Id} {equip.Name}";
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
-                FABTimer.Interval = 3000;
-                FABTimer.Elapsed += FABTimer_Elapsed;
+                refreshMainLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.EquipDBDetailMainRefreshLayout);
+                refreshMainLayout.Refresh += delegate { _ = InitLoadProcess(true); };
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EquipDBDetailSnackbarLayout);
 
+                abilityTableSubLayout = FindViewById<LinearLayout>(Resource.Id.EquipDBDetailAbilitySubLayout);
+
+                await InitializeProcess();
                 _ = InitLoadProcess(false);
 
-                if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_EquipDBDetail", true) == true)) ETC.RunHelpActivity(this, "EquipDBDetail");
+                /*if ((ETC.locale.Language == "ko") && ETC.sharedPreferences.GetBoolean("Help_EquipDBDetail", true))
+                {
+                    ETC.RunHelpActivity(this, "EquipDBDetail");
+                }*/
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Activity_OnCreateError, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
         }
 
-        private void DBDetailFAB_LongClick(object sender, View.LongClickEventArgs e)
+        public override bool OnCreateOptionsMenu(IMenu menu)
         {
             try
             {
-                FloatingActionButton fab = sender as FloatingActionButton;
-
-                string tip = "";
-
-                switch (fab.Id)
-                {
-                    case Resource.Id.EquipDBDetailRefreshCacheFAB:
-                        tip = Resources.GetString(Resource.String.Tooltip_DB_CacheRefresh);
-                        break;
-                    case Resource.Id.EquipDBDetailProductPercentFAB:
-                        tip = Resources.GetString(Resource.String.Tooltip_DB_ProductPercentage);
-                        break;
-                }
-
-                Toast.MakeText(this, tip, ToastLength.Short).Show();
+                MenuInflater.Inflate(Resource.Menu.EquipDBDetailMenu, menu);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
+                Toast.MakeText(this, "Cannot create option menu", ToastLength.Short).Show();
             }
+
+            return base.OnCreateOptionsMenu(menu);
         }
 
-        private void RefreshCacheFAB_Click(object sender, EventArgs e)
-        {
-            _ = InitLoadProcess(true);
-        }
-
-        private void FABTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
-        {
-            HideFloatingActionButtonAnimation();
-        }
-
-        private void PercentTableFAB_Click(object sender, EventArgs e)
+        public override bool OnOptionsItemSelected(IMenuItem item)
         {
             try
             {
-                if (IsEnableFABMenu == false)
+                switch (item?.ItemId)
                 {
-                    PercentTableFAB.SetImageResource(Resource.Drawable.ProductPercentTable_Icon);
-                    IsEnableFABMenu = true;
-                    PercentTableFAB.Animate().Alpha(1.0f).SetDuration(500).Start();
-                    PercentTableFAB.Show();
-                    RefreshCacheFAB.Show();
-                    FABTimer.Start();
-                }
-                else
-                {
-                    if ((int)EquipInfoDR["ProductTIme"] != 0)
-                    {
+                    case Resource.Id.EquipDBDetailLink:
+                        Android.Support.V7.Widget.PopupMenu pMenu = new Android.Support.V7.Widget.PopupMenu(this, FindViewById<View>(Resource.Id.EquipDBDetailLink));
+                        pMenu.Inflate(Resource.Menu.DBLinkMenu);
+                        pMenu.MenuItemClick += PMenu_MenuItemClick;
+                        pMenu.Show();
+                        break;
+                    case Resource.Id.EquipDBDetailProductPercentage:
                         var intent = new Intent(this, typeof(ProductPercentTableActivity));
                         intent.PutExtra("Info", new string[] { "Equip", equip.Id.ToString() });
                         StartActivity(intent);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                    }
+                        break;
+                    case Android.Resource.Id.Home:
+                        OnBackPressed();
+                        break;
                 }
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeSubMenuError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                Toast.MakeText(this, "Cannot execute option menu", ToastLength.Short).Show();
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
+
+        private void PMenu_MenuItemClick(object sender, Android.Support.V7.Widget.PopupMenu.MenuItemClickEventArgs e)
+        {
+            try
+            {
+                string url = "";
+
+                switch (e.Item.ItemId)
+                {
+                    case Resource.Id.DBLinkNamu:
+                        url = $"https://namu.wiki/w/소녀전선/장비";
+                        break;
+                    case Resource.Id.DBLinkInven:
+                        url = $"http://gf.inven.co.kr/dataninfo/item/";
+                        break;
+                    case Resource.Id.DBLink36Base:
+                        url = $"https://girlsfrontline.kr/equip/{equip.Id}";
+                        break;
+                    case Resource.Id.DBLinkGFDB:
+                        url = $"https://gfl.zzzzz.kr/equip.php?lang=ko";
+                        break;
+                }
+
+                Intent intent = new Intent(this, typeof(WebBrowserActivity));
+                intent.PutExtra("url", url);
+                StartActivity(intent);
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                Toast.MakeText(this, "Cannot execute link menu", ToastLength.Short).Show();
             }
         }
 
-        private void HideFloatingActionButtonAnimation()
+        private async Task InitializeProcess()
         {
-            FABTimer.Stop();
-            IsEnableFABMenu = false;
-
-            RefreshCacheFAB.Hide();
-            PercentTableFAB.Alpha = 0.3f;
-            PercentTableFAB.SetImageResource(Resource.Drawable.HideFloating_Icon);
-        }
-
-        private async Task InitLoadProcess(bool IsRefresh)
-        {
-            InitLoadProgressBar.Visibility = ViewStates.Visible;
-
             await Task.Delay(100);
 
             try
             {
-                     // 장비 타이틀 바 초기화
+                Android.Graphics.Color toolbarColor;
+
+                switch (equip.Grade)
+                {
+                    case 2:
+                        toolbarColor = Android.Graphics.Color.SlateGray;
+                        break;
+                    case 3:
+                        toolbarColor = Android.Graphics.Color.ParseColor("#55CCEE");
+                        break;
+                    case 4:
+                        toolbarColor = Android.Graphics.Color.ParseColor("#AACC22");
+                        break;
+                    case 5:
+                        toolbarColor = Android.Graphics.Color.ParseColor("#FFBB22");
+                        break;
+                    default:
+                    case 0:
+                        toolbarColor = Android.Graphics.Color.ParseColor("#C040B0");
+                        break;
+                }
+
+                toolbar.SetBackgroundColor(toolbarColor);
+
+                if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+                {
+                    Window.SetStatusBarColor(toolbarColor);
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                Toast.MakeText(this, "Fail Initialize Process", ToastLength.Short).Show();
+            }
+        }
+
+
+        private async Task InitLoadProcess(bool IsRefresh)
+        {
+            await Task.Delay(100);
+
+            try
+            {
+                refreshMainLayout.Refreshing = true;
+
+
+                // 장비 타이틀 바 초기화
 
                 try
                 {
@@ -191,7 +238,7 @@ namespace GFI_with_GFS_A
                 FindViewById<TextView>(Resource.Id.EquipDBDetailEquipProductTime).Text = ETC.CalcTime(equip.ProductTime);
 
 
-                             // 장비 기본 정보 초기화
+                // 장비 기본 정보 초기화
 
                 int[] GradeStarIds = { Resource.Id.EquipDBDetailInfoGrade1, Resource.Id.EquipDBDetailInfoGrade2, Resource.Id.EquipDBDetailInfoGrade3, Resource.Id.EquipDBDetailInfoGrade4, Resource.Id.EquipDBDetailInfoGrade5 };
 
@@ -212,7 +259,7 @@ namespace GFI_with_GFS_A
                 FindViewById<TextView>(Resource.Id.EquipDBDetailInfoETC).Text = equip.Note;
 
 
-                            // 장비 사용여부 정보 초기화
+                // 장비 사용여부 정보 초기화
 
                 bool IsOnlyUse = false;
 
@@ -280,13 +327,13 @@ namespace GFI_with_GFS_A
                 }
 
 
-                            // 장비 능력치 초기화
+                // 장비 능력치 초기화
 
                 string[] Abilities = equip.Abilities;
                 string[] AbilityInitMags = equip.InitMags;
                 string[] AbilityMaxMags = equip.MaxMags;
 
-                AbilityTableSubLayout.RemoveAllViews();
+                abilityTableSubLayout.RemoveAllViews();
 
                 for (int i = 0; i < equip.Abilities.Length; ++i)
                 {
@@ -317,28 +364,33 @@ namespace GFI_with_GFS_A
                     layout.AddView(initmag);
                     layout.AddView(maxmag);
 
-                    AbilityTableSubLayout.AddView(layout);
+                    abilityTableSubLayout.AddView(layout);
                 }
 
-                if (ETC.useLightTheme == true) SetCardTheme();
+                if (ETC.useLightTheme)
+                {
+                    SetCardTheme();
+                }
+
                 ShowCardViewVisibility();
-                HideFloatingActionButtonAnimation();
             }
             catch (WebException ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
+               
                 _ = InitLoadProcess(false);
+                
                 return;
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
             finally
             {
-                InitLoadProgressBar.Visibility = ViewStates.Invisible;
+                refreshMainLayout.Refreshing = false;
             }
         }
 

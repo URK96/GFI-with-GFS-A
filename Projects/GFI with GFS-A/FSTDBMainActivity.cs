@@ -12,43 +12,38 @@ using System.Data;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "@string/Activity_FSTMainActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/Activity_FSTMainActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class FSTDBMainActivity : BaseAppCompatActivity
     {
-        delegate void DownloadProgress();
+        delegate Task DownloadProgress();
 
-        private List<FST> RootList = new List<FST>();
-        private List<FST> SubList = new List<FST>();
-        private List<string> Download_List = new List<string>();
+        private enum SortType { Name, Number }
+        private enum SortOrder { Ascending, Descending }
+        private SortType sortType = SortType.Name;
+        private SortOrder sortOrder = SortOrder.Ascending;
 
-        int[] TypeFilters = { Resource.Id.FSTFilterTypeATW, Resource.Id.FSTFilterTypeAGL, Resource.Id.FSTFilterTypeMTR};
+        private List<FST> rootList = new List<FST>();
+        private List<FST> subList = new List<FST>();
+        private List<string> downloadList = new List<string>();
 
-        int p_now = 0;
-        int p_total = 0;
+        int[] typeFilters = { Resource.Id.FSTFilterTypeATW, Resource.Id.FSTFilterTypeAGL, Resource.Id.FSTFilterTypeMTR};
 
-        private bool[] HasApplyFilter = { false };
-        private bool[] Filter_Type = { false, false, false };
-        private bool CanRefresh = false;
+        private bool[] hasApplyFilter = { false };
+        private bool[] filterType = { false, false, false };
+        private bool canRefresh = false;
 
-        private enum LineUp { Name, Number }
-        private LineUp LineUpStyle = LineUp.Name;
+        private string searchViewText;
 
+        private Android.Support.V7.Widget.Toolbar toolbar;
+        private Android.Support.V7.Widget.SearchView searchView;
         private RecyclerView mFSTListView;
-        private RecyclerView.LayoutManager MainRecyclerManager;
-        private CoordinatorLayout SnackbarLayout;
+        private RecyclerView.LayoutManager mainRecyclerManager;
+        private CoordinatorLayout snackbarLayout;
 
-        private EditText SearchText;
-
-        private Dialog dialog;
-        private ProgressBar totalProgressBar;
-        private ProgressBar nowProgressBar;
-        private TextView totalProgress;
-        private TextView nowProgress;
-        private FloatingActionButton refresh_fab;
-        private FloatingActionButton filter_fab;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -56,166 +51,99 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.useLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+                if (ETC.useLightTheme)
+                {
+                    SetTheme(Resource.Style.GFS_Light);
+                }
 
                 // Create your application here
                 SetContentView(Resource.Layout.FSTDBListLayout);
 
-                SetTitle(Resource.String.FSTDBMainActivity_Title);
+                canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
-                CanRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
-
-                mFSTListView = FindViewById<RecyclerView>(Resource.Id.FSTDBRecyclerView);
-                MainRecyclerManager = new LinearLayoutManager(this);
-                mFSTListView.SetLayoutManager(MainRecyclerManager);
-                SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FSTDBSnackbarLayout);
-
-                SearchText = FindViewById<EditText>(Resource.Id.FSTSearchText);
-
-                InitializeView();
-
-                if (ETC.useLightTheme == true)
+                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.FSTDBMainToolbar);
+                searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.FSTDBSearchView);
+                searchView.QueryTextChange += (sender, e) =>
                 {
-                    FindViewById<LinearLayout>(Resource.Id.FSTSearchLayout).SetBackgroundColor(Android.Graphics.Color.LightGray);
-                    FindViewById<ImageButton>(Resource.Id.FSTSearchResetButton).SetBackgroundResource(Resource.Drawable.SearchIcon_WhiteTheme);
-                    FindViewById<View>(Resource.Id.FSTSearchSeperateBar).SetBackgroundColor(Android.Graphics.Color.DarkGreen);
-                }
+                    searchViewText = e.NewText;
+                    _ = ListFST(searchViewText);
+                };
+                mFSTListView = FindViewById<RecyclerView>(Resource.Id.FSTDBRecyclerView);
+                mainRecyclerManager = new LinearLayoutManager(this);
+                mFSTListView.SetLayoutManager(mainRecyclerManager);
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FSTDBSnackbarLayout);
+
+                SetSupportActionBar(toolbar);
+                SupportActionBar.SetTitle(Resource.String.FSTDBMainActivity_Title);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
                 InitProcess();
 
-                ListFST(SearchText.Text);
+                _ = ListFST();
 
-                if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true) == true)) ETC.RunHelpActivity(this, "DBList");
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Activity_OnCreateError, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
-            }
-        }
-
-        /*private void MFSTListView_ScrollStateChanged(object sender, AbsListView.ScrollStateChangedEventArgs e)
-        {
-            try
-            {
-                switch (e.ScrollState)
+                /*if ((ETC.locale.Language == "ko") && ETC.sharedPreferences.GetBoolean("Help_DBList", true))
                 {
-                    case ScrollState.TouchScroll:
-                        filter_fab.Hide();
-                        array_fab.Hide();
-                        break;
-                    case ScrollState.Idle:
-                        filter_fab.Show();
-                        array_fab.Show();
-                        break;
-                }
+                    ETC.RunHelpActivity(this, "DBList");
+                }*/
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeStatusError, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.Activity_OnCreateError, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
             }
-        }*/
-
-        private async void Adapter_ItemClick(object sender, int position)
-        {
-            await Task.Delay(100);
-            var FSTInfo = new Intent(this, typeof(FSTDBDetailActivity));
-            FSTInfo.PutExtra("Keyword", SubList[position].CodeName);
-            StartActivity(FSTInfo);
-            OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }
 
-        private void InitializeView()
+        public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            refresh_fab = FindViewById<FloatingActionButton>(Resource.Id.FSTRefreshCacheFAB);
-            if (CanRefresh == false)
-                refresh_fab.Hide();
-            else
+            MenuInflater.Inflate(Resource.Menu.FSTDBMenu, menu);
+
+            var cacheItem = menu?.FindItem(Resource.Id.RefreshFSTCropImageCache);
+            _ = canRefresh ? cacheItem.SetVisible(true) : cacheItem.SetVisible(false);
+
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
             {
-                if (refresh_fab.HasOnClickListeners == false)
-                    refresh_fab.Click += delegate
+                case Android.Resource.Id.Home:
+                    OnBackPressed();
+                    break;
+                case Resource.Id.FSTDBMainFilter:
+                    InitFilterBox();
+                    break;
+                case Resource.Id.FSTDBMainSort:
+                    InitSortBox();
+                    break;
+                case Resource.Id.RefreshFSTCropImageCache:
+                    downloadList.Clear();
+
+                    foreach (DataRow dr in ETC.enemyList.Rows)
                     {
-                        Download_List.Clear();
-                        foreach (DataRow dr in ETC.enemyList.Rows) Download_List.Add((string)dr["CodeName"]);
-                        Download_List.TrimExcess();
+                        downloadList.Add((string)dr["CodeName"]);
+                    }
 
-                        ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(FSTCropImageDownloadProcess));
-                    };
+                    downloadList.TrimExcess();
 
-                refresh_fab.LongClick += MainFAB_fab_LongClick;
+                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(FSTCropImageDownloadProcess));
+                    break;
             }
 
-            filter_fab = FindViewById<FloatingActionButton>(Resource.Id.FSTFilterFAB);
-            if (filter_fab.HasOnClickListeners == false)
-                filter_fab.Click += Filter_Fab_Click;
-
-            ImageButton SearchResetButton = FindViewById<ImageButton>(Resource.Id.FSTSearchResetButton);
-            if (SearchResetButton.HasOnClickListeners == false)
-                SearchResetButton.Click += SearchResetButton_Click;
-
-            SearchText.TextChanged += SearchText_TextChanged;
+            return base.OnOptionsItemSelected(item);
         }
-
-        private void MainFAB_fab_LongClick(object sender, View.LongClickEventArgs e)
-        {
-            try
-            {
-                FloatingActionButton fab = sender as FloatingActionButton;
-
-                string tip = "";
-
-                switch (fab.Id)
-                {
-                    case Resource.Id.FSTRefreshCacheFAB:
-                        tip = Resources.GetString(Resource.String.Tooltip_DB_CacheRefresh);
-                        break;
-                    case Resource.Id.FSTFilterFAB:
-                        tip = Resources.GetString(Resource.String.Tooltip_DB_Filter);
-                        break;
-                }
-
-                Toast.MakeText(this, tip, ToastLength.Short).Show();
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-            }
-        }
-
-        /*private void Array_fab_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                switch (LineUpStyle)
-                {
-                    default:
-                    case LineUp.Name:
-                        LineUpStyle = LineUp.Number;
-                        array_fab.SetImageResource(Resource.Drawable.LineUp_DicNum_Icon);
-                        break;
-                    case LineUp.Number:
-                        LineUpStyle = LineUp.Name;
-                        array_fab.SetImageResource(Resource.Drawable.LineUp_ProductTime_Icon);
-                        break;
-                }
-
-                ListFST(SearchText.Text);
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.LineUp_Error, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
-            }
-        }*/
 
         private void InitProcess()
         {
             CreateListObject();
 
             if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false))
-                if (CheckFSTCropImage() == true)
+            {
+                if (CheckFSTCropImage())
+                {
                     ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(FSTCropImageDownloadProcess));
+                }
+            }
         }
 
         private void CreateListObject()
@@ -223,58 +151,75 @@ namespace GFI_with_GFS_A
             try
             {
                 foreach (DataRow dr in ETC.FSTList.Rows)
-                    RootList.Add(new FST(dr, true));
+                {
+                    rootList.Add(new FST(dr, true));
+                }
 
-                RootList.TrimExcess();
+                rootList.TrimExcess();
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Initialize_List_Fail, Snackbar.LengthShort);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.Initialize_List_Fail, Snackbar.LengthShort);
             }
         }
 
         private bool CheckFSTCropImage()
         {
-            Download_List.Clear();
+            downloadList.Clear();
 
-            for (int i = 0; i < RootList.Count; ++i)
+            for (int i = 0; i < rootList.Count; ++i)
             {
-                FST fst = RootList[i];
-                string FilePath = System.IO.Path.Combine(ETC.cachePath, "FST", "Normal_Icon", $"{fst.CodeName}.gfdcache");
-                if (System.IO.File.Exists(FilePath) == false)
-                    Download_List.Add(fst.CodeName);
+                FST fst = rootList[i];
+                string filePath = Path.Combine(ETC.cachePath, "FST", "Normal_Icon", $"{fst.CodeName}.gfdcache");
+
+                if (!File.Exists(filePath))
+                {
+                    downloadList.Add(fst.CodeName);
+                }
             }
 
-            Download_List.TrimExcess();
+            downloadList.TrimExcess();
 
-
-            return !(Download_List.Count == 0);
+            return !(downloadList.Count == 0);
         }
 
         private void ShowDownloadCheckMessage(int title, int message, DownloadProgress method)
         {
-            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
-            ad.SetTitle(title);
-            ad.SetMessage(message);
-            ad.SetCancelable(true);
-            ad.SetPositiveButton(Resource.String.AlertDialog_Download, delegate { method(); });
-            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG))
+            {
+                ad.SetTitle(title);
+                ad.SetMessage(message);
+                ad.SetCancelable(true);
+                ad.SetPositiveButton(Resource.String.AlertDialog_Download, delegate { method(); });
+                ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
 
-            ad.Show();
+                ad.Show();
+            }
         }
 
-        private async void FSTCropImageDownloadProcess()
+        private async Task FSTCropImageDownloadProcess()
         {
+            Dialog dialog;
+            ProgressBar totalProgressBar;
+            ProgressBar nowProgressBar;
+            TextView totalProgress;
+            TextView nowProgress;
+
             View v = LayoutInflater.Inflate(Resource.Layout.ProgressDialogLayout, null);
 
-            Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload);
-            pd.SetTitle(Resource.String.DBList_DownloadCropImageTitle);
-            pd.SetCancelable(false);
-            pd.SetView(v);
+            int pNow = 0;
+            int pTotal = 0;
 
-            dialog = pd.Create();
-            dialog.Show();
+            using (Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload))
+            {
+                pd.SetTitle(Resource.String.DBList_DownloadCropImageTitle);
+                pd.SetCancelable(false);
+                pd.SetView(v);
+
+                dialog = pd.Create();
+                dialog.Show();
+            }
 
             try
             {
@@ -283,74 +228,142 @@ namespace GFI_with_GFS_A
                 nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
                 nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
 
-                p_now = 0;
-                p_total = 0;
-                p_total = Download_List.Count;
+                pTotal = downloadList.Count;
                 totalProgressBar.Max = 100;
-                totalProgressBar.Progress = 0;
+                totalProgressBar.Progress = pNow;
 
                 using (WebClient wc = new WebClient())
                 {
-                    wc.DownloadProgressChanged += Wc_DownloadProgressChanged;
-                    wc.DownloadFileCompleted += Wc_DownloadFileCompleted;
-
-                    for (int i = 0; i < p_total; ++i)
+                    wc.DownloadProgressChanged += (sender, e) =>
                     {
-                        string url = System.IO.Path.Combine(ETC.server, "Data", "Images", "FST", "Normal_Icon", $"{Download_List[i]}_icon.png");
-                        string target = System.IO.Path.Combine(ETC.cachePath, "FST", "Normal_Icon", $"{Download_List[i]}.gfdcache");
+                        nowProgressBar.Progress = e.ProgressPercentage;
+                        nowProgress.Text = $"{e.ProgressPercentage}%";
+                    };
+                    wc.DownloadFileCompleted += (sender, e) =>
+                    {
+                        pNow += 1;
+
+                        totalProgressBar.Progress = Convert.ToInt32((pNow / Convert.ToDouble(pTotal)) * 100);
+                        totalProgress.Text = $"{totalProgressBar.Progress}%";
+                    };
+
+                    for (int i = 0; i < pTotal; ++i)
+                    {
+                        string url = Path.Combine(ETC.server, "Data", "Images", "FST", "Normal_Icon", $"{downloadList[i]}_icon.png");
+                        string target = Path.Combine(ETC.cachePath, "FST", "Normal_Icon", $"{downloadList[i]}.gfdcache");
+                        
                         await wc.DownloadFileTaskAsync(url, target);
                     }
                 }
 
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_DownloadCropImageComplete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_DownloadCropImageComplete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);
 
                 await Task.Delay(500);
 
-                ListFST(SearchText.Text);
+                _ = ListFST(searchViewText);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_DownloadCropImageFail, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_DownloadCropImageFail, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
             }
             finally
             {
                 dialog.Dismiss();
-                dialog = null;
-                totalProgressBar = null;
-                totalProgress = null;
-                nowProgressBar = null;
-                nowProgress = null;
             }
         }
 
-        private void Wc_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        private void InitSortBox()
         {
-            p_now += 1;
+            string[] sortTypeList =
+            {
+                Resources.GetString(Resource.String.Sort_SortMethod_Name),
+                Resources.GetString(Resource.String.Sort_SortMethod_Number)
+            };
 
-            totalProgressBar.Progress = Convert.ToInt32((p_now / Convert.ToDouble(p_total)) * 100);
-            totalProgress.Text = $"{totalProgressBar.Progress}%";
+            try
+            {
+                View v = LayoutInflater.Inflate(Resource.Layout.CommonSorterLayout, null);
+
+                var adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, sortTypeList);
+                adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
+
+                var sortSpinner = v.FindViewById<Spinner>(Resource.Id.CommonSortSpinner);
+
+                sortSpinner.Adapter = adapter;
+                sortSpinner.SetSelection((int)sortType);
+
+                switch (sortOrder)
+                {
+                    default:
+                    case SortOrder.Ascending:
+                        v.FindViewById<RadioButton>(Resource.Id.CommonSortOrderAscending).Checked = true;
+                        break;
+                    case SortOrder.Descending:
+                        v.FindViewById<RadioButton>(Resource.Id.CommonSortOrderDescending).Checked = true;
+                        break;
+                }
+
+                using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
+                {
+                    FilterBox.SetTitle(Resource.String.DBList_SortBoxTitle);
+                    FilterBox.SetView(v);
+                    FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplySort(v); });
+                    FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                    FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetSort(); });
+
+                    FilterBox.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.SortBox_InitError, Snackbar.LengthLong);
+            }
         }
 
-        private void Wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        private void ApplySort(View view)
         {
-            nowProgressBar.Progress = e.ProgressPercentage;
-            nowProgress.Text = $"{e.ProgressPercentage}%";
+            try
+            {
+                sortType = (SortType)view.FindViewById<Spinner>(Resource.Id.CommonSortSpinner).SelectedItemPosition;
+
+                if (view.FindViewById<RadioButton>(Resource.Id.CommonSortOrderAscending).Checked)
+                {
+                    sortOrder = SortOrder.Ascending;
+                }
+                else if (view.FindViewById<RadioButton>(Resource.Id.CommonSortOrderDescending).Checked)
+                {
+                    sortOrder = SortOrder.Descending;
+                }
+                else
+                {
+                    sortOrder = SortOrder.Ascending;
+                }
+
+                _ = ListFST(searchViewText);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_FilterBoxApplyFail, Snackbar.LengthLong);
+            }
         }
 
-        private void SearchText_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
+        private void ResetSort()
         {
-            ListFST(SearchText.Text);
-        }
+            try
+            {
+                sortType = SortType.Name;
+                sortOrder = SortOrder.Ascending;
 
-        private void SearchResetButton_Click(object sender, EventArgs e)
-        {
-            SearchText.Text = "";
-        }
-
-        private void Filter_Fab_Click(object sender, EventArgs e)
-        {
-            InitFilterBox();   
+                _ = ListFST(searchViewText);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_FilterBoxResetFail, Snackbar.LengthLong);
+            }
         }
 
         private void InitFilterBox()
@@ -361,22 +374,26 @@ namespace GFI_with_GFS_A
             {
                 View v = inflater.Inflate(Resource.Layout.FSTFilterLayout, null);
 
-                for (int i = 0; i < TypeFilters.Length; ++i)
-                    v.FindViewById<CheckBox>(TypeFilters[i]).Checked = Filter_Type[i];
+                for (int i = 0; i < typeFilters.Length; ++i)
+                {
+                    v.FindViewById<CheckBox>(typeFilters[i]).Checked = filterType[i];
+                }
 
-                Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical);
-                FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
-                FilterBox.SetView(v);
-                FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
-                FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(); });
+                using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
+                {
+                    FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
+                    FilterBox.SetView(v);
+                    FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
+                    FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                    FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(); });
 
-                FilterBox.Show();
+                    FilterBox.Show();
+                }
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FilterBox_InitError, Snackbar.LengthLong);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.FilterBox_InitError, Snackbar.LengthLong);
             }
         }
 
@@ -384,80 +401,96 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                for (int i = 0; i < TypeFilters.Length; ++i)
-                    Filter_Type[i] = view.FindViewById<CheckBox>(TypeFilters[i]).Checked;
+                for (int i = 0; i < typeFilters.Length; ++i)
+                {
+                    filterType[i] = view.FindViewById<CheckBox>(typeFilters[i]).Checked;
+                }
 
                 CheckApplyFilter();
 
-                ListFST(SearchText.Text);
+                _ = ListFST(searchViewText);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_FilterBoxApplyFail, Snackbar.LengthLong);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_FilterBoxApplyFail, Snackbar.LengthLong);
             }
         }
 
         private void CheckApplyFilter()
         {
-            for (int i = 0; i < TypeFilters.Length; ++i)
-                if (Filter_Type[i] == true)
+            for (int i = 0; i < typeFilters.Length; ++i)
+            {
+                hasApplyFilter[0] = filterType[i];
+
+                if (hasApplyFilter[0])
                 {
-                    HasApplyFilter[0] = true;
                     break;
                 }
+            }
         }
 
         private void ResetFilter()
         {
             try
             {
-                for (int i = 0; i < TypeFilters.Length; ++i)
-                    Filter_Type[i] = true;
+                for (int i = 0; i < typeFilters.Length; ++i)
+                {
+                    filterType[i] = true;
+                }
 
-                for (int i = 0; i < HasApplyFilter.Length; ++i)
-                    HasApplyFilter[i] = false;
+                for (int i = 0; i < hasApplyFilter.Length; ++i)
+                {
+                    hasApplyFilter[i] = false;
+                }
 
-                ListFST(SearchText.Text);
+                _ = ListFST(searchViewText);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_FilterBoxResetFail, Snackbar.LengthLong);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_FilterBoxResetFail, Snackbar.LengthLong);
             }
         }
 
-        private async void ListFST(string searchText)
+        private async Task ListFST(string searchText = "")
         {
-            SubList.Clear();
+            subList.Clear();
 
             searchText = searchText.ToUpper();
 
             try
             {
-                for (int i = 0; i < RootList.Count; ++i)
+                for (int i = 0; i < rootList.Count; ++i)
                 {
-                    FST fst = RootList[i];
+                    FST fst = rootList[i];
 
-                    if (CheckFilter(fst) == true)
-                        continue;
-
-                    if (searchText != "")
+                    if (CheckFilter(fst))
                     {
-                        string name = fst.Name.ToUpper();
-                        if (name.Contains(searchText) == false)
-                            continue;
+                        continue;
                     }
 
-                    SubList.Add(fst);
+                    if (!string.IsNullOrWhiteSpace(searchText))
+                    {
+                        string name = fst.Name.ToUpper();
+
+                        if (!name.Contains(searchText))
+                        {
+                            continue;
+                        }
+                    }
+
+                    subList.Add(fst);
                 }
 
-                SubList.Sort(SortFST);
+                subList.Sort(SortFST);
 
-                var adapter = new FSTListAdapter(SubList, this);
+                var adapter = new FSTListAdapter(subList, this);
 
-                if (adapter.HasOnItemClick() == false)
+                if (!adapter.HasOnItemClick())
+                {
                     adapter.ItemClick += Adapter_ItemClick;
+                }
 
                 await Task.Delay(100);
 
@@ -466,37 +499,64 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBList_ListingFail, Snackbar.LengthLong);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_ListingFail, Snackbar.LengthLong);
             }
+        }
+
+        private async void Adapter_ItemClick(object sender, int position)
+        {
+            await Task.Delay(100);
+            var FSTInfo = new Intent(this, typeof(FSTDBDetailActivity));
+            FSTInfo.PutExtra("Keyword", subList[position].CodeName);
+            StartActivity(FSTInfo);
+            OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }
 
         private int SortFST(FST x, FST y)
         {
-            switch (LineUpStyle)
+            if (sortOrder == SortOrder.Descending)
             {
-                case LineUp.Number:
-                    return x.DicNumber.CompareTo(y.DicNumber);
-                case LineUp.Name:
+                FST temp = x;
+                x = y;
+                y = temp;
+            }
+
+            switch (sortType)
+            {
+                case SortType.Name:
                 default:
                     return x.Name.CompareTo(y.Name);
+                case SortType.Number:
+                    return x.DicNumber.CompareTo(y.DicNumber); 
             }
         }
 
         private bool CheckFilter(FST fst)
         {
-            if (HasApplyFilter[0] == true)
+            if (hasApplyFilter[0])
+            {
                 switch (fst.Type)
                 {
                     case "ATW":
-                        if (Filter_Type[0] == false) return true;
+                        if (!filterType[0])
+                        {
+                            return true;
+                        }
                         break;
                     case "AGL":
-                        if (Filter_Type[1] == false) return true;
+                        if (!filterType[1])
+                        {
+                            return true;
+                        }
                         break;
                     case "MTR":
-                        if (Filter_Type[2] == false) return true;
+                        if (!filterType[2])
+                        {
+                            return true;
+                        }
                         break;
                 }
+            }
 
             return false;
         }
@@ -598,4 +658,5 @@ namespace GFI_with_GFS_A
             }
         }
     }
+
 }
