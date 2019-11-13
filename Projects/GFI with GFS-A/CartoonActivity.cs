@@ -177,13 +177,13 @@ namespace GFI_with_GFS_A
                                 case 2:
                                 case 3:
                                 case 4:
-                                case 5:
-                                case 8:
+                                case 6:
+                                case 9:
                                     _ = ((CartoonScreen)cartoonScreenF).LoadProcess(categoryList[categoryIndex], categoryIndex, e.Position - 1, false);
                                     break;
-                                case 6:
                                 case 7:
-                                case 9:
+                                case 8:
+                                case 10:
                                     _ = ((CartoonScreen)cartoonScreenF).LoadProcessWeb(categoryList[categoryIndex], categoryIndex, e.Position - 1, false);
                                     break;
                             }

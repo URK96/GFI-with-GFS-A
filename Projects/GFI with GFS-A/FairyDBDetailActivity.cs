@@ -5,6 +5,7 @@ using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V4.App;
 using Android.Support.V7.Widget;
+using Android.Support.V4.Widget;
 using Android.Views;
 using Android.Views.Animations;
 using Android.Widget;
@@ -17,25 +18,15 @@ using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class FairyDBDetailActivity : BaseFragmentActivity
+    [Activity(Label = "", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class FairyDBDetailActivity : BaseAppCompatActivity
     {
-        System.Timers.Timer FABTimer = new System.Timers.Timer();
-
         private Fairy fairy;
-        private DataRow FairyInfoDR = null;
+        private DataRow fairyInfoDR = null;
 
-        private bool IsOpenFABMenu = false;
-        private bool IsEnableFABMenu = false;
-
-        private ProgressBar InitLoadProgressBar;
-        private FloatingActionButton RefreshCacheFAB;
-        private FloatingActionButton PercentTableFAB;
-        private FloatingActionButton MainFAB;
-        private FloatingActionButton GFDBFAB;
-        private FloatingActionButton InvenFAB;
-        private FloatingActionButton BaseFAB;
-        private CoordinatorLayout SnackbarLayout = null;
+        private Android.Support.V7.Widget.Toolbar toolbar;
+        private SwipeRefreshLayout refreshMainLayout;
+        private CoordinatorLayout snackbarLayout;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -44,51 +35,36 @@ namespace GFI_with_GFS_A
                 base.OnCreate(savedInstanceState);
 
                 if (ETC.useLightTheme)
+                {
                     SetTheme(Resource.Style.GFS_Light);
+                }
 
                 // Create your application here
                 SetContentView(Resource.Layout.FairyDBDetailLayout);
 
-                FairyInfoDR = ETC.FindDataRow(ETC.fairyList, "DicNumber", Intent.GetIntExtra("DicNum", 0));
-                fairy = new Fairy(FairyInfoDR);
+               
 
-                InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.FairyDBDetailInitLoadProgress);
+                fairyInfoDR = ETC.FindDataRow(ETC.fairyList, "DicNumber", Intent.GetIntExtra("DicNum", 0));
+                fairy = new Fairy(fairyInfoDR);
+
+                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.FairyDBDetailMainToolbar);
+
+                SetSupportActionBar(toolbar);
+                SupportActionBar.Title = "";
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
+                refreshMainLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.FairyDBDetailMainRefreshLayout);
+                refreshMainLayout.Refresh += delegate { _ = InitLoadProcess(true); };
                 FindViewById<ImageView>(Resource.Id.FairyDBDetailSmallImage).Click += FairyDBDetailSmallImage_Click;
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FairyDBSnackbarLayout);
 
-                RefreshCacheFAB = FindViewById<FloatingActionButton>(Resource.Id.FairyDBDetailRefreshCacheFAB);
-                PercentTableFAB = FindViewById<FloatingActionButton>(Resource.Id.FairyDBDetailProductPercentFAB);
-                if (fairy.ProductTime == 0) PercentTableFAB.Visibility = ViewStates.Gone;
-                MainFAB = FindViewById<FloatingActionButton>(Resource.Id.FairyDBDetailSideLinkMainFAB);
-                GFDBFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB1);
-                GFDBFAB.SetImageResource(Resource.Drawable.GFDB_Logo);
-                InvenFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB2);
-                InvenFAB.SetImageResource(Resource.Drawable.Inven_Logo);
-                BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB3);
-                BaseFAB.SetImageResource(Resource.Drawable.Base36_Logo);
-
-                RefreshCacheFAB.Click += delegate { _ = InitLoadProcess(true); };
-                PercentTableFAB.Click += PercentTableFAB_Click;
-                MainFAB.Click += MainFAB_Click;
-                GFDBFAB.Click += MainSubFAB_Click;
-                InvenFAB.Click += MainSubFAB_Click;
-                BaseFAB.Click += MainSubFAB_Click;
-
-                RefreshCacheFAB.LongClick += DBDetailFAB_LongClick;
-                PercentTableFAB.LongClick += DBDetailFAB_LongClick;
-                MainFAB.LongClick += DBDetailFAB_LongClick;
-                GFDBFAB.LongClick += DBDetailFAB_LongClick;
-                InvenFAB.LongClick += DBDetailFAB_LongClick;
-                BaseFAB.LongClick += DBDetailFAB_LongClick;
-
-                SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FairyDBSnackbarLayout);
-
-                FABTimer.Interval = 3000;
-                FABTimer.Elapsed += delegate { HideFloatingActionButtonAnimation(); };
 
                 _ = InitLoadProcess(false);
 
-                if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_FairyDBDetail", true)))
+                /*if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_FairyDBDetail", true)))
+                {
                     ETC.RunHelpActivity(this, "FairyDBDetail");
+                }*/
             }
             catch (Exception ex)
             {
@@ -97,98 +73,76 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void DBDetailFAB_LongClick(object sender, View.LongClickEventArgs e)
+        public override bool OnCreateOptionsMenu(IMenu menu)
         {
             try
             {
-                FloatingActionButton fab = sender as FloatingActionButton;
+                MenuInflater.Inflate(Resource.Menu.FairyDBDetailMenu, menu);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                Toast.MakeText(this, "Cannot create option menu", ToastLength.Short).Show();
+            }
 
-                string tip = "";
+            return base.OnCreateOptionsMenu(menu);
+        }
 
-                switch (fab.Id)
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            try
+            {
+                switch (item?.ItemId)
                 {
-                    case Resource.Id.FairyDBDetailRefreshCacheFAB:
-                        tip = Resources.GetString(Resource.String.Tooltip_DB_CacheRefresh);
+                    case Resource.Id.FairyDBDetailLink:
+                        Android.Support.V7.Widget.PopupMenu pMenu = new Android.Support.V7.Widget.PopupMenu(this, FindViewById<View>(Resource.Id.FairyDBDetailLink));
+                        pMenu.Inflate(Resource.Menu.DBLinkMenu);
+                        pMenu.MenuItemClick += PMenu_MenuItemClick;
+                        pMenu.Show();
                         break;
-                    case Resource.Id.FairyDBDetailProductPercentFAB:
-                        tip = Resources.GetString(Resource.String.Tooltip_DB_ProductPercentage);
+                    case Resource.Id.FairyDBDetailProductPercentage:
+                        var intent = new Intent(this, typeof(ProductPercentTableActivity));
+                        intent.PutExtra("Info", new string[] { "Fairy", fairy.DicNumber.ToString() });
+                        StartActivity(intent);
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
-                    case Resource.Id.FairyDBDetailSideLinkMainFAB:
-                        if (IsEnableFABMenu == false) return;
-                        tip = Resources.GetString(Resource.String.Tooltip_DB_SideLink);
-                        break;
-                    case Resource.Id.SideLinkFAB1:
-                        tip = Resources.GetString(Resource.String.Tooltip_SideLink_GFDB);
-                        break;
-                    case Resource.Id.SideLinkFAB2:
-                        tip = Resources.GetString(Resource.String.Tooltip_SideLink_Inven);
-                        break;
-                    case Resource.Id.SideLinkFAB3:
-                        tip = Resources.GetString(Resource.String.Tooltip_SideLink_36Base);
+                    case Android.Resource.Id.Home:
+                        OnBackPressed();
                         break;
                 }
-
-                Toast.MakeText(this, tip, ToastLength.Short).Show();
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
+                Toast.MakeText(this, "Cannot execute option menu", ToastLength.Short).Show();
             }
+
+            return base.OnOptionsItemSelected(item);
         }
 
-        private void HideFloatingActionButtonAnimation()
-        {
-            FABTimer.Stop();
-            IsEnableFABMenu = false;
-
-            PercentTableFAB.Hide();
-            RefreshCacheFAB.Hide();
-            MainFAB.Alpha = 0.3f;
-            MainFAB.SetImageResource(Resource.Drawable.HideFloating_Icon);
-        }
-
-        private void PercentTableFAB_Click(object sender, EventArgs e)
+        private void PMenu_MenuItemClick(object sender, Android.Support.V7.Widget.PopupMenu.MenuItemClickEventArgs e)
         {
             try
             {
-                var intent = new Intent(this, typeof(ProductPercentTableActivity));
-                intent.PutExtra("Info", new string[] { "Fairy", fairy.DicNumber.ToString() });
-                StartActivity(intent);
-                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.SideLinkOpen_Fail, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
-            }
-        }
-
-        private void MainSubFAB_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                FloatingActionButton fab = sender as FloatingActionButton;
-
                 string url = "";
-                Intent intent = null;
 
-                switch (fab.Id)
+                switch (e.Item.ItemId)
                 {
-                    default:
-                    case Resource.Id.SideLinkFAB1:
-                        url = string.Format("http://gfl.zzzzz.kr/fairy.php?id={0}&lang=ko", fairy.DicNumber);
-                        intent = new Intent(this, typeof(WebBrowserActivity));               
+                    case Resource.Id.DBLinkNamu:
+                        url = $"https://namu.wiki/w/{fairy.Name}{(fairy.IsExtra ? "(소녀전선)" : "")}";
                         break;
-                    case Resource.Id.SideLinkFAB2:
-                        url = string.Format("http://girlsfrontline.inven.co.kr/dataninfo/fairy/?d=133&c={0}", fairy.DicNumber);
-                        intent = new Intent(this, typeof(WebBrowserActivity));
+                    case Resource.Id.DBLinkInven:
+                        url = $"http://gf.inven.co.kr/dataninfo/item/";
                         break;
-                    case Resource.Id.SideLinkFAB3:
-                        url = string.Format("https://girlsfrontline.kr/doll/{0}", fairy.DicNumber);
-                        intent = new Intent(this, typeof(WebBrowserActivity));
+                    case Resource.Id.DBLink36Base:
+                        url = $"https://girlsfrontline.kr/fairy/{fairy.DicNumber}";
+                        break;
+                    case Resource.Id.DBLinkGFDB:
+                        url = $"https://gfl.zzzzz.kr/fairy.php?id={fairy.DicNumber}&lang=ko";
                         break;
                 }
 
+                Intent intent = new Intent(this, typeof(WebBrowserActivity));
                 intent.PutExtra("url", url);
                 StartActivity(intent);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
@@ -196,75 +150,32 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.SideLinkOpen_Fail, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
-            }
-            finally
-            {
-                MainFAB_Click(MainFAB, new EventArgs());
+                Toast.MakeText(this, "Cannot execute link menu", ToastLength.Short).Show();
             }
         }
 
-        private void MainFAB_Click(object sender, EventArgs e)
+        private async Task InitializeProcess()
         {
-            if (!IsEnableFABMenu)
+            await Task.Delay(100);
+
+            try
             {
-                MainFAB.SetImageResource(Resource.Drawable.SideLinkIcon);
-                IsEnableFABMenu = true;
-                MainFAB.Animate().Alpha(1.0f).SetDuration(500).Start();
-                PercentTableFAB.Show();
-                RefreshCacheFAB.Show();
-                FABTimer.Start();
+                Android.Graphics.Color toolbarColor = Android.Graphics.Color.ParseColor("#C040B0");
+
+                if (fairy.IsExtra)
+                {
+                    toolbar.SetBackgroundColor(toolbarColor);
+                }
+             
+                if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+                {
+                    Window.SetStatusBarColor(toolbarColor);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                int[] ShowAnimationIds = { Resource.Animation.SideLinkFAB1_Show, Resource.Animation.SideLinkFAB2_Show, Resource.Animation.SideLinkFAB3_Show };
-                int[] HideAnimationIds = { Resource.Animation.SideLinkFAB1_Hide, Resource.Animation.SideLinkFAB2_Hide, Resource.Animation.SideLinkFAB3_Hide };
-                FloatingActionButton[] FABs = { GFDBFAB, InvenFAB, BaseFAB };
-                double[,] Mags = { { 1.80, 0.25 }, { 1.5, 1.5 }, { 0.25, 1.80 } };
-
-                try
-                {
-                    switch (IsOpenFABMenu)
-                    {
-                        case false:
-                            for (int i = 0; i < FABs.Length; ++i)
-                            {
-                                FrameLayout.LayoutParams layoutparams = (FrameLayout.LayoutParams)FABs[i].LayoutParameters;
-                                layoutparams.RightMargin += (int)(FABs[i].Width * Mags[i, 0]);
-                                layoutparams.BottomMargin += (int)(FABs[i].Height * Mags[i, 1]);
-
-                                FABs[i].LayoutParameters = layoutparams;
-                                FABs[i].StartAnimation(AnimationUtils.LoadAnimation(Application, ShowAnimationIds[i]));
-                                FABs[i].Clickable = true;
-                            }
-                            IsOpenFABMenu = true;
-                            PercentTableFAB.Hide();
-                            RefreshCacheFAB.Hide();
-                            FABTimer.Stop();
-                            break;
-                        case true:
-                            for (int i = 0; i < FABs.Length; ++i)
-                            {
-                                FrameLayout.LayoutParams layoutparams = (FrameLayout.LayoutParams)FABs[i].LayoutParameters;
-                                layoutparams.RightMargin -= (int)(FABs[i].Width * Mags[i, 0]);
-                                layoutparams.BottomMargin -= (int)(FABs[i].Height * Mags[i, 1]);
-
-                                FABs[i].LayoutParameters = layoutparams;
-                                FABs[i].StartAnimation(AnimationUtils.LoadAnimation(Application, HideAnimationIds[i]));
-                                FABs[i].Clickable = false;
-                            }
-                            IsOpenFABMenu = false;
-                            PercentTableFAB.Show();
-                            RefreshCacheFAB.Show();
-                            FABTimer.Start();
-                            break;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    ETC.LogError(ex, this);
-                    ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeSubMenuError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
-                }
+                ETC.LogError(ex, this);
+                Toast.MakeText(this, "Fail Initialize Process", ToastLength.Short).Show();
             }
         }
 
@@ -284,18 +195,20 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task InitLoadProcess(bool IsRefresh)
+        private async Task InitLoadProcess(bool isRefresh)
         {
-            InitLoadProgressBar.Visibility = ViewStates.Visible;
-
             await Task.Delay(100);
 
             try
             {
+                refreshMainLayout.Refreshing = true;
+
+
                 // 요정 타이틀 바 초기화
+
                 try
                 {
-                    if ((File.Exists(Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache")) == false) || (IsRefresh == true))
+                    if (!File.Exists(Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache")) || isRefresh)
                     {
                         using (WebClient wc = new WebClient())
                         {
@@ -303,15 +216,14 @@ namespace GFI_with_GFS_A
                         }
                     }
 
-                    if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", true) == true)
+                    if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", true))
                     {
                         Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache"));
                         drawable.SetAlpha(40);
                         FindViewById<RelativeLayout>(Resource.Id.FairyDBDetailMainLayout).Background = drawable;
                     }
 
-                    ImageView FairySmallImage = FindViewById<ImageView>(Resource.Id.FairyDBDetailSmallImage);
-                    FairySmallImage.SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache")));
+                    FindViewById<ImageView>(Resource.Id.FairyDBDetailSmallImage).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache")));
                 }
                 catch (Exception ex)
                 {
@@ -335,7 +247,7 @@ namespace GFI_with_GFS_A
 
                 try
                 {
-                    if ((File.Exists(Path.Combine(ETC.cachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache")) == false) || (IsRefresh == true))
+                    if (!File.Exists(Path.Combine(ETC.cachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache")) || isRefresh)
                     {
                         using (WebClient wc = new WebClient())
                         {
@@ -352,7 +264,7 @@ namespace GFI_with_GFS_A
 
                 FindViewById<TextView>(Resource.Id.FairyDBDetailSkillName).Text = fairy.SkillName;
 
-                if (ETC.useLightTheme == true)
+                if (ETC.useLightTheme)
                 {
                     FindViewById<ImageView>(Resource.Id.FairyDBDetailSkillTicketIcon).SetImageResource(Resource.Drawable.FairyTicket_Icon_WhiteTheme);
                     FindViewById<ImageView>(Resource.Id.FairyDBDetailSkillCoolTimeIcon).SetImageResource(Resource.Drawable.CoolTime_Icon_WhiteTheme);
@@ -401,9 +313,12 @@ namespace GFI_with_GFS_A
                     FindViewById<TextView>(StatusTexts[i]).Text = fairy.Abilities[abilities[i]];
                 }
 
-                if (ETC.useLightTheme == true) SetCardTheme();
+                if (ETC.useLightTheme)
+                {
+                    SetCardTheme();
+                }
+
                 ShowCardViewVisibility();
-                HideFloatingActionButtonAnimation();
             }
             catch (Exception ex)
             {
@@ -412,7 +327,7 @@ namespace GFI_with_GFS_A
             }
             finally
             {
-                InitLoadProgressBar.Visibility = ViewStates.Invisible;
+                refreshMainLayout.Refreshing = false;
             }
         }
 

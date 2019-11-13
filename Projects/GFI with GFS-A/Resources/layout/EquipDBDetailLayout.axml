@@ -28,6 +28,7 @@
                 <ImageView
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    android:layout_margin="10dp"
                     android:id="@+id/EquipDBDetailImage" />
                 <LinearLayout
                     android:orientation="vertical"

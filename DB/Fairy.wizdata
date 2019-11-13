@@ -12,6 +12,7 @@
                 <xs:element name="Type" type="xs:string" minOccurs="0" />
                 <xs:element name="DicNumber" type="xs:int" minOccurs="0" />
                 <xs:element name="ProductTime" type="xs:int" minOccurs="0" />
+                <xs:element name="IsExtra" type="xs:boolean" default="false" minOccurs="0" />
                 <xs:element name="FireRate" type="xs:string" minOccurs="0" />
                 <xs:element name="Accuracy" type="xs:string" minOccurs="0" />
                 <xs:element name="Evasion" type="xs:string" minOccurs="0" />
@@ -442,6 +443,7 @@
     <Type>전투</Type>
     <DicNumber>1003</DicNumber>
     <ProductTime>0</ProductTime>
+    <IsExtra>true</IsExtra>
     <FireRate>4/18</FireRate>
     <Accuracy>14/55</Accuracy>
     <Evasion>16/64</Evasion>
@@ -463,6 +465,7 @@
     <Type>전투</Type>
     <DicNumber>1001</DicNumber>
     <ProductTime>0</ProductTime>
+    <IsExtra>true</IsExtra>
     <FireRate>6/26</FireRate>
     <Accuracy>0/0</Accuracy>
     <Evasion>6/24</Evasion>
@@ -484,6 +487,7 @@
     <Type>책략</Type>
     <DicNumber>1002</DicNumber>
     <ProductTime>0</ProductTime>
+    <IsExtra>true</IsExtra>
     <FireRate>0/0</FireRate>
     <Accuracy>17.6/70</Accuracy>
     <Evasion>6/24</Evasion>
@@ -546,6 +550,7 @@
     <Type>전투</Type>
     <DicNumber>1005</DicNumber>
     <ProductTime>0</ProductTime>
+    <IsExtra>true</IsExtra>
     <FireRate>2.8/15</FireRate>
     <Accuracy>8/40</Accuracy>
     <Evasion>10/50</Evasion>
@@ -567,6 +572,7 @@
     <Type>전투</Type>
     <DicNumber>1006</DicNumber>
     <ProductTime>0</ProductTime>
+    <IsExtra>true</IsExtra>
     <FireRate>4.4/22</FireRate>
     <Accuracy>10/50</Accuracy>
     <Evasion>2/10</Evasion>
@@ -628,6 +634,7 @@
     <Type>전투</Type>
     <DicNumber>1007</DicNumber>
     <ProductTime>0</ProductTime>
+    <IsExtra>true</IsExtra>
     <FireRate>5.2/25</FireRate>
     <Accuracy>6.8/30</Accuracy>
     <Evasion>14.4/65</Evasion>

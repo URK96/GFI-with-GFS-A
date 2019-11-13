@@ -1,733 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/FairyDBDetailMainLayout">
-    <ProgressBar
+    android:id="@+id/FairyDBDetailMainRefreshLayout">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="@id/EquipDBDetailMainLayout"
-        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-        android:visibility="invisible"
-        android:indeterminate="true"
-        android:indeterminateOnly="true"
-        android:id="@+id/FairyDBDetailInitLoadProgress" />
-<!--Fairy Title Layout-->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/FairyDBDetailBasicLayout">
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_alignParentLeft="true"
-            android:id="@+id/FairyDBDetailSmallImageLayout">
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="75dp"
-                android:id="@+id/FairyDBDetailSmallImage" />
-        </FrameLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_toRightOf="@id/FairyDBDetailSmallImageLayout"
-            android:id="@+id/FairyDBDetailBasicInfoLayout">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:gravity="center"
-                android:layout_marginBottom="2dp"
-                android:id="@+id/FairyDBDetailFairyType" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:id="@+id/FairyDBDetailFairyName" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:gravity="center"
-                android:layout_marginTop="2dp"
-                android:id="@+id/FairyDBDetailFairyProductTime" />
-        </LinearLayout>
-    </RelativeLayout>
-<!--Scroll Part-->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/FairyDBDetailBasicLayout"
-        android:layout_marginTop="10dp">
-        <LinearLayout
-            android:orientation="vertical"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <!--Fairy Basic Info Part-->
-            <android.support.v7.widget.CardView
-                android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?android:attr/actionBarSize"
+            android:background="@color/MainColor"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:id="@+id/FairyDBDetailMainToolbar"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/FairyDBDetailMainLayout">
+        <!--Fairy Title Layout-->
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:visibility="gone"
-                android:id="@+id/FairyDBDetailBasicInfoCardLayout"
-                cardview:cardElevation="4dp"
-                cardview:cardCornerRadius="5dp"
-                cardview:cardBackgroundColor="@color/background_material_dark">
+                android:id="@+id/FairyDBDetailBasicLayout">
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="75dp"
+                    android:layout_margin="10dp"
+                    android:id="@+id/FairyDBDetailSmallImage" />
                 <LinearLayout
                     android:orientation="vertical"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@id/FairyDBDetailSmallImage"
                     android:id="@+id/FairyDBDetailBasicInfoLayout">
-                <!--Fairy Basic Info - Type Part-->
-                    <LinearLayout
-                        android:orientation="horizontal"
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="@string/Common_FairyType"
-                            android:gravity="center" />
-                        <View
-                            android:layout_width="5px"
-                            android:layout_height="30dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:background="@drawable/seperatebar_vertical" />
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="3"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:id="@+id/FairyDBDetailInfoType"
-                            android:gravity="center" />
-                    </LinearLayout>
-                <!--Fairy Basic Info - Name Part-->
-                    <LinearLayout
-                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:gravity="center"
+                        android:layout_marginBottom="2dp"
+                        android:id="@+id/FairyDBDetailFairyType" />
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="@string/Common_Name"
-                            android:gravity="center" />
-                        <View
-                            android:layout_width="5px"
-                            android:layout_height="30dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:background="@drawable/seperatebar_vertical" />
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="3"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:id="@+id/FairyDBDetailInfoName"
-                            android:gravity="center" />
-                    </LinearLayout>
-                <!--Fairy Basic Info - Illustrator Part-->
-                    <LinearLayout
-                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:id="@+id/FairyDBDetailFairyName" />
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="@string/Common_Illustrator"
-                            android:gravity="center" />
-                        <View
-                            android:layout_width="5px"
-                            android:layout_height="30dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:background="@drawable/seperatebar_vertical" />
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="3"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:id="@+id/FairyDBDetailInfoIllustrator"
-                            android:gravity="center" />
-                    </LinearLayout>
-                <!--Fairy Basic Info - ETC Part-->
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="@string/Common_ETC"
-                            android:gravity="center" />
-                        <View
-                            android:layout_width="5px"
-                            android:layout_height="30dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:background="@drawable/seperatebar_vertical" />
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="3"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:id="@+id/FairyDBDetailInfoETC"
-                            android:gravity="center" />
-                    </LinearLayout>
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/FairyDBDetailFairyProductTime" />
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
-        <!--Fairy Skill Part-->
-            <android.support.v7.widget.CardView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:visibility="gone"
-                android:id="@+id/FairyDBDetailSkillCardLayout"
-                cardview:cardElevation="4dp"
-                cardview:cardCornerRadius="5dp"
-                cardview:cardBackgroundColor="@color/background_material_dark">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/FairyDBDetailSkillLayout">
-                <!--Fairy Skill Part - Basic Layout-->
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/FairyDBDetailSkillBasicLayout">
-                    <!--Fairy Skill Part - Basic Layout - Skill Icon-->
-                        <FrameLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/FairyDBDetailSkillIconLayout">
-                            <ImageView
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:id="@+id/FairyDBDetailSkillIcon"
-                                android:layout_margin="5dp" />
-                        </FrameLayout>
-                    <!--Fairy Skill Part - Basic Layout - Skill Name-->
-                        <FrameLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="70dp"
-                            android:layout_toRightOf="@id/FairyDBDetailSkillIconLayout"
-                            android:id="@+id/FairyDBDetailSkillNameLayout">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:gravity="center"
-                                android:id="@+id/FairyDBDetailSkillName" />
-                        </FrameLayout>
-                    <!--Fairy Skill Part - Basic Layout - Skill CoolTime & Ticket-->
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="match_parent"
-                            android:layout_height="70dp"
-                            android:layout_toRightOf="@id/FairyDBDetailSkillIconLayout"
-                            android:layout_marginLeft="20dp"
-                            android:id="@+id/FairyDBDetailSkillLayout">
-                            <LinearLayout
-                                android:orientation="horizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:id="@+id/FairyDBDetailSkillTicketLayout">
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:id="@+id/FairyDBDetailSkillTicketIcon"
-                                    android:src="@drawable/fairyticket_icon" />
-                                <TextView
-                                    android:layout_height="match_parent"
-                                    android:layout_width="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:textAppearance="?android:attr/textAppearanceSmall"
-                                    android:gravity="center"
-                                    android:id="@+id/FairyDBDetailSkillTicket" />
-                            </LinearLayout>
-                            <LinearLayout
-                                android:orientation="horizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:id="@+id/FairyDBDetailSkillCoolTimeLayout">
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:id="@+id/FairyDBDetailSkillCoolTimeIcon"
-                                    android:src="@drawable/cooltime_icon" />
-                                <TextView
-                                    android:layout_height="match_parent"
-                                    android:layout_width="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:textAppearance="?android:attr/textAppearanceSmall"
-                                    android:gravity="center"
-                                    android:id="@+id/FairyDBDetailSkillCoolTime" />
-                            </LinearLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-                <!--Fairy Skill Part - Skill Explain-->
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_below="@id/FairyDBDetailSkillBasicLayout"
-                        android:id="@+id/FairyDBDetailSkillExplainLayout">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:gravity="center"
-                            android:id="@+id/FairyDBDetailSkillExplain" />
-                    </FrameLayout>
-                <!--Fairy Skill Part - Skill Ability-->
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_below="@id/FairyDBDetailSkillExplainLayout"
-                        android:id="@+id/FairyDBDetailSkillDetailLayout">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="@string/Common_Effect"
-                            android:gravity="center" />
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:gravity="center"
-                            android:id="@+id/FairyDBDetailSkillEffect" />
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="@string/Common_Mag"
-                            android:gravity="center" />
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:gravity="center"
-                            android:id="@+id/FairyDBDetailSkillRate" />
-                    </LinearLayout>
-                </RelativeLayout>
-            </android.support.v7.widget.CardView>
-        <!--Fairy Ability Part-->
-            <android.support.v7.widget.CardView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:visibility="gone"
-                android:id="@+id/FairyDBDetailAbilityCardLayout"
-                cardview:cardElevation="4dp"
-                cardview:cardCornerRadius="5dp"
-                cardview:cardBackgroundColor="@color/background_material_dark">
+            </RelativeLayout>
+        <!--Scroll Part-->
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/FairyDBDetailBasicLayout"
+                android:layout_marginTop="10dp">
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:id="@+id/FairyInfo_DetailMainLayout">
-                <!--Fairy Ability - FireRate Part-->
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:id="@+id/FairyInfoFRLayout">
-                        <TextView
-                            android:text="@string/Common_FR"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:id="@+id/textView1"
-                            android:gravity="center"
-                            android:layout_marginLeft="20dp"
-                            android:layout_weight="1" />
-                        <View
-                            android:layout_height="match_parent"
-                            android:layout_width="5px"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:background="@drawable/seperatebar_vertical" />
-                        <RelativeLayout
-                            android:orientation="vertical"
-                            android:layout_height="match_parent"
-                            android:layout_width="0dp"
-                            android:layout_weight="2"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp">
-                            <ProgressBar
-                                style="?android:attr/progressBarStyleHorizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:progressTint="@color/ProgressBarColor"
-                                android:id="@+id/FairyInfoFRProgress"
-                                android:max="300" />
-                            <TextView
-                                android:id="@+id/FairyInfoFRProgressMin"
-                                android:layout_height="10dp"
-                                android:layout_width="30dp"
-                                android:textSize="8dp"
-                                android:layout_alignLeft="@id/FairyInfoFRProgress"
-                                android:layout_alignTop="@id/FairyInfoFRProgress"
-                                android:gravity="left"
-                                android:text="0" />
-                            <TextView
-                                android:id="@+id/FairyInfoFRProgressMax"
-                                android:layout_height="10dp"
-                                android:layout_width="30dp"
-                                android:textSize="8dp"
-                                android:layout_alignRight="@id/FairyInfoFRProgress"
-                                android:layout_alignTop="@id/FairyInfoFRProgress"
-                                android:gravity="right" />
-                        </RelativeLayout>
-                        <TextView
-                            android:text="0/0"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:id="@+id/FairyInfoFRStatus"
-                            android:gravity="center"
-                            android:layout_weight="1"
-                            android:layout_marginRight="20dp" />
-                    </LinearLayout>
-                <!--Fairy Ability - Accuracy Part-->
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:id="@+id/FairyInfoACLayout">
-                        <TextView
-                            android:text="@string/Common_AC"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:id="@+id/textView1"
-                            android:gravity="center"
-                            android:layout_marginLeft="20dp"
-                            android:layout_weight="1" />
-                        <View
-                            android:layout_height="match_parent"
-                            android:layout_width="5px"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:background="@drawable/seperatebar_vertical" />
-                        <RelativeLayout
-                            android:orientation="vertical"
-                            android:layout_height="match_parent"
-                            android:layout_width="0dp"
-                            android:layout_weight="2"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp">
-                            <ProgressBar
-                                style="?android:attr/progressBarStyleHorizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:progressTint="@color/ProgressBarColor"
-                                android:id="@+id/FairyInfoACProgress"
-                                android:max="200" />
-                            <TextView
-                                android:id="@+id/FairyInfoACProgressMin"
-                                android:layout_height="10dp"
-                                android:layout_width="30dp"
-                                android:textSize="8dp"
-                                android:layout_alignLeft="@id/FairyInfoACProgress"
-                                android:layout_alignTop="@id/FairyInfoACProgress"
-                                android:gravity="left"
-                                android:text="0" />
-                            <TextView
-                                android:id="@+id/FairyInfoACProgressMax"
-                                android:layout_height="10dp"
-                                android:layout_width="30dp"
-                                android:textSize="8dp"
-                                android:layout_alignRight="@id/FairyInfoACProgress"
-                                android:layout_alignTop="@id/FairyInfoACProgress"
-                                android:gravity="right" />
-                        </RelativeLayout>
-                        <TextView
-                            android:text="0/0"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:id="@+id/FairyInfoACStatus"
-                            android:gravity="center"
-                            android:layout_weight="1"
-                            android:layout_marginRight="20dp" />
-                    </LinearLayout>
-                <!--Fairy Ability - Evasion Part-->
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:id="@+id/FairyInfoEVLayout">
-                        <TextView
-                            android:text="@string/Common_EV"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:id="@+id/textView1"
-                            android:gravity="center"
-                            android:layout_marginLeft="20dp"
-                            android:layout_weight="1" />
-                        <View
-                            android:layout_height="match_parent"
-                            android:layout_width="5px"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:background="@drawable/seperatebar_vertical" />
-                        <RelativeLayout
-                            android:orientation="vertical"
-                            android:layout_height="match_parent"
-                            android:layout_width="0dp"
-                            android:layout_weight="2"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp">
-                            <ProgressBar
-                                style="?android:attr/progressBarStyleHorizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:progressTint="@color/ProgressBarColor"
-                                android:id="@+id/FairyInfoEVProgress"
-                                android:max="150" />
-                            <TextView
-                                android:id="@+id/FairyInfoEVProgressMin"
-                                android:layout_height="10dp"
-                                android:layout_width="30dp"
-                                android:textSize="8dp"
-                                android:layout_alignLeft="@id/FairyInfoEVProgress"
-                                android:layout_alignTop="@id/FairyInfoEVProgress"
-                                android:gravity="left"
-                                android:text="0" />
-                            <TextView
-                                android:id="@+id/FairyInfoEVProgressMax"
-                                android:layout_height="10dp"
-                                android:layout_width="30dp"
-                                android:textSize="8dp"
-                                android:layout_alignRight="@id/FairyInfoEVProgress"
-                                android:layout_alignTop="@id/FairyInfoEVProgress"
-                                android:gravity="right" />
-                        </RelativeLayout>
-                        <TextView
-                            android:text="0/0"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:id="@+id/FairyInfoEVStatus"
-                            android:gravity="center"
-                            android:layout_weight="1"
-                            android:layout_marginRight="20dp" />
-                    </LinearLayout>
-                <!--Fairy Ability - Armor Part-->
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:id="@+id/FairyInfoAMLayout">
-                        <TextView
-                            android:text="@string/Common_AM"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:id="@+id/textView1"
-                            android:gravity="center"
-                            android:layout_marginLeft="20dp"
-                            android:layout_weight="1" />
-                        <View
-                            android:layout_height="match_parent"
-                            android:layout_width="5px"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:background="@drawable/seperatebar_vertical" />
-                        <RelativeLayout
-                            android:orientation="vertical"
-                            android:layout_height="match_parent"
-                            android:layout_width="0dp"
-                            android:layout_weight="2"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp">
-                            <ProgressBar
-                                style="?android:attr/progressBarStyleHorizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:progressTint="@color/ProgressBarColor"
-                                android:id="@+id/FairyInfoAMProgress"
-                                android:max="30" />
-                            <TextView
-                                android:id="@+id/FairyInfoAMProgressMin"
-                                android:layout_height="10dp"
-                                android:layout_width="30dp"
-                                android:textSize="8dp"
-                                android:layout_alignLeft="@id/FairyInfoAMProgress"
-                                android:layout_alignTop="@id/FairyInfoAMProgress"
-                                android:gravity="left"
-                                android:text="0" />
-                            <TextView
-                                android:id="@+id/FairyInfoAMProgressMax"
-                                android:layout_height="10dp"
-                                android:layout_width="30dp"
-                                android:textSize="8dp"
-                                android:layout_alignRight="@id/FairyInfoAMProgress"
-                                android:layout_alignTop="@id/FairyInfoAMProgress"
-                                android:gravity="right" />
-                        </RelativeLayout>
-                        <TextView
-                            android:text="0/0"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:id="@+id/FairyInfoAMStatus"
-                            android:gravity="center"
-                            android:layout_weight="1"
-                            android:layout_marginRight="20dp" />
-                    </LinearLayout>
-                <!--Fairy Ability - Critical Part-->
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:id="@+id/FairyInfoCRLayout">
-                        <TextView
-                            android:text="@string/Common_CR"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:id="@+id/textView1"
-                            android:gravity="center"
-                            android:layout_marginLeft="20dp"
-                            android:layout_weight="1" />
-                        <View
-                            android:layout_height="match_parent"
-                            android:layout_width="5px"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:background="@drawable/seperatebar_vertical" />
-                        <RelativeLayout
-                            android:orientation="vertical"
-                            android:layout_height="match_parent"
-                            android:layout_width="0dp"
-                            android:layout_weight="2"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp">
-                            <ProgressBar
-                                style="?android:attr/progressBarStyleHorizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:progressTint="@color/ProgressBarColor"
-                                android:id="@+id/FairyInfoCRProgress"
-                                android:max="30" />
-                            <TextView
-                                android:id="@+id/FairyInfoCRProgressMin"
-                                android:layout_height="10dp"
-                                android:layout_width="30dp"
-                                android:textSize="8dp"
-                                android:layout_alignLeft="@id/FairyInfoCRProgress"
-                                android:layout_alignTop="@id/FairyInfoCRProgress"
-                                android:gravity="left"
-                                android:text="0" />
-                            <TextView
-                                android:id="@+id/FairyInfoCRProgressMax"
-                                android:layout_height="10dp"
-                                android:layout_width="30dp"
-                                android:textSize="8dp"
-                                android:layout_alignRight="@id/FairyInfoCRProgress"
-                                android:layout_alignTop="@id/FairyInfoCRProgress"
-                                android:gravity="right" />
-                        </RelativeLayout>
-                        <TextView
-                            android:text="0/0"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:id="@+id/FairyInfoCRStatus"
-                            android:gravity="center"
-                            android:layout_weight="1"
-                            android:layout_marginRight="20dp" />
-                    </LinearLayout>
+                    android:layout_height="match_parent">
+                    <include layout="@layout/fairydbdetaillayout_cardview_basic"/>
+                    <include layout="@layout/fairydbdetaillayout_cardview_skill"/>
+                    <include layout="@layout/fairydbdetaillayout_cardview_ability"/>
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-    </ScrollView>
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/refreshicon_whitetheme"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="145dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:id="@+id/FairyDBDetailRefreshCacheFAB"
-        cardview:backgroundTint="@color/FABColor"
-        cardview:fabSize="auto"
-        cardview:rippleColor="#FF80AB" />
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/productpercenttable_icon"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="80dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:id="@+id/FairyDBDetailProductPercentFAB"
-        cardview:backgroundTint="@color/FABColor"
-        cardview:fabSize="auto"
-        cardview:rippleColor="#FF80AB" />
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="15dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/sidelinkicon"
-        android:id="@+id/FairyDBDetailSideLinkMainFAB"
-        cardview:backgroundTint="@color/FABColor"
-        cardview:fabSize="auto"
-        cardview:rippleColor="#FF80AB" />
-	<include
-        layout="@layout/sidelinkfablayout" />
-    <android.support.design.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/FairyDBDetailSnackbarLayout"
-        android:layout_alignTop="@id/FairyDBDetailMainLayout" />
-</RelativeLayout>
+            </android.support.v4.widget.NestedScrollView>
+            <android.support.design.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/FairyDBDetailSnackbarLayout"
+                android:layout_alignTop="@id/FairyDBDetailMainLayout" />
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

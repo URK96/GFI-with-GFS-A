@@ -32,3 +32,6 @@ dotnet_diagnostic.CA1814.severity = suggestion
 
 # CA1822: 멤버를 static으로 표시하세요.
 dotnet_diagnostic.CA1822.severity = suggestion
+
+# CA1819: 속성은 배열을 반환하지 않아야 합니다.
+dotnet_diagnostic.CA1819.severity = silent

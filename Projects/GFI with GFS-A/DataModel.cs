@@ -263,6 +263,7 @@ namespace GFI_with_GFS_A
         public int DicNumber { get; private set; }
         public string Type { get; private set; }
         public int ProductTime { get; private set; }
+        public bool IsExtra { get; private set; }
         public string Note { get; private set; }
         public string SkillName { get; private set; }
         public string SkillExplain { get; private set; }
@@ -282,6 +283,7 @@ namespace GFI_with_GFS_A
             DicNumber = (int)dr["DicNumber"];
             Type = (string)dr["Type"];
             ProductTime = (int)dr["ProductTime"];
+            IsExtra = (bool)dr["IsExtra"];
             Note = ETC.IsDBNullOrBlank(dr, "Note") ? "" : (string)dr["Note"];
 
             SkillName = (string)dr["SkillName"];
@@ -302,7 +304,9 @@ namespace GFI_with_GFS_A
             string[] ability_name = { "FireRate", "Accuracy", "Evasion", "Armor", "Critical" };
 
             for (int i = 0; i < ability_name.Length; ++i)
+            {
                 Abilities.Add(ability_name[i], (string)dr[ability_name[i]]);
+            }
         }
     }
 
