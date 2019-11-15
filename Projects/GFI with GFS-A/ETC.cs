@@ -220,6 +220,8 @@ namespace GFI_with_GFS_A
             Resources = baseContext.Resources;
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTU2MTM3QDMxMzcyZTMzMmUzMFQzNnlVTCtEVkxvYVUwYWdGUWczTnVyemdLREV6NGdKK1JmejFZRzN0WGs9");
 
+            //Push.SetEnabledAsync(true);
+
             if (isReleaseMode)
             {
                 AppCenter.Start("aca0ed39-4b25-4548-bf2a-ac92ccee2977", typeof(Analytics), typeof(Crashes), typeof(Push));

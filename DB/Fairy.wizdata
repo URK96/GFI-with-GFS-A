@@ -12,7 +12,6 @@
                 <xs:element name="Type" type="xs:string" minOccurs="0" />
                 <xs:element name="DicNumber" type="xs:int" minOccurs="0" />
                 <xs:element name="ProductTime" type="xs:int" minOccurs="0" />
-                <xs:element name="IsExtra" type="xs:boolean" default="false" minOccurs="0" />
                 <xs:element name="FireRate" type="xs:string" minOccurs="0" />
                 <xs:element name="Accuracy" type="xs:string" minOccurs="0" />
                 <xs:element name="Evasion" type="xs:string" minOccurs="0" />
@@ -61,6 +60,7 @@
     <ProductDialog_EN>"Nothing's over! Nothing will ever be, unless you're on holiday!"</ProductDialog_EN>
     <FairyExplain>공격 효율을 높여주는 능력을 지니고 있습니다. 평소에는 장비를 정비하는데 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Boosts attack effectiveness. Can be used to organize equipment on regular days.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>격노요정</Name>
@@ -83,6 +83,7 @@
     <ProductDialog_EN>"Come at me, you devil! I'mma send you smack in the middle of Hell!"</ProductDialog_EN>
     <FairyExplain>치명타 효율을 높여주는 능력을 지니고 있습니다. 평소에는 적을 도발하는데 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Boosts critical rate. Can be used for shouting messages and as an aid in arguments.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>방패요정</Name>
@@ -105,6 +106,7 @@
     <ProductDialog_EN>"Remember, no Russian...because I-I don't understand Russian..."</ProductDialog_EN>
     <FairyExplain>산탄총의 장갑을 강화하는 능력을 지니고 있습니다. 평소에는 지상의 경비에 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Strengthens shotguns' armor. Can be used as ground security on regular days.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>수호요정</Name>
@@ -127,6 +129,7 @@
     <ProductDialog_EN>"There's nothing to be afraid of anymore."</ProductDialog_EN>
     <FairyExplain>포스실드를 펼치는 능력을 지니고 있습니다. 평소에는 방수, 방진, 반재밍에 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Puts up a magnetic shield. Can provide shelter against rain, dust, and nuisance in general.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>방어요정</Name>
@@ -149,6 +152,7 @@
     <ProductDialog_EN>"You really aren't...lying?"</ProductDialog_EN>
     <FairyExplain>방어 성능을 높여주는 능력을 지니고 있습니다. 평소에는 기밀 보호와 긴급 수리에 사용할 수 있을 것 같습니다. </FairyExplain>
     <FairyExplain_EN>Boosts defense. Can be used for keeping secrets and in emergency medical treatment on regular days.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>도발요정</Name>
@@ -171,6 +175,7 @@
     <ProductDialog_EN>"Gah! Gah! Idiot! Moron!"</ProductDialog_EN>
     <FairyExplain>도발 표적을 만들어 내는 능력을 지니고 있습니다. 평소에는 짖궃은 장난을 치는데 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Produces taunting target drones. Can be used in practical jokes on regular days.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>저격요정</Name>
@@ -193,6 +198,7 @@
     <ProductDialog_EN>"T-Dolls can only salvage things on their end."</ProductDialog_EN>
     <FairyExplain>적을 저격하는 능력을 지니고 있습니다. 평소에는 무기 교정에 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Snipes the enemy. Can be used for calibrating weapons on regular days.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>포격요정</Name>
@@ -215,6 +221,7 @@
     <ProductDialog_EN>"Tee-hee! For Grifon!"</ProductDialog_EN>
     <FairyExplain>박격포를 발사하는 능력을 지니고 있습니다. 평소에는 대청소에 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Fires mortar bombs. Can be used in clean-ups on regular days.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>공습요정</Name>
@@ -237,6 +244,7 @@
     <ProductDialog_EN>"Heheh. You don't seem to have learned anything other than running away."</ProductDialog_EN>
     <FairyExplain>공습 지원을 호출하는 능력을 지니고 있습니다. 평소에는 높은 곳에서 작업할 때 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Conducts airstrikes. Can be used in overhead work on regular days.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>증원요정</Name>
@@ -259,6 +267,7 @@
     <ProductDialog_EN>"Go for the win! To show mercy is a weakness!"</ProductDialog_EN>
     <FairyExplain>증원 인형을 호출하는 능력을 지니고 있습니다. 평소에는 통신과 긴급 호출에 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Calls for reinforcement T-Dolls. Can be used for communication and sending emergency distress signals on regular days.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>공수요정</Name>
@@ -281,6 +290,7 @@
     <ProductDialog_EN>"You jump, I jump, right?"</ProductDialog_EN>
     <FairyExplain>헬리포트를 제어하는 능력을 지니고 있습니다. 평소에는 부지를 세우는데 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Controls Heliports. Can be used in decorating event venues on regular days.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>매설요정</Name>
@@ -303,6 +313,7 @@
     <ProductDialog_EN>"Humph. Time to make the fight a bit more explosive."</ProductDialog_EN>
     <FairyExplain>지뢰를 설치하는 능력을 지니고 있습니다. 평소에는 작물을 심는데 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Buries landmines. Can be used for planting on regular days.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>로켓요정</Name>
@@ -325,6 +336,7 @@
     <ProductDialog_EN>"Heheh... Up here..."</ProductDialog_EN>
     <FairyExplain>로켓포를 발사하는 능력을 지니고 있습니다. 평소에는 행사 날에 불꽃놀이를 쏘아 올리는데 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Fires rockets. Can be used for firing festive fireworks on regular days.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>공사요정</Name>
@@ -347,6 +359,7 @@
     <ProductDialog_EN>"Work! Work!"</ProductDialog_EN>
     <FairyExplain>요새를 구축하는 능력을 지니고 있습니다. 평소에는 유지 보수와 작은 시설물을 만드는데 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Builds fortresses. Can be used in maintenance and construction of small facilities on regular days.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>지휘요정</Name>
@@ -369,6 +382,7 @@
     <ProductDialog_EN>"Learn my MO and simply breeze past everything!"</ProductDialog_EN>
     <FairyExplain>작전 경험을 높여주는 능력을 지니고 있습니다. 평소에는 훈련과 교육에 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Boosts EXP. Can be used as a drill and teaching aid on regular days.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>수색요정</Name>
@@ -391,6 +405,7 @@
     <ProductDialog_EN>"RFB, you're gaming again!"</ProductDialog_EN>
     <FairyExplain>인형을 수색하고 구조하는 능력을 지니고 있습니다. 평소에는 모두를 집합시켜 외출하거나 밥을 먹는데 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Rescues T-Dolls. Can be used in assembling everyone for an outing or a meal on regular days.</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>조명요정</Name>
@@ -413,6 +428,7 @@
     <ProductDialog_EN>"The abducted is...on the other side...of the tunnel?"</ProductDialog_EN>
     <FairyExplain>야간작전 중 제대에 추가 시야를 제공하는 능력을 지니고 있습니다. 평소에는 야간탐험이나 암구호에 사용할 수 있을 것 같습니다.</FairyExplain>
     <FairyExplain_EN>Provides additional scope of vision in night battles. Can be used in nighttime adventures and sending signals</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>황금요정</Name>
@@ -436,6 +452,7 @@
     <ProductDialog_EN>"In this world, there's only money and wisdom!"</ProductDialog_EN>
     <FairyExplain>가지고 있는 거...반짝반짝 빛나는 능력을 가지고 있는 것 같아! 평소에도 이렇게 할 수 있는 걸!</FairyExplain>
     <FairyExplain_EN>Provides the ability to show off. At least it's something!</FairyExplain_EN>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>클로에</Name>
@@ -443,7 +460,6 @@
     <Type>전투</Type>
     <DicNumber>1003</DicNumber>
     <ProductTime>0</ProductTime>
-    <IsExtra>true</IsExtra>
     <FireRate>4/18</FireRate>
     <Accuracy>14/55</Accuracy>
     <Evasion>16/64</Evasion>
@@ -458,6 +474,7 @@
     <Note>붕괴학원 2 콜라보</Note>
     <ProductDialog>“Re Mi Re Mi Fa So Mi Mi Re”</ProductDialog>
     <FairyExplain>환영을 만드는 능력을 지니고 있습니다. 전투 중 체력을 지닌 환영을 2개 생성하고 일정 시간마다 모든 적에게 피해를 줍니다.</FairyExplain>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>야에사쿠라</Name>
@@ -465,7 +482,6 @@
     <Type>전투</Type>
     <DicNumber>1001</DicNumber>
     <ProductTime>0</ProductTime>
-    <IsExtra>true</IsExtra>
     <FireRate>6/26</FireRate>
     <Accuracy>0/0</Accuracy>
     <Evasion>6/24</Evasion>
@@ -480,6 +496,7 @@
     <Note>붕괴학원 2 콜라보</Note>
     <ProductDialog>"피어나라 이 슬픈 세상이여."</ProductDialog>
     <FairyExplain>범위 피해를 주는 능력을 지니고 있습니다. 전투 중 불기둥이 솟아나 닿은 적에게 피해를 줍니다.</FairyExplain>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>카구야</Name>
@@ -487,7 +504,6 @@
     <Type>책략</Type>
     <DicNumber>1002</DicNumber>
     <ProductTime>0</ProductTime>
-    <IsExtra>true</IsExtra>
     <FireRate>0/0</FireRate>
     <Accuracy>17.6/70</Accuracy>
     <Evasion>6/24</Evasion>
@@ -502,6 +518,7 @@
     <Note>붕괴학원 2 콜라보</Note>
     <ProductDialog>"달빛 속에서 이름 없는 춤을 추리라."</ProductDialog>
     <FairyExplain>맵병기. 전역 지도에서 거리 2칸 이내의 최대 3부대 적에게 피해를 줍니다.</FairyExplain>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>취사요정</Name>
@@ -522,6 +539,7 @@
     <Note>특이점 히든 20만점, 랭킹보상</Note>
     <ProductDialog>"자자자 어서 와, 사양말고. 내집처럼 편하게 있어도 괜찮아!"</ProductDialog>
     <FairyExplain>제대에 랜덤한 버프를 부여하는 능력을 지니고 있습니다. 평소에는 요리를 만드는데 사용할 수 있을 것 같습니다. (기분에 따라 맛있는 요리가 되거나 독극물이 됩니다.)</FairyExplain>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>스이</Name>
@@ -543,6 +561,7 @@
     <Note>DJMAX RESPECT 콜라보 이벤트 상점 구매 (교환권 80개)</Note>
     <ProductDialog>“전 당신이 필요해요, 제 곁에 있어주세요！”</ProductDialog>
     <FairyExplain>지정 위치에 이로운 효과를 부여하는 능력을 가지고 있습니다, 평소에는 동료들을 몰래 관찰하거나 데이트를 미행하곤 합니다.</FairyExplain>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>세라&amp;니나</Name>
@@ -550,7 +569,6 @@
     <Type>전투</Type>
     <DicNumber>1005</DicNumber>
     <ProductTime>0</ProductTime>
-    <IsExtra>true</IsExtra>
     <FireRate>2.8/15</FireRate>
     <Accuracy>8/40</Accuracy>
     <Evasion>10/50</Evasion>
@@ -565,6 +583,7 @@
     <Note>DJMAX RESPECT 콜라보 이벤트 1-3 클리어 보상</Note>
     <ProductDialog>“하얀 우주에서, 반짝반짝 빛나는 저희를 찾아보세요！”</ProductDialog>
     <FairyExplain>아군의 화력을 상승시키고 적군의 명중을 감소시키는 능력을 가지고 있습니다, 평소에는 동료들을 응원하거나 상대 팀을 헐뜯습니다(어느 쪽에 고용됐는지에 따라서요).</FairyExplain>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>프레이야&amp;카밀리아</Name>
@@ -572,7 +591,6 @@
     <Type>전투</Type>
     <DicNumber>1006</DicNumber>
     <ProductTime>0</ProductTime>
-    <IsExtra>true</IsExtra>
     <FireRate>4.4/22</FireRate>
     <Accuracy>10/50</Accuracy>
     <Evasion>2/10</Evasion>
@@ -587,6 +605,7 @@
     <Note>DJMAX RESPECT 콜라보 이벤트 상점 구매(교환권 80개)</Note>
     <ProductDialog>“최후의 밤이 되었습니다, 당신은 어떤 ‘저’를 원하시나요？”</ProductDialog>
     <FairyExplain>특정 위치에 패널티가 있는 각기 다른 이로운 효과를 부여하는 능력을 가지고 있습니다, 평소에는 동료들에게 예측할 수 없는 예언과 교훈을 전합니다, 하지만 공짜라는 건 자주 좋지만은 않죠.</FairyExplain>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>폭죽요정</Name>
@@ -607,6 +626,7 @@
     <Note>난류연속 랭킹전 88888점, 랭킹보상</Note>
     <ProductDialog>"자아! 불꽃이 만발하는 하늘 아래서 여러분의 마음을 고백하세요!"</ProductDialog>
     <FairyExplain>폭죽을 쏘는 능력을 지니고 있습니다. 평소에는 행사를 축하하거나 사람을 놀래는데 사용할 수 있을 것 같습니다. 밤낮을 안 가리고요.</FairyExplain>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>도깨비요정</Name>
@@ -627,6 +647,7 @@
     <Note>이성질체 랭킹전 300000점, 랭킹보상</Note>
     <ProductDialog>"동에 번쩍, 서에 번쩍, 세뱃돈 내놔라! 어흥!!"</ProductDialog>
     <FairyExplain>살상력을 지닌 폭죽을 터트리는 능력을 지니고 있습니다. 평소에는 명절을 축하하거나, 물고기를 잡거나, 게시판에서 보이스 메시지로 사용할 수 있을 것 같습니다.</FairyExplain>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>안나 그램</Name>
@@ -634,7 +655,6 @@
     <Type>전투</Type>
     <DicNumber>1007</DicNumber>
     <ProductTime>0</ProductTime>
-    <IsExtra>true</IsExtra>
     <FireRate>5.2/25</FireRate>
     <Accuracy>6.8/30</Accuracy>
     <Evasion>14.4/65</Evasion>
@@ -649,6 +669,7 @@
     <Note>발할라 콜라보 흰 장갑 파편 80개 교환 보상</Note>
     <ProductDialog>"...뭐든지 다 이유가 있는 법이니까, 그치?"</ProductDialog>
     <FairyExplain>제대의 회피와 화력을 조정하는 능력을 가지고 있습니다. 당신이 보신 건 그녀의 모습일 수도 있고, 그저 재미있는 먼지일 수도 있습니다.</FairyExplain>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>해변요정</Name>
@@ -669,6 +690,7 @@
     <Note>연쇄분열 랭킹전 랭킹보상</Note>
     <ProductDialog>"휴일을 즐길 줄 모르는 사람은 화난 유니콘에게 치일 거예요!"</ProductDialog>
     <FairyExplain>적을 약간 밀어내는 능력을 지니고 있습니다. 평소에는 바닥 청소에 사용할 수 있을 것 같습니다.</FairyExplain>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>연타요정</Name>
@@ -688,6 +710,7 @@
     <SkillRate>5 / 6 / 7 / 8 / 9 / 11 / 12 / 13 / 14 / 15;10 / 12 / 14 / 17 / 19 / 21 / 23 / 26 / 28 / 30</SkillRate>
     <ProductDialog>"아직이다! 멈추지 말라고! 제길!"</ProductDialog>
     <FairyExplain>버프 효과를 연속 부여하는 능력을 지니고 있습니다. 평소에는 타짜룰 추격하고 징벌하는 데 사용할 수 있을 것 같습니다.</FairyExplain>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>장벽요정</Name>
@@ -707,6 +730,7 @@
     <SkillRate>? / ? / ? / ? / ? / ? / ? / ? / ? / 150</SkillRate>
     <ProductDialog>"좌현의 탄막이... 아니라 장갑이 너무 얇아!"</ProductDialog>
     <FairyExplain>장갑을 지닌 인형에게 보호막을 씌우는 능력을 지니고 있습니다. 평소에는 아령이나 택배 요정으로 사용할 수 있을 것 같습니다.</FairyExplain>
+    <IsExtra>false</IsExtra>
   </Fairy>
   <Fairy>
     <Name>쌍둥이요정</Name>
@@ -726,5 +750,6 @@
     <SkillRate>300 / 350 / 400 / 450 / 500 / 550 / 600 / 650 / 700 / 750;42 / 54 / 66 / 78 / 90 / 102 / 114 / 126 / 138 / 150;126 / 162 / 198 / 234 / 270 / 306 / 342 / 378 / 414 / 450</SkillRate>
     <ProductDialog>"우리는 운명의 공동체예요. 편애하면 안 돼요!"</ProductDialog>
     <FairyExplain>공생체 쌍둥이를 소환하는 능력을 지니고 있습니다. 평소에는 편제확대한 인형의 적응 훈련을 돕거나 만담 공연에 쓸 수 있을 것 같습니다.</FairyExplain>
+    <IsExtra>false</IsExtra>
   </Fairy>
 </NewDataSet>

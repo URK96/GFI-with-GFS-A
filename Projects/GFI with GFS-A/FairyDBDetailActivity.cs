@@ -28,7 +28,7 @@ namespace GFI_with_GFS_A
         private SwipeRefreshLayout refreshMainLayout;
         private CoordinatorLayout snackbarLayout;
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace GFI_with_GFS_A
                 toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.FairyDBDetailMainToolbar);
 
                 SetSupportActionBar(toolbar);
-                SupportActionBar.Title = "";
+                SupportActionBar.Title = $"No.{fairy.DicNumber} {fairy.Name}";
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
                 refreshMainLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.FairyDBDetailMainRefreshLayout);
@@ -58,7 +58,7 @@ namespace GFI_with_GFS_A
                 FindViewById<ImageView>(Resource.Id.FairyDBDetailSmallImage).Click += FairyDBDetailSmallImage_Click;
                 snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FairyDBSnackbarLayout);
 
-
+                await InitializeProcess();
                 _ = InitLoadProcess(false);
 
                 /*if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_FairyDBDetail", true)))
@@ -129,7 +129,7 @@ namespace GFI_with_GFS_A
                 switch (e.Item.ItemId)
                 {
                     case Resource.Id.DBLinkNamu:
-                        url = $"https://namu.wiki/w/{fairy.Name}{(fairy.IsExtra ? "(소녀전선)" : "")}";
+                        url = $"https://namu.wiki/w/{fairy.Name}{((fairy.DicNumber >= 1000) ? "(소녀전선)" : "")}";
                         break;
                     case Resource.Id.DBLinkInven:
                         url = $"http://gf.inven.co.kr/dataninfo/item/";
@@ -162,14 +162,14 @@ namespace GFI_with_GFS_A
             {
                 Android.Graphics.Color toolbarColor = Android.Graphics.Color.ParseColor("#C040B0");
 
-                if (fairy.IsExtra)
+                if (fairy.DicNumber >= 1000)
                 {
                     toolbar.SetBackgroundColor(toolbarColor);
-                }
-             
-                if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
-                {
-                    Window.SetStatusBarColor(toolbarColor);
+
+                    if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+                    {
+                        Window.SetStatusBarColor(toolbarColor);
+                    }
                 }
             }
             catch (Exception ex)
