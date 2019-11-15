@@ -35,3 +35,6 @@ dotnet_diagnostic.CA1822.severity = suggestion
 
 # CA1819: 속성은 배열을 반환하지 않아야 합니다.
 dotnet_diagnostic.CA1819.severity = silent
+
+# CA1062: public 메서드의 인수에 대한 유효성을 검사하세요.
+dotnet_diagnostic.CA1062.severity = suggestion

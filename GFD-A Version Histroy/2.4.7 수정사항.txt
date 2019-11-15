@@ -1,0 +1,11 @@
+<2.4.7 수정사항>
+
+- DB 리스트 베타 레이아웃 기본 적용
+- 인형, 장비, 요정 DB 세부정보 레이아웃 변경
+- 메인화면에서 DB 버전 확인 과정이 오류가 나는 현상 수정
+- 만화 기능에서 일부 만화가 표시되지 않는 문제 수정
+
+- Apply DB list beta layout by default
+- Change T-Doll, Equip, Fairy DB detail layout
+- Fix DB version check issue on main menu
+- Fix cartoon issue

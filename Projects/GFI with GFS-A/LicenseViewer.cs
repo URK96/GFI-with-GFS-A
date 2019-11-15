@@ -88,7 +88,9 @@ namespace GFI_with_GFS_A
                     try
                     {
                         using (StreamReader sr = new StreamReader(Assets.Open(assetName)))
+                        {
                             licenseView.Text = sr.ReadToEnd();
+                        }
                     }
                     catch (Exception ex)
                     {

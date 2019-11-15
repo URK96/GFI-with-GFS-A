@@ -64,9 +64,9 @@ namespace GFI_with_GFS_A
 
         public ExternLibraryViewHolder(View view, Action<int> listener) : base(view)
         {
-            name = view.FindViewById<TextView>(Resource.Id.ExternLibraryListViewTitleText);
-            explain = view.FindViewById<TextView>(Resource.Id.ExternLibraryListViewExplainText);
-            license = view.FindViewById<TextView>(Resource.Id.ExternLibraryListViewLicenseText);
+            name = view?.FindViewById<TextView>(Resource.Id.ExternLibraryListViewTitleText);
+            explain = view?.FindViewById<TextView>(Resource.Id.ExternLibraryListViewExplainText);
+            license = view?.FindViewById<TextView>(Resource.Id.ExternLibraryListViewLicenseText);
 
             view.Click += (sender, e) => listener(LayoutPosition);
         }
@@ -98,7 +98,7 @@ namespace GFI_with_GFS_A
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.ExternLibraryListViewLayout, parent, false);
+            View view = LayoutInflater.From(parent?.Context).Inflate(Resource.Layout.ExternLibraryListViewLayout, parent, false);
 
             ExternLibraryViewHolder vh = new ExternLibraryViewHolder(view, OnClick);
 
