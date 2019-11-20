@@ -61,7 +61,7 @@ namespace GFI_with_GFS_A
 
                 if (ETC.useLightTheme)
                 {
-                    SetTheme(Resource.Style.GFS_Light);
+                    SetTheme(Resource.Style.GFS_Toolbar_Light);
                 }
 
                 // Create your application here

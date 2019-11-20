@@ -1,7 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using System;
@@ -10,10 +9,11 @@ using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "Open Source License", Theme = "@style/GFS")]
+    [Activity(Label = "Open Source License", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class LicenseViewer : BaseAppCompatActivity
     {
-        TextView licenseView;
+        private Android.Support.V7.Widget.Toolbar toolbar;
+        private TextView licenseView;
 
         string licenseType = "";
 
@@ -21,23 +21,35 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
-            LinearLayout mainLayout = new LinearLayout(this);
-            mainLayout.LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent);
-
-            ScrollView scrollView = new ScrollView(this);
-            scrollView.LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent);
-
-            licenseView = new TextView(this);
-
-            scrollView.AddView(licenseView);
-            mainLayout.AddView(scrollView);
+            if (ETC.useLightTheme)
+            {
+                SetTheme(Resource.Style.GFS_Toolbar_Light);
+            }
 
             // Create your application here
-            SetContentView(mainLayout);
+            SetContentView(Resource.Layout.LicenseViewerLayout);
+
+            toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.LicenseViewerMainToolbar);
+
+            SetSupportActionBar(toolbar);
+            SupportActionBar.Title = "Open Source License";
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             licenseType = Intent.GetStringExtra("Type");
 
             _ = ReadLicense();
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item?.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    OnBackPressed();
+                    break;
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
 
         private async Task ReadLicense()

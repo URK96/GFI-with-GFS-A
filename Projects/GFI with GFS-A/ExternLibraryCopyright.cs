@@ -1,7 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
@@ -9,9 +8,10 @@ using System;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "@string/Activity_ExternLibraryCopyrightActivity", Theme = "@style/GFS")]
+    [Activity(Label = "@string/Activity_ExternLibraryCopyrightActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class ExternLibraryCopyright : BaseAppCompatActivity
     {
+        private Android.Support.V7.Widget.Toolbar toolbar;
         private RecyclerView mainRecyclerView;
         private RecyclerView.LayoutManager mainLayoutManager;
 
@@ -29,6 +29,12 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.ExternLibraryCopyrightLayout);
 
+            toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.ExternLibraryMainToolbar);
+
+            SetSupportActionBar(toolbar);
+            SupportActionBar.SetTitle(Resource.String.Activity_ExternLibraryCopyrightActivity);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
             mainRecyclerView = FindViewById<RecyclerView>(Resource.Id.ExternLibraryRecyclerView);
             mainLayoutManager = new LinearLayoutManager(this);
             mainRecyclerView.SetLayoutManager(mainLayoutManager);
@@ -38,6 +44,18 @@ namespace GFI_with_GFS_A
             adapter = new ExternLibraryAdapter(name, explain, license);
             adapter.ItemClick += Adapter_ItemClick;
             mainRecyclerView.SetAdapter(adapter);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item?.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    OnBackPressed();
+                    break;
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
 
         private void Adapter_ItemClick(object sender, int position)
