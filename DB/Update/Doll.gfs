@@ -12889,4 +12889,127 @@
     <HasAnimation>false</HasAnimation>
     <ProductDialog>Six12, 신고합니다! 물론 지휘관님께 복종하겠습니다.</ProductDialog>
   </Doll>
+  <Doll>
+    <Name>CAWS</Name>
+    <Name_EN>CAWS</Name_EN>
+    <Name_JP>CAWS</Name_JP>
+    <CodeName>HKCAWS</CodeName>
+    <Nickname>CAWS</Nickname>
+    <Model>H&amp;K CAWS</Model>
+    <Country>Germany</Country>
+    <Type>SG</Type>
+    <Grade>5</Grade>
+    <ProductTime>495</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>A;B;A;A;S;S;B</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>6</MoveSpeed>
+    <Critical>40</Critical>
+    <Bullet>5</Bullet>
+    <Armor>0</Armor>
+    <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
+    <ConsumeFood>40/65/90/115/140</ConsumeFood>
+    <EffectFormation>0,0,0,1,0,2,1,0,0</EffectFormation>
+    <Effect>FR,AC;18,12</Effect>
+    <EffectType>MG</EffectType>
+    <DropEvent>중형제조</DropEvent>
+    <DicNumber>281</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>복수의 업화</Skill>
+    <SkillExplain>&lt;액티브&gt; 보호막을 생성한다.    &lt;패시브&gt; 보호막을 지니고 있을 때, 일반 공격을 멈추고 1.5초마다 1회씩 최대 3회 충전한다. 완전히 충전되거나 보호막이 사라지면 모든 충전 횟수를 소모하여 일정 범위 내에 있는 적에게 피해를 주는 특수 공격을 한다. (충전에 따른 범위 : 3 / 5 / 8)</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;보호막 수치;피해량</SkillEffect>
+    <SkillMag>8초,16초,40, 5.5배</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>废人</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>HK CAWS. 여기서 일하게 됐어. 환영회 같은 건 됐고... 그냥 돈 주는 만큼 일할게.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>DP-12</Name>
+    <Name_EN>DP-12</Name_EN>
+    <Name_JP>DP-12</Name_JP>
+    <CodeName>DP12</CodeName>
+    <Nickname>DP-12</Nickname>
+    <Model>DP-12</Model>
+    <Country>United States of America</Country>
+    <Type>SG</Type>
+    <Grade>5</Grade>
+    <ProductTime>493</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>A;B;A;A;A;S;B</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>6</MoveSpeed>
+    <Critical>40</Critical>
+    <Bullet>5</Bullet>
+    <Armor>0</Armor>
+    <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
+    <ConsumeFood>40/65/90/115/140</ConsumeFood>
+    <EffectFormation>1,0,0,1,0,2,0,0,0</EffectFormation>
+    <Effect>FR,AC;15,15</Effect>
+    <EffectType>RF,MG</EffectType>
+    <DropEvent>중형제조</DropEvent>
+    <DicNumber>282</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>민속 괴담</Skill>
+    <SkillExplain>&lt;액티브&gt; 즉시 재장전을 하고 장탄수를 3발 추가한다. 추가된 3발로 공격 시 해당 적에게 일정 피해량을 2번 입힌다. 슬러그 탄과 중첩은 불가.    &lt;패시브&gt; 재장전할 때마다 자신에게 보호막을 부여한다. 또한 자신의 바로 뒤에 있는 아군의 피해량을 감소시킨다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;패시브 지속시간;보호막 수치;피해 감소량;피해량</SkillEffect>
+    <SkillMag>3초,16초,5초,40,25%,1배</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>Pandea_work</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>DP-12, 정성을 다해 지휘관님을 지켜 드리겠습니다. 음... 제 이름에 숨겨진 이야기를 들려 드릴까요?</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>리버레이터</Name>
+    <Name_EN>Liberator</Name_EN>
+    <Name_JP>Liberator</Name_JP>
+    <CodeName>Liberator</CodeName>
+    <Nickname>리버레이터</Nickname>
+    <Model>Winchester Liberator</Model>
+    <Country>United States of America</Country>
+    <Type>SG</Type>
+    <Grade>4</Grade>
+    <ProductTime>465</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;A;S;B;A;A;A</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>6</MoveSpeed>
+    <Critical>40</Critical>
+    <Bullet>4</Bullet>
+    <Armor>0</Armor>
+    <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
+    <ConsumeFood>40/65/90/115/140</ConsumeFood>
+    <EffectFormation>1,0,2,0,0,0,1,0,0</EffectFormation>
+    <Effect>FR,AC;10,25</Effect>
+    <EffectType>MG</EffectType>
+    <DropEvent>중형제조</DropEvent>
+    <DicNumber>283</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>심판의 충격</Skill>
+    <SkillExplain>스킬 지속시간 동안 일반 공격이 적에게 일정 피해를 4번 연속으로 입힌다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;피해량</SkillEffect>
+    <SkillMag>8초,16초,8초,0.5배</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>人造天使lili</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>헬로! 평등과 균형의 사자, 윈체스터 리버레이터 등장! 지휘관, 불공평한 싸움이라면 나한테 맡겨 줘!</ProductDialog>
+  </Doll>
 </NewDataSet>

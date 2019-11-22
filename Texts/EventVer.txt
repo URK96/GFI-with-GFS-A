@@ -1,6 +1,6 @@
 Y;
-52;
-1;
-DJMAX 콜라보 (복각);
-https://cafe.naver.com/girlsfrontlinekr/3702335;
-2019/11/15 16:00 ~ 2019/12/6 14:59;
+53;
+2;
+DJMAX 콜라보 (복각),신규 전술인형 제조확률 UP;
+https://cafe.naver.com/girlsfrontlinekr/3702335,https://www.girlsfrontline.co.kr/archives/3386.html;
+2019/11/15 16:00 ~ 2019/12/6 14:59,2019/11/23 00:00 ~ 2019/11/24 23:59;
