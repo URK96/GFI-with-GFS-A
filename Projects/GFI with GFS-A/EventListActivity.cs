@@ -17,43 +17,77 @@ using System.Net;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Name = "com.gfl.dic.EventListActivity", Label = "@string/Activity_EventListActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.EventListActivity", Label = "@string/Activity_EventListActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class EventListActivity : BaseAppCompatActivity
     {
         enum EventPeriodType { Now, Scheduled, Over }
 
-        private LinearLayout EventListSubLayout;
-        private LinearLayout EventListSubLayout2;
+        private LinearLayout eventListSubLayout;
+        private LinearLayout eventListSubLayout2;
 
-        private int EventCount = 0;
-        private int NowEventCount = 0;
-        private int ScheduledEventCount = 0;
-        private string[] EventURLs;
-        private string[] EventPeriods;
-        private string EventFilePath = Path.Combine(ETC.cachePath, "Event", "EventVer.txt");
-       
+        private int eventCount = 0;
+        private int nowEventCount = 0;
+        private int scheduledEventCount = 0;
+        private string[] eventURLs;
+        private string[] eventPeriods;
+        private readonly string eventFilePath = Path.Combine(ETC.cachePath, "Event", "EventVer.txt");
 
-        private CoordinatorLayout SnackbarLayout;
+        private CoordinatorLayout snackbarLayout;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.useLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+            if (ETC.useLightTheme)
+            {
+                SetTheme(Resource.Style.GFS_Toolbar_Light);
+            }
 
             // Create your application here
             SetContentView(Resource.Layout.EventListLayout);
 
+            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.EventListMainToolbar));
+            SupportActionBar.SetTitle(Resource.String.EventListActivity_Title);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
             ETC.SetDialogTheme();
 
-            SetTitle(Resource.String.EventListActivity_Title);
+            snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EventListSnackbarLayout);
 
-            SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EventListSnackbarLayout);
-
-            EventListSubLayout = FindViewById<LinearLayout>(Resource.Id.EventListButtonSubLayout);
-            EventListSubLayout2 = FindViewById<LinearLayout>(Resource.Id.EventListButtonSubLayout2);
+            eventListSubLayout = FindViewById<LinearLayout>(Resource.Id.EventListButtonSubLayout);
+            eventListSubLayout2 = FindViewById<LinearLayout>(Resource.Id.EventListButtonSubLayout2);
 
             _ = InitLoad();
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            try
+            {
+                MenuInflater.Inflate(Resource.Menu.EventListMenu, menu);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                Toast.MakeText(this, "Cannot create option menu", ToastLength.Short).Show();
+            }
+
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item?.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    OnBackPressed();
+                    break;
+                case Resource.Id.RefreshOldGFDImageCache:
+                    _ = UpdateEvent();
+                    break;
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
 
         private async Task InitLoad()
@@ -62,8 +96,10 @@ namespace GFI_with_GFS_A
 
             try
             {
-                if (await CheckEventVersion() == true)
+                if (await CheckEventVersion())
+                {
                     await UpdateEvent();
+                }
 
                 TextView period1 = FindViewById<TextView>(Resource.Id.EventPeriodText1);
                 Button button1 = FindViewById<Button>(Resource.Id.EventButton1);
@@ -72,44 +108,46 @@ namespace GFI_with_GFS_A
 
                 string[] temp;
 
-                using (StreamReader sr = new StreamReader(new FileStream(EventFilePath, FileMode.Open, FileAccess.Read)))
+                using (StreamReader sr = new StreamReader(new FileStream(eventFilePath, FileMode.Open, FileAccess.Read)))
                 {
                     temp = sr.ReadToEnd().Split(';');
                 }
 
-                EventCount = int.Parse(temp[2]);
-                EventURLs = new string[EventCount];
-                EventURLs = temp[4].Split(',');
-                EventPeriods = new string[EventCount];
-                EventPeriods = temp[5].Split(',');
+                eventCount = int.Parse(temp[2]);
+                eventURLs = new string[eventCount];
+                eventURLs = temp[4].Split(',');
+                eventPeriods = new string[eventCount];
+                eventPeriods = temp[5].Split(',');
 
-                NowEventCount = 0;
-                ScheduledEventCount = 0;
+                nowEventCount = 0;
+                scheduledEventCount = 0;
 
-                EventListSubLayout.RemoveAllViews();
-                EventListSubLayout2.RemoveAllViews();
+                eventListSubLayout.RemoveAllViews();
+                eventListSubLayout2.RemoveAllViews();
 
-                for (int i = 0; i < EventCount; ++i)
+                for (int i = 0; i < eventCount; ++i)
                 {
                     EventPeriodType type;
-                    string[] EventPeriod = EventPeriods[i].Split(' ');
+                    string[] EventPeriod = eventPeriods[i].Split(' ');
 
                     type = CheckEventPeriod(EventPeriod);
 
                     if (type == EventPeriodType.Over)
+                    {
                         continue;
+                    }
 
-                    string text_period = EventPeriods[i];
-                    Android.Graphics.Drawables.Drawable event_image = Android.Graphics.Drawables.Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Event", "Images", "Event_" + (i + 1) + ".png"));
+                    string textPeriod = eventPeriods[i];
+                    Android.Graphics.Drawables.Drawable eventImage = Android.Graphics.Drawables.Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Event", "Images", "Event_" + (i + 1) + ".png"));
 
                     if (type == EventPeriodType.Now)
                     {
-                        NowEventCount += 1;
+                        nowEventCount += 1;
 
-                        if (NowEventCount == 1)
+                        if (nowEventCount == 1)
                         {
-                            period1.Text = text_period;
-                            button1.Background = event_image;
+                            period1.Text = textPeriod;
+                            button1.Background = eventImage;
                             button1.Tag = i;
                             button1.Click += EventButton_Click;
                         }
@@ -121,25 +159,25 @@ namespace GFI_with_GFS_A
                             period.LayoutParameters = period1.LayoutParameters;
                             button.LayoutParameters = button1.LayoutParameters;
 
-                            period.Text = text_period;
+                            period.Text = textPeriod;
                             period.Gravity = GravityFlags.Center;
 
-                            button.Background = event_image;
+                            button.Background = eventImage;
                             button.Tag = i;
                             button.Click += EventButton_Click;
 
-                            EventListSubLayout.AddView(period);
-                            EventListSubLayout.AddView(button);
+                            eventListSubLayout.AddView(period);
+                            eventListSubLayout.AddView(button);
                         }
                     }
                     else if (type == EventPeriodType.Scheduled)
                     {
-                        ScheduledEventCount += 1;
+                        scheduledEventCount += 1;
 
-                        if (ScheduledEventCount == 1)
+                        if (scheduledEventCount == 1)
                         {
-                            period2.Text = text_period;
-                            button2.Background = event_image;
+                            period2.Text = textPeriod;
+                            button2.Background = eventImage;
                             button2.Tag = i;
                             button2.Click += EventButton_Click;
                         }
@@ -151,26 +189,26 @@ namespace GFI_with_GFS_A
                             period.LayoutParameters = period2.LayoutParameters;
                             button.LayoutParameters = button2.LayoutParameters;
 
-                            period.Text = text_period;
+                            period.Text = textPeriod;
                             period.Gravity = GravityFlags.Center;
 
-                            button.Background = event_image;
+                            button.Background = eventImage;
                             button.Tag = i;
                             button.Click += EventButton_Click;
 
-                            EventListSubLayout2.AddView(period);
-                            EventListSubLayout2.AddView(button);
+                            eventListSubLayout2.AddView(period);
+                            eventListSubLayout2.AddView(button);
                         }
                     }
                 }
 
-                if (NowEventCount == 0)
+                if (nowEventCount == 0)
                 {
                     period1.Text = Resources.GetString(Resource.String.EventList_NoEvent);
                     button1.Visibility = ViewStates.Gone;
                 }
 
-                if (ScheduledEventCount == 0)
+                if (scheduledEventCount == 0)
                 {
                     period2.Text = Resources.GetString(Resource.String.EventList_NoEvent);
                     button2.Visibility = ViewStates.Gone;
@@ -209,7 +247,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.InitLoad_Error, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.InitLoad_Error, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -217,59 +255,73 @@ namespace GFI_with_GFS_A
         {
             await ETC.CheckServerNetwork();
 
-            if (ETC.isServerDown == true)
+            if (ETC.isServerDown)
+            {
                 return false;
+            }
 
-            string LocalEventVerPath = Path.Combine(ETC.cachePath, "Event", "EventVer.txt");
-            string ServerEventVerPath = Path.Combine(ETC.server, "EventVer.txt");
-            string TempEventVerPath = Path.Combine(ETC.tempPath, "EventVer.txt");
+            string localEventVerPath = Path.Combine(ETC.cachePath, "Event", "EventVer.txt");
+            string serverEventVerPath = Path.Combine(ETC.server, "EventVer.txt");
+            string tempEventVerPath = Path.Combine(ETC.tempPath, "EventVer.txt");
 
-            bool HasEventUpdate = false;
+            bool hasEventUpdate = false;
 
-            if (File.Exists(LocalEventVerPath) == false)
-                HasEventUpdate = true;
+            if (!File.Exists(localEventVerPath))
+            {
+                hasEventUpdate = true;
+            }
             else
             {
                 using (WebClient wc = new WebClient())
-                    await wc.DownloadFileTaskAsync(ServerEventVerPath, TempEventVerPath);
+                {
+                    await wc.DownloadFileTaskAsync(serverEventVerPath, tempEventVerPath);
+                }
 
                 await Task.Delay(1);
 
-                using (StreamReader sr1 = new StreamReader(new FileStream(LocalEventVerPath, FileMode.Open, FileAccess.Read)))
-                using (StreamReader sr2 = new StreamReader(new FileStream(TempEventVerPath, FileMode.Open, FileAccess.Read)))
+                using (StreamReader sr1 = new StreamReader(new FileStream(localEventVerPath, FileMode.Open, FileAccess.Read)))
+                using (StreamReader sr2 = new StreamReader(new FileStream(tempEventVerPath, FileMode.Open, FileAccess.Read)))
                 {
                     int localVer = int.Parse(sr1.ReadToEnd().Split(';')[1]);
                     int serverVer = int.Parse(sr2.ReadToEnd().Split(';')[1]);
 
-                    if (localVer < serverVer)
-                        HasEventUpdate = true;
+                    hasEventUpdate = localVer < serverVer;
                 }
             }
 
-            return HasEventUpdate;
+            return hasEventUpdate;
         }
 
         private EventPeriodType CheckEventPeriod(string[] period)
         {
-            int start_year = int.Parse(period[0].Split('/')[0]);
-            int start_month = int.Parse(period[0].Split('/')[1]);
-            int start_day = int.Parse(period[0].Split('/')[2]);
-            int start_hour = int.Parse(period[1].Split(':')[0]);
-            int start_minute = int.Parse(period[1].Split(':')[1]);
+            int startYear = int.Parse(period[0].Split('/')[0]);
+            int startMonth = int.Parse(period[0].Split('/')[1]);
+            int startDay = int.Parse(period[0].Split('/')[2]);
+            int startHour = int.Parse(period[1].Split(':')[0]);
+            int startMinute = int.Parse(period[1].Split(':')[1]);
 
-            int end_year = int.Parse(period[3].Split('/')[0]);
-            int end_month = int.Parse(period[3].Split('/')[1]);
-            int end_day = int.Parse(period[3].Split('/')[2]);
-            int end_hour = int.Parse(period[4].Split(':')[0]);
-            int end_minute = int.Parse(period[4].Split(':')[1]);
+            int endYear = int.Parse(period[3].Split('/')[0]);
+            int endMonth = int.Parse(period[3].Split('/')[1]);
+            int endDay = int.Parse(period[3].Split('/')[2]);
+            int endHour = int.Parse(period[4].Split(':')[0]);
+            int endMinute = int.Parse(period[4].Split(':')[1]);
 
             DateTime now = DateTime.Now;
-            DateTime start = new DateTime(start_year, start_month, start_day, start_hour, start_minute, 0);
-            DateTime end = new DateTime(end_year, end_month, end_day, end_hour, end_minute, 0);
+            DateTime start = new DateTime(startYear, startMonth, startDay, startHour, startMinute, 0);
+            DateTime end = new DateTime(endYear, endMonth, endDay, endHour, endMinute, 0);
 
-            if (DateTime.Compare(now, start) < 0) return EventPeriodType.Scheduled;
-            else if (DateTime.Compare(now, end) > 0) return EventPeriodType.Over;
-            else return EventPeriodType.Now;
+            if (DateTime.Compare(now, start) < 0)
+            {
+                return EventPeriodType.Scheduled;
+            }
+            else if (DateTime.Compare(now, end) > 0)
+            {
+                return EventPeriodType.Over;
+            }
+            else
+            {
+                return EventPeriodType.Now;
+            }
         }
 
         private void EventButton_Click(object sender, EventArgs e)
@@ -279,14 +331,14 @@ namespace GFI_with_GFS_A
                 Button bt = sender as Button;
 
                 var intent = new Intent(this, typeof(WebBrowserActivity));
-                intent.PutExtra("url", EventURLs[Convert.ToInt32(bt.Tag)]);
+                intent.PutExtra("url", eventURLs[Convert.ToInt32(bt.Tag)]);
                 StartActivity(intent);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.MenuAccess_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.MenuAccess_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -315,15 +367,20 @@ namespace GFI_with_GFS_A
                 nowProgressBar.Indeterminate = true;
                 totalProgressBar.Indeterminate = true;
 
-                if (Directory.Exists(ETC.tempPath) == false)
+                if (!Directory.Exists(ETC.tempPath))
+                {
                     Directory.CreateDirectory(ETC.tempPath);
-                if (Directory.Exists(Path.Combine(ETC.cachePath, "Event", "Images")) == false)
+                }
+                if (!Directory.Exists(Path.Combine(ETC.cachePath, "Event", "Images")))
+                {
                     Directory.CreateDirectory(Path.Combine(ETC.cachePath, "Event", "Images"));
+                }
 
                 using (WebClient wc = new WebClient())
                 {
                     string url = Path.Combine(ETC.server, "EventVer.txt");
                     string target = Path.Combine(ETC.tempPath, "EventVer.txt");
+
                     await wc.DownloadFileTaskAsync(url, target);
                     await Task.Delay(500);
 
@@ -331,12 +388,12 @@ namespace GFI_with_GFS_A
                     totalProgressBar.Indeterminate = false;
                     totalProgressBar.Progress = 0;
 
-                    wc.DownloadProgressChanged += (object sender, DownloadProgressChangedEventArgs e) =>
+                    wc.DownloadProgressChanged += (sender, e) =>
                     {
                         nowProgressBar.Progress = e.ProgressPercentage;
                         nowProgress.Text = e.BytesReceived > 2048 ? $"{e.BytesReceived / 1024}KB" : $"{e.BytesReceived}B";
                     };
-                    wc.DownloadFileCompleted += (object sender, System.ComponentModel.AsyncCompletedEventArgs e) =>
+                    wc.DownloadFileCompleted += (sender, e) =>
                     {
                         totalProgressBar.Progress += 1;
                         totalProgress.Text = $"{totalProgressBar.Progress} / {totalProgressBar.Max}";
@@ -345,7 +402,9 @@ namespace GFI_with_GFS_A
                     int totalCount = 0;
 
                     using (StreamReader sr = new StreamReader(new FileStream(Path.Combine(ETC.tempPath, "EventVer.txt"), FileMode.Open, FileAccess.Read)))
+                    {
                         totalCount += int.Parse(sr.ReadToEnd().Split(';')[2]);
+                    }
 
                     totalProgressBar.Max = totalCount;
 
@@ -353,6 +412,7 @@ namespace GFI_with_GFS_A
                     {
                         string url2 = Path.Combine(ETC.server, "Data", "Images", "Events", "Event_" + i + ".png");
                         string target2 = Path.Combine(ETC.cachePath, "Event", "Images", "Event_" + i + ".png");
+
                         await wc.DownloadFileTaskAsync(url2, target2);
                         await Task.Delay(100);
                     }
@@ -363,7 +423,8 @@ namespace GFI_with_GFS_A
 
                     string oldVersion = Path.Combine(ETC.cachePath, "Event", "EventVer.txt");
                     string newVersion = Path.Combine(ETC.tempPath, "EventVer.txt");
-                    File.Copy(newVersion, oldVersion, true);
+
+                    ETC.CopyFile(newVersion, oldVersion);
 
                     await Task.Delay(1000);
                 }

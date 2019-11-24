@@ -1,13 +1,12 @@
-﻿# Fairy DB Update 2019/11/14
+﻿# T-Doll DB Update 2019/11/22
+
+- Add new T-Dolls (HK CAWS, DP-12, Liberator)
+
+
+# Fairy DB Update 2019/11/14
 
 - Edit some fairy info
 - Add new internal item for new version
-
-
-# T-Doll DB Update 2019/11/01
-
-- Add new costumes (QBU-88, G36C, M870, MG3, PSG-1, Model L, Type97S)
-
 
 
 # Equip DB Update 2019/10/26

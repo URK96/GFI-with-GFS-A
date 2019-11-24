@@ -127,6 +127,8 @@
     <item>선배와 후배</item>
     <item>어느 골짜기 이야기</item>
     <item>지나간 명절 이야기</item>
+    <item>공석</item>
+    <item>K2와 네게브의 부관면접</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -181,6 +183,7 @@
     <item>2화</item>
     <item>3화</item>
     <item>4화</item>
+    <item>5화</item>
   </string-array>
 
   <string-array name="GF_Guide">
@@ -467,6 +470,12 @@
     <item>79 - 이상한 중제조</item>
     <item>80 - 야한언니 에이전트</item>
     <item>81 - 미인계</item>
+    <item>82 - G36의 미소</item>
+    <item>83 - 소녀탐정 헬리안</item>
+    <item>84 - 소녀전선 아이돌 프로젝트</item>
+    <item>85 - 아이돌 콘테스트</item>
+    <item>86 - 그리폰 최고 아이돌은 누구?</item>
+    <item>87 - 에이전트의 짝사랑</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -552,5 +561,11 @@
     <item>http://naver.me/FPX8lRgC</item>
     <item>http://naver.me/FkbhF1lR</item>
     <item>http://naver.me/GaQVGoFM</item>
+    <item>http://naver.me/FwFfGwbV</item>
+    <item>http://naver.me/GqOM1vft</item>
+    <item>http://naver.me/FjMOKbsz</item>
+    <item>http://naver.me/G9ADajtp</item>
+    <item>http://naver.me/F8L0nw4h</item>
+    <item>http://naver.me/5uu8zmHx</item>
   </string-array>
 </resources>

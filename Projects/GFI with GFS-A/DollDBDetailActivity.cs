@@ -119,6 +119,7 @@ namespace GFI_with_GFS_A
                 }
 
                 FindViewById<ImageButton>(Resource.Id.DollDBExtraFeatureButton).Click += ExtraMenuButton_Click;
+                FindViewById<ImageButton>(Resource.Id.DollDBExtraFeatureButton).SetImageResource(curtainDownIcon);
                 modelDataButton = FindViewById<Button>(Resource.Id.DollDBDetailModelDataButton);
                 modelDataButton.Click += ModelDataButton_Click;
 

@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Name = "com.gfl.dic.OldGFDActivity", Label = "GFD v1", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.OldGFDActivity", Label = "GFD v1", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class OldGFDViewer : BaseAppCompatActivity
     {
         private ArrayAdapter imageAdapter;
@@ -24,24 +24,26 @@ namespace GFI_with_GFS_A
         private DrawerLayout mainDrawerLayout;
         private ListView drawerListView;
         internal CoordinatorLayout snackbarLayout;
-        private FloatingActionButton refreshFAB;
 
         private string[] oldGFDImageList;
 
         internal int initImageIndex = 0;
 
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             try
-            { 
+            {
                 if (ETC.Resources == null)
+                {
                     ETC.BasicInitializeApp(this);
+                }
 
                 base.OnCreate(savedInstanceState);
 
                 if (ETC.useLightTheme)
-                    SetTheme(Resource.Style.GFS_NoActionBar_Light);
+                {
+                    SetTheme(Resource.Style.GFS_Toolbar_Light);
+                }
 
                 // Create your application here
                 SetContentView(Resource.Layout.OldGFDLayout);
@@ -54,23 +56,11 @@ namespace GFI_with_GFS_A
                 mainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.OldGFDViewerMainDrawerLayout);
                 mainDrawerLayout.DrawerOpened += delegate
                 {
-                    if (ETC.useLightTheme)
-                        SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen_WhiteTheme);
-                    else
-                        SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen);
+                    SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen);                        
                 };
                 mainDrawerLayout.DrawerClosed += delegate
                 {
-                    if (ETC.useLightTheme)
-                        SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
-                    else
-                        SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
-                };
-                refreshFAB = FindViewById<FloatingActionButton>(Resource.Id.OldGFDViewerRefreshFAB);
-                refreshFAB.Click += delegate 
-                {
-                    _ = ((OldGFDViewerScreen)oldGFDViewer_F).DownloadGFDImage();
-                    ((OldGFDViewerScreen)oldGFDViewer_F).ShowImage(0);
+                    SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
                 };
                 drawerListView = FindViewById<ListView>(Resource.Id.OldGFDImageListView);
                 drawerListView.ItemClick += DrawerListView_ItemClick;
@@ -79,13 +69,8 @@ namespace GFI_with_GFS_A
 
                 SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.OldGFDViewerMainToolbar));
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-                SupportActionBar.SetDisplayShowTitleEnabled(true);
-                SupportActionBar.SetHomeButtonEnabled(true);
-
-                if (ETC.useLightTheme)
-                    SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
-                else
-                    SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
+                SupportActionBar.Title = "GFD v1";
+                SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
 
                 // Set Fragment
 
@@ -104,17 +89,44 @@ namespace GFI_with_GFS_A
             }
         }
 
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            try
+            {
+                MenuInflater.Inflate(Resource.Menu.OldGFDMenu, menu);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                Toast.MakeText(this, "Cannot create option menu", ToastLength.Short).Show();
+            }
+
+            return base.OnCreateOptionsMenu(menu);
+        }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            switch (item.ItemId)
+            switch (item?.ItemId)
             {
                 case Android.Resource.Id.Home:
                     if (mainDrawerLayout.IsDrawerOpen(GravityCompat.Start))
+                    {
                         mainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                    }
                     else
+                    {
                         mainDrawerLayout.OpenDrawer(GravityCompat.Start);
+                    }
 
                     return true;
+                case Resource.Id.RefreshOldGFDImageCache:
+                    _ = ((OldGFDViewerScreen)oldGFDViewer_F).DownloadGFDImage();
+                    ((OldGFDViewerScreen)oldGFDViewer_F).ShowImage(0);
+                    break;
+                case Resource.Id.OldGFDExit:
+                    mainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                    OnBackPressed();
+                    break;
             }
 
             return base.OnOptionsItemSelected(item);
@@ -216,7 +228,7 @@ namespace GFI_with_GFS_A
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            v = inflater.Inflate(Resource.Layout.OldGFDScreenLayout, container, false);
+            v = inflater?.Inflate(Resource.Layout.OldGFDScreenLayout, container, false);
 
             imageContainer = v.FindViewById<LinearLayout>(Resource.Id.OldGFDImageContainer);
             snackbarLayout_F = ((OldGFDViewer)Activity).snackbarLayout;
@@ -338,8 +350,12 @@ namespace GFI_with_GFS_A
         private bool CheckImage()
         {
             foreach (string s in imageName)
+            {
                 if (!File.Exists(Path.Combine(ETC.cachePath, "OldGFD", "Images", $"{ETC.locale.Language}_{s}.gfdcache")))
+                {
                     return true;
+                }
+            }
 
             return false;
         }
@@ -361,14 +377,18 @@ namespace GFI_with_GFS_A
                         string LocalDBVerPath = Path.Combine(ETC.systemPath, "OldGFDVer.txt");
 
                         if (!File.Exists(LocalDBVerPath))
+                        {
                             hasUpdate = true;
+                        }
                         else
                         {
                             int serverVer = int.Parse(await wc.DownloadStringTaskAsync(Path.Combine(ETC.server, "OldGFDVer.txt")));
                             int localVer = 0;
 
                             using (StreamReader sr = new StreamReader(new FileStream(LocalDBVerPath, FileMode.Open, FileAccess.Read)))
+                            {
                                 localVer = int.Parse(sr.ReadToEnd());
+                            }
 
                             hasUpdate = localVer < serverVer;
                         }
@@ -377,17 +397,14 @@ namespace GFI_with_GFS_A
 
                 if (hasUpdate || isMissing)
                 {
-                    using (var builder = new Android.Support.V7.App.AlertDialog.Builder(Activity))
-                    {
-                        builder.SetTitle(Resource.String.UpdateDialog_Title);
-                        builder.SetMessage(Resource.String.UpdateDialog_Message);
-                        builder.SetCancelable(true);
-                        builder.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate { await DownloadGFDImage(); });
-                        builder.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                    var builder = new Android.Support.V7.App.AlertDialog.Builder(Activity);
+                    builder.SetTitle(Resource.String.UpdateDialog_Title);
+                    builder.SetMessage(Resource.String.UpdateDialog_Message);
+                    builder.SetCancelable(true);
+                    builder.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate { await DownloadGFDImage(); });
+                    builder.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
 
-                        var dialog = builder.Create();
-                        dialog.Show();
-                    }
+                    builder.Create().Show();
                 }
             }
             catch (Exception ex)
@@ -406,59 +423,57 @@ namespace GFI_with_GFS_A
             ProgressBar nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
             TextView nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
 
-            using (var builder = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload))
+            var builder = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload);
+            builder.SetTitle(Resource.String.UpdateDownloadDialog_Title);
+            builder.SetView(v);
+            builder.SetCancelable(false);
+
+            Dialog dialog = builder.Create();
+            dialog.Show();
+
+            await Task.Delay(100);
+
+            try
             {
-                builder.SetTitle(Resource.String.UpdateDownloadDialog_Title);
-                builder.SetView(v);
-                builder.SetCancelable(false);
+                totalProgressBar.Max = imageName.Length;
+                totalProgressBar.Progress = 0;
 
-                Dialog dialog = builder.Create();
-                dialog.Show();
-
-                await Task.Delay(100);
-
-                try
+                using (WebClient wc = new WebClient())
                 {
-                    totalProgressBar.Max = imageName.Length;
-                    totalProgressBar.Progress = 0;
-
-                    using (WebClient wc = new WebClient())
+                    wc.DownloadFileCompleted += (object sender, System.ComponentModel.AsyncCompletedEventArgs e) =>
                     {
-                        wc.DownloadFileCompleted += (object sender, System.ComponentModel.AsyncCompletedEventArgs e) =>
-                        {
-                            totalProgressBar.Progress += 1;
-                            totalProgress.Text = $"{totalProgressBar.Progress} / {totalProgressBar.Max}";
-                        };
-                        wc.DownloadProgressChanged += (object sender, DownloadProgressChangedEventArgs e) =>
-                        {
-                            nowProgressBar.Progress = e.ProgressPercentage;
-                            nowProgress.Text = $"{e.BytesReceived / 1024}KB";
-                        };
+                        totalProgressBar.Progress += 1;
+                        totalProgress.Text = $"{totalProgressBar.Progress} / {totalProgressBar.Max}";
+                    };
+                    wc.DownloadProgressChanged += (object sender, DownloadProgressChangedEventArgs e) =>
+                    {
+                        nowProgressBar.Progress = e.ProgressPercentage;
+                        nowProgress.Text = $"{e.BytesReceived / 1024}KB";
+                    };
 
-                        foreach (string s in imageName)
-                        {
-                            string url = Path.Combine(ETC.server, "Data", "Images", "OldGFD", "Images", ETC.locale.Language, $"{s}.png");
-                            string target = Path.Combine(ETC.cachePath, "OldGFD", "Images", $"{ETC.locale.Language}_{s}.gfdcache");
+                    foreach (string s in imageName)
+                    {
+                        string url = Path.Combine(ETC.server, "Data", "Images", "OldGFD", "Images", ETC.locale.Language, $"{s}.png");
+                        string target = Path.Combine(ETC.cachePath, "OldGFD", "Images", $"{ETC.locale.Language}_{s}.gfdcache");
 
-                            await wc.DownloadFileTaskAsync(url, target);
-                        }
-
-                        wc.DownloadFile(Path.Combine(ETC.server, "OldGFDVer.txt"), Path.Combine(ETC.systemPath, "OldGFDVer.txt"));
+                        await wc.DownloadFileTaskAsync(url, target);
                     }
 
-                    ETC.ShowSnackbar(snackbarLayout_F, Resource.String.UpdateDownload_Complete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);
+                    wc.DownloadFile(Path.Combine(ETC.server, "OldGFDVer.txt"), Path.Combine(ETC.systemPath, "OldGFDVer.txt"));
                 }
-                catch (Exception ex)
-                {
-                    ETC.LogError(ex, Activity);
-                    ETC.ShowSnackbar(snackbarLayout_F, Resource.String.UpdateDownload_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
-                }
-                finally
-                {
-                    dialog.Dismiss();
-                }
-            }
 
+                ETC.ShowSnackbar(snackbarLayout_F, Resource.String.UpdateDownload_Complete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, Activity);
+                ETC.ShowSnackbar(snackbarLayout_F, Resource.String.UpdateDownload_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+            }
+            finally
+            {
+                dialog.Dismiss();
+            }
+            
             await Task.Delay(100);
         }
     }

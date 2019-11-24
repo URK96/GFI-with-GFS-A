@@ -264,6 +264,7 @@
   <string name="Common_Sort">정렬</string>
   <string name="Common_UpdateImageCache">이미지 캐시 갱신</string>
   <string name="Common_Link">링크</string>
+  <string name="Common_Close">닫기</string>
 
   <!--Sort String-->
   <string name="Sort_SortMethod">정렬 방법</string>
@@ -691,10 +692,10 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.4.7 수정사항]\n\n
-- DB 리스트 베타 레이아웃 기본 적용\n
-- 인형, 장비, 요정 DB 세부정보 레이아웃 변경\n
-- 메인화면에서 DB 버전 확인 과정이 오류가 나는 현상 수정\n
-- 만화 기능에서 일부 만화가 표시되지 않는 문제 수정
+    [2.4.8 수정사항]\n\n
+- 일부 타이틀바 교체\n
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 소녀전선, 분열 후 전선)\n
+- 일부 다운로드 창에서 오류가 발생하는 현상 수정\n
+- 흰색 테마 적용 시 DB 세부정보에서 오류가 발생하는 현상 수정
   </string>
 </resources>

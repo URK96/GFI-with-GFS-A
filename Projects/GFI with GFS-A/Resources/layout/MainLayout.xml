@@ -6,20 +6,25 @@
     android:gravity="center"
     android:id="@+id/MainLayout"
     android:animateLayoutChanges="true">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="@color/MainColor"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:id="@+id/MainMainToolbar"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_below="@id/MainMainToolbar"
+        android:orientation="vertical">        
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:id="@+id/MainNotificationCardLayout"
-            android:foreground="?android:attr/selectableItemBackground"
             android:backgroundTint="#80528553"
             android:animateLayoutChanges="true"
-            app:cardElevation="8dp"
-            app:cardMaxElevation="8dp"
             app:cardCornerRadius="5dp">
             <LinearLayout
                 android:orientation="vertical"
@@ -28,7 +33,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:padding="5dp"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="@string/Common_GFDNotification"
                     android:gravity="left"/>
@@ -38,7 +43,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
+                        android:padding="5dp"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text=""
                         android:ellipsize="end"
@@ -248,5 +253,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/MainSnackbarLayout"
-        android:layout_alignTop="@id/MainLayout" />
+        android:layout_below="@id/MainMainToolbar" />
 </RelativeLayout>

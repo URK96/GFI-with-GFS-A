@@ -11,6 +11,9 @@
 		<android.support.v7.widget.Toolbar
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+            android:minHeight="?android:attr/actionBarSize"
+            android:background="@color/MainColor"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
 			android:id="@+id/OldGFDViewerMainToolbar" />
 		<android.support.v4.widget.DrawerLayout
 			android:layout_width="match_parent"
@@ -31,21 +34,9 @@
 			    android:id="@+id/OldGFDImageListView" />
 		</android.support.v4.widget.DrawerLayout>
     </LinearLayout>
-	<android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="15dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/refreshicon_whitetheme"
-        android:id="@+id/OldGFDViewerRefreshFAB"
-        app:backgroundTint="@color/FABColor"
-        app:fabSize="mini"
-        app:rippleColor="#FF80AB" />
 	<android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/OldGFDViewerSnackbarLayout"
-        android:layout_alignTop="@id/OldGFDViewerMainLayout" />
+        android:layout_below="@id/OldGFDViewerMainToolbar" />
 </RelativeLayout>

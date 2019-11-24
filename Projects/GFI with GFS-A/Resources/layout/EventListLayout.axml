@@ -6,15 +6,19 @@
     android:gravity="center"
     android:id="@+id/EventListMainLayout"
     android:animateLayoutChanges="true">
+    <android.support.v7.widget.Toolbar
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="@color/MainColor"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+		android:id="@+id/EventListMainToolbar" />
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignTop="@id/EventListMainLayout"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_below="@id/EventListMainToolbar"
+        android:layout_margin="20dp"
         android:alpha="0"
         android:id="@+id/EventListButtonLayout">
         <ScrollView
@@ -129,5 +133,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/EventListSnackbarLayout"
-        android:layout_alignTop="@id/EventListMainLayout" />
+        android:layout_below="@id/EventListMainToolbar" />
 </RelativeLayout>

@@ -1,0 +1,11 @@
+<2.4.8 수정사항>
+
+- 일부 타이틀바 교체
+- 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 소녀전선, 분열 후 전선)
+- 일부 다운로드 창에서 오류가 발생하는 현상 수정
+- 흰색 테마 적용 시 DB 세부정보에서 오류가 발생하는 현상 수정
+
+- Change some title bar
+- Add cartoon content
+- Fix error issue on some download dialog
+- Fix error issue on DB detail with white theme

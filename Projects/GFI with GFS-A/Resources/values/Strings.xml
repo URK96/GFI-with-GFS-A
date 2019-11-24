@@ -262,6 +262,7 @@
   <string name="Common_Sort">Sort</string>
   <string name="Common_UpdateImageCache">Update Image Cache</string>
   <string name="Common_Link">Link</string>
+  <string name="Common_Close">Close</string>
   
   <!--Sort String-->
   <string name="Sort_SortMethod">Sort Method</string>
@@ -687,10 +688,10 @@
   <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
     
   <string name="NewFeature">
-    [2.4.7 Update]\n\n
-- Apply DB list beta layout by default\n
-- Change T-Doll, Equip, Fairy DB detail layout\n
-- Fix DB version check issue on main menu\n
-- Fix cartoon issue
+    [2.4.8 Update]\n\n
+- Change some title bar\n
+- Add cartoon content\n
+- Fix error issue on some download dialog\n
+- Fix error issue on DB detail with white theme
   </string>
 </resources>

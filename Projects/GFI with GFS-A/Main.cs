@@ -7,20 +7,17 @@ using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.Transitions;
-using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
-using Xamarin.Essentials;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "GFD", Theme = "@style/GFS", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "GFD", Theme = "@style/GFS.Toolbar", ScreenOrientation = ScreenOrientation.Portrait)]
     public partial class Main : BaseAppCompatActivity
     {
         System.Timers.Timer exitTimer = new System.Timers.Timer();
@@ -29,6 +26,7 @@ namespace GFI_with_GFS_A
 
         private TextView notificationView;
 
+        private Android.Support.V7.Widget.Toolbar toolbar;
         private RecyclerView dbDictionarySubMenu;
         private RecyclerView gfUtilSubMenu;
         private RecyclerView extrasSubMenu;
@@ -56,15 +54,19 @@ namespace GFI_with_GFS_A
 
                 if (ETC.useLightTheme)
                 {
-                    SetTheme(Resource.Style.GFS_Light);
+                    SetTheme(Resource.Style.GFS_Toolbar_Light);
                 }
 
                 // Create your application here
                 SetContentView(Resource.Layout.MainLayout);
-                SetTitle(Resource.String.MainActivity_Title);
 
 
                 // Find View & Connect Event
+
+                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.MainMainToolbar);
+
+                SetSupportActionBar(toolbar);
+                SupportActionBar.SetTitle(Resource.String.MainActivity_Title);
 
                 mainCardViewList = new CardView[]
                 {
@@ -400,7 +402,7 @@ namespace GFI_with_GFS_A
                         }
                         break;
                     case 1:
-                        await Task.Run(() => 
+                        await Task.Run(() =>
                         {
                             if (string.IsNullOrEmpty(ETC.equipmentList.TableName))
                             {
@@ -419,7 +421,7 @@ namespace GFI_with_GFS_A
                         }
                         break;
                     case 2:
-                        await Task.Run(() => 
+                        await Task.Run(() =>
                         {
                             if (string.IsNullOrEmpty(ETC.fairyList.TableName))
                             {
@@ -438,7 +440,7 @@ namespace GFI_with_GFS_A
                         }
                         break;
                     case 3:
-                        await Task.Run(() => 
+                        await Task.Run(() =>
                         {
                             if (string.IsNullOrEmpty(ETC.enemyList.TableName))
                             {
@@ -457,7 +459,7 @@ namespace GFI_with_GFS_A
                         }
                         break;
                     case 4:
-                        await Task.Run(() => 
+                        await Task.Run(() =>
                         {
                             if (string.IsNullOrEmpty(ETC.FSTList.TableName))
                             {
