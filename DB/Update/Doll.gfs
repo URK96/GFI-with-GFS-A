@@ -111,6 +111,7 @@
     <SkillExplain>지속시간 동안 아군 전원의 화력과 치명률을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;치명률 증가치</SkillEffect>
     <SkillMag>6초,12초,8초,10%,35%</SkillMag>
+    <Costume>터뷸런스 소닉</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Asuka Ito</VoiceActor>
@@ -7021,6 +7022,7 @@
     <SkillExplain>&lt;패시브&gt; 3회 일반 공격 후 4회째 공격을 강화한다.</SkillExplain>
     <SkillEffect>쿨타임;공격력 배율</SkillEffect>
     <SkillMag>영속,2.4배</SkillMag>
+    <Costume>데저트 크로스</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Izumi Iwamatsu</VoiceActor>
@@ -8321,6 +8323,7 @@
     <SkillExplain>점점 강해지는 추가 공격을 3회 때린다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;화력 변화율</SkillEffect>
     <SkillMag>8초,16초,1.5배 | 2.5배 | 3.5배</SkillMag>
+    <Costume>크림슨 코드라이버</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Hisako Kanemoto</VoiceActor>
@@ -11454,6 +11457,7 @@
     <SkillExplain>아군에게 진형에 따라 버프를 부여한다. (전열 : 보호막 생성 / 중열 : 명중과 회피 상승 / 후열 : 화력 상승)</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;보호막 수치;명중 상승치;회피 상승치;화력 상승치</SkillEffect>
     <SkillMag>6초,16초,8초,53,60%,60%,25%</SkillMag>
+    <Costume>스퍼트 매그넘</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Tadokoro Azusa</VoiceActor>
@@ -11619,6 +11623,7 @@
     <SkillExplain>야간작전에서 지속시간동안 명중을 상승시킨다. 주간을 제외한 야간에서는 동시에 재장전 시간도 감소시킨다. 또한 발사중인 탄띠에 탄을 추가한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;야간 명중 증가치;주간 명중 증가치;야간 발사수 증가치;주간 발사수 증가치;재장전시간 감소치</SkillEffect>
     <SkillMag>8초,18초,8초,80%,40%,4발,2발,30%</SkillMag>
+    <Costume>퀘이사 스트림</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Tamegai Hana</VoiceActor>
@@ -13011,5 +13016,45 @@
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>헬로! 평등과 균형의 사자, 윈체스터 리버레이터 등장! 지휘관, 불공평한 싸움이라면 나한테 맡겨 줘!</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>INSAS</Name>
+    <Name_EN>INSAS</Name_EN>
+    <Name_JP>INSAS</Name_JP>
+    <CodeName>INSAS</CodeName>
+    <Nickname>INSAS</Nickname>
+    <Model>INSAS</Model>
+    <Country>India</Country>
+    <Type>AR</Type>
+    <Grade>3</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;B;A;S;B;A</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>10</MoveSpeed>
+    <Critical>20</Critical>
+    <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>0,0,1,0,2,1,0,0,0</EffectFormation>
+    <Effect>FR,EV;10,10</Effect>
+    <EffectType>SMG</EffectType>
+    <DropEvent>2019년 11월 로그인 보상</DropEvent>
+    <DicNumber>279</DicNumber>
+    <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
+    <SkillCode>sneak_attack</SkillCode>
+    <Skill>기습공격</Skill>
+    <SkillExplain>지속시간 동안 자신의 화력과 명중을 증가시킨다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;명중 증가치</SkillEffect>
+    <SkillMag>5초,8초,5초,35%,100%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>kleed</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>흥, 나처럼 고귀하고 우수한 인형을 휘하에 두게 되다니, 전생에 덕을 참 많이 쌓았나 보구나.</ProductDialog>
   </Doll>
 </NewDataSet>
