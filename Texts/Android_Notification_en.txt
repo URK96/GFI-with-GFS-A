@@ -1,17 +1,21 @@
-﻿# T-Doll DB Update 2019/11/22
+﻿# T-Doll DB Update 2019/12/06
 
-- Add new T-Dolls (HK CAWS, DP-12, Liberator)
+- Add new T-Dolls (Zas M76)
+- Add new T-Doll costumes
+- Add new MOD info (NTW-20, APS, MAB, C96)
+
+
+
+# Equip DB Update 2019/12/06
+
+- Add only use equipment (NTW-20, APS, MAB, C96, RFB, Type100, TAR-21)
+
 
 
 # Fairy DB Update 2019/11/14
 
 - Edit some fairy info
 - Add new internal item for new version
-
-
-# Equip DB Update 2019/10/26
-
-- Add only use equipment (Type95/97, RPD, MAC-10, M9)
 
 
 
