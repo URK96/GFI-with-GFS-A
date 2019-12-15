@@ -1,0 +1,7 @@
+<2.4.9 수정사항>
+
+- 일부 타이틀바 교체
+- 만화 컨텐츠 추가 (Geo의 소녀전선)
+
+- Change some title bar
+- Add cartoon content

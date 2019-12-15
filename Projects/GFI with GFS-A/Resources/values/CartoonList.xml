@@ -476,6 +476,12 @@
     <item>85 - 아이돌 콘테스트</item>
     <item>86 - 그리폰 최고 아이돌은 누구?</item>
     <item>87 - 에이전트의 짝사랑</item>
+    <item>88 - 고백 성공?</item>
+    <item>89 - 무협전선</item>
+    <item>90 - 강호의 도리를 지키는 아키텍트</item>
+    <item>91 - 술이 떨어진 M16</item>
+    <item>92 - 예림이! 그 패 봐봐, 혹시 장이야?</item>
+    <item>93 - 설원 탐색 임무</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -567,5 +573,11 @@
     <item>http://naver.me/G9ADajtp</item>
     <item>http://naver.me/F8L0nw4h</item>
     <item>http://naver.me/5uu8zmHx</item>
+    <item>http://naver.me/xcHR0ukR</item>
+    <item>http://naver.me/F0pYFbcw</item>
+    <item>http://naver.me/5yrlrXMf</item>
+    <item>http://naver.me/F2cXIw4T</item>
+    <item>http://naver.me/Fq9sQk7h</item>
+    <item>http://naver.me/Fkb09rgW</item>
   </string-array>
 </resources>

@@ -108,12 +108,28 @@ namespace GFI_with_GFS_A
             {
                 Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGVertical);
                 ad.SetTitle(Resource.String.NewFeatureDialog_Title);
-                ad.SetMessage(Resource.String.NewFeature);
                 ad.SetCancelable(true);
                 ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
 
                 try
                 {
+                    string assetName = "";
+
+                    switch (ETC.locale.Language)
+                    {
+                        case "ko":
+                            assetName = "UpdateFeature_ko.txt";
+                            break;
+                        default:
+                            assetName = "UpdateFeature_en.txt";
+                            break;
+                    }
+
+                    using (StreamReader sr = new StreamReader(Activity.Assets.Open(assetName)))
+                    {
+                        ad.SetMessage(sr.ReadToEnd());
+                    }
+
                     ad.Show();
                 }
                 catch (Exception ex)
