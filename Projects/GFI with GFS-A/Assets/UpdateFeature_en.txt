@@ -1,4 +1,6 @@
-<2.4.9 수정사항>
+<2.4.9 Update>
 
-- Change some title bar
+- Change some UI
 - Add cartoon content
+- Fix T-Doll type sort issue
+- Memory Optimized

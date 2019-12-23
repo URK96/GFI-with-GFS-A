@@ -8,10 +8,18 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <Spinner
-            android:id="@+id/DollDBImageViewerCostumeList"
+        <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:minHeight="?android:attr/actionBarSize"
+            android:background="@color/MainColor"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:id="@+id/DollDBImageViewerMainToolbar">
+            <Spinner
+                android:id="@+id/DollDBImageViewerCostumeList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.v7.widget.Toolbar>
         <ProgressBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,12 +62,6 @@
 			android:isScrollContainer="true"
             android:id="@+id/DollDBImageViewerImageView"
             android:clickable="true"/>
-        <!--<ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-			android:isScrollContainer="true"
-            android:id="@+id/DollDBImageViewerImageView"
-            android:clickable="true" />-->
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"

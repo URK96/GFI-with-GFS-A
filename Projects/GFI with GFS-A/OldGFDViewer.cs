@@ -117,8 +117,7 @@ namespace GFI_with_GFS_A
                     {
                         mainDrawerLayout.OpenDrawer(GravityCompat.Start);
                     }
-
-                    return true;
+                    break;
                 case Resource.Id.RefreshOldGFDImageCache:
                     _ = ((OldGFDViewerScreen)oldGFDViewer_F).DownloadGFDImage();
                     ((OldGFDViewerScreen)oldGFDViewer_F).ShowImage(0);

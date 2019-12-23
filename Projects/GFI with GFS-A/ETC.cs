@@ -218,7 +218,7 @@ namespace GFI_with_GFS_A
             SetDialogTheme();
             SetLanguage(context);
             Resources = baseContext.Resources;
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTU2MTM3QDMxMzcyZTMzMmUzMFQzNnlVTCtEVkxvYVUwYWdGUWczTnVyemdLREV6NGdKK1JmejFZRzN0WGs9");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTg2NDEyQDMxMzcyZTM0MmUzMHBENmM5Wk42Zyt4dVNVZm1qUTVhTW9DeWtBTFJLY1RGekRnMTgxOEpiQ3c9");
 
             if (isReleaseMode)
             {

@@ -706,31 +706,31 @@ namespace GFI_with_GFS_A
                         }
                         break;
                     case "SMG":
-                        if (!filterType[0])
+                        if (!filterType[1])
                         {
                             return true;
                         }
                         break;
                     case "AR":
-                        if (!filterType[0])
+                        if (!filterType[2])
                         {
                             return true;
                         }
                         break;
                     case "RF":
-                        if (!filterType[0])
+                        if (!filterType[3])
                         {
                             return true;
                         }
                         break;
                     case "MG":
-                        if (!filterType[0])
+                        if (!filterType[4])
                         {
                             return true;
                         }
                         break;
                     case "SG":
-                        if (!filterType[0])
+                        if (!filterType[5])
                         {
                             return true;
                         }

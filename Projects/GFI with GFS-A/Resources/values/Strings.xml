@@ -51,6 +51,8 @@
   <!--New - Cartoon String-->
   <string name="Cartoon_DownloadCartoonTitle">Download Cartoon</string>
   <string name="Cartoon_DownloadCartoonMessage">Cartoon Downloading...</string>
+  <string name="Cartoon_ToolbarItem_SkipPrevious">Previous</string>
+  <string name="Cartoon_ToolbarItem_SkipNext">Next</string>
 
   <!--Activity String-->
   <string name="Activity_DollMainActivity">T-Doll List</string>

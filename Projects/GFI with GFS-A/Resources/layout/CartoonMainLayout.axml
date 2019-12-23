@@ -8,7 +8,14 @@
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/CartoonMainToolbar" />
+        android:background="@color/MainColor"
+        android:id="@+id/CartoonMainToolbar" >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/CartoonToolbarCartoonTitle"/>
+    </android.support.v7.widget.Toolbar>
     <android.support.v4.widget.DrawerLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

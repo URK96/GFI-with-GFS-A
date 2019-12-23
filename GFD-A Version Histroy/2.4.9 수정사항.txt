@@ -1,7 +1,11 @@
 <2.4.9 수정사항>
 
-- 일부 타이틀바 교체
+- 일부 UI 수정
 - 만화 컨텐츠 추가 (Geo의 소녀전선)
+- 인형 총기별로 정렬이 불가하던 문제 수정
+- 메모리 최적화
 
-- Change some title bar
+- Change some UI
 - Add cartoon content
+- Fix T-Doll type sort issue
+- Memory Optimized

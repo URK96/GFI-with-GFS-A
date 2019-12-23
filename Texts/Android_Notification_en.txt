@@ -1,9 +1,7 @@
-﻿# T-Doll DB Update 2019/12/06
+﻿# T-Doll DB Update 2019/12/24
 
-- Add new T-Dolls (Zas M76)
+- Add new T-Dolls (MAT-49)
 - Add new T-Doll costumes
-- Add new MOD info (NTW-20, APS, MAB, C96)
-
 
 
 # Equip DB Update 2019/12/06

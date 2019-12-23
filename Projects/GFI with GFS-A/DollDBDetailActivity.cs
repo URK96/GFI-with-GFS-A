@@ -270,30 +270,14 @@ namespace GFI_with_GFS_A
                     InitializeVoiceList();
                 }
 
-
-
-                Android.Graphics.Color toolbarColor;
-
-                switch (doll.Grade)
+                var toolbarColor = doll.Grade switch
                 {
-                    case 2:
-                        toolbarColor = Android.Graphics.Color.SlateGray;
-                        break;
-                    case 3:
-                        toolbarColor = Android.Graphics.Color.ParseColor("#55CCEE");
-                        break;
-                    case 4:
-                        toolbarColor = Android.Graphics.Color.ParseColor("#AACC22");
-                        break;
-                    case 5:
-                        toolbarColor = Android.Graphics.Color.ParseColor("#FFBB22");
-                        break;
-                    default:
-                    case 0:
-                        toolbarColor = Android.Graphics.Color.ParseColor("#C040B0");
-                        break;
-                }
-
+                    2 => Android.Graphics.Color.SlateGray,
+                    3 => Android.Graphics.Color.ParseColor("#55CCEE"),
+                    4 => Android.Graphics.Color.ParseColor("#AACC22"),
+                    5 => Android.Graphics.Color.ParseColor("#FFBB22"),
+                    _ => Android.Graphics.Color.ParseColor("#C040B0"),
+                };
                 toolbar.SetBackgroundColor(toolbarColor);
 
                 if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)

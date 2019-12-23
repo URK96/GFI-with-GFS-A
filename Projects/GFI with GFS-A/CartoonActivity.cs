@@ -27,6 +27,7 @@ namespace GFI_with_GFS_A
         private Android.Support.V4.App.FragmentTransaction ft;
         private Android.Support.V4.App.Fragment cartoonScreenF;
 
+        internal TextView toolbarCartoonTitle;
         internal DrawerLayout mainDrawerLayout;
         private ListView drawerListView;
 
@@ -49,33 +50,16 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.CartoonMainLayout);
 
+
             // Find View & Connect Event
 
+            toolbarCartoonTitle = FindViewById<TextView>(Resource.Id.CartoonToolbarCartoonTitle);
             mainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.CartoonMainDrawerLayout);
-            mainDrawerLayout.DrawerOpened += delegate
-            {
-                if (ETC.useLightTheme)
-                {
-                    SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen_WhiteTheme);
-                }
-                else
-                {
-                    SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen);
-                }
-            };
-            mainDrawerLayout.DrawerClosed += delegate
-            {
-                if (ETC.useLightTheme)
-                {
-                    SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
-                }
-                else
-                {
-                    SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
-                }
-            };
+            mainDrawerLayout.DrawerOpened += delegate { SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen); };
+            mainDrawerLayout.DrawerClosed += delegate { SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu); };
             drawerListView = FindViewById<ListView>(Resource.Id.CartoonMainNavigationListView);
             drawerListView.ItemClick += DrawerListView_ItemClick;
+
 
             // Set ActionBar
 
@@ -83,15 +67,8 @@ namespace GFI_with_GFS_A
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
+            SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
 
-            if (ETC.useLightTheme)
-            {
-                SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu_WhiteTheme);
-            }
-            else
-            {
-                SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
-            }
 
             // Set Fragment
 
@@ -122,21 +99,40 @@ namespace GFI_with_GFS_A
             }
         }
 
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.CartoonMenu, menu);
+
+            return base.OnCreateOptionsMenu(menu);
+        }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item?.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    if (!mainDrawerLayout.IsDrawerOpen(GravityCompat.Start))
-                    {
-                        mainDrawerLayout.OpenDrawer(GravityCompat.Start);
-                    }
-                    else
+                    if (mainDrawerLayout.IsDrawerOpen(GravityCompat.Start))
                     {
                         mainDrawerLayout.CloseDrawer(GravityCompat.Start);
                     }
-
-                    return true;
+                    else
+                    {
+                        mainDrawerLayout.OpenDrawer(GravityCompat.Start);
+                    }
+                    break;
+                case Resource.Id.CartoonSkipPrevious:
+                    (cartoonScreenF as CartoonScreen).SkipCartoon(-1);
+                    break;
+                case Resource.Id.CartoonSkipNext:
+                    (cartoonScreenF as CartoonScreen).SkipCartoon(1);
+                    break;
+                case Resource.Id.RefreshCartoonImageCache:
+                    (cartoonScreenF as CartoonScreen).RefreshCartoon();
+                    break;
+                case Resource.Id.CartoonExit:
+                    mainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                    OnBackPressed();
+                    break;
             }
 
             return base.OnOptionsItemSelected(item);
@@ -179,12 +175,12 @@ namespace GFI_with_GFS_A
                                 case 4:
                                 case 6:
                                 case 9:
-                                    _ = ((CartoonScreen)cartoonScreenF).LoadProcess(categoryList[categoryIndex], categoryIndex, e.Position - 1, false);
+                                    _ = (cartoonScreenF as CartoonScreen).LoadProcess(categoryList[categoryIndex], categoryIndex, e.Position - 1, false);
                                     break;
                                 case 7:
                                 case 8:
                                 case 10:
-                                    _ = ((CartoonScreen)cartoonScreenF).LoadProcessWeb(categoryList[categoryIndex], categoryIndex, e.Position - 1, false);
+                                    _ = (cartoonScreenF as CartoonScreen).LoadProcessWeb(categoryList[categoryIndex], categoryIndex, e.Position - 1, false);
                                     break;
                             }
                             mainDrawerLayout.CloseDrawer(GravityCompat.Start);
@@ -263,13 +259,10 @@ namespace GFI_with_GFS_A
 
         private View v;
 
+        private TextView toolbarTitle;
         private LinearLayout copyrightLayout;
         private FrameLayout webViewLayout;
         private ProgressBar loadProgress;
-        private Button previousButton;
-        private Button nextButton;
-        private ImageButton refreshButton;
-        private TextView nowCartoonText;
         private RecyclerView mainRecyclerView;
         private RecyclerView.LayoutManager mainLayoutManager;
 
@@ -292,57 +285,47 @@ namespace GFI_with_GFS_A
 
             // Find View & Connect Event
 
+            toolbarTitle = (Activity as CartoonActivity).toolbarCartoonTitle;
             copyrightLayout = v.FindViewById<LinearLayout>(Resource.Id.CartoonScreenCopyrightLayout);
             webViewLayout = v.FindViewById<FrameLayout>(Resource.Id.CartoonScreenWebViewLayout);
             loadProgress = v.FindViewById<ProgressBar>(Resource.Id.CartoonScreenLoadProgress);
-            previousButton = v.FindViewById<Button>(Resource.Id.CartoonScreenPreviousButton);
-            previousButton.Click += delegate
-            {
-                switch (cartoonType)
-                {
-                    default:
-                    case CartoonType.Image:
-                        _ = LoadProcess(nowCategory, nowCategoryIndex, nowItemIndex - 1, false);
-                        break;
-                    case CartoonType.Web:
-                        _ = LoadProcessWeb(nowCategory, nowCategoryIndex, nowItemIndex - 1, false);
-                        break;
-                }
-            };
-            nextButton = v.FindViewById<Button>(Resource.Id.CartoonScreenNextButton);
-            nextButton.Click += delegate 
-            {
-                switch (cartoonType)
-                {
-                    default:
-                    case CartoonType.Image:
-                        _ = LoadProcess(nowCategory, nowCategoryIndex, nowItemIndex + 1, false);
-                        break;
-                    case CartoonType.Web:
-                        _ = LoadProcessWeb(nowCategory, nowCategoryIndex, nowItemIndex + 1, false);
-                        break;
-                }
-            };
-            refreshButton = v.FindViewById<ImageButton>(Resource.Id.CartoonScreenRefreshButton);
-            refreshButton.Click += delegate 
-            {
-                switch (cartoonType)
-                {
-                    default:
-                    case CartoonType.Image:
-                        _ = LoadProcess(nowCategory, nowCategoryIndex, nowItemIndex, true);
-                        break;
-                    case CartoonType.Web:
-                        _ = LoadProcessWeb(nowCategory, nowCategoryIndex, nowItemIndex, true);
-                        break;
-                }
-            };
-            nowCartoonText = v.FindViewById<TextView>(Resource.Id.CartoonScreenNowCartoonText);
             mainRecyclerView = v.FindViewById<RecyclerView>(Resource.Id.CartoonScreenMainRecyclerView);
             mainLayoutManager = new LinearLayoutManager(Activity);
             mainRecyclerView.SetLayoutManager(mainLayoutManager);
 
             return v;
+        }
+
+        internal void SkipCartoon(int mag)
+        {
+            // mag = 1 : Skip Next
+            // mag = -1 : Skip Previous
+
+            if ((nowItemIndex == 0) && (mag == -1))
+            {
+                Toast.MakeText(Activity, " ", ToastLength.Short);
+            }
+            else if ((nowItemIndex == (selectedItemList.Count - 1)) && (mag == 1))
+            {
+                Toast.MakeText(Activity, " ", ToastLength.Short);
+            }
+            else
+            {
+                _ = cartoonType switch
+                {
+                    CartoonType.Web => LoadProcessWeb(nowCategory, nowCategoryIndex, nowItemIndex + mag, false),
+                    _ => LoadProcess(nowCategory, nowCategoryIndex, nowItemIndex + mag, false),
+                };
+            } 
+        }
+
+        internal void RefreshCartoon()
+        {
+            _ = cartoonType switch
+            {
+                CartoonType.Web => LoadProcessWeb(nowCategory, nowCategoryIndex, nowItemIndex, true),
+                _ => LoadProcess(nowCategory, nowCategoryIndex, nowItemIndex, true),
+            };
         }
 
         internal async Task LoadProcess(string category, int categoryIndex, int itemIndex, bool isRefresh)
@@ -356,31 +339,15 @@ namespace GFI_with_GFS_A
 
             try
             {
-                if (itemIndex == 0)
-                {
-                    previousButton.Enabled = false;
-                    nextButton.Enabled = true;
-                }
-                else if (itemIndex == (selectedItemList.Count - 1))
-                {
-                    previousButton.Enabled = true;
-                    nextButton.Enabled = false;
-                }
-                else
-                {
-                    previousButton.Enabled = true;
-                    nextButton.Enabled = true;
-                }
-
                 loadProgress.Visibility = ViewStates.Visible;
-                ((CartoonActivity)Activity).mainDrawerLayout.Enabled = false;
+                (Activity as CartoonActivity).mainDrawerLayout.Enabled = false;
                 selectedItemList.Clear();
 
                 copyrightLayout.RemoveAllViews();
 
                 await Task.Delay(100);
 
-                ((CartoonActivity)Activity).ListItems(categoryIndex, ref selectedItemList);
+                (Activity as CartoonActivity).ListItems(categoryIndex, ref selectedItemList);
                 selectedItemList.TrimExcess();
 
                 string categoryPath = Path.Combine(cartoonTopPath, category);
@@ -457,7 +424,7 @@ namespace GFI_with_GFS_A
                 foreach (string file in Files)
                 {
                     Drawable drawable = Drawable.CreateFromPath(file);
-                    Android.Graphics.Bitmap bitmap = ((BitmapDrawable)drawable).Bitmap;
+                    Android.Graphics.Bitmap bitmap = (drawable as BitmapDrawable).Bitmap;
 
                     int height = 0;
 
@@ -498,8 +465,8 @@ namespace GFI_with_GFS_A
             }
             finally
             {
-                ((CartoonActivity)Activity).mainDrawerLayout.Enabled = false;
-                nowCartoonText.Text = selectedItemList[itemIndex];
+                (Activity as CartoonActivity).mainDrawerLayout.Enabled = false;
+                toolbarTitle.Text = selectedItemList[itemIndex];
                 webViewLayout.Visibility = ViewStates.Gone;
                 mainRecyclerView.Visibility = ViewStates.Visible;
             }
@@ -513,25 +480,9 @@ namespace GFI_with_GFS_A
             nowCategory = category;
 
             try
-            {              
-                if (itemIndex == 0)
-                {
-                    previousButton.Enabled = false;
-                    nextButton.Enabled = true;
-                }
-                else if (itemIndex == (selectedItemList.Count - 1))
-                {
-                    previousButton.Enabled = true;
-                    nextButton.Enabled = false;
-                }
-                else
-                {
-                    previousButton.Enabled = true;
-                    nextButton.Enabled = true;
-                }
-
+            {             
                 loadProgress.Visibility = ViewStates.Visible;
-                ((CartoonActivity)Activity).mainDrawerLayout.Enabled = false;
+                (Activity as CartoonActivity).mainDrawerLayout.Enabled = false;
                 selectedItemList.Clear();
                 selectedItemURLList.Clear();
 
@@ -540,7 +491,7 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(100);
 
-                ((CartoonActivity)Activity).ListItems(categoryIndex, ref selectedItemList);
+                (Activity as CartoonActivity).ListItems(categoryIndex, ref selectedItemList);
                 ListItemURLs(categoryIndex, ref selectedItemURLList);
                 selectedItemList.TrimExcess();
                 selectedItemURLList.TrimExcess();
@@ -568,8 +519,8 @@ namespace GFI_with_GFS_A
             }
             finally
             {
-                ((CartoonActivity)Activity).mainDrawerLayout.Enabled = false;
-                nowCartoonText.Text = selectedItemList[itemIndex];
+                (Activity as CartoonActivity).mainDrawerLayout.Enabled = false;
+                toolbarTitle.Text = selectedItemList[itemIndex];
                 mainRecyclerView.Visibility = ViewStates.Gone;
                 webViewLayout.Visibility = ViewStates.Visible;
             }
@@ -585,11 +536,9 @@ namespace GFI_with_GFS_A
 
         private async Task DownloadCartoon(string category, int itemIndex)
         {
-            Uri uri;
-
             Android.Support.V7.App.AlertDialog dialog;
 
-            Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload);
+            var ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload);
             ad.SetTitle(Resource.String.Cartoon_DownloadCartoonTitle);
             ad.SetMessage(Resource.String.Cartoon_DownloadCartoonMessage);
             ad.SetCancelable(false);
@@ -608,7 +557,7 @@ namespace GFI_with_GFS_A
                     string contentPath = Path.Combine(ServerItemPath, $"{count}.png");
                     string localContentPath = Path.Combine(cartoonTopPath, category, itemIndex.ToString(), $"{count}.gfdcache");
 
-                    Uri.TryCreate(contentPath, UriKind.RelativeOrAbsolute, out uri);
+                    Uri.TryCreate(contentPath, UriKind.RelativeOrAbsolute, out Uri uri);
                     WebRequest request = WebRequest.Create(uri);
 
                     using (WebResponse response = await request.GetResponseAsync().ConfigureAwait(false))
@@ -624,7 +573,7 @@ namespace GFI_with_GFS_A
                         wc.DownloadProgressChanged += (sender, e) =>
                         {
                             string message = Resources.GetString(Resource.String.Cartoon_DownloadCartoonMessage);
-                            Activity.RunOnUiThread(() => { ad.SetMessage($"{message}{count}({e.BytesReceived / 1024}KB)"); });
+                            Activity.RunOnUiThread(() => { ad.SetMessage($"{message}{count.ToString()}({(e.BytesReceived / 1024).ToString()}KB)"); });
                         };
                         await wc.DownloadFileTaskAsync(contentPath, localContentPath);
                     }
@@ -706,7 +655,7 @@ namespace GFI_with_GFS_A
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            CartoonScreenViewHolder vh = holder as CartoonScreenViewHolder;
+            var vh = holder as CartoonScreenViewHolder;
 
             vh?.CartoonImageView.SetImageBitmap(Image[position]);
         }
@@ -715,7 +664,7 @@ namespace GFI_with_GFS_A
         {
             View view = LayoutInflater.From(parent?.Context).Inflate(Resource.Layout.CartoonScreenListLayout, parent, false);
 
-            CartoonScreenViewHolder vh = new CartoonScreenViewHolder(view);
+            var vh = new CartoonScreenViewHolder(view);
 
             return vh;
         }

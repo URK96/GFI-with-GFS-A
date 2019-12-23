@@ -3,14 +3,14 @@ using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V4.View;
 using Android.Support.V4.Widget;
-using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+
 using System;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Name = "com.gfl.dic.CalcActivity", Label = "계산기", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.CalcActivity", Label = "계산기", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class CalcMainActivity : BaseAppCompatActivity
     {
         Android.Support.V4.App.Fragment ExpItemCalc_F;
@@ -21,8 +21,8 @@ namespace GFI_with_GFS_A
 
         Android.Support.V4.App.FragmentTransaction ft = null;
 
-        DrawerLayout MainDrawerLayout;
-        NavigationView MainNavigationView;
+        DrawerLayout mainDrawerLayout;
+        NavigationView mainNavigationView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -40,9 +40,11 @@ namespace GFI_with_GFS_A
 
             // Set Main Drawer
 
-            MainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.Calc_MainDrawerLayout);
-            MainNavigationView = FindViewById<NavigationView>(Resource.Id.Calc_NavigationView);
-            MainNavigationView.NavigationItemSelected += MainNavigationView_NavigationItemSelected;
+            mainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.Calc_MainDrawerLayout);
+            mainDrawerLayout.DrawerOpened += delegate { SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen); };
+            mainDrawerLayout.DrawerClosed += delegate { SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu); };
+            mainNavigationView = FindViewById<NavigationView>(Resource.Id.Calc_NavigationView);
+            mainNavigationView.NavigationItemSelected += MainNavigationView_NavigationItemSelected;
 
 
             // Set ActionBar
@@ -52,11 +54,7 @@ namespace GFI_with_GFS_A
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
             SupportActionBar.Title = Resources.GetString(Resource.String.TitleName_ExpItemCalc);
-
-            if (ETC.useLightTheme)
-                SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.CalcIcon_WhiteTheme);
-            else
-                SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.CalcIcon);
+            SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
 
 
             // Set Fragment
@@ -107,7 +105,7 @@ namespace GFI_with_GFS_A
 
                 ft.Commit();
 
-                MainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                mainDrawerLayout.CloseDrawer(GravityCompat.Start);
                 SupportActionBar.Title = title;
             }
             catch (Exception ex)
@@ -117,17 +115,31 @@ namespace GFI_with_GFS_A
             }
         }
 
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.CalcToolbarMenu, menu);
+
+            return base.OnCreateOptionsMenu(menu);
+        }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            switch (item.ItemId)
+            switch (item?.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    if (!MainDrawerLayout.IsDrawerOpen(GravityCompat.Start))
-                        MainDrawerLayout.OpenDrawer(GravityCompat.Start);
+                    if (mainDrawerLayout.IsDrawerOpen(GravityCompat.Start))
+                    {
+                        mainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                    }
                     else
-                        MainDrawerLayout.CloseDrawer(GravityCompat.Start);
-
-                    return true;
+                    {
+                        mainDrawerLayout.OpenDrawer(GravityCompat.Start);
+                    }
+                    break;
+                case Resource.Id.CalcExit:
+                    mainDrawerLayout.CloseDrawer(GravityCompat.Start);
+                    OnBackPressed();
+                    break;
             }
 
             return base.OnOptionsItemSelected(item);
@@ -135,9 +147,19 @@ namespace GFI_with_GFS_A
 
         public override void OnBackPressed()
         {
-            base.OnBackPressed();
-            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-            GC.Collect();
+            if (mainDrawerLayout.IsDrawerOpen(GravityCompat.Start))
+            {
+                mainDrawerLayout.CloseDrawer(GravityCompat.Start);
+
+                return;
+            }
+            else
+            {
+                GC.Collect();
+
+                base.OnBackPressed();
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+            }
         }
     }
 }

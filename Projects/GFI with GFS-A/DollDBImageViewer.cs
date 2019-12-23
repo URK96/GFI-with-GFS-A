@@ -14,10 +14,12 @@ using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "DollDBImageViewer", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "DollDBImageViewer", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class DollDBImageViewer : BaseAppCompatActivity
     {
         private Doll doll;
+
+        private Android.Support.V7.Widget.Toolbar toolbar;
 
         private CoordinatorLayout snackbarLayout;
         private Spinner costumeList;
@@ -36,7 +38,7 @@ namespace GFI_with_GFS_A
         private bool enableCensored = true;
         private string[] censorType;
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             try
             {
@@ -56,6 +58,7 @@ namespace GFI_with_GFS_A
                 doll = new Doll(ETC.FindDataRow(ETC.dollList, "DicNumber", int.Parse(temp[0])));
                 censorType = doll.HasCensored ? doll.CensorType : null;
 
+                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.DollDBImageViewerMainToolbar);
                 dollImageView = FindViewById<PhotoView>(Resource.Id.DollDBImageViewerImageView);
                 snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBImageViewerSnackbarLayout);
                 costumeList = FindViewById<Spinner>(Resource.Id.DollDBImageViewerCostumeList);
@@ -66,19 +69,19 @@ namespace GFI_with_GFS_A
                     changeStateButton.Checked = false;
                     censoredOption.Checked = censoredOption.Enabled = CheckCensorType();
 
-                    LoadImage(costumeIndex, false);
+                    _ = LoadImage(costumeIndex, false);
                 };
                 loadProgressBar = FindViewById<ProgressBar>(Resource.Id.DollDBImageViewerLoadProgress);
                 loadProgressBar.Visibility = ViewStates.Visible;
                 refreshCacheButton = FindViewById<Button>(Resource.Id.DollDBImageViewerRefreshImageCacheButton);
-                refreshCacheButton.Click += delegate { LoadImage(costumeIndex, true); };
+                refreshCacheButton.Click += delegate { _ = LoadImage(costumeIndex, true); };
                 changeStateButton = FindViewById<ToggleButton>(Resource.Id.DollDBImageViewerChangeStateButton);
                 changeStateButton.CheckedChange += (sender, e) =>
                 {
                     isDamage = e.IsChecked;
                     censoredOption.Checked = censoredOption.Enabled = CheckCensorType();
 
-                    LoadImage(costumeIndex, false);
+                    _ = LoadImage(costumeIndex, false);
                 };
                 censoredOption = FindViewById<ToggleButton>(Resource.Id.DollDBImageViewerCensoredOption);
                 censoredOption.Checked = doll.HasCensored;
@@ -86,20 +89,89 @@ namespace GFI_with_GFS_A
                 {
                     enableCensored = e.IsChecked;
 
-                    LoadImage(costumeIndex, false);
+                    _ = LoadImage(costumeIndex, false);
                 };
                 imageStatus = FindViewById<TextView>(Resource.Id.DollDBImageViewerImageStatus);
 
                 censoredOption.Visibility = ETC.sharedPreferences.GetBoolean("ImageCensoredUnlock", false) ? ViewStates.Visible : ViewStates.Gone;
 
+                SetSupportActionBar(toolbar);
+                SupportActionBar.SetDisplayShowTitleEnabled(false);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
+                await InitializeProcess();
+
                 LoadCostumeList();
-                LoadImage(0, false);
+                _ = LoadImage(0, false);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
+        }
+
+        private async Task InitializeProcess()
+        {
+            await Task.Delay(100);
+
+            try
+            {
+                var toolbarColor = doll.Grade switch
+                {
+                    2 => Android.Graphics.Color.SlateGray,
+                    3 => Android.Graphics.Color.ParseColor("#55CCEE"),
+                    4 => Android.Graphics.Color.ParseColor("#AACC22"),
+                    5 => Android.Graphics.Color.ParseColor("#FFBB22"),
+                    _ => Android.Graphics.Color.ParseColor("#C040B0"),
+                };
+                toolbar.SetBackgroundColor(toolbarColor);
+
+                if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+                {
+                    Window.SetStatusBarColor(toolbarColor);
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                Toast.MakeText(this, "Fail Initialize Process", ToastLength.Short).Show();
+            }
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            try
+            {
+                //MenuInflater.Inflate(Resource.Menu.DollDBDetailMenu, menu);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                Toast.MakeText(this, "Cannot create option menu", ToastLength.Short).Show();
+            }
+
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            try
+            {
+                switch (item?.ItemId)
+                {
+                    case Android.Resource.Id.Home:
+                        OnBackPressed();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                Toast.MakeText(this, "Cannot execute option menu", ToastLength.Short).Show();
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
 
         private void LoadCostumeList()
@@ -118,8 +190,8 @@ namespace GFI_with_GFS_A
 
                 costumes.TrimExcess();
 
-                var CostumeListAdapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, costumes);
-                CostumeListAdapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
+                var CostumeListAdapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout_ImageViewer, costumes);
+                CostumeListAdapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout_ImageViewer);
 
                 costumeList.Adapter = CostumeListAdapter;
             }

@@ -37,6 +37,8 @@ namespace GFI_with_GFS_A
 
             licenseType = Intent.GetStringExtra("Type");
 
+            licenseView = FindViewById<TextView>(Resource.Id.LicenseViewerTextView);
+
             _ = ReadLicense();
         }
 
@@ -95,21 +97,18 @@ namespace GFI_with_GFS_A
                         break;
                 }
 
-                await Task.Run(() =>
+                try
                 {
-                    try
+                    using (StreamReader sr = new StreamReader(Assets.Open(assetName)))
                     {
-                        using (StreamReader sr = new StreamReader(Assets.Open(assetName)))
-                        {
-                            licenseView.Text = sr.ReadToEnd();
-                        }
+                        licenseView.Text = sr.ReadToEnd();
                     }
-                    catch (Exception ex)
-                    {
-                        ETC.LogError(ex, this);
-                        Toast.MakeText(this, "Cannot Read License Raw Data", ToastLength.Short).Show();
-                    }
-                }).ConfigureAwait(true);
+                }
+                catch (Exception ex)
+                {
+                    ETC.LogError(ex, this);
+                    Toast.MakeText(this, "Cannot Read License Raw Data", ToastLength.Short).Show();
+                }
             }
             catch (Exception ex)
             {
