@@ -729,11 +729,6 @@ namespace GFI_with_GFS_A
         internal static string CalcTime(int minute)
         {
             return (minute != 0) ? $"{minute / 60} : {(minute % 60).ToString("D2")}" : Resources.GetString(Resource.String.Common_NonProduct);
-
-            /*if (minute != 0)
-                return $"{minute / 60} : {(minute % 60).ToString("D2")}";
-            else
-                return Resources.GetString(Resource.String.Common_NonProduct);*/
         }
 
         internal static bool IsDBNullOrBlank(DataRow dr, string index)

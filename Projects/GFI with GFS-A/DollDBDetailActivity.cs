@@ -234,7 +234,7 @@ namespace GFI_with_GFS_A
                 switch (e.Item.ItemId)
                 {
                     case Resource.Id.DBLinkNamu:
-                        url = $"https://namu.wiki/w/{doll.krName}(소녀전선)";
+                        url = $"https://namu.wiki/w/{doll.NameKR}(소녀전선)";
                         break;
                     case Resource.Id.DBLinkInven:
                         url = $"http://gf.inven.co.kr/dataninfo/dolls/detail.php?d=126&c={doll.DicNumber}";
@@ -574,11 +574,11 @@ namespace GFI_with_GFS_A
                 switch (vCostumeIndex)
                 {
                     case 0:
-                        VoiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Doll", doll.krName, $"{doll.krName}_{voice}_JP.wav");
+                        VoiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Doll", doll.NameKR, $"{doll.NameKR}_{voice}_JP.wav");
                         target = Path.Combine(ETC.cachePath, "Voices", "Doll", $"{doll.DicNumber}_{voice}_JP.gfdcache");
                         break;
                     default:
-                        VoiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Doll", $"{doll.krName}_{vCostumeIndex - 1}", $"{doll.krName}_{vCostumeIndex - 1}_{voice}_JP.wav");
+                        VoiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Doll", $"{doll.NameKR}_{vCostumeIndex - 1}", $"{doll.NameKR}_{vCostumeIndex - 1}_{voice}_JP.wav");
                         target = Path.Combine(ETC.cachePath, "Voices", "Doll", $"{doll.DicNumber}_{vCostumeIndex - 1}_{voice}_JP.gfdcache");
                         break;
                 }

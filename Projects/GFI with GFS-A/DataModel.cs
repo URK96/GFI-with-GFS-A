@@ -7,7 +7,7 @@ namespace GFI_with_GFS_A
     public partial class Doll
     {
         public string Name { get; private set; }
-        public string krName { get; private set; }
+        public string NameKR { get; private set; }
         public string NickName { get; private set; }
         public string CodeName { get; private set; }
         public int DicNumber { get; private set; }
@@ -47,7 +47,7 @@ namespace GFI_with_GFS_A
         public Dictionary<string, string> Abilities { get; private set; }
         public string[] AbilityGrade { get; private set; }
 
-        public string GetDicNumberString { get { return string.Format("No. {0}", DicNumber); } }
+        public string GetDicNumberString { get { return $"No. {DicNumber.ToString()}"; } }
         public string GetProductTimeToString { get { return ETC.CalcTime(ProductTime); } }
 
         internal Doll(DataRow dr, bool basicInfo = false)
@@ -63,7 +63,7 @@ namespace GFI_with_GFS_A
                 ProductDialog = ETC.IsDBNullOrBlank(dr, "ProductDialog") ? "" : (string)dr["ProductDialog"];
             }
 
-            krName = (string)dr["Name"];
+            NameKR = (string)dr["Name"];
             NickName = (string)dr["NickName"];
             CodeName = (string)dr["CodeName"];
             DicNumber = (int)dr["DicNumber"];
@@ -80,11 +80,13 @@ namespace GFI_with_GFS_A
             CensorType = HasCensored ? ((string)dr["CensorType"]).Split(';') : null;
             Costumes = ETC.IsDBNullOrBlank(dr, "Costume") == true ? null : ((string)dr["Costume"]).Split(';');
 
-            string[] BuffFormation_Data = ((string)dr["EffectFormation"]).Split(',');
+            string[] buffFormationData = ((string)dr["EffectFormation"]).Split(',');
             BuffFormation = new int[9];
 
-            for (int i = 0; i < BuffFormation_Data.Length; ++i)
-                BuffFormation[i] = int.Parse(BuffFormation_Data[i]);
+            for (int i = 0; i < buffFormationData.Length; ++i)
+            {
+                BuffFormation[i] = int.Parse(buffFormationData[i]);
+            }
 
             BuffInfo = ((string)dr["Effect"]).Split(';');
             BuffType = ((string)dr["EffectType"]).Split(',');
@@ -101,7 +103,9 @@ namespace GFI_with_GFS_A
                 ModBuffFormation = new int[9];
 
                 for (int i = 0; i < ModBuffFormation_Data.Length; ++i)
+                {
                     ModBuffFormation[i] = int.Parse(ModBuffFormation_Data[i]);
+                }
 
                 ModBuffInfo = ((string)dr["ModEffect"]).Split(';');
                 ModSkillName = (string)dr["ModSkill"];
@@ -164,22 +168,32 @@ namespace GFI_with_GFS_A
         {
             Abilities = new Dictionary<string, string>();
 
-            string[] ability_name = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed", "MoveSpeed", "Critical" };
+            string[] abilityName = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed", "MoveSpeed", "Critical" };
 
-            for (int i = 0; i < ability_name.Length; ++i)
-                Abilities.Add(ability_name[i], (string)dr[ability_name[i]]);
+            for (int i = 0; i < abilityName.Length; ++i)
+            {
+                Abilities.Add(abilityName[i], (string)dr[abilityName[i]]);
+            }
 
             Abilities.Add("Grow", (string)dr["Grow"]);
 
             if (ETC.IsDBNullOrBlank(dr, "Bullet"))
+            {
                 Abilities.Add("Bullet", "0");
+            }
             else
+            {
                 Abilities.Add("Bullet", (string)dr["Bullet"]);
+            }
 
             if (ETC.IsDBNullOrBlank(dr, "Armor"))
+            {
                 Abilities.Add("Armor", "0");
+            }
             else
+            {
                 Abilities.Add("Armor", (string)dr["Armor"]);
+            }
 
             AbilityGrade = ((string)dr["AbilityGrade"]).Split(';');
         }
@@ -206,7 +220,7 @@ namespace GFI_with_GFS_A
         public string[] MaxMags { get; private set; }
         public bool CanUpgrade { get; private set; }
 
-        public string GetIdString { get { return string.Format("No. {0}", Id); } }
+        public string GetIdString { get { return $"No. {Id.ToString()}"; } }
         public string GetProductTimeToString { get { return ETC.CalcTime(ProductTime); } }
 
         internal Equip(DataRow dr, bool basicInfo = false)
@@ -220,7 +234,7 @@ namespace GFI_with_GFS_A
             Note = ETC.IsDBNullOrBlank(dr, "Note") ? "" : (string)dr["Note"];
             Type = (string)dr["Type"];
 
-            ImagePath = Path.Combine(ETC.cachePath, "Equip", "Normal", string.Format("{0}.gfdcache", Icon));
+            ImagePath = Path.Combine(ETC.cachePath, "Equip", "Normal", $"{Icon}.gfdcache");
 
             OnlyUse = ETC.IsDBNullOrBlank(dr, "OnlyUse") ? null : ((string)dr["OnlyUse"]).Split(';');
             DollType = ETC.IsDBNullOrBlank(dr, "DollType") ? null : ((string)dr["DollType"]).Split(';');
@@ -271,9 +285,9 @@ namespace GFI_with_GFS_A
         public int OrderConsume { get; private set; }
         public int CoolDown { get; private set; }
 
-        public Dictionary<string, string> Abilities;
+        public Dictionary<string, string> Abilities { get; private set; }
 
-        public string GetDicNumberString { get { return string.Format("No. {0}", DicNumber); } }
+        public string GetDicNumberString { get { return $"No. {DicNumber.ToString()}"; } }
         public string GetProductTimeToString { get { return ETC.CalcTime(ProductTime); } }
 
         internal Fairy(DataRow dr, bool basicInfo = false)
@@ -299,11 +313,11 @@ namespace GFI_with_GFS_A
         {
             Abilities = new Dictionary<string, string>();
 
-            string[] ability_name = { "FireRate", "Accuracy", "Evasion", "Armor", "Critical" };
+            string[] abilityName = { "FireRate", "Accuracy", "Evasion", "Armor", "Critical" };
 
-            for (int i = 0; i < ability_name.Length; ++i)
+            for (int i = 0; i < abilityName.Length; ++i)
             {
-                Abilities.Add(ability_name[i], (string)dr[ability_name[i]]);
+                Abilities.Add(abilityName[i], (string)dr[abilityName[i]]);
             }
         }
     }
@@ -320,7 +334,7 @@ namespace GFI_with_GFS_A
         public string[] Voices { get; private set; }
         public string Note { get; private set; }
 
-        public Dictionary<string, int>[] Abilities;
+        public Dictionary<string, int>[] Abilities { get; private set; }
 
         public Enemy(DataRow dr, bool basicInfo = false)
         {
@@ -331,15 +345,21 @@ namespace GFI_with_GFS_A
 
             List<DataRow> drs = new List<DataRow>();
 
-            foreach (DataRow t_dr in ETC.enemyList.Rows)
-                if ((string)t_dr["CodeName"] == CodeName)
-                    drs.Add(t_dr);
+            foreach (DataRow tdr in ETC.enemyList.Rows)
+            {
+                if ((string)tdr["CodeName"] == CodeName)
+                {
+                    drs.Add(tdr);
+                }
+            }
 
             drs.TrimExcess();
 
             Types = new string[drs.Count];
             for (int i = 0; i < Types.Length; ++i)
+            {
                 Types[i] = (string)drs[i]["Type"];
+            }
 
             IsBoss = (bool)dr["IsBoss"];
             HasVoice = (bool)dr["HasVoice"];
@@ -357,14 +377,16 @@ namespace GFI_with_GFS_A
         {
             Abilities = new Dictionary<string, int>[Types.Length];
 
-            string[] ability_name = { "HP", "FireRate", "Accuracy", "Evasion", "AttackSpeed", "MoveSpeed", "Penetration", "Armor", "Range" };
+            string[] abilityName = { "HP", "FireRate", "Accuracy", "Evasion", "AttackSpeed", "MoveSpeed", "Penetration", "Armor", "Range" };
 
             for (int i = 0; i < Abilities.Length; ++i)
             {
                 Abilities[i] = new Dictionary<string, int>();
 
-                for (int k = 0; k < ability_name.Length; ++k)
-                    Abilities[i].Add(ability_name[k], (int)drs[i][ability_name[k]]);
+                for (int k = 0; k < abilityName.Length; ++k)
+                {
+                    Abilities[i].Add(abilityName[k], (int)drs[i][abilityName[k]]);
+                }
             }
         }
     }
@@ -393,12 +415,11 @@ namespace GFI_with_GFS_A
         public string[][] SkillEffect { get; private set; }
         public string[][] SkillMag { get; private set; }
 
-        public Dictionary<string, int> Abilities;
-
-        public string[] AbilityList = { "Kill", "Crush", "Accuracy", "Reload" };
-        public int CircuitCount = 5;
-        public int CircuitLength = 8;
-        public int CircuitHeight = 8;
+        public Dictionary<string, int> Abilities { get; private set; }
+        public string[] AbilityList { get; private set; } = { "Kill", "Crush", "Accuracy", "Reload" };
+        public int CircuitCount { get; private set; } = 5;
+        public int CircuitLength { get; private set; } = 8;
+        public int CircuitHeight { get; private set; } = 8;
 
         public FST(DataRow dr, bool basicInfo = false)
         {
@@ -414,7 +435,7 @@ namespace GFI_with_GFS_A
             ForceSize = (int)dr["ForceSize"];
             Distance = (string)dr["Distance"];
 
-            if (basicInfo == false)
+            if (!basicInfo)
             {
                 InitializeVersionUpPlus(ref dr);
                 InitializeChipsetCircuit(ref dr);
@@ -433,10 +454,12 @@ namespace GFI_with_GFS_A
             for (int i = 0; i < VersionUpPlus.Length; ++i)
             {
                 VersionUpPlus[i] = new Dictionary<string, int>();
-                string[] ability_list = list[i].Split(',');
+                string[] abilityList = list[i].Split(',');
 
-                for (int k = 0; k < ability_list.Length; ++k)
-                    VersionUpPlus[i].Add(AbilityList[k], int.Parse(ability_list[k]));
+                for (int k = 0; k < abilityList.Length; ++k)
+                {
+                    VersionUpPlus[i].Add(AbilityList[k], int.Parse(abilityList[k]));
+                }
             }
         }
 
@@ -446,34 +469,44 @@ namespace GFI_with_GFS_A
 
             ChipsetCircuit = new int[CircuitCount, CircuitHeight, CircuitLength];
 
-            for (int i = 0; i < CircuitCount; ++i)
+            /*for (int i = 0; i < CircuitCount; ++i)
+            {
                 for (int k = 0; k < CircuitHeight; ++k)
+                {
                     for (int x = 0; x < CircuitLength; ++x)
+                    {
                         ChipsetCircuit[i, k, x] = 0;
+                    }
+                }
+            }*/
 
             for (int i = 0; i < CircuitCount; ++i)
             {
-                string[] circuit_rows = ((string)dr[$"Circuit{i + 1}"]).Split(';');
+                string[] circuitRows = ((string)dr[$"Circuit{(i + 1).ToString()}"]).Split(';');
 
-                for (int k = 0; k < circuit_rows.Length; ++k)
+                for (int k = 0; k < circuitRows.Length; ++k)
                 {
-                    string[] row_index = circuit_rows[k].Split(',');
+                    string[] rowIndex = circuitRows[k].Split(',');
 
-                    for (int j = 0; j < row_index.Length; ++j)
+                    for (int j = 0; j < rowIndex.Length; ++j)
                     {
-                        int num = int.Parse(row_index[j]);
+                        int num = int.Parse(rowIndex[j]);
 
                         if (num != 0)
                         {
                             if (num < 10)
+                            {
                                 ChipsetCircuit[i, k, num - 1] = 1;
+                            }
                             else
                             {
                                 int start = num / 10;
                                 int end = num % 10;
 
-                                for (int x = start - 1; x < end; ++x)
+                                for (int x = (start - 1); x < end; ++x)
+                                {
                                     ChipsetCircuit[i, k, x] = 1;
+                                }
                             }
                         }
                     }
@@ -489,31 +522,37 @@ namespace GFI_with_GFS_A
             for (int i = 0; i < GradeRestriction.Length; ++i)
             {
                 GradeRestriction[i] = new Dictionary<string, int>();
-                string[] ability_list = list[i].Split(',');
+                string[] abilityList = list[i].Split(',');
 
-                for (int k = 0; k < ability_list.Length; ++k)
-                    GradeRestriction[i].Add(AbilityList[k], int.Parse(ability_list[k]));
+                for (int k = 0; k < abilityList.Length; ++k)
+                {
+                    GradeRestriction[i].Add(AbilityList[k], int.Parse(abilityList[k]));
+                }
             }
         }
 
         private void InitializeChipsetBonus(ref DataRow dr)
         {
-            string[] count_list = ((string)dr["ChipsetBonusCount"]).Split(',');
-            ChipsetBonusCount = new int[count_list.Length];
+            string[] countList = ((string)dr["ChipsetBonusCount"]).Split(',');
+            ChipsetBonusCount = new int[countList.Length];
 
-            for (int i = 0; i < count_list.Length; ++i)
-                ChipsetBonusCount[i] = int.Parse(count_list[i]);
+            for (int i = 0; i < countList.Length; ++i)
+            {
+                ChipsetBonusCount[i] = int.Parse(countList[i]);
+            }
 
-            string[] mag_list = ((string)dr["ChipsetBonusMag"]).Split(';');
-            ChipsetBonusMag = new Dictionary<string, int>[mag_list.Length];
+            string[] magList = ((string)dr["ChipsetBonusMag"]).Split(';');
+            ChipsetBonusMag = new Dictionary<string, int>[magList.Length];
 
-            for (int i = 0; i < mag_list.Length; ++i)
+            for (int i = 0; i < magList.Length; ++i)
             {
                 ChipsetBonusMag[i] = new Dictionary<string, int>();
-                string[] ability_values = mag_list[i].Split(',');
+                string[] abilityValues = magList[i].Split(',');
 
-                for (int k = 0; k < ability_values.Length; ++k)
-                    ChipsetBonusMag[i].Add(AbilityList[k], int.Parse(ability_values[k]));
+                for (int k = 0; k < abilityValues.Length; ++k)
+                {
+                    ChipsetBonusMag[i].Add(AbilityList[k], int.Parse(abilityValues[k]));
+                }
             }
         }
 
@@ -529,16 +568,16 @@ namespace GFI_with_GFS_A
                 SkillName[i] = (string)dr[$"SkillName{i + 1}"];
                 SkillExplain[i] = (string)dr[$"SkillExplain{i + 1}"];
 
-                string[] effect_list = ((string)dr[$"SkillEffect{i + 1}"]).Split(';');
-                string[] mag_list = ((string)dr[$"SkillMag{i + 1}"]).Split(',');
+                string[] effectList = ((string)dr[$"SkillEffect{i + 1}"]).Split(';');
+                string[] magList = ((string)dr[$"SkillMag{i + 1}"]).Split(',');
 
-                SkillEffect[i] = new string[effect_list.Length];
-                SkillMag[i] = new string[mag_list.Length];
+                SkillEffect[i] = new string[effectList.Length];
+                SkillMag[i] = new string[magList.Length];
 
-                for (int k = 0; k < effect_list.Length; ++k)
+                for (int k = 0; k < effectList.Length; ++k)
                 {
-                    SkillEffect[i][k] = effect_list[k];
-                    SkillMag[i][k] = mag_list[k];
+                    SkillEffect[i][k] = effectList[k];
+                    SkillMag[i][k] = magList[k];
                 }
             }
         }

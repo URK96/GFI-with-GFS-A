@@ -16,7 +16,7 @@ dotnet_diagnostic.CA1307.severity = silent
 dotnet_diagnostic.CA1303.severity = suggestion
 
 # CA1305: IFormatProvider를 지정하세요.
-dotnet_diagnostic.CA1305.severity = suggestion
+dotnet_diagnostic.CA1305.severity = silent
 
 # CA3075: XML의 안전하지 않은 DTD 처리
 dotnet_diagnostic.CA3075.severity = suggestion
@@ -28,7 +28,7 @@ dotnet_diagnostic.CA2000.severity = suggestion
 dotnet_diagnostic.CA1707.severity = suggestion
 
 # CA1814: 다차원 배열보다 가변 배열을 사용하세요.
-dotnet_diagnostic.CA1814.severity = suggestion
+dotnet_diagnostic.CA1814.severity = silent
 
 # CA1822: 멤버를 static으로 표시하세요.
 dotnet_diagnostic.CA1822.severity = suggestion
