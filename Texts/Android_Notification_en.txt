@@ -1,7 +1,6 @@
-﻿# T-Doll DB Update 2019/12/24
+﻿# T-Doll DB Update 2019/12/27
 
-- Add new T-Dolls (MAT-49)
-- Add new T-Doll costumes
+- Add new T-Dolls (SIG-556, C-93, KAC-PDW, CR-21, R5, 45M)
 
 
 # Equip DB Update 2019/12/06

@@ -13214,4 +13214,232 @@
     <HasAnimation>false</HasAnimation>
     <ProductDialog>전하... 전하가 바로 제가 몸 바쳐 수호할 운명의 주군이십니까?</ProductDialog>
   </Doll>
+  <Doll>
+    <Name>SIG-556</Name>
+    <Name_EN>SIG-556</Name_EN>
+    <CodeName>SIG556</CodeName>
+    <Nickname>SIG-556</Nickname>
+    <Model>SIG SG 556</Model>
+    <Country>Switzerland</Country>
+    <Type>AR</Type>
+    <Grade>5</Grade>
+    <ProductTime>236</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>A;A;A;A;A;A</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>15</MoveSpeed>
+    <Critical>20</Critical>
+    <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>0,0,1,0,2,1,0,0,0</EffectFormation>
+    <Effect>FR,EV;12,15</Effect>
+    <EffectType>SMG</EffectType>
+    <DropEvent>없음</DropEvent>
+    <DicNumber>287</DicNumber>
+    <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
+    <Skill>전장의 힙스터</Skill>
+    <SkillExplain>자신의 사속을 최대치까지 증가시키고 화력을 증가시킨다. 스킬 활성화 시 사격할 때마다 과부하가 1 상승하며, 12에 도달할 때 과부하를 모두 제거하고 2초동안 기절하며 스킬이 해제된다 (기절 시 제대 전진 불가). 스킬 버튼을 다시 클릭하여 수동 해제 가능하며 스킬 해제 시 사격마다 과부하가 1 감소한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;화력 증가치</SkillEffect>
+    <SkillMag>5초,4초,50%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>水熊</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>안녕! 패션 리더 SIG556이야! 내 옷차림에 놀랐나 보네? 이 옷의 패션 키워드는 "절제된 광기"야!</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>C-93</Name>
+    <Name_EN>C-93</Name_EN>
+    <CodeName>C93</CodeName>
+    <Nickname>C-93</Nickname>
+    <Model>Borchardt C-93</Model>
+    <Country>German Empire</Country>
+    <Type>HG</Type>
+    <Grade>5</Grade>
+    <ProductTime>69</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;A;S;A;A;A</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>15</MoveSpeed>
+    <Critical>20</Critical>
+    <ConsumeAmmo>10/15/20/25/30</ConsumeAmmo>
+    <ConsumeFood>10/15/20/25/30</ConsumeFood>
+    <EffectFormation>1,0,0,1,1,0,2,1,1</EffectFormation>
+    <Effect>FR,EV;12,30;15,37;18,45;21,52;24,60</Effect>
+    <EffectType>ALL</EffectType>
+    <DropEvent>없음</DropEvent>
+    <DicNumber>285</DicNumber>
+    <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
+    <Skill>청나비의 유언</Skill>
+    <SkillExplain>&lt;패시브&gt; 전투 시작 시 나비를 3마리 얻는다. 아군 인형이 능력치 감소 디버프를 받을 시 (요정 스킬 효과 제외), 해당 인형의 사속을 4초간 증가시킨다. 중복 적용이 불가능하고 다른 인형의 패시브를 발동시키지 않으며 3초 내로 동일 대상에게 다시 발동하지 않는다. 자신이 디버프를 받을 경우 추가로 나비 1마리를 얻는다. 나비는 최대 6마리까지 보유 가능.      &lt;액티브&gt; 아군 전체의 화력을 증가시킨다. 동시에 자신의 나비를 모두 소모하여 1마리마다 아군 인형 1명의 사속을 4초간 증가시킨다. 최대 2회 중첩되며 피해량 기여도 순으로 부여한다. 지속시간 종료 후 나비를 3마리 얻는다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치;화력 증가치</SkillEffect>
+    <SkillMag>5초,12초,8초,8%,18%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>NOCO</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>짜잔~ 보르하르트 C93이 신고합니다! 오오! 저, 지휘관님 알아요! 아주 유명인이시잖아요! 후후후, 이곳에서라면 저도 분명 유명해질 수 있겠죠?</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>KAC-PDW</Name>
+    <Name_EN>KAC-PDW</Name_EN>
+    <CodeName>KAC</CodeName>
+    <Nickname>KAC-PDW</Nickname>
+    <Model>KAC-PDW</Model>
+    <Country>United States of America</Country>
+    <Type>SMG</Type>
+    <Grade>4</Grade>
+    <ProductTime>140</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;S;A;A;B;B</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>12</MoveSpeed>
+    <Critical>5</Critical>
+    <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>1,0,0,1,2,0,0,0,0</EffectFormation>
+    <Effect>FR,AC;12,30</Effect>
+    <EffectType>AR</EffectType>
+    <DropEvent>없음</DropEvent>
+    <DicNumber>286</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>D-가드</Skill>
+    <SkillExplain>자신이 받은 모든 디버프를 제거하고 1초간 100%의 왜곡방벽을 생성한다. 왜곡방벽이 사라진 후 자신의 회피를 증가시킨다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;회피 증가치</SkillEffect>
+    <SkillMag>6초,8초,5초,60%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>山药</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>KAC-PDW가 경례! 아, 포도의 향기... 역시, 지휘관이 바로 내가 그토록 찾던 허니였어! 쑥스러워하지 말고, 허니도 날 허니라 불러 줘~♥</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>CR-21</Name>
+    <Name_EN>CR-21</Name_EN>
+    <CodeName>CR21</CodeName>
+    <Nickname>CR-21</Nickname>
+    <Model>CR-21</Model>
+    <Country>Republic of South Africa</Country>
+    <Type>AR</Type>
+    <Grade>4</Grade>
+    <ProductTime>215</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;B;B;S;A;A</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>15</MoveSpeed>
+    <Critical>20</Critical>
+    <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>0,0,1,0,2,1,0,0,0</EffectFormation>
+    <Effect>AC,EV;50,12</Effect>
+    <EffectType>SMG</EffectType>
+    <DropEvent>없음</DropEvent>
+    <DicNumber>288</DicNumber>
+    <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
+    <Skill>근육 불끈</Skill>
+    <SkillExplain>자신의 화력을 증가시키고, 화력이 가장 높은 적을 우선적으로 공격한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect>
+    <SkillMag>5초,8초,5초,60%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>K箱</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>CR-21이 입대를 신고합니다! 보안 임무든 일과 훈련이든, 다 나에게 맡겨 줘!</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>R5</Name>
+    <Name_EN>R5</Name_EN>
+    <CodeName>R5RGP</CodeName>
+    <Nickname>R5</Nickname>
+    <Model>R5</Model>
+    <Country>United States of America</Country>
+    <Type>AR</Type>
+    <Grade>5</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>A;A;B;S;A;A</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>15</MoveSpeed>
+    <Critical>20</Critical>
+    <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>0,0,1,0,2,0,0,0,1</EffectFormation>
+    <Effect>AS,EV;12,15</Effect>
+    <EffectType>SMG</EffectType>
+    <DropEvent>KEY 이벤트 '분홍빛 송년회' 빙고 보상</DropEvent>
+    <DicNumber>289</DicNumber>
+    <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
+    <Skill>화력전개T</Skill>
+    <SkillExplain>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect>
+    <SkillMag>4초,16초,10초,75%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>音符</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>레밍턴 R5... 엄청난 기대를 받으며 태어난 이름이야. 내가 그 기대에 어울릴지는, 지휘관의 두 눈으로 판단해 줘.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>43M</Name>
+    <Name_EN>43M</Name_EN>
+    <CodeName>Danuvia43M</CodeName>
+    <Nickname>43M</Nickname>
+    <Model>Danuvia 43M</Model>
+    <Country>Hungary</Country>
+    <Type>SMG</Type>
+    <Grade>3</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>?;?;?;?;?;?</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>12</MoveSpeed>
+    <Critical>5</Critical>
+    <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>0,0,0,0,0,0,0,0,0</EffectFormation>
+    <Effect>?,?;?,?</Effect>
+    <EffectType>AR</EffectType>
+    <DropEvent>2020년 1월 출석보상</DropEvent>
+    <DicNumber>290</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>?</Skill>
+    <SkillExplain>?</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간</SkillEffect>
+    <SkillMag>?,?,?</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>?</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>안녕하세요, 지휘관님! 오늘도 날이 참 좋네요!</ProductDialog>
+  </Doll>
 </NewDataSet>
