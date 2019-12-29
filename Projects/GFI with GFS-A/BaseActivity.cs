@@ -11,7 +11,9 @@ namespace GFI_with_GFS_A
         protected override void AttachBaseContext(Context @base)
         {
             if (!ETC.hasBasicInit)
+            {
                 ETC.BasicInitializeApp(@base);
+            }
 
             base.AttachBaseContext(ETC.baseContext);
         }

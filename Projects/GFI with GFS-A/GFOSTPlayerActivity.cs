@@ -16,7 +16,7 @@ using Plugin.SimpleAudioPlayer;
 
 namespace GFI_with_GFS_A
 {
-    /*internal static class MusicRepository
+    internal static class MusicRepository
     {
         private static readonly string serverMusicPath = Path.Combine(ETC.server, "Data", "Music");
 
@@ -129,7 +129,7 @@ namespace GFI_with_GFS_A
         }
     }
 
-    [Activity(Name = "com.gfl.dic.OSTPlayer", Label = "OST (Beta)", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.OSTPlayer", Label = "OST (Beta)", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class GFOSTPlayerActivity : BaseAppCompatActivity
     {
         private bool isCategory = true;
@@ -147,7 +147,7 @@ namespace GFI_with_GFS_A
 
             if (ETC.useLightTheme)
             {
-                SetTheme(Resource.Style.GFS_NoActionBar_Light);
+                SetTheme(Resource.Style.GFS_Toolbar_Light);
             }
 
             // Create your application here
@@ -159,6 +159,8 @@ namespace GFI_with_GFS_A
             }
 
             mainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.GFOSTPlayerMainDrawerLayout);
+            mainDrawerLayout.DrawerOpened += delegate { SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen); };
+            mainDrawerLayout.DrawerClosed += delegate { SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu); };
             drawerListView = FindViewById<ListView>(Resource.Id.GFOSTPlayerNavigationListView);
             drawerListView.ItemClick += DrawerListView_ItemSelected;
 
@@ -166,7 +168,7 @@ namespace GFI_with_GFS_A
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
-            SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.OSTPlayer);
+            SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
 
             gfOSTPlayerScreenF = new GFOSTPlayerScreen();
 
@@ -190,7 +192,7 @@ namespace GFI_with_GFS_A
                     {
                         mainDrawerLayout.OpenDrawer(GravityCompat.Start);
                     }
-                    return true;
+                    break;
             }
 
             return base.OnOptionsItemSelected(item);
@@ -508,5 +510,5 @@ namespace GFI_with_GFS_A
                 ETC.LogError(ex);
             }
         }
-    }*/
+    }
 }

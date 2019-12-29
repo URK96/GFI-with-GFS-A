@@ -7,16 +7,8 @@
 	<android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+		android:background="@color/MainColor"
         android:id="@+id/StoryMainToolbar" />
-	<Button
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_margin="5dp"
-		android:enabled="false"
-		android:background="@android:drawable/screen_background_dark_transparent"
-		android:layout_below="@id/StoryMainToolbar"
-		android:text="@string/Common_PreviousList"
-		android:id="@+id/StoryMainPreviousButton"/>
 	<android.support.v7.widget.RecyclerView
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"

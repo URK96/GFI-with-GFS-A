@@ -180,7 +180,7 @@ namespace GFI_with_GFS_A
             topTitleList.TrimExcess();
 
             adapter = new StoryListAdapter(itemList.ToArray(), topTitleList.ToArray(), captionList.ToArray());
-            adapter.ItemClick += Adapter_ItemClick;
+            adapter.itemClick += Adapter_ItemClick;
         }
 
         private void ListStoryItem_Sub()
@@ -273,7 +273,7 @@ namespace GFI_with_GFS_A
             topTitleList.TrimExcess();
 
             adapter = new StoryListAdapter(itemList.ToArray(), topTitleList.ToArray(), captionList.ToArray());
-            adapter.ItemClick += Adapter_ItemClick;
+            adapter.itemClick += Adapter_ItemClick;
         }
 
 
