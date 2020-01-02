@@ -39,8 +39,10 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.useLightTheme == true)
+                if (ETC.useLightTheme)
+                {
                     SetTheme(Resource.Style.GFS_Splash_Light);
+                }
 
                 SetContentView(Resource.Layout.SplashLayout);
 

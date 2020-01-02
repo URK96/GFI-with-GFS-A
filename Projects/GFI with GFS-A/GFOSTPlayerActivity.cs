@@ -16,7 +16,7 @@ using Plugin.SimpleAudioPlayer;
 
 namespace GFI_with_GFS_A
 {
-    internal static class MusicRepository
+    /*internal static class MusicRepository
     {
         private static readonly string serverMusicPath = Path.Combine(ETC.server, "Data", "Music");
 
@@ -510,5 +510,5 @@ namespace GFI_with_GFS_A
                 ETC.LogError(ex);
             }
         }
-    }
+    }*/
 }

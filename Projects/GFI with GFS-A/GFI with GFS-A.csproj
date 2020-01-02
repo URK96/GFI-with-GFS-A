@@ -85,7 +85,7 @@
     <AndroidDexTool>d8</AndroidDexTool>
     <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
     <MandroidI18n />
-    <AndroidPackageFormat>aab</AndroidPackageFormat>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
     <AndroidApkSigningAlgorithm>md5withRSA</AndroidApkSigningAlgorithm>
     <AndroidApkDigestAlgorithm>SHA1</AndroidApkDigestAlgorithm>
   </PropertyGroup>
@@ -2025,6 +2025,18 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Menu\CalcToolbarMenu.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Menu\StoryToolbarMenu.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Menu\StoryReaderToolbarMenu.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>

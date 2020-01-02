@@ -248,4 +248,25 @@
     <item>Fate</item>
     <item>End of the Moonlight</item>
   </string-array>
+
+  <string-array name="Story_Main_Main_Event_2019Halloween_TopTitle">
+    <item>팬텀 신드롬</item>
+    <item>팬텀 신드롬</item>
+    <item>팬텀 신드롬</item>
+    <item>팬텀 신드롬</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2019Halloween">
+    <item>변질된 스타카토</item>
+    <item>깜짝 상자</item>
+    <item>유통기한</item>
+    <item>방부제</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2019Halloween_Caption">
+    <item>변질된 스타카토</item>
+    <item>깜짝 상자</item>
+    <item>유통기한</item>
+    <item>방부제</item>
+  </string-array>
 </resources>

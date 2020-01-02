@@ -170,6 +170,11 @@ namespace GFI_with_GFS_A
                     Caption_res = Resource.Array.Story_Main_Main_Event_ShatteredConnexion_Caption;
                     TopTitle_res = Resource.Array.Story_Main_Main_Event_ShatteredConnexion_TopTitle;
                     break;
+                case 31:
+                    Title_res = Resource.Array.Story_Main_Main_Event_2019Halloween;
+                    Caption_res = Resource.Array.Story_Main_Main_Event_2019Halloween_Caption;
+                    TopTitle_res = Resource.Array.Story_Main_Main_Event_2019Halloween_TopTitle;
+                    break;
             }
 
             itemList.AddRange(Resources.GetStringArray(Title_res));
@@ -366,6 +371,9 @@ namespace GFI_with_GFS_A
                         break;
                     case 30:
                         Category = "ShatteredConnexion";
+                        break;
+                    case 31:
+                        Category = "2019Halloween";
                         break;
                 }
             }

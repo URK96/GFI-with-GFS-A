@@ -1,15 +1,15 @@
 ﻿using Android.App;
 using Android.OS;
-using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+
 using System;
 using System.Collections.Generic;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Name = "com.gfl.dic.StoryActivity", Label = "@string/Activity_StoryActivity", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.StoryActivity", Label = "@string/Activity_StoryActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public partial class StoryActivity : BaseAppCompatActivity
     {
         enum Category { Main, SubMain, Item }
@@ -38,7 +38,7 @@ namespace GFI_with_GFS_A
 
             if (ETC.useLightTheme)
             {
-                SetTheme(Resource.Style.GFS_NoActionBar_Light);
+                SetTheme(Resource.Style.GFS_Toolbar_Light);
             }
 
             // Create your application here

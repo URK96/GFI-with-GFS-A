@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.gfl.dic" android:installLocation="internalOnly" android:versionName="2.4.9" android:versionCode="127">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.gfl.dic" android:installLocation="internalOnly" android:versionName="2.4.10" android:versionCode="128">
 	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="29" />
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
