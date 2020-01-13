@@ -2890,6 +2890,7 @@
     <Costume>"내가 좀 늦었지?";세계의 노래;킁킁 수사관</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
+    <CostumeVoices>2:ACCEPT;AGREE;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TIP;TITLECALL;WIN</CostumeVoices>
     <VoiceActor>Mamiko Noto</VoiceActor>
     <Illustrator>ZAGALA</Illustrator>
     <HasCensor>false</HasCensor>
@@ -2947,6 +2948,7 @@
     <Costume>"이번만 봐줄게";다이아몬드의 꽃;겨울 여행;깡총 요원</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
+    <CostumeVoices>3:ACCEPT;AGREE;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TIP;TITLECALL;WIN</CostumeVoices>
     <VoiceActor>Tomomi Mineuchi</VoiceActor>
     <Illustrator>ZAGALA</Illustrator>
     <HasCensor>false</HasCensor>
@@ -4820,6 +4822,7 @@
     <Costume>별에 감싸이다;고양이의 선물</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
+    <CostumeVoices>1:ACCEPT;AGREE;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TIP;TITLECALL;WIN</CostumeVoices>
     <VoiceActor>Ai Nonaka</VoiceActor>
     <Illustrator>NIXOO</Illustrator>
     <HasCensor>false</HasCensor>
@@ -5876,6 +5879,7 @@
     <Costume>숲속의 어린 순록;맑음 때때로 꿀꿀</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
+    <CostumeVoices>1:ACCEPT;AGREE;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TIP;TITLECALL;WIN</CostumeVoices>
     <VoiceActor>Rie Takahashi</VoiceActor>
     <Illustrator>rosele</Illustrator>
     <HasCensor>false</HasCensor>
@@ -11576,7 +11580,8 @@
     <SkillExplain>아군에게 6초간 지속되는 보호막을 부여한다. 3초 후에도 보호막이 남아있는 경우 해당 인형은 화력과 명중이 상승한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;보호막 수치;화력 상승치;명중 상승치</SkillEffect>
     <SkillMag>6초,16초,5초,42,35%,35%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>水熊</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -11785,7 +11790,8 @@
     <SkillExplain>&lt;패시브&gt; 장갑이 없는 적에게 1.05배의 데미지를 준다.    &lt;액티브&gt; 조준시간이 지날 때마다 가장 먼 적을 공격하고 3초간 대상의 화력을 감소시키는 저격모드를 9초동안 발동한다. 단, 저격공격은 치명타가 적용되지만 장갑의 영향을 받는다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;조준시간;피해량;화력 감소치</SkillEffect>
     <SkillMag>6초,16초,1.5초,2배,10%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>DANGERDROP</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -11906,7 +11912,8 @@
     <SkillExplain>지속시간 동안 자신의 화력과 사속이 증가한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;사속 증가치</SkillEffect>
     <SkillMag>6초,16초,10초,50%,20%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>XIN</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -11945,7 +11952,8 @@
     <SkillExplain>자신의 회피가 100% 상승하고, 화력과 명중이 30% 감소한다. 또한 1회 공격 당 동시에 2회 피해를 입히게 된다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;회피 상승량;화력 감소량;명중 감소량</SkillEffect>
     <SkillMag>6초,8초,5초,100%,30%,30%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>音符</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -11985,7 +11993,8 @@
     <SkillEffect>선 쿨타임;쿨타임;목표 기절 시간;목표 피해량;범위 기절 시간;범위 피해량</SkillEffect>
     <SkillMag>6초,12초,3초,4배,2초,2배</SkillMag>
     <Costume>두근두근 하이스쿨</Costume>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>山药</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12025,7 +12034,8 @@
     <SkillEffect>선 쿨타임;쿨타임;저격 피해량;폭발 피해량</SkillEffect>
     <SkillMag>8초,16초,5배,1.5배</SkillMag>
     <Costume>사탕 내놔라!</Costume>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>薯子Imoko</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12064,7 +12074,8 @@
     <SkillExplain>무작위 3명의 적에게 빠르게 저격한다. 반드시 명중하고 장갑 영향을 받는다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
     <SkillMag>6초,16초,3.5배</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>X布</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12104,7 +12115,8 @@
     <SkillExplain>&lt;패시브&gt; 재장전 중일 때 버프칸에 위치한 아군이 받는 피해량을 20% 감소시킨다.   &lt;액티브&gt; 자신의 화력을 증가시키며 버프칸에 위치한 아군의 병종에 따라 추가 버프를 제공한다. [AR : 명중 25% 증가] [SMG : 다음 재장전 시간 25% 감소] [SG : 장탄수 1발 추가]</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 상승치</SkillEffect>
     <SkillMag>8초,18초,6초,55%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>暖森</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12144,7 +12156,8 @@
     <SkillExplain>&lt;패시브&gt; 전투 시작 시와 일정 주기마다 1개의 백합 문양을 얻는다. 최대 4개 보유 가능.   &lt;액티브&gt; 백합 문양을 1개 소비하여 다음 재장전 시간을 감소시킨다. 최대 2회 중첩 가능.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;충전 주기;재장전 시간 감소치</SkillEffect>
     <SkillMag>6초,2초,4초,20%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>花酒</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12183,7 +12196,8 @@
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 상승치;화력 상승치</SkillEffect>
     <SkillMag>6초,8초,5초,10%,40%</SkillMag>
     <Costume>럭키 바캉스</Costume>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>ASK</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12457,7 +12471,8 @@
     <SkillExplain>지속시간 동안 자신의 사속을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치</SkillEffect>
     <SkillMag>4초,16초,10초,60%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>FKEY</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12495,7 +12510,8 @@
     <SkillExplain>폭발한 위치의 2.5 반경에 적의 사속과 이동속도를 감소시키는 연막을 발생시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 감소치;이속 감소치</SkillEffect>
     <SkillMag>1초,16초,4초,36%,50%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>狂気の君</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12533,7 +12549,8 @@
     <SkillExplain>스킬을 발동할 때마다 두 가지 상태 사이에서 전환한다. 단 버프를 받을 시 발동하는 패시브를 발동시키지 않는다. &lt;복수의 시간 (기본)&gt; 아군 전체의 사속을 10% 상승시킨다.  &lt;추격의 시간&gt; 아군 전체의 이동속도를 60% 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 상승치;이동속도 증가치</SkillEffect>
     <SkillMag>3초,3초,영속,10%,60%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>litsvn</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12573,7 +12590,8 @@
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치</SkillEffect>
     <SkillMag>6초,8초,5초,55%</SkillMag>
     <Costume>4번함 출항</Costume>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>藤ちょこ</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12612,7 +12630,8 @@
     <SkillEffect>선 쿨타임;쿨타임;일반공격 확률;지속시간;사속 감소치;이동속도 감소치;피해량;기절 시간</SkillEffect>
     <SkillMag>5초,16초,40%,6초,6%,6%,6배,2.4초</SkillMag>
     <Costume>물빛 청춘</Costume>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>小吃</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12650,7 +12669,8 @@
     <SkillExplain>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 상승치</SkillEffect>
     <SkillMag>5초,8초,5초,60%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>sola7764</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12691,7 +12711,8 @@
     <SkillExplain>지속시간 동안 자신의 화력을 증가시키고 발사 중인 탄띠에 탄을 추가한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;발사 수 증가치</SkillEffect>
     <SkillMag>8초,18초,8초,30%,3발</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>DDAL</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12729,7 +12750,8 @@
     <SkillExplain>&lt;액티브&gt; 지속시간 동안 자신의 사속을 증가시킨다. 체력과 보호막 수치의 합이 가장 높은 적 3명에게 표식을 부여하여 받는 피해량을 10% 증가시킨다. 자신은 표식된 적을 우선적으로 공격하며 공격할 때마다 주는 피해량이 최대 3번 증가한다.   &lt;패시브&gt; 기본 공격이 보호막을 관통하며 체력과 보호막에 동시에 같은 피해를 준다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치;피해 증가치 (자신);피해 증가치 (아군)</SkillEffect>
     <SkillMag>6초,12초,8초,40%,60%,10%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>Anmi</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12768,7 +12790,8 @@
     <SkillExplain>&lt;액티브&gt; 발동 시 기존 탄창을 모두 사용한 뒤에 예비 탄띠를 사용하여 공격한다. 사격마다 예비 탄띠를 1발 소모하며 화력이 증가하지만 5초간 명중이 최대 10회 중첩되어 감소한다. 스킬을 다시 발동하여 해제가 가능하다.   &lt;패시브&gt; 전투 개시에 예비 탄띠를 30발 소지하며 장전 중이 아닐 때 3초마다 예비 탄띠가 1발 추가된다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;화력 증가치;명중 감소치</SkillEffect>
     <SkillMag>3초,5초,20%,15%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>钟式机动红领巾</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12807,7 +12830,8 @@
     <SkillExplain>스킬을 발동할 때마다 두 모드가 전환된다.  &lt;관통모드 (기본)&gt; 일반 공격이 관통 효과를 가지며 화력이 감소하며 관통 수치가 50% 감소한다.   &lt;강타 모드&gt; 자신의 화력과 명중이 증가한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 감소치;강타모드 증가치</SkillEffect>
     <SkillMag>0초,3초,영속,30%,20%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>時辰</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12845,7 +12869,8 @@
     <SkillExplain>9초간 저격 모드가 되어 일정 조준 시간이 지날 때마다 가장 멀리있는 적에게 피해를 주고, 피해를 입은 적의 화력을 3초간 감소시킨다. 반드시 명중하고 치명타와 장갑이 적용된다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;조준시간;피해량;화력 감소치</SkillEffect>
     <SkillMag>6초,16초,1.5초,1.8배,15%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>咩爆</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12883,7 +12908,8 @@
     <SkillExplain>&lt;액티브&gt; 자신의 사속이 증가하며 지속시간 동안 공격한 적의 화력을 3초간 감소시킨다. 디버프는 최대 5중첩.   &lt;패시브&gt; 디버프 효과를 받고 있는 적을 공격할 시 디버프가 하나일 경우 일정 수치, 2개 이상일 경우 5%씩 피해량이 중첩되어 증가한다. 디버프는 액티브를 포함한 모든 상태이상을 포함한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 상승치;화력 감소치;기본 피해량</SkillEffect>
     <SkillMag>6초,8초,5초,50%,20%,1.1배</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>saitom</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12923,7 +12949,8 @@
     <SkillExplain>지속시간 동안 적 전체의 화력을 감소시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 감소치</SkillEffect>
     <SkillMag>6초,12초,8초,25%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>原子Dan</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -12965,7 +12992,8 @@
     <SkillExplain>공격력의 X배의 피해를 주는 추가탄을 발사하고 거리 N칸만큼 적을 밀어낸다</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;피해량;넉백 거리</SkillEffect>
     <SkillMag>8초,16초,2배,3</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>受菟</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -13007,7 +13035,8 @@
     <SkillEffect>선 쿨타임;쿨타임;보호막 수치;피해량</SkillEffect>
     <SkillMag>8초,16초,40, 5.5배</SkillMag>
     <Costume>120유로의 겨울 선물</Costume>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>废人</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -13284,7 +13313,8 @@
     <SkillExplain>&lt;패시브&gt; 전투 시작 시 나비를 3마리 얻는다. 아군 인형이 능력치 감소 디버프를 받을 시 (요정 스킬 효과 제외), 해당 인형의 사속을 4초간 증가시킨다. 중복 적용이 불가능하고 다른 인형의 패시브를 발동시키지 않으며 3초 내로 동일 대상에게 다시 발동하지 않는다. 자신이 디버프를 받을 경우 추가로 나비 1마리를 얻는다. 나비는 최대 6마리까지 보유 가능.      &lt;액티브&gt; 아군 전체의 화력을 증가시킨다. 동시에 자신의 나비를 모두 소모하여 1마리마다 아군 인형 1명의 사속을 4초간 증가시킨다. 최대 2회 중첩되며 피해량 기여도 순으로 부여한다. 지속시간 종료 후 나비를 3마리 얻는다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치;화력 증가치</SkillEffect>
     <SkillMag>5초,12초,8초,8%,18%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>NOCO</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
@@ -13360,7 +13390,8 @@
     <SkillExplain>자신의 화력을 증가시키고, 화력이 가장 높은 적을 우선적으로 공격한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect>
     <SkillMag>5초,8초,5초,60%</SkillMag>
-    <HasVoice>false</HasVoice>
+    <HasVoice>true</HasVoice>
+    <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <Illustrator>K箱</Illustrator>
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
