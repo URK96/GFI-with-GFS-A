@@ -47,6 +47,7 @@
     <item>이벤트</item>
     <item>콜라보 이벤트</item>
     <item>이벤트</item>
+    <item>2019 할로윈 이벤트</item>
   </string-array>
 
   <string-array name="Story_Main_Main">
@@ -81,6 +82,7 @@
     <item>이성질체</item>
     <item>VA-11 HALL-A</item>
     <item>연쇄분열</item>
+    <item>팬텀 신드롬</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Caption">
@@ -115,6 +117,7 @@
     <item>이성질체</item>
     <item>발할라</item>
     <item>연쇄분열</item>
+    <item>팬텀 신드롬</item>
   </string-array>
 
   <string-array name="Story_Main_Sub_TopTitle">

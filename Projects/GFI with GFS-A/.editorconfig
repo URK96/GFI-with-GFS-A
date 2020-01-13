@@ -7,7 +7,7 @@ dotnet_diagnostic.CA1031.severity = suggestion
 dotnet_diagnostic.CA2007.severity = suggestion
 
 # CA1304: CultureInfo를 지정하세요.
-dotnet_diagnostic.CA1304.severity = suggestion
+dotnet_diagnostic.CA1304.severity = silent
 
 # CA1307: StringComparison을 지정하세요.
 dotnet_diagnostic.CA1307.severity = silent

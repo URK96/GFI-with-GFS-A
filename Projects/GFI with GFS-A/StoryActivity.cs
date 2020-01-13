@@ -1,15 +1,15 @@
 ﻿using Android.App;
 using Android.OS;
-using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+
 using System;
 using System.Collections.Generic;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Name = "com.gfl.dic.StoryActivity", Label = "@string/Activity_StoryActivity", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.StoryActivity", Label = "@string/Activity_StoryActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public partial class StoryActivity : BaseAppCompatActivity
     {
         enum Category { Main, SubMain, Item }
@@ -19,7 +19,6 @@ namespace GFI_with_GFS_A
         private Top topType = Top.Main;
 
         private RecyclerView mainRecyclerView;
-        private Button previousButton;
         private RecyclerView.LayoutManager mainRecyclerManager;
 
         private string[] mainList;
@@ -38,24 +37,49 @@ namespace GFI_with_GFS_A
             base.OnCreate(savedInstanceState);
 
             if (ETC.useLightTheme)
-                SetTheme(Resource.Style.GFS_NoActionBar_Light);
+            {
+                SetTheme(Resource.Style.GFS_Toolbar_Light);
+            }
 
             // Create your application here
             SetContentView(Resource.Layout.StoryMainLayout);
 
             SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.StoryMainToolbar));
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            SupportActionBar.SetTitle(Resource.String.Activity_StoryActivity);
 
             mainRecyclerView = FindViewById<RecyclerView>(Resource.Id.StoryRecyclerView);
             mainRecyclerManager = new LinearLayoutManager(this);
             mainRecyclerView.SetLayoutManager(mainRecyclerManager);
-            previousButton = FindViewById<Button>(Resource.Id.StoryMainPreviousButton);
-            previousButton.Click += delegate { ChangeAdapter(true); };
 
             InitializeList();
 
             adapter = new StoryListAdapter(mainList, topTitleList.ToArray(), captionList.ToArray());
-            adapter.ItemClick += Adapter_ItemClick;
+            adapter.itemClick += Adapter_ItemClick;
             mainRecyclerView.SetAdapter(adapter);
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.StoryToolbarMenu, menu);
+
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item?.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    OnBackPressed();
+                    break;
+                case Resource.Id.StoryExit:
+                    base.OnBackPressed();
+                    OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                    break;
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
 
         private void Adapter_ItemClick(object sender, int position)
@@ -64,10 +88,17 @@ namespace GFI_with_GFS_A
             {
                 case Category.Main:
                     if (position == 0)
+                    {
                         topType = Top.Main;
+                    }
                     else if (position == 1)
+                    {
                         topType = Top.Sub;
-                    else return;
+                    }
+                    else
+                    {
+                        return;
+                    }
                     break;
                 case Category.SubMain:
                     subMainIndex = position;
@@ -107,7 +138,6 @@ namespace GFI_with_GFS_A
                         captionList.TrimExcess();
                         topTitleList.TrimExcess();
                         categoryType = Category.Main;
-                        previousButton.Enabled = false;
                         adapter = new StoryListAdapter(mainList, topTitleList.ToArray(), captionList.ToArray());
                         break;
                     case Category.Item:
@@ -137,8 +167,6 @@ namespace GFI_with_GFS_A
             }
             else
             {
-                previousButton.Enabled = true;
-
                 switch (categoryType)
                 {
                     case Category.Main:
@@ -166,10 +194,13 @@ namespace GFI_with_GFS_A
                         break;
                     case Category.SubMain:
                         if (topType == Top.Main)
+                        {
                             ListStoryItem_Main();
+                        }
                         else if (topType == Top.Sub)
+                        {
                             ListStoryItem_Sub();
-
+                        }
                         categoryType = Category.Item;
                         break;
                     case Category.Item:
@@ -179,7 +210,9 @@ namespace GFI_with_GFS_A
             }
 
             if (!adapter.HasOnItemClick())
-                adapter.ItemClick += Adapter_ItemClick;
+            {
+                adapter.itemClick += Adapter_ItemClick;
+            }
 
             mainRecyclerView.SetAdapter(adapter);
         }
@@ -208,9 +241,9 @@ namespace GFI_with_GFS_A
 
         public StoryListViewHolder(View view, Action<int> listener) : base (view)
         {
-            TopTitle = view.FindViewById<TextView>(Resource.Id.StoryListViewTopTitleText);
-            Title = view.FindViewById<TextView>(Resource.Id.StoryListViewTitleText);
-            Caption = view.FindViewById<TextView>(Resource.Id.StoryListViewCaptionText);
+            TopTitle = view?.FindViewById<TextView>(Resource.Id.StoryListViewTopTitleText);
+            Title = view?.FindViewById<TextView>(Resource.Id.StoryListViewTitleText);
+            Caption = view?.FindViewById<TextView>(Resource.Id.StoryListViewCaptionText);
 
             view.Click += (sender, e) => listener(LayoutPosition);
         }
@@ -222,7 +255,7 @@ namespace GFI_with_GFS_A
         private string[] topTitleList;
         private string[] captionList;
 
-        public event EventHandler<int> ItemClick;
+        public event EventHandler<int> itemClick;
 
         public StoryListAdapter(string[] title, string[] toptitle, string[] caption)
         {
@@ -242,9 +275,9 @@ namespace GFI_with_GFS_A
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.StoryListViewLayout, parent, false);
-
+            View view = LayoutInflater.From(parent?.Context).Inflate(Resource.Layout.StoryListViewLayout, parent, false);
             StoryListViewHolder vh = new StoryListViewHolder(view, OnClick);
+
             return vh;
         }
 
@@ -255,15 +288,12 @@ namespace GFI_with_GFS_A
 
         void OnClick(int position)
         {
-            ItemClick?.Invoke(this, position);
+            itemClick?.Invoke(this, position);
         }
 
         public bool HasOnItemClick()
         {
-            if (ItemClick == null)
-                return false;
-            else
-                return true;
+            return (itemClick != null);
         }
     }
 }

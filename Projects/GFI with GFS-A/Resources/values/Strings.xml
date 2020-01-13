@@ -356,8 +356,15 @@
   <string name="DollDBMainActivity_SearchHint">Search T-Doll Name</string>
   
   <!--ProductPercentTable-->
-  <string name="ProductPercentTable_List_TotalCount">Prioritize attempt</string>
-  <string name="ProductPercentTable_List_Percentage">Prioritize probability</string>
+  <string name="ProductPercentTable_List_TotalCount">Attempt</string>
+  <string name="ProductPercentTable_List_Percentage">Percentage</string>
+  <string name="ProductPercentTable_ProductType_Normal">Normal</string>
+  <string name="ProductPercentTable_ProductType_Advance">Advance</string>
+  <string name="ProductPercentTable_ToolbarMenu_ListMode">List Mode</string>
+  <string name="ProductPercentTable_ToolbarMenu_ProductTypeMode">Product Type Mode</string>
+  <string name="ProductPercentTable_LoadingText_ReceiveServerData">Receive Server Data...</string>
+  <string name="ProductPercentTable_LoadingText_DataProcess">Processing Data...</string>
+  <string name="ProductPercentTable_LoadingText_DataListing">Listing Data...</string>
   
   <!--EnemyDBDetail-->
   <string name="EnemyDBDetail_Boss">Boss</string>

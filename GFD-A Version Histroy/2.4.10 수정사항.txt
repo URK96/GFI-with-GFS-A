@@ -4,3 +4,8 @@
 - 만화 컨텐츠 추가 (Geo의 소녀전선)
 - 적 목록 정렬이 불가하던 문제 수정
 - 메모리 최적화
+
+- Change some UI
+- Add cartoon content
+- Fix enemy sort issue
+- Memory Optimized

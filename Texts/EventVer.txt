@@ -1,6 +1,6 @@
 Y;
-56;
-3;
-거룩한 밤 광상곡,분홍빛 송년회,제조 확률 UP;
-https://cafe.naver.com/girlsfrontlinekr/3735535,https://www.girlsfrontline.co.kr/archives/3529.html,https://www.girlsfrontline.co.kr/archives/3549.html;
-2019/12/06 15:00 ~ 2019/12/27 14:59,2019/12/28 00:00 ~ 2019/1/17 23:59,2019/12/28 00:00 ~ 2019/12/29 23:59;
+57;
+2;
+분홍빛 송년회,작전 경험치 1.5배;
+https://www.girlsfrontline.co.kr/archives/3529.html,https://www.girlsfrontline.co.kr/archives/3558.html;
+2019/12/28 00:00 ~ 2020/1/17 23:59,2020/1/10 00:00 ~ 2020/1/15 23:59;

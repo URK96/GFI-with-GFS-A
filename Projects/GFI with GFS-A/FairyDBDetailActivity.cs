@@ -78,6 +78,11 @@ namespace GFI_with_GFS_A
             try
             {
                 MenuInflater.Inflate(Resource.Menu.FairyDBDetailMenu, menu);
+
+                if (fairy.ProductTime == 0)
+                {
+                    menu?.FindItem(Resource.Id.FairyDBDetailProductPercentage).SetVisible(false);
+                }
             }
             catch (Exception ex)
             {

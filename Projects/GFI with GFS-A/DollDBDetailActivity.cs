@@ -183,6 +183,11 @@ namespace GFI_with_GFS_A
             try
             {
                 MenuInflater.Inflate(Resource.Menu.DollDBDetailMenu, menu);
+
+                if (doll.ProductTime == 0)
+                {
+                    menu?.FindItem(Resource.Id.DollDBDetailProductPercentage).SetVisible(false);
+                }
             }
             catch (Exception ex)
             {

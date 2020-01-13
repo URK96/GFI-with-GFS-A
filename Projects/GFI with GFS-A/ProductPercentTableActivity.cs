@@ -6,36 +6,41 @@ using Android.Views;
 using Android.Widget;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Com.Wang.Avi;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "ProductPercentTableActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class ProductPercentTableActivity : BaseFragmentActivity
+    [Activity(Label = "ProductPercentTableActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class ProductPercentTableActivity : BaseAppCompatActivity
     {
         enum Category { Doll, Equip, Fairy }
-        enum ShowMode { Normal, Advance }
+        enum ProductTypeMode { Normal, Advance }
         enum ListMode { TotalCount, Percentage }
 
-        private Category ProductCategory = Category.Doll;
-        private ShowMode Show_Mode = ShowMode.Normal;
-        private ListMode List_Mode = ListMode.Percentage;
+        private Category productCategory = Category.Doll;
+        private ProductTypeMode productTypeMode = ProductTypeMode.Normal;
+        private ListMode listMode = ListMode.Percentage;
 
-        private int Id;
-        private string TopURL = "";
+        private int id;
+        private string topURL = "";
+        private string listM = "";
+        private string typeM = "";
+        private bool isLoading = false;
 
-        private LinearLayout TableMainLayout;
+        private AVLoadingIndicatorView loadingIndicatorView;
+        private TextView loadingIndicatorExplain;
+        private TextView nameToolbarTextView;
+        private TextView modeToolbarTextView;
+        private LinearLayout tableMainLayout;
 
-        private ProgressBar InitLoadProgressBar;
-        private Button ChangeShowMode;
-        private Button ChangeListMode;
+        private double[,] normalData;
+        private double[,] advanceData;
 
-        private double[,] Normal_Data;
-        private double[,] Advance_Data;
-
-        private readonly int[] TopViewIds =
+        private readonly int[] topViewIds =
         {
             Resource.Id.ProductPercentTable_TableTop_Manpower,
             Resource.Id.ProductPercentTable_TableTop_Ammo,
@@ -53,87 +58,114 @@ namespace GFI_with_GFS_A
             base.OnCreate(savedInstanceState);
 
             if (ETC.useLightTheme)
-                SetTheme(Resource.Style.GFS_Light);
+            {
+                SetTheme(Resource.Style.GFS_Toolbar_Light);
+            }
 
             // Create your application here
             SetContentView(Resource.Layout.ProductPercentTableLayout);
 
-            InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.ProductPercentTableInitLoadProgress);
-            ChangeShowMode = FindViewById<Button>(Resource.Id.ProductPercentTableChangeShowModeButton);
-            ChangeShowMode.Click += ChangeModeButton_Click;
-            ChangeListMode = FindViewById<Button>(Resource.Id.ProductPercentTableChangeListModeButton);
-            ChangeListMode.Click += ChangeModeButton_Click;
+            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.ProductPercentTableMainToolbar));
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            TableMainLayout = FindViewById<LinearLayout>(Resource.Id.ProductPercentTable_MainTableLayout);
+            loadingIndicatorView = FindViewById<AVLoadingIndicatorView>(Resource.Id.ProductPercentTableLoadingIndicatorView);
+            loadingIndicatorView.SetIndicator("BallClipRotateMultipleIndicator");
+            loadingIndicatorExplain = FindViewById<TextView>(Resource.Id.ProductPercentTableLoadingIndicatorExplainText);
+            nameToolbarTextView = FindViewById<TextView>(Resource.Id.ProductPercentTableToolbarName);
+            modeToolbarTextView = FindViewById<TextView>(Resource.Id.ProductPercentTableToolbarMode);
+
+            tableMainLayout = FindViewById<LinearLayout>(Resource.Id.ProductPercentTable_MainTableLayout);
 
             string[] data = Intent.GetStringArrayExtra("Info");
 
-            Id = int.Parse(data[1]);
+            id = int.Parse(data[1]);
 
             switch (data[0])
             {
                 case "Doll":
-                    ProductCategory = Category.Doll;
-                    TopURL = "http://db.baka.pw:9999/stats/tdoll/id/";
+                    productCategory = Category.Doll;
+                    topURL = "http://db.baka.pw:9999/stats/tdoll/id/";
+                    nameToolbarTextView.Text = $"Doll No.{id}";
                     break;
                 case "Equip":
-                    ProductCategory = Category.Equip;
-                    TopURL = "http://db.baka.pw:9999/stats/equip/id/";
+                    productCategory = Category.Equip;
+                    topURL = "http://db.baka.pw:9999/stats/equip/id/";
+                    nameToolbarTextView.Text = $"Equip No.{id}";
                     break;
                 case "Fairy":
-                    ProductCategory = Category.Fairy;
-                    TopURL = "http://db.baka.pw:9999/stats/fairy/id/";
-                    Show_Mode = ShowMode.Advance;
-                    ChangeShowMode.Text = Resources.GetString(Resource.String.Common_AdvanceProduct);
+                    productCategory = Category.Fairy;
+                    topURL = "http://db.baka.pw:9999/stats/fairy/id/";
+                    nameToolbarTextView.Text = $"Fairy No.{id}";
                     break;
             }
-            
+
+            typeM = Resources.GetString(Resource.String.ProductPercentTable_ProductType_Normal);
+            listM = Resources.GetString(Resource.String.ProductPercentTable_List_Percentage);
+
+            modeToolbarTextView.Text = $"{typeM} - {listM}";
+
             _ = ProcessData();
         }
 
-        private void ChangeModeButton_Click(object sender, EventArgs e)
+        public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            Button bt = sender as Button;
+            MenuInflater.Inflate(Resource.Menu.ProductPercentTableToolbarMenu, menu);
 
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item?.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    OnBackPressed();
+                    break;
+                case Resource.Id.ProductPercentTableChangeListMode:
+                    ChangeShowMode(0);
+                    break;
+                case Resource.Id.ProductPercentTableChangeProductTypeMode:
+                    ChangeShowMode(1);
+                    break;
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mode">Type Mode (0 : List, 1 : Product Type)</param>
+        private void ChangeShowMode(int mode)
+        {
             try
             {
-                switch (bt.Id)
+                if (isLoading)
                 {
-                    case Resource.Id.ProductPercentTableChangeShowModeButton:
-                        if (Show_Mode == ShowMode.Normal)
-                        {
-                            Show_Mode = ShowMode.Advance;
-                            bt.Text = Resources.GetString(Resource.String.Common_AdvanceProduct);
-                        }
-                        else if (Show_Mode == ShowMode.Advance)
-                        {
-                            Show_Mode = ShowMode.Normal;
-                            bt.Text = Resources.GetString(Resource.String.Common_NormalProduct);
-                        }
-                        else
-                        {
-                            Show_Mode = ShowMode.Normal;
-                            bt.Text = Resources.GetString(Resource.String.Common_NormalProduct);
-                        }
+                    return;
+                }
+
+                switch (mode)
+                {
+                    case 0 when (listMode == ListMode.Percentage):
+                        listMode = ListMode.TotalCount;
+                        listM = Resources.GetString(Resource.String.ProductPercentTable_List_TotalCount);
                         break;
-                    case Resource.Id.ProductPercentTableChangeListModeButton:
-                        if (List_Mode == ListMode.Percentage)
-                        {
-                            List_Mode = ListMode.TotalCount;
-                            bt.Text = Resources.GetString(Resource.String.ProductPercentTable_List_TotalCount);
-                        }
-                        else if (List_Mode == ListMode.TotalCount)
-                        {
-                            List_Mode = ListMode.Percentage;
-                            bt.Text = Resources.GetString(Resource.String.ProductPercentTable_List_Percentage);
-                        }
-                        else
-                        {
-                            List_Mode = ListMode.Percentage;
-                            bt.Text = Resources.GetString(Resource.String.ProductPercentTable_List_Percentage);
-                        }
+                    case 0 when (listMode == ListMode.TotalCount):
+                        listMode = ListMode.Percentage;
+                        listM = Resources.GetString(Resource.String.ProductPercentTable_List_Percentage);
+                        break;
+                    case 1 when (productTypeMode == ProductTypeMode.Normal):
+                        productTypeMode = ProductTypeMode.Advance;
+                        typeM = Resources.GetString(Resource.String.ProductPercentTable_ProductType_Advance);
+                        break;
+                    case 1 when (productTypeMode == ProductTypeMode.Advance):
+                        productTypeMode = ProductTypeMode.Normal;
+                        typeM = Resources.GetString(Resource.String.ProductPercentTable_ProductType_Normal);
                         break;
                 }
+
+                modeToolbarTextView.Text = $"{typeM} - {listM}";
 
                 _ = LoadList();
             }
@@ -149,62 +181,64 @@ namespace GFI_with_GFS_A
 
             try
             {
-                TableMainLayout.RemoveAllViews();
+                isLoading = true;
 
-                ChangeShowMode.Enabled = false;
-                ChangeListMode.Enabled = false;
+                tableMainLayout.RemoveAllViews();
 
-                if (InitLoadProgressBar.Visibility != ViewStates.Visible) InitLoadProgressBar.Visibility = ViewStates.Visible;
-
-                switch (Show_Mode)
+                switch (productTypeMode)
                 {
-                    case ShowMode.Normal:
+                    case ProductTypeMode.Normal:
                     default:
-                        list = new double[(Normal_Data.Length / 8), 8];
-                        list = Normal_Data;
+                        list = new double[(normalData.Length / 8), 8];
+                        list = normalData;
                         break;
-                    case ShowMode.Advance:
-                        list = new double[(Advance_Data.Length / 8), 8];
-                        list = Advance_Data;
+                    case ProductTypeMode.Advance:
+                        list = new double[(advanceData.Length / 8), 8];
+                        list = advanceData;
                         break;
                 }
 
                 list = await SortList(list);
 
-                if (list == null) throw new Exception();
-
-                InitLoadProgressBar.Indeterminate = false;
-                InitLoadProgressBar.Max = list.Length / TopViewIds.Length;
-                InitLoadProgressBar.Progress = 0;
+                if (list == null)
+                {
+                    throw new Exception();
+                }
 
                 await Task.Delay(100);
 
-                for (int i = 0; i < (list.Length / TopViewIds.Length); ++i)
+                for (int i = 0; i < (list.Length / topViewIds.Length); ++i)
                 {
                     LinearLayout layout = new LinearLayout(this)
                     {
                         Orientation = Orientation.Horizontal,
-                        LayoutParameters = TableMainLayout.LayoutParameters
+                        LayoutParameters = tableMainLayout.LayoutParameters
                     };
                     layout.SetGravity(GravityFlags.Center);
 
-                    for (int j = 0; j < TopViewIds.Length; ++j)
+                    for (int j = 0; j < topViewIds.Length; ++j)
                     {
                         TextView tv = new TextView(this)
                         {
-                            LayoutParameters = FindViewById<TextView>(TopViewIds[j]).LayoutParameters
+                            LayoutParameters = FindViewById<TextView>(topViewIds[j]).LayoutParameters,
+                            Gravity = GravityFlags.Center,
+                            Text = (j == 8) ? $"{list[i, j]}%" : list[i, j].ToString()
                         };
 
-                        if (j == 8) tv.Text = string.Format("{0}%", list[i, j]);
-                        else tv.Text = list[i, j].ToString();
+                        /*if (j == 8)
+                        {
+                            tv.Text = string.Format("{0}%", list[i, j]);
+                        }
+                        else
+                        {
+                            tv.Text = list[i, j].ToString();
+                        }*/
 
-                        tv.Gravity = GravityFlags.Center;
                         layout.AddView(tv);
                     }
 
-                    InitLoadProgressBar.Progress += 1;
                     await Task.Delay(1);
-                    TableMainLayout.AddView(layout);
+                    tableMainLayout.AddView(layout);
                 }
 
                 await Task.Delay(100);
@@ -215,56 +249,53 @@ namespace GFI_with_GFS_A
             }
             finally
             {
-                InitLoadProgressBar.Visibility = ViewStates.Invisible;
-                InitLoadProgressBar.Indeterminate = true;
-                ChangeListMode.Enabled = true;
-                ChangeShowMode.Enabled = true;
+                isLoading = false;
             }
         }
 
         private async Task<double[,]> SortList(double[,] list)
         {
-            await Task.Delay(100);
+            await Task.Delay(10);
+
             try
             {
-                double[] temp = new double[TopViewIds.Length];
+                double[] temp = new double[topViewIds.Length];
                 int index = 0;
 
-                switch (List_Mode)
+                index = listMode switch
                 {
-                    case ListMode.Percentage:
-                    default:
-                        index = TopViewIds.Length - 1;
-                        break;
-                    case ListMode.TotalCount:
-                        index = TopViewIds.Length - 2;
-                        break;
-                }
+                    ListMode.TotalCount => topViewIds.Length - 2,
+                    _ => topViewIds.Length - 1,
+                };
 
-                for (int i = 0; i < (list.Length / TopViewIds.Length); ++i)
+                for (int i = 0; i < (list.Length / topViewIds.Length); ++i)
                 {
-                    int max_index = i;
+                    int maxIndex = i;
 
-                    for (int j = i; j < (list.Length / TopViewIds.Length); ++j)
+                    for (int j = i; j < (list.Length / topViewIds.Length); ++j)
                     {
-                        if (list[max_index, index] < list[j, index]) max_index = j;
+                        if (list[maxIndex, index] < list[j, index])
+                        {
+                            maxIndex = j;
+                        }
                     }
 
-                    if (max_index != i)
+                    if (maxIndex != i)
                     {
                         for (int k = 0; k < temp.Length; ++k)
                         {
                             temp[k] = list[i, k];
-                            list[i, k] = list[max_index, k];
-                            list[max_index, k] = temp[k];
+                            list[i, k] = list[maxIndex, k];
+                            list[maxIndex, k] = temp[k];
                         }
                     }
                 }
 
                 return list;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                ETC.LogError(ex, this);
                 return null;
             }
         }
@@ -273,52 +304,64 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                InitLoadProgressBar.Visibility = ViewStates.Visible;
-                InitLoadProgressBar.BringToFront();
+                isLoading = true;
 
-                string url = string.Format("{0}{1}", TopURL, Id);
-                string temp_data;
+                loadingIndicatorExplain.SetText(Resource.String.ProductPercentTable_LoadingText_ReceiveServerData);
+
+                string url = $"{topURL}{id}";
+                string tempData;
 
                 using (WebClient wc = new WebClient())
                 {
-                    temp_data = await wc.DownloadStringTaskAsync(url);
+                    tempData = await wc.DownloadStringTaskAsync(url);
                 }
 
-                StringBuilder sb = new StringBuilder(temp_data);
+                loadingIndicatorExplain.SetText(Resource.String.ProductPercentTable_LoadingText_DataProcess);
+
+                StringBuilder sb = new StringBuilder(tempData);
 
                 sb.Replace("\"formula\":", " ");
 
-                List<int> remove_list = new List<int>();
+                List<int> removeList = new List<int>();
 
                 for (int i = 0; i < sb.Length; ++i)
                 {
-                    if ((sb[i] == '[') || (sb[i] == ']') || (sb[i] == '{') || (sb[i] == '}') || (char.IsWhiteSpace(sb[i]) == true))
+                    if ((sb[i] == '[') || (sb[i] == ']') || (sb[i] == '{') || (sb[i] == '}') || (char.IsWhiteSpace(sb[i])))
                     {
-                        remove_list.Add(i);
+                        removeList.Add(i);
                     }
                 }
 
-                remove_list.TrimExcess();
+                removeList.TrimExcess();
 
                 int count = 0;
 
-                foreach (int index in remove_list)
+                foreach (int index in removeList)
                 {
-                    if ((index - count) >= 0) sb.Remove((index - count), 1);
-                    else sb.Remove(0, 1);
+                    if ((index - count) >= 0)
+                    {
+                        sb.Remove((index - count), 1);
+                    }
+                    else
+                    {
+                        sb.Remove(0, 1);
+                    }
+
                     count += 1;
                 }
 
                 await Task.Delay(100);
 
-                temp_data = sb.ToString();
+                tempData = sb.ToString();
 
-                string[] data = temp_data.Split(',');
+                loadingIndicatorExplain.SetText(Resource.String.ProductPercentTable_LoadingText_DataListing);
 
-                int normal_count = 0;
-                List<int> normal_row = new List<int>();
-                int advance_count = 0;
-                List<int> advance_row = new List<int>();
+                string[] data = tempData.Split(',');
+
+                int normalCount = 0;
+                List<int> normalRow = new List<int>();
+                int advanceCount = 0;
+                List<int> advanceRow = new List<int>();
 
                 for (int i = 0; i < (data.Length / 8); ++i)
                 {
@@ -328,48 +371,54 @@ namespace GFI_with_GFS_A
                     {
                         case 0:
                         default:
-                            normal_count += 1;
-                            normal_row.Add(i);
+                            normalCount += 1;
+                            normalRow.Add(i);
                             break;
                         case 2:
-                            advance_count += 1;
-                            advance_row.Add(i);
+                            advanceCount += 1;
+                            advanceRow.Add(i);
                             break;
                     }
                 }
 
-                normal_row.TrimExcess();
-                advance_row.TrimExcess();
+                normalRow.TrimExcess();
+                advanceRow.TrimExcess();
 
-                Normal_Data = new double[normal_count, 9];
-                Advance_Data = new double[advance_count, 9];
+                normalData = new double[normalCount, 9];
+                advanceData = new double[advanceCount, 9];
 
-                for (int i = 0; i < (Normal_Data.Length / TopViewIds.Length); ++i)
+                for (int i = 0; i < (normalData.Length / topViewIds.Length); ++i)
                 {
-                    int row = normal_row[i];
+                    int row = normalRow[i];
 
                     if (i == 197)
                     {
                         await Task.Delay(1);
                     }
 
-                    for (int j = 0; j < TopViewIds.Length; j++)
+                    for (int j = 0; j < topViewIds.Length; j++)
                     {
-                        if (j == 8) Normal_Data[i, j] = Math.Round(((Normal_Data[i, 6] / Normal_Data[i, 7]) * 100), 4);
-                        else Normal_Data[i, j] = double.Parse(data[((row * 8) + j)].Split(':')[1]);
+                        normalData[i, j] = (j == 8) ? Math.Round(((normalData[i, 6] / normalData[i, 7]) * 100), 4) :
+                            double.Parse(data[((row * 8) + j)].Split(':')[1]);
+
+                        /*if (j == 8) normalData[i, j] = Math.Round(((normalData[i, 6] / normalData[i, 7]) * 100), 4);
+                        else normalData[i, j] = double.Parse(data[((row * 8) + j)].Split(':')[1]);*/
                     }
                 }
 
-                if (advance_count != 0)
+                if (advanceCount != 0)
                 {
-                    for (int i = 0; i < (Advance_Data.Length / TopViewIds.Length); ++i)
+                    for (int i = 0; i < (advanceData.Length / topViewIds.Length); ++i)
                     {
-                        int row = advance_row[i];
+                        int row = advanceRow[i];
 
-                        for (int j = 0; j < TopViewIds.Length; j++)
+                        for (int j = 0; j < topViewIds.Length; j++)
                         {
-                            if (j == 8) Advance_Data[i, j] = Math.Round(((Advance_Data[i, 6] / Advance_Data[i, 7]) * 100), 4);
-                            else Advance_Data[i, j] = int.Parse(data[((row * 8) + j)].Split(':')[1]);
+                            advanceData[i, j] = (j == 8) ? Math.Round(((advanceData[i, 6] / advanceData[i, 7]) * 100), 4) :
+                                int.Parse(data[((row * 8) + j)].Split(':')[1]);
+                            
+                            /*if (j == 8) advanceData[i, j] = Math.Round(((advanceData[i, 6] / advanceData[i, 7]) * 100), 4);
+                            else advanceData[i, j] = int.Parse(data[((row * 8) + j)].Split(':')[1]);*/
                         }
                     }
                 }
@@ -381,8 +430,19 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                InitLoadProgressBar.Visibility = ViewStates.Invisible;
             }
+            finally
+            {
+                loadingIndicatorView.SmoothToHide();
+                loadingIndicatorExplain.Visibility = ViewStates.Gone;
+            }
+        }
+
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+            GC.Collect();
         }
     }
 }

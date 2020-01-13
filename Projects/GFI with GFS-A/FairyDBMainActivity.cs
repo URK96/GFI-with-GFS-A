@@ -100,15 +100,17 @@ namespace GFI_with_GFS_A
         {
             MenuInflater.Inflate(Resource.Menu.FairyDBMenu, menu);
 
-            var cacheItem = menu.FindItem(Resource.Id.RefreshFairyCropImageCache);
-            _ = canRefresh ? cacheItem.SetVisible(true) : cacheItem.SetVisible(false);
+            if (canRefresh)
+            {
+                menu?.FindItem(Resource.Id.RefreshFairyCropImageCache).SetVisible(true);
+            }
 
             return base.OnCreateOptionsMenu(menu);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            switch (item.ItemId)
+            switch (item?.ItemId)
             {
                 case Android.Resource.Id.Home:
                     OnBackPressed();
@@ -119,14 +121,16 @@ namespace GFI_with_GFS_A
                 case Resource.Id.FairyDBMainSort:
                     InitSortBox();
                     break;
-                case Resource.Id.RefreshEquipCropImageCache:
+                case Resource.Id.RefreshFairyCropImageCache:
                     downloadList.Clear();
+
+                    string filePath = "";
 
                     for (int i = 0; i < rootList.Count; ++i)
                     {
-                        string FilePath = Path.Combine(ETC.cachePath, "Fairy", "Normal_Crop", $"{rootList[i].DicNumber}.gfdcache");
+                        filePath = Path.Combine(ETC.cachePath, "Fairy", "Normal_Crop", $"{rootList[i].DicNumber}.gfdcache");
 
-                        if (!File.Exists(FilePath))
+                        if (!File.Exists(filePath))
                         {
                             downloadList.Add(rootList[i].DicNumber);
                         }
@@ -192,16 +196,14 @@ namespace GFI_with_GFS_A
 
         private void ShowDownloadCheckMessage(int title, int message, DownloadProgress method)
         {
-            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG))
-            {
-                ad.SetTitle(title);
-                ad.SetMessage(message);
-                ad.SetCancelable(true);
-                ad.SetPositiveButton(Resource.String.AlertDialog_Download, delegate { method(); });
-                ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+            var ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
+            ad.SetTitle(title);
+            ad.SetMessage(message);
+            ad.SetCancelable(true);
+            ad.SetPositiveButton(Resource.String.AlertDialog_Download, delegate { method(); });
+            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
 
-                ad.Show();
-            }
+            ad.Show();
         }
 
         private async void FairyCropImageDownloadProcess()
@@ -217,15 +219,13 @@ namespace GFI_with_GFS_A
             int pNow = 0;
             int pTotal = 0;
 
-            using (Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload))
-            {
-                pd.SetTitle(Resource.String.DBList_DownloadCropImageTitle);
-                pd.SetCancelable(false);
-                pd.SetView(v);
+            var pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload);
+            pd.SetTitle(Resource.String.DBList_DownloadCropImageTitle);
+            pd.SetCancelable(false);
+            pd.SetView(v);
 
-                dialog = pd.Create();
-                dialog.Show();
-            }
+            dialog = pd.Create();
+            dialog.Show();
 
             try
             {

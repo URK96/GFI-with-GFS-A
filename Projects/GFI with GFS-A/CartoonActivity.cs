@@ -81,24 +81,6 @@ namespace GFI_with_GFS_A
             LoadCategoryList();
         }
 
-        private void LoadCategoryList()
-        {
-            try
-            {
-                categoryList = Resources.GetStringArray(Resource.Array.Cartoon_Category);
-
-                categoryAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, categoryList);
-                drawerListView.Adapter = categoryAdapter;
-
-                mainDrawerLayout.OpenDrawer(GravityCompat.Start);
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                Toast.MakeText(this, "Fail to initialize category list", ToastLength.Short).Show();
-            }
-        }
-
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.CartoonMenu, menu);
@@ -138,6 +120,24 @@ namespace GFI_with_GFS_A
             return base.OnOptionsItemSelected(item);
         }
 
+        private void LoadCategoryList()
+        {
+            try
+            {
+                categoryList = Resources.GetStringArray(Resource.Array.Cartoon_Category);
+
+                categoryAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, categoryList);
+                drawerListView.Adapter = categoryAdapter;
+
+                mainDrawerLayout.OpenDrawer(GravityCompat.Start);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                Toast.MakeText(this, "Fail to initialize category list", ToastLength.Short).Show();
+            }
+        }
+
         private void DrawerListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             try
@@ -173,6 +173,7 @@ namespace GFI_with_GFS_A
                                 case 2:
                                 case 3:
                                 case 4:
+                                case 5:
                                 case 6:
                                 case 9:
                                     _ = (cartoonScreenF as CartoonScreen).LoadProcess(categoryList[categoryIndex], categoryIndex, e.Position - 1, false);

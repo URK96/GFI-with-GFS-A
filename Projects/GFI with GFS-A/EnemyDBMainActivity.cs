@@ -51,7 +51,7 @@ namespace GFI_with_GFS_A
         private RecyclerView.LayoutManager mainLayoutManager;
         private CoordinatorLayout snackbarLayout;
 
-        string searchViewText;
+        string searchViewText = "";
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -324,7 +324,7 @@ namespace GFI_with_GFS_A
                         break;
                 }
 
-                using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
+                using (var FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
                 {
                     FilterBox.SetTitle(Resource.String.DBList_SortBoxTitle);
                     FilterBox.SetView(v);
@@ -361,7 +361,7 @@ namespace GFI_with_GFS_A
                     sortOrder = SortOrder.Ascending;
                 }
 
-                _ = ListEnemy(searchViewText);
+                _ = ListEnemy(searchViewText ?? "");
             }
             catch (Exception ex)
             {
@@ -403,7 +403,7 @@ namespace GFI_with_GFS_A
                     v.FindViewById<CheckBox>(enemyAffiliationFilters[i]).Checked = filterEnemyAffiliation[i];
                 }
 
-                using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
+                using (var FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
                 {
                     FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
                     FilterBox.SetView(v);
@@ -535,7 +535,11 @@ namespace GFI_with_GFS_A
 
                 await Task.Delay(100);
 
-                RunOnUiThread(() => { mEnemyRecyclerView.SetAdapter(adapter); });
+                RunOnUiThread(() => 
+                {
+                    mEnemyRecyclerView.SetAdapter(null);
+                    mEnemyRecyclerView.SetAdapter(adapter); 
+                });
             }
             catch (Exception ex)
             {
@@ -713,58 +717,50 @@ namespace GFI_with_GFS_A
             try
             {
                 int typeIconId = 0;
-                string enemy_type = "";
+                string enemyType = "";
 
                 switch (item.IsBoss)
                 {
                     default:
                     case false:
                         typeIconId = Resource.Drawable.Grade_N;
-                        enemy_type = "NM";
+                        enemyType = "NM";
                         break;
                     case true:
                         typeIconId = Resource.Drawable.Grade_S;
-                        enemy_type = "Boss";
+                        enemyType = "Boss";
                         break;
                 }
                 //vh.TypeIcon.SetImageResource(typeIconId);
 
-                vh.Type.Text = enemy_type;
+                vh.Type.Text = enemyType;
 
                 if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false))
                 {
                     vh.SmallImage.Visibility = ViewStates.Visible;
-                    string FilePath = Path.Combine(ETC.cachePath, "Enemy", "Normal_Crop", $"{item.CodeName}.gfdcache");
+                    string filePath = Path.Combine(ETC.cachePath, "Enemy", "Normal_Crop", $"{item.CodeName}.gfdcache");
 
-                    if (File.Exists(FilePath))
-                        vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(FilePath));
+                    if (File.Exists(filePath))
+                    {
+                        vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(filePath));
+                    }
                 }
-                else vh.SmallImage.Visibility = ViewStates.Gone;
+                else
+                {
+                    vh.SmallImage.Visibility = ViewStates.Gone;
+                }
 
                 int affiliationIconId = 0;
 
-                switch (item.Affiliation)
+                affiliationIconId = item.Affiliation switch
                 {
-                    case "SANGVIS FERRI":
-                        affiliationIconId = Resource.Drawable.SFLogo;
-                        break;
-                    default:
-                    case "I.O.P Manufacturing Company":
-                        affiliationIconId = Resource.Drawable.IOPLogo;
-                        break;
-                    case "Mind Map System":
-                        affiliationIconId = Resource.Drawable.IOPLogo;
-                        break;
-                    case "KCCO":
-                        affiliationIconId = Resource.Drawable.KCCOLogo;
-                        break;
-                    case "Paradeus":
-                        affiliationIconId = Resource.Drawable.ParadeusLogo;
-                        break;
-                    case "E.L.I.D.":
-                        affiliationIconId = Resource.Drawable.ELIDLogo;
-                        break;
-                }
+                    "SANGVIS FERRI" => Resource.Drawable.SFLogo,
+                    "Mind Map System" => Resource.Drawable.IOPLogo,
+                    "KCCO" => Resource.Drawable.KCCOLogo,
+                    "Paradeus" => Resource.Drawable.ParadeusLogo,
+                    "E.L.I.D." => Resource.Drawable.ELIDLogo,
+                    _ => Resource.Drawable.IOPLogo,
+                };
                 vh.AffiliationImage.SetImageResource(affiliationIconId);
 
                 vh.Name.Text = item.Name;

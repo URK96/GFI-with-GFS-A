@@ -3,6 +3,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+	<android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:background="@color/MainColor"
+        android:id="@+id/StoryReaderMainToolbar" >
+		<TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+			android:id="@+id/StoryReaderNowStoryText"/>
+	</android.support.v7.widget.Toolbar>
 	<ProgressBar
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -10,47 +20,13 @@
 		android:indeterminateOnly="true"
 		android:visibility="invisible"
 		android:id="@+id/StoryReaderLoadProgress"/>
-	<LinearLayout
-		android:orientation="horizontal"
+	<ScrollView 
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
-		<Button
-			android:layout_width="wrap_content"
+		android:layout_height="match_parent">
+		<TextView 
+			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:text="@string/Common_Previous"
-			android:id="@+id/StoryReaderPreviousButton"/>
-		<TextView
-			android:layout_width="0dp"
-			android:layout_height="match_parent"
-			android:layout_weight="1"
-			android:text=""
 			android:textAppearance="?android:attr/textAppearanceMedium"
-			android:ellipsize="marquee"
-			android:marqueeRepeatLimit="marquee_forever"
-			android:singleLine="true"
-			android:gravity="center"
-			android:id="@+id/StoryReaderNowStoryText"/>
-		<Button
-			android:layout_width="wrap_content"
-			android:layout_height="match_parent"
-			android:text="@string/Common_Next"
-			android:id="@+id/StoryReaderNextButton"/>
-		<ImageButton
-			android:layout_width="wrap_content"
-			android:layout_height="match_parent"
-			android:text=""
-			android:src="@drawable/refreshicon"
-			android:scaleType="fitCenter"
-			android:enabled="false"
-			android:id="@+id/StoryReaderRefreshButton"/>
-	</LinearLayout>
-<ScrollView 
-	android:layout_width="match_parent"
-	android:layout_height="match_parent">
-	<TextView 
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-		android:id="@+id/StoryReaderMainTextView"/>
-</ScrollView>
+			android:id="@+id/StoryReaderMainTextView"/>
+	</ScrollView>
 </LinearLayout>

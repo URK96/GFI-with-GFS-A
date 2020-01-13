@@ -482,6 +482,13 @@
     <item>91 - 술이 떨어진 M16</item>
     <item>92 - 예림이! 그 패 봐봐, 혹시 장이야?</item>
     <item>93 - 설원 탐색 임무</item>
+    <item>94 - 그리폰의 알바 아키텍트</item>
+    <item>95 - 신데렐라</item>
+    <item>96 - 왕자님의 정체</item>
+    <item>97 - 지휘관은 누구를 좋아하나?</item>
+    <item>98 - 에이전트, 위기에 처하다!</item>
+    <item>99 - 고문을 견디는 에이전트</item>
+    <item>100 - 에이전트는 더 이상 치마를 들추지 못해</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -579,5 +586,12 @@
     <item>http://naver.me/F2cXIw4T</item>
     <item>http://naver.me/Fq9sQk7h</item>
     <item>http://naver.me/Fkb09rgW</item>
+    <item>http://naver.me/x4Cpk1LP</item>
+    <item>http://naver.me/5PRahcrW</item>
+    <item>http://naver.me/FcUAf7EI</item>
+    <item>http://naver.me/xiABg3fL</item>
+    <item>http://naver.me/xZmpzRY9</item>
+    <item>http://naver.me/F9LropBT</item>
+    <item>http://naver.me/GvryfeeF</item>
   </string-array>
 </resources>

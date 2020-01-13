@@ -1,41 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/ProductPercentTableMainLayout">
-    <ProgressBar
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="@id/ProductPercentTableMainLayout"
-        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-        android:visibility="invisible"
-        android:indeterminate="true"
-        android:id="@+id/ProductPercentTableInitLoadProgress" />
+        android:layout_height="match_parent">
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/ProductPercentTableLoadingIndicatorView"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_below="@id/ProductPercentTableLoadingIndicatorView"
+            android:id="@+id/ProductPercentTableLoadingIndicatorExplainText"/>
+    </RelativeLayout>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
-            android:orientation="horizontal"
+        <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/ProductPercentTableControlMainLayout">
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:enabled="false"
-                android:text="@string/Common_NormalProduct"
-                android:id="@+id/ProductPercentTableChangeShowModeButton" />
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:enabled="false"
-                android:text="@string/ProductPercentTable_List_Percentage"
-                android:id="@+id/ProductPercentTableChangeListModeButton" />
-        </LinearLayout>
+            android:minHeight="?android:attr/actionBarSize"
+            android:background="@color/MainColor"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:id="@+id/ProductPercentTableMainToolbar">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/ProductPercentTableToolbarName"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/ProductPercentTableToolbarMode"/>
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
