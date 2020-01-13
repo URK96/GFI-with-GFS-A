@@ -16,20 +16,19 @@ using Microsoft.AppCenter.Push;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using Xamarin.Essentials;
-using Plugin.SimpleAudioPlayer;
 
 namespace GFI_with_GFS_A
 {
     internal static class ETC
     {
         internal static string server = "http://chlwlsgur96.ipdisk.co.kr/publist/HDD1/Data/Project/GFS/";
-        internal static string sdCardPath = (string)Android.OS.Environment.ExternalStorageDirectory;
-        internal static string tempPath = Path.Combine(sdCardPath, "GFDTemp");
-        internal static string appDataPath = Path.Combine(sdCardPath, "Android", "data", "com.gfl.dic");
-        internal static string dbPath = Path.Combine(appDataPath, "DB");
-        internal static string systemPath = Path.Combine(appDataPath, "System");
-        internal static string cachePath = Path.Combine(appDataPath, "Cache");
-        internal static string logPath = Path.Combine(systemPath, "Log");
+        internal static string sdCardPath;
+        internal static string tempPath;
+        internal static string appDataPath;
+        internal static string dbPath;
+        internal static string systemPath;
+        internal static string cachePath;
+        internal static string logPath;
 
         internal static bool isReleaseMode = true;
         internal static bool hasInitDollAvgAbility = false;
@@ -64,10 +63,6 @@ namespace GFI_with_GFS_A
         };
 
         internal static AverageAbility[] avgList;
-
-        internal static ISimpleAudioPlayer ostPlayer;
-        internal static Service ostService;
-        internal static int[] ostIndex = { 0, 0 };
 
         internal static Java.Util.Locale locale; // ko, en
         internal static Android.Content.Res.Resources Resources = null;
@@ -213,12 +208,20 @@ namespace GFI_with_GFS_A
             isReleaseMode = false;
 #endif
 
-            sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(context);
+            sharedPreferences = Android.Support.V7.Preferences.PreferenceManager.GetDefaultSharedPreferences(context);
             useLightTheme = sharedPreferences.GetBoolean("UseLightTheme", false);
             SetDialogTheme();
             SetLanguage(context);
             Resources = baseContext.Resources;
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTg2NDEyQDMxMzcyZTM0MmUzMHBENmM5Wk42Zyt4dVNVZm1qUTVhTW9DeWtBTFJLY1RGekRnMTgxOEpiQ3c9");
+
+            sdCardPath = baseContext.GetExternalFilesDir(null).AbsolutePath; //(string)Android.OS.Environment.ExternalStorageDirectory;
+            tempPath = Path.Combine(sdCardPath, "GFDTemp");
+            appDataPath = Path.Combine(sdCardPath, "Android", "data", "com.gfl.dic");
+            dbPath = Path.Combine(appDataPath, "DB");
+            systemPath = Path.Combine(appDataPath, "System");
+            cachePath = Path.Combine(appDataPath, "Cache");
+            logPath = Path.Combine(systemPath, "Log");
 
             if (isReleaseMode)
             {
@@ -234,23 +237,14 @@ namespace GFI_with_GFS_A
         {
             int langIndex = int.Parse(ETC.sharedPreferences.GetString("AppLanguage", "0"));
 
-            Java.Util.Locale locale;
-
-            switch (langIndex)
+            var locale = langIndex switch
             {
-                default:
-                case 0:
-                    locale = Java.Util.Locale.Default;
-                    break;
-                case 1:
-                    locale = Java.Util.Locale.Korea;
-                    break;
-                case 2:
-                    locale = Java.Util.Locale.Us;
-                    break;
-            }
+                1 => Java.Util.Locale.Korea,
+                2 => Java.Util.Locale.Us,
+                _ => Java.Util.Locale.Default,
+            };
 
-            Android.Content.Res.Configuration config = new Android.Content.Res.Configuration
+            var config = new Android.Content.Res.Configuration
             {
                 Locale = locale
             };
@@ -281,11 +275,9 @@ namespace GFI_with_GFS_A
         {
             await Task.Delay(100);
 
-            Uri uri;
-
             try
             {
-                _ = Uri.TryCreate(server, UriKind.RelativeOrAbsolute, out uri);
+                _ = Uri.TryCreate(server, UriKind.RelativeOrAbsolute, out Uri uri);
                 HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
                 request.Method = "HEAD";
 
@@ -417,8 +409,10 @@ namespace GFI_with_GFS_A
                 Path.Combine(cachePath, "Doll", "Normal_Crop"),
                 Path.Combine(cachePath, "Doll", "Normal"),
                 Path.Combine(cachePath, "Doll", "Skill"),
+                Path.Combine(cachePath, "Doll", "ProductData"),
                 Path.Combine(cachePath, "Equip"),
                 Path.Combine(cachePath, "Equip", "Normal"),
+                Path.Combine(cachePath, "Equip", "ProductData"),
                 Path.Combine(cachePath, "Fairy"),
                 Path.Combine(cachePath, "Fairy", "Normal"),
                 Path.Combine(cachePath, "Fairy", "Normal_Crop"),
@@ -584,16 +578,14 @@ namespace GFI_with_GFS_A
             ProgressBar nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
             TextView nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
 
-            using (Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(activity, dialogBGDownload))
-            {
-                pd.SetTitle(titleMsg);
-                pd.SetMessage(Resources.GetString(messageMgs));
-                pd.SetView(v);
-                pd.SetCancelable(false);
+            var pd = new Android.Support.V7.App.AlertDialog.Builder(activity, dialogBGDownload);
+            pd.SetTitle(titleMsg);
+            pd.SetMessage(Resources.GetString(messageMgs));
+            pd.SetView(v);
+            pd.SetCancelable(false);
 
-                dialog = pd.Create();
-                dialog.Show();
-            }
+            dialog = pd.Create();
+            dialog.Show();
 
             await Task.Delay(100);
 
@@ -692,21 +684,23 @@ namespace GFI_with_GFS_A
             catch (Exception)
             {
                 if (activity != null)
+                {
                     activity.RunOnUiThread(() => { Toast.MakeText(activity, "Error Write Log", ToastLength.Long).Show(); });
+                }
             }
         }
 
         internal static void ShowSnackbar(View v, string message, int time)
         {
             Snackbar sb = Snackbar.Make(v, message, time);
-            v.BringToFront();
+            //v.BringToFront();
             MainThread.BeginInvokeOnMainThread(() => { sb.Show(); });
         }
         
         internal static void ShowSnackbar(View v, string message, int time, Android.Graphics.Color color)
         {
             Snackbar sb = Snackbar.Make(v, message, time);
-            v.BringToFront();
+            //v.BringToFront();
             sb.View.SetBackgroundColor(color);
             MainThread.BeginInvokeOnMainThread(() => { sb.Show(); });
         }
@@ -714,26 +708,21 @@ namespace GFI_with_GFS_A
         internal static void ShowSnackbar(View v, int stringResource, int time)
         {
             Snackbar sb = Snackbar.Make(v, stringResource, time);
-            v.BringToFront();
+            //v.BringToFront();
             MainThread.BeginInvokeOnMainThread(() => { sb.Show(); });
         }
 
         internal static void ShowSnackbar(View v, int stringResource, int time, Android.Graphics.Color color)
         {
             Snackbar sb = Snackbar.Make(v, stringResource, time);
-            v.BringToFront();
+            //v.BringToFront();
             sb.View.SetBackgroundColor(color);
             MainThread.BeginInvokeOnMainThread(() => { sb.Show(); });
         }
 
-        internal static string CalcTime(int minute)
-        {
-            return (minute != 0) ? $"{minute / 60} : {(minute % 60).ToString("D2")}" : Resources.GetString(Resource.String.Common_NonProduct);
-        }
+        internal static string CalcTime(int minute) => (minute != 0) ? $"{minute / 60} : {(minute % 60).ToString("D2")}" : Resources.GetString(Resource.String.Common_NonProduct);
 
-        internal static bool IsDBNullOrBlank(DataRow dr, string index)
-        {
-            return ((dr[index] == DBNull.Value) || (string.IsNullOrWhiteSpace((string)dr[index])));        }
+        internal static bool IsDBNullOrBlank(DataRow dr, string index) => (dr[index] == DBNull.Value) || string.IsNullOrWhiteSpace((string)dr[index]);
 
         /// <summary>
         /// File Copy Temporary Replace Method
@@ -763,9 +752,11 @@ namespace GFI_with_GFS_A
             double dCriticalRate = criticalRate / 100.0;
             double aps = 29.999994 / Math.Floor(1500.0 / attackSpeed);
 
-            double[] power = { 0, 0 };
-            power[0] = Math.Max(fireRate * 0.85 + Math.Min(penetration - enemyArmor, 2), 1);
-            power[1] = Math.Max(fireRate * 1.15 + Math.Min(penetration - enemyArmor, 2), 1);
+            double[] power = 
+            {
+                Math.Max(fireRate * 0.85 + Math.Min(penetration - enemyArmor, 2), 1),
+                Math.Max(fireRate * 1.15 + Math.Min(penetration - enemyArmor, 2), 1)
+            };
 
             double[] normalDamage = { Math.Round(power[0]), Math.Round(power[1]) };
             double[] criticalDamage = { Math.Round(power[0] * dCriticalRate), Math.Round(power[1] * dCriticalRate) };

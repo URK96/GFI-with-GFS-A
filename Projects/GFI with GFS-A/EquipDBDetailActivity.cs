@@ -79,6 +79,11 @@ namespace GFI_with_GFS_A
             try
             {
                 MenuInflater.Inflate(Resource.Menu.EquipDBDetailMenu, menu);
+
+                if (equip.ProductTime == 0)
+                {
+                    menu?.FindItem(Resource.Id.EquipDBDetailProductPercentage).SetVisible(false);
+                }
             }
             catch (Exception ex)
             {

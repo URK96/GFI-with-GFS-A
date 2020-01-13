@@ -102,7 +102,7 @@ namespace GFI_with_GFS_A
         {
             MenuInflater.Inflate(Resource.Menu.DollDBMenu, menu);
 
-            var cacheItem = menu.FindItem(Resource.Id.RefreshDollCropImageCache);
+            var cacheItem = menu?.FindItem(Resource.Id.RefreshDollCropImageCache);
             _ = canRefresh ? cacheItem.SetVisible(true) : cacheItem.SetVisible(false);
 
             return base.OnCreateOptionsMenu(menu);
@@ -190,16 +190,14 @@ namespace GFI_with_GFS_A
 
         private void ShowDownloadCheckMessage(int title, int message, DownloadProgress method)
         {
-            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG))
-            {
-                ad.SetTitle(title);
-                ad.SetMessage(message);
-                ad.SetCancelable(true);
-                ad.SetPositiveButton(Resource.String.AlertDialog_Download, delegate { method(); });
-                ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+            var ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
+            ad.SetTitle(title);
+            ad.SetMessage(message);
+            ad.SetCancelable(true);
+            ad.SetPositiveButton(Resource.String.AlertDialog_Download, delegate { method(); });
+            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
 
-                ad.Show();
-            }
+            ad.Show();
         }
 
         private async void DollCropImageDownloadProcess()
@@ -215,15 +213,13 @@ namespace GFI_with_GFS_A
             int pNow = 0;
             int pTotal = 0;
 
-            using (Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload))
-            {
-                pd.SetTitle(Resource.String.DBList_DownloadCropImageTitle);
-                pd.SetCancelable(false);
-                pd.SetView(v);
+            var pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload);   
+            pd.SetTitle(Resource.String.DBList_DownloadCropImageTitle);
+            pd.SetCancelable(false);
+            pd.SetView(v);
 
-                dialog = pd.Create();
-                dialog.Show();
-            }
+            dialog = pd.Create();
+            dialog.Show();
 
             try
             {
@@ -314,16 +310,14 @@ namespace GFI_with_GFS_A
                         break;
                 }
 
-                using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
-                {
-                    FilterBox.SetTitle(Resource.String.DBList_SortBoxTitle);
-                    FilterBox.SetView(v);
-                    FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplySort(v); });
-                    FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                    FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetSort(); });
+                var FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical);
+                FilterBox.SetTitle(Resource.String.DBList_SortBoxTitle);
+                FilterBox.SetView(v);
+                FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplySort(v); });
+                FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetSort(); });
 
-                    FilterBox.Show();
-                }
+                FilterBox.Show();
             }
             catch (Exception ex)
             {
@@ -400,16 +394,14 @@ namespace GFI_with_GFS_A
                 }
                 v.FindViewById<CheckBox>(modFilter).Checked = filterMod;
 
-                using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
-                {
-                    FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
-                    FilterBox.SetView(v);
-                    FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
-                    FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                    FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(); });
+                var FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical);
+                FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
+                FilterBox.SetView(v);
+                FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
+                FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(); });
 
-                    FilterBox.Show();
-                }
+                FilterBox.Show();
             }
             catch (Exception ex)
             {
@@ -536,11 +528,9 @@ namespace GFI_with_GFS_A
                         continue;
                     }
 
-                    if (searchText != "")
+                    if (string.IsNullOrWhiteSpace(searchText))
                     {
-                        string name = doll.Name.ToUpper();
-
-                        if (!name.Contains(searchText))
+                        if (!doll.Name.ToUpper().Contains(searchText))
                         {
                             continue;
                         }
@@ -572,6 +562,7 @@ namespace GFI_with_GFS_A
         private async void Adapter_ItemClick(object sender, int position)
         {
             await Task.Delay(100);
+
             var DollInfo = new Intent(this, typeof(DollDBDetailActivity));
             DollInfo.PutExtra("DicNum", subList[position].DicNumber);
             StartActivity(DollInfo) ;
@@ -581,16 +572,18 @@ namespace GFI_with_GFS_A
         private bool CheckDollByProductTime(int[] pTime, int range, int dTime)
         {
             int pTimeM = (pTime[0] * 60) + pTime[1];
+            int minTime = pTimeM - range;
+            int maxTime = pTimeM + range;
 
-            for (int i = (pTimeM - range); i <= (pTimeM + range); ++i)
+            /*for (int i = (pTimeM - range); i <= (pTimeM + range); ++i)
             {
                 if (dTime == i)
                 {
                     return true;
                 }
-            }
+            }*/
 
-            return false;
+            return ((minTime <= dTime) && (dTime <= maxTime));
         }
 
         private int SortDoll(Doll x, Doll y)
@@ -641,15 +634,15 @@ namespace GFI_with_GFS_A
                     else
                     {
                         string[] abilities = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
-                        DollAbilitySet DAS = new DollAbilitySet(x.Type);
+                        DollAbilitySet das = new DollAbilitySet(x.Type);
 
-                        string[] xGrowRatio = x.Abilities["Grow"].Split(';');
-                        string[] xBasicRatio = x.Abilities[abilities[(int)sortType - 3]].Split(';');
-                        int xValue = DAS.CalcAbility(abilities[(int)sortType - 3], int.Parse(xBasicRatio[0]), int.Parse(xGrowRatio[0]), 100, 90, false);
+                        int xGrowRatio = int.Parse(x.Abilities["Grow"].Split(';')[0]);
+                        int xBasicRatio = int.Parse(x.Abilities[abilities[(int)sortType - 3]].Split(';')[0]);
+                        int xValue = das.CalcAbility(abilities[(int)sortType - 3], xBasicRatio, xGrowRatio, 100, 90, false);
 
-                        string[] yGrowRatio = y.Abilities["Grow"].Split(';');
-                        string[] yBasicRatio = y.Abilities[abilities[(int)sortType - 3]].Split(';');
-                        int yValue = DAS.CalcAbility(abilities[(int)sortType - 3], int.Parse(yBasicRatio[0]), int.Parse(yGrowRatio[0]), 100, 90, false);
+                        int yGrowRatio = int.Parse(y.Abilities["Grow"].Split(';')[0]);
+                        int yBasicRatio = int.Parse(y.Abilities[abilities[(int)sortType - 3]].Split(';')[0]);
+                        int yValue = das.CalcAbility(abilities[(int)sortType - 3], yBasicRatio, yGrowRatio, 100, 90, false);
 
                         return xValue.CompareTo(yValue);
                     }
@@ -773,7 +766,7 @@ namespace GFI_with_GFS_A
             Name = view.FindViewById<TextView>(Resource.Id.DollListName);
             ProductTime = view.FindViewById<TextView>(Resource.Id.DollListProductTime);
 
-            view.Click += (sender, e) => listener(base.LayoutPosition);
+            view.Click += (sender, e) => listener(LayoutPosition);
         }
     }
 
@@ -793,8 +786,8 @@ namespace GFI_with_GFS_A
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
             View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.DollListLayout, parent, false);
+            var vh = new DollListViewHolder(view, OnClick);
 
-            DollListViewHolder vh = new DollListViewHolder(view, OnClick);
             return vh;
         }
 
@@ -805,22 +798,17 @@ namespace GFI_with_GFS_A
 
         void OnClick(int position)
         {
-            if (ItemClick != null)
-            {
-                ItemClick(this, position);
-            }
+            ItemClick?.Invoke(this, position);
         }
 
         public bool HasOnItemClick()
         {
-            if (ItemClick == null) return false;
-            else return true;
+            return !(ItemClick == null);
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            DollListViewHolder vh = holder as DollListViewHolder;
-
+            var vh = holder as DollListViewHolder;
             var item = items[position];
 
             try
@@ -830,10 +818,16 @@ namespace GFI_with_GFS_A
                 if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
                 {
                     vh.SmallImage.Visibility = ViewStates.Visible;
-                    if (File.Exists(Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{item.DicNumber}.gfdcache")) == true)
+
+                    if (File.Exists(Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{item.DicNumber}.gfdcache")))
+                    {
                         vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{item.DicNumber}.gfdcache")));
+                    }
                 }
-                else vh.SmallImage.Visibility = ViewStates.Gone;
+                else
+                {
+                    vh.SmallImage.Visibility = ViewStates.Gone;
+                }
 
                 vh.Grade.SetImageResource(item.GradeIconId);
                 vh.Type.Text = item.Type;

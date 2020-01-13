@@ -580,9 +580,9 @@ namespace GFI_with_GFS_A
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     case 2:
-                        ETC.ShowSnackbar(snackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
-                        //StartActivity(typeof(GFOSTPlayerActivity));
-                        //OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                        //ETC.ShowSnackbar(snackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
+                        StartActivity(typeof(GFOSTPlayerActivity));
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                     default:
                         ETC.ShowSnackbar(snackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);

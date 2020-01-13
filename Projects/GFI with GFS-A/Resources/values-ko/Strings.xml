@@ -359,8 +359,15 @@
   <string name="DollDBMainActivity_SearchHint">인형 이름 검색</string>
   
   <!--ProductPercentTable-->
-  <string name="ProductPercentTable_List_TotalCount">시도 횟수 우선</string>
-  <string name="ProductPercentTable_List_Percentage">확률 우선</string>
+  <string name="ProductPercentTable_List_TotalCount">시도 횟수</string>
+  <string name="ProductPercentTable_List_Percentage">제조 확률</string>
+  <string name="ProductPercentTable_ProductType_Normal">일반</string>
+  <string name="ProductPercentTable_ProductType_Advance">중형</string>
+  <string name="ProductPercentTable_ToolbarMenu_ListMode">목록 모드</string>
+  <string name="ProductPercentTable_ToolbarMenu_ProductTypeMode">제조 방식 모드</string>
+  <string name="ProductPercentTable_LoadingText_ReceiveServerData">서버 데이터 받는 중...</string>
+  <string name="ProductPercentTable_LoadingText_DataProcess">데이터 처리 중...</string>
+  <string name="ProductPercentTable_LoadingText_DataListing">데이터 정렬 중...</string>
   
   <!--EnemyDBDetail-->
   <string name="EnemyDBDetail_Boss">보스</string>

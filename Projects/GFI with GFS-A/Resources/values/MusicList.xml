@@ -1,5 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
+  <string-array name="MusicCategory">
+    <item>@string/Music_Category_Normal</item>
+    <item>@string/Music_Category_ContinuumTurbulence</item>
+    <item>@string/Music_Category_Cube</item>
+    <item>@string/Music_Category_DeepDive</item>
+    <item>@string/Music_Category_DJMAX</item>
+    <item>@string/Music_Category_GuiltyGear</item>
+    <item>@string/Music_Category_Houkai2</item>
+    <item>@string/Music_Category_Hypothermia</item>
+    <item>@string/Music_Category_Singularity</item>
+  </string-array>
+
+  <string-array name="MusicCategory_RealPath">
+    <item>Normal</item>
+    <item>Continuum Turbulence</item>
+    <item>Cube</item>
+    <item>Deep Dive</item>
+    <item>DJMAX</item>
+    <item>GuiltyGear</item>
+    <item>Houkai2</item>
+    <item>Hypothermia</item>
+    <item>Singularity</item>
+  </string-array>
+  
   <string-array name="Normal">
     <item>(Area 0) Frontline</item>
     <item>(Area 0) War</item>

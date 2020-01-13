@@ -5,17 +5,17 @@
     <item
       android:title="@string/Common_ExpItem"
       android:id="@+id/CalcNavigation_ExpItem"/>
-  <item
+    <item
       android:title="@string/Common_Core"
       android:id="@+id/CalcNavigation_Core"/>
-<item
+    <item
       android:title="@string/Common_SkillTraining"
       android:id="@+id/CalcNavigation_SkillTraining"/>
     <item
-          android:title="@string/Common_FSTGradeUp"
-          android:id="@+id/CalcNavigation_FSTGradeUp"/>
+      android:title="@string/Common_FSTGradeUp"
+      android:id="@+id/CalcNavigation_FSTGradeUp"/>
     <item
-          android:title="@string/Common_AreaExp"
-          android:id="@+id/CalcNavigation_AreaExp"/>
+      android:title="@string/Common_AreaExp"
+      android:id="@+id/CalcNavigation_AreaExp"/>
   </group>
 </menu>

@@ -13,6 +13,7 @@ using System.IO;
 using System.Threading.Tasks;
 
 using Xamarin.Essentials;
+using MohammedAlaa.GifLoading;
 
 namespace GFI_with_GFS_A
 {
@@ -20,11 +21,9 @@ namespace GFI_with_GFS_A
     [Activity(MainLauncher = true, Label = "@string/App_TitleName", Theme = "@style/GFS.Splash", ScreenOrientation = ScreenOrientation.Portrait)]
     public class SplashScreen : BaseAppCompatActivity
     {
-        private CoordinatorLayout SnackbarLayout;
-        private ImageView SplashImageView;
-        private TextView StatusText;
+        private TextView statusText;
 
-        private ISharedPreferencesEditor PreferenceEditor;
+        private ISharedPreferencesEditor preferenceEditor;
 
         protected override void AttachBaseContext(Context @base)
         {
@@ -41,31 +40,40 @@ namespace GFI_with_GFS_A
 
                 if (ETC.useLightTheme)
                 {
-                    SetTheme(Resource.Style.GFS_Splash_Light);
+                    SetTheme(Resource.Style.GFS_Toolbar_Light);
+                }
+                else
+                {
+                    SetTheme(Resource.Style.GFS_Toolbar);
                 }
 
                 SetContentView(Resource.Layout.SplashLayout);
 
                 //ETC.BasicInitializeApp(this);
-                PreferenceEditor = ETC.sharedPreferences.Edit();
+                preferenceEditor = ETC.sharedPreferences.Edit();
 
-                SplashImageView = FindViewById<ImageView>(Resource.Id.SplashImageView);
-
-                Random r = new Random(DateTime.Now.Millisecond);
+                /*Random r = new Random(DateTime.Now.Millisecond);
 
                 if ((ETC.sharedPreferences.GetInt("SplashBG_Index", 0) == 1) || ((r.Next() % 20) == 0))
+                {
                     SplashImageView.SetImageResource(Resource.Drawable.Splash_Special);
+                }
                 else
+                {
                     SplashImageView.SetImageResource(Resource.Drawable.SplashBG2);
-
-                StatusText = FindViewById<TextView>(Resource.Id.SplashStatusText);
+                }*/
+                statusText = FindViewById<TextView>(Resource.Id.SplashStatusText);
 
                 // Check Permission
 
                 if (int.Parse(Build.VERSION.Release.Split('.')[0]) >= 6)
+                {
                     CheckPermission();
+                }
                 else
+                {
                     _ = InitProcess();
+                }
             }
             catch (Exception ex)
             {
@@ -76,8 +84,6 @@ namespace GFI_with_GFS_A
 
         private async Task InitProcess()
         {
-            SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.SplashSnackbarLayout);
-
             await Task.Delay(500);
 
             try
@@ -86,10 +92,12 @@ namespace GFI_with_GFS_A
 
                 FindViewById<TextView>(Resource.Id.SplashAppVersion).Text = $"v{AppInfo.VersionString}({AppInfo.BuildString})";
 
-                await ETC.AnimateText(StatusText, "Initializing");
+                await ETC.AnimateText(statusText, "Initializing");
 
                 if (ETC.sharedPreferences.GetBoolean("CheckInitLowMemory", true))
+                {
                     CheckDeviceMemory();
+                }
 
                 ETC.isLowRAM = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);
               
@@ -100,28 +108,34 @@ namespace GFI_with_GFS_A
 
                 if (!CheckDBFiles())
                 {
-                    await ETC.AnimateText(StatusText, "Download DB First");
+                    await ETC.AnimateText(statusText, "Download DB First");
 
                     try
                     {
                         await ETC.CheckServerNetwork();
 
                         if (!ETC.isServerDown)
+                        {
                             await ETC.UpdateDB(this);
+                        }
                         else
+                        {
                             throw new Exception("Server is down");
+                        }
                     }
                     catch (Exception ex)
                     {
                         ETC.LogError(ex, this);
-                        ETC.ShowSnackbar(SnackbarLayout, Resource.String.Splash_SkipCheckUpdate, 1000, Android.Graphics.Color.DarkBlue);
+                        Toast.MakeText(this, Resource.String.Splash_SkipCheckUpdate, ToastLength.Long).Show();
                     }
                 }
 
                 try
                 {
                     using (StreamReader sr = new StreamReader(new FileStream(Path.Combine(ETC.systemPath, "DBVer.txt"), FileMode.Open, FileAccess.Read)))
-                        int.TryParse(sr.ReadToEnd(), out ETC.dbVersion);
+                    {
+                        _ = int.TryParse(sr.ReadToEnd(), out ETC.dbVersion);
+                    }
                 }
                 catch (Exception)
                 {
@@ -131,11 +145,6 @@ namespace GFI_with_GFS_A
 
                 // Finalize & Start Main
 
-                SnackbarLayout?.Dispose();
-                SplashImageView?.Dispose();
-                StatusText?.Dispose();
-                PreferenceEditor?.Dispose();
-
                 StartActivity(typeof(Main));
                 OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
                 Finish();
@@ -143,7 +152,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.InitLoad_Error, Snackbar.LengthIndefinite, Android.Graphics.Color.DarkRed);
+                Toast.MakeText(this, Resource.String.InitLoad_Error, ToastLength.Long).Show();
             }
             finally
             {
@@ -159,20 +168,28 @@ namespace GFI_with_GFS_A
                 ArrayList request = new ArrayList();
 
                 foreach (string permission in check)
+                {
                     if (CheckSelfPermission(permission) == Permission.Denied)
+                    {
                         request.Add(permission);
+                    }
+                }
 
                 request.TrimToSize();
 
                 if (request.Count == 0)
+                {
                     _ = InitProcess();
+                }
                 else
+                {
                     RequestPermissions((string[])request.ToArray(typeof(string)), 0);
+                }
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.Permission_Error, Snackbar.LengthIndefinite, Android.Graphics.Color.DarkMagenta);
+                Toast.MakeText(this, Resource.String.Permission_Error, ToastLength.Long).Show();
             }
         }
 
@@ -201,38 +218,42 @@ namespace GFI_with_GFS_A
 
             if (totalRam <= 2048)
             {
-                PreferenceEditor.PutBoolean("LowMemoryOption", true);
-                PreferenceEditor.PutBoolean("DBListImageShow", false);
-                PreferenceEditor.PutBoolean("DBDetailBackgroundImage", false);
+                preferenceEditor.PutBoolean("LowMemoryOption", true);
+                preferenceEditor.PutBoolean("DBListImageShow", false);
+                preferenceEditor.PutBoolean("DBDetailBackgroundImage", false);
             }
 
-            PreferenceEditor.PutBoolean("CheckInitLowMemory", false);
-            PreferenceEditor.Apply();
+            preferenceEditor.PutBoolean("CheckInitLowMemory", false);
+            preferenceEditor.Apply();
         }
 
         private bool CheckDBFiles()
         {
             foreach (string s in ETC.dbFiles)
+            {
                 if (!File.Exists(Path.Combine(ETC.dbPath, s)))
+                {
                     return false;
+                }
+            }
 
             return true;
         }
 
         public override void OnBackPressed()
         {
-            Android.Support.V7.App.AlertDialog.Builder ExitDialog = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.GFD_Dialog);
+            var exitDialog = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.GFD_Dialog);
 
-            ExitDialog.SetTitle(Resource.String.Main_CheckExitTitle);
-            ExitDialog.SetMessage(Resource.String.Main_CheckExit);
-            ExitDialog.SetCancelable(true);
-            ExitDialog.SetPositiveButton(Resource.String.AlertDialog_Exit, delegate
+            exitDialog.SetTitle(Resource.String.Main_CheckExitTitle);
+            exitDialog.SetMessage(Resource.String.Main_CheckExit);
+            exitDialog.SetCancelable(true);
+            exitDialog.SetPositiveButton(Resource.String.AlertDialog_Exit, delegate
             {
                 FinishAffinity();
                 Process.KillProcess(Process.MyPid());
             });
-            ExitDialog.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-            ExitDialog.Show();
+            exitDialog.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+            exitDialog.Show();
         }
     }
 }
