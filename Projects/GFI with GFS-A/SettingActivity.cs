@@ -304,7 +304,7 @@ namespace GFI_with_GFS_A
             };
 
 
-            SwitchPreference PreviewDBListLayout = (SwitchPreference)FindPreference("PreviewDBListLayout");
+            /*SwitchPreference PreviewDBListLayout = (SwitchPreference)FindPreference("PreviewDBListLayout");
             if (ETC.useLightTheme)
             {
                 PreviewDBListLayout.SetIcon(Resource.Drawable.BetaIcon_WhiteTheme);
@@ -318,7 +318,7 @@ namespace GFI_with_GFS_A
             {
                 SaveSetting.PutBoolean("PreviewDBListLayout", PreviewDBListLayout.Checked);
                 SaveSetting.Apply();
-            };
+            };*/
 
 
             SwitchPreference DBDetailBackgroundImage = (SwitchPreference)FindPreference("DBDetailBackgroundImage");

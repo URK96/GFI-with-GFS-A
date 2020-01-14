@@ -1,6 +1,9 @@
-﻿# T-Doll DB Update 2019/12/30
+﻿# T-Doll DB Update 2020/01/13
 
-- Fix T-Doll's costumes
+- Add 8th T-Doll Voice (PA-15, ADS, HK33, C-93, Kord, T-CMS, VP70, Magal, HS2000, Type4, P30, SSG3000, PM-9, K3, CR-21, MG36, R93, CAWS, EM-2, M1895 CB, MP41, Six12, CSRG M1915, M200, Desert Eagle, ACR, QBU-88)
+- Add Special T-Doll Voice (HK416, OTs-44, UMP9, UMP45)
+- Fix some Voice Actor info
+- Add 8th T-Doll Voice Actor info
 
 
 # Equip DB Update 2019/12/06

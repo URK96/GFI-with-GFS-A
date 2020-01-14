@@ -8,3 +8,12 @@
 - 제조가 불가능한 인형/장비/요정의 경우 제조 확률표 아이콘이 뜨지 않도록 수정
 - 사용하지 않는 설정 항목 제거
 - 메모리 최적화
+
+- Change some UI
+- Add cartoon content
+- Reopen OST Player
+- Change init loading screen
+- Fix list image download issue
+- Fix hide option icon
+- Remove unuse setting
+- Memory Optimized

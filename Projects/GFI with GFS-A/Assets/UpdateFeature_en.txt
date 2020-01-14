@@ -1,6 +1,10 @@
-<2.4.10 Update>
+<2.4.11 Update>
 
 - Change some UI
 - Add cartoon content
-- Fix enemy sort issue
+- Reopen OST Player
+- Change init loading screen
+- Fix list image download issue
+- Fix hide option icon
+- Remove unuse setting
 - Memory Optimized

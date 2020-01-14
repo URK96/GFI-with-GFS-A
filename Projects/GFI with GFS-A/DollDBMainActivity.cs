@@ -528,7 +528,7 @@ namespace GFI_with_GFS_A
                         continue;
                     }
 
-                    if (string.IsNullOrWhiteSpace(searchText))
+                    if (!string.IsNullOrWhiteSpace(searchText))
                     {
                         if (!doll.Name.ToUpper().Contains(searchText))
                         {

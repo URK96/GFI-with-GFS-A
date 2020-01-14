@@ -670,7 +670,7 @@ namespace GFI_with_GFS_A
 
                 voiceList.Clear();
 
-                switch(vCostumeIndex)
+                switch (vCostumeIndex)
                 {
                     case 0:
                         voiceList.AddRange(doll.Voices);

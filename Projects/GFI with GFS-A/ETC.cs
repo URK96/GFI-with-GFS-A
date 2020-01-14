@@ -215,9 +215,9 @@ namespace GFI_with_GFS_A
             Resources = baseContext.Resources;
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTg2NDEyQDMxMzcyZTM0MmUzMHBENmM5Wk42Zyt4dVNVZm1qUTVhTW9DeWtBTFJLY1RGekRnMTgxOEpiQ3c9");
 
-            sdCardPath = baseContext.GetExternalFilesDir(null).AbsolutePath; //(string)Android.OS.Environment.ExternalStorageDirectory;
-            tempPath = Path.Combine(sdCardPath, "GFDTemp");
-            appDataPath = Path.Combine(sdCardPath, "Android", "data", "com.gfl.dic");
+            //sdCardPath = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
+            appDataPath = baseContext.GetExternalFilesDir(null).AbsolutePath; //Path.Combine(sdCardPath, "Android", "data", "com.gfl.dic");
+            tempPath = Path.Combine(appDataPath, "GFDTemp");
             dbPath = Path.Combine(appDataPath, "DB");
             systemPath = Path.Combine(appDataPath, "System");
             cachePath = Path.Combine(appDataPath, "Cache");
@@ -437,6 +437,7 @@ namespace GFI_with_GFS_A
                 Path.Combine(cachePath, "GuideBook"),
                 Path.Combine(cachePath, "GuideBook", "PDFs"),
                 Path.Combine(cachePath, "GuideBook", "Images"),
+                Path.Combine(cachePath, "OST")
             };
 
             foreach (string path in MainPaths)
