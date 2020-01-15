@@ -4,7 +4,6 @@ using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.Design.Widget;
 using Android.Widget;
 
 using System;
@@ -13,7 +12,6 @@ using System.IO;
 using System.Threading.Tasks;
 
 using Xamarin.Essentials;
-using MohammedAlaa.GifLoading;
 
 namespace GFI_with_GFS_A
 {
@@ -27,9 +25,17 @@ namespace GFI_with_GFS_A
 
         protected override void AttachBaseContext(Context @base)
         {
-            ETC.BasicInitializeApp(@base);
+            try
+            {
+                ETC.BasicInitializeApp(@base);
 
-            base.AttachBaseContext(ETC.baseContext);
+                base.AttachBaseContext(ETC.baseContext);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex);
+                Toast.MakeText(this, "Fail Basic Initialize", ToastLength.Long).Show();
+            }
         }
 
         protected override void OnCreate(Bundle savedInstanceState)

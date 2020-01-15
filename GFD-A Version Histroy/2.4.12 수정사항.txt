@@ -1,0 +1,5 @@
+<2.4.12 긴급 수정사항>
+
+- 일부 기기에서 앱 실행이 불가한 문제 수정
+
+- Fix app start issue on some device

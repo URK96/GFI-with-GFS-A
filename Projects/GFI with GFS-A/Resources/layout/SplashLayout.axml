@@ -4,17 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/SplashMainLayout">
-	<com.mohammedalaa.gifloading.LoadingView
+	<com.wang.avi.AVLoadingIndicatorView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-		android:layout_centerInParent="true"
-		android:id="@+id/SplashAnimationLoadingView"
-		app:src="@drawable/splashanimation"/>
+        android:layout_centerInParent="true"
+        android:id="@+id/SplashLoadingIndicatorView"
+		app:indicatorName="BallClipRotateMultipleIndicator"/>
 	<TextView
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content"
 		android:layout_centerInParent="true"
-		android:layout_below="@id/SplashAnimationLoadingView"
+		android:layout_below="@id/SplashLoadingIndicatorView"
 		android:gravity="center"
 		android:textColor="#F2F2F2"
 		android:textAppearance="?android:attr/textAppearanceLarge"

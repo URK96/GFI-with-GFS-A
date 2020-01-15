@@ -1,10 +1,3 @@
-<2.4.11 Update>
+<2.4.12 Update>
 
-- Change some UI
-- Add cartoon content
-- Reopen OST Player
-- Change init loading screen
-- Fix list image download issue
-- Fix hide option icon
-- Remove unuse setting
-- Memory Optimized
+- Fix app start issue on some device
