@@ -137,11 +137,11 @@
     <Reference Include="Plugin.SimpleAudioPlayer.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xam.Plugin.SimpleAudioPlayer.1.4.0\lib\MonoAndroid10\Plugin.SimpleAudioPlayer.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=17.4.0.41, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Licensing.17.4.0.41\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
+    <Reference Include="Syncfusion.Licensing, Version=17.4.0.43, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.17.4.0.43\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfChart.Android, Version=17.4451.0.41, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.Android.17.4.0.41\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
+    <Reference Include="Syncfusion.SfChart.Android, Version=17.4451.0.43, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.Android.17.4.0.43\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -330,6 +330,7 @@
     <Compile Include="DataModel.cs" />
     <Compile Include="DollAbilitySet.cs" />
     <Compile Include="DollDBDetailActivity.cs" />
+    <Compile Include="DollDBGuideImageViewer.cs" />
     <Compile Include="DollDBMainActivity.cs" />
     <Compile Include="EnemyDBImageViewer.cs" />
     <Compile Include="EnemyDBMainActivity.cs" />
@@ -849,7 +850,7 @@
     <AndroidResource Include="Resources\layout\CalcMainLayout.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\DollDB_ImageViewer.axml" />
+    <AndroidResource Include="Resources\layout\DollDBImageViewer.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\DollFilterLayout.axml" />
@@ -2058,6 +2059,32 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-nodpi\SplashAnimation.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\LibraryBookIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\DollDBGuideImageViewerLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Menu\DollDBGuideImageViewerMenu.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\DamageIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Menu\DollDBImageViewerMenu.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\CensorIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

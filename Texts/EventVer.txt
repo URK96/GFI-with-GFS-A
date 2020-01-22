@@ -1,6 +1,6 @@
 Y;
-57;
-2;
-분홍빛 송년회,작전 경험치 1.5배;
-https://www.girlsfrontline.co.kr/archives/3529.html,https://www.girlsfrontline.co.kr/archives/3558.html;
-2019/12/28 00:00 ~ 2020/1/17 23:59,2020/1/10 00:00 ~ 2020/1/15 23:59;
+59;
+11;
+편극광,등불 밑 새해,일반 인형제조 확률 업,중형 인형제조 확률 업,일반 장비제조 확률 업,중형 장비제조 확률 업,BGM-71 확률 업,AGS-30 확률 업,2B14 확률 업,M2 확률 업,AT4 확률 업;
+https://cafe.naver.com/girlsfrontlinekr/3806934,https://www.girlsfrontline.co.kr/archives/3623.html,https://www.girlsfrontline.co.kr/archives/3639.html,https://www.girlsfrontline.co.kr/archives/3639.html,https://www.girlsfrontline.co.kr/archives/3639.html,https://www.girlsfrontline.co.kr/archives/3639.html,https://www.girlsfrontline.co.kr/archives/3639.html,https://www.girlsfrontline.co.kr/archives/3639.html,https://www.girlsfrontline.co.kr/archives/3639.html,https://www.girlsfrontline.co.kr/archives/3639.html,https://www.girlsfrontline.co.kr/archives/3639.html;
+2020/1/21 16:00 ~ 2020/3/6 14:59,2020/1/25 00:00 ~ 2020/2/14 23:59,2020/1/25 00:00 ~ 2020/1/26 23:59,2020/1/29 00:00 ~ 2020/1/30 23:59,2020/1/27 00:00 ~ 2020/1/28 23:59,2020/1/31 00:00 ~ 2020/2/1 23:59,2020/1/25 00:00 ~ 2020/1/26 23:59,2020/1/27 00:00 ~ 2020/1/28 23:59,2020/1/29 00:00 ~ 2020/1/30 23:59,2020/1/31 00:00 ~ 2020/2/1 23:59,2020/2/2 00:00 ~ 2020/2/3 23:59;

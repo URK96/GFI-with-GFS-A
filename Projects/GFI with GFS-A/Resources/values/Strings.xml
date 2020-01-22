@@ -76,7 +76,7 @@
   <string name="Main_NotificationLoadFail"># Failed to load announcement #</string>
   <string name="Main_NotificationInitializeFail">Failed to retrieve announcement</string>
   <string name="Main_CheckExitTitle">Quit GF Dictionary</string>
-  <string name="Main_CheckExit">Are you going to... quit here...?</string>
+  <string name="Main_CheckExit">Are you sure exit GFD?</string>
   <string name="DBList_DownloadCropImageCheckTitle">Download list image</string>
   <string name="DBList_DownloadCropImageTitle">Downloading list image...</string>
   <string name="DBList_DownloadCropImageCheckMessage">Do you want to download list image?</string>
@@ -99,6 +99,7 @@
   <string name="SideLinkOpen_Fail">Failed to open link</string>
   <string name="Initialize_List_Fail">Failed to initialize list</string>
   <string name="ImageLoad_Fail">Image Load Error Occurred</string>
+  <string name="Download_Fail">Download Error</string>
   <string name="UpdateDialog_Title">Updates available</string>
   <string name="UpdateDialog_Message">Are you going to proceed with the update?</string>
   <string name="UpdateCheck_Fail">Failed to check updates</string>
@@ -114,7 +115,7 @@
   <string name="MenuAccess_Fail">Failed to enter menu</string>
   <string name="NotifyCheckServer_Title">Server Check Notification</string>
   <string name="AlertDialog_Error">Dialog Error</string>
-  <string name="VoiceStreaming_Error">Voice Streaming Failed</string>
+  <string name="VoiceStreaming_DownloadError">Voice Download Failed</string>
   <string name="VoiceStreaming_PlayError">Voice Playback Failed</string>
   <string name="VoiceList_InitError">Failed to initialize voice list</string>
   <string name="RFBot_DisunderstandInput">Unable to interpret sentence</string>
@@ -265,6 +266,8 @@
   <string name="Common_UpdateImageCache">Update Image Cache</string>
   <string name="Common_Link">Link</string>
   <string name="Common_Close">Close</string>
+  <string name="Common_Downloading">Download...</string>
+  <string name="Common_Load">Load...</string>
   
   <!--Sort String-->
   <string name="Sort_SortMethod">Sort Method</string>
@@ -350,6 +353,8 @@
   <string name="DollDBImageViewer_ImageStatusDamage">Damaged</string>
   <string name="DollDBImageViewer_ImageCensored">Censor</string>
   <string name="DollDBImageViewer_ImageOriginal">Original</string>
+  <string name="DollDBImageViewer_Menu_Censor">Change Censored</string>
+  <string name="DollDBImageViewer_Menu_Damage">Change State</string>
   
   <!--DollDBMain-->
   <string name="DollDBMainActivity_Title">T-Doll List</string>
@@ -365,6 +370,16 @@
   <string name="ProductPercentTable_LoadingText_ReceiveServerData">Receive Server Data...</string>
   <string name="ProductPercentTable_LoadingText_DataProcess">Processing Data...</string>
   <string name="ProductPercentTable_LoadingText_DataListing">Listing Data...</string>
+
+  <!--DollDBGuideImageViewer-->
+  <string name="DollDBGuideImageViewer_Title">T-Doll Guide Image (Beta)</string>
+  <string name="DollDBGuideImageViewer_LoadingText_NotExistServerImage">No Server Image</string>
+  <string name="DollDBGuideImageViewer_LoadingText_CheckLocalImage">Check Local Image...</string>
+  <string name="DollDBGuideImageViewer_LoadingText_CheckServerImage">Check Server Image...</string>
+  <string name="DollDBGuideImageViewer_LoadingText_DownloadImage">Download Image...</string>
+  <string name="DollDBGuideImageViewer_LoadingText_LoadImage">Load Image...</string>
+  <string name="DollDBGuideImageViewer_LoadingText_FailLoadImage">Fail Load Image :(</string>
+  <string name="DollDBGuideImageViewer_LoadingText_FailDownloadImage">Fail Download Image :(</string>
   
   <!--EnemyDBDetail-->
   <string name="EnemyDBDetail_Boss">Boss</string>

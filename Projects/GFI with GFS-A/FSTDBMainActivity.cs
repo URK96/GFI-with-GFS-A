@@ -13,6 +13,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Xamarin.Essentials;
 
 namespace GFI_with_GFS_A
 {
@@ -186,16 +187,14 @@ namespace GFI_with_GFS_A
 
         private void ShowDownloadCheckMessage(int title, int message, DownloadProgress method)
         {
-            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG))
-            {
-                ad.SetTitle(title);
-                ad.SetMessage(message);
-                ad.SetCancelable(true);
-                ad.SetPositiveButton(Resource.String.AlertDialog_Download, delegate { method(); });
-                ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+            var ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
+            ad.SetTitle(title);
+            ad.SetMessage(message);
+            ad.SetCancelable(true);
+            ad.SetPositiveButton(Resource.String.AlertDialog_Download, delegate { method(); });
+            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
 
-                ad.Show();
-            }
+            ad.Show();
         }
 
         private async Task FSTCropImageDownloadProcess()
@@ -211,15 +210,13 @@ namespace GFI_with_GFS_A
             int pNow = 0;
             int pTotal = 0;
 
-            using (Android.Support.V7.App.AlertDialog.Builder pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload))
-            {
-                pd.SetTitle(Resource.String.DBList_DownloadCropImageTitle);
-                pd.SetCancelable(false);
-                pd.SetView(v);
+            var pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload);
+            pd.SetTitle(Resource.String.DBList_DownloadCropImageTitle);
+            pd.SetCancelable(false);
+            pd.SetView(v);
 
-                dialog = pd.Create();
-                dialog.Show();
-            }
+            dialog = pd.Create();
+            dialog.Show();
 
             try
             {
@@ -237,14 +234,14 @@ namespace GFI_with_GFS_A
                     wc.DownloadProgressChanged += (sender, e) =>
                     {
                         nowProgressBar.Progress = e.ProgressPercentage;
-                        nowProgress.Text = $"{e.ProgressPercentage}%";
+                        MainThread.BeginInvokeOnMainThread(() => { nowProgress.Text = $"{e.ProgressPercentage}%"; });
                     };
                     wc.DownloadFileCompleted += (sender, e) =>
                     {
                         pNow += 1;
 
                         totalProgressBar.Progress = Convert.ToInt32((pNow / Convert.ToDouble(pTotal)) * 100);
-                        totalProgress.Text = $"{totalProgressBar.Progress}%";
+                        MainThread.BeginInvokeOnMainThread(() => { totalProgress.Text = $"{totalProgressBar.Progress}%"; });
                     };
 
                     for (int i = 0; i < pTotal; ++i)
@@ -304,16 +301,14 @@ namespace GFI_with_GFS_A
                         break;
                 }
 
-                using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
-                {
-                    FilterBox.SetTitle(Resource.String.DBList_SortBoxTitle);
-                    FilterBox.SetView(v);
-                    FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplySort(v); });
-                    FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                    FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetSort(); });
+                var filterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical);
+                filterBox.SetTitle(Resource.String.DBList_SortBoxTitle);
+                filterBox.SetView(v);
+                filterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplySort(v); });
+                filterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                filterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetSort(); });
 
-                    FilterBox.Show();
-                }
+                filterBox.Show();
             }
             catch (Exception ex)
             {
@@ -379,16 +374,14 @@ namespace GFI_with_GFS_A
                     v.FindViewById<CheckBox>(typeFilters[i]).Checked = filterType[i];
                 }
 
-                using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
-                {
-                    FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
-                    FilterBox.SetView(v);
-                    FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
-                    FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                    FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(); });
+                var filterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical);
+                filterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
+                filterBox.SetView(v);
+                filterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
+                filterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                filterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(); });
 
-                    FilterBox.Show();
-                }
+                filterBox.Show();
             }
             catch (Exception ex)
             {

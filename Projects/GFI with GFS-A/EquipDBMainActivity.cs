@@ -315,16 +315,14 @@ namespace GFI_with_GFS_A
                         break;
                 }
 
-                using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
-                {
-                    FilterBox.SetTitle(Resource.String.DBList_SortBoxTitle);
-                    FilterBox.SetView(v);
-                    FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplySort(v); });
-                    FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                    FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetSort(); });
+                var filterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical);
+                filterBox.SetTitle(Resource.String.DBList_SortBoxTitle);
+                filterBox.SetView(v);
+                filterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplySort(v); });
+                filterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                filterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetSort(); });
 
-                    FilterBox.Show();
-                }
+                filterBox.Show();
             }
             catch (Exception ex)
             {
@@ -400,16 +398,14 @@ namespace GFI_with_GFS_A
                     v.FindViewById<CheckBox>(categoryFilters[i]).Checked = filterCategory[i];
                 }
 
-                using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
-                {
-                    FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
-                    FilterBox.SetView(v);
-                    FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
-                    FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                    FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(); });
+                var filterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical);
+                filterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
+                filterBox.SetView(v);
+                filterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
+                filterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                filterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(); });
 
-                    FilterBox.Show();
-                }
+                filterBox.Show();
             }
             catch (Exception ex)
             {

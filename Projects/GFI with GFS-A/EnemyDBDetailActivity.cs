@@ -7,12 +7,14 @@ using Android.Support.Design.Widget;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using Plugin.SimpleAudioPlayer;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace GFI_with_GFS_A
 {
@@ -24,13 +26,16 @@ namespace GFI_with_GFS_A
         private int enemyTypeIndex = 0;
         private bool isExtraFeatureOpen = false;
 
-        private CoordinatorLayout SnackbarLayout;
+        private ISimpleAudioPlayer voicePlayer;
+        private FileStream stream;
 
-        private ProgressBar InitLoadProgressBar;
-        private Spinner TypeSelector;
-        private Button ExtraMenuButton;
-        private Spinner VoiceSelector;
-        private Button VoicePlayButton;
+        private CoordinatorLayout snackbarLayout;
+
+        private ProgressBar initLoadProgressBar;
+        private Spinner typeSelector;
+        private Button extraMenuButton;
+        private Spinner voiceSelector;
+        private Button voicePlayButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -39,35 +44,39 @@ namespace GFI_with_GFS_A
                 base.OnCreate(savedInstanceState);
 
                 if (ETC.useLightTheme)
+                {
                     SetTheme(Resource.Style.GFS_Light);
+                }
 
                 // Create your application here
                 SetContentView(Resource.Layout.EnemyDBDetailLayout);
 
                 enemy = new Enemy(ETC.FindDataRow(ETC.enemyList, "CodeName", Intent.GetStringExtra("Keyword")));
 
-                InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.EnemyDBDetailInitLoadProgress);
+                voicePlayer = CrossSimpleAudioPlayer.Current;
+
+                initLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.EnemyDBDetailInitLoadProgress);
                 FindViewById<ImageView>(Resource.Id.EnemyDBDetailSmallImage).Click += EnemyDBDetailSmallImage_Click;
-                TypeSelector = FindViewById<Spinner>(Resource.Id.EnemyDBDetailEnemyTypeSelector);
-                TypeSelector.ItemSelected += TypeSelector_ItemSelected;
-                ExtraMenuButton = FindViewById<Button>(Resource.Id.EnemyDBDetailExtraFeatureButton);
-                ExtraMenuButton.Click += ExtraMenuButton_Click;
+                typeSelector = FindViewById<Spinner>(Resource.Id.EnemyDBDetailEnemyTypeSelector);
+                typeSelector.ItemSelected += TypeSelector_ItemSelected;
+                extraMenuButton = FindViewById<Button>(Resource.Id.EnemyDBDetailExtraFeatureButton);
+                extraMenuButton.Click += ExtraMenuButton_Click;
 
                 var t_adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, enemy.Types);
                 t_adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
-                TypeSelector.Adapter = t_adapter;
+                typeSelector.Adapter = t_adapter;
 
                 if (enemy.HasVoice)
                 {
-                    ExtraMenuButton.Visibility = ViewStates.Visible;
+                    extraMenuButton.Visibility = ViewStates.Visible;
                     FindViewById<LinearLayout>(Resource.Id.EnemyDBDetailVoiceLayout).Visibility = ViewStates.Visible;
-                    VoiceSelector = FindViewById<Spinner>(Resource.Id.EnemyDBDetailVoiceSelector);
-                    VoicePlayButton = FindViewById<Button>(Resource.Id.EnemyDBDetailVoicePlayButton);
-                    VoicePlayButton.Click += VoicePlayButton_Click;
+                    voiceSelector = FindViewById<Spinner>(Resource.Id.EnemyDBDetailVoiceSelector);
+                    voicePlayButton = FindViewById<Button>(Resource.Id.EnemyDBDetailVoicePlayButton);
+                    voicePlayButton.Click += delegate { _ = PlayVoiceProcess(); };
                     InitializeVoiceList();
                 }
 
-                SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EnemyDBDetailSnackbarLayout);
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EnemyDBDetailSnackbarLayout);
 
                 _ = InitLoadProcess();
             }
@@ -97,58 +106,68 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async void VoicePlayButton_Click(object sender, EventArgs e)
+        private async Task PlayVoiceProcess()
         {
-            ProgressBar pb = FindViewById<ProgressBar>(Resource.Id.EnemyDBDetailVoiceDownloadProgress);
+            await Task.Delay(100);
+
+            string voice = enemy.Voices[voiceSelector.SelectedItemPosition];
+
+            string voiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Enemy", enemy.CodeName, $"{enemy.CodeName}_{voice}_JP.wav");
+            string target = Path.Combine(ETC.cachePath, "Voices", "Enemy", $"{enemy.CodeName}_{voice}_JP.gfdcache");
 
             try
             {
-                pb.Visibility = ViewStates.Visible;
-                pb.Indeterminate = true;
+                stream?.Dispose();
 
-                string voice = enemy.Voices[VoiceSelector.SelectedItemPosition];
-
-                string VoiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Enemy", enemy.CodeName, $"{enemy.CodeName}_{voice}_JP.wav");
-                string target = Path.Combine(ETC.cachePath, "Voices", "Enemy", $"{enemy.CodeName}_{voice}_JP.gfdcache");
-
-                MediaPlayer SoundPlayer = new MediaPlayer();
-                SoundPlayer.Completion += delegate { SoundPlayer.Release(); };
-
-                await Task.Delay(100);
-
-                try
-                {
-                    SoundPlayer.SetDataSource(target);
-                }
-                catch (Exception)
+                if (!File.Exists(target))
                 {
                     using (WebClient wc = new WebClient())
                     {
-                        wc.DownloadProgressChanged += (object s, DownloadProgressChangedEventArgs args) =>
+                        MainThread.BeginInvokeOnMainThread(() => { voicePlayButton.Enabled = false; });
+
+                        wc.DownloadProgressChanged += (sender, e) =>
                         {
-                            pb.Indeterminate = false;
-                            pb.Progress = args.ProgressPercentage;
+                            MainThread.BeginInvokeOnMainThread(() => { voicePlayButton.Text = $"{e.ProgressPercentage}%"; });
                         };
-                        await wc.DownloadFileTaskAsync(VoiceServerURL, target);
+
+                        await wc.DownloadFileTaskAsync(voiceServerURL, target);
                     }
 
-                    SoundPlayer.SetDataSource(target);
+                    await Task.Delay(500);
                 }
 
-                pb.Visibility = ViewStates.Invisible;
+                stream = new FileStream(target, FileMode.Open, FileAccess.Read);
 
-                SoundPlayer.Prepare();
-                SoundPlayer.Start();
+                voicePlayer.Load(stream);
+                voicePlayer.Play();
             }
             catch (WebException ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.VoiceStreaming_Error, Snackbar.LengthShort, Android.Graphics.Color.DarkViolet);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.VoiceStreaming_DownloadError, Snackbar.LengthShort, Android.Graphics.Color.DarkCyan);
+
+                if (File.Exists(target))
+                {
+                    File.Delete(target);
+                }
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.VoiceStreaming_PlayError, Snackbar.LengthShort, Android.Graphics.Color.DarkCyan);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.VoiceStreaming_PlayError, Snackbar.LengthShort, Android.Graphics.Color.DarkCyan);
+
+                if (File.Exists(target))
+                {
+                    File.Delete(target);
+                }
+            }
+            finally
+            {
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    voicePlayButton.Enabled = true;
+                    voicePlayButton.SetText(Resource.String.Common_Play);
+                });
             }
         }
 
@@ -158,9 +177,9 @@ namespace GFI_with_GFS_A
             {
                 var v_adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, enemy.Voices);
                 v_adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
-                VoiceSelector.Adapter = v_adapter;
+                voiceSelector.Adapter = v_adapter;
 
-                VoiceSelector.SetSelection(0);
+                voiceSelector.SetSelection(0);
             }
             catch (Exception ex)
             {
@@ -188,13 +207,13 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ImageViewer_ActivityOpenError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.ImageViewer_ActivityOpenError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
 
         private async Task InitLoadProcess()
         {
-            InitLoadProgressBar.Visibility = ViewStates.Visible;
+            initLoadProgressBar.Visibility = ViewStates.Visible;
 
             await Task.Delay(100);
 
@@ -276,18 +295,18 @@ namespace GFI_with_GFS_A
             catch (WebException ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
                 _ = InitLoadProcess();
                 return;
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
             finally
             {
-                InitLoadProgressBar.Visibility = ViewStates.Invisible;
+                initLoadProgressBar.Visibility = ViewStates.Invisible;
             }
         }
 
@@ -298,5 +317,18 @@ namespace GFI_with_GFS_A
             FindViewById<CardView>(Resource.Id.EnemyDBDetailAbilityCardLayout).Visibility = ViewStates.Visible;
         }
 
+        public override void OnBackPressed()
+        {
+            if (voicePlayer.IsPlaying)
+            {
+                voicePlayer.Stop();
+            }
+
+            stream?.Dispose();
+
+            base.OnBackPressed();
+            OverridePendingTransition(Resource.Animation.Activity_SlideInLeft, Resource.Animation.Activity_SlideOutRight);
+            GC.Collect();
+        }
     }
 }

@@ -46,6 +46,8 @@ namespace GFI_with_GFS_A
         private DrawerLayout mainDrawerLayout;
         private ListView drawerListView;
 
+        private FileStream stream;
+
         private string musicServerPath = "";
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -225,6 +227,8 @@ namespace GFI_with_GFS_A
 
             try
             {
+                stream?.Dispose();
+
                 musicServerPath = 
                     Path.Combine(MusicRepo.serverMusicPath, "OST", MusicRepo.categoryRealPath[MusicRepo.categoryIndex], $"{MusicRepo.itemList[MusicRepo.itemIndex]}.mp3");
                 string locaclFileName = $"{MusicRepo.categoryIndex.ToString()}_{MusicRepo.itemIndex.ToString()}.mp3";
@@ -234,7 +238,9 @@ namespace GFI_with_GFS_A
                     await wc.DownloadFileTaskAsync(musicServerPath, Path.Combine(MusicRepo.localMusicCachePath, locaclFileName));
                 }
 
-                MusicRepo.ostPlayer.Load(new FileStream(Path.Combine(MusicRepo.localMusicCachePath, locaclFileName), FileMode.Open, FileAccess.Read));
+                stream = new FileStream(Path.Combine(MusicRepo.localMusicCachePath, locaclFileName), FileMode.Open, FileAccess.Read);
+
+                MusicRepo.ostPlayer.Load(stream);
                 MusicRepo.ostPlayer.Play();
             }
             catch (Exception ex)

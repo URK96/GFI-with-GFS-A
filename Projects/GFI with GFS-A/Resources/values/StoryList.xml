@@ -7,12 +7,12 @@
   
   <string-array name="Story_Main">
     <item>메인이야기</item>
-    <item>서브이야기 (Comming Soon)</item>
+    <item>서브이야기</item>
   </string-array>
 
   <string-array name="Story_Main_Caption">
     <item>메인이야기</item>
-    <item>서브이야기 (Comming Soon)</item>
+    <item>서브이야기</item>
   </string-array>
 
   <string-array name="Story_Main_Main_TopTitle">

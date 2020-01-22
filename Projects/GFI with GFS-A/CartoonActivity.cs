@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Name = "com.gfl.dic.CartoonActivity", Label = "Cartoon", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.CartoonActivity", Label = "Cartoon", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public partial class CartoonActivity : BaseAppCompatActivity
     {
         bool isCategory = true;
@@ -44,7 +44,7 @@ namespace GFI_with_GFS_A
 
             if (ETC.useLightTheme)
             {
-                SetTheme(Resource.Style.GFS_NoActionBar_Light);
+                SetTheme(Resource.Style.GFS_Toolbar_Light);
             }
 
             // Create your application here

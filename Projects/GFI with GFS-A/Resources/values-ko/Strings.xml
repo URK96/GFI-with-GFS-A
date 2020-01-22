@@ -71,14 +71,14 @@
   
   <!--Solution String-->
   <string name="CheckingUpdate">업데이트 확인 중...</string>
-  <string name="Splash_SkipCheckUpdate">업데이트 확인은 건너뛰어보겠어!</string>
+  <string name="Splash_SkipCheckUpdate">업데이트 확인을 건너뜁니다</string>
   <string name="LatestUpdateVersion">최신 버전입니다.</string>
   <string name="UnableCheckUpdate">업데이트 확인 불가</string>
   <string name="Main_NotificationTitle">공지사항</string>
   <string name="Main_NotificationLoadFail"># 공지사항 로드 실패 #</string>
   <string name="Main_NotificationInitializeFail">공지사항을 불러오기 실패</string>
   <string name="Main_CheckExitTitle">소전사전 종료</string>
-  <string name="Main_CheckExit">여기서... 종료할거야...?</string>
+  <string name="Main_CheckExit">소전사전을 종료할까요?</string>
   <string name="DBList_DownloadCropImageCheckTitle">리스트 이미지 다운로드</string>
   <string name="DBList_DownloadCropImageTitle">리스트 이미지 다운로드 중...</string>
   <string name="DBList_DownloadCropImageCheckMessage">리스트 이미지를 다운로드할까요?</string>
@@ -101,22 +101,23 @@
   <string name="SideLinkOpen_Fail">링크 열기 실패</string>
   <string name="Initialize_List_Fail">리스트 초기화 실패</string>
   <string name="ImageLoad_Fail">이미지 로드 오류 발생</string>
+  <string name="Download_Fail">다운로드 오류</string>
   <string name="UpdateDialog_Title">업데이트 존재</string>
   <string name="UpdateDialog_Message">업데이트를 진행할 거야?</string>
   <string name="UpdateCheck_Fail">업데이트 확인 실패</string>
   <string name="UpdateDownloadDialog_Title">업데이트 다운로드</string>
-  <string name="UpdateDownloadDialog_Message">업데이트 다운로드 중이야. 잠시만 기다려줘!</string>
+  <string name="UpdateDownloadDialog_Message">업데이트 다운로드 중입니다</string>
   <string name="UpdateDownload_Complete">업데이트 다운로드 완료</string>
   <string name="UpdateDownload_Fail">업데이트 다운로드 실패</string>
   <string name="Activity_OnCreateError">Activity OnCreate 오류</string>
   <string name="Activity_LoadFail">Activity 로드 오류</string>
-  <string name="DevMode">에헤헤~♪ 아직인 게야!</string>
+  <string name="DevMode">아직 개발 중인 부분입니다</string>
   <string name="AbnormalAccess">비정상적인 접근</string>
-  <string name="NoDBFiles">DB 파일 없음. 업데이트 필요.</string>
+  <string name="NoDBFiles">DB 파일 없음. DB 복구가 필요합니다.</string>
   <string name="MenuAccess_Fail">메뉴 진입 실패</string>
   <string name="NotifyCheckServer_Title">서버 점검 안내</string>
   <string name="AlertDialog_Error">Dialog 오류</string>
-  <string name="VoiceStreaming_Error">Voice 스트리밍 실패</string>
+  <string name="VoiceStreaming_DownloadError">Voice 다운로드 실패</string>
   <string name="VoiceStreaming_PlayError">Voice 재생 실패</string>
   <string name="VoiceList_InitError">보이스 리스트 초기화 실패</string>
   <string name="RFBot_DisunderstandInput">해석 불가능한 문구입니다.</string>
@@ -126,8 +127,8 @@
   <string name="ProductPercentTable_LoadFail">제조 정보 로드 실패</string>
   <string name="NoDBFileFound_Message">서버 점검 문제로 초기 DB를 다운로드할 수 없습니다. 나중에 다시 시도해 주세요.</string>
   <string name="CheckDBUpdateDialog_Title">DB 업데이트</string>
-  <string name="CheckDBUpdateDialog_Question">새로운 DB 버전이 존재해. 업데이트를 진행할 거야?</string>
-  <string name="CheckDBUpdateDialog_Message">업데이트 확인중이야. 잠시만 기다려줘!</string>
+  <string name="CheckDBUpdateDialog_Question">새로운 DB 버전이 존재합니다. 업데이트를 진행할까요?</string>
+  <string name="CheckDBUpdateDialog_Message">업데이트 확인 중입니다. 잠시만 기다려주세요.</string>
   <string name="RepairDBDialog_Title">DB 복구중</string>
   <string name="RepairDBDialog_Message">DB 복구 중...</string>
   <string name="RepairDB_Complete">DB 복구 성공</string>
@@ -135,7 +136,7 @@
   <string name="UpdateDBDialog_Message">DB 업데이트 중...</string>
   <string name="UpdateDBDialog_RefreshVersionMessage">DB 버전 갱신 중...</string>
   <string name="UpdateDBDialog_LoadDB">DB 다시 읽는 중...</string>
-  <string name="CheckDBUpdate_UpToDate">최신버전이야. 업데이트가 필요없어!</string>
+  <string name="CheckDBUpdate_UpToDate">현재 DB 버전이 최신입니다.</string>
   <string name="CheckDBUpdate_Complete">DB 업데이트 완료</string>
   <string name="NewFeatureDialog_Title">새로운 기능</string>
   <string name="FAB_ChangeSubMenuError">플로팅 보조 메뉴 작동 실패</string>
@@ -267,6 +268,8 @@
   <string name="Common_UpdateImageCache">이미지 캐시 갱신</string>
   <string name="Common_Link">링크</string>
   <string name="Common_Close">닫기</string>
+  <string name="Common_Downloading">다운로드 중...</string>
+  <string name="Common_Load">로드 중...</string>
 
   <!--Sort String-->
   <string name="Sort_SortMethod">정렬 방법</string>
@@ -353,6 +356,8 @@
   <string name="DollDBImageViewer_ImageStatusDamage">중상</string>
   <string name="DollDBImageViewer_ImageCensored">검열</string>
   <string name="DollDBImageViewer_ImageOriginal">원본</string>
+  <string name="DollDBImageViewer_Menu_Censor">검열 전환</string>
+  <string name="DollDBImageViewer_Menu_Damage">일반/중상 전환</string>
   
   <!--DollDBMain-->
   <string name="DollDBMainActivity_Title">인형 목록</string>
@@ -368,6 +373,16 @@
   <string name="ProductPercentTable_LoadingText_ReceiveServerData">서버 데이터 받는 중...</string>
   <string name="ProductPercentTable_LoadingText_DataProcess">데이터 처리 중...</string>
   <string name="ProductPercentTable_LoadingText_DataListing">데이터 정렬 중...</string>
+
+  <!--DollDBGuideImageViewer-->
+  <string name="DollDBGuideImageViewer_Title">인형 가이드 이미지 (Beta)</string>
+  <string name="DollDBGuideImageViewer_LoadingText_NotExistImage">서버에 이미지가 없습니다</string>
+  <string name="DollDBGuideImageViewer_LoadingText_CheckLocalImage">로컬 이미지 확인 중...</string>
+  <string name="DollDBGuideImageViewer_LoadingText_CheckServerImage">서버 이미지 확인 중...</string>
+  <string name="DollDBGuideImageViewer_LoadingText_DownloadImage">이미지 다운로드 중...</string>
+  <string name="DollDBGuideImageViewer_LoadingText_LoadImage">이미지 로드 중...</string>
+  <string name="DollDBGuideImageViewer_LoadingText_FailLoadImage">이미지 로드 실패 :(</string>
+  <string name="DollDBGuideImageViewer_LoadingText_FailDownloadImage">이미지 다운로드 실패 :(</string>
   
   <!--EnemyDBDetail-->
   <string name="EnemyDBDetail_Boss">보스</string>

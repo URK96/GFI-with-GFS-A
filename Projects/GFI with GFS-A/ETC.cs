@@ -410,6 +410,7 @@ namespace GFI_with_GFS_A
                 Path.Combine(cachePath, "Doll", "Normal"),
                 Path.Combine(cachePath, "Doll", "Skill"),
                 Path.Combine(cachePath, "Doll", "ProductData"),
+                Path.Combine(cachePath, "Doll", "GuideImage"),
                 Path.Combine(cachePath, "Equip"),
                 Path.Combine(cachePath, "Equip", "Normal"),
                 Path.Combine(cachePath, "Equip", "ProductData"),
@@ -688,6 +689,8 @@ namespace GFI_with_GFS_A
                 {
                     activity.RunOnUiThread(() => { Toast.MakeText(activity, "Error Write Log", ToastLength.Long).Show(); });
                 }
+
+                Crashes.TrackError(ex);
             }
         }
 

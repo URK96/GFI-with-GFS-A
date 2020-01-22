@@ -20,15 +20,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </android.support.v7.widget.Toolbar>
-        <ProgressBar
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/DollDBImageViewerLoadProgress"
-            android:visibility="invisible"
-            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-            android:progressTint="@color/ProgressBarColor"
-            android:indeterminateOnly="true" />
-        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_below="@id/DollDBImageViewerMainToolbar"
+            android:id="@+id/DollDBImageViewerLoadingLayout">
+            <com.wang.avi.AVLoadingIndicatorView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/DollDBImageViewerLoadingIndicatorView"
+                app:indicatorName="BallClipRotateMultipleIndicator"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_below="@id/DollDBImageViewerLoadingIndicatorView"
+                android:id="@+id/DollDBImageViewerLoadingIndicatorExplainText"/>
+        </RelativeLayout>
+        <!--<LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,7 +67,7 @@
 				android:textOff="@string/DollDBImageViewer_ImageOriginal"
 				android:textOn="@string/DollDBImageViewer_ImageCensored"
 				android:id="@+id/DollDBImageViewerCensoredOption"/>
-        </LinearLayout>
+        </LinearLayout>-->
 		<com.github.chrisbanes.photoview.PhotoView
 			android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -13,6 +13,7 @@ using System.Data;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace GFI_with_GFS_A
 {
@@ -237,14 +238,14 @@ namespace GFI_with_GFS_A
                     wc.DownloadProgressChanged += (sender, e) =>
                     {
                         nowProgressBar.Progress = e.ProgressPercentage;
-                        nowProgress.Text = $"{e.ProgressPercentage}%";
+                        MainThread.BeginInvokeOnMainThread(() => { nowProgress.Text = $"{e.ProgressPercentage}%"; });
                     };
                     wc.DownloadFileCompleted += (sender, e) =>
                     {
                         pNow += 1;
 
                         totalProgressBar.Progress = Convert.ToInt32((pNow / Convert.ToDouble(pTotal)) * 100);
-                        totalProgress.Text = $"{totalProgressBar.Progress}%";
+                        MainThread.BeginInvokeOnMainThread(() => { totalProgress.Text = $"{totalProgressBar.Progress}%"; });
                     };
 
                     for (int i = 0; i < pTotal; ++i)
@@ -310,14 +311,14 @@ namespace GFI_with_GFS_A
                         break;
                 }
 
-                var FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical);
-                FilterBox.SetTitle(Resource.String.DBList_SortBoxTitle);
-                FilterBox.SetView(v);
-                FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplySort(v); });
-                FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetSort(); });
+                var filterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical);
+                filterBox.SetTitle(Resource.String.DBList_SortBoxTitle);
+                filterBox.SetView(v);
+                filterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplySort(v); });
+                filterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                filterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetSort(); });
 
-                FilterBox.Show();
+                filterBox.Show();
             }
             catch (Exception ex)
             {

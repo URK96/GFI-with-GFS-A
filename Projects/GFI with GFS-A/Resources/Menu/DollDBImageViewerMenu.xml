@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:local="http://schemas.android.com/apk/res-auto">
+  <item
+    android:id="@+id/DollDBImageViewerCensoredOption"
+    android:icon="@drawable/CensorIcon"
+    android:title="@string/DollDBImageViewer_Menu_Censor"
+    local:showAsAction="ifRoom"/>
+  <item
+    android:id="@+id/DollDBImageViewerChangeStateButton"
+    android:icon="@drawable/DamageIcon"
+    android:title="@string/DollDBImageViewer_Menu_Damage"
+    local:showAsAction="ifRoom"/>
+  <item
+    android:id="@+id/RefreshDollImageCache"
+    android:icon="@drawable/CachedIcon"
+    android:title="@string/Common_UpdateImageCache"
+    local:showAsAction="ifRoom"/>
+</menu>

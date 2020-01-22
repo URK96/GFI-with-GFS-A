@@ -13,6 +13,7 @@ using Android.Text;
 using Android.Content;
 using Android.Support.V7.Widget;
 using System.IO;
+using Xamarin.Essentials;
 
 namespace GFI_with_GFS_A
 {
@@ -243,14 +244,14 @@ namespace GFI_with_GFS_A
                     wc.DownloadProgressChanged += (sender, e) =>
                     {
                         nowProgressBar.Progress = e.ProgressPercentage;
-                        nowProgress.Text = $"{e.ProgressPercentage}%";
+                        MainThread.BeginInvokeOnMainThread(() => { nowProgress.Text = $"{e.ProgressPercentage}%"; });
                     };
                     wc.DownloadFileCompleted += (sender, e) =>
                     {
                         pNow += 1;
 
                         totalProgressBar.Progress = Convert.ToInt32((pNow / Convert.ToDouble(pTotal)) * 100);
-                        totalProgress.Text = $"{totalProgressBar.Progress}%";
+                        MainThread.BeginInvokeOnMainThread(() => { totalProgress.Text = $"{totalProgressBar.Progress}%"; });
                     };
 
                     for (int i = 0; i < pTotal; ++i)
@@ -311,16 +312,14 @@ namespace GFI_with_GFS_A
                         break;
                 }
 
-                using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
-                {
-                    FilterBox.SetTitle(Resource.String.DBList_SortBoxTitle);
-                    FilterBox.SetView(v);
-                    FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplySort(v); });
-                    FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                    FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetSort(); });
+                var filterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical);
+                filterBox.SetTitle(Resource.String.DBList_SortBoxTitle);
+                filterBox.SetView(v);
+                filterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplySort(v); });
+                filterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                filterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetSort(); });
 
-                    FilterBox.Show();
-                }
+                filterBox.Show();
             }
             catch (Exception ex)
             {
@@ -400,16 +399,14 @@ namespace GFI_with_GFS_A
                     v.FindViewById<NumberPicker>(productTimeFilters[i]).Value = filterProductTime[i];
                 }
 
-                using (Android.Support.V7.App.AlertDialog.Builder FilterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical))
-                {
-                    FilterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
-                    FilterBox.SetView(v);
-                    FilterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
-                    FilterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                    FilterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(); });
+                var filterBox = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGVertical);
+                filterBox.SetTitle(Resource.String.DBList_FilterBoxTitle);
+                filterBox.SetView(v);
+                filterBox.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { ApplyFilter(v); });
+                filterBox.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                filterBox.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { ResetFilter(); });
 
-                    FilterBox.Show();
-                }
+                filterBox.Show();
             }
             catch (Exception ex)
             {

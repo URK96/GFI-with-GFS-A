@@ -18,6 +18,8 @@ using Com.Syncfusion.Charts;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using Android.Support.Transitions;
+using Xamarin.Essentials;
+using Plugin.SimpleAudioPlayer;
 
 namespace GFI_with_GFS_A
 {
@@ -43,6 +45,9 @@ namespace GFI_with_GFS_A
 
         private bool isExtraFeatureOpen = false;
         private bool isChartLoad = false;
+
+        private ISimpleAudioPlayer voicePlayer;
+        private FileStream stream;
 
         private Android.Support.V7.Widget.Toolbar toolbar;
         private SwipeRefreshLayout refreshMainLayout;
@@ -82,11 +87,16 @@ namespace GFI_with_GFS_A
                 doll = new Doll(dollInfoDR);
                 das = new DollAbilitySet(doll.Type);
 
+                voicePlayer = CrossSimpleAudioPlayer.Current;
+
                 toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.DollDBDetailMainToolbar);
 
                 SetSupportActionBar(toolbar);
-                SupportActionBar.Title = $"No.{doll.DicNumber} {doll.Name}";
+                //SupportActionBar.Title = $"No.{doll.DicNumber} {doll.Name}";
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
+                FindViewById<TextView>(Resource.Id.DollDBDetailToolbarDicNumber).Text = $"No. {doll.DicNumber}";
+                FindViewById<TextView>(Resource.Id.DollDBDetailToolbarName).Text = $"{doll.Name} - {doll.CodeName}";
 
                 refreshMainLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.DollDBDetailMainRefreshLayout);
                 refreshMainLayout.Refresh += delegate { _ = InitLoadProcess(true); };
@@ -100,7 +110,7 @@ namespace GFI_with_GFS_A
                     voiceCostumeSelector.ItemSelected += VoiceCostumeSelector_ItemSelected;
                     voiceSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailVoiceSelector);
                     voicePlayButton = FindViewById<Button>(Resource.Id.DollDBDetailVoicePlayButton);
-                    voicePlayButton.Click += VoicePlayButton_Click;
+                    voicePlayButton.Click += delegate { _ = PlayVoiceProcess(); };
                 }
 
                 if (doll.HasMod)
@@ -204,6 +214,9 @@ namespace GFI_with_GFS_A
             {
                 switch (item?.ItemId)
                 {
+                    case Android.Resource.Id.Home:
+                        OnBackPressed();
+                        break;
                     case Resource.Id.DollDBDetailLink:
                         Android.Support.V7.Widget.PopupMenu pMenu = new Android.Support.V7.Widget.PopupMenu(this, FindViewById<View>(Resource.Id.DollDBDetailLink));
                         pMenu.Inflate(Resource.Menu.DBLinkMenu);
@@ -216,8 +229,11 @@ namespace GFI_with_GFS_A
                         StartActivity(intent);
                         OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
-                    case Android.Resource.Id.Home:
-                        OnBackPressed();
+                    case Resource.Id.DollDBDetailGuideBookDetail:
+                        var intent2 = new Intent(this, typeof(DollDBGuideImageViewer));
+                        intent2.PutExtra("Info", doll.DicNumber);
+                        StartActivity(intent2);
+                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                         break;
                 }
             }
@@ -565,68 +581,79 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async void VoicePlayButton_Click(object sender, EventArgs e)
+        private async Task PlayVoiceProcess()
         {
+            await Task.Delay(100);
+
+            string voice = voiceList[voiceSelector.SelectedItemPosition];
+            string voiceServerURL = "";
+            string target = "";
+
             try
             {
-                FindViewById<ProgressBar>(Resource.Id.DollDBDetailVoiceDownloadProgress).Visibility = ViewStates.Visible;
-                FindViewById<ProgressBar>(Resource.Id.DollDBDetailVoiceDownloadProgress).Indeterminate = true;
-
-                string voice = voiceList[voiceSelector.SelectedItemPosition];
-                string VoiceServerURL = "";
-                string target = "";
+                stream?.Dispose();
 
                 switch (vCostumeIndex)
                 {
                     case 0:
-                        VoiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Doll", doll.NameKR, $"{doll.NameKR}_{voice}_JP.wav");
+                        voiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Doll", doll.NameKR, $"{doll.NameKR}_{voice}_JP.wav");
                         target = Path.Combine(ETC.cachePath, "Voices", "Doll", $"{doll.DicNumber}_{voice}_JP.gfdcache");
                         break;
                     default:
-                        VoiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Doll", $"{doll.NameKR}_{vCostumeIndex - 1}", $"{doll.NameKR}_{vCostumeIndex - 1}_{voice}_JP.wav");
+                        voiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Doll", $"{doll.NameKR}_{vCostumeIndex - 1}", $"{doll.NameKR}_{vCostumeIndex - 1}_{voice}_JP.wav");
                         target = Path.Combine(ETC.cachePath, "Voices", "Doll", $"{doll.DicNumber}_{vCostumeIndex - 1}_{voice}_JP.gfdcache");
                         break;
                 }
 
-                MediaPlayer SoundPlayer = new MediaPlayer();
-                SoundPlayer.Completion += delegate { SoundPlayer.Release(); };
-
-                await Task.Delay(100);
-
-                try
-                {
-                    SoundPlayer.SetDataSource(target);
-                }
-                catch (Exception)
+                if (!File.Exists(target))
                 {
                     using (WebClient wc = new WebClient())
                     {
-                        wc.DownloadProgressChanged += (object s, DownloadProgressChangedEventArgs args) =>
+                        MainThread.BeginInvokeOnMainThread(() => { voicePlayButton.Enabled = false; });
+
+                        wc.DownloadProgressChanged += (sender, e) =>
                         {
-                            FindViewById<ProgressBar>(Resource.Id.DollDBDetailVoiceDownloadProgress).Indeterminate = false;
-                            FindViewById<ProgressBar>(Resource.Id.DollDBDetailVoiceDownloadProgress).Progress = args.ProgressPercentage;
+                            MainThread.BeginInvokeOnMainThread(() => { voicePlayButton.Text = $"{e.ProgressPercentage}%"; });
                         };
 
-                        await wc.DownloadFileTaskAsync(VoiceServerURL, target).ConfigureAwait(false);
+                        await wc.DownloadFileTaskAsync(voiceServerURL, target);
                     }
 
-                    SoundPlayer.SetDataSource(target);
+                    await Task.Delay(500);
                 }
 
-                FindViewById<ProgressBar>(Resource.Id.DollDBDetailVoiceDownloadProgress).Visibility = ViewStates.Invisible;
+                stream = new FileStream(target, FileMode.Open, FileAccess.Read);
 
-                SoundPlayer.Prepare();
-                SoundPlayer.Start();
+                voicePlayer.Load(stream);
+                voicePlayer.Play();
             }
             catch (WebException ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(snackbarLayout, Resource.String.VoiceStreaming_Error, Snackbar.LengthShort, Android.Graphics.Color.DarkViolet);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.VoiceStreaming_DownloadError, Snackbar.LengthShort, Android.Graphics.Color.DarkViolet);
+
+                if (File.Exists(target))
+                {
+                    File.Delete(target);
+                }
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
                 ETC.ShowSnackbar(snackbarLayout, Resource.String.VoiceStreaming_PlayError, Snackbar.LengthShort, Android.Graphics.Color.DarkCyan);
+
+                if (File.Exists(target))
+                {
+                    File.Delete(target);
+                }
+            }
+            finally
+            {
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    voicePlayButton.Enabled = true;
+                    voicePlayButton.SetText(Resource.String.Common_Play);
+                });
             }
         }
 
@@ -1269,27 +1296,19 @@ namespace GFI_with_GFS_A
             {
                 ImageView ModButton = sender as ImageView;
 
-                switch (ModButton.Id)
+                modIndex = ModButton.Id switch
                 {
-                    case Resource.Id.DollDBDetailModSelect0:
-                        modIndex = 0;
-                        break;
-                    case Resource.Id.DollDBDetailModSelect1:
-                        modIndex = 1;
-                        break;
-                    case Resource.Id.DollDBDetailModSelect2:
-                        modIndex = 2;
-                        break;
-                    case Resource.Id.DollDBDetailModSelect3:
-                        modIndex = 3;
-                        break;
-                    default:
-                        modIndex = 0;
-                        break;
-                }
+                    Resource.Id.DollDBDetailModSelect0 => 0,
+                    Resource.Id.DollDBDetailModSelect1 => 1,
+                    Resource.Id.DollDBDetailModSelect2 => 2,
+                    Resource.Id.DollDBDetailModSelect3 => 3,
+                    _ => 0,
+                };
 
                 foreach (int id in modButtonIds)
+                {
                     FindViewById<ImageButton>(id).SetBackgroundColor(Android.Graphics.Color.Transparent);
+                }
 
                 ModButton.SetBackgroundColor(Android.Graphics.Color.ParseColor("#54A716"));
 
@@ -1326,10 +1345,16 @@ namespace GFI_with_GFS_A
 
         public override void OnBackPressed()
         {
+            if (voicePlayer.IsPlaying)
+            {
+                voicePlayer.Stop();
+            }
+
+            stream?.Dispose();
+            
             base.OnBackPressed();
             OverridePendingTransition(Resource.Animation.Activity_SlideInLeft, Resource.Animation.Activity_SlideOutRight);
             GC.Collect();
-            FinishAfterTransition();
         }
 
         internal class DollMaxAbility

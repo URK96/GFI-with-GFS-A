@@ -11,6 +11,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using Com.Wang.Avi;
+using Xamarin.Essentials;
+using Android.Graphics.Drawables;
 
 namespace GFI_with_GFS_A
 {
@@ -21,16 +24,22 @@ namespace GFI_with_GFS_A
 
         private Android.Support.V7.Widget.Toolbar toolbar;
 
+        private RelativeLayout loadingLayout;
+        private AVLoadingIndicatorView loadingIndicator;
+        private TextView loadingText;
         private CoordinatorLayout snackbarLayout;
         private Spinner costumeList;
-        private ProgressBar loadProgressBar;
-        private Button refreshCacheButton;
+        /*private Button refreshCacheButton;
         private ToggleButton changeStateButton;
-        private ToggleButton censoredOption;
+        private ToggleButton censoredOption;*/
         private PhotoView dollImageView;
         private TextView imageStatus;
 
         private List<string> costumes;
+
+        private Drawable imageDrawable;
+
+        private IMenuItem censorMenuItem;
 
         private bool isDamage = false;
         private int costumeIndex = 0;
@@ -50,7 +59,7 @@ namespace GFI_with_GFS_A
                 }
 
                 // Create your application here
-                SetContentView(Resource.Layout.DollDB_ImageViewer);
+                SetContentView(Resource.Layout.DollDBImageViewer);
 
                 string[] temp = Intent.GetStringExtra("Data").Split(';');
 
@@ -59,6 +68,9 @@ namespace GFI_with_GFS_A
                 censorType = doll.HasCensored ? doll.CensorType : null;
 
                 toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.DollDBImageViewerMainToolbar);
+                loadingLayout = FindViewById<RelativeLayout>(Resource.Id.DollDBImageViewerLoadingLayout);
+                loadingIndicator = FindViewById<AVLoadingIndicatorView>(Resource.Id.DollDBImageViewerLoadingIndicatorView);
+                loadingText = FindViewById<TextView>(Resource.Id.DollDBImageViewerLoadingIndicatorExplainText);
                 dollImageView = FindViewById<PhotoView>(Resource.Id.DollDBImageViewerImageView);
                 snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBImageViewerSnackbarLayout);
                 costumeList = FindViewById<Spinner>(Resource.Id.DollDBImageViewerCostumeList);
@@ -66,14 +78,11 @@ namespace GFI_with_GFS_A
                 {
                     isDamage = false;
                     costumeIndex = e.Position;
-                    changeStateButton.Checked = false;
-                    censoredOption.Checked = censoredOption.Enabled = CheckCensorType();
+                    censorMenuItem.SetVisible(CheckCensorType());
 
                     _ = LoadImage(costumeIndex, false);
                 };
-                loadProgressBar = FindViewById<ProgressBar>(Resource.Id.DollDBImageViewerLoadProgress);
-                loadProgressBar.Visibility = ViewStates.Visible;
-                refreshCacheButton = FindViewById<Button>(Resource.Id.DollDBImageViewerRefreshImageCacheButton);
+                /*refreshCacheButton = FindViewById<Button>(Resource.Id.DollDBImageViewerRefreshImageCacheButton);
                 refreshCacheButton.Click += delegate { _ = LoadImage(costumeIndex, true); };
                 changeStateButton = FindViewById<ToggleButton>(Resource.Id.DollDBImageViewerChangeStateButton);
                 changeStateButton.CheckedChange += (sender, e) =>
@@ -91,9 +100,10 @@ namespace GFI_with_GFS_A
 
                     _ = LoadImage(costumeIndex, false);
                 };
-                imageStatus = FindViewById<TextView>(Resource.Id.DollDBImageViewerImageStatus);
+                
 
-                censoredOption.Visibility = ETC.sharedPreferences.GetBoolean("ImageCensoredUnlock", false) ? ViewStates.Visible : ViewStates.Gone;
+                censoredOption.Visibility = ETC.sharedPreferences.GetBoolean("ImageCensoredUnlock", false) ? ViewStates.Visible : ViewStates.Gone;*/
+                imageStatus = FindViewById<TextView>(Resource.Id.DollDBImageViewerImageStatus);
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.SetDisplayShowTitleEnabled(false);
@@ -109,6 +119,43 @@ namespace GFI_with_GFS_A
                 ETC.LogError(ex, this);
                 Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
             }
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.DollDBImageViewerMenu, menu);
+
+            censorMenuItem = menu?.FindItem(Resource.Id.DollDBImageViewerCensoredOption);
+
+            censorMenuItem.SetVisible(ETC.sharedPreferences.GetBoolean("ImageCensoredUnlock", false));
+
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item?.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    OnBackPressed();
+                    break;
+                case Resource.Id.DollDBImageViewerCensoredOption:
+                    enableCensored = !enableCensored;
+
+                    _ = LoadImage(costumeIndex, false);
+                    break;
+                case Resource.Id.DollDBImageViewerChangeStateButton:
+                    isDamage = !isDamage;
+                    censorMenuItem.SetVisible(CheckCensorType());
+
+                    _ = LoadImage(costumeIndex, false);
+                    break;
+                case Resource.Id.RefreshDollImageCache:
+                    _ = LoadImage(costumeIndex, true);
+                    break;
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
 
         private async Task InitializeProcess()
@@ -137,41 +184,6 @@ namespace GFI_with_GFS_A
                 ETC.LogError(ex, this);
                 Toast.MakeText(this, "Fail Initialize Process", ToastLength.Short).Show();
             }
-        }
-
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            try
-            {
-                //MenuInflater.Inflate(Resource.Menu.DollDBDetailMenu, menu);
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                Toast.MakeText(this, "Cannot create option menu", ToastLength.Short).Show();
-            }
-
-            return base.OnCreateOptionsMenu(menu);
-        }
-
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            try
-            {
-                switch (item?.ItemId)
-                {
-                    case Android.Resource.Id.Home:
-                        OnBackPressed();
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                Toast.MakeText(this, "Cannot execute option menu", ToastLength.Short).Show();
-            }
-
-            return base.OnOptionsItemSelected(item);
         }
 
         private void LoadCostumeList()
@@ -237,11 +249,15 @@ namespace GFI_with_GFS_A
         {
             await Task.Delay(100);
 
+            string imageName = doll.DicNumber.ToString();
+
             try
             {
-                loadProgressBar.Visibility = ViewStates.Visible;
-
-                string imageName = doll.DicNumber.ToString();
+                dollImageView.SetImageDrawable(null);
+                imageDrawable?.Dispose();
+                loadingLayout.Visibility = ViewStates.Visible;
+                loadingIndicator.SmoothToShow();
+                MainThread.BeginInvokeOnMainThread(() => { loadingText.SetText(Resource.String.Common_Load); });
 
                 if (costumeIndex >= 1)
                 {
@@ -264,24 +280,36 @@ namespace GFI_with_GFS_A
 
                 if (!File.Exists(imagePath) || isRefresh)
                 {
+                    string dTemp = Resources.GetString(Resource.String.Common_Downloading);
+
+                    MainThread.BeginInvokeOnMainThread(() => { loadingText.Text = dTemp; });
+
                     using (WebClient wc = new WebClient())
                     {
-                        await Task.Run(async () => { await wc.DownloadFileTaskAsync(url, imagePath); });
+                        wc.DownloadProgressChanged += (sender, e) => { loadingText.Text = $"{dTemp}{e.ProgressPercentage}%"; };
+
+                        await wc.DownloadFileTaskAsync(url, imagePath);
                     }
                 }
 
-                await Task.Delay(100);
+                await Task.Delay(500);
 
-                dollImageView.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(imagePath));
+                MainThread.BeginInvokeOnMainThread(() => { loadingText.SetText(Resource.String.Common_Load); });
+
+                imageDrawable = await Drawable.CreateFromPathAsync(imagePath);
+
+                dollImageView.SetImageDrawable(imageDrawable);
 
                 string damageText = isDamage ? Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusDamage) : Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusNormal);
+                string censorText = Resources.GetString(Resource.String.DollDBImageViewer_ImageCensored);
 
-                changeStateButton.Text = damageText;
-                imageStatus.Text = $"{doll.Name} - {costumes[costumeIndex]} - {damageText}";
+                imageStatus.Text = censorMenuItem.IsVisible ? $"{doll.Name} - {costumes[costumeIndex]} - {damageText} - {censorText}{(enableCensored ? "O" : "X")}" : 
+                    $"{doll.Name} - {costumes[costumeIndex]} - {damageText}";
             }
-            catch (WebException ex) when (ex.Message.Contains("System.IO"))
+            catch (WebException ex)
             {
                 ETC.LogError(ex, this);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.ImageLoad_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
             catch (Exception ex)
             {
@@ -290,12 +318,16 @@ namespace GFI_with_GFS_A
             }
             finally
             {
-                loadProgressBar.Visibility = ViewStates.Invisible;
+                loadingText.Text = "";
+                loadingIndicator.SmoothToHide();
+                loadingLayout.Visibility = ViewStates.Gone;
             }
         }
 
         public override void OnBackPressed()
         {
+            imageDrawable?.Dispose();
+
             base.OnBackPressed();
             OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             GC.Collect();
