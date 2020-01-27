@@ -7,4 +7,9 @@
 - DB 리스트에서 대화상자 생성 시 오류가 발생하는 현상 수정
 - 보이스 재생 구조 변경
 
-- Fix app start issue on some device
+- Add T-Doll Guide Image Viewer
+- Improve T-Doll Image Viewer UI
+- Add Cartoon Content
+- Fix Image Download Issue on Enemy, FST DB List
+- Fix Dialog Message Issue
+- Change Voice Player Process
