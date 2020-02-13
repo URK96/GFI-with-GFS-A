@@ -384,11 +384,6 @@ namespace GFI_with_GFS_A
                             {
                                 ETC.LoadDBSync(ETC.dollList, "Doll.gfs", false);
                             }
-
-                            if (!ETC.hasInitDollAvgAbility)
-                            {
-                                ETC.InitializeAverageAbility();
-                            }
                         });
                         if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
                         {

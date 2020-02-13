@@ -31,7 +31,6 @@ namespace GFI_with_GFS_A
         internal static string logPath;
 
         internal static bool isReleaseMode = true;
-        internal static bool hasInitDollAvgAbility = false;
         internal static bool hasBasicInit = false;
         internal static bool isLowRAM = false;
         internal static bool useLightTheme = false;
@@ -62,8 +61,6 @@ namespace GFI_with_GFS_A
             "FairyAttribution.gfs"
         };
 
-        internal static AverageAbility[] avgList;
-
         internal static Java.Util.Locale locale; // ko, en
         internal static Android.Content.Res.Resources Resources = null;
         internal static Context baseContext;
@@ -71,129 +68,6 @@ namespace GFI_with_GFS_A
         internal static ISharedPreferences sharedPreferences;
 
         internal static bool isServerDown = false;
-
-        internal struct AverageAbility
-        {
-            public int HP { get; set; }
-            public int FR { get; set; }
-            public int EV { get; set; }
-            public int AC { get; set; }
-            public int AS { get; set; }
-            public int AM { get; set; }
-        }
-
-        internal static void InitializeAverageAbility()
-        {
-            string[] abilityList = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
-            const int typeCount = 6;
-            const int abilityCount = 6;
-
-            Doll doll;
-            DollAbilitySet das;
-
-            AverageAbility avg_HG = new AverageAbility();
-            AverageAbility avg_SMG = new AverageAbility();
-            AverageAbility avg_AR = new AverageAbility();
-            AverageAbility avg_RF = new AverageAbility();
-            AverageAbility avg_MG = new AverageAbility();
-            AverageAbility avg_SG = new AverageAbility();
-
-            avgList = new AverageAbility[typeCount]
-            {
-                avg_HG,
-                avg_SMG,
-                avg_AR,
-                avg_RF,
-                avg_MG,
-                avg_SG
-            };
-            
-            int[] count = { 0, 0, 0, 0, 0, 0 };
-            int[,] total = new int[typeCount, abilityCount];
-
-            for (int i = 0; i < typeCount; ++i)
-                for (int j = 0; j < abilityCount; ++j)
-                    total[i, j] = 0;
-
-            for (int i = 0; i < dollList.Rows.Count; ++i)
-            {
-                int index = 0;
-
-                doll = new Doll(dollList.Rows[i]);
-                das = new DollAbilitySet(doll.Type);
-                
-                switch (doll.Type)
-                {
-                    case "HG":
-                        index = 0;
-                        break;
-                    case "SMG":
-                        index = 1;
-                        break;
-                    case "AR":
-                        index = 2;
-                        break;
-                    case "RF":
-                        index = 3;
-                        break;
-                    case "MG":
-                        index = 4;
-                        break;
-                    case "SG":
-                        index = 5;
-                        break;
-                }
-
-                count[index] += 1;
-
-                int growValue = int.Parse(doll.Abilities["Grow"].Split(';')[0]);
-                int abilityValue;
-
-                for (int j = 0; j < abilityList.Length; ++j)
-                {
-                    abilityValue = int.Parse(doll.Abilities[abilityList[j]].Split(';')[0]);
-                    total[index, j] += das.CalcAbility(abilityList[j], abilityValue, growValue, 100, 100, false);
-                }
-                    
-                if (doll.Type == "SG")
-                {
-                    abilityValue = int.Parse(doll.Abilities["Armor"].Split(';')[0]);
-                    total[index, 5] += das.CalcAbility("Armor", abilityValue, growValue, 100, 100, false);
-                }
-            }
-
-            int value;
-
-            for (int i = 0; i < typeCount; ++i)
-                for (int j = 0; j < abilityCount; ++j)
-                {
-                    value = Convert.ToInt32(Math.Round((double)total[i, j] / count[i]));
-
-                    switch (j)
-                    {
-                        case 0:
-                            avgList[i].HP = value;
-                            break;
-                        case 1:
-                            avgList[i].FR = value;
-                            break;
-                        case 2:
-                            avgList[i].EV = value;
-                            break;
-                        case 3:
-                            avgList[i].AC = value;
-                            break;
-                        case 4:
-                            avgList[i].AS = value;
-                            break;
-                        case 5:
-                            avgList[i].AM = value;
-                            break;
-                    }
-                }
-
-            hasInitDollAvgAbility = true;
-        }
 
         internal static void SetDialogTheme()
         {

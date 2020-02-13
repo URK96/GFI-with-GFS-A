@@ -674,12 +674,12 @@
     <ProductTime>30</ProductTime>
     <HasMod>true</HasMod>
     <AbilityGrade>S;A;B;B;A;B</AbilityGrade>
-    <Grow>100;0</Grow>
-    <HP>125;0</HP>
-    <FireRate>115;0</FireRate>
-    <Evasion>95;0</Evasion>
-    <Accuracy>95;0</Accuracy>
-    <AttackSpeed>120;0</AttackSpeed>
+    <Grow>100;108</Grow>
+    <HP>125;125</HP>
+    <FireRate>115;118</FireRate>
+    <Evasion>95;100</Evasion>
+    <Accuracy>95;108</Accuracy>
+    <AttackSpeed>120;120</AttackSpeed>
     <MoveSpeed>15</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>10/15/20/25/30</ConsumeAmmo>
@@ -1182,12 +1182,12 @@
     <ProductTime>55</ProductTime>
     <HasMod>true</HasMod>
     <AbilityGrade>S;B;B;B;S;A</AbilityGrade>
-    <Grow>110;0</Grow>
-    <HP>125;0</HP>
-    <FireRate>105;0</FireRate>
-    <Evasion>95;0</Evasion>
-    <Accuracy>95;0</Accuracy>
-    <AttackSpeed>125;0</AttackSpeed>
+    <Grow>110;110</Grow>
+    <HP>125;125</HP>
+    <FireRate>105;115</FireRate>
+    <Evasion>95;95</Evasion>
+    <Accuracy>95;105</Accuracy>
+    <AttackSpeed>125;125</AttackSpeed>
     <MoveSpeed>15</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>10/15/20/25/30</ConsumeAmmo>
@@ -1832,12 +1832,12 @@
     <ProductTime>90</ProductTime>
     <HasMod>true</HasMod>
     <AbilityGrade>A;S;C;B;B;A</AbilityGrade>
-    <Grow>110;0</Grow>
-    <HP>115;0</HP>
-    <FireRate>125;0</FireRate>
-    <Evasion>85;0</Evasion>
-    <Accuracy>95;0</Accuracy>
-    <AttackSpeed>95;0</AttackSpeed>
+    <Grow>110;110</Grow>
+    <HP>115;120</HP>
+    <FireRate>125;125</FireRate>
+    <Evasion>85;94</Evasion>
+    <Accuracy>95;95</Accuracy>
+    <AttackSpeed>95;100</AttackSpeed>
     <MoveSpeed>12</MoveSpeed>
     <Critical>5</Critical>
     <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
@@ -6388,12 +6388,12 @@
     <ProductTime>285</ProductTime>
     <HasMod>true</HasMod>
     <AbilityGrade>B;SS;C;B;C;S</AbilityGrade>
-    <Grow>130;0</Grow>
-    <HP>105;0</HP>
-    <FireRate>145;0</FireRate>
-    <Evasion>80;0</Evasion>
-    <Accuracy>105;0</Accuracy>
-    <AttackSpeed>85;0</AttackSpeed>
+    <Grow>130;130</Grow>
+    <HP>105;105</HP>
+    <FireRate>145;145</FireRate>
+    <Evasion>80;80</Evasion>
+    <Accuracy>105;110</Accuracy>
+    <AttackSpeed>85;90</AttackSpeed>
     <MoveSpeed>7</MoveSpeed>
     <Critical>40</Critical>
     <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
@@ -13208,13 +13208,13 @@
     <Grade>3</Grade>
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
-    <AbilityGrade>?;?;?;?;?;?</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <AbilityGrade>B;B;B;A;A;A</AbilityGrade>
+    <Grow>118</Grow>
+    <HP>95</HP>
+    <FireRate>102</FireRate>
+    <Evasion>105</Evasion>
+    <Accuracy>120</Accuracy>
+    <AttackSpeed>110</AttackSpeed>
     <MoveSpeed>7</MoveSpeed>
     <Critical>40</Critical>
     <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
@@ -13248,12 +13248,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;B;A;A;B;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>118</Grow>
+    <HP>105</HP>
+    <FireRate>105</FireRate>
+    <Evasion>112</Evasion>
+    <Accuracy>110</Accuracy>
+    <AttackSpeed>100</AttackSpeed>
     <MoveSpeed>12</MoveSpeed>
     <Critical>5</Critical>
     <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
@@ -13287,12 +13287,12 @@
     <ProductTime>236</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>A;A;A;A;A;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>112</Grow>
+    <HP>110</HP>
+    <FireRate>118</FireRate>
+    <Evasion>115</Evasion>
+    <Accuracy>118</Accuracy>
+    <AttackSpeed>115</AttackSpeed>
     <MoveSpeed>15</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
@@ -13325,12 +13325,12 @@
     <ProductTime>69</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;A;S;A;A;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>122</Grow>
+    <HP>95</HP>
+    <FireRate>115</FireRate>
+    <Evasion>130</Evasion>
+    <Accuracy>122</Accuracy>
+    <AttackSpeed>118</AttackSpeed>
     <MoveSpeed>15</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>10/15/20/25/30</ConsumeAmmo>
@@ -13365,12 +13365,12 @@
     <ProductTime>140</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;S;A;A;B;B</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>105</Grow>
+    <HP>102</HP>
+    <FireRate>130</FireRate>
+    <Evasion>120</Evasion>
+    <Accuracy>120</Accuracy>
+    <AttackSpeed>105</AttackSpeed>
     <MoveSpeed>12</MoveSpeed>
     <Critical>5</Critical>
     <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
@@ -13403,12 +13403,12 @@
     <ProductTime>215</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;B;B;S;A;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>115</Grow>
+    <HP>100</HP>
+    <FireRate>108</FireRate>
+    <Evasion>105</Evasion>
+    <Accuracy>130</Accuracy>
+    <AttackSpeed>122</AttackSpeed>
     <MoveSpeed>15</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
@@ -13443,12 +13443,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>A;A;B;S;A;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>120</Grow>
+    <HP>112</HP>
+    <FireRate>120</FireRate>
+    <Evasion>102</Evasion>
+    <Accuracy>130</Accuracy>
+    <AttackSpeed>112</AttackSpeed>
     <MoveSpeed>15</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
@@ -13481,12 +13481,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;A;C;B;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>120</Grow>
+    <HP>105</HP>
+    <FireRate>110</FireRate>
+    <Evasion>85</Evasion>
+    <Accuracy>100</Accuracy>
+    <AttackSpeed>110</AttackSpeed>
     <MoveSpeed>12</MoveSpeed>
     <Critical>5</Critical>
     <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
@@ -13520,12 +13520,12 @@
     <ProductTime>376</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;B;S;S;A;S</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>138</Grow>
+    <HP>100</HP>
+    <FireRate>95</FireRate>
+    <Evasion>125</Evasion>
+    <Accuracy>130</Accuracy>
+    <AttackSpeed>115</AttackSpeed>
     <MoveSpeed>4</MoveSpeed>
     <Critical>5</Critical>
     <Bullet>10</Bullet>
@@ -13559,12 +13559,12 @@
     <ProductTime>255</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;A;A;A;A;S</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>136</Grow>
+    <HP>100</HP>
+    <FireRate>118</FireRate>
+    <Evasion>110</Evasion>
+    <Accuracy>112</Accuracy>
+    <AttackSpeed>110</AttackSpeed>
     <MoveSpeed>10</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
@@ -13597,12 +13597,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>S;B;B;A;B;S</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>132</Grow>
+    <HP>130</HP>
+    <FireRate>98</FireRate>
+    <Evasion>100</Evasion>
+    <Accuracy>120</Accuracy>
+    <AttackSpeed>102</AttackSpeed>
     <MoveSpeed>15</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>40/65/90/115/140</ConsumeAmmo>
@@ -13635,12 +13635,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;B;S;A;A;B</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>105</Grow>
+    <HP>108</HP>
+    <FireRate>100</FireRate>
+    <Evasion>125</Evasion>
+    <Accuracy>110</Accuracy>
+    <AttackSpeed>112</AttackSpeed>
     <MoveSpeed>12</MoveSpeed>
     <Critical>5</Critical>
     <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
@@ -13673,12 +13673,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;B;A;A;A;S</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>128</Grow>
+    <HP>96</HP>
+    <FireRate>106</FireRate>
+    <Evasion>110</Evasion>
+    <Accuracy>112</Accuracy>
+    <AttackSpeed>120</AttackSpeed>
     <MoveSpeed>7</MoveSpeed>
     <Critical>40</Critical>
     <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
@@ -13711,12 +13711,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;A;B;B;A;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>122</Grow>
+    <HP>102</HP>
+    <FireRate>110</FireRate>
+    <Evasion>108</Evasion>
+    <Accuracy>105</Accuracy>
+    <AttackSpeed>110</AttackSpeed>
     <MoveSpeed>10</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
@@ -13736,5 +13736,42 @@
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>발멧 M82가 신고합니다. 항상 지휘관과 함께할 수 있기를. ...제가 정말 쓸모 있다면 말입니다만.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>89식 소총</Name>
+    <CodeName>HowaType89</CodeName>
+    <Nickname>89식</Nickname>
+    <Model>Type 89 5.56mm AR</Model>
+    <Country>Japan</Country>
+    <Type>AR</Type>
+    <Grade>5</Grade>
+    <ProductTime>248</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>A;A;A;A;A;A</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>10</MoveSpeed>
+    <Critical>20</Critical>
+    <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>0,0,1,0,2,1,0,0,1</EffectFormation>
+    <Effect>FR,EV;20,15</Effect>
+    <EffectType>SMG</EffectType>
+    <DropEvent>없음</DropEvent>
+    <DicNumber>290</DicNumber>
+    <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
+    <Skill>수능의 정석</Skill>
+    <SkillExplain>&lt;복습 모드&gt; 공격할 때마다 집중도가 1 상승하며, 18에 도달 시 자동으로 만점 모드로 전환한다. 복습 모드에서 스킬 발동 시 집중도를 6 소모하여 자신의 화력과 사속을 증가시킨다. 집중도가 6 미만일 경우 모두 소모해 발동한다.     &lt;만점 모드&gt; 공격할 때마다 집중도를 1 소모하며, 모두 소진 시 자동으로 복습 모드가 된다. 만점 모드에선 체력이 가장 높은 적을 우선 공격하며, 같은 적을 공격할 때마다 주는 피해량이 최대 3회까지 증가한다. 만점 모드에서 스킬 발동 시 자신의 화력과 사속, 명중을 증가시키지만 자신이 받는 피해량이 30% 증가하며 이동속도가 30% 감소한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;피해량 상승치;복습 모드 화력 증가치;복습 모드 사속 증가치;만점 모드 화력 증가치;만점 모드 사속 증가치;만점 모드 명중 증가치</SkillEffect>
+    <SkillMag>3초,4초,10%,30%,30%,30%,60%,60%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>Parsley</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>짜잔! 89식 자동소총이 입대를 신고합니다! 어라? 지휘관님, 64식도 여기에 있나요?</ProductDialog>
   </Doll>
 </NewDataSet>

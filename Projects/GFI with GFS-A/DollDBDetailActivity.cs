@@ -1,50 +1,67 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Graphics.Drawables;
-using Android.Media;
 using Android.OS;
 using Android.Support.Design.Widget;
+using Android.Support.Transitions;
 using Android.Support.V4.Widget;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+
+using Com.Syncfusion.Charts;
+
+using Plugin.SimpleAudioPlayer;
+
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Com.Syncfusion.Charts;
-using System.Collections.ObjectModel;
-using System.Collections.Generic;
-using Android.Support.Transitions;
+
 using Xamarin.Essentials;
-using Plugin.SimpleAudioPlayer;
 
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class DollDBDetailActivity : BaseAppCompatActivity
     {
+        internal struct AverageAbility
+        {
+            public int HP { get; set; }
+            public int FR { get; set; }
+            public int EV { get; set; }
+            public int AC { get; set; }
+            public int AS { get; set; }
+            public int AM { get; set; }
+        }
+
+        private AverageAbility avgAbility;
+        private List<int[]> typeAbilities;
+
         private LinearLayout skillTableSubLayout;
         private LinearLayout modSkillTableSubLayout;
 
-        internal static Doll doll;
-        internal static Doll cDoll;
+        private Doll doll;
         private DataRow dollInfoDR = null;
-        internal static int modIndex = 0;
+        private int modIndex = 0;
         private int vCostumeIndex = 0;
         private List<string> voiceList = new List<string>();
 
-        internal static int abilityLevel = 1;
+        private int abilityLevel = 1;
         private List<int> levelList = new List<int>();
-        internal static int abilityFavor = 0;
+        private int abilityFavor = 0;
         private List<string> favorList = new List<string>();
-        internal static DollAbilitySet das;
-        internal static int[] abilityValues = new int[6];
+        private DollAbilitySet das;
+        private int[] abilityValues = new int[6];
 
         private bool isExtraFeatureOpen = false;
         private bool isChartLoad = false;
+        private bool initLoadComplete = false;
 
         private ISimpleAudioPlayer voicePlayer;
         private FileStream stream;
@@ -67,7 +84,7 @@ namespace GFI_with_GFS_A
         private int curtainDownIcon = ETC.useLightTheme ? Resource.Drawable.ArrowDown_WhiteTheme : Resource.Drawable.ArrowDown;
 
         int[] modButtonIds = { Resource.Id.DollDBDetailModSelect0, Resource.Id.DollDBDetailModSelect1, Resource.Id.DollDBDetailModSelect2, Resource.Id.DollDBDetailModSelect3 };
-        internal static List<string> compareList;
+        private List<string> compareList;
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
@@ -92,14 +109,13 @@ namespace GFI_with_GFS_A
                 toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.DollDBDetailMainToolbar);
 
                 SetSupportActionBar(toolbar);
-                //SupportActionBar.Title = $"No.{doll.DicNumber} {doll.Name}";
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
                 FindViewById<TextView>(Resource.Id.DollDBDetailToolbarDicNumber).Text = $"No. {doll.DicNumber}";
                 FindViewById<TextView>(Resource.Id.DollDBDetailToolbarName).Text = $"{doll.Name} - {doll.CodeName}";
 
                 refreshMainLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.DollDBDetailMainRefreshLayout);
-                refreshMainLayout.Refresh += delegate { _ = InitLoadProcess(true); };
+                refreshMainLayout.Refresh += async delegate { await InitLoadProcess(true); };
                 snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBDetailSnackbarLayout);
 
                 FindViewById<ImageView>(Resource.Id.DollDBDetailSmallImage).Click += DollDBDetailSmallImage_Click;
@@ -139,13 +155,14 @@ namespace GFI_with_GFS_A
                 modSkillTableSubLayout = FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSkillAbilitySubLayout);
                 
                 abilityLevelSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityLevelSelector);
-                abilityLevelSelector.ItemSelected += (object sender, AdapterView.ItemSelectedEventArgs e) => 
+                abilityLevelSelector.ItemSelected += async (object sender, AdapterView.ItemSelectedEventArgs e) => 
                 {
                     abilityLevel = levelList[e.Position];
-                    _ = LoadAbility();
+
+                    await LoadAbility();
                 };
                 abilityFavorSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityFavorSelector);
-                abilityFavorSelector.ItemSelected += (object sender, AdapterView.ItemSelectedEventArgs e) => 
+                abilityFavorSelector.ItemSelected += async (object sender, AdapterView.ItemSelectedEventArgs e) => 
                 {
                     switch (e.Position)
                     {
@@ -166,7 +183,10 @@ namespace GFI_with_GFS_A
                             break;
                     }
 
-                    _ = LoadAbility();
+                    if (initLoadComplete)
+                    {
+                        await LoadAbility();
+                    }
                 };
                 chartCompareList = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityChartCompareList);
                 chartCompareList.ItemSelected += (sender, e) => { _ = LoadChart(e.Position); };
@@ -176,7 +196,7 @@ namespace GFI_with_GFS_A
                 ListAbilityLevelFavor();
 
                 await InitializeProcess();
-                _ = InitLoadProcess(false);
+                await InitLoadProcess(false);
 
                 /*if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DollDBDetail", true)))
                     ETC.RunHelpActivity(this, "DollDBDetail");*/
@@ -218,7 +238,7 @@ namespace GFI_with_GFS_A
                         OnBackPressed();
                         break;
                     case Resource.Id.DollDBDetailLink:
-                        Android.Support.V7.Widget.PopupMenu pMenu = new Android.Support.V7.Widget.PopupMenu(this, FindViewById<View>(Resource.Id.DollDBDetailLink));
+                        var pMenu = new Android.Support.V7.Widget.PopupMenu(this, FindViewById<View>(Resource.Id.DollDBDetailLink));
                         pMenu.Inflate(Resource.Menu.DBLinkMenu);
                         pMenu.MenuItemClick += PMenu_MenuItemClick;
                         pMenu.Show();
@@ -244,6 +264,95 @@ namespace GFI_with_GFS_A
             }
 
             return base.OnOptionsItemSelected(item);
+        }
+
+        private void CalcAverageAbility()
+        {
+            string[] abilityList = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
+            const int abilityCount = 6;
+
+            var das = new DollAbilitySet(doll.Type);
+            int[] total = new int[abilityCount];
+
+            if (typeAbilities == null)
+            {
+                typeAbilities = new List<int[]>();
+                Doll tDoll;
+
+                foreach (DataRow row in ETC.dollList.Rows)
+                {
+                    if ((string)row["Type"] != doll.Type)
+                    {
+                        continue;
+                    }
+
+                    tDoll = new Doll(row);
+
+                    int[] abilityValues = new int[abilityCount + 1]; // HP, FireRate, Evasion, Accuracy, AttackSpeed, Armor, Grow
+
+                    abilityValues[6] = int.Parse(tDoll.Abilities["Grow"].Split(';')[0]);
+
+                    for (int i = 0; i < abilityList.Length; ++i)
+                    {
+                        abilityValues[i] = int.Parse(tDoll.Abilities[abilityList[i]].Split(';')[0]);
+                        total[i] += das.CalcAbility(abilityList[i], abilityValues[i], abilityValues[6], abilityLevel, abilityFavor, false);
+                    }
+
+                    if (doll.Type == "SG")
+                    {
+                        abilityValues[5] = int.Parse(tDoll.Abilities["Armor"].Split(';')[0]);
+                        total[5] += das.CalcAbility("Armor", abilityValues[5], abilityValues[6], abilityLevel, abilityFavor, false);
+                    }
+
+                    typeAbilities.Add(abilityValues);
+                }
+
+                typeAbilities.TrimExcess();
+            }
+            else
+            {
+                foreach (var abilityValues in typeAbilities)
+                {
+                    for (int i = 0; i < abilityList.Length; ++i)
+                    {
+                        total[i] += das.CalcAbility(abilityList[i], abilityValues[i], abilityValues[6], abilityLevel, abilityFavor, false);
+                    }
+
+                    if (doll.Type == "SG")
+                    {
+                        total[5] += das.CalcAbility("Armor", abilityValues[5], abilityValues[6], abilityLevel, abilityFavor, false);
+                    }
+                }
+            }
+
+            int value;
+
+            for (int i = 0; i < abilityCount; ++i)
+            {
+                value = Convert.ToInt32(Math.Round((double)total[i] / typeAbilities.Count));
+
+                switch (i)
+                {
+                    case 0:
+                        avgAbility.HP = value;
+                        break;
+                    case 1:
+                        avgAbility.FR = value;
+                        break;
+                    case 2:
+                        avgAbility.EV = value;
+                        break;
+                    case 3:
+                        avgAbility.AC = value;
+                        break;
+                    case 4:
+                        avgAbility.AS = value;
+                        break;
+                    case 5:
+                        avgAbility.AM = value;
+                        break;
+                }
+            }
         }
 
         private void PMenu_MenuItemClick(object sender, Android.Support.V7.Widget.PopupMenu.MenuItemClickEventArgs e)
@@ -497,70 +606,70 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task LoadChart(int CompareIndex)
+        private async Task LoadChart(int compareIndex)
         {
             await Task.Delay(100);
 
-            chart.Series.Clear();
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                chart.Series.Clear();
 
-            ChartZoomPanBehavior ZoomBehavior = new ChartZoomPanBehavior();
-            ZoomBehavior.ZoomMode = ZoomMode.Xy;
-            ZoomBehavior.SelectionZoomingEnabled = true;
-            ZoomBehavior.MaximumZoomLevel = 2.0f;
-            ZoomBehavior.ZoomingEnabled = true;
-            ZoomBehavior.DoubleTapEnabled = true;
-            ZoomBehavior.ScrollingEnabled = true;
+                if (compareIndex == 0)
+                {
+                    CalcAverageAbility();
+                }
 
-            chart.Behaviors.Add(ZoomBehavior);
+                var ZoomBehavior = new ChartZoomPanBehavior
+                {
+                    ZoomMode = ZoomMode.Xy,
+                    SelectionZoomingEnabled = true,
+                    MaximumZoomLevel = 2.0f,
+                    ZoomingEnabled = true,
+                    DoubleTapEnabled = true,
+                    ScrollingEnabled = true
+                };
 
-            chart.PrimaryAxis = new CategoryAxis();
-            chart.SecondaryAxis = new NumericalAxis();
-            chart.Legend.Visibility = Com.Syncfusion.Charts.Visibility.Visible;
+                chart.Behaviors.Add(ZoomBehavior);
 
-            chart.Legend.LabelStyle.TextColor = ETC.useLightTheme ? Android.Graphics.Color.DarkGray : Android.Graphics.Color.LightGray;
+                chart.PrimaryAxis = new CategoryAxis();
+                chart.SecondaryAxis = new NumericalAxis();
+                chart.Legend.Visibility = Com.Syncfusion.Charts.Visibility.Visible;
 
-            /*if (ETC.UseLightTheme == true)
-                chart.Legend.LabelStyle.TextColor = Android.Graphics.Color.DarkGray;
-            else
-                chart.Legend.LabelStyle.TextColor = Android.Graphics.Color.LightGray;*/
+                chart.Legend.LabelStyle.TextColor = ETC.useLightTheme ? Android.Graphics.Color.DarkGray : Android.Graphics.Color.LightGray;
 
-            RadarSeries radar = new RadarSeries();
+                
+                var model = new DataModel(compareIndex, doll, abilityValues, compareList, modIndex, abilityLevel, abilityFavor, ref avgAbility);
 
-            DataModel model = new DataModel(CompareIndex);
+                var radar = new RadarSeries
+                {
+                    ItemsSource = model.MaxAbilityList,
+                    XBindingPath = "AbilityType",
+                    YBindingPath = "AbilityValue",
+                    DrawType = PolarChartDrawType.Line,
+                    Color = Android.Graphics.Color.LightGreen,
+                    EnableAnimation = true,
+                    Label = doll.Name,
+                    TooltipEnabled = true
+                };
 
-            radar.ItemsSource = model.MaxAbilityList;
-            radar.XBindingPath = "AbilityType";
-            radar.YBindingPath = "AbilityValue";
-            radar.DrawType = PolarChartDrawType.Line;
-            radar.Color = Android.Graphics.Color.LightGreen;
-            radar.EnableAnimation = true;
+                chart.Series.Add(radar);
 
-            radar.Label = doll.Name;
-            radar.TooltipEnabled = true;
+                RadarSeries radar2 = new RadarSeries
+                {
+                    ItemsSource = model.CompareAbilityList,
+                    XBindingPath = "AbilityType",
+                    YBindingPath = "AbilityValue",
+                    DrawType = PolarChartDrawType.Line,
+                    Color = Android.Graphics.Color.Magenta,
+                    EnableAnimation = true,
+                    Label = (compareIndex == 0) ? $"{doll.Type}{Resources.GetString(Resource.String.DollDBDetail_RadarAverageString)}" : compareList[compareIndex],
+                    TooltipEnabled = true
+                };
 
-            chart.Series.Add(radar);
+                chart.Series.Add(radar2);
 
-            RadarSeries radar2 = new RadarSeries();
-
-            radar2.ItemsSource = model.CompareAbilityList;
-            radar2.XBindingPath = "AbilityType";
-            radar2.YBindingPath = "AbilityValue";
-            radar2.DrawType = PolarChartDrawType.Line;
-            radar2.Color = Android.Graphics.Color.Magenta;
-            radar2.EnableAnimation = true;
-
-            radar2.Label = (CompareIndex == 0) ? $"{doll.Type}{Resources.GetString(Resource.String.DollDBDetail_RadarAverageString)}" : cDoll.Name;
-
-            /*if (CompareIndex == 0)
-                radar2.Label = $"{doll.Type}{Resources.GetString(Resource.String.DollDBDetail_RadarAverageString)}";
-            else
-                radar2.Label = cDoll.Name;*/
-
-            radar2.TooltipEnabled = true;
-
-            chart.Series.Add(radar2);
-
-            isChartLoad = true;
+                isChartLoad = true;
+            });
         }
 
         protected override void OnResume()
@@ -1120,11 +1229,8 @@ namespace GFI_with_GFS_A
 
                 await LoadAbility();
 
-                double[] DPS = ETC.CalcDPS(abilityValues[1], abilityValues[4], 0, abilityValues[3], 3, int.Parse(doll.Abilities["Critical"]), 5);
-                FindViewById<TextView>(Resource.Id.DollInfoDPSStatus).Text = $"{DPS[0].ToString("F2")} ~ {DPS[1].ToString("F2")}";
-
-
-                _ = LoadChart(chartCompareList.SelectedItemPosition);
+                double[] dps = ETC.CalcDPS(abilityValues[1], abilityValues[4], 0, abilityValues[3], 3, int.Parse(doll.Abilities["Critical"]), 5);
+                FindViewById<TextView>(Resource.Id.DollInfoDPSStatus).Text = $"{dps[0].ToString("F2")} ~ {dps[1].ToString("F2")}";
 
                 if (ETC.useLightTheme)
                 {
@@ -1151,6 +1257,7 @@ namespace GFI_with_GFS_A
             finally
             {
                 refreshMainLayout.Refreshing = false;
+                initLoadComplete = true;
             }
         }
 
@@ -1222,6 +1329,8 @@ namespace GFI_with_GFS_A
                     abilityValues[5] = 0;
                     FindViewById<LinearLayout>(Resource.Id.DollInfoAMLayout).Visibility = ViewStates.Gone;
                 }
+
+                await LoadChart(chartCompareList.SelectedItemPosition);
             }
             catch (Exception ex)
             {
@@ -1290,7 +1399,7 @@ namespace GFI_with_GFS_A
             FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout).Visibility = ViewStates.Visible;
         }
 
-        private void DollDBDetailModSelectButton_Click(object sender, EventArgs e)
+        private async void DollDBDetailModSelectButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -1312,10 +1421,11 @@ namespace GFI_with_GFS_A
 
                 ModButton.SetBackgroundColor(Android.Graphics.Color.ParseColor("#54A716"));
 
-                ListAbilityLevelFavor();
-
-                _ = InitLoadProcess(false);
-                _ = LoadChart(chartCompareList.SelectedItemPosition);
+                if (initLoadComplete)
+                {
+                    ListAbilityLevelFavor();
+                    await InitLoadProcess(false);
+                }
             }
             catch (Exception ex)
             {
@@ -1359,8 +1469,8 @@ namespace GFI_with_GFS_A
 
         internal class DollMaxAbility
         {
-            public string AbilityType { get; set; }
-            public int AbilityValue { get; set; }
+            public string AbilityType { get; private set; }
+            public int AbilityValue { get; private set; }
 
             public DollMaxAbility(string type, int value)
             {
@@ -1371,11 +1481,30 @@ namespace GFI_with_GFS_A
 
         internal class DataModel
         {
-            public ObservableCollection<DollMaxAbility> MaxAbilityList { get; set; }
-            public ObservableCollection<DollMaxAbility> CompareAbilityList { get; set; }
+            public ObservableCollection<DollMaxAbility> MaxAbilityList { get; private set; }
+            public ObservableCollection<DollMaxAbility> CompareAbilityList { get; private set; }
 
-            public DataModel(int CompareIndex)
+            private Doll doll;
+
+            private readonly int[] abilityValues;
+            private readonly List<string> compareList;
+            private readonly int compareIndex;
+            private readonly int modIndex;
+            private readonly int abilityLevel;
+            private readonly int abilityFavor;
+            private readonly AverageAbility averageAbility;
+            
+            public DataModel(int compareIndex, Doll doll, int[] abilityValues, List<string> compareList, int modIndex, int abilityLevel, int abilityFavor, ref AverageAbility averageAbility)
             {
+                this.compareIndex = compareIndex;
+                this.doll = doll;
+                this.abilityValues = abilityValues;
+                this.compareList = compareList;
+                this.modIndex = modIndex;
+                this.abilityLevel = abilityLevel;
+                this.abilityFavor = abilityFavor;
+                this.averageAbility = averageAbility;
+
                 MaxAbilityList = new ObservableCollection<DollMaxAbility>()
                 {
                     new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_HP), abilityValues[0]),
@@ -1386,76 +1515,100 @@ namespace GFI_with_GFS_A
                     new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AM), abilityValues[5])
                 };
 
-                if (CompareIndex == 0)
+                CreateCompareCollection();
+            }
+
+            private void CreateCompareCollection()
+            {
+                try
                 {
-                    int index = 0;
-
-                    switch (doll.Type)
+                    if (compareIndex == 0)
                     {
-                        case "HG":
-                            index = 0;
-                            break;
-                        case "SMG":
-                            index = 1;
-                            break;
-                        case "AR":
-                            index = 2;
-                            break;
-                        case "RF":
-                            index = 3;
-                            break;
-                        case "MG":
-                            index = 4;
-                            break;
-                        case "SG":
-                            index = 5;
-                            break;
-                    }
-
-                    CompareAbilityList = new ObservableCollection<DollMaxAbility>()
-                    {
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_HP), ETC.avgList[index].HP),
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_FR), ETC.avgList[index].FR),
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_EV), ETC.avgList[index].EV),
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AC), ETC.avgList[index].AC),
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AS), ETC.avgList[index].AS),
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AM), ETC.avgList[index].AM)
-                    };
-                }
-                else
-                {
-                    cDoll = new Doll(ETC.FindDataRow(ETC.dollList, "Name", compareList[CompareIndex]));
-
-                    string[] abilities = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
-                    int[] compareAbilityValues = { 0, 0, 0, 0, 0, 0 };
-                    int growRatio = (modIndex == 0) ? int.Parse(cDoll.Abilities["Grow"].Split(';')[0]) : int.Parse(cDoll.Abilities["Grow"].Split(';')[1]);
-
-                    for (int i = 0; i < abilities.Length; ++i)
-                    {
-                        int baseRatio = (modIndex == 0) ? int.Parse(cDoll.Abilities[abilities[i]].Split(';')[0]) : int.Parse(cDoll.Abilities[abilities[i]].Split(';')[1]);
-
-                        compareAbilityValues[i] = das.CalcAbility(abilities[i], baseRatio, growRatio, 100, 50, false);
-                    }
-
-                    if (doll.Type == "SG")
-                    {
-                        int baseRatio = (modIndex == 0) ? int.Parse(cDoll.Abilities["Armor"].Split(';')[0]) : int.Parse(cDoll.Abilities["Armor"].Split(';')[1]);
-
-                        compareAbilityValues[5] = das.CalcAbility("Armor", baseRatio, growRatio, 100, 50, false);
+                        CompareAbilityList = new ObservableCollection<DollMaxAbility>()
+                        {
+                            new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_HP), averageAbility.HP),
+                            new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_FR), averageAbility.FR),
+                            new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_EV), averageAbility.EV),
+                            new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AC), averageAbility.AC),
+                            new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AS), averageAbility.AS),
+                            new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AM), averageAbility.AM)
+                        };
                     }
                     else
                     {
-                        compareAbilityValues[5] = 0;
-                    }
+                        var cDoll = new Doll(ETC.FindDataRow(ETC.dollList, "Name", compareList[compareIndex]));
+                        var das = new DollAbilitySet(cDoll.Type);
 
+                        string[] abilities = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
+                        int[] compareAbilityValues = { 0, 0, 0, 0, 0, 0 };
+                        int growRatio = 0;
+
+                        if (modIndex > 0)
+                        {
+                            growRatio = cDoll.HasMod ? int.Parse(cDoll.Abilities["Grow"].Split(';')[1]) : int.Parse(cDoll.Abilities["Grow"].Split(';')[0]);
+                        }
+                        else
+                        {
+                            growRatio = int.Parse(cDoll.Abilities["Grow"].Split(';')[0]);
+                        }
+
+                        for (int i = 0; i < abilities.Length; ++i)
+                        {
+                            int baseRatio = (modIndex == 0) ? int.Parse(cDoll.Abilities[abilities[i]].Split(';')[0]) : int.Parse(cDoll.Abilities[abilities[i]].Split(';')[1]);
+
+                            if (modIndex > 0)
+                            {
+                                baseRatio = cDoll.HasMod ? int.Parse(cDoll.Abilities[abilities[i]].Split(';')[1]) : int.Parse(cDoll.Abilities[abilities[i]].Split(';')[0]);
+                            }
+                            else
+                            {
+                                baseRatio = int.Parse(cDoll.Abilities[abilities[i]].Split(';')[0]);
+                            }
+
+                            compareAbilityValues[i] = das.CalcAbility(abilities[i], baseRatio, growRatio, abilityLevel, abilityFavor, false);
+                        }
+
+                        if (doll.Type == "SG")
+                        {
+                            int baseRatio = (modIndex == 0) ? int.Parse(cDoll.Abilities["Armor"].Split(';')[0]) : int.Parse(cDoll.Abilities["Armor"].Split(';')[1]);
+
+                            if (modIndex > 0)
+                            {
+                                baseRatio = cDoll.HasMod ? int.Parse(cDoll.Abilities["Armor"].Split(';')[1]) : int.Parse(cDoll.Abilities["Armor"].Split(';')[0]);
+                            }
+                            else
+                            {
+                                baseRatio = int.Parse(cDoll.Abilities["Armor"].Split(';')[0]);
+                            }
+
+                            compareAbilityValues[5] = das.CalcAbility("Armor", baseRatio, growRatio, abilityLevel, abilityFavor, false);
+                        }
+                        else
+                        {
+                            compareAbilityValues[5] = 0;
+                        }
+
+                        CompareAbilityList = new ObservableCollection<DollMaxAbility>()
+                        {
+                            new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_HP), compareAbilityValues[0]),
+                            new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_FR), compareAbilityValues[1]),
+                            new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_EV), compareAbilityValues[2]),
+                            new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AC), compareAbilityValues[3]),
+                            new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AS), compareAbilityValues[4]),
+                            new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AM), compareAbilityValues[5])
+                        };
+                    }
+                }
+                catch
+                {
                     CompareAbilityList = new ObservableCollection<DollMaxAbility>()
                     {
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_HP), compareAbilityValues[0]),
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_FR), compareAbilityValues[1]),
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_EV), compareAbilityValues[2]),
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AC), compareAbilityValues[3]),
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AS), compareAbilityValues[4]),
-                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AM), compareAbilityValues[5])
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_HP), 0),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_FR), 0),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_EV), 0),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AC), 0),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AS), 0),
+                        new DollMaxAbility(ETC.Resources.GetString(Resource.String.Common_AM), 0)
                     };
                 }
             }

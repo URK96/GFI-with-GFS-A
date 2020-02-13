@@ -1,9 +1,11 @@
-<2.5.0 수정사항>
+<2.4.13 수정사항>
 
 - 인형 가이드 이미지 뷰어 추가
 - 인형 이미지 뷰어 UI 개선
-- 만화 컨텐츠 추가 (그리폰 일상만화)
+- 만화 컨텐츠 추가 (그리폰 일상만화, 츠보우의 소녀전선)
 - 적, FST DB 리스트에서 이미지 다운로드 시 오류가 발생하는 현상 수정
+- 인형 능력치 그래프가 능력치 변경 시 바로 반응하도록 수정
+- 인형 능력치 그래프의 타입 평균치가 레벨, 호감도 별로 따로 산정되도록 수정
 - DB 리스트에서 대화상자 생성 시 오류가 발생하는 현상 수정
 - 보이스 재생 구조 변경
 
@@ -12,4 +14,5 @@
 - Add Cartoon Content
 - Fix Image Download Issue on Enemy, FST DB List
 - Fix Dialog Message Issue
+- Fix T-Doll Ability Graph issue
 - Change Voice Player Process

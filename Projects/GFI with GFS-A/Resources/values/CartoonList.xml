@@ -129,6 +129,8 @@
     <item>지나간 명절 이야기</item>
     <item>공석</item>
     <item>K2와 네게브의 부관면접</item>
+    <item>아빠가 없어</item>
+    <item>식사 문제</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -543,6 +545,10 @@
     <item>98 - 에이전트, 위기에 처하다!</item>
     <item>99 - 고문을 견디는 에이전트</item>
     <item>100 - 에이전트는 더 이상 치마를 들추지 못해</item>
+    <item>101 - 철혈 인형의 귀순</item>
+    <item>102 - 드리머의 인터넷 방송</item>
+    <item>103 - 헬리안과 지휘관의 출장</item>
+    <item>104 - 헬리안의 유혹</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -647,5 +653,9 @@
     <item>http://naver.me/xZmpzRY9</item>
     <item>http://naver.me/F9LropBT</item>
     <item>http://naver.me/GvryfeeF</item>
+    <item>http://naver.me/xkSgVMqV</item>
+    <item>http://naver.me/GV8d3vBb</item>
+    <item>http://naver.me/xT8fZerU</item>
+    <item>http://naver.me/FAj05i8F</item>
   </string-array>
 </resources>

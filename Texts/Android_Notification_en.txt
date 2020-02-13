@@ -1,30 +1,30 @@
-﻿# T-Doll DB Update 2020/01/13
+﻿
+# T-Doll DB Update 2019/09/12
 
-- Fix 43M Dic Number
-- Add New Event T-Doll (RPK-16, AK-15, 웨블리 리볼버, CF05, M82, SL8)
-- Add New Costume (DP-12, MG34, PA-15, JS 9, MG36, PKP, T91, EM-2)
-
-
-# Equip DB Update 2019/12/06
-
-- Add only use equipment (NTW-20, APS, MAB, C96, RFB, Type100, TAR-21)
+- Add ability info
+- Add new T-Doll (Type89)
 
 
+# Equip DB Update 2019/09/24
 
-# Fairy DB Update 2019/11/14
+- Add new equipments
+- Edit some equipment info
 
+
+# Fairy DB Update 2019/09/22
+
+- Add new fairies
 - Edit some fairy info
-- Add new internal item for new version
+
+
+# Enemy DB Update 2019/09/15
+
+- Edit some Enemy info
+
+
+# FST DB Update 2019/05/08
+
+- Add new FST (AT4)
 
 
 
-# FST DB Update 2019/10/26
-
-- Add new FST (QLZ-04)
-
-
-
-# Enemy DB Update 2019/10/2
-
-- Add new enemy
-- Add new voice
