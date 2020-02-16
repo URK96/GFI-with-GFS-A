@@ -1,0 +1,11 @@
+<2.5.0 수정사항>
+
+- 메인 UI 개선
+
+- Improve main UI
+- Change png type icon to vector icon
+- Add some icons
+- Improve FST detail UI
+- Improve Enemy detail UI
+- Add & Remove setting content
+

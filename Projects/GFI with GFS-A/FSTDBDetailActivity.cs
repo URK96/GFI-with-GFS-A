@@ -15,32 +15,24 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Android.Util;
+using Android.Support.V4.Widget;
+using Android.Support.Transitions;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class FSTDBDetailActivity : BaseFragmentActivity
+    [Activity(Label = "", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class FSTDBDetailActivity : BaseAppCompatActivity
     {
-        System.Timers.Timer FABTimer = new System.Timers.Timer();
-
-        private DataRow FSTInfoDR;
+        private DataRow fstInfoDR;
         private FST fst;
 
-        private bool IsOpenFABMenu = false;
-        private bool IsEnableFABMenu = false;
+        private CoordinatorLayout snackbarLayout;
 
-        private ScrollView ScrollLayout;
-        private CoordinatorLayout SnackbarLayout;
-
-        private ProgressBar InitLoadProgressBar;
-        private RatingBar GradeControl;
-        private RatingBar VersionGradeControl;
+        private SwipeRefreshLayout refreshMainLayout;
+        private Android.Support.V7.Widget.Toolbar toolbar;
+        private RatingBar gradeControl;
+        private RatingBar versionGradeControl;
         private Spinner ChipsetBonusSelector;
-        private FloatingActionButton RefreshCacheFAB;
-        private FloatingActionButton MainFAB;
-        private FloatingActionButton NamuWikiFAB;
-        private FloatingActionButton InvenFAB;
-        private FloatingActionButton BaseFAB;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -48,22 +40,38 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.useLightTheme == true)
-                    SetTheme(Resource.Style.GFS_Light);
+                if (ETC.useLightTheme)
+                {
+                    SetTheme(Resource.Style.GFS_Toolbar_Light);
+                }
 
                 // Create your application here
                 SetContentView(Resource.Layout.FSTDBDetailLayout);
 
-                FSTInfoDR = ETC.FindDataRow(ETC.FSTList, "CodeName", Intent.GetStringExtra("Keyword"));
-                fst = new FST(FSTInfoDR);
+                fstInfoDR = ETC.FindDataRow(ETC.FSTList, "CodeName", Intent.GetStringExtra("Keyword"));
+                fst = new FST(fstInfoDR);
 
-                InitLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.FSTDBDetailInitLoadProgress);
-                GradeControl = FindViewById<RatingBar>(Resource.Id.FSTDBDetailGradeControl1);
-                GradeControl.Rating = 1;
-                GradeControl.RatingBarChange += FSTDBDetailActivity_RatingBarChange;
-                VersionGradeControl = FindViewById<RatingBar>(Resource.Id.FSTDBDetailGradeControl2);
-                VersionGradeControl.Rating = 0;
-                VersionGradeControl.RatingBarChange += delegate { CalcAbility(); };
+                refreshMainLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.FSTDBDetailMainRefreshLayout);
+                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.FSTDBDetailMainToolbar);
+
+                SetSupportActionBar(toolbar);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
+                FindViewById<TextView>(Resource.Id.FSTDBDetailToolbarType).Text = fst.Type switch
+                {
+                    "ATW" => ETC.Resources.GetString(Resource.String.FSTDBDetail_Type_ATW),
+                    "AGL" => ETC.Resources.GetString(Resource.String.FSTDBDetail_Type_AGL),
+                    "MTR" => ETC.Resources.GetString(Resource.String.FSTDBDetail_Type_MTR),
+                    _ => ""
+                };
+                FindViewById<TextView>(Resource.Id.FSTDBDetailToolbarName).Text = $"{fst.Name} - {fst.CodeName}";
+
+                gradeControl = FindViewById<RatingBar>(Resource.Id.FSTDBDetailGradeControl1);
+                gradeControl.Rating = 1;
+                gradeControl.RatingBarChange += FSTDBDetailActivity_RatingBarChange;
+                versionGradeControl = FindViewById<RatingBar>(Resource.Id.FSTDBDetailGradeControl2);
+                versionGradeControl.Rating = 0;
+                versionGradeControl.RatingBarChange += delegate { CalcAbility(); };
 
                 ChipsetBonusSelector = FindViewById<Spinner>(Resource.Id.FSTDBDetailChipsetBonusSelector);
                 ChipsetBonusSelector.ItemSelected += delegate { CalcAbility(); };
@@ -72,26 +80,7 @@ namespace GFI_with_GFS_A
 
                 //FindViewById<ImageView>(Resource.Id.FSTDBDetailSmallImage).Click += DollDBDetailSmallImage_Click;
 
-                ScrollLayout = FindViewById<ScrollView>(Resource.Id.FSTDBDetailScrollLayout);
-                SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FSTDBDetailSnackbarLayout);
-
-                RefreshCacheFAB = FindViewById<FloatingActionButton>(Resource.Id.FSTDBDetailRefreshCacheFAB);
-                MainFAB = FindViewById<FloatingActionButton>(Resource.Id.FSTDBDetailSideLinkMainFAB);
-                NamuWikiFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB1);
-                NamuWikiFAB.SetImageResource(Resource.Drawable.NamuWiki_Logo);
-                InvenFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB2);
-                InvenFAB.SetImageResource(Resource.Drawable.Inven_Logo);
-                BaseFAB = FindViewById<FloatingActionButton>(Resource.Id.SideLinkFAB3);
-                BaseFAB.SetImageResource(Resource.Drawable.Base36_Logo);
-
-                RefreshCacheFAB.Click += RefreshCacheFAB_Click;
-                MainFAB.Click += MainFAB_Click;
-                NamuWikiFAB.Click += MainSubFAB_Click;
-                InvenFAB.Click += MainSubFAB_Click;
-                BaseFAB.Click += MainSubFAB_Click;
-
-                FABTimer.Interval = 3000;
-                FABTimer.Elapsed += FABTimer_Elapsed;
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FSTDBDetailSnackbarLayout);
 
                 _ = InitLoadProcess(false);
             }
@@ -106,15 +95,17 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                int GradeSetting = Convert.ToInt32(GradeControl.Rating);
+                int gradeSetting = Convert.ToInt32(gradeControl.Rating);
 
                 List<string> list = new List<string>
                 {
                     Resources.GetString(Resource.String.FSTDBDetail_Chipset_Default)
                 };
-                
+
                 foreach (int i in fst.ChipsetBonusCount)
+                {
                     list.Add(i.ToString());
+                }
 
                 list.TrimExcess();
 
@@ -127,7 +118,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.List_InitError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.List_InitError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -135,11 +126,14 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                if (e.Rating >= 5) FindViewById<LinearLayout>(Resource.Id.FSTDBDetailGradeControlLayout2).Visibility = ViewStates.Visible;
+                if (e.Rating >= 5)
+                {
+                    FindViewById<LinearLayout>(Resource.Id.FSTDBDetailGradeControlLayout2).Visibility = ViewStates.Visible;
+                }
                 else
                 {
                     FindViewById<LinearLayout>(Resource.Id.FSTDBDetailGradeControlLayout2).Visibility = ViewStates.Gone;
-                    VersionGradeControl.Rating = 0;
+                    versionGradeControl.Rating = 0;
                 }
 
                 SetChipsetBonusList();
@@ -148,18 +142,8 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FSTDBDetail_SubGradeError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.FSTDBDetail_SubGradeError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
-        }
-
-        private void RefreshCacheFAB_Click(object sender, EventArgs e)
-        {
-            _ = InitLoadProcess(true);
-        }
-
-        private void FABTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
-        {
-            HideFloatingActionButtonAnimation();
         }
 
         private void MainSubFAB_Click(object sender, EventArgs e)
@@ -196,72 +180,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.SideLinkOpen_Fail, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
-            }
-            finally
-            {
-                MainFAB_Click(MainFAB, new EventArgs());
-            }
-        }
-
-        private void MainFAB_Click(object sender, EventArgs e)
-        {
-            if (IsEnableFABMenu == false)
-            {
-                MainFAB.SetImageResource(Resource.Drawable.SideLinkIcon);
-                IsEnableFABMenu = true;
-                MainFAB.Animate().Alpha(1.0f).SetDuration(500).Start();
-                RefreshCacheFAB.Show();
-                FABTimer.Start();
-            }
-            else
-            {
-                int[] ShowAnimationIds = { Resource.Animation.SideLinkFAB1_Show, Resource.Animation.SideLinkFAB2_Show, Resource.Animation.SideLinkFAB3_Show };
-                int[] HideAnimationIds = { Resource.Animation.SideLinkFAB1_Hide, Resource.Animation.SideLinkFAB2_Hide, Resource.Animation.SideLinkFAB3_Hide };
-                FloatingActionButton[] FABs = { NamuWikiFAB, InvenFAB, BaseFAB };
-                double[,] Mags = { { 1.80, 0.25 }, { 1.5, 1.5 }, { 0.25, 1.80 } };
-
-                try
-                {
-                    switch (IsOpenFABMenu)
-                    {
-                        case false:
-                            for (int i = 0; i < FABs.Length; ++i)
-                            {
-                                FrameLayout.LayoutParams layoutparams = (FrameLayout.LayoutParams)FABs[i].LayoutParameters;
-                                layoutparams.RightMargin += (int)(FABs[i].Width * Mags[i, 0]);
-                                layoutparams.BottomMargin += (int)(FABs[i].Height * Mags[i, 1]);
-
-                                FABs[i].LayoutParameters = layoutparams;
-                                FABs[i].StartAnimation(AnimationUtils.LoadAnimation(Application, ShowAnimationIds[i]));
-                                FABs[i].Clickable = true;
-                            }
-                            IsOpenFABMenu = true;
-                            RefreshCacheFAB.Hide();
-                            FABTimer.Stop();
-                            break;
-                        case true:
-                            for (int i = 0; i < FABs.Length; ++i)
-                            {
-                                FrameLayout.LayoutParams layoutparams = (FrameLayout.LayoutParams)FABs[i].LayoutParameters;
-                                layoutparams.RightMargin -= (int)(FABs[i].Width * Mags[i, 0]);
-                                layoutparams.BottomMargin -= (int)(FABs[i].Height * Mags[i, 1]);
-
-                                FABs[i].LayoutParameters = layoutparams;
-                                FABs[i].StartAnimation(AnimationUtils.LoadAnimation(Application, HideAnimationIds[i]));
-                                FABs[i].Clickable = false;
-                            }
-                            IsOpenFABMenu = false;
-                            RefreshCacheFAB.Show();
-                            FABTimer.Start();
-                            break;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    ETC.LogError(ex, this);
-                    ETC.ShowSnackbar(SnackbarLayout, Resource.String.FAB_ChangeSubMenuError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
-                }
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.SideLinkOpen_Fail, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -270,26 +189,27 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                var FSTImageViewer = new Intent(this, typeof(DollDBImageViewer));
-                FSTImageViewer.PutExtra("Data", fst.Name);
-                StartActivity(FSTImageViewer);
+                var fstImageViewer = new Intent(this, typeof(DollDBImageViewer));
+                fstImageViewer.PutExtra("Data", fst.Name);
+                StartActivity(fstImageViewer);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ImageViewer_ActivityOpenError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.ImageViewer_ActivityOpenError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
 
-        private async Task InitLoadProcess(bool IsRefresh)
+        private async Task InitLoadProcess(bool isRefresh)
         {
-            InitLoadProgressBar.Visibility = ViewStates.Visible;
-
             await Task.Delay(100);
 
             try
             {
+                refreshMainLayout.Refreshing = true;
+                TransitionManager.BeginDelayedTransition(refreshMainLayout);
+
                 // 중화기 타이틀 바 초기화
 
                 /*if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false) == true)
@@ -317,20 +237,24 @@ namespace GFI_with_GFS_A
                 try
                 {
                     ImageView smallImage = FindViewById<ImageView>(Resource.Id.FSTDBDetailSmallImage);
-                    string cropimage_path = Path.Combine(ETC.cachePath, "FST", "Normal_Crop", $"{fst.CodeName}.gfdcache");
+                    string cropimagePath = Path.Combine(ETC.cachePath, "FST", "Normal_Crop", $"{fst.CodeName}.gfdcache");
 
-                    if ((File.Exists(cropimage_path) == false) || (IsRefresh == true))
+                    if (!File.Exists(cropimagePath) || isRefresh)
+                    {
                         using (WebClient wc = new WebClient())
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "FST", "Normal_Crop", $"{fst.CodeName}.png"), cropimage_path);
+                        {
+                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "FST", "Normal_Crop", $"{fst.CodeName}.png"), cropimagePath);
+                        }
+                    }
 
-                    DisplayMetrics dm = ApplicationContext.Resources.DisplayMetrics;
+                    var dm = ApplicationContext.Resources.DisplayMetrics;
 
                     int width = dm.WidthPixels;
                     int height = dm.HeightPixels;
 
-                    Drawable drawable = Drawable.CreateFromPath(cropimage_path);
+                    var drawable = Drawable.CreateFromPath(cropimagePath);
                     smallImage.SetImageDrawable(drawable);
-                    FrameLayout.LayoutParams param = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, drawable.IntrinsicHeight * (width / drawable.IntrinsicWidth));
+                    var param = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, drawable.IntrinsicHeight * (width / drawable.IntrinsicWidth));
                     smallImage.LayoutParameters = param;
                 }
                 catch (Exception ex)
@@ -342,7 +266,7 @@ namespace GFI_with_GFS_A
                 FindViewById<TextView>(Resource.Id.FSTDBDetailFSTDicNumber).Text = "No. " + 1;
                 FindViewById<TextView>(Resource.Id.FSTDBDetailFSTProductTime).Text = "제조 불가";*/
 
-                // 인형 기본 정보 초기화
+                // 중화기 기본 정보 초기화
 
                 FindViewById<TextView>(Resource.Id.FSTDBDetailInfoType).Text = fst.Type;
                 FindViewById<TextView>(Resource.Id.FSTDBDetailInfoName).Text = fst.Name;
@@ -361,84 +285,87 @@ namespace GFI_with_GFS_A
 
                 // 중화기 스킬 정보 초기화
 
-                int[] SkillIconIds = { Resource.Id.FSTDBDetailSkillIcon1, Resource.Id.FSTDBDetailSkillIcon2, Resource.Id.FSTDBDetailSkillIcon3 };
-                int[] SkillNameIds = { Resource.Id.FSTDBDetailSkillName1, Resource.Id.FSTDBDetailSkillName2, Resource.Id.FSTDBDetailSkillName3 };
-                int[] SkillInitCoolTimeIconIds = { Resource.Id.FSTDBDetailSkillInitCoolTimeIcon1, Resource.Id.FSTDBDetailSkillInitCoolTimeIcon2, Resource.Id.FSTDBDetailSkillInitCoolTimeIcon3 };
-                int[] SkillInitCoolTimeIds = { Resource.Id.FSTDBDetailSkillInitCoolTime1, Resource.Id.FSTDBDetailSkillInitCoolTime2, Resource.Id.FSTDBDetailSkillInitCoolTime3 };
-                int[] SkillCoolTimeIconIds = { Resource.Id.FSTDBDetailSkillCoolTimeIcon1, Resource.Id.FSTDBDetailSkillCoolTimeIcon2, Resource.Id.FSTDBDetailSkillCoolTimeIcon3 };
-                int[] SkillCoolTimeIds = { Resource.Id.FSTDBDetailSkillCoolTime1, Resource.Id.FSTDBDetailSkillCoolTime2, Resource.Id.FSTDBDetailSkillCoolTime3 };
-                int[] SkillExplainIds = { Resource.Id.FSTDBDetailSkillExplain1, Resource.Id.FSTDBDetailSkillExplain2, Resource.Id.FSTDBDetailSkillExplain3 };
-                int[] SkillTableSubLayoutIds = { Resource.Id.FSTDBDetailSkillAbilitySubLayout1, Resource.Id.FSTDBDetailSkillAbilitySubLayout2, Resource.Id.FSTDBDetailSkillAbilitySubLayout3 };
-                int[] SkillAbilityTopLayoutIds = { Resource.Id.FSTDBDetailSkillAbilityTopLayout1, Resource.Id.FSTDBDetailSkillAbilityTopLayout2, Resource.Id.FSTDBDetailSkillAbilityTopLayout3 };
-                int[] SkillAbilityTopTextIds_1 = { Resource.Id.FSTDBDetailSkillAbilityTopText11, Resource.Id.FSTDBDetailSkillAbilityTopText21, Resource.Id.FSTDBDetailSkillAbilityTopText31 };
-                int[] SkillAbilityTopTextIds_2 = { Resource.Id.FSTDBDetailSkillAbilityTopText12, Resource.Id.FSTDBDetailSkillAbilityTopText22, Resource.Id.FSTDBDetailSkillAbilityTopText32 };
+                int[] skillIconIds = { Resource.Id.FSTDBDetailSkillIcon1, Resource.Id.FSTDBDetailSkillIcon2, Resource.Id.FSTDBDetailSkillIcon3 };
+                int[] skillNameIds = { Resource.Id.FSTDBDetailSkillName1, Resource.Id.FSTDBDetailSkillName2, Resource.Id.FSTDBDetailSkillName3 };
+                int[] skillInitCoolTimeIconIds = { Resource.Id.FSTDBDetailSkillInitCoolTimeIcon1, Resource.Id.FSTDBDetailSkillInitCoolTimeIcon2, Resource.Id.FSTDBDetailSkillInitCoolTimeIcon3 };
+                int[] skillInitCoolTimeIds = { Resource.Id.FSTDBDetailSkillInitCoolTime1, Resource.Id.FSTDBDetailSkillInitCoolTime2, Resource.Id.FSTDBDetailSkillInitCoolTime3 };
+                int[] skillCoolTimeIconIds = { Resource.Id.FSTDBDetailSkillCoolTimeIcon1, Resource.Id.FSTDBDetailSkillCoolTimeIcon2, Resource.Id.FSTDBDetailSkillCoolTimeIcon3 };
+                int[] skillCoolTimeIds = { Resource.Id.FSTDBDetailSkillCoolTime1, Resource.Id.FSTDBDetailSkillCoolTime2, Resource.Id.FSTDBDetailSkillCoolTime3 };
+                int[] skillExplainIds = { Resource.Id.FSTDBDetailSkillExplain1, Resource.Id.FSTDBDetailSkillExplain2, Resource.Id.FSTDBDetailSkillExplain3 };
+                int[] skillTableSubLayoutIds = { Resource.Id.FSTDBDetailSkillAbilitySubLayout1, Resource.Id.FSTDBDetailSkillAbilitySubLayout2, Resource.Id.FSTDBDetailSkillAbilitySubLayout3 };
+                int[] skillAbilityTopLayoutIds = { Resource.Id.FSTDBDetailSkillAbilityTopLayout1, Resource.Id.FSTDBDetailSkillAbilityTopLayout2, Resource.Id.FSTDBDetailSkillAbilityTopLayout3 };
+                int[] skillAbilityTopTextIds1 = { Resource.Id.FSTDBDetailSkillAbilityTopText11, Resource.Id.FSTDBDetailSkillAbilityTopText21, Resource.Id.FSTDBDetailSkillAbilityTopText31 };
+                int[] skillAbilityTopTextIds2 = { Resource.Id.FSTDBDetailSkillAbilityTopText12, Resource.Id.FSTDBDetailSkillAbilityTopText22, Resource.Id.FSTDBDetailSkillAbilityTopText32 };
 
 
                 for (int i = 0; i < 3; ++i)
                 {
-                    string SkillName = fst.SkillName[i];
+                    string skillName = fst.SkillName[i];
 
                     try
                     {
-                        string skillicon_path = Path.Combine(ETC.cachePath, "FST", "Skill", $"{SkillName}.gfdcache");
+                        string skillIconPath = Path.Combine(ETC.cachePath, "FST", "Skill", $"{skillName}.gfdcache");
 
-                        if ((File.Exists(skillicon_path) == false) || (IsRefresh == true))
+                        if (!File.Exists(skillIconPath) || isRefresh)
                         {
                             using (WebClient wc = new WebClient())
-                                wc.DownloadFile(Path.Combine(ETC.server, "Data", "Images", "SkillIcons", "FST", SkillName + ".png"), skillicon_path);
+                            {
+                                wc.DownloadFile(Path.Combine(ETC.server, "Data", "Images", "SkillIcons", "FST", skillName + ".png"), skillIconPath);
+                            }
                         }
 
-                        FindViewById<ImageView>(SkillIconIds[i]).SetImageDrawable(Drawable.CreateFromPath(skillicon_path));
+                        FindViewById<ImageView>(skillIconIds[i]).SetImageDrawable(Drawable.CreateFromPath(skillIconPath));
                     }
                     catch (Exception ex)
                     {
                         ETC.LogError(ex, this);
                     }
 
-                    FindViewById<TextView>(SkillNameIds[i]).Text = SkillName;
+                    FindViewById<TextView>(skillNameIds[i]).Text = skillName;
 
-                    if (ETC.useLightTheme == true)
-                    {
-                        FindViewById<ImageView>(SkillInitCoolTimeIconIds[i]).SetImageResource(Resource.Drawable.FirstCoolTime_Icon_WhiteTheme);
-                        FindViewById<ImageView>(SkillCoolTimeIconIds[i]).SetImageResource(Resource.Drawable.CoolTime_Icon_WhiteTheme);
+                    if (ETC.useLightTheme)
+                    { 
+                        FindViewById<ImageView>(skillInitCoolTimeIconIds[i]).SetImageResource(Resource.Drawable.FirstCoolTime_Icon_WhiteTheme);
+                        FindViewById<ImageView>(skillCoolTimeIconIds[i]).SetImageResource(Resource.Drawable.CoolTime_Icon_WhiteTheme);
                     }
 
-                    string[] SkillEffects = fst.SkillEffect[i];
-                    string[] SkillMags = fst.SkillMag[i];
+                    string[] skillEffects = fst.SkillEffect[i];
+                    string[] skillMags = fst.SkillMag[i];
 
-                    TextView SkillInitCoolTime = FindViewById<TextView>(SkillInitCoolTimeIds[i]);
-                    SkillInitCoolTime.SetTextColor(Android.Graphics.Color.Orange);
-                    SkillInitCoolTime.Text = "0"; //SkillMags[0];
-                    TextView SkillCoolTime = FindViewById<TextView>(SkillCoolTimeIds[i]);
-                    SkillCoolTime.SetTextColor(Android.Graphics.Color.DarkOrange);
-                    SkillCoolTime.Text = "0"; //SkillMags[1];
+                    TextView skillInitCoolTime = FindViewById<TextView>(skillInitCoolTimeIds[i]);
+                    skillInitCoolTime.SetTextColor(Android.Graphics.Color.Orange);
+                    skillInitCoolTime.Text = "0"; //SkillMags[0];
 
-                    FindViewById<TextView>(SkillExplainIds[i]).Text = fst.SkillExplain[i];
+                    TextView skillCoolTime = FindViewById<TextView>(skillCoolTimeIds[i]);
+                    skillCoolTime.SetTextColor(Android.Graphics.Color.DarkOrange);
+                    skillCoolTime.Text = "0"; //SkillMags[1];
 
-                    LinearLayout SkillTableSubLayout = FindViewById<LinearLayout>(SkillTableSubLayoutIds[i]);
-                    SkillTableSubLayout.RemoveAllViews();
+                    FindViewById<TextView>(skillExplainIds[i]).Text = fst.SkillExplain[i];
 
-                    for (int k = 0; k < SkillEffects.Length; ++k)
+                    LinearLayout skillTableSubLayout = FindViewById<LinearLayout>(skillTableSubLayoutIds[i]);
+                    skillTableSubLayout.RemoveAllViews();
+
+                    for (int k = 0; k < skillEffects.Length; ++k)
                     {
                         LinearLayout layout = new LinearLayout(this);
                         layout.Orientation = Orientation.Horizontal;
-                        layout.LayoutParameters = FindViewById<LinearLayout>(SkillAbilityTopLayoutIds[i]).LayoutParameters;
+                        layout.LayoutParameters = FindViewById<LinearLayout>(skillAbilityTopLayoutIds[i]).LayoutParameters;
 
                         TextView ability = new TextView(this);
                         TextView mag = new TextView(this);
 
-                        ability.LayoutParameters = FindViewById<TextView>(SkillAbilityTopTextIds_1[i]).LayoutParameters;
-                        mag.LayoutParameters = FindViewById<TextView>(SkillAbilityTopTextIds_2[i]).LayoutParameters;
+                        ability.LayoutParameters = FindViewById<TextView>(skillAbilityTopTextIds1[i]).LayoutParameters;
+                        mag.LayoutParameters = FindViewById<TextView>(skillAbilityTopTextIds2[i]).LayoutParameters;
                         
-                        ability.Text = SkillEffects[k];
+                        ability.Text = skillEffects[k];
                         ability.Gravity = GravityFlags.Center;
-                        mag.Text = SkillMags[k];
+                        mag.Text = skillMags[k];
                         mag.Gravity = GravityFlags.Center;
 
                         layout.AddView(ability);
                         layout.AddView(mag);
 
-                        SkillTableSubLayout.AddView(layout);
+                        skillTableSubLayout.AddView(layout);
                     }
                 }
 
@@ -447,32 +374,36 @@ namespace GFI_with_GFS_A
 
                 CalcAbility();
 
-                if (ETC.useLightTheme == true) SetCardTheme();
+                if (ETC.useLightTheme)
+                {
+                    SetCardTheme();
+                }
 
-                _ = ShowCardViewAnimation();
-                HideFloatingActionButtonAnimation();
+                ShowCardViewVisibility();
             }
             catch (WebException ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
+
                 _ = InitLoadProcess(false);
+
                 return;
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
             finally
             {
-                InitLoadProgressBar.Visibility = ViewStates.Invisible;
+                refreshMainLayout.Refreshing = false;
             }
         }
 
         private void SetCircuit()
         {
-            int[] CircuitRowIds =
+            int[] circuitRowIds =
             {
                 Resource.Id.FSTDBDetailCircuitRow1,
                 Resource.Id.FSTDBDetailCircuitRow2,
@@ -484,24 +415,27 @@ namespace GFI_with_GFS_A
                 Resource.Id.FSTDBDetailCircuitRow8
             };
 
-            foreach (int id in CircuitRowIds) FindViewById<LinearLayout>(id).RemoveAllViews();
+            foreach (int id in circuitRowIds)
+            {
+                FindViewById<LinearLayout>(id).RemoveAllViews();
+            }
 
-            int Grade = Convert.ToInt32(GradeControl.Rating);
+            int grade = Convert.ToInt32(gradeControl.Rating);
 
             try
             {
                 View testView = FindViewById<View>(Resource.Id.FSTDBDetailCircuitRowItem);
 
-                GradeControl.IsIndicator = true;
-                VersionGradeControl.IsIndicator = true;
+                gradeControl.IsIndicator = true;
+                versionGradeControl.IsIndicator = true;
 
-                if (Grade == 0) Grade = 1;
+                grade = (grade == 0) ? 1 : grade;
 
-                string[] row_values = ((string)FSTInfoDR[string.Format("Circuit{0}", Grade)]).Split(';');
+                string[] rowValues = ((string)fstInfoDR[$"Circuit{grade}"]).Split(';');
 
                 for (int i = 0; i < fst.CircuitHeight; ++i)
                 {
-                    LinearLayout CircuitRow = FindViewById<LinearLayout>(CircuitRowIds[i]);
+                    LinearLayout circuitRow = FindViewById<LinearLayout>(circuitRowIds[i]);
 
                     for (int k = 0; k < fst.CircuitLength; ++k)
                     {
@@ -509,108 +443,112 @@ namespace GFI_with_GFS_A
                         view.LayoutParameters = testView.LayoutParameters;
                         view.Visibility = ViewStates.Visible;
 
-                        if (fst.ChipsetCircuit[Grade - 1, i, k] == 1)
+                        if (fst.ChipsetCircuit[grade - 1, i, k] == 1)
                         {
-                            int color_id = 0;
+                            int colorId = 0;
 
                             switch (fst.ChipsetType)
                             {
                                 default:
                                 case "Blue":
-                                    color_id = Resource.Color.FST_BlueChipset;
+                                    colorId = Resource.Color.FST_BlueChipset;
                                     break;
                                 case "Orange":
-                                    color_id = Resource.Color.FST_OrangeChipset;
+                                    colorId = Resource.Color.FST_OrangeChipset;
                                     break;
                             }
-                            view.SetBackgroundResource(color_id);
+                            view.SetBackgroundResource(colorId);
                         }
                         else
+                        {
                             view.SetBackgroundColor(Android.Graphics.Color.LightGray);
+                        }
 
-                        CircuitRow.AddView(view);
+                        circuitRow.AddView(view);
                     }
                 }
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FSTDBDetail_CircuitCalcError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.FSTDBDetail_CircuitCalcError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
             finally
             {
-                GradeControl.IsIndicator = false;
-                VersionGradeControl.IsIndicator = false;
+                gradeControl.IsIndicator = false;
+                versionGradeControl.IsIndicator = false;
             }
         }
 
         private void CalcAbility()
         {
-            int[] Progresses = { Resource.Id.FSTInfoKillProgress, Resource.Id.FSTInfoCrushProgress, Resource.Id.FSTInfoACProgress, Resource.Id.FSTInfoRLProgress };
-            int[] ProgressMaxTexts = { Resource.Id.FSTInfoKillProgressMax, Resource.Id.FSTInfoCrushProgressMax, Resource.Id.FSTInfoACProgressMax, Resource.Id.FSTInfoRLProgressMax };
-            int[] StatusTexts = { Resource.Id.FSTInfoKillStatus, Resource.Id.FSTInfoCrushStatus, Resource.Id.FSTInfoACStatus, Resource.Id.FSTInfoRLStatus };
+            int[] progresses = { Resource.Id.FSTInfoKillProgress, Resource.Id.FSTInfoCrushProgress, Resource.Id.FSTInfoACProgress, Resource.Id.FSTInfoRLProgress };
+            int[] progressMaxTexts = { Resource.Id.FSTInfoKillProgressMax, Resource.Id.FSTInfoCrushProgressMax, Resource.Id.FSTInfoACProgressMax, Resource.Id.FSTInfoRLProgressMax };
+            int[] statusTexts = { Resource.Id.FSTInfoKillStatus, Resource.Id.FSTInfoCrushStatus, Resource.Id.FSTInfoACStatus, Resource.Id.FSTInfoRLStatus };
 
-            int ChipsetIndex = ChipsetBonusSelector.SelectedItemPosition;
-            int VersionIndex = Convert.ToInt32(VersionGradeControl.Rating * 2);
+            int chipsetIndex = ChipsetBonusSelector.SelectedItemPosition;
+            int versionIndex = Convert.ToInt32(versionGradeControl.Rating * 2);
 
-            int[] BonusUp = { 0, 0, 0, 0 };
+            int[] bonusUp = { 0, 0, 0, 0 };
 
             try
             {
-                GradeControl.IsIndicator = true;
-                VersionGradeControl.IsIndicator = true;
+                gradeControl.IsIndicator = true;
+                versionGradeControl.IsIndicator = true;
 
-                if (ChipsetIndex > 0)
-                    for (int i = 0; i < ChipsetIndex; ++i)
-                        for (int k = 0; k < fst.AbilityList.Length; ++k)
-                            BonusUp[k] += fst.ChipsetBonusMag[i][fst.AbilityList[k]];
-
-                if (VersionIndex > 0)
-                    for (int i = 0; i < VersionIndex; ++i)
-                        for (int k = 0; k < fst.AbilityList.Length; ++k)
-                            BonusUp[k] += fst.VersionUpPlus[i][fst.AbilityList[k]];
-
-                for (int i = 0; i < Progresses.Length; ++i)
+                if (chipsetIndex > 0)
                 {
-                    FindViewById<TextView>(ProgressMaxTexts[i]).Text = FindViewById<ProgressBar>(Progresses[i]).Max.ToString();
+                    for (int i = 0; i < chipsetIndex; ++i)
+                    {
+                        for (int k = 0; k < fst.AbilityList.Length; ++k)
+                        {
+                            bonusUp[k] += fst.ChipsetBonusMag[i][fst.AbilityList[k]];
+                        }
+                    }
+                }
 
-                    int MinValue = fst.Abilities[$"{fst.AbilityList[i]}_Min"];
-                    int MaxValue = fst.Abilities[$"{fst.AbilityList[i]}_Max"];
+                if (versionIndex > 0)
+                {
+                    for (int i = 0; i < versionIndex; ++i)
+                    {
+                        for (int k = 0; k < fst.AbilityList.Length; ++k)
+                        {
+                            bonusUp[k] += fst.VersionUpPlus[i][fst.AbilityList[k]];
+                        }
+                    }
+                }
 
-                    ProgressBar pb = FindViewById<ProgressBar>(Progresses[i]);
-                    pb.Progress = MinValue;
-                    pb.SecondaryProgress = MaxValue + BonusUp[i];
+                for (int i = 0; i < progresses.Length; ++i)
+                {
+                    FindViewById<TextView>(progressMaxTexts[i]).Text = FindViewById<ProgressBar>(progresses[i]).Max.ToString();
 
-                    FindViewById<TextView>(StatusTexts[i]).Text = $"{MinValue}/{MaxValue}(+{BonusUp[i]})";
+                    int minValue = fst.Abilities[$"{fst.AbilityList[i]}_Min"];
+                    int maxValue = fst.Abilities[$"{fst.AbilityList[i]}_Max"];
+
+                    ProgressBar pb = FindViewById<ProgressBar>(progresses[i]);
+                    pb.Progress = minValue;
+                    pb.SecondaryProgress = maxValue + bonusUp[i];
+
+                    FindViewById<TextView>(statusTexts[i]).Text = $"{minValue}/{maxValue}(+{bonusUp[i]})";
                 }
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.FSTDBDetail_AbilityCalcError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.FSTDBDetail_AbilityCalcError, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
             finally
             {
-                GradeControl.IsIndicator = false;
-                VersionGradeControl.IsIndicator = false;
+                gradeControl.IsIndicator = false;
+                versionGradeControl.IsIndicator = false;
             }
-        }
-
-        private void HideFloatingActionButtonAnimation()
-        {
-            FABTimer.Stop();
-            IsEnableFABMenu = false;
-
-            RefreshCacheFAB.Hide();
-            MainFAB.Alpha = 0.3f;
-            MainFAB.SetImageResource(Resource.Drawable.HideFloating_Icon);
         }
 
         private void SetCardTheme()
         {
-            int[] CardViewIds = { Resource.Id.FSTDBDetailBasicInfoCardLayout, Resource.Id.FSTDBDetailCircuitCardLayout, Resource.Id.FSTDBDetailSkillCardLayout1, Resource.Id.FSTDBDetailSkillCardLayout2, Resource.Id.FSTDBDetailSkillCardLayout3, Resource.Id.FSTDBDetailAbilityCardLayout };
+            int[] cardViewIds = { Resource.Id.FSTDBDetailBasicInfoCardLayout, Resource.Id.FSTDBDetailCircuitCardLayout, Resource.Id.FSTDBDetailSkillCardLayout1, Resource.Id.FSTDBDetailSkillCardLayout2, Resource.Id.FSTDBDetailSkillCardLayout3, Resource.Id.FSTDBDetailAbilityCardLayout };
 
-            foreach (int id in CardViewIds)
+            foreach (int id in cardViewIds)
             {
                 CardView cv = FindViewById<CardView>(id);
 
@@ -619,22 +557,14 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task ShowCardViewAnimation()
+        private void ShowCardViewVisibility()
         {
-            await Task.Delay(100);
-
-            if (FindViewById<CardView>(Resource.Id.FSTDBDetailBasicInfoCardLayout).Alpha == 0.0f)
-                FindViewById<CardView>(Resource.Id.FSTDBDetailBasicInfoCardLayout).Animate().Alpha(1.0f).SetDuration(500).Start();
-            if (FindViewById<CardView>(Resource.Id.FSTDBDetailCircuitCardLayout).Alpha == 0.0f)
-                FindViewById<CardView>(Resource.Id.FSTDBDetailCircuitCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(500).Start();
-            if (FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout1).Alpha == 0.0f)
-                FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout1).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1000).Start();
-            if (FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout2).Alpha == 0.0f)
-                FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout2).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(1500).Start();
-            if (FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout3).Alpha == 0.0f)
-                FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout3).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(2000).Start();
-            if (FindViewById<CardView>(Resource.Id.FSTDBDetailAbilityCardLayout).Alpha == 0.0f)
-                FindViewById<CardView>(Resource.Id.FSTDBDetailAbilityCardLayout).Animate().Alpha(1.0f).SetDuration(500).SetStartDelay(2500).Start();
+            FindViewById<CardView>(Resource.Id.FSTDBDetailBasicInfoCardLayout).Visibility = ViewStates.Visible;
+            FindViewById<CardView>(Resource.Id.FSTDBDetailCircuitCardLayout).Visibility = ViewStates.Visible;
+            FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout1).Visibility = ViewStates.Visible;
+            FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout2).Visibility = ViewStates.Visible;
+            FindViewById<CardView>(Resource.Id.FSTDBDetailSkillCardLayout3).Visibility = ViewStates.Visible;
+            FindViewById<CardView>(Resource.Id.FSTDBDetailAbilityCardLayout).Visibility = ViewStates.Visible;
         }
 
         public override void OnBackPressed()

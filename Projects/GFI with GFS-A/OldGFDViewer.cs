@@ -19,7 +19,7 @@ namespace GFI_with_GFS_A
     {
         private ArrayAdapter imageAdapter;
         private Android.Support.V4.App.FragmentTransaction ft;
-        private Android.Support.V4.App.Fragment oldGFDViewer_F;
+        private Android.Support.V4.App.Fragment oldGFDViewerF;
 
         private DrawerLayout mainDrawerLayout;
         private ListView drawerListView;
@@ -74,10 +74,10 @@ namespace GFI_with_GFS_A
 
                 // Set Fragment
 
-                oldGFDViewer_F = new OldGFDViewerScreen();
+                oldGFDViewerF = new OldGFDViewerScreen();
 
                 ft = SupportFragmentManager.BeginTransaction();
-                ft.Add(Resource.Id.OldGFDViewerContainer, oldGFDViewer_F, "OldGFDViewerScreen");
+                ft.Add(Resource.Id.OldGFDViewerContainer, oldGFDViewerF, "OldGFDViewerScreen");
                 ft.Commit();
 
                 InitList();
@@ -119,8 +119,8 @@ namespace GFI_with_GFS_A
                     }
                     break;
                 case Resource.Id.RefreshOldGFDImageCache:
-                    _ = ((OldGFDViewerScreen)oldGFDViewer_F).DownloadGFDImage();
-                    ((OldGFDViewerScreen)oldGFDViewer_F).ShowImage(0);
+                    _ = ((OldGFDViewerScreen)oldGFDViewerF).DownloadGFDImage();
+                    ((OldGFDViewerScreen)oldGFDViewerF).ShowImage(0);
                     break;
                 case Resource.Id.OldGFDExit:
                     mainDrawerLayout.CloseDrawer(GravityCompat.Start);
@@ -189,7 +189,7 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                ((OldGFDViewerScreen)oldGFDViewer_F).ShowImage(e.Position);
+                ((OldGFDViewerScreen)oldGFDViewerF).ShowImage(e.Position);
                 mainDrawerLayout.CloseDrawer(GravityCompat.Start);
             }
             catch (Exception ex)

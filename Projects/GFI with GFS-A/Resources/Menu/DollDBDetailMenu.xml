@@ -4,17 +4,17 @@
   xmlns:local="http://schemas.android.com/apk/res-auto">
   <item
     android:id="@+id/DollDBDetailGuideBookDetail"
-    android:icon="@drawable/LibraryBookIcon"
+    android:icon="@drawable/librarybook_icon"
     android:title="@string/Common_Link"
     local:showAsAction="ifRoom"/>
   <item
     android:id="@+id/DollDBDetailLink"
-    android:icon="@drawable/LinkIcon"
+    android:icon="@drawable/link_icon"
     android:title="@string/Common_Link"
     local:showAsAction="ifRoom"/>
   <item
     android:id="@+id/DollDBDetailProductPercentage"
-    android:icon="@drawable/ProductPercentTable_Icon"
+    android:icon="@drawable/ticketpercentage_icon"
     android:title="@string/Tooltip_DB_ProductPercentage"
     local:showAsAction="ifRoom"/>
 </menu>

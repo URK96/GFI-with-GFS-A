@@ -4,12 +4,12 @@
   xmlns:local="http://schemas.android.com/apk/res-auto">
   <item
     android:id="@+id/RefreshOldGFDImageCache"
-    android:icon="@drawable/CachedIcon"
+    android:icon="@drawable/sync_icon"
     android:title="@string/Common_UpdateImageCache"
     local:showAsAction="ifRoom"/>
   <item
     android:id="@+id/OldGFDExit"
-    android:icon="@drawable/Close"
+    android:icon="@drawable/close_icon"
     android:title="@string/Common_Close"
     local:showAsAction="always"/>
 </menu>

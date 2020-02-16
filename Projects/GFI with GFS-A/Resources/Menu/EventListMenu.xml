@@ -4,7 +4,7 @@
   xmlns:local="http://schemas.android.com/apk/res-auto">
   <item
     android:id="@+id/RefreshOldGFDImageCache"
-    android:icon="@drawable/CachedIcon"
+    android:icon="@drawable/sync_icon"
     android:title="@string/Common_UpdateImageCache"
     local:showAsAction="ifRoom"/>
 </menu>

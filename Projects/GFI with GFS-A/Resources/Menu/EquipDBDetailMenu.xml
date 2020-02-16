@@ -4,12 +4,12 @@
   xmlns:local="http://schemas.android.com/apk/res-auto">
   <item
     android:id="@+id/EquipDBDetailLink"
-    android:icon="@drawable/LinkIcon"
+    android:icon="@drawable/link_icon"
     android:title="@string/Common_Link"
     local:showAsAction="ifRoom"/>
   <item
     android:id="@+id/EquipDBDetailProductPercentage"
-    android:icon="@drawable/ProductPercentTable_Icon"
+    android:icon="@drawable/ticketpercentage_icon"
     android:title="@string/Tooltip_DB_ProductPercentage"
     local:showAsAction="ifRoom"/>
 </menu>

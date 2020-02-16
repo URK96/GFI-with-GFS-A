@@ -403,6 +403,9 @@
   <string name="FairyDBMainActivity_SearchHint">Search Fairy Name</string>
   
   <!--FSTDBDetail-->
+  <string name="FSTDBDetail_Type_ATW">Anti-Tank Weapon</string>
+  <string name="FSTDBDetail_Type_AGL">Automatic Grenade Launcher</string>
+  <string name="FSTDBDetail_Type_MTR">Infantry Mortar</string>
   <string name="FSTDBDetail_Chipset_Default">Default</string>
   <string name="FSTDBDetail_SubGradeError">Apply Grade Error</string>
   <string name="FSTDBDetail_CircuitCalcError">Calc CirCuit Error</string>
@@ -421,19 +424,28 @@
   <string name="GFDInfo_Update_Playstore">Play Store</string>
   <string name="GFDInfo_Update_Apk">APK</string>
   
-  <!--Main-->
+  <!--New Main-->
   <string name="MainActivity_Title">GFD</string>
-  <string name="Main_MainMenu_DBMenu">DB Menu</string>
-  <string name="Main_ManiMenu_GFUtil">GF Util</string>
-  <string name="Main_MainMenu_OldGFD">GFD v1</string>
-  <string name="Main_MainMenu_GFDInfo">Info</string>
-  <string name="Main_MainMenu_Extras">Extras</string>
-  <string name="Main_MainMenu_Setting">Setting</string>
-  <string name="Main_DBMenu_DollDB">T-Doll DB</string>
-  <string name="Main_DBMenu_EquipDB">Equip DB</string>
-  <string name="Main_DBMenu_FairyDB">Fairy DB</string>
-  <string name="Main_DBMenu_EnemyDB">Enemy DB</string>
-  <string name="Main_DBMenu_FSTDB">FST DB</string>
+  <string name="Main_Category_Home">Home</string>
+  <string name="Main_Home_NotificationTitle">* Notification *</string>
+  <string name="Main_Category_DB">DB</string>
+  <string name="Main_Category_GFDv1">GFD v1</string>
+  <string name="Main_Category_GFUtil">GFUtil</string>
+  <string name="Main_Category_Other">Other</string>
+  <string name="Main_Toolbar_GFDInfo">Info</string>
+  <string name="Main_Toolbar_Setting">Setting</string>
+
+  <!--New Main - DB-->
+  <string name="Main_DB_DollDB">T-Doll DB</string>
+  <string name="Main_DB_EquipDB">Equip DB</string>
+  <string name="Main_DB_FairyDB">Fairy DB</string>
+  <string name="Main_DB_EnemyDB">Enemy DB</string>
+  <string name="Main_DB_FSTDB">FST DB</string>
+
+  <!--New Main - GFD v1-->
+  <!--Duplicate OldGFD String-->
+
+  <!--New Main - GFUtil-->
   <string name="Main_GFUtil_Event">GF Event</string>
   <string name="Main_GFUtil_OfficialNotification">GF Notification</string>
   <string name="Main_GFUtil_Calc">Calculator</string>
@@ -442,9 +454,11 @@
   <string name="Main_GFUtil_Story">Story</string>
   <string name="Main_GFUtil_GuideBookViewer">Guide Book</string>
   <string name="Main_GFUtil_ShortGuideBookViewer">Beginner Guide</string>
-  <string name="Main_ExtraMenu_ProductSimulator">Manufacturing Simulation</string>
-  <string name="Main_ExtraMenu_GFOSTPlayer">OST Player</string>
-  <string name="Main_ExtraMenu_Cartoon">Cartoon</string>
+
+  <!--New Main - Other-->
+  <string name="Main_Other_ProductSimulator">Manufacturing Simulation</string>
+  <string name="Main_Other_GFOSTPlayer">OST Player</string>
+  <string name="Main_Other_Cartoon">Cartoon</string>
   
   <!--OldGFD-->
   <string name="OldGFDViewer_ProductDollTable">T-Doll Production Timetable</string>
@@ -531,9 +545,11 @@
   <string name="Setting_ServerCheck_Summary">Checking server when app start. When disable, app starting time is short but not recommend.</string>
   <string name="Setting_AppLanguage_Title">App Language</string>
   <string name="Setting_AppLanguage_Summary">Chage language in app strings. This setting not affect device setting. After setup, the app must be restarted before it takes effect.</string>
-  <string name="Setting_Category_MainMenu">Main Menu</string>
-  <string name="Setting_MainButtonColor_Title">Main Button Color</string>
-  <string name="Setting_MainButtonColor_Summary">Select the color of the menu button. After setup, the app must be restarted before it takes effect.</string>
+
+  <string name="Setting_Category_MainMenu">Main Screen</string>
+  <string name="Setting_StartMainFragment_Title">Start Main Screen</string>
+  <string name="Setting_StartMainFragment_Summary">Select start menu category after app start. After setup, the app must be restarted before it takes effect.</string>
+
   <string name="Setting_Category_DB">DB</string>
   <string name="Setting_DynamicDBLoad_Title">Dynamic DB LOad</string>
   <string name="Setting_DynamicDBLoad_Summary">Load DB only if app need it. Enabling this feature will shorten app startup time, but may increase load time when using the feature. After setup, the app must be restarted before it takes effect.</string>
@@ -543,14 +559,17 @@
   <string name="Setting_CheckDBUpdate_Summary">Check for updates to DB data. If there is an update, it will proceed automatically.</string>
   <string name="Setting_RepairDB_Title">Repair DB</string>
   <string name="Setting_RepairDB_Summary">Repair DB Data. If the DB cannot be loaded correctly, use this option to repair the DB.</string>
+  
   <string name="Setting_Category_DBList">DB List</string>
   <string name="Setting_DBListImageShow_Title">Activate List Image</string>
   <string name="Setting_DBListImageShow_Summary">Set the DB list to display the corresponding image for each item. On devices with less than 2GB of RAM, app may crash when activated.</string>
   <string name="Setting_PreviewDBListLayout_Title">Preview DB List Layout</string>
   <string name="Setting_PreviewDBListLayout_Summary">Apply preview beta layout. This setting only affect T-Doll, Equip, Fairy DB list.</string>
+  
   <string name="Setting_Category_DBDetail">DB Detail</string>
   <string name="Setting_DBDetailBackgroundImage_Title">Enable Detail Page Background Image</string>
   <string name="Setting_DBDetailBackgroundImage_Summary">Set image displayed in the background on the DB Details page. On devices with less than 2GB of RAM, app may crash when activated.</string>
+  
   <string name="Setting_Category_TextViewer">Text Viewer</string>
   <string name="Setting_TextSize_Title">Set Text Size</string>
   <string name="Setting_TextSize_Summary">Set text size of text viewer</string>
@@ -558,14 +577,17 @@
   <string name="Setting_TextColor_Summary">Set text color of text viewer.</string>
   <string name="Setting_BackgroundColor_Title">Set Background Color</string>
   <string name="Setting_BackgroundColor_Summary">Set background color of text viewer.</string>
+  
   <string name="Setting_Category_Cache">Cache</string>
   <string name="Setting_DownloadAllCache_Title">Download Part-All Cache</string>
   <string name="Setting_DownloadAllCache_Summary">The database cache files used in the small dictionary are downloaded in advance. Use this feature to download the cache and you can use some features of app on offline.</string>
   <string name="Setting_CleanCache_Title">Delete All Cache</string>
   <string name="Setting_CleanCache_Summary">Free up storage space by deleting the cache file. If there is no cache, the cache can be downloaded again, which can increase data usage. We recommend restarting the app after deleting the cache.</string>
+  
   <string name="Setting_Category_Log">Log</string>
   <string name="Setting_DeleteAllLogFile_Title">Delete Log</string>
   <string name="Setting_DeleteAllLogFile_Summary">Delete all log files.</string>
+  
   <string name="Setting_Category_ETC">ETC</string>
   <string name="Setting_ExternalLibraryLicense_Title">External Library License</string>
   <string name="Setting_ExternalLibraryLicense_Summary">Check license of external library applied on this app</string>

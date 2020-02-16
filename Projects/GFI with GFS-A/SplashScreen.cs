@@ -151,6 +151,7 @@ namespace GFI_with_GFS_A
 
                 // Finalize & Start Main
 
+                //StartActivity(typeof(Main));
                 StartActivity(typeof(Main));
                 OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
                 Finish();

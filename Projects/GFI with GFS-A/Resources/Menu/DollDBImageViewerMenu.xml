@@ -4,17 +4,17 @@
   xmlns:local="http://schemas.android.com/apk/res-auto">
   <item
     android:id="@+id/DollDBImageViewerCensoredOption"
-    android:icon="@drawable/CensorIcon"
+    android:icon="@drawable/unlock_icon"
     android:title="@string/DollDBImageViewer_Menu_Censor"
     local:showAsAction="ifRoom"/>
   <item
     android:id="@+id/DollDBImageViewerChangeStateButton"
-    android:icon="@drawable/DamageIcon"
+    android:icon="@drawable/damage_icon"
     android:title="@string/DollDBImageViewer_Menu_Damage"
     local:showAsAction="ifRoom"/>
   <item
     android:id="@+id/RefreshDollImageCache"
-    android:icon="@drawable/CachedIcon"
+    android:icon="@drawable/sync_icon"
     android:title="@string/Common_UpdateImageCache"
     local:showAsAction="ifRoom"/>
 </menu>

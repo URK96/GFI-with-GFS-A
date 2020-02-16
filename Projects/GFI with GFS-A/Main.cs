@@ -1,18 +1,14 @@
-using Android;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
-using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.Transitions;
-using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+
 using System;
-using System.IO;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
@@ -22,24 +18,16 @@ namespace GFI_with_GFS_A
     {
         System.Timers.Timer exitTimer = new System.Timers.Timer();
 
-        CoordinatorLayout snackbarLayout;
-
-        private TextView notificationView;
-
+        private CoordinatorLayout snackbarLayout;
         private Android.Support.V7.Widget.Toolbar toolbar;
-        private RecyclerView dbDictionarySubMenu;
-        private RecyclerView gfUtilSubMenu;
-        private RecyclerView extrasSubMenu;
-        private RecyclerView oldGFDSubMenu;
+        private FrameLayout fContainer;
+        private BottomNavigationView bottomNavigation;
 
-        private LinearLayout.LayoutParams expandParams;
-        private LinearLayout.LayoutParams collapseParams;
-
-        private bool isCardOpen = false;
-
-        private int openCardIndex = 0;
-
-        private CardView[] mainCardViewList;
+        private Android.Support.V4.App.Fragment mainHomeF;
+        private Android.Support.V4.App.Fragment mainDBF;
+        private Android.Support.V4.App.Fragment mainGFDv1F;
+        private Android.Support.V4.App.Fragment mainGFUtilF;
+        private Android.Support.V4.App.Fragment mainOtherF;
 
         protected override void AttachBaseContext(Context @base)
         {
@@ -64,43 +52,22 @@ namespace GFI_with_GFS_A
                 // Find View & Connect Event
 
                 toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.MainMainToolbar);
+                fContainer = FindViewById<FrameLayout>(Resource.Id.MainFragmentContainer);
+                bottomNavigation = FindViewById<BottomNavigationView>(Resource.Id.MainBottomNavigation);
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.SetTitle(Resource.String.MainActivity_Title);
 
-                mainCardViewList = new CardView[]
-                {
-                    FindViewById<CardView>(Resource.Id.MainNotificationCardLayout),
-                    FindViewById<CardView>(Resource.Id.MainDBDictionaryCardLayout),
-                    FindViewById<CardView>(Resource.Id.MainGFUtilCardLayout),
-                    FindViewById<CardView>(Resource.Id.MainExtrasCardLayout),
-                    FindViewById<CardView>(Resource.Id.MainOldGFDCardLayout),
-                    FindViewById<CardView>(Resource.Id.MainGFDInfoCardLayout),
-                    FindViewById<CardView>(Resource.Id.MainSettingCardLayout)
-                };
+                bottomNavigation.NavigationItemSelected += (sender, e) => { ChangeFragment(e.Item.ItemId); };
 
-                mainCardViewList[0].Click += MainNotificationCardLayout_Click;
-                mainCardViewList[1].Click += MainDBDictionaryCardLayout_Click;
-                mainCardViewList[2].Click += MainGFUtilCardLayout_Click;
-                mainCardViewList[3].Click += MainExtrasCardLayout_Click;
-                mainCardViewList[4].Click += MainOldGFDCardLayout_Click;
-                mainCardViewList[5].Click += delegate
-                {
-                    StartActivity(typeof(GFDInfoActivity));
-                    OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
-                };
-                mainCardViewList[6].Click += delegate
-                {
-                    StartActivity(typeof(SettingActivity));
-                    OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
-                };
+                // Set Fragment
 
-                dbDictionarySubMenu = FindViewById<RecyclerView>(Resource.Id.MainDBDictionaryRecyclerView);
-                gfUtilSubMenu = FindViewById<RecyclerView>(Resource.Id.MainGFUtilRecyclerView);
-                extrasSubMenu = FindViewById<RecyclerView>(Resource.Id.MainExtrasRecyclerView);
-                oldGFDSubMenu = FindViewById<RecyclerView>(Resource.Id.MainOldGFDRecyclerView);
-                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.MainSnackbarLayout);
-                notificationView = FindViewById<TextView>(Resource.Id.MainNotificationText);
+                mainHomeF = new HomeFragment();
+                mainDBF = new DBFragment();
+                mainGFDv1F = new GFDv1Fragment();
+                mainGFUtilF = new GFUtilFragment();
+                mainOtherF = new OtherFragment();
+
 
                 // Set ActionBar Title Icon
 
@@ -112,7 +79,7 @@ namespace GFI_with_GFS_A
                 SupportActionBar.SetDisplayShowHomeEnabled(true);
                 SupportActionBar.SetIcon(Resource.Mipmap.ic_launcher);*/
 
-                SupportActionBar.SetBackgroundDrawable(new ColorDrawable(Android.Graphics.Color.ParseColor("#54A716")));
+                //SupportActionBar.SetBackgroundDrawable(new ColorDrawable(Android.Graphics.Color.ParseColor("#54A716")));
 
                 // Set Program Exit Timer
 
@@ -121,6 +88,30 @@ namespace GFI_with_GFS_A
 
                 // Load Init Process
 
+                int startIndex = int.Parse(ETC.sharedPreferences.GetString("StartMainFragment", "0"));
+                int id = 0;
+
+                switch (startIndex)
+                {
+                    default:
+                    case 0:
+                        id = Resource.Id.MainNavigation_Home;
+                        break;
+                    case 1:
+                        id = Resource.Id.MainNavigation_DB;
+                        break;
+                    case 2:
+                        id = Resource.Id.MainNavigation_GFDv1;
+                        break;
+                    case 3:
+                        id = Resource.Id.MainNavigation_GFUtil;
+                        break;
+                    case 4:
+                        id = Resource.Id.MainNavigation_Other;
+                        break;
+                }
+
+                bottomNavigation.SelectedItemId = id;
                 _ = InitializeProcess();
             }
             catch (Exception ex)
@@ -130,13 +121,72 @@ namespace GFI_with_GFS_A
             }
         }
 
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.MainToolbarMenu, menu);
+
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item?.ItemId)
+            {
+                case Resource.Id.MainToolbar_GFDInfo:
+                    StartActivity(typeof(GFDInfoActivity));
+                    OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
+                    break;
+                case Resource.Id.MainToolbar_Setting:
+                    StartActivity(typeof(SettingActivity));
+                    OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
+                    break;
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
+
+        private void ChangeFragment(int id)
+        {
+            Android.Support.V4.App.Fragment fragment = null;
+
+            switch (id)
+            {
+                case Resource.Id.MainNavigation_Home:
+                    fragment = mainHomeF;
+                    break;
+                case Resource.Id.MainNavigation_DB:
+                    fragment = mainDBF;
+                    break;
+                case Resource.Id.MainNavigation_GFDv1:
+                    fragment = mainGFDv1F;
+                    break;
+                case Resource.Id.MainNavigation_GFUtil:
+                    fragment = mainGFUtilF;
+                    break;
+                case Resource.Id.MainNavigation_Other:
+                    fragment = mainOtherF;
+                    break;
+            }
+
+            if (fragment == null)
+            {
+                return;
+            }
+
+            TransitionManager.BeginDelayedTransition(fContainer);
+
+            SupportFragmentManager.BeginTransaction().Replace(Resource.Id.MainFragmentContainer, fragment).Commit();
+
+            GC.Collect();
+        }
+
         protected override void OnResume()
         {
             try
             {
                 base.OnResume();
 
-                // Refresh Notification Data
+                // Refresh Server Data
 
                 _ = CheckNetworkData();
             }
@@ -149,10 +199,10 @@ namespace GFI_with_GFS_A
         // Auto Run Mode
         private void RunStartMode()
         {
-            switch (ETC.sharedPreferences.GetString("StartAppMode", "0"))
+            /*switch (ETC.sharedPreferences.GetString("StartAppMode", "0"))
             {
                 case "1":
-                    MainDBDictionaryCardLayout_Click(mainCardViewList[1], new EventArgs()); // DB Sub Menu
+                    ChangeFragment(Resource.Id.MainNavigation_DB); // DB Sub Menu
                     break;
                 case "2":
                     MainOldGFDSubMenu_Click(mainCardViewList[3], 0); // OldGFD
@@ -174,7 +224,7 @@ namespace GFI_with_GFS_A
                     break;
                 default:
                     break;
-            }
+            }*/
         }
 
         private async Task InitializeProcess()
@@ -184,87 +234,6 @@ namespace GFI_with_GFS_A
 
             try
             {
-                /*if (!ETC.sharedPreferences.GetBoolean("LowMemoryOption", false) && (ETC.Language.Language == "ko"))
-                {
-                    // Set Main Menu Button Color (1 = Orange, 0 = Default)
-                    
-                    switch (ETC.sharedPreferences.GetString("MainButtonColor", "0"))
-                    {
-                        case "1":
-                            for (int i = 0; i < MainMenuButtonIds.Length; ++i)
-                                FindViewById<Button>(MainMenuButtonIds[i]).SetBackgroundResource(MainMenuButtonBackgroundIds_Orange[i]);
-                            for (int i = 0; i < DBSubMenuButtonIds.Length; ++i)
-                                FindViewById<Button>(DBSubMenuButtonIds[i]).SetBackgroundResource(DBSubMenuButtonBackgroundIds_Orange[i]);
-                            for (int i = 0; i < ExtraMenuButtonIds.Length; ++i)
-                                FindViewById<Button>(ExtraMenuButtonIds[i]).SetBackgroundResource(ExtraMenuButtonBackgroundIds_Orange[i]);
-                            break;
-                        case "0":
-                        default:
-                            for (int i = 0; i < MainMenuButtonIds.Length; ++i)
-                                FindViewById<Button>(MainMenuButtonIds[i]).SetBackgroundResource(MainMenuButtonBackgroundIds[i]);
-                            for (int i = 0; i < DBSubMenuButtonIds.Length; ++i)
-                                FindViewById<Button>(DBSubMenuButtonIds[i]).SetBackgroundResource(DBSubMenuButtonBackgroundIds[i]);
-                            for (int i = 0; i < ExtraMenuButtonIds.Length; ++i)
-                                FindViewById<Button>(ExtraMenuButtonIds[i]).SetBackgroundResource(ExtraMenuButtonBackgroundIds[i]);
-                            break;
-                    }
-                }
-                else
-                {
-                    for (int i = 0; i < MainMenuButtonIds.Length; ++i)
-                        FindViewById<Button>(MainMenuButtonIds[i]).Text = MainMenuButtonText[i];
-                    for (int i = 0; i < DBSubMenuButtonIds.Length; ++i)
-                        FindViewById<Button>(DBSubMenuButtonIds[i]).Text = DBSubMenuButtonText[i];
-                    for (int i = 0; i < ExtraMenuButtonIds.Length; ++i)
-                        FindViewById<Button>(ExtraMenuButtonIds[i]).Text = ExtraMenuButtonText[i];
-                }
-
-                // Temporary Remove Button Images
-
-                for (int i = 0; i < MainMenuButtonIds.Length; ++i) FindViewById<Button>(MainMenuButtonIds[i]).Text = MainMenuButtonText[i];
-                for (int i = 0; i < DBSubMenuButtonIds.Length; ++i) FindViewById<Button>(DBSubMenuButtonIds[i]).Text = DBSubMenuButtonText[i];
-                for (int i = 0; i < ExtraMenuButtonIds.Length; ++i) FindViewById<Button>(ExtraMenuButtonIds[i]).Text = ExtraMenuButtonText[i];*/
-
-                // Set Layout Params Preset
-
-                expandParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent);
-                collapseParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, 0, 1);
-                collapseParams.SetMargins(20, 20, 20, 20);
-
-                // Set Sub Menu Adapter
-
-                var dbSubAdapter = new MainListAdapter(DBSubMenuButtonText, this);
-                dbSubAdapter.ItemClick += MainDBDictionarySubMenu_Click;
-                dbDictionarySubMenu.SetLayoutManager(new LinearLayoutManager(this));
-                dbDictionarySubMenu.SetAdapter(dbSubAdapter);
-
-                var gfUtilSubAdapter = new MainListAdapter(GFUtilMenuButtonText, this);
-                gfUtilSubAdapter.ItemClick += MainGFUtilSubMenu_Click;
-                gfUtilSubMenu.SetLayoutManager(new LinearLayoutManager(this));
-                gfUtilSubMenu.SetAdapter(gfUtilSubAdapter);
-
-                var extrasSubAdapter = new MainListAdapter(ExtraMenuButtonText, this);
-                extrasSubAdapter.ItemClick += MainExtrasSubMenu_Click;
-                extrasSubMenu.SetLayoutManager(new LinearLayoutManager(this));
-                extrasSubMenu.SetAdapter(extrasSubAdapter);
-
-                string[] oldGFDList;
-
-                switch (ETC.locale.Language)
-                {
-                    case "ko":
-                        oldGFDList = oldGFDListText_ko;
-                        break;
-                    default:
-                        oldGFDList = oldGFDListText_etc;
-                        break;
-                }
-
-                var oldGFDSubAdapter = new MainListAdapter(oldGFDList, this);
-                oldGFDSubAdapter.ItemClick += MainOldGFDSubMenu_Click;
-                oldGFDSubMenu.SetLayoutManager(new LinearLayoutManager(this));
-                oldGFDSubMenu.SetAdapter(oldGFDSubAdapter);
-
                 // Check Auto Run Mode
 
                 if (ETC.sharedPreferences.GetString("StartAppMode", "0") != "0")
@@ -286,10 +255,7 @@ namespace GFI_with_GFS_A
         {
             await Task.Delay(100);
 
-            TextView tv = FindViewById<TextView>(Resource.Id.MainNowDBVersion);
-            tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBChecking)})";
-
-            string notificationText = "";
+            //tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBChecking)})";
 
             try
             {
@@ -303,9 +269,9 @@ namespace GFI_with_GFS_A
 
                     if (await ETC.CheckDBVersion())
                     {
-                        RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})"; });
+                        //RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})"; });
 
-                        Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
+                        var ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
                         ad.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
                         ad.SetMessage(Resource.String.CheckDBUpdateDialog_Question);
                         ad.SetCancelable(true);
@@ -316,11 +282,11 @@ namespace GFI_with_GFS_A
 
                             if (!await ETC.CheckDBVersion())
                             {
-                                RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})"; });
+                                //RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})"; });
                             }
                             else
                             {
-                                RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})"; });
+                                //RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})"; });
                             }
 
                         });
@@ -329,33 +295,7 @@ namespace GFI_with_GFS_A
                     }
                     else
                     {
-                        RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})"; });
-                    }
-
-
-                    // Get Notification
-
-                    string url = "";
-
-                    if (ETC.locale.Language == "ko")
-                    {
-                        url = Path.Combine(ETC.server, "Android_Notification.txt");
-                    }
-                    else
-                    {
-                        url = Path.Combine(ETC.server, "Android_Notification_en.txt");
-                    }
-
-                    if (ETC.isServerDown)
-                    {
-                        notificationText = "& Server is Maintenance &";
-                    }
-                    else
-                    {
-                        using (WebClient wc = new WebClient())
-                        {
-                            notificationText = await wc.DownloadStringTaskAsync(url);
-                        }
+                        //RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})"; });
                     }
                 });
             }
@@ -363,231 +303,6 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(ex, this);
                 ETC.ShowSnackbar(snackbarLayout, Resource.String.Main_NotificationInitializeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
-                notificationText = "$ Load Fail $";
-            }
-            finally
-            {
-                notificationView.Text = notificationText;
-            }
-        }
-
-        private async void MainDBDictionarySubMenu_Click(object sender, int position)
-        {
-            try
-            {
-                switch (position)
-                {
-                    case 0:
-                        await Task.Run(() =>
-                        {
-                            if (string.IsNullOrEmpty(ETC.dollList.TableName))
-                            {
-                                ETC.LoadDBSync(ETC.dollList, "Doll.gfs", false);
-                            }
-                        });
-                        if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
-                        {
-                            StartActivity(typeof(DollDBMainActivity));
-                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        }
-                        else
-                        {
-                            StartActivity(typeof(DollDBMainActivity));
-                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        }
-                        break;
-                    case 1:
-                        await Task.Run(() =>
-                        {
-                            if (string.IsNullOrEmpty(ETC.equipmentList.TableName))
-                            {
-                                ETC.LoadDBSync(ETC.equipmentList, "Equipment.gfs", false);
-                            }
-                        });
-                        if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
-                        {
-                            StartActivity(typeof(EquipDBMainActivity));
-                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        }
-                        else
-                        {
-                            StartActivity(typeof(EquipDBMainActivity));
-                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        }
-                        break;
-                    case 2:
-                        await Task.Run(() =>
-                        {
-                            if (string.IsNullOrEmpty(ETC.fairyList.TableName))
-                            {
-                                ETC.LoadDBSync(ETC.fairyList, "Fairy.gfs", false);
-                            }
-                        });
-                        if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
-                        {
-                            StartActivity(typeof(FairyDBMainActivity));
-                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        }
-                        else
-                        {
-                            StartActivity(typeof(FairyDBMainActivity));
-                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        }
-                        break;
-                    case 3:
-                        await Task.Run(() =>
-                        {
-                            if (string.IsNullOrEmpty(ETC.enemyList.TableName))
-                            {
-                                ETC.LoadDBSync(ETC.enemyList, "Enemy.gfs", false);
-                            }
-                        });
-                        if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
-                        {
-                            StartActivity(typeof(EnemyDBMainActivity));
-                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        }
-                        else
-                        {
-                            StartActivity(typeof(EnemyDBMainActivity));
-                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        }
-                        break;
-                    case 4:
-                        await Task.Run(() =>
-                        {
-                            if (string.IsNullOrEmpty(ETC.FSTList.TableName))
-                            {
-                                ETC.LoadDBSync(ETC.FSTList, "FST.gfs", false);
-                            }
-                        });
-                        if (ETC.sharedPreferences.GetBoolean("PreviewDBListLayout", true))
-                        {
-                            StartActivity(typeof(FSTDBMainActivity));
-                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        }
-                        else
-                        {
-                            StartActivity(typeof(FSTDBMainActivity));
-                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        }
-                        break;
-                    default:
-                        ETC.ShowSnackbar(snackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                ETC.ShowSnackbar(snackbarLayout, Resource.String.MenuAccess_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
-            }
-        }
-
-        private async void MainGFUtilSubMenu_Click(object sender, int position)
-        {
-            await Task.Delay(10);
-
-            try
-            {
-                switch (position)
-                {
-                    case 0:
-                        var newsIntent = new Intent(this, typeof(WebBrowserActivity));
-                        newsIntent.PutExtra("url", "http://www.girlsfrontline.co.kr/archives/category/news");
-                        StartActivity(newsIntent);
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case 1:
-                        if (int.Parse(Build.VERSION.Release.Split('.')[0]) >= 6)
-                        {
-                            CheckPermission(Manifest.Permission.Internet);
-                        }
-                        StartActivity(typeof(EventListActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case 2:
-                        if (int.Parse(Build.VERSION.Release.Split('.')[0]) >= 6)
-                        {
-                            CheckPermission(Manifest.Permission.Internet);
-                        }
-                        var mdIntent = new Intent(this, typeof(WebBrowserActivity));
-                        mdIntent.PutExtra("url", "https://tempkaridc.github.io/gf/");
-                        StartActivity(mdIntent);
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case 3:
-                        StartActivity(typeof(CalcMainActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case 4:
-                        if (int.Parse(Build.VERSION.Release.Split('.')[0]) >= 6)
-                        {
-                            CheckPermission(Manifest.Permission.Internet);
-                        }
-                        var areaTipIntent = new Intent(this, typeof(WebBrowserActivity));
-                        areaTipIntent.PutExtra("url", "https://cafe.naver.com/girlsfrontlinekr/235663");
-                        StartActivity(areaTipIntent);
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case 5:
-                        //ETC.ShowSnackbar(SnackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
-                        StartActivity(typeof(ShortGuideBookViewer));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case 6:
-                        StartActivity(typeof(StoryActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    default:
-                        ETC.ShowSnackbar(snackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                ETC.ShowSnackbar(snackbarLayout, Resource.String.MenuAccess_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
-            }
-        }
-
-        private async void MainExtrasSubMenu_Click(object sender, int position)
-        {
-            await Task.Delay(10);
-
-            try
-            {
-                switch (position)
-                {
-                    case 0:
-                        if (ETC.dbVersion != 0)
-                        {
-                            StartActivity(typeof(ProductSimulatorCategorySelectActivity));
-                            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        }
-                        else
-                        {
-                            ETC.ShowSnackbar(snackbarLayout, Resource.String.NoDBFiles, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
-                        }
-                        break;
-                    case 1:
-                        StartActivity(typeof(CartoonActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    case 2:
-                        //ETC.ShowSnackbar(snackbarLayout, Resource.String.DevMode, Snackbar.LengthShort);
-                        StartActivity(typeof(GFOSTPlayerActivity));
-                        OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        break;
-                    default:
-                        ETC.ShowSnackbar(snackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                ETC.ShowSnackbar(snackbarLayout, Resource.String.MenuAccess_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -609,293 +324,17 @@ namespace GFI_with_GFS_A
 
         public override void OnBackPressed()
         {
-            if (isCardOpen)
-            {
-                switch (openCardIndex)
-                {
-                    case 0:
-                        MainNotificationCardLayout_Click(mainCardViewList[openCardIndex], new EventArgs());
-                        break;
-                    case 1:
-                        MainDBDictionaryCardLayout_Click(mainCardViewList[openCardIndex], new EventArgs());
-                        break;
-                    case 2:
-                        MainGFUtilCardLayout_Click(mainCardViewList[openCardIndex], new EventArgs());
-                        break;
-                    case 3:
-                        MainExtrasCardLayout_Click(mainCardViewList[openCardIndex], new EventArgs());
-                        break;
-                    case 4:
-                        MainOldGFDCardLayout_Click(mainCardViewList[openCardIndex], new EventArgs());
-                        break;
-                }
-
-                return;
-            }
-
             if (!exitTimer.Enabled)
             {
                 exitTimer.Start();
-                ETC.ShowSnackbar(snackbarLayout, Resource.String.Main_CheckExit, Snackbar.LengthLong, Android.Graphics.Color.DarkOrange);
+                //ETC.ShowSnackbar(snackbarLayout, Resource.String.Main_CheckExit, Snackbar.LengthLong, Android.Graphics.Color.DarkOrange);
+                Toast.MakeText(this, Resource.String.Main_CheckExit, ToastLength.Short).Show();
             }
             else
             {
                 FinishAffinity();
                 OverridePendingTransition(Resource.Animation.Activity_SlideInLeft, Resource.Animation.Activity_SlideOutRight);
                 Process.KillProcess(Process.MyPid());
-            }
-        }
-
-        private void MainNotificationCardLayout_Click(object sender, EventArgs e)
-        {
-            var card = sender as CardView;
-
-            try
-            {
-                TransitionManager.BeginDelayedTransition(card);
-
-                if (notificationView.MaxLines == 1)
-                {
-                    card.CardElevation = 16;
-
-                    for (int i = 1; i < mainCardViewList.Length; ++i)
-                    {
-                        mainCardViewList[i].Visibility = ViewStates.Gone;
-                        mainCardViewList[i].CardElevation = 8;
-                    }
-
-                    notificationView.SetMaxLines(int.MaxValue);
-                    isCardOpen = true;
-                    openCardIndex = 0;
-                }
-                else
-                {
-                    for (int i = 1; i < mainCardViewList.Length; ++i)
-                    {
-                        mainCardViewList[i].Visibility = ViewStates.Visible;
-                    }
-
-                    notificationView.SetMaxLines(1);
-                    isCardOpen = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                Toast.MakeText(this, "Main Notification transition error", ToastLength.Short).Show();
-            }
-        }
-
-        private void MainDBDictionaryCardLayout_Click(object sender, EventArgs e)
-        {
-            var card = sender as CardView;
-
-            try
-            {
-                TransitionManager.BeginDelayedTransition(card);
-
-                if (dbDictionarySubMenu.Visibility == ViewStates.Gone)
-                {
-                    card.LayoutParameters = expandParams;
-                    card.CardElevation = 16;
-
-                    for (int i = 0; i < mainCardViewList.Length; ++i)
-                    {
-                        if (mainCardViewList[i].Id == card.Id)
-                        {
-                            continue;
-                        }
-
-                        mainCardViewList[i].Visibility = ViewStates.Gone;
-                        mainCardViewList[i].CardElevation = 8;
-                    }
-
-                    dbDictionarySubMenu.Visibility = ViewStates.Visible;
-                    isCardOpen = true;
-                    openCardIndex = 1;
-                }
-                else
-                {
-                    card.LayoutParameters = collapseParams;
-
-                    for (int i = 0; i < mainCardViewList.Length; ++i)
-                    {
-                        if (mainCardViewList[i].Id == card.Id)
-                        {
-                            continue;
-                        }
-
-                        mainCardViewList[i].Visibility = ViewStates.Visible;
-                    }
-
-                    dbDictionarySubMenu.Visibility = ViewStates.Gone;
-                    isCardOpen = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                Toast.MakeText(this, "Main DB transition error", ToastLength.Short).Show();
-            }
-        }
-
-        private void MainGFUtilCardLayout_Click(object sender, EventArgs e)
-        {
-            var card = sender as CardView;
-
-            try
-            {
-                TransitionManager.BeginDelayedTransition(card);
-
-                if (gfUtilSubMenu.Visibility == ViewStates.Gone)
-                {
-                    card.LayoutParameters = expandParams;
-                    card.CardElevation = 16;
-
-                    for (int i = 0; i < mainCardViewList.Length; ++i)
-                    {
-                        if (mainCardViewList[i].Id == card.Id)
-                        {
-                            continue;
-                        }
-
-                        mainCardViewList[i].Visibility = ViewStates.Gone;
-                        mainCardViewList[i].CardElevation = 8;
-                    }
-
-                    gfUtilSubMenu.Visibility = ViewStates.Visible;
-                    isCardOpen = true;
-                    openCardIndex = 2;
-                }
-                else
-                {
-                    card.LayoutParameters = collapseParams;
-
-                    for (int i = 0; i < mainCardViewList.Length; ++i)
-                    {
-                        if (mainCardViewList[i].Id == card.Id)
-                        {
-                            continue;
-                        }
-
-                        mainCardViewList[i].Visibility = ViewStates.Visible;
-                    }
-
-                    gfUtilSubMenu.Visibility = ViewStates.Gone;
-                    isCardOpen = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                Toast.MakeText(this, "Main GF Util transition error", ToastLength.Short).Show();
-            }
-        }
-
-        private void MainExtrasCardLayout_Click(object sender, EventArgs e)
-        {
-            var card = sender as CardView;
-
-            try
-            {
-                TransitionManager.BeginDelayedTransition(card);
-
-                if (extrasSubMenu.Visibility == ViewStates.Gone)
-                {
-                    card.LayoutParameters = expandParams;
-                    card.CardElevation = 16;
-
-                    for (int i = 0; i < mainCardViewList.Length; ++i)
-                    {
-                        if (mainCardViewList[i].Id == card.Id)
-                        {
-                            continue;
-                        }
-
-                        mainCardViewList[i].Visibility = ViewStates.Gone;
-                        mainCardViewList[i].CardElevation = 8;
-                    }
-
-                    extrasSubMenu.Visibility = ViewStates.Visible;
-                    isCardOpen = true;
-                    openCardIndex = 3;
-                }
-                else
-                {
-                    card.LayoutParameters = collapseParams;
-
-                    for (int i = 0; i < mainCardViewList.Length; ++i)
-                    {
-                        if (mainCardViewList[i].Id == card.Id)
-                        {
-                            continue;
-                        }
-
-                        mainCardViewList[i].Visibility = ViewStates.Visible;
-                    }
-
-                    extrasSubMenu.Visibility = ViewStates.Gone;
-                    isCardOpen = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                Toast.MakeText(this, "Main Extras transition error", ToastLength.Short).Show();
-
-            }
-        }
-
-        private void MainOldGFDCardLayout_Click(object sender, EventArgs e)
-        {
-            var card = sender as CardView;
-
-            try
-            {
-                TransitionManager.BeginDelayedTransition(card);
-
-                if (oldGFDSubMenu.Visibility == ViewStates.Gone)
-                {
-                    card.LayoutParameters = expandParams;
-                    card.CardElevation = 16;
-
-                    for (int i = 0; i < mainCardViewList.Length; ++i)
-                    {
-                        if (mainCardViewList[i].Id == card.Id)
-                        {
-                            continue;
-                        }
-
-                        mainCardViewList[i].Visibility = ViewStates.Gone;
-                        mainCardViewList[i].CardElevation = 8;
-                    }
-
-                    oldGFDSubMenu.Visibility = ViewStates.Visible;
-                    isCardOpen = true;
-                    openCardIndex = 4;
-                }
-                else
-                {
-                    card.LayoutParameters = collapseParams;
-
-                    for (int i = 0; i < mainCardViewList.Length; ++i)
-                    {
-                        if (mainCardViewList[i].Id == card.Id)
-                        {
-                            continue;
-                        }
-
-                        mainCardViewList[i].Visibility = ViewStates.Visible;
-                    }
-
-                    oldGFDSubMenu.Visibility = ViewStates.Gone;
-                    isCardOpen = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                Toast.MakeText(this, "Main OldGFD transition error", ToastLength.Short).Show();
             }
         }
 
@@ -910,8 +349,9 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                ETC.LogError(ex, this);
-                ETC.ShowSnackbar(snackbarLayout, Resource.String.Permission_Error, Snackbar.LengthIndefinite, Android.Graphics.Color.DarkMagenta);
+                ETC.LogError(ex);
+                //ETC.ShowSnackbar(snackbarLayout, Resource.String.Permission_Error, Snackbar.LengthIndefinite, Android.Graphics.Color.DarkMagenta);
+                Toast.MakeText(this, Resource.String.Permission_Error, ToastLength.Short).Show();
             }
         }
 
@@ -920,73 +360,6 @@ namespace GFI_with_GFS_A
             if (grantResults[0] == Permission.Denied)
             {
                 Toast.MakeText(this, Resource.String.PermissionDeny_Message, ToastLength.Short).Show();
-            }
-        }
-    }
-
-    class MainListViewHolder : RecyclerView.ViewHolder
-    {
-        public TextView subItem { get; private set; }
-
-        public MainListViewHolder(View view, Action<int> listener) : base(view)
-        {
-            subItem = view.FindViewById<TextView>(Resource.Id.MainListSubItems);
-
-            view.Click += (sender, e) => listener(LayoutPosition);
-        }
-    }
-
-    class MainListAdapter : RecyclerView.Adapter
-    {
-        string[] items;
-        Activity context;
-
-        public event EventHandler<int> ItemClick;
-
-        public MainListAdapter(string[] items, Activity context)
-        {
-            this.items = items;
-            this.context = context;
-        }
-
-        public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
-        {
-            View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.MainListLayout, parent, false);
-
-            MainListViewHolder vh = new MainListViewHolder(view, OnClick);
-
-            return vh;
-        }
-
-        public override int ItemCount
-        {
-            get { return items.Length; }
-        }
-
-        void OnClick(int position)
-        {
-            ItemClick?.Invoke(this, position);
-        }
-
-        public bool HasOnItemClick()
-        {
-            return !(ItemClick == null);
-        }
-
-        public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
-        {
-            MainListViewHolder vh = holder as MainListViewHolder;
-
-            var item = items[position];
-
-            try
-            {
-                vh.subItem.Text = item;
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, context);
-                Toast.MakeText(context, "Error Create View", ToastLength.Short).Show();
             }
         }
     }

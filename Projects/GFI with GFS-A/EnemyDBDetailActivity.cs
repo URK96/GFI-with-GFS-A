@@ -4,6 +4,8 @@ using Android.Graphics.Drawables;
 using Android.Media;
 using Android.OS;
 using Android.Support.Design.Widget;
+using Android.Support.Transitions;
+using Android.Support.V4.Widget;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
@@ -18,26 +20,25 @@ using Xamarin.Essentials;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class EnemyDBDetailActivity : Activity
+    [Activity(Label = "", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class EnemyDBDetailActivity : BaseAppCompatActivity
     {
         Enemy enemy = null;
 
         private int enemyTypeIndex = 0;
-        private bool isExtraFeatureOpen = false;
 
         private ISimpleAudioPlayer voicePlayer;
         private FileStream stream;
 
         private CoordinatorLayout snackbarLayout;
 
-        private ProgressBar initLoadProgressBar;
+        private SwipeRefreshLayout refreshMainLayout;
+        private Android.Support.V7.Widget.Toolbar toolbar;
         private Spinner typeSelector;
-        private Button extraMenuButton;
         private Spinner voiceSelector;
         private Button voicePlayButton;
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             try
             {
@@ -45,7 +46,7 @@ namespace GFI_with_GFS_A
 
                 if (ETC.useLightTheme)
                 {
-                    SetTheme(Resource.Style.GFS_Light);
+                    SetTheme(Resource.Style.GFS_Toolbar_Light);
                 }
 
                 // Create your application here
@@ -55,30 +56,35 @@ namespace GFI_with_GFS_A
 
                 voicePlayer = CrossSimpleAudioPlayer.Current;
 
-                initLoadProgressBar = FindViewById<ProgressBar>(Resource.Id.EnemyDBDetailInitLoadProgress);
+                refreshMainLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.EnemyDBDetailMainRefreshLayout);
+                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.EnemyDBDetailMainToolbar);
+
+                SetSupportActionBar(toolbar);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
+                FindViewById<TextView>(Resource.Id.EnemyDBDetailToolbarAffiliation).Text = enemy.Affiliation;
+                FindViewById<TextView>(Resource.Id.EnemyDBDetailToolbarName).Text = enemy.Name;
+
                 FindViewById<ImageView>(Resource.Id.EnemyDBDetailSmallImage).Click += EnemyDBDetailSmallImage_Click;
                 typeSelector = FindViewById<Spinner>(Resource.Id.EnemyDBDetailEnemyTypeSelector);
                 typeSelector.ItemSelected += TypeSelector_ItemSelected;
-                extraMenuButton = FindViewById<Button>(Resource.Id.EnemyDBDetailExtraFeatureButton);
-                extraMenuButton.Click += ExtraMenuButton_Click;
 
-                var t_adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, enemy.Types);
-                t_adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
-                typeSelector.Adapter = t_adapter;
+                var tAdapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, enemy.Types);
+                tAdapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
+                typeSelector.Adapter = tAdapter;
 
                 if (enemy.HasVoice)
                 {
-                    extraMenuButton.Visibility = ViewStates.Visible;
                     FindViewById<LinearLayout>(Resource.Id.EnemyDBDetailVoiceLayout).Visibility = ViewStates.Visible;
                     voiceSelector = FindViewById<Spinner>(Resource.Id.EnemyDBDetailVoiceSelector);
                     voicePlayButton = FindViewById<Button>(Resource.Id.EnemyDBDetailVoicePlayButton);
                     voicePlayButton.Click += delegate { _ = PlayVoiceProcess(); };
-                    InitializeVoiceList();
                 }
 
                 snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EnemyDBDetailSnackbarLayout);
 
-                _ = InitLoadProcess();
+                await InitializeProcess();
+                await InitLoadProcess();
             }
             catch (Exception ex)
             {
@@ -87,22 +93,49 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ExtraMenuButton_Click(object sender, EventArgs e)
+        public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            Button b = sender as Button;
-
-            switch (isExtraFeatureOpen)
+            switch (item?.ItemId)
             {
-                case false:
-                    isExtraFeatureOpen = true;
-                    b.Text = "△△△";
-                    FindViewById<LinearLayout>(Resource.Id.EnemyDBDetailExtraFeatureLayout).Visibility = ViewStates.Visible;
+                case Android.Resource.Id.Home:
+                    OnBackPressed();
                     break;
-                case true:
-                    isExtraFeatureOpen = false;
-                    b.Text = "▽▽▽";
-                    FindViewById<LinearLayout>(Resource.Id.EnemyDBDetailExtraFeatureLayout).Visibility = ViewStates.Gone;
-                    break;
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
+
+        private async Task InitializeProcess()
+        {
+            await Task.Delay(100);
+
+            try
+            {
+                if (enemy.HasVoice)
+                {
+                    InitializeVoiceList();
+                }
+
+                var toolbarColor = enemy.Affiliation switch
+                {
+                    "SANGVIS FERRI" => Android.Graphics.Color.ParseColor("#441111"),
+                    "Mind Map System" => Android.Graphics.Color.ParseColor("#262626"),
+                    "KCCO" => Android.Graphics.Color.ParseColor("#47661E"),
+                    "Paradeus" => Android.Graphics.Color.ParseColor("#00008B"),
+                    "E.L.I.D." => Android.Graphics.Color.ParseColor("#441111"),
+                    _ => Android.Graphics.Color.ParseColor("#262626")
+                };
+                toolbar.SetBackgroundColor(toolbarColor);
+
+                if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+                {
+                    Window.SetStatusBarColor(toolbarColor);
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                Toast.MakeText(this, "Fail Initialize Process", ToastLength.Short).Show();
             }
         }
 
@@ -175,9 +208,9 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                var v_adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, enemy.Voices);
-                v_adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
-                voiceSelector.Adapter = v_adapter;
+                var adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, enemy.Voices);
+                adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
+                voiceSelector.Adapter = adapter;
 
                 voiceSelector.SetSelection(0);
             }
@@ -213,12 +246,14 @@ namespace GFI_with_GFS_A
 
         private async Task InitLoadProcess()
         {
-            initLoadProgressBar.Visibility = ViewStates.Visible;
-
             await Task.Delay(100);
 
             try
             {
+                refreshMainLayout.Refreshing = true;
+                TransitionManager.BeginDelayedTransition(refreshMainLayout);
+
+
                 // 철혈 타이틀 바 초기화
 
                 if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false))
@@ -226,10 +261,14 @@ namespace GFI_with_GFS_A
                     string imagePath = Path.Combine(ETC.cachePath, "Enemy", "Normal", $"{enemy.CodeName}.gfdcache");
 
                     if (!File.Exists(imagePath))
+                    {
                         using (WebClient wc = new WebClient())
+                        {
                             await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "Enemy", "Normal", $"{enemy.CodeName}.png"), imagePath);
+                        }
+                    }
 
-                    Drawable drawable = Drawable.CreateFromPath(imagePath);
+                    var drawable = Drawable.CreateFromPath(imagePath);
                     drawable.SetAlpha(40);
                     FindViewById<RelativeLayout>(Resource.Id.EnemyDBDetailMainLayout).Background = drawable;
                 }
@@ -237,17 +276,25 @@ namespace GFI_with_GFS_A
                 string cropImagePath = Path.Combine(ETC.cachePath, "Enemy", "Normal_Crop", $"{enemy.CodeName}.gfdcache");
 
                 if (!File.Exists(cropImagePath))
+                {
                     using (WebClient wc = new WebClient())
+                    {
                         await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "Enemy", "Normal_Crop", $"{enemy.CodeName}.png"), cropImagePath);
+                    }
+                }
 
                 FindViewById<ImageView>(Resource.Id.EnemyDBDetailSmallImage).SetImageDrawable(Drawable.CreateFromPath(cropImagePath));
 
                 TextView type = FindViewById<TextView>(Resource.Id.EnemyDBDetailType);
 
                 if (enemy.IsBoss)
+                {
                     FindViewById<TextView>(Resource.Id.EnemyDBDetailType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Boss);
+                }
                 else
+                {
                     FindViewById<TextView>(Resource.Id.EnemyDBDetailType).Text = Resources.GetString(Resource.String.EnemyDBDetail_Normal);
+                }
 
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailEnemyName).Text = enemy.Name;
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailEnemyCodeName).Text = enemy.CodeName;
@@ -273,6 +320,7 @@ namespace GFI_with_GFS_A
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoVoiceActor).Text = "";
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailInfoETC).Text = enemy.Note;
 
+
                 // 철혈 능력치 초기화
 
                 string[] abilities = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed", "Penetration", "Armor", "Range" };
@@ -296,7 +344,9 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(ex, this);
                 ETC.ShowSnackbar(snackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
+
                 _ = InitLoadProcess();
+
                 return;
             }
             catch (Exception ex)
@@ -306,7 +356,7 @@ namespace GFI_with_GFS_A
             }
             finally
             {
-                initLoadProgressBar.Visibility = ViewStates.Invisible;
+                refreshMainLayout.Refreshing = false;
             }
         }
 

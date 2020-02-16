@@ -4,7 +4,7 @@
   xmlns:local="http://schemas.android.com/apk/res-auto">
   <item
     android:id="@+id/CalcExit"
-    android:icon="@drawable/Close"
+    android:icon="@drawable/close_icon"
     android:title="@string/Common_Close"
     local:showAsAction="always"/>
 </menu>

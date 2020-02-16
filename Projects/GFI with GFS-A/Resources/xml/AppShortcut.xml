@@ -28,7 +28,7 @@
   <shortcut
     android:shortcutId="GFD_Calc"
     android:enabled="true"
-    android:icon="@drawable/CalcIcon_WhiteTheme"
+    android:icon="@drawable/calc_icon"
     android:shortcutShortLabel="@string/Shortcut_GFDCalc_ShortLabel"
     android:shortcutLongLabel="@string/Shortcut_GFDCalc_LongLabel"
     android:shortcutDisabledMessage="@string/Shortcut_GFDCalc_DisabledLabel">

@@ -4,12 +4,12 @@
   xmlns:local="http://schemas.android.com/apk/res-auto">
   <item
     android:id="@+id/ProductPercentTableChangeProductTypeMode"
-    android:icon="@drawable/ModeIcon"
+    android:icon="@drawable/m_icon"
     android:title="@string/ProductPercentTable_ToolbarMenu_ProductTypeMode"
     local:showAsAction="ifRoom"/>
   <item
     android:id="@+id/ProductPercentTableChangeListMode"
-    android:icon="@drawable/ListModeIcon"
+    android:icon="@drawable/listmode_icon"
     android:title="@string/ProductPercentTable_ToolbarMenu_ListMode"
     local:showAsAction="ifRoom"/>
 </menu>

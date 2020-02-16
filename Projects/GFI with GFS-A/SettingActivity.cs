@@ -103,10 +103,18 @@ namespace GFI_with_GFS_A
         {
             SaveSetting =  ETC.sharedPreferences.Edit();
 
-            Preference UpdateLog = FindPreference("UpdateLog");
-            UpdateLog.PreferenceClick += delegate
+            Preference updateLog = FindPreference("UpdateLog");
+            if (ETC.useLightTheme)
             {
-                Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGVertical);
+                updateLog.SetIcon(Resource.Drawable.updatehistory_icon_wt);
+            }
+            else
+            {
+                updateLog.SetIcon(Resource.Drawable.updatehistory_icon);
+            }
+            updateLog.PreferenceClick += delegate
+            {
+                var ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGVertical);
                 ad.SetTitle(Resource.String.NewFeatureDialog_Title);
                 ad.SetCancelable(true);
                 ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { });
@@ -139,78 +147,77 @@ namespace GFI_with_GFS_A
                 }
             };
 
-            ListPreference StartAppMode = (ListPreference)FindPreference("StartAppMode");
+            ListPreference startAppMode = (ListPreference)FindPreference("StartAppMode");
             if (ETC.useLightTheme)
             {
-                StartAppMode.SetIcon(Resource.Drawable.AppStartModeIcon_WhiteTheme);
+                startAppMode.SetIcon(Resource.Drawable.appmode_icon_wt);
             }
             else
             {
-                StartAppMode.SetIcon(Resource.Drawable.AppStartModeIcon);
+                startAppMode.SetIcon(Resource.Drawable.appmode_icon);
             }
-            StartAppMode.SetEntries(new string[] 
+            startAppMode.SetEntries(new string[] 
             {
                 Resources.GetString(Resource.String.Common_Default),
-                Resources.GetString(Resource.String.Main_MainMenu_DBMenu),
-                Resources.GetString(Resource.String.Main_MainMenu_OldGFD),
+                Resources.GetString(Resource.String.Main_Category_GFDv1),
                 Resources.GetString(Resource.String.Main_GFUtil_AreaTip),
                 Resources.GetString(Resource.String.Main_GFUtil_Calc),
                 Resources.GetString(Resource.String.Main_GFUtil_Event),
                 Resources.GetString(Resource.String.Main_GFUtil_OfficialNotification),
-                Resources.GetString(Resource.String.Main_ExtraMenu_GFOSTPlayer)
+                Resources.GetString(Resource.String.Main_Other_GFOSTPlayer)
             });
-            StartAppMode.SetEntryValues(new string[] { "0", "1", "2", "3", "4", "5", "6", "7" });
-            StartAppMode.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("StartAppMode", "0")));
+            startAppMode.SetEntryValues(new string[] { "0", "1", "2", "3", "4", "5", "6" });
+            startAppMode.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("StartAppMode", "0")));
 
 
-            SwitchPreference LowMemoryOption = (SwitchPreference)FindPreference("LowMemoryOption");
+            /*SwitchPreference lowMemoryOption = (SwitchPreference)FindPreference("LowMemoryOption");
             if (ETC.useLightTheme)
             {
-                LowMemoryOption.SetIcon(Resource.Drawable.LowMemoryOptionIcon_WhiteTheme);
+                lowMemoryOption.SetIcon(Resource.Drawable.LowMemoryOptionIcon_WhiteTheme);
             }
             else
             {
-                LowMemoryOption.SetIcon(Resource.Drawable.LowMemoryOptionIcon);
+                lowMemoryOption.SetIcon(Resource.Drawable.LowMemoryOptionIcon);
             }
-            LowMemoryOption.Checked = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);
-            LowMemoryOption.PreferenceChange += delegate
+            lowMemoryOption.Checked = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);
+            lowMemoryOption.PreferenceChange += delegate
             {
-                SaveSetting.PutBoolean("LowMemoryOption", LowMemoryOption.Checked);
+                SaveSetting.PutBoolean("LowMemoryOption", lowMemoryOption.Checked);
+                SaveSetting.Apply();
+            };*/
+
+
+            SwitchPreference useLightTheme = (SwitchPreference)FindPreference("UseLightTheme");
+            if (ETC.useLightTheme)
+            {
+                useLightTheme.SetIcon(Resource.Drawable.themecolor_icon_wt);
+            }
+            else
+            {
+                useLightTheme.SetIcon(Resource.Drawable.themecolor_icon);
+            }
+            useLightTheme.Checked = ETC.sharedPreferences.GetBoolean("UseLightTheme", false);
+            useLightTheme.PreferenceChange += delegate
+            {
+                ETC.useLightTheme = useLightTheme.Checked;
+                SaveSetting.PutBoolean("UseLightTheme", useLightTheme.Checked);
                 SaveSetting.Apply();
             };
 
 
-            SwitchPreference UseLightTheme = (SwitchPreference)FindPreference("UseLightTheme");
+            SwitchPreference enableServerCheck = (SwitchPreference)FindPreference("EnableServerCheck");
             if (ETC.useLightTheme)
             {
-                UseLightTheme.SetIcon(Resource.Drawable.UseLightThemeIcon_WhiteTheme);
+                enableServerCheck.SetIcon(Resource.Drawable.server_icon_wt);
             }
             else
             {
-                UseLightTheme.SetIcon(Resource.Drawable.UseLightThemeIcon);
+                enableServerCheck.SetIcon(Resource.Drawable.server_icon);
             }
-            UseLightTheme.Checked = ETC.sharedPreferences.GetBoolean("UseLightTheme", false);
-            UseLightTheme.PreferenceChange += delegate
+            enableServerCheck.Checked = ETC.sharedPreferences.GetBoolean("EnableServerCheck", true);
+            enableServerCheck.PreferenceChange += delegate
             {
-                ETC.useLightTheme = UseLightTheme.Checked;
-                SaveSetting.PutBoolean("UseLightTheme", UseLightTheme.Checked);
-                SaveSetting.Apply();
-            };
-
-
-            SwitchPreference EnableServerCheck = (SwitchPreference)FindPreference("EnableServerCheck");
-            if (ETC.useLightTheme)
-            {
-                EnableServerCheck.SetIcon(Resource.Drawable.UseLightThemeIcon_WhiteTheme);
-            }
-            else
-            {
-                EnableServerCheck.SetIcon(Resource.Drawable.UseLightThemeIcon);
-            }
-            EnableServerCheck.Checked = ETC.sharedPreferences.GetBoolean("EnableServerCheck", true);
-            EnableServerCheck.PreferenceChange += delegate
-            {
-                SaveSetting.PutBoolean("EnableServerCheck", EnableServerCheck.Checked);
+                SaveSetting.PutBoolean("EnableServerCheck", enableServerCheck.Checked);
                 SaveSetting.Apply();
             };
 
@@ -227,79 +234,99 @@ namespace GFI_with_GFS_A
             MainButtonColor.SetEntryValues(new string[] { "0", "1" });
             MainButtonColor.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("MainButtonColor", "0")));*/
 
-            ListPreference AppLanguage = (ListPreference)FindPreference("AppLanguage");
+            ListPreference startMainFragment = (ListPreference)FindPreference("StartMainFragment");
             if (ETC.useLightTheme)
             {
-                AppLanguage.SetIcon(Resource.Drawable.LanguageIcon_WhiteTheme);
+                startMainFragment.SetIcon(Resource.Drawable.startscreen_icon_wt);
             }
             else
             {
-                AppLanguage.SetIcon(Resource.Drawable.LanguageIcon);
+                startMainFragment.SetIcon(Resource.Drawable.startscreen_icon);
             }
-            AppLanguage.SetEntries(new string[]
+            startMainFragment.SetEntries(new string[]
+            {
+                Resources.GetString(Resource.String.Main_Category_Home),
+                Resources.GetString(Resource.String.Main_Category_DB),
+                Resources.GetString(Resource.String.Main_Category_GFDv1),
+                Resources.GetString(Resource.String.Main_Category_GFUtil),
+                Resources.GetString(Resource.String.Main_Category_Other),
+            });
+            startMainFragment.SetEntryValues(new string[] { "0", "1", "2", "3", "4" });
+            startMainFragment.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("StartMainFragment", "0")));
+
+            ListPreference appLanguage = (ListPreference)FindPreference("AppLanguage");
+            if (ETC.useLightTheme)
+            {
+                appLanguage.SetIcon(Resource.Drawable.language_icon_wt);
+            }
+            else
+            {
+                appLanguage.SetIcon(Resource.Drawable.language_icon);
+            }
+            appLanguage.SetEntries(new string[]
             {
                 "System Default",
                 Resources.GetString(Resource.String.Common_Language_KR),
                 Resources.GetString(Resource.String.Common_Language_EN)
             });
-            AppLanguage.SetEntryValues(new string[] { "0", "1", "2" });
-            AppLanguage.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("AppLanguage", "0")));
+            appLanguage.SetEntryValues(new string[] { "0", "1", "2" });
+            appLanguage.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("AppLanguage", "0")));
 
 
-            SwitchPreference AutoDBUpdate = (SwitchPreference)FindPreference("AutoDBUpdate");
+            SwitchPreference autoDBUpdate = (SwitchPreference)FindPreference("AutoDBUpdate");
             if (ETC.useLightTheme)
             {
-                AutoDBUpdate.SetIcon(Resource.Drawable.AutoDBUpdate_WhiteTheme);
+                autoDBUpdate.SetIcon(Resource.Drawable.databasesync_icon_wt);
             }
             else
             {
-                AutoDBUpdate.SetIcon(Resource.Drawable.AutoDBUpdate);
+                autoDBUpdate.SetIcon(Resource.Drawable.databasesync_icon);
             }
-            AutoDBUpdate.Checked = ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true);
-            AutoDBUpdate.PreferenceChange += delegate
+            autoDBUpdate.Checked = ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true);
+            autoDBUpdate.PreferenceChange += delegate
             {
-                SaveSetting.PutBoolean("AutoDBUpdate", AutoDBUpdate.Checked);
+                SaveSetting.PutBoolean("AutoDBUpdate", autoDBUpdate.Checked);
                 SaveSetting.Apply();
             };
 
 
-            Preference CheckDBUpdate = FindPreference("CheckDBUpdate");
+            Preference checkDBUpdate = FindPreference("CheckDBUpdate");
             if (ETC.useLightTheme)
             {
-                CheckDBUpdate.SetIcon(Resource.Drawable.CheckDBUpdate_WhiteTheme);
+                checkDBUpdate.SetIcon(Resource.Drawable.databaseupdate_icon_wt);
             }
             else
             {
-                CheckDBUpdate.SetIcon(Resource.Drawable.CheckDBUpdate);
+                checkDBUpdate.SetIcon(Resource.Drawable.databaseupdate_icon);
             }
-            CheckDBUpdate.PreferenceClick += CheckDBUpdate_PreferenceClick;
+            checkDBUpdate.PreferenceClick += CheckDBUpdate_PreferenceClick;
 
 
-            Preference RepairDB = FindPreference("RepairDB");
+            Preference repairDB = FindPreference("RepairDB");
             if (ETC.useLightTheme)
             {
-                RepairDB.SetIcon(Resource.Drawable.RepairDB_WhiteTheme);
+                repairDB.SetIcon(Resource.Drawable.repair_icon_wt);
             }
             else
             {
-                RepairDB.SetIcon(Resource.Drawable.RepairDB);
+                repairDB.SetIcon(Resource.Drawable.repair_icon);
             }
-            RepairDB.PreferenceClick += RepairDB_PreferenceClick;
+            repairDB.PreferenceClick += RepairDB_PreferenceClick;
 
 
-            SwitchPreference DBListImage = (SwitchPreference)FindPreference("DBListImageShow");
+            SwitchPreference dbListImage = (SwitchPreference)FindPreference("DBListImageShow");
             if (ETC.useLightTheme)
             {
-                DBListImage.SetIcon(Resource.Drawable.DBListImageIcon_WhiteTheme);
+                dbListImage.SetIcon(Resource.Drawable.listmode_icon_wt);
             }
             else
             {
-                DBListImage.SetIcon(Resource.Drawable.DBListImageIcon);
+                dbListImage.SetIcon(Resource.Drawable.listmode_icon);
             }
-            DBListImage.Checked = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
-            DBListImage.PreferenceChange += delegate 
+            dbListImage.Checked = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
+            dbListImage.PreferenceChange += delegate 
             {
-                SaveSetting.PutBoolean("DBListImageShow", DBListImage.Checked);
+                SaveSetting.PutBoolean("DBListImageShow", dbListImage.Checked);
                 SaveSetting.Apply();
             };
 
@@ -321,92 +348,108 @@ namespace GFI_with_GFS_A
             };*/
 
 
-            SwitchPreference DBDetailBackgroundImage = (SwitchPreference)FindPreference("DBDetailBackgroundImage");
+            SwitchPreference dbDetailBackgroundImage = (SwitchPreference)FindPreference("DBDetailBackgroundImage");
             if (ETC.useLightTheme)
             {
-                DBDetailBackgroundImage.SetIcon(Resource.Drawable.DBDetailBackgroundImageIcon_WhiteTheme);
+                dbDetailBackgroundImage.SetIcon(Resource.Drawable.backgroundimage_icon_wt);
             }
             else
             {
-                DBDetailBackgroundImage.SetIcon(Resource.Drawable.DBDetailBackgroundImageIcon);
+                dbDetailBackgroundImage.SetIcon(Resource.Drawable.backgroundimage_icon);
             }
-            DBDetailBackgroundImage.Checked = ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false);
-            DBDetailBackgroundImage.PreferenceChange += delegate
+            dbDetailBackgroundImage.Checked = ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false);
+            dbDetailBackgroundImage.PreferenceChange += delegate
             {
-                SaveSetting.PutBoolean("DBDetailBackgroundImage", DBDetailBackgroundImage.Checked);
+                SaveSetting.PutBoolean("DBDetailBackgroundImage", dbDetailBackgroundImage.Checked);
                 SaveSetting.Apply();
             };
 
 
-            Preference TextViewerTextSize = FindPreference("TextViewerTextSize");
+            Preference textViewerTextSize = FindPreference("TextViewerTextSize");
             if (ETC.useLightTheme)
             {
-                TextViewerTextSize.SetIcon(Resource.Drawable.FontSizeIcon_WhiteTheme);
+                textViewerTextSize.SetIcon(Resource.Drawable.fontsize_icon_wt);
             }
             else
             {
-                TextViewerTextSize.SetIcon(Resource.Drawable.FontSizeIcon);
+                textViewerTextSize.SetIcon(Resource.Drawable.fontsize_icon);
             }
-            TextViewerTextSize.PreferenceClick += TextViewerTextSize_PreferenceClick;
+            textViewerTextSize.PreferenceClick += TextViewerTextSize_PreferenceClick;
 
 
-            Preference TextViewerTextColor = FindPreference("TextViewerTextColor");
+            Preference textViewerTextColor = FindPreference("TextViewerTextColor");
             if (ETC.useLightTheme)
             {
-                TextViewerTextColor.SetIcon(Resource.Drawable.FontColorPickIcon_WhiteTheme);
+                textViewerTextColor.SetIcon(Resource.Drawable.fontcolor_icon_wt);
             }
             else
             {
-                TextViewerTextColor.SetIcon(Resource.Drawable.FontColorPickIcon);
+                textViewerTextColor.SetIcon(Resource.Drawable.fontcolor_icon);
             }
-            TextViewerTextColor.PreferenceClick += TextViewerTextColor_PreferenceClick;
+            textViewerTextColor.PreferenceClick += TextViewerTextColor_PreferenceClick;
 
 
-            Preference TextViewerBackgroundColor = FindPreference("TextViewerBackgroundColor");
+            Preference textViewerBackgroundColor = FindPreference("TextViewerBackgroundColor");
             if (ETC.useLightTheme)
             {
-                TextViewerBackgroundColor.SetIcon(Resource.Drawable.ColorPickIcon_WhiteTheme);
+                textViewerBackgroundColor.SetIcon(Resource.Drawable.backgroundcolor_icon_wt);
             }
             else
             {
-                TextViewerBackgroundColor.SetIcon(Resource.Drawable.ColorPickIcon);
+                textViewerBackgroundColor.SetIcon(Resource.Drawable.backgroundcolor_icon);
             }
-            TextViewerBackgroundColor.PreferenceClick += TextViewerBackgroundColor_PreferenceClick;
+            textViewerBackgroundColor.PreferenceClick += TextViewerBackgroundColor_PreferenceClick;
 
             /*Preference DownloadAllCache = FindPreference("DownloadAllCache");
             if (ETC.UseLightTheme == true) DownloadAllCache.SetIcon(Resource.Drawable.DownloadAllCacheIcon_WhiteTheme);
             else DownloadAllCache.SetIcon(Resource.Drawable.DownloadAllCacheIcon);
             DownloadAllCache.PreferenceClick += DownloadAllCache_PreferenceClick;*/
 
-            Preference CleanCache = FindPreference("CleanCache");
+            Preference cleanCache = FindPreference("CleanCache");
             if (ETC.useLightTheme)
             {
-                CleanCache.SetIcon(Resource.Drawable.CleanCacheIcon_WhiteTheme);
+                cleanCache.SetIcon(Resource.Drawable.delete_icon_wt);
             }
             else
             {
-                CleanCache.SetIcon(Resource.Drawable.CleanCacheIcon);
+                cleanCache.SetIcon(Resource.Drawable.delete_icon);
             }
-            CleanCache.PreferenceClick += CleanCache_PreferenceClick;
+            cleanCache.PreferenceClick += CleanCache_PreferenceClick;
 
             //Preference OpenLogFolder = FindPreference("OpenLogFolder");
 
-            Preference DeleteAllLogFile = FindPreference("DeleteAllLogFile");
+            Preference deleteAllLogFile = FindPreference("DeleteAllLogFile");
             if (ETC.useLightTheme)
             {
-                DeleteAllLogFile.SetIcon(Resource.Drawable.DeleteAllLogFileIcon_WhiteTheme);
+                deleteAllLogFile.SetIcon(Resource.Drawable.deletelog_icon_wt);
             }
             else
             {
-                DeleteAllLogFile.SetIcon(Resource.Drawable.DeleteAllLogFileIcon);
+                deleteAllLogFile.SetIcon(Resource.Drawable.deletelog_icon);
             }
-            DeleteAllLogFile.PreferenceClick += DeleteAllLogFile_PreferenceClick;
+            deleteAllLogFile.PreferenceClick += DeleteAllLogFile_PreferenceClick;
 
-            Preference ExternalLibraryLicense = FindPreference("ExternalLibraryLicense");
-            ExternalLibraryLicense.PreferenceClick += delegate { Activity.StartActivity(typeof(ExternLibraryCopyright)); };
+            Preference externalLibraryLicense = FindPreference("ExternalLibraryLicense");
+            if (ETC.useLightTheme)
+            {
+                externalLibraryLicense.SetIcon(Resource.Drawable.license_icon_wt);
+            }
+            else
+            {
+                externalLibraryLicense.SetIcon(Resource.Drawable.license_icon);
+            }
+            externalLibraryLicense.PreferenceClick += delegate { Activity.StartActivity(typeof(ExternLibraryCopyright)); };
 
-            Preference GFDSourceCode = FindPreference("GFDSourceCode");
-            GFDSourceCode.PreferenceClick += async delegate
+            Preference gfdSourceCode = FindPreference("GFDSourceCode");
+            if (ETC.useLightTheme)
+            {
+                gfdSourceCode.SetIcon(Resource.Drawable.sourcecode_icon_wt);
+            }
+            else
+            {
+                gfdSourceCode.SetIcon(Resource.Drawable.sourcecode_icon);
+            }
+            gfdSourceCode.PreferenceClick += async delegate
             {
                 Toast.MakeText(Activity, Resource.String.Switch_ExternalBrowser, ToastLength.Short).Show();
 
@@ -421,18 +464,15 @@ namespace GFI_with_GFS_A
 
             try
             {
-                using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG))
-                {
-                    ad.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
-                    ad.SetMessage(Resource.String.CheckDBUpdateDialog_Message);
-                    ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
-                    ad.SetCancelable(false);
+                var ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG);
+                ad.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
+                ad.SetMessage(Resource.String.CheckDBUpdateDialog_Message);
+                ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
+                ad.SetCancelable(false);
 
-                    dialog = ad.Show();
-                }
+                dialog = ad.Show();
 
                 await ETC.CheckServerNetwork();
-
                 await Task.Delay(100);
 
                 if (ETC.isServerDown)
@@ -519,33 +559,31 @@ namespace GFI_with_GFS_A
                 }
                 else if (count > 5)
                 {
-                    using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG))
+                    var ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG);
+                    ad.SetTitle("¿Quiere neutralizar el cortafuegos?");
+                    ad.SetMessage("SANGVIS FERRI, Annulation - Chaos, OK - Inscrire cachée");
+                    ad.SetCancelable(true);
+                    ad.SetNegativeButton("䍡湣敬", delegate { PreferenceScreen.RemoveAll(); });
+                    ad.SetPositiveButton("佋", delegate
                     {
-                        ad.SetTitle("¿Quiere neutralizar el cortafuegos?");
-                        ad.SetMessage("SANGVIS FERRI, Annulation - Chaos, OK - Inscrire cachée");
-                        ad.SetCancelable(true);
-                        ad.SetNegativeButton("䍡湣敬", delegate { PreferenceScreen.RemoveAll(); });
-                        ad.SetPositiveButton("佋", delegate
-                        {
-                            Activity.StartActivity(typeof(ZinaOS));
-                            Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-                        });
+                        Activity.StartActivity(typeof(ZinaOS));
+                        Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                    });
 
-                        ad.Show();
-                    }
+                    ad.Show();
+
                 }
                 else
                 {
-                    using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG))
-                    {
-                        ad.SetTitle(Resource.String.SettingActivity_DeleteLogFile_DialogTitle);
-                        ad.SetMessage(Resource.String.SettingActivity_DeleteLogFile_DialogCheckMessage);
-                        ad.SetCancelable(true);
-                        ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                        ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { CleanLogFolderProcess(); });
+                    var ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG);
+                    ad.SetTitle(Resource.String.SettingActivity_DeleteLogFile_DialogTitle);
+                    ad.SetMessage(Resource.String.SettingActivity_DeleteLogFile_DialogCheckMessage);
+                    ad.SetCancelable(true);
+                    ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                    ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { CleanLogFolderProcess(); });
 
-                        ad.Show();
-                    }
+                    ad.Show();
+
                 }
             }
             catch (Exception ex)
@@ -561,15 +599,14 @@ namespace GFI_with_GFS_A
 
             try
             {
-                using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload))
-                {
-                    ad.SetTitle(Resource.String.SettingActivity_DeleteLogFile_DialogTitle);
-                    ad.SetMessage(Resource.String.SettingActivity_DeleteLogFile_DialogMessage);
-                    ad.SetCancelable(false);
-                    ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
+                var ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload);
+                ad.SetTitle(Resource.String.SettingActivity_DeleteLogFile_DialogTitle);
+                ad.SetMessage(Resource.String.SettingActivity_DeleteLogFile_DialogMessage);
+                ad.SetCancelable(false);
+                ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
 
-                    dialog = ad.Show();
-                }
+                dialog = ad.Show();
+
 
                 await Task.Delay(1000);
 
@@ -606,25 +643,23 @@ namespace GFI_with_GFS_A
             np.MinValue = 4;
             np.Value = ETC.sharedPreferences.GetInt("TextViewerTextSize", 12);
 
-            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG))
+            var ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG);
+            ad.SetTitle(Resource.String.Common_TextSize);
+            ad.SetCancelable(true);
+            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+            ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate
             {
-                ad.SetTitle(Resource.String.Common_TextSize);
-                ad.SetCancelable(true);
-                ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate
-                {
-                    SaveSetting.PutInt("TextViewerTextSize", 12);
-                    SaveSetting.Apply();
-                });
-                ad.SetPositiveButton(Resource.String.AlertDialog_Set, delegate
-                {
-                    SaveSetting.PutInt("TextViewerTextSize", np.Value);
-                    SaveSetting.Apply();
-                });
-                ad.SetView(view);
+                SaveSetting.PutInt("TextViewerTextSize", 12);
+                SaveSetting.Apply();
+            });
+            ad.SetPositiveButton(Resource.String.AlertDialog_Set, delegate
+            {
+                SaveSetting.PutInt("TextViewerTextSize", np.Value);
+                SaveSetting.Apply();
+            });
+            ad.SetView(view);
 
-                ad.Show();
-            }
+            ad.Show();
         }
 
         private void TextViewerTextColor_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
@@ -633,25 +668,23 @@ namespace GFI_with_GFS_A
 
             ColorPickerView cp = view.FindViewById<ColorPickerView>(Resource.Id.ColorPickerControl);
 
-            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG))
+            var ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG);
+            ad.SetTitle(Resource.String.Common_TextColor);
+            ad.SetCancelable(true);
+            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+            ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate
             {
-                ad.SetTitle(Resource.String.Common_TextColor);
-                ad.SetCancelable(true);
-                ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate
-                {
-                    SaveSetting.PutString("TextViewerTextColorHex", "None");
-                    SaveSetting.Apply();
-                });
-                ad.SetPositiveButton(Resource.String.AlertDialog_Set, delegate
-                {
-                    SaveSetting.PutString("TextViewerTextColorHex", $"#{cp.GetColor().ToArgb().ToString("X")}");
-                    SaveSetting.Apply();
-                });
-                ad.SetView(view);
+                SaveSetting.PutString("TextViewerTextColorHex", "None");
+                SaveSetting.Apply();
+            });
+            ad.SetPositiveButton(Resource.String.AlertDialog_Set, delegate
+            {
+                SaveSetting.PutString("TextViewerTextColorHex", $"#{cp.GetColor().ToArgb().ToString("X")}");
+                SaveSetting.Apply();
+            });
+            ad.SetView(view);
 
-                ad.Show();
-            }
+            ad.Show();
         }
 
         private void TextViewerBackgroundColor_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
@@ -660,25 +693,23 @@ namespace GFI_with_GFS_A
 
             ColorPickerView cp = view.FindViewById<ColorPickerView>(Resource.Id.ColorPickerControl);
 
-            using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG))
+            var ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG);
+            ad.SetTitle(Resource.String.Common_BackgroundColor);
+            ad.SetCancelable(true);
+            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+            ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate
             {
-                ad.SetTitle(Resource.String.Common_BackgroundColor);
-                ad.SetCancelable(true);
-                ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate
-                {
-                    SaveSetting.PutString("TextViewerBackgroundColorHex", "None");
-                    SaveSetting.Apply();
-                });
-                ad.SetPositiveButton(Resource.String.AlertDialog_Set, delegate
-                {
-                    SaveSetting.PutString("TextViewerBackgroundColorHex", $"#{cp.GetColor().ToArgb().ToString("X")}");
-                    SaveSetting.Apply();
-                });
-                ad.SetView(view);
+                SaveSetting.PutString("TextViewerBackgroundColorHex", "None");
+                SaveSetting.Apply();
+            });
+            ad.SetPositiveButton(Resource.String.AlertDialog_Set, delegate
+            {
+                SaveSetting.PutString("TextViewerBackgroundColorHex", $"#{cp.GetColor().ToArgb().ToString("X")}");
+                SaveSetting.Apply();
+            });
+            ad.SetView(view);
 
-                ad.Show();
-            }
+            ad.Show();
         }
 
         /*private void DownloadAllCache_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
@@ -1325,16 +1356,14 @@ namespace GFI_with_GFS_A
 
             int totalSize = Convert.ToInt32(tTotalSize / 1024 / 1024);
 
-            using (Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG))
-            {
-                alert.SetTitle(Resource.String.SettingActivity_DeleteAllCache_DialogTitle);
-                alert.SetMessage(string.Format("{0} {1}{2}", Resources.GetString(Resource.String.SettingActivity_DeleteAllCache_DialogCheckMessage), totalSize, "MB"));
-                alert.SetCancelable(true);
-                alert.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-                alert.SetPositiveButton(Resource.String.AlertDialog_Delete, delegate { CleanCacheProcess(); });
+            var alert = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBG);
+            alert.SetTitle(Resource.String.SettingActivity_DeleteAllCache_DialogTitle);
+            alert.SetMessage(string.Format("{0} {1}{2}", Resources.GetString(Resource.String.SettingActivity_DeleteAllCache_DialogCheckMessage), totalSize, "MB"));
+            alert.SetCancelable(true);
+            alert.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+            alert.SetPositiveButton(Resource.String.AlertDialog_Delete, delegate { CleanCacheProcess(); });
 
-                alert.Show();
-            }
+            alert.Show();
         }
 
         private async void CleanCacheProcess()
@@ -1343,23 +1372,27 @@ namespace GFI_with_GFS_A
 
             try
             {
+                var ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload);
+                ad.SetTitle(Resource.String.SettingActivity_DeleteAllCache_DialogTitle);
+                ad.SetMessage(Resource.String.SettingActivity_DeleteAllCache_DialogMessage);
+                ad.SetCancelable(false);
+                ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
 
-                using (Android.Support.V7.App.AlertDialog.Builder ad = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.dialogBGDownload))
-                {
-                    ad.SetTitle(Resource.String.SettingActivity_DeleteAllCache_DialogTitle);
-                    ad.SetMessage(Resource.String.SettingActivity_DeleteAllCache_DialogMessage);
-                    ad.SetCancelable(false);
-                    ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
-
-                    dialog = ad.Show();
-                }
+                dialog = ad.Show();
 
                 await Task.Delay(1000);
 
                 await Task.Run(() =>
                 {
-                    if (Directory.Exists(ETC.cachePath) == true) Directory.Delete(ETC.cachePath, true);
-                    if (File.Exists(Path.Combine(ETC.systemPath, "OldGFDVer.txt")) == true) File.Delete(Path.Combine(ETC.systemPath, "OldGFDVer.txt"));
+                    if (Directory.Exists(ETC.cachePath))
+                    {
+                        Directory.Delete(ETC.cachePath, true);
+                    }
+
+                    if (File.Exists(Path.Combine(ETC.systemPath, "OldGFDVer.txt")))
+                    {
+                        File.Delete(Path.Combine(ETC.systemPath, "OldGFDVer.txt"));
+                    }
 
                     Directory.CreateDirectory(ETC.cachePath);
                     ETC.CheckInitFolder();

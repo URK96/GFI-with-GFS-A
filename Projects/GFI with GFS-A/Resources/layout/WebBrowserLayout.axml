@@ -52,7 +52,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="10"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/close"
+                    android:src="@drawable/close_icon"
                     android:id="@+id/WebBrowserToolbarClose"/>
             </LinearLayout>
         </android.support.design.widget.CollapsingToolbarLayout>

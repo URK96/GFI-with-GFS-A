@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Main_DB_TitleList">
+    <item>@string/Main_DB_DollDB</item>
+    <item>@string/Main_DB_EquipDB</item>
+    <item>@string/Main_DB_FairyDB</item>
+    <item>@string/Main_DB_EnemyDB</item>
+    <item>@string/Main_DB_FSTDB</item>
+  </string-array>
+
+  <string-array name="Main_GFDv1_TitleList_ko">
+    <item>@string/OldGFDViewer_ProductDollTable</item>
+    <item>@string/OldGFDViewer_ProductEquipTable</item>
+    <item>@string/OldGFDViewer_ProductFairyTable</item>
+    <item>@string/OldGFDViewer_MDTable</item>
+    <!--<item>@string/OldGFDViewer_DollPerformance</item>-->
+    <item>@string/OldGFDViewer_FairyAttribute</item>
+    <item>@string/OldGFDViewer_RecommendDollRecipe</item>
+    <item>@string/OldGFDViewer_RecommendEquipRecipe</item>
+    <item>@string/OldGFDViewer_RecommendMD</item>
+    <item>@string/OldGFDViewer_RecommendLeveling</item>
+    <item>@string/OldGFDViewer_RecommendBreeding</item>
+  </string-array>
+
+  <string-array name="Main_GFDv1_TitleList">
+    <item>@string/OldGFDViewer_ProductDollTable</item>
+    <item>@string/OldGFDViewer_ProductEquipTable</item>
+    <!--<item>@string/OldGFDViewer_ProductFairyTable</item>-->
+    <item>@string/OldGFDViewer_MDTable</item>
+    <!--<item>@string/OldGFDViewer_DollPerformance</item>-->
+    <!--<item>@string/OldGFDViewer_FairyAttribute</item>-->
+    <item>@string/OldGFDViewer_RecommendDollRecipe</item>
+    <item>@string/OldGFDViewer_RecommendEquipRecipe</item>
+    <!--<item>@string/OldGFDViewer_RecommendMD</item>-->
+    <item>@string/OldGFDViewer_RecommendLeveling</item>
+    <!--<item>@string/OldGFDViewer_RecommendBreeding</item>-->
+  </string-array>
+
+  <string-array name="Main_GFUtil_TitleList">
+    <item>@string/Main_GFUtil_OfficialNotification</item>
+    <item>@string/Main_GFUtil_Event</item>
+    <item>@string/Main_GFUtil_MDSupport</item>
+    <item>@string/Main_GFUtil_Calc</item>
+    <item>@string/Main_GFUtil_AreaTip</item>
+    <item>@string/Main_GFUtil_ShortGuideBookViewer</item>
+    <item>@string/Main_GFUtil_Story</item>
+  </string-array>
+
+  <string-array name="Main_Other_TitleList">
+    <item>@string/Main_Other_ProductSimulator</item>
+    <item>@string/Main_Other_Cartoon</item>
+    <item>@string/Main_Other_GFOSTPlayer</item>
+  </string-array>
+</resources>
