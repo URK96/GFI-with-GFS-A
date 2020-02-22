@@ -419,6 +419,7 @@
   <string name="FSTDBMainActivity_SearchHint">화력소대 이름 검색</string>
   
   <!--GFDInfo-->
+  <string name="GFDInfo_Title">소전사전v2 정보</string>
   <string name="GFDInfo_Developer_Soomae">총괄 &amp; 디자인 : 수매</string>
   <string name="GFDInfo_Developer_URK96">App &amp; 소스제작 : URK96</string>
   <string name="GFDInfo_Developer_Bibitjyadame">검수 &amp; 공략 : 스텡</string>

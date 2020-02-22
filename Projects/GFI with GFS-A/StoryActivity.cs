@@ -124,9 +124,13 @@ namespace GFI_with_GFS_A
         private void ChangeAdapter(bool IsPrevious)
         {
             adapter = null;
-            subMainList.Clear();
-            captionList.Clear();
-            topTitleList.Clear();
+
+            if (!(!IsPrevious && (categoryType == Category.Item)))
+            {
+                subMainList.Clear();
+                captionList.Clear();
+                topTitleList.Clear();
+            }
 
             if (IsPrevious)
             {

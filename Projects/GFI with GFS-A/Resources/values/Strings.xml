@@ -416,6 +416,7 @@
   <string name="FSTDBMainActivity_SearchHint">Search FST Name</string>
   
   <!--GFDInfo-->
+  <string name="GFDInfo_Title">GFDv2 Info</string>
   <string name="GFDInfo_Developer_Soomae">Lead &amp; Designer : 수매 (Soomae)</string>
   <string name="GFDInfo_Developer_URK96">App &amp; Source Code : URK96</string>
   <string name="GFDInfo_Developer_Bibitjyadame">Check &amp; Information : 스텡 (Steng)</string>

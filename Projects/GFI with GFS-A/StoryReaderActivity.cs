@@ -20,6 +20,7 @@ namespace GFI_with_GFS_A
         private int itemCount = 0;
         private int dollDicNumber = 0;
         private string[] itemList;
+        private string[] topTitleList;
 
         private string language = "ko";
 
@@ -54,12 +55,10 @@ namespace GFI_with_GFS_A
             }
 
             itemList = Intent.GetStringArrayExtra("List");
+            topTitleList = Intent.GetStringArrayExtra("TopList");
 
             SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.StoryReaderMainToolbar));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-
-            FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryCategory).Text = category;
-            FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryTitle).Text = itemList[itemIndex];
 
             textSize = ETC.sharedPreferences.GetInt("TextViewerTextSize", 12);
             textColor = ETC.sharedPreferences.GetString("TextViewerTextColorHex", "None");
@@ -150,6 +149,9 @@ namespace GFI_with_GFS_A
             await LoadText(file);
 
             SupportActionBar.Title = $"{itemIndex}. {itemList[itemIndex - 1]}";
+
+            FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryCategory).Text = topTitleList[itemIndex - 1];
+            FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryTitle).Text = itemList[itemIndex - 1];
 
             loadProgressBar.Visibility = ViewStates.Invisible;
         }

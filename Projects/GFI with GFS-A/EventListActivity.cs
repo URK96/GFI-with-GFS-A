@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Threading.Tasks;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Support.V7.App;
+using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Widget;
-using Android.Support.Design.Widget;
+
+using System;
+using System.IO;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Name = "com.gfl.dic.EventListActivity", Label = "@string/Activity_EventListActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Name = "com.gfl.dic.EventListActivity", Label = "", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class EventListActivity : BaseAppCompatActivity
     {
         enum EventPeriodType { Now, Scheduled, Over }
@@ -30,34 +25,42 @@ namespace GFI_with_GFS_A
         private int scheduledEventCount = 0;
         private string[] eventURLs;
         private string[] eventPeriods;
-        private readonly string eventFilePath = Path.Combine(ETC.cachePath, "Event", "EventVer.txt");
+        private string eventFilePath;
 
         private CoordinatorLayout snackbarLayout;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState);
-
-            if (ETC.useLightTheme)
+            try
             {
-                SetTheme(Resource.Style.GFS_Toolbar_Light);
+                base.OnCreate(savedInstanceState);
+
+                if (ETC.useLightTheme)
+                {
+                    SetTheme(Resource.Style.GFS_Toolbar_Light);
+                }
+
+                // Create your application here
+                SetContentView(Resource.Layout.EventListLayout);
+
+                eventFilePath = Path.Combine(ETC.cachePath, "Event", "EventVer.txt");
+
+                SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.EventListMainToolbar));
+                SupportActionBar.SetTitle(Resource.String.EventListActivity_Title);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EventListSnackbarLayout);
+
+                eventListSubLayout = FindViewById<LinearLayout>(Resource.Id.EventListButtonSubLayout);
+                eventListSubLayout2 = FindViewById<LinearLayout>(Resource.Id.EventListButtonSubLayout2);
+
+                _ = InitLoad();
             }
-
-            // Create your application here
-            SetContentView(Resource.Layout.EventListLayout);
-
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.EventListMainToolbar));
-            SupportActionBar.SetTitle(Resource.String.EventListActivity_Title);
-            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-
-            ETC.SetDialogTheme();
-
-            snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EventListSnackbarLayout);
-
-            eventListSubLayout = FindViewById<LinearLayout>(Resource.Id.EventListButtonSubLayout);
-            eventListSubLayout2 = FindViewById<LinearLayout>(Resource.Id.EventListButtonSubLayout2);
-
-            _ = InitLoad();
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                Toast.MakeText(this, Resource.String.Activity_OnCreateError, ToastLength.Short).Show();
+            }
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

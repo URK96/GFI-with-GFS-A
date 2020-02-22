@@ -42,6 +42,17 @@ namespace GFI_with_GFS_A
 
             mainRefreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.WebBrowserMainRefreshLayout);
             mainRefreshLayout.Refresh += delegate { web.Reload(); };
+            mainRefreshLayout.ViewTreeObserver.ScrollChanged += (sender, e) =>
+            {
+                if (web.ScrollY == 0)
+                {
+                    mainRefreshLayout.Enabled = true;
+                }
+                else
+                {
+                    mainRefreshLayout.Enabled = false;
+                }
+            };
 
             web = FindViewById<WebView>(Resource.Id.WebBrowser);
             webAddressEditText = FindViewById<EditText>(Resource.Id.WebBrowserAddressBar);

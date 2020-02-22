@@ -13,16 +13,15 @@ using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "GFDInfoActivity", Theme = "@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "GFDInfoActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class GFDInfoActivity : BaseAppCompatActivity
     {
-        Button UpdateButton;
-        TextView NowVersion;
-        TextView ServerVersion;
-        CoordinatorLayout SnackbarLayout;
+        Button updateButton;
+        TextView nowVersion;
+        TextView serverVersion;
+        CoordinatorLayout snackbarLayout;
 
-        FloatingActionButton DiscordFAB;
-
+        FloatingActionButton discordFAB;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -30,20 +29,27 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.useLightTheme == true) SetTheme(Resource.Style.GFS_NoActionBar_Light);
+                if (ETC.useLightTheme)
+                {
+                    SetTheme(Resource.Style.GFS_NoActionBar_Light);
+                }
 
                 // Create your application here
                 SetContentView(Resource.Layout.GFDInfoLayout);
 
-                UpdateButton = FindViewById<Button>(Resource.Id.GFDInfo_AppUpdateButton);
-                UpdateButton.Click += UpdateButton_Click;
-                NowVersion = FindViewById<TextView>(Resource.Id.GFDInfo_NowAppVersion);
-                ServerVersion = FindViewById<TextView>(Resource.Id.GFDInfo_ServerAppVersion);
-                SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.GFDInfoSnackbarLayout);
+                SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.GFDInfoMainToolbar));
+                SupportActionBar.SetTitle(Resource.String.GFDInfo_Title);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
-                DiscordFAB = FindViewById<FloatingActionButton>(Resource.Id.DiscordFAB);
-                DiscordFAB.Click += HelpFAB_Click;
-                DiscordFAB.LongClick += HelpFAB_LongClick;
+                updateButton = FindViewById<Button>(Resource.Id.GFDInfo_AppUpdateButton);
+                updateButton.Click += UpdateButton_Click;
+                nowVersion = FindViewById<TextView>(Resource.Id.GFDInfo_NowAppVersion);
+                serverVersion = FindViewById<TextView>(Resource.Id.GFDInfo_ServerAppVersion);
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.GFDInfoSnackbarLayout);
+
+                discordFAB = FindViewById<FloatingActionButton>(Resource.Id.DiscordFAB);
+                discordFAB.Click += HelpFAB_Click;
+                discordFAB.LongClick += HelpFAB_LongClick;
 
                 Initialize();
             }
@@ -54,15 +60,25 @@ namespace GFI_with_GFS_A
             }
         }
 
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item?.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    OnBackPressed();
+                    break;
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
+
         private void HelpFAB_LongClick(object sender, View.LongClickEventArgs e)
         {
             try
             {
-                FloatingActionButton fab = sender as FloatingActionButton;
-
                 string tip = "";
 
-                switch (fab.Id)
+                switch ((sender as FloatingActionButton).Id)
                 {
                     case Resource.Id.DiscordFAB:
                         tip = Resources.GetString(Resource.String.Tooltip_GFDInfo_Discord);
@@ -81,25 +97,22 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                FloatingActionButton fab = sender as FloatingActionButton;
-
-                Intent intent = null;
                 string url = "";
 
-                switch (fab.Id)
+                switch ((sender as FloatingActionButton).Id)
                 {
                     case Resource.Id.DiscordFAB:
                         url = "https://discord.gg/sWRw4MN";
                         break;
                 }
 
-                intent = new Intent(Intent.ActionView, Android.Net.Uri.Parse(url));
+                var intent = new Intent(Intent.ActionView, Android.Net.Uri.Parse(url));
                 StartActivity(intent);
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.SideLinkOpen_Fail, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.SideLinkOpen_Fail, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
             }
         }
 
@@ -147,20 +160,21 @@ namespace GFI_with_GFS_A
 
         private async Task CheckAppVersion()
         {
-            bool HasUpdate = false;
             await Task.Delay(100);
+
+            bool hasUpdate = false;
 
             try
             {
                 var context = ApplicationContext;
-                string[] now_ver = context.PackageManager.GetPackageInfo(context.PackageName, 0).VersionName.Split('.');
-                string[] server_ver = new string[now_ver.Length];
+                string[] nowVer = context.PackageManager.GetPackageInfo(context.PackageName, 0).VersionName.Split('.');
+                string[] serverVer = new string[nowVer.Length];
 
-                NowVersion.Text = string.Format("{0} : {1} - ", Resources.GetString(Resource.String.GFDInfo_NowVersion), context.PackageManager.GetPackageInfo(context.PackageName, 0).VersionName);
+                nowVersion.Text = string.Format("{0} : {1} - ", Resources.GetString(Resource.String.GFDInfo_NowVersion), context.PackageManager.GetPackageInfo(context.PackageName, 0).VersionName);
 #if DEBUG
-                NowVersion.Text += "Debug";
+                nowVersion.Text += "Debug";
 #else
-                NowVersion.Text += "Release";
+                nowVersion.Text += "Release";
 #endif
                 string url = Path.Combine(ETC.server, "GFD_AppVer.txt");
                 string target = Path.Combine(ETC.tempPath, "AppVer.txt");
@@ -172,36 +186,43 @@ namespace GFI_with_GFS_A
 
                 using (StreamReader sr = new StreamReader(new FileStream(target, FileMode.Open, FileAccess.Read)))
                 {
-                    server_ver = (sr.ReadToEnd()).Split('.');
+                    serverVer = (sr.ReadToEnd()).Split('.');
                 }
 
-                for (int i = 0; i < server_ver.Length; ++i)
+                for (int i = 0; i < serverVer.Length; ++i)
                 {
-                    if (int.Parse(now_ver[i]) < int.Parse(server_ver[i])) HasUpdate = true;
-                    else if (int.Parse(now_ver[i]) == int.Parse(server_ver[i])) continue;
+                    if (int.Parse(nowVer[i]) < int.Parse(serverVer[i]))
+                    {
+                        hasUpdate = true;
+                    }
+                    else if (int.Parse(nowVer[i]) == int.Parse(serverVer[i]))
+                    {
+                        continue;
+                    }
                     else
                     {
-                        HasUpdate = false;
+                        hasUpdate = false;
                         break;
                     }
                 }
 
-                if (HasUpdate == true)
+                if (hasUpdate)
                 {
-                    UpdateButton.Visibility = ViewStates.Visible;
-                    UpdateButton.Animate().Alpha(1.0f).SetDuration(500).Start();
-                    ServerVersion.Text = string.Format("{0} : {1}.{2}.{3}", Resources.GetString(Resource.String.GFDInfo_NewVersion), server_ver[0], server_ver[1],  server_ver[2]);
+                    updateButton.Visibility = ViewStates.Visible;
+                    updateButton.Animate().Alpha(1.0f).SetDuration(500).Start();
+                    serverVersion.Text = string.Format("{0} : {1}.{2}.{3}", Resources.GetString(Resource.String.GFDInfo_NewVersion), serverVer[0], serverVer[1],  serverVer[2]);
                 }
                 else
                 {
-                    ServerVersion.Text = Resources.GetString(Resource.String.LatestUpdateVersion);
+                    serverVersion.Text = Resources.GetString(Resource.String.LatestUpdateVersion);
                 }
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.UpdateCheck_Fail, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
-                ServerVersion.Text = Resources.GetString(Resource.String.UnableCheckUpdate);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.UpdateCheck_Fail, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
+
+                serverVersion.Text = Resources.GetString(Resource.String.UnableCheckUpdate);
             }
         }
 

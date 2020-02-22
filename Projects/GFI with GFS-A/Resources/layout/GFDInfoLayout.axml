@@ -5,11 +5,20 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     android:id="@+id/GFDInfoMainLayout">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="@color/MainColor"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:id="@+id/GFDInfoMainToolbar">
+    </android.support.v7.widget.Toolbar>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:gravity="center">
         <ImageView
             android:layout_width="100dp"
             android:layout_height="150dp"

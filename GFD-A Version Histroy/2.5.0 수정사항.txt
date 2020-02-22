@@ -1,11 +1,31 @@
 <2.5.0 수정사항>
 
+- 최소 Android OS 버전 상향 (Android OS 5.0 이상)
 - 메인 UI 개선
+- FST DB 세부정보 UI 개선
+- 적 DB 세부정보 UI 개선
+- 제조 시뮬레이터 UI 개선
+- 내부 웹 브라우저 UI 개선
+- 아이콘 타입 변경 (png -> vector)
+- 일부 아이콘 추가
+- 만화 컨텐츠 추가 (Geo의 소녀전선)
+- 스토리 뷰어 타이틀 표시 오류 수정
+- 이벤트 바로가기 기능 사용 시 앱이 꺼지는 현상 수정
+- 일부 설정 항목 추가 및 제거
+- 내부 라이브러리 및 라이선스 업데이트
+- AndroidX 마이그레이션
 
+- Change support min OS version (Android OS 5.0)
 - Improve main UI
-- Change png type icon to vector icon
-- Add some icons
 - Improve FST detail UI
 - Improve Enemy detail UI
+- Improve Product Simulator UI
+- Improve internal web browser UI
+- Change png type icon to vector icon
+- Add some icons
+- Add cartoon content
+- Fix story reader title issue
+- Fix event static shortcut crash issue
 - Add & Remove setting content
-
+- Update NuGet packages & license
+- Migration to AndroidX

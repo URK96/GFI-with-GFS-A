@@ -9,177 +9,178 @@ namespace GFI_with_GFS_A
         {
             itemList.Clear();
 
-            int Title_res = 0;
-            int Caption_res = 0;
-            int TopTitle_res = 0;
+            int titleRes = 0;
+            int captionRes = 0;
+            int topTitleRes = 0;
 
             switch (subMainIndex)
             {
                 case 0:
-                    Title_res = Resource.Array.Story_Main_Main_Prologue;
-                    Caption_res = Resource.Array.Story_Main_Main_Prologue_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Prologue_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Prologue;
+                    captionRes = Resource.Array.Story_Main_Main_Prologue_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Prologue_TopTitle;
                     break;
                 case 1:
-                    Title_res = Resource.Array.Story_Main_Main_Area_0;
-                    Caption_res = Resource.Array.Story_Main_Main_Area_0_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Area_0_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Area_0;
+                    captionRes = Resource.Array.Story_Main_Main_Area_0_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Area_0_TopTitle;
                     break;
                 case 2:
-                    Title_res = Resource.Array.Story_Main_Main_Area_1;
-                    Caption_res = Resource.Array.Story_Main_Main_Area_1_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Area_1_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Area_1;
+                    captionRes = Resource.Array.Story_Main_Main_Area_1_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Area_1_TopTitle;
                     break;
                 case 3:
-                    Title_res = Resource.Array.Story_Main_Main_Area_2;
-                    Caption_res = Resource.Array.Story_Main_Main_Area_2_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Area_2_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Area_2;
+                    captionRes = Resource.Array.Story_Main_Main_Area_2_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Area_2_TopTitle;
                     break;
                 case 4:
-                    Title_res = Resource.Array.Story_Main_Main_Area_3;
-                    Caption_res = Resource.Array.Story_Main_Main_Area_3_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Area_3_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Area_3;
+                    captionRes = Resource.Array.Story_Main_Main_Area_3_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Area_3_TopTitle;
                     break;
                 case 5:
-                    Title_res = Resource.Array.Story_Main_Main_Area_4;
-                    Caption_res = Resource.Array.Story_Main_Main_Area_4_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Area_4_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Area_4;
+                    captionRes = Resource.Array.Story_Main_Main_Area_4_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Area_4_TopTitle;
                     break;
                 case 6:
-                    Title_res = Resource.Array.Story_Main_Main_Area_5;
-                    Caption_res = Resource.Array.Story_Main_Main_Area_5_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Area_5_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Area_5;
+                    captionRes = Resource.Array.Story_Main_Main_Area_5_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Area_5_TopTitle;
                     break;
                 case 7:
-                    Title_res = Resource.Array.Story_Main_Main_Area_6;
-                    Caption_res = Resource.Array.Story_Main_Main_Area_6_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Area_6_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Area_6;
+                    captionRes = Resource.Array.Story_Main_Main_Area_6_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Area_6_TopTitle;
                     break;
                 case 8:
-                    Title_res = Resource.Array.Story_Main_Main_Area_7;
-                    Caption_res = Resource.Array.Story_Main_Main_Area_7_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Area_7_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Area_7;
+                    captionRes = Resource.Array.Story_Main_Main_Area_7_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Area_7_TopTitle;
                     break;
                 case 9:
-                    Title_res = Resource.Array.Story_Main_Main_Area_8;
-                    Caption_res = Resource.Array.Story_Main_Main_Area_8_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Area_8_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Area_8;
+                    captionRes = Resource.Array.Story_Main_Main_Area_8_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Area_8_TopTitle;
                     break;
                 case 10:
-                    Title_res = Resource.Array.Story_Main_Main_Area_9;
-                    Caption_res = Resource.Array.Story_Main_Main_Area_9_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Area_9_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Area_9;
+                    captionRes = Resource.Array.Story_Main_Main_Area_9_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Area_9_TopTitle;
                     break;
                 case 11:
-                    Title_res = Resource.Array.Story_Main_Main_Area_10;
-                    Caption_res = Resource.Array.Story_Main_Main_Area_10_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Area_10_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Area_10;
+                    captionRes = Resource.Array.Story_Main_Main_Area_10_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Area_10_TopTitle;
                     break;
                 case 12:
-                    Title_res = Resource.Array.Story_Main_Main_Area_11;
-                    Caption_res = Resource.Array.Story_Main_Main_Area_11_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Area_11_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Area_11;
+                    captionRes = Resource.Array.Story_Main_Main_Area_11_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Area_11_TopTitle;
                     break;
                 case 13:
-                    Title_res = Resource.Array.Story_Main_Main_Event_Cube;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_Cube_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_Cube_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_Cube;
+                    captionRes = Resource.Array.Story_Main_Main_Event_Cube_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_Cube_TopTitle;
                     break;
                 case 14:
-                    Title_res = Resource.Array.Story_Main_Main_Event_Hypothermia_1;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_Hypothermia_1_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_Hypothermia_1_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_1;
+                    captionRes = Resource.Array.Story_Main_Main_Event_Hypothermia_1_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_1_TopTitle;
                     break;
                 case 15:
-                    Title_res = Resource.Array.Story_Main_Main_Event_Hypothermia_2;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_Hypothermia_2_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_Hypothermia_2_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_2;
+                    captionRes = Resource.Array.Story_Main_Main_Event_Hypothermia_2_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_2_TopTitle;
                     break;
                 case 16:
-                    Title_res = Resource.Array.Story_Main_Main_Event_Hypothermia_3;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_Hypothermia_3_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_Hypothermia_3_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_3;
+                    captionRes = Resource.Array.Story_Main_Main_Event_Hypothermia_3_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_3_TopTitle;
                     break;
                 case 17:
-                    Title_res = Resource.Array.Story_Main_Main_Event_Hypothermia_Hidden;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_Hypothermia_Hidden_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_Hypothermia_Hidden_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_Hidden;
+                    captionRes = Resource.Array.Story_Main_Main_Event_Hypothermia_Hidden_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_Hidden_TopTitle;
                     break;
                 case 18:
-                    Title_res = Resource.Array.Story_Main_Main_Event_CubePlus;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_CubePlus_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_CubePlus_Toptitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_CubePlus;
+                    captionRes = Resource.Array.Story_Main_Main_Event_CubePlus_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_CubePlus_Toptitle;
                     break;
                 case 19:
-                    Title_res = Resource.Array.Story_Main_Main_Event_GuiltyGear;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_GuiltyGear_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_GuiltyGear_Toptitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_GuiltyGear;
+                    captionRes = Resource.Array.Story_Main_Main_Event_GuiltyGear_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_GuiltyGear_Toptitle;
                     break;
                 case 20:
-                    Title_res = Resource.Array.Story_Main_Main_Event_DeepDive_1;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_DeepDive_1_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_DeepDive_1_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_DeepDive_1;
+                    captionRes = Resource.Array.Story_Main_Main_Event_DeepDive_1_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_DeepDive_1_TopTitle;
                     break;
                 case 21:
-                    Title_res = Resource.Array.Story_Main_Main_Event_DeepDive_2;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_DeepDive_2_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_DeepDive_2_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_DeepDive_2;
+                    captionRes = Resource.Array.Story_Main_Main_Event_DeepDive_2_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_DeepDive_2_TopTitle;
                     break;
                 case 22:
-                    Title_res = Resource.Array.Story_Main_Main_Event_DeepDive_3;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_DeepDive_3_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_DeepDive_3_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_DeepDive_3;
+                    captionRes = Resource.Array.Story_Main_Main_Event_DeepDive_3_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_DeepDive_3_TopTitle;
                     break;
                 case 23:
-                    Title_res = Resource.Array.Story_Main_Main_Event_DeepDive_Hidden;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_DeepDive_Hidden_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_DeepDive_Hidden_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_DeepDive_Hidden;
+                    captionRes = Resource.Array.Story_Main_Main_Event_DeepDive_Hidden_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_DeepDive_Hidden_TopTitle;
                     break;
                 case 24:
-                    Title_res = Resource.Array.Story_Main_Main_Event_Singularity;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_Singularity_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_Singularity_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_Singularity;
+                    captionRes = Resource.Array.Story_Main_Main_Event_Singularity_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_Singularity_TopTitle;
                     break;
                 case 25:
-                    Title_res = Resource.Array.Story_Main_Main_Event_DJMAX_1;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_DJMAX_1_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_DJMAX_1_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_DJMAX_1;
+                    captionRes = Resource.Array.Story_Main_Main_Event_DJMAX_1_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_DJMAX_1_TopTitle;
                     break;
                 case 26:
-                    Title_res = Resource.Array.Story_Main_Main_Event_DJMAX_2;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_DJMAX_2_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_DJMAX_2_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_DJMAX_2;
+                    captionRes = Resource.Array.Story_Main_Main_Event_DJMAX_2_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_DJMAX_2_TopTitle;
                     break;
                 case 27:
-                    Title_res = Resource.Array.Story_Main_Main_Event_ContinuumTurbulence;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_ContinuumTurbulence_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_ContinuumTurbulence_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_ContinuumTurbulence;
+                    captionRes = Resource.Array.Story_Main_Main_Event_ContinuumTurbulence_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_ContinuumTurbulence_TopTitle;
                     break;
                 case 28:
-                    Title_res = Resource.Array.Story_Main_Main_Event_Isomer;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_Isomer_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_Isomer_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_Isomer;
+                    captionRes = Resource.Array.Story_Main_Main_Event_Isomer_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_Isomer_TopTitle;
                     break;
                 case 29:
-                    Title_res = Resource.Array.Story_Main_Main_Event_VA;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_VA_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_VA_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_VA;
+                    captionRes = Resource.Array.Story_Main_Main_Event_VA_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_VA_TopTitle;
                     break;
                 case 30:
-                    Title_res = Resource.Array.Story_Main_Main_Event_ShatteredConnexion;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_ShatteredConnexion_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_ShatteredConnexion_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_ShatteredConnexion;
+                    captionRes = Resource.Array.Story_Main_Main_Event_ShatteredConnexion_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_ShatteredConnexion_TopTitle;
                     break;
                 case 31:
-                    Title_res = Resource.Array.Story_Main_Main_Event_2019Halloween;
-                    Caption_res = Resource.Array.Story_Main_Main_Event_2019Halloween_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Main_Event_2019Halloween_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Main_Event_2019Halloween;
+                    captionRes = Resource.Array.Story_Main_Main_Event_2019Halloween_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_2019Halloween_TopTitle;
                     break;
             }
 
-            itemList.AddRange(Resources.GetStringArray(Title_res));
-            captionList.AddRange(Resources.GetStringArray(Caption_res));
-            topTitleList.AddRange(Resources.GetStringArray(TopTitle_res));
+            itemList.AddRange(Resources.GetStringArray(titleRes));
+            captionList.AddRange(Resources.GetStringArray(captionRes));
+            topTitleList.AddRange(Resources.GetStringArray(topTitleRes));
+
             itemList.TrimExcess();
             captionList.TrimExcess();
             topTitleList.TrimExcess();
@@ -192,87 +193,88 @@ namespace GFI_with_GFS_A
         {
             itemList.Clear();
 
-            int Title_res = 0;
-            int Caption_res = 0;
-            int TopTitle_res = 0;
+            int titleRes = 0;
+            int captionRes = 0;
+            int topTitleRes = 0;
 
             switch (subMainIndex)
             {
                 case 0:
-                    Title_res = Resource.Array.Story_Main_Sub_2016MessyHalloween;
-                    Caption_res = Resource.Array.Story_Main_Sub_2016MessyHalloween_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Sub_2016MessyHalloween_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Sub_2016MessyHalloween;
+                    captionRes = Resource.Array.Story_Main_Sub_2016MessyHalloween_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Sub_2016MessyHalloween_TopTitle;
                     break;
                 case 1:
-                    Title_res = Resource.Array.Story_Main_Sub_2016TacticalChristmas;
-                    Caption_res = Resource.Array.Story_Main_Sub_2016TacticalChristmas_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Sub_2016TacticalChristmas_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Sub_2016TacticalChristmas;
+                    captionRes = Resource.Array.Story_Main_Sub_2016TacticalChristmas_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Sub_2016TacticalChristmas_TopTitle;
                     break;
                 case 2:
-                    Title_res = Resource.Array.Story_Main_Sub_2017Anniversary;
-                    Caption_res = Resource.Array.Story_Main_Sub_2017Anniversary_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Sub_2017Anniversary_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Sub_2017Anniversary;
+                    captionRes = Resource.Array.Story_Main_Sub_2017Anniversary_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Sub_2017Anniversary_TopTitle;
                     break;
                 case 3:
-                    Title_res = Resource.Array.Story_Main_Sub_2017OperaPrinces;
-                    Caption_res = Resource.Array.Story_Main_Sub_2017OperaPrinces_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Sub_2017OperaPrinces_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Sub_2017OperaPrinces;
+                    captionRes = Resource.Array.Story_Main_Sub_2017OperaPrinces_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Sub_2017OperaPrinces_TopTitle;
                     break;
                 case 4:
-                    Title_res = Resource.Array.Story_Main_Sub_2018LunaNewYear;
-                    Caption_res = Resource.Array.Story_Main_Sub_2018LunaNewYear_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Sub_2018LunaNewYear_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Sub_2018LunaNewYear;
+                    captionRes = Resource.Array.Story_Main_Sub_2018LunaNewYear_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Sub_2018LunaNewYear_TopTitle;
                     break;
                 case 5:
-                    Title_res = Resource.Array.Story_Main_Sub_2018SweetWedding;
-                    Caption_res = Resource.Array.Story_Main_Sub_2018SweetWedding_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Sub_2018SweetWedding_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Sub_2018SweetWedding;
+                    captionRes = Resource.Array.Story_Main_Sub_2018SweetWedding_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Sub_2018SweetWedding_TopTitle;
                     break;
                 case 6:
-                    Title_res = Resource.Array.Story_Main_Sub_2018Anniversary;
-                    Caption_res = Resource.Array.Story_Main_Sub_2018Anniversary_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Sub_2018Anniversary_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Sub_2018Anniversary;
+                    captionRes = Resource.Array.Story_Main_Sub_2018Anniversary_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Sub_2018Anniversary_TopTitle;
                     break;
                 case 7:
-                    Title_res = Resource.Array.Story_Main_Sub_2018MaidTraining;
-                    Caption_res = Resource.Array.Story_Main_Sub_2018MaidTraining_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Sub_2018MaidTraining_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Sub_2018MaidTraining;
+                    captionRes = Resource.Array.Story_Main_Sub_2018MaidTraining_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Sub_2018MaidTraining_TopTitle;
                     break;
                 case 8:
-                    Title_res = Resource.Array.Story_Main_Sub_2018BeachParty;
-                    Caption_res = Resource.Array.Story_Main_Sub_2018BeachParty_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Sub_2018BeachParty_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Sub_2018BeachParty;
+                    captionRes = Resource.Array.Story_Main_Sub_2018BeachParty_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Sub_2018BeachParty_TopTitle;
                     break;
                 case 9:
-                    Title_res = Resource.Array.Story_Main_Sub_2018RiseoftheWitches;
-                    Caption_res = Resource.Array.Story_Main_Sub_2018RiseoftheWitches_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Sub_2018RiseoftheWitches_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Sub_2018RiseoftheWitches;
+                    captionRes = Resource.Array.Story_Main_Sub_2018RiseoftheWitches_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Sub_2018RiseoftheWitches_TopTitle;
                     break;
                 case 10:
-                    Title_res = Resource.Array.Story_Main_Sub_2018AnotherChristmas;
-                    Caption_res = Resource.Array.Story_Main_Sub_2018AnotherChristmas_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Sub_2018AnotherChristmas_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Sub_2018AnotherChristmas;
+                    captionRes = Resource.Array.Story_Main_Sub_2018AnotherChristmas_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Sub_2018AnotherChristmas_TopTitle;
                     break;
                 case 11:
-                    Title_res = Resource.Array.Story_Main_Sub_2019LunaNewYear;
-                    Caption_res = Resource.Array.Story_Main_Sub_2019LunaNewYear_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Sub_2019LunaNewYear_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Sub_2019LunaNewYear;
+                    captionRes = Resource.Array.Story_Main_Sub_2019LunaNewYear_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Sub_2019LunaNewYear_TopTitle;
                     break;
                 case 12:
-                    Title_res = Resource.Array.Story_Main_Sub_2019GunRose;
-                    Caption_res = Resource.Array.Story_Main_Sub_2019GunRose_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Sub_2019GunRose_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Sub_2019GunRose;
+                    captionRes = Resource.Array.Story_Main_Sub_2019GunRose_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Sub_2019GunRose_TopTitle;
                     break;
                 case 13:
-                    Title_res = Resource.Array.Story_Main_Sub_2019Anniversary;
-                    Caption_res = Resource.Array.Story_Main_Sub_2019Anniversary_Caption;
-                    TopTitle_res = Resource.Array.Story_Main_Sub_2019Anniversary_TopTitle;
+                    titleRes = Resource.Array.Story_Main_Sub_2019Anniversary;
+                    captionRes = Resource.Array.Story_Main_Sub_2019Anniversary_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Sub_2019Anniversary_TopTitle;
                     break;
             }
 
-            itemList.AddRange(Resources.GetStringArray(Title_res));
-            captionList.AddRange(Resources.GetStringArray(Caption_res));
-            topTitleList.AddRange(Resources.GetStringArray(TopTitle_res));
+            itemList.AddRange(Resources.GetStringArray(titleRes));
+            captionList.AddRange(Resources.GetStringArray(captionRes));
+            topTitleList.AddRange(Resources.GetStringArray(topTitleRes));
+
             itemList.TrimExcess();
             captionList.TrimExcess();
             topTitleList.TrimExcess();
@@ -284,25 +286,25 @@ namespace GFI_with_GFS_A
 
         private void RunReader()
         {
-            string Top = "";
-            string Category = "";
+            string top = "";
+            string category = "";
 
             switch (topType)
             {
-                case StoryActivity.Top.Main:
-                    Top = "Main";
+                case Top.Main:
+                    top = "Main";
                     break;
-                case StoryActivity.Top.Sub:
-                    Top = "Sub";
+                case Top.Sub:
+                    top = "Sub";
                     break;
             }
 
-            if (topType == StoryActivity.Top.Main)
+            if (topType == Top.Main)
             {
                 switch (subMainIndex)
                 {
                     case 0:
-                        Category = "Prologue";
+                        category = "Prologue";
                         break;
                     case 1:
                     case 2:
@@ -316,119 +318,120 @@ namespace GFI_with_GFS_A
                     case 10:
                     case 11:
                     case 12:
-                        Category = $"Area_{subMainIndex - 1}";
+                        category = $"Area_{subMainIndex - 1}";
                         break;
                     case 13:
-                        Category = "Cube";
+                        category = "Cube";
                         break;
                     case 14:
-                        Category = "Hypothermia_1";
+                        category = "Hypothermia_1";
                         break;
                     case 15:
-                        Category = "Hypothermia_2";
+                        category = "Hypothermia_2";
                         break;
                     case 16:
-                        Category = "Hypothermia_3";
+                        category = "Hypothermia_3";
                         break;
                     case 17:
-                        Category = "Hypothermia_Hidden";
+                        category = "Hypothermia_Hidden";
                         break;
                     case 18:
-                        Category = "CubePlus";
+                        category = "CubePlus";
                         break;
                     case 19:
-                        Category = "GuiltyGear";
+                        category = "GuiltyGear";
                         break;
                     case 20:
-                        Category = "DeepDive_1";
+                        category = "DeepDive_1";
                         break;
                     case 21:
-                        Category = "DeepDive_2";
+                        category = "DeepDive_2";
                         break;
                     case 22:
-                        Category = "DeepDive_3";
+                        category = "DeepDive_3";
                         break;
                     case 23:
-                        Category = "DeepDive_Hidden";
+                        category = "DeepDive_Hidden";
                         break;
                     case 24:
-                        Category = "Singularity";
+                        category = "Singularity";
                         break;
                     case 25:
-                        Category = "DJMAX_1";
+                        category = "DJMAX_1";
                         break;
                     case 26:
-                        Category = "DJMAX_2";
+                        category = "DJMAX_2";
                         break;
                     case 27:
-                        Category = "ContinuumTurbulence";
+                        category = "ContinuumTurbulence";
                         break;
                     case 28:
-                        Category = "Isomer";
+                        category = "Isomer";
                         break;
                     case 29:
-                        Category = "VA";
+                        category = "VA";
                         break;
                     case 30:
-                        Category = "ShatteredConnexion";
+                        category = "ShatteredConnexion";
                         break;
                     case 31:
-                        Category = "2019Halloween";
+                        category = "2019Halloween";
                         break;
                 }
             }
-            else if (topType == StoryActivity.Top.Sub)
+            else if (topType == Top.Sub)
             {
                 switch (subMainIndex)
                 {
                     case 0:
-                        Category = "2016MessyHalloween";
+                        category = "2016MessyHalloween";
                         break;
                     case 1:
-                        Category = "2016TacticalChristmas";
+                        category = "2016TacticalChristmas";
                         break;
                     case 2:
-                        Category = "2017Anniversary";
+                        category = "2017Anniversary";
                         break;
                     case 3:
-                        Category = "2017OperaPrinces";
+                        category = "2017OperaPrinces";
                         break;
                     case 4:
-                        Category = "2018LunaNewYear";
+                        category = "2018LunaNewYear";
                         break;
                     case 5:
-                        Category = "2018SweetWedding";
+                        category = "2018SweetWedding";
                         break;
                     case 6:
-                        Category = "2018Anniversary";
+                        category = "2018Anniversary";
                         break;
                     case 7:
-                        Category = "2018MaidTraining";
+                        category = "2018MaidTraining";
                         break;
                     case 8:
-                        Category = "2018BeachParty";
+                        category = "2018BeachParty";
                         break;
                     case 9:
-                        Category = "2018RiseoftheWitches";
+                        category = "2018RiseoftheWitches";
                         break;
                     case 10:
-                        Category = "2018AnotherChristmas";
+                        category = "2018AnotherChristmas";
                         break;
                     case 11:
-                        Category = "2019LunaNewYear";
+                        category = "2019LunaNewYear";
                         break;
                     case 12:
-                        Category = "2019GunRose";
+                        category = "2019GunRose";
                         break;
                     case 13:
-                        Category = "2019Anniversary";
+                        category = "2019Anniversary";
                         break;
                 }
             }
 
             var intent = new Intent(this, typeof(StoryReaderActivity));
-            intent.PutExtra("Info", new string[] { Top, Category, itemIndex.ToString(), itemList.Count.ToString() });
+            intent.PutExtra("Info", new string[] { top, category, itemIndex.ToString(), itemList.Count.ToString() });
             intent.PutExtra("List", itemList.ToArray());
+            intent.PutExtra("TopList", topTitleList.ToArray());
             StartActivity(intent);
             OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }
