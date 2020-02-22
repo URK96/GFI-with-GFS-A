@@ -16,37 +16,39 @@ using Android.Support.V7.Widget;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "ProductResultActivity", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class ProductResultActivity : BaseFragmentActivity
+    [Activity(Label = "ProductResultActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class ProductResultActivity : BaseAppCompatActivity
     {
-        private string[] Types;
-        private DataRow[] DRs;
+        private string[] types;
+        private DataRow[] drs;
 
-        private RecyclerView MainRecyclerView;
-        private RecyclerView.LayoutManager MainLayoutManager;
+        private RecyclerView mainRecyclerView;
         private ProductResultAdapter adapter;
 
-        private CoordinatorLayout SnackbarLayout;
+        private CoordinatorLayout snackbarLayout;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            if (ETC.useLightTheme == true) SetTheme(Resource.Style.GFS_Light);
+            if (ETC.useLightTheme)
+            {
+                SetTheme(Resource.Style.GFS_Toolbar_Light);
+            }
 
             // Create your application here
             SetContentView(Resource.Layout.ProductResultLayout);
 
-            Types = Intent.GetStringArrayExtra("ResultType");
+            types = Intent.GetStringArrayExtra("ResultType");
             string[] names = Intent.GetStringArrayExtra("ResultInfo");
 
-            DRs = new DataRow[Types.Length];
+            drs = new DataRow[types.Length];
 
-            for (int i = 0; i < Types.Length; ++i)
+            for (int i = 0; i < types.Length; ++i)
             {
                 DataRow ResultDR = null;
 
-                switch (Types[i])
+                switch (types[i])
                 {
                     case "Doll":
                         ResultDR = ETC.FindDataRow(ETC.dollList, "Name", names[i]);
@@ -59,17 +61,25 @@ namespace GFI_with_GFS_A
                         break;
                 }
 
-                DRs[i] = ResultDR;
+                drs[i] = ResultDR;
             }
 
-            SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.PSResultSnackbarLayout);
-            MainRecyclerView = FindViewById<RecyclerView>(Resource.Id.PSResultRecyclerView);
-            MainLayoutManager = new LinearLayoutManager(this);
-            MainRecyclerView.SetLayoutManager(MainLayoutManager);
+            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.PSResultMainToolbar));
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            SupportActionBar.SetTitle(Resource.String.ProductSimulatorResultActivity_Title);
 
-            adapter = new ProductResultAdapter(Types, DRs, this);
-            if (adapter.HasOnItemClick() == false) adapter.ItemClick += Adapter_ItemClick;
-            MainRecyclerView.SetAdapter(adapter);
+            snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.PSResultSnackbarLayout);
+            mainRecyclerView = FindViewById<RecyclerView>(Resource.Id.PSResultRecyclerView);
+            mainRecyclerView.SetLayoutManager(new LinearLayoutManager(this));
+
+            adapter = new ProductResultAdapter(types, drs, this);
+
+            if (!adapter.HasOnItemClick())
+            {
+                adapter.ItemClick += Adapter_ItemClick;
+            }
+
+            mainRecyclerView.SetAdapter(adapter);
         }
 
         private void Adapter_ItemClick(object sender, int e)
@@ -78,19 +88,19 @@ namespace GFI_with_GFS_A
             {
                 Intent ResultInfo = null;
 
-                switch (Types[e])
+                switch (types[e])
                 {
                     case "Doll":
                         ResultInfo = new Intent(this, typeof(DollDBDetailActivity));
-                        ResultInfo.PutExtra("DicNum", (int)DRs[e]["DicNumber"]);
+                        ResultInfo.PutExtra("DicNum", (int)drs[e]["DicNumber"]);
                         break;
                     case "Equip":
                         ResultInfo = new Intent(this, typeof(EquipDBDetailActivity));
-                        ResultInfo.PutExtra("Keyword", (string)DRs[e]["Name"]);
+                        ResultInfo.PutExtra("Keyword", (string)drs[e]["Name"]);
                         break;
                     case "Fairy":
                         ResultInfo = new Intent(this, typeof(FairyDBDetailActivity));
-                        ResultInfo.PutExtra("Keyword", (string)DRs[e]["Name"]);
+                        ResultInfo.PutExtra("Keyword", (string)drs[e]["Name"]);
                         break;
                 }
 
@@ -100,7 +110,7 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthShort);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthShort);
             }
         }
 
@@ -115,6 +125,7 @@ namespace GFI_with_GFS_A
 
     public class ProductResultViewHolder : RecyclerView.ViewHolder
     {
+        public CardView CardView { get; private set; }
         public TextView DicNumber { get; private set; }
         public TextView Type { get; private set; }
         public ImageView Grade { get; private set; }
@@ -124,6 +135,7 @@ namespace GFI_with_GFS_A
 
         public ProductResultViewHolder(View view, Action<int> listener) : base(view)
         {
+            CardView = view.FindViewById<CardView>(Resource.Id.PSResultListMainCardView);
             DicNumber = view.FindViewById<TextView>(Resource.Id.PSResultListNumber);
             Type = view.FindViewById<TextView>(Resource.Id.PSResultListType);
             Grade = view.FindViewById<ImageView>(Resource.Id.PSResultListGrade);
@@ -137,9 +149,9 @@ namespace GFI_with_GFS_A
 
     public class ProductResultAdapter : RecyclerView.Adapter
     {
-        string[] types;
-        DataRow[] items;
-        Activity context;
+        readonly string[] types;
+        readonly DataRow[] items;
+        readonly Activity context;
 
         public event EventHandler<int> ItemClick;
 
@@ -152,9 +164,9 @@ namespace GFI_with_GFS_A
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.ProductResultListLayout, parent, false);
+            View view = LayoutInflater.From(parent?.Context).Inflate(Resource.Layout.ProductResultListLayout, parent, false);
+            var vh = new ProductResultViewHolder(view, OnClick);
 
-            ProductResultViewHolder vh = new ProductResultViewHolder(view, OnClick);
             return vh;
         }
 
@@ -165,31 +177,26 @@ namespace GFI_with_GFS_A
 
         void OnClick(int position)
         {
-            if (ItemClick != null)
-            {
-                ItemClick(this, position);
-            }
+            ItemClick?.Invoke(this, position);
         }
 
         public bool HasOnItemClick()
         {
-            if (ItemClick == null) return false;
-            else return true;
+            return (ItemClick != null);
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            ProductResultViewHolder vh = holder as ProductResultViewHolder;
+            var vh = holder as ProductResultViewHolder;
 
             string type = types[position];
-            DataRow item = items[position];
+            var item = items[position];
 
             try
             {
-                int D_Num = (int)item["DicNumber"];
+                int dNum = (int)item["DicNumber"];
 
                 vh.DicNumber.Text = $"No. {(int)item["DicNumber"]}";
-
 
                 string URL = "";
                 string FilePath = "";
@@ -210,7 +217,7 @@ namespace GFI_with_GFS_A
                         break;
                 }
 
-                if (File.Exists(FilePath) == false)
+                if (!File.Exists(FilePath))
                 {
                     using (WebClient wc = new WebClient())
                     {
@@ -224,23 +231,25 @@ namespace GFI_with_GFS_A
                 {
                     switch ((int)item["Grade"])
                     {
+                        default:
                         case 2:
                             GradeIconId = Resource.Drawable.Grade_2;
                             break;
                         case 3:
                             GradeIconId = Resource.Drawable.Grade_3;
+                            vh.CardView.SetCardBackgroundColor(Android.Graphics.Color.ParseColor("#8055CCEE"));
                             break;
                         case 4:
                             GradeIconId = Resource.Drawable.Grade_4;
+                            vh.CardView.SetCardBackgroundColor(Android.Graphics.Color.ParseColor("#80AACC22"));
                             break;
                         case 5:
                             GradeIconId = Resource.Drawable.Grade_5;
+                            vh.CardView.SetCardBackgroundColor(Android.Graphics.Color.ParseColor("#80FFBB22"));
                             break;
                         case 0:
                             GradeIconId = Resource.Drawable.Grade_0;
-                            break;
-                        default:
-                            GradeIconId = Resource.Drawable.Grade_2;
+                            vh.CardView.SetCardBackgroundColor(Android.Graphics.Color.ParseColor("#80C040B0"));
                             break;
                     }
 
@@ -270,9 +279,18 @@ namespace GFI_with_GFS_A
                         if (ETC.locale.Language == "ko") name = (string)item["Name"];
                         else
                         {
-                            if (item["Name_EN"] == DBNull.Value) name = (string)item["Name"];
-                            else if (string.IsNullOrWhiteSpace((string)item["Name_EN"])) name = (string)item["Name"];
-                            else name = (string)item["Name_EN"];
+                            if (item["Name_EN"] == DBNull.Value)
+                            {
+                                name = (string)item["Name"];
+                            }
+                            else if (string.IsNullOrWhiteSpace((string)item["Name_EN"]))
+                            {
+                                name = (string)item["Name"];
+                            }
+                            else
+                            {
+                                name = (string)item["Name_EN"];
+                            }
                         }
                         break;
                     case "Equip":
@@ -280,8 +298,8 @@ namespace GFI_with_GFS_A
                         name = (string)item["Name"];
                         break;
                 }
-                vh.Name.Text = name;
 
+                vh.Name.Text = name;
                 vh.ProductTime.Text = ETC.CalcTime((int)item["ProductTime"]);
             }
             catch (Exception ex)

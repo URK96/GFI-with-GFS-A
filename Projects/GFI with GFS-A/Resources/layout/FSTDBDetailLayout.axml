@@ -127,7 +127,7 @@
                     </LinearLayout>
                 </RelativeLayout>
             <!--Scroll Part-->
-                <ScrollView
+                <android.support.v4.widget.NestedScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -142,7 +142,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
-                            android:alpha="0"
+                            android:visibility="gone"
                             android:id="@+id/FSTDBDetailBasicInfoCardLayout"
                             cardview:cardElevation="4dp"
                             cardview:cardCornerRadius="5dp"
@@ -383,7 +383,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
-                            android:alpha="0"
+                            android:visibility="gone"
                             android:id="@+id/FSTDBDetailCircuitCardLayout"
                             cardview:cardElevation="4dp"
                             cardview:cardCornerRadius="5dp"
@@ -473,7 +473,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
-                            android:alpha="0"
+                            android:visibility="gone"
                             android:id="@+id/FSTDBDetailSkillCardLayout1"
                             cardview:cardElevation="4dp"
                             cardview:cardCornerRadius="5dp"
@@ -617,7 +617,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
-                            android:alpha="0"
+                            android:visibility="gone"
                             android:id="@+id/FSTDBDetailSkillCardLayout2"
                             cardview:cardElevation="4dp"
                             cardview:cardCornerRadius="5dp"
@@ -761,7 +761,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
-                            android:alpha="0"
+                            android:visibility="gone"
                             android:id="@+id/FSTDBDetailSkillCardLayout3"
                             cardview:cardElevation="4dp"
                             cardview:cardCornerRadius="5dp"
@@ -905,7 +905,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
-                            android:alpha="0"
+                            android:visibility="gone"
                             android:id="@+id/FSTDBDetailAbilityCardLayout"
                             cardview:cardElevation="4dp"
                             cardview:cardCornerRadius="5dp"
@@ -1192,7 +1192,7 @@
                             </LinearLayout>
                         </android.support.v7.widget.CardView>
                     </LinearLayout>
-                </ScrollView>
+                </android.support.v4.widget.NestedScrollView>
             </LinearLayout>
             <android.support.design.widget.CoordinatorLayout
                 android:layout_width="match_parent"

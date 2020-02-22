@@ -9,26 +9,25 @@ using Android.Widget;
 using System;
 using Android.Support.Design.Widget;
 using Xamarin.Essentials;
+using Android.Support.V4.Widget;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Name = "com.gfl.dic.WebViewActivity", Label = "", Theme = "@style/GFS", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class WebBrowserActivity : BaseFragmentActivity
+    [Activity(Name = "com.gfl.dic.WebViewActivity", Label = "", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class WebBrowserActivity : BaseAppCompatActivity
     {
-        private static ProgressBar loadProgress;
-
-        private WebView web;
-        private ImageButton previousButton;
-        private ImageButton nextButton;
-        private ImageButton closeButton;
         private static EditText webAddressEditText;
+        private static SwipeRefreshLayout mainRefreshLayout;
+        private WebView web;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             if (ETC.useLightTheme)
-                SetTheme(Resource.Style.GFS_Light);
+            {
+                SetTheme(Resource.Style.GFS_Toolbar_Light);
+            }
 
             // Create your application here
             SetContentView(Resource.Layout.WebBrowserLayout);
@@ -39,7 +38,11 @@ namespace GFI_with_GFS_A
                 Finish();
             }
 
-            //loadProgress = FindViewById<ProgressBar>(Resource.Id.WebBrowserToolbarLoadProgress);
+            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.WebBrowserMainToolbar));
+
+            mainRefreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.WebBrowserMainRefreshLayout);
+            mainRefreshLayout.Refresh += delegate { web.Reload(); };
+
             web = FindViewById<WebView>(Resource.Id.WebBrowser);
             webAddressEditText = FindViewById<EditText>(Resource.Id.WebBrowserAddressBar);
             webAddressEditText.EditorAction += (object sender, TextView.EditorActionEventArgs e) =>
@@ -47,32 +50,20 @@ namespace GFI_with_GFS_A
                 string url = (sender as EditText).Text;
 
                 if (e.ActionId == Android.Views.InputMethods.ImeAction.Done)
+                {
                     if (url.StartsWith("http"))
+                    {
                         web.LoadUrl(url);
+                    }
                     else
+                    {
                         web.LoadUrl($"http://{url}");
-            };
-            previousButton = FindViewById<ImageButton>(Resource.Id.WebBrowserToolbarPrevious);
-            nextButton = FindViewById<ImageButton>(Resource.Id.WebBrowserToolbarNext);
-            closeButton = FindViewById<ImageButton>(Resource.Id.WebBrowserToolbarClose);
-            previousButton.Click += delegate
-            {
-                if (web.CanGoBack())
-                    web.GoBack();
-            };
-            nextButton.Click += delegate
-            {
-                if (web.CanGoForward())
-                    web.GoForward();
-            };
-            closeButton.Click += delegate 
-            {
-                Finish();
-                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                    }
+                }
             };
 
-            web.Settings.JavaScriptEnabled = true;
             web.SetWebViewClient(new WebBrowserWebClient());
+            web.Settings.JavaScriptEnabled = true;
             web.Settings.BuiltInZoomControls = true;
             web.Settings.AllowContentAccess = true;
             web.Settings.BlockNetworkImage = false;
@@ -84,15 +75,51 @@ namespace GFI_with_GFS_A
             InitProcess();
         }
 
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.WebBrowserMenu, menu);
+
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item?.ItemId)
+            {
+                case Resource.Id.WebBrowserPrevious:
+                    if (web.CanGoBack())
+                    {
+                        web.GoBack();
+                    }
+                    break;
+                case Resource.Id.WebBrowserNext:
+                    if (web.CanGoForward())
+                    {
+                        web.GoForward();
+                    }
+                    break;
+                case Resource.Id.WebBrowserClose:
+                    Finish();
+                    OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                    GC.Collect();
+                    break;
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
+
         private void InitProcess()
         {
             try
             {
                 string url = Intent.GetStringExtra("url");
 
-                url = url ?? Intent.DataString;
+                url ??= Intent.DataString;
 
-                web.LoadUrl(url);
+                if (url != null)
+                {
+                    web.LoadUrl(url);
+                }
             }
             catch (Exception ex)
             {
@@ -107,22 +134,22 @@ namespace GFI_with_GFS_A
             {
                 var network = Connectivity.NetworkAccess;
 
-                if (network != NetworkAccess.Internet)
-                    return false;
+                return network == NetworkAccess.Internet;
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
+
                 return false;
             }
-
-            return true;
         }
 
         public override void OnBackPressed()
         {
             if (web.CanGoBack())
+            {
                 web.GoBack();
+            }
             else
             {
                 base.OnBackPressed();
@@ -151,26 +178,20 @@ namespace GFI_with_GFS_A
             public override void OnLoadResource(WebView view, string url)
             {
                 base.OnLoadResource(view, url);
-
-                if (loadProgress != null)
-                    loadProgress.Progress = view.Progress;
             }
 
             public override void OnPageStarted(WebView view, string url, Bitmap favicon)
             {
                 base.OnPageStarted(view, url, favicon);
-                webAddressEditText.Text = url;
 
-                if (loadProgress != null)
-                    loadProgress.Visibility = ViewStates.Visible;
+                webAddressEditText.Text = url;
             }
 
             public override void OnPageFinished(WebView view, string url)
             {
                 base.OnPageFinished(view, url);
 
-                if (loadProgress != null)
-                    loadProgress.Visibility = ViewStates.Invisible;
+                mainRefreshLayout.Refreshing = false;
             }
         }
     }

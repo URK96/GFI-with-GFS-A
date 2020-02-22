@@ -53,10 +53,13 @@ namespace GFI_with_GFS_A
                 dollDicNumber = int.Parse(info[4]);
             }
 
+            itemList = Intent.GetStringArrayExtra("List");
+
             SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.StoryReaderMainToolbar));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            itemList = Intent.GetStringArrayExtra("List");
+            FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryCategory).Text = category;
+            FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryTitle).Text = itemList[itemIndex];
 
             textSize = ETC.sharedPreferences.GetInt("TextViewerTextSize", 12);
             textColor = ETC.sharedPreferences.GetString("TextViewerTextColorHex", "None");

@@ -484,12 +484,19 @@
   <string name="ProductSimulatorActivity_GroupDollError">인형 분류 오류</string>
   <string name="ProductSimulatorActivity_ProductDollError">인형 제조 오류</string>
   
-  <!--ProductSimulatorCategorySelect-->
-  <string name="ProductSimulatorCategorySelectActivity_Title">I.O.P Production</string>
-  <string name="ProductSimulatorCategorySelectActivity_DollNormalProduct">인형 일반제조</string>
-  <string name="ProductSimulatorCategorySelectActivity_DollAdvancedProduct">인형 중형제조</string>
-  <string name="ProductSimulatorCategorySelectActivity_EquipNormalProduct">장비 일반제조</string>
-  <string name="ProductSimulatorCategorySelectActivity_EquipAdvancedProduct">장비 중형제조</string>
+  <!--ProductSimulatorCategory-->
+  <string name="ProductSimulatorCategoryActivity_Title">I.O.P Production</string>
+  <string name="ProductSimulatorCategoryActivity_DollNormalProduct">인형 일반제조</string>
+  <string name="ProductSimulatorCategoryActivity_DollAdvancedProduct">인형 중형제조</string>
+  <string name="ProductSimulatorCategoryActivity_EquipNormalProduct">장비 일반제조</string>
+  <string name="ProductSimulatorCategoryActivity_EquipAdvancedProduct">장비 중형제조</string>
+  <string name="ProductSimulatorCategoryActivity_DollNormalProduct_Caption">인형 일반제조</string>
+  <string name="ProductSimulatorCategoryActivity_DollAdvancedProduct_Caption">인형 중형제조</string>
+  <string name="ProductSimulatorCategoryActivity_EquipNormalProduct_Caption">장비 일반제조</string>
+  <string name="ProductSimulatorCategoryActivity_EquipAdvancedProduct_Caption">장비 중형제조</string>
+
+  <!--ProductSimulatorResult-->
+  <string name="ProductSimulatorResultActivity_Title">제조 결과</string>
     
   <!--Setting-->
   <string name="SettingActivity_Title">설정</string>

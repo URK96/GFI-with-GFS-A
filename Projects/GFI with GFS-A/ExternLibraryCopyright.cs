@@ -11,9 +11,7 @@ namespace GFI_with_GFS_A
     [Activity(Label = "@string/Activity_ExternLibraryCopyrightActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class ExternLibraryCopyright : BaseAppCompatActivity
     {
-        private Android.Support.V7.Widget.Toolbar toolbar;
         private RecyclerView mainRecyclerView;
-        private RecyclerView.LayoutManager mainLayoutManager;
 
         string[] name;
         string[] explain;
@@ -26,18 +24,20 @@ namespace GFI_with_GFS_A
         {
             base.OnCreate(savedInstanceState);
 
+            if (ETC.useLightTheme)
+            {
+                SetTheme(Resource.Style.GFS_Toolbar_Light);
+            }
+
             // Create your application here
             SetContentView(Resource.Layout.ExternLibraryCopyrightLayout);
 
-            toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.ExternLibraryMainToolbar);
-
-            SetSupportActionBar(toolbar);
+            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.ExternLibraryMainToolbar));
             SupportActionBar.SetTitle(Resource.String.Activity_ExternLibraryCopyrightActivity);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             mainRecyclerView = FindViewById<RecyclerView>(Resource.Id.ExternLibraryRecyclerView);
-            mainLayoutManager = new LinearLayoutManager(this);
-            mainRecyclerView.SetLayoutManager(mainLayoutManager);
+            mainRecyclerView.SetLayoutManager(new LinearLayoutManager(this));
 
             InitializeList();
 
@@ -76,15 +76,15 @@ namespace GFI_with_GFS_A
 
     public class ExternLibraryViewHolder : RecyclerView.ViewHolder
     {
-        public TextView name { get; private set; }
-        public TextView explain { get; private set; }
-        public TextView license { get; private set; }
+        public TextView Name { get; private set; }
+        public TextView Explain { get; private set; }
+        public TextView License { get; private set; }
 
         public ExternLibraryViewHolder(View view, Action<int> listener) : base(view)
         {
-            name = view?.FindViewById<TextView>(Resource.Id.ExternLibraryListViewTitleText);
-            explain = view?.FindViewById<TextView>(Resource.Id.ExternLibraryListViewExplainText);
-            license = view?.FindViewById<TextView>(Resource.Id.ExternLibraryListViewLicenseText);
+            Name = view?.FindViewById<TextView>(Resource.Id.ExternLibraryListViewTitleText);
+            Explain = view?.FindViewById<TextView>(Resource.Id.ExternLibraryListViewExplainText);
+            License = view?.FindViewById<TextView>(Resource.Id.ExternLibraryListViewLicenseText);
 
             view.Click += (sender, e) => listener(LayoutPosition);
         }
@@ -92,9 +92,9 @@ namespace GFI_with_GFS_A
 
     public class ExternLibraryAdapter : RecyclerView.Adapter
     {
-        private string[] nameList;
-        private string[] explainList;
-        private string[] licenseList;
+        private readonly string[] nameList;
+        private readonly string[] explainList;
+        private readonly string[] licenseList;
 
         public event EventHandler<int> ItemClick;
 
@@ -107,11 +107,11 @@ namespace GFI_with_GFS_A
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            ExternLibraryViewHolder vh = holder as ExternLibraryViewHolder;
+            var vh = holder as ExternLibraryViewHolder;
 
-            vh.name.Text = nameList[position];
-            vh.explain.Text = explainList[position];
-            vh.license.Text = licenseList[position];
+            vh.Name.Text = nameList[position];
+            vh.Explain.Text = explainList[position];
+            vh.License.Text = licenseList[position];
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

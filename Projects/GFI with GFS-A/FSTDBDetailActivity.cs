@@ -32,7 +32,7 @@ namespace GFI_with_GFS_A
         private Android.Support.V7.Widget.Toolbar toolbar;
         private RatingBar gradeControl;
         private RatingBar versionGradeControl;
-        private Spinner ChipsetBonusSelector;
+        private Spinner chipsetBonusSelector;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -48,7 +48,7 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.FSTDBDetailLayout);
 
-                fstInfoDR = ETC.FindDataRow(ETC.FSTList, "CodeName", Intent.GetStringExtra("Keyword"));
+                fstInfoDR = ETC.FindDataRow(ETC.fstList, "CodeName", Intent.GetStringExtra("Keyword"));
                 fst = new FST(fstInfoDR);
 
                 refreshMainLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.FSTDBDetailMainRefreshLayout);
@@ -66,6 +66,8 @@ namespace GFI_with_GFS_A
                 };
                 FindViewById<TextView>(Resource.Id.FSTDBDetailToolbarName).Text = $"{fst.Name} - {fst.CodeName}";
 
+                refreshMainLayout.Refresh += async delegate { await InitLoadProcess(true); };
+
                 gradeControl = FindViewById<RatingBar>(Resource.Id.FSTDBDetailGradeControl1);
                 gradeControl.Rating = 1;
                 gradeControl.RatingBarChange += FSTDBDetailActivity_RatingBarChange;
@@ -73,8 +75,8 @@ namespace GFI_with_GFS_A
                 versionGradeControl.Rating = 0;
                 versionGradeControl.RatingBarChange += delegate { CalcAbility(); };
 
-                ChipsetBonusSelector = FindViewById<Spinner>(Resource.Id.FSTDBDetailChipsetBonusSelector);
-                ChipsetBonusSelector.ItemSelected += delegate { CalcAbility(); };
+                chipsetBonusSelector = FindViewById<Spinner>(Resource.Id.FSTDBDetailChipsetBonusSelector);
+                chipsetBonusSelector.ItemSelected += delegate { CalcAbility(); };
 
                 SetChipsetBonusList();
 
@@ -111,9 +113,9 @@ namespace GFI_with_GFS_A
 
                 var adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, list);
                 adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
-                ChipsetBonusSelector.Adapter = adapter;
+                chipsetBonusSelector.Adapter = adapter;
 
-                ChipsetBonusSelector.SetSelection(0);
+                chipsetBonusSelector.SetSelection(0);
             }
             catch (Exception ex)
             {
@@ -486,7 +488,7 @@ namespace GFI_with_GFS_A
             int[] progressMaxTexts = { Resource.Id.FSTInfoKillProgressMax, Resource.Id.FSTInfoCrushProgressMax, Resource.Id.FSTInfoACProgressMax, Resource.Id.FSTInfoRLProgressMax };
             int[] statusTexts = { Resource.Id.FSTInfoKillStatus, Resource.Id.FSTInfoCrushStatus, Resource.Id.FSTInfoACStatus, Resource.Id.FSTInfoRLStatus };
 
-            int chipsetIndex = ChipsetBonusSelector.SelectedItemPosition;
+            int chipsetIndex = chipsetBonusSelector.SelectedItemPosition;
             int versionIndex = Convert.ToInt32(versionGradeControl.Rating * 2);
 
             int[] bonusUp = { 0, 0, 0, 0 };
@@ -546,7 +548,15 @@ namespace GFI_with_GFS_A
 
         private void SetCardTheme()
         {
-            int[] cardViewIds = { Resource.Id.FSTDBDetailBasicInfoCardLayout, Resource.Id.FSTDBDetailCircuitCardLayout, Resource.Id.FSTDBDetailSkillCardLayout1, Resource.Id.FSTDBDetailSkillCardLayout2, Resource.Id.FSTDBDetailSkillCardLayout3, Resource.Id.FSTDBDetailAbilityCardLayout };
+            int[] cardViewIds = 
+            { 
+                Resource.Id.FSTDBDetailBasicInfoCardLayout, 
+                Resource.Id.FSTDBDetailCircuitCardLayout, 
+                Resource.Id.FSTDBDetailSkillCardLayout1, 
+                Resource.Id.FSTDBDetailSkillCardLayout2, 
+                Resource.Id.FSTDBDetailSkillCardLayout3, 
+                Resource.Id.FSTDBDetailAbilityCardLayout 
+            };
 
             foreach (int id in cardViewIds)
             {

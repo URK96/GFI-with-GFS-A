@@ -549,6 +549,10 @@
     <item>102 - 드리머의 인터넷 방송</item>
     <item>103 - 헬리안과 지휘관의 출장</item>
     <item>104 - 헬리안의 유혹</item>
+    <item>105 - 니토의 뒷거래</item>
+    <item>106 - 위기의 지휘관과 헬리안</item>
+    <item>107 - 그들의 결말</item>
+    <item>마지막 화 - 연재 후기</item>
   </string-array>
 
   <string-array name="Geo_GF_URL">
@@ -657,5 +661,9 @@
     <item>http://naver.me/GV8d3vBb</item>
     <item>http://naver.me/xT8fZerU</item>
     <item>http://naver.me/FAj05i8F</item>
+    <item>http://naver.me/FgzYP2EG</item>
+    <item>http://naver.me/xpDhAzU4</item>
+    <item>http://naver.me/FirnEGRx</item>
+    <item>http://naver.me/Fq9FN2wD</item>
   </string-array>
 </resources>

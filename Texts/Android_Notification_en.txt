@@ -1,8 +1,7 @@
 ﻿
-# T-Doll DB Update 2019/09/12
+# T-Doll DB Update 2019/09/19
 
-- Add ability info
-- Add new T-Doll (Type89)
+- Add New Costumes (4Type, G11, M1A1, 9A-91, MG3, SR-3MP, Falcon)
 
 
 # Equip DB Update 2019/09/24

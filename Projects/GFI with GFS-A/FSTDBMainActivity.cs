@@ -151,7 +151,7 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                foreach (DataRow dr in ETC.FSTList.Rows)
+                foreach (DataRow dr in ETC.fstList.Rows)
                 {
                     rootList.Add(new FST(dr, true));
                 }

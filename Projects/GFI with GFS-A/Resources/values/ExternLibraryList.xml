@@ -4,11 +4,16 @@
     <item>Microsoft.AppCenter</item>
     <item>Microsoft.AppCenter.Analytics</item>
     <item>Microsoft.AppCenter.Crashes</item>
+    <item>Microsoft.AppCenter.Push</item>
     <item>Microsoft.Bcl</item>
     <item>Microsoft.Bcl.Async</item>
     <item>Microsoft.Bcl.Build</item>
-    <item>Microsoft.Net.Http</item>
     <item>Microsoft.CodeAnalysis.FxCopAnalyzers</item>
+    <item>Microsoft.CodeAnalysis.VersionCheckAnalyzer</item>
+    <item>Microsoft.CodeQuality.Analyzers</item>
+    <item>Microsoft.Net.Http</item>
+    <item>Microsoft.NetCore.Analyzers</item>
+    <item>Microsoft.NetFramework.Analyzers</item>
     <item>Net.ArcanaStudio.ColorPicker</item>
     <item>Newtonsoft.Json</item>
     <item>Syncfusion.Licensing</item>
@@ -16,6 +21,7 @@
     <item>System.Collections.NonGeneric</item>
     <item>System.Numerics.Vectors</item>
     <item>System.Threading.Tasks.Parallel</item>
+    <item>Xam.Plugin.SimpleAudioPlayer</item>
     <item>Xamarin.Android.Arch.Core.Common</item>
     <item>Xamarin.Android.Arch.Core.Runtime</item>
     <item>Xamarin.Android.Arch.Lifecycle.Common</item>
@@ -23,6 +29,7 @@
     <item>Xamarin.Android.Arch.Lifecycle.LiveData.Core</item>
     <item>Xamarin.Android.Arch.Lifecycle.Runtime</item>
     <item>Xamarin.Android.Arch.Lifecycle.ViewModel</item>
+    <item>Xamarin.Android.AVLoadingIndicatorView</item>
     <item>Xamarin.Android.PhotoView</item>
     <item>Xamarin.Android.Support.Animated.Vector.Drawable</item>
     <item>Xamarin.Android.Support.Annotations</item>
@@ -58,19 +65,79 @@
     <item>Xamarin.Android.Support.Vector.Drawable</item>
     <item>Xamarin.Android.Support.VersionedParcelable</item>
     <item>Xamarin.Android.Support.ViewPager</item>
+    <item>Xamarin.AndroidX.Activity</item>
+    <item>Xamarin.AndroidX.Annotation</item>
+    <item>Xamarin.AndroidX.AppCompat</item>
+    <item>Xamarin.AndroidX.AppCompat.Resources</item>
+    <item>Xamarin.AndroidX.Arch.Core.Common</item>
+    <item>Xamarin.AndroidX.Arch.Core.Runtime</item>
+    <item>Xamarin.AndroidX.AsyncLayoutInflater</item>
+    <item>Xamarin.AndroidX.Browser</item>
+    <item>Xamarin.AndroidX.CardView</item>
+    <item>Xamarin.AndroidX.Collection</item>
+    <item>Xamarin.AndroidX.CoordinatorLayout</item>
+    <item>Xamarin.AndroidX.Core</item>
+    <item>Xamarin.AndroidX.CursorAdapter</item>
+    <item>Xamarin.AndroidX.CustomView</item>
+    <item>Xamarin.AndroidX.DocumentFile</item>
+    <item>Xamarin.AndroidX.DrawerLayout</item>
+    <item>Xamarin.AndroidX.Fragment</item>
+    <item>Xamarin.AndroidX.Interpolator</item>
+    <item>Xamarin.AndroidX.Legacy.Support.Core.UI</item>
+    <item>Xamarin.AndroidX.Legacy.Support.Core.Utils</item>
+    <item>Xamarin.AndroidX.Legacy.Support.V4</item>
+    <item>Xamarin.AndroidX.Lifecycle.Common</item>
+    <item>Xamarin.AndroidX.Lifecycle.LiveData</item>
+    <item>Xamarin.AndroidX.Lifecycle.LiveData.Core</item>
+    <item>Xamarin.AndroidX.Lifecycle.Runtime</item>
+    <item>Xamarin.AndroidX.Lifecycle.ViewModel</item>
+    <item>Xamarin.AndroidX.Loader</item>
+    <item>Xamarin.AndroidX.LocalBroadcastManager</item>
+    <item>Xamarin.AndroidX.Media</item>
+    <item>Xamarin.AndroidX.MediaRouter</item>
+    <item>Xamarin.AndroidX.Migration</item>
+    <item>Xamarin.AndroidX.MultiDex</item>
+    <item>Xamarin.AndroidX.Palette</item>
+    <item>Xamarin.AndroidX.Preference</item>
+    <item>Xamarin.AndroidX.Print</item>
+    <item>Xamarin.AndroidX.RecyclerView</item>
+    <item>Xamarin.AndroidX.SavedState</item>
+    <item>Xamarin.AndroidX.SlidingPaneLayout</item>
+    <item>Xamarin.AndroidX.SwipeRefreshLayout</item>
+    <item>Xamarin.AndroidX.Transition</item>
+    <item>Xamarin.AndroidX.VectorDrawable</item>
+    <item>Xamarin.AndroidX.VectorDrawable.Animated</item>
+    <item>Xamarin.AndroidX.VersionedParcelable</item>
+    <item>Xamarin.AndroidX.ViewPager</item>
     <item>Xamarin.Build.Download</item>
     <item>Xamarin.Essentials</item>
+    <item>Xamarin.Firebase.Common</item>
+    <item>Xamarin.Firebase.Iid</item>
+    <item>Xamarin.Firebase.Iid.Interop</item>
+    <item>Xamarin.Firebase.Measurement.Connector</item>
+    <item>Xamarin.Firebase.Messaging</item>
+    <item>Xamarin.Google.Android.Material</item>
+    <item>Xamarin.Google.AutoValue.Annotations</item>
+    <item>Xamarin.GooglePlayServices.Base</item>
+    <item>Xamarin.GooglePlayServices.Basement</item>
+    <item>Xamarin.GooglePlayServices.Stats</item>
+    <item>Xamarin.GooglePlayServices.Tasks</item>
   </string-array>
 
   <string-array name="ExternLibrary_Explain">
     <item>This package contains the basic functionalities that all App Center services use to communicate with the backend.</item>
     <item>This package contains functionalities to collect session, device properties, events etc... for your application.</item>
     <item>This package contains functionalities to collect crash reports for your application.</item>
-    <item>Adds support for types added in later versions of .NET when targeting previous versions.</item>
+    <item>This package contains functionalities to send push notifications to users of your application from our portal.</item>
+    <item>This packages enables projects targeting down-level platforms to use some of the types added in later versions.</item>
     <item>Enables usage of the async and await keywords from projects targeting .NET Framework 4, Silverlight 4, and Windows Phone Siverlight 7.5.</item>
-    <item>Provides build infrastructure components for Microsoft packages.</item>
-    <item>This package provides a programming interface for modern HTTP/REST based applications.</item>
-    <item>Microsoft recommended code quality rules and .NET API usage rules, including the most important FxCop rules, implemented as analyzers using the .NET Compiler Platform (Roslyn). These analyzers check your code for security, performance, and design issues, among others.</item>
+    <item>This package provides build infrastructure components so that projects referencing specific Microsoft packages can successfully build.</item>
+    <item>These analyzers check your code for security, performance, and design issues, among others.</item>
+    <item>Microsoft.CodeAnalysis Version Check Analyzer</item>
+    <item>This package is included as a part of Microsoft.CodeAnalysis.FxCopAnalyzers NuGet package.</item>
+    <item>This package includes HttpClient for sending requests over HTTP, as well as HttpRequestMessage and HttpResponseMessage for processing HTTP messages.</item>
+    <item>This package is included as a part of Microsoft.CodeAnalysis.FxCopAnalyzers NuGet package.</item>
+    <item>This package is included as a part of Microsoft.CodeAnalysis.FxCopAnalyzers NuGet package.</item>
     <item>Color picker library for Xamarin Android</item>
     <item>Json.NET is a popular high-performance JSON framework for .NET</item>
     <item>Syncfusion licensing is a .NET library for validating the registered Syncfusion license in an application at runtime.</item>
@@ -78,6 +145,7 @@
     <item>Provides classes that define older non-generic collections of objects, such as lists, queues, hash tables and dictionaries. Developers should prefer the generic collections in the System.Collections package.</item>
     <item>Provides hardware-accelerated numeric types, suitable for high-performance processing and graphics application.</item>
     <item>Provides the System.Threading.Tasks.Parallel class, which adds support for running loops and iterators in parallel.</item>
+    <item>A light-weight and easy to use cross-platform audio player for Windows UWP/WPF, Xamarin.iOS, Xamarin.Android, Xamarin.Mac, Xamarin.tvOS, Tizen and Xamarin.Forms.</item>
     <item>Xamarin.Android bindings for Android Support Library - common</item>
     <item>Xamarin.Android bindings for Android Support Library - runtime</item>
     <item>Xamarin.Android bindings for Android Support Library - common</item>
@@ -85,6 +153,7 @@
     <item>Xamarin.Android bindings for Android Support Library - livedata-core</item>
     <item>Xamarin.Android bindings for Android Support Library - runtime</item>
     <item>Xamarin.Android bindings for Android Support Library - viewmodel</item>
+    <item>AVLoadingIndicatorView is a collection of nice loading animations for Android.</item>
     <item>Xamarin.Android binding for PhotoView - Implementation of ImageView for Android that supports zooming, by various touch gestures.</item>
     <item>Xamarin.Android bindings for Android Support Library - animated-vector-drawable</item>
     <item>Xamarin.Android bindings for Android Support Library - support-annotations</item>
@@ -120,18 +189,78 @@
     <item>Xamarin.Android bindings for Android Support Library - support-vector-drawable</item>
     <item>Xamarin.Android bindings for Android Support Library - versionedparcelable</item>
     <item>Xamarin.Android bindings for Android Support Library - viewpager</item>
+    <item>Xamarin.Android bindings for AndroidX - activity</item>
+    <item>Xamarin.Android bindings for AndroidX - annotation</item>
+    <item>Xamarin.Android bindings for AndroidX - appcompat</item>
+    <item>Xamarin.Android bindings for AndroidX - appcompat-resources</item>
+    <item>Xamarin.Android bindings for AndroidX - core-common</item>
+    <item>Xamarin.Android bindings for AndroidX - core-runtime</item>
+    <item>Xamarin.Android bindings for AndroidX - asynclayoutinflater</item>
+    <item>Xamarin.Android bindings for AndroidX - browser</item>
+    <item>Xamarin.Android bindings for AndroidX - cardview</item>
+    <item>Xamarin.Android bindings for AndroidX - collection</item>
+    <item>Xamarin.Android bindings for AndroidX - coordinatorlayout</item>
+    <item>Xamarin.Android bindings for AndroidX - core</item>
+    <item>Xamarin.Android bindings for AndroidX - cursoradapter</item>
+    <item>Xamarin.Android bindings for AndroidX - customview</item>
+    <item>Xamarin.Android bindings for AndroidX - documentfile</item>
+    <item>Xamarin.Android bindings for AndroidX - drawerlayout</item>
+    <item>Xamarin.Android bindings for AndroidX - fragment</item>
+    <item>Xamarin.Android bindings for AndroidX - interpolator</item>
+    <item>Xamarin.Android bindings for AndroidX - legacy-support-core-ui</item>
+    <item>Xamarin.Android bindings for AndroidX - legacy-support-core-utils</item>
+    <item>Xamarin.Android bindings for AndroidX - legacy-support-v4</item>
+    <item>Xamarin.Android bindings for AndroidX - lifecycle-common</item>
+    <item>Xamarin.Android bindings for AndroidX - lifecycle-livedata</item>
+    <item>Xamarin.Android bindings for AndroidX - lifecycle-livedata-core</item>
+    <item>Xamarin.Android bindings for AndroidX - lifecycle-runtime</item>
+    <item>Xamarin.Android bindings for AndroidX - lifecycle-viewmodel</item>
+    <item>Xamarin.Android bindings for AndroidX - loader</item>
+    <item>Xamarin.Android bindings for AndroidX - localbroadcastmanager</item>
+    <item>Xamarin.Android bindings for AndroidX - media</item>
+    <item>Xamarin.Android bindings for AndroidX - mediarouter</item>
+    <item>This package provides a set of tools and MSBuild tasks to aid in the migration from Android Support to Android X.</item>
+    <item>Xamarin.Android bindings for AndroidX - multidex</item>
+    <item>Xamarin.Android bindings for AndroidX - palette</item>
+    <item>Xamarin.Android bindings for AndroidX - preference</item>
+    <item>Xamarin.Android bindings for AndroidX - print</item>
+    <item>Xamarin.Android bindings for AndroidX - recyclerview</item>
+    <item>Xamarin.Android bindings for AndroidX - savedstate</item>
+    <item>Xamarin.Android bindings for AndroidX - slidingpanelayout</item>
+    <item>Xamarin.Android bindings for AndroidX - swiperefreshlayout</item>
+    <item>Xamarin.Android bindings for AndroidX - transition</item>
+    <item>Xamarin.Android bindings for AndroidX - vectordrawable</item>
+    <item>Xamarin.Android bindings for AndroidX - vectordrawable-animated</item>
+    <item>Xamarin.Android bindings for AndroidX - versionedparcelable</item>
+    <item>Xamarin.Android bindings for AndroidX - viewpager</item>
     <item>Support for downloading and unpacking archives when building MSBuild projects</item>
     <item>Xamarin.Essentials - a kit of essential APIs for your apps</item>
+    <item>Xamarin.Android Bindings for Google Play Services - Xamarin.Firebase.Common</item>
+    <item>Xamarin.Android Bindings for Google Play Services - Xamarin.Firebase.Iid</item>
+    <item>Xamarin.Android Bindings for Google Play Services - Xamarin.Firebase.Iid.Interop</item>
+    <item>Xamarin.Android Bindings for Google Play Services - Xamarin.Firebase.Measurement.Connector</item>
+    <item>Xamarin.Android Bindings for Google Play Services - Xamarin.Firebase.Messaging</item>
+    <item>Xamarin.Android bindings for AndroidX - material</item>
+    <item>* No Description *</item>
+    <item>Xamarin.Android Bindings for Google Play Services - Base</item>
+    <item>Xamarin.Android Bindings for Google Play Services - Basement</item>
+    <item>Xamarin.Android Bindings for Google Play Services - Stats</item>
+    <item>Xamarin.Android Bindings for Google Play Services - Tasks</item>
   </string-array>
   
   <string-array name="ExternLibrary_License">
     <item>Microsoft - MIT License</item>
     <item>Microsoft - MIT License</item>
     <item>Microsoft - MIT License</item>
+    <item>Microsoft - MIT License</item>
     <item>Microsoft - MICROSOFT SOFTWARE LICENSE TERMS</item>
     <item>Microsoft - MICROSOFT SOFTWARE LICENSE TERMS</item>
     <item>Microsoft - MICROSOFT SOFTWARE LICENSE TERMS</item>
+    <item>Apache-2.0</item>
+    <item>Apache-2.0</item>
+    <item>Apache-2.0</item>
     <item>Microsoft - MICROSOFT SOFTWARE LICENSE TERMS</item>
+    <item>Apache-2.0</item>
     <item>Apache-2.0</item>
     <item>Arcana Studio - Arcana Studio License</item>
     <item>NewtonSoft - MIT LICENSE</item>
@@ -140,6 +269,52 @@
     <item>Microsoft - MICROSOFT SOFTWARE LICENSE TERMS</item>
     <item>.NET Foundation and Contributors - MIT License</item>
     <item>Microsoft - MICROSOFT SOFTWARE LICENSE TERMS</item>
+    <item>MIT License</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>jzeferino - MIT License</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
     <item>.NET Foundation Contributor - MIT LICENSE</item>
     <item>.NET Foundation Contributor - MIT LICENSE</item>
     <item>.NET Foundation Contributor - MIT LICENSE</item>
@@ -184,22 +359,86 @@
     <item>.NET Foundation Contributor - MIT LICENSE</item>
     <item>Xamarin - MIT LICENSE</item>
     <item>Microsoft Corporation - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE with Android Software Development Kit License Agreement</item>
+    <item>.NET Foundation Contributor - MIT LICENSE with Android Software Development Kit License Agreement</item>
+    <item>.NET Foundation Contributor - MIT LICENSE with Android Software Development Kit License Agreement</item>
+    <item>.NET Foundation Contributor - MIT LICENSE with Android Software Development Kit License Agreement</item>
+    <item>.NET Foundation Contributor - MIT LICENSE with Android Software Development Kit License Agreement</item>
+    <item>.NET Foundation Contributor - MIT LICENSE</item>
+    <item>.NET Foundation Contributor - MIT LICENSE with Apache-2.0</item>
+    <item>.NET Foundation Contributor - MIT LICENSE with Android Software Development Kit License Agreement</item>
+    <item>.NET Foundation Contributor - MIT LICENSE with Android Software Development Kit License Agreement</item>
+    <item>.NET Foundation Contributor - MIT LICENSE with Android Software Development Kit License Agreement</item>
+    <item>.NET Foundation Contributor - MIT LICENSE with Android Software Development Kit License Agreement</item>
   </string-array>
 
   <string-array name="ExternLibrary_LicenseType">
     <item>MIT</item>
     <item>MIT</item>
     <item>MIT</item>
+    <item>MIT</item>
     <item>Microsoft_License</item>
     <item>Microsoft_License</item>
     <item>Microsoft_License</item>
+    <item>Apache-2.0</item>
+    <item>Apache-2.0</item>
+    <item>Apache-2.0</item>
     <item>Microsoft_License</item>
+    <item>Apache-2.0</item>
+    <item>Apache-2.0</item>
     <item>Arcana_Studio_License</item>
     <item>MIT_NewtonSoft</item>
     <item>Syncfusion_License</item>
     <item>Syncfusion_License</item>
     <item>Microsoft_License</item>
     <item>MIT_.NET Foundation and Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_jzeferino</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor</item>
     <item>MIT_.NET Foundation Contributor</item>
     <item>MIT_.NET Foundation Contributor</item>
     <item>MIT_.NET Foundation Contributor</item>
@@ -244,5 +483,16 @@
     <item>MIT_.NET Foundation Contributor</item>
     <item>MIT_Xamarin</item>
     <item>MIT_Microsoft Corporation</item>
+    <item>MIT_.NET Foundation Contributor_Android Software Development Kit License Agreement</item>
+    <item>MIT_.NET Foundation Contributor_Android Software Development Kit License Agreement</item>
+    <item>MIT_.NET Foundation Contributor_Android Software Development Kit License Agreement</item>
+    <item>MIT_.NET Foundation Contributor_Android Software Development Kit License Agreement</item>
+    <item>MIT_.NET Foundation Contributor_Android Software Development Kit License Agreement</item>
+    <item>MIT_.NET Foundation Contributor</item>
+    <item>MIT_.NET Foundation Contributor_Apache-2.0</item>
+    <item>MIT_.NET Foundation Contributor_Android Software Development Kit License Agreement</item>
+    <item>MIT_.NET Foundation Contributor_Android Software Development Kit License Agreement</item>
+    <item>MIT_.NET Foundation Contributor_Android Software Development Kit License Agreement</item>
+    <item>MIT_.NET Foundation Contributor_Android Software Development Kit License Agreement</item>
   </string-array>
 </resources>

@@ -199,32 +199,35 @@ namespace GFI_with_GFS_A
         // Auto Run Mode
         private void RunStartMode()
         {
-            /*switch (ETC.sharedPreferences.GetString("StartAppMode", "0"))
+            switch (ETC.sharedPreferences.GetString("StartAppMode", "0"))
             {
                 case "1":
                     ChangeFragment(Resource.Id.MainNavigation_DB); // DB Sub Menu
                     break;
                 case "2":
-                    MainOldGFDSubMenu_Click(mainCardViewList[3], 0); // OldGFD
+                    var oldGFDIntent = new Intent(this, typeof(OldGFDViewer));
+                    oldGFDIntent.PutExtra("Index", 0);
+                    StartActivity(oldGFDIntent);
+                    OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut); // OldGFD
                     break;
                 case "3":
-                    MainExtrasSubMenu_Click(mainCardViewList[2], 3); // Area Tip
+                    (mainGFUtilF as GFUtilFragment).Adapter_ItemClick(null, 4); // Area Tip
                     break;
                 case "4":
-                    MainExtrasSubMenu_Click(mainCardViewList[2], 2); // Calc
+                    (mainGFUtilF as GFUtilFragment).Adapter_ItemClick(null, 3); // Calc
                     break;
                 case "5":
-                    MainExtrasSubMenu_Click(mainCardViewList[2], 0); // Event
+                    (mainGFUtilF as GFUtilFragment).Adapter_ItemClick(null, 1); // Event
                     break;
                 case "6":
-                    MainExtrasSubMenu_Click(mainCardViewList[2], 1); // Offical Notification
+                    (mainGFUtilF as GFUtilFragment).Adapter_ItemClick(null, 0); // Offical Notification
                     break;
                 case "7":
-                    MainExtrasSubMenu_Click(mainCardViewList[2], 9); // OST Player
+                    (mainOtherF as OtherFragment).Adapter_ItemClick(null, 2); // OST Player
                     break;
                 default:
                     break;
-            }*/
+            }
         }
 
         private async Task InitializeProcess()

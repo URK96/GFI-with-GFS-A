@@ -65,6 +65,8 @@ namespace GFI_with_GFS_A
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailToolbarAffiliation).Text = enemy.Affiliation;
                 FindViewById<TextView>(Resource.Id.EnemyDBDetailToolbarName).Text = enemy.Name;
 
+                refreshMainLayout.Refresh += async delegate { await InitLoadProcess(true); };
+
                 FindViewById<ImageView>(Resource.Id.EnemyDBDetailSmallImage).Click += EnemyDBDetailSmallImage_Click;
                 typeSelector = FindViewById<Spinner>(Resource.Id.EnemyDBDetailEnemyTypeSelector);
                 typeSelector.ItemSelected += TypeSelector_ItemSelected;
@@ -84,7 +86,7 @@ namespace GFI_with_GFS_A
                 snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EnemyDBDetailSnackbarLayout);
 
                 await InitializeProcess();
-                await InitLoadProcess();
+                await InitLoadProcess(false);
             }
             catch (Exception ex)
             {
@@ -225,7 +227,7 @@ namespace GFI_with_GFS_A
         {
             enemyTypeIndex = e.Position;
 
-            _ = InitLoadProcess();
+            _ = InitLoadProcess(false);
         }
 
         private void EnemyDBDetailSmallImage_Click(object sender, EventArgs e)
@@ -244,7 +246,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task InitLoadProcess()
+        private async Task InitLoadProcess(bool isRefresh)
         {
             await Task.Delay(100);
 
@@ -260,7 +262,7 @@ namespace GFI_with_GFS_A
                 {
                     string imagePath = Path.Combine(ETC.cachePath, "Enemy", "Normal", $"{enemy.CodeName}.gfdcache");
 
-                    if (!File.Exists(imagePath))
+                    if (!File.Exists(imagePath) || isRefresh)
                     {
                         using (WebClient wc = new WebClient())
                         {
@@ -275,7 +277,7 @@ namespace GFI_with_GFS_A
 
                 string cropImagePath = Path.Combine(ETC.cachePath, "Enemy", "Normal_Crop", $"{enemy.CodeName}.gfdcache");
 
-                if (!File.Exists(cropImagePath))
+                if (!File.Exists(cropImagePath) || isRefresh)
                 {
                     using (WebClient wc = new WebClient())
                     {
@@ -338,6 +340,11 @@ namespace GFI_with_GFS_A
                     FindViewById<TextView>(StatusTexts[i]).Text = value.ToString();
                 }
 
+                if (ETC.useLightTheme)
+                {
+                    SetCardTheme();
+                }
+
                 ShowCardViewVisibility();
             }
             catch (WebException ex)
@@ -345,7 +352,7 @@ namespace GFI_with_GFS_A
                 ETC.LogError(ex, this);
                 ETC.ShowSnackbar(snackbarLayout, Resource.String.RetryLoad_CauseNetwork, Snackbar.LengthShort, Android.Graphics.Color.DarkMagenta);
 
-                _ = InitLoadProcess();
+                _ = InitLoadProcess(false);
 
                 return;
             }
@@ -357,6 +364,24 @@ namespace GFI_with_GFS_A
             finally
             {
                 refreshMainLayout.Refreshing = false;
+            }
+        }
+
+        private void SetCardTheme()
+        {
+            int[] CardViewIds =
+            {
+                Resource.Id.EnemyDBDetailEnemyTypeSelectCardLayout,
+                Resource.Id.EnemyDBDetailBasicInfoCardLayout,
+                Resource.Id.EnemyDBDetailAbilityCardLayout
+            };
+
+            foreach (int id in CardViewIds)
+            {
+                CardView cv = FindViewById<CardView>(id);
+
+                cv.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
+                cv.Radius = 15.0f;
             }
         }
 

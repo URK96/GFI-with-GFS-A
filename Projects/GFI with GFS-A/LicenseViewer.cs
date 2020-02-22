@@ -56,6 +56,8 @@ namespace GFI_with_GFS_A
 
         private async Task ReadLicense()
         {
+            await Task.Delay(100);
+
             string assetName = "";
 
             try
@@ -89,8 +91,17 @@ namespace GFI_with_GFS_A
                     case "MIT_Microsoft Corporation":
                         assetName = "Xamarin.Essentials_MIT_License.txt";
                         break;
+                    case "MIT_jzeferino":
+                        assetName = "jzeferino_MIT_License.txt";
+                        break;
                     case "Apache-2.0":
                         assetName = "Apache2.0.txt";
+                        break;
+                    case "MIT_.NET Foundation Contributor_Android Software Development Kit License Agreement":
+                        assetName = "Android Software Development Kit License Agreement_with_MIT.txt";
+                        break;
+                    case "MIT_.NET Foundation Contributor_Apache-2.0":
+                        assetName = "Apache2.0_with_MIT.txt";
                         break;
                     case "Unknown":
                         assetName = "Unknown.txt";

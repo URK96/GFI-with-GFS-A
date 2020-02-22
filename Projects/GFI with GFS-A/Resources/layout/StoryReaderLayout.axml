@@ -8,10 +8,21 @@
         android:layout_height="wrap_content"
 		android:background="@color/MainColor"
         android:id="@+id/StoryReaderMainToolbar" >
-		<TextView
+		<LinearLayout
+			android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-			android:id="@+id/StoryReaderNowStoryText"/>
+            android:layout_height="match_parent">
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:id="@+id/StoryReaderToolbarNowStoryCategory"/>
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:id="@+id/StoryReaderToolbarNowStoryTitle"/>
+		</LinearLayout>
 	</android.support.v7.widget.Toolbar>
 	<ProgressBar
 		android:layout_width="match_parent"

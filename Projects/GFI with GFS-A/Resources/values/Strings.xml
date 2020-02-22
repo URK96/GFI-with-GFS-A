@@ -481,12 +481,19 @@
   <string name="ProductSimulatorActivity_GroupDollError">T-Doll Classification Error</string>
   <string name="ProductSimulatorActivity_ProductDollError">T-Doll Production Error</string>
   
-  <!--ProductSimulatorCategorySelect-->
-  <string name="ProductSimulatorCategorySelectActivity_Title">I.O.P Production</string>
-  <string name="ProductSimulatorCategorySelectActivity_DollNormalProduct">T-Doll Normal</string>
-  <string name="ProductSimulatorCategorySelectActivity_DollAdvancedProduct">T-Doll Advanced</string>
-  <string name="ProductSimulatorCategorySelectActivity_EquipNormalProduct">Equip Normal</string>
-  <string name="ProductSimulatorCategorySelectActivity_EquipAdvancedProduct">Equip Advanced</string>
+  <!--ProductSimulatorCategory-->
+  <string name="ProductSimulatorCategoryActivity_Title">I.O.P Production</string>
+  <string name="ProductSimulatorCategoryActivity_DollNormalProduct">T-Doll Normal</string>
+  <string name="ProductSimulatorCategoryActivity_DollAdvancedProduct">T-Doll Advanced</string>
+  <string name="ProductSimulatorCategoryActivity_EquipNormalProduct">Equip Normal</string>
+  <string name="ProductSimulatorCategoryActivity_EquipAdvancedProduct">Equip Advanced</string>
+  <string name="ProductSimulatorCategoryActivity_DollNormalProduct_Caption">T-Doll Normal</string>
+  <string name="ProductSimulatorCategoryActivity_DollAdvancedProduct_Caption">T-Doll Advanced</string>
+  <string name="ProductSimulatorCategoryActivity_EquipNormalProduct_Caption">Equip Normal</string>
+  <string name="ProductSimulatorCategoryActivity_EquipAdvancedProduct_Caption">Equip Advanced</string>
+
+  <!--ProductSimulatorResult-->
+  <string name="ProductSimulatorResultActivity_Title">Product Result</string>
   
   <!--Setting-->
   <string name="SettingActivity_Title">Settings</string>

@@ -3460,7 +3460,7 @@
     <SkillExplain>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect>
     <SkillMag>4초,8초,5초,260%</SkillMag>
-    <Costume>검은토끼 마키아또;토끼 특공대장</Costume>
+    <Costume>검은토끼 마키아또;토끼 특공대장;무녀의 운수대통 부적</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Takada Yuuki</VoiceActor>
@@ -4472,7 +4472,7 @@
     <SkillExplain>야간작전 시 지속시간 동안 자신의 화력을 증가시킨다. 주간에는 효과치가 감소한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;야간 화력 증가치;주간 화력 증가치</SkillEffect>
     <SkillMag>5초,16초,6초,180%,60%</SkillMag>
-    <Costume>총알 카페</Costume>
+    <Costume>총알 카페;꿈을 담은 화살</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Nakahara Mai</VoiceActor>
@@ -4956,7 +4956,7 @@
     <SkillExplain>지속시간 동안 공격시 타격횟수를 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;타격횟수</SkillEffect>
     <SkillMag>6초,16초,4.5초,3번</SkillMag>
-    <Costume>은톨이 좀비;가장 아름다운 선물;용가리 주니어</Costume>
+    <Costume>은톨이 좀비;가장 아름다운 선물;용가리 주니어;봄잠 자는 쥐</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Fukuhara Ayaka</VoiceActor>
@@ -5834,6 +5834,7 @@
     <SkillExplain>지속시간 동안 자신의 사속을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치</SkillEffect>
     <SkillMag>5초,16초,15초,40%</SkillMag>
+    <Costume>백설 홍매화</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Mimori Suzuko</VoiceActor>
@@ -7339,7 +7340,7 @@
     <SkillExplain>지속시간 동안 자신의 화력을 증가시키고 발사 중인 탄띠에 탄을 추가한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;발사 수 증가치</SkillEffect>
     <SkillMag>8초,18초,8초,30%,4발</SkillMag>
-    <Costume>휴일의 거리 풍경;밤이 되었습니다</Costume>
+    <Costume>휴일의 거리 풍경;밤이 되었습니다;사자탈춤</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Taneda Risa</VoiceActor>
@@ -11877,6 +11878,7 @@
     <SkillExplain>&lt;일반공격&gt; 1초마다 제일 뒤에 있는 적에게 1.5배의 피해를 준다. 2발 사격 후 재장전하며 사속이 높을수록 재장선이 빨라진다.   &lt;패시브&gt; 전투 개시 후 6초, 전투 중 8초마다 특수 탄환 1발을 얻는다. 최대 2발 보유 가능하며 보유한 특수 탄환 1발 당 화력과 명중이 상승한다.   &lt;액티브&gt; 특수 탄환을 1발 소모해 2초간 조준 후, 체력이 가장 많은 적에게 피해를 준다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;화력 상승치;명중 상승치;저격 피해량</SkillEffect>
     <SkillMag>6초,1초,18%,18%,2.5배</SkillMag>
+    <Costume>그대 곁에서</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINEWIN</Voices>
     <VoiceActor>Oojora Naomi</VoiceActor>
@@ -12608,7 +12610,7 @@
     <SkillExplain>&lt;액티브&gt; 자신의 사속을 증가시킨다.  &lt;패시브&gt; 2회 공격 후, 다음 공격 시 관통 효과를 가진 탄환으로 관통한 적과 목표에게 피해를 준다. 이 공격은 반드시 명중한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치</SkillEffect>
     <SkillMag>6초,8초,5초,55%</SkillMag>
-    <Costume>4번함 출항</Costume>
+    <Costume>4번함 출항;꽃 제기 치기</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Ito Miku</VoiceActor>

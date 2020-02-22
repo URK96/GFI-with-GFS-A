@@ -139,9 +139,9 @@ namespace GFI_with_GFS_A
                         case 4:
                             await Task.Run(() =>
                             {
-                                if (string.IsNullOrEmpty(ETC.FSTList.TableName))
+                                if (string.IsNullOrEmpty(ETC.fstList.TableName))
                                 {
-                                    ETC.LoadDBSync(ETC.FSTList, "FST.gfs", false);
+                                    ETC.LoadDBSync(ETC.fstList, "FST.gfs", false);
                                 }
                             });
 
@@ -223,7 +223,7 @@ namespace GFI_with_GFS_A
                 return view;
             }
 
-            private async void Adapter_ItemClick(object sender, int e)
+            internal async void Adapter_ItemClick(object sender, int e)
             {
                 await Task.Delay(10);
 
@@ -316,7 +316,7 @@ namespace GFI_with_GFS_A
                 return view;
             }
 
-            private async void Adapter_ItemClick(object sender, int e)
+            internal async void Adapter_ItemClick(object sender, int e)
             {
                 await Task.Delay(10);
 
@@ -327,7 +327,7 @@ namespace GFI_with_GFS_A
                         case 0:
                             if (ETC.dbVersion != 0)
                             {
-                                Activity.StartActivity(typeof(ProductSimulatorCategorySelectActivity));
+                                Activity.StartActivity(typeof(ProductSimulatorCategoryActivity));
                                 Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                             }
                             else

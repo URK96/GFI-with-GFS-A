@@ -45,7 +45,7 @@ namespace GFI_with_GFS_A
         internal static DataTable equipmentList = new DataTable();
         internal static DataTable fairyList = new DataTable();
         internal static DataTable enemyList = new DataTable();
-        internal static DataTable FSTList = new DataTable();
+        internal static DataTable fstList = new DataTable();
         internal static DataTable skillTrainingList = new DataTable();
         internal static DataTable mdSupportList = new DataTable();
         internal static DataTable freeOPList = new DataTable();
@@ -85,13 +85,15 @@ namespace GFI_with_GFS_A
 
             sharedPreferences = Android.Support.V7.Preferences.PreferenceManager.GetDefaultSharedPreferences(context);
             useLightTheme = sharedPreferences.GetBoolean("UseLightTheme", false);
+
             SetDialogTheme();
             SetLanguage(context);
+
             Resources = baseContext.Resources;
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTg2NDEyQDMxMzcyZTM0MmUzMHBENmM5Wk42Zyt4dVNVZm1qUTVhTW9DeWtBTFJLY1RGekRnMTgxOEpiQ3c9");
 
             //sdCardPath = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
-            appDataPath = baseContext.GetExternalFilesDir(null).AbsolutePath; //Path.Combine(sdCardPath, "Android", "data", "com.gfl.dic");
+            appDataPath = FileSystem.AppDataDirectory; //baseContext.GetExternalFilesDir(null).AbsolutePath; //Path.Combine(sdCardPath, "Android", "data", "com.gfl.dic");
             tempPath = Path.Combine(appDataPath, "GFDTemp");
             dbPath = Path.Combine(appDataPath, "DB");
             systemPath = Path.Combine(appDataPath, "System");
@@ -110,7 +112,7 @@ namespace GFI_with_GFS_A
 
         internal static void SetLanguage(Context context)
         {
-            int langIndex = int.Parse(ETC.sharedPreferences.GetString("AppLanguage", "0"));
+            int langIndex = int.Parse(sharedPreferences.GetString("AppLanguage", "0"));
 
             var locale = langIndex switch
             {
@@ -123,6 +125,7 @@ namespace GFI_with_GFS_A
             {
                 Locale = locale
             };
+
             ETC.locale = locale;
             baseContext = context.CreateConfigurationContext(config);
         }
@@ -346,8 +349,8 @@ namespace GFI_with_GFS_A
                 _ = fairyList.ReadXml(Path.Combine(dbPath, "Fairy.gfs"));
                 enemyList.Clear();
                 _ = enemyList.ReadXml(Path.Combine(dbPath, "Enemy.gfs"));
-                FSTList.Clear();
-                _ = FSTList.ReadXml(Path.Combine(dbPath, "FST.gfs"));
+                fstList.Clear();
+                _ = fstList.ReadXml(Path.Combine(dbPath, "FST.gfs"));
                 skillTrainingList.Clear();
                 _ = skillTrainingList.ReadXml(Path.Combine(dbPath, "SkillTraining.gfs"));
                 mdSupportList.Clear();
@@ -652,7 +655,7 @@ namespace GFI_with_GFS_A
 
         internal static void ShuffleList<T>(this IList<T> list)
         {
-            RNGCryptoServiceProvider provider = new RNGCryptoServiceProvider();
+            var provider = new RNGCryptoServiceProvider();
             byte[] rNum = new byte[1];
             T temp;
             int r;
@@ -672,7 +675,7 @@ namespace GFI_with_GFS_A
 
         internal static int CreateRandomNum(int mag = 1)
         {
-            RNGCryptoServiceProvider provider = new RNGCryptoServiceProvider();
+            var provider = new RNGCryptoServiceProvider();
             byte[] rNum = new byte[1];
 
             provider.GetBytes(rNum);
