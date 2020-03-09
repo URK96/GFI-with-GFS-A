@@ -44,6 +44,7 @@
     <item>@string/Main_GFUtil_AreaTip</item>
     <item>@string/Main_GFUtil_ShortGuideBookViewer</item>
     <item>@string/Main_GFUtil_Story</item>
+    <item>@string/Main_GFUtil_SDSimulator</item>
   </string-array>
 
   <string-array name="Main_Other_TitleList">

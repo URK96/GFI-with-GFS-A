@@ -6,50 +6,45 @@
     android:layout_height="match_parent"
     android:id="@+id/WebBrowserMainRefreshLayout">
 
-    <android.support.design.widget.CoordinatorLayout 
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:descendantFocusability="beforeDescendants"
-        android:focusableInTouchMode="true">
-        <android.support.design.widget.AppBarLayout
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/WebBrowserAppBar">
-            <android.support.design.widget.CollapsingToolbarLayout
-                android:id="@+id/collapsing_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?android:attr/actionBarSize"
-                android:fitsSystemWindows="true"
-                app:contentScrim="?attr/colorPrimary"
-                app:expandedTitleMarginEnd="64dp"
-                app:expandedTitleMarginStart="48dp"
-                app:layout_scrollFlags="scroll|enterAlways">
-                <android.support.v7.widget.Toolbar
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="?android:attr/actionBarSize"
-                    android:background="@color/MainColor"
-                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                    android:id="@+id/WebBrowserMainToolbar">
-                    <EditText
-                        android:descendantFocusability="beforeDescendants"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:enabled="true"
-                        android:selectAllOnFocus="true"
-                        android:inputType="text"
-                        android:imeOptions="actionDone"
-                        android:id="@+id/WebBrowserAddressBar"/>
-                </android.support.v7.widget.Toolbar>
-            </android.support.design.widget.CollapsingToolbarLayout>
-        </android.support.design.widget.AppBarLayout>
+            android:minHeight="?android:attr/actionBarSize"
+            android:background="@color/MainColor"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:id="@+id/WebBrowserMainToolbar">
 
-        <android.webkit.WebView
+            <EditText
+                android:descendantFocusability="beforeDescendants"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:enabled="true"
+                android:selectAllOnFocus="true"
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:id="@+id/WebBrowserAddressBar"/>
+
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/WebBrowser"/>
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.webkit.WebView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/WebBrowser"/>
+
+        </android.support.v4.widget.NestedScrollView>
     
-    </android.support.design.widget.CoordinatorLayout>
+    </LinearLayout>
+
 </android.support.v4.widget.SwipeRefreshLayout>

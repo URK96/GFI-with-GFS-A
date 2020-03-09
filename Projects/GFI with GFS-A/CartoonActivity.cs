@@ -176,6 +176,7 @@ namespace GFI_with_GFS_A
                                 case 5:
                                 case 6:
                                 case 9:
+                                case 11:
                                     _ = (cartoonScreenF as CartoonScreen).LoadProcess(categoryList[categoryIndex], categoryIndex, e.Position - 1, false);
                                     break;
                                 case 7:
@@ -232,6 +233,9 @@ namespace GFI_with_GFS_A
                     break;
                 case 10:
                     list.AddRange(Resources.GetStringArray(Resource.Array.Geo_GF));
+                    break;
+                case 11:
+                    list.AddRange(Resources.GetStringArray(Resource.Array.senlong_GF));
                     break;
             }
         }
@@ -403,6 +407,10 @@ namespace GFI_with_GFS_A
                     case 9:
                         tv1.Text = "Creator : MMM";
                         tv2.Text = "https://www.pixiv.net/member.php?id=25683341";
+                        break;
+                    case 11:
+                        tv1.Text = "Creator : 센롱";
+                        tv2.Text = "https://www.pixiv.net/users/21946119";
                         break;
                 }
 

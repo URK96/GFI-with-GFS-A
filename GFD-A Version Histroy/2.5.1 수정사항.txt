@@ -1,0 +1,15 @@
+<2.5.1 수정사항>
+
+- SD 시뮬 기능 추가 (웹 페이지)
+- 일부 기기에서 이유 없이 강제 종료되는 문제 수정
+- 내장 웹브라우저 상단 내용이 짤리는 현상 수정
+- 만화 카테고리 추가 (센롱의 숏컷전선)
+- 만화 컨텐츠 추가 (츠보우의 소녀전선)
+
+<2.5.1 Update>
+
+- Add SD Simulator Web
+- Fix app crash issue
+- Fix web browser layout issue
+- Add cartoon category
+- Add cartoon content

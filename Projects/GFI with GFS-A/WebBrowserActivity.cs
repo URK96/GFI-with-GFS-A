@@ -81,7 +81,7 @@ namespace GFI_with_GFS_A
             web.Settings.BlockNetworkLoads = false;
             web.Settings.LoadsImagesAutomatically = true;
             web.Settings.DomStorageEnabled = true;
-            web.Settings.SetAppCacheEnabled(true);
+            web.Settings.SetAppCacheEnabled(false);
             
             InitProcess();
         }

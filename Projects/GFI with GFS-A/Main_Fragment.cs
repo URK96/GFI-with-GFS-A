@@ -281,6 +281,12 @@ namespace GFI_with_GFS_A
                             Activity.StartActivity(typeof(StoryActivity));
                             Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                             break;
+                        case 7:
+                            var sdIntent = new Intent(Activity, typeof(WebBrowserActivity));
+                            sdIntent.PutExtra("url", "http://urk96.github.io/gfd-sd-simulator");
+                            StartActivity(sdIntent);
+                            Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                            break;
                         default:
                             //ETC.ShowSnackbar(snackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
                             Toast.MakeText(Activity, Resource.String.AbnormalAccess, ToastLength.Short).Show();

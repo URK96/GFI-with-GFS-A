@@ -1,16 +1,7 @@
-<2.5.0 Update>
+<2.5.1 Update>
 
-- Change support min OS version (Android OS 5.0)
-- Improve main UI
-- Improve FST detail UI
-- Improve Enemy detail UI
-- Improve Product Simulator UI
-- Improve internal web browser UI
-- Change png type icon to vector icon
-- Add some icons
+- Add SD Simulator Web
+- Fix app crash issue
+- Fix web browser layout issue
+- Add cartoon category
 - Add cartoon content
-- Fix story reader title issue
-- Fix event static shortcut crash issue
-- Add & Remove setting content
-- Update NuGet packages & license
-- Migration to AndroidX

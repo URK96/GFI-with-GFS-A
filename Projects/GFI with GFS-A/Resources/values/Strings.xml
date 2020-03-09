@@ -455,6 +455,7 @@
   <string name="Main_GFUtil_Story">Story</string>
   <string name="Main_GFUtil_GuideBookViewer">Guide Book</string>
   <string name="Main_GFUtil_ShortGuideBookViewer">Beginner Guide</string>
+  <string name="Main_GFUtil_SDSimulator">SD Simulator</string>
 
   <!--New Main - Other-->
   <string name="Main_Other_ProductSimulator">Manufacturing Simulation</string>

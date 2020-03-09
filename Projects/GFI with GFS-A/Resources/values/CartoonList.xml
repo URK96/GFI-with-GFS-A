@@ -12,6 +12,7 @@
     <item>불멸전선</item>
     <item>학식전선</item>
     <item>Geo의 코믹전선</item>
+    <item>센롱의 숏컷전선</item>
   </string-array>
 
   <string-array name="kazensky_GF">
@@ -131,6 +132,7 @@
     <item>K2와 네게브의 부관면접</item>
     <item>아빠가 없어</item>
     <item>식사 문제</item>
+    <item>나강 리볼버 할매</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -665,5 +667,179 @@
     <item>http://naver.me/xpDhAzU4</item>
     <item>http://naver.me/FirnEGRx</item>
     <item>http://naver.me/Fq9FN2wD</item>
+  </string-array>
+
+  <string-array name="senlong_GF">
+    <item>냥혐게임 소녀전선</item>
+    <item>고양이의 음악시간</item>
+    <item>요리하는 와짱</item>
+    <item>아이스크림 와짱</item>
+    <item>와짱의 와갤요리</item>
+    <item>와짱의 와갤요리 2</item>
+    <item>와짱의 와갤요리 -봉쥬르-</item>
+    <item>술취한 흥국이</item>
+    <item>IWS2000 별명지어주는 3컷</item>
+    <item>엠뀨(M99)와 토끼</item>
+    <item>와짱과 세일러복</item>
+    <item>95식과 97식 만화</item>
+    <item>95식의 여름나기</item>
+    <item>와짱의 몸무게</item>
+    <item>97식과 우로보로스</item>
+    <item>우로보로스가 파세짱 벗긴 만화</item>
+    <item>우로보로스의 파세 흉내내기</item>
+    <item>제발 파세를 주세요</item>
+    <item>와짱의 요리에 대응하는 파세짱</item>
+    <item>울보와짱과 춘전이</item>
+    <item>와짱을 쉽게 그려보자!</item>
+    <item>자유의 우로짱</item>
+    <item>춘전이의 파이팅 포즈</item>
+    <item>M14가 바라보는 춘전이</item>
+    <item>젠카이노 춘전이</item>
+    <item>흥국이가 해주는 승리의 주문</item>
+    <item>성우가 붙은 웰로드 장군</item>
+    <item>우리 개는 안물어요</item>
+    <item>지휘관이 선물해준 롱패딩</item>
+    <item>아이스크림가게 알바하는 와짱</item>
+    <item>아이스크림가게 알바하는 와짱 2</item>
+    <item>대신귀여운와파카를드리겟습니다</item>
+    <item>케이크 처음만들어본 와짱</item>
+    <item>선물받은 카구팔과 와짱</item>
+    <item>이유식 먹는 이유식 어린이</item>
+    <item>여러가지 와짱</item>
+    <item>흥국생명에서 일하는 흥국이</item>
+    <item>어린 와짱과 엠뀨</item>
+    <item>궁예전선</item>
+    <item>끝말잇기하는 흥국이</item>
+    <item>DSR-50의 새로운 별명</item>
+    <item>AR소대의 헤어스타일</item>
+    <item>뉴스에 나온 소녀전선</item>
+    <item>특이점데레 흥국이</item>
+    <item>요리의신 와짱</item>
+    <item>와짱의 요리사 도전!</item>
+    <item>갑자기 분위기 사오</item>
+    <item>스파스와 탕수육</item>
+    <item>와짱 특제 음식을 먹는 스파스</item>
+    <item>95식 97식 퀴즈</item>
+    <item>단식투쟁 스파스</item>
+    <item>WA2000 골목식당</item>
+    <item>토끼모자 엠뀨</item>
+    <item>회전초밥 스파스</item>
+    <item>흥국이식 위로</item>
+    <item>분위기 변신 우지</item>
+    <item>초강력 네게브</item>
+    <item>잠탱판매자 흥국이</item>
+    <item>댕댕이도 거르는 그 요리</item>
+    <item>해피뉴이어 스파스</item>
+    <item>흥국이 움뀨에디션</item>
+    <item>도둑맞은 흥국이 옷</item>
+    <item>귀여워해주고 싶었던 흥국이</item>
+    <item>커플이 싫은 움뀨</item>
+    <item>몸이 바뀐 움자매</item>
+    <item>뀨블리 UMP9</item>
+    <item>침투준비 UMP9</item>
+    <item>UMP45의 질투 방법</item>
+    <item>흥국이 욕 참기 챌린지</item>
+    <item>우지 해체당하다</item>
+    <item>안구사 고체온증</item>
+    <item>화내는 UMP9</item>
+    <item>어린이 움사오</item>
+    <item>평행세계 움자매</item>
+    <item>UMP9 라이더</item>
+    <item>SNS계정 만든 UMP9</item>
+    <item>삐진 UMP9</item>
+    <item>UMP9 술 내기</item>
+    <item>G11 깨우기</item>
+    <item>와이파이 소프모드</item>
+    <item>분위기 변신 와짱</item>
+    <item>꼬리 신경 TMP</item>
+    <item>움뀨의 애완동물</item>
+    <item>말랑말랑 흥국이</item>
+    <item>MDR의 인기 특강</item>
+    <item>댕댕이 트윈테일</item>
+    <item>마인드맵 고장난 와짱</item>
+    <item>우지의 변형</item>
+    <item>트윈테일 소프모드</item>
+    <item>발렌타인 소프모드</item>
+    <item>분위기 전환 우리형</item>
+    <item>흥국 TV</item>
+    <item>흥국이와 숨바꼭질</item>
+    <item>부츠챠!</item>
+    <item>사오흥국 자괴감배틀</item>
+    <item>콩지와 도끼</item>
+    <item>움뀨흥국 끝말잇기</item>
+    <item>구아구아</item>
+    <item>새학기 흥국이</item>
+    <item>새학기 흥국이 2</item>
+    <item>우지 선생님</item>
+    <item>인형뽑기</item>
+    <item>조별과제 흥국이</item>
+    <item>사오와 면접</item>
+    <item>앞머리 소프모드</item>
+    <item>카페 흥국이</item>
+    <item>와쟝과 공포영화</item>
+    <item>머리 엉킨 사오흥국</item>
+    <item>흥국이가 톡을 보냈다</item>
+    <item>약속</item>
+    <item>흥국이와 그림</item>
+    <item>움뀨의 간식</item>
+    <item>주스</item>
+    <item>안녕흥국법</item>
+    <item>싫어하는 척</item>
+    <item>휴가</item>
+    <item>흥국이 2호기</item>
+    <item>춘전 어린이</item>
+    <item>뭔가 잘못된 HK416</item>
+    <item>사오의 소개</item>
+    <item>늦게 터지는 타입</item>
+    <item>적안의 솦모</item>
+    <item>흥국이의 유년기</item>
+    <item>G11 선배</item>
+    <item>유투브를 시작한 MDR</item>
+    <item>벽쿵 움뀨</item>
+    <item>솦모 하고 싶은거 다 해!</item>
+    <item>HK416의 사진 촬영</item>
+    <item>뀨흐흑</item>
+    <item>세대차이</item>
+    <item>엘리트 사오</item>
+    <item>내꺼</item>
+    <item>네가 몰 알아!</item>
+    <item>사오 퀴즈</item>
+    <item>우로보로스와 지휘관</item>
+    <item>MDR 개조 소식!</item>
+    <item>우지했다</item>
+    <item>암흑진화 UMP9</item>
+    <item>마법소녀★흥국이</item>
+    <item>마법소녀★흥국이 2</item>
+    <item>마법소녀★흥국이 3</item>
+    <item>마법소녀★흥국이 4</item>
+    <item>마법소녀★흥국이 5</item>
+    <item>마법소녀★흥국이 6</item>
+    <item>마법소녀★흥국이 7</item>
+    <item>한 단어</item>
+    <item>PASSWAD</item>
+    <item>안구사의 독촉</item>
+    <item>질 스팅레이의 숙취송♪</item>
+    <item>라이브2D 와쟝</item>
+    <item>흥국이는 안했어!</item>
+    <item>성탄절 흥국이</item>
+    <item>효녀 M14</item>
+    <item>나강의 새해맞이</item>
+    <item>AK-15 마일로의 자기암시</item>
+    <item>AK-15 마일로의 불만</item>
+    <item>AK-15, 딸기치즈케익</item>
+    <item>마일로</item>
+    <item>마일로 2</item>
+    <item>트윈테일의 날 404</item>
+    <item>파세의 제조응원</item>
+    <item>파세 씨리즈</item>
+    <item>취한다</item>
+    <item>부들부들 안구사</item>
+    <item>돌돌 계란말이</item>
+    <item>와쟝눈나</item>
+    <item>흥국이 3호기</item>
+    <item>얀데레 스파스</item>
+    <item>해체에용</item>
+    <item>와짱 2호기,3호기</item>
+    <item>나강(11세)</item>
   </string-array>
 </resources>
