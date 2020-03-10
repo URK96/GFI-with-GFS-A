@@ -269,4 +269,25 @@
     <item>유통기한</item>
     <item>방부제</item>
   </string-array>
+
+  <string-array name="Story_Main_Main_Event_2019Christmas_TopTitle">
+    <item>거룩한 밤 광상곡</item>
+    <item>거룩한 밤 광상곡</item>
+    <item>거룩한 밤 광상곡</item>
+    <item>거룩한 밤 광상곡</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2019Christmas">
+    <item>철혈의 그린치</item>
+    <item>솔리드 디너게이트</item>
+    <item>달려라 디너게이트</item>
+    <item>선물 찬송가</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2019Christmas_Caption">
+    <item>철혈의 그린치</item>
+    <item>솔리드 디너게이트</item>
+    <item>달려라 디너게이트</item>
+    <item>선물 찬송가</item>
+  </string-array>
 </resources>

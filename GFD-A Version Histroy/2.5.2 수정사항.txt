@@ -1,0 +1,9 @@
+<2.5.2 수정사항>
+
+- 스토리 추가 (편극광, 12전역, 10전역 야간, 2019 크리스마스 이벤트)
+- 인터넷이 끊어졌을 때 앱이 비정상적으로 종료되는 문제 수정
+
+<2.5.2 Update>
+
+- Add story content
+- Fix app crash issue when internet is unavailable

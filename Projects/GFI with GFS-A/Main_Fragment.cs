@@ -41,23 +41,33 @@ namespace GFI_with_GFS_A
 
                 string url = "";
 
-                if (ETC.locale.Language == "ko")
+                try
                 {
-                    url = Path.Combine(ETC.server, "Android_Notification.txt");
-                }
-                else
-                {
-                    url = Path.Combine(ETC.server, "Android_Notification_en.txt");
-                }
 
-                if (ETC.isServerDown)
-                {
-                    notificationView.Text = "& Server is Maintenance &";
+                    if (ETC.locale.Language == "ko")
+                    {
+                        url = Path.Combine(ETC.server, "Android_Notification.txt");
+                    }
+                    else
+                    {
+                        url = Path.Combine(ETC.server, "Android_Notification_en.txt");
+                    }
+
+                    if (ETC.isServerDown)
+                    {
+                        notificationView.Text = "& Server is Maintenance &";
+                    }
+                    else
+                    {
+                        using var wc = new WebClient();
+                        notificationView.Text = await wc.DownloadStringTaskAsync(url);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    using var wc = new WebClient();
-                    notificationView.Text = await wc.DownloadStringTaskAsync(url);
+                    ETC.LogError(ex, Activity);
+
+                    notificationView.Text = "& Notification Load Error &";
                 }
             }
         }

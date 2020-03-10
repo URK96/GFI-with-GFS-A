@@ -112,6 +112,8 @@ namespace GFI_with_GFS_A
                 }
 
                 bottomNavigation.SelectedItemId = id;
+
+
                 _ = InitializeProcess();
             }
             catch (Exception ex)
@@ -180,13 +182,15 @@ namespace GFI_with_GFS_A
             GC.Collect();
         }
 
-        protected override void OnResume()
+        protected override async void OnResume()
         {
             try
             {
                 base.OnResume();
 
                 // Refresh Server Data
+
+                await ETC.CheckServerNetwork();
 
                 _ = CheckNetworkData();
             }
@@ -264,9 +268,8 @@ namespace GFI_with_GFS_A
             {
                 // Check Server Status
 
-                await ETC.CheckServerNetwork().ConfigureAwait(false);
 
-                await Task.Run(async () =>
+                /*await Task.Run(async () =>
                 {
                     // Check DB Version
 
@@ -300,7 +303,38 @@ namespace GFI_with_GFS_A
                     {
                         //RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})"; });
                     }
-                });
+                });*/
+
+                if (await ETC.CheckDBVersion())
+                {
+                    //RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})"; });
+
+                    var ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
+                    ad.SetTitle(Resource.String.CheckDBUpdateDialog_Title);
+                    ad.SetMessage(Resource.String.CheckDBUpdateDialog_Question);
+                    ad.SetCancelable(true);
+                    ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
+                    ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, async delegate
+                    {
+                        await ETC.UpdateDB(this, true);
+
+                        if (!await ETC.CheckDBVersion())
+                        {
+                            //RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})"; });
+                        }
+                        else
+                        {
+                            //RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateAvailable)})"; });
+                        }
+
+                    });
+
+                    RunOnUiThread(() => { ad.Show(); });
+                }
+                else
+                {
+                    //RunOnUiThread(() => { tv.Text = $"DB Ver.{ETC.dbVersion} ({Resources.GetString(Resource.String.Main_DBUpdateNewest)})"; });
+                }
             }
             catch (Exception ex)
             {

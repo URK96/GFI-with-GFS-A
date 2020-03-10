@@ -156,7 +156,7 @@ namespace GFI_with_GFS_A
             try
             {
                 _ = Uri.TryCreate(server, UriKind.RelativeOrAbsolute, out Uri uri);
-                HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
+                var request = WebRequest.Create(uri) as HttpWebRequest;
                 request.Method = "HEAD";
 
                 using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)

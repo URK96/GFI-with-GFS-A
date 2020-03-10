@@ -29,6 +29,7 @@
     <item>전역</item>
     <item>전역</item>
     <item>전역</item>
+    <item>전역</item>
     <item>이벤트</item>
     <item>이벤트</item>
     <item>이벤트</item>
@@ -48,6 +49,8 @@
     <item>콜라보 이벤트</item>
     <item>이벤트</item>
     <item>2019 할로윈 이벤트</item>
+    <item>2019 크리스마스 이벤트</item>
+    <item>이벤트</item>
   </string-array>
 
   <string-array name="Story_Main_Main">
@@ -64,6 +67,7 @@
     <item>제9전역 : 미실</item>
     <item>제10전역 : 연옥</item>
     <item>제11전역 : 사냥</item>
+    <item>제12전역 : 숨막힘</item>
     <item>큐브작전</item>
     <item>저체온증 : 재앙의 울버린</item>
     <item>저체온증 : 등화관제</item>
@@ -83,6 +87,8 @@
     <item>VA-11 HALL-A</item>
     <item>연쇄분열</item>
     <item>팬텀 신드롬</item>
+    <item>거룩한 밤 광상곡</item>
+    <item>편극광</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Caption">
@@ -99,6 +105,7 @@
     <item>달링, 당신의 마음은 지금 어디있나요?</item>
     <item>절망 속에서 행복을 떠올리는 건 최악의 고통이다.</item>
     <item>난세를 홀로 떠도는 자여, 한번이라도 세상을 사랑해 본 적은 있는가?</item>
+    <item>자, 뒤집힌 숲속에서 그녀의 그림자를 찾자.</item>
     <item>큐브작전</item>
     <item>CH.01 재앙의 울버린</item>
     <item>CH.02 등화관제</item>
@@ -118,6 +125,8 @@
     <item>발할라</item>
     <item>연쇄분열</item>
     <item>팬텀 신드롬</item>
+    <item>거룩한 밤 광상곡</item>
+    <item>편극광</item>
   </string-array>
 
   <string-array name="Story_Main_Sub_TopTitle">
