@@ -1,19 +1,17 @@
 ﻿using Android.App;
-using Android.Content;
-using Android.Media;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.V4.View;
 using Android.Support.V4.Widget;
-using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+
+using Plugin.SimpleAudioPlayer;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading.Tasks;
-using Plugin.SimpleAudioPlayer;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
@@ -21,6 +19,7 @@ namespace GFI_with_GFS_A
     {
         internal static ISimpleAudioPlayer ostPlayer;
         internal static bool isOSTLoad = false;
+        internal static bool isReload = false;
 
         internal static readonly string serverMusicPath = Path.Combine(ETC.server, "Data", "Music");
         internal static readonly string localMusicCachePath = Path.Combine(ETC.cachePath, "OST");
@@ -161,10 +160,28 @@ namespace GFI_with_GFS_A
                         arrayId = Resource.Array.Houkai2;
                         break;
                     case 7:
-                        arrayId = Resource.Array.Hypothermia;
+                        arrayId = Resource.Array.Arctic;
                         break;
                     case 8:
                         arrayId = Resource.Array.Singularity;
+                        break;
+                    case 9:
+                        arrayId = Resource.Array.Isomer;
+                        break;
+                    case 10:
+                        arrayId = Resource.Array.VA;
+                        break;
+                    case 11:
+                        arrayId = Resource.Array.ShatteredConnexion;
+                        break;
+                    case 12:
+                        arrayId = Resource.Array.PhantomSyndrome;
+                        break;
+                    case 13:
+                        arrayId = Resource.Array.HolyNightRhapsody;
+                        break;
+                    case 14:
+                        arrayId = Resource.Array.PolarizedLight;
                         break;
                 }
 
@@ -233,15 +250,19 @@ namespace GFI_with_GFS_A
                     Path.Combine(MusicRepo.serverMusicPath, "OST", MusicRepo.categoryRealPath[MusicRepo.categoryIndex], $"{MusicRepo.itemList[MusicRepo.itemIndex]}.mp3");
                 string locaclFileName = $"{MusicRepo.categoryIndex.ToString()}_{MusicRepo.itemIndex.ToString()}.mp3";
 
-                using (WebClient wc = new WebClient())
+                using (var wc = new WebClient())
                 {
                     await wc.DownloadFileTaskAsync(musicServerPath, Path.Combine(MusicRepo.localMusicCachePath, locaclFileName));
                 }
 
                 stream = new FileStream(Path.Combine(MusicRepo.localMusicCachePath, locaclFileName), FileMode.Open, FileAccess.Read);
 
+                (gfOSTPlayerScreenF as GFOSTPlayerScreen).ChangeMusicAlbum();
+
                 MusicRepo.ostPlayer.Load(stream);
                 MusicRepo.ostPlayer.Play();
+
+                _ = (gfOSTPlayerScreenF as GFOSTPlayerScreen).infoMethod();
             }
             catch (Exception ex)
             {
@@ -273,6 +294,7 @@ namespace GFI_with_GFS_A
             if (mainDrawerLayout.IsDrawerOpen(GravityCompat.Start))
             {
                 mainDrawerLayout.CloseDrawer(GravityCompat.Start);
+
                 return;
             }
             else
@@ -285,6 +307,8 @@ namespace GFI_with_GFS_A
 
     public class GFOSTPlayerScreen : Android.Support.V4.App.Fragment
     {
+        internal delegate Task InfoMethod();
+
         private View v;
 
         private GFOSTPlayerActivity ostActivity;
@@ -297,6 +321,8 @@ namespace GFI_with_GFS_A
         private ImageView skipPreviousButton;
         private ImageView playPauseButton;
         private ImageView skipNextButton;
+
+        internal InfoMethod infoMethod;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -344,7 +370,13 @@ namespace GFI_with_GFS_A
                 skipNextButton.SetImageResource(Resource.Drawable.SkipNext);
             }
 
-            _ = RefreshInfo();
+            infoMethod = new InfoMethod(RefreshInfo);
+
+            if (MusicRepo.isOSTLoad && MusicRepo.ostPlayer.IsPlaying)
+            {
+                ChangeMusicAlbum();
+                infoMethod();
+            }
 
             return v;
         }
@@ -359,10 +391,12 @@ namespace GFI_with_GFS_A
                 {
                     case Resource.Id.GFOSTPlayerSkipPreviousButton:
                         MusicRepo.ostPlayer.Stop();
+
                         if (MusicRepo.itemIndex > 1)
                         {
                             MusicRepo.itemIndex -= 1;
                         }
+
                         _ = ostActivity.LoadMusic();
                         break;
                     case Resource.Id.GFOSTPlayerPlayPauseButton:
@@ -370,10 +404,12 @@ namespace GFI_with_GFS_A
                         break;
                     case Resource.Id.GFOSTPlayerSkipNextButton:
                         MusicRepo.ostPlayer.Stop();
+
                         if (MusicRepo.itemIndex < MusicRepo.itemList.Count)
                         {
                             MusicRepo.itemIndex += 1;
                         }
+
                         _ = ostActivity.LoadMusic();
                         break;
                 }
@@ -381,6 +417,70 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex, Activity);
+            }
+        }
+
+        internal void ChangeMusicAlbum()
+        {
+            try
+            {
+                int resId = 0;
+
+                switch (MusicRepo.categoryIndex)
+                {
+                    case 0:
+                        resId = Resource.Drawable.Album_Normal;
+                        break;
+                    case 1:
+                        resId = Resource.Drawable.Album_ContinuumTurbulence;
+                        break;
+                    case 2:
+                        resId = Resource.Drawable.Album_Cube;
+                        break;
+                    case 3:
+                        resId = Resource.Drawable.Album_DeepDive;
+                        break;
+                    case 4:
+                        resId = Resource.Drawable.Album_DJMAX;
+                        break;
+                    case 5:
+                        resId = Resource.Drawable.Album_HuntingRabbit;
+                        break;
+                    case 6:
+                        resId = Resource.Drawable.Album_Houkai2;
+                        break;
+                    case 7:
+                        resId = Resource.Drawable.Album_Arctic;
+                        break;
+                    case 8:
+                        resId = Resource.Drawable.Album_Singularity;
+                        break;
+                    case 9:
+                        resId = Resource.Drawable.Album_Isomer;
+                        break;
+                    case 10:
+                        resId = Resource.Drawable.Album_VA;
+                        break;
+                    case 11:
+                        resId = Resource.Drawable.Album_ShatteredConnexion;
+                        break;
+                    case 12:
+                        resId = Resource.Drawable.Album_PhantomSyndrome;
+                        break;
+                    case 13:
+                        resId = Resource.Drawable.Album_HolyNightRhapsody;
+                        break;
+                    case 14:
+                        resId = Resource.Drawable.Album_PolarizedLight;
+                        break;
+                }
+
+                musicAlbumArt.SetImageResource(resId);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, Activity);
+                musicAlbumArt.SetImageDrawable(null);
             }
         }
 
@@ -393,8 +493,8 @@ namespace GFI_with_GFS_A
                     if (MusicRepo.isOSTLoad && MusicRepo.ostPlayer.IsPlaying)
                     {
                         musicName.Text = MusicRepo.itemList[MusicRepo.itemIndex];
-                        musicLengthText.Text = MusicRepo.ostPlayer.Duration.ToString();
-                        musicNowPosition.Text = MusicRepo.ostPlayer.CurrentPosition.ToString();
+                        musicLengthText.Text = MusicRepo.ostPlayer.Duration.ToString("F0");
+                        musicNowPosition.Text = MusicRepo.ostPlayer.CurrentPosition.ToString("F0");
                         musicSeekBar.Progress = Convert.ToInt32(Math.Ceiling(MusicRepo.ostPlayer.CurrentPosition / MusicRepo.ostPlayer.Duration * 100));
                     }
 
@@ -403,7 +503,7 @@ namespace GFI_with_GFS_A
             }
             catch (Exception ex)
             {
-                Toast.MakeText(Activity, ex.ToString(), ToastLength.Short).Show();
+                Toast.MakeText(Activity, "Refresh Error", ToastLength.Short).Show();
                 ETC.LogError(ex, Activity);
             }
         }

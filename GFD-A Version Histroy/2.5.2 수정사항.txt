@@ -1,9 +1,17 @@
 <2.5.2 수정사항>
 
 - 스토리 추가 (편극광, 12전역, 10전역 야간, 2019 크리스마스 이벤트)
+- OST 앨범아트 추가
+- OST 항목 추가
+- OST에서 간헐적으로 정보가 갱신되지 않는 현상 수정
+- OST 실행 중에 다시 OST 항목으로 들어갔을 때 앱이 튕기는 현상 수정
 - 인터넷이 끊어졌을 때 앱이 비정상적으로 종료되는 문제 수정
 
 <2.5.2 Update>
 
 - Add story content
+- Add OST albumart
+- Add OST content
+- Fix OST info refresh issue
+- Fix app crash when entering OST Player
 - Fix app crash issue when internet is unavailable

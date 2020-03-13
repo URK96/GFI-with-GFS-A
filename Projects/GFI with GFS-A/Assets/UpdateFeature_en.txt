@@ -1,7 +1,8 @@
-<2.5.1 Update>
+<2.5.2 Update>
 
-- Add SD Simulator Web
-- Fix app crash issue
-- Fix web browser layout issue
-- Add cartoon category
-- Add cartoon content
+- Add story content
+- Add OST albumart
+- Add OST content
+- Fix OST info refresh issue
+- Fix app crash when entering OST Player
+- Fix app crash issue when internet is unavailable

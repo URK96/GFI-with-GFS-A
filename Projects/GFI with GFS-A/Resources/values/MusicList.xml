@@ -8,8 +8,14 @@
     <item>@string/Music_Category_DJMAX</item>
     <item>@string/Music_Category_GuiltyGear</item>
     <item>@string/Music_Category_Houkai2</item>
-    <item>@string/Music_Category_Hypothermia</item>
+    <item>@string/Music_Category_Arctic</item>
     <item>@string/Music_Category_Singularity</item>
+    <item>@string/Music_Category_Isomer</item>
+    <item>@string/Music_Category_VA</item>
+    <item>@string/Music_Category_ShatteredConnexion</item>
+    <item>@string/Music_Category_PhantomSyndrome</item>
+    <item>@string/Music_Category_HolyNightRhapsody</item>
+    <item>@string/Music_Category_PolarizedLight</item>
   </string-array>
 
   <string-array name="MusicCategory_RealPath">
@@ -20,8 +26,14 @@
     <item>DJMAX</item>
     <item>GuiltyGear</item>
     <item>Houkai2</item>
-    <item>Hypothermia</item>
+    <item>Arctic</item>
     <item>Singularity</item>
+    <item>Isomer</item>
+    <item>VA-11 HALL-A</item>
+    <item>Shattered Connexion</item>
+    <item>Phantom Syndrome</item>
+    <item>Holy Night Rhapsody</item>
+    <item>Polarized Light</item>
   </string-array>
   
   <string-array name="Normal">
@@ -134,10 +146,10 @@
     <item>map8</item>
   </string-array>
 
-  <string-array name="Hypothermia">
-    <item>3-4</item>
-    <item>winter_day</item>
-    <item>winter_night</item>
+  <string-array name="Arctic">
+    <item>Boss Map - Snowflake</item>
+    <item>Winter Day - White Front</item>
+    <item>Winter Night - To The Twilight</item>
   </string-array>
 
   <string-array name="Singularity">
@@ -149,5 +161,79 @@
     <item>Map2</item>
     <item>Map3</item>
     <item>What am I fighting for</item>
+  </string-array>
+
+  <string-array name="Isomer">
+    <item>90Wish Part1</item>
+    <item>90Wish Part2</item>
+    <item>90Wish Part3</item>
+    <item>Ending - シラカバの光</item>
+    <item>G&amp;K Part1</item>
+    <item>G&amp;K Part2</item>
+    <item>G&amp;K Part3</item>
+    <item>Motor</item>
+    <item>SF Part1</item>
+    <item>SF Part2</item>
+    <item>SF Part3 (No Loop)</item>
+    <item>SF Part3</item>
+  </string-array>
+
+  <string-array name="VA">
+    <item>A New Frontier</item>
+    <item>All Systems, Go</item>
+    <item>Digital Drive</item>
+    <item>Drive Me Wild</item>
+    <item>Every Day Is Night</item>
+    <item>Follow The Trail</item>
+    <item>Glitch City</item>
+    <item>Hopes and Dreams</item>
+    <item>March of the White Knights</item>
+    <item>Reminiscence</item>
+    <item>Shine Spark</item>
+    <item>Showtime!</item>
+    <item>Snowfall</item>
+    <item>Synthestitch</item>
+    <item>Those Who Dwell in Shadows</item>
+    <item>Through the Storm, We Will Find a Way</item>
+    <item>Troubling News</item>
+    <item>Welcome to VA-11 HALL-A</item>
+    <item>Where Do I Go From Here</item>
+    <item>Your Love Is a Drug (Song)</item>
+    <item>Your Love Is a Drug</item>
+    <item>You ve Got Me</item>
+  </string-array>
+
+  <string-array name="ShatteredConnexion">
+    <item>Connexion (Full Ending)</item>
+    <item>Connexion (Game Cut Ending)</item>
+    <item>Elecwar - Hard</item>
+    <item>Elecwar - Normal</item>
+    <item>Lobby</item>
+    <item>Mainenemy - Hard</item>
+    <item>Mainenemy - Normal</item>
+    <item>Zombie - Hard</item>
+    <item>Zombie - Normal</item>
+  </string-array>
+
+  <string-array name="PhantomSyndrome">
+    <item>Cury - Full</item>
+    <item>Cury - Part 1</item>
+    <item>Cury - Part 2</item>
+    <item>Host</item>
+    <item>Made in Heaven</item>
+  </string-array>
+
+  <string-array name="HolyNightRhapsody">
+    <item>Intermission (Christmas ver)</item>
+    <item>Map</item>
+    <item>Story</item>
+  </string-array>
+
+  <string-array name="PolarizedLight">
+    <item>Chapter 1 (Non-polarization)</item>
+    <item>Chapter 2 (Double prism)</item>
+    <item>Chapter 3 (Polarization Endpoint)</item>
+    <item>Intermission</item>
+    <item>Polaris (Full Ending)</item>
   </string-array>
 </resources>
