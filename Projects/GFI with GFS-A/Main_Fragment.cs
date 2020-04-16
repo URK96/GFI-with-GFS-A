@@ -361,6 +361,10 @@ namespace GFI_with_GFS_A
                             Activity.StartActivity(typeof(GFOSTPlayerActivity));
                             Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                             break;
+                        case 3:
+                            Activity.StartActivity(typeof(GFPVListActivity));
+                            Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                            break;
                         default:
                             //ETC.ShowSnackbar(snackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
                             Toast.MakeText(Activity, Resource.String.AbnormalAccess, ToastLength.Short).Show();

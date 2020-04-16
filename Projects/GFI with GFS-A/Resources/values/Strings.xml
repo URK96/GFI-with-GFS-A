@@ -54,6 +54,23 @@
   <string name="Cartoon_ToolbarItem_SkipPrevious">Previous</string>
   <string name="Cartoon_ToolbarItem_SkipNext">Next</string>
 
+  <!--Game Event Category-->
+  <string name="Game_Event_ContinuumTurbulence">Continuum Turbulence</string>
+  <string name="Game_Event_Cube">Cube</string>
+  <string name="Game_Event_DeepDive">Deep Dive</string>
+  <string name="Game_Event_DJMAX">DJMAX</string>
+  <string name="Game_Event_HuntingRabbit">Guilty Gear &amp; Blazblue</string>
+  <string name="Game_Event_Houkai2">Houkai2</string>
+  <string name="Game_Event_Singularity">Singularity</string>
+  <string name="Game_Event_Normal">Normal</string>
+  <string name="Game_Event_Arctic">Arctic</string>
+  <string name="Game_Event_HolyNightRhapsody">Holy Night Rhapsody</string>
+  <string name="Game_Event_Isomer">Isomer</string>
+  <string name="Game_Event_PhantomSyndrome">Phantom Syndrome</string>
+  <string name="Game_Event_PolarizedLight">Polarized Light</string>
+  <string name="Game_Event_ShatteredConnexion">Shattered Connexion</string>
+  <string name="Game_Event_VA">VA-11 HALL-A</string>
+
   <!--Activity String-->
   <string name="Activity_DollMainActivity">T-Doll List</string>
   <string name="Activity_EquipMainActivity">Equipment List</string>
@@ -461,6 +478,7 @@
   <string name="Main_Other_ProductSimulator">Manufacturing Simulation</string>
   <string name="Main_Other_GFOSTPlayer">OST Player</string>
   <string name="Main_Other_Cartoon">Cartoon</string>
+  <string name="Main_Other_GFPV">GF PV</string>
   
   <!--OldGFD-->
   <string name="OldGFDViewer_ProductDollTable">T-Doll Production Timetable</string>
@@ -722,6 +740,12 @@
   <!--PDFViewer-->
   <string name="PDFViewer_DownloadPDFTitle">Download PDF</string>
   <string name="PDFViewer_DownloadPDFMessage">Downloading PDF...</string>
+
+  <!--GFPVActivity-->
+  <string name="GFPVActivity_DownloadRequireDialog_Title">Download Require</string>
+  <string name="GFPVActivity_DownloadRequireDialog_Message">PV file is not found. Download PV file?</string>
+  <string name="GFPVActivity_DownloadDialog_Title">PV Download</string>
+  <string name="GFPVActivity_DownloadDialog_Message">Downloading PV...</string>
   
   <!--Music Category-->
   <string name="Music_Category_ContinuumTurbulence">Continuum Turbulence</string>

@@ -316,7 +316,8 @@ namespace GFI_with_GFS_A
                 Path.Combine(cachePath, "GuideBook"),
                 Path.Combine(cachePath, "GuideBook", "PDFs"),
                 Path.Combine(cachePath, "GuideBook", "Images"),
-                Path.Combine(cachePath, "OST")
+                Path.Combine(cachePath, "OST"),
+                Path.Combine(cachePath, "Video", "PV")
             };
 
             foreach (string path in MainPaths)

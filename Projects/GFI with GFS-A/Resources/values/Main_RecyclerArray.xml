@@ -51,5 +51,6 @@
     <item>@string/Main_Other_ProductSimulator</item>
     <item>@string/Main_Other_Cartoon</item>
     <item>@string/Main_Other_GFOSTPlayer</item>
+    <item>@string/Main_Other_GFPV</item>
   </string-array>
 </resources>

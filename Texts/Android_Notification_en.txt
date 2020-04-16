@@ -1,7 +1,6 @@
-﻿
-# T-Doll DB Update 2019/09/19
+﻿# T-Doll DB Update 2020/04/07
 
-- Add New Costumes (4Type, G11, M1A1, 9A-91, MG3, SR-3MP, Falcon)
+- Add MOD T-Doll Voices (HK416, MP5, UMP9, UMP45, M1895, MP-446, M14, Micro Uzi, AS Val, Mosin-Nagant)
 
 
 # Equip DB Update 2019/09/24

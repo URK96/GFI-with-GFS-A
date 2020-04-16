@@ -62,7 +62,7 @@ namespace GFI_with_GFS_A
             ft = SupportFragmentManager.BeginTransaction();
 
             ExpItemCalc_F = new ExpItemCalc();
-            CoreCalc_F = new Core();
+            CoreCalc_F = new DummyCore();
             SkillTrainingCalc_F = new SkillTraining();
             FSTGradeUp_F = new FSTGradeUp();
             AreaExpCalc_F = new AreaExpCalc();
