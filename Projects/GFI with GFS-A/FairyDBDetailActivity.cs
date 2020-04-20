@@ -24,7 +24,7 @@ namespace GFI_with_GFS_A
         private Fairy fairy;
         private DataRow fairyInfoDR = null;
 
-        private Android.Support.V7.Widget.Toolbar toolbar;
+        private AndroidX.AppCompat.Widget.Toolbar toolbar;
         private SwipeRefreshLayout refreshMainLayout;
         private CoordinatorLayout snackbarLayout;
 
@@ -47,7 +47,7 @@ namespace GFI_with_GFS_A
                 fairyInfoDR = ETC.FindDataRow(ETC.fairyList, "DicNumber", Intent.GetIntExtra("DicNum", 0));
                 fairy = new Fairy(fairyInfoDR);
 
-                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.FairyDBDetailMainToolbar);
+                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.FairyDBDetailMainToolbar);
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.Title = $"No.{fairy.DicNumber} {fairy.Name}";

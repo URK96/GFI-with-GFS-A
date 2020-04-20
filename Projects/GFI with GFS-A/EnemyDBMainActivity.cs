@@ -46,7 +46,7 @@ namespace GFI_with_GFS_A
         private bool[] filterEnemyAffiliation = { false, false, false, false, false, false };
         private bool canRefresh = false;
 
-        private Android.Support.V7.Widget.Toolbar toolbar;
+        private AndroidX.AppCompat.Widget.Toolbar toolbar;
         private Android.Support.V7.Widget.SearchView searchView;
         private RecyclerView mEnemyRecyclerView;
         private RecyclerView.LayoutManager mainLayoutManager;
@@ -70,7 +70,7 @@ namespace GFI_with_GFS_A
 
                 canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
-                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.EnemyDBMainToolbar);
+                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.EnemyDBMainToolbar);
                 searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.EnemyDBSearchView);
                 searchView.QueryTextChange += (sender, e) =>
                 {

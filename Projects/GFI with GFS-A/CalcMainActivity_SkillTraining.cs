@@ -8,7 +8,7 @@ using System.Data;
 
 namespace GFI_with_GFS_A
 {
-    public class SkillTraining : Android.Support.V4.App.Fragment
+    public class SkillTraining : AndroidX.Fragment.App.Fragment
     {
         private View v;
 

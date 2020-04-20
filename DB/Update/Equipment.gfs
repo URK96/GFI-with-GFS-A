@@ -1938,7 +1938,7 @@
   <Equipment>
     <Name>ZFG42</Name>
     <Id>150</Id>
-    <Type>레드 닷 조준기, 옵티컬</Type>
+    <Type>옵티컬</Type>
     <Category>부속</Category>
     <Grade>0</Grade>
     <Ability>명중;치명타율;사속</Ability>
@@ -2204,5 +2204,125 @@
     <Note>마인드맵 업그레이드 추가</Note>
     <Icon>APS_Only_2</Icon>
     <ProductDialog>지휘부의 모두들 스테츠킨의 그 마음대로 움직이는 번개모양 머리를 궁금하게 바라봤습니다. 캐릭터 개성을 유지하기 위한 물건이라고 보기엔 너무 눈에 띄니까요. 그러던 어느 날 P7은 스테츠킨이 잠 잘때 이 안테나를 뽑아서 따로 충전하는 것을 봤습니다... </ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>ART2</Name>
+    <Id>172</Id>
+    <Type>옵티컬</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;치명타율</Ability>
+    <InitialMagnification>+3~5;+17~24%</InitialMagnification>
+    <MaxMagnification>+9;+48%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>M21</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>M21_Only</Icon>
+    <ProductDialog>정밀 사격을 위한 조준경으로 접안렌즈의 금색 테두리가 느낌이 있어서 M21가 엄청 좋아합니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>9x39mm SPP</Name>
+    <Id>173</Id>
+    <Type>고속탄</Type>
+    <Category>탄환</Category>
+    <Grade>0</Grade>
+    <Ability>화력;치명피해</Ability>
+    <InitialMagnification>+8~12;+6~10%</InitialMagnification>
+    <MaxMagnification>+20;+15%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>OTs-12</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>OTs12_Only</Icon>
+    <ProductDialog>신형 9x39mm 총알로 보통 동일 구경 총알보다 더 높은 관통력을 지녔습니다. 파랗게 칠했다고 훈련용으로 착각하지 마세요.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>Frag12 파쇄탄</Name>
+    <Id>174</Id>
+    <Type>슬러그</Type>
+    <Category>탄환</Category>
+    <Grade>0</Grade>
+    <Ability>타겟;화력;명중;사격 강화</Ability>
+    <InitialMagnification>-2;+8;+12;사격 강화</InitialMagnification>
+    <MaxMagnification>-2;+15;+20;사격 강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>AA-12</OnlyUse>
+    <Note>편극광 랭킹전 보상</Note>
+    <Icon>AA12_Only</Icon>
+    <ProductDialog>12게이지 산탄총을 위해 설계된 고폭탄두로 AA12의 홍보 수단으로 시장을 휩쓸었던 물건입니다. 파쇄탄의 위력과 AA12의 연사력이 합쳐진 폭발력은 예술 그 자체!</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>BPR4&amp;SRM6</Name>
+    <Id>175</Id>
+    <Type>소음기</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;회피;화력</Ability>
+    <InitialMagnification>+17~24%;+6~8;+2~3</InitialMagnification>
+    <MaxMagnification>+48%;+10;+6</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>MDR</OnlyUse>
+    <Note>사진관 미스터리 이벤트 오렌지 코인 80개로 교환</Note>
+    <Icon>MDR_Only</Icon>
+    <ProductDialog>OSS에서 .308과 7.62mm 구경을 위해 설계한 소음기입니다. 모듈화 디자인과 세련된 외형으로 그리폰 게시판에 화제가 된 이 상품을 어느 게시판 파수꾼이 놓칠 리가 없겠죠.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>7n31</Name>
+    <Id>176</Id>
+    <Type>특수탄</Type>
+    <Category>탄환</Category>
+    <Grade>0</Grade>
+    <Ability>화력;사속;관통</Ability>
+    <InitialMagnification>+7~10;+1~2;?</InitialMagnification>
+    <MaxMagnification>+15;+3;+35</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>GSh-18</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>GSh18_Only</Icon>
+    <ProductDialog>일반 9x19mm Para 탄보다 높은 관통력을 지닌 탄약입니다. 갈수록 늘어나는 장갑 유닛에 대비해 Gsh18이 특별히 주문했습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>MGP 개조 키트</Name>
+    <Id>177</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>명중;사속;치명피해</Ability>
+    <InitialMagnification>+11~15;-4~1;?</InitialMagnification>
+    <MaxMagnification>+30;-1;+25%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>M500</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>M500_Only</Icon>
+    <ProductDialog>유명 총기부품제조업체에서 생산한 업그레이드 키트입니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>12.7mm 1SL</Name>
+    <Id>178</Id>
+    <Type>철갑탄</Type>
+    <Category>탄환</Category>
+    <Grade>0</Grade>
+    <Ability>화력;관통</Ability>
+    <InitialMagnification>+3~5;+110~120</InitialMagnification>
+    <MaxMagnification>+10;+180</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>KSVK</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>KSVK_Only</Icon>
+    <ProductDialog>원래는 공격헬기가 대지 사격 때 명중률을 높이기 위해 탄피 안에 2번째 탄두를 넣은 특수탄약이지만 KSVK의 강렬한 요구로 IOP에서 그녀의 총기로도 쓸 수 있게 개조한 물건입니다. 이걸로 괜찮은 제압력을 발휘할 수 있겠죠.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>WML&amp;전술총몸덮개</Name>
+    <Id>179</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>회피;치명타율</Ability>
+    <InitialMagnification>?;+12~15%</InitialMagnification>
+    <MaxMagnification>+20;+20%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>M950A</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>M950A_Only</Icon>
+    <ProductDialog>개조한 M950A는 전술 총몸덮개를 장착하여 레일이 총 4개로 다양한 부착물을 선택할 수 있습니다. 반면 M950A 본인은 이 개조로 인해 총기가 많이 무거워져서 훈련이 더 힘들어졌다고 자주 불평합니다.</ProductDialog>
   </Equipment>
 </NewDataSet>

@@ -26,7 +26,7 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.ProductSimulatorCategoryLayout);
 
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.ProductSimulatorCategoryMainToolbar));
+            SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.ProductSimulatorCategoryMainToolbar));
             SupportActionBar.SetTitle(Resource.String.ProductSimulatorCategoryActivity_Title);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 

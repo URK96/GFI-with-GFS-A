@@ -12,7 +12,6 @@
                 <xs:element name="Type" type="xs:string" minOccurs="0" />
                 <xs:element name="DicNumber" type="xs:int" minOccurs="0" />
                 <xs:element name="ProductTime" type="xs:int" minOccurs="0" />
-                <xs:element name="IsExtra" type="xs:boolean" default="false" minOccurs="0" />
                 <xs:element name="FireRate" type="xs:string" minOccurs="0" />
                 <xs:element name="Accuracy" type="xs:string" minOccurs="0" />
                 <xs:element name="Evasion" type="xs:string" minOccurs="0" />
@@ -443,7 +442,6 @@
     <Type>전투</Type>
     <DicNumber>1003</DicNumber>
     <ProductTime>0</ProductTime>
-    <IsExtra>true</IsExtra>
     <FireRate>4/18</FireRate>
     <Accuracy>14/55</Accuracy>
     <Evasion>16/64</Evasion>
@@ -465,7 +463,6 @@
     <Type>전투</Type>
     <DicNumber>1001</DicNumber>
     <ProductTime>0</ProductTime>
-    <IsExtra>true</IsExtra>
     <FireRate>6/26</FireRate>
     <Accuracy>0/0</Accuracy>
     <Evasion>6/24</Evasion>
@@ -487,7 +484,6 @@
     <Type>책략</Type>
     <DicNumber>1002</DicNumber>
     <ProductTime>0</ProductTime>
-    <IsExtra>true</IsExtra>
     <FireRate>0/0</FireRate>
     <Accuracy>17.6/70</Accuracy>
     <Evasion>6/24</Evasion>
@@ -550,7 +546,6 @@
     <Type>전투</Type>
     <DicNumber>1005</DicNumber>
     <ProductTime>0</ProductTime>
-    <IsExtra>true</IsExtra>
     <FireRate>2.8/15</FireRate>
     <Accuracy>8/40</Accuracy>
     <Evasion>10/50</Evasion>
@@ -572,7 +567,6 @@
     <Type>전투</Type>
     <DicNumber>1006</DicNumber>
     <ProductTime>0</ProductTime>
-    <IsExtra>true</IsExtra>
     <FireRate>4.4/22</FireRate>
     <Accuracy>10/50</Accuracy>
     <Evasion>2/10</Evasion>
@@ -634,7 +628,6 @@
     <Type>전투</Type>
     <DicNumber>1007</DicNumber>
     <ProductTime>0</ProductTime>
-    <IsExtra>true</IsExtra>
     <FireRate>5.2/25</FireRate>
     <Accuracy>6.8/30</Accuracy>
     <Evasion>14.4/65</Evasion>
@@ -726,5 +719,25 @@
     <SkillRate>300 / 350 / 400 / 450 / 500 / 550 / 600 / 650 / 700 / 750;42 / 54 / 66 / 78 / 90 / 102 / 114 / 126 / 138 / 150;126 / 162 / 198 / 234 / 270 / 306 / 342 / 378 / 414 / 450</SkillRate>
     <ProductDialog>"우리는 운명의 공동체예요. 편애하면 안 돼요!"</ProductDialog>
     <FairyExplain>공생체 쌍둥이를 소환하는 능력을 지니고 있습니다. 평소에는 편제확대한 인형의 적응 훈련을 돕거나 만담 공연에 쓸 수 있을 것 같습니다.</FairyExplain>
+  </Fairy>
+  <Fairy>
+    <Name>시조요정</Name>
+    <Type>전투</Type>
+    <DicNumber>26</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>10/10</FireRate>
+    <Accuracy>10/10</Accuracy>
+    <Evasion>10/10</Evasion>
+    <Armor>10/10</Armor>
+    <Critical>0/0</Critical>
+    <SkillName>방황의 끝</SkillName>
+    <SkillExplain>전투에 아무 영향도 없지만 승리를 위해 기도합니다.</SkillExplain>
+    <OrderConsume>0</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>내 모든 영광과 꿈을 너에게.</SkillEffect>
+    <SkillRate>0</SkillRate>
+    <Note>편극광 클리어 보상</Note>
+    <ProductDialog>"나는 처음이자 마지막... 모든 건 나로 시작하고, 나로 끝날 것이다."</ProductDialog>
+    <FairyExplain>다른 요정의 힘을 증폭하는 능력을 지니고 있습니다. 평소에는 모형 조립과 의자 찜하기에 사용할 수 있을 것 같습니다.</FairyExplain>
   </Fairy>
 </NewDataSet>

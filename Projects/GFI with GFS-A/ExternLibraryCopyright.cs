@@ -32,7 +32,7 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.ExternLibraryCopyrightLayout);
 
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.ExternLibraryMainToolbar));
+            SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.ExternLibraryMainToolbar));
             SupportActionBar.SetTitle(Resource.String.Activity_ExternLibraryCopyrightActivity);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 

@@ -24,8 +24,8 @@ namespace GFI_with_GFS_A
         bool isCategory = true;
 
         private ArrayAdapter categoryAdapter;
-        private Android.Support.V4.App.FragmentTransaction ft;
-        private Android.Support.V4.App.Fragment cartoonScreenF;
+        private AndroidX.Fragment.App.FragmentTransaction ft;
+        private AndroidX.Fragment.App.Fragment cartoonScreenF;
 
         internal TextView toolbarCartoonTitle;
         internal DrawerLayout mainDrawerLayout;
@@ -63,7 +63,7 @@ namespace GFI_with_GFS_A
 
             // Set ActionBar
 
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.CartoonMainToolbar));
+            SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.CartoonMainToolbar));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
@@ -258,7 +258,7 @@ namespace GFI_with_GFS_A
         }
     }
 
-    public class CartoonScreen : Android.Support.V4.App.Fragment
+    public class CartoonScreen : AndroidX.Fragment.App.Fragment
     {
         enum CartoonType { Image, Web }
 

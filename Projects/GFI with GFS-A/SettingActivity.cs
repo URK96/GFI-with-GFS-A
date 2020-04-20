@@ -2,11 +2,10 @@
 using Android.Content;
 using Android.OS;
 using Android.Support.Design.Widget;
-using Android.Support.V14.Preferences;
-using Android.Support.V7.Preferences;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using AndroidX.Preference;
 using Net.ArcanaStudio.ColorPicker;
 using System;
 using System.Collections.Generic;
@@ -39,7 +38,7 @@ namespace GFI_with_GFS_A
 
                 SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.SettingSnackbarLayout);
 
-                SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.SettingMainToolbar));
+                SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.SettingMainToolbar));
                 SupportActionBar.SetTitle(Resource.String.SettingActivity_Title);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
@@ -71,7 +70,7 @@ namespace GFI_with_GFS_A
         }
     }
 
-    public class MainSettingFragment : PreferenceFragmentCompat
+    public class MainSettingFragment : AndroidX.Preference.PreferenceFragmentCompat
     {
         private ISharedPreferencesEditor SaveSetting;
 

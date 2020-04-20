@@ -18,8 +18,8 @@ namespace GFI_with_GFS_A
     public class OldGFDViewer : BaseAppCompatActivity
     {
         private ArrayAdapter imageAdapter;
-        private Android.Support.V4.App.FragmentTransaction ft;
-        private Android.Support.V4.App.Fragment oldGFDViewerF;
+        private AndroidX.Fragment.App.FragmentTransaction ft;
+        private AndroidX.Fragment.App.Fragment oldGFDViewerF;
 
         private DrawerLayout mainDrawerLayout;
         private ListView drawerListView;
@@ -67,7 +67,7 @@ namespace GFI_with_GFS_A
 
                 // Set Action Bar
 
-                SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.OldGFDViewerMainToolbar));
+                SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.OldGFDViewerMainToolbar));
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
                 SupportActionBar.Title = "GFD v1";
                 SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu);
@@ -214,7 +214,7 @@ namespace GFI_with_GFS_A
         }
     }
 
-    public class OldGFDViewerScreen : Android.Support.V4.App.Fragment
+    public class OldGFDViewerScreen : AndroidX.Fragment.App.Fragment
     {
         private View v;
 

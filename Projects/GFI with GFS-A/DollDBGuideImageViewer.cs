@@ -43,7 +43,7 @@ namespace GFI_with_GFS_A
             serverImagePath = Path.Combine(ETC.server, "Data", "Images", "Guns", "GuideImage", $"{dollNum}.png");
             localImagePath = Path.Combine(ETC.cachePath, "Doll", "GuideImage", $"{dollNum}.png");
 
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.DollDBGuideImageViewerMainToolbar));
+            SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.DollDBGuideImageViewerMainToolbar));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             FindViewById<TextView>(Resource.Id.DollDBGuideImageViewerToolbarDicNumber).Text = $"No. {dollNum}";

@@ -29,7 +29,7 @@ namespace GFI_with_GFS_A
         private CoordinatorLayout snackbarLayout;
 
         private SwipeRefreshLayout refreshMainLayout;
-        private Android.Support.V7.Widget.Toolbar toolbar;
+        private AndroidX.AppCompat.Widget.Toolbar toolbar;
         private RatingBar gradeControl;
         private RatingBar versionGradeControl;
         private Spinner chipsetBonusSelector;
@@ -52,7 +52,7 @@ namespace GFI_with_GFS_A
                 fst = new FST(fstInfoDR);
 
                 refreshMainLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.FSTDBDetailMainRefreshLayout);
-                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.FSTDBDetailMainToolbar);
+                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.FSTDBDetailMainToolbar);
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);

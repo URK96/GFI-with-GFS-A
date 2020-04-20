@@ -88,7 +88,7 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.ProductSimulatorLayout);
 
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.ProductSimulatorMainToolbar));
+            SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.ProductSimulatorMainToolbar));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.ProductSimulatorSnackbarLayout);

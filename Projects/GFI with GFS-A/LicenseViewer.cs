@@ -12,7 +12,7 @@ namespace GFI_with_GFS_A
     [Activity(Label = "Open Source License", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class LicenseViewer : BaseAppCompatActivity
     {
-        private Android.Support.V7.Widget.Toolbar toolbar;
+        private AndroidX.AppCompat.Widget.Toolbar toolbar;
         private TextView licenseView;
 
         string licenseType = "";
@@ -29,7 +29,7 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.LicenseViewerLayout);
 
-            toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.LicenseViewerMainToolbar);
+            toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.LicenseViewerMainToolbar);
 
             SetSupportActionBar(toolbar);
             SupportActionBar.Title = "Open Source License";

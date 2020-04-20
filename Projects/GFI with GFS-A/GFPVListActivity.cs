@@ -49,7 +49,7 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.GFPVListLayout);
 
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.GFPVListMainToolbar));
+            SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.GFPVListMainToolbar));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetTitle(Resource.String.Main_Other_GFPV);
 

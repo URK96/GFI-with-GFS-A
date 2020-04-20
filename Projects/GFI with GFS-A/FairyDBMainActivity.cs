@@ -41,7 +41,7 @@ namespace GFI_with_GFS_A
 
         private string searchViewText = "";
 
-        private Android.Support.V7.Widget.Toolbar toolbar;
+        private AndroidX.AppCompat.Widget.Toolbar toolbar;
         private Android.Support.V7.Widget.SearchView searchView;
         private RecyclerView mFairyListView;
         private RecyclerView.LayoutManager mainLayoutManager;
@@ -65,7 +65,7 @@ namespace GFI_with_GFS_A
 
                 canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
-                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.FairyDBMainToolbar);
+                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.FairyDBMainToolbar);
                 searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.FairyDBSearchView);
                 searchView.QueryTextChange += (sender, e) =>
                 {

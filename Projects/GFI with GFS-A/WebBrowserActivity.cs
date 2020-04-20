@@ -38,7 +38,7 @@ namespace GFI_with_GFS_A
                 Finish();
             }
 
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.WebBrowserMainToolbar));
+            SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.WebBrowserMainToolbar));
 
             mainRefreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.WebBrowserMainRefreshLayout);
             mainRefreshLayout.Refresh += delegate { web.Reload(); };

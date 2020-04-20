@@ -843,9 +843,6 @@
     <AndroidResource Include="Resources\layout\Calc_SkillTraining.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\CalcMainLayout.axml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\DollDBImageViewer.axml" />
   </ItemGroup>
   <ItemGroup>

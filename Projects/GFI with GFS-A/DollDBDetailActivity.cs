@@ -66,7 +66,7 @@ namespace GFI_with_GFS_A
         private ISimpleAudioPlayer voicePlayer;
         private FileStream stream;
 
-        private Android.Support.V7.Widget.Toolbar toolbar;
+        private AndroidX.AppCompat.Widget.Toolbar toolbar;
         private SwipeRefreshLayout refreshMainLayout;
         private NestedScrollView scrollLayout;
         private CoordinatorLayout snackbarLayout;
@@ -106,7 +106,7 @@ namespace GFI_with_GFS_A
 
                 voicePlayer = CrossSimpleAudioPlayer.Current;
 
-                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.DollDBDetailMainToolbar);
+                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.DollDBDetailMainToolbar);
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);

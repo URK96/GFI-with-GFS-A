@@ -22,16 +22,13 @@ namespace GFI_with_GFS_A
     {
         private Doll doll;
 
-        private Android.Support.V7.Widget.Toolbar toolbar;
+        private AndroidX.AppCompat.Widget.Toolbar toolbar;
 
         private RelativeLayout loadingLayout;
         private AVLoadingIndicatorView loadingIndicator;
         private TextView loadingText;
         private CoordinatorLayout snackbarLayout;
         private Spinner costumeList;
-        /*private Button refreshCacheButton;
-        private ToggleButton changeStateButton;
-        private ToggleButton censoredOption;*/
         private PhotoView dollImageView;
         private TextView imageStatus;
 
@@ -67,7 +64,7 @@ namespace GFI_with_GFS_A
                 doll = new Doll(ETC.FindDataRow(ETC.dollList, "DicNumber", int.Parse(temp[0])));
                 censorType = doll.HasCensored ? doll.CensorType : null;
 
-                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.DollDBImageViewerMainToolbar);
+                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.DollDBImageViewerMainToolbar);
                 loadingLayout = FindViewById<RelativeLayout>(Resource.Id.DollDBImageViewerLoadingLayout);
                 loadingIndicator = FindViewById<AVLoadingIndicatorView>(Resource.Id.DollDBImageViewerLoadingIndicatorView);
                 loadingText = FindViewById<TextView>(Resource.Id.DollDBImageViewerLoadingIndicatorExplainText);
@@ -82,27 +79,6 @@ namespace GFI_with_GFS_A
 
                     _ = LoadImage(costumeIndex, false);
                 };
-                /*refreshCacheButton = FindViewById<Button>(Resource.Id.DollDBImageViewerRefreshImageCacheButton);
-                refreshCacheButton.Click += delegate { _ = LoadImage(costumeIndex, true); };
-                changeStateButton = FindViewById<ToggleButton>(Resource.Id.DollDBImageViewerChangeStateButton);
-                changeStateButton.CheckedChange += (sender, e) =>
-                {
-                    isDamage = e.IsChecked;
-                    censoredOption.Checked = censoredOption.Enabled = CheckCensorType();
-
-                    _ = LoadImage(costumeIndex, false);
-                };
-                censoredOption = FindViewById<ToggleButton>(Resource.Id.DollDBImageViewerCensoredOption);
-                censoredOption.Checked = doll.HasCensored;
-                censoredOption.CheckedChange += (sender, e) =>
-                {
-                    enableCensored = e.IsChecked;
-
-                    _ = LoadImage(costumeIndex, false);
-                };
-                
-
-                censoredOption.Visibility = ETC.sharedPreferences.GetBoolean("ImageCensoredUnlock", false) ? ViewStates.Visible : ViewStates.Gone;*/
                 imageStatus = FindViewById<TextView>(Resource.Id.DollDBImageViewerImageStatus);
 
                 SetSupportActionBar(toolbar);

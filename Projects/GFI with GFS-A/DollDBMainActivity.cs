@@ -45,8 +45,8 @@ namespace GFI_with_GFS_A
 
         private string searchViewText = "";
 
-        private Android.Support.V7.Widget.Toolbar toolbar;
-        private Android.Support.V7.Widget.SearchView searchView;
+        private AndroidX.AppCompat.Widget.Toolbar toolbar;
+        private AndroidX.AppCompat.Widget.SearchView searchView;
         private RecyclerView mDollListView;
         private RecyclerView.LayoutManager mainLayoutManager;
         private CoordinatorLayout snackbarLayout;
@@ -67,8 +67,8 @@ namespace GFI_with_GFS_A
 
                 canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
-                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.DollDBMainToolbar);
-                searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.DollDBSearchView);
+                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.DollDBMainToolbar);
+                searchView = FindViewById<AndroidX.AppCompat.Widget.SearchView>(Resource.Id.DollDBSearchView);
                 searchView.QueryTextChange += (sender, e) =>
                 {
                     searchViewText = e.NewText;

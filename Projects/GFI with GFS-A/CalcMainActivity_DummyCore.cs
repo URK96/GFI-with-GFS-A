@@ -5,7 +5,7 @@ using System;
 
 namespace GFI_with_GFS_A
 {
-    public class DummyCore : Android.Support.V4.App.Fragment
+    public class DummyCore : AndroidX.Fragment.App.Fragment
     {
         private View v;
 

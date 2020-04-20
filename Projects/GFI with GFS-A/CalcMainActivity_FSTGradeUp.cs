@@ -5,7 +5,7 @@ using System;
 
 namespace GFI_with_GFS_A
 {
-    public class FSTGradeUp : Android.Support.V4.App.Fragment
+    public class FSTGradeUp : AndroidX.Fragment.App.Fragment
     {
         private View v;
 

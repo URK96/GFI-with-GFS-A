@@ -33,7 +33,7 @@ namespace GFI_with_GFS_A
         private CoordinatorLayout snackbarLayout;
 
         private SwipeRefreshLayout refreshMainLayout;
-        private Android.Support.V7.Widget.Toolbar toolbar;
+        private AndroidX.AppCompat.Widget.Toolbar toolbar;
         private Spinner typeSelector;
         private Spinner voiceSelector;
         private Button voicePlayButton;
@@ -57,7 +57,7 @@ namespace GFI_with_GFS_A
                 voicePlayer = CrossSimpleAudioPlayer.Current;
 
                 refreshMainLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.EnemyDBDetailMainRefreshLayout);
-                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.EnemyDBDetailMainToolbar);
+                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.EnemyDBDetailMainToolbar);
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);

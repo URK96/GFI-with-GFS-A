@@ -37,7 +37,7 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.GFDInfoLayout);
 
-                SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.GFDInfoMainToolbar));
+                SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.GFDInfoMainToolbar));
                 SupportActionBar.SetTitle(Resource.String.GFDInfo_Title);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 

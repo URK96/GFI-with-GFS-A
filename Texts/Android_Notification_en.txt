@@ -1,18 +1,20 @@
-﻿# T-Doll DB Update 2020/04/07
+﻿# T-Doll DB Update 2020/04/17
 
-- Add MOD T-Doll Voices (HK416, MP5, UMP9, UMP45, M1895, MP-446, M14, Micro Uzi, AS Val, Mosin-Nagant)
-
-
-# Equip DB Update 2019/09/24
-
-- Add new equipments
-- Edit some equipment info
+- Add new T-Doll costumes (AA-12, A-91, PA-15, NS2000, P30, PP-19-01)
+- Add new T-Doll info (HS10)
+- Add 8th MOD T-Doll info (GSh-18, M500, KSVK, M950A)
+- Fix some skill info
 
 
-# Fairy DB Update 2019/09/22
+# Equip DB Update 2020/04/17
 
-- Add new fairies
-- Edit some fairy info
+- Add new equipment
+- Add 8th MOD T-Doll equipment
+
+
+# Fairy DB Update 2020/04/17
+
+- Add new fairy (Origin Fairy)
 
 
 # Enemy DB Update 2019/09/15

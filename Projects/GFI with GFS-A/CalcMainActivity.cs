@@ -13,13 +13,13 @@ namespace GFI_with_GFS_A
     [Activity(Name = "com.gfl.dic.CalcActivity", Label = "계산기", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class CalcMainActivity : BaseAppCompatActivity
     {
-        Android.Support.V4.App.Fragment ExpItemCalc_F;
-        Android.Support.V4.App.Fragment CoreCalc_F;
-        Android.Support.V4.App.Fragment SkillTrainingCalc_F;
-        Android.Support.V4.App.Fragment FSTGradeUp_F;
-        Android.Support.V4.App.Fragment AreaExpCalc_F;
+        AndroidX.Fragment.App.Fragment ExpItemCalc_F;
+        AndroidX.Fragment.App.Fragment CoreCalc_F;
+        AndroidX.Fragment.App.Fragment SkillTrainingCalc_F;
+        AndroidX.Fragment.App.Fragment FSTGradeUp_F;
+        AndroidX.Fragment.App.Fragment AreaExpCalc_F;
 
-        Android.Support.V4.App.FragmentTransaction ft = null;
+        AndroidX.Fragment.App.FragmentTransaction ft = null;
 
         DrawerLayout mainDrawerLayout;
         NavigationView mainNavigationView;
@@ -29,7 +29,9 @@ namespace GFI_with_GFS_A
             base.OnCreate(savedInstanceState);
 
             if (ETC.useLightTheme)
+            {
                 SetTheme(Resource.Style.GFS_NoActionBar_Light);
+            }
 
             // Create your application here
             SetContentView(Resource.Layout.CalcMainLayout);
@@ -39,7 +41,6 @@ namespace GFI_with_GFS_A
 
 
             // Set Main Drawer
-
             mainDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.Calc_MainDrawerLayout);
             mainDrawerLayout.DrawerOpened += delegate { SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen); };
             mainDrawerLayout.DrawerClosed += delegate { SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu); };
@@ -49,7 +50,7 @@ namespace GFI_with_GFS_A
 
             // Set ActionBar
 
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.Calc_Toolbar));
+            SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.Calc_Toolbar));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);

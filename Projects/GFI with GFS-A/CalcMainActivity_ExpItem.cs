@@ -6,7 +6,7 @@ using System;
 
 namespace GFI_with_GFS_A
 {
-    public class ExpItemCalc : Android.Support.V4.App.Fragment
+    public class ExpItemCalc : AndroidX.Fragment.App.Fragment
     {
         private View v;
 

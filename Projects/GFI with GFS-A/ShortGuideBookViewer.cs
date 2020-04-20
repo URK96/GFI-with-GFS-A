@@ -18,8 +18,8 @@ namespace GFI_with_GFS_A
     public class ShortGuideBookViewer : BaseAppCompatActivity
     {
         private ArrayAdapter imageAdapter;
-        private Android.Support.V4.App.FragmentTransaction ft;
-        private Android.Support.V4.App.Fragment ShortGuideBookF;
+        private AndroidX.Fragment.App.FragmentTransaction ft;
+        private AndroidX.Fragment.App.Fragment ShortGuideBookF;
 
         internal DrawerLayout mainDrawerLayout;
         private ListView drawerListView;
@@ -64,7 +64,7 @@ namespace GFI_with_GFS_A
                 mainDrawerLayout.DrawerOpened += delegate { SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.MenuOpen); };
                 mainDrawerLayout.DrawerClosed += delegate { SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.Menu); };
 
-                SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.ShortGuideBookMainToolbar));
+                SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.ShortGuideBookMainToolbar));
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
                 SupportActionBar.SetDisplayShowTitleEnabled(true);
                 SupportActionBar.SetHomeButtonEnabled(true);
@@ -165,7 +165,7 @@ namespace GFI_with_GFS_A
         }
     }
 
-    public class ShortGuideBookScreen : Android.Support.V4.App.Fragment
+    public class ShortGuideBookScreen : AndroidX.Fragment.App.Fragment
     {
         private View v;
 

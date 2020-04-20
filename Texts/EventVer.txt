@@ -1,6 +1,6 @@
 Y;
-62;
+63;
 2;
-사진관 미스테리,전역 경험치 1.5배 이벤트;
-https://cafe.naver.com/girlsfrontlinekr/3889596,https://www.girlsfrontline.co.kr/archives/3791.html;
-2020/3/20 16:00 ~ 2020/4/10 14:59,2020/3/28 00:00 ~ 2020/4/2 23:59;
+4차 국지전,밝은 달밤의 꿈;
+https://www.girlsfrontline.co.kr/archives/3797.html,https://www.girlsfrontline.co.kr/archives/3842.html;
+2020/4/10 16:00 ~ 2020/4/30 14:59,2020/4/18 00:00 ~ 2020/5/8 23:59;

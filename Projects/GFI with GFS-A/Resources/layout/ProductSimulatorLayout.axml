@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/ProductSimulatorMainLayout">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="?android:attr/actionBarSize"
@@ -29,7 +29,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/ProductSimulatorToolbarType"/>
         </LinearLayout>
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
 	    xmlns:cardview="http://schemas.android.com/apk/res-auto"

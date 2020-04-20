@@ -15,7 +15,7 @@ namespace GFI_with_GFS_A
 {
     public partial class Main : BaseAppCompatActivity
     {
-        internal class HomeFragment : Android.Support.V4.App.Fragment
+        internal class HomeFragment : AndroidX.Fragment.App.Fragment
         {
             private TextView notificationView;
 
@@ -72,7 +72,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        internal class DBFragment : Android.Support.V4.App.Fragment
+        internal class DBFragment : AndroidX.Fragment.App.Fragment
         {
             private RecyclerView recyclerView;
 
@@ -173,7 +173,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        internal class GFDv1Fragment : Android.Support.V4.App.Fragment
+        internal class GFDv1Fragment : AndroidX.Fragment.App.Fragment
         {
             private RecyclerView recyclerView;
 
@@ -213,7 +213,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        internal class GFUtilFragment : Android.Support.V4.App.Fragment
+        internal class GFUtilFragment : AndroidX.Fragment.App.Fragment
         {
             private RecyclerView recyclerView;
 
@@ -312,7 +312,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        internal class OtherFragment : Android.Support.V4.App.Fragment
+        internal class OtherFragment : AndroidX.Fragment.App.Fragment
         {
             private RecyclerView recyclerView;
 

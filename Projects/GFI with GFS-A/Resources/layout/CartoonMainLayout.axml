@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 	android:id="@+id/CartoonMainRootLayout">
-    <android.support.v7.widget.Toolbar
+    <AndroidX.AppCompat.Widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/MainColor"
@@ -15,7 +15,7 @@
             android:layout_height="match_parent"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/CartoonToolbarCartoonTitle"/>
-    </android.support.v7.widget.Toolbar>
+    </AndroidX.AppCompat.Widget.Toolbar>
     <android.support.v4.widget.DrawerLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

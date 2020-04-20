@@ -57,7 +57,7 @@ namespace GFI_with_GFS_A
             itemList = Intent.GetStringArrayExtra("List");
             topTitleList = Intent.GetStringArrayExtra("TopList");
 
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.StoryReaderMainToolbar));
+            SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.StoryReaderMainToolbar));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             textSize = ETC.sharedPreferences.GetInt("TextViewerTextSize", 12);

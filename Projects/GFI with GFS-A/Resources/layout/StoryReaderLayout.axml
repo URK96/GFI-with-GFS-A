@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-	<android.support.v7.widget.Toolbar
+	<androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 		android:background="@color/MainColor"
@@ -23,7 +23,7 @@
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:id="@+id/StoryReaderToolbarNowStoryTitle"/>
 		</LinearLayout>
-	</android.support.v7.widget.Toolbar>
+	</androidx.appcompat.widget.Toolbar>
 	<ProgressBar
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"

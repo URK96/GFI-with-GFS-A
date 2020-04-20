@@ -64,7 +64,7 @@ namespace GFI_with_GFS_A
                 drs[i] = ResultDR;
             }
 
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.PSResultMainToolbar));
+            SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.PSResultMainToolbar));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetTitle(Resource.String.ProductSimulatorResultActivity_Title);
 

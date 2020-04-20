@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
-using Android.Support.V4.App;
-using Android.Support.V7.App;
+using AndroidX.Fragment.App;
+using AndroidX.AppCompat.App;
 
 namespace GFI_with_GFS_A
 {

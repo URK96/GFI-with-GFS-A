@@ -39,8 +39,8 @@ namespace GFI_with_GFS_A
         private bool isCategory = true;
 
         private ArrayAdapter categoryAdapter;
-        private Android.Support.V4.App.FragmentTransaction ft;
-        private Android.Support.V4.App.Fragment gfOSTPlayerScreenF;
+        private AndroidX.Fragment.App.FragmentTransaction ft;
+        private AndroidX.Fragment.App.Fragment gfOSTPlayerScreenF;
 
         private DrawerLayout mainDrawerLayout;
         private ListView drawerListView;
@@ -72,7 +72,7 @@ namespace GFI_with_GFS_A
             drawerListView = FindViewById<ListView>(Resource.Id.GFOSTPlayerNavigationListView);
             drawerListView.ItemClick += DrawerListView_ItemSelected;
 
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.GFOSTPlayerToolbar));
+            SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.GFOSTPlayerToolbar));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
@@ -305,7 +305,7 @@ namespace GFI_with_GFS_A
         }
     }
 
-    public class GFOSTPlayerScreen : Android.Support.V4.App.Fragment
+    public class GFOSTPlayerScreen : AndroidX.Fragment.App.Fragment
     {
         internal delegate Task InfoMethod();
 

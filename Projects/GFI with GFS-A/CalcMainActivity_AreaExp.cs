@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
-    public class AreaExpCalc : Android.Support.V4.App.Fragment
+    public class AreaExpCalc : AndroidX.Fragment.App.Fragment
     {
         private View v;
 
@@ -41,7 +41,7 @@ namespace GFI_with_GFS_A
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            v = inflater.Inflate(Resource.Layout.Calc_AreaExpCalc, container, false);
+            v = inflater?.Inflate(Resource.Layout.Calc_AreaExpCalc, container, false);
 
             // Find View & Connect Event
 

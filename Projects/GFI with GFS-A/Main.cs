@@ -19,15 +19,15 @@ namespace GFI_with_GFS_A
         System.Timers.Timer exitTimer = new System.Timers.Timer();
 
         private CoordinatorLayout snackbarLayout;
-        private Android.Support.V7.Widget.Toolbar toolbar;
+        private AndroidX.AppCompat.Widget.Toolbar toolbar;
         private FrameLayout fContainer;
         private BottomNavigationView bottomNavigation;
 
-        private Android.Support.V4.App.Fragment mainHomeF;
-        private Android.Support.V4.App.Fragment mainDBF;
-        private Android.Support.V4.App.Fragment mainGFDv1F;
-        private Android.Support.V4.App.Fragment mainGFUtilF;
-        private Android.Support.V4.App.Fragment mainOtherF;
+        private AndroidX.Fragment.App.Fragment mainHomeF;
+        private AndroidX.Fragment.App.Fragment mainDBF;
+        private AndroidX.Fragment.App.Fragment mainGFDv1F;
+        private AndroidX.Fragment.App.Fragment mainGFUtilF;
+        private AndroidX.Fragment.App.Fragment mainOtherF;
 
         protected override void AttachBaseContext(Context @base)
         {
@@ -51,7 +51,7 @@ namespace GFI_with_GFS_A
 
                 // Find View & Connect Event
 
-                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.MainMainToolbar);
+                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.MainMainToolbar);
                 fContainer = FindViewById<FrameLayout>(Resource.Id.MainFragmentContainer);
                 bottomNavigation = FindViewById<BottomNavigationView>(Resource.Id.MainBottomNavigation);
 
@@ -149,7 +149,7 @@ namespace GFI_with_GFS_A
 
         private void ChangeFragment(int id)
         {
-            Android.Support.V4.App.Fragment fragment = null;
+            AndroidX.Fragment.App.Fragment fragment = null;
 
             switch (id)
             {

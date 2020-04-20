@@ -39,7 +39,7 @@ namespace GFI_with_GFS_A
 
         private string searchViewText;
 
-        private Android.Support.V7.Widget.Toolbar toolbar;
+        private AndroidX.AppCompat.Widget.Toolbar toolbar;
         private Android.Support.V7.Widget.SearchView searchView;
         private RecyclerView mFSTListView;
         private RecyclerView.LayoutManager mainRecyclerManager;
@@ -62,7 +62,7 @@ namespace GFI_with_GFS_A
 
                 canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
 
-                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.FSTDBMainToolbar);
+                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.FSTDBMainToolbar);
                 searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.FSTDBSearchView);
                 searchView.QueryTextChange += (sender, e) =>
                 {

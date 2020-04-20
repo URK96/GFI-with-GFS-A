@@ -45,7 +45,7 @@ namespace GFI_with_GFS_A
 
                 eventFilePath = Path.Combine(ETC.cachePath, "Event", "EventVer.txt");
 
-                SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.EventListMainToolbar));
+                SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.EventListMainToolbar));
                 SupportActionBar.SetTitle(Resource.String.EventListActivity_Title);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 

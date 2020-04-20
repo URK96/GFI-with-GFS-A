@@ -27,7 +27,7 @@ namespace GFI_with_GFS_A
         private DataRow equipInfoDR = null;
 
         private SwipeRefreshLayout refreshMainLayout;
-        private Android.Support.V7.Widget.Toolbar toolbar;
+        private AndroidX.AppCompat.Widget.Toolbar toolbar;
         private CoordinatorLayout snackbarLayout;
 
         protected override async void OnCreate(Bundle savedInstanceState)
@@ -47,7 +47,7 @@ namespace GFI_with_GFS_A
                 equipInfoDR = ETC.FindDataRow(ETC.equipmentList, "Id", Intent.GetIntExtra("Id", 0));
                 equip = new Equip(equipInfoDR);
 
-                toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.EquipDBDetailMainToolbar);
+                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.EquipDBDetailMainToolbar);
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.Title = $"No.{equip.Id} {equip.Name}";

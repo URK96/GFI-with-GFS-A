@@ -65,7 +65,7 @@ namespace GFI_with_GFS_A
             // Create your application here
             SetContentView(Resource.Layout.ProductPercentTableLayout);
 
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.ProductPercentTableMainToolbar));
+            SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.ProductPercentTableMainToolbar));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             loadingIndicatorView = FindViewById<AVLoadingIndicatorView>(Resource.Id.ProductPercentTableLoadingIndicatorView);

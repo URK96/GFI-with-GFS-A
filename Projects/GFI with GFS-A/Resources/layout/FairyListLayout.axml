@@ -3,7 +3,8 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:background="?android:attr/selectableItemBackground"
+    android:padding="10dp">
     <LinearLayout
         android:layout_width="48dp"
         android:layout_height="match_parent"
@@ -11,7 +12,7 @@
         <ImageView
             android:id="@+id/FairyListType"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:scaleType="fitCenter" />
     </LinearLayout>
     <ImageView
