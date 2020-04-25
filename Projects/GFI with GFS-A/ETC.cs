@@ -90,7 +90,7 @@ namespace GFI_with_GFS_A
             SetLanguage(context);
 
             Resources = baseContext.Resources;
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTg2NDEyQDMxMzcyZTM0MmUzMHBENmM5Wk42Zyt4dVNVZm1qUTVhTW9DeWtBTFJLY1RGekRnMTgxOEpiQ3c9");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjQzMzY5QDMxMzgyZTMxMmUzMG9YTFRBTHp5bERLSm55aDF3YTdxKzcwWHNMK2k3QTZTTGxiajBoRU5odDg9");
 
             //sdCardPath = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
             appDataPath = FileSystem.AppDataDirectory; //baseContext.GetExternalFilesDir(null).AbsolutePath; //Path.Combine(sdCardPath, "Android", "data", "com.gfl.dic");
