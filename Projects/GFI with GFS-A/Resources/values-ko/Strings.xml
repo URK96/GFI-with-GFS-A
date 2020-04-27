@@ -5,6 +5,7 @@
   
   <string name="Common_ExpItem">작전보고서</string>
   <string name="Common_Core">대체코어</string>
+  <string name="Common_CoalitionGrade">혼합세력 등급</string>
   <string name="Common_SkillTraining">스킬 훈련</string>
   <string name="Common_FSTGradeUp">FST 등급</string>
   <string name="Common_AreaExp">경험치 계산</string>
@@ -354,6 +355,7 @@
   <!--CalcMain-->
   <string name="TitleName_ExpItemCalc">작전보고서 계산기</string>
   <string name="TitleName_CoreCalc">코어 계산기</string>
+  <string name="TitleName_CoalitionGrade">혼합세력 등급 계산기</string>
   <string name="TitleName_SkillTrainingCalc">훈련-스킬칩 계산기</string>
   <string name="TitleName_FSTGradeUpCalc">FST 등급 계산기</string>
   <string name="ExpItemCalc_ItemCount">장</string>
@@ -629,6 +631,12 @@
   <string name="Calc_Core_ResultCoreCountText">* 필요한 코어 수 *</string>
   <string name="Calc_Core_DefaultCoreCountResultText">개 코어 필요</string>
   
+  <!--Calc_CoalitionGrade-->
+  <string name="Calc_CoalitionGrade_BornGradeSettingText">태생 등급</string>
+  <string name="Calc_CoalitionGrade_DummySettingText">등급 설정</string>
+  <string name="Calc_CoalitionGrade_ResultDiskCountText">* 필요 디스크 *</string>
+  <string name="Calc_CoalitionGrade_DefaultDiskCountResultText">디스크 필요</string>
+  
   <!--Calc_ExpItem-->
   <string name="Calc_ExpItem_ModSettingText">* Mod 설정 *</string>
   <string name="Calc_ExpItem_ModSettingCheckBox">Mod 적용</string>
@@ -647,7 +655,7 @@
   
   <!--Calc_SkillTraining-->
   <string name="Calc_SkillTraining_LevelSettingText">레벨</string>
-  <string name="Calc_SkillTraining_ResultChipCountText">* 단계별 스킬 훈련칩 요구량 *\n(초급 / 중급 / 고급)></string>
+  <string name="Calc_SkillTraining_ResultChipCountText">* 단계별 스킬 아이템 요구량 *\n(초급 / 중급 / 고급)></string>
   <string name="Calc_SkillTraining_ResultChipCountDefaultText">0 / 0 / 0</string>
   <string name="Calc_SkillTraining_ResultTimeCountText">* 총 소요시간 *</string>
   <string name="Calc_SkillTraining_ResultTimeCountDefaultText">0 시간</string>
@@ -655,6 +663,7 @@
   <string name="Calc_SkillTraining_DefaultAdvanceSkillChipResultText">중급</string>
   <string name="Calc_SkillTraining_DefaultMasterSkillChipResultText">고급</string>
   <string name="Calc_SkillTraining_DefaultSkillChipResultText">스킬칩 필요</string>
+  <string name="Calc_skillTraining_DefaultSkillCodeResultText">스킬코드 필요</string>
   <string name="Calc_SkillTraining_DefaultTimeResultText">시간 필요</string>
   
   <!--Calc_FSTGradeUp-->

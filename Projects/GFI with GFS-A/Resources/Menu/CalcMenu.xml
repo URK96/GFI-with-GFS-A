@@ -9,6 +9,9 @@
       android:title="@string/Common_Core"
       android:id="@+id/CalcNavigation_Core"/>
     <item
+      android:title="@string/Common_CoalitionGrade"
+      android:id="@+id/CalcNavigation_CoalitionGrade"/>
+    <item
       android:title="@string/Common_SkillTraining"
       android:id="@+id/CalcNavigation_SkillTraining"/>
     <item

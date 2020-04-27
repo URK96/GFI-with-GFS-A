@@ -4,6 +4,7 @@
   <string name="App_TitleName">GF Dictionary</string>
   <string name="Common_ExpItem">Battle Report</string>
   <string name="Common_Core">Core</string>
+  <string name="Common_CoalitionGrade">Coalition Grade</string>
   <string name="Common_SkillTraining">Skill Training</string>
   <string name="Common_FSTGradeUp">FST GradeUP</string>
   <string name="Common_AreaExp">Area Exp</string>
@@ -352,6 +353,7 @@
   <!--CalcMain-->
   <string name="TitleName_ExpItemCalc">Battle Report Calc</string>
   <string name="TitleName_CoreCalc">Core Calc</string>
+  <string name="TitleName_CoalitionGrade">Coalition Grade Calc</string>
   <string name="TitleName_SkillTrainingCalc">Skill Training Calc</string>
   <string name="TitleName_FSTGradeUpCalc">FST Grade Up Calc</string>
   <string name="ExpItemCalc_ItemCount"></string>
@@ -628,6 +630,12 @@
   <string name="Calc_Core_DummySettingText">Dummy</string>
   <string name="Calc_Core_ResultCoreCountText">* Require Core *</string>
   <string name="Calc_Core_DefaultCoreCountResultText">Core Require</string>
+
+  <!--Calc_CoalitionGrade-->
+  <string name="Calc_CoalitionGrade_BornGradeSettingText">Born Grade</string>
+  <string name="Calc_CoalitionGrade_DummySettingText">Grade Set</string>
+  <string name="Calc_CoalitionGrade_ResultDiskCountText">* Require Disk *</string>
+  <string name="Calc_CoalitionGrade_DefaultDiskCountResultText">Disk Require</string>
   
   <!--Calc_ExpItem-->
   <string name="Calc_ExpItem_ModSettingText">* Set Mode *</string>
@@ -647,7 +655,7 @@
   
   <!--Calc_SkillTraining-->
   <string name="Calc_SkillTraining_LevelSettingText">Level</string>
-  <string name="Calc_SkillTraining_ResultChipCountText">* Require Skill Chips *\n(Basic / Advance / Master)></string>
+  <string name="Calc_SkillTraining_ResultChipCountText">* Require Skill Items *\n(Basic / Advance / Master)></string>
   <string name="Calc_SkillTraining_ResultChipCountDefaultText">0 / 0 / 0</string>
   <string name="Calc_SkillTraining_ResultTimeCountText">* Total Time *</string>
   <string name="Calc_SkillTraining_ResultTimeCountDefaultText">0 Hour</string>
@@ -655,6 +663,7 @@
   <string name="Calc_SkillTraining_DefaultAdvanceSkillChipResultText">Advance</string>
   <string name="Calc_SkillTraining_DefaultMasterSkillChipResultText">Master</string>
   <string name="Calc_SkillTraining_DefaultSkillChipResultText">Skill Chip Require</string>
+  <string name="Calc_skillTraining_DefaultSkillCodeResultText">Skill Code Require</string>
   <string name="Calc_SkillTraining_DefaultTimeResultText">Hour Require</string>
 
   <!--Calc_FSTGradeUp-->

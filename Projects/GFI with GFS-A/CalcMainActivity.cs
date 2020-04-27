@@ -15,6 +15,7 @@ namespace GFI_with_GFS_A
     {
         AndroidX.Fragment.App.Fragment ExpItemCalc_F;
         AndroidX.Fragment.App.Fragment CoreCalc_F;
+        AndroidX.Fragment.App.Fragment CoalitionGrade_F;
         AndroidX.Fragment.App.Fragment SkillTrainingCalc_F;
         AndroidX.Fragment.App.Fragment FSTGradeUp_F;
         AndroidX.Fragment.App.Fragment AreaExpCalc_F;
@@ -64,6 +65,7 @@ namespace GFI_with_GFS_A
 
             ExpItemCalc_F = new ExpItemCalc();
             CoreCalc_F = new DummyCore();
+            CoalitionGrade_F = new CoalitionGrade();
             SkillTrainingCalc_F = new SkillTraining();
             FSTGradeUp_F = new FSTGradeUp();
             AreaExpCalc_F = new AreaExpCalc();
@@ -89,6 +91,10 @@ namespace GFI_with_GFS_A
                     case Resource.Id.CalcNavigation_Core:
                         ft.Replace(Resource.Id.CalcFragmentContainer, CoreCalc_F, "CoreCalc");
                         title = Resources.GetString(Resource.String.TitleName_CoreCalc);
+                        break;
+                    case Resource.Id.CalcNavigation_CoalitionGrade:
+                        ft.Replace(Resource.Id.CalcFragmentContainer, CoalitionGrade_F, "CoalitionGradeCalc");
+                        title = Resources.GetString(Resource.String.TitleName_CoalitionGrade);
                         break;
                     case Resource.Id.CalcNavigation_SkillTraining:
                         ft.Replace(Resource.Id.CalcFragmentContainer, SkillTrainingCalc_F, "SkillTraining");

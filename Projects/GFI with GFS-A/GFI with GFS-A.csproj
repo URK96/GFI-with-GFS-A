@@ -458,6 +458,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseActivity.cs" />
+    <Compile Include="CalcMainActivity_CoalitionGrade.cs" />
     <Compile Include="CalcMainActivity_DummyCore.cs" />
     <Compile Include="CalcMainActivity_SkillTraining.cs" />
     <Compile Include="CalcMainActivity_FSTGradeUp.cs" />
@@ -1937,6 +1938,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\done_icon_whitetheme.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Calc_CoalitionGrade.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

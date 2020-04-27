@@ -12,13 +12,14 @@ namespace GFI_with_GFS_A
     {
         private View v;
 
-        private Spinner TrainingTypeList;
-        private NumberPicker TrainingStartLevel;
-        private NumberPicker TrainingTargetLevel;
-        private TextView Result_BasicChip;
-        private TextView Result_AdvanceChip;
-        private TextView Result_MasterChip;
-        private TextView Result_Time;
+        private Spinner trainingTypeList;
+        private NumberPicker trainingStartLevel;
+        private NumberPicker trainingTargetLevel;
+        private TextView resultBasicChip;
+        private TextView resultAdvanceChip;
+        private TextView resultMasterChip;
+        private TextView resultSkillItemText;
+        private TextView resultTime;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -26,16 +27,18 @@ namespace GFI_with_GFS_A
 
             // Find View & Connect Event
 
-            TrainingTypeList = v.FindViewById<Spinner>(Resource.Id.CalcSkillTrainingType);
-            TrainingTypeList.ItemSelected += delegate { CalcSkillTraining(TrainingStartLevel.Value, TrainingTargetLevel.Value); };
-            TrainingStartLevel = v.FindViewById<NumberPicker>(Resource.Id.CalcSkillTrainingStartLevel);
-            TrainingStartLevel.ValueChanged += TrainingLevelSelector_ValueChanged;
-            TrainingTargetLevel = v.FindViewById<NumberPicker>(Resource.Id.CalcSkillTrainingEndLevel);
-            TrainingTargetLevel.ValueChanged += TrainingLevelSelector_ValueChanged;
-            Result_BasicChip = v.FindViewById<TextView>(Resource.Id.CalcSkillTrainingResultBasicSkillChip);
-            Result_AdvanceChip = v.FindViewById<TextView>(Resource.Id.CalcSkillTrainingResultAdvanceSkillChip);
-            Result_MasterChip = v.FindViewById<TextView>(Resource.Id.CalcSkillTrainingResultMasterSkillChip);
-            Result_Time = v.FindViewById<TextView>(Resource.Id.CalcSkillTrainingResultTime);
+            trainingTypeList = v.FindViewById<Spinner>(Resource.Id.CalcSkillTrainingType);
+            trainingStartLevel = v.FindViewById<NumberPicker>(Resource.Id.CalcSkillTrainingStartLevel);
+            trainingTargetLevel = v.FindViewById<NumberPicker>(Resource.Id.CalcSkillTrainingEndLevel);
+            resultBasicChip = v.FindViewById<TextView>(Resource.Id.CalcSkillTrainingResultBasicSkillChip);
+            resultAdvanceChip = v.FindViewById<TextView>(Resource.Id.CalcSkillTrainingResultAdvanceSkillChip);
+            resultMasterChip = v.FindViewById<TextView>(Resource.Id.CalcSkillTrainingResultMasterSkillChip);
+            resultSkillItemText = v.FindViewById<TextView>(Resource.Id.CalcSkillTrainingResultSkillItemText);
+            resultTime = v.FindViewById<TextView>(Resource.Id.CalcSkillTrainingResultTime);
+
+            trainingTypeList.ItemSelected += TrainingTypeList_ItemSelected;
+            trainingStartLevel.ValueChanged += TrainingLevelSelector_ValueChanged;
+            trainingTargetLevel.ValueChanged += TrainingLevelSelector_ValueChanged;
 
             InitializeProcess();
 
@@ -46,30 +49,77 @@ namespace GFI_with_GFS_A
         {
             // Set List Adapter
 
-            List<string> list = new List<string>(3);
+            var list = new List<string>(5);
 
             foreach (DataRow dr in ETC.skillTrainingList.Rows)
-                list.Add((string)dr["Type"]);
+            {
+                if (ETC.locale.Language == "ko")
+                {
+                    list.Add((string)dr["Type"]);
+                }
+                else
+                {
+                    list.Add((string)dr["Type_EN"]);
+                }
+            }
 
             list.TrimExcess();
 
             var adapter = new ArrayAdapter(Activity, Resource.Layout.SpinnerListLayout, list);
             adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
-            TrainingTypeList.Adapter = adapter;
+
+            trainingTypeList.Adapter = adapter;
 
             // Set Init Value
 
-            Result_BasicChip.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultBasicSkillChipResultText)}";
-            Result_AdvanceChip.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultAdvanceSkillChipResultText)}";
-            Result_MasterChip.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultMasterSkillChipResultText)}";
-            Result_Time.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultTimeResultText)}";
+            resultBasicChip.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultBasicSkillChipResultText)}";
+            resultAdvanceChip.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultAdvanceSkillChipResultText)}";
+            resultMasterChip.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultMasterSkillChipResultText)}";
+            resultTime.Text = $"0 {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultTimeResultText)}";
 
-            TrainingStartLevel.MinValue = 1;
-            TrainingStartLevel.MaxValue = 1;
-            TrainingStartLevel.Value = 1;
-            TrainingTargetLevel.MinValue = 1;
-            TrainingTargetLevel.MaxValue = 10;
-            TrainingTargetLevel.Value = 1;
+            trainingStartLevel.MinValue = 1;
+            trainingStartLevel.MaxValue = 1;
+            trainingStartLevel.Value = 1;
+            trainingTargetLevel.MinValue = 1;
+            trainingTargetLevel.MaxValue = 10;
+            trainingTargetLevel.Value = 1;
+        }
+
+        private void TrainingTypeList_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            try
+            {
+                trainingStartLevel.MinValue = 1;
+                trainingStartLevel.MaxValue = 1;
+                trainingStartLevel.Value = 1;
+                trainingTargetLevel.MinValue = 1;
+                trainingTargetLevel.Value = 1;
+
+                switch (e.Position)
+                {
+                    default:
+                    case 0:
+                    case 1:
+                    case 2:
+                        trainingTargetLevel.MaxValue = 10;
+                        resultAdvanceChip.Visibility = ViewStates.Visible;
+                        break;
+                    case 3:
+                        trainingTargetLevel.MaxValue = 10;
+                        resultAdvanceChip.Visibility = ViewStates.Gone;
+                        break;
+                    case 4:
+                        trainingTargetLevel.MaxValue = 5;
+                        resultAdvanceChip.Visibility = ViewStates.Gone;
+                        break;
+                }
+
+                CalcSkillTraining(trainingStartLevel.Value, trainingTargetLevel.Value);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, Activity);
+            }
         }
 
         private void TrainingLevelSelector_ValueChanged(object sender, NumberPicker.ValueChangeEventArgs e)
@@ -81,14 +131,14 @@ namespace GFI_with_GFS_A
                 switch (np.Id)
                 {
                     case Resource.Id.CalcSkillTrainingResultTime:
-                        TrainingTargetLevel.MinValue = e.NewVal;
+                        trainingTargetLevel.MinValue = e.NewVal;
                         break;
                     case Resource.Id.CalcSkillTrainingEndLevel:
-                        TrainingStartLevel.MaxValue = e.NewVal;
+                        trainingStartLevel.MaxValue = e.NewVal;
                         break;
                 }
 
-                CalcSkillTraining(TrainingStartLevel.Value, TrainingTargetLevel.Value);
+                CalcSkillTraining(trainingStartLevel.Value, trainingTargetLevel.Value);
             }
             catch (Exception ex)
             {
@@ -105,7 +155,7 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                DataRow dr = ETC.skillTrainingList.Rows[TrainingTypeList.SelectedItemPosition];
+                var dr = ETC.skillTrainingList.Rows[trainingTypeList.SelectedItemPosition];
 
                 string[] itemConsume = ((string)dr["Consumption"]).Split(';');
                 string[] time = ((string)dr["Time"]).Split(';');
@@ -134,10 +184,23 @@ namespace GFI_with_GFS_A
                     timeCount += int.Parse(time[i - 1]);
                 }
 
-                Result_BasicChip.Text = $"{itemCount[0]} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultBasicSkillChipResultText)}";
-                Result_AdvanceChip.Text = $"{itemCount[1]} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultAdvanceSkillChipResultText)}";
-                Result_MasterChip.Text = $"{itemCount[2]} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultMasterSkillChipResultText)}";
-                Result_Time.Text = $"{timeCount} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultTimeResultText)}";
+                switch (trainingTypeList.SelectedItemPosition)
+                {
+                    case 0:
+                    case 1:
+                    case 2:
+                        resultSkillItemText.SetText(Resource.String.Calc_SkillTraining_DefaultSkillChipResultText);
+                        break;
+                    case 3:
+                    case 4:
+                        resultSkillItemText.SetText(Resource.String.Calc_skillTraining_DefaultSkillCodeResultText);
+                        break;
+                }
+
+                resultBasicChip.Text = $"{itemCount[0]} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultBasicSkillChipResultText)}";
+                resultAdvanceChip.Text = $"{itemCount[1]} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultAdvanceSkillChipResultText)}";
+                resultMasterChip.Text = $"{itemCount[2]} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultMasterSkillChipResultText)}";
+                resultTime.Text = $"{timeCount} {Resources.GetString(Resource.String.Calc_SkillTraining_DefaultTimeResultText)}";
             }
             catch (Exception ex)
             {

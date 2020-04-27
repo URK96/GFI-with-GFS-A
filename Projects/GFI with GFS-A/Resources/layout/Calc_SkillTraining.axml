@@ -95,7 +95,8 @@
 					android:textAppearance="?android:attr/textAppearanceMedium"
 					android:text="@string/Calc_SkillTraining_DefaultSkillChipResultText"
 					android:textColor="@color/Calc_TextColor_WhiteTheme"
-					android:gravity="right"/>
+					android:gravity="right"
+					android:id="@+id/CalcSkillTrainingResultSkillItemText"/>
 				<TextView
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"

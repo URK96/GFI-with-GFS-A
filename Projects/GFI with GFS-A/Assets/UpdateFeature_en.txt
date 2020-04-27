@@ -1,8 +1,8 @@
-<2.5.2 Update>
+<2.5.3 Update>
 
-- Add story content
-- Add OST albumart
-- Add OST content
-- Fix OST info refresh issue
-- Fix app crash when entering OST Player
-- Fix app crash issue when internet is unavailable
+- Add GF PV feature
+- Add cartoon content
+- Fix some string
+- Fix some layout
+- Update UI library
+- Fix some bugs

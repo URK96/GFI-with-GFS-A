@@ -8,6 +8,7 @@
             <xs:complexType>
               <xs:sequence>
                 <xs:element name="Type" type="xs:string" minOccurs="0" />
+                <xs:element name="Type_EN" type="xs:string" minOccurs="0" />
                 <xs:element name="Consumption" type="xs:string" minOccurs="0" />
                 <xs:element name="Time" type="xs:string" minOccurs="0" />
                 <xs:element name="DataType" type="xs:string" minOccurs="0" />
@@ -20,20 +21,37 @@
   </xs:schema>
   <SkillTraining>
     <Type>인형</Type>
+    <Type_EN>T-Doll</Type_EN>
     <Consumption>100;200;300;120;200;300;400;200;300</Consumption>
     <Time>1;2;3;4;6;9;12;18;24</Time>
     <DataType>B;B;B;A;A;A;A;M;M</DataType>
   </SkillTraining>
   <SkillTraining>
     <Type>전략요정</Type>
+    <Type_EN>Strategy Fairy</Type_EN>
     <Consumption>200;400;600;240;400;600;800;400;600</Consumption>
     <Time>2;6;10;14;20;26;32;40;48</Time>
     <DataType>B;B;B;A;A;A;A;M;M</DataType>
   </SkillTraining>
   <SkillTraining>
     <Type>전투요정</Type>
+    <Type_EN>Combat Fairy</Type_EN>
     <Consumption>200;400;600;200;400;600;200;400;600</Consumption>
     <Time>2;6;10;14;20;26;32;40;48</Time>
     <DataType>B;B;B;A;A;A;M;M;M</DataType>
+  </SkillTraining>
+  <SkillTraining>
+    <Type>혼합세력 액티브</Type>
+    <Type_EN>Coalition Active</Type_EN>
+    <Consumption>300;400;500;600;800;200;300;400;600</Consumption>
+    <Time>1;3;5;8;12;16;20;27;36</Time>
+    <DataType>B;B;B;B;B;M;M;M;M</DataType>
+  </SkillTraining>
+  <SkillTraining>
+    <Type>혼합세력 패시브</Type>
+    <Type_EN>Coalition Passive</Type_EN>
+    <Consumption>400;600;200;400</Consumption>
+    <Time>0;0;0;0</Time>
+    <DataType>B;B;M;M</DataType>
   </SkillTraining>
 </NewDataSet>
