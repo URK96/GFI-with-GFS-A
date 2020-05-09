@@ -1,6 +1,6 @@
 Y;
-63;
+64;
 2;
-4차 국지전,밝은 달밤의 꿈;
-https://www.girlsfrontline.co.kr/archives/3797.html,https://www.girlsfrontline.co.kr/archives/3842.html;
-2020/4/10 16:00 ~ 2020/4/30 14:59,2020/4/18 00:00 ~ 2020/5/8 23:59;
+이상한 나라 여행,4주년 출석;
+https://www.girlsfrontline.co.kr/archives/3941.html,https://www.girlsfrontline.co.kr/archives/3921.html;
+2020/5/16 00:00 ~ 2020/6/5 23:59,2020/5/14 00:00 ~ 2020/5/31 23:59;

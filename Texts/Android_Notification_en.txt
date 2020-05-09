@@ -1,9 +1,6 @@
-﻿# T-Doll DB Update 2020/04/17
+﻿# T-Doll DB Update 2020/05/09
 
-- Add new T-Doll costumes (AA-12, A-91, PA-15, NS2000, P30, PP-19-01)
-- Add new T-Doll info (HS10)
-- Add 8th MOD T-Doll info (GSh-18, M500, KSVK, M950A)
-- Fix some skill info
+- Add new T-Dolls (CAR, HP-35, SAF, Tabuk, AK-Alfa, ZB-26)
 
 
 # Equip DB Update 2020/04/17

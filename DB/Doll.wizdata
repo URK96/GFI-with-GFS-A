@@ -13865,7 +13865,7 @@
     <EffectFormation>0,1,0,0,2,0,0,1,0</EffectFormation>
     <Effect>FR;16</Effect>
     <EffectType>AR</EffectType>
-    <DropEvent>2020년 2월 로그인 보상</DropEvent>
+    <DropEvent>2020년 2월 출석 보상</DropEvent>
     <DicNumber>298</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>blood_wave</SkillCode>
@@ -13919,5 +13919,235 @@
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>High Standard Model 10이 신고합니다! 지휘관님께 충성을 다하겠습니다!</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>CAR</Name>
+    <Name_EN>CAR</Name_EN>
+    <CodeName>CAR</CodeName>
+    <Nickname>CAR</Nickname>
+    <Model>Charlton Automatic Rifle</Model>
+    <Country>New Zealand</Country>
+    <Type>MG</Type>
+    <Grade>3</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;A;A;S;B;A</AbilityGrade>
+    <Grow>118</Grow>
+    <HP>100</HP>
+    <FireRate>115</FireRate>
+    <Evasion>115</Evasion>
+    <Accuracy>130</Accuracy>
+    <AttackSpeed>105</AttackSpeed>
+    <MoveSpeed>4</MoveSpeed>
+    <Critical>5</Critical>
+    <Bullet>0</Bullet>
+    <ConsumeAmmo>40/65/90/115/140</ConsumeAmmo>
+    <ConsumeFood>30/45/60/75/90</ConsumeFood>
+    <EffectFormation>0,0,1,2,0,0,0,0,1</EffectFormation>
+    <Effect>AS,AC;10,12</Effect>
+    <EffectType>SG</EffectType>
+    <DropEvent>2020년 4월 출석보상</DropEvent>
+    <DicNumber>300</DicNumber>
+    <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
+    <SkillCode>firepower_spread_mg</SkillCode>
+    <Skill>화력전개MG</Skill>
+    <SkillExplain>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect>
+    <SkillMag>8초,18초.6초.65%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>潮汐</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>아, 안녕하세요, 지휘관님. CAR이라고 합니다. 들어본 적이 없으시다고요? 역시 그렇군요...</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>HP-35</Name>
+    <Name_EN>HP-35</Name_EN>
+    <CodeName>BrowningHP</CodeName>
+    <Nickname>HP-35</Nickname>
+    <Model>Browning Hi-Power</Model>
+    <Country>Belgium</Country>
+    <Type>HG</Type>
+    <Grade>5</Grade>
+    <ProductTime>95</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>A;B;A;A;B;S</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>15</MoveSpeed>
+    <Critical>20</Critical>
+    <ConsumeAmmo>10/15/20/25/30</ConsumeAmmo>
+    <ConsumeFood>10/15/20/25/30</ConsumeFood>
+    <EffectFormation>0,1,0,1,1,1,1,2,1</EffectFormation>
+    <Effect>FR,EV;30,20</Effect>
+    <EffectType>ALL</EffectType>
+    <DropEvent>없음</DropEvent>
+    <DicNumber>303</DicNumber>
+    <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
+    <Skill>폭주반주</Skill>
+    <SkillExplain>&lt;패시브&gt;   야간전 또는 디버프 효과를 받고 있는 적은 받는 피해량이 증가한다. 동일 조건의 아군은 받는 피해량이 감소한다.   &lt;액티브&gt; 모든 적이 받는 피해량을 증가시킨다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;적 패시브 증가치;아군 패시브 증가치;액티브 증가치</SkillEffect>
+    <SkillMag>6초,12초,6초,8%,15%,18%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>れおえん</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>FN 브라우닝 하이파워가 인사드립니다. 오늘은 기분 좋은 바람이 부는데, 함께 바람 좀 쐬고서 일하는 건 어떠신가요?</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>SAF</Name>
+    <Name_EN>SAF</Name_EN>
+    <CodeName>SAF</CodeName>
+    <Nickname>SAF</Nickname>
+    <Model>FAMAE Mini SAF</Model>
+    <Country>Chile</Country>
+    <Type>SMG</Type>
+    <Grade>4</Grade>
+    <ProductTime>130</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;B;A;S;S;B</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>12</MoveSpeed>
+    <Critical>5</Critical>
+    <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>1,2,0,1,0,0,0,0,0</EffectFormation>
+    <Effect>FR;22</Effect>
+    <EffectType>AR</EffectType>
+    <DropEvent>없음</DropEvent>
+    <DicNumber>304</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>충격파 폭탄</Skill>
+    <SkillExplain>자신의 정면 거리 5 지점에 수류탄을 투척하여 반경 2.5 범위 안의 적에게 피해를 주고 공격 또는 스킬 시전이 아닌 적은 특정 방향으로 밀려난다. (상단 : 아래 방향으로 넉백, 중단 : 위 또는 아래 방향으로 넉백, 하단 : 위 방향으로 넉백)</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
+    <SkillMag>4초,8초,3배</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>染羽</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>안녕 지휘관, 새로 휘하에 배속된 SAF야. 음...? 좋은 냄새가 나네... 나 한번 안아 줄래...?</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>타부크 저격소총</Name>
+    <Name_EN>Tabuk</Name_EN>
+    <CodeName>Tabuk</CodeName>
+    <Nickname>타부크</Nickname>
+    <Model>Tabuk Snipe Rifle</Model>
+    <Country>Iraq</Country>
+    <Type>RF</Type>
+    <Grade>4</Grade>
+    <ProductTime>265</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;B;B;A;A;A</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>7</MoveSpeed>
+    <Critical>40</Critical>
+    <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
+    <ConsumeFood>30/45/60/75/90</ConsumeFood>
+    <EffectFormation>0,1,0,0,2,0,0,1,0</EffectFormation>
+    <Effect>CL;15</Effect>
+    <EffectType>HG</EffectType>
+    <DropEvent>없음</DropEvent>
+    <DicNumber>305</DicNumber>
+    <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
+    <Skill>대칭성 조절</Skill>
+    <SkillExplain>자신의 화력을 지속시간 동안 증가시킨다. 또한 지속시간 동안 자신과 거리가 5 이내인 적이 있으면 해당 적을 우선적으로 공격하며 화력이 증가한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;추가 화력 증가치</SkillEffect>
+    <SkillMag>5초,8초,5초,55%,10%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>瑶柱菌</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>세상에, 여기 왜 이렇게 비대칭이에요?! 으으... 죄송해요, 어지러워서 쓰러질 것 같아요...</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>AK-Alfa</Name>
+    <Name_EN>AK-Alfa</Name_EN>
+    <CodeName>AKAlfa</CodeName>
+    <Nickname>알파</Nickname>
+    <Model>AK-Alfa</Model>
+    <Country>Israel</Country>
+    <Type>AR</Type>
+    <Grade>5</Grade>
+    <ProductTime>236</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;A;A;A;B;S</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>10</MoveSpeed>
+    <Critical>20</Critical>
+    <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>0,1,0,2,1,1,0,0,0</EffectFormation>
+    <Effect>FR,EV;20,15</Effect>
+    <EffectType>SMG,AR</EffectType>
+    <DropEvent>없음</DropEvent>
+    <DicNumber>306</DicNumber>
+    <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
+    <Skill>블레이자</Skill>
+    <SkillExplain>&lt;패시브&gt; 자신의 바로 정면에 있는 적을 공격할 때 피해량이 증가한다.   &lt;액티브&gt; 자신의 화력을 증가시킨다. 또한 지속시간 동안 자신의 바로 정면에 있는 적을 우선으로 공격한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;액티브 화력 증가량;패시브 화력 증가량</SkillEffect>
+    <SkillMag>5초,8초,5초,65%,20%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>neco</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>나는 AK 알파... 오메가까지는 아니야. 그럼 실례하는데, 천문대는 어느 쪽이야?</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>ZB-26</Name>
+    <Name_EN>ZB-26</Name_EN>
+    <CodeName>ZB26</CodeName>
+    <Nickname>ZB-26</Nickname>
+    <Model>ZB vz.26</Model>
+    <Country>Czech</Country>
+    <Type>MG</Type>
+    <Grade>5</Grade>
+    <ProductTime>386</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>A;A;A;A;B;S</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>4</MoveSpeed>
+    <Critical>5</Critical>
+    <ConsumeAmmo>40/65/90/115/140</ConsumeAmmo>
+    <ConsumeFood>30/45/60/75/90</ConsumeFood>
+    <EffectFormation>0,0,1,2,1,1,0,0,0</EffectFormation>
+    <Effect>AS,AM;15,15</Effect>
+    <EffectType>SG</EffectType>
+    <DropEvent>없음</DropEvent>
+    <DicNumber>307</DicNumber>
+    <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
+    <Skill>퍼펙트 체인</Skill>
+    <SkillExplain>&lt;패시브&gt; 재장전을 마칠 때마다 다른 기관총 인형에게 장탄을 1발 추가시킨다. 일반 재장전이 끝날 때마다 다음 재장전 시간이 20%씩 최대 60%까지 감소한다.   &lt;액티브&gt; 즉시 재장전을 하여 특수탄약을 추가한다. 특수탄약을 소모할 때 화력과 명중이 증가한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;특수탄약 추가량;화력 증가치;명중 증가치</SkillEffect>
+    <SkillMag>8초,18초,8발,50%,50%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>whoisshe</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>여기가 바로 그리폰이군요? 알겠습니다, 앞으로 제 활약을 기대해 주세요. 언제 어디서든 전력을 다하겠습니다.</ProductDialog>
   </Doll>
 </NewDataSet>
