@@ -6,3 +6,12 @@
 - 일부 레이아웃 수정
 - UI 라이브러리 업데이트
 - 일부 버그 수정
+
+<2.5.4 Update>
+
+- Add coalition content in calc feature
+- Add cartoon content
+- Fix cartoon feature entering issue
+- Fix some layout
+- Update UI library
+- Fix some bugs

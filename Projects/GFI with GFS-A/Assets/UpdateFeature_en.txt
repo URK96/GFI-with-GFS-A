@@ -1,8 +1,8 @@
-<2.5.3 Update>
+<2.5.4 Update>
 
-- Add GF PV feature
+- Add coalition content in calc feature
 - Add cartoon content
-- Fix some string
+- Fix cartoon feature entering issue
 - Fix some layout
 - Update UI library
 - Fix some bugs

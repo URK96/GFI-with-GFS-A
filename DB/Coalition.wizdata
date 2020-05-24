@@ -1,0 +1,593 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Doll" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Doll">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Name_EN" type="xs:string" minOccurs="0" />
+                <xs:element name="Name_JP" type="xs:string" minOccurs="0" />
+                <xs:element name="CodeName" type="xs:string" minOccurs="0" />
+                <xs:element name="Nickname" type="xs:string" minOccurs="0" />
+                <xs:element name="Type" type="xs:string" minOccurs="0" />
+                <xs:element name="IsBoss" type="xs:boolean" default="false" minOccurs="0" />
+                <xs:element name="BornGrade" type="xs:int" minOccurs="0" />
+                <xs:element name="ProductTime" type="xs:int" minOccurs="0" />
+                <xs:element name="AbilityGrade" type="xs:string" minOccurs="0" />
+                <xs:element name="Grow" type="xs:string" minOccurs="0" />
+                <xs:element name="HP" type="xs:string" minOccurs="0" />
+                <xs:element name="FireRate" type="xs:string" minOccurs="0" />
+                <xs:element name="Evasion" type="xs:string" minOccurs="0" />
+                <xs:element name="Accuracy" type="xs:string" minOccurs="0" />
+                <xs:element name="AttackSpeed" type="xs:string" minOccurs="0" />
+                <xs:element name="MoveSpeed" type="xs:string" minOccurs="0" />
+                <xs:element name="Critical" type="xs:string" minOccurs="0" />
+                <xs:element name="Bullet" type="xs:string" minOccurs="0" />
+                <xs:element name="Armor" type="xs:string" minOccurs="0" />
+                <xs:element name="EffectFormation" type="xs:string" minOccurs="0" />
+                <xs:element name="Effect1" type="xs:string" minOccurs="0" />
+                <xs:element name="EffectMag1" type="xs:string" minOccurs="0" />
+                <xs:element name="EffectType1" type="xs:string" minOccurs="0" />
+                <xs:element name="Effect2" type="xs:string" minOccurs="0" />
+                <xs:element name="EffectMag2" type="xs:string" minOccurs="0" />
+                <xs:element name="EffectType2" type="xs:string" minOccurs="0" />
+                <xs:element name="Effect3" type="xs:string" minOccurs="0" />
+                <xs:element name="EffectMag3" type="xs:string" minOccurs="0" />
+                <xs:element name="EffectType3" type="xs:string" minOccurs="0" />
+                <xs:element name="DropEvent" type="xs:string" minOccurs="0" />
+                <xs:element name="DicNumber" type="xs:int" minOccurs="0" />
+                <xs:element name="SkillCode1" type="xs:string" minOccurs="0" />
+                <xs:element name="Skill1" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillExplain1" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillEffect1" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillMag1" type="xs:string" minOccurs="0" />
+                <xs:element name="FASkillMag1" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillCode2" type="xs:string" minOccurs="0" />
+                <xs:element name="Skill2" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillExplain2" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillEffect2" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillMag2" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillCode3" type="xs:string" minOccurs="0" />
+                <xs:element name="Skill3" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillExplain3" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillEffect3" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillMag3" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillCode4" type="xs:string" minOccurs="0" />
+                <xs:element name="Skill4" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillExplain4" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillEffect4" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillMag4" type="xs:string" minOccurs="0" />
+                <xs:element name="HasVoice" type="xs:boolean" default="false" minOccurs="0" />
+                <xs:element name="Voices" type="xs:string" minOccurs="0" />
+                <xs:element name="CostumeVoices" type="xs:string" minOccurs="0" />
+                <xs:element name="VoiceActor" type="xs:string" minOccurs="0" />
+                <xs:element name="Illustrator" type="xs:string" minOccurs="0" />
+                <xs:element name="HasCensor" type="xs:boolean" default="false" minOccurs="0" />
+                <xs:element name="CensorType" type="xs:string" minOccurs="0" />
+                <xs:element name="ProductDialog" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Doll>
+    <Name>프롤러</Name>
+    <Type>LightArmor;Machine;CloseIn</Type>
+    <IsBoss>false</IsBoss>
+    <BornGrade>1</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>2</DicNumber>
+    <Skill1>불타는 직감</Skill1>
+    <SkillExplain1>수비 방침에서 자신 뒤에 있는 유닛의 화력과 회피를 증가시킨다. 그 외 방침에서는 자신의 주위 3 범위 안의 모든 근접 유닛의 화력과 회피를 증가시킨다. 최대 3 중첩.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;화력 증가치;회피 증가치</SkillEffect1>
+    <SkillMag1>0초,0초,12%,30%</SkillMag1>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>스카웃</Name>
+    <Type>LightArmor;Machine;CloseIn</Type>
+    <IsBoss>false</IsBoss>
+    <BornGrade>1</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>3</DicNumber>
+    <Skill1>약점 표시</Skill1>
+    <SkillExplain1>현재 공격 대상 주위 2 범위 안의 적 유닛을 표식한다. 표식된 유닛은 회피가 감소하며, 아군 유닛에게 공격 받을 때 추가로 피해를 받는다. 중첩 불가능.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;지속시간;회피 감소치;피해량</SkillEffect1>
+    <SkillMag1>2초,8초,5초,50%,14</SkillMag1>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>리퍼</Name>
+    <Type>LightArmor;Doll;Remote</Type>
+    <IsBoss>false</IsBoss>
+    <BornGrade>1</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>4</DicNumber>
+    <Skill1>극한의 적응력</Skill1>
+    <SkillExplain1>수비 방침에서 발동 시 자신의 회피를 증가시킨다. 그 외 방침에서는 자신의 화력을 증가시킨다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;지속시간;회피 증가치;화력 증가치</SkillEffect1>
+    <SkillMag1>6초,8초,5초,120%,90%</SkillMag1>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>스케어크로우</Name>
+    <Type>LightArmor;Doll;Remote</Type>
+    <IsBoss>true</IsBoss>
+    <BornGrade>3</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <EffectFormation>1;1;1;1;1;1;1;1;1</EffectFormation>
+    <Effect1>AS,EV</Effect1>
+    <EffectMag1>6,9;15,20;15,20;15,20</EffectMag1>
+    <EffectType1>Doll</EffectType1>
+    <DicNumber>5</DicNumber>
+    <Skill1>전장 청소</Skill1>
+    <SkillExplain1>&lt;패시브&gt; 스케어크로우의 일반 공격 1회는 소형 드론 3기의 일제사격으로 구성된다. 각 드론의 화력은 스케어크로우의 40%이다.   &lt;액티브&gt; 소형드론이 고속 회전하며 5초간 10차례 공격하며 추가로 5회 공격한다. 이때 드론 화력이 증가하며, 체력이 가장 적은 목표를 우선 공격한다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;드론 화력 증가치</SkillEffect1>
+    <SkillMag1>6초,12초,100%</SkillMag1>
+    <FASkillMag1>4초,12초,100%</FASkillMag1>
+    <Skill2>그림자 포식</Skill2>
+    <SkillExplain2>자신이 이동할 수 있는 지점에 정찰 유닛을 배치한다. 이 유닛은 이동할 수 없지만 거점은 점령할 수 있고, 적과 조우 시 파괴되며 적 최대 체력에 비례해서 피해를 준다. 다음 아군 턴 시작 시 자동 소멸한다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;피해량</SkillEffect2>
+    <SkillMag2>0턴,2턴,30%</SkillMag2>
+    <Skill3>주박</Skill3>
+    <SkillExplain3>스케어크로우의 2차례 공격마다 마지막 드론 사격은 해당 목표의 회피와 사속을 감소시킨다.</SkillExplain3>
+    <SkillEffect3>선 쿨타임;쿨타임;지속시간;회피 감소량;사속 감소량</SkillEffect3>
+    <SkillMag3>0초,0초,5초,40%,20%</SkillMag3>
+    <Skill4>고스트 스텝</Skill4>
+    <SkillExplain4>적이 점령한 거점에서 전투 시, 제대 전체 화력을 증가시킨다.</SkillExplain4>
+    <SkillEffect4>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect4>
+    <SkillMag4>0초,0초,6초,10%</SkillMag4>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>디너게이트</Name>
+    <Type>LightArmor;Machine;CloseIn</Type>
+    <IsBoss>false</IsBoss>
+    <BornGrade>1</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>6</DicNumber>
+    <Skill1>부실한 증원</Skill1>
+    <SkillExplain1>일정 횟수 일반공격을 할 때마다, 자신의 위치에 자신의 능력치를 일정치 계승한 유닛을 1마리 소환한다.   &lt;추가 증원&gt; 디너게이트가 1편제 손실될 때, 자신의 능력치를 완전히 계승한 유닛을 1마리 소환한다. 동시에 자신의 1편제 체력의 일정치 만큼의 보호막을 얻는다. 중첩 불가능.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;일반 지속시간;발동 공격 횟수;능력치 계승 비율;추가 증원 지속시간;보호막 지속시간;보호막 충전량</SkillEffect1>
+    <SkillMag1>0초,3333초,10초,6회,100%,10초,5초,100%</SkillMag1>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>베스피드</Name>
+    <Type>LightArmor;Doll;Remote</Type>
+    <IsBoss>false</IsBoss>
+    <BornGrade>1</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>7</DicNumber>
+    <Skill1>무리의 힘</Skill1>
+    <SkillExplain1>모든 원격 유닛의 사속과 명중을 증가시킨다. 중첩 불가능.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;지속시간;사속 증가량;명중 증가량</SkillEffect1>
+    <SkillMag1>5초,8초,5초,6%,20%</SkillMag1>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>엑스큐셔너</Name>
+    <Type>LightArmor;Doll;CloseIn</Type>
+    <IsBoss>true</IsBoss>
+    <BornGrade>3</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <EffectFormation>1;1;1;1;1;1;1;1;1</EffectFormation>
+    <Effect1>FR,CR</Effect1>
+    <EffectMag1>6,6;10,10;10,10;10,10</EffectMag1>
+    <EffectType1>All</EffectType1>
+    <Effect2>AC,EV</Effect2>
+    <EffectMag2>10,10;18,18;18,18;18,18</EffectMag2>
+    <EffectType2>CloseIn</EffectType2>
+    <DicNumber>8</DicNumber>
+    <Skill1>정수리 치기</Skill1>
+    <SkillExplain1>체력이 가장 많은 적을 내려찍어, 중심 1 범위 안의 적에게 3단 근접 피해를 준다. 해당 피해량은 범위 내 적의 각 편제수에 따라 나눠진다. 동시에 주위 4 범위 안의 적에게 피해를 주고 자신에게 보호막을 생성한다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;지속시간;근접 피해량;추가 피해량</SkillEffect1>
+    <SkillMag1>6초,12초,5초,17.5배,0.7배</SkillMag1>
+    <FASkillMag1>6초,12초,5초,25배,1배</FASkillMag1>
+    <Skill2>처형의 피날레</Skill2>
+    <SkillExplain2>스킬 아이콘으로 공격 모드를 전환하며 전환 시 3초간 이동속도가 100% 증가한다.   &lt;기본 : 권총 사격&gt; 가장 가까운 적에게 1배 화력으로 사격하며, 4회 공격마다 해당 목표가 받는 피해량이 증가한다.   &lt;참격&gt; 근접전 모드로 전환하여 사거리가 3에 공격속도가 감소하지만 반드시 치명타가 발생하며 전방 4 범위 안의 적에게 장갑 무시 근접 공격 피해를 준다.   &lt;초기 전환&gt; 전투 처음으로 전환 시 모든 근접 유닛의 이동속도를 50% 증가시키며, 엑스큐서너의 현재 체력의 5%만큼의 보호막을 생성한다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;사격 피해 증가량;공격속도 감소량;근접 공격 피해량;보호막 지속시간</SkillEffect2>
+    <SkillMag2>0초,5초,10%,20%,0.8배,5초</SkillMag2>
+    <Skill3>칼날의 섬광</Skill3>
+    <SkillExplain3>근접전 모드로 전환 시, 자신의 회피를 증가시키며 보호막을 생성한다.</SkillExplain3>
+    <SkillEffect3>선 쿨타임;쿨타임;지속시간;회피 증가량;보호막 생성량</SkillEffect3>
+    <SkillMag3>0초,0초,3초,50%,50</SkillMag3>
+    <Skill4>토막내기</Skill4>
+    <SkillExplain4>적의 남은 체력이 적을수록 피해량이 증가한다.</SkillExplain4>
+    <SkillEffect4>선 쿨타임;쿨타임;최대 피해 증가량</SkillEffect4>
+    <SkillMag4>0초,0초,20%</SkillMag4>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>예거</Name>
+    <Type>LightArmor;Doll;Remote</Type>
+    <IsBoss>false</IsBoss>
+    <BornGrade>1</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>9</DicNumber>
+    <Skill1>예거 스트라이크</Skill1>
+    <SkillExplain1>일정 횟수의 일반 공격 시마다 저격을 1번 실시한다. 1초간 조준 후 가장 뒤에 있는 적에게 피해를 준다. 반드시 명중하며 장갑을 무시한다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;일반 공격 횟수;피해량</SkillEffect1>
+    <SkillMag1>0초,0초,4회,350%</SkillMag1>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>가드</Name>
+    <Type>LightArmor;Doll;CloseIn</Type>
+    <IsBoss>false</IsBoss>
+    <BornGrade>1</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>10</DicNumber>
+    <Skill1>실드 코팅</Skill1>
+    <SkillExplain1>수비 방침에서 발동 시 같은 열 인형 유닛에게 보호막을 부여한다. 수비 이외 방침에서 발동 시 자신 주위 3 범위 안의 아군 인형 유닛에게 보호막을 부여한다. 동일 효과는 3회 중첩 가능하다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;지속시간;수비 방침 보호막 생성량;그 외 보호막 생성량</SkillEffect1>
+    <SkillMag1>5초,8초,5초,20,40</SkillMag1>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>헌터</Name>
+    <Type>LightArmor;Doll;Remote</Type>
+    <IsBoss>true</IsBoss>
+    <BornGrade>3</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <EffectFormation>1;1;1;1;1;1;1;1;1</EffectFormation>
+    <Effect1>AS,AC</Effect1>
+    <EffectMag1>3,3;6,6;6,6;6,6</EffectMag1>
+    <EffectType1>All</EffectType1>
+    <Effect2>AC,EV</Effect2>
+    <EffectMag2>8,8;12,12;12,12;12,12</EffectMag2>
+    <EffectType2>CloseIn</EffectType2>
+    <Effect3>FR,AC</Effect3>
+    <EffectMag3>6,8;10,12;10,12;10,12</EffectMag3>
+    <EffectType3>Remote</EffectType3>
+    <DicNumber>11</DicNumber>
+    <Skill1>멸망의 혈탄</Skill1>
+    <SkillExplain1>&lt;패시브&gt; 헌터의 일반 공격은 권총 2정 동시 사격으로 목표에게 화력 50%만큼의 피해를 2회씩 준다.   &lt;액티브&gt; 발동 후 일정 시간 동안 체력이 가장 높은 적을 우선으로 공격하며, 권총 1정의 위력이 본체 화력 일정 수준만큼으로 증가하고, 같은 대상을 공격할 때마다 주는 피해량이 최대 20회까지 일정량씩 증가한다. 구속탄의 효과를 받은 적이 있을 경우 해당 적을 우선 공격한다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;액티브 지속시간;화력 증가치;피해량 증가치</SkillEffect1>
+    <SkillMag1>6초,12초,6초,70%,15%</SkillMag1>
+    <FASkillMag1>6초,12초,6초,80%,18%</FASkillMag1>
+    <Skill2>짐승은 그물에</Skill2>
+    <SkillExplain2>헌터는 일정 시간마다 특수한 구속탄을 1발씩 최대 3발 획득할 수 있다. 스킬 발동 시, 체력이 가장 높은 적에게 반드시 명중하는 100% 피해를 주고, 이동을 멈추게 하며 다른 유닛의 공격을 집중시키게 한다. 동시에 대상의 명중과 장갑을 감소시킨다. 디버프는 중첩 불가.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;구속탄 획득 간격;이동 불가 지속시간;디버프 지속시간;명중 감소량;장갑 감소량</SkillEffect2>
+    <SkillMag2>0초,3초,6초,3초,5초,50%,50%</SkillMag2>
+    <Skill3>격분</Skill3>
+    <SkillExplain3>공격 시 치명타가 발생하지 않을 때마다, 다음 치명타가 발생할 때까지 치명타 피해량이 증가한다.</SkillExplain3>
+    <SkillEffect3>선 쿨타임;쿨타임;피해 증가량</SkillEffect3>
+    <SkillMag3>0초,0초,15%</SkillMag3>
+    <Skill4>궁지몰이</Skill4>
+    <SkillExplain4>디버프 효과를 받는 적을 공격할 경우 주는 피해량이 증가한다.</SkillExplain4>
+    <SkillEffect4>선 쿨타임;쿨타임;피해 증가량</SkillEffect4>
+    <SkillMag4>0초,0초,20%</SkillMag4>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>드라군</Name>
+    <Type>LightArmor;Doll;CloseIn</Type>
+    <IsBoss>false</IsBoss>
+    <BornGrade>2</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>12</DicNumber>
+    <Skill1>선봉의 춤</Skill1>
+    <SkillExplain1>수비 방침에서 사거리가 3 증가하며, 전투 개시 시 자신의 최대 체력의 일정 수준만큼 보호막을 생성한다. 보호막 유지 동안 화력, 사속, 이동속도가 증가한다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;보호막 생성량;보호막 지속시간;화력 증가치;사속 증가치;이동속도 증가치</SkillEffect1>
+    <SkillMag1>0초,0초,15%,8초,50%,50%,50%</SkillMag1>
+    <Skill2>칼의 감옥</Skill2>
+    <SkillExplain2>일반 공격 시 목표의 화력과 명중을 감소시킨다. 중첩 불가능.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;지속시간;화력 감소치;명중 감소치</SkillEffect2>
+    <SkillMag2>0초,0초,3초,15%,25%</SkillMag2>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>네메움</Name>
+    <Type>HeavyArmor;Machine;Remote</Type>
+    <IsBoss>false</IsBoss>
+    <BornGrade>2</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>14</DicNumber>
+    <Skill1>사자의 발톱</Skill1>
+    <SkillExplain1>네메움은 공격 시 목표에게 지속시간을 지닌 표식을 1개 부여한다. 네메움이 해당 표식을 가진 유닛을 공격할 때 표식 1개마다 치명률이 증가한다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;표식 지속시간;치명률 증가치</SkillEffect1>
+    <SkillMag1>0초,0초,5초,5%</SkillMag1>
+    <Skill2>사자의 송곳니</Skill2>
+    <SkillExplain2>일반 공격마다 추가로 목표의 최대 체력의 일정 수준만큼의 피해를 줄 수 있다. 단, 최대 피해량은 자신의 화력의 2배이다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;체력 비례 피해량</SkillEffect2>
+    <SkillMag2>0초,0초,0.5%</SkillMag2>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>이지스</Name>
+    <Type>HeavyArmor;Doll;CloseIn</Type>
+    <IsBoss>false</IsBoss>
+    <BornGrade>2</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>15</DicNumber>
+    <Skill1>신성한 방패</Skill1>
+    <SkillExplain1>자신에게 보호막을 생성한다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;지속시간;보호막 생성량</SkillEffect1>
+    <SkillMag1>4초,6초,5초,40</SkillMag1>
+    <Skill2>두려움 없는 자</Skill2>
+    <SkillExplain2>자신이 받는 피해량을 감소시킨다. 수비 방침일 경우 같은 열의 유닛이 받는 피해량을 감소시킨다. 동일 효과는 최대 3회 중첩 가능.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;자기 피해 감소량;아군 피해 감소량</SkillEffect2>
+    <SkillMag2>0초,0초,10%,5%</SkillMag2>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>맨티코어</Name>
+    <Type>HeavyArmor;Machine;Remote</Type>
+    <IsBoss>false</IsBoss>
+    <BornGrade>2</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>16</DicNumber>
+    <Skill1>소탕 사격</Skill1>
+    <SkillExplain1>다음 일반 공격 시 목표를 중심으로 좌우를 소사하여, 범위 안에 있는 적 각 편제에게 2회로 나눠 피해를 준다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;피해량</SkillEffect1>
+    <SkillMag1>3초,6초,2.5배</SkillMag1>
+    <Skill2>괴수의 위협</Skill2>
+    <SkillExplain2>근접 방침에 따라 현재 공격 중이 아닌 적에게 다음 효과를 부여한다.   &lt;수비&gt; 적을 밀어내고 해당 적들의 이동속도과 사속을 감소시킨다.   &lt;그 외&gt; 적을 일정시간 기절시킨다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;수비 디버프 지속시간;이동속도 감소치;사속 감소치;기절 지속시간</SkillEffect2>
+    <SkillMag2>0초,10초,3초,30%,30%,2.5초</SkillMag2>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>인트루더</Name>
+    <Type>LightArmor;Doll;Remote</Type>
+    <IsBoss>true</IsBoss>
+    <BornGrade>3</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <EffectFormation>1;1;1;1;1;1;1;1;1</EffectFormation>
+    <Effect1>FR,AC,EV,CR</Effect1>
+    <EffectMag1>6,6,6,6;10,10,10,10;10,10,10,10;10,10,10,10</EffectMag1>
+    <EffectType1>All</EffectType1>
+    <DicNumber>17</DicNumber>
+    <Skill1>교란군세</Skill1>
+    <SkillExplain1>디너게이트 3그룹을 증원으로 호출하여, 전방으로 돌진해 경로 상에 있는 적들을 공격한다. 각 그룹은 5편제 디너게이트 3기를 포함하며, 인투루더의 최대 체력, 화력, 명중, 회피를 일정 수치 계승한다. 디너게이트는 충돌한 적에게 일정 피해를 추가로 준다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;체력 계승치;화력 계승치;명중 계승치;회피 계승치;충돌 피해량</SkillEffect1>
+    <SkillMag1>6초,12초,5%,100%,50%,50%,40%</SkillMag1>
+    <FASkillMag1>6초,12초,10%,100%,50%,50%,50%</FASkillMag1>
+    <Skill2>철벽 증원</Skill2>
+    <SkillExplain2>아무 아군 제대를 선택하여 발동한다. 선택한 제대는 전투 개시 시 디너게이트 1그룹의 증원을 받게 된다. 1그룹은 5편제 디너게이트 2기를 포함하며 일정 능력치를 가진다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;증원 체력;증원 화력;증원;공속;증원 명중;증원 회피</SkillEffect2>
+    <SkillMag2>0턴,2턴,300,80,50,50,70</SkillMag2>
+    <Skill3>전면 보호</Skill3>
+    <SkillExplain3>전투 개시 시, 아군 전체에게 인트루더 체력의 일정 비율만큼 보호막을 부여한다.</SkillExplain3>
+    <SkillEffect3>선 쿨타임;쿨타임;보호막 지속시간;보호막 생성량</SkillEffect3>
+    <SkillMag3>0초,3333초,5초,10%</SkillMag3>
+    <Skill4>증원 강화</Skill4>
+    <SkillExplain4>인트루더가 존재하는 동안 증원 병력으로 등장한 모든 아군 유닛은 인트루더 체력의 일정 수치만큼의 보호막을 부여받으며 화력이 인트루더 화력에 비례해서 증가한다.</SkillExplain4>
+    <SkillEffect4>선 쿨타임;쿨타임;보호막 생성량;화력 증가치(인트루더 비례)</SkillEffect4>
+    <SkillMag4>0초,0초,10%,10%</SkillMag4>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>브루트</Name>
+    <Type>LightArmor;Doll;CloseIn</Type>
+    <IsBoss>false</IsBoss>
+    <BornGrade>2</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>28</DicNumber>
+    <Skill1>분노의 연격</Skill1>
+    <SkillExplain1>브루트의 일반 공격은 자신의 화력에 비례한 피해량의 근접 공격 2회로 구성된다. 일정 시간마다 다음 일반 공격 명중 시 적의 장갑을 자신의 관통 수치에 비례해서 감소시킨다. 동일 효과는 최대 3회 중첩 가능.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;일반 공격 피해량;특수 디버프 발동 간격;디버프 지속시간;장갑 감소량</SkillEffect1>
+    <SkillMag1>0초,4초,60%,4초,4초,20%</SkillMag1>
+    <Skill2>난도질</Skill2>
+    <SkillExplain2>섬멸 또는 돌격 방침에서 공격마다 목표 유닛이 받는 근접 피해량을 증가시키며, 자신의 회피를 증가시킨다. 피해 증가는 최대 3회, 회피 상승 효과는 최대 6회 중첩 가능.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;지속시간;근접 피해 증가량;회피 증가량</SkillEffect2>
+    <SkillMag2>0초,0초,3초,7,25%</SkillMag2>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>스트라이커</Name>
+    <Type>LightArmor;Doll;Remote</Type>
+    <IsBoss>false</IsBoss>
+    <BornGrade>1</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>29</DicNumber>
+    <Skill1>초전박살</Skill1>
+    <SkillExplain1>전투 개시 후 공격마다 추가 피해를 준다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;지속시간;추가 피해량</SkillEffect1>
+    <SkillMag1>0초,0초,5초,70%</SkillMag1>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+  <Doll>
+    <Name>타란툴라</Name>
+    <Type>HeavyArmor;Machine;CloseIn</Type>
+    <IsBoss>false</IsBoss>
+    <BornGrade>2</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>30</DicNumber>
+    <Skill1>튼튼한 증원</Skill1>
+    <SkillExplain1>일정 횟수의 일반 공격을 할 때마다, 자신의 위치에 자신의 능력치를 계승한 유닛을 1마리 소환한다.   &lt;추가 증원&gt; 타란튤라가 1편제 손실될 때, 자신의 능력치를 완전히 계승한 유닛을 1마리 소환한다. 동시에 자신의 1편제 체력 100% 만큼의 보호막을 부여한다. 중첩 불가능.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;일반 공격 횟수;능력 계승치;일반 지속시간;추가 증원 지속시간;보호막 지속시간;보호막 부여량</SkillEffect1>
+    <SkillMag1>0초,1초,6회,100%,10초,10초,5초,100%</SkillMag1>
+    <Skill2>끈질긴 본능</Skill2>
+    <SkillExplain2>타란튤라는 남은 체력이 적을수록 피해를 적게 받는다. 최대 체력의 일정 손실마다, 받는 피해량이 1% 감소한다. 증원으로 소환된 타란튤라도 해당 효과를 적용받는다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;발동 손실 비율</SkillEffect2>
+    <SkillMag2>0초,3333초,3%</SkillMag2>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Doll>
+</NewDataSet>

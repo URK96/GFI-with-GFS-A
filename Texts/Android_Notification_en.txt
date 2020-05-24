@@ -1,6 +1,6 @@
-﻿# T-Doll DB Update 2020/05/09
+﻿# T-Doll DB Update 2020/05/22
 
-- Add new T-Dolls (CAR, HP-35, SAF, Tabuk, AK-Alfa, ZB-26)
+- Add new T-Doll's Costumes (OTs-14, QBU-88, Saiga-12, KSVK, Zas M76, M1911, M4A1, M16A1, M4 SOPMOD II, ST AR-15, RO635, M200)
 
 
 # Equip DB Update 2020/04/17
