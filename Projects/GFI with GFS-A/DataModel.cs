@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Java.Lang;
+
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 
@@ -160,22 +162,20 @@ namespace GFI_with_GFS_A
                     CostumeVoices = null;
                 }
 
-                SetAbility(ref dr);
+                SetAbility(dr);
             }
         }
 
-        private void SetAbility(ref DataRow dr)
+        private void SetAbility(DataRow dr)
         {
             Abilities = new Dictionary<string, string>();
 
-            string[] abilityName = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed", "MoveSpeed", "Critical" };
+            string[] abilityName = { "Grow", "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed", "MoveSpeed", "Critical" };
 
             for (int i = 0; i < abilityName.Length; ++i)
             {
                 Abilities.Add(abilityName[i], (string)dr[abilityName[i]]);
             }
-
-            Abilities.Add("Grow", (string)dr["Grow"]);
 
             if (ETC.IsDBNullOrBlank(dr, "Bullet"))
             {
@@ -259,10 +259,10 @@ namespace GFI_with_GFS_A
                     break;
             }
 
-            SetAbility(ref dr);
+            SetAbility(dr);
         }
 
-        private void SetAbility(ref DataRow dr)
+        private void SetAbility(DataRow dr)
         {
             Abilities = ((string)dr["Ability"]).Split(';');
             InitMags = ((string)dr["InitialMagnification"]).Split(';');
@@ -306,10 +306,10 @@ namespace GFI_with_GFS_A
             OrderConsume = (int)dr["OrderConsume"];
             CoolDown = (int)dr["CoolDown"];
 
-            SetAbility(ref dr);
+            SetAbility(dr);
         }
 
-        private void SetAbility(ref DataRow dr)
+        private void SetAbility(DataRow dr)
         {
             Abilities = new Dictionary<string, string>();
 
@@ -370,10 +370,10 @@ namespace GFI_with_GFS_A
                 Voices = ((string)dr["Voices"]).Split(';');
             }
 
-            SetAbility(ref drs);
+            SetAbility(drs);
         }
 
-        private void SetAbility(ref List<DataRow> drs)
+        private void SetAbility(List<DataRow> drs)
         {
             Abilities = new Dictionary<string, int>[Types.Length];
 
@@ -437,16 +437,16 @@ namespace GFI_with_GFS_A
 
             if (!basicInfo)
             {
-                InitializeVersionUpPlus(ref dr);
-                InitializeChipsetCircuit(ref dr);
-                InitializeGradeRestriction(ref dr);
-                InitializeChipsetBonus(ref dr);
-                InitializeSkills(ref dr);
-                InitializeAbilities(ref dr);
+                InitializeVersionUpPlus(dr);
+                InitializeChipsetCircuit(dr);
+                InitializeGradeRestriction(dr);
+                InitializeChipsetBonus(dr);
+                InitializeSkills(dr);
+                InitializeAbilities(dr);
             }
         }
 
-        private void InitializeVersionUpPlus(ref DataRow dr)
+        private void InitializeVersionUpPlus(DataRow dr)
         {
             VersionUpPlus = new Dictionary<string, int>[10];
             string[] list = ((string)dr["VersionUp"]).Split(';');
@@ -463,7 +463,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void InitializeChipsetCircuit(ref DataRow dr)
+        private void InitializeChipsetCircuit(DataRow dr)
         {
             ChipsetType = (string)dr["CircuitType"];
 
@@ -514,7 +514,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void InitializeGradeRestriction(ref DataRow dr)
+        private void InitializeGradeRestriction(DataRow dr)
         {
             GradeRestriction = new Dictionary<string, int>[5];
             string[] list = ((string)dr["CeilingRestriction"]).Split(';');
@@ -531,7 +531,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void InitializeChipsetBonus(ref DataRow dr)
+        private void InitializeChipsetBonus(DataRow dr)
         {
             string[] countList = ((string)dr["ChipsetBonusCount"]).Split(',');
             ChipsetBonusCount = new int[countList.Length];
@@ -556,7 +556,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void InitializeSkills(ref DataRow dr)
+        private void InitializeSkills(DataRow dr)
         {
             SkillName = new string[3];
             SkillExplain = new string[3];
@@ -582,7 +582,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void InitializeAbilities(ref DataRow dr)
+        private void InitializeAbilities(DataRow dr)
         {
             Abilities = new Dictionary<string, int>();
 
@@ -593,6 +593,268 @@ namespace GFI_with_GFS_A
                 Abilities.Add($"{s}_Min", int.Parse(list[0]));
                 Abilities.Add($"{s}_Max", int.Parse(list[1]));
             }
+        }
+    }
+
+    public class Coalition
+    {
+        public string Name { get; private set; }
+        public string NameKR { get; private set; }
+        public string NickName { get; private set; }
+        public string CodeName { get; private set; }
+        public int DicNumber { get; private set; }
+        //public string Country { get; private set; }
+        public string Illustrator { get; private set; }
+        public string VoiceActor { get; private set; }
+        public int Grade { get; private set; }
+        public int GradeIconId { get; private set; }
+        //public string ProductDialog { get; private set; }
+        public string[] TypeCode { get; private set; }
+        public string[] Type { get; private set; }
+        public string Affiliation { get; private set; }
+        public bool IsBoss { get; private set; }
+        public bool HasVoice { get; private set; }
+        public string[] Costumes { get; private set; }
+        public int[] BuffFormation { get; private set; }
+        public string[][] BuffInfo { get; private set; }
+        public string[][] BuffMag { get; private set; }
+        public string[] BuffType { get; private set; }
+        public string[] SkillName { get; private set; }
+        public string[] SkillExplain { get; private set; }
+        public string[][] SkillEffect { get; private set; }
+        public string[][] SkillMag { get; private set; }
+        public string[][] FASkillMag { get; private set; }
+        public string[] Voices { get; private set; }
+        public string[,] CostumeVoices { get; private set; }
+        public bool HasCensored { get; private set; }
+        public string[] CensorType { get; private set; }
+        public string[] DropArea { get; private set; }
+
+        public Dictionary<string, string> Abilities { get; private set; }
+        public string[] AbilityGrade { get; private set; }
+
+        public string GetDicNumberString { get { return $"No. {DicNumber.ToString()}"; } }
+        public string GetTypeString { get
+            {
+                var sb = new StringBuilder();
+
+                foreach (string type in Type)
+                {
+                    sb.Append(type);
+                    sb.Append("  ");
+                }
+
+                return sb.Delete(sb.Length() - 2, sb.Length()).ToString();
+            }
+        }
+
+        internal Coalition(DataRow dr, bool basicInfo = false)
+        {
+            if (ETC.locale.Language == "ko")
+            {
+                Name = (string)dr["Name"];
+                //ProductDialog = ETC.IsDBNullOrBlank(dr, "ProductDialog") ? "" : (string)dr["ProductDialog"];
+            }
+            else
+            {
+                Name = ETC.IsDBNullOrBlank(dr, "Name_EN") ? (string)dr["CodeName"] : (string)dr["Name_EN"];
+                //ProductDialog = ETC.IsDBNullOrBlank(dr, "ProductDialog") ? "" : (string)dr["ProductDialog"];
+            }
+
+            NameKR = (string)dr["Name"];
+            //NickName = (string)dr["NickName"];
+            //CodeName = (string)dr["CodeName"];
+            DicNumber = (int)dr["DicNumber"];
+            //Country = SetCountry(ref dr);
+            Grade = (int)dr["BornGrade"];
+
+            SetType(dr);
+
+            Affiliation = (string)dr["Affiliation"];
+            //DropEvent = ((string)dr["DropEvent"]).Split(',');
+            IsBoss = (bool)dr["IsBoss"];
+            HasVoice = (bool)dr["HasVoice"];
+            Illustrator = ETC.IsDBNullOrBlank(dr, "Illustrator") ? "" : (string)dr["Illustrator"];
+            HasCensored = (bool)dr["HasCensor"];
+            CensorType = HasCensored ? ((string)dr["CensorType"]).Split(';') : null;
+            //Costumes = ETC.IsDBNullOrBlank(dr, "Costume") == true ? null : ((string)dr["Costume"]).Split(';');
+
+            if (!ETC.IsDBNullOrBlank(dr, "EffectFormation"))
+            {
+                BuffFormation = new int[9];
+                BuffInfo = new string[3][];
+                BuffMag = new string[3][];
+                BuffType = new string[3];
+
+                string[] buffFormationData = ((string)dr["EffectFormation"]).Split(',');
+
+                for (int i = 0; i < buffFormationData.Length; ++i)
+                {
+                    BuffFormation[i] = int.Parse(buffFormationData[i]);
+                }
+
+                for (int i = 0; i < 3; ++i)
+                {
+                    string[] index = { $"Effect{i + 1}", $"EffectMag{i + 1}", $"EffectType{i + 1}" };
+
+                    if (!ETC.IsDBNullOrBlank(dr, index[0]))
+                    {
+                        BuffInfo[i] = ((string)dr[index[0]]).Split(",");
+                        BuffMag[i] = ((string)dr[index[1]]).Split(";");
+                        BuffType[i] = (string)dr[index[2]];
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+
+            SkillName = new string[4];
+            SkillExplain = new string[4];
+            SkillEffect = new string[4][];
+            SkillMag = new string[4][];
+            FASkillMag = new string[4][];
+
+            for (int i = 0; i < 4; ++i)
+            {
+                string[] index = { $"Skill{i + 1}", $"SkillExplain{i + 1}", $"SkillEffect{i + 1}", $"SkillMag{i + 1}" };
+
+                if (!ETC.IsDBNullOrBlank(dr, index[0]))
+                {
+                    SkillName[i] = (string)dr[index[0]];
+                    SkillExplain[i] = (string)dr[index[1]];
+                    SkillEffect[i] = ((string)dr[index[2]]).Split(";");
+                    SkillMag[i] = ((string)dr[index[3]]).Split(",");
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            if (!ETC.IsDBNullOrBlank(dr, "FASkillMag1"))
+            {
+                FASkillMag[0] = ((string)dr["FASkillMag1"]).Split(",");
+            }
+
+            switch (Grade)
+            {
+                case 0:
+                    GradeIconId = Resource.Drawable.Grade_0;
+                    break;
+                case 1:
+                    GradeIconId = Resource.Drawable.Grade_1;
+                    break;
+                case 2:
+                    GradeIconId = Resource.Drawable.Grade_2;
+                    break;
+                case 3:
+                    GradeIconId = Resource.Drawable.Grade_3;
+                    break;
+                case 4:
+                    GradeIconId = Resource.Drawable.Grade_4;
+                    break;
+                case 5:
+                    GradeIconId = Resource.Drawable.Grade_5;
+                    break;
+            }
+
+            if (!basicInfo)
+            {
+                if (HasVoice)
+                {
+                    Voices = ((string)dr["Voices"]).Split(';');
+                    VoiceActor = ETC.IsDBNullOrBlank(dr, "VoiceActor") ? "" : (string)dr["VoiceActor"];
+
+                    if (!ETC.IsDBNullOrBlank(dr, "CostumeVoices"))
+                    {
+                        string[] temp = ((string)dr["CostumeVoices"]).Split('/');
+
+                        CostumeVoices = new string[temp.Length, 2];
+
+                        for (int i = 0; i < temp.Length; ++i)
+                        {
+                            CostumeVoices[i, 0] = temp[i].Split(':')[0];
+                            CostumeVoices[i, 1] = temp[i].Split(':')[1];
+                        }
+                    }
+                }
+                else
+                {
+                    Voices = null;
+                    CostumeVoices = null;
+                }
+
+                //SetAbility(dr);
+            }
+        }
+
+        private void SetType(DataRow dr)
+        {
+            TypeCode = ((string)dr["Type"]).Split(";");
+            Type = new string[TypeCode.Length];
+
+            for (int i = 0; i < TypeCode.Length; ++i)
+            {
+                string s = "";
+
+                switch (TypeCode[i])
+                {
+                    case "LightArmor":
+                        s = ETC.Resources.GetString(Resource.String.Common_LightArmor);
+                        break;
+                    case "HeavyArmor":
+                        s = ETC.Resources.GetString(Resource.String.Common_HeavyArmor);
+                        break;
+                    case "Machine":
+                        s = ETC.Resources.GetString(Resource.String.Common_Machine);
+                        break;
+                    case "Doll":
+                        s = ETC.Resources.GetString(Resource.String.Common_Doll);
+                        break;
+                    case "Remote":
+                        s = ETC.Resources.GetString(Resource.String.Common_Remote);
+                        break;
+                    case "CloseIn":
+                        s = ETC.Resources.GetString(Resource.String.Common_CloseIn);
+                        break;
+                }
+
+                Type[i] = s;
+            }
+        }
+
+        private void SetAbility(DataRow dr)
+        {
+            Abilities = new Dictionary<string, string>();
+
+            string[] abilityName = { "Grow", "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed", "MoveSpeed", "Critical" };
+
+            for (int i = 0; i < abilityName.Length; ++i)
+            {
+                Abilities.Add(abilityName[i], (string)dr[abilityName[i]]);
+            }
+
+            if (ETC.IsDBNullOrBlank(dr, "Bullet"))
+            {
+                Abilities.Add("Bullet", "0");
+            }
+            else
+            {
+                Abilities.Add("Bullet", (string)dr["Bullet"]);
+            }
+
+            if (ETC.IsDBNullOrBlank(dr, "Armor"))
+            {
+                Abilities.Add("Armor", "0");
+            }
+            else
+            {
+                Abilities.Add("Armor", (string)dr["Armor"]);
+            }
+
+            AbilityGrade = ((string)dr["AbilityGrade"]).Split(';');
         }
     }
 }

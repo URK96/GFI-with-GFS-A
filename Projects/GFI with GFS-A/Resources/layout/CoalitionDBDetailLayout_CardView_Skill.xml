@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto">
+<android.support.v7.widget.CardView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:visibility="gone"
+    android:id="@+id/CoalitionDBDetailSkillCardLayout"
+    cardview:cardElevation="4dp"
+    cardview:cardCornerRadius="5dp"
+    cardview:cardBackgroundColor="@color/background_material_dark">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:layout_marginBottom="10dp"
+        android:id="@+id/CoalitionDBDetailSkillLayout">
+    <!--Coalition Skill Part - Basic Layout-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CoalitionDBDetailSkillBasicLayout">
+        <!--Coalition Skill Part - Basic Layout - Skill Icon-->
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/CoalitionDBDetailSkillIcon"
+                android:layout_margin="5dp" />
+        <!--Coalition Skill Part - Basic Layout - Skill Name-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:gravity="center"
+                android:id="@+id/CoalitionDBDetailSkillName" />
+        <!--Coalition Skill Part - Basic Layout - Skill CoolTime-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_toRightOf="@id/CoalitionDBDetailSkillName"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/CoalitionDBDetailSkillCoolTimeLayout">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/CoalitionDBDetailSkillCoolTimeLayout1">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/firstcooltime_icon"
+                        android:id="@+id/CoalitionDBDetailSkillInitCoolTimeIcon"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:gravity="center"
+                        android:id="@+id/CoalitionDBDetailSkillInitCoolTime" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/CoalitionDBDetailSkillCoolTimeLayout2">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/cooltime_icon"
+                        android:id="@+id/CoalitionDBDetailSkillCoolTimeIcon"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:gravity="center"
+                        android:id="@+id/CoalitionDBDetailSkillCoolTime" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    <!--Coalition Skill Part - Skill Explain-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="center"
+            android:layout_below="@id/CoalitionDBDetailSkillBasicLayout"
+            android:id="@+id/CoalitionDBDetailSkillExplain" />
+    <!--Coalition Skill Part - Skill Ability-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/CoalitionDBDetailSkillExplain"
+            android:id="@+id/CoalitionDBDetailSkillAbilityLayout">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/CoalitionDBDetailSkillAbilityTopLayout">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/Common_Effect"
+                    android:id="@+id/CoalitionDBDetailSkillAbilityTopText1" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/Common_Mag"
+                    android:id="@+id/CoalitionDBDetailSkillAbilityTopText2" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/CoalitionDBDetailSkillAbilitySubLayout" />
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+</merge>

@@ -9,6 +9,12 @@
   <string name="Common_SkillTraining">스킬 훈련</string>
   <string name="Common_FSTGradeUp">FST 등급</string>
   <string name="Common_AreaExp">경험치 계산</string>
+  <string name="Common_LightArmor">경장갑</string>
+  <string name="Common_HeavyArmor">중장갑</string>
+  <string name="Common_Machine">기계</string>
+  <string name="Common_Doll">인형</string>
+  <string name="Common_Remote">원격</string>
+  <string name="Common_CloseIn">근접</string>
   <string name="TitleName_AreaExpCalc">지역별 경험치 계산</string>
   
   <string name="ComingSoon">Coming Soon...</string>
@@ -80,6 +86,7 @@
   <string name="Activity_FairyMainActivity">요정 목록</string>
   <string name="Acticity_EnemyMainActivity">적 목록</string>
   <string name="Activity_FSTMainActivity">화력소대 목록</string>
+  <string name="Activity_CoalitionMainActivity">혼합세력 목록</string>
   <string name="Activity_CalcMainActivity">계산기</string>
   <string name="Activity_CartoonMainActivity">만화</string>
   <string name="Activity_EventListActivity">이벤트 목록</string>
@@ -113,7 +120,6 @@
   <string name="DBList_SortBoxApplyFail">정렬 적용 실패</string>
   <string name="DBList_SortBoxResetFail">정렬 초기화 실패</string>
   <string name="DBDetail_LoadDetailFail">세부내용 로드 실패</string>
-  <string name="DollDBDetail_MODChangeFail">Mod 변경 실패</string>
   <string name="RetryLoad_CauseNetwork">네트워크 문제로 재로드 중...</string>
   <string name="Initialize_Fail">초기화 실패</string>
   <string name="SideLinkOpen_Fail">링크 열기 실패</string>
@@ -200,6 +206,7 @@
   <string name="Common_Name">이름</string>
   <string name="Common_CodeName">코드명</string>
   <string name="Common_Grade">등급</string>
+  <string name="Common_BornGrade">태생 등급</string>
   <string name="Common_VersionUpGrade">버전업</string>
   <string name="Common_Range">범위</string>
   <string name="Common_DicNumber">도감 번호</string>
@@ -211,6 +218,7 @@
   <string name="Common_AppearancePlace">출현 지역</string>
   <string name="Common_Effect">효과</string>
   <string name="Common_Mag">비율</string>
+  <string name="Common_Type">종류</string>
   <string name="Common_GunType">총기 종류</string>
   <string name="Common_EquipCategory">장비 분류</string>
   <string name="Common_EquipType">장비 종류</string>
@@ -368,6 +376,8 @@
   <string name="DollDBDetail_RadarAverageString">평균</string>
   <string name="DollDBDetail_BuffType_All">모든 총기 적용</string>
   <string name="DollDBDetail_BuffType_ConfirmString">적용</string>
+  <string name="DollDBDetail_MODChangeFail">Mod 변경 실패</string>
+
   
   <!--DollDBImageViewer-->
   <string name="DollDBImageViewer_DefaultCostume">기본 코스튬</string>
@@ -436,6 +446,16 @@
   <!--FSTMain-->
   <string name="FSTDBMainActivity_Title">화력소대 목록</string>
   <string name="FSTDBMainActivity_SearchHint">화력소대 이름 검색</string>
+
+  <!--CoalitionMain-->
+  <string name="CoalitionDBMainActivity_Title">혼합세력 목록</string>
+  <string name="CoalitionDBMainActivity_SearchHint">혼합세력 이름 검색</string>
+
+  <!--CoalitionDBDetailActivity-->
+  <string name="CoalitionDBDetail_RadarAverageString">평균</string>
+  <string name="CoalitionDBDetail_BuffType_All">모든 총기 적용</string>
+  <string name="CoalitionDBDetail_BuffType_ConfirmString">적용</string>
+  <string name="CoalitionDBDetail_AnalysisChangeFail">분석 수치 변경 실패</string>
   
   <!--GFDInfo-->
   <string name="GFDInfo_Title">소전사전v2 정보</string>
@@ -464,6 +484,7 @@
   <string name="Main_DB_FairyDB">요정 DB</string>
   <string name="Main_DB_EnemyDB">적 DB</string>
   <string name="Main_DB_FSTDB">화력소대 DB</string>
+  <string name="Main_DB_CoalitionDB">혼합세력 DB</string>
 
   <!--New Main - GFD v1-->
   <!--Duplicate OldGFD String-->

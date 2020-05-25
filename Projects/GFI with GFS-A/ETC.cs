@@ -46,6 +46,7 @@ namespace GFI_with_GFS_A
         internal static DataTable fairyList = new DataTable();
         internal static DataTable enemyList = new DataTable();
         internal static DataTable fstList = new DataTable();
+        internal static DataTable coalitionList = new DataTable();
         internal static DataTable skillTrainingList = new DataTable();
         internal static DataTable mdSupportList = new DataTable();
         internal static DataTable freeOPList = new DataTable();
@@ -56,6 +57,7 @@ namespace GFI_with_GFS_A
             "Fairy.gfs",
             "Enemy.gfs",
             "FST.gfs",
+            "Coalition.gfs",
             "MDSupportList.gfs",
             "FreeOP.gfs",
             "SkillTraining.gfs",
@@ -306,6 +308,10 @@ namespace GFI_with_GFS_A
                 Path.Combine(cachePath, "FST", "Normal"),
                 Path.Combine(cachePath, "FST", "Normal_Icon"),
                 Path.Combine(cachePath, "FST", "Skill"),
+                Path.Combine(cachePath, "Coalition"),
+                Path.Combine(cachePath, "Coalition", "BG"),
+                Path.Combine(cachePath, "Coalition", "Normal"),
+                Path.Combine(cachePath, "Coalition", "Normal_Crop"),
                 Path.Combine(cachePath, "OldGFD"),
                 Path.Combine(cachePath, "OldGFD", "Images"),
                 Path.Combine(cachePath, "Event"),
@@ -343,21 +349,31 @@ namespace GFI_with_GFS_A
             try
             {
                 dollList.Clear();
-                _ = dollList.ReadXml(Path.Combine(dbPath, "Doll.gfs"));
+                dollList.ReadXml(Path.Combine(dbPath, "Doll.gfs"));
+
                 equipmentList.Clear();
-                _ = equipmentList.ReadXml(Path.Combine(dbPath, "Equipment.gfs"));
+                equipmentList.ReadXml(Path.Combine(dbPath, "Equipment.gfs"));
+
                 fairyList.Clear();
-                _ = fairyList.ReadXml(Path.Combine(dbPath, "Fairy.gfs"));
+                fairyList.ReadXml(Path.Combine(dbPath, "Fairy.gfs"));
+
                 enemyList.Clear();
-                _ = enemyList.ReadXml(Path.Combine(dbPath, "Enemy.gfs"));
+                enemyList.ReadXml(Path.Combine(dbPath, "Enemy.gfs"));
+
                 fstList.Clear();
-                _ = fstList.ReadXml(Path.Combine(dbPath, "FST.gfs"));
+                fstList.ReadXml(Path.Combine(dbPath, "FST.gfs"));
+
+                coalitionList.Clear();
+                coalitionList.ReadXml(Path.Combine(dbPath, "Coalition.gfs"));
+
                 skillTrainingList.Clear();
-                _ = skillTrainingList.ReadXml(Path.Combine(dbPath, "SkillTraining.gfs"));
+                skillTrainingList.ReadXml(Path.Combine(dbPath, "SkillTraining.gfs"));
+
                 mdSupportList.Clear();
-                _ = mdSupportList.ReadXml(Path.Combine(dbPath, "MDSupportList.gfs"));
+                mdSupportList.ReadXml(Path.Combine(dbPath, "MDSupportList.gfs"));
+
                 freeOPList.Clear();
-                _ = freeOPList.ReadXml(Path.Combine(dbPath, "FreeOP.gfs"));
+                freeOPList.ReadXml(Path.Combine(dbPath, "FreeOP.gfs"));
             }
             catch (Exception)
             {
@@ -378,7 +394,7 @@ namespace GFI_with_GFS_A
                     table.Clear();
                 }
 
-                _ = table.ReadXml(Path.Combine(dbPath, dbFile));
+                table.ReadXml(Path.Combine(dbPath, dbFile));
             }
             catch (Exception)
             {

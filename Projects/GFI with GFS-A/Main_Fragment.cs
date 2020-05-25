@@ -158,6 +158,18 @@ namespace GFI_with_GFS_A
                             Activity.StartActivity(typeof(FSTDBMainActivity));
                             Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                             break;
+                        case 5:
+                            await Task.Run(() =>
+                            {
+                                if (string.IsNullOrEmpty(ETC.fstList.TableName))
+                                {
+                                    ETC.LoadDBSync(ETC.coalitionList, "Coalition.gfs", false);
+                                }
+                            });
+
+                            Activity.StartActivity(typeof(CoalitionDBMainActivity));
+                            Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                            break;
                         default:
                             //ETC.ShowSnackbar(snackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
                             Toast.MakeText(Activity, Resource.String.AbnormalAccess, ToastLength.Short).Show();

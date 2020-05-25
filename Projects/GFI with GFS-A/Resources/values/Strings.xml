@@ -8,6 +8,12 @@
   <string name="Common_SkillTraining">Skill Training</string>
   <string name="Common_FSTGradeUp">FST GradeUP</string>
   <string name="Common_AreaExp">Area Exp</string>
+  <string name="Common_LightArmor">L Armor</string>
+  <string name="Common_HeavyArmor">H Armor</string>
+  <string name="Common_Machine">Machine</string>
+  <string name="Common_Doll">Doll</string>
+  <string name="Common_Remote">Remote</string>
+  <string name="Common_CloseIn">Close</string>
   <string name="TitleName_AreaExpCalc">Calc Area Exp</string>
   <string name="ComingSoon">Coming Soon...</string>
   <string name="Common_ServerMaintenance">Server is Maintenance...</string>
@@ -78,6 +84,7 @@
   <string name="Activity_FairyMainActivity">Fairy List</string>
   <string name="Acticity_EnemyMainActivity">Enemy List</string>
   <string name="Activity_FSTMainActivity">FST List</string>
+  <string name="Activity_CoalitionMainActivity">Coalition List</string>
   <string name="Activity_CalcMainActivity">Calculator</string>
   <string name="Activity_CartoonMainActivity">Cartoon</string>
   <string name="Activity_EventListActivity">Event</string>
@@ -111,7 +118,6 @@
   <string name="DBList_SortBoxApplyFail">Failed to set sort</string>
   <string name="DBList_SortBoxResetFail">Failed to initialize sort</string>
   <string name="DBDetail_LoadDetailFail">Failed to load detail</string>
-  <string name="DollDBDetail_MODChangeFail">Failed to change Mod</string>
   <string name="RetryLoad_CauseNetwork">Reloading due to the network error</string>
   <string name="Initialize_Fail">Failed to initialize</string>
   <string name="SideLinkOpen_Fail">Failed to open link</string>
@@ -198,6 +204,7 @@
   <string name="Common_Name">Name</string>
   <string name="Common_CodeName">Code Name</string>
   <string name="Common_Grade">Grade</string>
+  <string name="Common_BornGrade">Born Grade</string>
   <string name="Common_VersionUpGrade">Version Up</string>
   <string name="Common_Range">Range</string>
   <string name="Common_DicNumber">Dic No.</string>
@@ -209,6 +216,7 @@
   <string name="Common_AppearancePlace">Drop</string>
   <string name="Common_Effect">Effect</string>
   <string name="Common_Mag">Ratio</string>
+  <string name="Common_Type">Type</string>
   <string name="Common_GunType">Gun Type</string>
   <string name="Common_EquipCategory">Equip Category</string>
   <string name="Common_EquipType">Equip Type</string>
@@ -365,6 +373,7 @@
   <string name="DollDBDetail_RadarAverageString">Average</string>
   <string name="DollDBDetail_BuffType_All">Apply to all Types</string>
   <string name="DollDBDetail_BuffType_ConfirmString">Apply</string>
+  <string name="DollDBDetail_MODChangeFail">Failed to change Mod</string>
   
   <!--DollDBImageViewer-->
   <string name="DollDBImageViewer_DefaultCostume">Basic Costume</string>
@@ -433,6 +442,16 @@
   <!--FSTMain-->
   <string name="FSTDBMainActivity_Title">FST List</string>
   <string name="FSTDBMainActivity_SearchHint">Search FST Name</string>
+
+  <!--CoalitionMain-->
+  <string name="CoalitionDBMainActivity_Title">Coalition List</string>
+  <string name="CoalitionDBMainActivity_SearchHint">Search Coalition Name</string>
+
+  <!--CoalitionDBDetailActivity-->
+  <string name="CoalitionDBDetail_RadarAverageString">Average</string>
+  <string name="CoalitionDBDetail_BuffType_All">Apply to all Types</string>
+  <string name="CoalitionDBDetail_BuffType_ConfirmString">Apply</string>
+  <string name="CoalitionDBDetail_AnalysisChangeFail">Failed to change analysis</string>
   
   <!--GFDInfo-->
   <string name="GFDInfo_Title">GFDv2 Info</string>
@@ -461,6 +480,7 @@
   <string name="Main_DB_FairyDB">Fairy DB</string>
   <string name="Main_DB_EnemyDB">Enemy DB</string>
   <string name="Main_DB_FSTDB">FST DB</string>
+  <string name="Main_DB_CoalitionDB">Coalition DB</string>
 
   <!--New Main - GFD v1-->
   <!--Duplicate OldGFD String-->

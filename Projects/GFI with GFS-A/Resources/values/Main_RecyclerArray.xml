@@ -6,6 +6,7 @@
     <item>@string/Main_DB_FairyDB</item>
     <item>@string/Main_DB_EnemyDB</item>
     <item>@string/Main_DB_FSTDB</item>
+    <item>@string/Main_DB_CoalitionDB</item>
   </string-array>
 
   <string-array name="Main_GFDv1_TitleList_ko">

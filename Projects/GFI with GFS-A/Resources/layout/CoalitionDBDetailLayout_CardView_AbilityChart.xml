@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto">
+<android.support.v7.widget.CardView
+    android:layout_width="fill_parent"
+    android:layout_height="400dp"
+    android:layout_margin="10dp"
+    android:visibility="gone"
+    android:id="@+id/DollDBDetailAbilityRadarChartCardLayout"
+    cardview:cardElevation="4dp"
+    cardview:cardCornerRadius="5dp"
+    cardview:cardBackgroundColor="@color/background_material_dark">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp">
+		<Spinner
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/DollDBDetailAbilityChartCompareList" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/DollDBDetailAbilityRadarChartLayout">
+            <Com.Syncfusion.Charts.SfChart
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/DollDBDetailAbilityRadarChart" />
+        </FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:text="@string/FeatureTemporaryDisable"
+            android:textAlignment="center"
+            android:id="@+id/DollDBDetailChartMessage"/>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+</merge>

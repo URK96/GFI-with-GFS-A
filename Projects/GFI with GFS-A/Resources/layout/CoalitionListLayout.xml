@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+	android:background="?android:attr/selectableItemBackground"
+    android:transitionName="CoalitionTransitionBox"
+    android:id="@+id/CoalitionListMainLayout">
+    <LinearLayout
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="center"
+            android:id="@+id/CoalitionListAffiliation"/>
+        <ImageView
+            android:id="@+id/CoalitionListGrade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+		android:id="@+id/CoalitionListSmallImage"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+		<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+			android:id="@+id/CoalitionListDicNumber"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/CoalitionListName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/CoalitionListType1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="2dp"
+                android:textSize="15dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/CoalitionListType2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="2dp"
+                android:textSize="15dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/CoalitionListType3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="2dp"
+                android:textSize="15dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:gravity="center" />
+        </LinearLayout>
+        
+    </LinearLayout>
+</LinearLayout>
+
