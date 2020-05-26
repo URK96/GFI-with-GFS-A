@@ -312,6 +312,7 @@ namespace GFI_with_GFS_A
                 Path.Combine(cachePath, "Coalition", "BG"),
                 Path.Combine(cachePath, "Coalition", "Normal"),
                 Path.Combine(cachePath, "Coalition", "Normal_Crop"),
+                Path.Combine(cachePath, "Coalition", "Skill"),
                 Path.Combine(cachePath, "OldGFD"),
                 Path.Combine(cachePath, "OldGFD", "Images"),
                 Path.Combine(cachePath, "Event"),

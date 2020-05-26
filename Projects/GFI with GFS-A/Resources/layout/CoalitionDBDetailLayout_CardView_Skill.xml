@@ -111,6 +111,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/Common_Effect"
+                    android:textStyle="bold"
                     android:id="@+id/CoalitionDBDetailSkillAbilityTopText1" />
                 <TextView
                     android:layout_width="0dp"
@@ -118,6 +119,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/Common_Mag"
+                    android:textStyle="bold"
                     android:id="@+id/CoalitionDBDetailSkillAbilityTopText2" />
             </LinearLayout>
             <LinearLayout

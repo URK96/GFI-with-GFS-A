@@ -81,8 +81,7 @@ namespace GFI_with_GFS_A
         private Spinner chartCompareList;
         private SfChart chart;
 
-        private View[] buffCardViews;
-        private View[] skillCardViews;
+        private List<CardView> scrollCardViews = new List<CardView>();
 
         private int curtainUpIcon = ETC.useLightTheme ? Resource.Drawable.ArrowUp_WhiteTheme : Resource.Drawable.ArrowUp;
         private int curtainDownIcon = ETC.useLightTheme ? Resource.Drawable.ArrowDown_WhiteTheme : Resource.Drawable.ArrowDown;
@@ -148,8 +147,6 @@ namespace GFI_with_GFS_A
 
                 scrollLayout = FindViewById<NestedScrollView>(Resource.Id.CoalitionDBDetailScrollLayout);
 
-                skillTableSubLayout = FindViewById<LinearLayout>(Resource.Id.CoalitionDBDetailSkillAbilitySubLayout);
-                
                 /*abilityLevelSelector = FindViewById<Spinner>(Resource.Id.CoalitionDBDetailAbilityLevelSelector);
                 abilityLevelSelector.ItemSelected += async (object sender, AdapterView.ItemSelectedEventArgs e) => 
                 {
@@ -791,6 +788,7 @@ namespace GFI_with_GFS_A
                     TransitionManager.BeginDelayedTransition(refreshMainLayout);
                 }
 
+                scrollCardViews.Clear();
                 scrollMainLayout.RemoveAllViews();
 
 
@@ -868,6 +866,7 @@ namespace GFI_with_GFS_A
                 basicLayout.FindViewById<TextView>(Resource.Id.CoalitionDBDetailInfoAffiliation).Text = coalition.Affiliation;
                 //FindViewById<TextView>(Resource.Id.CoalitionDBDetailInfoHowToGain).Text = (string)coalitionInfoDR["DropEvent"];
 
+                scrollCardViews.Add(basicLayout.FindViewById<CardView>(Resource.Id.CoalitionDBDetailBasicInfoCardLayout));
                 scrollMainLayout.AddView(basicLayout);
 
 
@@ -877,9 +876,11 @@ namespace GFI_with_GFS_A
                 {
                     await LoadBuff();
                 }
-                
+
 
                 // 인형 스킬 정보 초기화
+
+                await LoadSkill(isRefresh);
 
                 /*string SkillName = coalition.SkillName;
 
@@ -1010,8 +1011,6 @@ namespace GFI_with_GFS_A
                 int buffIconNameId = Resource.Id.CoalitionDBDetailBuffName;
                 int buffDetailId = Resource.Id.CoalitionDBDetailBuffDetail;
 
-                buffCardViews = new View[buffCardCount];
-
                 for (int i = 0; i < buffCardCount; ++i)
                 {
                     if (coalition.BuffInfo[i] == null)
@@ -1105,7 +1104,7 @@ namespace GFI_with_GFS_A
                         buffTypeView.Text = $"{coalition.BuffType[i]} {Resources.GetString(Resource.String.CoalitionDBDetail_BuffType_ConfirmString)}";
                     }
 
-                    buffCardViews[i] = rootView.FindViewById<CardView>(Resource.Id.CoalitionDBDetailBuffCardLayout);
+                    scrollCardViews.Add(rootView.FindViewById<CardView>(Resource.Id.CoalitionDBDetailBuffCardLayout));
                     scrollMainLayout.AddView(rootView);
                 }
             }
@@ -1113,6 +1112,105 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(ex, this);
                 ETC.ShowSnackbar(snackbarLayout, "Error Load Formation Buff", Snackbar.LengthShort);
+            }
+        }
+
+        private async Task LoadSkill(bool isRefresh)
+        {
+            await Task.Delay(10);
+
+            try
+            {
+                for (int i = 0; i < coalition.SkillName.Length; ++i)
+                {
+                    if (coalition.SkillName[i] == null)
+                    {
+                        break;
+                    }
+
+                    var rootView = LayoutInflater.Inflate(Resource.Layout.CoalitionDBDetailLayout_CardView_Skill, new LinearLayout(this), true);
+
+                    string sName = coalition.SkillName[i];
+
+                    try
+                    {
+                        string url = Path.Combine(ETC.server, "Data", "Images", "SkillIcons", "Coalition", $"{sName}.png");
+                        string target = Path.Combine(ETC.cachePath, "Coalition", "Skill", $"{sName}.gfdcache");
+
+                        if (!File.Exists(target) || isRefresh)
+                        {
+                            using (var wc = new WebClient())
+                            {
+                                wc.DownloadFile(url, target);
+                            }
+                        }
+
+                        rootView.FindViewById<ImageView>(Resource.Id.CoalitionDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(target));
+                    }
+                    catch (Exception ex)
+                    {
+                        ETC.LogError(ex, this);
+                    }
+
+                    rootView.FindViewById<TextView>(Resource.Id.CoalitionDBDetailSkillName).Text = sName;
+
+                    if (ETC.useLightTheme)
+                    {
+                        rootView.FindViewById<ImageView>(Resource.Id.CoalitionDBDetailSkillInitCoolTimeIcon).SetImageResource(Resource.Drawable.FirstCoolTime_Icon_WhiteTheme);
+                        rootView.FindViewById<ImageView>(Resource.Id.CoalitionDBDetailSkillCoolTimeIcon).SetImageResource(Resource.Drawable.CoolTime_Icon_WhiteTheme);
+                    }
+
+                    string[] sAbilities = coalition.SkillEffect[i];
+                    string[] sMags = ((i == 0) && (coalition.IsBoss) && (analysisIndex == 4)) ? coalition.FASkillMag[i] : coalition.SkillMag[i];
+
+                    var sInitCoolTimeView = rootView.FindViewById<TextView>(Resource.Id.CoalitionDBDetailSkillInitCoolTime);
+                    sInitCoolTimeView.SetTextColor(Android.Graphics.Color.Orange);
+                    sInitCoolTimeView.Text = sMags[0];
+
+                    var sCoolTimeView = rootView.FindViewById<TextView>(Resource.Id.CoalitionDBDetailSkillCoolTime);
+                    sCoolTimeView.SetTextColor(Android.Graphics.Color.DarkOrange);
+                    sCoolTimeView.Text = sMags[1];
+
+                    rootView.FindViewById<TextView>(Resource.Id.CoalitionDBDetailSkillExplain).Text = coalition.SkillExplain[i];
+
+                    var skillTableSubLayout = rootView.FindViewById<LinearLayout>(Resource.Id.CoalitionDBDetailSkillAbilitySubLayout);
+                    //skillTableSubLayout.RemoveAllViews();
+
+                    for (int k = 2; k < sAbilities.Length; ++k)
+                    {
+                        var layout = new LinearLayout(this)
+                        {
+                            Orientation = Android.Widget.Orientation.Horizontal,
+                            LayoutParameters = rootView.FindViewById<LinearLayout>(Resource.Id.CoalitionDBDetailSkillAbilityTopLayout).LayoutParameters
+                        };
+
+                        var ability = new TextView(this)
+                        {
+                            LayoutParameters = rootView.FindViewById<TextView>(Resource.Id.CoalitionDBDetailSkillAbilityTopText1).LayoutParameters,
+                            Text = sAbilities[k],
+                            Gravity = GravityFlags.Center
+                        };
+                        var mag = new TextView(this)
+                        {
+                            LayoutParameters = rootView.FindViewById<TextView>(Resource.Id.CoalitionDBDetailSkillAbilityTopText2).LayoutParameters,
+                            Text = sMags[k],
+                            Gravity = GravityFlags.Center
+                        };
+
+                        layout.AddView(ability);
+                        layout.AddView(mag);
+
+                        skillTableSubLayout.AddView(layout);
+                    }
+
+                    scrollCardViews.Add(rootView.FindViewById<CardView>(Resource.Id.CoalitionDBDetailSkillCardLayout));
+                    scrollMainLayout.AddView(rootView);
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                ETC.ShowSnackbar(snackbarLayout, "Error Load Skill", Snackbar.LengthShort);
             }
         }
 
@@ -1208,65 +1306,19 @@ namespace GFI_with_GFS_A
         {
             const float radius = 15.0f;
 
-            int[] CardViewIds = 
+            foreach (var cv in scrollCardViews)
             {
-                Resource.Id.CoalitionDBDetailBasicInfoCardLayout
-            };
-
-            foreach (int id in CardViewIds)
-            {
-                CardView cv = FindViewById<CardView>(id);
-
                 cv.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
                 cv.Radius = radius;
-            }
-
-            if (buffCardViews != null)
-            {
-                foreach (View view in buffCardViews)
-                {
-                    var cv = view.FindViewById<CardView>(Resource.Id.CoalitionDBDetailBuffCardLayout);
-
-                    cv.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
-                    cv.Radius = radius;
-                }
-            }
-
-            if (skillCardViews != null)
-            {
-                /*foreach (View view in skillCardViews)
-                {
-                    var cv = view.FindViewById<CardView>(Resource.Id.CoalitionDBDetailBuffCardLayout);
-
-                    cv.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
-                    cv.Radius = radius;
-                }*/
             }
         }
 
         private void ShowCardViewVisibility()
         {
-            FindViewById<CardView>(Resource.Id.CoalitionDBDetailBasicInfoCardLayout).Visibility = ViewStates.Visible;
-
-            if (buffCardViews != null)
+            foreach (var cv in scrollCardViews)
             {
-                foreach (View view in buffCardViews)
-                {
-                    if (view == null)
-                    {
-                        break;
-                    }
-
-                    view.FindViewById<CardView>(Resource.Id.CoalitionDBDetailBuffCardLayout).Visibility = ViewStates.Visible;
-                }
-            }
-
-            if (skillCardViews != null)
-            {
-                /*foreach (View view in skillCardViews)
-                {
-                    view.FindViewById<CardView>(Resource.Id.CoalitionDBDetailBuffCardLayout).Visibility = ViewStates.Visible;
-                }*/
+                cv.Visibility = ViewStates.Visible;
+                cv.Alpha = 0.7f;
             }
         }
 
