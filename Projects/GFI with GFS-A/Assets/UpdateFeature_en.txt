@@ -1,8 +1,8 @@
-<2.5.4 Update>
+<2.6.0 Update>
 
-- Add coalition content in calc feature
+- Add coalition DB feature
 - Add cartoon content
-- Fix cartoon feature entering issue
 - Fix some layout
 - Update UI library
 - Fix some bugs
+- Optimize memory usage

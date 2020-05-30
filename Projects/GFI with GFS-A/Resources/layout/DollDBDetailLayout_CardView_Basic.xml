@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cardview="http://schemas.android.com/apk/res-auto">
 <android.support.v7.widget.CardView
@@ -108,11 +108,12 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/Common_Name"
                 android:gravity="center" />
+            <include layout="@layout/seperatebar_vertical"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:id="@+id/DollDBDetailInfoName"
                 android:gravity="center" />
         </LinearLayout>

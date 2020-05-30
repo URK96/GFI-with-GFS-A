@@ -1,6 +1,12 @@
 ﻿# T-Doll DB Update 2020/05/22
 
-- Add new T-Doll's Costumes (OTs-14, QBU-88, Saiga-12, KSVK, Zas M76, M1911, M4A1, M16A1, M4 SOPMOD II, ST AR-15, RO635, M200)
+- Add new T-Dolls (MAS-38, Colt Defender)
+- Edit some T-Doll's Info
+
+
+# Coalition DB Update 2020/05/30
+
+- Add DB
 
 
 # Equip DB Update 2020/04/17

@@ -1,0 +1,62 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/CoalitionDBImageViewerMainLayout">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?android:attr/actionBarSize"
+            android:background="@color/MainColor"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:id="@+id/CoalitionDBImageViewerMainToolbar">
+            <Spinner
+                android:id="@+id/CoalitionDBImageViewerCostumeList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </androidx.appcompat.widget.Toolbar>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/CoalitionDBImageViewerMainToolbar"
+            android:id="@+id/CoalitionDBImageViewerLoadingLayout">
+            <com.wang.avi.AVLoadingIndicatorView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/CoalitionDBImageViewerLoadingIndicatorView"
+                app:indicatorName="BallClipRotateMultipleIndicator"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_below="@id/CoalitionDBImageViewerLoadingIndicatorView"
+                android:id="@+id/CoalitionDBImageViewerLoadingIndicatorExplainText"/>
+        </RelativeLayout>
+		<com.github.chrisbanes.photoview.PhotoView
+			android:layout_width="match_parent"
+            android:layout_height="match_parent"
+			android:isScrollContainer="true"
+            android:id="@+id/CoalitionDBImageViewerImageView"
+            android:clickable="true"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CoalitionDBImageViewerImageStatus"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignParentBottom="true" />
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CoalitionDBImageViewerSnackbarLayout"
+        android:layout_alignTop="@id/CoalitionDBImageViewerMainLayout" />
+</RelativeLayout>

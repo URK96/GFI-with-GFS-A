@@ -1,10 +1,10 @@
 <?xml version="1.0" standalone="yes"?>
 <NewDataSet>
   <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Doll" msdata:UseCurrentLocale="true">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Coalition" msdata:UseCurrentLocale="true">
       <xs:complexType>
         <xs:choice minOccurs="0" maxOccurs="unbounded">
-          <xs:element name="Doll">
+          <xs:element name="Coalition">
             <xs:complexType>
               <xs:sequence>
                 <xs:element name="Name" type="xs:string" minOccurs="0" />
@@ -76,8 +76,9 @@
       </xs:complexType>
     </xs:element>
   </xs:schema>
-  <Doll>
+  <Coalition>
     <Name>프롤러</Name>
+    <CodeName>Prowler</CodeName>
     <Type>LightArmor;Machine;CloseIn</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>false</IsBoss>
@@ -99,9 +100,10 @@
     <SkillMag1>0초,0초,12%,30%</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>스카웃</Name>
+    <CodeName>Scouts</CodeName>
     <Type>LightArmor;Machine;CloseIn</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>false</IsBoss>
@@ -123,9 +125,10 @@
     <SkillMag1>2초,8초,5초,50%,14</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>리퍼</Name>
+    <CodeName>Ripper</CodeName>
     <Type>LightArmor;Doll;Remote</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>false</IsBoss>
@@ -147,9 +150,10 @@
     <SkillMag1>6초,8초,5초,120%,90%</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>스케어크로우</Name>
+    <CodeName>Scarecrow</CodeName>
     <Type>LightArmor;Doll;Remote</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>true</IsBoss>
@@ -188,9 +192,10 @@
     <SkillMag4>0초,0초,6초,10%</SkillMag4>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>디너게이트</Name>
+    <CodeName>Dinergate</CodeName>
     <Type>LightArmor;Machine;CloseIn</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>false</IsBoss>
@@ -212,9 +217,10 @@
     <SkillMag1>0초,3333초,10초,6회,100%,10초,5초,100%</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>베스피드</Name>
+    <CodeName>Vespid</CodeName>
     <Type>LightArmor;Doll;Remote</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>false</IsBoss>
@@ -236,9 +242,10 @@
     <SkillMag1>5초,8초,5초,6%,20%</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>엑스큐셔너</Name>
+    <CodeName>Executioner</CodeName>
     <Type>LightArmor;Doll;CloseIn</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>true</IsBoss>
@@ -280,9 +287,10 @@
     <SkillMag4>0초,0초,20%</SkillMag4>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>예거</Name>
+    <CodeName>Jaeger</CodeName>
     <Type>LightArmor;Doll;Remote</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>false</IsBoss>
@@ -304,9 +312,10 @@
     <SkillMag1>0초,0초,4회,350%</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>가드</Name>
+    <CodeName>Guard</CodeName>
     <Type>LightArmor;Doll;CloseIn</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>false</IsBoss>
@@ -328,9 +337,10 @@
     <SkillMag1>5초,8초,5초,20,40</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>헌터</Name>
+    <CodeName>Hunter</CodeName>
     <Type>LightArmor;Doll;Remote</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>true</IsBoss>
@@ -375,9 +385,10 @@
     <SkillMag4>0초,0초,20%</SkillMag4>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>드라군</Name>
+    <CodeName>Dragoon</CodeName>
     <Type>LightArmor;Doll;CloseIn</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>false</IsBoss>
@@ -403,9 +414,10 @@
     <SkillMag2>0초,0초,3초,15%,25%</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>네메움</Name>
+    <CodeName>Nemeum</CodeName>
     <Type>HeavyArmor;Machine;Remote</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>false</IsBoss>
@@ -431,9 +443,10 @@
     <SkillMag2>0초,0초,0.5%</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>이지스</Name>
+    <CodeName>Aegis</CodeName>
     <Type>HeavyArmor;Doll;CloseIn</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>false</IsBoss>
@@ -459,9 +472,10 @@
     <SkillMag2>0초,0초,10%,5%</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>맨티코어</Name>
+    <CodeName>Manticore</CodeName>
     <Type>HeavyArmor;Machine;Remote</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>false</IsBoss>
@@ -487,9 +501,10 @@
     <SkillMag2>0초,10초,3초,30%,30%,2.5초</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>인트루더</Name>
+    <CodeName>Intruder</CodeName>
     <Type>LightArmor;Doll;Remote</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>true</IsBoss>
@@ -516,7 +531,7 @@
     <FASkillMag1>6초,12초,10%,100%,50%,50%,50%</FASkillMag1>
     <Skill2>철벽 증원</Skill2>
     <SkillExplain2>아무 아군 제대를 선택하여 발동한다. 선택한 제대는 전투 개시 시 디너게이트 1그룹의 증원을 받게 된다. 1그룹은 5편제 디너게이트 2기를 포함하며 일정 능력치를 가진다.</SkillExplain2>
-    <SkillEffect2>선 쿨타임;쿨타임;증원 체력;증원 화력;증원;공속;증원 명중;증원 회피</SkillEffect2>
+    <SkillEffect2>선 쿨타임;쿨타임;증원 체력;증원 화력;증원 공속;증원 명중;증원 회피</SkillEffect2>
     <SkillMag2>0턴,2턴,300,80,50,50,70</SkillMag2>
     <Skill3>전면 보호</Skill3>
     <SkillExplain3>전투 개시 시, 아군 전체에게 인트루더 체력의 일정 비율만큼 보호막을 부여한다.</SkillExplain3>
@@ -528,9 +543,10 @@
     <SkillMag4>0초,0초,10%,10%</SkillMag4>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>브루트</Name>
+    <CodeName>Brute</CodeName>
     <Type>LightArmor;Doll;CloseIn</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>false</IsBoss>
@@ -556,9 +572,10 @@
     <SkillMag2>0초,0초,3초,7,25%</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>스트라이커</Name>
+    <CodeName>Striker</CodeName>
     <Type>LightArmor;Doll;Remote</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>false</IsBoss>
@@ -580,9 +597,10 @@
     <SkillMag1>0초,0초,5초,70%</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
-  <Doll>
+  </Coalition>
+  <Coalition>
     <Name>타란툴라</Name>
+    <CodeName>Tarantula</CodeName>
     <Type>HeavyArmor;Machine;CloseIn</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>false</IsBoss>
@@ -608,5 +626,5 @@
     <SkillMag2>0초,3333초,3%</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
-  </Doll>
+  </Coalition>
 </NewDataSet>

@@ -346,7 +346,7 @@ namespace GFI_with_GFS_A
                 switch (e.Item.ItemId)
                 {
                     case Resource.Id.DBLinkNamu:
-                        url = $"https://namu.wiki/w/{coalition.NameKR}(소녀전선)";
+                        url = $"https://namu.wiki/w/{coalition.NameKR}(소녀전선)/혼합세력";
                         break;
                     case Resource.Id.DBLinkInven:
                         url = $"http://gf.inven.co.kr/dataninfo/Coalitions/detail.php?d=126&c={coalition.DicNumber}";
@@ -384,10 +384,11 @@ namespace GFI_with_GFS_A
 
                 var toolbarColor = coalition.Grade switch
                 {
-                    1 => Android.Graphics.Color.SlateGray,
-                    2 => Android.Graphics.Color.ParseColor("#55CCEE"),
-                    3 => Android.Graphics.Color.ParseColor("#AACC22"),
-                    4 => Android.Graphics.Color.ParseColor("#FFBB22"),
+                    1 => Android.Graphics.Color.DarkSlateGray,
+                    2 => Android.Graphics.Color.SlateGray,
+                    3 => Android.Graphics.Color.ParseColor("#55CCEE"),
+                    4 => Android.Graphics.Color.ParseColor("#AACC22"),
+                    5 => Android.Graphics.Color.ParseColor("#FFBB22"),
                     _ => Android.Graphics.Color.ParseColor("#C040B0"),
                 };
                 toolbar.SetBackgroundColor(toolbarColor);
@@ -763,10 +764,10 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                /*var coalitionImageViewer = new Intent(this, typeof(CoalitionDBImageViewer));
-                coalitionImageViewer.PutExtra("Data", $"{coalition.DicNumber};{modIndex}");
+                var coalitionImageViewer = new Intent(this, typeof(CoalitionDBImageViewer));
+                coalitionImageViewer.PutExtra("Data", $"{coalition.DicNumber}");
                 StartActivity(coalitionImageViewer);
-                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);*/
+                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
             catch (Exception ex)
             {
@@ -881,78 +882,6 @@ namespace GFI_with_GFS_A
                 // 인형 스킬 정보 초기화
 
                 await LoadSkill(isRefresh);
-
-                /*string SkillName = coalition.SkillName;
-
-                try
-                {
-                    string url = Path.Combine(ETC.server, "Data", "Images", "SkillIcons", $"{SkillName}.png");
-                    string target = Path.Combine(ETC.cachePath, "Coalition", "Skill", $"{SkillName}.gfdcache");
-
-                    if (!File.Exists(target) || isRefresh)
-                    {
-                        using (WebClient wc = new WebClient())
-                        {
-                            wc.DownloadFile(url, target);
-                        }
-                    }
-
-                    FindViewById<ImageView>(Resource.Id.CoalitionDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(target));
-                }
-                catch (Exception ex)
-                {
-                    ETC.LogError(ex, this);
-                }
-
-                FindViewById<TextView>(Resource.Id.CoalitionDBDetailSkillName).Text = SkillName;
-
-                if (ETC.useLightTheme)
-                {
-                    FindViewById<ImageView>(Resource.Id.CoalitionDBDetailSkillInitCoolTimeIcon).SetImageResource(Resource.Drawable.FirstCoolTime_Icon_WhiteTheme);
-                    FindViewById<ImageView>(Resource.Id.CoalitionDBDetailSkillCoolTimeIcon).SetImageResource(Resource.Drawable.CoolTime_Icon_WhiteTheme);
-                }
-
-                string[] SkillAbilities = coalition.SkillEffect;
-                string[] SkillMags = (modIndex == 0) ? coalition.SkillMag : coalition.SkillMagAfterMod;
-
-                TextView SkillInitCoolTime = FindViewById<TextView>(Resource.Id.CoalitionDBDetailSkillInitCoolTime);
-                SkillInitCoolTime.SetTextColor(Android.Graphics.Color.Orange);
-                SkillInitCoolTime.Text = SkillMags[0];
-
-                TextView SkillCoolTime = FindViewById<TextView>(Resource.Id.CoalitionDBDetailSkillCoolTime);
-                SkillCoolTime.SetTextColor(Android.Graphics.Color.DarkOrange);
-                SkillCoolTime.Text = SkillMags[1];
-
-                FindViewById<TextView>(Resource.Id.CoalitionDBDetailSkillExplain).Text = coalition.SkillExplain;
-
-                skillTableSubLayout.RemoveAllViews();
-
-                for (int i = 2; i < SkillAbilities.Length; ++i)
-                {
-                    LinearLayout layout = new LinearLayout(this)
-                    {
-                        Orientation = Android.Widget.Orientation.Horizontal,
-                        LayoutParameters = FindViewById<LinearLayout>(Resource.Id.CoalitionDBDetailSkillAbilityTopLayout).LayoutParameters
-                    };
-
-                    TextView ability = new TextView(this)
-                    {
-                        LayoutParameters = FindViewById<TextView>(Resource.Id.CoalitionDBDetailSkillAbilityTopText1).LayoutParameters,
-                        Text = SkillAbilities[i],
-                        Gravity = GravityFlags.Center
-                    };
-                    TextView mag = new TextView(this)
-                    {
-                        LayoutParameters = FindViewById<TextView>(Resource.Id.CoalitionDBDetailSkillAbilityTopText2).LayoutParameters,
-                        Text = SkillMags[i],
-                        Gravity = GravityFlags.Center
-                    };
-
-                    layout.AddView(ability);
-                    layout.AddView(mag);
-
-                    skillTableSubLayout.AddView(layout);
-                }*/
 
 
                 // 인형 능력치 초기화

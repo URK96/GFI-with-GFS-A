@@ -17,10 +17,10 @@ using Android.Graphics.Drawables;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "DollDBImageViewer", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class DollDBImageViewer : BaseAppCompatActivity
+    [Activity(Label = "CoalitionDBImageViewer", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class CoalitionDBImageViewer : BaseAppCompatActivity
     {
-        private Doll doll;
+        private Coalition coalition;
 
         private AndroidX.AppCompat.Widget.Toolbar toolbar;
 
@@ -29,20 +29,17 @@ namespace GFI_with_GFS_A
         private TextView loadingText;
         private CoordinatorLayout snackbarLayout;
         private Spinner costumeList;
-        private PhotoView dollImageView;
+        private PhotoView CoalitionImageView;
         private TextView imageStatus;
 
         private List<string> costumes;
 
         private Drawable imageDrawable;
 
-        private IMenuItem censorMenuItem;
-
         private bool isDamage = false;
+        private bool isAwake = false;
         private int costumeIndex = 0;
         private int modIndex = 0;
-        private bool enableCensored = true;
-        private string[] censorType;
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
@@ -56,30 +53,25 @@ namespace GFI_with_GFS_A
                 }
 
                 // Create your application here
-                SetContentView(Resource.Layout.DollDBImageViewer);
+                SetContentView(Resource.Layout.CoalitionDBImageViewer);
 
-                string[] temp = Intent.GetStringExtra("Data").Split(';');
+                coalition = new Coalition(ETC.FindDataRow(ETC.coalitionList, "DicNumber", int.Parse(Intent.GetStringExtra("Data"))));
 
-                modIndex = int.Parse(temp[1]);
-                doll = new Doll(ETC.FindDataRow(ETC.dollList, "DicNumber", int.Parse(temp[0])));
-                censorType = doll.HasCensored ? doll.CensorType : null;
-
-                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.DollDBImageViewerMainToolbar);
-                loadingLayout = FindViewById<RelativeLayout>(Resource.Id.DollDBImageViewerLoadingLayout);
-                loadingIndicator = FindViewById<AVLoadingIndicatorView>(Resource.Id.DollDBImageViewerLoadingIndicatorView);
-                loadingText = FindViewById<TextView>(Resource.Id.DollDBImageViewerLoadingIndicatorExplainText);
-                dollImageView = FindViewById<PhotoView>(Resource.Id.DollDBImageViewerImageView);
-                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBImageViewerSnackbarLayout);
-                costumeList = FindViewById<Spinner>(Resource.Id.DollDBImageViewerCostumeList);
+                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.CoalitionDBImageViewerMainToolbar);
+                loadingLayout = FindViewById<RelativeLayout>(Resource.Id.CoalitionDBImageViewerLoadingLayout);
+                loadingIndicator = FindViewById<AVLoadingIndicatorView>(Resource.Id.CoalitionDBImageViewerLoadingIndicatorView);
+                loadingText = FindViewById<TextView>(Resource.Id.CoalitionDBImageViewerLoadingIndicatorExplainText);
+                CoalitionImageView = FindViewById<PhotoView>(Resource.Id.CoalitionDBImageViewerImageView);
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.CoalitionDBImageViewerSnackbarLayout);
+                costumeList = FindViewById<Spinner>(Resource.Id.CoalitionDBImageViewerCostumeList);
                 costumeList.ItemSelected += (sender , e) =>
                 {
                     isDamage = false;
                     costumeIndex = e.Position;
-                    censorMenuItem.SetVisible(CheckCensorType());
 
                     _ = LoadImage(costumeIndex, false);
                 };
-                imageStatus = FindViewById<TextView>(Resource.Id.DollDBImageViewerImageStatus);
+                imageStatus = FindViewById<TextView>(Resource.Id.CoalitionDBImageViewerImageStatus);
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.SetDisplayShowTitleEnabled(false);
@@ -99,11 +91,14 @@ namespace GFI_with_GFS_A
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.DollDBImageViewerMenu, menu);
+            MenuInflater.Inflate(Resource.Menu.CoalitionDBImageViewerMenu, menu);
 
-            censorMenuItem = menu?.FindItem(Resource.Id.DollDBImageViewerCensoredOption);
-
-            censorMenuItem.SetVisible(ETC.sharedPreferences.GetBoolean("ImageCensoredUnlock", false));
+            var awakeItem = menu.FindItem(Resource.Id.CoalitionDBImageViewerAwakeButton);
+            
+            if (!coalition.IsBoss)
+            {
+                awakeItem.SetVisible(false);
+            }
 
             return base.OnCreateOptionsMenu(menu);
         }
@@ -115,18 +110,23 @@ namespace GFI_with_GFS_A
                 case Android.Resource.Id.Home:
                     OnBackPressed();
                     break;
-                case Resource.Id.DollDBImageViewerCensoredOption:
+                /*case Resource.Id.CoalitionDBImageViewerCensoredOption:
                     enableCensored = !enableCensored;
 
                     _ = LoadImage(costumeIndex, false);
                     break;
-                case Resource.Id.DollDBImageViewerChangeStateButton:
+                case Resource.Id.CoalitionDBImageViewerChangeStateButton:
                     isDamage = !isDamage;
                     censorMenuItem.SetVisible(CheckCensorType());
 
                     _ = LoadImage(costumeIndex, false);
+                    break;*/
+                case Resource.Id.CoalitionDBImageViewerAwakeButton:
+                    isAwake = !isAwake;
+
+                    _ = LoadImage(costumeIndex, false);
                     break;
-                case Resource.Id.RefreshDollImageCache:
+                case Resource.Id.RefreshCoalitionImageCache:
                     _ = LoadImage(costumeIndex, true);
                     break;
             }
@@ -140,8 +140,9 @@ namespace GFI_with_GFS_A
 
             try
             {
-                var toolbarColor = doll.Grade switch
+                var toolbarColor = coalition.Grade switch
                 {
+                    1 => Android.Graphics.Color.DarkSlateGray,
                     2 => Android.Graphics.Color.SlateGray,
                     3 => Android.Graphics.Color.ParseColor("#55CCEE"),
                     4 => Android.Graphics.Color.ParseColor("#AACC22"),
@@ -168,20 +169,20 @@ namespace GFI_with_GFS_A
             {
                 costumes = new List<string>()
                 {
-                    Resources.GetString(Resource.String.DollDBImageViewer_DefaultCostume)
+                    Resources.GetString(Resource.String.CoalitionDBImageViewer_DefaultCostume)
                 };
 
-                if (doll.Costumes != null)
+                if (coalition.Costumes != null)
                 {
-                    costumes.AddRange(doll.Costumes);
+                    costumes.AddRange(coalition.Costumes);
                 }
 
                 costumes.TrimExcess();
 
-                var CostumeListAdapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout_ImageViewer, costumes);
-                CostumeListAdapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout_ImageViewer);
+                var costumeListAdapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout_ImageViewer, costumes);
+                costumeListAdapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout_ImageViewer);
 
-                costumeList.Adapter = CostumeListAdapter;
+                costumeList.Adapter = costumeListAdapter;
             }
             catch (Exception ex)
             {
@@ -190,7 +191,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private bool CheckCensorType()
+        /*private bool CheckCensorType()
         {
             if (censorType == null)
             {
@@ -219,17 +220,17 @@ namespace GFI_with_GFS_A
             }
 
             return false;
-        }
+        }*/
 
         private async Task LoadImage(int costumeIndex, bool isRefresh = false)
         {
             await Task.Delay(100);
 
-            string imageName = doll.DicNumber.ToString();
+            string imageName = coalition.DicNumber.ToString();
 
             try
             {
-                dollImageView.SetImageDrawable(null);
+                CoalitionImageView.SetImageDrawable(null);
                 imageDrawable?.Dispose();
                 loadingLayout.Visibility = ViewStates.Visible;
                 loadingIndicator.SmoothToShow();
@@ -239,20 +240,17 @@ namespace GFI_with_GFS_A
                 {
                     imageName += $"_{costumeIndex + 1}";
                 }
-                else if ((costumeIndex == 0) && (modIndex == 3))
-                {
-                    imageName += "_M";
-                }
 
+                imageName += isAwake ? "_F" : "";
                 imageName += isDamage ? "_D" : "";
 
-                if (doll.HasCensored && enableCensored && (modIndex != 3))
+                /*if (coalition.HasCensored && enableCensored && (modIndex != 3))
                 {
                     imageName += CheckCensorType() ? "_C" : "";
-                }
+                }*/
 
-                string imagePath = Path.Combine(ETC.cachePath, "Doll", "Normal", $"{imageName}.gfdcache");
-                string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal", $"{imageName}.png");
+                string imagePath = Path.Combine(ETC.cachePath, "Coalition", "Normal", $"{imageName}.gfdcache");
+                string url = Path.Combine(ETC.server, "Data", "Images", "Coalition", "Normal", $"{imageName}.png");
 
                 if (!File.Exists(imagePath) || isRefresh)
                 {
@@ -274,13 +272,17 @@ namespace GFI_with_GFS_A
 
                 imageDrawable = await Drawable.CreateFromPathAsync(imagePath);
 
-                dollImageView.SetImageDrawable(imageDrawable);
+                CoalitionImageView.SetImageDrawable(imageDrawable);
 
-                string damageText = isDamage ? Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusDamage) : Resources.GetString(Resource.String.DollDBImageViewer_ImageStatusNormal);
-                string censorText = Resources.GetString(Resource.String.DollDBImageViewer_ImageCensored);
+                string awakeText = Resources.GetString(Resource.String.CoalitionDBImageViewer_ImageStatusAwake);
+                string damageText = isDamage ? Resources.GetString(Resource.String.CoalitionDBImageViewer_ImageStatusDamage) : Resources.GetString(Resource.String.CoalitionDBImageViewer_ImageStatusNormal);
+                string censorText = Resources.GetString(Resource.String.CoalitionDBImageViewer_ImageCensored);
 
-                imageStatus.Text = censorMenuItem.IsVisible ? $"{doll.Name} - {costumes[costumeIndex]} - {damageText} - {censorText}{(enableCensored ? "O" : "X")}" : 
-                    $"{doll.Name} - {costumes[costumeIndex]} - {damageText}";
+                /*imageStatus.Text = censorMenuItem.IsVisible ? $"{coalition.Name} - {costumes[costumeIndex]} - {damageText} - {censorText}{(enableCensored ? "O" : "X")}" : 
+                    $"{coalition.Name} - {costumes[costumeIndex]} - {damageText}";*/
+
+                imageStatus.Text = isAwake ? $"{coalition.Name} - {costumes[costumeIndex]} - {damageText} - {awakeText}" :
+                    $"{coalition.Name} - {costumes[costumeIndex]} - {damageText}";
             }
             catch (WebException ex)
             {

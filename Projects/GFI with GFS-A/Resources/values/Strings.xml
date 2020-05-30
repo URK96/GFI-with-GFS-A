@@ -452,6 +452,17 @@
   <string name="CoalitionDBDetail_BuffType_All">Apply to all Types</string>
   <string name="CoalitionDBDetail_BuffType_ConfirmString">Apply</string>
   <string name="CoalitionDBDetail_AnalysisChangeFail">Failed to change analysis</string>
+
+  <!--CoalitionDBImageViewer-->
+  <string name="CoalitionDBImageViewer_DefaultCostume">Basic Costume</string>
+  <string name="CoalitionDBImageViewer_ImageStatusNormal">Normal</string>
+  <string name="CoalitionDBImageViewer_ImageStatusDamage">Damaged</string>
+  <string name="CoalitionDBImageViewer_ImageStatusAwake">Awake</string>
+  <string name="CoalitionDBImageViewer_ImageCensored">Censor</string>
+  <string name="CoalitionDBImageViewer_ImageOriginal">Original</string>
+  <string name="CoalitionDBImageViewer_Menu_Censor">Change Censored</string>
+  <string name="CoalitionDBImageViewer_Menu_Damage">Change State</string>
+  <string name="CoalitionDBImageViewer_Menu_Awake">Change Awake</string>
   
   <!--GFDInfo-->
   <string name="GFDInfo_Title">GFDv2 Info</string>

@@ -663,7 +663,7 @@ namespace GFI_with_GFS_A
 
             NameKR = (string)dr["Name"];
             //NickName = (string)dr["NickName"];
-            //CodeName = (string)dr["CodeName"];
+            CodeName = (string)dr["CodeName"];
             DicNumber = (int)dr["DicNumber"];
             //Country = SetCountry(ref dr);
             Grade = (int)dr["BornGrade"];

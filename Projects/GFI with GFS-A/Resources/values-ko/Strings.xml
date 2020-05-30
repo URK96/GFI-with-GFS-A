@@ -456,6 +456,17 @@
   <string name="CoalitionDBDetail_BuffType_All">모든 총기 적용</string>
   <string name="CoalitionDBDetail_BuffType_ConfirmString">적용</string>
   <string name="CoalitionDBDetail_AnalysisChangeFail">분석 수치 변경 실패</string>
+
+  <!--CoalitionDBImageViewer-->
+  <string name="CoalitionDBImageViewer_DefaultCostume">기본 코스튬</string>
+  <string name="CoalitionDBImageViewer_ImageStatusNormal">정상</string>
+  <string name="CoalitionDBImageViewer_ImageStatusDamage">중상</string>
+  <string name="CoalitionDBImageViewer_ImageStatusAwake">각성</string>
+  <string name="CoalitionDBImageViewer_ImageCensored">검열</string>
+  <string name="CoalitionDBImageViewer_ImageOriginal">원본</string>
+  <string name="CoalitionDBImageViewer_Menu_Censor">검열 전환</string>
+  <string name="CoalitionDBImageViewer_Menu_Damage">일반/중상 전환</string>
+  <string name="CoalitionDBImageViewer_Menu_Awake">일반/각성 전환</string>
   
   <!--GFDInfo-->
   <string name="GFDInfo_Title">소전사전v2 정보</string>

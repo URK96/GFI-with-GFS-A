@@ -153,6 +153,8 @@ namespace GFI_with_GFS_A
         {
             try
             {
+                //rootList.Clear();
+
                 foreach (DataRow dr in ETC.coalitionList.Rows)
                 {
                     rootList.Add(new Coalition(dr));
@@ -248,7 +250,7 @@ namespace GFI_with_GFS_A
 
                     for (int i = 0; i < pTotal; ++i)
                     {
-                        string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal_Crop", $"{downloadList[i]}.png");
+                        string url = Path.Combine(ETC.server, "Data", "Images", "Coalition", "Normal_Crop", $"{downloadList[i]}.png");
                         string target = Path.Combine(ETC.cachePath, "Coalition", "Normal_Crop", $"{downloadList[i]}.gfdcache");
 
                         await wc.DownloadFileTaskAsync(url, target);

@@ -155,6 +155,7 @@
     <Effect>AS,AC;10,25;12,31;15,37;17,43;20,50</Effect>
     <ModEffect>AS,AC;24,60</ModEffect>
     <EffectType>ALL</EffectType>
+    <EffectTypeAfterMod>ALL</EffectTypeAfterMod>
     <DropEvent>모든 맵</DropEvent>
     <DicNumber>2</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
@@ -216,6 +217,7 @@
     <Effect>FR,CR;16,8;20,10;24,12;28,14;32,16</Effect>
     <ModEffect>FR,CR;36,20</ModEffect>
     <EffectType>ALL</EffectType>
+    <EffectTypeAfterMod>ALL</EffectTypeAfterMod>
     <DropEvent>모든 맵</DropEvent>
     <DicNumber>5</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
@@ -363,6 +365,7 @@
     <Effect>FR;14;17;21;24;28</Effect>
     <ModEffect>FR;36</ModEffect>
     <EffectType>ALL</EffectType>
+    <EffectTypeAfterMod>ALL</EffectTypeAfterMod>
     <DropEvent>1-5부터 모든 맵</DropEvent>
     <DicNumber>91</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
@@ -599,7 +602,7 @@
     <EffectFormation>0,1,0,0,2,1,0,1,0</EffectFormation>
     <Effect>FR,AC;7,35;8,43;10,52;12,61;14,70</Effect>
     <EffectType>ALL</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>11</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>cover_command_n</SkillCode>
@@ -643,7 +646,7 @@
     <EffectFormation>0,1,1,0,2,0,0,1,1</EffectFormation>
     <Effect>FR,EV;10,10;12,12;15,15;17,17;20,20</Effect>
     <EffectType>ALL</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>3</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>stun_grenade</SkillCode>
@@ -692,6 +695,7 @@
     <Effect>AC,EV;32,15;40,18;48,22;56,26;64,30</Effect>
     <ModEffect>AC,EV;80,40</ModEffect>
     <EffectType>ALL</EffectType>
+    <EffectTypeAfterMod>ALL</EffectTypeAfterMod>
     <DropEvent>1-2E이후의 모든 맵</DropEvent>
     <DicNumber>12</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
@@ -1145,6 +1149,7 @@
     <Effect>FR,AC;12,25;15,31;18,37;21,43;24,50</Effect>
     <ModEffect>FR,AC;24,60</ModEffect>
     <EffectType>ALL</EffectType>
+    <EffectTypeAfterMod>ALL</EffectTypeAfterMod>
     <DropEvent>0-1, 1-4E, 3-1E, 3-4E, 4-1, 4-1E, 5-1, 5-1E, 6-5, 6-1E, 7-2E</DropEvent>
     <DicNumber>1</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
@@ -1390,7 +1395,7 @@
     <EffectFormation>1,0,1,2,0,0,1,0,1</EffectFormation>
     <Effect>FR,AC;15,20;18,25;22,30;26,35;30,40</Effect>
     <EffectType>ALL</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>168</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>assault_supp</SkillCode>
@@ -1435,7 +1440,7 @@
     <EffectFormation>1,1,0,0,2,1,1,1,0</EffectFormation>
     <Effect>FR,EV;15,10;18,12;22,15;26,17;30,20</Effect>
     <EffectType>ALL</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>96</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>fire_command</SkillCode>
@@ -1722,7 +1727,7 @@
     <EffectFormation>1,1,1,1,2,1,1,1,1</EffectFormation>
     <Effect>FR,CR;15,10;18,12;22,15;26,17;30,20</Effect>
     <EffectType>ALL</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>183</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>inquisitor_bullet</SkillCode>
@@ -2055,6 +2060,7 @@
     <Effect>EV;20</Effect>
     <ModEffect>EV,CR;20,10</ModEffect>
     <EffectType>AR</EffectType>
+    <EffectTypeAfterMod>AR</EffectTypeAfterMod>
     <DropEvent>1-6, 1-2E 부터 모든 지역</DropEvent>
     <DicNumber>93</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
@@ -2114,6 +2120,7 @@
     <Effect>AS;20</Effect>
     <ModEffect>AS;24</ModEffect>
     <EffectType>AR</EffectType>
+    <EffectTypeAfterMod>AR</EffectTypeAfterMod>
     <DropEvent>0지역 전부, 2-4E, 3-1을 제외한 3지역 전부, 4지역 전부, 5지역 전부</DropEvent>
     <DicNumber>94</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
@@ -2216,7 +2223,7 @@
     <EffectFormation>1,0,0,0,2,0,1,0,0</EffectFormation>
     <Effect>AS,EV;10,10</Effect>
     <EffectType>AR</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>33</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <SkillCode>smoke_grenade</SkillCode>
@@ -2409,6 +2416,7 @@
     <Effect>AC,EV;10,30</Effect>
     <ModEffect>AC,EV;30,40</ModEffect>
     <EffectType>AR</EffectType>
+    <EffectTypeAfterMod>AR</EffectTypeAfterMod>
     <DropEvent>0-1, 1-6, 1-2E, 1-3E, 1-4E, 2-4를 제외한 2지역 전부, 3-1E, 3-4E를 제외한 3지역 전부, 4-2, 4-3, 4-5, 4-6, 4-1E, 4-3E, 5-1, 5-3, 5-5, 5-6, 5-1E, 5-3E, 5-4E, 6-2, 6-3, 6-5, 6-6, 6-2E, 6-4E, 7-2, 7-3, 7-5, 7-6, 7-2E, 7-4E</DropEvent>
     <DicNumber>29</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
@@ -2467,6 +2475,7 @@
     <Effect>FR;18</Effect>
     <ModEffect>FR,AC;18,15</ModEffect>
     <EffectType>AR</EffectType>
+    <EffectTypeAfterMod>AR</EffectTypeAfterMod>
     <DropEvent>0-2, 0-3, 2-4부터 2지역 전부, 3-1E, 3-3E를 제외한 3지역 전부, 4-2, 4-4, 4-5, 4-6, 4-2E, 4-4E, 5-2, 5-4, 5-5, 5-6, 5-2E, 5-4E, 6-2, 6-4, 6-5, 6-6, 6-2E, 6-4E</DropEvent>
     <DicNumber>32</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
@@ -2529,7 +2538,7 @@
     <SkillCode>evasion_maneuver</SkillCode>
     <Skill>회피기동</Skill>
     <SkillExplain>지속시간 동안 자신의 회피를 증가시킨다.</SkillExplain>
-    <SkillEffect>선 쿨타임;쿨타임;지속시간;회피 증가치</SkillEffect>
+    <SkillEffect>��� 쿨타임;쿨타임;지속시간;회피 증가치</SkillEffect>
     <SkillMag>6초,8초,5초,120%</SkillMag>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
@@ -2831,6 +2840,7 @@
     <Effect>AC,CR;40,20</Effect>
     <ModEffect>AC,CR;45,20</ModEffect>
     <EffectType>AR</EffectType>
+    <EffectTypeAfterMod>AR,RF</EffectTypeAfterMod>
     <DropEvent>0-2, 2-4E, 3-2E, 3-4E, 4-2, 4-2E, 5-2, 5-2E, 6-4, 6-1E</DropEvent>
     <DicNumber>26</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
@@ -2891,6 +2901,7 @@
     <Effect>AS,AC;12,30</Effect>
     <ModEffect>AS,AC;15,30</ModEffect>
     <EffectType>AR</EffectType>
+    <EffectTypeAfterMod>AR</EffectTypeAfterMod>
     <DropEvent>4-4E, 5-4, 5-5, 5-6, 5-2E, 6-2, 6-5, 6-2E</DropEvent>
     <DicNumber>101</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
@@ -2950,6 +2961,7 @@
     <Effect>FR,CR;18,30</Effect>
     <ModEffect>FR,CR;20,30</ModEffect>
     <EffectType>AR</EffectType>
+    <EffectTypeAfterMod>AR</EffectTypeAfterMod>
     <DropEvent>6-6, 6-3E</DropEvent>
     <DicNumber>103</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
@@ -3050,7 +3062,7 @@
     <EffectFormation>1,0,0,0,2,0,1,0,0</EffectFormation>
     <Effect>FR,EV;8,20</Effect>
     <EffectType>AR</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>23</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <SkillCode>evasion_maneuver_t</SkillCode>
@@ -3096,7 +3108,7 @@
     <EffectFormation>1,0,0,0,2,0,1,0,0</EffectFormation>
     <Effect>AS,EV;15,10</Effect>
     <EffectType>AR</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>150</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <SkillCode>evasion_maneuver</SkillCode>
@@ -3230,7 +3242,7 @@
     <EffectFormation>1,0,0,0,2,0,1,0,0</EffectFormation>
     <Effect>FR,EV;12,15</Effect>
     <EffectType>AR</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>16</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <SkillCode>force_shield</SkillCode>
@@ -3374,7 +3386,7 @@
     <EffectFormation>1,0,0,1,2,0,1,0,0</EffectFormation>
     <Effect>FR,AS;10,8</Effect>
     <EffectType>AR</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>104</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <SkillCode>force_shield</SkillCode>
@@ -3424,7 +3436,7 @@
     <EffectFormation>1,0,0,0,2,0,1,0,0</EffectFormation>
     <Effect>FR;20</Effect>
     <EffectType>AR</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>127</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <SkillCode>stun_grenade</SkillCode>
@@ -3473,7 +3485,7 @@
     <EffectFormation>1,0,0,1,2,0,1,0,0</EffectFormation>
     <Effect>AS,CR;18,30</Effect>
     <EffectType>AR</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>135</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <SkillCode>firepower_spread</SkillCode>
@@ -3610,6 +3622,7 @@
     <Effect>AS,AC;20,50</Effect>
     <ModEffect>AS,AC;25,55</ModEffect>
     <EffectType>SMG</EffectType>
+    <EffectTypeAfterMod>SMG</EffectTypeAfterMod>
     <DropEvent>2-3 이후 모든 지역</DropEvent>
     <DicNumber>63</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
@@ -3704,7 +3717,7 @@
     <EffectFormation>0,0,1,0,2,0,0,0,1</EffectFormation>
     <Effect>FR,AS;20,10</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>74</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>firepower_spread</SkillCode>
@@ -3836,7 +3849,7 @@
     <EffectType>SMG</EffectType>
     <DropEvent>0-1, 0-2, 0-4, 2-4부터 2지역 전부, 3-3E를 제외한 3지역 전부, 4-3, 4-3E를 제외한 4지역 전부, 5-3, 5-3E를 제외한 5지역 전부, 6-1, 6-4, 6-3E를 제외한 6지역 전부, 지휘관 레벨 20 30 35 달성 보상</DropEvent>
     <DicNumber>58</DicNumber>
-    <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
+    <AvailableEquipmentType>부���/탄환/인형</AvailableEquipmentType>
     <SkillCode>sneak_attack</SkillCode>
     <Skill>기습공격</Skill>
     <SkillExplain>지속시간 동안 자신의 화력과 명중이 증가한다.</SkillExplain>
@@ -3928,7 +3941,8 @@
     <Effect>EV,AC;20,60</Effect>
     <ModEffect>EV,AC;20,60</ModEffect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <EffectTypeAfterMod>SMG.AR</EffectTypeAfterMod>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>61</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>high_explosive_grenade</SkillCode>
@@ -4244,6 +4258,7 @@
     <Effect>FR,AS;25,10</Effect>
     <ModEffect>FR,AS;25,15</ModEffect>
     <EffectType>SMG</EffectType>
+    <EffectTypeAfterMod>SMG</EffectTypeAfterMod>
     <DropEvent>0-2, 3-6, 3-3E, 3-4E, 4-3, 4-1E, 5-1, 5-5, 5-6, 6-1, 6-6</DropEvent>
     <DicNumber>60</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
@@ -4433,6 +4448,7 @@
     <Effect>FR,AS;30,10</Effect>
     <ModEffect>FR,AS;30,15</ModEffect>
     <EffectType>SMG</EffectType>
+    <EffectTypeAfterMod>SMG</EffectTypeAfterMod>
     <DropEvent>그리폰 특별 구원 활동 2-6, 2-4E 드랍, 한국서버 사전등록 인원수 달성 보상</DropEvent>
     <DicNumber>64</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
@@ -4533,7 +4549,7 @@
     <EffectFormation>0,1,0,0,2,0,0,1,0</EffectFormation>
     <Effect>FR;20</Effect>
     <EffectType>AR</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>171</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>blood_wave</SkillCode>
@@ -4578,6 +4594,7 @@
     <Effect>FR,CR;18,30</Effect>
     <ModEffect>FR,CR;20,32</ModEffect>
     <EffectType>AR</EffectType>
+    <EffectTypeAfterMod>AR</EffectTypeAfterMod>
     <DropEvent>2-6 클리어 보상, 메아리 이벤트 7-3E 지역 S클리어</DropEvent>
     <DicNumber>55</DicNumber>
     <AvailableEquipmentType>탄환/인형/인형</AvailableEquipmentType>
@@ -4634,6 +4651,7 @@
     <Effect>AC,EV;50,12</Effect>
     <ModEffect>AC,EV;50,15</ModEffect>
     <EffectType>SMG</EffectType>
+    <EffectTypeAfterMod>SMG</EffectTypeAfterMod>
     <DropEvent>3-3 클리어 보상, 메아리 이벤트 7-5 지역 S클리어</DropEvent>
     <DicNumber>56</DicNumber>
     <AvailableEquipmentType>부속/부속/인형</AvailableEquipmentType>
@@ -4734,6 +4752,7 @@
     <Effect>AS,EV;10,12</Effect>
     <ModEffect>AS,EV;10,15</ModEffect>
     <EffectType>SMG</EffectType>
+    <EffectTypeAfterMod>SMG</EffectTypeAfterMod>
     <DropEvent>3-6 클리어 보상, 메아리 이벤트 7-2E 지역 S클리어</DropEvent>
     <DicNumber>57</DicNumber>
     <AvailableEquipmentType>부속/부속/인형</AvailableEquipmentType>
@@ -4831,6 +4850,7 @@
     <Effect>FR;40</Effect>
     <ModEffect>FR;45</ModEffect>
     <EffectType>SMG</EffectType>
+    <EffectTypeAfterMod>SMG</EffectTypeAfterMod>
     <DropEvent>5-4E</DropEvent>
     <DicNumber>65</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
@@ -4885,7 +4905,7 @@
     <EffectFormation>0,0,1,0,2,1,0,0,1</EffectFormation>
     <Effect>EV;20</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>106</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>grenade_salvo</SkillCode>
@@ -4975,7 +4995,7 @@
     <EffectFormation>0,0,0,0,2,1,0,0,0</EffectFormation>
     <Effect>FR,EV;30,10</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>122</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>hawk_eye</SkillCode>
@@ -5020,7 +5040,7 @@
     <EffectFormation>0,0,0,0,2,0,0,0,1</EffectFormation>
     <Effect>FR,EV;10,18</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>129</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>firepower_spread_t</SkillCode>
@@ -5065,7 +5085,7 @@
     <EffectFormation>0,0,1,0,2,0,0,0,0</EffectFormation>
     <Effect>AS,EV;10,18</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>130</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>assault_focus_t</SkillCode>
@@ -5153,7 +5173,7 @@
     <EffectFormation>0,0,1,0,2,1,0,0,1</EffectFormation>
     <Effect>AC,EV;30,18</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>172</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>snipe_support</SkillCode>
@@ -5240,7 +5260,7 @@
     <EffectFormation>0,2,1,0,0,0,0,0,1</EffectFormation>
     <Effect>FR,EV;20,12</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>181</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>collective_fire_n</SkillCode>
@@ -5373,6 +5393,7 @@
     <Effect>CL;10</Effect>
     <ModEffect>CL;15</ModEffect>
     <EffectType>HG</EffectType>
+    <EffectTypeAfterMod>HG</EffectTypeAfterMod>
     <DropEvent>2-5 이후 모든 지역</DropEvent>
     <DicNumber>51</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
@@ -5561,6 +5582,7 @@
     <Effect>CL;12</Effect>
     <ModEffect>CL;15</ModEffect>
     <EffectType>HG</EffectType>
+    <EffectTypeAfterMod>HG</EffectTypeAfterMod>
     <DropEvent>0지역 전부, 3-1, 3-2, 3-2E를 제외한 3지역 전부, 4-2, 4-3E를 제외한 4지역 전부, 5-3, 5-3E를 제외한 5지역 전부, 6-2, 6-3E를 제외한 6지역 전부, 지휘관 레벨 40 45 50 달성 보상</DropEvent>
     <DicNumber>37</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
@@ -5617,6 +5639,7 @@
     <Effect>CL;12</Effect>
     <ModEffect>CL;15</ModEffect>
     <EffectType>HG</EffectType>
+    <EffectTypeAfterMod>HG</EffectTypeAfterMod>
     <DropEvent>0지역 전부, 2-4E, 3지역 2, 3, 4, 5, 6, 1E, 2E, 4지역 1, 2, 5, 6, 1E, 3E, 4E, 5지역 1, 3, 4, 5, 6, 1E, 3E, 4E, 6지역 2, 3, 4, 5, 6, 2E, 3E, 4E</DropEvent>
     <DicNumber>44</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
@@ -5671,7 +5694,8 @@
     <Effect>CL;12</Effect>
     <ModEffect>CL;15</ModEffect>
     <EffectType>HG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <EffectTypeAfterMod>HG</EffectTypeAfterMod>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>95</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>firepower_spread_n</SkillCode>
@@ -6117,6 +6141,7 @@
     <Effect>CL;15</Effect>
     <ModEffect>CL;18</ModEffect>
     <EffectType>HG</EffectType>
+    <EffectTypeAfterMod>HG</EffectTypeAfterMod>
     <DropEvent>0-3, 4-6, 5-6, 5-3E, 6-5, 6-3E</DropEvent>
     <DicNumber>39</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
@@ -6257,7 +6282,7 @@
     <EffectFormation>0,0,1,0,2,0,0,0,1</EffectFormation>
     <Effect>CL;15</Effect>
     <EffectType>HG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>43</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>assault_focus</SkillCode>
@@ -6387,7 +6412,7 @@
     <EffectFormation>0,0,0,0,2,0,0,1,1</EffectFormation>
     <Effect>CL;15</Effect>
     <EffectType>HG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>184</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>agility_shoot</SkillCode>
@@ -6433,6 +6458,7 @@
     <Effect>CL;18</Effect>
     <ModEffect>CL;20</ModEffect>
     <EffectType>HG</EffectType>
+    <EffectTypeAfterMod>HG</EffectTypeAfterMod>
     <DropEvent>8-4E</DropEvent>
     <DicNumber>53</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
@@ -6484,7 +6510,7 @@
     <EffectFormation>0,1,0,0,2,0,0,1,0</EffectFormation>
     <Effect>CL;18</Effect>
     <EffectType>HG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>50</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>firepower_spread</SkillCode>
@@ -6616,7 +6642,7 @@
     <EffectFormation>0,0,0,0,2,1,0,0,0</EffectFormation>
     <Effect>CL;18</Effect>
     <EffectType>HG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>128</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>snipe_shot</SkillCode>
@@ -6661,7 +6687,7 @@
     <EffectFormation>0,1,0,0,2,0,0,1,0</EffectFormation>
     <Effect>CL;18</Effect>
     <EffectType>HG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>148</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>eagle_assault</SkillCode>
@@ -6934,6 +6960,7 @@
     <Effect>FR,AS;10,10</Effect>
     <ModEffect>FR,AS;15,15</ModEffect>
     <EffectType>SG</EffectType>
+    <EffectTypeAfterMod>SG</EffectTypeAfterMod>
     <DropEvent>5-5 이후 5구역 전부, 6-5이후 6구역 전부</DropEvent>
     <DicNumber>81</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
@@ -7176,6 +7203,7 @@
     <Effect>AS,AC;10,12</Effect>
     <ModEffect>AS,AC;10,15</ModEffect>
     <EffectType>SG</EffectType>
+    <EffectTypeAfterMod>SG</EffectTypeAfterMod>
     <DropEvent>0-1, 0-4, 3-6, 3-1E, 3-2E, 4-1, 4-2, 4-5, 4-6, 4-2E, 4-4E, 5-2, 5-4, 5-6, 5-2E, 5-4E, 6-1, 6-4, 6-6, 6-1E, 6-4E</DropEvent>
     <DicNumber>89</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
@@ -7412,6 +7440,7 @@
     <Effect>FR,AM;15,10</Effect>
     <ModEffect>FR,AM;18,10</ModEffect>
     <EffectType>SG</EffectType>
+    <EffectTypeAfterMod>SG</EffectTypeAfterMod>
     <DropEvent>0-1, 6-6</DropEvent>
     <DicNumber>75</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
@@ -7514,7 +7543,7 @@
     <EffectFormation>0,0,1,0,0,0,2,0,1</EffectFormation>
     <Effect>AS;18</Effect>
     <EffectType>SG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>121</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>hunting_impulse</SkillCode>
@@ -7560,7 +7589,7 @@
     <EffectFormation>0,0,1,2,0,0,0,0,1</EffectFormation>
     <Effect>AS,AM;15,10</Effect>
     <EffectType>SG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>149</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>hunting_impulse_n</SkillCode>
@@ -7605,7 +7634,7 @@
     <EffectFormation>0,0,1,2,0,1,0,0,1</EffectFormation>
     <Effect>FR,AM;10,15</Effect>
     <EffectType>SG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>185</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>lock_load_n</SkillCode>
@@ -7696,7 +7725,7 @@
     <EffectFormation>0,0,1,2,0,0,0,0,1</EffectFormation>
     <Effect>AC,AM;12,15</Effect>
     <EffectType>SG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>125</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>lock_load</SkillCode>
@@ -7742,7 +7771,7 @@
     <EffectFormation>0,0,1,2,0,1,0,0,1</EffectFormation>
     <Effect>AM;20</Effect>
     <EffectType>SG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>112</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>blood_acceleration</SkillCode>
@@ -7787,7 +7816,7 @@
     <EffectFormation>2,0,1,0,0,1,0,0,1</EffectFormation>
     <Effect>AS,AC;15,12</Effect>
     <EffectType>SG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>173</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>ultimatum</SkillCode>
@@ -8661,7 +8690,7 @@
     <EffectFormation>0,0,1,0,2,0,0,0,1</EffectFormation>
     <Effect>FR,AC;25,50</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>194</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>overhit</SkillCode>
@@ -8706,7 +8735,7 @@
     <EffectFormation>0,0,1,2,0,1,0,0,0</EffectFormation>
     <Effect>FR,AM;8,12</Effect>
     <EffectType>SG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>2017년 12월 출석보상</DropEvent>
     <DicNumber>195</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>lock_load</SkillCode>
@@ -9001,7 +9030,7 @@
     <EffectFormation>0,0,1,0,2,0,0,0,1</EffectFormation>
     <Effect>AS,EV;12,15</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>196</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>yahyooran</SkillCode>
@@ -9044,7 +9073,7 @@
     <EffectFormation>1,0,0,0,2,0,1,0,0</EffectFormation>
     <Effect>FR,AC;12,30</Effect>
     <EffectType>AR</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>137</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <SkillCode>smoke_grenade</SkillCode>
@@ -9087,7 +9116,7 @@
     <EffectFormation>2,0,0,1,0,0,1,0,0</EffectFormation>
     <Effect>CL;10</Effect>
     <EffectType>RF</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>197</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>mars_trumpet</SkillCode>
@@ -9131,7 +9160,7 @@
     <EffectFormation>1,0,0,1,0,0,2,0,0</EffectFormation>
     <Effect>CL;10</Effect>
     <EffectType>RF</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>198</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>morse_mask</SkillCode>
@@ -9176,7 +9205,7 @@
     <EffectFormation>0,0,1,0,0,1,2,0,0</EffectFormation>
     <Effect>FR,AC;10,15</Effect>
     <EffectType>SG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>199</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>firepower_spread_mg</SkillCode>
@@ -9263,7 +9292,7 @@
     <EffectFormation>0,0,1,0,0,1,0,2,1</EffectFormation>
     <Effect>FR,AS;25,15</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>206</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>baekrang_eye</SkillCode>
@@ -9308,7 +9337,7 @@
     <EffectFormation>0,2,1,0,0,1,0,0,1</EffectFormation>
     <Effect>AC,EV;55,16</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>205</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>twin_burst</SkillCode>
@@ -9353,7 +9382,7 @@
     <EffectFormation>1,1,0,1,2,1,1,1,0</EffectFormation>
     <Effect>FR,AC;15,20;18,35;22,30;26,35;30,40</Effect>
     <EffectType>ALL</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>212</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>battlefield_philosophy</SkillCode>
@@ -9396,7 +9425,7 @@
     <EffectFormation>0,0,1,0,2,0,0,0,0</EffectFormation>
     <Effect>FR,EV;20,15</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>216</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>anti_personal_grenade</SkillCode>
@@ -9438,7 +9467,7 @@
     <EffectFormation>1,0,0,1,2,0,1,0,0</EffectFormation>
     <Effect>FR,AS;15,5</Effect>
     <EffectType>AR</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>213</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <SkillCode>mind_chain</SkillCode>
@@ -9483,7 +9512,7 @@
     <EffectFormation>0,0,0,0,2,1,0,0,1</EffectFormation>
     <Effect>FR,AC;25,65</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>215</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>danger_scout</SkillCode>
@@ -10883,7 +10912,7 @@
     <EffectFormation>1,2,0,1,1,0,1,0,0</EffectFormation>
     <Effect>FR,AC;12,30;15,37;18,45;21,52;24,60</Effect>
     <EffectType>ALL</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>233</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>fatal_gambling</SkillCode>
@@ -10926,7 +10955,7 @@
     <EffectFormation>0,0,1,0,2,0,0,0,1</EffectFormation>
     <Effect>CL;15</Effect>
     <EffectType>HG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>235</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>vapor_eruption</SkillCode>
@@ -10968,7 +10997,7 @@
     <EffectFormation>0,0,1,0,2,1,0,0,1</EffectFormation>
     <Effect>FR,AC;20,55</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>237</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>meteorite_rain</SkillCode>
@@ -11010,7 +11039,7 @@
     <EffectFormation>0,0,1,0,2,1,0,0,1</EffectFormation>
     <Effect>FR,EV;20,15</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>236</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>grenade_horror</SkillCode>
@@ -11055,7 +11084,7 @@
     <EffectFormation>0,0,1,0,0,1,2,0,1</EffectFormation>
     <Effect>AC,AM;10,15</Effect>
     <EffectType>SG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>238</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>lazy_anger</SkillCode>
@@ -11347,7 +11376,7 @@
     <EffectFormation>1,0,0,0,2,0,1,0,0</EffectFormation>
     <Effect>FR,AC;12,35</Effect>
     <EffectType>AR</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>228</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <SkillCode>mirror_blossom</SkillCode>
@@ -11386,7 +11415,7 @@
     <EffectFormation>1,0,1,1,2,1,0,0,0</EffectFormation>
     <Effect>FR,AC;12,25;15,31;18,37;21,43;24,50</Effect>
     <EffectType>ALL</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>248</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>blood_eclipse</SkillCode>
@@ -11426,7 +11455,7 @@
     <EffectFormation>0,0,0,0,2,1,0,0,1</EffectFormation>
     <Effect>FR,EV;18,18</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>243</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>future_prediction</SkillCode>
@@ -11468,7 +11497,7 @@
     <EffectFormation>1,0,0,1,2,0,1,0,0</EffectFormation>
     <Effect>FR,AC;12,30</Effect>
     <EffectType>AR</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>245</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <SkillCode>squirrel_girl</SkillCode>
@@ -11510,7 +11539,7 @@
     <EffectFormation>0,0,1,0,2,1,0,0,0</EffectFormation>
     <Effect>CL;15</Effect>
     <EffectType>HG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>247</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>emergency_fire</SkillCode>
@@ -11681,7 +11710,7 @@
     <SkillCode>flower_lock</SkillCode>
     <Skill>꽃의 자물쇠</Skill>
     <SkillExplain>지속시간 동안 체력이 제일 적은 적을 공격하고 해당 적이 손실한 체력 비율에 따라 화력이 상승한다.</SkillExplain>
-    <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 배율</SkillEffect>
+    <SkillEffect>선 쿨타임;쿨타임;지���시간;화력 배율</SkillEffect>
     <SkillMag>4초,8초,5초,2.4배</SkillMag>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINEWIN</Voices>
@@ -11857,7 +11886,7 @@
     <EffectFormation>2,1,0,0,1,0,0,0,0</EffectFormation>
     <Effect>CL;18</Effect>
     <EffectType>HG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>257</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>silent_kill</SkillCode>
@@ -12064,7 +12093,7 @@
     <EffectFormation>1,2,1,1,1,1,0,1,0</EffectFormation>
     <Effect>AS,AC;15,25;18,31;22,37;26,43;30,50</Effect>
     <EffectType>ALL</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>260</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>thrill_shot</SkillCode>
@@ -12106,7 +12135,7 @@
     <EffectFormation>1,1,0,0,1,0,2,1,0</EffectFormation>
     <Effect>CL;18</Effect>
     <EffectType>HG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>261</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>shock_explosive</SkillCode>
@@ -12148,7 +12177,7 @@
     <EffectFormation>0,0,1,0,2,0,0,0,1</EffectFormation>
     <Effect>FR,AC;20,55</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>262</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>cracker_shoot</SkillCode>
@@ -12191,7 +12220,7 @@
     <EffectFormation>0,0,1,2,1,1,0,0,0</EffectFormation>
     <Effect>FR,AC;10,15</Effect>
     <EffectType>SMG,AR,SG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>263</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>light_tent</SkillCode>
@@ -12234,7 +12263,7 @@
     <EffectFormation>2,0,1,0,0,1,0,0,0</EffectFormation>
     <Effect>AS,AM;12,12</Effect>
     <EffectType>SG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>264</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>lily_pattern</SkillCode>
@@ -12632,7 +12661,7 @@
     <EffectFormation>1,2,1,1,0,1,0,0,0</EffectFormation>
     <Effect>FR,AC;9,30;11,37;13,45;15,52;18,60</Effect>
     <EffectType>ALL</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>269</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <Skill>바바 야가</Skill>
@@ -12674,7 +12703,7 @@
     <EffectFormation>0,1,1,0,2,1,0,0,1</EffectFormation>
     <Effect>CL;15</Effect>
     <EffectType>HG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>270</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <Skill>데드라인</Skill>
@@ -12715,7 +12744,7 @@
     <EffectFormation>0,0,1,0,2,1,0,0,1</EffectFormation>
     <Effect>AC,EV;30,18</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>214</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <Skill>폭풍 침식</Skill>
@@ -13374,7 +13403,7 @@
     <EffectFormation>0,0,1,0,2,1,0,0,0</EffectFormation>
     <Effect>FR,EV;12,15</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>287</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <Skill>전장의 힙스터</Skill>
@@ -13412,7 +13441,7 @@
     <EffectFormation>1,0,0,1,1,0,2,1,1</EffectFormation>
     <Effect>FR,EV;12,30;15,37;18,45;21,52;24,60</Effect>
     <EffectType>ALL</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>285</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <Skill>청나비의 유언</Skill>
@@ -13452,7 +13481,7 @@
     <EffectFormation>1,0,0,1,2,0,0,0,0</EffectFormation>
     <Effect>FR,AC;12,30</Effect>
     <EffectType>AR</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>286</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <Skill>D-가드</Skill>
@@ -13490,7 +13519,7 @@
     <EffectFormation>0,0,1,0,2,1,0,0,0</EffectFormation>
     <Effect>AC,EV;50,12</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>288</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <Skill>근육 불끈</Skill>
@@ -13822,12 +13851,12 @@
     <ProductTime>248</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>A;A;A;A;A;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>116</Grow>
+    <HP>110</HP>
+    <FireRate>120</FireRate>
+    <Evasion>110</Evasion>
+    <Accuracy>118</Accuracy>
+    <AttackSpeed>118</AttackSpeed>
     <MoveSpeed>10</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
@@ -13835,7 +13864,7 @@
     <EffectFormation>0,0,1,0,2,1,0,0,1</EffectFormation>
     <Effect>FR,EV;20,15</Effect>
     <EffectType>SMG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>290</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <Skill>수능의 정석</Skill>
@@ -13980,12 +14009,12 @@
     <ProductTime>95</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>A;B;A;A;B;S</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>128</Grow>
+    <HP>115</HP>
+    <FireRate>108</FireRate>
+    <Evasion>112</Evasion>
+    <Accuracy>120</Accuracy>
+    <AttackSpeed>105</AttackSpeed>
     <MoveSpeed>15</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>10/15/20/25/30</ConsumeAmmo>
@@ -13993,7 +14022,7 @@
     <EffectFormation>0,1,0,1,1,1,1,2,1</EffectFormation>
     <Effect>FR,EV;30,20</Effect>
     <EffectType>ALL</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>303</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <Skill>폭주반주</Skill>
@@ -14018,12 +14047,12 @@
     <ProductTime>130</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;B;A;S;S;B</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>102</Grow>
+    <HP>102</HP>
+    <FireRate>100</FireRate>
+    <Evasion>120</Evasion>
+    <Accuracy>125</Accuracy>
+    <AttackSpeed>128</AttackSpeed>
     <MoveSpeed>12</MoveSpeed>
     <Critical>5</Critical>
     <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
@@ -14031,7 +14060,7 @@
     <EffectFormation>1,2,0,1,0,0,0,0,0</EffectFormation>
     <Effect>FR;22</Effect>
     <EffectType>AR</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>304</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <Skill>충격파 폭탄</Skill>
@@ -14056,12 +14085,12 @@
     <ProductTime>265</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;B;B;A;A;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>122</Grow>
+    <HP>95</HP>
+    <FireRate>105</FireRate>
+    <Evasion>105</Evasion>
+    <Accuracy>120</Accuracy>
+    <AttackSpeed>115</AttackSpeed>
     <MoveSpeed>7</MoveSpeed>
     <Critical>40</Critical>
     <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
@@ -14069,7 +14098,7 @@
     <EffectFormation>0,1,0,0,2,0,0,1,0</EffectFormation>
     <Effect>CL;15</Effect>
     <EffectType>HG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>305</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <Skill>대칭성 조절</Skill>
@@ -14094,12 +14123,12 @@
     <ProductTime>236</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;A;A;A;B;S</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>132</Grow>
+    <HP>105</HP>
+    <FireRate>116</FireRate>
+    <Evasion>115</Evasion>
+    <Accuracy>118</Accuracy>
+    <AttackSpeed>108</AttackSpeed>
     <MoveSpeed>10</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
@@ -14107,7 +14136,7 @@
     <EffectFormation>0,1,0,2,1,1,0,0,0</EffectFormation>
     <Effect>FR,EV;20,15</Effect>
     <EffectType>SMG,AR</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>306</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <Skill>블레이자</Skill>
@@ -14132,12 +14161,12 @@
     <ProductTime>386</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>A;A;A;A;B;S</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>130</Grow>
+    <HP>110</HP>
+    <FireRate>116</FireRate>
+    <Evasion>115</Evasion>
+    <Accuracy>110</Accuracy>
+    <AttackSpeed>105</AttackSpeed>
     <MoveSpeed>4</MoveSpeed>
     <Critical>5</Critical>
     <ConsumeAmmo>40/65/90/115/140</ConsumeAmmo>
@@ -14145,7 +14174,7 @@
     <EffectFormation>0,0,1,2,1,1,0,0,0</EffectFormation>
     <Effect>AS,AM;15,15</Effect>
     <EffectType>SG</EffectType>
-    <DropEvent>없음</DropEvent>
+    <DropEvent>일반제조</DropEvent>
     <DicNumber>307</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <Skill>퍼펙트 체인</Skill>
@@ -14157,5 +14186,83 @@
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>여기가 바로 그리폰이군요? 알겠습니다, 앞으로 제 활약을 기대해 주세요. 언제 어디서든 전력을 다하겠습니다.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>MAS-38</Name>
+    <Name_EN>MAS-38</Name_EN>
+    <CodeName>MAS38</CodeName>
+    <Nickname>MAS-38</Nickname>
+    <Model>MAS-38</Model>
+    <Country>France</Country>
+    <Type>SMG</Type>
+    <Grade>3</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;B;A;B;B;A</AbilityGrade>
+    <Grow>112</Grow>
+    <HP>108</HP>
+    <FireRate>95</FireRate>
+    <Evasion>115</Evasion>
+    <Accuracy>100</Accuracy>
+    <AttackSpeed>105</AttackSpeed>
+    <MoveSpeed>12</MoveSpeed>
+    <Critical>5</Critical>
+    <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>1,0,0,0,0,0,1,2,0</EffectFormation>
+    <Effect>FR,CR;18,20</Effect>
+    <EffectType>AR</EffectType>
+    <DropEvent>2020년 5월 출석보상</DropEvent>
+    <DicNumber>301</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>신속처분</Skill>
+    <SkillExplain>지속시간 동안 자신의 화력과 회피를 증가시킨다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;회피 증가치</SkillEffect>
+    <SkillMag>6초,8초,5초,150%,40%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>繪品</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>지휘관님, 어색한 표정 짓지 마세요! 이런 만남도 괜찮긴 하지만, 우리는 분명 더 뜨거운 관계를 맺게 될 테니까요!</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>콜트 디펜더</Name>
+    <Name_EN>Colt Defender</Name_EN>
+    <CodeName>ColtDefender</CodeName>
+    <Nickname>콜트 디펜더</Nickname>
+    <Model>Colt Defender</Model>
+    <Country>United States of America</Country>
+    <Type>SG</Type>
+    <Grade>4</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>A;A;S;B;B;B;A</AbilityGrade>
+    <Grow>120</Grow>
+    <HP>112</HP>
+    <FireRate>118</FireRate>
+    <Evasion>130</Evasion>
+    <Accuracy>95</Accuracy>
+    <AttackSpeed>95</AttackSpeed>
+    <MoveSpeed>6</MoveSpeed>
+    <Critical>40</Critical>
+    <Bullet>8</Bullet>
+    <Armor>100</Armor>
+    <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
+    <ConsumeFood>40/65/90/115/140</ConsumeFood>
+    <EffectFormation>1,0,1,1,1,2,0,0,0</EffectFormation>
+    <Effect>FR,AM;10,10</Effect>
+    <EffectType>MG,SG</EffectType>
+    <DropEvent>13-6, 13-4E</DropEvent>
+    <DicNumber>302</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>탄환의 꽃</Skill>
+    <SkillExplain>&lt;패시브&gt; 공격할 때마다 모든 장탄을 소모해 가장 가까운 적 하나에게 8회 피해를 준다. 적과 가까울수록 큰 피해를 준다. 단, 넉백 판정은 1회이며 슬러그탄과 중첩되지 않는다. 또한 재장전 시간이 감소한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;최대 피해량;재장전 시간 감소량</SkillEffect>
+    <SkillMag>0초,0초,2.5배,2초</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>小最软糖</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>디펜더... 시, 신고합니다... 가까이 오시면 위험해요, 그냥 명령만 내려 주세요...</ProductDialog>
   </Doll>
 </NewDataSet>

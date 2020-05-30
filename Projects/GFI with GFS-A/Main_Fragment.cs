@@ -161,7 +161,7 @@ namespace GFI_with_GFS_A
                         case 5:
                             await Task.Run(() =>
                             {
-                                if (string.IsNullOrEmpty(ETC.fstList.TableName))
+                                if (string.IsNullOrEmpty(ETC.coalitionList.TableName))
                                 {
                                     ETC.LoadDBSync(ETC.coalitionList, "Coalition.gfs", false);
                                 }
