@@ -68,19 +68,6 @@ namespace GFI_with_GFS_A
                 mainGFUtilF = new GFUtilFragment();
                 mainOtherF = new OtherFragment();
 
-
-                // Set ActionBar Title Icon
-
-                /*if ((DateTime.Now.Month == 10) && (DateTime.Now.Day == 31))
-                    SupportActionBar.SetIcon(Resource.Drawable.AppIcon2_Core);
-                else
-                    SupportActionBar.SetIcon(int.Parse(ETC.sharedPreferences.GetString("MainActionbarIcon", Resource.Drawable.AppIcon2.ToString())));
-
-                SupportActionBar.SetDisplayShowHomeEnabled(true);
-                SupportActionBar.SetIcon(Resource.Mipmap.ic_launcher);*/
-
-                //SupportActionBar.SetBackgroundDrawable(new ColorDrawable(Android.Graphics.Color.ParseColor("#54A716")));
-
                 // Set Program Exit Timer
 
                 exitTimer.Interval = 2000;
@@ -364,7 +351,6 @@ namespace GFI_with_GFS_A
             if (!exitTimer.Enabled)
             {
                 exitTimer.Start();
-                //ETC.ShowSnackbar(snackbarLayout, Resource.String.Main_CheckExit, Snackbar.LengthLong, Android.Graphics.Color.DarkOrange);
                 Toast.MakeText(this, Resource.String.Main_CheckExit, ToastLength.Short).Show();
             }
             else
@@ -387,7 +373,6 @@ namespace GFI_with_GFS_A
             catch (Exception ex)
             {
                 ETC.LogError(ex);
-                //ETC.ShowSnackbar(snackbarLayout, Resource.String.Permission_Error, Snackbar.LengthIndefinite, Android.Graphics.Color.DarkMagenta);
                 Toast.MakeText(this, Resource.String.Permission_Error, ToastLength.Short).Show();
             }
         }

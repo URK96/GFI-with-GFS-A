@@ -290,4 +290,61 @@
     <item>달려라 디너게이트</item>
     <item>선물 찬송가</item>
   </string-array>
+
+  <string-array name="Story_Main_Main_Event_2020Spring_TopTitle">
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2020Spring">
+    <item>유령 별장의 소문</item>
+    <item>빈집</item>
+    <item>그리폰의 건축가</item>
+    <item>MDR의 실종</item>
+    <item>곱사등이</item>
+    <item>귤씨 7개</item>
+    <item>2번째 마인드맵</item>
+    <item>리엔필드의 인사 Ⅰ</item>
+    <item>리엔필드의 인사 Ⅱ</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2020Spring_Caption">
+    <item>유령 별장의 소문</item>
+    <item>빈집</item>
+    <item>그리폰의 건축가</item>
+    <item>MDR의 실종</item>
+    <item>곱사등이</item>
+    <item>귤씨 7개</item>
+    <item>2번째 마인드맵</item>
+    <item>리엔필드의 인사 Ⅰ</item>
+    <item>리엔필드의 인사 Ⅱ</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2020Summer_TopTitle">
+    <item>바다 저 멀리</item>
+    <item>바다 저 멀리</item>
+    <item>바다 저 멀리</item>
+    <item>바다 저 멀리</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2020Summer">
+    <item>외딴 섬의 휴일</item>
+    <item>쥐구멍에 볕들 날</item>
+    <item>숨겨진 위험지대</item>
+    <item>여름 노을빛</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2020Summer_Caption">
+    <item>외딴 섬의 휴일</item>
+    <item>쥐구멍에 볕들 날</item>
+    <item>숨겨진 위험지대</item>
+    <item>여름 노을빛</item>
+  </string-array>
 </resources>

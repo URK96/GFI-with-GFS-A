@@ -30,6 +30,7 @@
     <item>전역</item>
     <item>전역</item>
     <item>전역</item>
+    <item>전역</item>
     <item>이벤트</item>
     <item>이벤트</item>
     <item>이벤트</item>
@@ -51,6 +52,8 @@
     <item>2019 할로윈 이벤트</item>
     <item>2019 크리스마스 이벤트</item>
     <item>이벤트</item>
+    <item>2020 봄 시즌 이벤트</item>
+    <item>2020 여름 시즌 이벤트</item>
   </string-array>
 
   <string-array name="Story_Main_Main">
@@ -68,6 +71,7 @@
     <item>제10전역 : 연옥</item>
     <item>제11전역 : 사냥</item>
     <item>제12전역 : 숨막힘</item>
+    <item>제13전역 : 멸각</item>
     <item>큐브작전</item>
     <item>저체온증 : 재앙의 울버린</item>
     <item>저체온증 : 등화관제</item>
@@ -89,6 +93,8 @@
     <item>팬텀 신드롬</item>
     <item>거룩한 밤 광상곡</item>
     <item>편극광</item>
+    <item>사진관 미스테리</item>
+    <item>바다 저 멀리</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Caption">
@@ -106,6 +112,7 @@
     <item>절망 속에서 행복을 떠올리는 건 최악의 고통이다.</item>
     <item>난세를 홀로 떠도는 자여, 한번이라도 세상을 사랑해 본 적은 있는가?</item>
     <item>자, 뒤집힌 숲속에서 그녀의 그림자를 찾자.</item>
+    <item>끝이며 시작.</item>
     <item>큐브작전</item>
     <item>CH.01 재앙의 울버린</item>
     <item>CH.02 등화관제</item>
@@ -127,6 +134,8 @@
     <item>팬텀 신드롬</item>
     <item>거룩한 밤 광상곡</item>
     <item>편극광</item>
+    <item>사진관 미스테리</item>
+    <item>바다 저 멀리</item>
   </string-array>
 
   <string-array name="Story_Main_Sub_TopTitle">

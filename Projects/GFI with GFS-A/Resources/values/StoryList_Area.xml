@@ -654,4 +654,43 @@
     <item>"드디어 고향에 돌아왔구나. 지금부터 어떤 일이 일어날까?"</item>
   </string-array>
 
+  <string-array name="Story_Main_Main_Area_13_TopTitle">
+    <item>일반 13-1</item>
+    <item>일반 13-2</item>
+    <item>일반 13-3</item>
+    <item>일반 13-4</item>
+    <item>일반 13-5</item>
+    <item>일반 13-6</item>
+    <item>긴급 13-1</item>
+    <item>긴급 13-2</item>
+    <item>긴급 13-3 </item>
+    <item>긴급 13-4 </item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Area_13">
+    <item>원점수비</item>
+    <item>밀봉우편</item>
+    <item>구면</item>
+    <item>오랜 벗</item>
+    <item>점차 접근</item>
+    <item>종지부</item>
+    <item>지나간 일Ⅰ</item>
+    <item>지나간 일Ⅱ</item>
+    <item>지나간 일Ⅲ</item>
+    <item>지나간 일Ⅳ</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Area_13_Caption">
+    <item>원점수비</item>
+    <item>밀봉우편</item>
+    <item>구면</item>
+    <item>오랜 벗</item>
+    <item>점차 접근</item>
+    <item>종지부</item>
+    <item>지나간 일Ⅰ</item>
+    <item>지나간 일Ⅱ</item>
+    <item>지나간 일Ⅲ</item>
+    <item>지나간 일Ⅳ</item>
+  </string-array>
+
 </resources>

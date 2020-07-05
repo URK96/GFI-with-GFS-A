@@ -1,7 +1,6 @@
-﻿# T-Doll DB Update 2020/05/22
+﻿# T-Doll DB Update 2020/06/12
 
-- Add new T-Dolls (MAS-38, Colt Defender)
-- Edit some T-Doll's Info
+- Add new T-Doll's costumes (AK-Alfa, HP-35, EVO 3, T-5000, TMP, X95, FAMAS)
 
 
 # Coalition DB Update 2020/05/30

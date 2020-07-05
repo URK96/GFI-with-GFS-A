@@ -86,109 +86,124 @@ namespace GFI_with_GFS_A
                     topTitleRes = Resource.Array.Story_Main_Main_Area_12_TopTitle;
                     break;
                 case 14:
+                    titleRes = Resource.Array.Story_Main_Main_Area_13;
+                    captionRes = Resource.Array.Story_Main_Main_Area_13_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Area_13_TopTitle;
+                    break;
+                case 15:
                     titleRes = Resource.Array.Story_Main_Main_Event_Cube;
                     captionRes = Resource.Array.Story_Main_Main_Event_Cube_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_Cube_TopTitle;
                     break;
-                case 15:
+                case 16:
                     titleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_1;
                     captionRes = Resource.Array.Story_Main_Main_Event_Hypothermia_1_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_1_TopTitle;
                     break;
-                case 16:
+                case 17:
                     titleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_2;
                     captionRes = Resource.Array.Story_Main_Main_Event_Hypothermia_2_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_2_TopTitle;
                     break;
-                case 17:
+                case 18:
                     titleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_3;
                     captionRes = Resource.Array.Story_Main_Main_Event_Hypothermia_3_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_3_TopTitle;
                     break;
-                case 18:
+                case 19:
                     titleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_Hidden;
                     captionRes = Resource.Array.Story_Main_Main_Event_Hypothermia_Hidden_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_Hypothermia_Hidden_TopTitle;
                     break;
-                case 19:
+                case 20:
                     titleRes = Resource.Array.Story_Main_Main_Event_CubePlus;
                     captionRes = Resource.Array.Story_Main_Main_Event_CubePlus_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_CubePlus_Toptitle;
                     break;
-                case 20:
+                case 21:
                     titleRes = Resource.Array.Story_Main_Main_Event_GuiltyGear;
                     captionRes = Resource.Array.Story_Main_Main_Event_GuiltyGear_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_GuiltyGear_Toptitle;
                     break;
-                case 21:
+                case 22:
                     titleRes = Resource.Array.Story_Main_Main_Event_DeepDive_1;
                     captionRes = Resource.Array.Story_Main_Main_Event_DeepDive_1_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_DeepDive_1_TopTitle;
                     break;
-                case 22:
+                case 23:
                     titleRes = Resource.Array.Story_Main_Main_Event_DeepDive_2;
                     captionRes = Resource.Array.Story_Main_Main_Event_DeepDive_2_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_DeepDive_2_TopTitle;
                     break;
-                case 23:
+                case 24:
                     titleRes = Resource.Array.Story_Main_Main_Event_DeepDive_3;
                     captionRes = Resource.Array.Story_Main_Main_Event_DeepDive_3_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_DeepDive_3_TopTitle;
                     break;
-                case 24:
+                case 25:
                     titleRes = Resource.Array.Story_Main_Main_Event_DeepDive_Hidden;
                     captionRes = Resource.Array.Story_Main_Main_Event_DeepDive_Hidden_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_DeepDive_Hidden_TopTitle;
                     break;
-                case 25:
+                case 26:
                     titleRes = Resource.Array.Story_Main_Main_Event_Singularity;
                     captionRes = Resource.Array.Story_Main_Main_Event_Singularity_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_Singularity_TopTitle;
                     break;
-                case 26:
+                case 27:
                     titleRes = Resource.Array.Story_Main_Main_Event_DJMAX_1;
                     captionRes = Resource.Array.Story_Main_Main_Event_DJMAX_1_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_DJMAX_1_TopTitle;
                     break;
-                case 27:
+                case 28:
                     titleRes = Resource.Array.Story_Main_Main_Event_DJMAX_2;
                     captionRes = Resource.Array.Story_Main_Main_Event_DJMAX_2_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_DJMAX_2_TopTitle;
                     break;
-                case 28:
+                case 29:
                     titleRes = Resource.Array.Story_Main_Main_Event_ContinuumTurbulence;
                     captionRes = Resource.Array.Story_Main_Main_Event_ContinuumTurbulence_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_ContinuumTurbulence_TopTitle;
                     break;
-                case 29:
+                case 30:
                     titleRes = Resource.Array.Story_Main_Main_Event_Isomer;
                     captionRes = Resource.Array.Story_Main_Main_Event_Isomer_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_Isomer_TopTitle;
                     break;
-                case 30:
+                case 31:
                     titleRes = Resource.Array.Story_Main_Main_Event_VA;
                     captionRes = Resource.Array.Story_Main_Main_Event_VA_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_VA_TopTitle;
                     break;
-                case 31:
+                case 32:
                     titleRes = Resource.Array.Story_Main_Main_Event_ShatteredConnexion;
                     captionRes = Resource.Array.Story_Main_Main_Event_ShatteredConnexion_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_ShatteredConnexion_TopTitle;
                     break;
-                case 32:
+                case 33:
                     titleRes = Resource.Array.Story_Main_Main_Event_2019Halloween;
                     captionRes = Resource.Array.Story_Main_Main_Event_2019Halloween_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_2019Halloween_TopTitle;
                     break;
-                case 33:
+                case 34:
                     titleRes = Resource.Array.Story_Main_Main_Event_2019Christmas;
                     captionRes = Resource.Array.Story_Main_Main_Event_2019Christmas_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_2019Christmas_TopTitle;
                     break;
-                case 34:
+                case 35:
                     titleRes = Resource.Array.Story_Main_Main_Event_PolarizedLight;
                     captionRes = Resource.Array.Story_Main_Main_Event_PolarizedLight_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_PolarizedLight_TopTitle;
+                    break;
+                case 36:
+                    titleRes = Resource.Array.Story_Main_Main_Event_2020Spring;
+                    captionRes = Resource.Array.Story_Main_Main_Event_2020Spring_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_2020Spring_TopTitle;
+                    break;
+                case 37:
+                    titleRes = Resource.Array.Story_Main_Main_Event_2020Summer;
+                    captionRes = Resource.Array.Story_Main_Main_Event_2020Summer_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_2020Summer_TopTitle;
                     break;
             }
 
@@ -334,70 +349,77 @@ namespace GFI_with_GFS_A
                     case 11:
                     case 12:
                     case 13:
+                    case 14:
                         category = $"Area_{subMainIndex - 1}";
                         break;
-                    case 14:
+                    case 15:
                         category = "Cube";
                         break;
-                    case 15:
+                    case 16:
                         category = "Hypothermia_1";
                         break;
-                    case 16:
+                    case 17:
                         category = "Hypothermia_2";
                         break;
-                    case 17:
+                    case 18:
                         category = "Hypothermia_3";
                         break;
-                    case 18:
+                    case 19:
                         category = "Hypothermia_Hidden";
                         break;
-                    case 19:
+                    case 20:
                         category = "CubePlus";
                         break;
-                    case 20:
+                    case 21:
                         category = "GuiltyGear";
                         break;
-                    case 21:
+                    case 22:
                         category = "DeepDive_1";
                         break;
-                    case 22:
+                    case 23:
                         category = "DeepDive_2";
                         break;
-                    case 23:
+                    case 24:
                         category = "DeepDive_3";
                         break;
-                    case 24:
+                    case 25:
                         category = "DeepDive_Hidden";
                         break;
-                    case 25:
+                    case 26:
                         category = "Singularity";
                         break;
-                    case 26:
+                    case 27:
                         category = "DJMAX_1";
                         break;
-                    case 27:
+                    case 28:
                         category = "DJMAX_2";
                         break;
-                    case 28:
+                    case 29:
                         category = "ContinuumTurbulence";
                         break;
-                    case 29:
+                    case 30:
                         category = "Isomer";
                         break;
-                    case 30:
+                    case 31:
                         category = "VA";
                         break;
-                    case 31:
+                    case 32:
                         category = "ShatteredConnexion";
                         break;
-                    case 32:
+                    case 33:
                         category = "2019Halloween";
                         break;
-                    case 33:
+                    case 34:
                         category = "2019Christmas";
                         break;
-                    case 34:
+                    case 35:
                         category = "PolarizedLight";
+                        break;
+                    case 36:
+                        category = "2020Spring";
+                        break;
+                    case 37:
+                        category = "2020Summer";
                         break;
                 }
             }

@@ -346,6 +346,34 @@
     <item>124화</item>
     <item>125화</item>
     <item>126화</item>
+    <item>127화</item>
+    <item>128화</item>
+    <item>129화</item>
+    <item>130화</item>
+    <item>131화</item>
+    <item>2020 만우절 특별편 1화</item>
+    <item>2020 만우절 특별편 2화</item>
+    <item>2020 만우절 특별편 3화</item>
+    <item>2020 만우절 특별편 4화</item>
+    <item>2020 만우절 특별편 5화</item>
+    <item>2020 만우절 특별편 6화</item>
+    <item>2020 만우절 특별편 7화</item>
+    <item>132화</item>
+    <item>133화</item>
+    <item>134화</item>
+    <item>135화</item>
+    <item>136화</item>
+    <item>137화</item>
+    <item>138화</item>
+    <item>138화</item>
+    <item>3주년 특별편 1화</item>
+    <item>3주년 특별편 2화</item>
+    <item>3주년 특별편 3화</item>
+    <item>3주년 특별편 4화</item>
+    <item>3주년 특별편 5화</item>
+    <item>3주년 특별편 6화</item>
+    <item>3주년 특별편 7화</item>
+    <item>3주년 특별편 8화</item>
   </string-array>
 
   <string-array name="mota6nako_GF">
@@ -852,5 +880,7 @@
     <item>와장창☆</item>
     <item>움뀨 반응</item>
     <item>안구사 괴롭히지 마라!</item>
+    <item>구사는 어려워</item>
+    <item>트윈테일 마일로</item>
   </string-array>
 </resources>

@@ -2630,7 +2630,7 @@
     <SkillExplain>폭발한 위치의 2.5 반경 내의 적에게 피해를 준다</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
     <SkillMag>3초,16초,6배</SkillMag>
-    <Costume>백야의 별 이야기</Costume>
+    <Costume>백야의 별 이야기;EVO 3의 아침</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Yamamoto Nozomi</VoiceActor>
@@ -2716,7 +2716,7 @@
     <SkillExplain>지속시간 동안 자신의 회피를 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;회피 증가치</SkillEffect>
     <SkillMag>6초,8초,5초,120%</SkillMag>
-    <Costume>매우 반짝이는 귀;냥 프리즘 파워</Costume>
+    <Costume>매우 반짝이는 귀;냥 프리즘 파워;흑묘 유치원</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Kibune Sachiho</VoiceActor>
@@ -4365,6 +4365,7 @@
     <SkillExplain>유탄을 발사하여 폭발한 위치의 1/2.5/4 반경 내의 적에게 피해를 준다</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
     <SkillMag>8초,16초,5배/2배/1배</SkillMag>
+    <Costume>총포와 사이드박스;새와 숲지기</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Matsui Eriko</VoiceActor>
@@ -6420,7 +6421,7 @@
     <SkillExplain>지속시간 동안 자신의 사속과 명중을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치;명중 증가치</SkillEffect>
     <SkillMag>6초,8초,6초,50%,50%</SkillMag>
-    <Costume>웨딩 레인저</Costume>
+    <Costume>웨딩 레인저;차원의 파괴자</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Fujii Yukiyo</VoiceActor>
@@ -11712,6 +11713,7 @@
     <SkillExplain>지속시간 동안 체력이 제일 적은 적을 공격하고 해당 적이 손실한 체력 비율에 따라 화력이 상승한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지���시간;화력 배율</SkillEffect>
     <SkillMag>4초,8초,5초,2.4배</SkillMag>
+    <Costume>백장미 소녀</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINEWIN</Voices>
     <VoiceActor>Ueda Kana</VoiceActor>
@@ -14029,6 +14031,7 @@
     <SkillExplain>&lt;패시브&gt;   야간전 또는 디버프 효과를 받고 있는 적은 받는 피해량이 증가한다. 동일 조건의 아군은 받는 피해량이 감소한다.   &lt;액티브&gt; 모든 적이 받는 피해량을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;적 패시브 증가치;아군 패시브 증가치;액티브 증가치</SkillEffect>
     <SkillMag>6초,12초,6초,8%,15%,18%</SkillMag>
+    <Costume>바람 타고 씽씽</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>れおえん</Illustrator>
     <HasCensor>false</HasCensor>
@@ -14143,6 +14146,7 @@
     <SkillExplain>&lt;패시브&gt; 자신의 바로 정면에 있는 적을 공격할 때 피해량이 증가한다.   &lt;액티브&gt; 자신의 화력을 증가시킨다. 또한 지속시간 동안 자신의 바로 정면에 있는 적을 우선으로 공격한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;액티브 화력 증가량;패시브 화력 증가량</SkillEffect>
     <SkillMag>5초,8초,5초,65%,20%</SkillMag>
+    <Costume>고양이 사냥꾼</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>neco</Illustrator>
     <HasCensor>false</HasCensor>

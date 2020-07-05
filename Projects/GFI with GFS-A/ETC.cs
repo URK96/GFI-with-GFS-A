@@ -1,22 +1,23 @@
 ﻿using Android.App;
 using Android.Content;
-using Android.Preferences;
 using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Widget;
-using System;
-using System.Data;
-using System.IO;
-using System.Net;
-using System.Threading.Tasks;
+
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Push;
+
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Net;
 using System.Security.Cryptography;
+using System.Threading.Tasks;
+
 using Xamarin.Essentials;
-using Android.Content.PM;
 
 namespace GFI_with_GFS_A
 {
@@ -147,6 +148,7 @@ namespace GFI_with_GFS_A
             for (int i = 0; i < text.Length; ++i)
             {
                 view.Text += text[i];
+
                 await Task.Delay(50);
             }
         }
@@ -157,70 +159,28 @@ namespace GFI_with_GFS_A
 
             try
             {
-                _ = Uri.TryCreate(server, UriKind.RelativeOrAbsolute, out Uri uri);
+                if (!Uri.TryCreate(server, UriKind.RelativeOrAbsolute, out Uri uri))
+                {
+                    throw new Exception("Cannot create uri");
+                }
+
                 var request = WebRequest.Create(uri) as HttpWebRequest;
                 request.Method = "HEAD";
 
-                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                using (var response = request.GetResponse() as HttpWebResponse)
                 {
                     isServerDown = !(response.StatusCode == HttpStatusCode.OK);
 
-                    if (response != null)
-                    {
-                        response.Close();
-                    }
+                    response?.Close();
                 }
             }
             catch (Exception ex)
             {
                 LogError(ex);
+
                 isServerDown = true;
             }
         }
-
-        /*internal static async Task UpViewAlpha(View view, int rate, int delay)
-        {
-            if (rate <= 0) rate = 1;
-            int mag = 10 * rate;
-
-            for (int i = 0; i < mag; ++i)
-            {
-                view.Alpha += Convert.ToSingle(1.0 / mag);
-                await Task.Delay(delay);
-                if (view.Alpha == 1) break;
-            }
-        }
-
-        internal static async Task DownViewAlpha(View view, int rate, int delay)
-        {
-            if (rate <= 0) rate = 1;
-            int mag = 10 * rate;
-
-            for (int i = 0; i < mag; ++i)
-            {
-                view.Alpha -= Convert.ToSingle(1.0 / mag);
-                await Task.Delay(delay);
-                if (view.Alpha == 0) break;
-            }
-        }
-
-        internal static async Task UpProgressBarProgress(ProgressBar pb, int start, int end, int delay)
-        {
-            for (int i = start; i <= end; ++i)
-            {
-                pb.Progress = i;
-                await Task.Delay(delay);
-            }
-        }
-
-        internal static async Task DownProgressBarProgress(ProgressBar pb, int start, int end, int delay)
-        {
-            for (int i = start; i <= end; --i)
-            {
-                pb.Progress = i;
-                await Task.Delay(delay);
-            }
-        }*/
 
         internal static DataRow FindDataRow<T>(DataTable table, string index, T value)
         {
@@ -246,11 +206,13 @@ namespace GFI_with_GFS_A
                 if (((T)dr[index]).Equals(value))
                 {
                     row = dr;
+
                     return true;
                 }
             }
 
             row = null;
+
             return false;
         }
 
@@ -266,14 +228,14 @@ namespace GFI_with_GFS_A
                 Directory.CreateDirectory(tempPath);
             }
 
-            DirectoryInfo appDataDI = new DirectoryInfo(appDataPath);
+            var appDataDI = new DirectoryInfo(appDataPath);
 
             if (!appDataDI.Exists)
             {
                 appDataDI.Create();
             }
 
-            string[] MainPaths =
+            string[] mainPaths =
             {
                 dbPath,
                 systemPath,
@@ -281,7 +243,7 @@ namespace GFI_with_GFS_A
                 cachePath
             };
 
-            string[] SubPaths =
+            string[] subPaths =
             {
                 Path.Combine(cachePath, "Doll"),
                 Path.Combine(cachePath, "Doll", "SD"),
@@ -327,14 +289,14 @@ namespace GFI_with_GFS_A
                 Path.Combine(cachePath, "Video", "PV")
             };
 
-            foreach (string path in MainPaths)
+            foreach (string path in mainPaths)
             {
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);
                 }
             }
-            foreach (string path in SubPaths)
+            foreach (string path in subPaths)
             {
                 if (!Directory.Exists(path))
                 {
@@ -443,7 +405,7 @@ namespace GFI_with_GFS_A
             }
             else
             {
-                using (WebClient wc = new WebClient())
+                using (var wc = new WebClient())
                 {
                     await wc.DownloadFileTaskAsync(serverDBVerPath, tempDBVerPath);
                 }

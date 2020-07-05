@@ -1,6 +1,6 @@
 Y;
-64;
-2;
-이상한 나라 여행,4주년 출석;
-https://www.girlsfrontline.co.kr/archives/3941.html,https://www.girlsfrontline.co.kr/archives/3921.html;
-2020/5/16 00:00 ~ 2020/6/5 23:59,2020/5/14 00:00 ~ 2020/5/31 23:59;
+66;
+1;
+바다 저 멀리;
+https://www.girlsfrontline.co.kr/archives/4043.html;
+2020/6/19 16:00 ~ 2020/7/10 14:59;
