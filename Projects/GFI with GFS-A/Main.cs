@@ -330,22 +330,6 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void MainOldGFDSubMenu_Click(object sender, int position)
-        {
-            try
-            {
-                var oldGFDIntent = new Intent(this, typeof(OldGFDViewer));
-                oldGFDIntent.PutExtra("Index", position);
-                StartActivity(oldGFDIntent);
-                OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                ETC.ShowSnackbar(snackbarLayout, Resource.String.MenuAccess_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
-            }
-        }
-
         public override void OnBackPressed()
         {
             if (!exitTimer.Enabled)

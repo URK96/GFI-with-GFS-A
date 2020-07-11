@@ -8,6 +8,7 @@ using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace GFI_with_GFS_A
 {
@@ -136,7 +137,7 @@ namespace GFI_with_GFS_A
 
         private async Task LoadProcess(bool isRefresh)
         {
-            loadProgressBar.Visibility = ViewStates.Visible;
+            MainThread.BeginInvokeOnMainThread(() => { loadProgressBar.Visibility = ViewStates.Visible; });
 
             string file = (category == "ModStory") ? Path.Combine(ETC.cachePath, "Story", category, $"{dollDicNumber}_{itemIndex}.gfdcache") :
                 Path.Combine(ETC.cachePath, "Story", category, $"{itemIndex}.gfdcache");
@@ -153,7 +154,7 @@ namespace GFI_with_GFS_A
             FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryCategory).Text = topTitleList[itemIndex - 1];
             FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryTitle).Text = itemList[itemIndex - 1];
 
-            loadProgressBar.Visibility = ViewStates.Invisible;
+            MainThread.BeginInvokeOnMainThread(() => { loadProgressBar.Visibility = ViewStates.Invisible; });
         }
 
         private async Task LoadText(string path)

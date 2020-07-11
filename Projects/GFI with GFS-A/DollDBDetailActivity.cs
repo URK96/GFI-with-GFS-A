@@ -62,6 +62,7 @@ namespace GFI_with_GFS_A
         private bool isExtraFeatureOpen = false;
         private bool isChartLoad = false;
         private bool initLoadComplete = false;
+        private bool isApplyModVoice = false;
 
         private ISimpleAudioPlayer voicePlayer;
         private FileStream stream;
@@ -426,17 +427,25 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                string[] StoryList = new string[]
+                string[] storyList = new string[]
                 {
                     $"{doll.Name} MOD Story 1",
                     $"{doll.Name} MOD Story 2",
                     $"{doll.Name} MOD Story 3",
                     $"{doll.Name} MOD Story 4"
                 };
+                string[] topTitleList = new string[]
+                {
+                    "MOD Story",
+                    "MOD Story",
+                    "MOD Story",
+                    "MOD Story"
+                };
 
                 var intent = new Intent(this, typeof(StoryReaderActivity));
-                intent.PutExtra("Info", new string[] { "Sub", "ModStory", "0", StoryList.Length.ToString(), doll.DicNumber.ToString() });
-                intent.PutExtra("List", StoryList);
+                intent.PutExtra("Info", new string[] { "Sub", "ModStory", "0", storyList.Length.ToString(), doll.DicNumber.ToString() });
+                intent.PutExtra("List", storyList);
+                intent.PutExtra("TopList", topTitleList);
                 StartActivity(intent);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
@@ -705,18 +714,20 @@ namespace GFI_with_GFS_A
                 switch (vCostumeIndex)
                 {
                     case 0:
-                        voiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Doll", doll.NameKR, $"{doll.NameKR}_{voice}_JP.wav");
-                        target = Path.Combine(ETC.cachePath, "Voices", "Doll", $"{doll.DicNumber}_{voice}_JP.gfdcache");
+                        string baseName = isApplyModVoice ? $"{doll.CodeName}Mod" : $"{doll.CodeName}";
+
+                        voiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Doll", "New", baseName, $"{baseName}_{voice}_JP.wav");
+                        target = Path.Combine(ETC.cachePath, "Voices", "Doll", $"{baseName}_{voice}_JP.gfdcache");
                         break;
                     default:
-                        voiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Doll", $"{doll.NameKR}_{vCostumeIndex - 1}", $"{doll.NameKR}_{vCostumeIndex - 1}_{voice}_JP.wav");
-                        target = Path.Combine(ETC.cachePath, "Voices", "Doll", $"{doll.DicNumber}_{vCostumeIndex - 1}_{voice}_JP.gfdcache");
+                        voiceServerURL = Path.Combine(ETC.server, "Data", "Voice", "Doll", "New", $"{doll.CodeName}_{vCostumeIndex - 1}", $"{doll.CodeName}_{vCostumeIndex - 1}_{voice}_JP.wav");
+                        target = Path.Combine(ETC.cachePath, "Voices", "Doll", $"{doll.CodeName}_{vCostumeIndex - 1}_{voice}_JP.gfdcache");
                         break;
                 }
 
                 if (!File.Exists(target))
                 {
-                    using (WebClient wc = new WebClient())
+                    using (var wc = new WebClient())
                     {
                         MainThread.BeginInvokeOnMainThread(() => { voicePlayButton.Enabled = false; });
 
@@ -770,7 +781,7 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                List<string> vcList = new List<string>()
+                var voiceCategoryList = new List<string>()
                 {
                     "Default"
                 };
@@ -779,17 +790,33 @@ namespace GFI_with_GFS_A
                 {
                     for (int i = 0; i < (doll.CostumeVoices.Length / doll.CostumeVoices.Rank); ++i)
                     {
-                        vcList.Add(doll.Costumes[int.Parse(doll.CostumeVoices[i, 0])]);
+                        voiceCategoryList.Add(doll.Costumes[int.Parse(doll.CostumeVoices[i, 0])]);
                     }
                 }
 
-                vcList.TrimExcess();
-
-                var adater = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, vcList);
-                adater.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
-                voiceCostumeSelector.Adapter = adater;
+                var adapter = new ArrayAdapter<string>(this, Resource.Layout.SpinnerListLayout, voiceCategoryList);
+                adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
+                voiceCostumeSelector.Adapter = adapter;
 
                 voiceCostumeSelector.SetSelection(0);
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                Toast.MakeText(this, Resource.String.VoiceList_InitError, ToastLength.Short).Show();
+            }
+        }
+
+        private void UpdateVoiceList()
+        {
+            try
+            {
+                var adapter = voiceCostumeSelector.Adapter as ArrayAdapter<string>;
+
+                adapter.Remove(adapter.GetItem(0));
+                adapter.Insert(isApplyModVoice ? "Default - MOD" : "Default", 0);
+
+                adapter.NotifyDataSetChanged();
             }
             catch (Exception ex)
             {
@@ -1403,7 +1430,7 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                ImageView ModButton = sender as ImageView;
+                var ModButton = sender as ImageView;
 
                 modIndex = ModButton.Id switch
                 {
@@ -1421,9 +1448,12 @@ namespace GFI_with_GFS_A
 
                 ModButton.SetBackgroundColor(Android.Graphics.Color.ParseColor("#54A716"));
 
+                isApplyModVoice = (modIndex == 3) && (doll.ModVoices != null);
+
                 if (initLoadComplete)
                 {
                     ListAbilityLevelFavor();
+                    UpdateVoiceList();
                     await InitLoadProcess(false);
                 }
             }

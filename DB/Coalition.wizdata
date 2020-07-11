@@ -416,6 +416,31 @@
     <HasCensor>false</HasCensor>
   </Coalition>
   <Coalition>
+    <Name>재규어</Name>
+    <CodeName>Jaguar</CodeName>
+    <Type>LightArmor;Machine;Remote</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>false</IsBoss>
+    <BornGrade>1</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>13</DicNumber>
+    <Skill1>정밀 타격</Skill1>
+    <SkillExplain1>재규어의 공격은 반경 2 범위 안의 적에게 폭발 피해를 준다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;폭발 피해량</SkillEffect1>
+    <SkillMag1>0초,0초,1.25배</SkillMag1>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Coalition>
+  <Coalition>
     <Name>네메움</Name>
     <CodeName>Nemeum</CodeName>
     <Type>HeavyArmor;Machine;Remote</Type>
@@ -545,6 +570,51 @@
     <HasCensor>false</HasCensor>
   </Coalition>
   <Coalition>
+    <Name>디스트로이어</Name>
+    <CodeName>Destroyer</CodeName>
+    <Type>LightArmor;Doll;Remote</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>true</IsBoss>
+    <BornGrade>3</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
+    <Effect1>FR,AM</Effect1>
+    <EffectMag1>6,6;10,10;10,10;10,10</EffectMag1>
+    <EffectType1>HeavyArmor</EffectType1>
+    <Effect2>FR,AC</Effect2>
+    <EffectMag2>6,9;10,15;10,15;10,15</EffectMag2>
+    <EffectType2>Machine</EffectType2>
+    <DicNumber>18</DicNumber>
+    <Skill1>내 손바닥 안이야!</Skill1>
+    <SkillExplain1>체력이 가장 높은 적을 중심으로 십자 범위 안의 적에게 폭발 피해를 준다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;폭발 피해량</SkillEffect1>
+    <SkillMag1>6초,12초,2배</SkillMag1>
+    <FASkillMag1>6초,12초,2.5배</FASkillMag1>
+    <Skill2>유탄 지원</Skill2>
+    <SkillExplain2>거리 2칸 이내의 아군에게 지원 사격을 제공한다. 전투 중 일정 시간마다 유탄을 2발 발사하여 반경 1 범위 안의 적에게 폭발 피해를 준다. 또한 직접 시설에 화력의 0.1배의 피해를 줄 수 있다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;발사 간격;폭발 피해량</SkillEffect2>
+    <SkillMag2>0초,6초,6초,0.5배</SkillMag2>
+    <Skill3>복합 유탄</Skill3>
+    <SkillExplain3>디스트로이어는 특별한 유탄 발사기로 공격하며 유탄을 12발 쏘고 2초동안 교체한다. 자신의 공속을 감소시키는 대신 1회 공격당 유탄을 2발 발사하여 반경 1 범위 안의 적에게 화력의 0.5배의 폭발 피해를 준다.</SkillExplain3>
+    <SkillEffect3>선 쿨타임;쿨타임;공속 감소량</SkillEffect3>
+    <SkillMag3>0초,0초,50%</SkillMag3>
+    <Skill4>소이류탄</Skill4>
+    <SkillExplain4>탄띠 교체 후 첫 공격 시 추가로 피격 범위에 불을 붙여 0.5초마다 일정 피해량을 주고 해당 범위 안의 적이 받는 피해량을 증가시킨다.</SkillExplain4>
+    <SkillEffect4>선 쿨타임;쿨타임;지속시간;지속 피해량;피해 증가량</SkillEffect4>
+    <SkillMag4>0초,0초,2.5초,0.15배,10%</SkillMag4>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Coalition>
+  <Coalition>
     <Name>브루트</Name>
     <CodeName>Brute</CodeName>
     <Type>LightArmor;Doll;CloseIn</Type>
@@ -624,6 +694,35 @@
     <SkillExplain2>타란튤라는 남은 체력이 적을수록 피해를 적게 받는다. 최대 체력의 일정 손실마다, 받는 피해량이 1% 감소한다. 증원으로 소환된 타란튤라도 해당 효과를 적용받는다.</SkillExplain2>
     <SkillEffect2>선 쿨타임;쿨타임;발동 손실 비율</SkillEffect2>
     <SkillMag2>0초,3333초,3%</SkillMag2>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Coalition>
+  <Coalition>
+    <Name>가드SWAP</Name>
+    <CodeName>Guard_SWAP</CodeName>
+    <Type>LightArmor;Doll;CloseIn</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>false</IsBoss>
+    <BornGrade>2</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>57</DicNumber>
+    <Skill1>적응력 코팅</Skill1>
+    <SkillExplain1>모든 아군 인형 유닛에게 자신의 최대 체력의 일정 비율만큼 보호막을 10초간 부여한다. 원래 보호막이 없는 아군은 추가로 회피가 증가하며, 이미 보호막을 가진 아군은 화력이 증가한다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;지속시간;보호막 생성량;회피 증가량;화력 증가량</SkillEffect1>
+    <SkillMag1>5초,8초,5초,4%,50%,10%</SkillMag1>
+    <Skill2>반사 코팅</Skill2>
+    <SkillExplain2>자신이 받는 피해량을 감소시킨다. 해당 효과가 사라지면 바로 앞에 있는 적에게 일정량의 필중 피해를 준다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;지속시간;피해 감소량;필중 피해량</SkillEffect2>
+    <SkillMag2>3초,6초,5초,20%,1.2배</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
   </Coalition>

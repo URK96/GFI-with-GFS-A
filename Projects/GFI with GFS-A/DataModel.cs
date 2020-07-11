@@ -41,6 +41,7 @@ namespace GFI_with_GFS_A
         public string[] ModSkillEffect { get; private set; }
         public string[] ModSkillMag { get; private set; }
         public string[] Voices { get; private set; }
+        public string[] ModVoices { get; private set; }
         public string[,] CostumeVoices { get; private set; }
         public bool HasCensored { get; private set; }
         public string[] CensorType { get; private set; }
@@ -101,7 +102,9 @@ namespace GFI_with_GFS_A
             if (HasMod)
             {
                 ModGrade = (int)dr["ModGrade"];
+
                 string[] ModBuffFormation_Data = ((string)dr["ModEffectFormation"]).Split(',');
+
                 ModBuffFormation = new int[9];
 
                 for (int i = 0; i < ModBuffFormation_Data.Length; ++i)
@@ -141,6 +144,7 @@ namespace GFI_with_GFS_A
                 if (HasVoice)
                 {
                     Voices = ((string)dr["Voices"]).Split(';');
+                    ModVoices = ETC.IsDBNullOrBlank(dr, "ModVoices") ? null : ((string)dr["ModVoices"]).Split(';');
                     VoiceActor = ETC.IsDBNullOrBlank(dr, "VoiceActor") ? "" : (string)dr["VoiceActor"];
 
                     if (!ETC.IsDBNullOrBlank(dr, "CostumeVoices"))
@@ -159,6 +163,7 @@ namespace GFI_with_GFS_A
                 else
                 {
                     Voices = null;
+                    ModVoices = null;
                     CostumeVoices = null;
                 }
 

@@ -1,8 +1,7 @@
-<2.6.0 Update>
+<2.6.2 Update>
 
-- Add coalition DB feature
-- Add cartoon content
-- Fix some layout
-- Update UI library
+- Add MOD voice feature
+- Change processing type for voice file
+- Fix UI issue in MOD Story
+- Update UI library and license key
 - Fix some bugs
-- Optimize memory usage

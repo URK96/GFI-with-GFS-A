@@ -1,0 +1,16 @@
+<2.6.1 수정사항>
+
+- 만화 컨텐츠 추가 (센롱의 숏컷전선, 그리폰 일상만화)
+- 메인 스토리 컨텐츠 추가 (13지역, 2020 봄, 여름 이벤트)
+- UI 라이브러리 업데이트
+- AndroidX 라이브러리 업데이트
+- 일부 버그 수정
+
+
+<2.6.1 Update>
+
+- Add cartoon content
+- Add main story content
+- Update UI library
+- Update AndroidX library
+- Fix some bugs

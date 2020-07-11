@@ -5,3 +5,12 @@
 - 개조 스토리에서 UI가 제대로 처리되지 않는 문제 수정
 - UI 라이브러리 업데이트 및 라이선스 키 갱신
 - 그 외 버그 수정
+
+
+<2.6.2 Update>
+
+- Add MOD voice feature
+- Change processing type for voice file
+- Fix UI issue in MOD Story
+- Update UI library and license key
+- Fix some bugs

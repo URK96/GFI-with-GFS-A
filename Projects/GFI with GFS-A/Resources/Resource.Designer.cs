@@ -1837,11 +1837,16 @@ namespace GFI_with_GFS_A
 			global::Com.Syncfusion.Charts.Resource.Layout.range_navigator_layout = global::GFI_with_GFS_A.Resource.Layout.range_navigator_layout;
 			global::Com.Syncfusion.Charts.Resource.String.q = global::GFI_with_GFS_A.Resource.String.q;
 			global::Com.Syncfusion.Charts.Resource.String.quarter = global::GFI_with_GFS_A.Resource.String.quarter;
+			global::Com.Syncfusion.Charts.Resource.String.sfchart_Median_label = global::GFI_with_GFS_A.Resource.String.sfchart_Median_label;
+			global::Com.Syncfusion.Charts.Resource.String.sfchart_Q1_label = global::GFI_with_GFS_A.Resource.String.sfchart_Q1_label;
+			global::Com.Syncfusion.Charts.Resource.String.sfchart_Q3_label = global::GFI_with_GFS_A.Resource.String.sfchart_Q3_label;
 			global::Com.Syncfusion.Charts.Resource.String.sfchart_close_label = global::GFI_with_GFS_A.Resource.String.sfchart_close_label;
 			global::Com.Syncfusion.Charts.Resource.String.sfchart_decrease_label = global::GFI_with_GFS_A.Resource.String.sfchart_decrease_label;
 			global::Com.Syncfusion.Charts.Resource.String.sfchart_high_label = global::GFI_with_GFS_A.Resource.String.sfchart_high_label;
 			global::Com.Syncfusion.Charts.Resource.String.sfchart_increase_label = global::GFI_with_GFS_A.Resource.String.sfchart_increase_label;
 			global::Com.Syncfusion.Charts.Resource.String.sfchart_low_label = global::GFI_with_GFS_A.Resource.String.sfchart_low_label;
+			global::Com.Syncfusion.Charts.Resource.String.sfchart_maximum_label = global::GFI_with_GFS_A.Resource.String.sfchart_maximum_label;
+			global::Com.Syncfusion.Charts.Resource.String.sfchart_minimum_label = global::GFI_with_GFS_A.Resource.String.sfchart_minimum_label;
 			global::Com.Syncfusion.Charts.Resource.String.sfchart_open_label = global::GFI_with_GFS_A.Resource.String.sfchart_open_label;
 			global::Com.Syncfusion.Charts.Resource.String.sfchart_others_label = global::GFI_with_GFS_A.Resource.String.sfchart_others_label;
 			global::Com.Syncfusion.Charts.Resource.String.sfchart_total_label = global::GFI_with_GFS_A.Resource.String.sfchart_total_label;
@@ -15465,29 +15470,44 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7F10024E
 			public const int Setting_UseLightTheme_Title = 2131755598;
 			
-			// aapt resource value: 0x7F100315
-			public const int sfchart_close_label = 2131755797;
-			
-			// aapt resource value: 0x7F100316
-			public const int sfchart_decrease_label = 2131755798;
-			
-			// aapt resource value: 0x7F100317
-			public const int sfchart_high_label = 2131755799;
-			
 			// aapt resource value: 0x7F100318
-			public const int sfchart_increase_label = 2131755800;
+			public const int sfchart_close_label = 2131755800;
 			
 			// aapt resource value: 0x7F100319
-			public const int sfchart_low_label = 2131755801;
+			public const int sfchart_decrease_label = 2131755801;
 			
 			// aapt resource value: 0x7F10031A
-			public const int sfchart_open_label = 2131755802;
+			public const int sfchart_high_label = 2131755802;
 			
 			// aapt resource value: 0x7F10031B
-			public const int sfchart_others_label = 2131755803;
+			public const int sfchart_increase_label = 2131755803;
 			
 			// aapt resource value: 0x7F10031C
-			public const int sfchart_total_label = 2131755804;
+			public const int sfchart_low_label = 2131755804;
+			
+			// aapt resource value: 0x7F10031D
+			public const int sfchart_maximum_label = 2131755805;
+			
+			// aapt resource value: 0x7F100315
+			public const int sfchart_Median_label = 2131755797;
+			
+			// aapt resource value: 0x7F10031E
+			public const int sfchart_minimum_label = 2131755806;
+			
+			// aapt resource value: 0x7F10031F
+			public const int sfchart_open_label = 2131755807;
+			
+			// aapt resource value: 0x7F100320
+			public const int sfchart_others_label = 2131755808;
+			
+			// aapt resource value: 0x7F100316
+			public const int sfchart_Q1_label = 2131755798;
+			
+			// aapt resource value: 0x7F100317
+			public const int sfchart_Q3_label = 2131755799;
+			
+			// aapt resource value: 0x7F100321
+			public const int sfchart_total_label = 2131755809;
 			
 			// aapt resource value: 0x7F10025D
 			public const int Shortcut_Cartoon_DisabledLabel = 2131755613;
@@ -15639,11 +15659,11 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7F100280
 			public const int Splash_SkipCheckUpdate = 2131755648;
 			
-			// aapt resource value: 0x7F10031D
-			public const int status_bar_notification_info_overflow = 2131755805;
+			// aapt resource value: 0x7F100322
+			public const int status_bar_notification_info_overflow = 2131755810;
 			
-			// aapt resource value: 0x7F10031E
-			public const int summary_collapsed_preference_list = 2131755806;
+			// aapt resource value: 0x7F100323
+			public const int summary_collapsed_preference_list = 2131755811;
 			
 			// aapt resource value: 0x7F100281
 			public const int Switch_ExternalBrowser = 2131755649;
@@ -15750,11 +15770,11 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7F1002A3
 			public const int UpdateEventDialog_Title = 2131755683;
 			
-			// aapt resource value: 0x7F10031F
-			public const int v7_preference_off = 2131755807;
+			// aapt resource value: 0x7F100324
+			public const int v7_preference_off = 2131755812;
 			
-			// aapt resource value: 0x7F100320
-			public const int v7_preference_on = 2131755808;
+			// aapt resource value: 0x7F100325
+			public const int v7_preference_on = 2131755813;
 			
 			// aapt resource value: 0x7F1002A4
 			public const int VoiceList_InitError = 2131755684;
@@ -15765,14 +15785,14 @@ namespace GFI_with_GFS_A
 			// aapt resource value: 0x7F1002A6
 			public const int VoiceStreaming_PlayError = 2131755686;
 			
-			// aapt resource value: 0x7F100321
-			public const int w = 2131755809;
+			// aapt resource value: 0x7F100326
+			public const int w = 2131755814;
 			
 			// aapt resource value: 0x7F1002A7
 			public const int Web_NetworkNotInternet = 2131755687;
 			
-			// aapt resource value: 0x7F100322
-			public const int week = 2131755810;
+			// aapt resource value: 0x7F100327
+			public const int week = 2131755815;
 			
 			static String()
 			{

@@ -1,6 +1,6 @@
 Y;
-66;
-1;
-바다 저 멀리;
-https://www.girlsfrontline.co.kr/archives/4043.html;
-2020/6/19 16:00 ~ 2020/7/10 14:59;
+68;
+2;
+전역 경험치 1.5배 이벤트,담당관 특수 보급;
+https://www.girlsfrontline.co.kr/archives/4090.html,https://www.girlsfrontline.co.kr/archives/4116.html;
+2020/7/11 00:00 ~ 2020/7/23 23:59,2020/7/25 00:00 ~ 2020/8/20 23:59;
