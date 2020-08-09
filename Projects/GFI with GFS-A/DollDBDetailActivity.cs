@@ -17,7 +17,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
-using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -43,9 +42,6 @@ namespace GFI_with_GFS_A
         private AverageAbility avgAbility;
         private List<int[]> typeAbilities;
 
-        private LinearLayout skillTableSubLayout;
-        private LinearLayout modSkillTableSubLayout;
-
         private Doll doll;
         private DataRow dollInfoDR = null;
         private int modIndex = 0;
@@ -70,6 +66,7 @@ namespace GFI_with_GFS_A
         private AndroidX.AppCompat.Widget.Toolbar toolbar;
         private SwipeRefreshLayout refreshMainLayout;
         private NestedScrollView scrollLayout;
+        private LinearLayout scrollMainContainer;
         private CoordinatorLayout snackbarLayout;
 
         private Spinner voiceCostumeSelector;
@@ -80,6 +77,15 @@ namespace GFI_with_GFS_A
         private Spinner abilityFavorSelector;
         private Spinner chartCompareList;
         private SfChart chart;
+
+        private List<CardView> scrollCardViews = new List<CardView>();
+
+        private View basicInfoRootLayout;
+        private View buffInfoRootLayout;
+        private View skillInfoRootLayout;
+        private View modSkillInfoRootLayout;
+        private View abilityInfoRootLayout;
+        private View abilityRadarChartRootLayout;
 
         private int curtainUpIcon = ETC.useLightTheme ? Resource.Drawable.ArrowUp_WhiteTheme : Resource.Drawable.ArrowUp;
         private int curtainDownIcon = ETC.useLightTheme ? Resource.Drawable.ArrowDown_WhiteTheme : Resource.Drawable.ArrowDown;
@@ -111,6 +117,13 @@ namespace GFI_with_GFS_A
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
+                basicInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_Basic, new LinearLayout(this), true);
+                buffInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_Buff, new LinearLayout(this), true);
+                skillInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_Skill, new LinearLayout(this), true);
+                modSkillInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_ModSkill, new LinearLayout(this), true);
+                abilityInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_Ability, new LinearLayout(this), true);
+                abilityRadarChartRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_AbilityChart, new LinearLayout(this), true);
 
                 FindViewById<TextView>(Resource.Id.DollDBDetailToolbarDicNumber).Text = $"No. {doll.DicNumber}";
                 FindViewById<TextView>(Resource.Id.DollDBDetailToolbarName).Text = $"{doll.Name} - {doll.CodeName}";
@@ -151,16 +164,15 @@ namespace GFI_with_GFS_A
                 modelDataButton.Click += ModelDataButton_Click;
 
                 scrollLayout = FindViewById<NestedScrollView>(Resource.Id.DollDBDetailScrollLayout);
+                scrollMainContainer = FindViewById<LinearLayout>(Resource.Id.DollDBDetailScrollMainLayout);
 
-                skillTableSubLayout = FindViewById<LinearLayout>(Resource.Id.DollDBDetailSkillAbilitySubLayout);
-                modSkillTableSubLayout = FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSkillAbilitySubLayout);
                 
                 abilityLevelSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityLevelSelector);
-                abilityLevelSelector.ItemSelected += async (object sender, AdapterView.ItemSelectedEventArgs e) => 
+                abilityLevelSelector.ItemSelected += (sender, e) => 
                 {
                     abilityLevel = levelList[e.Position];
 
-                    await LoadAbility();
+                    LoadAbility();
                 };
                 abilityFavorSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityFavorSelector);
                 abilityFavorSelector.ItemSelected += async (object sender, AdapterView.ItemSelectedEventArgs e) => 
@@ -186,12 +198,12 @@ namespace GFI_with_GFS_A
 
                     if (initLoadComplete)
                     {
-                        await LoadAbility();
+                        LoadAbility();
                     }
                 };
-                chartCompareList = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityChartCompareList);
-                chartCompareList.ItemSelected += (sender, e) => { _ = LoadChart(e.Position); };
-                chart = FindViewById<SfChart>(Resource.Id.DollDBDetailAbilityRadarChart);
+                chartCompareList = abilityRadarChartRootLayout.FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityChartCompareList);
+                chartCompareList.ItemSelected += (sender, e) => { LoadChart(e.Position); };
+                chart = abilityRadarChartRootLayout.FindViewById<SfChart>(Resource.Id.DollDBDetailAbilityRadarChart);
 
                 InitCompareList();
                 ListAbilityLevelFavor();
@@ -615,10 +627,8 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task LoadChart(int compareIndex)
+        private void LoadChart(int compareIndex)
         {
-            await Task.Delay(100);
-
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 chart.Series.Clear();
@@ -646,7 +656,6 @@ namespace GFI_with_GFS_A
 
                 chart.Legend.LabelStyle.TextColor = ETC.useLightTheme ? Android.Graphics.Color.DarkGray : Android.Graphics.Color.LightGray;
 
-                
                 var model = new DataModel(compareIndex, doll, abilityValues, compareList, modIndex, abilityLevel, abilityFavor, ref avgAbility);
 
                 var radar = new RadarSeries
@@ -663,7 +672,7 @@ namespace GFI_with_GFS_A
 
                 chart.Series.Add(radar);
 
-                RadarSeries radar2 = new RadarSeries
+                var radar2 = new RadarSeries
                 {
                     ItemsSource = model.CompareAbilityList,
                     XBindingPath = "AbilityType",
@@ -689,7 +698,7 @@ namespace GFI_with_GFS_A
 
                 if (isChartLoad)
                 {
-                    _ = LoadChart(chartCompareList.SelectedItemPosition);
+                    LoadChart(chartCompareList.SelectedItemPosition);
                 }
             }
             catch (Exception ex)
@@ -794,9 +803,15 @@ namespace GFI_with_GFS_A
                     }
                 }
 
+                // Create Voice Costume Selector Adapter
                 var adapter = new ArrayAdapter<string>(this, Resource.Layout.SpinnerListLayout, voiceCategoryList);
                 adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
                 voiceCostumeSelector.Adapter = adapter;
+
+                // Create Voice Selector Adapter
+                var adapter2 = new ArrayAdapter<string>(this, Resource.Layout.SpinnerListLayout, voiceList);
+                adapter2.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
+                voiceSelector.Adapter = adapter2;
 
                 voiceCostumeSelector.SetSelection(0);
             }
@@ -843,11 +858,11 @@ namespace GFI_with_GFS_A
                         break;
                 }
 
-                voiceList.TrimExcess();
+                var voiceSelectorAdapter = (voiceSelector.Adapter as ArrayAdapter<string>);
 
-                var adapter = new ArrayAdapter(this, Resource.Layout.SpinnerListLayout, voiceList);
-                adapter.SetDropDownViewResource(Resource.Layout.SpinnerListLayout);
-                voiceSelector.Adapter = adapter;
+                voiceSelectorAdapter.Clear();
+                voiceSelectorAdapter.AddAll(voiceList);
+                voiceSelectorAdapter.NotifyDataSetChanged();
             }
             catch (Exception ex)
             {
@@ -860,9 +875,9 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                var DollImageViewer = new Intent(this, typeof(DollDBImageViewer));
-                DollImageViewer.PutExtra("Data", $"{doll.DicNumber};{modIndex}");
-                StartActivity(DollImageViewer);
+                var dollImageViewer = new Intent(this, typeof(DollDBImageViewer));
+                dollImageViewer.PutExtra("Data", $"{doll.DicNumber};{modIndex}");
+                StartActivity(dollImageViewer);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
             catch (Exception ex)
@@ -880,381 +895,20 @@ namespace GFI_with_GFS_A
             {
                 refreshMainLayout.Refreshing = true;
                 TransitionManager.BeginDelayedTransition(refreshMainLayout);
+                scrollCardViews.Clear();
+                scrollMainContainer.RemoveAllViews();
 
+                LoadTitle(isRefresh);
+                LoadBasic();
+                LoadBuff();
+                LoadSkill(isRefresh);
 
-                // 인형 타이틀 바 초기화
-
-                if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false))
+                if (modIndex >= 2)
                 {
-                    try
-                    {
-                        string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal", $"{doll.DicNumber}.png");
-                        string target = Path.Combine(ETC.cachePath, "Doll", "Normal", $"{doll.DicNumber}.gfdcache");
-
-                        if (!File.Exists(target) || isRefresh)
-                        {
-                            using (WebClient wc = new WebClient())
-                            {
-                                await wc.DownloadFileTaskAsync(url, target);
-                            }
-                        }
-
-                        Drawable drawable = Drawable.CreateFromPath(target);
-                        drawable.SetAlpha(40);
-
-                        FindViewById<ImageView>(Resource.Id.DollDBDetailBackgroundImageView).SetImageDrawable(drawable);
-                    }
-                    catch (Exception ex)
-                    {
-                        ETC.LogError(ex, this);
-                    }
+                    LoadModSkill(isRefresh);
                 }
 
-                string fileName = (modIndex == 3) ? $"{doll.DicNumber.ToString()}_M" : doll.DicNumber.ToString();
-
-                try
-                {
-                    string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal_Crop", $"{fileName}.png");
-                    string target = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{fileName}.gfdcache");
-
-                    if (!File.Exists(target) || isRefresh)
-                    {
-                        using (WebClient wc = new WebClient())
-                        {
-                            await wc.DownloadFileTaskAsync(url, target);
-                        }
-                    }
-
-                    FindViewById<ImageView>(Resource.Id.DollDBDetailSmallImage).SetImageDrawable(Drawable.CreateFromPath(target));
-                }
-                catch (Exception ex)
-                {
-                    ETC.LogError(ex, this);
-                }
-
-                FindViewById<TextView>(Resource.Id.DollDBDetailDollName).Text = doll.Name;
-                FindViewById<TextView>(Resource.Id.DollDBDetailDollDicNumber).Text = $"No. {doll.DicNumber}";
-                FindViewById<TextView>(Resource.Id.DollDBDetailDollProductTime).Text = ETC.CalcTime(doll.ProductTime);
-                FindViewById<TextView>(Resource.Id.DollDBDetailDollProductDialog).Text = doll.ProductDialog;
-
-
-                // 인형 기본 정보 초기화
-
-                int[] GradeStarIds = 
-                {
-                    Resource.Id.DollDBDetailInfoGrade1,
-                    Resource.Id.DollDBDetailInfoGrade2,
-                    Resource.Id.DollDBDetailInfoGrade3,
-                    Resource.Id.DollDBDetailInfoGrade4,
-                    Resource.Id.DollDBDetailInfoGrade5,
-                    Resource.Id.DollDBDetailInfoGrade6
-                };
-
-                int Grade = (modIndex > 0) ? doll.ModGrade : doll.Grade;
-
-                if (Grade == 0)
-                {
-                    for (int i = 1; i < GradeStarIds.Length; ++i)
-                    {
-                        FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
-                    }
-
-                    FindViewById<ImageView>(GradeStarIds[0]).SetImageResource(Resource.Drawable.Grade_Star_EX);
-                }
-                else
-                {
-                    for (int i = Grade; i < GradeStarIds.Length; ++i)
-                    {
-                        FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
-                    }
-
-                    for (int i = 0; i < Grade; ++i)
-                    {
-                        FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Visible;
-                        FindViewById<ImageView>(GradeStarIds[i]).SetImageResource(Resource.Drawable.Grade_Star);
-                    }
-                }
-
-                FindViewById<TextView>(Resource.Id.DollDBDetailInfoType).Text = doll.Type;
-                FindViewById<TextView>(Resource.Id.DollDBDetailInfoName).Text = doll.Name;
-                FindViewById<TextView>(Resource.Id.DollDBDetailInfoNickName).Text = doll.NickName;
-                FindViewById<TextView>(Resource.Id.DollDBDetailInfoIllustrator).Text = doll.Illustrator;
-                FindViewById<TextView>(Resource.Id.DollDBDetailInfoVoiceActor).Text = doll.VoiceActor;
-                FindViewById<TextView>(Resource.Id.DollDBDetailInfoRealModel).Text = doll.RealModel;
-                FindViewById<TextView>(Resource.Id.DollDBDetailInfoCountry).Text = doll.Country;
-                FindViewById<TextView>(Resource.Id.DollDBDetailInfoHowToGain).Text = (string)dollInfoDR["DropEvent"];
-
-
-                // 인형 버프 정보 초기화
-
-                int[] buffIds = 
-                {
-                    Resource.Id.DollDBDetailBuff1, Resource.Id.DollDBDetailBuff2, Resource.Id.DollDBDetailBuff3,
-                    Resource.Id.DollDBDetailBuff4, Resource.Id.DollDBDetailBuff5, Resource.Id.DollDBDetailBuff6,
-                    Resource.Id.DollDBDetailBuff7, Resource.Id.DollDBDetailBuff8, Resource.Id.DollDBDetailBuff9
-                };
-                int[] buffData = (modIndex == 0) ? doll.BuffFormation : doll.ModBuffFormation;
-
-                for (int i = 0; i < buffData.Length; ++i)
-                {
-                    Android.Graphics.Color color;
-
-                    switch (buffData[i])
-                    {
-                        case 0:
-                            color = Android.Graphics.Color.Gray;
-                            break;
-                        case 1:
-                            color = Android.Graphics.Color.ParseColor("#54A716");
-                            break;
-                        case 2:
-                            color = Android.Graphics.Color.White;
-                            break;
-                        default:
-                            color = Android.Graphics.Color.Red;
-                            break;
-                    }
-
-                    FindViewById<View>(buffIds[i]).SetBackgroundColor(color);
-                }
-
-                int[] buffIconIds = { Resource.Id.DollDBDetailBuffIcon1, Resource.Id.DollDBDetailBuffIcon2 };
-                int[] buffIconNameIds = { Resource.Id.DollDBDetailBuffName1, Resource.Id.DollDBDetailBuffName2 };
-                int[] buffDetailIds = { Resource.Id.DollDBDetailBuffDetail1, Resource.Id.DollDBDetailBuffDetail2 };
-
-                string[] buff = (modIndex >= 1) ? doll.ModBuffInfo : doll.BuffInfo;
-                string[] buffType = buff[0].Split(',');
-
-                FindViewById<LinearLayout>(Resource.Id.DollDBDetailBuffLayout2).Visibility = (buffType.Length == 1) ? ViewStates.Gone : ViewStates.Visible;
-
-                for (int i = 0; i < buffType.Length; ++i)
-                {
-                    int id = 0;
-                    string name = "";
-
-                    switch (buffType[i])
-                    {
-                        case "AC":
-                            id = ETC.useLightTheme ? Resource.Drawable.AC_Icon_WhiteTheme : Resource.Drawable.AC_Icon;
-                            name = Resources.GetString(Resource.String.Common_AC);
-                            break;
-                        case "AM":
-                            id = ETC.useLightTheme ? Resource.Drawable.AM_Icon_WhiteTheme : Resource.Drawable.AM_Icon;
-                            name = Resources.GetString(Resource.String.Common_AM);
-                            break;
-                        case "AS":
-                            id = ETC.useLightTheme ? Resource.Drawable.AS_Icon_WhiteTheme : Resource.Drawable.AS_Icon;
-                            name = Resources.GetString(Resource.String.Common_AS);
-                            break;
-                        case "CR":
-                            id = ETC.useLightTheme ? Resource.Drawable.CR_Icon_WhiteTheme : Resource.Drawable.CR_Icon;
-                            name = Resources.GetString(Resource.String.Common_CR);
-                            break;
-                        case "EV":
-                            id = ETC.useLightTheme ? Resource.Drawable.EV_Icon_WhiteTheme : Resource.Drawable.EV_Icon;
-                            name = Resources.GetString(Resource.String.Common_EV);
-                            break;
-                        case "FR":
-                            id = ETC.useLightTheme ? Resource.Drawable.FR_Icon_WhiteTheme : Resource.Drawable.FR_Icon;
-                            name = Resources.GetString(Resource.String.Common_FR);
-                            break;
-                        case "CL":
-                            id = ETC.useLightTheme ? Resource.Drawable.CL_Icon_WhiteTheme : Resource.Drawable.CL_Icon;
-                            name = Resources.GetString(Resource.String.Common_CL);
-                            break;
-                        default:
-                            break;
-                    }
-
-                    FindViewById<ImageView>(buffIconIds[i]).SetImageResource(id);
-                    FindViewById<TextView>(buffIconNameIds[i]).Text = name;
-                }
-
-                StringBuilder sb1 = new StringBuilder();
-                StringBuilder sb2 = new StringBuilder();
-                StringBuilder[] EffectString = { sb1, sb2 };
-
-                for (int i = 1; i < buff.Length; ++i)
-                {
-                    string[] s = buff[i].Split(',');
-
-                    for (int j = 0; j < s.Length; ++j)
-                    {
-                        EffectString[j].Append(s[j]);
-                        EffectString[j].Append("%");
-
-                        if (i < (buff.Length - 1))
-                        {
-                            EffectString[j].Append(" | ");
-                        }
-                    }
-                }
-
-                for (int i = 0; i < buffType.Length; ++i)
-                {
-                    FindViewById<TextView>(buffDetailIds[i]).Text = EffectString[i].ToString();
-                }
-
-                var EffectTypeView = FindViewById<TextView>(Resource.Id.DollDBDetailEffectType);
-
-                if (doll.BuffType[0] == "ALL")
-                {
-                    EffectTypeView.Text = Resources.GetString(Resource.String.DollDBDetail_BuffType_All);
-                }
-                else
-                {
-                    StringBuilder sb = new StringBuilder();
-
-                    foreach (string type in doll.BuffType)
-                    {
-                        sb.Append($"{type} ");
-                    }
-
-                    EffectTypeView.Text = $"{sb.ToString()} {Resources.GetString(Resource.String.DollDBDetail_BuffType_ConfirmString)}";
-                }
-
-
-                // 인형 스킬 정보 초기화
-
-                string SkillName = doll.SkillName;
-
-                try
-                {
-                    string url = Path.Combine(ETC.server, "Data", "Images", "SkillIcons", $"{SkillName}.png");
-                    string target = Path.Combine(ETC.cachePath, "Doll", "Skill", $"{SkillName}.gfdcache");
-
-                    if (!File.Exists(target) || isRefresh)
-                    {
-                        using (WebClient wc = new WebClient())
-                        {
-                            wc.DownloadFile(url, target);
-                        }
-                    }
-
-                    FindViewById<ImageView>(Resource.Id.DollDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(target));
-                }
-                catch (Exception ex)
-                {
-                    ETC.LogError(ex, this);
-                }
-
-                FindViewById<TextView>(Resource.Id.DollDBDetailSkillName).Text = SkillName;
-
-                if (ETC.useLightTheme)
-                {
-                    FindViewById<ImageView>(Resource.Id.DollDBDetailSkillInitCoolTimeIcon).SetImageResource(Resource.Drawable.FirstCoolTime_Icon_WhiteTheme);
-                    FindViewById<ImageView>(Resource.Id.DollDBDetailSkillCoolTimeIcon).SetImageResource(Resource.Drawable.CoolTime_Icon_WhiteTheme);
-                }
-
-                string[] SkillAbilities = doll.SkillEffect;
-                string[] SkillMags = (modIndex == 0) ? doll.SkillMag : doll.SkillMagAfterMod;
-
-                TextView SkillInitCoolTime = FindViewById<TextView>(Resource.Id.DollDBDetailSkillInitCoolTime);
-                SkillInitCoolTime.SetTextColor(Android.Graphics.Color.Orange);
-                SkillInitCoolTime.Text = SkillMags[0];
-
-                TextView SkillCoolTime = FindViewById<TextView>(Resource.Id.DollDBDetailSkillCoolTime);
-                SkillCoolTime.SetTextColor(Android.Graphics.Color.DarkOrange);
-                SkillCoolTime.Text = SkillMags[1];
-
-                FindViewById<TextView>(Resource.Id.DollDBDetailSkillExplain).Text = doll.SkillExplain;
-
-                skillTableSubLayout.RemoveAllViews();
-
-                for (int i = 2; i < SkillAbilities.Length; ++i)
-                {
-                    LinearLayout layout = new LinearLayout(this)
-                    {
-                        Orientation = Android.Widget.Orientation.Horizontal,
-                        LayoutParameters = FindViewById<LinearLayout>(Resource.Id.DollDBDetailSkillAbilityTopLayout).LayoutParameters
-                    };
-
-                    TextView ability = new TextView(this)
-                    {
-                        LayoutParameters = FindViewById<TextView>(Resource.Id.DollDBDetailSkillAbilityTopText1).LayoutParameters,
-                        Text = SkillAbilities[i],
-                        Gravity = GravityFlags.Center
-                    };
-                    TextView mag = new TextView(this)
-                    {
-                        LayoutParameters = FindViewById<TextView>(Resource.Id.DollDBDetailSkillAbilityTopText2).LayoutParameters,
-                        Text = SkillMags[i],
-                        Gravity = GravityFlags.Center
-                    };
-
-                    layout.AddView(ability);
-                    layout.AddView(mag);
-
-                    skillTableSubLayout.AddView(layout);
-                }
-
-
-                // 인형 Mod 스킬 정보 초기화
-
-                if (doll.HasMod)
-                {
-                    string mSkillName = doll.ModSkillName;
-
-                    try
-                    {
-                        string url = Path.Combine(ETC.server, "Data", "Images", "SkillIcons", $"{mSkillName}.png");
-                        string target = Path.Combine(ETC.cachePath, "Doll", "Skill", $"{mSkillName}.gfdcache");
-
-                        if (!File.Exists(target) || isRefresh)
-                        {
-                            using (WebClient wc = new WebClient())
-                            {
-                                wc.DownloadFile(url, target);
-                            }
-                        }
-
-                        FindViewById<ImageView>(Resource.Id.DollDBDetailModSkillIcon).SetImageDrawable(Drawable.CreateFromPath(target));
-                    }
-                    catch (Exception ex)
-                    {
-                        ETC.LogError(ex, this);
-                    }
-
-                    FindViewById<TextView>(Resource.Id.DollDBDetailModSkillName).Text = mSkillName;
-                    FindViewById<TextView>(Resource.Id.DollDBDetailModSkillExplain).Text = doll.ModSkillExplain;
-
-                    string[] mSkillAbilities = doll.ModSkillEffect;
-                    string[] mSkillMags = doll.ModSkillMag;
-
-                    modSkillTableSubLayout.RemoveAllViews();
-
-                    for (int i = 0; i < mSkillAbilities.Length; ++i)
-                    {
-                        LinearLayout layout = new LinearLayout(this)
-                        {
-                            Orientation = Android.Widget.Orientation.Horizontal,
-                            LayoutParameters = FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSkillAbilityTopLayout).LayoutParameters
-                        };
-
-                        TextView ability = new TextView(this)
-                        {
-                            LayoutParameters = FindViewById<TextView>(Resource.Id.DollDBDetailModSkillAbilityTopText1).LayoutParameters,
-                            Text = mSkillAbilities[i],
-                            Gravity = GravityFlags.Center
-                        };
-                        TextView mag = new TextView(this)
-                        {
-                            LayoutParameters = FindViewById<TextView>(Resource.Id.DollDBDetailModSkillAbilityTopText2).LayoutParameters,
-                            Text = mSkillMags[i],
-                            Gravity = GravityFlags.Center
-                        };
-
-                        layout.AddView(ability);
-                        layout.AddView(mag);
-
-                        modSkillTableSubLayout.AddView(layout);
-                    }
-                }
-
-
-                // 인형 능력치 초기화
-
-                await LoadAbility();
+                LoadAbility();
 
                 double[] dps = ETC.CalcDPS(abilityValues[1], abilityValues[4], 0, abilityValues[3], 3, int.Parse(doll.Abilities["Critical"]), 5);
                 FindViewById<TextView>(Resource.Id.DollInfoDPSStatus).Text = $"{dps[0].ToString("F2")} ~ {dps[1].ToString("F2")}";
@@ -1288,10 +942,355 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task LoadAbility()
+        private void LoadTitle(bool isRefresh)
         {
-            await Task.Delay(10);
+            if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false))
+            {
+                try
+                {
+                    string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal", $"{doll.DicNumber}.png");
+                    string target = Path.Combine(ETC.cachePath, "Doll", "Normal", $"{doll.DicNumber}.gfdcache");
 
+                    if (!File.Exists(target) || isRefresh)
+                    {
+                        using (var wc = new WebClient())
+                        {
+                            wc.DownloadFile(url, target);
+                        }
+                    }
+
+                    var drawable = Drawable.CreateFromPath(target);
+                    drawable.SetAlpha(40);
+
+                    FindViewById<ImageView>(Resource.Id.DollDBDetailBackgroundImageView).SetImageDrawable(drawable);
+                }
+                catch (Exception ex)
+                {
+                    ETC.LogError(ex, this);
+                }
+            }
+
+            string fileName = (modIndex == 3) ? $"{doll.DicNumber}_M" : doll.DicNumber.ToString();
+
+            try
+            {
+                string url = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal_Crop", $"{fileName}.png");
+                string target = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{fileName}.gfdcache");
+
+                if (!File.Exists(target) || isRefresh)
+                {
+                    using (var wc = new WebClient())
+                    {
+                        wc.DownloadFile(url, target);
+                    }
+                }
+
+                FindViewById<ImageView>(Resource.Id.DollDBDetailSmallImage).SetImageDrawable(Drawable.CreateFromPath(target));
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+            }
+
+            FindViewById<TextView>(Resource.Id.DollDBDetailDollName).Text = doll.Name;
+            FindViewById<TextView>(Resource.Id.DollDBDetailDollDicNumber).Text = $"No. {doll.DicNumber}";
+            FindViewById<TextView>(Resource.Id.DollDBDetailDollProductTime).Text = ETC.CalcTime(doll.ProductTime);
+            FindViewById<TextView>(Resource.Id.DollDBDetailDollProductDialog).Text = doll.ProductDialog;
+        }
+
+        private void LoadBasic()
+        {
+            var gradeString = new StringBuilder();
+            int nowGrade = (modIndex >= 1) ? doll.ModGrade : doll.Grade;
+
+            for (int i = 0; i < nowGrade; ++i)
+            {
+                gradeString.Append("★");
+            }
+
+            basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoGrade).Text = gradeString.ToString();
+            basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoType).Text = doll.Type;
+            basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoName).Text = doll.Name;
+            basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoNickName).Text = doll.NickName;
+            basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoIllustrator).Text = doll.Illustrator;
+            basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoVoiceActor).Text = doll.VoiceActor;
+            basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoRealModel).Text = doll.RealModel;
+            basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoCountry).Text = doll.Country;
+            basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoHowToGain).Text = (string)dollInfoDR["DropEvent"];
+
+            scrollCardViews.Add(basicInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout));
+            scrollMainContainer.AddView(basicInfoRootLayout);
+        }
+
+        private void LoadBuff()
+        {
+            int[] buffIds =
+            {
+                Resource.Id.DollDBDetailBuff1, Resource.Id.DollDBDetailBuff2, Resource.Id.DollDBDetailBuff3,
+                Resource.Id.DollDBDetailBuff4, Resource.Id.DollDBDetailBuff5, Resource.Id.DollDBDetailBuff6,
+                Resource.Id.DollDBDetailBuff7, Resource.Id.DollDBDetailBuff8, Resource.Id.DollDBDetailBuff9
+            };
+            int[] buffData = (modIndex == 0) ? doll.BuffFormation : doll.ModBuffFormation;
+
+            for (int i = 0; i < buffData.Length; ++i)
+            {
+                var color = (buffData[i]) switch
+                {
+                    0 => Android.Graphics.Color.Gray,
+                    1 => Android.Graphics.Color.ParseColor("#54A716"),
+                    2 => Android.Graphics.Color.White,
+                    _ => Android.Graphics.Color.Red,
+                };
+
+                buffInfoRootLayout.FindViewById<View>(buffIds[i]).SetBackgroundColor(color);
+            }
+
+            int[] buffIconIds = { Resource.Id.DollDBDetailBuffIcon1, Resource.Id.DollDBDetailBuffIcon2 };
+            int[] buffIconNameIds = { Resource.Id.DollDBDetailBuffName1, Resource.Id.DollDBDetailBuffName2 };
+            int[] buffDetailIds = { Resource.Id.DollDBDetailBuffDetail1, Resource.Id.DollDBDetailBuffDetail2 };
+
+            string[] buff = (modIndex >= 1) ? doll.ModBuffInfo : doll.BuffInfo;
+            string[] buffType = buff[0].Split(',');
+
+            buffInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollDBDetailBuffLayout2).Visibility = (buffType.Length == 1) ? ViewStates.Gone : ViewStates.Visible;
+
+            for (int i = 0; i < buffType.Length; ++i)
+            {
+                int id = 0;
+                string name = "";
+
+                switch (buffType[i])
+                {
+                    case "AC":
+                        id = ETC.useLightTheme ? Resource.Drawable.AC_Icon_WhiteTheme : Resource.Drawable.AC_Icon;
+                        name = Resources.GetString(Resource.String.Common_AC);
+                        break;
+                    case "AM":
+                        id = ETC.useLightTheme ? Resource.Drawable.AM_Icon_WhiteTheme : Resource.Drawable.AM_Icon;
+                        name = Resources.GetString(Resource.String.Common_AM);
+                        break;
+                    case "AS":
+                        id = ETC.useLightTheme ? Resource.Drawable.AS_Icon_WhiteTheme : Resource.Drawable.AS_Icon;
+                        name = Resources.GetString(Resource.String.Common_AS);
+                        break;
+                    case "CR":
+                        id = ETC.useLightTheme ? Resource.Drawable.CR_Icon_WhiteTheme : Resource.Drawable.CR_Icon;
+                        name = Resources.GetString(Resource.String.Common_CR);
+                        break;
+                    case "EV":
+                        id = ETC.useLightTheme ? Resource.Drawable.EV_Icon_WhiteTheme : Resource.Drawable.EV_Icon;
+                        name = Resources.GetString(Resource.String.Common_EV);
+                        break;
+                    case "FR":
+                        id = ETC.useLightTheme ? Resource.Drawable.FR_Icon_WhiteTheme : Resource.Drawable.FR_Icon;
+                        name = Resources.GetString(Resource.String.Common_FR);
+                        break;
+                    case "CL":
+                        id = ETC.useLightTheme ? Resource.Drawable.CL_Icon_WhiteTheme : Resource.Drawable.CL_Icon;
+                        name = Resources.GetString(Resource.String.Common_CL);
+                        break;
+                    default:
+                        break;
+                }
+
+                buffInfoRootLayout.FindViewById<ImageView>(buffIconIds[i]).SetImageResource(id);
+                buffInfoRootLayout.FindViewById<TextView>(buffIconNameIds[i]).Text = name;
+            }
+
+            var sb1 = new StringBuilder();
+            var sb2 = new StringBuilder();
+            StringBuilder[] EffectString = { sb1, sb2 };
+
+            for (int i = 1; i < buff.Length; ++i)
+            {
+                string[] s = buff[i].Split(',');
+
+                for (int j = 0; j < s.Length; ++j)
+                {
+                    EffectString[j].Append(s[j]);
+                    EffectString[j].Append("%");
+
+                    if (i < (buff.Length - 1))
+                    {
+                        EffectString[j].Append(" | ");
+                    }
+                }
+            }
+
+            for (int i = 0; i < buffType.Length; ++i)
+            {
+                buffInfoRootLayout.FindViewById<TextView>(buffDetailIds[i]).Text = EffectString[i].ToString();
+            }
+
+            string effectTypeString;
+
+            if (doll.BuffType[0] == "ALL")
+            {
+                effectTypeString = Resources.GetString(Resource.String.DollDBDetail_BuffType_All);
+            }
+            else
+            {
+                var sb = new StringBuilder();
+
+                foreach (string type in doll.BuffType)
+                {
+                    sb.Append($"{type} ");
+                }
+
+                effectTypeString = $"{sb} {Resources.GetString(Resource.String.DollDBDetail_BuffType_ConfirmString)}";
+            }
+
+            buffInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailEffectType).Text = effectTypeString;
+
+            scrollCardViews.Add(buffInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout));
+            scrollMainContainer.AddView(buffInfoRootLayout);
+        }
+
+        private void LoadSkill(bool isRefresh)
+        {
+            string skillName = doll.SkillName;
+
+            try
+            {
+                string url = Path.Combine(ETC.server, "Data", "Images", "SkillIcons", $"{skillName}.png");
+                string target = Path.Combine(ETC.cachePath, "Doll", "Skill", $"{skillName}.gfdcache");
+
+                if (!File.Exists(target) || isRefresh)
+                {
+                    using (var wc = new WebClient())
+                    {
+                        wc.DownloadFile(url, target);
+                    }
+                }
+
+                skillInfoRootLayout.FindViewById<ImageView>(Resource.Id.DollDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(target));
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+            }
+
+            skillInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailSkillName).Text = skillName;
+
+            if (ETC.useLightTheme)
+            {
+                skillInfoRootLayout.FindViewById<ImageView>(Resource.Id.DollDBDetailSkillInitCoolTimeIcon).SetImageResource(Resource.Drawable.FirstCoolTime_Icon_WhiteTheme);
+                skillInfoRootLayout.FindViewById<ImageView>(Resource.Id.DollDBDetailSkillCoolTimeIcon).SetImageResource(Resource.Drawable.CoolTime_Icon_WhiteTheme);
+            }
+
+            string[] skillAbilities = doll.SkillEffect;
+            string[] skillMags = (modIndex == 0) ? doll.SkillMag : doll.SkillMagAfterMod;
+
+            var skillInitCoolTime = skillInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailSkillInitCoolTime);
+            skillInitCoolTime.SetTextColor(Android.Graphics.Color.Orange);
+            skillInitCoolTime.Text = skillMags[0];
+
+            var skillCoolTime = skillInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailSkillCoolTime);
+            skillCoolTime.SetTextColor(Android.Graphics.Color.DarkOrange);
+            skillCoolTime.Text = skillMags[1];
+
+            skillInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailSkillExplain).Text = doll.SkillExplain;
+
+            var skillTableSubLayout = skillInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollDBDetailSkillAbilitySubLayout);
+            skillTableSubLayout.RemoveAllViews();
+
+            for (int i = 2; i < skillAbilities.Length; ++i)
+            {
+                var layout = new LinearLayout(this)
+                {
+                    Orientation = Android.Widget.Orientation.Horizontal,
+                    LayoutParameters = skillInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollDBDetailSkillAbilityTopLayout).LayoutParameters
+                };
+
+                var ability = new TextView(this)
+                {
+                    LayoutParameters = skillInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailSkillAbilityTopText1).LayoutParameters,
+                    Text = skillAbilities[i],
+                    Gravity = GravityFlags.Center
+                };
+                var mag = new TextView(this)
+                {
+                    LayoutParameters = skillInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailSkillAbilityTopText2).LayoutParameters,
+                    Text = skillMags[i],
+                    Gravity = GravityFlags.Center
+                };
+
+                layout.AddView(ability);
+                layout.AddView(mag);
+
+                skillTableSubLayout.AddView(layout);
+            }
+
+            scrollCardViews.Add(skillInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailSkillCardLayout));
+            scrollMainContainer.AddView(skillInfoRootLayout);
+        }
+
+        private void LoadModSkill(bool isRefresh)
+        {
+            string modSkillName = doll.ModSkillName;
+
+            try
+            {
+                string url = Path.Combine(ETC.server, "Data", "Images", "SkillIcons", $"{modSkillName}.png");
+                string target = Path.Combine(ETC.cachePath, "Doll", "Skill", $"{modSkillName}.gfdcache");
+
+                if (!File.Exists(target) || isRefresh)
+                {
+                    using (var wc = new WebClient())
+                    {
+                        wc.DownloadFile(url, target);
+                    }
+                }
+
+                modSkillInfoRootLayout.FindViewById<ImageView>(Resource.Id.DollDBDetailModSkillIcon).SetImageDrawable(Drawable.CreateFromPath(target));
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+            }
+
+            modSkillInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailModSkillName).Text = modSkillName;
+            modSkillInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailModSkillExplain).Text = doll.ModSkillExplain;
+
+            string[] modSkillAbilities = doll.ModSkillEffect;
+            string[] modSkillMags = doll.ModSkillMag;
+
+            var modSkillTableSubLayout = modSkillInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSkillAbilitySubLayout);
+            modSkillTableSubLayout.RemoveAllViews();
+
+            for (int i = 0; i < modSkillAbilities.Length; ++i)
+            {
+                var layout = new LinearLayout(this)
+                {
+                    Orientation = Android.Widget.Orientation.Horizontal,
+                    LayoutParameters = modSkillInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSkillAbilityTopLayout).LayoutParameters
+                };
+
+                var ability = new TextView(this)
+                {
+                    LayoutParameters = modSkillInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailModSkillAbilityTopText1).LayoutParameters,
+                    Text = modSkillAbilities[i],
+                    Gravity = GravityFlags.Center
+                };
+                var mag = new TextView(this)
+                {
+                    LayoutParameters = modSkillInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailModSkillAbilityTopText2).LayoutParameters,
+                    Text = modSkillMags[i],
+                    Gravity = GravityFlags.Center
+                };
+
+                layout.AddView(ability);
+                layout.AddView(mag);
+
+                modSkillTableSubLayout.AddView(layout);
+            }
+
+            scrollCardViews.Add(modSkillInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailModSkillCardLayout));
+            scrollMainContainer.AddView(modSkillInfoRootLayout);
+        }
+
+        private void LoadAbility()
+        {
             try
             {
                 string[] abilities = { "HP", "FireRate", "Evasion", "Accuracy", "AttackSpeed" };
@@ -1303,61 +1302,66 @@ namespace GFI_with_GFS_A
 
                 for (int i = 0; i < progresses.Length; ++i)
                 {
-                    FindViewById<TextView>(progressMaxTexts[i]).Text = FindViewById<ProgressBar>(progresses[i]).Max.ToString();
+                    abilityInfoRootLayout.FindViewById<TextView>(progressMaxTexts[i]).Text = abilityInfoRootLayout.FindViewById<ProgressBar>(progresses[i]).Max.ToString();
 
                     string[] basicRatio = doll.Abilities[abilities[i]].Split(';');
                     int value = (modIndex == 0) ? das.CalcAbility(abilities[i], int.Parse(basicRatio[0]), int.Parse(growRatio[0]), abilityLevel, abilityFavor, false) :
                         das.CalcAbility(abilities[i], int.Parse(basicRatio[1]), int.Parse(growRatio[1]), abilityLevel, abilityFavor, true);
 
-                    ProgressBar pb = FindViewById<ProgressBar>(progresses[i]);
+                    var pb = abilityInfoRootLayout.FindViewById<ProgressBar>(progresses[i]);
                     pb.Progress = value;
 
                     abilityValues[i] = value;
 
-                    FindViewById<TextView>(statusTexts[i]).Text = $"{value} ({doll.AbilityGrade[i]})";
+                    abilityInfoRootLayout.FindViewById<TextView>(statusTexts[i]).Text = $"{value} ({doll.AbilityGrade[i]})";
                 }
 
                 if ((doll.Type == "MG") || (doll.Type == "SG"))
                 {
-                    FindViewById<LinearLayout>(Resource.Id.DollInfoBulletLayout).Visibility = ViewStates.Visible;
-                    FindViewById<LinearLayout>(Resource.Id.DollInfoReloadLayout).Visibility = ViewStates.Visible;
+                    abilityInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollInfoBulletLayout).Visibility = ViewStates.Visible;
+                    abilityInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollInfoReloadLayout).Visibility = ViewStates.Visible;
 
                     double reloadTime = CalcReloadTime(doll, doll.Type, abilityValues[4]);
                     int bullet = doll.HasMod ? int.Parse(doll.Abilities["Bullet"].Split(';')[modIndex]) : int.Parse(doll.Abilities["Bullet"]);
 
-                    FindViewById<TextView>(Resource.Id.DollInfoBulletProgressMax).Text = FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress).Max.ToString();
+                    abilityInfoRootLayout.FindViewById<TextView>(Resource.Id.DollInfoBulletProgressMax).Text = abilityInfoRootLayout.FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress).Max.ToString();
 
-                    FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress).Progress = bullet;
-                    FindViewById<TextView>(Resource.Id.DollInfoBulletStatus).Text = bullet.ToString();
-                    FindViewById<TextView>(Resource.Id.DollInfoReloadStatus).Text = $"{reloadTime} {Resources.GetString(Resource.String.Time_Second)}";
+                    abilityInfoRootLayout.FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress).Progress = bullet;
+                    abilityInfoRootLayout.FindViewById<TextView>(Resource.Id.DollInfoBulletStatus).Text = bullet.ToString();
+                    abilityInfoRootLayout.FindViewById<TextView>(Resource.Id.DollInfoReloadStatus).Text = $"{reloadTime} {Resources.GetString(Resource.String.Time_Second)}";
                 }
                 else
                 {
-                    FindViewById<LinearLayout>(Resource.Id.DollInfoBulletLayout).Visibility = ViewStates.Gone;
-                    FindViewById<LinearLayout>(Resource.Id.DollInfoReloadLayout).Visibility = ViewStates.Gone;
+                    abilityInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollInfoBulletLayout).Visibility = ViewStates.Gone;
+                    abilityInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollInfoReloadLayout).Visibility = ViewStates.Gone;
                 }
 
                 if (doll.Type == "SG")
                 {
-                    FindViewById<LinearLayout>(Resource.Id.DollInfoAMLayout).Visibility = ViewStates.Visible;
-                    FindViewById<TextView>(Resource.Id.DollInfoAMProgressMax).Text = FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress).Max.ToString();
+                    abilityInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollInfoAMLayout).Visibility = ViewStates.Visible;
+                    abilityInfoRootLayout.FindViewById<TextView>(Resource.Id.DollInfoAMProgressMax).Text = FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress).Max.ToString();
 
                     string[] basicRatio = doll.Abilities["Armor"].Split(';');
                     int value = (modIndex == 0) ? das.CalcAbility("Armor", int.Parse(basicRatio[0]), int.Parse(growRatio[0]), abilityLevel, abilityFavor, false) :
                         das.CalcAbility("Armor", int.Parse(basicRatio[1]), int.Parse(growRatio[1]), abilityLevel, abilityFavor, true);
 
-                    FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress).Progress = value;
+                    abilityInfoRootLayout.FindViewById<ProgressBar>(Resource.Id.DollInfoAMProgress).Progress = value;
 
                     abilityValues[5] = value;
-                    FindViewById<TextView>(Resource.Id.DollInfoAMStatus).Text = $"{value} ({doll.AbilityGrade[6]})";
+                    abilityInfoRootLayout.FindViewById<TextView>(Resource.Id.DollInfoAMStatus).Text = $"{value} ({doll.AbilityGrade[6]})";
                 }
                 else
                 {
                     abilityValues[5] = 0;
-                    FindViewById<LinearLayout>(Resource.Id.DollInfoAMLayout).Visibility = ViewStates.Gone;
+                    abilityInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollInfoAMLayout).Visibility = ViewStates.Gone;
                 }
 
-                await LoadChart(chartCompareList.SelectedItemPosition);
+                LoadChart(chartCompareList.SelectedItemPosition);
+
+                scrollCardViews.Add(abilityInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout));
+                scrollCardViews.Add(abilityRadarChartRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout));
+                scrollMainContainer.AddView(abilityInfoRootLayout);
+                scrollMainContainer.AddView(abilityRadarChartRootLayout);
             }
             catch (Exception ex)
             {
@@ -1382,57 +1386,29 @@ namespace GFI_with_GFS_A
 
         private void SetCardTheme()
         {
-            int[] CardViewIds = 
+            foreach (var cardview in scrollCardViews)
             {
-                Resource.Id.DollDBDetailBasicInfoCardLayout,
-                Resource.Id.DollDBDetailBuffCardLayout,
-                Resource.Id.DollDBDetailSkillCardLayout,
-                Resource.Id.DollDBDetailModSkillCardLayout,
-                Resource.Id.DollDBDetailAbilityCardLayout,
-                Resource.Id.DollDBDetailAbilityRadarChartCardLayout
-            };
-
-            foreach (int id in CardViewIds)
-            {
-                CardView cv = FindViewById<CardView>(id);
-
-                cv.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
-                cv.Radius = 15.0f;
+                cardview.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
+                cardview.Radius = 15.0f;
             }
         }
 
         private void ShowCardViewVisibility()
         {
-            FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout).Visibility = ViewStates.Visible;
-            FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout).Visibility = ViewStates.Visible;
-            FindViewById<CardView>(Resource.Id.DollDBDetailSkillCardLayout).Visibility = ViewStates.Visible;
-
-            CardView ModCardView = FindViewById<CardView>(Resource.Id.DollDBDetailModSkillCardLayout);
-
-            switch (modIndex)
+            foreach (var cardview in scrollCardViews)
             {
-                case 0:
-                case 1:
-                default:
-                    ModCardView.Visibility = ViewStates.Gone;
-                    break;
-                case 2:
-                case 3:
-                    ModCardView.Visibility = ViewStates.Visible;
-                    break;
+                cardview.Visibility = ViewStates.Visible;
+                cardview.Alpha = 0.7f;
             }
-
-            FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout).Visibility = ViewStates.Visible;
-            FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout).Visibility = ViewStates.Visible;
         }
 
         private async void DollDBDetailModSelectButton_Click(object sender, EventArgs e)
         {
             try
             {
-                var ModButton = sender as ImageView;
+                var modButton = sender as ImageView;
 
-                modIndex = ModButton.Id switch
+                modIndex = modButton.Id switch
                 {
                     Resource.Id.DollDBDetailModSelect0 => 0,
                     Resource.Id.DollDBDetailModSelect1 => 1,
@@ -1446,7 +1422,7 @@ namespace GFI_with_GFS_A
                     FindViewById<ImageButton>(id).SetBackgroundColor(Android.Graphics.Color.Transparent);
                 }
 
-                ModButton.SetBackgroundColor(Android.Graphics.Color.ParseColor("#54A716"));
+                modButton.SetBackgroundColor(Android.Graphics.Color.ParseColor("#54A716"));
 
                 isApplyModVoice = (modIndex == 3) && (doll.ModVoices != null);
 
@@ -1485,9 +1461,12 @@ namespace GFI_with_GFS_A
 
         public override void OnBackPressed()
         {
-            if (voicePlayer.IsPlaying)
+            if (voicePlayer != null)
             {
-                voicePlayer.Stop();
+                if (voicePlayer.IsPlaying)
+                {
+                    voicePlayer.Stop();
+                }
             }
 
             stream?.Dispose();

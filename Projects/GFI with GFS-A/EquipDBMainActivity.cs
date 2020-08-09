@@ -17,14 +17,9 @@ using Xamarin.Essentials;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "@string/Activity_EquipMainActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class EquipDBMainActivity : BaseAppCompatActivity
+    public class EquipDBMainActivity : DBMainActivity
     {
         delegate void DownloadProgress();
-
-        private enum SortType { Name, ProductTime }
-        private enum SortOrder { Ascending, Descending }
-        private SortType sortType = SortType.Name;
-        private SortOrder sortOrder = SortOrder.Ascending;
 
         private List<Equip> rootList = new List<Equip>();
         private List<Equip> subList = new List<Equip>();
@@ -38,15 +33,6 @@ namespace GFI_with_GFS_A
         private int[] filterProductTime = { 0, 0, 0 };
         private bool[] filterGrade = { false, false, false, false, false };
         private bool[] filterCategory = { false, false, false };
-        private bool canRefresh = false;
-
-        private string searchViewText = "";
-
-        private AndroidX.AppCompat.Widget.Toolbar toolbar;
-        private Android.Support.V7.Widget.SearchView searchView;
-        private RecyclerView mEquipListView;
-        private RecyclerView.LayoutManager mainRecyclerManager;
-        private CoordinatorLayout snackbarLayout;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -54,35 +40,19 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.useLightTheme)
-                {
-                    SetTheme(Resource.Style.GFS_Toolbar_Light);
-                }
+                ListItem = new ListProcess(ListEquip);
 
-                // Create your application here
-                SetContentView(Resource.Layout.EquipDBListLayout);
+                adapter = new EquipListAdapter(subList, this);
+                (adapter as EquipListAdapter).ItemClick += Adapter_ItemClick;
 
-                canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
+                recyclerView.SetAdapter(adapter);
 
-                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.EquipDBMainToolbar);
-                searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.EquipDBSearchView);
-                searchView.QueryTextChange += (sender, e) =>
-                {
-                    searchViewText = e.NewText;
-                    _ = ListEquip(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
-                };
-                mEquipListView = FindViewById<RecyclerView>(Resource.Id.EquipDBRecyclerView);
-                mainRecyclerManager = new LinearLayoutManager(this);
-                mEquipListView.SetLayoutManager(mainRecyclerManager);
-                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EquipDBSnackbarLayout);
-
-                SetSupportActionBar(toolbar);
                 SupportActionBar.SetTitle(Resource.String.EquipDBMainActivity_Title);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
                 InitProcess();
 
-                _ = ListEquip(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2]);
+                _ = ListEquip();
 
                 /*if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DBList", true)))
                 {
@@ -96,18 +66,6 @@ namespace GFI_with_GFS_A
             }
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.EquipDBMenu, menu);
-
-            if (canRefresh)
-            {
-                menu?.FindItem(Resource.Id.RefreshEquipCropImageCache).SetVisible(true);
-            }
-
-            return base.OnCreateOptionsMenu(menu);
-        }
-
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item?.ItemId)
@@ -115,13 +73,13 @@ namespace GFI_with_GFS_A
                 case Android.Resource.Id.Home:
                     OnBackPressed();
                     break;
-                case Resource.Id.EquipDBMainFilter:
+                case Resource.Id.DBMainFilter:
                     InitFilterBox();
                     break;
-                case Resource.Id.EquipDBMainSort:
+                case Resource.Id.DBMainSort:
                     InitSortBox();
                     break;
-                case Resource.Id.RefreshEquipCropImageCache:
+                case Resource.Id.RefreshCropImageCache:
                     downloadList.Clear();
 
                     string iconName = "";
@@ -137,7 +95,9 @@ namespace GFI_with_GFS_A
                     }
 
                     downloadList.TrimExcess();
-                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EquipCropImageDownloadProcess));
+                    ShowDownloadCheckMessage(downloadList,
+                        Path.Combine(ETC.server, "Data", "Images", "Equipments"),
+                        Path.Combine(ETC.cachePath, "Equip", "Normal"));
                     break;
             }
 
@@ -152,7 +112,9 @@ namespace GFI_with_GFS_A
             {
                 if (CheckCropImage())
                 {
-                    ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(EquipCropImageDownloadProcess));
+                    ShowDownloadCheckMessage(downloadList,
+                        Path.Combine(ETC.server, "Data", "Images", "Equipments"),
+                        Path.Combine(ETC.cachePath, "Equip", "Normal"));
                 }
             }
         }
@@ -196,91 +158,6 @@ namespace GFI_with_GFS_A
             downloadList.TrimExcess();
 
             return !(downloadList.Count == 0);
-        }
-
-        private void ShowDownloadCheckMessage(int title, int message, DownloadProgress method)
-        {
-            var ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
-            ad.SetTitle(title);
-            ad.SetMessage(message);
-            ad.SetCancelable(true);
-            ad.SetPositiveButton(Resource.String.AlertDialog_Download, delegate { method(); });
-            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-
-            ad.Show();
-        }
-
-        private async void EquipCropImageDownloadProcess()
-        {
-            Dialog dialog;
-            ProgressBar totalProgressBar;
-            ProgressBar nowProgressBar;
-            TextView totalProgress;
-            TextView nowProgress;
-
-            View v = LayoutInflater.Inflate(Resource.Layout.ProgressDialogLayout, null);
-
-            int pNow = 0;
-            int pTotal = 0;
-
-            var pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload);
-            pd.SetTitle(Resource.String.DBList_DownloadCropImageTitle);
-            pd.SetCancelable(false);
-            pd.SetView(v);
-
-            dialog = pd.Create();
-            dialog.Show();
-
-            try
-            {
-                totalProgressBar = v.FindViewById<ProgressBar>(Resource.Id.TotalProgressBar);
-                totalProgress = v.FindViewById<TextView>(Resource.Id.TotalProgressPercentage);
-                nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
-                nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
-
-                pTotal = downloadList.Count;
-                totalProgressBar.Max = 100;
-                totalProgressBar.Progress = pNow;
-
-                using (WebClient wc = new WebClient())
-                {
-                    wc.DownloadProgressChanged += (sender, e) =>
-                    {
-                        nowProgressBar.Progress = e.ProgressPercentage;
-                        MainThread.BeginInvokeOnMainThread(() => { nowProgress.Text = $"{e.ProgressPercentage}%"; });
-                    };
-                    wc.DownloadFileCompleted += (sender, e) =>
-                    {
-                        pNow += 1;
-
-                        totalProgressBar.Progress = Convert.ToInt32((pNow / Convert.ToDouble(pTotal)) * 100);
-                        MainThread.BeginInvokeOnMainThread(() => { totalProgress.Text = $"{totalProgressBar.Progress}%"; });
-                    };
-
-                    for (int i = 0; i < pTotal; ++i)
-                    {
-                        string url = Path.Combine(ETC.server, "Data", "Images", "Equipments", $"{downloadList[i]}.png");
-                        string target = Path.Combine(ETC.cachePath, "Equip", "Normal", $"{downloadList[i]}.gfdcache");
-
-                        await wc.DownloadFileTaskAsync(url, target).ConfigureAwait(false);
-                    }
-                }
-
-                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_DownloadCropImageComplete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);
-
-                await Task.Delay(500);
-
-                _ = ListEquip(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_DownloadCropImageFail, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
-            }
-            finally
-            {
-                dialog.Dismiss();
-            }
         }
 
         private void InitSortBox()
@@ -350,7 +227,7 @@ namespace GFI_with_GFS_A
                     sortOrder = SortOrder.Ascending;
                 }
 
-                _ = ListEquip(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                _ = ListEquip();
             }
             catch (Exception ex)
             {
@@ -366,7 +243,7 @@ namespace GFI_with_GFS_A
                 sortType = SortType.Name;
                 sortOrder = SortOrder.Ascending;
 
-                _ = ListEquip(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                _ = ListEquip();
             }
             catch (Exception ex)
             {
@@ -433,7 +310,7 @@ namespace GFI_with_GFS_A
 
                 CheckApplyFilter();
 
-                _ = ListEquip(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                _ = ListEquip();
             }
             catch (Exception ex)
             {
@@ -495,7 +372,7 @@ namespace GFI_with_GFS_A
                     hasApplyFilter[i] = false;
                 }
 
-                _ = ListEquip(new int[] { filterProductTime[0], filterProductTime[1] }, filterProductTime[2], searchViewText);
+                _ = ListEquip();
             }
             catch (Exception ex)
             {
@@ -504,11 +381,14 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task ListEquip(int[] pTime, int pRange, string searchText = "")
+        private async Task ListEquip()
         {
             subList.Clear();
 
-            searchText = searchText.ToUpper();
+            string searchText = searchViewText.ToUpper();
+
+            int[] pTime = { filterProductTime[0], filterProductTime[1] };
+            int pRange = filterProductTime[2];
 
             try
             {
@@ -544,16 +424,9 @@ namespace GFI_with_GFS_A
 
                 subList.Sort(SortEquip);
 
-                var adapter = new EquipListAdapter(subList, this);
-
-                if (!adapter.HasOnItemClick())
-                {
-                    adapter.ItemClick += Adapter_ItemClick;
-                }
-
                 await Task.Delay(100);
 
-                RunOnUiThread(() => { mEquipListView.SetAdapter(adapter); });
+                RefreshAdapter();
             }
             catch (Exception ex)
             {
@@ -565,25 +438,19 @@ namespace GFI_with_GFS_A
         private async void Adapter_ItemClick(object sender, int position)
         {
             await Task.Delay(100);
-            var EquipInfo = new Intent(this, typeof(EquipDBDetailActivity));
-            EquipInfo.PutExtra("Id", subList[position].Id);
-            StartActivity(EquipInfo);
+            var equipInfo = new Intent(this, typeof(EquipDBDetailActivity));
+            equipInfo.PutExtra("Id", subList[position].Id);
+            StartActivity(equipInfo);
             OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }
 
         private static bool CheckEquipByProductTime(int[] pTime, int range, int dTime)
         {
             int pTimeM = (pTime[0] * 60) + pTime[1];
+            int minTime = pTimeM - range;
+            int maxTime = pTimeM + range;
 
-            for (int i = (pTimeM - range); i <= (pTimeM + range); ++i)
-            {
-                if (dTime == i)
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return ((minTime <= dTime) && (dTime <= maxTime));
         }
 
         private int SortEquip(Equip x, Equip y)
@@ -688,13 +555,6 @@ namespace GFI_with_GFS_A
             }
 
             return false;
-        }
-
-        public override void OnBackPressed()
-        {
-            base.OnBackPressed();
-            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-            GC.Collect();
         }
     }
 

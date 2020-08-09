@@ -1,6 +1,6 @@
 Y;
-68;
-2;
-전역 경험치 1.5배 이벤트,담당관 특수 보급;
-https://www.girlsfrontline.co.kr/archives/4090.html,https://www.girlsfrontline.co.kr/archives/4116.html;
-2020/7/11 00:00 ~ 2020/7/23 23:59,2020/7/25 00:00 ~ 2020/8/20 23:59;
+70;
+5;
+전역 경험치 1.5배 이벤트,담당관 특수 보급,열정의 열대야,몽중극,신규 전술인형 제조 확률 UP;
+https://www.girlsfrontline.co.kr/archives/4090.html,https://www.girlsfrontline.co.kr/archives/4116.html,https://www.girlsfrontline.co.kr/archives/4159.html,https://cafe.naver.com/girlsfrontlinekr/4038541,https://www.girlsfrontline.co.kr/archives/4208.html;
+2020/7/11 00:00 ~ 2020/7/23 23:59,2020/7/25 00:00 ~ 2020/8/20 23:59,2020/7/25 00:00 ~ 2020/8/14 23:59,2020/7/31 15:00 ~ 2020/8/21 13:59,2020/8/1 00:00 ~ 2020/8/2 23:59;

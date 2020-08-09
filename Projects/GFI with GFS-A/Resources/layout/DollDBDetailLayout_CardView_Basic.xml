@@ -5,7 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-	android:visibility="gone"
+    android:visibility="gone"
     android:id="@+id/DollDBDetailBasicInfoCardLayout"
     cardview:cardElevation="4dp"
     cardview:cardCornerRadius="5dp"
@@ -28,52 +28,13 @@
                 android:text="@string/Common_Grade"
                 android:gravity="center" />
             <include layout="@layout/seperatebar_vertical"/>
-            <LinearLayout
-                android:layout_height="match_parent"
+            <TextView
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:orientation="horizontal">
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/DollDBDetailInfoGrade1" />
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/DollDBDetailInfoGrade2" />
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/DollDBDetailInfoGrade3" />
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/DollDBDetailInfoGrade4" />
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/DollDBDetailInfoGrade5" />
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/DollDBDetailInfoGrade6" />
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
-            </LinearLayout>
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/DollDBDetailInfoGrade"
+                android:gravity="center" />
         </LinearLayout>
     <!--Doll Basic Info - Type Part-->
         <LinearLayout

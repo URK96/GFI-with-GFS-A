@@ -216,7 +216,8 @@
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/DollDBDetailScrollMainLayout">
                     <include layout="@layout/dolldbdetaillayout_cardview_basic"/>
                     <include layout="@layout/dolldbdetaillayout_cardview_buff"/>
                     <include layout="@layout/dolldbdetaillayout_cardview_skill"/>

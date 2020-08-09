@@ -369,6 +369,11 @@
   <string name="ChangeMode_Error">Category change error</string>
   <string name="InternalCalc_Error">Internal calculation error</string>
 
+
+  <!--DBMain-->
+  <string name="DBMainActivity_Title">List</string>
+  <string name="DBMainActivity_SearchHint">Search Name</string>
+
   <!--DollDBDetailActivity-->
   <string name="DollDBDetail_RadarAverageString">Average</string>
   <string name="DollDBDetail_BuffType_All">Apply to all Types</string>

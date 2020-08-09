@@ -1,9 +1,12 @@
-﻿# T-Doll DB Update 2020/07/09
+﻿# T-Doll DB Update 2020/07/31
 
-- Add new T-Doll (C14)
+- Add Gunslinger Girl T-Dolls
+- Add Gunslinger Girl T-Doll's costumes
+- Add Gunslinger Girl T-Doll's voices
+- Add new T-Doll (Lusa, VSK-94, S-ACR, Rex Zero 1)
 
 
-# Coalition DB Update 2020/07/09
+# Coalition DB Update 2020/07/28
 
 - Add new Coalition units
 - Add new Coalition boss unit

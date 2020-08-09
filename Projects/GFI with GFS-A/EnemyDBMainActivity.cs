@@ -17,14 +17,9 @@ using Xamarin.Essentials;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "@string/Acticity_EnemyMainActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class EnemyDBMainActivity : BaseAppCompatActivity
+    public class EnemyDBMainActivity : DBMainActivity
     {
         delegate Task DownloadProgress();
-
-        private enum SortType { Name }
-        private enum SortOrder { Ascending, Descending }
-        private SortType sortType = SortType.Name;
-        private SortOrder sortOrder = SortOrder.Ascending;
 
         private List<Enemy> rootList = new List<Enemy>();
         private List<Enemy> subList = new List<Enemy>();
@@ -44,15 +39,6 @@ namespace GFI_with_GFS_A
         private bool[] hasApplyFilter = { false, false };
         private bool[] filterEnemyType = { false, false };
         private bool[] filterEnemyAffiliation = { false, false, false, false, false, false };
-        private bool canRefresh = false;
-
-        private AndroidX.AppCompat.Widget.Toolbar toolbar;
-        private Android.Support.V7.Widget.SearchView searchView;
-        private RecyclerView mEnemyRecyclerView;
-        private RecyclerView.LayoutManager mainLayoutManager;
-        private CoordinatorLayout snackbarLayout;
-
-        string searchViewText = "";
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -60,29 +46,13 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.useLightTheme)
-                {
-                    SetTheme(Resource.Style.GFS_Toolbar_Light);
-                }
+                ListItem = new ListProcess(ListEnemy);
 
-                // Create your application here
-                SetContentView(Resource.Layout.EnemyDBListLayout);
+                adapter = new EnemyListAdapter(subList, this);
+                (adapter as EnemyListAdapter).ItemClick += Adapter_ItemClick;
 
-                canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
+                recyclerView.SetAdapter(adapter);
 
-                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.EnemyDBMainToolbar);
-                searchView = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.EnemyDBSearchView);
-                searchView.QueryTextChange += (sender, e) =>
-                {
-                    searchViewText = e.NewText;
-                    _ = ListEnemy(searchViewText);
-                };
-                mEnemyRecyclerView = FindViewById<RecyclerView>(Resource.Id.EnemyDBRecyclerView);
-                mainLayoutManager = new LinearLayoutManager(this);
-                mEnemyRecyclerView.SetLayoutManager(mainLayoutManager);
-                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.EnemyDBSnackbarLayout);
-
-                SetSupportActionBar(toolbar);
                 SupportActionBar.SetTitle(Resource.String.EnemyDBMainActivity_Title);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
@@ -102,16 +72,6 @@ namespace GFI_with_GFS_A
             }
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.EnemyDBMenu, menu);
-
-            var cacheItem = menu?.FindItem(Resource.Id.RefreshEnemyCropImageCache);
-            _ = canRefresh ? cacheItem.SetVisible(true) : cacheItem.SetVisible(false);
-
-            return base.OnCreateOptionsMenu(menu);
-        }
-
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item?.ItemId)
@@ -119,13 +79,13 @@ namespace GFI_with_GFS_A
                 case Android.Resource.Id.Home:
                     OnBackPressed();
                     break;
-                case Resource.Id.EnemyDBMainFilter:
+                case Resource.Id.DBMainFilter:
                     InitFilterBox();
                     break;
-                case Resource.Id.EnemyDBMainSort:
+                case Resource.Id.DBMainSort:
                     InitSortBox();
                     break;
-                case Resource.Id.RefreshEnemyCropImageCache:
+                case Resource.Id.RefreshCropImageCache:
                     downloadList.Clear();
 
                     foreach (Enemy enemy in rootList)
@@ -135,7 +95,9 @@ namespace GFI_with_GFS_A
 
                     downloadList.TrimExcess();
 
-                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(EnemyCropImageDownloadProcess));
+                    ShowDownloadCheckMessage(downloadList,
+                        Path.Combine(ETC.server, "Data", "Images", "Enemy", "Normal_Crop"),
+                        Path.Combine(ETC.cachePath, "Enemy", "Normal_Crop"));
                     break;
             }
 
@@ -150,7 +112,9 @@ namespace GFI_with_GFS_A
             {
                 if (CheckEnemyCropImage())
                 {
-                    ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(EnemyCropImageDownloadProcess));
+                    ShowDownloadCheckMessage(downloadList,
+                        Path.Combine(ETC.server, "Data", "Images", "Enemy", "Normal_Crop"),
+                        Path.Combine(ETC.cachePath, "Enemy", "Normal_Crop"));
                 }
             }     
         }
@@ -204,91 +168,6 @@ namespace GFI_with_GFS_A
             downloadList.TrimExcess();
 
             return !(downloadList.Count == 0);
-        }
-
-        private void ShowDownloadCheckMessage(int title, int message, DownloadProgress method)
-        {
-            var ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
-            ad.SetTitle(title);
-            ad.SetMessage(message);
-            ad.SetCancelable(true);
-            ad.SetPositiveButton(Resource.String.AlertDialog_Download, delegate { method(); });
-            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-
-            ad.Show();
-        }
-
-        private async Task EnemyCropImageDownloadProcess()
-        {
-            Dialog dialog;
-            ProgressBar totalProgressBar;
-            ProgressBar nowProgressBar;
-            TextView totalProgress;
-            TextView nowProgress;
-
-            View v = LayoutInflater.Inflate(Resource.Layout.ProgressDialogLayout, null);
-
-            int pNow = 0;
-            int pTotal = 0;
-
-            var pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload);
-            pd.SetTitle(Resource.String.DBList_DownloadCropImageTitle);
-            pd.SetCancelable(false);
-            pd.SetView(v);
-
-            dialog = pd.Create();
-            dialog.Show();
-
-            try
-            {
-                totalProgressBar = v.FindViewById<ProgressBar>(Resource.Id.TotalProgressBar);
-                totalProgress = v.FindViewById<TextView>(Resource.Id.TotalProgressPercentage);
-                nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
-                nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
-
-                pTotal = downloadList.Count;
-                totalProgressBar.Max = 100;
-                totalProgressBar.Progress = pNow;
-
-                using (WebClient wc = new WebClient())
-                {
-                    wc.DownloadProgressChanged += (sender, e) =>
-                    {
-                        nowProgressBar.Progress = e.ProgressPercentage;
-                        MainThread.BeginInvokeOnMainThread(() => { nowProgress.Text = $"{e.ProgressPercentage}%"; });
-                    };
-                    wc.DownloadFileCompleted += (sender, e) =>
-                    {
-                        pNow += 1;
-
-                        totalProgressBar.Progress = Convert.ToInt32(pNow / Convert.ToDouble(pTotal) * 100);
-                        MainThread.BeginInvokeOnMainThread(() => { totalProgress.Text = $"{totalProgressBar.Progress}%"; });
-                    };
-
-                    for (int i = 0; i < pTotal; ++i)
-                    {
-                        string url = Path.Combine(ETC.server, "Data", "Images", "Enemy", "Normal_Crop", $"{downloadList[i]}.png");
-                        string target = Path.Combine(ETC.cachePath, "Enemy", "Normal_Crop", $"{downloadList[i]}.gfdcache");
-
-                        await wc.DownloadFileTaskAsync(url, target).ConfigureAwait(false);
-                    }
-                }
-
-                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_DownloadCropImageComplete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);
-
-                await Task.Delay(500);
-
-                _ = ListEnemy(searchViewText);
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_DownloadCropImageFail, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
-            }
-            finally
-            {
-                dialog.Dismiss();
-            }
         }
 
         private void InitSortBox()
@@ -356,7 +235,7 @@ namespace GFI_with_GFS_A
                     sortOrder = SortOrder.Ascending;
                 }
 
-                _ = ListEnemy(searchViewText ?? "");
+                _ = ListEnemy();
             }
             catch (Exception ex)
             {
@@ -372,7 +251,7 @@ namespace GFI_with_GFS_A
                 sortType = SortType.Name;
                 sortOrder = SortOrder.Ascending;
 
-                _ = ListEnemy(searchViewText);
+                _ = ListEnemy();
             }
             catch (Exception ex)
             {
@@ -431,7 +310,7 @@ namespace GFI_with_GFS_A
 
                 CheckApplyFilter();
 
-                _ = ListEnemy(searchViewText);
+                _ = ListEnemy();
             }
             catch (Exception ex)
             {
@@ -480,7 +359,7 @@ namespace GFI_with_GFS_A
                     hasApplyFilter[i] = false;
                 }
 
-                _ = ListEnemy(searchViewText);
+                _ = ListEnemy();
             }
             catch (Exception ex)
             {
@@ -489,11 +368,11 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task ListEnemy(string searchText = "")
+        private async Task ListEnemy()
         {
             subList.Clear();
 
-            searchText = searchText.ToUpper();
+            string searchText = searchViewText.ToUpper();
 
             try
             {
@@ -521,20 +400,9 @@ namespace GFI_with_GFS_A
 
                 subList.Sort(SortEnemy);
 
-                var adapter = new EnemyListAdapter(subList, this);
-
-                if (!adapter.HasOnItemClick())
-                {
-                    adapter.ItemClick += Adapter_ItemClick;
-                }
-
                 await Task.Delay(100);
 
-                RunOnUiThread(() => 
-                {
-                    mEnemyRecyclerView.SetAdapter(null);
-                    mEnemyRecyclerView.SetAdapter(adapter); 
-                });
+                RefreshAdapter();
             }
             catch (Exception ex)
             {
@@ -629,13 +497,6 @@ namespace GFI_with_GFS_A
             }
 
             return false;
-        }
-
-        public override void OnBackPressed()
-        {
-            base.OnBackPressed();
-            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-            GC.Collect();
         }
     }
 

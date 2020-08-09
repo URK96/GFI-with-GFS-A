@@ -45,7 +45,7 @@ namespace GFI_with_GFS_A
 
         private LinearLayout skillTableSubLayout;
         private LinearLayout modSkillTableSubLayout;
-        private LinearLayout scrollMainLayout;
+        private LinearLayout scrollMainContainer;
 
         private Coalition coalition;
         private DataRow coalitionInfoDR = null;
@@ -121,7 +121,7 @@ namespace GFI_with_GFS_A
                 refreshMainLayout.Refresh += async delegate { await InitLoadProcess(true); };
                 snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.CoalitionDBDetailSnackbarLayout);
 
-                scrollMainLayout = FindViewById<LinearLayout>(Resource.Id.CoalitionDBDetailScrollMainLayout);
+                scrollMainContainer = FindViewById<LinearLayout>(Resource.Id.CoalitionDBDetailScrollMainLayout);
 
                 FindViewById<ImageView>(Resource.Id.CoalitionDBDetailSmallImage).Click += CoalitionDBDetailSmallImage_Click;
 
@@ -783,14 +783,9 @@ namespace GFI_with_GFS_A
             try
             {
                 refreshMainLayout.Refreshing = true;
-
-                if (!isExtraFeatureOpen)
-                {
-                    TransitionManager.BeginDelayedTransition(refreshMainLayout);
-                }
-
+                TransitionManager.BeginDelayedTransition(refreshMainLayout);
                 scrollCardViews.Clear();
-                scrollMainLayout.RemoveAllViews();
+                scrollMainContainer.RemoveAllViews();
 
 
                 // 인형 타이틀 바 초기화
@@ -828,7 +823,7 @@ namespace GFI_with_GFS_A
 
                     if (!File.Exists(target) || isRefresh)
                     {
-                        using (WebClient wc = new WebClient())
+                        using (var wc = new WebClient())
                         {
                             await wc.DownloadFileTaskAsync(url, target);
                         }
@@ -868,7 +863,7 @@ namespace GFI_with_GFS_A
                 //FindViewById<TextView>(Resource.Id.CoalitionDBDetailInfoHowToGain).Text = (string)coalitionInfoDR["DropEvent"];
 
                 scrollCardViews.Add(basicLayout.FindViewById<CardView>(Resource.Id.CoalitionDBDetailBasicInfoCardLayout));
-                scrollMainLayout.AddView(basicLayout);
+                scrollMainContainer.AddView(basicLayout);
 
 
                 // 인형 버프 정보 초기화
@@ -1034,7 +1029,7 @@ namespace GFI_with_GFS_A
                     }
 
                     scrollCardViews.Add(rootView.FindViewById<CardView>(Resource.Id.CoalitionDBDetailBuffCardLayout));
-                    scrollMainLayout.AddView(rootView);
+                    scrollMainContainer.AddView(rootView);
                 }
             }
             catch (Exception ex)
@@ -1133,7 +1128,7 @@ namespace GFI_with_GFS_A
                     }
 
                     scrollCardViews.Add(rootView.FindViewById<CardView>(Resource.Id.CoalitionDBDetailSkillCardLayout));
-                    scrollMainLayout.AddView(rootView);
+                    scrollMainContainer.AddView(rootView);
                 }
             }
             catch (Exception ex)

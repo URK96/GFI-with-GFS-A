@@ -20,14 +20,9 @@ using Xamarin.Essentials;
 namespace GFI_with_GFS_A
 {
     [Activity(Label = "@string/Activity_CoalitionMainActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class CoalitionDBMainActivity : BaseAppCompatActivity
+    public class CoalitionDBMainActivity : DBMainActivity
     {
         delegate void DownloadProgress();
-
-        private enum SortType { Name, Number }
-        private enum SortOrder { Ascending, Descending }
-        private SortType sortType = SortType.Name;
-        private SortOrder sortOrder = SortOrder.Ascending;
 
         private List<Coalition> rootList = new List<Coalition>();
         private List<Coalition> subList = new List<Coalition>();
@@ -39,15 +34,6 @@ namespace GFI_with_GFS_A
         private bool[] hasApplyFilter = { false, false };
         private bool[] filterGrade = { false, false, false };
         private bool[] filterType = { false, false, false, false, false, false };
-        private bool canRefresh = false;
-
-        private string searchViewText = "";
-
-        private AndroidX.AppCompat.Widget.Toolbar toolbar;
-        private AndroidX.AppCompat.Widget.SearchView searchView;
-        private RecyclerView mCoalitionListView;
-        private RecyclerView.LayoutManager mainLayoutManager;
-        private CoordinatorLayout snackbarLayout;
         
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -60,24 +46,13 @@ namespace GFI_with_GFS_A
                     SetTheme(Resource.Style.GFS_Toolbar_Light);
                 }
 
-                // Create your application here
-                SetContentView(Resource.Layout.CoalitionDBListLayout);
+                ListItem = new ListProcess(ListCoalition);
 
-                canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
+                adapter = new CoalitionListAdapter(subList, filterType, this);
+                (adapter as CoalitionListAdapter).ItemClick += Adapter_ItemClick;
 
-                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.CoalitionDBMainToolbar);
-                searchView = FindViewById<AndroidX.AppCompat.Widget.SearchView>(Resource.Id.CoalitionDBSearchView);
-                searchView.QueryTextChange += (sender, e) =>
-                {
-                    searchViewText = e.NewText;
-                    _ = ListCoalition(searchViewText);
-                };
-                mCoalitionListView = FindViewById<RecyclerView>(Resource.Id.CoalitionDBRecyclerView);
-                mainLayoutManager = new LinearLayoutManager(this);
-                mCoalitionListView.SetLayoutManager(mainLayoutManager);
-                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.CoalitionDBSnackbarLayout);
+                recyclerView.SetAdapter(adapter);
 
-                SetSupportActionBar(toolbar);
                 SupportActionBar.SetTitle(Resource.String.CoalitionDBMainActivity_Title);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
@@ -97,16 +72,6 @@ namespace GFI_with_GFS_A
             }
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.CoalitionDBMenu, menu);
-
-            var cacheItem = menu?.FindItem(Resource.Id.RefreshCoalitionCropImageCache);
-            _ = canRefresh ? cacheItem.SetVisible(true) : cacheItem.SetVisible(false);
-
-            return base.OnCreateOptionsMenu(menu);
-        }
-
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item?.ItemId)
@@ -114,13 +79,13 @@ namespace GFI_with_GFS_A
                 case Android.Resource.Id.Home:
                     OnBackPressed();
                     break;
-                case Resource.Id.CoalitionDBMainFilter:
+                case Resource.Id.DBMainFilter:
                     InitFilterBox();
                     break;
-                case Resource.Id.CoalitionDBMainSort:
+                case Resource.Id.DBMainSort:
                     InitSortBox();
                     break;
-                case Resource.Id.RefreshCoalitionCropImageCache:
+                case Resource.Id.RefreshCropImageCache:
                     downloadList.Clear();
 
                     foreach (DataRow dr in ETC.coalitionList.Rows)
@@ -129,7 +94,9 @@ namespace GFI_with_GFS_A
                     }
 
                     downloadList.TrimExcess();
-                    ShowDownloadCheckMessage(Resource.String.DBList_RefreshCropImageTitle, Resource.String.DBList_RefreshCropImageMessage, new DownloadProgress(CoalitionCropImageDownloadProcess));
+                    ShowDownloadCheckMessage(downloadList,
+                        Path.Combine(ETC.server, "Data", "Images", "Coalition", "Normal_Crop"),
+                        Path.Combine(ETC.cachePath, "Coalition", "Normal_Crop"));
                     break;
             }
 
@@ -144,7 +111,9 @@ namespace GFI_with_GFS_A
             {
                 if (CheckCropImage())
                 {
-                    ShowDownloadCheckMessage(Resource.String.DBList_DownloadCropImageCheckTitle, Resource.String.DBList_DownloadCropImageCheckMessage, new DownloadProgress(CoalitionCropImageDownloadProcess));
+                    ShowDownloadCheckMessage(downloadList,
+                        Path.Combine(ETC.server, "Data", "Images", "Coalition", "Normal_Crop"),
+                        Path.Combine(ETC.cachePath, "Coalition", "Normal_Crop"));
                 }
             }
         }
@@ -153,8 +122,6 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                //rootList.Clear();
-
                 foreach (DataRow dr in ETC.coalitionList.Rows)
                 {
                     rootList.Add(new Coalition(dr));
@@ -187,91 +154,6 @@ namespace GFI_with_GFS_A
             downloadList.TrimExcess();
 
             return !(downloadList.Count == 0);
-        }
-
-        private void ShowDownloadCheckMessage(int title, int message, DownloadProgress method)
-        {
-            var ad = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBG);
-            ad.SetTitle(title);
-            ad.SetMessage(message);
-            ad.SetCancelable(true);
-            ad.SetPositiveButton(Resource.String.AlertDialog_Download, delegate { method(); });
-            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-
-            ad.Show();
-        }
-
-        private async void CoalitionCropImageDownloadProcess()
-        {
-            Dialog dialog;
-            ProgressBar totalProgressBar;
-            ProgressBar nowProgressBar;
-            TextView totalProgress;
-            TextView nowProgress;
-
-            View v = LayoutInflater.Inflate(Resource.Layout.ProgressDialogLayout, null);
-
-            int pNow = 0;
-            int pTotal = 0;
-
-            var pd = new Android.Support.V7.App.AlertDialog.Builder(this, ETC.dialogBGDownload);   
-            pd.SetTitle(Resource.String.DBList_DownloadCropImageTitle);
-            pd.SetCancelable(false);
-            pd.SetView(v);
-
-            dialog = pd.Create();
-            dialog.Show();
-
-            try
-            {
-                totalProgressBar = v.FindViewById<ProgressBar>(Resource.Id.TotalProgressBar);
-                totalProgress = v.FindViewById<TextView>(Resource.Id.TotalProgressPercentage);
-                nowProgressBar = v.FindViewById<ProgressBar>(Resource.Id.NowProgressBar);
-                nowProgress = v.FindViewById<TextView>(Resource.Id.NowProgressPercentage);
-
-                pTotal = downloadList.Count;
-                totalProgressBar.Max = 100;
-                totalProgressBar.Progress = pNow;
-
-                using (WebClient wc = new WebClient())
-                {
-                    wc.DownloadProgressChanged += (sender, e) =>
-                    {
-                        nowProgressBar.Progress = e.ProgressPercentage;
-                        MainThread.BeginInvokeOnMainThread(() => { nowProgress.Text = $"{e.ProgressPercentage}%"; });
-                    };
-                    wc.DownloadFileCompleted += (sender, e) =>
-                    {
-                        pNow += 1;
-
-                        totalProgressBar.Progress = Convert.ToInt32((pNow / Convert.ToDouble(pTotal)) * 100);
-                        MainThread.BeginInvokeOnMainThread(() => { totalProgress.Text = $"{totalProgressBar.Progress}%"; });
-                    };
-
-                    for (int i = 0; i < pTotal; ++i)
-                    {
-                        string url = Path.Combine(ETC.server, "Data", "Images", "Coalition", "Normal_Crop", $"{downloadList[i]}.png");
-                        string target = Path.Combine(ETC.cachePath, "Coalition", "Normal_Crop", $"{downloadList[i]}.gfdcache");
-
-                        await wc.DownloadFileTaskAsync(url, target);
-                    }
-                }
-
-                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_DownloadCropImageComplete, Snackbar.LengthLong, Android.Graphics.Color.DarkOliveGreen);
-
-                await Task.Delay(500);
-
-                _ = ListCoalition(searchViewText);
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                ETC.ShowSnackbar(snackbarLayout, Resource.String.DBList_DownloadCropImageFail, Snackbar.LengthShort, Android.Graphics.Color.DeepPink);
-            }
-            finally
-            {
-                dialog.Dismiss();
-            }
         }
 
         private void InitSortBox()
@@ -346,7 +228,7 @@ namespace GFI_with_GFS_A
                     sortOrder = SortOrder.Ascending;
                 }
 
-                _ = ListCoalition(searchViewText);
+                _ = ListCoalition();
             }
             catch (Exception ex)
             {
@@ -362,7 +244,7 @@ namespace GFI_with_GFS_A
                 sortType = SortType.Name;
                 sortOrder = SortOrder.Ascending;
 
-                _ = ListCoalition(searchViewText);
+                _ = ListCoalition();
             }
             catch (Exception ex)
             {
@@ -417,7 +299,7 @@ namespace GFI_with_GFS_A
 
                 CheckApplyFilter();
 
-                _ = ListCoalition(searchViewText);
+                _ = ListCoalition();
             }
             catch (Exception ex)
             {
@@ -466,7 +348,7 @@ namespace GFI_with_GFS_A
                     hasApplyFilter[i] = false;
                 }
 
-                _ = ListCoalition(searchViewText);
+                _ = ListCoalition();
             }
             catch (Exception ex)
             {
@@ -475,11 +357,11 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task ListCoalition(string searchText = "")
+        private async Task ListCoalition()
         {
             subList.Clear();
 
-            searchText = searchText.ToUpper();
+            string searchText = searchViewText.ToUpper();
 
             try
             {
@@ -505,16 +387,9 @@ namespace GFI_with_GFS_A
 
                 subList.Sort(SortCoalition);
 
-                var adapter = new CoalitionListAdapter(subList, filterType, this);
-
-                if (!adapter.HasOnItemClick())
-                {
-                    adapter.ItemClick += Adapter_ItemClick;
-                }
-
                 await Task.Delay(100);
 
-                RunOnUiThread(() => { mCoalitionListView.SetAdapter(adapter); });
+                RefreshAdapter();
             }
             catch (Exception ex)
             {
@@ -601,14 +476,6 @@ namespace GFI_with_GFS_A
             }
 
             return false;
-        }
-
-        public override void OnBackPressed()
-        {
-            base.OnBackPressed();
-            Finish();
-            OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
-            GC.Collect();
         }
     }
 

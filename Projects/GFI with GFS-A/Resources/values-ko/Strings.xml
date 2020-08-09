@@ -372,6 +372,10 @@
   <string name="InternalCalc_Error">내부 계산 오류</string>
  
 
+  <!--DBMain-->
+  <string name="DBMainActivity_Title">목록</string>
+  <string name="DBMainActivity_SearchHint">이름 검색</string>
+  
   <!--DollDBDetailActivity-->
   <string name="DollDBDetail_RadarAverageString">평균</string>
   <string name="DollDBDetail_BuffType_All">모든 총기 적용</string>

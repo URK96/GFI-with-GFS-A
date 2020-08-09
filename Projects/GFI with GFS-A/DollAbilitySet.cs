@@ -62,29 +62,16 @@ namespace GFI_with_GFS_A
             modGrowGrow.Add("Evasion", new double[] { 0.075, 22.572 });
             modGrowGrow.Add("AttackSpeed", new double[] { 0.022, 15.741 });
 
-            double[] attributeValues = null;
-
-            switch(type)
+            double[] attributeValues = type switch
             {
-                case "HG":
-                    attributeValues = new double[] { 0.6, 0.6, 1.2, 1.8, 0.8, 0 };
-                    break;
-                case "SMG":
-                    attributeValues = new double[] { 1.6, 0.6, 0.3, 1.6, 1.2, 0 };
-                    break;
-                case "AR":
-                    attributeValues = new double[] { 1.0, 1.0, 1.0, 1.0, 1.0, 0 };
-                    break;
-                case "RF":
-                    attributeValues = new double[] { 0.8, 2.4, 1.6, 0.8, 0.5, 0 };
-                    break;
-                case "MG":
-                    attributeValues = new double[] { 1.5, 1.8, 0.6, 0.6, 1.6, 0 };
-                    break;
-                case "SG":
-                    attributeValues = new double[] { 2.0, 0.7, 0.3, 0.3, 0.4, 1 };
-                    break;
-            }
+                "HG" => new double[] { 0.6, 0.6, 1.2, 1.8, 0.8, 0 },
+                "SMG" => new double[] { 1.6, 0.6, 0.3, 1.6, 1.2, 0 },
+                "AR" => new double[] { 1.0, 1.0, 1.0, 1.0, 1.0, 0 },
+                "RF" => new double[] { 0.8, 2.4, 1.6, 0.8, 0.5, 0 },
+                "MG" => new double[] { 1.5, 1.8, 0.6, 0.6, 1.6, 0 },
+                "SG" => new double[] { 2.0, 0.7, 0.3, 0.3, 0.4, 1 },
+                _ => new double[] { 0, 0, 0, 0, 0, 0 },
+            };
 
             for (int i = 0; i < attributeTypes.Length; ++i)
             {

@@ -615,6 +615,51 @@
     <HasCensor>false</HasCensor>
   </Coalition>
   <Coalition>
+    <Name>아키텍트</Name>
+    <CodeName>Architect</CodeName>
+    <Type>LightArmor;Doll;Remote</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>true</IsBoss>
+    <BornGrade>3</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
+    <Effect1>AC,EV</Effect1>
+    <EffectMag1>8,8;12,12;12,12;12,12</EffectMag1>
+    <EffectType1>All</EffectType1>
+    <Effect2>FR,AC</Effect2>
+    <EffectMag2>8,8;12,12;12,12;12,12</EffectMag2>
+    <EffectType2>Machine</EffectType2>
+    <DicNumber>27</DicNumber>
+    <Skill1>축제 시작이야!</Skill1>
+    <SkillExplain1>체력이 가장 높은 적에게 편제당 피해를 주고, 그 주위 4 범위 안의 적에게 편제당 폭발 피해를 준다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;일반 피해 배수;폭발 피해 배수</SkillEffect1>
+    <SkillMag1>6초,12초,4배,1.2배</SkillMag1>
+    <FASkillMag1>6초,12초,5배,1.5배</FASkillMag1>
+    <Skill2>나도 끼워줘!</Skill2>
+    <SkillExplain2>2칸 이내에 있는 아군이 전투할 경우 지원 사격을 제공한다. 일정 시간마다 유탄을 1발 발사하여 반경 2 범위 안의 적에게 편제당 피해를 주고, 자신의 화력 50% 만큼의 파쇄 효과를 준다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;발사 간격;피해 배수</SkillEffect2>
+    <SkillMag2>0초,6초,6초,0.5배</SkillMag2>
+    <Skill3>폭렬</Skill3>
+    <SkillExplain3>아키텍트의 1회 공격은 목표에게 화력 0.25배의 피해를 4회 준다. 6번의 일반 공격 이후 추가로 목표 주위 1 범위에 편제당 폭발 피해를 준다.</SkillExplain3>
+    <SkillEffect3>선 쿨타임;쿨타임;폭발 피해 배수</SkillEffect3>
+    <SkillMag3>0초,0초,0.8배</SkillMag3>
+    <Skill4>폭파 전문가</Skill4>
+    <SkillExplain4>아키텍트가 존재하는 동안 아군이 주는 모든 폭발 피해가 추가로 증가한다.</SkillExplain4>
+    <SkillEffect4>선 쿨타임;쿨타임;폭발 피해 증가량</SkillEffect4>
+    <SkillMag4>0초,0초,20%</SkillMag4>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Coalition>
+  <Coalition>
     <Name>브루트</Name>
     <CodeName>Brute</CodeName>
     <Type>LightArmor;Doll;CloseIn</Type>
@@ -723,6 +768,35 @@
     <SkillExplain2>자신이 받는 피해량을 감소시킨다. 해당 효과가 사라지면 바로 앞에 있는 적에게 일정량의 필중 피해를 준다.</SkillExplain2>
     <SkillEffect2>선 쿨타임;쿨타임;지속시간;피해 감소량;필중 피해량</SkillEffect2>
     <SkillMag2>3초,6초,5초,20%,1.2배</SkillMag2>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+  </Coalition>
+  <Coalition>
+    <Name>리퍼SWAP</Name>
+    <CodeName>Ripper_SWAP</CodeName>
+    <Type>LightArmor;Doll;CloseIn</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>false</IsBoss>
+    <BornGrade>2</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>86</DicNumber>
+    <Skill1>극한의 적응력</Skill1>
+    <SkillExplain1>수비 방침에서 발동 시 자신의 회피를 증가시킨다. 그 외 방침에서는 자신의 화력을 증가시킨다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;지속시간;회피 증가치;화력 증가치</SkillEffect1>
+    <SkillMag1>6초,8초,5초,120%,90%</SkillMag1>
+    <Skill2>위협감지</Skill2>
+    <SkillExplain2>일정 시간마다 또는 편제 손실 시 발동한다. 수비 방침일 경우 일정 시간 왜곡방벽을 생성하며, 그 외 방침일 경우 화력을 증가시킨다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;발동 간격;왜곡방벽 지속시간;버프 지속시간</SkillEffect2>
+    <SkillMag2>0초,0초,8초,2초,3초</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
   </Coalition>
