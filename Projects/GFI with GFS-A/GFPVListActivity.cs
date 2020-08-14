@@ -34,7 +34,10 @@ namespace GFI_with_GFS_A
             "PV_VA",
             "PV_ShatteredConnexion",
             "PV_PhantomSyndrome",
-            "PV_PolarizedLight"
+            "PV_PolarizedLight",
+            "PV_PhotoGalleryPuzzle",
+            "PV_BihaiSecret",
+            "PV_DreamDrama"
         };
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -269,6 +272,15 @@ namespace GFI_with_GFS_A
                         break;
                     case 11:
                         iconId = Resource.Drawable.Album_PolarizedLight;
+                        break;
+                    case 12:
+                        iconId = Resource.Drawable.Album_PhotoGalleryPuzzle;
+                        break;
+                    case 13:
+                        iconId = Resource.Drawable.Album_BihaiSecret;
+                        break;
+                    case 14:
+                        iconId = Resource.Drawable.Album_DreamDrama;
                         break;
                 }
 

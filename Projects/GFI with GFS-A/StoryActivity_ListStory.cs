@@ -205,6 +205,11 @@ namespace GFI_with_GFS_A
                     captionRes = Resource.Array.Story_Main_Main_Event_2020Summer_Caption;
                     topTitleRes = Resource.Array.Story_Main_Main_Event_2020Summer_TopTitle;
                     break;
+                case 38:
+                    titleRes = Resource.Array.Story_Main_Main_Event_DreamDrama;
+                    captionRes = Resource.Array.Story_Main_Main_Event_DreamDrama_Caption;
+                    topTitleRes = Resource.Array.Story_Main_Main_Event_DreamDrama_TopTitle;
+                    break;
             }
 
             itemList.AddRange(Resources.GetStringArray(titleRes));
@@ -420,6 +425,9 @@ namespace GFI_with_GFS_A
                         break;
                     case 37:
                         category = "2020Summer";
+                        break;
+                    case 38:
+                        category = "DreamDrama";
                         break;
                 }
             }

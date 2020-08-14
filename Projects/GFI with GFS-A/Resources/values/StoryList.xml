@@ -54,6 +54,7 @@
     <item>이벤트</item>
     <item>2020 봄 시즌 이벤트</item>
     <item>2020 여름 시즌 이벤트</item>
+    <item>콜라보 이벤트</item>
   </string-array>
 
   <string-array name="Story_Main_Main">
@@ -95,6 +96,7 @@
     <item>편극광</item>
     <item>사진관 미스테리</item>
     <item>바다 저 멀리</item>
+    <item>몽중극</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Caption">
@@ -136,6 +138,7 @@
     <item>편극광</item>
     <item>사진관 미스테리</item>
     <item>바다 저 멀리</item>
+    <item>몽중극</item>
   </string-array>
 
   <string-array name="Story_Main_Sub_TopTitle">
