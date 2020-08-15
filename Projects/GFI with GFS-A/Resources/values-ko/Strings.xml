@@ -79,6 +79,9 @@
   <string name="Game_Event_PolarizedLight">편극광</string>
   <string name="Game_Event_ShatteredConnexion">연쇄분열</string>
   <string name="Game_Event_VA">발할라 콜라보</string>
+  <string name="Game_Event_PhotoGalleryPuzzle">사진관 미스테리</string>
+  <string name="Game_Event_BihaiSecret">바다 저 멀리</string>
+  <string name="Game_Event_DreamDrama">몽중극</string>
 
   <!--Activity String-->
   <string name="Activity_DollMainActivity">인형 목록</string>

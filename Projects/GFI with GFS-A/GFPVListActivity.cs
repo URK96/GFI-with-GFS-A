@@ -39,6 +39,24 @@ namespace GFI_with_GFS_A
             "PV_BihaiSecret",
             "PV_DreamDrama"
         };
+        internal static string[] titleList =
+        {
+            ETC.Resources.GetString(Resource.String.Game_Event_Cube),
+            ETC.Resources.GetString(Resource.String.Game_Event_HuntingRabbit),
+            ETC.Resources.GetString(Resource.String.Game_Event_Arctic),
+            ETC.Resources.GetString(Resource.String.Game_Event_DeepDive),
+            ETC.Resources.GetString(Resource.String.Game_Event_Singularity),
+            ETC.Resources.GetString(Resource.String.Game_Event_DJMAX),
+            ETC.Resources.GetString(Resource.String.Game_Event_ContinuumTurbulence),
+            ETC.Resources.GetString(Resource.String.Game_Event_Isomer),
+            ETC.Resources.GetString(Resource.String.Game_Event_VA),
+            ETC.Resources.GetString(Resource.String.Game_Event_ShatteredConnexion),
+            ETC.Resources.GetString(Resource.String.Game_Event_PhantomSyndrome),
+            ETC.Resources.GetString(Resource.String.Game_Event_PolarizedLight),
+            ETC.Resources.GetString(Resource.String.Game_Event_PhotoGalleryPuzzle),
+            ETC.Resources.GetString(Resource.String.Game_Event_BihaiSecret),
+            ETC.Resources.GetString(Resource.String.Game_Event_DreamDrama)
+        };
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -204,27 +222,11 @@ namespace GFI_with_GFS_A
 
         private class GFPVListAdapter : RecyclerView.Adapter
         {
-            private string[] titleList;
-
             public event EventHandler<int> ItemClick;
 
             public GFPVListAdapter()
             {
-                titleList = new string[]
-                {
-                    ETC.Resources.GetString(Resource.String.Game_Event_Cube),
-                    ETC.Resources.GetString(Resource.String.Game_Event_HuntingRabbit),
-                    ETC.Resources.GetString(Resource.String.Game_Event_Arctic),
-                    ETC.Resources.GetString(Resource.String.Game_Event_DeepDive),
-                    ETC.Resources.GetString(Resource.String.Game_Event_Singularity),
-                    ETC.Resources.GetString(Resource.String.Game_Event_DJMAX),
-                    ETC.Resources.GetString(Resource.String.Game_Event_ContinuumTurbulence),
-                    ETC.Resources.GetString(Resource.String.Game_Event_Isomer),
-                    ETC.Resources.GetString(Resource.String.Game_Event_VA),
-                    ETC.Resources.GetString(Resource.String.Game_Event_ShatteredConnexion),
-                    ETC.Resources.GetString(Resource.String.Game_Event_PhantomSyndrome),
-                    ETC.Resources.GetString(Resource.String.Game_Event_PolarizedLight)
-                };
+
             }
 
             public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
