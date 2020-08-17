@@ -1,7 +1,9 @@
-<2.6.2 Update>
+<2.6.3 Update>
 
-- Add MOD voice feature
-- Change processing type for voice file
-- Fix UI issue in MOD Story
-- Update UI library and license key
+- Support Android 11
+- Add story
+- Add PV
+- Add GF Animation link feature
+- Change DB activity component
+- Update UI library
 - Fix some bugs

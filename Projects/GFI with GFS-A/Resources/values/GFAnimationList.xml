@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  
+  <string-array name="GFAnimation_TopTitle">
+    <item>@string/GFAnimation_HealingSeries</item>
+    <item>@string/GFAnimation_HealingSeries</item>
+    <item>@string/GFAnimation_HealingSeries</item>
+    <item>@string/GFAnimation_HealingSeries</item>
+    <item>@string/GFAnimation_HealingSeries</item>
+    <item>@string/GFAnimation_HealingSeries</item>
+    <item>@string/GFAnimation_HealingSeries</item>
+    <item>@string/GFAnimation_HealingSeries</item>
+    <item>@string/GFAnimation_HealingSeries</item>
+    <item>@string/GFAnimation_HealingSeries</item>
+    <item>@string/GFAnimation_HealingSeries</item>
+    <item>@string/GFAnimation_HealingSeries</item>
+    <item>@string/GFAnimation_HealingSeries</item>
+    <item>@string/GFAnimation_HealingSeries</item>
+    <item>@string/GFAnimation_MadSeries</item>
+    <item>@string/GFAnimation_MadSeries</item>
+    <item>@string/GFAnimation_MadSeries</item>
+    <item>@string/GFAnimation_MadSeries</item>
+    <item>@string/GFAnimation_MadSeries</item>
+    <item>@string/GFAnimation_MadSeries</item>
+    <item>@string/GFAnimation_MadSeries</item>
+    <item>@string/GFAnimation_MadSeries</item>
+    <item>@string/GFAnimation_MadSeries</item>
+    <item>@string/GFAnimation_MadSeries</item>
+    <item>@string/GFAnimation_MadSeries</item>
+    <item>@string/GFAnimation_MadSeries</item>
+    <item>@string/GFAnimation_MadSeries</item>
+  </string-array>
+    
+  <string-array name="GFAnimation_Title">
+    <item>@string/GFAnimation_TotalEpisode</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+    <item>6</item>
+    <item>7</item>
+    <item>8</item>
+    <item>9</item>
+    <item>10</item>
+    <item>11</item>
+    <item>12</item>
+    <item>@string/GFAnimation_Interview</item>
+    <item>@string/GFAnimation_TotalEpisode</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+    <item>6</item>
+    <item>7</item>
+    <item>8</item>
+    <item>9</item>
+    <item>10</item>
+    <item>11</item>
+    <item>12</item>
+  </string-array>
+
+</resources>

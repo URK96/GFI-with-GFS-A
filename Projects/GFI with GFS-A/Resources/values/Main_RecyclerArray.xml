@@ -53,5 +53,6 @@
     <item>@string/Main_Other_Cartoon</item>
     <item>@string/Main_Other_GFOSTPlayer</item>
     <item>@string/Main_Other_GFPV</item>
+    <item>@string/Main_Other_GFAnimation</item>
   </string-array>
 </resources>

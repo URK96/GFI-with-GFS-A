@@ -135,20 +135,21 @@ namespace GFI_with_GFS_A
             {
                 StringBuilder sb = new StringBuilder();
 
-                sb.AppendFormat("{0}\n", Resources.GetString(Resource.String.GFDInfo_Developer_Soomae));
+                sb.AppendLine(Resources.GetString(Resource.String.GFDInfo_Developer_Soomae));
                 sb.Append("eveia@naver.com\n\n");
-                sb.AppendFormat("{0}\n", Resources.GetString(Resource.String.GFDInfo_Developer_URK96));
+                sb.AppendLine(Resources.GetString(Resource.String.GFDInfo_Developer_URK96));
                 sb.Append("chlwlsgur96@hotmail.com\n\n");
-                sb.AppendFormat("{0}\n", Resources.GetString(Resource.String.GFDInfo_Developer_Bibitjyadame));
+                sb.AppendLine(Resources.GetString(Resource.String.GFDInfo_Developer_Bibitjyadame));
                 sb.Append("bibitjyadame@gmail.com");
                 sb.Append("\n\n## Special Thanks ##\n\n");
-                sb.Append("츠보우, ");
-                sb.Append("잉여군, ");
-                sb.Append("MADCORE\n");
-                sb.Append("천솜향, ");
-                sb.Append("우용곡, ");
-                sb.Append("MMM, ");
-                sb.Append("Geo");
+                sb.AppendLine("츠보우");
+                sb.AppendLine("잉여군");
+                sb.AppendLine("MADCORE");
+                sb.AppendLine("천솜향");
+                sb.AppendLine("우용곡");
+                sb.AppendLine("MMM");
+                sb.AppendLine("Geo");
+                sb.AppendLine("센롱");
 
                 FindViewById<TextView>(Resource.Id.GFDInfoDeveloperInfo).Text = sb.ToString();
             }

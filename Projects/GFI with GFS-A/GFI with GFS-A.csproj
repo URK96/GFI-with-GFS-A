@@ -51,7 +51,7 @@
     <BundleAssemblies>false</BundleAssemblies>
     <AndroidSupportedAbis>
     </AndroidSupportedAbis>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
@@ -89,6 +89,7 @@
     <AndroidPackageFormat>apk</AndroidPackageFormat>
     <AndroidApkSigningAlgorithm>md5withRSA</AndroidApkSigningAlgorithm>
     <AndroidApkDigestAlgorithm>SHA1</AndroidApkDigestAlgorithm>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Java.Interop" />
@@ -520,6 +521,8 @@
     <Compile Include="FSTDBDetailActivity.cs" />
     <Compile Include="FSTDBMainActivity.cs" />
     <Compile Include="DollDBImageViewer.cs" />
+    <Compile Include="GFAnimationActivity_ListLink.cs" />
+    <Compile Include="GFAnimationActivity.cs" />
     <Compile Include="GFPVListActivity.cs" />
     <Compile Include="HelpImageActivity.cs" />
     <Compile Include="LicenseViewer.cs" />
@@ -2114,6 +2117,30 @@
     <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.3.3.0\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.3.3.0\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.3.3.0\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\GFAnimationListLayout.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\GFAnimationLayout.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\GFAnimationList.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\GFAnimationDialogLayout.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

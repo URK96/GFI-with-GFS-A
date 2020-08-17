@@ -89,4 +89,7 @@
     <item name="android:textColorPrimary">#000000</item>
     <item name="android:windowBackground">@drawable/downloaddialogbg_whitetheme</item>
   </style>
+
+  <style name="GFD.BottomSheetDialog" parent="Theme.Design.BottomSheetDialog" />
+  <style name="GFD.BottomSheetDialog.Light" parent="Theme.Design.Light.BottomSheetDialog" />
 </resources>

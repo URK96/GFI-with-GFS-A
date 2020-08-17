@@ -59,8 +59,10 @@ namespace GFI_with_GFS_A
                     }
                     else
                     {
-                        using var wc = new WebClient();
-                        notificationView.Text = await wc.DownloadStringTaskAsync(url);
+                        using (var wc = new WebClient())
+                        {
+                            notificationView.Text = await wc.DownloadStringTaskAsync(url);
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -375,6 +377,10 @@ namespace GFI_with_GFS_A
                             break;
                         case 3:
                             Activity.StartActivity(typeof(GFPVListActivity));
+                            Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                            break;
+                        case 4:
+                            Activity.StartActivity(typeof(GFAnimationActivity));
                             Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                             break;
                         default:

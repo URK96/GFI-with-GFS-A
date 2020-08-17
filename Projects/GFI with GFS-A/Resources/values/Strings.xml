@@ -520,6 +520,7 @@
   <string name="Main_Other_GFOSTPlayer">OST Player</string>
   <string name="Main_Other_Cartoon">Cartoon</string>
   <string name="Main_Other_GFPV">GF PV</string>
+  <string name="Main_Other_GFAnimation">GF Animation</string>
   
   <!--OldGFD-->
   <string name="OldGFDViewer_ProductDollTable">T-Doll Production Timetable</string>
@@ -794,7 +795,20 @@
   <string name="GFPVActivity_DownloadRequireDialog_Message">PV file is not found. Download PV file?</string>
   <string name="GFPVActivity_DownloadDialog_Title">PV Download</string>
   <string name="GFPVActivity_DownloadDialog_Message">Downloading PV...</string>
+
   
+  <!--GFAnimation-->
+  <string name="GFAnimation_HealingSeries">Healing</string>
+  <string name="GFAnimation_MadSeries">Madness</string>
+  <string name="GFAnimation_TotalEpisode">Total Episode</string>
+  <string name="GFAnimation_Episode">Episode</string>
+  <string name="GFAnimation_Interview">Interview</string>
+  <string name="GFAnimation_Language_Korean">Korean</string>
+  <string name="GFAnimation_Language_Chinese">Chinese</string>
+  <string name="GFAnimation_Language_Japanese">Japanese</string>
+  <string name="GFAnimation_SelectLanguage">Select Language</string>
+  
+
   <!--Music Category-->
   <string name="Music_Category_ContinuumTurbulence">Continuum Turbulence</string>
   <string name="Music_Category_Cube">Cube</string>
