@@ -803,7 +803,7 @@
   <string name="GFAnimation_TotalEpisode">Total Episode</string>
   <string name="GFAnimation_Episode">Episode</string>
   <string name="GFAnimation_Interview">Interview</string>
-  <string name="GFAnimation_Language_Korean">Korean</string>
+  <string name="GFAnimation_Language_Korean">Korean (Fan Dubbing)</string>
   <string name="GFAnimation_Language_Chinese">Chinese</string>
   <string name="GFAnimation_Language_Japanese">Japanese</string>
   <string name="GFAnimation_SelectLanguage">Select Language</string>
