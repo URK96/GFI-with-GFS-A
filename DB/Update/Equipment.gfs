@@ -2325,4 +2325,214 @@
     <Icon>M950A_Only</Icon>
     <ProductDialog>개조한 M950A는 전술 총몸덮개를 장착하여 레일이 총 4개로 다양한 부착물을 선택할 수 있습니다. 반면 M950A 본인은 이 개조로 인해 총기가 많이 무거워져서 훈련이 더 힘들어졌다고 자주 불평합니다.</ProductDialog>
   </Equipment>
+  <Equipment>
+    <Name>전술 손잡이</Name>
+    <Id>180</Id>
+    <Type>소음기</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>회피;치명타율</Ability>
+    <InitialMagnification>+8~11;+12~15%</InitialMagnification>
+    <MaxMagnification>+22;+20%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>마카로프</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>MakarovPM_Only</Icon>
+    <ProductDialog>유명 총기 부품 공장에서 마카로프 PM을 위해 설계한 권총 손잡이입니다. 탄알집을 빠르게 교체할 수 있는 기능을 추가하고 그립감을 개선한 손에 착 달라붙는 명품입니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>RIP380ACP</Name>
+    <Id>181</Id>
+    <Type>특수탄</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;사속;관통</Ability>
+    <InitialMagnification>+7~10;-4;-10~7</InitialMagnification>
+    <MaxMagnification>+20;-4;-7</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>스콜피온</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>Vz61_Only</Icon>
+    <ProductDialog>파고들어 터진다! 생김새와 실제 성능 모두 무시무시한 HP탄입니다. 확장 탄두는 보호가 부족한 목표에게 막대한 타격을 입혀 이름 그대로 "R.I.P"를 선사합니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>S&amp;B762</Name>
+    <Id>182</Id>
+    <Type>특수탄</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;사속</Ability>
+    <InitialMagnification>+12~15;-4</InitialMagnification>
+    <MaxMagnification>+25;-4</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>79식</OnlyUse>
+    <Note>바다 저 멀리 이벤트 재화 80개 교환</Note>
+    <Icon>79type_Only</Icon>
+    <ProductDialog>중량 85gr(5.5g)의 FMJ 탄약으로 관통력을 높였습니다. 최근 79식이 아끼는 물건이죠.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>트럼프 카드</Name>
+    <Id>183</Id>
+    <Type>특수</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>치명피해;속도</Ability>
+    <InitialMagnification>+20~25%;-3</InitialMagnification>
+    <MaxMagnification>+45;-3</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>리코</OnlyUse>
+    <Note>몽중극 이벤트 재화 60개 교환</Note>
+    <Icon>Rico_Only</Icon>
+    <ProductDialog>그냥 평범한 트럼프 카드입니다. 파괴만을 위해 태어난 의체가 이것으로 탑을 세울 수 있죠.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>동화 그림책</Name>
+    <Id>184</Id>
+    <Type>특수</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>회피;화력</Ability>
+    <InitialMagnification>+8~12;+1~3</InitialMagnification>
+    <MaxMagnification>+20;+5</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>안젤리카</OnlyUse>
+    <Note>몽중극 이벤트 재화 60개 교환</Note>
+    <Icon>Angelica_Only</Icon>
+    <ProductDialog>아름다운 동화 이야기가 그려진 책입니다. 소녀의 꿈과 기억을 간직한 이 책을 보면 언제든지 안심됩니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>평면 안경</Name>
+    <Id>185</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;화력;명중</Ability>
+    <InitialMagnification>+18~25%;+3~5;+1~3</InitialMagnification>
+    <MaxMagnification>+50%;+10;+5</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>클라에스</OnlyUse>
+    <Note>몽중극 이벤트 재화 60개 교환</Note>
+    <Icon>Claes_Only</Icon>
+    <ProductDialog>어느 두 사람의 약속을 담은 안경입니다. 도수가 없어도 더욱 침착하게 세상을 볼 수 있게 됩니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>격투 대검</Name>
+    <Id>186</Id>
+    <Type>특수</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>화력;치명타율;치명피해</Ability>
+    <InitialMagnification>+7~10;+11~14%;+12~15%</InitialMagnification>
+    <MaxMagnification>+15;+25%;+22%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>트리엘라</OnlyUse>
+    <Note>몽중극 이벤트 재화 60개 교환</Note>
+    <Icon>Triela_Only</Icon>
+    <ProductDialog>총을 쓸 수 없는 상황이라면 칼을 뽑아야 합니다. 승리를 위해서라면 주먹이든 이빨이든 다 동원할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>골동품 만화경</Name>
+    <Id>187</Id>
+    <Type>소음기</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;회피;명중</Ability>
+    <InitialMagnification>+13~16%;+6~8;+1~3</InitialMagnification>
+    <MaxMagnification>+25;+10;+5</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>헨리에타</OnlyUse>
+    <Note>몽중극 이벤트 재화 60개 교환</Note>
+    <Icon>Henrietta_Only</Icon>
+    <ProductDialog>정교하게 만든 만화경입니다. 소유자는 이게 진품인지 아닌지 신경 쓰지 않습니다. 중요한 건 안에 담긴 마음이니까요.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>운석 조각</Name>
+    <Id>188</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;화력;명중</Ability>
+    <InitialMagnification>+18~25%;+3~5;+1~3</InitialMagnification>
+    <MaxMagnification>+50%;+10;+5</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>클라에스</OnlyUse>
+    <Note>몽중극 이벤트 재화 60개 교환</Note>
+    <Icon>Claes_Only_2</Icon>
+    <ProductDialog>아무리 뜨거운 불길에 휩싸여도 이 진심만은 사라지지 않습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>손목시계</Name>
+    <Id>189</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;화력;명중</Ability>
+    <InitialMagnification>+18~25%;+3~5;+1~3</InitialMagnification>
+    <MaxMagnification>+50%;+10;+5</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>클라에스</OnlyUse>
+    <Note>몽중극 이벤트 재화 60개 교환</Note>
+    <Icon>Claes_Only_3</Icon>
+    <ProductDialog>틀에 박힌 삶이라도 안정적이고 행복할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>G-box</Name>
+    <Id>190</Id>
+    <Type>특수</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>회피;명중</Ability>
+    <InitialMagnification>-10~5;+3~5</InitialMagnification>
+    <MaxMagnification>-5;+10</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>G11</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>G11_Only</Icon>
+    <ProductDialog>G11을 위해 특별히 개발한 특수공구함 처음에는 단순한 휴대용 보조배터리였지만 최종 버전 Gbox는 G11의 일상 용품을 보관할 수 있어 그녀의 필수 물품이 되었다. 동시에 G11이 말하기론 이 상자는 자신에게 매우 높은 전술 가치가 있다고 한다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>ACS-L</Name>
+    <Id>191</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;화력</Ability>
+    <InitialMagnification>+17~24%;+3~5</InitialMagnification>
+    <MaxMagnification>+48%;+10</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>Super SASS</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>SuperSASS_Only</Icon>
+    <ProductDialog>MGP에서 설계한 합성수지 개머리판 뒷면에 작은 저장 공간이 있어 도구를 넣을 수 있고 넓은 칙패드는 사용자의 편안함을 높여준다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>귀염둥이 팬던트</Name>
+    <Id>192</Id>
+    <Type>특수</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>회피;화력</Ability>
+    <InitialMagnification>+20~25;-8~6</InitialMagnification>
+    <MaxMagnification>+45;-6</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>RO635</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>RO635_Only</Icon>
+    <ProductDialog>RO635를 위해 특별히 설계한 다목적 악세서리. 스트레스 해소 경보 받침대 등 기능을 한 몸에 담았다. 소문으론 설계 과정에서 어느 인형이 개발 현장에 강제침입해서 디자이너에게 자신의 모습으로 설계할 것을 요구했다고 한다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>전술 기동방패</Name>
+    <Id>193</Id>
+    <Type>방탄판</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>장갑;회피</Ability>
+    <InitialMagnification>+6~8;+1</InitialMagnification>
+    <MaxMagnification>+11;+2</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>97식 산탄총</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>97typeS_Only</Icon>
+    <ProductDialog>IOP가 97식 산탄총을 위해 설계한 고기동성 방탄실드 깔끔한 구조에 군더더기 없는 외형은 보기만해도 든든하다.</ProductDialog>
+  </Equipment>
 </NewDataSet>

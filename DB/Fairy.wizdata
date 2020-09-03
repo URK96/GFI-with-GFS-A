@@ -740,4 +740,24 @@
     <ProductDialog>"나는 처음이자 마지막... 모든 건 나로 시작하고, 나로 끝날 것이다."</ProductDialog>
     <FairyExplain>다른 요정의 힘을 증폭하는 능력을 지니고 있습니다. 평소에는 모형 조립과 의자 찜하기에 사용할 수 있을 것 같습니다.</FairyExplain>
   </Fairy>
+  <Fairy>
+    <Name>경사요정</Name>
+    <Type>책략</Type>
+    <DicNumber>27</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>3.2/18</FireRate>
+    <Accuracy>12/66</Accuracy>
+    <Evasion>16/88</Evasion>
+    <Armor>0/0</Armor>
+    <Critical>4/22</Critical>
+    <SkillName>신비로운 복숭아</SkillName>
+    <SkillExplain>시야 내 주변 2칸의 빈 거점 중 한 곳에 2턴간 유지되는 복숭아를 배치한다. 적이 해당 복숭아에 접촉 시 다음 전투에서 5초간 화력을 감소시키고, 아군이 접촉 시 다음 전투에서 지속시간 동안 이동속도가 증가한다.</SkillExplain>
+    <OrderConsume>1</OrderConsume>
+    <CoolDown>3</CoolDown>
+    <SkillEffect>화력 감소치;이동속도 증가치;지속시간</SkillEffect>
+    <SkillRate>12 / 14 / 16 / 18 / 20 / 22 / 24 / 26 / 28 / 30;3 / 3 / 4 / 4 / 4 / 5 / 5 / 5 / 5 / 6 / 6;5 / 6 / 6 / 7 / 7 / 8 / 8 / 9 / 9 / 10</SkillRate>
+    <Note>편극광 랭킹전 보상</Note>
+    <ProductDialog>"항상 행운이 함께하고, 모든 일이 술술 풀리기를! 새해 복 많이 받으세요!"</ProductDialog>
+    <FairyExplain>신비한 복숭아를 투척하는 능력을 지니고 있습니다. 평소에는 간식 제공이나, 화채를 만드는것에 사용할 수 있을 것 같습니다.</FairyExplain>
+  </Fairy>
 </NewDataSet>

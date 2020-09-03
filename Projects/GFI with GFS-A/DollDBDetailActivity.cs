@@ -43,22 +43,22 @@ namespace GFI_with_GFS_A
         private List<int[]> typeAbilities;
 
         private Doll doll;
-        private DataRow dollInfoDR = null;
-        private int modIndex = 0;
-        private int vCostumeIndex = 0;
+        private DataRow dollInfoDR;
+        private int modIndex;
+        private int vCostumeIndex;
         private List<string> voiceList = new List<string>();
 
         private int abilityLevel = 1;
         private List<int> levelList = new List<int>();
-        private int abilityFavor = 0;
+        private int abilityFavor;
         private List<string> favorList = new List<string>();
         private DollAbilitySet das;
         private int[] abilityValues = new int[6];
 
-        private bool isExtraFeatureOpen = false;
-        private bool isChartLoad = false;
-        private bool initLoadComplete = false;
-        private bool isApplyModVoice = false;
+        private bool isExtraFeatureOpen;
+        private bool isChartLoad;
+        private bool initLoadComplete;
+        private bool isApplyModVoice;
 
         private ISimpleAudioPlayer voicePlayer;
         private FileStream stream;
@@ -106,18 +106,24 @@ namespace GFI_with_GFS_A
 
                 // Create your application here
                 SetContentView(Resource.Layout.DollDBDetailLayout);
-
+                 
+                // Set Data
                 dollInfoDR = ETC.FindDataRow(ETC.dollList, "DicNumber", Intent.GetIntExtra("DicNum", 0));
                 doll = new Doll(dollInfoDR);
                 das = new DollAbilitySet(doll.Type);
 
                 voicePlayer = CrossSimpleAudioPlayer.Current;
 
+                // Set Toolbar
                 toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.DollDBDetailMainToolbar);
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
+                FindViewById<TextView>(Resource.Id.DollDBDetailToolbarDicNumber).Text = $"No. {doll.DicNumber}";
+                FindViewById<TextView>(Resource.Id.DollDBDetailToolbarName).Text = $"{doll.Name} - {doll.CodeName}";
+
+                // Inflate CardView Layouts
                 basicInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_Basic, new LinearLayout(this), true);
                 buffInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_Buff, new LinearLayout(this), true);
                 skillInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_Skill, new LinearLayout(this), true);
@@ -125,15 +131,14 @@ namespace GFI_with_GFS_A
                 abilityInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_Ability, new LinearLayout(this), true);
                 abilityRadarChartRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_AbilityChart, new LinearLayout(this), true);
 
-                FindViewById<TextView>(Resource.Id.DollDBDetailToolbarDicNumber).Text = $"No. {doll.DicNumber}";
-                FindViewById<TextView>(Resource.Id.DollDBDetailToolbarName).Text = $"{doll.Name} - {doll.CodeName}";
-
+                // Init Refresh and Snackbar Layout
                 refreshMainLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.DollDBDetailMainRefreshLayout);
                 refreshMainLayout.Refresh += async delegate { await InitLoadProcess(true); };
                 snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.DollDBDetailSnackbarLayout);
 
                 FindViewById<ImageView>(Resource.Id.DollDBDetailSmallImage).Click += DollDBDetailSmallImage_Click;
 
+                // Init Doll Voice's Features
                 if (doll.HasVoice)
                 {
                     voiceCostumeSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailVoiceCostumeSelector);
@@ -143,6 +148,7 @@ namespace GFI_with_GFS_A
                     voicePlayButton.Click += delegate { _ = PlayVoiceProcess(); };
                 }
 
+                // Init Doll Mod's Features
                 if (doll.HasMod)
                 {
                     foreach (int id in modButtonIds)
@@ -158,24 +164,26 @@ namespace GFI_with_GFS_A
                     ModStoryButton.Click += ModStoryButton_Click;
                 }
 
+                // Init Extra Menu Layout
                 FindViewById<ImageButton>(Resource.Id.DollDBExtraFeatureButton).Click += ExtraMenuButton_Click;
                 FindViewById<ImageButton>(Resource.Id.DollDBExtraFeatureButton).SetImageResource(curtainDownIcon);
                 modelDataButton = FindViewById<Button>(Resource.Id.DollDBDetailModelDataButton);
                 modelDataButton.Click += ModelDataButton_Click;
 
+                // Init Main Scroll Layout
                 scrollLayout = FindViewById<NestedScrollView>(Resource.Id.DollDBDetailScrollLayout);
                 scrollMainContainer = FindViewById<LinearLayout>(Resource.Id.DollDBDetailScrollMainLayout);
 
                 
-                abilityLevelSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityLevelSelector);
+                abilityLevelSelector = abilityInfoRootLayout.FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityLevelSelector);
                 abilityLevelSelector.ItemSelected += (sender, e) => 
                 {
                     abilityLevel = levelList[e.Position];
 
                     LoadAbility();
                 };
-                abilityFavorSelector = FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityFavorSelector);
-                abilityFavorSelector.ItemSelected += async (object sender, AdapterView.ItemSelectedEventArgs e) => 
+                abilityFavorSelector = abilityInfoRootLayout.FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityFavorSelector);
+                abilityFavorSelector.ItemSelected += (object sender, AdapterView.ItemSelectedEventArgs e) =>
                 {
                     switch (e.Position)
                     {
@@ -201,6 +209,8 @@ namespace GFI_with_GFS_A
                         LoadAbility();
                     }
                 };
+
+                // Init Chart
                 chartCompareList = abilityRadarChartRootLayout.FindViewById<Spinner>(Resource.Id.DollDBDetailAbilityChartCompareList);
                 chartCompareList.ItemSelected += (sender, e) => { LoadChart(e.Position); };
                 chart = abilityRadarChartRootLayout.FindViewById<SfChart>(Resource.Id.DollDBDetailAbilityRadarChart);
@@ -208,7 +218,7 @@ namespace GFI_with_GFS_A
                 InitCompareList();
                 ListAbilityLevelFavor();
 
-                await InitializeProcess();
+                InitializeProcess();
                 await InitLoadProcess(false);
 
                 /*if ((ETC.locale.Language == "ko") && (ETC.sharedPreferences.GetBoolean("Help_DollDBDetail", true)))
@@ -402,10 +412,8 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private async Task InitializeProcess()
+        private void InitializeProcess()
         {
-            await Task.Delay(100);
-
             try
             {
                 if (doll.HasVoice)
@@ -427,6 +435,8 @@ namespace GFI_with_GFS_A
                 {
                     Window.SetStatusBarColor(toolbarColor);
                 }
+
+                ShowTitleSubLayout();
             }
             catch (Exception ex)
             {
@@ -552,8 +562,6 @@ namespace GFI_with_GFS_A
 
                 abilityLevelSelector.Adapter = adapter;
                 abilityFavorSelector.Adapter = adapter2;
-
-                abilityFavorSelector.SetSelection(1);
             }
             catch (Exception ex)
             {
@@ -575,6 +583,7 @@ namespace GFI_with_GFS_A
 
                 foreach (DataRow dr in ETC.dollList.Rows)
                 {
+
                     cDoll = new Doll(dr);
 
                     if ((doll.DicNumber == cDoll.DicNumber) || (cDoll.Type != doll.Type))
@@ -583,6 +592,11 @@ namespace GFI_with_GFS_A
                     }
 
                     compareList.Add(cDoll.Name);
+
+                    if (cDoll.CodeName == "stg940")
+                    {
+                        continue;
+                    }
                 }
 
                 compareList.TrimExcess();
@@ -894,6 +908,7 @@ namespace GFI_with_GFS_A
             try
             {
                 refreshMainLayout.Refreshing = true;
+
                 TransitionManager.BeginDelayedTransition(refreshMainLayout);
                 scrollCardViews.Clear();
                 scrollMainContainer.RemoveAllViews();
@@ -910,16 +925,13 @@ namespace GFI_with_GFS_A
 
                 LoadAbility();
 
-                double[] dps = ETC.CalcDPS(abilityValues[1], abilityValues[4], 0, abilityValues[3], 3, int.Parse(doll.Abilities["Critical"]), 5);
-                FindViewById<TextView>(Resource.Id.DollInfoDPSStatus).Text = $"{dps[0].ToString("F2")} ~ {dps[1].ToString("F2")}";
-
                 if (ETC.useLightTheme)
                 {
                     SetCardTheme();
                 }
 
                 ShowCardViewVisibility();
-                ShowTitleSubLayout();
+                
             }
             catch (WebException ex)
             {
@@ -934,6 +946,8 @@ namespace GFI_with_GFS_A
             {
                 ETC.LogError(ex, this);
                 ETC.ShowSnackbar(snackbarLayout, Resource.String.DBDetail_LoadDetailFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+
+                Toast.MakeText(this, ex.ToString(), ToastLength.Long).Show();
             }
             finally
             {
@@ -1005,7 +1019,7 @@ namespace GFI_with_GFS_A
 
             for (int i = 0; i < nowGrade; ++i)
             {
-                gradeString.Append("★");
+                gradeString.Append('★');
             }
 
             basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoGrade).Text = gradeString.ToString();
@@ -1018,8 +1032,11 @@ namespace GFI_with_GFS_A
             basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoCountry).Text = doll.Country;
             basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoHowToGain).Text = (string)dollInfoDR["DropEvent"];
 
-            scrollCardViews.Add(basicInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout));
-            scrollMainContainer.AddView(basicInfoRootLayout);
+            if (!scrollCardViews.Contains(basicInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout)))
+            { 
+                scrollCardViews.Add(basicInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout));
+                scrollMainContainer.AddView(basicInfoRootLayout);
+            }
         }
 
         private void LoadBuff()
@@ -1108,7 +1125,7 @@ namespace GFI_with_GFS_A
                 for (int j = 0; j < s.Length; ++j)
                 {
                     EffectString[j].Append(s[j]);
-                    EffectString[j].Append("%");
+                    EffectString[j].Append('%');
 
                     if (i < (buff.Length - 1))
                     {
@@ -1142,8 +1159,11 @@ namespace GFI_with_GFS_A
 
             buffInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailEffectType).Text = effectTypeString;
 
-            scrollCardViews.Add(buffInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout));
-            scrollMainContainer.AddView(buffInfoRootLayout);
+            if (!scrollCardViews.Contains(buffInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout)))
+            {
+                scrollCardViews.Add(buffInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout));
+                scrollMainContainer.AddView(buffInfoRootLayout);
+            }
         }
 
         private void LoadSkill(bool isRefresh)
@@ -1355,6 +1375,9 @@ namespace GFI_with_GFS_A
                     abilityValues[5] = 0;
                     abilityInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollInfoAMLayout).Visibility = ViewStates.Gone;
                 }
+
+                double[] dps = ETC.CalcDPS(abilityValues[1], abilityValues[4], 0, abilityValues[3], 3, int.Parse(doll.Abilities["Critical"]), 5);
+                FindViewById<TextView>(Resource.Id.DollInfoDPSStatus).Text = $"{dps[0].ToString("F2")} ~ {dps[1].ToString("F2")}";
 
                 LoadChart(chartCompareList.SelectedItemPosition);
 

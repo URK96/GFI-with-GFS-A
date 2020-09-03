@@ -1,10 +1,16 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+
+using Com.Wang.Avi;
+
+using ImageViews.Photo;
+
 using System;
 using System.Collections;
 using System.Data;
@@ -15,22 +21,24 @@ using System.Threading.Tasks;
 
 namespace GFI_with_GFS_A
 {
-    [Activity(Label = "", Theme="@style/GFS.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "FairyDBImageViewer", Theme="@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class FairyDBImageViewer : BaseAppCompatActivity
     {
-        private DataRow FairyInfoDR = null;
-        private string FairyName = "";
-        private int FairyDicNumber = 0;
+        private Fairy fairy;
 
-        private CoordinatorLayout SnackbarLayout;
-        private ProgressBar LoadProgressBar;
-        private ImageView FairyImageView;
-        private TextView ImageStatus;
-        private Button NextButton;
-        private Button PreviousButton;
-        private TextView FairyNumStatus;
+        private AndroidX.AppCompat.Widget.Toolbar toolbar;
 
-        private int ImageNum = 1;
+        private RelativeLayout loadingLayout;
+        private AVLoadingIndicatorView loadingIndicator;
+        private TextView loadingText;
+        private CoordinatorLayout snackbarLayout;
+        private PhotoView fairyImageView;
+        private TextView imageStatus;
+        private TextView fairyNumTitle;
+
+        private Drawable imageDrawable;
+
+        private int imageNum = 1;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -38,27 +46,32 @@ namespace GFI_with_GFS_A
             {
                 base.OnCreate(savedInstanceState);
 
-                if (ETC.useLightTheme == true) SetTheme(Resource.Style.GFS_NoActionBar_Light);
+                if (ETC.useLightTheme)
+                {
+                    SetTheme(Resource.Style.GFS_Toolbar_Light);
+                }
 
                 // Create your application here
                 SetContentView(Resource.Layout.FairyDB_ImageViewer);
 
-                FairyInfoDR = ETC.FindDataRow(ETC.fairyList, "Name", Intent.GetStringExtra("Keyword"));
-                FairyName = (string)FairyInfoDR["Name"];
-                FairyDicNumber = (int)FairyInfoDR["DicNumber"];
+                fairy = new Fairy(ETC.FindDataRow(ETC.fairyList, "Name", Intent.GetStringExtra("Keyword")));
 
-                FairyImageView = FindViewById<ImageView>(Resource.Id.FairyDBImageViewerImageView);
-                LoadProgressBar = FindViewById<ProgressBar>(Resource.Id.FairyDBImageViewerLoadProgress);
-                ImageStatus = FindViewById<TextView>(Resource.Id.FairyDBImageViewerImageStatus);
-                NextButton = FindViewById<Button>(Resource.Id.FairyDBImageViewerNextButton);
-                PreviousButton = FindViewById<Button>(Resource.Id.FairyDBImageViewerPreviousButton);
-                FairyNumStatus = FindViewById<TextView>(Resource.Id.FairyDBImageViewerImageNum);
+                toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.FairyDBImageViewerMainToolbar);
 
-                SnackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FairyDBImageViewerSnackbarLayout);
+                SetSupportActionBar(toolbar);
+                SupportActionBar.SetDisplayShowTitleEnabled(false);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
-                InitProcess();
+                loadingLayout = FindViewById<RelativeLayout>(Resource.Id.FairyDBImageViewerLoadingLayout);
+                loadingIndicator = FindViewById<AVLoadingIndicatorView>(Resource.Id.FairyDBImageViewerLoadingIndicatorView);
+                loadingText = FindViewById<TextView>(Resource.Id.FairyDBImageViewerLoadingIndicatorExplainText);
+                fairyImageView = FindViewById<PhotoView>(Resource.Id.FairyDBImageViewerImageView);
+                imageStatus = FindViewById<TextView>(Resource.Id.FairyDBImageViewerImageStatus);
+                fairyNumTitle = FindViewById<TextView>(Resource.Id.FairyDBImageViewerImageNum);
 
-                LoadImage();
+                snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.FairyDBImageViewerSnackbarLayout);
+
+                _ = LoadImage();
             }
             catch (Exception ex)
             {
@@ -67,88 +80,119 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void InitProcess()
+        public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            try
-            {
-                FairyNumStatus.Text = ImageNum.ToString();
+            MenuInflater.Inflate(Resource.Menu.FairyDBImageViewerMenu, menu);
 
-                NextButton.Click += FairyImageNumChangeButton_Click;
-                PreviousButton.Click += FairyImageNumChangeButton_Click;
-            }
-            catch (Exception ex)
-            {
-                ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.InitLoad_Error, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
-            }
+            return base.OnCreateOptionsMenu(menu);
         }
 
-        private void FairyImageNumChangeButton_Click(object sender, EventArgs e)
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item?.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    OnBackPressed();
+                    break;
+                case Resource.Id.FairyDBImageViewerPreviousButton:
+                case Resource.Id.FairyDBImageViewerNextButton:
+                    _ = FairyImageStageChange(item.ItemId);
+                    break;
+                case Resource.Id.RefreshFairyImageCache:
+                    _ = LoadImage(true);
+                    break;
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
+
+        private async Task FairyImageStageChange(int id)
         {
             try
             {
-                Button b = sender as Button;
-
-                switch (b.Id)
+                switch (id)
                 {
+                    case Resource.Id.FairyDBImageViewerNextButton when imageNum is 3:
+                        imageNum = 1;
+                        break;
                     case Resource.Id.FairyDBImageViewerNextButton:
-                        if (ImageNum == 3) ImageNum = 1;
-                        else ImageNum += 1;
+                        imageNum += 1;
+                        break;
+                    case Resource.Id.FairyDBImageViewerPreviousButton when imageNum is 1:
+                        imageNum = 3;
                         break;
                     case Resource.Id.FairyDBImageViewerPreviousButton:
-                        if (ImageNum == 1) ImageNum = 3;
-                        else ImageNum -= 1;
+                        imageNum -= 1;
                         break;
                 }
 
-                FairyNumStatus.Text = ImageNum.ToString();
-
-                LoadImage();
+                await LoadImage();
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ImageViewer_ChangeImageError, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.ImageViewer_ChangeImageError, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
         }
 
-        private async void LoadImage()
+        private async Task LoadImage(bool isRefresh = false)
         {
+            await Task.Delay(100);
+
             try
             {
-                LoadProgressBar.Visibility = ViewStates.Visible;
+                fairyImageView.SetImageDrawable(null);
+                imageDrawable?.Dispose();
+                loadingLayout.Visibility = ViewStates.Visible;
+                loadingIndicator.SmoothToShow();
+                loadingText.SetText(Resource.String.Common_Load);
 
-                await Task.Delay(100);
+                string imageName = $"{fairy.DicNumber}_{imageNum}";
+                string imagePath = Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{imageName}.gfdcache");
+                string url = Path.Combine(ETC.server, "Data", "Images", "Fairy", imageName + ".png");
 
-                string ImageName = string.Format("{0}_{1}", FairyDicNumber, ImageNum);
-
-                string ImagePath = Path.Combine(ETC.cachePath, "Fairy", "Normal", ImageName + ".gfdcache");
-
-                if (File.Exists(ImagePath) == false)
+                if (!File.Exists(imagePath) || isRefresh)
                 {
-                    using (WebClient wc = new WebClient())
+                    string dTemp = Resources.GetString(Resource.String.Common_Downloading);
+
+                    loadingText.Text = dTemp;
+
+                    using (var wc = new WebClient())
                     {
-                        await Task.Run(async () => { await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "Fairy", ImageName + ".png"), ImagePath); });
+                        wc.DownloadProgressChanged += (sender, e) => { loadingText.Text = $"{dTemp}{e.ProgressPercentage}%"; };
+
+                        await wc.DownloadFileTaskAsync(url, imagePath);
                     }
                 }
 
-                FairyImageView.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(ImagePath));
+                await Task.Delay(500);
 
-                ImageStatus.Text = string.Format("{0} - {1}단계", FairyName, ImageNum);
+                loadingText.SetText(Resource.String.Common_Load);
+
+                imageDrawable = await Drawable.CreateFromPathAsync(imagePath);
+
+                fairyImageView.SetImageDrawable(imageDrawable);
+
+                fairyNumTitle.Text = $"{imageNum} 단계";
+                imageStatus.Text = $"{fairy.Name} - {imageNum}단계";
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.ImageLoad_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.ImageLoad_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
             }
             finally
             {
-                LoadProgressBar.Visibility = ViewStates.Invisible;
+                loadingText.Text = "";
+                loadingIndicator.SmoothToHide();
+                loadingLayout.Visibility = ViewStates.Gone;
             }
         }
 
         public override void OnBackPressed()
         {
+            imageDrawable?.Dispose();
+
             base.OnBackPressed();
             OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             GC.Collect();

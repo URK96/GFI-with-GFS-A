@@ -17,20 +17,24 @@ namespace GFI_with_GFS_A
     {
         private string top = "";
         private string category = "";
-        private int itemIndex = 0;
-        private int itemCount = 0;
-        private int dollDicNumber = 0;
+        private int itemIndex;
+        private int itemCount;
+        private int dollDicNumber;
         private string[] itemList;
         private string[] topTitleList;
 
-        private string language = "ko";
+        private readonly string language = "ko";
 
         private string textColor;
         private string backgroundColor;
         private int textSize = 12;
 
+        private TextView titleCategory;
+        private TextView titleNow;
+
         private ProgressBar loadProgressBar;
         private TextView mainTextView;
+        
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -60,6 +64,9 @@ namespace GFI_with_GFS_A
 
             SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.StoryReaderMainToolbar));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
+            titleCategory = FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryCategory);
+            titleNow = FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryTitle);
 
             textSize = ETC.sharedPreferences.GetInt("TextViewerTextSize", 12);
             textColor = ETC.sharedPreferences.GetString("TextViewerTextColorHex", "None");
@@ -119,8 +126,6 @@ namespace GFI_with_GFS_A
                     }
 
                     itemIndex -= 1;
-
-                    _ = LoadProcess(false);
                     break;
                 case Resource.Id.StoryReaderSkipNext:
                     if (itemIndex == itemCount)
@@ -129,10 +134,10 @@ namespace GFI_with_GFS_A
                     }
 
                     itemIndex += 1;
-
-                    _ = LoadProcess(false);
                     break;
             }
+
+            _ = LoadProcess(false);
         }
 
         private async Task LoadProcess(bool isRefresh)
@@ -143,16 +148,14 @@ namespace GFI_with_GFS_A
                 Path.Combine(ETC.cachePath, "Story", category, $"{itemIndex}.gfdcache");
 
             if (!File.Exists(file) || isRefresh)
-            {
+            {   
                 await DownloadStory();
             }
 
             await LoadText(file);
 
-            SupportActionBar.Title = $"{itemIndex}. {itemList[itemIndex - 1]}";
-
-            FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryCategory).Text = topTitleList[itemIndex - 1];
-            FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryTitle).Text = itemList[itemIndex - 1];
+            titleCategory.Text = topTitleList[itemIndex - 1];
+            titleNow.Text = $"{itemList[itemIndex - 1]}";
 
             MainThread.BeginInvokeOnMainThread(() => { loadProgressBar.Visibility = ViewStates.Invisible; });
         }

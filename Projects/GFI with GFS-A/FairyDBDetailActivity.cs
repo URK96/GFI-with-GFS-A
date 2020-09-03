@@ -22,9 +22,9 @@ namespace GFI_with_GFS_A
     public class FairyDBDetailActivity : BaseAppCompatActivity
     {
         private Fairy fairy;
-        private DataRow fairyInfoDR = null;
 
         private AndroidX.AppCompat.Widget.Toolbar toolbar;
+
         private SwipeRefreshLayout refreshMainLayout;
         private CoordinatorLayout snackbarLayout;
 
@@ -42,16 +42,16 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.FairyDBDetailLayout);
 
-               
-
-                fairyInfoDR = ETC.FindDataRow(ETC.fairyList, "DicNumber", Intent.GetIntExtra("DicNum", 0));
-                fairy = new Fairy(fairyInfoDR);
+                fairy = new Fairy(ETC.FindDataRow(ETC.fairyList, "DicNumber", Intent.GetIntExtra("DicNum", 0)));
 
                 toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.FairyDBDetailMainToolbar);
 
                 SetSupportActionBar(toolbar);
                 SupportActionBar.Title = $"No.{fairy.DicNumber} {fairy.Name}";
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
+                FindViewById<TextView>(Resource.Id.FairyDBDetailToolbarDicNumber).Text = $"No. {fairy.DicNumber}";
+                FindViewById<TextView>(Resource.Id.FairyDBDetailToolbarName).Text = $"{fairy.Name}";
 
                 refreshMainLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.FairyDBDetailMainRefreshLayout);
                 refreshMainLayout.Refresh += delegate { _ = InitLoadProcess(true); };
@@ -165,10 +165,11 @@ namespace GFI_with_GFS_A
 
             try
             {
-                Android.Graphics.Color toolbarColor = Android.Graphics.Color.ParseColor("#C040B0");
 
                 if (fairy.DicNumber >= 1000)
                 {
+                    Android.Graphics.Color toolbarColor = Android.Graphics.Color.ParseColor("#C040B0");
+
                     toolbar.SetBackgroundColor(toolbarColor);
 
                     if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
@@ -188,9 +189,9 @@ namespace GFI_with_GFS_A
         {
             try
             {
-                var FairyImageViewer = new Intent(this, typeof(FairyDBImageViewer));
-                FairyImageViewer.PutExtra("Keyword", fairy.Name);
-                StartActivity(FairyImageViewer);
+                var fairyImageViewer = new Intent(this, typeof(FairyDBImageViewer));
+                fairyImageViewer.PutExtra("Keyword", fairy.Name);
+                StartActivity(fairyImageViewer);
                 OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
             }
             catch (Exception ex)
@@ -213,22 +214,25 @@ namespace GFI_with_GFS_A
 
                 try
                 {
-                    if (!File.Exists(Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache")) || isRefresh)
+                    string smallImagePath = Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache");
+                    string url = Path.Combine(ETC.server, "Data", "Images", "Fairy", $"{fairy.DicNumber}_1.png");
+
+                    if (!File.Exists(smallImagePath) || isRefresh)
                     {
-                        using (WebClient wc = new WebClient())
+                        using (var wc = new WebClient())
                         {
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "Fairy", $"{fairy.DicNumber}_1.png"), Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache"));
+                            await wc.DownloadFileTaskAsync(url, smallImagePath);
                         }
                     }
 
                     if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", true))
                     {
-                        Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache"));
+                        var drawable = Drawable.CreateFromPath(smallImagePath);
                         drawable.SetAlpha(40);
                         FindViewById<RelativeLayout>(Resource.Id.FairyDBDetailMainLayout).Background = drawable;
                     }
 
-                    FindViewById<ImageView>(Resource.Id.FairyDBDetailSmallImage).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache")));
+                    FindViewById<ImageView>(Resource.Id.FairyDBDetailSmallImage).SetImageDrawable(Drawable.CreateFromPath(smallImagePath));
                 }
                 catch (Exception ex)
                 {
@@ -252,15 +256,18 @@ namespace GFI_with_GFS_A
 
                 try
                 {
-                    if (!File.Exists(Path.Combine(ETC.cachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache")) || isRefresh)
+                    string skillIconPath = Path.Combine(ETC.cachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache");
+                    string url2 = Path.Combine(ETC.server, "Data", "Images", "FairySkill", $"{fairy.SkillName}.png");
+
+                    if (!File.Exists(skillIconPath) || isRefresh)
                     {
-                        using (WebClient wc = new WebClient())
+                        using (var wc = new WebClient())
                         {
-                            await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "FairySkill", $"{fairy.SkillName}.png"), Path.Combine(ETC.cachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache"));
+                            await wc.DownloadFileTaskAsync(url2, skillIconPath);
                         }
                     }
 
-                    FindViewById<ImageView>(Resource.Id.FairyDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache")));
+                    FindViewById<ImageView>(Resource.Id.FairyDBDetailSkillIcon).SetImageDrawable(Drawable.CreateFromPath(skillIconPath));
                 }
                 catch (Exception ex)
                 {
@@ -282,8 +289,8 @@ namespace GFI_with_GFS_A
                 string[] effect = fairy.SkillEffect;
                 string[] rate = fairy.SkillRate;
 
-                StringBuilder sb1 = new StringBuilder();
-                StringBuilder sb2 = new StringBuilder();
+                var sb1 = new StringBuilder();
+                var sb2 = new StringBuilder();
 
                 for (int i = 0; i < effect.Length; ++i)
                 {

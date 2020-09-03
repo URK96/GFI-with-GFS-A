@@ -1,26 +1,25 @@
-﻿# T-Doll DB Update 2020/07/31
+﻿# T-Doll DB Update 2020/08/30
 
-- Add Gunslinger Girl T-Dolls
-- Add Gunslinger Girl T-Doll's costumes
-- Add Gunslinger Girl T-Doll's voices
-- Add new T-Doll (Lusa, VSK-94, S-ACR, Rex Zero 1)
+- Add new costumes (AUG, NTW-20, Mk48, M1897, Mosin-Nagant)
+- Add new T-Doll (StG-940, AUG Para, General Liu Rifle, Mondragon M1908, PM1910, VHS)
 
 
-# Coalition DB Update 2020/07/28
+# Coalition DB Update 2020/08/30
 
 - Add new Coalition units
 - Add new Coalition boss unit
+- Change some coalition images
 
 
-# Equip DB Update 2020/04/17
+# Equip DB Update 2020/08/30
 
 - Add new equipment
-- Add 8th MOD T-Doll equipment
+- Add 9th MOD T-Doll equipment
 
 
-# Fairy DB Update 2020/04/17
+# Fairy DB Update 2020/08/30
 
-- Add new fairy (Origin Fairy)
+- Add new fairy
 
 
 # Enemy DB Update 2019/09/15

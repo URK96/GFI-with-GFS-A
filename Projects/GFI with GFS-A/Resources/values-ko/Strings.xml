@@ -82,6 +82,7 @@
   <string name="Game_Event_PhotoGalleryPuzzle">사진관 미스테리</string>
   <string name="Game_Event_BihaiSecret">바다 저 멀리</string>
   <string name="Game_Event_DreamDrama">몽중극</string>
+  <string name="Game_Event_DualRandomness">이중난수</string>
 
   <!--Activity String-->
   <string name="Activity_DollMainActivity">인형 목록</string>
@@ -440,6 +441,10 @@
   <!--FairyDBMain-->
   <string name="FairyDBMainActivity_Title">요정 목록</string>
   <string name="FairyDBMainActivity_SearchHint">요정 이름 검색</string>
+
+  <!--FairyDBImageViewer-->
+  <string name="FairyDBImageViewer_PreviousButton">이전 단계</string>
+  <string name="FairyDBImageViewer_NextButton">다음 단계</string>
   
   <!--FSTDBDetail-->
   <string name="FSTDBDetail_Type_ATW">대전차화기</string>

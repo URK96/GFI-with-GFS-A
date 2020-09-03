@@ -15,7 +15,23 @@
             android:minHeight="?android:attr/actionBarSize"
             android:background="@color/MainColor"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            android:id="@+id/FairyDBDetailMainToolbar"/>
+            android:id="@+id/FairyDBDetailMainToolbar">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/FairyDBDetailToolbarDicNumber"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/FairyDBDetailToolbarName"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

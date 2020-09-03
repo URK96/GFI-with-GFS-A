@@ -29,17 +29,17 @@ namespace GFI_with_GFS_A
         private TextView loadingText;
         private CoordinatorLayout snackbarLayout;
         private Spinner costumeList;
-        private PhotoView CoalitionImageView;
+        private PhotoView coalitionImageView;
         private TextView imageStatus;
 
         private List<string> costumes;
 
         private Drawable imageDrawable;
 
-        private bool isDamage = false;
-        private bool isAwake = false;
-        private int costumeIndex = 0;
-        private int modIndex = 0;
+        private bool isDamage;
+        private bool isAwake;
+        private int costumeIndex;
+        private int modIndex;
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
@@ -61,7 +61,7 @@ namespace GFI_with_GFS_A
                 loadingLayout = FindViewById<RelativeLayout>(Resource.Id.CoalitionDBImageViewerLoadingLayout);
                 loadingIndicator = FindViewById<AVLoadingIndicatorView>(Resource.Id.CoalitionDBImageViewerLoadingIndicatorView);
                 loadingText = FindViewById<TextView>(Resource.Id.CoalitionDBImageViewerLoadingIndicatorExplainText);
-                CoalitionImageView = FindViewById<PhotoView>(Resource.Id.CoalitionDBImageViewerImageView);
+                coalitionImageView = FindViewById<PhotoView>(Resource.Id.CoalitionDBImageViewerImageView);
                 snackbarLayout = FindViewById<CoordinatorLayout>(Resource.Id.CoalitionDBImageViewerSnackbarLayout);
                 costumeList = FindViewById<Spinner>(Resource.Id.CoalitionDBImageViewerCostumeList);
                 costumeList.ItemSelected += (sender , e) =>
@@ -230,7 +230,7 @@ namespace GFI_with_GFS_A
 
             try
             {
-                CoalitionImageView.SetImageDrawable(null);
+                coalitionImageView.SetImageDrawable(null);
                 imageDrawable?.Dispose();
                 loadingLayout.Visibility = ViewStates.Visible;
                 loadingIndicator.SmoothToShow();
@@ -272,7 +272,7 @@ namespace GFI_with_GFS_A
 
                 imageDrawable = await Drawable.CreateFromPathAsync(imagePath);
 
-                CoalitionImageView.SetImageDrawable(imageDrawable);
+                coalitionImageView.SetImageDrawable(imageDrawable);
 
                 string awakeText = Resources.GetString(Resource.String.CoalitionDBImageViewer_ImageStatusAwake);
                 string damageText = isDamage ? Resources.GetString(Resource.String.CoalitionDBImageViewer_ImageStatusDamage) : Resources.GetString(Resource.String.CoalitionDBImageViewer_ImageStatusNormal);

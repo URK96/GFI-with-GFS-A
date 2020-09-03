@@ -69,6 +69,7 @@
                 <xs:element name="HasCensor" type="xs:boolean" default="false" minOccurs="0" />
                 <xs:element name="CensorType" type="xs:string" minOccurs="0" />
                 <xs:element name="ProductDialog" type="xs:string" minOccurs="0" />
+                <xs:element name="UnitExplain" type="xs:string" minOccurs="0" />
               </xs:sequence>
             </xs:complexType>
           </xs:element>
@@ -100,6 +101,7 @@
     <SkillMag1>0초,0초,12%,30%</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>철혈의 하급 기갑 유닛. 화력과 기동력 모두 낮아 후방에서 순찰과 정찰 임무를 담당한다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>스카웃</Name>
@@ -125,6 +127,7 @@
     <SkillMag1>2초,8초,5초,50%,14</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>철혈의 하급 기갑 유닛. 화력은 비교적 약하지만 기동력과 은폐성이 매우 뛰어나다. 주로 전선 정찰과 정보 수집에 투입된다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>리퍼</Name>
@@ -150,6 +153,7 @@
     <SkillMag1>6초,8초,5초,120%,90%</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>철혈의 표준 규격 작전 유닛. 근거리 돌격 무기를 장착했다. 기동력이 비교적 높아 전장에서 선봉 또는 정찰을 맡는다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>스케어크로우</Name>
@@ -192,6 +196,7 @@
     <SkillMag4>0초,0초,6초,10%</SkillMag4>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>정보 수집분석을 잘하지만 정면 전투에는 다소 약한 면이 있다. 철혈에서 지위가 낮은 편이다. 이성적이고 과묵한 독설가 직책에 충실하며 감정에 휘둘리는 것을 타기한다. 그래서 감정이 풍부한 주제에 명령에 복종할 줄만 아는 그리폰 인형을 상대로 우월감을 가진다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>디너게이트</Name>
@@ -217,6 +222,7 @@
     <SkillMag1>0초,3333초,10초,6회,100%,10초,5초,100%</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>철혈의 하급 기갑 유닛. 약하지만 양산에 적합하여 순찰 및 수색 임무에 투입된다. 단순한 몸통 박치기로 공격하지만 숫자가 불어나면 결코 무시할 수가 없다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>베스피드</Name>
@@ -242,6 +248,7 @@
     <SkillMag1>5초,8초,5초,6%,20%</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>철혈의 표준 규격 작전 유닛. 원거리 돌격 무기를 장착했다. 하급 군용인형과 비슷한 화력을 지녀 소규모 전투에서 주력을 맡는다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>엑스큐셔너</Name>
@@ -287,6 +294,7 @@
     <SkillMag4>0초,0초,20%</SkillMag4>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>엘리트 척후에 해당하며 스케어크로우보다 지위가 약간 높고 자주 둘이서 함께 행동한다. 저돌적이고 괄괄한 여장부 성격을 가진 인형. 정정당당하게 싸우길 좋아하며 약자를 괴롭히는 건 싫어한다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>예거</Name>
@@ -312,6 +320,7 @@
     <SkillMag1>0초,0초,4회,350%</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>철혈의 표준 규격 작전 유닛 원거리 저격 무기를 장착했다. 맷집이 부실하지만 화력과 명중률이 높다 평소 작전에서 반드시 주의해야 할 상대.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>가드</Name>
@@ -337,6 +346,7 @@
     <SkillMag1>5초,8초,5초,20,40</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>철혈의 고급 작전 유닛 방패와 근거리 화기를 장착했다. 보이는 것처럼 수비를 담당하여 중요한 유닛을 호위하거나 전선을 추진할 때 강력한 선봉으로 등장한다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>헌터</Name>
@@ -385,6 +395,7 @@
     <SkillMag4>0초,0초,20%</SkillMag4>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>기동력과 지능이 높으며 교란과 추격 작전에 특화되어 있다. 스케어크로우와 엑스큐셔너와 함께할 때 최고의 실력을 발휘할 수 있다. 침착하고 냉정하며 온갖 수단으로 적을 궁지에 몰아넣어 붙잡는 것을 선호한다. 그리폰을 매우 오만하게 대하지만 너무 비겁한 수단을 쓰는 건 좋아하지 않는다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>드라군</Name>
@@ -414,6 +425,7 @@
     <SkillMag2>0초,0초,3초,15%,25%</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>철혈의 고급 작전 유닛 소형 보행기와 돌격 무기를 장착했다. 화력과 사거리 그리고 기동력 모두 상당한 수준으로 전장에서 강행돌파를 위해 투입된다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>재규어</Name>
@@ -439,6 +451,7 @@
     <SkillMag1>0초,0초,1.25배</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>철혈의 표준 규격 기갑 유닛. 일종의 자주 박격포로 기동성이 떨어지지만 위력만큼은 정규군 무기와 맞먹는다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>네메움</Name>
@@ -468,6 +481,7 @@
     <SkillMag2>0초,0초,0.5%</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>군용 표준 규격 기갑 유닛이지만 출고되기 전에 철혈에게 탈취당했다. 현대 군용화기 시스템을 탑재하여 에너지를 충전하여 강력한 사격을 한다. 하지만 공격 속도가 느리고 방어력이 부실하다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>이지스</Name>
@@ -497,6 +511,7 @@
     <SkillMag2>0초,0초,10%,5%</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>군용 표준 규격 기갑 유닛이지만 출고되기 전에 철혈에게 탈취당했다. 제식무기인 전기충격기와 방패를 장착했다. 근접전 능력이 뛰어나며 두꺼운 장갑을 지녔다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>맨티코어</Name>
@@ -526,6 +541,7 @@
     <SkillMag2>0초,10초,3초,30%,30%,2.5초</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>군용 표준 규격 기갑 유닛이지만 출고되기 전에 철혈에게 탈취당했다. 현대 군용 돌격 무기와 장갑을 탑재하여 화력과 방어력 모두 뛰어나다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>인트루더</Name>
@@ -568,6 +584,7 @@
     <SkillMag4>0초,0초,10%,10%</SkillMag4>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>책략 제공을 담당하며 해킹 및 신호 간섭에도 특화되어 있다. 게이저의 직속 부하지만 자신도 작전 인형을 지휘할 수 있는 지위가 다소 높은 인형이다. 언행은 우아하고 상냥하지만 소름 끼치는 공허가 느껴진다. 인간의 희극을 좋아하는데 이는 어쩌면 자신의 개성을 찾아내기 위함일 수도 있다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>디스트로이어</Name>
@@ -613,6 +630,53 @@
     <SkillMag4>0초,0초,2.5초,0.15배,10%</SkillMag4>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>폭파 임무에 특화되어 있으며 폭탄 해체도 전문가 수준이다. 개인 전투 능력도 괜찮아 가끔 알케미스트와 조를 짤 때가 있다. 평소 건방지고 입이 험하지만 츤데레 끼가 있다. 어린애처럼 투정을 부리며 다급해지면 울음을 터뜨린다. 자신의 키를 매우 신경 쓰고 있다.</UnitExplain>
+  </Coalition>
+  <Coalition>
+    <Name>우로보로스</Name>
+    <CodeName>Weaver</CodeName>
+    <Type>LightArmor;Doll;Remote</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>true</IsBoss>
+    <BornGrade>3</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
+    <Effect1>EV,CR</Effect1>
+    <EffectMag1>6,6;15,15;15,15;15,15</EffectMag1>
+    <EffectType1>All</EffectType1>
+    <Effect2>FR,AC</Effect2>
+    <EffectMag2>5,5;12,12;12,12;12,12</EffectMag2>
+    <EffectType2>LightArmor</EffectType2>
+    <DicNumber>21</DicNumber>
+    <Skill1>맹독 추락</Skill1>
+    <SkillExplain1>1초 간격으로 무작위 적 유닛에게 편제당 비례하는 피해를 준다. 1회 발동에 8회 피해를 준다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;피해량</SkillEffect1>
+    <SkillMag1>6초,12초,1.2배</SkillMag1>
+    <FASkillMag1>6초,12초,1.5배</FASkillMag1>
+    <Skill2>뫼비우스</Skill2>
+    <SkillExplain2>&lt;패시브&gt; 아군이 점령한 거점에서 적과 조우할 경우 아군 전체의 사속을 증가시키고 이동속도를 3 증가시킨다. 야간전에서는 아무 거점에서도 적용된다.     &lt;액티브&gt; 일정 거리 이내의 적을 지정해서 발동한다. 지정한 적을 구속하여 1턴간 이동할 수 없게 한다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;패시브 사속 증가치;액티브 사용 거리</SkillEffect2>
+    <SkillMag2>0턴,3턴,15%,2칸</SkillMag2>
+    <Skill3>독니</Skill3>
+    <SkillExplain3>우로보로스의 일반 공격 1회는 화력 0.5배의 2단 공격으로 구성된다. 이 유닛이 적에게 치명타를 적중시킬 경우, 대상이 받는 피해량을 증폭시킨다. 최대 3회 중첩</SkillExplain3>
+    <SkillEffect3>선 쿨타임;쿨타임;지속시간;증폭 피해량</SkillEffect3>
+    <SkillMag3>0초,0초,3초,5%</SkillMag3>
+    <Skill4>호르몬 활성화</Skill4>
+    <SkillExplain4>아군 전체의 치명타율을 증가시킨다.</SkillExplain4>
+    <SkillEffect4>선 쿨타임;쿨타임;지속시간;치명타율 증가량</SkillEffect4>
+    <SkillMag4>3초,8초,5초,20%</SkillMag4>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+    <UnitExplain>단거리 돌파 또는 수비 작전에 특화되어 지능과 전투 능력 모두 높은 나비 사건 이후 제작된 인형. 하지만 실험작이기 때문에 AI가 불안정하고 통제하기 어렵다. 겉으로는 진중해 보여도 속으론 매우 거만하다. 비록 강한 무력과 지능을 가졌지만 실전 경험이 적고 행동 스타일도 불안정하므로 적과 아군 모두 그녀에 대해 방심할 수가 없다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>아키텍트</Name>
@@ -658,6 +722,7 @@
     <SkillMag4>0초,0초,20%</SkillMag4>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>원거리 파괴 및 화력 지원이 특기인 강력한 인형 평소 혼자서 행동한다. 활발하고 해맑은 성격에 생각이 없는 소녀. 언제나 즐거워 보이며 그리폰에 대해서도 적대심이 없고 철혈에는 최소한의 명령 복종만 하는 수준이다. 하지만 폭격과 파괴에 열중하기 때문에 여전히 골치 아픈 상대다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>브루트</Name>
@@ -687,6 +752,7 @@
     <SkillMag2>0초,0초,3초,7,25%</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>철혈의 신형 근거리 작전 유닛 적에게 빠르게 접근해 무시무시한 피해를 입힌다. 하지만 장갑이 부실해 파괴되기 쉽다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>스트라이커</Name>
@@ -712,6 +778,7 @@
     <SkillMag1>0초,0초,5초,70%</SkillMag1>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>철혈의 표준 규격 작전 유닛 기관총을 장착하여 화력과 사속 모두 높다. 전장에서 주로 화력 행사와 제압 사격을 담당한다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>타란툴라</Name>
@@ -741,6 +808,7 @@
     <SkillMag2>0초,3333초,3%</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>디너게이트의 장갑 강화 버전. 생존력이 크게 상승했으며 무리를 지어 적에게 큰 피해를 입힐 수 있습니다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>가드SWAP</Name>
@@ -770,11 +838,12 @@
     <SkillMag2>3초,6초,5초,20%,1.2배</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>강화된 가드. 방패와 근거리 화기 모두 강화되어 수비가 더욱 견고해졌다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>리퍼SWAP</Name>
     <CodeName>Ripper_SWAP</CodeName>
-    <Type>LightArmor;Doll;CloseIn</Type>
+    <Type>LightArmor;Doll;Remote</Type>
     <Affiliation>S.F.</Affiliation>
     <IsBoss>false</IsBoss>
     <BornGrade>2</BornGrade>
@@ -799,5 +868,36 @@
     <SkillMag2>0초,0초,8초,2초,3초</SkillMag2>
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
+    <UnitExplain>성능을 대폭 강화한 리퍼. 화력과 기동력 모두 크게 상승했다. 과거의 자신과 이별하기 위해 머리색과 제복을 교체했다.</UnitExplain>
+  </Coalition>
+  <Coalition>
+    <Name>베스피드SWAP</Name>
+    <CodeName>Vespid_SWAP</CodeName>
+    <Type>LightArmor;Doll;Remote</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>false</IsBoss>
+    <BornGrade>2</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>94</DicNumber>
+    <Skill1>무리의 지원</Skill1>
+    <SkillExplain1>모든 원격 유닛의 사속과 명중을 증가시킨다. 중첩 불가능.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;지속시간;사속 증가량;명중 증가량</SkillEffect1>
+    <SkillMag1>5초,8초,5초,8%,30%</SkillMag1>
+    <Skill2>화력 교란</Skill2>
+    <SkillExplain2>첫 공격은 체력이 가장 높은 적을 공격하여 반드시 치명타가 발생하는 동시에 대상의 화력, 사속, 이동속도를 감소시킨다. 첫 공격 후 3발 간격으로 다시 발동한다. 중첩 불가능.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;지속시간;화력 감소량;사속 감소량;이동속도 감소량</SkillEffect2>
+    <SkillMag2>0초,0초,3초,10%,10%,10%</SkillMag2>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+    <UnitExplain>성능을 대폭 강화한 베스피드 아군 유닛을 약화하는 능력을 습득했습니다. 새로운 헬멧과 보호구를 분출받아 사기가 높습니다.</UnitExplain>
   </Coalition>
 </NewDataSet>

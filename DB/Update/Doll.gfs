@@ -6169,7 +6169,7 @@
     <ModSkillEffect>화력 상승치;사속 상승치</ModSkillEffect>
     <ModSkillMag>20%,30%</ModSkillMag>
     <OnlyUseEquip>K6-24X56</OnlyUseEquip>
-    <Costume>달빛 바다</Costume>
+    <Costume>달빛 바다;무쇠 칼날</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <ModVoices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</ModVoices>
@@ -6487,7 +6487,7 @@
     <ModSkillEffect>피해량</ModSkillEffect>
     <ModSkillMag>4배</ModSkillMag>
     <OnlyUseEquip>20mm HEI</OnlyUseEquip>
-    <Costume>루돌프;무더위 속 임무;VIP 체험관</Costume>
+    <Costume>루돌프;무더위 속 임무;VIP 체험관;아이언 하트</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Kayano Ai</VoiceActor>
@@ -7565,6 +7565,7 @@
     <SkillExplain>지속시간 동안 자신의 명중을 상승시키고 모든 공격이 치명타가 된다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;명중 증가치</SkillEffect>
     <SkillMag>3초,18초,6초,70%</SkillMag>
+    <Costume>초연의 호령</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Tachibana Ricca</VoiceActor>
@@ -8033,7 +8034,7 @@
     <SkillExplain>공격력의 X배의 피해를 주는 추가탄을 발사하고 거리 N칸만큼 적을 밀어낸다</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;피해량;넉백 거리</SkillEffect>
     <SkillMag>8초,16초,2배,3</SkillMag>
-    <Costume>일렉트릭 위치</Costume>
+    <Costume>일렉트릭 위치;창공 순찰자</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN;</Voices>
     <VoiceActor>Koichi Makoto</VoiceActor>
@@ -10140,6 +10141,7 @@
     <SkillExplain>자신의 명중을 감소시키지만 사속을 상승시키고 난사한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;명중 감소치;사속 증가치</SkillEffect>
     <SkillMag>4초,16초,7초,0%,150%</SkillMag>
+    <Costume>전선 장의사</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Waki Azumi</VoiceActor>
@@ -14757,5 +14759,232 @@
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>안녕하세요, 안젤리카라고 해요. 제가 필요한 곳이 있다면 명령을 내려주세요.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>StG-940</Name>
+    <Name_EN>StG-940</Name_EN>
+    <CodeName>stg940</CodeName>
+    <Nickname>StG-940</Nickname>
+    <Model>Wieger 940</Model>
+    <Country>East Germany</Country>
+    <Type>AR</Type>
+    <Grade>3</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;A;B;A;B;A</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>10</MoveSpeed>
+    <Critical>20</Critical>
+    <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>0,0,1,0,2,0,0,0,1</EffectFormation>
+    <Effect>EV;15</Effect>
+    <EffectType>SMG</EffectType>
+    <DropEvent>2020년 8월 출석보상</DropEvent>
+    <DicNumber>314</DicNumber>
+    <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
+    <Skill>전력전개</Skill>
+    <SkillExplain>지속시간 동안 자신의 화력과 사속, 명중을 증가시킨다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;사속 증가치;명중 증가치</SkillEffect>
+    <SkillMag>6초,8초,5초,15%,30%,80%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>咸兵</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>안녕하세요, 지휘관님. StG940이 신고합니다. 위거라고 부르셔도 좋아요, 위거 누나~나 위거 언니~라고 불러주시면 더 좋고요♪</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>AUG Para</Name>
+    <Name_EN>AUG Para</Name_EN>
+    <CodeName>AUGPARA</CodeName>
+    <Nickname>AUG Para</Nickname>
+    <Model>Steyr AUG Para</Model>
+    <Country>Austria</Country>
+    <Type>SMG</Type>
+    <Grade>5</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;B;S;A;A;A</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>12</MoveSpeed>
+    <Critical>5</Critical>
+    <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>1,0,0,1,2,0,1,0,0</EffectFormation>
+    <Effect>FR,AC;15,25</Effect>
+    <EffectType>AR</EffectType>
+    <DropEvent>이중난수 이벤트 보급상자 개봉 및 777개 확정</DropEvent>
+    <DicNumber>315</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>사고전환</Skill>
+    <SkillExplain>스킬을 사용하여 모드를 전환한다. 변동 수치는 다른 증감효과 계산 후 마지막으로 가산하며, 이미 전환한 수치는 기타 버프 해제로 인해 제거되지 않는다. 또한 상태를 전환한 후 먼저 변환된 수치를 환원한다.   &lt;공격 모드&gt; 일정 시간마다 자신의 회피 수치를 화력과 명중으로 변환한다. 회피 1당 화력 2, 명중 1을 증가시키며 회피가 일정 수치 미만인 경우에만 다른 모드로 전환할 수 있다.   &lt;회피 모드&gt; 일정 시간마다 자신의 화력과 명중을 회피로 변환한다. 화력 1, 명중 1당 회피 4를 증가시키며 화력과 명중이 일정 수치 미만이면 변환이 중단된다. </SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;수치 변환 주기;공격 모드 회피 하한치;회피 모드 화력 하한치;회피 모드 명중 하한치</SkillEffect>
+    <SkillMag>1초,1초,0.1초,75,35,23</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>RIRE</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>오늘부터 그리폰에서 일하게 된 AUG Para입니다! 잘 부탁드려요, 선배님. 아침, 여기 애완동물을 데리고 와도 되는 거죠?</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>류 소총</Name>
+    <CodeName>GeneralLiu</CodeName>
+    <Nickname>류 소총</Nickname>
+    <Model>General Liu's Rifle</Model>
+    <Country>China</Country>
+    <Type>RF</Type>
+    <Grade>5</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>C;A;C;A;A;S</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>7</MoveSpeed>
+    <Critical>40</Critical>
+    <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
+    <ConsumeFood>30/45/60/75/90</ConsumeFood>
+    <EffectFormation>0,1,0,0,2,1,0,1,0</EffectFormation>
+    <Effect>CL;18</Effect>
+    <EffectType>HG</EffectType>
+    <DropEvent>이중난수 이벤트 한정 구출</DropEvent>
+    <DicNumber>316</DicNumber>
+    <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
+    <Skill>공동전선</Skill>
+    <SkillExplain>&lt;패시브&gt; 전투 개시 시, 3편제 지원인형 3기를 증원으로 소환한다. 지원 인형은 아군 진형 후방에 도착하면 공격을 개시하며, 류 소총의 일부 능력치를 물려받고 편제 당 체력 5를 가지며 기타 능력치 및 공격 방식은 류 소총을 따른다.   &lt;액티브 - 일반 모드&gt; 사속이 10% 감소하고 화력이 20% 증가한다. 가장 멀리 있는 적을 우선으로 공격한다.   &lt;액티브 - 자동 모드&gt; 화력이 10% 감소하고 사속이 20% 증가한다. 가장 가까운 적을 우선 공격한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지원인형 화력 수치;지원인형 사속 수치;지원인형 명중 수치</SkillEffect>
+    <SkillMag>1초,1초,35%,60%,40%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>八号地球</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>처음 뵙겠습니다, 지휘관님. 류칭언, 또는 류 소총이라고합니다. 네, 일단 여기까지만 할게요... 죄송합니다.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>몬드라곤 M1908</Name>
+    <CodeName>MondragonM1908</CodeName>
+    <Nickname>몬드라곤 M1908</Nickname>
+    <Model>Mondragón M1908</Model>
+    <Country>Mexico</Country>
+    <Type>RF</Type>
+    <Grade>4</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;B;B;A;A;A</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>7</MoveSpeed>
+    <Critical>40</Critical>
+    <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
+    <ConsumeFood>30/45/60/75/90</ConsumeFood>
+    <EffectFormation>0,1,0,0,2,0,0,1,0</EffectFormation>
+    <Effect>FR;18</Effect>
+    <EffectType>RF</EffectType>
+    <DropEvent>이중난수 이벤트 한정 구출</DropEvent>
+    <DicNumber>317</DicNumber>
+    <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
+    <Skill>필승의 신념</Skill>
+    <SkillExplain>&lt;패시브&gt; 자신이 제대 리더일 경우, 전투 중 자신의 사속을 35% 감소시키는 대신 기타 소총 인형의 치명타율과 치명피해를 증가시킨다.   &lt;액티브&gt; 스킬 발동 시 자신 버프칸 위의 아군 인형의 화력과 사속을 증가시킨다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;패시브 치명타율 증가치;패시브 치명피해 증가치;액티브 화력 증가치;액티브 사속 증가치</SkillEffect>
+    <SkillMag>5초,16초,5초,20%,10%,15%,12%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>荒境TS</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>처음 뵙겠습니다, 지휘관님. 몬드라곤 M1908이라고 합니다. 필요한 일이 있다면 얼마든지 말씀해 주십시오.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>VHS</Name>
+    <Name_EN>VHS</Name_EN>
+    <CodeName>VHS</CodeName>
+    <Nickname>VHS</Nickname>
+    <Model>HS VHS (Višenamjenska Hrvatska Strojnica)</Model>
+    <Country>Croatia</Country>
+    <Type>AR</Type>
+    <Grade>5</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;A;B;A;A;S</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>10</MoveSpeed>
+    <Critical>20</Critical>
+    <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>0,0,1,0,2,1,0,0,1</EffectFormation>
+    <Effect>AC,EV;30,18</Effect>
+    <EffectType>SMG</EffectType>
+    <DropEvent>이중난수 이벤트 클리어 보상</DropEvent>
+    <DicNumber>318</DicNumber>
+    <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
+    <Skill>해석 침투</Skill>
+    <SkillExplain>&lt;패시브&gt; 1초마다 해석도를 1개 얻는다. 해석도 당 최종 피해량을 일정 수치 증가시킨다. 최대 10중첩.   &lt;액티브&gt; 모든 해석도를 소모하여 적군에서 가장 높은 화력, 명중, 사속 수치를 자신에게 가산한다. 단 화력, 명중, 사속은 일정 비율까지만 증가한다. 또한 지속시간 동안 해석도를 얻을 수 없다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;패시브 피해량 증가;액티브 화력 최대치;액티브 명중 최대치;액티브 사속 최대치</SkillEffect>
+    <SkillMag>5초,8초,6초,2.5%,45%,80%,40%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>八九香香鸡</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>...아, 책 읽던 사이에 벌써 도착했네? VHS, 입대를 신고합니다. 마음대로 부려도 돼.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>PM1910</Name>
+    <Name_EN>PM1910</Name_EN>
+    <CodeName>PM1910</CodeName>
+    <Nickname>PM1910</Nickname>
+    <Model>PM M1910</Model>
+    <Country>Russia</Country>
+    <Type>MG</Type>
+    <Grade>4</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>A;A;B;A;B;A</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>4</MoveSpeed>
+    <Critical>5</Critical>
+    <Bullet>10</Bullet>
+    <ConsumeAmmo>40/65/90/115/140</ConsumeAmmo>
+    <ConsumeFood>30/45/60/75/90</ConsumeFood>
+    <EffectFormation>2,1,0,0,1,1,0,0,0</EffectFormation>
+    <Effect>FR,AM;10,15</Effect>
+    <EffectType>SG</EffectType>
+    <DropEvent>이중난수 이벤트 클리어 보상</DropEvent>
+    <DicNumber>319</DicNumber>
+    <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
+    <Skill>살기 발산</Skill>
+    <SkillExplain>&lt;패시브&gt; 재장전하는 동안 버프칸 위의 아군 인형의 회피가 증가하고, 기타 위치의 아군 인형의 화력이 증가한다.   &lt;액티브&gt; 현재 장탄수를 12발 추가한다. 추가 탄환을 소모하는 동안 자신의 명중을 증가시킨다. 단, 다음 재장전 시간이 4초 증가한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;패시브 회피 증가치;패시브 화력 증가치;액티브 명중 증가치</SkillEffect>
+    <SkillMag>3초,18초,20%,10%,80%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>XQ</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>PM1910이다, 쌈박질할 일이 있으면 바로 날 부르라고!</ProductDialog>
   </Doll>
 </NewDataSet>

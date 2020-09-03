@@ -37,7 +37,8 @@ namespace GFI_with_GFS_A
             "PV_PolarizedLight",
             "PV_PhotoGalleryPuzzle",
             "PV_BihaiSecret",
-            "PV_DreamDrama"
+            "PV_DreamDrama",
+            "PV_DualRandomness"
         };
         internal static string[] titleList =
         {
@@ -224,10 +225,7 @@ namespace GFI_with_GFS_A
         {
             public event EventHandler<int> ItemClick;
 
-            public GFPVListAdapter()
-            {
-
-            }
+            public GFPVListAdapter() { }
 
             public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
             {
@@ -235,80 +233,36 @@ namespace GFI_with_GFS_A
 
                 vh.Title.Text = titleList[position];
 
-                int iconId = 0;
-
-                switch (position)
+                int iconId = position switch
                 {
-                    case 0:
-                        iconId = Resource.Drawable.Album_Cube;
-                        break;
-                    case 1:
-                        iconId = Resource.Drawable.Album_HuntingRabbit;
-                        break;
-                    case 2:
-                        iconId = Resource.Drawable.Album_Arctic;
-                        break;
-                    case 3:
-                        iconId = Resource.Drawable.Album_DeepDive;
-                        break;
-                    case 4:
-                        iconId = Resource.Drawable.Album_Singularity;
-                        break;
-                    case 5:
-                        iconId = Resource.Drawable.Album_DJMAX;
-                        break;
-                    case 6:
-                        iconId = Resource.Drawable.Album_ContinuumTurbulence;
-                        break;
-                    case 7:
-                        iconId = Resource.Drawable.Album_Isomer;
-                        break;
-                    case 8:
-                        iconId = Resource.Drawable.Album_VA;
-                        break;
-                    case 9:
-                        iconId = Resource.Drawable.Album_ShatteredConnexion;
-                        break;
-                    case 10:
-                        iconId = Resource.Drawable.Album_PhantomSyndrome;
-                        break;
-                    case 11:
-                        iconId = Resource.Drawable.Album_PolarizedLight;
-                        break;
-                    case 12:
-                        iconId = Resource.Drawable.Album_PhotoGalleryPuzzle;
-                        break;
-                    case 13:
-                        iconId = Resource.Drawable.Album_BihaiSecret;
-                        break;
-                    case 14:
-                        iconId = Resource.Drawable.Album_DreamDrama;
-                        break;
-                }
+                    0 => Resource.Drawable.Album_Cube,
+                    1 => Resource.Drawable.Album_HuntingRabbit,
+                    2 => Resource.Drawable.Album_Arctic,
+                    3 => Resource.Drawable.Album_DeepDive,
+                    4 => Resource.Drawable.Album_Singularity,
+                    5 => Resource.Drawable.Album_DJMAX,
+                    6 => Resource.Drawable.Album_ContinuumTurbulence,
+                    7 => Resource.Drawable.Album_Isomer,
+                    8 => Resource.Drawable.Album_VA,
+                    9 => Resource.Drawable.Album_ShatteredConnexion,
+                    10 => Resource.Drawable.Album_PhantomSyndrome,
+                    11 => Resource.Drawable.Album_PolarizedLight,
+                    12 => Resource.Drawable.Album_PhotoGalleryPuzzle,
+                    13 => Resource.Drawable.Album_BihaiSecret,
+                    14 => Resource.Drawable.Album_DreamDrama,
+                    15 => Resource.Drawable.Album_DualRandomness,
+                    _ => default
+                };
 
                 vh.Icon.SetImageResource(iconId);
 
                 if (File.Exists(Path.Combine(pvPath, $"{pvList[position]}.mp4")))
-                { 
-                    if (ETC.useLightTheme)
-                    {
-                        vh.DownloadIcon.SetImageResource(Resource.Drawable.done_icon_whitetheme);
-                    }
-                    else
-                    {
-                        vh.DownloadIcon.SetImageResource(Resource.Drawable.done_icon);
-                    }
+                {
+                    vh.DownloadIcon.SetImageResource(ETC.useLightTheme ? Resource.Drawable.done_icon_whitetheme : Resource.Drawable.done_icon);
                 }
                 else
                 {
-                    if (ETC.useLightTheme)
-                    {
-                        vh.DownloadIcon.SetImageResource(Resource.Drawable.download_icon_whitetheme);
-                    }
-                    else
-                    {
-                        vh.DownloadIcon.SetImageResource(Resource.Drawable.download_icon);
-                    }
+                    vh.DownloadIcon.SetImageResource(ETC.useLightTheme ? Resource.Drawable.download_icon_whitetheme : Resource.Drawable.download_icon);
                 }
             }
 

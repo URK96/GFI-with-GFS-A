@@ -80,6 +80,7 @@
   <string name="Game_Event_PhotoGalleryPuzzle">Photo Gallery</string>
   <string name="Game_Event_BihaiSecret">Bihai Secret</string>
   <string name="Game_Event_DreamDrama">Dream Drama</string>
+  <string name="Game_Event_DualRandomness">Dual Randomness</string>
 
   <!--Activity String-->
   <string name="Activity_DollMainActivity">T-Doll List</string>
@@ -437,6 +438,10 @@
   <!--FairyDBMain-->
   <string name="FairyDBMainActivity_Title">Fairy List</string>
   <string name="FairyDBMainActivity_SearchHint">Search Fairy Name</string>
+
+  <!--FairyDBImageViewer-->
+  <string name="FairyDBImageViewer_PreviousButton">Previous</string>
+  <string name="FairyDBImageViewer_NextButton">Next</string>
   
   <!--FSTDBDetail-->
   <string name="FSTDBDetail_Type_ATW">Anti-Tank Weapon</string>
