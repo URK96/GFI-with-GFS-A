@@ -436,7 +436,8 @@ namespace GFI_with_GFS_A
                     Window.SetStatusBarColor(toolbarColor);
                 }
 
-                ShowTitleSubLayout();
+                InitTitleSubLayout();
+                InitCardViews();
             }
             catch (Exception ex)
             {
@@ -910,8 +911,6 @@ namespace GFI_with_GFS_A
                 refreshMainLayout.Refreshing = true;
 
                 TransitionManager.BeginDelayedTransition(refreshMainLayout);
-                scrollCardViews.Clear();
-                scrollMainContainer.RemoveAllViews();
 
                 LoadTitle(isRefresh);
                 LoadBasic();
@@ -925,13 +924,7 @@ namespace GFI_with_GFS_A
 
                 LoadAbility();
 
-                if (ETC.useLightTheme)
-                {
-                    SetCardTheme();
-                }
-
-                ShowCardViewVisibility();
-                
+                ShowCardViewVisibility();          
             }
             catch (WebException ex)
             {
@@ -1031,12 +1024,6 @@ namespace GFI_with_GFS_A
             basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoRealModel).Text = doll.RealModel;
             basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoCountry).Text = doll.Country;
             basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoHowToGain).Text = (string)dollInfoDR["DropEvent"];
-
-            if (!scrollCardViews.Contains(basicInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout)))
-            { 
-                scrollCardViews.Add(basicInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout));
-                scrollMainContainer.AddView(basicInfoRootLayout);
-            }
         }
 
         private void LoadBuff()
@@ -1159,11 +1146,6 @@ namespace GFI_with_GFS_A
 
             buffInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailEffectType).Text = effectTypeString;
 
-            if (!scrollCardViews.Contains(buffInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout)))
-            {
-                scrollCardViews.Add(buffInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout));
-                scrollMainContainer.AddView(buffInfoRootLayout);
-            }
         }
 
         private void LoadSkill(bool isRefresh)
@@ -1240,9 +1222,6 @@ namespace GFI_with_GFS_A
 
                 skillTableSubLayout.AddView(layout);
             }
-
-            scrollCardViews.Add(skillInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailSkillCardLayout));
-            scrollMainContainer.AddView(skillInfoRootLayout);
         }
 
         private void LoadModSkill(bool isRefresh)
@@ -1304,9 +1283,6 @@ namespace GFI_with_GFS_A
 
                 modSkillTableSubLayout.AddView(layout);
             }
-
-            scrollCardViews.Add(modSkillInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailModSkillCardLayout));
-            scrollMainContainer.AddView(modSkillInfoRootLayout);
         }
 
         private void LoadAbility()
@@ -1377,14 +1353,9 @@ namespace GFI_with_GFS_A
                 }
 
                 double[] dps = ETC.CalcDPS(abilityValues[1], abilityValues[4], 0, abilityValues[3], 3, int.Parse(doll.Abilities["Critical"]), 5);
-                FindViewById<TextView>(Resource.Id.DollInfoDPSStatus).Text = $"{dps[0].ToString("F2")} ~ {dps[1].ToString("F2")}";
+                abilityInfoRootLayout.FindViewById<TextView>(Resource.Id.DollInfoDPSStatus).Text = $"{dps[0].ToString("F2")} ~ {dps[1].ToString("F2")}";
 
                 LoadChart(chartCompareList.SelectedItemPosition);
-
-                scrollCardViews.Add(abilityInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout));
-                scrollCardViews.Add(abilityRadarChartRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout));
-                scrollMainContainer.AddView(abilityInfoRootLayout);
-                scrollMainContainer.AddView(abilityRadarChartRootLayout);
             }
             catch (Exception ex)
             {
@@ -1393,7 +1364,7 @@ namespace GFI_with_GFS_A
             }
         }
 
-        private void ShowTitleSubLayout()
+        private void InitTitleSubLayout()
         {
             if (doll.HasVoice)
             {
@@ -1407,21 +1378,48 @@ namespace GFI_with_GFS_A
             FindViewById<LinearLayout>(Resource.Id.DollDBDetailExtraButtonLayout).Visibility = ViewStates.Visible;
         }
 
-        private void SetCardTheme()
-        {
-            foreach (var cardview in scrollCardViews)
-            {
-                cardview.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
-                cardview.Radius = 15.0f;
-            }
-        }
-
         private void ShowCardViewVisibility()
         {
             foreach (var cardview in scrollCardViews)
             {
-                cardview.Visibility = ViewStates.Visible;
-                cardview.Alpha = 0.7f;
+                cardview.Visibility = (cardview.Id == Resource.Id.DollDBDetailModSkillCardLayout) && (modIndex < 2) ?
+                    ViewStates.Gone : ViewStates.Visible;
+            }
+        }
+
+        private void InitCardViews()
+        {
+            try
+            {
+                scrollMainContainer.AddView(basicInfoRootLayout);
+                scrollMainContainer.AddView(buffInfoRootLayout);
+                scrollMainContainer.AddView(skillInfoRootLayout);
+                scrollMainContainer.AddView(modSkillInfoRootLayout);
+                scrollMainContainer.AddView(abilityInfoRootLayout);
+                scrollMainContainer.AddView(abilityRadarChartRootLayout);
+
+                scrollCardViews.Add(basicInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout));
+                scrollCardViews.Add(buffInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout));
+                scrollCardViews.Add(skillInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailSkillCardLayout));
+                scrollCardViews.Add(modSkillInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailModSkillCardLayout));
+                scrollCardViews.Add(abilityInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout));
+                scrollCardViews.Add(abilityRadarChartRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout));
+                
+                foreach (var cardview in scrollCardViews)
+                {
+                    cardview.Alpha = 0.7f;
+
+                    if (ETC.useLightTheme)
+                    {
+                        cardview.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
+                        cardview.Radius = 15.0f;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                ETC.ShowSnackbar(snackbarLayout, "Error init cardviews", Snackbar.LengthShort);
             }
         }
 

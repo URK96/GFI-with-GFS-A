@@ -24,7 +24,6 @@ namespace GFI_with_GFS_A
         private LinearLayout abilityTableSubLayout;
 
         private Equip equip;
-        private DataRow equipInfoDR = null;
 
         private SwipeRefreshLayout refreshMainLayout;
         private AndroidX.AppCompat.Widget.Toolbar toolbar;
@@ -44,14 +43,14 @@ namespace GFI_with_GFS_A
                 // Create your application here
                 SetContentView(Resource.Layout.EquipDBDetailLayout);
 
-                equipInfoDR = ETC.FindDataRow(ETC.equipmentList, "Id", Intent.GetIntExtra("Id", 0));
-                equip = new Equip(equipInfoDR);
+                equip = new Equip(ETC.FindDataRow(ETC.equipmentList, "Id", Intent.GetIntExtra("Id", 0)));
 
                 toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.EquipDBDetailMainToolbar);
 
                 SetSupportActionBar(toolbar);
-                SupportActionBar.Title = $"No.{equip.Id} {equip.Name}";
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+                FindViewById<TextView>(Resource.Id.EquipDBDetailToolbarDicNumber).Text = $"No. {equip.Id}";
+                FindViewById<TextView>(Resource.Id.EquipDBDetailToolbarName).Text = $"{equip.Name} - {equip.Type}";
 
                 refreshMainLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.EquipDBDetailMainRefreshLayout);
                 refreshMainLayout.Refresh += delegate { _ = InitLoadProcess(true); };

@@ -1,6 +1,8 @@
 ﻿using Android.Content;
 using Android.Icu.Text;
 
+using System.Runtime.Remoting.Messaging;
+
 using static GFI_with_GFS_A.Resource.Array;
 
 namespace GFI_with_GFS_A
@@ -9,181 +11,71 @@ namespace GFI_with_GFS_A
     {
         private void ListMainStoryItem(out (int, int, int) stringIds)
         {
-            switch (subMainIndex)
+            stringIds = subMainIndex switch
             {
-                default:
-                    stringIds = (0, 0, 0);
-                    break;
-                case 0:
-                    stringIds = (Story_Main_Main_Prologue_TopTitle, Story_Main_Main_Prologue, Story_Main_Main_Prologue_Caption);
-                    break;
-                case 1:
-                    stringIds = (Story_Main_Main_Area_0_TopTitle, Story_Main_Main_Area_0, Story_Main_Main_Area_0_Caption);
-                    break;
-                case 2:
-                    stringIds = (Story_Main_Main_Area_1_TopTitle, Story_Main_Main_Area_1, Story_Main_Main_Area_1_Caption);
-                    break;
-                case 3:
-                    stringIds = (Story_Main_Main_Area_2_TopTitle, Story_Main_Main_Area_2, Story_Main_Main_Area_2_Caption);
-                    break;
-                case 4:
-                    stringIds = (Story_Main_Main_Area_3_TopTitle, Story_Main_Main_Area_3, Story_Main_Main_Area_3_Caption);
-                    break;
-                case 5:
-                    stringIds = (Story_Main_Main_Area_4_TopTitle, Story_Main_Main_Area_4, Story_Main_Main_Area_4_Caption);
-                    break;
-                case 6:
-                    stringIds = (Story_Main_Main_Area_5_TopTitle, Story_Main_Main_Area_5, Story_Main_Main_Area_5_Caption);
-                    break;
-                case 7:
-                    stringIds = (Story_Main_Main_Area_6_TopTitle, Story_Main_Main_Area_6, Story_Main_Main_Area_6_Caption);
-                    break;
-                case 8:
-                    stringIds = (Story_Main_Main_Area_7_TopTitle, Story_Main_Main_Area_7, Story_Main_Main_Area_7_Caption);
-                    break;
-                case 9:
-                    stringIds = (Story_Main_Main_Area_8_TopTitle, Story_Main_Main_Area_8, Story_Main_Main_Area_8_Caption);
-                    break;
-                case 10:
-                    stringIds = (Story_Main_Main_Area_9_TopTitle, Story_Main_Main_Area_9, Story_Main_Main_Area_9_Caption);
-                    break;
-                case 11:
-                    stringIds = (Story_Main_Main_Area_10_TopTitle, Story_Main_Main_Area_10, Story_Main_Main_Area_10_Caption);
-                    break;
-                case 12:
-                    stringIds = (Story_Main_Main_Area_11_TopTitle, Story_Main_Main_Area_11, Story_Main_Main_Area_11_Caption);
-                    break;
-                case 13:
-                    stringIds = (Story_Main_Main_Area_12_TopTitle, Story_Main_Main_Area_12, Story_Main_Main_Area_12_Caption);
-                    break;
-                case 14:
-                    stringIds = (Story_Main_Main_Area_13_TopTitle, Story_Main_Main_Area_13, Story_Main_Main_Area_13_Caption);
-                    break;
-                case 15:
-                    stringIds = (Story_Main_Main_Event_Cube_TopTitle, Story_Main_Main_Event_Cube, Story_Main_Main_Event_Cube_Caption);
-                    break;
-                case 16:
-                    stringIds = (Story_Main_Main_Event_Hypothermia_1_TopTitle, Story_Main_Main_Event_Hypothermia_1, Story_Main_Main_Event_Hypothermia_1_Caption);
-                    break;
-                case 17:
-                    stringIds = (Story_Main_Main_Event_Hypothermia_2_TopTitle, Story_Main_Main_Event_Hypothermia_2, Story_Main_Main_Event_Hypothermia_2_Caption);
-                    break;
-                case 18:
-                    stringIds = (Story_Main_Main_Event_Hypothermia_3_TopTitle, Story_Main_Main_Event_Hypothermia_3, Story_Main_Main_Event_Hypothermia_3_Caption);
-                    break;
-                case 19:
-                    stringIds = (Story_Main_Main_Event_Hypothermia_Hidden_TopTitle, Story_Main_Main_Event_Hypothermia_Hidden, Story_Main_Main_Event_Hypothermia_Hidden_Caption);
-                    break;
-                case 20:
-                    stringIds = (Story_Main_Main_Event_CubePlus_Toptitle, Story_Main_Main_Event_CubePlus, Story_Main_Main_Event_CubePlus_Caption);
-                    break;
-                case 21:
-                    stringIds = (Story_Main_Main_Event_GuiltyGear_Toptitle, Story_Main_Main_Event_GuiltyGear, Story_Main_Main_Event_GuiltyGear_Caption);
-                    break;
-                case 22:
-                    stringIds = (Story_Main_Main_Event_DeepDive_1_TopTitle, Story_Main_Main_Event_DeepDive_1, Story_Main_Main_Event_DeepDive_1_Caption);
-                    break;
-                case 23:
-                    stringIds = (Story_Main_Main_Event_DeepDive_2_TopTitle, Story_Main_Main_Event_DeepDive_2, Story_Main_Main_Event_DeepDive_2_Caption);
-                    break;
-                case 24:
-                    stringIds = (Story_Main_Main_Event_DeepDive_3_TopTitle, Story_Main_Main_Event_DeepDive_3, Story_Main_Main_Event_DeepDive_3_Caption);
-                    break;
-                case 25:
-                    stringIds = (Story_Main_Main_Event_DeepDive_Hidden_TopTitle, Story_Main_Main_Event_DeepDive_Hidden, Story_Main_Main_Event_DeepDive_Hidden_Caption);
-                    break;
-                case 26:
-                    stringIds = (Story_Main_Main_Event_Singularity_TopTitle, Story_Main_Main_Event_Singularity, Story_Main_Main_Event_Singularity_Caption);
-                    break;
-                case 27:
-                    stringIds = (Story_Main_Main_Event_DJMAX_1_TopTitle, Story_Main_Main_Event_DJMAX_1, Story_Main_Main_Event_DJMAX_1_Caption);
-                    break;
-                case 28:
-                    stringIds = (Story_Main_Main_Event_DJMAX_2_TopTitle, Story_Main_Main_Event_DJMAX_2, Story_Main_Main_Event_DJMAX_2_Caption);
-                    break;
-                case 29:
-                    stringIds = (Story_Main_Main_Event_ContinuumTurbulence_TopTitle, Story_Main_Main_Event_ContinuumTurbulence, Story_Main_Main_Event_ContinuumTurbulence_Caption);
-                    break;
-                case 30:
-                    stringIds = (Story_Main_Main_Event_Isomer_TopTitle, Story_Main_Main_Event_Isomer, Story_Main_Main_Event_Isomer_Caption);
-                    break;
-                case 31:
-                    stringIds = (Story_Main_Main_Event_VA_TopTitle, Story_Main_Main_Event_VA, Story_Main_Main_Event_VA_Caption);
-                    break;
-                case 32:
-                    stringIds = (Story_Main_Main_Event_ShatteredConnexion_TopTitle, Story_Main_Main_Event_ShatteredConnexion, Story_Main_Main_Event_ShatteredConnexion_Caption);
-                    break;
-                case 33:
-                    stringIds = (Story_Main_Main_Event_2019Halloween_TopTitle, Story_Main_Main_Event_2019Halloween, Story_Main_Main_Event_2019Halloween_Caption);
-                    break;
-                case 34:
-                    stringIds = (Story_Main_Main_Event_2019Christmas_TopTitle, Story_Main_Main_Event_2019Christmas, Story_Main_Main_Event_2019Christmas_Caption);
-                    break;
-                case 35:
-                    stringIds = (Story_Main_Main_Event_PolarizedLight_TopTitle, Story_Main_Main_Event_PolarizedLight, Story_Main_Main_Event_PolarizedLight_Caption);
-                    break;
-                case 36:
-                    stringIds = (Story_Main_Main_Event_2020Spring_TopTitle, Story_Main_Main_Event_2020Spring, Story_Main_Main_Event_2020Spring_Caption);
-                    break;
-                case 37:
-                    stringIds = (Story_Main_Main_Event_2020Summer_TopTitle, Story_Main_Main_Event_2020Summer, Story_Main_Main_Event_2020Summer_Caption);
-                    break;
-                case 38:
-                    stringIds = (Story_Main_Main_Event_DreamDrama_TopTitle, Story_Main_Main_Event_DreamDrama, Story_Main_Main_Event_DreamDrama_Caption);
-                    break;
-            }
+                0 => (Story_Main_Main_Prologue_TopTitle, Story_Main_Main_Prologue, Story_Main_Main_Prologue_Caption),
+                1 => (Story_Main_Main_Area_0_TopTitle, Story_Main_Main_Area_0, Story_Main_Main_Area_0_Caption),
+                2 => (Story_Main_Main_Area_1_TopTitle, Story_Main_Main_Area_1, Story_Main_Main_Area_1_Caption),
+                3 => (Story_Main_Main_Area_2_TopTitle, Story_Main_Main_Area_2, Story_Main_Main_Area_2_Caption),
+                4 => (Story_Main_Main_Area_3_TopTitle, Story_Main_Main_Area_3, Story_Main_Main_Area_3_Caption),
+                5 => (Story_Main_Main_Area_4_TopTitle, Story_Main_Main_Area_4, Story_Main_Main_Area_4_Caption),
+                6 => (Story_Main_Main_Area_5_TopTitle, Story_Main_Main_Area_5, Story_Main_Main_Area_5_Caption),
+                7 => (Story_Main_Main_Area_6_TopTitle, Story_Main_Main_Area_6, Story_Main_Main_Area_6_Caption),
+                8 => (Story_Main_Main_Area_7_TopTitle, Story_Main_Main_Area_7, Story_Main_Main_Area_7_Caption),
+                9 => (Story_Main_Main_Area_8_TopTitle, Story_Main_Main_Area_8, Story_Main_Main_Area_8_Caption),
+                10 => (Story_Main_Main_Area_9_TopTitle, Story_Main_Main_Area_9, Story_Main_Main_Area_9_Caption),
+                11 => (Story_Main_Main_Area_10_TopTitle, Story_Main_Main_Area_10, Story_Main_Main_Area_10_Caption),
+                12 => (Story_Main_Main_Area_11_TopTitle, Story_Main_Main_Area_11, Story_Main_Main_Area_11_Caption),
+                13 => (Story_Main_Main_Area_12_TopTitle, Story_Main_Main_Area_12, Story_Main_Main_Area_12_Caption),
+                14 => (Story_Main_Main_Area_13_TopTitle, Story_Main_Main_Area_13, Story_Main_Main_Area_13_Caption),
+                15 => (Story_Main_Main_Event_Cube_TopTitle, Story_Main_Main_Event_Cube, Story_Main_Main_Event_Cube_Caption),
+                16 => (Story_Main_Main_Event_Hypothermia_1_TopTitle, Story_Main_Main_Event_Hypothermia_1, Story_Main_Main_Event_Hypothermia_1_Caption),
+                17 => (Story_Main_Main_Event_Hypothermia_2_TopTitle, Story_Main_Main_Event_Hypothermia_2, Story_Main_Main_Event_Hypothermia_2_Caption),
+                18 => (Story_Main_Main_Event_Hypothermia_3_TopTitle, Story_Main_Main_Event_Hypothermia_3, Story_Main_Main_Event_Hypothermia_3_Caption),
+                19 => (Story_Main_Main_Event_Hypothermia_Hidden_TopTitle, Story_Main_Main_Event_Hypothermia_Hidden, Story_Main_Main_Event_Hypothermia_Hidden_Caption),
+                20 => (Story_Main_Main_Event_CubePlus_Toptitle, Story_Main_Main_Event_CubePlus, Story_Main_Main_Event_CubePlus_Caption),
+                21 => (Story_Main_Main_Event_GuiltyGear_Toptitle, Story_Main_Main_Event_GuiltyGear, Story_Main_Main_Event_GuiltyGear_Caption),
+                22 => (Story_Main_Main_Event_DeepDive_1_TopTitle, Story_Main_Main_Event_DeepDive_1, Story_Main_Main_Event_DeepDive_1_Caption),
+                23 => (Story_Main_Main_Event_DeepDive_2_TopTitle, Story_Main_Main_Event_DeepDive_2, Story_Main_Main_Event_DeepDive_2_Caption),
+                24 => (Story_Main_Main_Event_DeepDive_3_TopTitle, Story_Main_Main_Event_DeepDive_3, Story_Main_Main_Event_DeepDive_3_Caption),
+                25 => (Story_Main_Main_Event_DeepDive_Hidden_TopTitle, Story_Main_Main_Event_DeepDive_Hidden, Story_Main_Main_Event_DeepDive_Hidden_Caption),
+                26 => (Story_Main_Main_Event_Singularity_TopTitle, Story_Main_Main_Event_Singularity, Story_Main_Main_Event_Singularity_Caption),
+                27 => (Story_Main_Main_Event_DJMAX_1_TopTitle, Story_Main_Main_Event_DJMAX_1, Story_Main_Main_Event_DJMAX_1_Caption),
+                28 => (Story_Main_Main_Event_DJMAX_2_TopTitle, Story_Main_Main_Event_DJMAX_2, Story_Main_Main_Event_DJMAX_2_Caption),
+                29 => (Story_Main_Main_Event_ContinuumTurbulence_TopTitle, Story_Main_Main_Event_ContinuumTurbulence, Story_Main_Main_Event_ContinuumTurbulence_Caption),
+                30 => (Story_Main_Main_Event_Isomer_TopTitle, Story_Main_Main_Event_Isomer, Story_Main_Main_Event_Isomer_Caption),
+                31 => (Story_Main_Main_Event_VA_TopTitle, Story_Main_Main_Event_VA, Story_Main_Main_Event_VA_Caption),
+                32 => (Story_Main_Main_Event_ShatteredConnexion_TopTitle, Story_Main_Main_Event_ShatteredConnexion, Story_Main_Main_Event_ShatteredConnexion_Caption),
+                33 => (Story_Main_Main_Event_2019Halloween_TopTitle, Story_Main_Main_Event_2019Halloween, Story_Main_Main_Event_2019Halloween_Caption),
+                34 => (Story_Main_Main_Event_2019Christmas_TopTitle, Story_Main_Main_Event_2019Christmas, Story_Main_Main_Event_2019Christmas_Caption),
+                35 => (Story_Main_Main_Event_PolarizedLight_TopTitle, Story_Main_Main_Event_PolarizedLight, Story_Main_Main_Event_PolarizedLight_Caption),
+                36 => (Story_Main_Main_Event_2020Spring_TopTitle, Story_Main_Main_Event_2020Spring, Story_Main_Main_Event_2020Spring_Caption),
+                37 => (Story_Main_Main_Event_2020Summer_TopTitle, Story_Main_Main_Event_2020Summer, Story_Main_Main_Event_2020Summer_Caption),
+                38 => (Story_Main_Main_Event_DreamDrama_TopTitle, Story_Main_Main_Event_DreamDrama, Story_Main_Main_Event_DreamDrama_Caption),
+                _ => (0, 0, 0),
+            };
         }
 
         private void ListSubStoryItem(out (int, int, int) stringIds)
         {
-            switch (subMainIndex)
+            stringIds = subMainIndex switch
             {
-                default:
-                    stringIds = (0, 0, 0);
-                    break;
-                case 0:
-                    stringIds = (Story_Main_Sub_2016MessyHalloween_TopTitle, Story_Main_Sub_2016MessyHalloween, Story_Main_Sub_2016MessyHalloween_Caption);
-                    break;
-                case 1:
-                    stringIds = (Story_Main_Sub_2016TacticalChristmas_TopTitle, Story_Main_Sub_2016TacticalChristmas, Story_Main_Sub_2016TacticalChristmas_Caption);
-                    break;
-                case 2:
-                    stringIds = (Story_Main_Sub_2017Anniversary_TopTitle, Story_Main_Sub_2017Anniversary, Story_Main_Sub_2017Anniversary_Caption);
-                    break;
-                case 3:
-                    stringIds = (Story_Main_Sub_2017OperaPrinces_TopTitle, Story_Main_Sub_2017OperaPrinces, Story_Main_Sub_2017OperaPrinces_Caption);
-                    break;
-                case 4:
-                    stringIds = (Story_Main_Sub_2018LunaNewYear_TopTitle, Story_Main_Sub_2018LunaNewYear, Story_Main_Sub_2018LunaNewYear_Caption);
-                    break;
-                case 5:
-                    stringIds = (Story_Main_Sub_2018SweetWedding_TopTitle, Story_Main_Sub_2018SweetWedding, Story_Main_Sub_2018SweetWedding_Caption);
-                    break;
-                case 6:
-                    stringIds = (Story_Main_Sub_2018Anniversary_TopTitle, Story_Main_Sub_2018Anniversary, Story_Main_Sub_2018Anniversary_Caption);
-                    break;
-                case 7:
-                    stringIds = (Story_Main_Sub_2018MaidTraining_TopTitle, Story_Main_Sub_2018MaidTraining, Story_Main_Sub_2018MaidTraining_Caption);
-                    break;
-                case 8:
-                    stringIds = (Story_Main_Sub_2018BeachParty_TopTitle, Story_Main_Sub_2018BeachParty, Story_Main_Sub_2018BeachParty_Caption);
-                    break;
-                case 9:
-                    stringIds = (Story_Main_Sub_2018RiseoftheWitches_TopTitle, Story_Main_Sub_2018RiseoftheWitches, Story_Main_Sub_2018RiseoftheWitches_Caption);
-                    break;
-                case 10:
-                    stringIds = (Story_Main_Sub_2018AnotherChristmas_TopTitle, Story_Main_Sub_2018AnotherChristmas, Story_Main_Sub_2018AnotherChristmas_Caption);
-                    break;
-                case 11:
-                    stringIds = (Story_Main_Sub_2019LunaNewYear_TopTitle, Story_Main_Sub_2019LunaNewYear, Story_Main_Sub_2019LunaNewYear_Caption);
-                    break;
-                case 12:
-                    stringIds = (Story_Main_Sub_2019GunRose_TopTitle, Story_Main_Sub_2019GunRose, Story_Main_Sub_2019GunRose_Caption);
-                    break;
-                case 13:
-                    stringIds = (Story_Main_Sub_2019Anniversary_TopTitle, Story_Main_Sub_2019Anniversary, Story_Main_Sub_2019Anniversary_Caption);
-                    break;
-            }
+                0 => (Story_Main_Sub_2016MessyHalloween_TopTitle, Story_Main_Sub_2016MessyHalloween, Story_Main_Sub_2016MessyHalloween_Caption),
+                1 => (Story_Main_Sub_2016TacticalChristmas_TopTitle, Story_Main_Sub_2016TacticalChristmas, Story_Main_Sub_2016TacticalChristmas_Caption),
+                2 => (Story_Main_Sub_2017Anniversary_TopTitle, Story_Main_Sub_2017Anniversary, Story_Main_Sub_2017Anniversary_Caption),
+                3 => (Story_Main_Sub_2017OperaPrinces_TopTitle, Story_Main_Sub_2017OperaPrinces, Story_Main_Sub_2017OperaPrinces_Caption),
+                4 => (Story_Main_Sub_2018LunaNewYear_TopTitle, Story_Main_Sub_2018LunaNewYear, Story_Main_Sub_2018LunaNewYear_Caption),
+                5 => (Story_Main_Sub_2018SweetWedding_TopTitle, Story_Main_Sub_2018SweetWedding, Story_Main_Sub_2018SweetWedding_Caption),
+                6 => (Story_Main_Sub_2018Anniversary_TopTitle, Story_Main_Sub_2018Anniversary, Story_Main_Sub_2018Anniversary_Caption),
+                7 => (Story_Main_Sub_2018MaidTraining_TopTitle, Story_Main_Sub_2018MaidTraining, Story_Main_Sub_2018MaidTraining_Caption),
+                8 => (Story_Main_Sub_2018BeachParty_TopTitle, Story_Main_Sub_2018BeachParty, Story_Main_Sub_2018BeachParty_Caption),
+                9 => (Story_Main_Sub_2018RiseoftheWitches_TopTitle, Story_Main_Sub_2018RiseoftheWitches, Story_Main_Sub_2018RiseoftheWitches_Caption),
+                10 => (Story_Main_Sub_2018AnotherChristmas_TopTitle, Story_Main_Sub_2018AnotherChristmas, Story_Main_Sub_2018AnotherChristmas_Caption),
+                11 => (Story_Main_Sub_2019LunaNewYear_TopTitle, Story_Main_Sub_2019LunaNewYear, Story_Main_Sub_2019LunaNewYear_Caption),
+                12 => (Story_Main_Sub_2019GunRose_TopTitle, Story_Main_Sub_2019GunRose, Story_Main_Sub_2019GunRose_Caption),
+                13 => (Story_Main_Sub_2019Anniversary_TopTitle, Story_Main_Sub_2019Anniversary, Story_Main_Sub_2019Anniversary_Caption),
+                _ => (0, 0, 0),
+            };
         }
 
         private void ListMemoryStoryItem(out (int, int, int) stringIds)
@@ -204,8 +96,8 @@ namespace GFI_with_GFS_A
 
         private void RunReader()
         {
-            string top = "";
-            string category = "";
+            string top;
+            string category;
 
             switch (topType)
             {
@@ -218,6 +110,8 @@ namespace GFI_with_GFS_A
                 case Top.Memory:
                     top = "Memory";
                     break;
+                default:
+                    return;
             }
 
             if (topType == Top.Main)
@@ -315,6 +209,8 @@ namespace GFI_with_GFS_A
                     case 38:
                         category = "DreamDrama";
                         break;
+                    default:
+                        return;
                 }
             }
             else if (topType == Top.Sub)
@@ -363,6 +259,8 @@ namespace GFI_with_GFS_A
                     case 13:
                         category = "2019Anniversary";
                         break;
+                    default:
+                        return;
                 }
             }
             else if (topType == Top.Memory)
@@ -375,6 +273,8 @@ namespace GFI_with_GFS_A
                     case 1:
                         category = "C122";
                         break;
+                    default:
+                        return;
                 }
             }
             else

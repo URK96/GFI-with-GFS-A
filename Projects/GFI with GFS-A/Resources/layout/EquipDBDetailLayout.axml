@@ -15,7 +15,24 @@
             android:minHeight="?android:attr/actionBarSize"
             android:background="@color/MainColor"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            android:id="@+id/EquipDBDetailMainToolbar"/>
+            android:id="@+id/EquipDBDetailMainToolbar">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/EquipDBDetailToolbarDicNumber"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/EquipDBDetailToolbarName"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

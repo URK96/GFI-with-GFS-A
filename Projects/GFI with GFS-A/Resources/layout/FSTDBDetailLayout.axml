@@ -28,6 +28,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#FFFFFF"
                     android:id="@+id/FSTDBDetailToolbarName"/>
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
