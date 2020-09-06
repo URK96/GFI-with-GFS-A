@@ -86,7 +86,7 @@
     <AndroidDexTool>d8</AndroidDexTool>
     <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
     <MandroidI18n />
-    <AndroidPackageFormat>apk</AndroidPackageFormat>
+    <AndroidPackageFormat>aab</AndroidPackageFormat>
     <AndroidApkSigningAlgorithm>md5withRSA</AndroidApkSigningAlgorithm>
     <AndroidApkDigestAlgorithm>SHA1</AndroidApkDigestAlgorithm>
     <LangVersion>8.0</LangVersion>

@@ -12,4 +12,11 @@
 
 <2.6.5 Update>
 
-- Edit some string
+- Add memory story feature
+- Add new PV item (Dual Randomness)
+- Add new cartoon content
+- Add story list item animation
+- Improve Fairy DB UI
+- Improve DB title UI
+- Fix ability info load issue in Doll DB detail
+- Update UI library

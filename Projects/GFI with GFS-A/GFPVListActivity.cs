@@ -56,7 +56,8 @@ namespace GFI_with_GFS_A
             ETC.Resources.GetString(Resource.String.Game_Event_PolarizedLight),
             ETC.Resources.GetString(Resource.String.Game_Event_PhotoGalleryPuzzle),
             ETC.Resources.GetString(Resource.String.Game_Event_BihaiSecret),
-            ETC.Resources.GetString(Resource.String.Game_Event_DreamDrama)
+            ETC.Resources.GetString(Resource.String.Game_Event_DreamDrama),
+            ETC.Resources.GetString(Resource.String.Game_Event_DualRandomness)
         };
 
         protected override void OnCreate(Bundle savedInstanceState)

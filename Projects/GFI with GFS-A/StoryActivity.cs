@@ -87,7 +87,7 @@ namespace GFI_with_GFS_A
                     topType = Top.Main;
                     break;
                 case Category.Main when position is 1:
-                    topType = Top.Main;
+                    topType = Top.Sub;
                     break;
                 case Category.Main when position is 2:
                     topType = Top.Memory;
