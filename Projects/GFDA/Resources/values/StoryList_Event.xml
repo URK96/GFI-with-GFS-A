@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Story_Main_Main_Event_Cube_TopTitle">
+    <item>이벤트 : 큐브</item>
+    <item>이벤트 : 큐브</item>
+    <item>이벤트 : 큐브</item>
+    <item>이벤트 : 큐브</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_Cube">
+    <item>7단계 퍼즐</item>
+    <item>모서리 처리</item>
+    <item>층계교체</item>
+    <item>차면붕괴</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_Cube_Caption">
+    <item>AR-15가 달아난 후, 404소대는 철혈의 기지에 잠입하여 재머를 저지하는 임무를 수행하게 되었어요...</item>
+    <item>HK416과 G11은 우로보로스의 함정에서 도망치며 UMP45와 UMP9와 합류하였어요...</item>
+    <item>우로보로스가 헌터의 데이터를 소각하여, 실마리를 놓치지만, 이때 조그만 지원자가 나타났답니다.</item>
+    <item>엑스큐셔너와의 사투가 폭음과 함께 끝나고, 의심을 품은 우로보로스는 전면포위를 개시하였어요! </item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_Hypothermia_1_TopTitle">
+    <item>이벤트 : 저체온증 CH.01</item>
+    <item>이벤트 : 저체온증 CH.01</item>
+    <item>이벤트 : 저체온증 CH.01</item>
+    <item>이벤트 : 저체온증 CH.01</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_Hypothermia_1">
+    <item>재앙의 울버린 1</item>
+    <item>재앙의 울버린 2</item>
+    <item>재앙의 울버린 3</item>
+    <item>재앙의 울버린 4</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_Hypothermia_1_Caption">
+    <item>M4A1의 마인드가 손상을 입은 후, AR팀이 그녀의 병문안을 다녀오던 중 주피터에 의해 포격당했어요...</item>
+    <item>AR팀은 적진 속에서 굶주림과 추위를 견디며 통신소를 찾아 헬리안 씨와의 접촉을 시도하고 있다고 해요...</item>
+    <item>AR팀은 악천후 속에서 보급점 찾아나섰어요...그러던 와중, 중요한 인형을 찾는 임무를 맡게 되었지요...</item>
+    <item>철혈의 보스 게이저는 전구역에 수배령을 내렸어요...밤이 되고 AR소대는 최후의 돌파를 시작한다고 해요...</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_Hypothermia_2_TopTitle">
+    <item>이벤트 : 저체온증 CH.02</item>
+    <item>이벤트 : 저체온증 CH.02</item>
+    <item>이벤트 : 저체온증 CH.02</item>
+    <item>이벤트 : 저체온증 CH.02</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_Hypothermia_2">
+    <item>등화관제 1</item>
+    <item>등화관제 2</item>
+    <item>등화관제 3</item>
+    <item>등화관제 4</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Main_Event_Hypothermia_2_Caption">
+    <item>그날 밤 UMP45는 헬리안에게 AR팀을 구조하라는 임무를 전해받아 철혈의 쥬피터 시험기지로 향했어요.</item>
+    <item>다른 한 편 HK416과 G11도 작전을 개시하여 위험을 뚫고 UMP자매와 합류하게 되었답니다..</item>
+    <item>어둠속에서 404소대와 합류한 45는, AR팀의 세이프하우스의 정보를 파악하기위해 조사를 시작했어요.</item>
+    <item>또 한명의 철혈 보스 아키텍트는 404소대를 발견하지만 45의 계획대로 돌파&amp;구조작전이 개시 되었어요..</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_Hypothermia_3_TopTitle">
+    <item>이벤트 : 저체온증 CH.03</item>
+    <item>이벤트 : 저체온증 CH.03</item>
+    <item>이벤트 : 저체온증 CH.03</item>
+    <item>이벤트 : 저체온증 CH.03</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Main_Event_Hypothermia_3">
+    <item>귀환작전 1</item>
+    <item>귀환작전 2</item>
+    <item>귀환작전 3</item>
+    <item>귀환작전 4</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_Hypothermia_3_Caption">
+    <item>AR팀과 404소대가 순로롭게 합류하였지만, 아직 위험은 사라지지 않았어요...</item>
+    <item>핼리포트와 꽤 멀어진 후, 45는 철혈의 관리자를 우선적으로 처리하는 걸로 안전한 퇴각을 장담 했어요.</item>
+    <item>철혈측에서 포위작전에 박차를 가하기 시작했습니다...AR팀은 서둘러 보급한 뒤 퇴각하였어요.</item>
+    <item>위급상황에서, RO는 45의 계획대로 진행하지만, 모든 일은 뜻대로 된다는 보장은 없으니까요.</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_Hypothermia_Hidden_TopTitle">
+    <item>이벤트 : 저체온증 CH.??</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_Hypothermia_Hidden">
+    <item>이상한 나라로</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_Hypothermia_Hidden_Caption">
+    <item>이상한 나라로</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_CubePlus_Toptitle">
+    <item>이벤트 : 큐브+</item>
+    <item>이벤트 : 큐브+</item>
+    <item>이벤트 : 큐브+</item>
+    <item>이벤트 : 큐브+</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_CubePlus">
+    <item>십자배치</item>
+    <item>빗나간 예측</item>
+    <item>정해진 공식</item>
+    <item>행렬반전</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_CubePlus_Caption">
+    <item>M4A1의 보고：...여긴...어디야？</item>
+    <item>M4A1의 보고：결국에는 제 잘못이에요...P08...제가 모두를 대리고 이곳에서 빠져나가겠습니다...</item>
+    <item>M4A1의 보고：아키텍트는 어째서 이곳에 나타난걸까요...어찌됐든 저는 반드시 승리해야만합니다...</item>
+    <item>M4A1의 보고：우로보로스...대체 어떻게...나는 어찌해야...그건...우린...살아남을...수...있을....</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_GuiltyGear_Toptitle">
+    <item>콜라보 이벤트 : 헌팅래빗</item>
+    <item>콜라보 이벤트 : 헌팅래빗</item>
+    <item>콜라보 이벤트 : 헌팅래빗</item>
+    <item>콜라보 이벤트 : 헌팅래빗</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_GuiltyGear">
+    <item>세인트 엘모</item>
+    <item>인형섬멸</item>
+    <item>사냥 게임</item>
+    <item>헌팅 래빗 작전</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_GuiltyGear_Caption">
+    <item>세인트 엘모</item>
+    <item>인형섬멸</item>
+    <item>사냥 게임</item>
+    <item>헌팅 래빗 작전</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DeepDive_1_TopTitle">
+    <item>이벤트 : 딥다이브 CH.01</item>
+    <item>이벤트 : 딥다이브 CH.01</item>
+    <item>이벤트 : 딥다이브 CH.01</item>
+    <item>이벤트 : 딥다이브 CH.01</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Main_Event_DeepDive_1">
+    <item>심지혼선 1</item>
+    <item>심지혼선 2</item>
+    <item>심지혼선 3</item>
+    <item>심지혼선 4</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DeepDive_1_Caption">
+    <item>UMP45가 고용주의 새로운 의뢰를 수행하기 위해, 새로운 훈련을 시작한다.</item>
+    <item>전자전 훈련이 진행되던 중, UMP45가 과거로부터 온 소식을 듣게되는데......</item>
+    <item>훈련의 강도가 강해지면서, UMP45는 마인드맵에 봉인 되어있던 기억이 되살아나기 시작한다.</item>
+    <item>그리폰의 전술인형이 함정에 빠지고, 실전에서 전자전을 펼칠 기회를 갖게된다.</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DeepDive_2_TopTitle">
+    <item>이벤트 : 딥다이브 CH.02</item>
+    <item>이벤트 : 딥다이브 CH.02</item>
+    <item>이벤트 : 딥다이브 CH.02</item>
+    <item>이벤트 : 딥다이브 CH.02</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DeepDive_2">
+    <item>쌍곡함수 1</item>
+    <item>쌍곡함수 2</item>
+    <item>쌍곡함수 3</item>
+    <item>쌍곡함수 4</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Main_Event_DeepDive_2_Caption">
+    <item>탐색임무가 정식으로 시작되었고, 눈치빠른 철혈들이 곧바로 대처에 나선다.</item>
+    <item>철혈의 두목이 끊임없이 404소대를 괴롭히지만, UMP45의 정신은 이미 다른 곳에 팔려있다.</item>
+    <item>UMP45는 철혈을 두려워하지 않았으며 독단적으로 행동하려 한다. 또한 철혈 디스트로이어가 완전히 새로운 자태로 모습을 드러낸다.</item>
+    <item>디스트로이어와… 아니, 디너게이트와의 전투가 막바지로 치닫는다!</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DeepDive_3_TopTitle">
+    <item>이벤트 : 딥다이브 CH.03</item>
+    <item>이벤트 : 딥다이브 CH.03</item>
+    <item>이벤트 : 딥다이브 CH.03</item>
+    <item>이벤트 : 딥다이브 CH.03</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DeepDive_3">
+    <item>대립행동 1</item>
+    <item>대립행동 2</item>
+    <item>대립행동 3</item>
+    <item>대립행동 4</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DeepDive_3_Caption">
+    <item>UMP45가 마인드맵 침입에 노출되고, 404소대는 철혈이 목표를 달성하기 전에 충분한 기억파편으로 그녀를 깨우려한다.</item>
+    <item>UMP45의 기억이 계속해서 파헤쳐지고, 드리머도 디스트로이어를 위해 2차개조를 시작하는데.....</item>
+    <item>404소대는 계속되는 전자전으로 인해 체력이 고갈되고, 디스트로이어는 또 새로운 모습으로 나타난다!</item>
+    <item>최후의 탈출작전이 시작되었다. 404소대는 UMP45를 깨울 수 있을까, 자칭 완전체의 디스트로이어에게서 벗어날 수 있을까?</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DeepDive_Hidden_TopTitle">
+    <item>이벤트 : 딥다이브 CH.??</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DeepDive_Hidden">
+    <item>허수미궁</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DeepDive_Hidden_Caption">
+    <item>허수미궁</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DJMAX_1_TopTitle">
+    <item>콜라보 이벤트 : 영광의 날 - Avec Nou</item>
+    <item>콜라보 이벤트 : 영광의 날 - Avec Nou</item>
+    <item>콜라보 이벤트 : 영광의 날 - Avec Nou</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DJMAX_1">
+    <item>Stalker</item>
+    <item>HeartBeat</item>
+    <item>Waiting for you</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DJMAX_1_Caption">
+    <item>Stalker</item>
+    <item>HeartBeat</item>
+    <item>Waiting for you</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DJMAX_2_TopTitle">
+    <item>콜라보 이벤트 : 영광의 날 - Dreaming on you</item>
+    <item>콜라보 이벤트 : 영광의 날 - Dreaming on you</item>
+    <item>콜라보 이벤트 : 영광의 날 - Dreaming on you</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DJMAX_2">
+    <item>Sunset Rider</item>
+    <item>Fate</item>
+    <item>End of the Moonlight</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DJMAX_2_Caption">
+    <item>Sunset Rider</item>
+    <item>Fate</item>
+    <item>End of the Moonlight</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2019Halloween_TopTitle">
+    <item>팬텀 신드롬</item>
+    <item>팬텀 신드롬</item>
+    <item>팬텀 신드롬</item>
+    <item>팬텀 신드롬</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2019Halloween">
+    <item>변질된 스타카토</item>
+    <item>깜짝 상자</item>
+    <item>유통기한</item>
+    <item>방부제</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2019Halloween_Caption">
+    <item>변질된 스타카토</item>
+    <item>깜짝 상자</item>
+    <item>유통기한</item>
+    <item>방부제</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2019Christmas_TopTitle">
+    <item>거룩한 밤 광상곡</item>
+    <item>거룩한 밤 광상곡</item>
+    <item>거룩한 밤 광상곡</item>
+    <item>거룩한 밤 광상곡</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2019Christmas">
+    <item>철혈의 그린치</item>
+    <item>솔리드 디너게이트</item>
+    <item>달려라 디너게이트</item>
+    <item>선물 찬송가</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2019Christmas_Caption">
+    <item>철혈의 그린치</item>
+    <item>솔리드 디너게이트</item>
+    <item>달려라 디너게이트</item>
+    <item>선물 찬송가</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2020Spring_TopTitle">
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+    <item>사진관 미스테리</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2020Spring">
+    <item>유령 별장의 소문</item>
+    <item>빈집</item>
+    <item>그리폰의 건축가</item>
+    <item>MDR의 실종</item>
+    <item>곱사등이</item>
+    <item>귤씨 7개</item>
+    <item>2번째 마인드맵</item>
+    <item>리엔필드의 인사 Ⅰ</item>
+    <item>리엔필드의 인사 Ⅱ</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2020Spring_Caption">
+    <item>유령 별장의 소문</item>
+    <item>빈집</item>
+    <item>그리폰의 건축가</item>
+    <item>MDR의 실종</item>
+    <item>곱사등이</item>
+    <item>귤씨 7개</item>
+    <item>2번째 마인드맵</item>
+    <item>리엔필드의 인사 Ⅰ</item>
+    <item>리엔필드의 인사 Ⅱ</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2020Summer_TopTitle">
+    <item>바다 저 멀리</item>
+    <item>바다 저 멀리</item>
+    <item>바다 저 멀리</item>
+    <item>바다 저 멀리</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2020Summer">
+    <item>외딴 섬의 휴일</item>
+    <item>쥐구멍에 볕들 날</item>
+    <item>숨겨진 위험지대</item>
+    <item>여름 노을빛</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2020Summer_Caption">
+    <item>외딴 섬의 휴일</item>
+    <item>쥐구멍에 볕들 날</item>
+    <item>숨겨진 위험지대</item>
+    <item>여름 노을빛</item>
+  </string-array>
+</resources>

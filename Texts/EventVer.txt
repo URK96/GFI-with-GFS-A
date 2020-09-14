@@ -1,6 +1,6 @@
 Y;
-72;
-1;
-이중난수;
-https://cafe.naver.com/girlsfrontlinekr/4060405;
-2020/8/28 16:00 ~ 2020/10/2 13:59;
+73;
+2;
+이중난수,지붕밑 괴담;
+https://cafe.naver.com/girlsfrontlinekr/4060405,https://www.girlsfrontline.co.kr/archives/4388.html;
+2020/8/28 16:00 ~ 2020/10/2 13:59,2020/9/12 00:00 ~ 2020/10/2 13:59;

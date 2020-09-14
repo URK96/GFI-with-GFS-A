@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:id="@+id/GFDInfoMainLayout">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="@color/MainColor"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:id="@+id/GFDInfoMainToolbar" >
+    </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:src="@drawable/gfdinfoicon"
+            android:layout_gravity="center" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/Common_GFDv2"
+            android:textStyle="bold"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="center"
+            android:id="@+id/GFDInfo_NowAppVersion" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="center"
+            android:id="@+id/GFDInfo_ServerAppVersion" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/Common_Update"
+            android:alpha="0"
+            android:id="@+id/GFDInfo_AppUpdateButton"
+            android:visibility="invisible"
+            android:layout_gravity="center" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/GFDInfoLayout_DeveloperInfo"
+            android:textStyle="bold"
+            android:gravity="center" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:gravity="center"
+                android:id="@+id/GFDInfoDeveloperInfo" />
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_alignBottom="@id/GFDInfoMainLayout">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:layout_gravity="center">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/xamarin_logo" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:text="Powered by Xamarin.Android" />
+        </LinearLayout>
+    </LinearLayout>
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/discordicon"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:backgroundTint="@color/FABColor"
+        app:fabSize="auto"
+        app:rippleColor="#FF80AB"
+        android:id="@+id/DiscordFAB" />
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/GFDInfoSnackbarLayout"
+        android:layout_alignTop="@id/GFDInfoMainLayout" />
+</RelativeLayout>

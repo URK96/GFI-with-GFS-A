@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:id="@+id/EventListMainLayout"
+    android:animateLayoutChanges="true">
+    <androidx.appcompat.widget.Toolbar
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="@color/MainColor"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+		android:id="@+id/EventListMainToolbar" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/EventListMainToolbar"
+        android:layout_margin="20dp"
+        android:alpha="0"
+        android:id="@+id/EventListButtonLayout">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/NowEventTitle">
+                    <View
+                        android:layout_height="5px"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/seperatebar" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/EventListLayout_EventOngoing" />
+                    <View
+                        android:layout_height="5px"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/seperatebar" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:id="@+id/EventPeriodText1" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/EventButton1" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/EventListButtonSubLayout" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/ScheduledEventTitle">
+                    <View
+                        android:layout_height="5px"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/seperatebar" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/EventListLayout_EventUpComing" />
+                    <View
+                        android:layout_height="5px"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/seperatebar" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:id="@+id/EventPeriodText2" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/EventButton2" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/EventListButtonSubLayout2" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/EventListSnackbarLayout"
+        android:layout_below="@id/EventListMainToolbar" />
+</RelativeLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	cardview:cardElevation="4dp"
+	cardview:cardUseCompatPadding="true"
+	cardview:cardCornerRadius="5dp"
+	android:foreground="?android:attr/selectableItemBackground"
+    android:id="@+id/PSResultListMainCardView">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+	    android:background="?android:attr/selectableItemBackground"
+        android:id="@+id/PSResultListMainLayout">
+        <LinearLayout
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/PSResultListType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:gravity="center" />
+            <ImageView
+                android:id="@+id/PSResultListGrade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/PSResultListSmallImage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+		    <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+			    android:id="@+id/PSResultListNumber"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/PSResultListName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/PSResultListProductTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

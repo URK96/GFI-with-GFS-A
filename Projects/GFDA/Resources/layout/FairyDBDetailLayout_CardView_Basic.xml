@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto">
+<!--Fairy Basic Info Part-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        android:id="@+id/FairyDBDetailBasicInfoCardLayout"
+        cardview:cardElevation="4dp"
+        cardview:cardCornerRadius="5dp"
+        cardview:cardBackgroundColor="@color/background_material_dark">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/FairyDBDetailBasicInfoLayout">
+        <!--Fairy Basic Info - Type Part-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/Common_FairyType"
+                    android:gravity="center" />
+                <View
+                    android:layout_width="5px"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/seperatebar_vertical" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/FairyDBDetailInfoType"
+                    android:gravity="center" />
+            </LinearLayout>
+        <!--Fairy Basic Info - Name Part-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/Common_Name"
+                    android:gravity="center" />
+                <View
+                    android:layout_width="5px"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/seperatebar_vertical" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/FairyDBDetailInfoName"
+                    android:gravity="center" />
+            </LinearLayout>
+        <!--Fairy Basic Info - Illustrator Part-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/Common_Illustrator"
+                    android:gravity="center" />
+                <View
+                    android:layout_width="5px"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/seperatebar_vertical" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/FairyDBDetailInfoIllustrator"
+                    android:gravity="center" />
+            </LinearLayout>
+        <!--Fairy Basic Info - ETC Part-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/Common_ETC"
+                    android:gravity="center" />
+                <View
+                    android:layout_width="5px"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/seperatebar_vertical" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/FairyDBDetailInfoETC"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</merge>

@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Story_Main_Main_Event_ContinuumTurbulence_TopTitle">
+    <item>난류연속 : 황천의 여명</item>
+    <item>난류연속 : 황천의 여명</item>
+    <item>난류연속 : 황천의 여명</item>
+    <item>난류연속 : 황천의 여명</item>
+    <item>난류연속 : 황천의 여명</item>
+    <item>난류연속 : 황천의 여명</item>
+    <item>난류연속 : 황천의 여명</item>
+    <item>난류연속 : 황천의 여명</item>
+    <item>난류연속 : 황천의 여명</item>
+    <item>난류연속 : 황천의 여명</item>
+    <item>난류연속 : 황천의 여명</item>
+    <item>난류연속 : 황천의 여명</item>
+    <item>난류연속 : 황천의 여명</item>
+    <item>난류연속 : 황천의 여명</item>
+    <item>난류연속 : 황천의 여명</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 유일한 결말</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 종말을 넘어</item>
+    <item>난류연속 : 에필로그</item>
+    <item>난류연속 : 랭킹전</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_ContinuumTurbulence">
+    <item>폭심지</item>
+    <item>폐기물</item>
+    <item>어두운 밤</item>
+    <item>세이프 하우스</item>
+    <item>예비전원</item>
+    <item>비축거점</item>
+    <item>잘 가라 허수아비</item>
+    <item>피 없는 전장</item>
+    <item>마지막 날</item>
+    <item>평화협상</item>
+    <item>행운?</item>
+    <item>철혈고위거점</item>
+    <item>마인드 파편</item>
+    <item>가장 비겁한 소원</item>
+    <item>다음 목적지</item>
+    <item>의문의 적</item>
+    <item>지원군</item>
+    <item>포효하는 태양</item>
+    <item>그리폰 결사대</item>
+    <item>2번 수비거점</item>
+    <item>무서운 굉음</item>
+    <item>3번 수비거점</item>
+    <item>4번 수비거점</item>
+    <item>거친 장난</item>
+    <item>총공격</item>
+    <item>떠보는 공세</item>
+    <item>미래를 위해</item>
+    <item>검은 인형</item>
+    <item>작별 인사</item>
+    <item>잠깐만인 평화</item>
+    <item>마지막 티켓</item>
+    <item>ELID 감염자</item>
+    <item>신호탄</item>
+    <item>레드존</item>
+    <item>유지</item>
+    <item>옐로우존</item>
+    <item>표식</item>
+    <item>복수</item>
+    <item>희망 출현</item>
+    <item>모든 울분</item>
+    <item>비열한 생쥐들</item>
+    <item>운에 맡기다</item>
+    <item>나쁜 소식</item>
+    <item>IED</item>
+    <item>승리자</item>
+    <item>걸림돌</item>
+    <item>하얀 인형</item>
+    <item>돌풍구출</item>
+    <item>추방자</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_ContinuumTurbulence_Caption">
+    <item>일반</item>
+    <item>일반 [분기점]</item>
+    <item>배드 엔딩 1 [분기 2]</item>
+    <item>정상 [분기 1]</item>
+    <item>일반</item>
+    <item>일반 [분기점]</item>
+    <item>배드 엔딩 2 루트 [분기 2]</item>
+    <item>배드 엔딩 2 [분기 2]</item>
+    <item>정상 [분기 1]</item>
+    <item>정상 [분기 1]</item>
+    <item>일반</item>
+    <item>일반</item>
+    <item>일반</item>
+    <item>일반</item>
+    <item>일반</item>
+    <item>일반</item>
+    <item>일반 [분기점]</item>
+    <item>배드 엔딩 3 [분기 2]</item>
+    <item>정상 [분기 1]</item>
+    <item>일반 [분기점]</item>
+    <item>배드 엔딩 4 [분기 2]</item>
+    <item>정상 [분기 1] [분기점]</item>
+    <item>정상 [분기 1-2] [분기점]</item>
+    <item>정상 [분기 1-1, 1-2-1]</item>
+    <item>정상 [분기 1-1, 1-2-1]</item>
+    <item>정상 [분기 1-2-2]</item>
+    <item>정상 [분기 1-2-2]</item>
+    <item>일반 [분기점]</item>
+    <item>배드 엔딩 5 [분기 2]</item>
+    <item>배드 엔딩 6 [분기 3]</item>
+    <item>정상 [분기 1]</item>
+    <item>일반</item>
+    <item>일반 [분기점]</item>
+    <item>정상 [분기 2] [분기점]</item>
+    <item>배드 엔딩 7 [분기 2-2]</item>
+    <item>정상 [분기 1, 2-1] [분기점]</item>
+    <item>정상 [분기 1]</item>
+    <item>정상 [분기 2]</item>
+    <item>일반 [분기점]</item>
+    <item>배드 엔딩 8 [분기 2]</item>
+    <item>정상 [분기 1] [분기점]</item>
+    <item>배드 엔딩 9 [분기 1]</item>
+    <item>정상 [분기 2]</item>
+    <item>일반 [분기점]</item>
+    <item>배드 엔딩 10 [분기 2]</item>
+    <item>정상 [분기 1]</item>
+    <item>일반</item>
+    <item>에필로그</item>
+    <item>랭킹전</item>
+  </string-array>
+</resources>

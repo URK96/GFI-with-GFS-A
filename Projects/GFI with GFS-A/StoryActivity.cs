@@ -25,7 +25,6 @@ namespace GFI_with_GFS_A
         private RecyclerView mainRecyclerView;
 
         private List<string> titleList = new List<string>();
-        private List<string> itemList = new List<string>();
         private List<string> topTitleList = new List<string>();
         private List<string> captionList = new List<string>();
 

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto">
+<androidx.cardview.widget.CardView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:visibility="gone"
+    android:id="@+id/DollDBDetailModSkillCardLayout"
+    cardview:cardElevation="4dp"
+    cardview:cardCornerRadius="5dp"
+    cardview:cardBackgroundColor="@color/background_material_dark">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:layout_marginBottom="10dp"
+        android:id="@+id/DollDBDetailModSkillLayout">
+    <!--Doll Mod Skill Part - Basic Layout-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/DollDBDetailModSkillBasicLayout">
+        <!--Doll Mod Skill Part - Basic Layout - Skill Icon-->
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/DollDBDetailModSkillIcon"
+                android:layout_margin="5dp" />
+        <!--Doll Mod Skill Part - Basic Layout - Skill Name-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:gravity="center"
+                android:id="@+id/DollDBDetailModSkillName" />
+        </LinearLayout>
+    <!--Doll Mod Skill Part - Skill Explain-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/DollDBDetailModSkillBasicLayout"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="center"
+            android:id="@+id/DollDBDetailModSkillExplain" />
+    <!--Doll Mod Skill Part - Skill Ability-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/DollDBDetailModSkillExplain"
+            android:id="@+id/DollDBDetailModSkillAbilityLayout">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/DollDBDetailModSkillAbilityTopLayout">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/Common_Effect"
+                    android:textStyle="bold"
+                    android:id="@+id/DollDBDetailModSkillAbilityTopText1" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/Common_Mag"
+                    android:textStyle="bold"
+                    android:id="@+id/DollDBDetailModSkillAbilityTopText2" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/DollDBDetailModSkillAbilitySubLayout" />
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+</merge>

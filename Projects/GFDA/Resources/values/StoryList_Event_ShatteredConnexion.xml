@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Story_Main_Main_Event_ShatteredConnexion_TopTitle">
+    <item>연쇄분열 : 1지역</item>
+    <item>연쇄분열 : 1지역</item>
+    <item>연쇄분열 : 1지역</item>
+    <item>연쇄분열 : 1지역</item>
+    <item>연쇄분열 : 1지역</item>
+    <item>연쇄분열 : 1지역</item>
+    <item>연쇄분열 : 1지역</item>
+    <item>연쇄분열 : 1지역</item>
+    <item>연쇄분열 : 2지역</item>
+    <item>연쇄분열 : 2지역</item>
+    <item>연쇄분열 : 2지역</item>
+    <item>연쇄분열 : 2지역</item>
+    <item>연쇄분열 : 2지역</item>
+    <item>연쇄분열 : 2지역</item>
+    <item>연쇄분열 : 2지역</item>
+    <item>연쇄분열 : 2지역</item>
+    <item>연쇄분열 : 3지역</item>
+    <item>연쇄분열 : 3지역</item>
+    <item>연쇄분열 : 3지역</item>
+    <item>연쇄분열 : 3지역</item>
+    <item>연쇄분열 : 3지역</item>
+    <item>연쇄분열 : 3지역</item>
+    <item>연쇄분열 : 3지역</item>
+    <item>연쇄분열 : 3지역</item>
+    <item>연쇄분열 : 3지역</item>
+    <item>연쇄분열 : 4지역</item>
+    <item>연쇄분열 : 4지역</item>
+    <item>연쇄분열 : 4지역</item>
+    <item>연쇄분열 : 4지역</item>
+    <item>연쇄분열 : 4지역</item>
+    <item>연쇄분열 : 4지역</item>
+    <item>연쇄분열 : 4지역</item>
+    <item>연쇄분열 : 4지역</item>
+    <item>연쇄분열 : 히든</item>
+    <item>연쇄분열 : 5지역</item>
+    <item>연쇄분열 : 5지역</item>
+    <item>연쇄분열 : 5지역</item>
+    <item>연쇄분열 : 5지역</item>
+    <item>연쇄분열 : 5지역</item>
+    <item>연쇄분열 : 5지역</item>
+    <item>연쇄분열 : 5지역</item>
+    <item>연쇄분열 : 5지역</item>
+    <item>연쇄분열 : 5지역</item>
+    <item>연쇄분열 : 5지역</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_ShatteredConnexion">
+    <item>정적의 기운</item>
+    <item>파트 타임</item>
+    <item>뿌리를 찾아서</item>
+    <item>옛벗과 재회</item>
+    <item>묶여버린 유령 Ⅰ</item>
+    <item>기밀 정보 Ⅰ</item>
+    <item>기밀 정보 Ⅱ</item>
+    <item>기밀 정보 Ⅲ</item>
+    <item>묶여버린 유령 Ⅱ</item>
+    <item>닿지 않는 탄식 Ⅰ</item>
+    <item>이름 없는 방랑자 Ⅱ</item>
+    <item>이름 없는 방랑자 Ⅰ</item>
+    <item>닿지 않는 탄식 Ⅱ</item>
+    <item>기밀 정보 Ⅳ</item>
+    <item>기밀 정보 Ⅴ</item>
+    <item>기밀 정보 Ⅵ</item>
+    <item>인식분열 Ⅰ</item>
+    <item>인식분열 Ⅱ</item>
+    <item>바닥의 귀향길 Ⅰ</item>
+    <item>불청객</item>
+    <item>인식분열 Ⅲ</item>
+    <item>인식분열 Ⅳ</item>
+    <item>기밀 정보 Ⅶ</item>
+    <item>기밀 정보 Ⅷ</item>
+    <item>기밀 정보 Ⅸ</item>
+    <item>끝없는 연결</item>
+    <item>바닥의 귀향길 Ⅱ</item>
+    <item>이성질체 Ⅰ</item>
+    <item>바닥의 귀향길 Ⅲ</item>
+    <item>이성질체 Ⅱ</item>
+    <item>기밀 정보 Ⅹ</item>
+    <item>기밀 정보 XI</item>
+    <item>기밀 정보 XII</item>
+    <item>종언의 꽃밭</item>
+    <item>진퇴양난</item>
+    <item>이 뽑기 작전 Ⅰ</item>
+    <item>이 뽑기 작전 Ⅱ</item>
+    <item>모든 것을 삼키는 꽃밭</item>
+    <item>잘 있어라, 탈린 Ⅰ</item>
+    <item>잘 있어라, 탈린 Ⅰ</item>
+    <item>잘 있어라, 탈린 Ⅱ</item>
+    <item>기밀 정보 XIII</item>
+    <item>기밀 정보 XIV</item>
+    <item>기밀 정보 XV</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_ShatteredConnexion_Caption">
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>사이드 스토리</item>
+    <item>사이드 스토리</item>
+    <item>사이드 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>사이드 스토리</item>
+    <item>사이드 스토리</item>
+    <item>사이드 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>사이드 스토리</item>
+    <item>사이드 스토리</item>
+    <item>사이드 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>사이드 스토리</item>
+    <item>사이드 스토리</item>
+    <item>사이드 스토리</item>
+    <item>랭킹전</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>메인 스토리</item>
+    <item>사이드 스토리</item>
+    <item>사이드 스토리</item>
+    <item>사이드 스토리</item>
+  </string-array>
+</resources>

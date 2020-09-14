@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:background="@color/MainColor"
+        android:id="@+id/StoryReaderMainToolbar" >
+		<LinearLayout
+			android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:id="@+id/StoryReaderToolbarNowStoryCategory"/>
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:id="@+id/StoryReaderToolbarNowStoryTitle"/>
+		</LinearLayout>
+	</androidx.appcompat.widget.Toolbar>
+	<ProgressBar
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+		android:indeterminateOnly="true"
+		android:visibility="invisible"
+		android:id="@+id/StoryReaderLoadProgress"/>
+	<ScrollView 
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<TextView 
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:id="@+id/StoryReaderMainTextView"/>
+	</ScrollView>
+</LinearLayout>

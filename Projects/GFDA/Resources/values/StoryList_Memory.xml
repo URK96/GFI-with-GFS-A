@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Story_Main_Memory_C121_TopTitle">
+    <item>C121 - 1</item>
+    <item>C121 - 2</item>
+    <item>C121 - 3</item>
+    <item>C121 - 4</item>
+    <item>C121 - 5</item>
+    <item>C121 - 6</item>
+    <item>C121 - 7</item>
+    <item>C121 - 8</item>
+    <item>C121 - 9</item>
+    <item>C121 - 10</item>
+    <item>C121 - 11</item>
+  </string-array>
+
+  <string-array name="Story_Main_Memory_C121">
+    <item>소박한 마녀</item>
+    <item>뒤쫓는 유령</item>
+    <item>정석적인 계획</item>
+    <item>맛있는 잡음</item>
+    <item>실패한 첫걸음</item>
+    <item>대가 있는 도움</item>
+    <item>어린 새의 날갯짓</item>
+    <item>대가 없는 진심</item>
+    <item>마녀의 밤</item>
+    <item>눈부신 전망</item>
+    <item>꿈의 간주</item>
+  </string-array>
+
+  <string-array name="Story_Main_Memory_C121_Caption">
+    <item>"진주는 모래 속에서도 빛을 발하는 법."</item>
+    <item>"유령이 꼭 그늘에 숨지는 않는다."</item>
+    <item>"계획을 갖고 있으면 적어도 실패했을 때 이유라도 알 수 있다."</item>
+    <item>"들키지 않으려면..."</item>
+    <item>"삶이란 성공과 실패 그리고 실패로 이루어진다."</item>
+    <item>"뭐든지 부탁해 돈만 낸다면."</item>
+    <item>"노력은 아쉬움을 되도록 줄이려고 하는 거야."</item>
+    <item>"기억에 대해서 인형이나 인간이나 똑같아."</item>
+    <item>"쉿 이 밤의 음악을 들어봐..."</item>
+    <item>"과외비라 치라고 내가 진작에 말했지?"</item>
+    <item>"아름다운 것은 어떻게든 묘사해야 해 이름이라도 지어줘."</item>
+  </string-array>
+
+  <string-array name="Story_Main_Memory_C122_TopTitle">
+    <item>C122 - 1</item>
+    <item>C122 - 2</item>
+    <item>C122 - 3</item>
+    <item>C122 - 4</item>
+    <item>C122 - 5</item>
+    <item>C122 - 6</item>
+    <item>C122 - 7</item>
+    <item>C122 - 8</item>
+    <item>C122 - 9</item>
+    <item>C122 - 10</item>
+  </string-array>
+
+  <string-array name="Story_Main_Memory_C122">
+    <item>Dealer</item>
+    <item>Player</item>
+    <item>Wager</item>
+    <item>Hit</item>
+    <item>Odds</item>
+    <item>Split</item>
+    <item>LadyLuck</item>
+    <item>Blinds</item>
+    <item>Heads-up</item>
+    <item>Fold</item>
+  </string-array>
+
+  <string-array name="Story_Main_Memory_C122_Caption">
+    <item>"어느 날 리엔필드가 임무를 마치고 그녀의 안식처에 돌아왔을 때 예상치 못한 일을 만났다..."</item>
+    <item>"리엔필드는 자신이 이런 무리에 낄 줄은 상상한 적 없다 게다가 자신보다 더 어색해 보이는 인물까지 있었다..."</item>
+    <item>"무슨 일이든 실전이 어려운 법 리엔필드는 머리로는 알고 있어도 지고 싶진 않았다."</item>
+    <item>"세상은 참 신기하지 특히 자신이 남보다 잘났다고 생각할 때 말이야."</item>
+    <item>"실패를 달게 받고 교훈을 얻어 다음에 성공하기 위해 준비하라... 입에 발린 말쯤이야 누구나 한다 하지만 그녀는 절대 실패하지 않는다."</item>
+    <item>"배우가 모였으니 막을 올리자."</item>
+    <item>"이 세상에 꺾을 수 없는 건 없다 난 그렇게 믿기에 지금까지 이겨왔다."</item>
+    <item>"사자는 토끼를 상대로도 전력을 다한다 토끼는 교활하기 때문에."</item>
+    <item>"네가 심연을 주시할 때 심연도 널 주시한다."</item>
+    <item>"삶은 이야기가 아니면서도 이야기다. 삶이라는 이야기 속에서 모두가 주인공이다."</item>
+  </string-array>
+</resources>

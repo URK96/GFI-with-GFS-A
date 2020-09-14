@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp">
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/FairyFilterMainLayout">
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/Common_ProductTime"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginRight="8dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center" />
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp">
+                <NumberPicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:id="@+id/FairyFilterProductHour" />
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:text="@string/Time_Hour"
+                    android:gravity="center"
+                    android:layout_marginRight="10dp" />
+                <NumberPicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:id="@+id/FairyFilterProductMinute" />
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:text="@string/Time_Minute"
+                    android:gravity="center" />
+            </LinearLayout>
+            <View
+                android:layout_height="5px"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#90909090" />
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp">
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="@string/Common_FairyType"
+                    android:textStyle="bold"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_marginRight="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center" />
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+                    <Space
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+                    <CheckBox
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:text="@string/Common_FairyType_Combat"
+                        android:layout_weight="2"
+                        android:id="@+id/FairyFilterTypeCombat" />
+                    <CheckBox
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:text="@string/Common_FairyType_Strategy"
+                        android:layout_weight="2"
+                        android:id="@+id/FairyFilterTypeStrategy" />
+                    <Space
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

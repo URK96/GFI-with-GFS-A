@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto">
+<!--Fairy Ability Part-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        android:id="@+id/FairyDBDetailAbilityCardLayout"
+        cardview:cardElevation="4dp"
+        cardview:cardCornerRadius="5dp"
+        cardview:cardBackgroundColor="@color/background_material_dark">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/FairyInfo_DetailMainLayout">
+        <!--Fairy Ability - FireRate Part-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/FairyInfoFRLayout">
+                <TextView
+                    android:text="@string/Common_FR"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView1"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1" />
+                <View
+                    android:layout_height="match_parent"
+                    android:layout_width="5px"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/seperatebar_vertical" />
+                <RelativeLayout
+                    android:orientation="vertical"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:progressTint="@color/ProgressBarColor"
+                        android:id="@+id/FairyInfoFRProgress"
+                        android:max="300" />
+                    <TextView
+                        android:id="@+id/FairyInfoFRProgressMin"
+                        android:layout_height="10dp"
+                        android:layout_width="30dp"
+                        android:textSize="8dp"
+                        android:layout_alignLeft="@id/FairyInfoFRProgress"
+                        android:layout_alignTop="@id/FairyInfoFRProgress"
+                        android:gravity="left"
+                        android:text="0" />
+                    <TextView
+                        android:id="@+id/FairyInfoFRProgressMax"
+                        android:layout_height="10dp"
+                        android:layout_width="30dp"
+                        android:textSize="8dp"
+                        android:layout_alignRight="@id/FairyInfoFRProgress"
+                        android:layout_alignTop="@id/FairyInfoFRProgress"
+                        android:gravity="right" />
+                </RelativeLayout>
+                <TextView
+                    android:text="0/0"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/FairyInfoFRStatus"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginRight="20dp" />
+            </LinearLayout>
+        <!--Fairy Ability - Accuracy Part-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/FairyInfoACLayout">
+                <TextView
+                    android:text="@string/Common_AC"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView1"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1" />
+                <View
+                    android:layout_height="match_parent"
+                    android:layout_width="5px"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/seperatebar_vertical" />
+                <RelativeLayout
+                    android:orientation="vertical"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:progressTint="@color/ProgressBarColor"
+                        android:id="@+id/FairyInfoACProgress"
+                        android:max="200" />
+                    <TextView
+                        android:id="@+id/FairyInfoACProgressMin"
+                        android:layout_height="10dp"
+                        android:layout_width="30dp"
+                        android:textSize="8dp"
+                        android:layout_alignLeft="@id/FairyInfoACProgress"
+                        android:layout_alignTop="@id/FairyInfoACProgress"
+                        android:gravity="left"
+                        android:text="0" />
+                    <TextView
+                        android:id="@+id/FairyInfoACProgressMax"
+                        android:layout_height="10dp"
+                        android:layout_width="30dp"
+                        android:textSize="8dp"
+                        android:layout_alignRight="@id/FairyInfoACProgress"
+                        android:layout_alignTop="@id/FairyInfoACProgress"
+                        android:gravity="right" />
+                </RelativeLayout>
+                <TextView
+                    android:text="0/0"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/FairyInfoACStatus"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginRight="20dp" />
+            </LinearLayout>
+        <!--Fairy Ability - Evasion Part-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/FairyInfoEVLayout">
+                <TextView
+                    android:text="@string/Common_EV"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView1"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1" />
+                <View
+                    android:layout_height="match_parent"
+                    android:layout_width="5px"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/seperatebar_vertical" />
+                <RelativeLayout
+                    android:orientation="vertical"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:progressTint="@color/ProgressBarColor"
+                        android:id="@+id/FairyInfoEVProgress"
+                        android:max="150" />
+                    <TextView
+                        android:id="@+id/FairyInfoEVProgressMin"
+                        android:layout_height="10dp"
+                        android:layout_width="30dp"
+                        android:textSize="8dp"
+                        android:layout_alignLeft="@id/FairyInfoEVProgress"
+                        android:layout_alignTop="@id/FairyInfoEVProgress"
+                        android:gravity="left"
+                        android:text="0" />
+                    <TextView
+                        android:id="@+id/FairyInfoEVProgressMax"
+                        android:layout_height="10dp"
+                        android:layout_width="30dp"
+                        android:textSize="8dp"
+                        android:layout_alignRight="@id/FairyInfoEVProgress"
+                        android:layout_alignTop="@id/FairyInfoEVProgress"
+                        android:gravity="right" />
+                </RelativeLayout>
+                <TextView
+                    android:text="0/0"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/FairyInfoEVStatus"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginRight="20dp" />
+            </LinearLayout>
+        <!--Fairy Ability - Armor Part-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/FairyInfoAMLayout">
+                <TextView
+                    android:text="@string/Common_AM"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView1"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1" />
+                <View
+                    android:layout_height="match_parent"
+                    android:layout_width="5px"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/seperatebar_vertical" />
+                <RelativeLayout
+                    android:orientation="vertical"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:progressTint="@color/ProgressBarColor"
+                        android:id="@+id/FairyInfoAMProgress"
+                        android:max="30" />
+                    <TextView
+                        android:id="@+id/FairyInfoAMProgressMin"
+                        android:layout_height="10dp"
+                        android:layout_width="30dp"
+                        android:textSize="8dp"
+                        android:layout_alignLeft="@id/FairyInfoAMProgress"
+                        android:layout_alignTop="@id/FairyInfoAMProgress"
+                        android:gravity="left"
+                        android:text="0" />
+                    <TextView
+                        android:id="@+id/FairyInfoAMProgressMax"
+                        android:layout_height="10dp"
+                        android:layout_width="30dp"
+                        android:textSize="8dp"
+                        android:layout_alignRight="@id/FairyInfoAMProgress"
+                        android:layout_alignTop="@id/FairyInfoAMProgress"
+                        android:gravity="right" />
+                </RelativeLayout>
+                <TextView
+                    android:text="0/0"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/FairyInfoAMStatus"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginRight="20dp" />
+            </LinearLayout>
+        <!--Fairy Ability - Critical Part-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/FairyInfoCRLayout">
+                <TextView
+                    android:text="@string/Common_CR"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView1"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1" />
+                <View
+                    android:layout_height="match_parent"
+                    android:layout_width="5px"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/seperatebar_vertical" />
+                <RelativeLayout
+                    android:orientation="vertical"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:progressTint="@color/ProgressBarColor"
+                        android:id="@+id/FairyInfoCRProgress"
+                        android:max="30" />
+                    <TextView
+                        android:id="@+id/FairyInfoCRProgressMin"
+                        android:layout_height="10dp"
+                        android:layout_width="30dp"
+                        android:textSize="8dp"
+                        android:layout_alignLeft="@id/FairyInfoCRProgress"
+                        android:layout_alignTop="@id/FairyInfoCRProgress"
+                        android:gravity="left"
+                        android:text="0" />
+                    <TextView
+                        android:id="@+id/FairyInfoCRProgressMax"
+                        android:layout_height="10dp"
+                        android:layout_width="30dp"
+                        android:textSize="8dp"
+                        android:layout_alignRight="@id/FairyInfoCRProgress"
+                        android:layout_alignTop="@id/FairyInfoCRProgress"
+                        android:gravity="right" />
+                </RelativeLayout>
+                <TextView
+                    android:text="0/0"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/FairyInfoCRStatus"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginRight="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</merge>

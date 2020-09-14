@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <group android:checkableBehavior="single">
+    <item
+      android:title="@string/Common_ExpItem"
+      android:id="@+id/CalcNavigation_ExpItem"/>
+    <item
+      android:title="@string/Common_Core"
+      android:id="@+id/CalcNavigation_Core"/>
+    <item
+      android:title="@string/Common_CoalitionGrade"
+      android:id="@+id/CalcNavigation_CoalitionGrade"/>
+    <item
+      android:title="@string/Common_SkillTraining"
+      android:id="@+id/CalcNavigation_SkillTraining"/>
+    <item
+      android:title="@string/Common_FSTGradeUp"
+      android:id="@+id/CalcNavigation_FSTGradeUp"/>
+    <item
+      android:title="@string/Common_AreaExp"
+      android:id="@+id/CalcNavigation_AreaExp"/>
+  </group>
+</menu>

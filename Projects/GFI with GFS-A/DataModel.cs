@@ -35,6 +35,7 @@ namespace GFI_with_GFS_A
         public string SkillExplain { get; private set; }
         public string[] SkillEffect { get; private set; }
         public string[] SkillMag { get; private set; }
+        public string[] SkillEffectAfterMod { get; private set; }
         public string[] SkillMagAfterMod { get; private set; }
         public string ModSkillName { get; private set; }
         public string ModSkillExplain { get; private set; }
@@ -117,6 +118,7 @@ namespace GFI_with_GFS_A
                 ModSkillExplain = (string)dr["ModSkillExplain"];
                 ModSkillEffect = ((string)dr["ModSkillEffect"]).Split(';');
                 ModSkillMag = ((string)dr["ModSkillMag"]).Split(',');
+                SkillEffectAfterMod = ((string)dr["SkillEffectAfterMod"]).Split(',');
                 SkillMagAfterMod = ((string)dr["SkillMagAfterMod"]).Split(',');
             }
 

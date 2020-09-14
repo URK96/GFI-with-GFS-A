@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<clip xmlns:android="http://schemas.android.com/apk/res/android"
+      android:drawable="@drawable/splash_special"
+      android:clipOrientation="vertical"
+      android:gravity="top"/>

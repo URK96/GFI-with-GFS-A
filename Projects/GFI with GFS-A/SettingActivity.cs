@@ -15,7 +15,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 
-namespace GFI_with_GFS_A
+namespace GFDA
 {
     [Activity(Label = "@string/Activity_SettingActivity", Theme = "@style/GFS.Setting", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SettingActivity : BaseAppCompatActivity

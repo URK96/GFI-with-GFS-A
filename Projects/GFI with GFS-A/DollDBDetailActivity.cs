@@ -1180,7 +1180,7 @@ namespace GFI_with_GFS_A
                 skillInfoRootLayout.FindViewById<ImageView>(Resource.Id.DollDBDetailSkillCoolTimeIcon).SetImageResource(Resource.Drawable.CoolTime_Icon_WhiteTheme);
             }
 
-            string[] skillAbilities = doll.SkillEffect;
+            string[] skillAbilities = (modIndex == 0) ? doll.SkillEffect : doll.SkillEffectAfterMod;
             string[] skillMags = (modIndex == 0) ? doll.SkillMag : doll.SkillMagAfterMod;
 
             var skillInitCoolTime = skillInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailSkillInitCoolTime);
@@ -1200,7 +1200,7 @@ namespace GFI_with_GFS_A
             {
                 var layout = new LinearLayout(this)
                 {
-                    Orientation = Android.Widget.Orientation.Horizontal,
+                    Orientation = Orientation.Horizontal,
                     LayoutParameters = skillInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollDBDetailSkillAbilityTopLayout).LayoutParameters
                 };
 

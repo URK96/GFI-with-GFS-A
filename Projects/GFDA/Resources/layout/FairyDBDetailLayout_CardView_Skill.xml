@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto">
+<!--Fairy Skill Part-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        android:id="@+id/FairyDBDetailSkillCardLayout"
+        cardview:cardElevation="4dp"
+        cardview:cardCornerRadius="5dp"
+        cardview:cardBackgroundColor="@color/background_material_dark">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/FairyDBDetailSkillLayout">
+        <!--Fairy Skill Part - Basic Layout-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/FairyDBDetailSkillBasicLayout">
+            <!--Fairy Skill Part - Basic Layout - Skill Icon-->
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/FairyDBDetailSkillIconLayout">
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:id="@+id/FairyDBDetailSkillIcon"
+                        android:layout_margin="5dp" />
+                </FrameLayout>
+            <!--Fairy Skill Part - Basic Layout - Skill Name-->
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_toRightOf="@id/FairyDBDetailSkillIconLayout"
+                    android:id="@+id/FairyDBDetailSkillNameLayout">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:gravity="center"
+                        android:id="@+id/FairyDBDetailSkillName" />
+                </FrameLayout>
+            <!--Fairy Skill Part - Basic Layout - Skill CoolTime & Ticket-->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_toRightOf="@id/FairyDBDetailSkillIconLayout"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/FairyDBDetailSkillLayout">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/FairyDBDetailSkillTicketLayout">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/FairyDBDetailSkillTicketIcon"
+                            android:src="@drawable/fairyticket_icon" />
+                        <TextView
+                            android:layout_height="match_parent"
+                            android:layout_width="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:gravity="center"
+                            android:id="@+id/FairyDBDetailSkillTicket" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/FairyDBDetailSkillCoolTimeLayout">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/FairyDBDetailSkillCoolTimeIcon"
+                            android:src="@drawable/cooltime_icon" />
+                        <TextView
+                            android:layout_height="match_parent"
+                            android:layout_width="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:gravity="center"
+                            android:id="@+id/FairyDBDetailSkillCoolTime" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        <!--Fairy Skill Part - Skill Explain-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/FairyDBDetailSkillBasicLayout"
+                android:id="@+id/FairyDBDetailSkillExplainLayout">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:gravity="center"
+                    android:id="@+id/FairyDBDetailSkillExplain" />
+            </FrameLayout>
+        <!--Fairy Skill Part - Skill Ability-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/FairyDBDetailSkillExplainLayout"
+                android:id="@+id/FairyDBDetailSkillDetailLayout">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/Common_Effect"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:gravity="center"
+                    android:id="@+id/FairyDBDetailSkillEffect" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/Common_Mag"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:gravity="center"
+                    android:id="@+id/FairyDBDetailSkillRate" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</merge>

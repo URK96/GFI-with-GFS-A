@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Story_Main_Main_Event_Isomer_TopTitle">
+    <item>이성질체 : 프롤로그</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 1지역</item>
+    <item>이성질체 : 2지역</item>
+    <item>이성질체 : 2지역</item>
+    <item>이성질체 : 2지역</item>
+    <item>이성질체 : 2지역</item>
+    <item>이성질체 : 2지역</item>
+    <item>이성질체 : 2지역</item>
+    <item>이성질체 : 2지역</item>
+    <item>이성질체 : 2지역</item>
+    <item>이성질체 : 2지역</item>
+    <item>이성질체 : 2지역</item>
+    <item>이성질체 : 2지역</item>
+    <item>이성질체 : 2지역</item>
+    <item>이성질체 : 2지역</item>
+    <item>이성질체 : 3지역 Part.1</item>
+    <item>이성질체 : 3지역 Part.1</item>
+    <item>이성질체 : 3지역 Part.1</item>
+    <item>이성질체 : 3지역 Part.1</item>
+    <item>이성질체 : 3지역 Part.1</item>
+    <item>이성질체 : 3지역 Part.1</item>
+    <item>이성질체 : 3지역 Part.1</item>
+    <item>이성질체 : 3지역 Part.1</item>
+    <item>이성질체 : 3지역 Part.1</item>
+    <item>이성질체 : 3지역 Part.1</item>
+    <item>이성질체 : 3지역 Part.2</item>
+    <item>이성질체 : 3지역 Part.2</item>
+    <item>이성질체 : 3지역 Part.2</item>
+    <item>이성질체 : 3지역 Part.2</item>
+    <item>이성질체 : 3지역 Part.2</item>
+    <item>이성질체 : 3지역 Part.2</item>
+    <item>이성질체 : 3지역 Part.2</item>
+    <item>이성질체 : 3지역 Part.2</item>
+    <item>이성질체 : 3지역 Part.2</item>
+    <item>이성질체 : 히든</item>
+  </string-array>
+  
+  <string-array name="Story_Main_Main_Event_Isomer">
+    <item>기념</item>
+    <item>환상뿐일 평화 Ⅰ</item>
+    <item>환상뿐일 평화 Ⅰ Sub</item>
+    <item>환상뿐일 평화 Ⅱ</item>
+    <item>환상뿐일 평화 Ⅱ Sub</item>
+    <item>환상뿐일 평화 Ⅲ</item>
+    <item>환상뿐일 평화 Ⅳ</item>
+    <item>환상뿐일 평화 Ⅴ</item>
+    <item>고양이와 생쥐 Ⅰ</item>
+    <item>고양이와 생쥐 Ⅱ</item>
+    <item>고양이와 생쥐 Ⅲ</item>
+    <item>고양이와 생쥐 Ⅲ Sub</item>
+    <item>고양이와 생쥐 Ⅳ</item>
+    <item>변경 밖에서 Ⅰ</item>
+    <item>변경 밖에서 Ⅱ</item>
+    <item>변경 밖에서 Ⅲ</item>
+    <item>변경 밖에서 Ⅳ</item>
+    <item>피의 신념 Ⅰ</item>
+    <item>피의 신념 Ⅰ Sub</item>
+    <item>피의 신념 Ⅰ Sub 2</item>
+    <item>피의 신념 Ⅱ</item>
+    <item>피의 신념 Ⅱ Sub</item>
+    <item>피의 신념 Ⅲ</item>
+    <item>늑대와 올빼미 Ⅰ</item>
+    <item>늑대와 올빼미 Ⅰ Sub</item>
+    <item>늑대와 올빼미 Ⅱ</item>
+    <item>늑대와 올빼미 Ⅲ</item>
+    <item>늑대와 올빼미 Ⅳ</item>
+    <item>성벽 밑에서 Ⅰ</item>
+    <item>성벽 밑에서 Ⅱ</item>
+    <item>잃어버린 카드 Ⅰ</item>
+    <item>잃어버린 카드 Ⅱ</item>
+    <item>잃어버린 카드 Ⅲ</item>
+    <item>상어와 바다 Ⅰ</item>
+    <item>상어와 바다 Ⅱ</item>
+    <item>상어와 바다 Ⅲ</item>
+    <item>상어와 바다 Ⅳ</item>
+    <item>상어와 바다 Ⅴ</item>
+    <item>상어와 바다 Ⅵ</item>
+    <item>상어와 바다 Ⅶ</item>
+    <item>소란 속에서 Ⅰ</item>
+    <item>소란 속에서 Ⅱ</item>
+    <item>소란 속에서 Ⅱ Sub</item>
+    <item>소란 속에서 Ⅲ</item>
+    <item>소란 속에서 Ⅳ</item>
+    <item>소란 속에서 Ⅴ</item>
+    <item>소란 속에서 Ⅵ</item>
+    <item>소란 속에서 Ⅵ Sub</item>
+    <item>소란 속에서 Ⅵ Sub 2</item>
+    <item>혼돈폐막</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_Isomer_Caption">
+    <item>프롤로그</item>
+    <item>1지역 - 그리폰</item>
+    <item>1지역 - 그리폰</item>
+    <item>1지역 - 그리폰</item>
+    <item>1지역 - 그리폰</item>
+    <item>1지역 - 그리폰</item>
+    <item>1지역 - 그리폰</item>
+    <item>1지역 - 그리폰</item>
+    <item>1지역 - 리벨리온 A</item>
+    <item>1지역 - 리벨리온 A</item>
+    <item>1지역 - 리벨리온 A</item>
+    <item>1지역 - 리벨리온 A</item>
+    <item>1지역 - 리벨리온 A</item>
+    <item>1지역 - 리벨리온 B</item>
+    <item>1지역 - 리벨리온 B</item>
+    <item>1지역 - 리벨리온 B</item>
+    <item>1지역 - 리벨리온 B</item>
+    <item>2지역 - 그리폰</item>
+    <item>2지역 - 그리폰</item>
+    <item>2지역 - 그리폰</item>
+    <item>2지역 - 그리폰</item>
+    <item>2지역 - 그리폰</item>
+    <item>2지역 - 그리폰</item>
+    <item>2지역 - 리벨리온 A</item>
+    <item>2지역 - 리벨리온 A</item>
+    <item>2지역 - 리벨리온 A</item>
+    <item>2지역 - 리벨리온 A</item>
+    <item>2지역 - 리벨리온 A</item>
+    <item>2지역 - 리벨리온 B</item>
+    <item>2지역 - 리벨리온 B</item>
+    <item>3지역 Part.1 - 그리폰</item>
+    <item>3지역 Part.1 - 그리폰</item>
+    <item>3지역 Part.1 - 그리폰</item>
+    <item>3지역 Part.1 - 리벨리온</item>
+    <item>3지역 Part.1 - 리벨리온</item>
+    <item>3지역 Part.1 - 리벨리온</item>
+    <item>3지역 Part.1 - 리벨리온</item>
+    <item>3지역 Part.1 - 리벨리온</item>
+    <item>3지역 Part.1 - 리벨리온</item>
+    <item>3지역 Part.1 - 리벨리온</item>
+    <item>3지역 Part.2</item>
+    <item>3지역 Part.2</item>
+    <item>3지역 Part.2</item>
+    <item>3지역 Part.2</item>
+    <item>3지역 Part.2</item>
+    <item>3지역 Part.2</item>
+    <item>3지역 Part.2</item>
+    <item>3지역 Part.2</item>
+    <item>3지역 Part.2</item>
+    <item>랭킹전</item>
+  </string-array>
+</resources>

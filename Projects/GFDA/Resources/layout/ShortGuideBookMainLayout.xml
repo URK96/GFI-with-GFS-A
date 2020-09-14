@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/ShortGuideBookMainLayout">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+		<androidx.appcompat.widget.Toolbar
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/MainColor"
+			android:id="@+id/ShortGuideBookMainToolbar" />
+		<androidx.drawerlayout.widget.DrawerLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_below="@id/ShortGuideBookMainToolbar"
+			android:id="@+id/ShortGuideBookMainDrawerLayout">
+			<LinearLayout
+			    android:orientation="vertical"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    android:id="@+id/ShortGuideBookContainer"/>
+			<ListView
+			    android:layout_width="240dp"
+			    android:layout_height="match_parent"
+			    android:layout_gravity="start"
+				android:choiceMode="singleChoice"
+				android:fitsSystemWindows="true"
+			    android:id="@+id/ShortGuideBookImageListView" />
+		</androidx.drawerlayout.widget.DrawerLayout>
+    </LinearLayout>
+	<androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ShortGuideBookSnackbarLayout"
+        android:layout_alignTop="@id/ShortGuideBookMainLayout" />
+</RelativeLayout>

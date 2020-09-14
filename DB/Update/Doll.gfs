@@ -48,6 +48,7 @@
                 <xs:element name="SkillExplainAfterMod" type="xs:string" minOccurs="0" />
                 <xs:element name="SkillEffect" type="xs:string" minOccurs="0" />
                 <xs:element name="SkillMag" type="xs:string" minOccurs="0" />
+                <xs:element name="SkillEffectAfterMod" type="xs:string" minOccurs="0" />
                 <xs:element name="SkillMagAfterMod" type="xs:string" minOccurs="0" />
                 <xs:element name="ModSkill" type="xs:string" minOccurs="0" />
                 <xs:element name="ModSkillExplain" type="xs:string" minOccurs="0" />
@@ -163,8 +164,10 @@
     <Skill>연막탄</Skill>
     <SkillAfterMod>연막탄</SkillAfterMod>
     <SkillExplain>폭발한 위치의 2.5 반경에 적의 사속과 이동속도를 감소시키는 연막을 발생시킨다.</SkillExplain>
+    <SkillExplainAfterMod>폭발한 위치의 2.5 반경에 적의 사속과 이동속도를 감소시키는 연막을 발생시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 감속치;이속 감소치</SkillEffect>
     <SkillMag>1초,12초,4초,36%,45%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;사속 감속치;이속 감소치</SkillEffectAfterMod>
     <SkillMagAfterMod>1초,16초,4초,40%,50%</SkillMagAfterMod>
     <ModSkill>역경의 명사수</ModSkill>
     <ModSkillExplain>연막탄을 투척한 후, 멀리 있는 적부터 가까이 있는 적까지 차례대로 조준하여 7번 사격해 대미지를 준다.</ModSkillExplain>
@@ -225,8 +228,10 @@
     <Skill>기선제압N</Skill>
     <SkillAfterMod>기선제압N</SkillAfterMod>
     <SkillExplain>지속시간 동안 적 전체의 화력을 감소시킨다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 적 전체의 화력을 감소시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간(야간);지속시간(주간);화력 감소치(야간);화력 감소치(주간)</SkillEffect>
     <SkillMag>6초,12초,8초,5초,35%,20%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간(야간);지속시간(주간);화력 감소치(야간);화력 감소치(주간)</SkillEffectAfterMod>
     <SkillMagAfterMod>6초,12초,8초,5초,40%,25%</SkillMagAfterMod>
     <ModSkill>칠색의 개선가</ModSkill>
     <ModSkillExplain>매 7회 공격시 지속시간 동안 아군 전체의 화력과 명중 상승</ModSkillExplain>
@@ -373,8 +378,10 @@
     <Skill>격발차단</Skill>
     <SkillAfterMod>격발차단</SkillAfterMod>
     <SkillExplain>지속시간 동안 적 전체의 사속을 감소시킨다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 적 전체의 사속을 감소시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 감소치</SkillEffect>
     <SkillMag>6초,12초,8초,22%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;사속 감소치</SkillEffectAfterMod>
     <SkillMagAfterMod>6초,12초,8초,28%</SkillMagAfterMod>
     <ModSkill>파도의 외침</ModSkill>
     <ModSkillExplain>격발차단 발동 시 지속시간 동안 버프 진형 내의 아군의 사속 상승</ModSkillExplain>
@@ -706,6 +713,7 @@
     <SkillExplainAfterMod>지속시간 동안 아군 전체의 명중을 상승시킨다. (야간작전 전용)</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;명중 증가치</SkillEffect>
     <SkillMag>3초,16초,15초,100%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;명중 증가치</SkillEffectAfterMod>
     <SkillMagAfterMod>3초,16초,15초,120%</SkillMagAfterMod>
     <ModSkill>밤하늘의 추격자</ModSkill>
     <ModSkillExplain>조명탄 발동시 다른 아군의 장탄수가 추가되며 아군 전원의 치명타 피해량이 증가한다.</ModSkillExplain>
@@ -1157,8 +1165,10 @@
     <Skill>일제사격</Skill>
     <SkillAfterMod>일제사격</SkillAfterMod>
     <SkillExplain>지속시간 동안 아군 전체의 화력을 증가시킨다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 아군 전체의 화력을 증가시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect>
     <SkillMag>6초,12초,8초,22%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffectAfterMod>
     <SkillMagAfterMod>6초,12초,8초,25%</SkillMagAfterMod>
     <ModSkill>듀얼 서바이버</ModSkill>
     <ModSkillExplain>일정 시간마다 아군 전원의 명중, 사속이 상승한다. 최대 3중첩</ModSkillExplain>
@@ -1217,6 +1227,7 @@
     <SkillExplainAfterMod>지속시간 동안 아군 전체의 사속을 증가시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 상승치</SkillEffect>
     <SkillMag>6초,12초,8초,22%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;사속 상승치</SkillEffectAfterMod>
     <SkillMagAfterMod>6초,12초,8초,25%</SkillMagAfterMod>
     <ModSkill>약골 때리기!</ModSkill>
     <ModSkillExplain>진압신호 발동시 지속시간 동안 자신의 화력과 치명타율이 증가한다. 체력이 낮은 적을 우선 공격하며 목표의 체력이 30% 미만일 경우 지속시간 동안 해당 적의 회피를 감소시킨다.</ModSkillExplain>
@@ -1476,12 +1487,12 @@
     <ProductTime>65</ProductTime>
     <HasMod>true</HasMod>
     <AbilityGrade>A;A;B;A;S;A</AbilityGrade>
-    <Grow>115;0</Grow>
-    <HP>115;0</HP>
-    <FireRate>110;0</FireRate>
-    <Evasion>95;0</Evasion>
-    <Accuracy>115;0</Accuracy>
-    <AttackSpeed>135;0</AttackSpeed>
+    <Grow>115;115</Grow>
+    <HP>115;118</HP>
+    <FireRate>110;116</FireRate>
+    <Evasion>95;102</Evasion>
+    <Accuracy>115;115</Accuracy>
+    <AttackSpeed>135;135</AttackSpeed>
     <MoveSpeed>15</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>10/15/20/25/30</ConsumeAmmo>
@@ -1502,6 +1513,7 @@
     <SkillExplainAfterMod>지속시간 동안 아군 전체의 사속을 증가시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치</SkillEffect>
     <SkillMag>6초,12초,8초,25%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;사속 증가치</SkillEffectAfterMod>
     <SkillMagAfterMod>6초,12초,8초,28%</SkillMagAfterMod>
     <ModSkill>영혼의 라이브!</ModSkill>
     <ModSkillExplain>아군이 점령한 거점에서 전투 시 적이 처음 사거리에 들어온 후 아군 진형 전방 4범위에 감속 구역을 생성하여 적의 이동속도, 회피를 감소시킨다. 아군이 점령하지 않은 거점에서 전투 시 전투 개시 후 아군 전체의 사속을 증가시키고 권총 이외의 아군의 기본 이동속도를 15로 증가시킨다.</ModSkillExplain>
@@ -1880,6 +1892,7 @@
     <SkillExplainAfterMod>폭발한 위치의 2.5 반경 내의 적에게 기절을 건다</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;기절 지속시간</SkillEffect>
     <SkillMag>5초,16초,3.2초</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;기절 지속시간</SkillEffectAfterMod>
     <SkillMagAfterMod>5초,16초,4초</SkillMagAfterMod>
     <ModSkill>홍염 추격</ModSkill>
     <ModSkillExplain>섬광탄 발동시 추가로 소이탄을 던져 반경 2.5범위의 적에게 폭발 피해를 주고 0.33초마다 화상 대미지를 주는 공간을 생성한다.</ModSkillExplain>
@@ -2069,8 +2082,10 @@
     <Skill>회피기동</Skill>
     <SkillAfterMod>회피기동</SkillAfterMod>
     <SkillExplain>지속시간 동안 자신의 회피를 증가시킨다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 자신의 회피를 증가시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;회피 증가치</SkillEffect>
     <SkillMag>6초,8초,5초,110%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;회피 증가치</SkillEffectAfterMod>
     <SkillMagAfterMod>6초,8초,5초,130%</SkillMagAfterMod>
     <ModSkill>광란의 스파크</ModSkill>
     <ModSkillExplain>전투 시작시 3칸의 전지를 보유하며 전지 1칸당 사속과 화력이 상승한다. 전지는 몇 초마다 1칸씩 소모되며 회피기동 사용시 다시 충전된다.</ModSkillExplain>
@@ -2129,8 +2144,10 @@
     <Skill>섬광탄</Skill>
     <SkillAfterMod>섬광탄</SkillAfterMod>
     <SkillExplain>폭발한 위치의 2.5 반경 내의 적에게 기절을 건다</SkillExplain>
+    <SkillExplainAfterMod>폭발한 위치의 2.5 반경 내의 적에게 기절을 건다</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;기절 지속시간</SkillEffect>
     <SkillMag>5초,16초,3.2초</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;기절 지속시간</SkillEffectAfterMod>
     <SkillMagAfterMod>5초,16초,4초</SkillMagAfterMod>
     <ModSkill>침묵의 섬광</ModSkill>
     <ModSkillExplain>섬광탄에 적의 명중을 감소시키는 효과가 추가된다. 이 효과는 섬광탄에 면역인 적에게도 적용된다.</ModSkillExplain>
@@ -2425,8 +2442,10 @@
     <Skill>수류탄</Skill>
     <SkillAfterMod>수류탄</SkillAfterMod>
     <SkillExplain>폭발한 위치의 2.5 반경 내의 적에게 피해를 준다</SkillExplain>
+    <SkillExplainAfterMod>폭발한 위치의 2.5 반경 내의 적에게 피해를 준다</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
     <SkillMag>3초,16초,6배</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;피해량</SkillEffectAfterMod>
     <SkillMagAfterMod>3초,16초,6.5배</SkillMagAfterMod>
     <ModSkill>용기의 방패</ModSkill>
     <ModSkillExplain>지속시간 동안 자신이 받는 피해를 감소시킨다.</ModSkillExplain>
@@ -2485,8 +2504,10 @@
     <Skill>소이탄</Skill>
     <SkillAfterMod>소이탄</SkillAfterMod>
     <SkillExplain>소이탄을 던져 1.5 반경에 피해를 주고 매 0.33초마다 화상 대미지를 입히는 구간을 생성한다.</SkillExplain>
+    <SkillExplainAfterMod>소이탄을 던져 1.5 반경에 피해를 주고 매 0.33초마다 화상 대미지를 입히는 구간을 생성한다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;폭발 피해량;지속 피해량;지속시간</SkillEffect>
     <SkillMag>3초,16초,6배,1배,5초</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;폭발 피해량;지속 피해량;지속시간</SkillEffectAfterMod>
     <SkillMagAfterMod>3초,16초,6.5배,1배,5초</SkillMagAfterMod>
     <ModSkill>연쇄 점화</ModSkill>
     <ModSkillExplain>소이탄이 1.5초마다 불 붙은 적에게 추가 피해를 주고 해당 적 주위 1반경을 추가로 소이탄 효과 범위로 만든다. 이 효과는 소이탄 효과 종료 시 같이 종료되며 불 붙은 적이 받는 화염 피해는 대상 중심으로 매우 작은 범위에 가해진다.</ModSkillExplain>
@@ -2850,8 +2871,10 @@
     <Skill>포스실드</Skill>
     <SkillAfterMod>포스실드</SkillAfterMod>
     <SkillExplain>자신에게 9999의 왜곡방벽을 생성한다.</SkillExplain>
+    <SkillExplainAfterMod>자신에게 9999의 왜곡방벽을 생성한다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간</SkillEffect>
     <SkillMag>8초,16초,3초</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간</SkillEffectAfterMod>
     <SkillMagAfterMod>8초,16초,4초</SkillMagAfterMod>
     <ModSkill>신기루 참호</ModSkill>
     <ModSkillExplain>포스실드 종료 후 적 숫자에 따라 회피가 증가한다. 최대 3중첩.</ModSkillExplain>
@@ -2911,8 +2934,10 @@
     <Skill>섬광탄</Skill>
     <SkillAfterMod>섬광탄</SkillAfterMod>
     <SkillExplain>폭발한 위치의 2.5 반경 내의 적에게 기절을 건다</SkillExplain>
+    <SkillExplainAfterMod>폭발한 위치의 2.5 반경 내의 적에게 기절을 건다</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;기절 지속시간</SkillEffect>
     <SkillMag>5초,16초,4초</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;기절 지속시간</SkillEffectAfterMod>
     <SkillMagAfterMod>5초,16초,4.5초</SkillMagAfterMod>
     <ModSkill>올빼미의 포효</ModSkill>
     <ModSkillExplain>섬광탄 폭발 시 중심의 적이 기절하지 않거나 이미 사망한 경우 같은 열에 위치한 아군의 회피를 증가시키고 보호막을 부여한다. 기절한 경우에는 같은 열에 위치한 아군의 화력을 증가시킨다.</ModSkillExplain>
@@ -2971,8 +2996,10 @@
     <Skill>연막탄</Skill>
     <SkillAfterMod>연막탄</SkillAfterMod>
     <SkillExplain>폭발한 위치의 2.5 반경에 적의 사속과 이동속도를 감소시키는 연막을 발생시킨다.</SkillExplain>
+    <SkillExplainAfterMod>폭발한 위치의 2.5 반경에 적의 사속과 이동속도를 감소시키는 연막을 발생시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 감소치;이속 감소치</SkillEffect>
     <SkillMag>1초,16초,4초,40%,50%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;사속 감소치;이속 감소치</SkillEffectAfterMod>
     <SkillMagAfterMod>1초,16초,4초,40%,55%</SkillMagAfterMod>
     <ModSkill>안개탄</ModSkill>
     <ModSkillExplain>연막탄이 터지고 2초 후부터 2초마다 연막 속의 적을 5초동안 쇼트 상태로 만들어 공격할 때마다 고정 피해를 입힌다.</ModSkillExplain>
@@ -3518,30 +3545,43 @@
     <Country>United States of America</Country>
     <Type>SMG</Type>
     <Grade>5</Grade>
+    <ModGrade>6</ModGrade>
     <ProductTime>0</ProductTime>
-    <HasMod>false</HasMod>
+    <HasMod>true</HasMod>
     <AbilityGrade>A;B;A;S;S;B</AbilityGrade>
-    <Grow>105</Grow>
-    <HP>110</HP>
-    <FireRate>105</FireRate>
-    <Evasion>120</Evasion>
-    <Accuracy>125</Accuracy>
-    <AttackSpeed>125</AttackSpeed>
+    <Grow>105;105</Grow>
+    <HP>110;115</HP>
+    <FireRate>105;110</FireRate>
+    <Evasion>120;125</Evasion>
+    <Accuracy>125;130</Accuracy>
+    <AttackSpeed>125;125</AttackSpeed>
     <MoveSpeed>12</MoveSpeed>
     <Critical>5</Critical>
     <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
     <ConsumeFood>20/30/40/50/60</ConsumeFood>
     <EffectFormation>1,1,0,1,2,0,1,1,0</EffectFormation>
+    <ModEffectFormation>1,1,0,1,2,0,1,1,0</ModEffectFormation>
     <Effect>AS,AC;10,35</Effect>
+    <ModEffect>AS,AC;15,40</ModEffect>
     <EffectType>AR</EffectType>
+    <EffectTypeAfterMod>AR</EffectTypeAfterMod>
     <DropEvent>7-6 클리어 보상</DropEvent>
     <DicNumber>143</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <SkillCode>mental_disturbance</SkillCode>
     <Skill>정신교란</Skill>
+    <SkillAfterMod>정신교란</SkillAfterMod>
     <SkillExplain>지속시간 동안 적 전체의 화력을 감소시키고 자신의 회피를 증가시킨다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 적 전체의 화력과 명중을 감소시키고 자신의 회피를 증가시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 감소치;회피 증가치</SkillEffect>
     <SkillMag>3초,12초,5초,25%,70%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;화력 감소치;명중 감소치;회피 증가치</SkillEffectAfterMod>
+    <SkillMagAfterMod>3초,12초,5초,25%,10%,70%</SkillMagAfterMod>
+    <ModSkill>정의의 심판</ModSkill>
+    <ModSkillExplain>자신의 1링크 체력보다 적은 피해량을 확률적으로 무시할 수 있다. 공격을 한 대상이 가지고 있는 디버프 또는 설한의 쐐기 효과를 지니고 있을 경우 해당 종류마다 무시 확률이 증가한다. 또한 정신교란 지속시간 동안 자신이 공격한 대상에게 설한의 쐐기 효과를 부여한다.</ModSkillExplain>
+    <ModSkillEffect>기본 확률;추가 확률</ModSkillEffect>
+    <ModSkillMag>20%,10%</ModSkillMag>
+    <OnlyUseEquip>귀염둥이 팬던트</OnlyUseEquip>
     <Costume>논밭의 수호자;규율의 집행인</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
@@ -3632,8 +3672,10 @@
     <Skill>살상류탄</Skill>
     <SkillAfterMod>살상류탄</SkillAfterMod>
     <SkillExplain>폭발한 위치의 1.5 반경 내의 적에게 피해를 준다</SkillExplain>
+    <SkillExplainAfterMod>폭발한 위치의 1.5 반경 내의 적에게 피해를 준다</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
     <SkillMag>8초,16초,10배</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;피해량</SkillEffectAfterMod>
     <SkillMagAfterMod>8초,16초,12배</SkillMagAfterMod>
     <ModSkill>얼어붙는 용기</ModSkill>
     <ModSkillExplain>살상류탄이 공격하는 대상의 체력이 50% 미만이면 유탄 추가 피해, 50% 이상이면 일정 시간 동안 기절시킨다.</ModSkillExplain>
@@ -3952,8 +3994,10 @@
     <Skill>파열류탄</Skill>
     <SkillAfterMod>파열류탄</SkillAfterMod>
     <SkillExplain>유탄을 발사하여 폭발한 위치의 1/2.5/4 반경 내의 적에게 피해를 준다</SkillExplain>
+    <SkillExplainAfterMod>유탄을 발사하여 폭발한 위치의 1/2.5/4 반경 내의 적에게 피해를 준다</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
     <SkillMag>8초,16초,4.5배/1.8배/1배</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;피해량</SkillEffectAfterMod>
     <SkillMagAfterMod>8초,16초,5배/2배/1배</SkillMagAfterMod>
     <ModSkill>화염 폭풍</ModSkill>
     <ModSkillExplain>파열류탄의 위력이 상승하고 대미지가 중심으로부터 1/2.5/4 반경의 원형으로 3단 폭발하는 형식으로 변경된다.</ModSkillExplain>
@@ -4270,8 +4314,10 @@
     <Skill>화력전개N</Skill>
     <SkillAfterMod>화력전개N</SkillAfterMod>
     <SkillExplain>야간작전 시 지속시간 동안 자신의 화력을 증가시킨다. 주간에는 효과치가 감소한다.</SkillExplain>
+    <SkillExplainAfterMod>야간작전 시 지속시간 동안 자신의 화력을 증가시킨다. 주간에는 효과치가 감소한다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;야간 화력 증가치;주간 화력 증가치</SkillEffect>
     <SkillMag>5초,16초,6초,180%,60%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;야간 화력 증가치;주간 화력 증가치</SkillEffectAfterMod>
     <SkillMagAfterMod>5초,16초,6초,200%,70%</SkillMagAfterMod>
     <ModSkill>신념</ModSkill>
     <ModSkillExplain>화력 상승 버프를 받을 시 일정 시간 동안 모든 공격이 반드시 명중한다. 요정 관련 버프도 포함한다.</ModSkillExplain>
@@ -4461,8 +4507,10 @@
     <Skill>화력전개T</Skill>
     <SkillAfterMod>화력전개T</SkillAfterMod>
     <SkillExplain>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect>
     <SkillMag>4초,16초,10초,70%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffectAfterMod>
     <SkillMagAfterMod>4초,16초,10초,75%</SkillMagAfterMod>
     <ModSkill>아크 기아스</ModSkill>
     <ModSkillExplain>화력전개 발동 시 추가로 지속시간 동안 버프칸 내 아군 인형의 회피가 상승한다. 또한 버프칸 내의 아군 인형 수에 따라 자신의 사속이 상승한다. (최대 2회 중첩)</ModSkillExplain>
@@ -4608,8 +4656,10 @@
     <Skill>화력전개T</Skill>
     <SkillAfterMod>화력전개T</SkillAfterMod>
     <SkillExplain>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect>
     <SkillMag>4초,16초,10초,70%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffectAfterMod>
     <SkillMagAfterMod>4초,16초,10초,75%</SkillMagAfterMod>
     <ModSkill>설한의 쐐기</ModSkill>
     <ModSkillExplain>화력전개T가 켜져있는 동안 목표에게 설한의 쐐기를 남긴다. 아군 유닛 수가 3기 이하일 때, 사속이 70% 하락하지만 공격이 강화되고 2.5 범위 내의 적에게 쐐기를 남기며 100%의 스플래시 대미지를 입힌다. 이 과정 동안 화력전개는 계속 유효하다.</ModSkillExplain>
@@ -4666,8 +4716,10 @@
     <Skill>살상류탄</Skill>
     <SkillAfterMod>살상류탄</SkillAfterMod>
     <SkillExplain>폭발한 위치의 1.5 반경 내의 적에게 피해를 준다</SkillExplain>
+    <SkillExplainAfterMod>폭발한 위치의 1.5 반경 내의 적에게 피해를 준다</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
     <SkillMag>8초,16초,12배</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;피해량</SkillEffectAfterMod>
     <SkillMagAfterMod>8초,16초,15배</SkillMagAfterMod>
     <ModSkill>광란의 서커스</ModSkill>
     <ModSkillExplain>살상류탄 착탄 후 작은 유탄 3개로 분열하여 1반경 내에 적에게 피해를 준다. 설한의 쐐기의 영향을 받고 있는 적에게 우선 조준되며 이 경우 대미지가 증가한다.</ModSkillExplain>
@@ -4768,8 +4820,10 @@
     <Skill>고속사격T</Skill>
     <SkillAfterMod>고속사격T</SkillAfterMod>
     <SkillExplain>지속시간 동안 자신의 사속을 증가시킨다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 자신의 사속을 증가시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치</SkillEffect>
     <SkillMag>4초,16초,15초,45%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;사속 증가치</SkillEffectAfterMod>
     <SkillMagAfterMod>4초,16초,15초,50%</SkillMagAfterMod>
     <ModSkill>죄와 벌</ModSkill>
     <ModSkillExplain>고속사격T 발동 시, 주무장과 부무장으로 동시 공격을 행한다. 부무장은 기본 평타의 효과치 만큼의 대미지를 주며, 설한의 쐐기의 영향을 받고 있는 적에게는 그 두 배의 대미지를 준다.</ModSkillExplain>
@@ -4867,8 +4921,10 @@
     <Skill>살상류탄</Skill>
     <SkillAfterMod>살상류탄</SkillAfterMod>
     <SkillExplain>폭발한 위치의 1.5 반경 내의 적에게 피해를 준다</SkillExplain>
+    <SkillExplainAfterMod>폭발한 위치의 1.5 반경 내의 적에게 피해를 준다</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
     <SkillMag>8초,16초,15배</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;피해량</SkillEffectAfterMod>
     <SkillMagAfterMod>6초,16초,16배</SkillMagAfterMod>
     <ModSkill>기생류탄</ModSkill>
     <ModSkillExplain>살상류탄 폭발 시 중심의 적이 사망했을 경우 4 반경 범위 내의 적에게 피해를 준다. 사망하지 않은 경우 3초동안 해당 대상에게 주는 피해가 증가하고 0.33초마다 피해를 입힌다.</ModSkillExplain>
@@ -4988,30 +5044,43 @@
     <Country>Germany</Country>
     <Type>AR</Type>
     <Grade>5</Grade>
+    <ModGrade>6</ModGrade>
     <ProductTime>244</ProductTime>
-    <HasMod>false</HasMod>
+    <HasMod>true</HasMod>
     <AbilityGrade>A;B;B;A;SS;A</AbilityGrade>
-    <Grow>110</Grow>
-    <HP>110</HP>
-    <FireRate>100</FireRate>
-    <Evasion>105</Evasion>
-    <Accuracy>115</Accuracy>
-    <AttackSpeed>145</AttackSpeed>
+    <Grow>110;114</Grow>
+    <HP>110;110</HP>
+    <FireRate>100;105</FireRate>
+    <Evasion>105;105</Evasion>
+    <Accuracy>115;115</Accuracy>
+    <AttackSpeed>145;145</AttackSpeed>
     <MoveSpeed>10</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
     <ConsumeFood>20/30/40/50/60</ConsumeFood>
     <EffectFormation>0,0,0,0,2,1,0,0,0</EffectFormation>
+    <ModEffectFormation>0,0,0,0,2,1,0,0,1</ModEffectFormation>
     <Effect>FR,EV;30,10</Effect>
+    <ModEffect>FR,EV;35,12</ModEffect>
     <EffectType>SMG</EffectType>
+    <EffectTypeAfterMod>SMG</EffectTypeAfterMod>
     <DropEvent>일반제조</DropEvent>
     <DicNumber>122</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>hawk_eye</SkillCode>
     <Skill>호크아이</Skill>
+    <SkillAfterMod>호크아이</SkillAfterMod>
     <SkillExplain>지속시간 동안 공격시 타격횟수를 증가시킨다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 공격시 타격횟수를 증가시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;타격횟수</SkillEffect>
     <SkillMag>6초,16초,4.5초,3번</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;타격횟수</SkillEffectAfterMod>
+    <SkillMagAfterMod>6초,16초,5초,3번</SkillMagAfterMod>
+    <ModSkill>독수리 부리</ModSkill>
+    <ModSkillExplain>같은 대상에게 3회 피해를 줄 때마다 추가로 관통과 보호막을 무시하는 최대 체력 비례 피해를 준다. 단, 최대 피해량은 자신의 화력에 비례한다.</ModSkillExplain>
+    <ModSkillEffect>피해 비율;최대 피해량</ModSkillEffect>
+    <ModSkillMag>2%,300%</ModSkillMag>
+    <OnlyUseEquip>G-box</OnlyUseEquip>
     <Costume>은톨이 좀비;가장 아름다운 선물;용가리 주니어;봄잠 자는 쥐;용기를 원하는 토끼</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
@@ -5317,9 +5386,9 @@
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>remove_target</SkillCode>
     <Skill>목표제거</Skill>
-    <SkillExplain>1.5초간 조준한 후에 특정 적에게 피해를 준다</SkillExplain>
-    <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
-    <SkillMag>10초,16초,5배</SkillMag>
+    <SkillExplain>스킬 쿨타임 종료 후 1초마다 1회, 최대 5회 충전한다. 스킬 발동 시 1초간 조준 후, 충전 횟수에 따라 특정 대상에게 피해를 주고 충전을 해제한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;최소 피해량;최대 피해량</SkillEffect>
+    <SkillMag>5초,11초,2.4배,5배</SkillMag>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Ide Kaori</VoiceActor>
@@ -5410,8 +5479,10 @@
     <Skill>화력전개</Skill>
     <SkillAfterMod>화력전개</SkillAfterMod>
     <SkillExplain>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 상승치</SkillEffect>
     <SkillMag>5초,8초,5초,55%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;화력 상승치</SkillEffectAfterMod>
     <SkillMagAfterMod>5초,8초,5초,65%</SkillMagAfterMod>
     <ModSkill>싸늘한 투지</ModSkill>
     <ModSkillExplain>화력전개 발동시 추가로 일정 시간 동안 자신의 사속 상승</ModSkillExplain>
@@ -5600,8 +5671,10 @@
     <Skill>화력전개</Skill>
     <SkillAfterMod>화력전개</SkillAfterMod>
     <SkillExplain>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect>
     <SkillMag>5초,8초,5초,60%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffectAfterMod>
     <SkillMagAfterMod>5초,8초,5초,65%</SkillMagAfterMod>
     <ModSkill>맑은 투지</ModSkill>
     <ModSkillExplain>화력전개 스킬 발동 시 추가로 지속시간 동안 자신의 치명피해를 상승시킨다.</ModSkillExplain>
@@ -5657,8 +5730,10 @@
     <Skill>확인사살</Skill>
     <SkillAfterMod>확인사살</SkillAfterMod>
     <SkillExplain>1.5초간 조준한 후에 최전방의 적에게 피해를 준다. 쿨타임 종료 후 1초마다 최대 5개의 스택을 쌓아 스킬의 위력을 증가시킨다. 스킬 발동 시 스택은 초기화된다.</SkillExplain>
+    <SkillExplainAfterMod>1.5초간 조준한 후에 최전방의 적에게 피해를 준다. 쿨타임 종료 후 1초마다 최대 5개의 스택을 쌓아 스킬의 위력을 증가시킨다. 스킬 발동 시 스택은 초기화된다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;최소 피해량;최대 피해량</SkillEffect>
     <SkillMag>10초,16초,2.6배,5.5배</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;최소 피해량;최대 피해량</SkillEffectAfterMod>
     <SkillMagAfterMod>10초,16초,2.8배,6배</SkillMagAfterMod>
     <ModSkill>그늘 속 구원자</ModSkill>
     <ModSkillExplain>3초 이상 정지시 위장 상태가 되어 자신의 명중, 사속이 상승한다. 위장 상태에서 확인사살 스킬 발동 시 스킬 피해량이 상승하고 발동 후에는 위장이 해제된다.</ModSkillExplain>
@@ -5713,8 +5788,10 @@
     <Skill>화력전개N</Skill>
     <SkillAfterMod>화력전개N</SkillAfterMod>
     <SkillExplain>야간작전 시 지속시간 동안 자신의 화력을 증가시킨다. 주간에는 효과치가 감소한다. &lt;MOD 추가 효과&gt; 이동속도가 500% 증가한다.</SkillExplain>
+    <SkillExplainAfterMod>야간작전 시 지속시간 동안 자신의 화력을 증가시킨다. 주간에는 효과치가 감소한다. &lt;MOD 추가 효과&gt; 이동속도가 500% 증가한다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;야간 화력 증가치;주간 화력 증가치</SkillEffect>
     <SkillMag>8초,8초,6초,90%,30%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;야간 화력 증가치;주간 화력 증가치</SkillEffectAfterMod>
     <SkillMagAfterMod>6초,8초,6초,100%,35%</SkillMagAfterMod>
     <ModSkill>만능전술</ModSkill>
     <ModSkillExplain>화력전개N 발동 시점에 체력이 가장 많은 적의 종류에 따라 다른 공격을 한다. &lt;장갑병&gt; 미사일을 발사해 단일 적에게 피해를 주고 2 반경 범위 내에 있는 적에게 피해를 준다. 단, 장갑은 적용된다.  &lt;일반병&gt; 수류탄으로 1 반경 범위에 7번 연속으로 범위 피해를 준다. 단, 장갑은 적용되며 동일한 적에게 2번 이상 피해가 들어간 경우 피해량이 반감된다. 발동 중 회피가 가능하다.  &lt;패시브&gt; 화력전개N의 지속시간 동안 평타가 적을 관통해 1배의 피해를 준다. 자신의 바로 앞에 적이 있을 경우 대검으로 공격해 1배 피해를 준다.</ModSkillExplain>
@@ -5763,9 +5840,9 @@
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>remove_target</SkillCode>
     <Skill>목표제거</Skill>
-    <SkillExplain>1.5초간 조준한 후에 특정 적에게 피해를 준다</SkillExplain>
-    <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
-    <SkillMag>10초,16초,5.5배</SkillMag>
+    <SkillExplain>스킬 쿨타임 종료 후 1초마다 1회, 최대 5회 충전한다. 스킬 발동 시 1초간 조준 후, 충전 횟수에 따라 특정 대상에게 피해를 주고 충전을 해제한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;최소 피해량;최대 피해량</SkillEffect>
+    <SkillMag>5초,11초,2.6배,5.5배</SkillMag>
     <Costume>성탄절 실내복</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
@@ -5831,30 +5908,43 @@
     <Country>United States of America</Country>
     <Type>RF</Type>
     <Grade>3</Grade>
+    <ModGrade>4</ModGrade>
     <ProductTime>0</ProductTime>
-    <HasMod>false</HasMod>
+    <HasMod>true</HasMod>
     <AbilityGrade>B;A;C;A;A;B</AbilityGrade>
-    <Grow>105</Grow>
-    <HP>100</HP>
-    <FireRate>115</FireRate>
-    <Evasion>90</Evasion>
-    <Accuracy>110</Accuracy>
-    <AttackSpeed>120</AttackSpeed>
+    <Grow>105;115</Grow>
+    <HP>100;100</HP>
+    <FireRate>115;120</FireRate>
+    <Evasion>90;90</Evasion>
+    <Accuracy>110;110</Accuracy>
+    <AttackSpeed>120;120</AttackSpeed>
     <MoveSpeed>7</MoveSpeed>
     <Critical>40</Critical>
     <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
     <ConsumeFood>30/45/60/75/90</ConsumeFood>
     <EffectFormation>0,0,1,0,2,0,0,0,0</EffectFormation>
+    <ModEffectFormation>0,1,1,0,2,0,0,0,0</ModEffectFormation>
     <Effect>CL;12</Effect>
+    <ModEffect>CL;15</ModEffect>
     <EffectType>HG</EffectType>
+    <EffectTypeAfterMod>HG</EffectTypeAfterMod>
     <DropEvent>16년 9월 로그인 보상(중국), AE 1-2, 1-3, 3-3, 히든맵, 17년 7월 로그인 보상(한국)</DropEvent>
     <DicNumber>124</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>remove_target</SkillCode>
     <Skill>목표제거</Skill>
-    <SkillExplain>1.5초간 조준한 후에 특정 적에게 피해를 준다</SkillExplain>
-    <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
-    <SkillMag>10초,16초,5.5배</SkillMag>
+    <SkillAfterMod>목표제거</SkillAfterMod>
+    <SkillExplain>스킬 쿨타임 종료 후 1초마다 1회, 최대 5회 충전한다. 스킬 발동 시 1초간 조준 후, 충전 횟수에 따라 특정 대상에게 피해를 주고 충전을 해제한다.</SkillExplain>
+    <SkillExplainAfterMod>스킬 쿨타임 종료 후 1초마다 1회, 최대 5회 충전한다. 스킬 발동 시 1초간 조준 후, 충전 횟수에 따라 체력이 가장 많은 적에게 피해를 주고 충전을 해제한다.</SkillExplainAfterMod>
+    <SkillEffect>선 쿨타임;쿨타임;최소 피해량;최대 피해량</SkillEffect>
+    <SkillMag>5초,11초,2.6배,5.5배</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;최소 피해량;최대 피해량</SkillEffectAfterMod>
+    <SkillMagAfterMod>5초,11초,2.8배,6배</SkillMagAfterMod>
+    <ModSkill>후속저격</ModSkill>
+    <ModSkillExplain>목표제거로 적을 처치하지 못했을 경우, 해당 적이 죽거나 충전 수만큼 공격하는 동안 일반 사격을 강화해 대상에게 화력의 1배 비율로 반드시 맞는 공격을 가한다. 또한 일반 사격과 스킬이 체력이 50% 이하인 적에게 주는 피해량이 증가한다.</ModSkillExplain>
+    <ModSkillEffect>피해량 증가치</ModSkillEffect>
+    <ModSkillMag>10%</ModSkillMag>
+    <OnlyUseEquip>ACS-L</OnlyUseEquip>
     <Costume>늑대 소녀</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
@@ -6073,6 +6163,7 @@
     <SkillExplain>지속시간 동안 자신의 사속을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치</SkillEffect>
     <SkillMag>6초,8초,5초,60%</SkillMag>
+    <Costume>화조풍월</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Aihara Kotomi</VoiceActor>
@@ -6161,8 +6252,10 @@
     <Skill>저격개시</Skill>
     <SkillAfterMod>저격개시</SkillAfterMod>
     <SkillExplain>1.5초간 조준한 후에 가장 멀리 있는 적에게 피해를 준다.</SkillExplain>
+    <SkillExplainAfterMod>1.5초간 조준한 후에 가장 멀리 있는 적에게 피해를 준다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
     <SkillMag>10초,16초,6배</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;피해량</SkillEffectAfterMod>
     <SkillMagAfterMod>10초,16초,6.5배</SkillMagAfterMod>
     <ModSkill>하얀 사신</ModSkill>
     <ModSkillExplain>일반 공격으로 적 처치시 3초간 자신의 화력 상승 (중첩 불가), 저격 개시 스킬로 적 처치시 5초간 자신의 사속 상승</ModSkillExplain>
@@ -6481,6 +6574,7 @@
     <SkillExplainAfterMod>1.5초간 조준한 후 보호막 무시 피해를 적에게 준다. 목표는 해당 공격으로 처치할 수 있는 적이 우선이나 없는 경우 체력이 제일 많은 적이 우선시된다. 쿨타임 종료 후 1초마다 최대 7개의 스택을 쌓아 스택당 스킬 위력을 증가시킨다. 스킬 발동시 스택은 초기화된다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;최소 피해량;최대 피해량</SkillEffect>
     <SkillMag>8초,9초,3.4배,8배</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;최소 피해량;최대 피해량</SkillEffectAfterMod>
     <SkillMagAfterMod>7초,9초,5배,10배</SkillMagAfterMod>
     <ModSkill>명경지수의 저격수</ModSkill>
     <ModSkillExplain>&lt;액티브&gt; 타오르는 사냥혼 또는 해당 스킬로 적 처치시 즉시 체력이 가장 낮은 적에게 추가 공격을 가한다. 이후 다음 타오르는 사냥혼을 위해 3번 충전한다. 최대 3번의 추가타 발동이 가능하다.   &lt;패시브&gt; 남은 체력이 50% 이상인 적을 공격할 때 일반 공격과 스킬의 피해량이 10% 증가한다.</ModSkillExplain>
@@ -6980,8 +7074,10 @@
     <Skill>사냥충동</Skill>
     <SkillAfterMod>사냥충동</SkillAfterMod>
     <SkillExplain>지속시간 동안 자신의 명중을 상승시키고 모든 공격이 치명타가 된다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 자신의 명중을 상승시키고 모든 공격이 치명타가 된다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;명중 증가치</SkillEffect>
     <SkillMag>3초,18초,6초,60%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;명중 증가치</SkillEffectAfterMod>
     <SkillMagAfterMod>3초,18초,6초,70%</SkillMagAfterMod>
     <ModSkill>샤이닝 배리어</ModSkill>
     <ModSkillExplain>공격할 때마다 일정 확률로 버프칸 위의 아군 인형에게 보호막을 부여한다. 사냥충동 지속시간 동안은 발동확률이 100%가 된다.</ModSkillExplain>
@@ -7224,8 +7320,10 @@
     <Skill>준비만전</Skill>
     <SkillAfterMod>준비만전</SkillAfterMod>
     <SkillExplain>지속시간 동안 자신의 화력을 증가시키고 발사 중인 탄띠에 탄을 추가한다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 자신의 화력을 증가시키고 발사 중인 탄띠에 탄을 추가한다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;발사 수 증가치</SkillEffect>
     <SkillMag>8초,18초,8초,30%,3발</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;화력 증가치;발사 수 증가치</SkillEffectAfterMod>
     <SkillMagAfterMod>8초,18초,8초,30%,4발</SkillMagAfterMod>
     <ModSkill>강자의 빈틈</ModSkill>
     <ModSkillExplain>재장전시 명중 상승, 발사중인 탄띠에 탄 1발 추가. 최대 3중첩</ModSkillExplain>
@@ -7462,8 +7560,10 @@
     <Skill>화력전개MG</Skill>
     <SkillAfterMod>화력전개MG</SkillAfterMod>
     <SkillExplain>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect>
     <SkillMag>8초,18초,6초,70%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffectAfterMod>
     <SkillMagAfterMod>8초,18초,6초,75%</SkillMagAfterMod>
     <ModSkill>전장의 마술사</ModSkill>
     <ModSkillExplain>탄창 교체 시간이 감소하고 탄창 교체 후 첫 3회 공격의 화력 상승 (초탄부터 적용)</ModSkillExplain>
@@ -7701,7 +7801,7 @@
     <SkillExplain>&lt;패시브&gt; 3회 일반 공격 후 4회째 공격을 강화한다.</SkillExplain>
     <SkillEffect>쿨타임;공격력 배율</SkillEffect>
     <SkillMag>영속,3배</SkillMag>
-    <Costume>새빨간 야간경비원;황야의 사냥꾼;플레이그 나이트</Costume>
+    <Costume>새빨간 야간경비원;황야의 사냥꾼;플레이그 나이트;어둠에 우린 차</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Koshimizu Ami</VoiceActor>
@@ -7862,12 +7962,12 @@
     <ProductTime>440</ProductTime>
     <HasMod>true</HasMod>
     <AbilityGrade>A;A;C;B;A;B;A</AbilityGrade>
-    <Grow>95;0</Grow>
-    <HP>120;0</HP>
-    <FireRate>110;0</FireRate>
-    <Evasion>90;0</Evasion>
-    <Accuracy>105;0</Accuracy>
-    <AttackSpeed>115;0</AttackSpeed>
+    <Grow>95;95</Grow>
+    <HP>120;120</HP>
+    <FireRate>110;115</FireRate>
+    <Evasion>90;90</Evasion>
+    <Accuracy>105;110</Accuracy>
+    <AttackSpeed>115;115</AttackSpeed>
     <MoveSpeed>6</MoveSpeed>
     <Critical>40</Critical>
     <Bullet>4</Bullet>
@@ -7890,6 +7990,7 @@
     <SkillExplainAfterMod>지속시간 동안 자신의 장갑을 증가시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;장갑 증가치</SkillEffect>
     <SkillMag>10초,16초,6초,60%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;장갑 증가치</SkillEffectAfterMod>
     <SkillMagAfterMod>10초,16초,6초,70%</SkillMagAfterMod>
     <ModSkill>사냥꾼의 직감</ModSkill>
     <ModSkillExplain>같은 열에 아군이 존재할 경우 자신에게 화력, 사속, 회피, 명중, 치명타율, 장갑 버프를 받을 시 해당 열의 아군 모두에게 보호막을 부여한다. 최대 3중첩.</ModSkillExplain>
@@ -8193,15 +8294,16 @@
     <Country>China</Country>
     <Type>SG</Type>
     <Grade>4</Grade>
+    <ModGrade>5</ModGrade>
     <ProductTime>0</ProductTime>
-    <HasMod>false</HasMod>
+    <HasMod>true</HasMod>
     <AbilityGrade>A;A;A;B;B;B;A</AbilityGrade>
-    <Grow>105</Grow>
-    <HP>120</HP>
-    <FireRate>110</FireRate>
-    <Evasion>115</Evasion>
-    <Accuracy>100</Accuracy>
-    <AttackSpeed>105</AttackSpeed>
+    <Grow>105;105</Grow>
+    <HP>120;120</HP>
+    <FireRate>110;120</FireRate>
+    <Evasion>115;115</Evasion>
+    <Accuracy>100;110</Accuracy>
+    <AttackSpeed>105;105</AttackSpeed>
     <MoveSpeed>6</MoveSpeed>
     <Critical>40</Critical>
     <Bullet>3</Bullet>
@@ -8209,16 +8311,28 @@
     <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
     <ConsumeFood>40/65/90/115/140</ConsumeFood>
     <EffectFormation>1,0,0,1,0,2,1,0,0</EffectFormation>
+    <ModEffectFormation>1,0,0,1,1,2,1,0,0</ModEffectFormation>
     <Effect>FR;12</Effect>
+    <ModEffect>FR;15</ModEffect>
     <EffectType>MG</EffectType>
+    <EffectTypeAfterMod>MG</EffectTypeAfterMod>
     <DropEvent>중형제조, 중형제조 10회 업적 보상</DropEvent>
     <DicNumber>161</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <SkillCode>firepower_spread_sg</SkillCode>
     <Skill>화력전개SG</Skill>
+    <SkillAfterMod>화력전개SG</SkillAfterMod>
     <SkillExplain>지속시간 동안 자신의 화력을 증가시키고 발동 중 동시 타격 수를 5로 증가시킨다. (슬러그 효과 중복 X)</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 자신의 화력과 명중을 증가시키고 발동 중 동시 타격 수를 5로 증가시킨다. (슬러그 효과 중복 X)</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect>
     <SkillMag>8초,16초,8초,120%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;화력 증가치;명중 증가치</SkillEffectAfterMod>
+    <SkillMagAfterMod>8초,16초,8초,120%,20%</SkillMagAfterMod>
+    <ModSkill>진압특공</ModSkill>
+    <ModSkillExplain>공격이 명중한 적은 1초동안 이동속도가 감소한다.</ModSkillExplain>
+    <ModSkillEffect>이동속도 감소치</ModSkillEffect>
+    <ModSkillMag>50%</ModSkillMag>
+    <OnlyUseEquip>전술 기동방패</OnlyUseEquip>
     <Costume>97계 병법</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
@@ -10166,12 +10280,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>true</HasMod>
     <AbilityGrade>B;S;S;B;B;B</AbilityGrade>
-    <Grow>105;0</Grow>
-    <HP>105;0</HP>
-    <FireRate>130;0</FireRate>
-    <Evasion>130;0</Evasion>
-    <Accuracy>108;0</Accuracy>
-    <AttackSpeed>100;0</AttackSpeed>
+    <Grow>105;105</Grow>
+    <HP>105;108</HP>
+    <FireRate>130;130</FireRate>
+    <Evasion>130;130</Evasion>
+    <Accuracy>108;115</Accuracy>
+    <AttackSpeed>100;111</AttackSpeed>
     <MoveSpeed>15</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>10/15/20/25/30</ConsumeAmmo>
@@ -10192,6 +10306,7 @@
     <SkillExplainAfterMod>지속시간 동안 쌍총으로 공격하여 2회의 피해를 입히며 반드시 치명타가 된다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간</SkillEffect>
     <SkillMag>6초,12초,6초</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간</SkillEffectAfterMod>
     <SkillMagAfterMod>6초,12초,8초</SkillMagAfterMod>
     <ModSkill>쌍성의 수호</ModSkill>
     <ModSkillExplain>매 공격시 치명률과 같은 확률로 진형버프 위의 아군에게 60초간 중첩 가능한 보호막을 1 부여한다. 또한 체인 스트라이크의 지속시간동안 자신의 치명상을 증가시킨다.</ModSkillExplain>
@@ -11400,7 +11515,7 @@
     <SkillExplain>자신에게 5초간 보호막을 생성한다. 파괴될 경우 지속시간동안 자신의 회피를 상승시키고 파괴되지 않으면 자신의 화력을 상승시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;보호막 수치;지속시간;회피 상승치;화력 상승치</SkillEffect>
     <SkillMag>8초,16초,42,5초,65%,85%</SkillMag>
-    <Costume>총잡이 무녀;마음에 묻어둔 보물</Costume>
+    <Costume>총잡이 무녀;마음에 묻어둔 보물;현의 카구라</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>かれい</Illustrator>
     <HasCensor>false</HasCensor>
@@ -11750,12 +11865,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>true</HasMod>
     <AbilityGrade>B;SS;C;A;C;S</AbilityGrade>
-    <Grow>128;0</Grow>
-    <HP>100;0</HP>
-    <FireRate>140;0</FireRate>
-    <Evasion>82;0</Evasion>
-    <Accuracy>112;0</Accuracy>
-    <AttackSpeed>88;0</AttackSpeed>
+    <Grow>128;128</Grow>
+    <HP>100;100</HP>
+    <FireRate>140;142</FireRate>
+    <Evasion>82;82</Evasion>
+    <Accuracy>112;118</Accuracy>
+    <AttackSpeed>88;92</AttackSpeed>
     <MoveSpeed>7</MoveSpeed>
     <Critical>40</Critical>
     <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
@@ -11776,6 +11891,7 @@
     <SkillExplainAfterMod>가장 최근에 공격한 적을 1.5초 조준한 뒤에 피해를 입히고 피해를 입은 적 주변 2 범위 내의 적에게 0.5배의 피해와 함께 명중과 사속을 감소시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;피해 배율;지속시간;명중 감소치;사속 감소치</SkillEffect>
     <SkillMag>5초,11초,4배,5초,20%,20%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;피해 배율;지속시간;명중 감소치;사속 감소치</SkillEffectAfterMod>
     <SkillMagAfterMod>4초,11초,5배,5초,20%,20%</SkillMagAfterMod>
     <ModSkill>진동 고폭탄</ModSkill>
     <ModSkillExplain>적군 중 디버프 효과가 있는 적이 있을 경우 일반 공격으로 해당 적으로부터 가장 가까운 적을 공격하고 추가로 목표 뒤 반경 2범위 안의 적에게 피해를 준다.</ModSkillExplain>
@@ -12245,7 +12361,7 @@
     <SkillExplain>&lt;패시브&gt; 재장전 중일 때 버프칸에 위치한 아군이 받는 피해량을 20% 감소시킨다.   &lt;액티브&gt; 자신의 화력을 증가시키며 버프칸에 위치한 아군의 병종에 따라 추가 버프를 제공한다. [AR : 명중 25% 증가] [SMG : 다음 재장전 시간 25% 감소] [SG : 장탄수 1발 추가]</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 상승치</SkillEffect>
     <SkillMag>8초,18초,6초,55%</SkillMag>
-    <Costume>히비스커스</Costume>
+    <Costume>히비스커스;대나무숲 검객</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Yukana</VoiceActor>
@@ -12328,7 +12444,7 @@
     <SkillExplain>&lt;패시브&gt; 같은 적을 3초 안에 다시 공격하면 3초간 사속이 상승한다. 최대 3중첩. 타겟이 바뀌는 경우 초기화된다.   &lt;액티브&gt; 지속시간 동안 화력이 상승하고 공격 대상이 최후열의 적으로 고정된다. 패시브가 매 공격시 발동되며 초기화되지 않는다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 상승치;화력 상승치</SkillEffect>
     <SkillMag>6초,8초,5초,10%,40%</SkillMag>
-    <Costume>럭키 바캉스</Costume>
+    <Costume>럭키 바캉스;등나무 가희</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Yukana</VoiceActor>
@@ -13227,7 +13343,7 @@
     <SkillExplain>&lt;액티브&gt; 즉시 재장전을 하고 장탄수를 3발 추가한다. 추가된 3발로 공격 시 해당 적에게 일정 피해량을 2번 입힌다. 슬러그 탄과 중첩은 불가.    &lt;패시브&gt; 재장전할 때마다 자신에게 보호막을 부여한다. 또한 자신의 바로 뒤에 있는 아군의 피해량을 감소시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;패시브 지속시간;보호막 수치;피해 감소량;피해량</SkillEffect>
     <SkillMag>3초,16초,5초,40,25%,1배</SkillMag>
-    <Costume>꽃과 달 등롱</Costume>
+    <Costume>꽃과 달 등롱;삼도천 여관 주인</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Kaida Yuuko</VoiceActor>
@@ -14161,6 +14277,7 @@
     <SkillExplain>자신의 화력을 지속시간 동안 증가시킨다. 또한 지속시간 동안 자신과 거리가 5 이내인 적이 있으면 해당 적을 우선적으로 공격하며 화력이 증가한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;추가 화력 증가치</SkillEffect>
     <SkillMag>5초,8초,5초,55%,10%</SkillMag>
+    <Costume>혼백 주방장</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>瑶柱菌</Illustrator>
     <HasCensor>false</HasCensor>
@@ -14412,12 +14529,12 @@
     <ProductTime>54</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;A;B;A;A;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>110</Grow>
+    <HP>105</HP>
+    <FireRate>115</FireRate>
+    <Evasion>107</Evasion>
+    <Accuracy>120</Accuracy>
+    <AttackSpeed>115</AttackSpeed>
     <MoveSpeed>15</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>10/15/20/25/30</ConsumeAmmo>
@@ -14450,12 +14567,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>A;B;A;A;A;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>110</Grow>
+    <HP>116</HP>
+    <FireRate>108</FireRate>
+    <Evasion>112</Evasion>
+    <Accuracy>110</Accuracy>
+    <AttackSpeed>120</AttackSpeed>
     <MoveSpeed>12</MoveSpeed>
     <Critical>5</Critical>
     <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
@@ -14488,12 +14605,12 @@
     <ProductTime>283</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;A;C;A;A;S</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>131</Grow>
+    <HP>100</HP>
+    <FireRate>116</FireRate>
+    <Evasion>88</Evasion>
+    <Accuracy>110</Accuracy>
+    <AttackSpeed>110</AttackSpeed>
     <MoveSpeed>7</MoveSpeed>
     <Critical>40</Critical>
     <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
@@ -14526,12 +14643,12 @@
     <ProductTime>248</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>A;B;B;B;S;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>122</Grow>
+    <HP>112</HP>
+    <FireRate>100</FireRate>
+    <Evasion>100</Evasion>
+    <Accuracy>105</Accuracy>
+    <AttackSpeed>135</AttackSpeed>
     <MoveSpeed>10</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
@@ -14564,12 +14681,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;A;S;A;A;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>118</Grow>
+    <HP>108</HP>
+    <FireRate>112</FireRate>
+    <Evasion>126</Evasion>
+    <Accuracy>120</Accuracy>
+    <AttackSpeed>115</AttackSpeed>
     <MoveSpeed>12</MoveSpeed>
     <Critical>5</Critical>
     <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
@@ -14605,12 +14722,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>C;A;B;A;A;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>120</Grow>
+    <HP>90</HP>
+    <FireRate>120</FireRate>
+    <Evasion>100</Evasion>
+    <Accuracy>120</Accuracy>
+    <AttackSpeed>110</AttackSpeed>
     <MoveSpeed>7</MoveSpeed>
     <Critical>40</Critical>
     <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
@@ -14646,12 +14763,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>A;A;B;B;B;A;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>110</Grow>
+    <HP>115</HP>
+    <FireRate>120</FireRate>
+    <Evasion>95</Evasion>
+    <Accuracy>100</Accuracy>
+    <AttackSpeed>100</AttackSpeed>
     <MoveSpeed>6</MoveSpeed>
     <Critical>40</Critical>
     <Bullet>4</Bullet>
@@ -14689,12 +14806,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;C;S;S;S;S</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>135</Grow>
+    <HP>95</HP>
+    <FireRate>90</FireRate>
+    <Evasion>130</Evasion>
+    <Accuracy>125</Accuracy>
+    <AttackSpeed>125</AttackSpeed>
     <MoveSpeed>4</MoveSpeed>
     <Critical>5</Critical>
     <Bullet>8</Bullet>
@@ -14731,12 +14848,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>A;A;B;S;A;S</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>125</Grow>
+    <HP>110</HP>
+    <FireRate>118</FireRate>
+    <Evasion>105</Evasion>
+    <Accuracy>132</Accuracy>
+    <AttackSpeed>110</AttackSpeed>
     <MoveSpeed>10</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
@@ -14772,12 +14889,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;A;B;A;B;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>118</Grow>
+    <HP>100</HP>
+    <FireRate>110</FireRate>
+    <Evasion>105</Evasion>
+    <Accuracy>120</Accuracy>
+    <AttackSpeed>104</AttackSpeed>
     <MoveSpeed>10</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
@@ -14810,12 +14927,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;B;S;A;A;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>118</Grow>
+    <HP>105</HP>
+    <FireRate>106</FireRate>
+    <Evasion>126</Evasion>
+    <Accuracy>120</Accuracy>
+    <AttackSpeed>110</AttackSpeed>
     <MoveSpeed>12</MoveSpeed>
     <Critical>5</Critical>
     <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
@@ -14847,12 +14964,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>C;A;C;A;A;S</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>132</Grow>
+    <HP>90</HP>
+    <FireRate>120</FireRate>
+    <Evasion>80</Evasion>
+    <Accuracy>122</Accuracy>
+    <AttackSpeed>112</AttackSpeed>
     <MoveSpeed>7</MoveSpeed>
     <Critical>40</Critical>
     <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
@@ -14884,12 +15001,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;B;B;A;A;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>122</Grow>
+    <HP>95</HP>
+    <FireRate>102</FireRate>
+    <Evasion>100</Evasion>
+    <Accuracy>110</Accuracy>
+    <AttackSpeed>120</AttackSpeed>
     <MoveSpeed>7</MoveSpeed>
     <Critical>40</Critical>
     <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
@@ -14922,12 +15039,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>B;A;B;A;A;S</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>132</Grow>
+    <HP>105</HP>
+    <FireRate>118</FireRate>
+    <Evasion>102</Evasion>
+    <Accuracy>120</Accuracy>
+    <AttackSpeed>112</AttackSpeed>
     <MoveSpeed>10</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
@@ -14960,12 +15077,12 @@
     <ProductTime>0</ProductTime>
     <HasMod>false</HasMod>
     <AbilityGrade>A;A;B;A;B;A</AbilityGrade>
-    <Grow>0</Grow>
-    <HP>0</HP>
-    <FireRate>0</FireRate>
-    <Evasion>0</Evasion>
-    <Accuracy>0</Accuracy>
-    <AttackSpeed>0</AttackSpeed>
+    <Grow>110</Grow>
+    <HP>115</HP>
+    <FireRate>118</FireRate>
+    <Evasion>105</Evasion>
+    <Accuracy>112</Accuracy>
+    <AttackSpeed>100</AttackSpeed>
     <MoveSpeed>4</MoveSpeed>
     <Critical>5</Critical>
     <Bullet>10</Bullet>

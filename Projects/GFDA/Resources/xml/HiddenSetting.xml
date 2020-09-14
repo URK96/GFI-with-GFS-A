@@ -1,0 +1,17 @@
+﻿<android.support.v7.preference.PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <android.support.v7.preference.PreferenceCategory
+    android:title="Nostalgia">
+    <ListPreference
+      android:key="MainActionbarIcon"
+      android:title="Nostalgia of GFD Icon"
+      android:summary="Feel the Nostalgia"/>
+  </android.support.v7.preference.PreferenceCategory>
+  <android.support.v7.preference.PreferenceCategory
+    android:title="Unlock">
+    <android.support.v14.preference.SwitchPreference
+      android:key="UnlockCensored"
+      android:title="Unlock Censored Images"
+      android:summary="Feel the Free!"/>
+  </android.support.v7.preference.PreferenceCategory>
+</android.support.v7.preference.PreferenceScreen>

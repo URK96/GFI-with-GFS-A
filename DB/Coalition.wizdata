@@ -679,6 +679,52 @@
     <UnitExplain>단거리 돌파 또는 수비 작전에 특화되어 지능과 전투 능력 모두 높은 나비 사건 이후 제작된 인형. 하지만 실험작이기 때문에 AI가 불안정하고 통제하기 어렵다. 겉으로는 진중해 보여도 속으론 매우 거만하다. 비록 강한 무력과 지능을 가졌지만 실전 경험이 적고 행동 스타일도 불안정하므로 적과 아군 모두 그녀에 대해 방심할 수가 없다.</UnitExplain>
   </Coalition>
   <Coalition>
+    <Name>알케미스트</Name>
+    <CodeName>Alchemist</CodeName>
+    <Type>LightArmor;Doll;CloseIn</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>true</IsBoss>
+    <BornGrade>3</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
+    <Effect1>AS,AC</Effect1>
+    <EffectMag1>9,9;15,15;15,15;15,15</EffectMag1>
+    <EffectType1>Machine</EffectType1>
+    <Effect2>FR,EV</Effect2>
+    <EffectMag2>9,9;15,15;15,15;15,15</EffectMag2>
+    <EffectType2>CloseIn</EffectType2>
+    <DicNumber>23</DicNumber>
+    <Skill1>최종 선언</Skill1>
+    <SkillExplain1>&lt;패시브&gt; 알케미스트는 수비 방침에서 사거리가 증가하며, 화력 0.5배의 2단 사격을 한다. 기타 방침에서는 치명타율이 50% 증가하며 적에게 반드시 명중하는 화력 0.5배의 근접피해를 2회 가한다.     &lt;액티브&gt; 스킬 발동 후 무적 상태가 되어 무작위 유닛에게 총 9차례 공격을 하며, 한 차례마다 일정 피해를 2회씩 준다. 동시에 목표에게 유기체 표식을 부여한다. 해당 공격은 반드시 명중하며 치명타가 가능하다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;액티브 피해량</SkillEffect1>
+    <SkillMag1>6초,12초,1.3배</SkillMag1>
+    <FASkillMag1>6초,12초,1.5배</FASkillMag1>
+    <Skill2>질량 활성화</Skill2>
+    <SkillExplain2>&lt;패시브&gt; 치명타 발생 시 목표에게 유기체 표식을 부여한다.     &lt;액티브&gt; 자신의 화력, 회피, 치명피해를 증가시킨다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;지속 시간;화력 증가치;회피 증가치;치명피해 증가치</SkillEffect2>
+    <SkillMag2>3초,8초,4초,30%,100%,30%</SkillMag2>
+    <Skill3>유기체</Skill3>
+    <SkillExplain3>유기체 표식을 지닌 목표를 공격할 때 주는 피해량이 증가하며, 동시에 자신은 보호막을 생성한다.</SkillExplain3>
+    <SkillEffect3>선 쿨타임;쿨타임;지속시간;표식 지속시간;피해량 비율;보호막 생성량</SkillEffect3>
+    <SkillMag3>0초,0초,18초,9초,1.1배,6</SkillMag3>
+    <Skill4>중력 해제</Skill4>
+    <SkillExplain4>수비 이외의 방침에서 6초마다 아군 전체의 이동속도를 증가시키며 해당 효과는 3초간 순차적으로 감소한다. 수비 방침에서는 1초마다 최대체력에 비례하는 보호막을 생성한다.</SkillExplain4>
+    <SkillEffect4>선 쿨타임;쿨타임;이동속도 증가치;보호막 생성량;보호막 지속시간</SkillEffect4>
+    <SkillMag4>0초,6초,100%,6%,5초</SkillMag4>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+    <UnitExplain>다양한 상황에 대응할 수 있고 심문에도 능한 엘리트 인형 가끔 디스트로이어와 조를 짤 때가 있다. 오만하고 잔인한 성격으로 목적을 위해서라면 수단을 가리지 않는다. 그리폰을 자신의 욕구를 채우기 위한 장난감 취급하는 등 사디즘 성향이 있지만 그래도 심리적으로 성숙하여 철혈 동료를 위해 나서 싸운다.</UnitExplain>
+  </Coalition>
+  <Coalition>
     <Name>아키텍트</Name>
     <CodeName>Architect</CodeName>
     <Type>LightArmor;Doll;Remote</Type>
@@ -809,6 +855,36 @@
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
     <UnitExplain>디너게이트의 장갑 강화 버전. 생존력이 크게 상승했으며 무리를 지어 적에게 큰 피해를 입힐 수 있습니다.</UnitExplain>
+  </Coalition>
+  <Coalition>
+    <Name>프롤러SWAP</Name>
+    <CodeName>Prowler_SWAP</CodeName>
+    <Type>LightArmor;Doll;CloseIn</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>false</IsBoss>
+    <BornGrade>2</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>55</DicNumber>
+    <Skill1>불타는 직감</Skill1>
+    <SkillExplain1>수비 방침에서 자신 뒤에 있는 유닛의 화력과 회피를 증가시킨다. 그 외 방침에서는 자신의 주위 3 범위 안의 모든 근접 유닛의 화력과 회피를 증가시킨다. 최대 3 중첩.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;화력 증가치;회피 증가치</SkillEffect1>
+    <SkillMag1>0초,0초,15%,40%</SkillMag1>
+    <Skill2>중점 보호</Skill2>
+    <SkillExplain2>모든 아군 유닛에게 보호막을 부여한다. 그 중 근접 유닛은 손실한 최대체력의 1%만큼 보호막을 추가로 2% 받는다. 최대 3중첩.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;지속시간;보호막 생성량</SkillEffect2>
+    <SkillMag2>3초,10초,10초,24</SkillMag2>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+    <UnitExplain>강화된 프롤러. 부족했던 화력과 기동력을 보완하여 드디어 최전선에서 싸울 정도의 능력을 얻었다.</UnitExplain>
   </Coalition>
   <Coalition>
     <Name>가드SWAP</Name>

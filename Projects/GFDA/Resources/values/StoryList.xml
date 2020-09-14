@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Story_Main_TopTitle">
+    <item>Main</item>
+    <item>Sub</item>
+    <item>Memory</item>
+  </string-array>
+  
+  <string-array name="Story_Main">
+    <item>메인이야기</item>
+    <item>서브이야기</item>
+    <item>추억회상</item>
+  </string-array>
+
+  <string-array name="Story_Main_Caption">
+    <item>주요 스토리 및 이벤트 전역에 대한 이야기</item>
+    <item>코스튬 및 그 외의 것에 대한 이야기</item>
+    <item>그리폰 내에 있던 사소하지만 누군가에겐 중요한 이야기</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_TopTitle">
+    <item>프롤로그</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>전역</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>콜라보 이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>콜라보 이벤트</item>
+    <item>콜라보 이벤트</item>
+    <item>이벤트</item>
+    <item>이벤트</item>
+    <item>콜라보 이벤트</item>
+    <item>이벤트</item>
+    <item>2019 할로윈 이벤트</item>
+    <item>2019 크리스마스 이벤트</item>
+    <item>이벤트</item>
+    <item>2020 봄 시즌 이벤트</item>
+    <item>2020 여름 시즌 이벤트</item>
+    <item>콜라보 이벤트</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main">
+    <item>프롤로그</item>
+    <item>제0전역 : 종자</item>
+    <item>제1전역 : 소생</item>
+    <item>제2전역 : 메아리</item>
+    <item>제3전역 : 침묵</item>
+    <item>제4전역 : 소문</item>
+    <item>제5전역 : 불씨</item>
+    <item>제6전역 : 혜성</item>
+    <item>제7전역 : 동반자</item>
+    <item>제8전역 : 불꽃</item>
+    <item>제9전역 : 미실</item>
+    <item>제10전역 : 연옥</item>
+    <item>제11전역 : 사냥</item>
+    <item>제12전역 : 숨막힘</item>
+    <item>제13전역 : 멸각</item>
+    <item>큐브작전</item>
+    <item>저체온증 : 재앙의 울버린</item>
+    <item>저체온증 : 등화관제</item>
+    <item>저체온증 : 귀환작전</item>
+    <item>저체온증 : 히든</item>
+    <item>파해법칙</item>
+    <item>헌팅래빗작전</item>
+    <item>딥다이브 : 심지혼선</item>
+    <item>딥다이브 : 쌍곡함수</item>
+    <item>딥다이브 : 대립행동</item>
+    <item>딥다이브 : 허수미궁</item>
+    <item>특이점</item>
+    <item>영광의 날 : Avec Nous</item>
+    <item>영광의 날 : Dreaming on You</item>
+    <item>난류연속</item>
+    <item>이성질체</item>
+    <item>VA-11 HALL-A</item>
+    <item>연쇄분열</item>
+    <item>팬텀 신드롬</item>
+    <item>거룩한 밤 광상곡</item>
+    <item>편극광</item>
+    <item>사진관 미스테리</item>
+    <item>바다 저 멀리</item>
+    <item>몽중극</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Caption">
+    <item>프롤로그</item>
+    <item>침수발생! 진퇴양난!</item>
+    <item>알고 싶니? 네가 얼마나 정신을 잃었는지 말이야...</item>
+    <item>귀향길을 찾아서, 한 번에 총알 한 발</item>
+    <item>진정한 사냥꾼의 선택</item>
+    <item>폭풍이 다가온다</item>
+    <item>파티에서 마신 술은 흘린 피만큼 많아야 한다</item>
+    <item>칠흑 속에서 소녀를 구하자, 다시 써지는 당신의 운명</item>
+    <item>서로의 결속이 진정한 힘의 근원이다</item>
+    <item>나는 널 위해 벽을 부수고, 세계를 보며, 타락해간다.</item>
+    <item>달링, 당신의 마음은 지금 어디있나요?</item>
+    <item>절망 속에서 행복을 떠올리는 건 최악의 고통이다.</item>
+    <item>난세를 홀로 떠도는 자여, 한번이라도 세상을 사랑해 본 적은 있는가?</item>
+    <item>자, 뒤집힌 숲속에서 그녀의 그림자를 찾자.</item>
+    <item>끝이며 시작.</item>
+    <item>큐브작전</item>
+    <item>CH.01 재앙의 울버린</item>
+    <item>CH.02 등화관제</item>
+    <item>CH.03 귀환작전</item>
+    <item>히든작전</item>
+    <item>큐브작전+</item>
+    <item>헌팅래빗</item>
+    <item>심지혼선</item>
+    <item>쌍곡함수</item>
+    <item>대립행동</item>
+    <item>히든</item>
+    <item>특이점</item>
+    <item>Avec Nous</item>
+    <item>Dreaming on You</item>
+    <item>난류연속</item>
+    <item>이성질체</item>
+    <item>발할라</item>
+    <item>연쇄분열</item>
+    <item>팬텀 신드롬</item>
+    <item>거룩한 밤 광상곡</item>
+    <item>편극광</item>
+    <item>사진관 미스테리</item>
+    <item>바다 저 멀리</item>
+    <item>몽중극</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_TopTitle">
+    <item>2016 핼러윈\nMessy Halloween</item>
+    <item>2016 성탄제\nTactical Christmas</item>
+    <item>2017 글로벌 1주년\nAnniversary</item>
+    <item>2017 전장의 왕자들\nOpera Princes</item>
+    <item>2018 설날\nLuna New Year</item>
+    <item>2018 달콤한 시간\nSweet Wedding</item>
+    <item>2018 글로벌 2주년\nAnniversary</item>
+    <item>2018 메이드 학원\nMaid Training</item>
+    <item>2018 워터파크 타이쿤\nBeach Party</item>
+    <item>2018 핼러윈\nRise of the Witches</item>
+    <item>2018 크리스마스\nAnother Christmas</item>
+    <item>2019 설날\nLuna New Year</item>
+    <item>2019 총과 장미\nGun &amp; Rose</item>
+    <item>2019 글로벌 3주년\nAnniversary</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub">
+    <item>무서운 이야기</item>
+    <item>산타클로스 헌팅 작전</item>
+    <item>그리폰 설립 기념 파티</item>
+    <item>치명적인 공연</item>
+    <item>연말 추억</item>
+    <item>달콤한 시간</item>
+    <item>다이아는 도둑맞지 않는다</item>
+    <item>메이드 캠프</item>
+    <item>비치 코만도</item>
+    <item>마녀의 숲</item>
+    <item>성탄절 익스프레스</item>
+    <item>설 맞이 대작전</item>
+    <item>총과 장미</item>
+    <item>함박웃음의 밤</item>
+  </string-array>
+
+  <string-array name="Story_Main_Sub_Caption">
+    <item>핼러윈 데이의 기묘하고 신비한 가장무도회에 공포스러운 분위기가 서서히 번져갑니다... 이번에 지휘관은 주동자를 찾아내서 퍼레이드 이벤트를 위기에서 지켜낼 수 있을까요?</item>
+    <item>그리폰의 첫 번째 크리스마스의 밤이 다가오고 있습니다. 다들 크리스마스 파티와 이벤트를 즐기는 와중, 몇몇 위험한 인형들이 정신나간 계획을 세우게 되는데......</item>
+    <item>비교적 엄숙한 그리폰의 설립 기념 파티지만, 그래도 기지 내부에서 하는 파티는 비교적 안심이 됩니다. 그리폰의 설립을 축하하기 위해 모인 연회, 지휘관님~ 오늘은 좀 시끄럽게해도 괜찮겠죠?</item>
+    <item>컨텐더 덕분에 지휘관도 성대한 오페라 연극에 초청받게 되었습니다. 화려한 무대 뒷편에 숨어있는 위험한 살기, 지휘관을 노리는 치명적인 무기는 과연 뭘까요? 갑작스러운 습격일까요, 아니면 미리 준비하고 있던 인형들일까요?</item>
+    <item>동양 인형이 기지를 떠난 사이, 성대한 명절인 설을 그리폰에 남겨진 인형들은 어떻게 재현할 수 있을까요? 예상치 못한 소동이 지나고, 새해엔 분명 좋은 일이 있을 거예요...아마.</item>
+    <item>홍보용 촬영 임무를 맡게된 인형들은 평소에는 볼 수 없었던 모습들을 보여줬습니다. 과연 웨딩 드레스를 입은 그 순간이, 인형들에게 특별한 추억으로 남을 수 있을까요?</item>
+    <item>설립 기념행사에서 지휘관과 인형들은 특별한 임무를 맡게 되었어요. 모두가 지키는 이상 누구도 쉽게 보석을 훔칠 수 없어요, 추억도 마찬가지로요.</item>
+    <item>중요한 임무를 맡기 위해서, 인형들은 추가적인 특수 훈련을 받게됐어요. 비록 우수한 메이드가 되는 것이 쉬운 일은 아니지만, 그녀들이라면 아마 문제 없겠…죠?</item>
+    <item>그리폰의 인형들은 예상치 못한 짧고도 평화로운 여름휴가를 얻었어요, 하지만 이 해변에는 뭔가 비밀이 숨겨져 있는 것 같은데요... 과연 인형들은 “평화로운” 휴가를 지낼 수 있을까요?</item>
+    <item>핼러윈 밤, 아무도 모르는 창고 구석에서 그리폰 인형 몇명이 괴담 릴레이를 하던 중 의도치 않게 무시무시한 이세계의 문을 열었다. 이건 유령의 짓인가? 아니면 인형의 장난인가?</item>
+    <item>크리스마스 이브, G36에게 사고가 나서 Five-seveN이 대신 행사 인원 배치 업무를 맡았다. 허둥지둥 찾아온 동료들은 과연 임무를 무사히 완수할 수 있을까? 아니면 행사 도중 제멋대로 굴게 될까?</item>
+    <item>다가오는 설날을 대비해, 그리폰 기지는 여태까지 없던 대작전을 시행했다. 바로… 인사 돌리기! 천년을 거쳐 내려온 풍속을 올해도 지킬 수 있을 것인지? 아니면… 이번 요란한 소용돌이에 휘말리는 건 또 누구일 것인가!?</item>
+    <item>이번 의뢰 덕분에 인형들은 모처럼 웨딩드레스를 입게 되었어요. 익숙한 총성과 초연과 잠시 떨어져 지낸 그동안 저마다 무슨 생각을 품고 있을까요?</item>
+    <item>설립 기념일을 맞아 그리폰 인형들은 간식으로 가득한 연회에 초청받았습니다. 원래 걱정 없이 쉴 수 있는 밤이라 생각했지만, 갑자기 나타난 두 깜짝 손님 때문에 재밌고 스릴 넘치게 되었습니다.</item>
+  </string-array>
+
+  <string-array name="Story_Main_Memory_TopTitle">
+    <item>추억회상</item>
+    <item>추억회상</item>
+  </string-array>
+
+  <string-array name="Story_Main_Memory">
+    <item>눈부시게 될 거야!</item>
+    <item>주말의 카드 테이블</item>
+  </string-array>
+
+  <string-array name="Story_Main_Memory_Caption">
+    <item>C121</item>
+    <item>C122</item>
+  </string-array>
+</resources>

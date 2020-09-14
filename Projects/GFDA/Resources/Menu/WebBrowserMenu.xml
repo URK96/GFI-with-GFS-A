@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:local="http://schemas.android.com/apk/res-auto">
+  <item
+    android:id="@+id/WebBrowserPrevious"
+    android:icon="@drawable/previous_icon"
+    android:title="@string/Common_Previous"
+    local:showAsAction="ifRoom"/>
+  <item
+    android:id="@+id/WebBrowserNext"
+    android:icon="@drawable/next_icon"
+    android:title="@string/Common_Next"
+    local:showAsAction="ifRoom"/>
+  <item
+    android:id="@+id/WebBrowserClose"
+    android:icon="@drawable/close_icon"
+    android:title="@string/Common_Close"
+    local:showAsAction="ifRoom"/>
+</menu>

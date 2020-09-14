@@ -1,0 +1,237 @@
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/DollDBDetailMainRefreshLayout">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?android:attr/actionBarSize"
+            android:background="@color/MainColor"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:id="@+id/DollDBDetailMainToolbar">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/DollDBDetailToolbarDicNumber"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/DollDBDetailToolbarName"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:id="@+id/DollDBDetailBackgroundImageView" />
+            <!--Doll Title Layout-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/DollDBDetailBasicLayout">
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="10dp"
+                    android:id="@+id/DollDBDetailSmallImage" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@id/DollDBDetailSmallImage"
+                    android:gravity="center"
+                    android:id="@+id/DollDBDetailBasicInfoLayout">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:gravity="center"
+                        android:layout_marginBottom="2dp"
+                        android:id="@+id/DollDBDetailDollDicNumber" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:id="@+id/DollDBDetailDollName" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/DollDBDetailDollProductTime" />
+                </LinearLayout>
+			    <TextView
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+				    android:layout_below="@id/DollDBDetailSmallImage"
+				    android:gravity="center"
+				    android:id="@+id/DollDBDetailDollProductDialog"/>
+			    <LinearLayout
+				    android:orientation="vertical"
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_below="@id/DollDBDetailDollProductDialog"
+				    android:layout_margin="10dp"
+				    android:visibility="gone"
+				    android:id="@+id/DollDBExtraFeatureLayout">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:visibility="gone"
+                        android:id="@+id/DollDBDetailVoiceLayout">
+				        <Spinner
+					        android:layout_width="match_parent"
+					        android:layout_height="wrap_content"
+					        android:gravity="center"
+					        android:id="@+id/DollDBDetailVoiceCostumeSelector"/>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <Spinner
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:id="@+id/DollDBDetailVoiceSelector" />
+                            <Button
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/Common_Play"
+                                android:id="@+id/DollDBDetailVoicePlayButton" />
+                        </LinearLayout>
+                        <ProgressBar
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressTint="@color/ProgressBarColor"
+                            android:visibility="invisible"
+                            android:id="@+id/DollDBDetailVoiceDownloadProgress" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_below="@id/DollDBDetailVoiceLayout"
+                        android:visibility="gone"
+                        android:id="@+id/DollDBDetailModSelectLayout">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent">
+                            <ImageButton
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:src="@drawable/mod_0"
+                                android:id="@+id/DollDBDetailModSelect0" />
+                            <ImageButton
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:src="@drawable/mod_1"
+                                android:id="@+id/DollDBDetailModSelect1" />
+                            <ImageButton
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:src="@drawable/mod_2"
+                                android:id="@+id/DollDBDetailModSelect2" />
+                            <ImageButton
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:src="@drawable/mod_3"
+                                android:id="@+id/DollDBDetailModSelect3" />
+                        </LinearLayout>
+                    </LinearLayout>
+			        <LinearLayout
+				        android:orientation="horizontal"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_below="@id/DollDBDetailModSelectLayout"
+				        android:visibility="gone"
+				        android:id="@+id/DollDBDetailExtraButtonLayout">
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+				            android:layout_weight="1"
+				            android:layout_marginLeft="5dp"
+				            android:layout_marginRight="5dp"
+				            android:visibility="gone"
+                            android:text="@string/DollDBDetailLayout_ModStory"
+                            android:id="@+id/DollDBDetailModStoryButton" />
+			            <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+				            android:layout_weight="1"
+				            android:layout_marginLeft="5dp"
+				            android:layout_marginRight="5dp"
+                            android:text="@string/DollDBDetailLayout_ModelData"
+                            android:id="@+id/DollDBDetailModelDataButton"/>
+			        </LinearLayout>
+		        </LinearLayout>
+                <ImageButton
+			        android:layout_width="match_parent"
+			        android:layout_height="50dp"
+			        android:layout_marginLeft="10dp"
+			        android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ArrowDown"
+                    android:scaleType="fitCenter"
+			        android:layout_below="@id/DollDBExtraFeatureLayout"
+			        android:id="@+id/DollDBExtraFeatureButton"/>
+            </RelativeLayout>
+            <!--Scroll Part-->
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/DollDBDetailBasicLayout"
+                android:id="@+id/DollDBDetailScrollLayout">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/DollDBDetailScrollMainLayout">
+                    <include layout="@layout/dolldbdetaillayout_cardview_basic"/>
+                    <include layout="@layout/dolldbdetaillayout_cardview_buff"/>
+                    <include layout="@layout/dolldbdetaillayout_cardview_skill"/>
+                    <include layout="@layout/dolldbdetaillayout_cardview_modskill"/>
+                    <include layout="@layout/dolldbdetaillayout_cardview_ability"/>
+                    <include layout="@layout/dolldbdetaillayout_cardview_abilitychart"/>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/DollDBDetailSnackbarLayout"
+                android:layout_alignTop="@id/DollDBDetailMainToolbar" />
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

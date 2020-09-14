@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:local="http://schemas.android.com/apk/res-auto">
+  <item
+    android:id="@+id/MainToolbar_GFDInfo"
+    android:icon="@drawable/info_icon"
+    android:title="@string/Main_Toolbar_GFDInfo"
+    local:showAsAction="always"/>
+  <item
+    android:id="@+id/MainToolbar_Setting"
+    android:icon="@drawable/setting_icon"
+    android:title="@string/Main_Toolbar_Setting"
+    local:showAsAction="always"/>
+</menu>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ProductPercentTableMainLayout">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/ProductPercentTableLoadingIndicatorView"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_below="@id/ProductPercentTableLoadingIndicatorView"
+            android:id="@+id/ProductPercentTableLoadingIndicatorExplainText"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?android:attr/actionBarSize"
+            android:background="@color/MainColor"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:id="@+id/ProductPercentTableMainToolbar">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/ProductPercentTableToolbarName"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/ProductPercentTableToolbarMode"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarAlwaysDrawHorizontalTrack="false">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/ProductPercentTable_TableTopLayout">
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Common_ManPower"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_Manpower" />
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Common_Ammo"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_Ammo" />
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Common_Food"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_MRE" />
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Common_Parts"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_Parts" />
+                    <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Common_Tier"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_ProductType" />
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Common_Category"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_ProductCategory" />
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Common_ProductHitCount"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_HitCount" />
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Common_ProductTotalCount"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_TotalCount" />
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Common_Probability"
+                        android:gravity="center"
+                        android:id="@+id/ProductPercentTable_TableTop_Percentage" />
+                </LinearLayout>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ProductPercentTable_MainTableLayout" />
+                </ScrollView>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ProductPercentTableSnackbarLayout"
+        android:layout_alignTop="@id/ProductPercentTableMainLayout" />
+</RelativeLayout>
