@@ -14,6 +14,8 @@ using System.Data;
 using System.IO;
 using System.Threading.Tasks;
 
+using Xamarin.Essentials;
+
 namespace GFDA
 {
     [Activity(Label = "@string/Activity_EquipMainActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -108,7 +110,7 @@ namespace GFDA
         {
             CreateListObject();
 
-            if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false))
+            if (Preferences.Get("DBListImageShow", false))
             {
                 if (CheckCropImage())
                 {
@@ -628,7 +630,7 @@ namespace GFDA
 
             try
             {
-                if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
+                if (Preferences.Get("DBListImageShow", false))
                 {
                     vh.SmallImage.Visibility = ViewStates.Visible;
                     string FilePath = System.IO.Path.Combine(ETC.cachePath, "Equip", "Normal", $"{item.Icon}.gfdcache");

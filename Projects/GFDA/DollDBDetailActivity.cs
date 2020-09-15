@@ -947,7 +947,7 @@ namespace GFDA
 
         private void LoadTitle(bool isRefresh)
         {
-            if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false))
+            if (Preferences.Get("DBDetailBackgroundImage", false))
             {
                 try
                 {

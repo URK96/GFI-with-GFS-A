@@ -16,6 +16,8 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
+using Xamarin.Essentials;
+
 namespace GFDA
 {
     [Activity(Label = "@string/Activity_CoalitionMainActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -106,7 +108,7 @@ namespace GFDA
         {
             CreateListObject();
 
-            if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false))
+            if (Preferences.Get("DBListImageShow", false))
             {
                 if (CheckCropImage())
                 {
@@ -553,7 +555,7 @@ namespace GFDA
                 vh.Affiliation.Text = item.Affiliation;
                 vh.DicNumber.Text = $"No. {item.DicNumber}";
 
-                if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
+                if (Preferences.Get("DBListImageShow", false))
                 {
                     vh.SmallImage.Visibility = ViewStates.Visible;
 

@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
 	android:layout_marginTop="10dp"
 	android:layout_marginBottom="10dp"
-    android:id="@+id/NumberPickerMainLayout">
-    <Net.ArcanaStudio.ColorPicker.ColorPickerView
+    android:id="@+id/ColorPickerMainLayout">
+   <Net.ArcanaStudio.ColorPicker.ColorPickerView
 		android:defaultValue="0x890099CC"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
@@ -17,4 +17,5 @@
 		android:title="Color picker with alpha"
 		android:layout_weight="1"
 		app:cpv_alphaChannelVisible="false" />
+
 </LinearLayout>

@@ -25,6 +25,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
+using Xamarin.Essentials;
+
 namespace GFDA
 {
     [Activity(Label = "", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -797,7 +799,7 @@ namespace GFDA
 
                 // 인형 타이틀 바 초기화
 
-                if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false))
+                if (Preferences.Get("DBDetailBackgroundImage", false))
                 {
                     try
                     {

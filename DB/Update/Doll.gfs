@@ -8307,7 +8307,7 @@
     <MoveSpeed>6</MoveSpeed>
     <Critical>40</Critical>
     <Bullet>3</Bullet>
-    <Armor>110</Armor>
+    <Armor>110;115</Armor>
     <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
     <ConsumeFood>40/65/90/115/140</ConsumeFood>
     <EffectFormation>1,0,0,1,0,2,1,0,0</EffectFormation>

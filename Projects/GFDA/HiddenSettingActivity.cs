@@ -10,6 +10,8 @@ using Google.Android.Material.Snackbar;
 
 using System;
 
+using Xamarin.Essentials;
+
 namespace GFDA
 {
     [Activity(Label = "Hidden Setting", Theme = "@style/GFS.Setting", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -71,7 +73,7 @@ namespace GFDA
 
         private void InitPreferences()
         {
-            SaveSetting = ETC.sharedPreferences.Edit();
+            //SaveSetting = ETC.sharedPreferences.Edit();
 
             ListPreference MainActionbarIcon = (ListPreference)FindPreference("MainActionbarIcon");
             MainActionbarIcon.SetEntries(new string[] 
@@ -95,12 +97,8 @@ namespace GFDA
             };*/
 
             SwitchPreference UnlockCensored = (SwitchPreference)FindPreference("UnlockCensored");
-            UnlockCensored.Checked = ETC.sharedPreferences.GetBoolean("DollImageCensoredUnlock", false);
-            UnlockCensored.PreferenceChange += delegate
-            {
-                SaveSetting.PutBoolean("DollImageCensoredUnlock", UnlockCensored.Checked);
-                SaveSetting.Apply();
-            };
+            UnlockCensored.Checked = Preferences.Get("DollImageCensoredUnlock", false);
+            UnlockCensored.PreferenceChange += delegate { Preferences.Set("DollImageCensoredUnlock", UnlockCensored.Checked); };
         }
     }
 }

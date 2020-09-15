@@ -18,6 +18,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
+using Xamarin.Essentials;
+
 namespace GFDA
 {
     [Activity(Label = "", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -194,7 +196,7 @@ namespace GFDA
 
                 try
                 {
-                    if ((File.Exists(Path.Combine(ETC.cachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache")) == false) || (IsRefresh == true))
+                    if (!File.Exists(Path.Combine(ETC.cachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache")) || IsRefresh)
                     {
                         using (WebClient wc = new WebClient())
                         {
@@ -202,7 +204,7 @@ namespace GFDA
                         }
                     }
 
-                    if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", true) == true)
+                    if (Preferences.Get("DBDetailBackgroundImage", true))
                     {
                         Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache"));
                         drawable.SetAlpha(40);

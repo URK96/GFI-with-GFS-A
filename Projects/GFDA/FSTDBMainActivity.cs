@@ -14,6 +14,8 @@ using System.Data;
 using System.IO;
 using System.Threading.Tasks;
 
+using Xamarin.Essentials;
+
 namespace GFDA
 {
     [Activity(Label = "@string/Activity_FSTMainActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -98,7 +100,7 @@ namespace GFDA
         {
             CreateListObject();
 
-            if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false))
+            if (Preferences.Get("DBListImageShow", false))
             {
                 if (CheckFSTCropImage())
                 {
@@ -493,15 +495,20 @@ namespace GFDA
 
             try
             {
-                if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false))
+                if (Preferences.Get("DBListImageShow", false))
                 {
                     vh.SmallImage.Visibility = ViewStates.Visible;
-                    string FilePath = System.IO.Path.Combine(ETC.cachePath, "FST", "Normal_Icon", $"{item.CodeName}.gfdcache");
-                    if (System.IO.File.Exists(FilePath) == true)
-                        vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(FilePath));
+                    string filePath = Path.Combine(ETC.cachePath, "FST", "Normal_Icon", $"{item.CodeName}.gfdcache");
+
+                    if (File.Exists(filePath))
+                    {
+                        vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(filePath));
+                    }
                 }
                 else
+                {
                     vh.SmallImage.Visibility = ViewStates.Gone;
+                }
 
                 vh.Type.Text = item.Type;
                 vh.Name.Text = item.Name;

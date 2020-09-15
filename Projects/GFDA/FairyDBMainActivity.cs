@@ -14,6 +14,8 @@ using System.Data;
 using System.IO;
 using System.Threading.Tasks;
 
+using Xamarin.Essentials;
+
 namespace GFDA
 {
     [Activity(Label = "@string/Activity_FairyMainActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -106,7 +108,7 @@ namespace GFDA
         {
             CreateListObject();
 
-            if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false))
+            if (Preferences.Get("DBListImageShow", false))
             {
                 if (CheckFairyCropImage())
                 {
@@ -562,7 +564,7 @@ namespace GFDA
                 }
                 vh.TypeIcon.SetImageResource(TypeIconId);
 
-                if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
+                if (Preferences.Get("DBListImageShow", false))
                 {
                     vh.SmallImage.Visibility = ViewStates.Visible;
                     string FilePath = System.IO.Path.Combine(ETC.cachePath, "Fairy", "Normal_Crop", $"{item.DicNumber}.gfdcache");

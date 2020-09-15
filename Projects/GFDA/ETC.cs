@@ -91,7 +91,7 @@ namespace GFDA
             isReleaseMode = false;
 #endif
 
-            sharedPreferences = null; //Preferences.PreferenceManager.GetDefaultSharedPreferences(context);
+            //sharedPreferences = null; //Preferences.PreferenceManager.GetDefaultSharedPreferences(context);
             useLightTheme = Preferences.Get("UseLightTheme", false);// sharedPreferences.GetBoolean("UseLightTheme", false);
 
             SetDialogTheme();

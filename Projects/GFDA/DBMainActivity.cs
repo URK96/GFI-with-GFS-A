@@ -56,7 +56,7 @@ namespace GFDA
                 // Create your application here
                 SetContentView(Resource.Layout.DBMainLayout);
 
-                canRefresh = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
+                canRefresh = Preferences.Get("DBListImageShow", false);
 
                 toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.DBMainToolbar);
                 searchView = FindViewById<AndroidX.AppCompat.Widget.SearchView>(Resource.Id.DBSearchView);

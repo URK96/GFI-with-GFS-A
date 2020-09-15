@@ -14,6 +14,8 @@ using System.Data;
 using System.IO;
 using System.Threading.Tasks;
 
+using Xamarin.Essentials;
+
 namespace GFDA
 {
     [Activity(Label = "@string/Acticity_EnemyMainActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -108,7 +110,7 @@ namespace GFDA
         {
             CreateListObject();
 
-            if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false))
+            if (Preferences.Get("DBListImageShow", false))
             {
                 if (CheckEnemyCropImage())
                 {
@@ -589,7 +591,7 @@ namespace GFDA
 
                 vh.Type.Text = enemyType;
 
-                if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false))
+                if (Preferences.Get("DBListImageShow", false))
                 {
                     vh.SmallImage.Visibility = ViewStates.Visible;
                     string filePath = Path.Combine(ETC.cachePath, "Enemy", "Normal_Crop", $"{item.CodeName}.gfdcache");

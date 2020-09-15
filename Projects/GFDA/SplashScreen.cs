@@ -21,8 +21,6 @@ namespace GFDA
     {
         private TextView statusText;
 
-        private ISharedPreferencesEditor preferenceEditor;
-
         protected override void AttachBaseContext(Context @base)
         {
             try
@@ -57,8 +55,6 @@ namespace GFDA
 
                 Platform.Init(this, savedInstanceState);
 
-                //preferenceEditor = ETC.sharedPreferences.Edit();
-
                 /*Random r = new Random(DateTime.Now.Millisecond);
 
                 if ((ETC.sharedPreferences.GetInt("SplashBG_Index", 0) == 1) || ((r.Next() % 20) == 0))
@@ -77,10 +73,8 @@ namespace GFDA
                 {
                     await CheckPermission();
                 }
-                else
-                {
-                    _ = InitProcess();
-                }
+
+                _ = InitProcess();
             }
             catch (Exception ex)
             {
@@ -231,13 +225,11 @@ namespace GFDA
 
             if (totalRam <= 2048)
             {
-                preferenceEditor.PutBoolean("LowMemoryOption", true);
-                preferenceEditor.PutBoolean("DBListImageShow", false);
-                preferenceEditor.PutBoolean("DBDetailBackgroundImage", false);
+                Preferences.Set("DBListImageShow", false);
+                Preferences.Set("DBDetailBackgroundImage", false);
             }
 
-            preferenceEditor.PutBoolean("CheckInitLowMemory", false);
-            preferenceEditor.Apply();
+            Preferences.Set("CheckInitLowMemory", false);
         }
 
         private bool CheckDBFiles()

@@ -676,7 +676,7 @@ namespace GFDA
             {
                 vh.DicNumber.Text = $"No. {item.DicNumber}";
 
-                if (ETC.sharedPreferences.GetBoolean("DBListImageShow", false) == true)
+                if (Preferences.Get("DBListImageShow", false))
                 {
                     vh.SmallImage.Visibility = ViewStates.Visible;
 

@@ -15,6 +15,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
+using Xamarin.Essentials;
+
 namespace GFDA
 {
     [Activity(Label = "", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -214,7 +216,7 @@ namespace GFDA
                         }
                     }
 
-                    if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", true))
+                    if (Preferences.Get("DBDetailBackgroundImage", true))
                     {
                         var drawable = Drawable.CreateFromPath(smallImagePath);
                         drawable.SetAlpha(40);

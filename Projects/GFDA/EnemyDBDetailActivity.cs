@@ -261,7 +261,7 @@ namespace GFDA
 
                 // 철혈 타이틀 바 초기화
 
-                if (ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false))
+                if (Preferences.Get("DBDetailBackgroundImage", false))
                 {
                     string imagePath = Path.Combine(ETC.cachePath, "Enemy", "Normal", $"{enemy.CodeName}.gfdcache");
 

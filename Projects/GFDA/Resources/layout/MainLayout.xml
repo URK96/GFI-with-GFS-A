@@ -19,7 +19,7 @@
         android:layout_below="@id/MainMainToolbar"
         android:layout_above="@+id/MainBottomNavigation"
         android:id="@+id/MainFragmentContainer"/>
-    <android.support.design.widget.BottomNavigationView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_gravity="start"
@@ -30,7 +30,7 @@
         app:menu="@menu/mainbottommenu"
         app:itemIconTint="@drawable/bottomnav_selector"
         app:itemTextColor="@drawable/bottomnav_selector"/>
-    <android.support.design.widget.CoordinatorLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/MainSnackbarLayout"

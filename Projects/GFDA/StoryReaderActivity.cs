@@ -69,9 +69,9 @@ namespace GFDA
             titleCategory = FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryCategory);
             titleNow = FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryTitle);
 
-            textSize = ETC.sharedPreferences.GetInt("TextViewerTextSize", 12);
-            textColor = ETC.sharedPreferences.GetString("TextViewerTextColorHex", "None");
-            backgroundColor = ETC.sharedPreferences.GetString("TextViewerBackgroundColorHex", "None");
+            textSize = Preferences.Get("TextViewerTextSize", 12);
+            textColor = Preferences.Get("TextViewerTextColorHex", "None");
+            backgroundColor = Preferences.Get("TextViewerBackgroundColorHex", "None");
 
             loadProgressBar = FindViewById<ProgressBar>(Resource.Id.StoryReaderLoadProgress);
             mainTextView = FindViewById<TextView>(Resource.Id.StoryReaderMainTextView);

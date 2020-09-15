@@ -8,6 +8,8 @@ using AndroidX.CoordinatorLayout.Widget;
 
 using Google.Android.Material.Snackbar;
 
+using Xamarin.Essentials;
+
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -514,12 +516,9 @@ namespace GFDA
 
                 if ((pManPower == 666) && (pAmmo == 666) && (pFood == 666) && (pParts == 666))
                 {
-                    if (!ETC.sharedPreferences.GetBoolean("ImageCensoredUnlock", false))
+                    if (!Preferences.Get("ImageCensoredUnlock", false))
                     {
-                        var editor = ETC.sharedPreferences.Edit();
-                        editor.PutBoolean("ImageCensoredUnlock", true);
-                        editor.Commit();
-
+                        Preferences.Set("ImageCensoredUnlock", true);
                         Toast.MakeText(this, "Image Censor Option unlock", ToastLength.Short).Show();
                     }
                     else

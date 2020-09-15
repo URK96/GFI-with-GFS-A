@@ -9,6 +9,8 @@ using AndroidX.Preference;
 
 using Google.Android.Material.Snackbar;
 
+using Net.ArcanaStudio.ColorPicker;
+
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -70,11 +72,9 @@ namespace GFDA
         }
     }
 
-    public class MainSettingFragment : AndroidX.Preference.PreferenceFragmentCompat
+    public class MainSettingFragment : PreferenceFragmentCompat
     {
-        private ISharedPreferencesEditor SaveSetting;
-
-        private CoordinatorLayout SnackbarLayout;
+        private CoordinatorLayout snackbarLayout;
 
         private Dialog dialog;
         private ProgressDialog p_dialog;
@@ -90,8 +90,8 @@ namespace GFDA
 
         public override void OnCreatePreferences(Bundle savedInstanceState, string rootKey)
         {
-            SnackbarLayout = Activity.FindViewById<CoordinatorLayout>(Resource.Id.SettingSnackbarLayout);
-            SnackbarLayout.BringToFront();
+            snackbarLayout = Activity.FindViewById<CoordinatorLayout>(Resource.Id.SettingSnackbarLayout);
+            snackbarLayout.BringToFront();
 
             AddPreferencesFromResource(Resource.Xml.MainSetting);
 
@@ -100,17 +100,8 @@ namespace GFDA
 
         private void InitPreferences()
         {
-            SaveSetting =  ETC.sharedPreferences.Edit();
-
-            Preference updateLog = FindPreference("UpdateLog");
-            if (ETC.useLightTheme)
-            {
-                updateLog.SetIcon(Resource.Drawable.updatehistory_icon_wt);
-            }
-            else
-            {
-                updateLog.SetIcon(Resource.Drawable.updatehistory_icon);
-            }
+            var updateLog = FindPreference("UpdateLog");
+            updateLog.SetIcon(ETC.useLightTheme ? Resource.Drawable.updatehistory_icon_wt : Resource.Drawable.updatehistory_icon);
             updateLog.PreferenceClick += delegate
             {
                 var ad = new AndroidX.AppCompat.App.AlertDialog.Builder(Activity, ETC.dialogBGVertical);
@@ -120,19 +111,13 @@ namespace GFDA
 
                 try
                 {
-                    string assetName = "";
-
-                    switch (ETC.locale.Language)
+                    string assetName = ETC.locale.Language switch
                     {
-                        case "ko":
-                            assetName = "UpdateFeature_ko.txt";
-                            break;
-                        default:
-                            assetName = "UpdateFeature_en.txt";
-                            break;
-                    }
+                        "ko" => "UpdateFeature_ko.txt",
+                        _ => "UpdateFeature_en.txt",
+                    };
 
-                    using (StreamReader sr = new StreamReader(Activity.Assets.Open(assetName)))
+                    using (var sr = new StreamReader(Activity.Assets.Open(assetName)))
                     {
                         ad.SetMessage(sr.ReadToEnd());
                     }
@@ -142,19 +127,12 @@ namespace GFDA
                 catch (Exception ex)
                 {
                     ETC.LogError(ex, Activity);
-                    ETC.ShowSnackbar(SnackbarLayout, Resource.String.Main_NotificationInitializeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
+                    ETC.ShowSnackbar(snackbarLayout, Resource.String.Main_NotificationInitializeFail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
                 }
             };
 
-            ListPreference startAppMode = (ListPreference)FindPreference("StartAppMode");
-            if (ETC.useLightTheme)
-            {
-                startAppMode.SetIcon(Resource.Drawable.appmode_icon_wt);
-            }
-            else
-            {
-                startAppMode.SetIcon(Resource.Drawable.appmode_icon);
-            }
+            var startAppMode = FindPreference("StartAppMode") as ListPreference;
+            startAppMode.SetIcon(ETC.useLightTheme ? Resource.Drawable.appmode_icon_wt : Resource.Drawable.appmode_icon);
             startAppMode.SetEntries(new string[] 
             {
                 Resources.GetString(Resource.String.Common_Default),
@@ -166,82 +144,20 @@ namespace GFDA
                 Resources.GetString(Resource.String.Main_Other_GFOSTPlayer)
             });
             startAppMode.SetEntryValues(new string[] { "0", "1", "2", "3", "4", "5", "6" });
-            startAppMode.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("StartAppMode", "0")));
+            startAppMode.SetValueIndex(int.Parse(Preferences.Get("StartAppMode", "0")));
 
+            var useLightTheme = FindPreference("UseLightTheme") as SwitchPreference;
+            useLightTheme.SetIcon(ETC.useLightTheme ? Resource.Drawable.themecolor_icon_wt : Resource.Drawable.themecolor_icon);
+            useLightTheme.Checked = Preferences.Get("UseLightTheme", false);
+            useLightTheme.PreferenceChange += delegate { Preferences.Set("UseLightTheme", ETC.useLightTheme = useLightTheme.Checked); };
 
-            /*SwitchPreference lowMemoryOption = (SwitchPreference)FindPreference("LowMemoryOption");
-            if (ETC.useLightTheme)
-            {
-                lowMemoryOption.SetIcon(Resource.Drawable.LowMemoryOptionIcon_WhiteTheme);
-            }
-            else
-            {
-                lowMemoryOption.SetIcon(Resource.Drawable.LowMemoryOptionIcon);
-            }
-            lowMemoryOption.Checked = ETC.sharedPreferences.GetBoolean("LowMemoryOption", false);
-            lowMemoryOption.PreferenceChange += delegate
-            {
-                SaveSetting.PutBoolean("LowMemoryOption", lowMemoryOption.Checked);
-                SaveSetting.Apply();
-            };*/
+            var enableServerCheck = FindPreference("EnableServerCheck") as SwitchPreference;
+            enableServerCheck.SetIcon(ETC.useLightTheme ? Resource.Drawable.server_icon_wt : Resource.Drawable.server_icon);
+            enableServerCheck.Checked = Preferences.Get("EnableServerCheck", true);
+            enableServerCheck.PreferenceChange += delegate { Preferences.Set("EnableServerCheck", enableServerCheck.Checked); };
 
-
-            SwitchPreference useLightTheme = (SwitchPreference)FindPreference("UseLightTheme");
-            if (ETC.useLightTheme)
-            {
-                useLightTheme.SetIcon(Resource.Drawable.themecolor_icon_wt);
-            }
-            else
-            {
-                useLightTheme.SetIcon(Resource.Drawable.themecolor_icon);
-            }
-            useLightTheme.Checked = ETC.sharedPreferences.GetBoolean("UseLightTheme", false);
-            useLightTheme.PreferenceChange += delegate
-            {
-                ETC.useLightTheme = useLightTheme.Checked;
-                SaveSetting.PutBoolean("UseLightTheme", useLightTheme.Checked);
-                SaveSetting.Apply();
-            };
-
-
-            SwitchPreference enableServerCheck = (SwitchPreference)FindPreference("EnableServerCheck");
-            if (ETC.useLightTheme)
-            {
-                enableServerCheck.SetIcon(Resource.Drawable.server_icon_wt);
-            }
-            else
-            {
-                enableServerCheck.SetIcon(Resource.Drawable.server_icon);
-            }
-            enableServerCheck.Checked = ETC.sharedPreferences.GetBoolean("EnableServerCheck", true);
-            enableServerCheck.PreferenceChange += delegate
-            {
-                SaveSetting.PutBoolean("EnableServerCheck", enableServerCheck.Checked);
-                SaveSetting.Apply();
-            };
-
-            /*ListPreference MainButtonColor = (ListPreference)FindPreference("MainButtonColor");
-            if (ETC.UseLightTheme)
-                MainButtonColor.SetIcon(Resource.Drawable.AppStartModeIcon_WhiteTheme);
-            else
-                MainButtonColor.SetIcon(Resource.Drawable.AppStartModeIcon);
-            MainButtonColor.SetEntries(new string[]
-            {
-                "Green (Default)",
-                "Orange"
-            });
-            MainButtonColor.SetEntryValues(new string[] { "0", "1" });
-            MainButtonColor.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("MainButtonColor", "0")));*/
-
-            ListPreference startMainFragment = (ListPreference)FindPreference("StartMainFragment");
-            if (ETC.useLightTheme)
-            {
-                startMainFragment.SetIcon(Resource.Drawable.startscreen_icon_wt);
-            }
-            else
-            {
-                startMainFragment.SetIcon(Resource.Drawable.startscreen_icon);
-            }
+            var startMainFragment = FindPreference("StartMainFragment") as ListPreference;
+            startMainFragment.SetIcon(ETC.useLightTheme ? Resource.Drawable.startscreen_icon_wt : Resource.Drawable.startscreen_icon);
             startMainFragment.SetEntries(new string[]
             {
                 Resources.GetString(Resource.String.Main_Category_Home),
@@ -251,17 +167,10 @@ namespace GFDA
                 Resources.GetString(Resource.String.Main_Category_Other),
             });
             startMainFragment.SetEntryValues(new string[] { "0", "1", "2", "3", "4" });
-            startMainFragment.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("StartMainFragment", "0")));
+            startMainFragment.SetValueIndex(int.Parse(Preferences.Get("StartMainFragment", "0")));
 
-            ListPreference appLanguage = (ListPreference)FindPreference("AppLanguage");
-            if (ETC.useLightTheme)
-            {
-                appLanguage.SetIcon(Resource.Drawable.language_icon_wt);
-            }
-            else
-            {
-                appLanguage.SetIcon(Resource.Drawable.language_icon);
-            }
+            var appLanguage = FindPreference("AppLanguage") as ListPreference;
+            appLanguage.SetIcon(ETC.useLightTheme ? Resource.Drawable.language_icon_wt : Resource.Drawable.language_icon);
             appLanguage.SetEntries(new string[]
             {
                 "System Default",
@@ -269,66 +178,26 @@ namespace GFDA
                 Resources.GetString(Resource.String.Common_Language_EN)
             });
             appLanguage.SetEntryValues(new string[] { "0", "1", "2" });
-            appLanguage.SetValueIndex(int.Parse(ETC.sharedPreferences.GetString("AppLanguage", "0")));
+            appLanguage.SetValueIndex(int.Parse(Preferences.Get("AppLanguage", "0")));
 
 
-            SwitchPreference autoDBUpdate = (SwitchPreference)FindPreference("AutoDBUpdate");
-            if (ETC.useLightTheme)
-            {
-                autoDBUpdate.SetIcon(Resource.Drawable.databasesync_icon_wt);
-            }
-            else
-            {
-                autoDBUpdate.SetIcon(Resource.Drawable.databasesync_icon);
-            }
-            autoDBUpdate.Checked = ETC.sharedPreferences.GetBoolean("AutoDBUpdate", true);
-            autoDBUpdate.PreferenceChange += delegate
-            {
-                SaveSetting.PutBoolean("AutoDBUpdate", autoDBUpdate.Checked);
-                SaveSetting.Apply();
-            };
+            var autoDBUpdate = FindPreference("AutoDBUpdate") as SwitchPreference;
+            autoDBUpdate.SetIcon(ETC.useLightTheme ? Resource.Drawable.databasesync_icon_wt : Resource.Drawable.databasesync_icon);
+            autoDBUpdate.Checked = Preferences.Get("AutoDBUpdate", true);
+            autoDBUpdate.PreferenceChange += delegate { Preferences.Set("AutoDBUpdate", autoDBUpdate.Checked); };
 
-
-            Preference checkDBUpdate = FindPreference("CheckDBUpdate");
-            if (ETC.useLightTheme)
-            {
-                checkDBUpdate.SetIcon(Resource.Drawable.databaseupdate_icon_wt);
-            }
-            else
-            {
-                checkDBUpdate.SetIcon(Resource.Drawable.databaseupdate_icon);
-            }
+            var checkDBUpdate = FindPreference("CheckDBUpdate");
+            checkDBUpdate.SetIcon(ETC.useLightTheme ? Resource.Drawable.databaseupdate_icon_wt : Resource.Drawable.databaseupdate_icon);
             checkDBUpdate.PreferenceClick += CheckDBUpdate_PreferenceClick;
 
-
-            Preference repairDB = FindPreference("RepairDB");
-            if (ETC.useLightTheme)
-            {
-                repairDB.SetIcon(Resource.Drawable.repair_icon_wt);
-            }
-            else
-            {
-                repairDB.SetIcon(Resource.Drawable.repair_icon);
-            }
+            var repairDB = FindPreference("RepairDB");
+            repairDB.SetIcon(ETC.useLightTheme ? Resource.Drawable.repair_icon_wt : Resource.Drawable.repair_icon);
             repairDB.PreferenceClick += RepairDB_PreferenceClick;
 
-
-            SwitchPreference dbListImage = (SwitchPreference)FindPreference("DBListImageShow");
-            if (ETC.useLightTheme)
-            {
-                dbListImage.SetIcon(Resource.Drawable.listmode_icon_wt);
-            }
-            else
-            {
-                dbListImage.SetIcon(Resource.Drawable.listmode_icon);
-            }
-            dbListImage.Checked = ETC.sharedPreferences.GetBoolean("DBListImageShow", false);
-            dbListImage.PreferenceChange += delegate 
-            {
-                SaveSetting.PutBoolean("DBListImageShow", dbListImage.Checked);
-                SaveSetting.Apply();
-            };
-
+            var dbListImage = FindPreference("DBListImageShow") as SwitchPreference;
+            dbListImage.SetIcon(ETC.useLightTheme ? Resource.Drawable.listmode_icon_wt : Resource.Drawable.listmode_icon);
+            dbListImage.Checked = Preferences.Get("DBListImageShow", false);
+            dbListImage.PreferenceChange += delegate { Preferences.Set("DBListImageShow", dbListImage.Checked); };
 
             /*SwitchPreference PreviewDBListLayout = (SwitchPreference)FindPreference("PreviewDBListLayout");
             if (ETC.useLightTheme)
@@ -346,57 +215,23 @@ namespace GFDA
                 SaveSetting.Apply();
             };*/
 
+            var dbDetailBackgroundImage = FindPreference("DBDetailBackgroundImage") as SwitchPreference;
+            dbDetailBackgroundImage.SetIcon(ETC.useLightTheme ? Resource.Drawable.backgroundimage_icon_wt : Resource.Drawable.backgroundimage_icon);
+            dbDetailBackgroundImage.Checked = Preferences.Get("DBDetailBackgroundImage", false);
+            dbDetailBackgroundImage.PreferenceChange += delegate { Preferences.Set("DBDetailBackgroundImage", dbDetailBackgroundImage.Checked); };
 
-            SwitchPreference dbDetailBackgroundImage = (SwitchPreference)FindPreference("DBDetailBackgroundImage");
-            if (ETC.useLightTheme)
-            {
-                dbDetailBackgroundImage.SetIcon(Resource.Drawable.backgroundimage_icon_wt);
-            }
-            else
-            {
-                dbDetailBackgroundImage.SetIcon(Resource.Drawable.backgroundimage_icon);
-            }
-            dbDetailBackgroundImage.Checked = ETC.sharedPreferences.GetBoolean("DBDetailBackgroundImage", false);
-            dbDetailBackgroundImage.PreferenceChange += delegate
-            {
-                SaveSetting.PutBoolean("DBDetailBackgroundImage", dbDetailBackgroundImage.Checked);
-                SaveSetting.Apply();
-            };
-
-
-            Preference textViewerTextSize = FindPreference("TextViewerTextSize");
-            if (ETC.useLightTheme)
-            {
-                textViewerTextSize.SetIcon(Resource.Drawable.fontsize_icon_wt);
-            }
-            else
-            {
-                textViewerTextSize.SetIcon(Resource.Drawable.fontsize_icon);
-            }
+            var textViewerTextSize = FindPreference("TextViewerTextSize");
+            textViewerTextSize.SetIcon(ETC.useLightTheme ? Resource.Drawable.fontsize_icon_wt : Resource.Drawable.fontsize_icon);
             textViewerTextSize.PreferenceClick += TextViewerTextSize_PreferenceClick;
 
 
-            Preference textViewerTextColor = FindPreference("TextViewerTextColor");
-            if (ETC.useLightTheme)
-            {
-                textViewerTextColor.SetIcon(Resource.Drawable.fontcolor_icon_wt);
-            }
-            else
-            {
-                textViewerTextColor.SetIcon(Resource.Drawable.fontcolor_icon);
-            }
+            var textViewerTextColor = FindPreference("TextViewerTextColor");
+            textViewerTextColor.SetIcon(ETC.useLightTheme ? Resource.Drawable.fontcolor_icon_wt : Resource.Drawable.fontcolor_icon);
             textViewerTextColor.PreferenceClick += TextViewerTextColor_PreferenceClick;
 
 
-            Preference textViewerBackgroundColor = FindPreference("TextViewerBackgroundColor");
-            if (ETC.useLightTheme)
-            {
-                textViewerBackgroundColor.SetIcon(Resource.Drawable.backgroundcolor_icon_wt);
-            }
-            else
-            {
-                textViewerBackgroundColor.SetIcon(Resource.Drawable.backgroundcolor_icon);
-            }
+            var textViewerBackgroundColor = FindPreference("TextViewerBackgroundColor");
+            textViewerBackgroundColor.SetIcon(ETC.useLightTheme ? Resource.Drawable.backgroundcolor_icon_wt : Resource.Drawable.backgroundcolor_icon);
             textViewerBackgroundColor.PreferenceClick += TextViewerBackgroundColor_PreferenceClick;
 
             /*Preference DownloadAllCache = FindPreference("DownloadAllCache");
@@ -404,56 +239,27 @@ namespace GFDA
             else DownloadAllCache.SetIcon(Resource.Drawable.DownloadAllCacheIcon);
             DownloadAllCache.PreferenceClick += DownloadAllCache_PreferenceClick;*/
 
-            Preference cleanCache = FindPreference("CleanCache");
-            if (ETC.useLightTheme)
-            {
-                cleanCache.SetIcon(Resource.Drawable.delete_icon_wt);
-            }
-            else
-            {
-                cleanCache.SetIcon(Resource.Drawable.delete_icon);
-            }
+            var cleanCache = FindPreference("CleanCache");
+            cleanCache.SetIcon(ETC.useLightTheme ? Resource.Drawable.delete_icon_wt : Resource.Drawable.delete_icon);
             cleanCache.PreferenceClick += CleanCache_PreferenceClick;
 
             //Preference OpenLogFolder = FindPreference("OpenLogFolder");
 
-            Preference deleteAllLogFile = FindPreference("DeleteAllLogFile");
-            if (ETC.useLightTheme)
-            {
-                deleteAllLogFile.SetIcon(Resource.Drawable.deletelog_icon_wt);
-            }
-            else
-            {
-                deleteAllLogFile.SetIcon(Resource.Drawable.deletelog_icon);
-            }
+            var deleteAllLogFile = FindPreference("DeleteAllLogFile");
+            deleteAllLogFile.SetIcon(ETC.useLightTheme ? Resource.Drawable.deletelog_icon_wt : Resource.Drawable.deletelog_icon);
             deleteAllLogFile.PreferenceClick += DeleteAllLogFile_PreferenceClick;
 
-            Preference externalLibraryLicense = FindPreference("ExternalLibraryLicense");
-            if (ETC.useLightTheme)
-            {
-                externalLibraryLicense.SetIcon(Resource.Drawable.license_icon_wt);
-            }
-            else
-            {
-                externalLibraryLicense.SetIcon(Resource.Drawable.license_icon);
-            }
+            var externalLibraryLicense = FindPreference("ExternalLibraryLicense");
+            externalLibraryLicense.SetIcon(ETC.useLightTheme ? Resource.Drawable.license_icon_wt : Resource.Drawable.license_icon);
             externalLibraryLicense.PreferenceClick += delegate { Activity.StartActivity(typeof(ExternLibraryCopyright)); };
 
-            Preference gfdSourceCode = FindPreference("GFDSourceCode");
-            if (ETC.useLightTheme)
-            {
-                gfdSourceCode.SetIcon(Resource.Drawable.sourcecode_icon_wt);
-            }
-            else
-            {
-                gfdSourceCode.SetIcon(Resource.Drawable.sourcecode_icon);
-            }
+            var gfdSourceCode = FindPreference("GFDSourceCode");
+            gfdSourceCode.SetIcon(ETC.useLightTheme ? Resource.Drawable.sourcecode_icon_wt : Resource.Drawable.sourcecode_icon);
             gfdSourceCode.PreferenceClick += async delegate
             {
                 Toast.MakeText(Activity, Resource.String.Switch_ExternalBrowser, ToastLength.Short).Show();
 
-                Uri uri = new Uri("https://github.com/URK96/GFI-with-GFS-A.git");
-                await Browser.OpenAsync(uri, BrowserLaunchMode.External).ConfigureAwait(false);
+                await Browser.OpenAsync(new Uri("https://github.com/URK96/GFI-with-GFS-A.git"), BrowserLaunchMode.External).ConfigureAwait(false);
             };
         }
 
@@ -542,19 +348,11 @@ namespace GFDA
 
                 if (count == 5)
                 {
-                    Preference p = sender as Preference;
+                    var p = sender as Preference;
 
                     p.SetTitle(Resource.String.Firewall);
                     p.SetSummary(Resource.String.Firewall_Message);
-
-                    if (ETC.useLightTheme)
-                    {
-                        p.SetIcon(Resource.Drawable.Hack_WhiteTheme);
-                    }
-                    else
-                    {
-                        p.SetIcon(Resource.Drawable.Hack);
-                    }
+                    p.SetIcon(ETC.useLightTheme ? Resource.Drawable.Hack_WhiteTheme : Resource.Drawable.Hack);
                 }
                 else if (count > 5)
                 {
@@ -570,7 +368,6 @@ namespace GFDA
                     });
 
                     ad.Show();
-
                 }
                 else
                 {
@@ -582,7 +379,6 @@ namespace GFDA
                     ad.SetPositiveButton(Resource.String.AlertDialog_Confirm, delegate { CleanLogFolderProcess(); });
 
                     ad.Show();
-
                 }
             }
             catch (Exception ex)
@@ -605,7 +401,6 @@ namespace GFDA
                 ad.SetView(Resource.Layout.SpinnerProgressDialogLayout);
 
                 dialog = ad.Show();
-
 
                 await Task.Delay(1000);
 
@@ -640,22 +435,14 @@ namespace GFDA
             var np = view.FindViewById<NumberPicker>(Resource.Id.NumberPickerControl);
             np.MaxValue = 30;
             np.MinValue = 4;
-            np.Value = ETC.sharedPreferences.GetInt("TextViewerTextSize", 12);
+            np.Value = Preferences.Get("TextViewerTextSize", 12);
 
             var ad = new AndroidX.AppCompat.App.AlertDialog.Builder(Activity, ETC.dialogBG);
             ad.SetTitle(Resource.String.Common_TextSize);
             ad.SetCancelable(true);
             ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-            ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate
-            {
-                SaveSetting.PutInt("TextViewerTextSize", 12);
-                SaveSetting.Apply();
-            });
-            ad.SetPositiveButton(Resource.String.AlertDialog_Set, delegate
-            {
-                SaveSetting.PutInt("TextViewerTextSize", np.Value);
-                SaveSetting.Apply();
-            });
+            ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { Preferences.Set("TextViewerTextSize", 12); });
+            ad.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { Preferences.Set("TextViewerTextSize", np.Value); });
             ad.SetView(view);
 
             ad.Show();
@@ -663,7 +450,7 @@ namespace GFDA
 
         private void TextViewerTextColor_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
         {
-            View view = Activity.LayoutInflater.Inflate(Resource.Layout.ColorPickerDialogLayout, null);
+            var view = Activity.LayoutInflater.Inflate(Resource.Layout.ColorPickerDialogLayout, null);
 
             var cp = view.FindViewById<ColorPickerView>(Resource.Id.ColorPickerControl);
 
@@ -671,16 +458,8 @@ namespace GFDA
             ad.SetTitle(Resource.String.Common_TextColor);
             ad.SetCancelable(true);
             ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-            ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate
-            {
-                SaveSetting.PutString("TextViewerTextColorHex", "None");
-                SaveSetting.Apply();
-            });
-            ad.SetPositiveButton(Resource.String.AlertDialog_Set, delegate
-            {
-                SaveSetting.PutString("TextViewerTextColorHex", $"#{cp.GetColor().ToArgb().ToString("X")}");
-                SaveSetting.Apply();
-            });
+            ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { Preferences.Set("TextViewerTextColorHex", "None"); });
+            ad.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { Preferences.Set("TextViewerTextColorHex", $"#{cp.GetColor().ToArgb():X}"); });
             ad.SetView(view);
 
             ad.Show();
@@ -688,7 +467,7 @@ namespace GFDA
 
         private void TextViewerBackgroundColor_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
         {
-            View view = Activity.LayoutInflater.Inflate(Resource.Layout.ColorPickerDialogLayout, null);
+            var view = Activity.LayoutInflater.Inflate(Resource.Layout.ColorPickerDialogLayout, null);
 
             var cp = view.FindViewById<ColorPickerView>(Resource.Id.ColorPickerControl);
 
@@ -696,16 +475,8 @@ namespace GFDA
             ad.SetTitle(Resource.String.Common_BackgroundColor);
             ad.SetCancelable(true);
             ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-            ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate
-            {
-                SaveSetting.PutString("TextViewerBackgroundColorHex", "None");
-                SaveSetting.Apply();
-            });
-            ad.SetPositiveButton(Resource.String.AlertDialog_Set, delegate
-            {
-                SaveSetting.PutString("TextViewerBackgroundColorHex", $"#{cp.GetColor().ToArgb().ToString("X")}");
-                SaveSetting.Apply();
-            });
+            ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { Preferences.Set("TextViewerBackgroundColorHex", "None"); });
+            ad.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { Preferences.Set("TextViewerBackgroundColorHex", $"#{cp.GetColor().ToArgb():X}"); });
             ad.SetView(view);
 
             ad.Show();

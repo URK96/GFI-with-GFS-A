@@ -15,6 +15,8 @@ using Google.Android.Material.Snackbar;
 using System;
 using System.Threading.Tasks;
 
+using Xamarin.Essentials;
+
 using Resource = GFDA.Resource;
 
 namespace GFDA
@@ -81,31 +83,16 @@ namespace GFDA
 
                 // Load Init Process
 
-                int startIndex = int.Parse(ETC.sharedPreferences.GetString("StartMainFragment", "0"));
-                int id = 0;
+                int startIndex = int.Parse(Preferences.Get("StartMainFragment", "0"));
 
-                switch (startIndex)
+                bottomNavigation.SelectedItemId = startIndex switch
                 {
-                    default:
-                    case 0:
-                        id = Resource.Id.MainNavigation_Home;
-                        break;
-                    case 1:
-                        id = Resource.Id.MainNavigation_DB;
-                        break;
-                    case 2:
-                        id = Resource.Id.MainNavigation_GFDv1;
-                        break;
-                    case 3:
-                        id = Resource.Id.MainNavigation_GFUtil;
-                        break;
-                    case 4:
-                        id = Resource.Id.MainNavigation_Other;
-                        break;
-                }
-
-                bottomNavigation.SelectedItemId = id;
-
+                    1 => Resource.Id.MainNavigation_DB,
+                    2 => Resource.Id.MainNavigation_GFDv1,
+                    3 => Resource.Id.MainNavigation_GFUtil,
+                    4 => Resource.Id.MainNavigation_Other,
+                    _ => Resource.Id.MainNavigation_Home,
+                };
 
                 _ = InitializeProcess();
             }
@@ -142,26 +129,15 @@ namespace GFDA
 
         private void ChangeFragment(int id)
         {
-            AndroidX.Fragment.App.Fragment fragment = null;
-
-            switch (id)
+            var fragment = id switch
             {
-                case Resource.Id.MainNavigation_Home:
-                    fragment = mainHomeF;
-                    break;
-                case Resource.Id.MainNavigation_DB:
-                    fragment = mainDBF;
-                    break;
-                case Resource.Id.MainNavigation_GFDv1:
-                    fragment = mainGFDv1F;
-                    break;
-                case Resource.Id.MainNavigation_GFUtil:
-                    fragment = mainGFUtilF;
-                    break;
-                case Resource.Id.MainNavigation_Other:
-                    fragment = mainOtherF;
-                    break;
-            }
+                Resource.Id.MainNavigation_Home => mainHomeF,
+                Resource.Id.MainNavigation_DB => mainDBF,
+                Resource.Id.MainNavigation_GFDv1 => mainGFDv1F,
+                Resource.Id.MainNavigation_GFUtil => mainGFUtilF,
+                Resource.Id.MainNavigation_Other => mainOtherF,
+                _ => null,
+            };
 
             if (fragment == null)
             {
@@ -196,7 +172,7 @@ namespace GFDA
         // Auto Run Mode
         private void RunStartMode()
         {
-            switch (ETC.sharedPreferences.GetString("StartAppMode", "0"))
+            switch (Preferences.Get("StartAppMode", "0"))
             {
                 case "1":
                     ChangeFragment(Resource.Id.MainNavigation_DB); // DB Sub Menu
@@ -236,7 +212,7 @@ namespace GFDA
             {
                 // Check Auto Run Mode
 
-                if (ETC.sharedPreferences.GetString("StartAppMode", "0") != "0")
+                if (Preferences.Get("StartAppMode", "0") != "0")
                 {
                     RunStartMode();
                 }
