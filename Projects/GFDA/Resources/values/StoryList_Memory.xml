@@ -80,4 +80,43 @@
     <item>"네가 심연을 주시할 때 심연도 널 주시한다."</item>
     <item>"삶은 이야기가 아니면서도 이야기다. 삶이라는 이야기 속에서 모두가 주인공이다."</item>
   </string-array>
+
+  <string-array name="Story_Main_Memory_C123_TopTitle">
+    <item>C123 - 1</item>
+    <item>C123 - 2</item>
+    <item>C123 - 3</item>
+    <item>C123 - 4</item>
+    <item>C123 - 5</item>
+    <item>C123 - 6</item>
+    <item>C123 - 7</item>
+    <item>C123 - 8</item>
+    <item>C123 - 9</item>
+    <item>C123 - 10</item>
+  </string-array>
+
+  <string-array name="Story_Main_Memory_C123">
+    <item>오리온자리</item>
+    <item>평면 반사</item>
+    <item>안내서</item>
+    <item>만유인력</item>
+    <item>점성술</item>
+    <item>천문도</item>
+    <item>은하</item>
+    <item>샛별</item>
+    <item>레다와 백조</item>
+    <item>별들의 기억</item>
+  </string-array>
+
+  <string-array name="Story_Main_Memory_C123_Caption">
+    <item>"친구가 갑자기 이상한 모습을 보일 때 마음의 준비를 하는 것이 좋다..."</item>
+    <item>"나야 평소대로 하는 게 최선인 걸 알지 그런데 평소대로 하는 게 마냥 쉬운 줄 알아?"</item>
+    <item>"내게 인생의 안내서가 있다면 그걸로 매일 저녁 메뉴를 정할 거야."</item>
+    <item>"운명으로 이끌리는 것들이 있어."</item>
+    <item>"이 세상 모든 일에 의미가 있다면 난 분명 미쳐버릴 거야."</item>
+    <item>"무한한 공간 저 너머로!"</item>
+    <item>"자신이 이해할 수 없는 것에 경외심을 가져라."</item>
+    <item>"네 모든 선택이 네 운명을 정한다."</item>
+    <item>"잃고 나서야 소중함을 깨달지 마."</item>
+    <item>"형체를 지닌 건 필멸하지만 형체 없는 의지는 불멸하다."</item>
+  </string-array>
 </resources>

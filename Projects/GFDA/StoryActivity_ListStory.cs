@@ -80,18 +80,12 @@ namespace GFDA
 
         private void ListMemoryStoryItem(out (int, int, int) stringIds)
         {
-            switch (subMainIndex)
+            stringIds = subMainIndex switch
             {
-                default:
-                    stringIds = (0, 0, 0);
-                    break;
-                case 0:
-                    stringIds = (Story_Main_Memory_C121_TopTitle, Story_Main_Memory_C121, Story_Main_Memory_C121_Caption);
-                    break;
-                case 1:
-                    stringIds = (Story_Main_Memory_C122_TopTitle, Story_Main_Memory_C122, Story_Main_Memory_C122_Caption);
-                    break;
-            }
+                0 => (Story_Main_Memory_C121_TopTitle, Story_Main_Memory_C121, Story_Main_Memory_C121_Caption),
+                1 => (Story_Main_Memory_C122_TopTitle, Story_Main_Memory_C122, Story_Main_Memory_C122_Caption),
+                _ => (0, 0, 0),
+            };
         }
 
         private void RunReader()
