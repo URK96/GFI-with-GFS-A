@@ -1,14 +1,13 @@
-﻿# T-Doll DB Update 2020/08/30
+﻿# T-Doll DB Update 2020/09/18
 
-- Add new costumes (AUG, NTW-20, Mk48, M1897, Mosin-Nagant)
-- Add new T-Doll (StG-940, AUG Para, General Liu Rifle, Mondragon M1908, PM1910, VHS)
+- Add 9th MOD T-Dolls
+- Add new T-Doll costumes
 
 
-# Coalition DB Update 2020/08/30
+# Coalition DB Update 2020/09/18
 
 - Add new Coalition units
 - Add new Coalition boss unit
-- Change some coalition images
 
 
 # Equip DB Update 2020/08/30

@@ -1,15 +1,11 @@
-<2.6.4 Update>
+<2.7.1 Update>
 
-- Edit some string
+- Fix story content crash issue
 
 
 
-<2.6.3 Update>
+<2.7.0 Update>
 
-- Support Android 11
-- Add story
-- Add PV
-- Add GF Animation link feature
-- Change DB activity component
-- Update UI library
-- Fix some bugs
+- Change and minimize Android library
+- Add new story contents
+- Fix ability info load issue in SG Mod Doll

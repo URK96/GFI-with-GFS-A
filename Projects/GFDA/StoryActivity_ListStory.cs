@@ -74,6 +74,10 @@ namespace GFDA
                 11 => (Story_Main_Sub_2019LunaNewYear_TopTitle, Story_Main_Sub_2019LunaNewYear, Story_Main_Sub_2019LunaNewYear_Caption),
                 12 => (Story_Main_Sub_2019GunRose_TopTitle, Story_Main_Sub_2019GunRose, Story_Main_Sub_2019GunRose_Caption),
                 13 => (Story_Main_Sub_2019Anniversary_TopTitle, Story_Main_Sub_2019Anniversary, Story_Main_Sub_2019Anniversary_Caption),
+                14 => (Story_Main_Sub_2019Summer_TopTitle, Story_Main_Sub_2019Summer, Story_Main_Sub_2019Summer_Caption),
+                15 => (Story_Main_Sub_2019Halloween_TopTitle, Story_Main_Sub_2019Halloween, Story_Main_Sub_2019Halloween_Caption),
+                16 => (Story_Main_Sub_2019Christmas_TopTitle, Story_Main_Sub_2019Christmas, Story_Main_Sub_2019Christmas_Caption),
+                17 => (Story_Main_Sub_2020NewYear_TopTitle, Story_Main_Sub_2020NewYear, Story_Main_Sub_2020NewYear_Caption),
                 _ => (0, 0, 0),
             };
         }
@@ -84,6 +88,7 @@ namespace GFDA
             {
                 0 => (Story_Main_Memory_C121_TopTitle, Story_Main_Memory_C121, Story_Main_Memory_C121_Caption),
                 1 => (Story_Main_Memory_C122_TopTitle, Story_Main_Memory_C122, Story_Main_Memory_C122_Caption),
+                2 => (Story_Main_Memory_C123_TopTitle, Story_Main_Memory_C123, Story_Main_Memory_C123_Caption),
                 _ => (0, 0, 0),
             };
         }
@@ -253,6 +258,18 @@ namespace GFDA
                     case 13:
                         category = "2019Anniversary";
                         break;
+                    case 14:
+                        category = "2019Summer";
+                        break;
+                    case 15:
+                        category = "2019Halloween";
+                        break;
+                    case 16:
+                        category = "2019Christmas";
+                        break;
+                    case 17:
+                        category = "2020NewYear";
+                        break;
                     default:
                         return;
                 }
@@ -266,6 +283,9 @@ namespace GFDA
                         break;
                     case 1:
                         category = "C122";
+                        break;
+                    case 2:
+                        category = "C123";
                         break;
                     default:
                         return;

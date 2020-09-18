@@ -7970,8 +7970,8 @@
     <AttackSpeed>115;115</AttackSpeed>
     <MoveSpeed>6</MoveSpeed>
     <Critical>40</Critical>
-    <Bullet>4</Bullet>
-    <Armor>115;0</Armor>
+    <Bullet>4;4;4;4</Bullet>
+    <Armor>115;115</Armor>
     <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
     <ConsumeFood>40/65/90/115/140</ConsumeFood>
     <EffectFormation>1,0,2,0,0,0,1,0,0</EffectFormation>
@@ -8306,7 +8306,7 @@
     <AttackSpeed>105;105</AttackSpeed>
     <MoveSpeed>6</MoveSpeed>
     <Critical>40</Critical>
-    <Bullet>3</Bullet>
+    <Bullet>3;3;3;3</Bullet>
     <Armor>110;115</Armor>
     <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
     <ConsumeFood>40/65/90/115/140</ConsumeFood>

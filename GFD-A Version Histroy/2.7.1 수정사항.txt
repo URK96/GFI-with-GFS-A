@@ -1,0 +1,8 @@
+<2.7.1 수정사항>
+
+- 스토리 일부 항목이 정상적으로 작동하지 않는 문제 수정
+
+
+<2.7.1 Update>
+
+- Fix story content crash issue
