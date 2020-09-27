@@ -10,15 +10,7 @@
     <item>Xam.Plugin.SimpleAudioPlayer</item>
     <item>Xamarin.Android.AVLoadingIndicatorView</item>
     <item>Xamarin.Android.PhotoView</item>
-    <item>Xamarin.AndroidX.Activity</item>
-    <item>Xamarin.AndroidX.Arch.Core.Common</item>
-    <item>Xamarin.AndroidX.Arch.Core.Runtime</item>
-    <item>Xamarin.AndroidX.Browser</item>
-    <item>Xamarin.AndroidX.Legacy.Support.Core.Utils</item>
-    <item>Xamarin.AndroidX.Legacy.Support.V4</item>
-    <item>Xamarin.AndroidX.Migration</item>
-    <item>Xamarin.AndroidX.MultiDex</item>
-    <item>Xamarin.AndroidX.Preference</item>
+    <item>Xamarin.AndroidX Libraries</item>
     <item>Xamarin.Essentials</item>
     <item>Xamarin.Google.Android.Material</item>
   </string-array>
@@ -33,15 +25,7 @@
     <item>A light-weight and easy to use cross-platform audio player for Windows UWP/WPF, Xamarin.iOS, Xamarin.Android, Xamarin.Mac, Xamarin.tvOS, Tizen and Xamarin.Forms.</item>
     <item>AVLoadingIndicatorView is a collection of nice loading animations for Android.</item>
     <item>Xamarin.Android binding for PhotoView - Implementation of ImageView for Android that supports zooming, by various touch gestures.</item>
-    <item>Xamarin.Android bindings for AndroidX - activity</item>
-    <item>Xamarin.Android bindings for AndroidX - core-common</item>
-    <item>Xamarin.Android bindings for AndroidX - core-runtime</item>
-    <item>Xamarin.Android bindings for AndroidX - browser</item>
-    <item>Xamarin.Android bindings for AndroidX - legacy-support-core-utils</item>
-    <item>Xamarin.Android bindings for AndroidX - legacy-support-v4</item>
-    <item>This package provides a set of tools and MSBuild tasks to aid in the migration from Android Support to Android X.</item>
-    <item>Xamarin.Android bindings for AndroidX - multidex</item>
-    <item>Xamarin.Android bindings for AndroidX - preference</item>
+    <item>Xamarin.Android bindings for AndroidX</item>
     <item>Xamarin.Essentials - a kit of essential APIs for your apps</item>
     <item>Xamarin.Android bindings for AndroidX - material</item>
   </string-array>
@@ -57,14 +41,6 @@
     <item>jzeferino - MIT License</item>
     <item>.NET Foundation Contributor - MIT LICENSE</item>
     <item>.NET Foundation Contributor - MIT LICENSE</item>
-    <item>.NET Foundation Contributor - MIT LICENSE</item>
-    <item>.NET Foundation Contributor - MIT LICENSE</item>
-    <item>.NET Foundation Contributor - MIT LICENSE</item>
-    <item>.NET Foundation Contributor - MIT LICENSE</item>
-    <item>.NET Foundation Contributor - MIT LICENSE</item>
-    <item>.NET Foundation Contributor - MIT LICENSE</item>
-    <item>.NET Foundation Contributor - MIT LICENSE</item>
-    <item>.NET Foundation Contributor - MIT LICENSE</item>
     <item>Microsoft Corporation - MIT LICENSE</item>
     <item>.NET Foundation Contributor - MIT LICENSE</item>
   </string-array>
@@ -78,14 +54,6 @@
     <item>Syncfusion_License</item>
     <item>MIT</item>
     <item>MIT_jzeferino</item>
-    <item>MIT_.NET Foundation Contributor</item>
-    <item>MIT_.NET Foundation Contributor</item>
-    <item>MIT_.NET Foundation Contributor</item>
-    <item>MIT_.NET Foundation Contributor</item>
-    <item>MIT_.NET Foundation Contributor</item>
-    <item>MIT_.NET Foundation Contributor</item>
-    <item>MIT_.NET Foundation Contributor</item>
-    <item>MIT_.NET Foundation Contributor</item>
     <item>MIT_.NET Foundation Contributor</item>
     <item>MIT_.NET Foundation Contributor</item>
     <item>MIT_Microsoft Corporation</item>

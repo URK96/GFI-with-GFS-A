@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Story_Main_Main_Event_DualRandomness_TopTitle">
+    <item>이중난수 : Chapter 1</item>
+    <item>이중난수 : Chapter 1</item>
+    <item>이중난수 : Chapter 1</item>
+    <item>이중난수 : Chapter 1</item>
+    <item>이중난수 : Chapter 1</item>
+    <item>이중난수 : Chapter 1</item>
+    <item>이중난수 : Chapter 2</item>
+    <item>이중난수 : Chapter 2</item>
+    <item>이중난수 : Chapter 2</item>
+    <item>이중난수 : Chapter 2</item>
+    <item>이중난수 : Chapter 2</item>
+    <item>이중난수 : Chapter 2</item>
+    <item>이중난수 : Chapter 2</item>
+    <item>이중난수 : Chapter 2</item>
+    <item>이중난수 : Chapter 2</item>
+    <item>이중난수 : Chapter 2</item>
+    <item>이중난수 : Chapter 2</item>
+    <item>이중난수 : Chapter 2</item>
+    <item>이중난수 : Chapter 3</item>
+    <item>이중난수 : Chapter 3</item>
+    <item>이중난수 : Chapter 3</item>
+    <item>이중난수 : Chapter 3</item>
+    <item>이중난수 : Chapter 3</item>
+    <item>이중난수 : Chapter 3</item>
+    <item>이중난수 : Chapter 3</item>
+    <item>이중난수 : Chapter 3</item>
+    <item>이중난수 : Chapter 3</item>
+    <item>이중난수 : Chapter 3</item>
+    <item>이중난수 : Chapter 3</item>
+    <item>이중난수 : Chapter 3</item>
+    <item>이중난수 : Chapter 4</item>
+    <item>이중난수 : Chapter 4</item>
+    <item>이중난수 : Chapter 4</item>
+    <item>이중난수 : Chapter 4</item>
+    <item>이중난수 : Chapter 4</item>
+    <item>이중난수 : Chapter 4</item>
+    <item>이중난수 : Chapter 4</item>
+    <item>이중난수 : Chapter 4</item>
+    <item>이중난수 : Chapter 4</item>
+    <item>이중난수 : Chapter 4</item>
+    <item>이중난수 : Chapter 4</item>
+    <item>이중난수 : Chapter 5</item>
+    <item>이중난수 : Chapter 5</item>
+    <item>이중난수 : Chapter 5</item>
+    <item>이중난수 : Chapter 5</item>
+    <item>이중난수 : Chapter 5</item>
+    <item>이중난수 : Epilogue</item>
+    <item>이중난수 : Epilogue</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DualRandomness">
+    <item>자리를 떠날 때 Ⅰ</item>
+    <item>자리를 떠날 때 Ⅱ</item>
+    <item>자리를 떠날 때 Ⅲ</item>
+    <item>자리를 떠날 때 Ⅳ</item>
+    <item>막이 오른다 Ⅰ</item>
+    <item>막이 오른다 Ⅱ</item>
+    <item>알레르기 Ⅰ</item>
+    <item>알레르기 Ⅱ</item>
+    <item>알레르기 Ⅲ</item>
+    <item>알레르기 Ⅳ</item>
+    <item>알레르기 Ⅴ</item>
+    <item>알레르기 Ⅵ</item>
+    <item>화분증·시작</item>
+    <item>익살꾼</item>
+    <item>꽃 핀 무덤</item>
+    <item>늑대 집회</item>
+    <item>등잔 밑</item>
+    <item>화분증·끝</item>
+    <item>유령자매 Ⅰ</item>
+    <item>유령자매 Ⅱ</item>
+    <item>유령자매 Ⅲ</item>
+    <item>유령자매 Ⅳ</item>
+    <item>유령자매 Ⅴ</item>
+    <item>유령자매 Ⅵ</item>
+    <item>드림박스·시작</item>
+    <item>피리 부는 소년</item>
+    <item>뻐꾸기 시계</item>
+    <item>방공 터널</item>
+    <item>봉제 인형</item>
+    <item>드림박스·끝</item>
+    <item>뱀 사냥 Ⅰ</item>
+    <item>뱀 사냥 Ⅱ</item>
+    <item>뱀 사냥 Ⅲ</item>
+    <item>뱀 사냥 Ⅳ</item> 
+    <item>뱀 사냥 Ⅴ</item>
+    <item>삼각공세·시작</item>
+    <item>거미줄</item>
+    <item>종이탑</item>
+    <item>정글 체스</item>
+    <item>선동꾼</item>
+    <item>삼각공세·끝</item>
+    <item>망설임 금물 Ⅰ</item>
+    <item>망설임 금물 Ⅱ</item>
+    <item>망설임 금물 Ⅲ</item>
+    <item>망설임 금물 Ⅳ</item>
+    <item>망설임 금물 Ⅴ</item>
+    <item>앞날의 징조</item>
+    <item>영원의 교량</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_DualRandomness_Caption">
+    <item>메인 스토리</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 스토리</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 스토리</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 스토리</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 스토리</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 안젤리아</item>
+  </string-array>
+</resources>

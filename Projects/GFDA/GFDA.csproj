@@ -28,16 +28,16 @@
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>True</DebugSymbols>
+    <DebugSymbols>true</DebugSymbols>
     <DebugType>portable</DebugType>
     <Optimize>False</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <AndroidUseSharedRuntime>true</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
-    <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <AndroidEnableProfiledAot>true</AndroidEnableProfiledAot>
@@ -156,19 +156,19 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AppCenter">
-      <Version>3.4.1</Version>
+      <Version>3.4.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Analytics">
-      <Version>3.4.1</Version>
+      <Version>3.4.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Crashes">
-      <Version>3.4.1</Version>
+      <Version>3.4.2</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Licensing">
-      <Version>18.2.0.58</Version>
+      <Version>18.2.0.59</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfChart.Android">
-      <Version>18.2.0.58</Version>
+      <Version>18.2.0.59</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugin.SimpleAudioPlayer">
       <Version>1.4.0</Version>
@@ -180,25 +180,25 @@
       <Version>2.1.4</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Activity">
-      <Version>1.1.0.2</Version>
+      <Version>1.1.0.4</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Arch.Core.Common">
-      <Version>2.1.0.5</Version>
+      <Version>2.1.0.6</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Arch.Core.Runtime">
-      <Version>2.1.0.5</Version>
+      <Version>2.1.0.6</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4">
-      <Version>1.0.0.4</Version>
+      <Version>1.0.0.5</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.MultiDex">
-      <Version>2.0.1.4</Version>
+      <Version>2.0.1.5</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Preference">
-      <Version>1.1.1.4</Version>
+      <Version>1.1.1.5</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.0.0.1" />
-    <PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.Utils" Version="1.0.0.4" />
+    <PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.Utils" Version="1.0.0.5" />
     <PackageReference Include="Xamarin.AndroidX.Browser" Version="1.2.0.2" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.7.1" />
@@ -1550,6 +1550,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\ZinaOS.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\StoryList_Event_DualRandomness.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

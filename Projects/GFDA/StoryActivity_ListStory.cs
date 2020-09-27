@@ -52,6 +52,7 @@ namespace GFDA
                 36 => (Story_Main_Main_Event_2020Spring_TopTitle, Story_Main_Main_Event_2020Spring, Story_Main_Main_Event_2020Spring_Caption),
                 37 => (Story_Main_Main_Event_2020Summer_TopTitle, Story_Main_Main_Event_2020Summer, Story_Main_Main_Event_2020Summer_Caption),
                 38 => (Story_Main_Main_Event_DreamDrama_TopTitle, Story_Main_Main_Event_DreamDrama, Story_Main_Main_Event_DreamDrama_Caption),
+                39 => (Story_Main_Main_Event_DualRandomness_TopTitle, Story_Main_Main_Event_DualRandomness, Story_Main_Main_Event_DualRandomness_Caption),
                 _ => (0, 0, 0),
             };
         }
@@ -207,6 +208,9 @@ namespace GFDA
                         break;
                     case 38:
                         category = "DreamDrama";
+                        break;
+                    case 39:
+                        category = "DualRandomness";
                         break;
                     default:
                         return;
