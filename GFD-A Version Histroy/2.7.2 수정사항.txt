@@ -3,3 +3,10 @@
 - 스토리 컨텐츠 추가 (이중난수)
 - 스토리 로드 이슈 수정
 - 외부 라이브러리 업데이트
+
+
+<2.7.2 Update>
+
+- Add new story content
+- Fix story load issue
+- Update external libraries

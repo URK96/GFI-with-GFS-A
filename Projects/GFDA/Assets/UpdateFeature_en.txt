@@ -1,11 +1,5 @@
-<2.7.1 Update>
+<2.7.2 Update>
 
-- Fix story content crash issue
-
-
-
-<2.7.0 Update>
-
-- Change and minimize Android library
-- Add new story contents
-- Fix ability info load issue in SG Mod Doll
+- Add new story content
+- Fix story load issue
+- Update external libraries
