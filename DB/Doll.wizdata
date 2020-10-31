@@ -5843,12 +5843,13 @@
     <SkillExplain>스킬 쿨타임 종료 후 1초마다 1회, 최대 5회 충전한다. 스킬 발동 시 1초간 조준 후, 충전 횟수에 따라 특정 대상에게 피해를 주고 충전을 해제한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;최소 피해량;최대 피해량</SkillEffect>
     <SkillMag>5초,11초,2.6배,5.5배</SkillMag>
-    <Costume>성탄절 실내복</Costume>
+    <Costume>성탄절 실내복;마경 문지기</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Kitamura Eri</VoiceActor>
     <Illustrator>卑しい人间</Illustrator>
-    <HasCensor>false</HasCensor>
+    <HasCensor>true</HasCensor>
+    <CensorType>C1D</CensorType>
     <HasAnimation>true</HasAnimation>
     <NormalAnimation>attack;die;move;snipe;victory;victoryloop;wait</NormalAnimation>
     <RoomAnimation>lying;move;pick;sit;wait</RoomAnimation>
@@ -13090,6 +13091,7 @@
     <SkillExplain>스킬을 발동할 때마다 두 모드가 전환된다.  &lt;관통모드 (기본)&gt; 일반 공격이 관통 효과를 가지며 화력이 감소하며 관통 수치가 50% 감소한다.   &lt;강타 모드&gt; 자신의 화력과 명중이 증가한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 감소치;강타모드 증가치</SkillEffect>
     <SkillMag>0초,3초,영속,30%,20%</SkillMag>
+    <Costume>사일런트 댄서</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Yuuki Kana</VoiceActor>
@@ -13916,6 +13918,7 @@
     <SkillExplain>스킬 지속시간 동안 받는 피해량이 감소한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;피해 감소량</SkillEffect>
     <SkillMag>5초,16초,5초,15</SkillMag>
+    <Costume>붉은 박쥐</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Ishimi Manaka</VoiceActor>
@@ -13997,6 +14000,7 @@
     <SkillExplain>지속시간 동안 자신의 화력과 사속이 증가한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;사속 증가치</SkillEffect>
     <SkillMag>6초,16초,5초,75%,25%</SkillMag>
+    <Costume>비범한 학도</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Kido Ibuki</VoiceActor>
@@ -14984,6 +14988,7 @@
     <SkillExplain>&lt;패시브&gt; 전투 개시 시, 3편제 지원인형 3기를 증원으로 소환한다. 지원 인형은 아군 진형 후방에 도착하면 공격을 개시하며, 류 소총의 일부 능력치를 물려받고 편제 당 체력 5를 가지며 기타 능력치 및 공격 방식은 류 소총을 따른다.   &lt;액티브 - 일반 모드&gt; 사속이 10% 감소하고 화력이 20% 증가한다. 가장 멀리 있는 적을 우선으로 공격한다.   &lt;액티브 - 자동 모드&gt; 화력이 10% 감소하고 사속이 20% 증가한다. 가장 가까운 적을 우선 공격한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지원인형 화력 수치;지원인형 사속 수치;지원인형 명중 수치</SkillEffect>
     <SkillMag>1초,1초,35%,60%,40%</SkillMag>
+    <Costume>버드나무 여우불</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>八号地球</Illustrator>
     <HasCensor>false</HasCensor>
@@ -15103,5 +15108,82 @@
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>PM1910이다, 쌈박질할 일이 있으면 바로 날 부르라고!</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>GM6 Lynx</Name>
+    <Name_EN>GM6 Lynx</Name_EN>
+    <CodeName>Gm6Lynx</CodeName>
+    <Nickname>GM6 Lynx</Nickname>
+    <Model>Gepárd M6 Lynx</Model>
+    <Country>Hungary</Country>
+    <Type>RF</Type>
+    <Grade>3</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;S;B;A;B;A</AbilityGrade>
+    <Grow>110</Grow>
+    <HP>95</HP>
+    <FireRate>132</FireRate>
+    <Evasion>95</Evasion>
+    <Accuracy>122</Accuracy>
+    <AttackSpeed>100</AttackSpeed>
+    <MoveSpeed>7</MoveSpeed>
+    <Critical>40</Critical>
+    <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
+    <ConsumeFood>30/45/60/75/90</ConsumeFood>
+    <EffectFormation>0,0,1,0,2,1,0,0,0</EffectFormation>
+    <Effect>CL;12</Effect>
+    <EffectType>HG</EffectType>
+    <DropEvent>2020년 9월 출석 보상</DropEvent>
+    <DicNumber>320</DicNumber>
+    <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
+    <Skill>삼중저격</Skill>
+    <SkillExplain>스킬 쿨타임 종료 후 0.5초마다 1회씩 최대 5회 충전한다. 스킬 발동 시 0.5씩 3번 조준 후, 충전 횟수에 따라 현재 목표에게 피해를 주고 충전을 해제한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;최소 피해량;최대 피해량</SkillEffect>
+    <SkillMag>5초,11초,1.7배,3.2배</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>Yunika-R</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>하하, 지휘관. 여기 사냥꾼이 부족한 모양이네!</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>TS12</Name>
+    <Name_EN>TS12</Name_EN>
+    <CodeName>TavorTS12</CodeName>
+    <Nickname>TS12</Nickname>
+    <Model>IWI Tavor TS12</Model>
+    <Country>Israel</Country>
+    <Type>SG</Type>
+    <Grade>3</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>A;A;C;A;A;A;B</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>6</MoveSpeed>
+    <Critical>40</Critical>
+    <Bullet>3</Bullet>
+    <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
+    <ConsumeFood>40/65/90/115/140</ConsumeFood>
+    <EffectFormation>0,0,0,1,0,2,1,0,0</EffectFormation>
+    <Effect>FR;15</Effect>
+    <EffectType>SMG</EffectType>
+    <DropEvent>2020년 10월 출석 보상</DropEvent>
+    <DicNumber>321</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>회전탄창</Skill>
+    <SkillExplain>스킬 발동 후 다음 2번 재장전은 즉시 완료되며, 첫번째 탄창을 사용한 공격은 화력이 증가하고, 두번째 탄창을 사용한 공격은 명중이 증가한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;화력 증가치;명중 증가치</SkillEffect>
+    <SkillMag>5초,16초,90%,150%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>menji</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>시간 딱 맞춰서 왔네, 지휘관.</ProductDialog>
   </Doll>
 </NewDataSet>
