@@ -642,62 +642,70 @@ namespace GFDA
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
-                chart.Series.Clear();
-
-                if (compareIndex == 0)
+                try
                 {
-                    CalcAverageAbility();
+                    chart.Series.Clear();
+
+                    if (compareIndex == 0)
+                    {
+                        CalcAverageAbility();
+                    }
+
+                    var ZoomBehavior = new ChartZoomPanBehavior
+                    {
+                        ZoomMode = ZoomMode.Xy,
+                        SelectionZoomingEnabled = true,
+                        MaximumZoomLevel = 2.0f,
+                        ZoomingEnabled = true,
+                        DoubleTapEnabled = true,
+                        ScrollingEnabled = true
+                    };
+
+                    chart.Behaviors.Add(ZoomBehavior);
+
+                    chart.PrimaryAxis = new CategoryAxis();
+                    chart.SecondaryAxis = new NumericalAxis();
+                    chart.Legend.Visibility = Com.Syncfusion.Charts.Visibility.Visible;
+
+                    chart.Legend.LabelStyle.TextColor = ETC.useLightTheme ? Android.Graphics.Color.DarkGray : Android.Graphics.Color.LightGray;
+
+                    var model = new DataModel(compareIndex, doll, abilityValues, compareList, modIndex, abilityLevel, abilityFavor, ref avgAbility);
+
+                    var radar = new RadarSeries
+                    {
+                        ItemsSource = model.MaxAbilityList,
+                        XBindingPath = "AbilityType",
+                        YBindingPath = "AbilityValue",
+                        DrawType = PolarChartDrawType.Line,
+                        Color = Android.Graphics.Color.LightGreen,
+                        EnableAnimation = true,
+                        Label = doll.Name,
+                        TooltipEnabled = true
+                    };
+
+                    chart.Series.Add(radar);
+
+                    var radar2 = new RadarSeries
+                    {
+                        ItemsSource = model.CompareAbilityList,
+                        XBindingPath = "AbilityType",
+                        YBindingPath = "AbilityValue",
+                        DrawType = PolarChartDrawType.Line,
+                        Color = Android.Graphics.Color.Magenta,
+                        EnableAnimation = true,
+                        Label = (compareIndex == 0) ? $"{doll.Type}{Resources.GetString(Resource.String.DollDBDetail_RadarAverageString)}" : compareList[compareIndex],
+                        TooltipEnabled = true
+                    };
+
+                    chart.Series.Add(radar2);
+
+                    isChartLoad = true;
                 }
-
-                var ZoomBehavior = new ChartZoomPanBehavior
+                catch (Exception ex)
                 {
-                    ZoomMode = ZoomMode.Xy,
-                    SelectionZoomingEnabled = true,
-                    MaximumZoomLevel = 2.0f,
-                    ZoomingEnabled = true,
-                    DoubleTapEnabled = true,
-                    ScrollingEnabled = true
-                };
-
-                chart.Behaviors.Add(ZoomBehavior);
-
-                chart.PrimaryAxis = new CategoryAxis();
-                chart.SecondaryAxis = new NumericalAxis();
-                chart.Legend.Visibility = Com.Syncfusion.Charts.Visibility.Visible;
-
-                chart.Legend.LabelStyle.TextColor = ETC.useLightTheme ? Android.Graphics.Color.DarkGray : Android.Graphics.Color.LightGray;
-
-                var model = new DataModel(compareIndex, doll, abilityValues, compareList, modIndex, abilityLevel, abilityFavor, ref avgAbility);
-
-                var radar = new RadarSeries
-                {
-                    ItemsSource = model.MaxAbilityList,
-                    XBindingPath = "AbilityType",
-                    YBindingPath = "AbilityValue",
-                    DrawType = PolarChartDrawType.Line,
-                    Color = Android.Graphics.Color.LightGreen,
-                    EnableAnimation = true,
-                    Label = doll.Name,
-                    TooltipEnabled = true
-                };
-
-                chart.Series.Add(radar);
-
-                var radar2 = new RadarSeries
-                {
-                    ItemsSource = model.CompareAbilityList,
-                    XBindingPath = "AbilityType",
-                    YBindingPath = "AbilityValue",
-                    DrawType = PolarChartDrawType.Line,
-                    Color = Android.Graphics.Color.Magenta,
-                    EnableAnimation = true,
-                    Label = (compareIndex == 0) ? $"{doll.Type}{Resources.GetString(Resource.String.DollDBDetail_RadarAverageString)}" : compareList[compareIndex],
-                    TooltipEnabled = true
-                };
-
-                chart.Series.Add(radar2);
-
-                isChartLoad = true;
+                    ETC.LogError(ex, this);
+                    Toast.MakeText(this, "Chart load error", ToastLength.Short).Show();
+                }
             });
         }
 
@@ -1257,7 +1265,7 @@ namespace GFDA
             {
                 var layout = new LinearLayout(this)
                 {
-                    Orientation = Android.Widget.Orientation.Horizontal,
+                    Orientation = Orientation.Horizontal,
                     LayoutParameters = modSkillInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollDBDetailModSkillAbilityTopLayout).LayoutParameters
                 };
 

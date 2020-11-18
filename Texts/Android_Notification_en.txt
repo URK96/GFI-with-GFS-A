@@ -1,10 +1,10 @@
-﻿# T-Doll DB Update 2020/09/18
+﻿# T-Doll DB Update 2020/11/14
 
-- Add 9th MOD T-Dolls
-- Add new T-Doll costumes
+- Add new T-Doll costumes (General Ryu, Kord, CF05, M82, M21, 97type)
+- Add new T-Dolls (GM6 Lynx, TS12, LTLX7000, V-PM5, M6 ASW, HK512)
 
 
-# Coalition DB Update 2020/09/18
+# Coalition DB Update 2020/11/14
 
 - Add new Coalition units
 - Add new Coalition boss unit

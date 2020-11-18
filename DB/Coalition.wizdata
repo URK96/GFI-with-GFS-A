@@ -174,7 +174,7 @@
     <Armor>0</Armor>
     <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
     <Effect1>AS,EV</Effect1>
-    <EffectMag1>6,9;15,20;15,20;15,20</EffectMag1>
+    <EffectMag1>6,9;15,20;15,20;15,20;15,20</EffectMag1>
     <EffectType1>Doll</EffectType1>
     <DicNumber>5</DicNumber>
     <Skill1>전장 청소</Skill1>
@@ -269,10 +269,10 @@
     <Armor>0</Armor>
     <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
     <Effect1>FR,CR</Effect1>
-    <EffectMag1>6,6;10,10;10,10;10,10</EffectMag1>
+    <EffectMag1>6,6;10,10;10,10;10,10;10,10</EffectMag1>
     <EffectType1>All</EffectType1>
     <Effect2>AC,EV</Effect2>
-    <EffectMag2>10,10;18,18;18,18;18,18</EffectMag2>
+    <EffectMag2>10,10;18,18;18,18;18,18;18,18</EffectMag2>
     <EffectType2>CloseIn</EffectType2>
     <DicNumber>8</DicNumber>
     <Skill1>정수리 치기</Skill1>
@@ -367,13 +367,13 @@
     <Armor>0</Armor>
     <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
     <Effect1>AS,AC</Effect1>
-    <EffectMag1>3,3;6,6;6,6;6,6</EffectMag1>
+    <EffectMag1>3,3;6,6;6,6;6,6;6,6</EffectMag1>
     <EffectType1>All</EffectType1>
     <Effect2>AC,EV</Effect2>
-    <EffectMag2>8,8;12,12;12,12;12,12</EffectMag2>
+    <EffectMag2>8,8;12,12;12,12;12,12;12,12</EffectMag2>
     <EffectType2>CloseIn</EffectType2>
     <Effect3>FR,AC</Effect3>
-    <EffectMag3>6,8;10,12;10,12;10,12</EffectMag3>
+    <EffectMag3>6,8;10,12;10,12;10,12;10,12</EffectMag3>
     <EffectType3>Remote</EffectType3>
     <DicNumber>11</DicNumber>
     <Skill1>멸망의 혈탄</Skill1>
@@ -562,7 +562,7 @@
     <Armor>0</Armor>
     <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
     <Effect1>FR,AC,EV,CR</Effect1>
-    <EffectMag1>6,6,6,6;10,10,10,10;10,10,10,10;10,10,10,10</EffectMag1>
+    <EffectMag1>6,6,6,6;10,10,10,10;10,10,10,10;10,10,10,10;10,10,10,10</EffectMag1>
     <EffectType1>All</EffectType1>
     <DicNumber>17</DicNumber>
     <Skill1>교란군세</Skill1>
@@ -605,10 +605,10 @@
     <Armor>0</Armor>
     <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
     <Effect1>FR,AM</Effect1>
-    <EffectMag1>6,6;10,10;10,10;10,10</EffectMag1>
+    <EffectMag1>6,6;10,10;10,10;10,10;10,10</EffectMag1>
     <EffectType1>HeavyArmor</EffectType1>
     <Effect2>FR,AC</Effect2>
-    <EffectMag2>6,9;10,15;10,15;10,15</EffectMag2>
+    <EffectMag2>6,9;10,15;10,15;10,15;10,15</EffectMag2>
     <EffectType2>Machine</EffectType2>
     <DicNumber>18</DicNumber>
     <Skill1>내 손바닥 안이야!</Skill1>
@@ -651,10 +651,10 @@
     <Armor>0</Armor>
     <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
     <Effect1>EV,CR</Effect1>
-    <EffectMag1>6,6;15,15;15,15;15,15</EffectMag1>
+    <EffectMag1>6,6;15,15;15,15;15,15;15,15</EffectMag1>
     <EffectType1>All</EffectType1>
     <Effect2>FR,AC</Effect2>
-    <EffectMag2>5,5;12,12;12,12;12,12</EffectMag2>
+    <EffectMag2>5,5;12,12;12,12;12,12;12,12</EffectMag2>
     <EffectType2>LightArmor</EffectType2>
     <DicNumber>21</DicNumber>
     <Skill1>맹독 추락</Skill1>
@@ -697,10 +697,10 @@
     <Armor>0</Armor>
     <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
     <Effect1>AS,AC</Effect1>
-    <EffectMag1>9,9;15,15;15,15;15,15</EffectMag1>
+    <EffectMag1>9,9;15,15;15,15;15,15;15,15</EffectMag1>
     <EffectType1>Machine</EffectType1>
     <Effect2>FR,EV</Effect2>
-    <EffectMag2>9,9;15,15;15,15;15,15</EffectMag2>
+    <EffectMag2>9,9;15,15;15,15;15,15;15,15</EffectMag2>
     <EffectType2>CloseIn</EffectType2>
     <DicNumber>23</DicNumber>
     <Skill1>최종 선언</Skill1>
@@ -725,6 +725,101 @@
     <UnitExplain>다양한 상황에 대응할 수 있고 심문에도 능한 엘리트 인형 가끔 디스트로이어와 조를 짤 때가 있다. 오만하고 잔인한 성격으로 목적을 위해서라면 수단을 가리지 않는다. 그리폰을 자신의 욕구를 채우기 위한 장난감 취급하는 등 사디즘 성향이 있지만 그래도 심리적으로 성숙하여 철혈 동료를 위해 나서 싸운다.</UnitExplain>
   </Coalition>
   <Coalition>
+    <Name>드리머</Name>
+    <CodeName>Dreamer</CodeName>
+    <Type>LightArmor;Doll;Remote</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>true</IsBoss>
+    <BornGrade>3</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
+    <Effect1>AC,EV</Effect1>
+    <EffectMag1>9,9;15,15;15,15;15,15;15,15</EffectMag1>
+    <EffectType1>All</EffectType1>
+    <Effect2>FR,CR</Effect2>
+    <EffectMag2>6,6;10,10;10,10;10,10;10,10</EffectMag2>
+    <EffectType2>Remote</EffectType2>
+    <DicNumber>24</DicNumber>
+    <Skill1>멸적의 섬광</Skill1>
+    <SkillExplain1>&lt;패시브&gt; 드리머는 자신에게서 가장 멀리 있는 유닛을 우선 공격한다.     &lt;액티브&gt; 현재 목표 중 가장 앞의 유닛을 향해 관통효과를 지닌 광선을 발사하여, 3초에 걸쳐 직선상의 유닛에게 편제당 장갑을 무시하고 반드시 명중하는 피해를 여러 번 준다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;피해량;타격 횟수</SkillEffect1>
+    <SkillMag1>6초,12초,0.4배,6회</SkillMag1>
+    <FASkillMag1>6초,12초,0.5배,6회</FASkillMag1>
+    <Skill2>처형 시간</Skill2>
+    <SkillExplain2>거리 3칸 이내의 아군제대가 전투할 때 지원 사격을 제공하여, 쿨타임마다 체력이 가장 많은 적을 저격하여 피해를 주고, 사속을 감소시킨다. 디버프 지속시간 3초. (장갑 무시, 반드시 명중) 단, 건물에는 피해를 줄 수 없다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;피해량;사속 감소량</SkillEffect2>
+    <SkillMag2>0초,3초,2.25배,50%</SkillMag2>
+    <Skill3>전장 주시</Skill3>
+    <SkillExplain3>수비 방침에서 자신의 유효 사거리가 16으로 증가한다. 동시에 치명타율과 치명피해가 증가하며 모든 공격이 반드시 명중한다. 기타 방침에서 아군의 모든 원격 유닛의 화력과 공속이 증가하며, 근접 유닛이 받는 피해량이 감소한다.</SkillExplain3>
+    <SkillEffect3>선 쿨타임;쿨타임;치명타율 증가치;치명피해 증가치;원격 유닛 화력 증가치;원격 유닛 공속 증가치;근접 유닛 피해 감소량</SkillEffect3>
+    <SkillMag3>0초,0초,10%,10%,10%,10%,20%</SkillMag3>
+    <Skill4>하늘 지배자</Skill4>
+    <SkillExplain4>드리머의 공격 대상이 멀리 있을수록 피해량이 증가한다. 거리가 5일 때부터 증가하여, 거리가 12 이상일 때 최대치로 증가한다.</SkillExplain4>
+    <SkillEffect4>선 쿨타임;쿨타임;최대 피해 증가량</SkillEffect4>
+    <SkillMag4>0초,0초,0.2배</SkillMag4>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+    <UnitExplain>전투 능력에 편중되어 초원거리 지정 타격 능력을 가졌다. 나비 사건 이후 제작되어 엘리사의 직속 명령을 따른다. 저격 능력 덕분에 정면에 나설 일이 드물어 평소 철혈 본부에서 저지를 놀리면서 지낸다. 우아한 미소에서 오만함과 예측할 수 없고 매우 불안정한 정신상태가 드러난다. 항상 자아중심적으로 작전 중에 통제에서 벗어나는 모습을 보여준다 그 엄청난 파괴력에 아군까지 휘말릴 수 있어 모두 그녀가 전장에 나타나지 않기를 바라고 있다.</UnitExplain>
+  </Coalition>
+  <Coalition>
+    <Name>게이저</Name>
+    <CodeName>Gager</CodeName>
+    <Type>LightArmor;Doll;Remote</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>true</IsBoss>
+    <BornGrade>3</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
+    <Effect1>FR</Effect1>
+    <EffectMag1>10;15;15;15;15</EffectMag1>
+    <EffectType1>All</EffectType1>
+    <Effect2>AC,CR</Effect2>
+    <EffectMag2>6,6;10,10;10,10;10,10;10,10</EffectMag2>
+    <EffectType2>Doll</EffectType2>
+    <Effect3>EV,AM</Effect3>
+    <EffectMag3>6,6;10,10;10,10;10,10;10,10</EffectMag3>
+    <EffectType3>CloseIn</EffectType3>
+    <DicNumber>26</DicNumber>
+    <Skill1>낙월 찌르기</Skill1>
+    <SkillExplain1>체력이 가장 많은 적 유닛 3개에 2단 찌르기를 한다. 첫 공격은 장갑을 무시하고 피해를 주며, 무게추 표식을 1개 부여한다. 다음 공격은 보호막을 무시하고 피해를 준다. 그 후, 목표 주위 2 범위 안의 적이 가진 무게추 표식 하나당 2회의 폭발 피해를 준다. 해당 스킬의 모든 피해는 반드시 명중하며, 치명타는 발생하지 않는다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;1차 공격 피해량;2차 공격 피해량;폭발 피해량</SkillEffect1>
+    <SkillMag1>6초,12초,1.5배,3.2배,0.4배</SkillMag1>
+    <FASkillMag1>6초,12초,2배,4배,0.5배</FASkillMag1>
+    <Skill2>전면교정</Skill2>
+    <SkillExplain2>&lt;패시브&gt; 게이저의 일반 공격은 1회에 2번 0.6배의 피해를 주고, 명중 시 적에게 30% 확률로 무게추 표식을 1개 부여한다.     &lt;액티브&gt; 자신의 공속을 극한까지 증가시키는 대신, 회피와 명중이 감소한다. 지속시간 동안 자신이 공격하지 않은 적을 우선 공격하며 명중 시 반드시 무게추 표식을 부여한다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;액티브 지속시간;회피 감소치;명중 감소치</SkillEffect2>
+    <SkillMag2>3초,8초,3초,30%,10%</SkillMag2>
+    <Skill3>무게추</Skill3>
+    <SkillExplain3>무게추 표식을 가진 적은 표식 하나마다 이동속도, 화력, 장갑이 감소한다. 최대 3회 중첩.</SkillExplain3>
+    <SkillEffect3>선 쿨타임;쿨타임;지속시간;이속 감소치;화력 감소치;장갑 감소치</SkillEffect3>
+    <SkillMag3>0초,0초,5초,10%,10%,50%</SkillMag3>
+    <Skill4>결투 재판</Skill4>
+    <SkillExplain4>전투 개시 3초 후, 아군 유닛이 적보다 많지 않을 경우, 아군 전체 화력이 증가한다. 아군이 적보다 많아지는 즉시 해제된다.</SkillExplain4>
+    <SkillEffect4>선 쿨타임;쿨타임;화력 증가치</SkillEffect4>
+    <SkillMag4>3초,0초,20%</SkillMag4>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+    <UnitExplain>작전 지휘 및 인원 조달을 담당하며 작전 인형을 지휘할 수 있고 자체 전투 실력도 상당한 에이전트 직속 부하인 고위 인형이다. 진지하고 엄격한 성격으로 언행에서 똑 부러지는 기품이 넘쳐난다. 적을 상대할 때도 원칙과 예절을 중시한다.</UnitExplain>
+  </Coalition>
+  <Coalition>
     <Name>아키텍트</Name>
     <CodeName>Architect</CodeName>
     <Type>LightArmor;Doll;Remote</Type>
@@ -743,10 +838,10 @@
     <Armor>0</Armor>
     <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
     <Effect1>AC,EV</Effect1>
-    <EffectMag1>8,8;12,12;12,12;12,12</EffectMag1>
+    <EffectMag1>8,8;12,12;12,12;12,12;12,12</EffectMag1>
     <EffectType1>All</EffectType1>
     <Effect2>FR,AC</Effect2>
-    <EffectMag2>8,8;12,12;12,12;12,12</EffectMag2>
+    <EffectMag2>8,8;12,12;12,12;12,12;12,12</EffectMag2>
     <EffectType2>Machine</EffectType2>
     <DicNumber>27</DicNumber>
     <Skill1>축제 시작이야!</Skill1>
@@ -917,6 +1012,36 @@
     <UnitExplain>강화된 가드. 방패와 근거리 화기 모두 강화되어 수비가 더욱 견고해졌다.</UnitExplain>
   </Coalition>
   <Coalition>
+    <Name>드라군SWAP</Name>
+    <CodeName>Dragoon_SWAP</CodeName>
+    <Type>LightArmor;Doll;CloseIn</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>false</IsBoss>
+    <BornGrade>2</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>58</DicNumber>
+    <Skill1>제동장치</Skill1>
+    <SkillExplain1>전투 개시 시 자신의 최대 체력의 일정 비율만큼 보호막을 생성하고, 일정 시간마다 최대 체력의 일정 비율만큼 보호막을 생성하고 받는 피해량을 감소시킨다. 피해량 감소 효과는 최대 2중첩. 보호막 보유 시 화력, 공속, 이동속도를 증가시킨다. 보호막이 파괴되면 버프를 해제하고 후방으로 물러나고 사거리가 3 증가하는 동시에 회피가 증가한다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;시작 보호막 생성 비율;보호막 생성 간격;반복 보호막 생성 비율;피해 감소치;화력 증가치;공속 증가치;이속 증가치;회피 증가치</SkillEffect1>
+    <SkillMag1>0초,3333초,15%,10초,10%,10%,50%,50%,50%,50%</SkillMag1>
+    <Skill2>칼의 감옥</Skill2>
+    <SkillExplain2>일반 공격 시 적의 화력과 명중을 감소시킨다. 중첩 불가능.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;지속시간;화력 감소치;명중 감소치</SkillEffect2>
+    <SkillMag2>0초,0초,3초,15%,25%</SkillMag2>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+    <UnitExplain>강화된 드라군 보행기와 돌격 무기뿐만이 아니라 모든 면이 업그레이드되었다. 신중하게 상대해야 한다.</UnitExplain>
+  </Coalition>
+  <Coalition>
     <Name>리퍼SWAP</Name>
     <CodeName>Ripper_SWAP</CodeName>
     <Type>LightArmor;Doll;Remote</Type>
@@ -975,5 +1100,31 @@
     <HasVoice>false</HasVoice>
     <HasCensor>false</HasCensor>
     <UnitExplain>성능을 대폭 강화한 베스피드 아군 유닛을 약화하는 능력을 습득했습니다. 새로운 헬멧과 보호구를 분출받아 사기가 높습니다.</UnitExplain>
+  </Coalition>
+  <Coalition>
+    <Name>골리앗 공장</Name>
+    <CodeName>Golyat_Factory</CodeName>
+    <Type>HeavyArmor;Machine;Remote</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>false</IsBoss>
+    <BornGrade>1</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>99</DicNumber>
+    <Skill1>청소협약</Skill1>
+    <SkillExplain1>전투 개시 후 자신 공속에 따라 지속적으로 골리앗을 증원한다. 각 골리앗은 이동속도가 10이며, 골리앗 공장의 일정 비율 체력과 10%의 화력을 계승한다. 나머지 능력치는 본체와 동일하다. 골리앗은 적과 접촉 또는 최대거리까지 이동 후 자폭하여, 주변 3 범위 안의 적에게 폭발 피해를 준다. 수비 또는 돌격 방침에서 골리앗은 정면 일직선으로 이동하며, 섬멸 방침에선 가장 가까운 적 유닛을 향해 이동해 적과 접촉 시 자폭한다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;계승 체력 비율;폭발 피해량</SkillEffect1>
+    <SkillMag1>0초,0초,50%,20배</SkillMag1>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+    <UnitExplain>폭발 유닛을 생산하는 이동식 철혈 공장. 자폭 기능을 가진 골리앗을 끊임없이 생산한다. 전장에 오래 있을수록 큰 위협이 된다.</UnitExplain>
   </Coalition>
 </NewDataSet>

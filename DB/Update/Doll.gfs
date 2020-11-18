@@ -5171,7 +5171,7 @@
     <SkillExplain>지속시간 동안 자신의 사속을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치</SkillEffect>
     <SkillMag>2초,16초,15초,50%</SkillMag>
-    <Costume>화려한 모란;지각 시츄에이션</Costume>
+    <Costume>화려한 모란;지각 시츄에이션;마녀 그레텔</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Sakura Ayane</VoiceActor>
@@ -5843,12 +5843,13 @@
     <SkillExplain>스킬 쿨타임 종료 후 1초마다 1회, 최대 5회 충전한다. 스킬 발동 시 1초간 조준 후, 충전 횟수에 따라 특정 대상에게 피해를 주고 충전을 해제한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;최소 피해량;최대 피해량</SkillEffect>
     <SkillMag>5초,11초,2.6배,5.5배</SkillMag>
-    <Costume>성탄절 실내복</Costume>
+    <Costume>성탄절 실내복;마경 문지기</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Kitamura Eri</VoiceActor>
     <Illustrator>卑しい人间</Illustrator>
-    <HasCensor>false</HasCensor>
+    <HasCensor>true</HasCensor>
+    <CensorType>C1D</CensorType>
     <HasAnimation>true</HasAnimation>
     <NormalAnimation>attack;die;move;snipe;victory;victoryloop;wait</NormalAnimation>
     <RoomAnimation>lying;move;pick;sit;wait</RoomAnimation>
@@ -13090,6 +13091,7 @@
     <SkillExplain>스킬을 발동할 때마다 두 모드가 전환된다.  &lt;관통모드 (기본)&gt; 일반 공격이 관통 효과를 가지며 화력이 감소하며 관통 수치가 50% 감소한다.   &lt;강타 모드&gt; 자신의 화력과 명중이 증가한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 감소치;강타모드 증가치</SkillEffect>
     <SkillMag>0초,3초,영속,30%,20%</SkillMag>
+    <Costume>사일런트 댄서</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Yuuki Kana</VoiceActor>
@@ -13916,6 +13918,7 @@
     <SkillExplain>스킬 지속시간 동안 받는 피해량이 감소한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;피해 감소량</SkillEffect>
     <SkillMag>5초,16초,5초,15</SkillMag>
+    <Costume>붉은 박쥐</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Ishimi Manaka</VoiceActor>
@@ -13997,6 +14000,7 @@
     <SkillExplain>지속시간 동안 자신의 화력과 사속이 증가한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;사속 증가치</SkillEffect>
     <SkillMag>6초,16초,5초,75%,25%</SkillMag>
+    <Costume>비범한 학도</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Kido Ibuki</VoiceActor>
@@ -14984,6 +14988,7 @@
     <SkillExplain>&lt;패시브&gt; 전투 개시 시, 3편제 지원인형 3기를 증원으로 소환한다. 지원 인형은 아군 진형 후방에 도착하면 공격을 개시하며, 류 소총의 일부 능력치를 물려받고 편제 당 체력 5를 가지며 기타 능력치 및 공격 방식은 류 소총을 따른다.   &lt;액티브 - 일반 모드&gt; 사속이 10% 감소하고 화력이 20% 증가한다. 가장 멀리 있는 적을 우선으로 공격한다.   &lt;액티브 - 자동 모드&gt; 화력이 10% 감소하고 사속이 20% 증가한다. 가장 가까운 적을 우선 공격한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지원인형 화력 수치;지원인형 사속 수치;지원인형 명중 수치</SkillEffect>
     <SkillMag>1초,1초,35%,60%,40%</SkillMag>
+    <Costume>버드나무 여우불</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>八号地球</Illustrator>
     <HasCensor>false</HasCensor>
@@ -15103,5 +15108,243 @@
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>PM1910이다, 쌈박질할 일이 있으면 바로 날 부르라고!</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>GM6 Lynx</Name>
+    <Name_EN>GM6 Lynx</Name_EN>
+    <CodeName>Gm6Lynx</CodeName>
+    <Nickname>GM6 Lynx</Nickname>
+    <Model>Gepárd M6 Lynx</Model>
+    <Country>Hungary</Country>
+    <Type>RF</Type>
+    <Grade>3</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;S;B;A;B;A</AbilityGrade>
+    <Grow>110</Grow>
+    <HP>95</HP>
+    <FireRate>132</FireRate>
+    <Evasion>95</Evasion>
+    <Accuracy>122</Accuracy>
+    <AttackSpeed>100</AttackSpeed>
+    <MoveSpeed>7</MoveSpeed>
+    <Critical>40</Critical>
+    <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
+    <ConsumeFood>30/45/60/75/90</ConsumeFood>
+    <EffectFormation>0,0,1,0,2,1,0,0,0</EffectFormation>
+    <Effect>CL;12</Effect>
+    <EffectType>HG</EffectType>
+    <DropEvent>2020년 9월 출석 보상</DropEvent>
+    <DicNumber>320</DicNumber>
+    <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
+    <Skill>삼중저격</Skill>
+    <SkillExplain>스킬 쿨타임 종료 후 0.5초마다 1회씩 최대 5회 충전한다. 스킬 발동 시 0.5씩 3번 조준 후, 충전 횟수에 따라 현재 목표에게 피해를 주고 충전을 해제한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;최소 피해량;최대 피해량</SkillEffect>
+    <SkillMag>5초,11초,1.7배,3.2배</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>Yunika-R</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>하하, 지휘관. 여기 사냥꾼이 부족한 모양이네!</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>TS12</Name>
+    <Name_EN>TS12</Name_EN>
+    <CodeName>TavorTS12</CodeName>
+    <Nickname>TS12</Nickname>
+    <Model>IWI Tavor TS12</Model>
+    <Country>Israel</Country>
+    <Type>SG</Type>
+    <Grade>3</Grade>
+    <ProductTime>0</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>A;A;C;A;A;A;B</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>6</MoveSpeed>
+    <Critical>40</Critical>
+    <Bullet>3</Bullet>
+    <Armor>0</Armor>
+    <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
+    <ConsumeFood>40/65/90/115/140</ConsumeFood>
+    <EffectFormation>0,0,0,1,0,2,1,0,0</EffectFormation>
+    <Effect>FR;15</Effect>
+    <EffectType>SMG</EffectType>
+    <DropEvent>2020년 10월 출석 보상</DropEvent>
+    <DicNumber>321</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>회전탄창</Skill>
+    <SkillExplain>스킬 발동 후 다음 2번 재장전은 즉시 완료되며, 첫번째 탄창을 사용한 공격은 화력이 증가하고, 두번째 탄창을 사용한 공격은 명중이 증가한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;화력 증가치;명중 증가치</SkillEffect>
+    <SkillMag>5초,16초,90%,150%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>menji</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>시간 딱 맞춰서 왔네, 지휘관.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>LTLX7000</Name>
+    <Name_EN>LTLX7000</Name_EN>
+    <CodeName>LTLX7000</CodeName>
+    <Nickname>LTLX7000</Nickname>
+    <Model>Beretta LTLX 7000</Model>
+    <Country>Italy</Country>
+    <Type>SG</Type>
+    <Grade>5</Grade>
+    <ProductTime>497</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>S;C;B;S;A;S;B</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>6</MoveSpeed>
+    <Critical>40</Critical>
+    <Bullet>5</Bullet>
+    <Armor>0</Armor>
+    <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
+    <ConsumeFood>40/65/90/115/140</ConsumeFood>
+    <EffectFormation>1,1,0,1,1,2,1,1,0</EffectFormation>
+    <Effect>FR,AC;10,15</Effect>
+    <EffectType>MG</EffectType>
+    <DropEvent>중형제조</DropEvent>
+    <DicNumber>323</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>이물배척</Skill>
+    <SkillExplain>&lt;패시브&gt; 자신 정면의 적 유닛이 자신에게 주는 피해량이 감소한다.     &lt;액티브&gt; 피해가 없는 공격을 하여, 자신 정면 부채꼴 범위 (중심각 150도, 반경 6) 안의 이동 가능한 적을 강제로 5만큼 밀어내고, 보호막과 버프 효과를 강제로 해제한다. 밀어낸 적 하나마다 자신의 장갑이 최대 5회 증가하며 대신 화력이 감소한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;액티브 지속시간;피해 감소량;장갑 증가량;화력 감소량</SkillEffect>
+    <SkillMag>5초,16초,8초,20%,20%,0%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>AF_KURO</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>LTLX7000, 신고합니다. 당신이 믿음직한 사람이길 바랄게, 지휘관.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>M6 ASW</Name>
+    <Name_EN>M6 ASW</Name_EN>
+    <CodeName>M6ASW</CodeName>
+    <Nickname>M6 ASW</Nickname>
+    <Model>M6 Aircrew Survival Weapon</Model>
+    <Country>United States of America</Country>
+    <Type>SG</Type>
+    <Grade>5</Grade>
+    <ProductTime>488</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>A;S;A;A;B;A;A</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>6</MoveSpeed>
+    <Critical>40</Critical>
+    <Bullet>4</Bullet>
+    <Armor>0</Armor>
+    <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
+    <ConsumeFood>40/65/90/115/140</ConsumeFood>
+    <EffectFormation>1,1,0,1,0,0,1,1,2</EffectFormation>
+    <Effect>FR,AC;18,12</Effect>
+    <EffectType>MG</EffectType>
+    <DropEvent>중형제조</DropEvent>
+    <DicNumber>324</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>혈화적성</Skill>
+    <SkillExplain>&lt;패시브&gt; 잔탄 소진 시 자동으로 RF 모드로 전환한다. 또한 매 전투 첫 공격은 모든 잔탄을 소모해 4단 피해를 준다.     &lt;RF 모드&gt; 가장 멀리 있는 적을 우선 공격하며, 회피가 감소하고, 사속 및 화력, 명중이 증가하고 관통을100 얻는다.     &lt;액티브&gt; 2초간 재장전 후 RF 모드의 효과를 해제하고 SG 모드로 전환한다. 전환 시 자신에게 보호막을 부여한다. 또한 SG 모드 기간 자신에게 도발 효과를 부여한다. (슬러그탄 효과는 SG 모드에서만 적용)</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;RF 모드 회피 감소량;RF 모드 사속 증가량;RF 모드 화력 증가량;RF 모드 명중 증가량;보호막 생성량;보호막 지속시간</SkillEffect>
+    <SkillMag>5초,20초,10%,100%,100%,200%,75,5초</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>鸦二</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>여기 지휘관의 생존 키트입니다, 받으세요. 그럼 전장의 최전방으로 가죠.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>V-PM5</Name>
+    <Name_EN>V-PM5</Name_EN>
+    <CodeName>VPM5</CodeName>
+    <Nickname>V-PM5</Nickname>
+    <Model>Valtro PM-5</Model>
+    <Country>Italy</Country>
+    <Type>SG</Type>
+    <Grade>4</Grade>
+    <ProductTime>431</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;A;S;B;A;A;A</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>6</MoveSpeed>
+    <Critical>40</Critical>
+    <Bullet>5</Bullet>
+    <Armor>0</Armor>
+    <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
+    <ConsumeFood>40/65/90/115/140</ConsumeFood>
+    <EffectFormation>1,0,0,0,1,2,1,1,0</EffectFormation>
+    <Effect>FR;18</Effect>
+    <EffectType>MG</EffectType>
+    <DropEvent>중형제조</DropEvent>
+    <DicNumber>325</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>생존우선</Skill>
+    <SkillExplain>&lt;패시브&gt; 이동 시 이동속도가 9 증가하며, 9초에 걸쳐 감소한다.     &lt;액티브&gt; 스킬 발동 시 자신의 장갑 수치의 일정 비율 만큼 회피를 증가시킨다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;액티브 지속시간;변환 비율</SkillEffect>
+    <SkillMag>8초,16초,4초,0.8배</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>水刀巴</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>바, 발트로 PM-5라고 합니다... 모두의 발목을 붙잡지 않도록 노력할게요...</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>HK512</Name>
+    <Name_EN>Gr HK512</Name_EN>
+    <CodeName>HK512</CodeName>
+    <Nickname>HK512</Nickname>
+    <Model>H&amp;K HK512</Model>
+    <Country>Germany</Country>
+    <Type>SG</Type>
+    <Grade>4</Grade>
+    <ProductTime>476</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;A;S;B;A;A;A</AbilityGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>6</MoveSpeed>
+    <Critical>40</Critical>
+    <Bullet>3</Bullet>
+    <Armor>0</Armor>
+    <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
+    <ConsumeFood>40/65/90/115/140</ConsumeFood>
+    <EffectFormation>1,0,1,1,1,2,1,0,1</EffectFormation>
+    <Effect>FR,AM;10,10</Effect>
+    <EffectType>MG,SG</EffectType>
+    <DropEvent>중형제조</DropEvent>
+    <DicNumber>326</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>열정의 차원</Skill>
+    <SkillExplain>&lt;패시브&gt; 재장전 시, 자신을 포함한 같은 열의 산탄총 인형의 남은 스킬 쿨타임을 감소시킨다.     &lt;액티브&gt; 스킬 발동 시 제대에 존재하는 산탄총 인형 하나당, 자신의 장갑과 회피를 증가시킨다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;액티브 지속시간;스킬 쿨타임 단축량;장갑 증가량;회피 증가량</SkillEffect>
+    <SkillMag>6초,16초,6초,20%,20%,20%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>一书</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>여어 지휘관, 많이 기다렸지? 내가 바로 HK512야. 그래서, 내 환영 파티장은 어느 쪽이야?</ProductDialog>
   </Doll>
 </NewDataSet>

@@ -54,7 +54,7 @@
         android:text=""
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_alignParentBottom="true" />
-    <android.support.design.widget.CoordinatorLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/CoalitionDBImageViewerSnackbarLayout"

@@ -183,7 +183,7 @@ namespace GFDA
                 {
                     ETC.LogError(ex, Activity);
                     //ETC.ShowSnackbar(snackbarLayout, Resource.String.MenuAccess_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
-                    Toast.MakeText(Activity, Resource.String.MenuAccess_Fail, ToastLength.Short).Show();
+                    Toast.MakeText(Activity, "Menu access fail", ToastLength.Short).Show();
                 }
             }
         }
@@ -223,7 +223,7 @@ namespace GFDA
                 {
                     ETC.LogError(ex, Activity);
                     //ETC.ShowSnackbar(snackbarLayout, Resource.String.MenuAccess_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
-                    Toast.MakeText(Activity, Resource.String.MenuAccess_Fail, ToastLength.Short).Show();
+                    Toast.MakeText(Activity, "Menu access fail", ToastLength.Short).Show();
                 }
             }
         }
@@ -248,10 +248,8 @@ namespace GFDA
                 return view;
             }
 
-            internal async void Adapter_ItemClick(object sender, int e)
+            internal void Adapter_ItemClick(object sender, int e)
             {
-                await Task.Delay(10);
-
                 try
                 {
                     switch (e)
@@ -307,7 +305,7 @@ namespace GFDA
                 {
                     ETC.LogError(ex, Activity);
                     //ETC.ShowSnackbar(snackbarLayout, Resource.String.MenuAccess_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
-                    Toast.MakeText(Activity, Resource.String.MenuAccess_Fail, ToastLength.Short).Show();
+                    Toast.MakeText(Activity, "Menu access fail", ToastLength.Short).Show();
                 }
             }
         }
@@ -379,7 +377,7 @@ namespace GFDA
                 {
                     ETC.LogError(ex, Activity);
                     //ETC.ShowSnackbar(snackbarLayout, Resource.String.MenuAccess_Fail, Snackbar.LengthLong, Android.Graphics.Color.DarkRed);
-                    Toast.MakeText(Activity, Resource.String.MenuAccess_Fail, ToastLength.Short).Show();
+                    Toast.MakeText(Activity, "Menu access fail", ToastLength.Short).Show();
                 }
             }
         }

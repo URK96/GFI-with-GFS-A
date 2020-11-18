@@ -955,23 +955,13 @@ namespace GFDA
 
                     for (int k = 0; k < buffData.Length; ++k)
                     {
-                        Android.Graphics.Color color;
-
-                        switch (buffData[k])
+                        var color = (buffData[k]) switch
                         {
-                            case 0:
-                                color = Android.Graphics.Color.Gray;
-                                break;
-                            case 1:
-                                color = Android.Graphics.Color.ParseColor("#54A716");
-                                break;
-                            case 2:
-                                color = Android.Graphics.Color.White;
-                                break;
-                            default:
-                                color = Android.Graphics.Color.Red;
-                                break;
-                        }
+                            0 => Android.Graphics.Color.Gray,
+                            1 => Android.Graphics.Color.ParseColor("#54A716"),
+                            2 => Android.Graphics.Color.White,
+                            _ => Android.Graphics.Color.Red,
+                        };
 
                         rootView.FindViewById<View>(buffIds[k]).SetBackgroundColor(color);
                     }

@@ -386,7 +386,7 @@ namespace GFDA
 
         private async Task ListDoll()
         {
-            subList.Clear();
+            var tempList = new List<Doll>();
 
             string searchText = searchViewText.ToUpper();
 
@@ -397,7 +397,7 @@ namespace GFDA
             {
                 for (int i = 0; i < rootList.Count; ++i)
                 {
-                    Doll doll = rootList[i];
+                    var doll = rootList[i];
 
                     if ((pTime[0] + pTime[1]) != 0)
                     {
@@ -420,9 +420,11 @@ namespace GFDA
                         }
                     }
 
-                    subList.Add(doll);
+                    tempList.Add(doll);
                 }
 
+                subList.Clear();
+                subList.AddRange(tempList);
                 subList.Sort(SortDoll);
 
                 await Task.Delay(100);
