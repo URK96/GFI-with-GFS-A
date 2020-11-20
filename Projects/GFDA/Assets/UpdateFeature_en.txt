@@ -1,5 +1,7 @@
-<2.7.2 Update>
+<2.7.3 Update>
 
-- Add new story content
-- Fix story load issue
-- Update external libraries
+- Fix main activity crash issue on some device
+- Fix Coliation ImageViewer crash issue
+- Fix RecyclerView index out crash issue
+- Update nuget packages
+- Update nuget license

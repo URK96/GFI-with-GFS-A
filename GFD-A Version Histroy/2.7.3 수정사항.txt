@@ -1,0 +1,16 @@
+<2.7.3 수정사항>
+
+- 혼합세력 DB 이미지 뷰어 오류 수정
+- 혼합세력 DB 4단계 각성 오류 수정
+- 일부 기기에서 앱이 충돌하는 현상 수정
+- 외부 라이브러리 업데이트
+- 외부 라이브러리 라이선스 갱신
+
+
+<2.7.3 Update>
+
+- Fix main activity crash issue on some device
+- Fix Coliation ImageViewer crash issue
+- Fix RecyclerView index out crash issue
+- Update nuget packages
+- Update nuget license
