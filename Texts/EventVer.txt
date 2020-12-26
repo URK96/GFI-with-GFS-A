@@ -1,6 +1,6 @@
 Y;
-77;
-4;
-고치 속 나비,다크존 물자회수작전,디비전 콜라보,전역 경험치 이벤트;
-https://cafe.naver.com/girlsfrontlinekr/4139105,https://www.girlsfrontline.co.kr/archives/4554.html,https://www.girlsfrontline.co.kr/archives/4552.html,https://www.girlsfrontline.co.kr/archives/4550.html;
-2020/10/30 16:00 ~ 2020/11/20 13:59,2020/11/28 00:00 ~ 2020/12/31 23:59,2020/12/04 16:00 ~ 2020/12/31 13:59,2020/11/21 00:00 ~ 2020/11/26 23:59;
+78;
+5;
+고치 속 나비,다크존 물자회수작전,디비전 콜라보,전역 경험치 이벤트,겨울사탕;
+https://cafe.naver.com/girlsfrontlinekr/4139105,https://www.girlsfrontline.co.kr/archives/4554.html,https://www.girlsfrontline.co.kr/archives/4552.html,https://www.girlsfrontline.co.kr/archives/4550.html,https://www.girlsfrontline.co.kr/archives/4701.html;
+2020/10/30 16:00 ~ 2020/11/20 13:59,2020/11/28 00:00 ~ 2020/12/31 23:59,2020/12/04 16:00 ~ 2021/1/1 13:59,2020/11/21 00:00 ~ 2020/11/26 23:59,2020/12/26 00:00 ~ 2021/1/15 23:59;

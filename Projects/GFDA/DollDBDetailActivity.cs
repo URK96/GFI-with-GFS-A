@@ -1060,10 +1060,15 @@ namespace GFDA
             string[] buff = (modIndex >= 1) ? doll.ModBuffInfo : doll.BuffInfo;
             string[] buffType = buff[0].Split(',');
 
-            buffInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollDBDetailBuffLayout2).Visibility = (buffType.Length == 1) ? ViewStates.Gone : ViewStates.Visible;
+            var buffContentRootLayout = buffInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollDBDetailBuffDetailLayout);
+            buffContentRootLayout.RemoveAllViews();
+
+            var magSb = new StringBuilder();
 
             for (int i = 0; i < buffType.Length; ++i)
             {
+                var contentLayout = LayoutInflater.Inflate(Resource.Layout.FormationBuff_Content_Layout, null);
+
                 int id = 0;
                 string name = "";
 
@@ -1101,33 +1106,24 @@ namespace GFDA
                         break;
                 }
 
-                buffInfoRootLayout.FindViewById<ImageView>(buffIconIds[i]).SetImageResource(id);
-                buffInfoRootLayout.FindViewById<TextView>(buffIconNameIds[i]).Text = name;
-            }
+                contentLayout.FindViewById<ImageView>(Resource.Id.FormationBuffContentIcon).SetImageResource(id);
+                contentLayout.FindViewById<TextView>(Resource.Id.FormationBuffContentType).Text = name;
 
-            var sb1 = new StringBuilder();
-            var sb2 = new StringBuilder();
-            StringBuilder[] EffectString = { sb1, sb2 };
+                magSb.Clear();
 
-            for (int i = 1; i < buff.Length; ++i)
-            {
-                string[] s = buff[i].Split(',');
-
-                for (int j = 0; j < s.Length; ++j)
+                for (int k = 1; k < buff.Length; ++k)
                 {
-                    EffectString[j].Append(s[j]);
-                    EffectString[j].Append('%');
-
-                    if (i < (buff.Length - 1))
+                    magSb.Append($"{buff[k].Split(',')[i]}%");
+                    
+                    if (k < (buff.Length - 1))
                     {
-                        EffectString[j].Append(" | ");
+                        magSb.Append(" - ");
                     }
                 }
-            }
 
-            for (int i = 0; i < buffType.Length; ++i)
-            {
-                buffInfoRootLayout.FindViewById<TextView>(buffDetailIds[i]).Text = EffectString[i].ToString();
+                contentLayout.FindViewById<TextView>(Resource.Id.FormationBuffContentMag).Text = magSb.ToString();
+
+                buffContentRootLayout.AddView(contentLayout);
             }
 
             string effectTypeString;
@@ -1140,7 +1136,7 @@ namespace GFDA
             {
                 var sb = new StringBuilder();
 
-                foreach (string type in doll.BuffType)
+                foreach (var type in doll.BuffType)
                 {
                     sb.Append($"{type} ");
                 }
@@ -1321,7 +1317,7 @@ namespace GFDA
                     abilityInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollInfoBulletLayout).Visibility = ViewStates.Visible;
                     abilityInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollInfoReloadLayout).Visibility = ViewStates.Visible;
 
-                    double reloadTime = CalcReloadTime(doll, doll.Type, abilityValues[4]);
+                    double reloadTime = CalcReloadTime(doll, doll.Type, abilityValues[4], modIndex);
                     int bullet = doll.HasMod ? int.Parse(doll.Abilities["Bullet"].Split(';')[modIndex]) : int.Parse(doll.Abilities["Bullet"]);
 
                     abilityInfoRootLayout.FindViewById<TextView>(Resource.Id.DollInfoBulletProgressMax).Text = abilityInfoRootLayout.FindViewById<ProgressBar>(Resource.Id.DollInfoBulletProgress).Max.ToString();
@@ -1364,7 +1360,7 @@ namespace GFDA
             catch (Exception ex)
             {
                 ETC.LogError(ex, this);
-                ETC.ShowSnackbar(snackbarLayout, "Error Load Ability", Snackbar.LengthShort);
+                ETC.ShowSnackbar(snackbarLayout, "Error Load Ability", BaseTransientBottomBar.LengthShort);
             }
         }
 
@@ -1465,18 +1461,18 @@ namespace GFDA
             }
         }
 
-        private double CalcReloadTime(Doll doll, string type, int AttackSpeed)
+        private double CalcReloadTime(Doll doll, string type, int attackSpeed, int mod = 0)
         {
             double result = 0;
 
             switch (type)
             {
                 case "MG":
-                    int tAS = AttackSpeed;
+                    int tAS = attackSpeed;
                     result = (tAS == 0) ? 0 : (4 + 200 / tAS);
                     break;
                 case "SG":
-                    int tB = int.Parse(doll.Abilities["Bullet"]);
+                    int tB = int.Parse(doll.Abilities["Bullet"].Split(';')[mod]);
                     result = 1.5 + 0.5 * tB;
                     break;
             }
