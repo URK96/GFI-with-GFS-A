@@ -6,3 +6,13 @@
 - 개조 SG 인형 능력 계산 문제 수정
 - 진형 버프가 3개 이상인 경우 튕기는 문제 수정
 - FST 회로 계산 문제 수정
+
+
+<2.7.4 Update>
+
+- Add new story content
+- Add new cartoon content
+- Add cache restore feature
+- Fix MOD SG T-Doll ability issue
+- Fix over 3 formation buff issue
+- Fix FST circuit calc issue

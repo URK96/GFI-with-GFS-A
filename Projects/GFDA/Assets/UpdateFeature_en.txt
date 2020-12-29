@@ -1,7 +1,8 @@
-<2.7.3 Update>
+<2.7.4 Update>
 
-- Fix main activity crash issue on some device
-- Fix Coliation ImageViewer crash issue
-- Fix RecyclerView index out crash issue
-- Update nuget packages
-- Update nuget license
+- Add new story content
+- Add new cartoon content
+- Add cache restore feature
+- Fix MOD SG T-Doll ability issue
+- Fix over 3 formation buff issue
+- Fix FST circuit calc issue
