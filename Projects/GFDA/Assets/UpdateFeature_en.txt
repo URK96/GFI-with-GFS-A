@@ -1,3 +1,9 @@
+<2.7.5 Update>
+
+- Fix story issue
+
+
+
 <2.7.4 Update>
 
 - Add new story content

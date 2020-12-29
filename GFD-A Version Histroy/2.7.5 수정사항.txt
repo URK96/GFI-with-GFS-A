@@ -1,0 +1,8 @@
+<2.7.5 수정사항>
+
+- 스토리 로드 이슈 수정
+
+
+<2.7.5 Update>
+
+- Fix story load issue
