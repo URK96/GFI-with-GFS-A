@@ -133,6 +133,7 @@
     <item>아빠가 없어</item>
     <item>식사 문제</item>
     <item>나강 리볼버 할매</item>
+    <item>돌아온 지휘관</item>
   </string-array>
   
   <string-array name="GF_SF">
@@ -884,5 +885,11 @@
     <item>달인 안구사</item>
     <item>뀨블리</item>
     <item>도전 흥국벨</item>
+    <item>리벨리온 마피아게임</item>
+    <item>마법소녀★안구사</item>
+    <item>죄송합니다</item>
+    <item>사기인형 흥국이</item>
+    <item>부들부들 안구사2</item>
+    <item>논리적 우리형</item>
   </string-array>
 </resources>

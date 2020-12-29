@@ -267,7 +267,7 @@ namespace GFDA
 
                     if (!File.Exists(imagePath) || isRefresh)
                     {
-                        using (WebClient wc = new WebClient())
+                        using (var wc = new WebClient())
                         {
                             await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "Enemy", "Normal", $"{enemy.CodeName}.png"), imagePath);
                         }
@@ -275,7 +275,8 @@ namespace GFDA
 
                     var drawable = Drawable.CreateFromPath(imagePath);
                     drawable.SetAlpha(40);
-                    FindViewById<RelativeLayout>(Resource.Id.EnemyDBDetailMainLayout).Background = drawable;
+
+                    FindViewById<ImageView>(Resource.Id.EnemyDBDetailBackgroundImageView).Background = drawable;
                 }
 
                 string cropImagePath = Path.Combine(ETC.cachePath, "Enemy", "Normal_Crop", $"{enemy.CodeName}.gfdcache");

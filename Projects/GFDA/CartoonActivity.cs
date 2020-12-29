@@ -216,48 +216,6 @@ namespace GFDA
                 11 => Resources.GetStringArray(Resource.Array.senlong_GF),
                 _ => null
             });
-
-            //switch (categoryIndex)
-            //{
-            //    case 0:
-            //        list.AddRange(Resources.GetStringArray(Resource.Array.kazensky_GF));
-            //        break;
-            //    case 1:
-            //        list.AddRange(Resources.GetStringArray(Resource.Array.GF_SF));
-            //        break;
-            //    case 2:
-            //        list.AddRange(Resources.GetStringArray(Resource.Array.GF_SF2));
-            //        break;
-            //    case 3:
-            //        list.AddRange(Resources.GetStringArray(Resource.Array.GF_SF2_After));
-            //        break;
-            //    case 4:
-            //        list.AddRange(Resources.GetStringArray(Resource.Array.GF_INGUKOON_Frontline));
-            //        break;
-            //    case 5:
-            //        list.AddRange(Resources.GetStringArray(Resource.Array.GF_Guide));
-            //        break;
-            //    case 6:
-            //        list.AddRange(Resources.GetStringArray(Resource.Array.GF_DailyComic));
-            //        break;
-            //    case 7:
-            //        list.AddRange(Resources.GetStringArray(Resource.Array.mota6nako_GF));
-            //        break;
-            //    case 8:
-            //        list.AddRange(Resources.GetStringArray(Resource.Array.ImmortalityFront_GF));
-            //        break;
-            //    case 9:
-            //        list.AddRange(Resources.GetStringArray(Resource.Array.MMM_GF));
-            //        break;
-            //    case 10:
-            //        list.AddRange(Resources.GetStringArray(Resource.Array.Geo_GF));
-            //        break;
-            //    case 11:
-            //        list.AddRange(Resources.GetStringArray(Resource.Array.senlong_GF));
-            //        break;
-            //    default:
-            //        break;
-            //}
         }
 
         public override void OnBackPressed()

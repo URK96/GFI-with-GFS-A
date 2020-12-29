@@ -585,9 +585,9 @@
   <string name="SettingActivity_DownloadAllCache_StatusOldGFD">소전사전v1 읽는 중...</string>
   <string name="SettingActivity_DownloadAllCache_StatusOldGFD2">소전사전v1 다운로드 중...</string>
   <string name="SettingActivity_DownloadAllCache_FailDialogTitle">캐시 다운로드 오류</string>
-  <string name="SettingActivity_DownloadAllCache_FailDialogMessage">앗···! 캐시 다운로드가 정상적으로 완료되지 못했어요!</string>
+  <string name="SettingActivity_DownloadAllCache_FailDialogMessage">캐시 다운로드에 오류가 발생했습니다.</string>
   <string name="SettingActivity_DownloadAllCache_CompleteDialogTitle">캐시 다운로드 완료</string>
-  <string name="SettingActivity_DownloadAllCache_CompleteDialogMessage">지휘관님! 캐시 다운로드가 완료되었어요!</string>
+  <string name="SettingActivity_DownloadAllCache_CompleteDialogMessage">캐시 다운로드가 완료되었습니다.</string>
   <string name="SettingActivity_DeleteAllCache_DialogTitle">캐시 삭제</string>
   <string name="SettingActivity_DeleteAllCache_DialogCheckMessage">정말로 모든 캐시를 삭제할 거야? 현재 캐시 용량은</string>
   <string name="SettingActivity_DeleteAllCache_DialogMessage">캐시 삭제 중입니다.</string>
@@ -832,7 +832,18 @@
   <string name="Music_Category_PolarizedLight">편극광</string>
   <string name="Music_Category_ShatteredConnexion">연쇄분열</string>
   <string name="Music_Category_VA">발할라 콜라보</string>
-  
+
+  <!--Cache-->
+  <string name="SelectCache_Dialog_Title">카테고리 선택</string>
+  <string name="SelectCache_FreeSpace">여유 공간</string>
+  <string name="SelectCache_RequireSpace">필요 공간</string>
+  <string name="SelectCache_Category_Dic">DB 사전</string>
+  <string name="SelectCache_Category_OldGFD">GFD v1</string>
+  <string name="SelectCache_Category_GuideBook">가이드북</string>
+  <string name="SelectCache_Category_Story">스토리</string>
+  <string name="SelectCache_Category_Cartoon">만화</string>
+  <string name="SelectCache_Category_PV">PV</string>
+  <string name="SelectCache_Category_OST">OST</string>
   
   <!--ETC String Value-->
   <string name="AdMob_TestID">ca-app-pub-3940256099942544/6300978111</string>

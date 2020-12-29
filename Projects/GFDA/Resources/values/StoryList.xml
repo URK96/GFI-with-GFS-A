@@ -59,6 +59,7 @@
     <item>2020 여름 시즌 이벤트</item>
     <item>콜라보 이벤트</item>
     <item>이벤트</item>
+    <item>2020 할로윈 이벤트</item>
   </string-array>
 
   <string-array name="Story_Main_Main">
@@ -102,6 +103,7 @@
     <item>바다 저 멀리</item>
     <item>몽중극</item>
     <item>이중난수</item>
+    <item>고치 속 나비</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Caption">
@@ -145,6 +147,7 @@
     <item>바다 저 멀리</item>
     <item>몽중극</item>
     <item>이중난수</item>
+    <item>고치 속 나비</item>
   </string-array>
 
   <string-array name="Story_Main_Sub_TopTitle">

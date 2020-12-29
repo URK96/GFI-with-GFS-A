@@ -97,10 +97,10 @@
 
   <androidx.preference.PreferenceCategory
     android:title="@string/Setting_Category_Cache">
-    <!--<androidx.preference.Preference
+    <androidx.preference.Preference
       android:key="DownloadAllCache"
       android:title="@string/Setting_DownloadAllCache_Title"
-      android:summary="@string/Setting_DownloadAllCache_Summary"/>-->
+      android:summary="@string/Setting_DownloadAllCache_Summary"/>
     <androidx.preference.Preference
       android:key="CleanCache"
       android:title="@string/Setting_CleanCache_Title"

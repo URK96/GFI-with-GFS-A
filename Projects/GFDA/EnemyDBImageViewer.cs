@@ -73,13 +73,13 @@ namespace GFDA
 
                 await Task.Delay(100);
 
-                string ImagePath = Path.Combine(ETC.cachePath, "Enemy", "Normal", EnemyCodeName + ".gfdcache");
+                string ImagePath = Path.Combine(ETC.cachePath, "Enemy", "Normal", $"{EnemyCodeName}.gfdcache");
 
                 if ((File.Exists(ImagePath) == false) || (IsRefresh == true))
                 {
                     using (WebClient wc = new WebClient())
                     {
-                        await Task.Run(async () => { await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "Enemy", "Normal", EnemyCodeName + ".png"), ImagePath); });
+                        await Task.Run(async () => { await wc.DownloadFileTaskAsync(Path.Combine(ETC.server, "Data", "Images", "Enemy", "Normal", $"{EnemyCodeName}.png"), ImagePath); });
                     }
                 }
 
@@ -87,7 +87,7 @@ namespace GFDA
 
                 EnemyImageView.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(ImagePath));
 
-                ImageStatus.Text = string.Format("{0} - {1}", EnemyCodeName, EnemyName);
+                ImageStatus.Text = $"{EnemyCodeName} - {EnemyName}";
             }
             catch (Exception ex)
             {

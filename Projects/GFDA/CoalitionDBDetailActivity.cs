@@ -1058,7 +1058,7 @@ namespace GFDA
                     try
                     {
                         string url = Path.Combine(ETC.server, "Data", "Images", "SkillIcons", "Coalition", $"{sName}.png");
-                        string target = Path.Combine(ETC.cachePath, "Coalition", "Skill", $"{sName}.gfdcache");
+                        string target = Path.Combine(ETC.cachePath, "Skill", $"{sName}.gfdcache");
 
                         if (!File.Exists(target) || isRefresh)
                         {

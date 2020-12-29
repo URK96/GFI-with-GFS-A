@@ -306,7 +306,7 @@ namespace GFDA
 
                     try
                     {
-                        string skillIconPath = Path.Combine(ETC.cachePath, "FST", "Skill", $"{skillName}.gfdcache");
+                        string skillIconPath = Path.Combine(ETC.cachePath, "Skill", $"{skillName}.gfdcache");
 
                         if (!File.Exists(skillIconPath) || isRefresh)
                         {
@@ -433,32 +433,28 @@ namespace GFDA
 
                 grade = (grade == 0) ? 1 : grade;
 
-                string[] rowValues = ((string)fstInfoDR[$"Circuit{grade}"]).Split(';');
+                int[,] rowValues = fst.ChipsetCircuit[grade - 1];
 
                 for (int i = 0; i < fst.CircuitHeight; ++i)
                 {
-                    LinearLayout circuitRow = FindViewById<LinearLayout>(circuitRowIds[i]);
+                    var circuitRow = FindViewById<LinearLayout>(circuitRowIds[i]);
 
                     for (int k = 0; k < fst.CircuitLength; ++k)
                     {
-                        View view = new View(this);
-                        view.LayoutParameters = testView.LayoutParameters;
-                        view.Visibility = ViewStates.Visible;
-
-                        if (fst.ChipsetCircuit[grade - 1, i, k] == 1)
+                        View view = new View(this)
                         {
-                            int colorId = 0;
+                            LayoutParameters = testView.LayoutParameters,
+                            Visibility = ViewStates.Visible
+                        };
 
-                            switch (fst.ChipsetType)
+                        if (rowValues[i, k] == 1)
+                        {
+                            int colorId = fst.ChipsetType switch
                             {
-                                default:
-                                case "Blue":
-                                    colorId = Resource.Color.FST_BlueChipset;
-                                    break;
-                                case "Orange":
-                                    colorId = Resource.Color.FST_OrangeChipset;
-                                    break;
-                            }
+                                "Orange" => Resource.Color.FST_OrangeChipset,
+                                _ => Resource.Color.FST_BlueChipset,
+                            };
+
                             view.SetBackgroundResource(colorId);
                         }
                         else

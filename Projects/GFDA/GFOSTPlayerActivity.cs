@@ -135,56 +135,25 @@ namespace GFDA
         {
             try
             {
-                int arrayId = 0;
-
-                switch (MusicRepo.categoryIndex)
+                int arrayId = MusicRepo.categoryIndex switch
                 {
-                    case 0:
-                        arrayId = Resource.Array.Normal;
-                        break;
-                    case 1:
-                        arrayId = Resource.Array.ContinuumTurbulence;
-                        break;
-                    case 2:
-                        arrayId = Resource.Array.Cube;
-                        break;
-                    case 3:
-                        arrayId = Resource.Array.DeepDive;
-                        break;
-                    case 4:
-                        arrayId = Resource.Array.DJMAX;
-                        break;
-                    case 5:
-                        arrayId = Resource.Array.GuiltyGear;
-                        break;
-                    case 6:
-                        arrayId = Resource.Array.Houkai2;
-                        break;
-                    case 7:
-                        arrayId = Resource.Array.Arctic;
-                        break;
-                    case 8:
-                        arrayId = Resource.Array.Singularity;
-                        break;
-                    case 9:
-                        arrayId = Resource.Array.Isomer;
-                        break;
-                    case 10:
-                        arrayId = Resource.Array.VA;
-                        break;
-                    case 11:
-                        arrayId = Resource.Array.ShatteredConnexion;
-                        break;
-                    case 12:
-                        arrayId = Resource.Array.PhantomSyndrome;
-                        break;
-                    case 13:
-                        arrayId = Resource.Array.HolyNightRhapsody;
-                        break;
-                    case 14:
-                        arrayId = Resource.Array.PolarizedLight;
-                        break;
-                }
+                    0 => Resource.Array.Normal,
+                    1 => Resource.Array.ContinuumTurbulence,
+                    2 => Resource.Array.Cube,
+                    3 => Resource.Array.DeepDive,
+                    4 => Resource.Array.DJMAX,
+                    5 => Resource.Array.GuiltyGear,
+                    6 => Resource.Array.Houkai2,
+                    7 => Resource.Array.Arctic,
+                    8 => Resource.Array.Singularity,
+                    9 => Resource.Array.Isomer,
+                    10 => Resource.Array.VA,
+                    11 => Resource.Array.ShatteredConnexion,
+                    12 => Resource.Array.PhantomSyndrome,
+                    13 => Resource.Array.HolyNightRhapsody,
+                    14 => Resource.Array.PolarizedLight,
+                    _ => 0,
+                };
 
                 MusicRepo.itemList.AddRange(ETC.Resources.GetStringArray(arrayId));
             }
@@ -247,9 +216,12 @@ namespace GFDA
             {
                 stream?.Dispose();
 
-                musicServerPath = 
-                    Path.Combine(MusicRepo.serverMusicPath, "OST", MusicRepo.categoryRealPath[MusicRepo.categoryIndex], $"{MusicRepo.itemList[MusicRepo.itemIndex]}.mp3");
-                string locaclFileName = $"{MusicRepo.categoryIndex.ToString()}_{MusicRepo.itemIndex.ToString()}.mp3";
+                string category = MusicRepo.categoryRealPath[MusicRepo.categoryIndex];
+                string item = MusicRepo.itemList[MusicRepo.itemIndex];
+
+                musicServerPath = Path.Combine(MusicRepo.serverMusicPath, "OST", category, $"{item}.mp3");
+
+                string locaclFileName = $"{category}_{item}.mp3";
 
                 using (var wc = new WebClient())
                 {

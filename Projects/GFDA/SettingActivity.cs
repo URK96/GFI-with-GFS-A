@@ -12,6 +12,7 @@ using Net.ArcanaStudio.ColorPicker;
 
 using System;
 using System.IO;
+using System.Net;
 using System.Threading.Tasks;
 
 using Xamarin.Essentials;
@@ -71,7 +72,7 @@ namespace GFDA
         }
     }
 
-    public class MainSettingFragment : PreferenceFragmentCompat
+    public partial class MainSettingFragment : PreferenceFragmentCompat
     {
         private CoordinatorLayout snackbarLayout;
 
@@ -233,10 +234,9 @@ namespace GFDA
             textViewerBackgroundColor.SetIcon(ETC.useLightTheme ? Resource.Drawable.backgroundcolor_icon_wt : Resource.Drawable.backgroundcolor_icon);
             textViewerBackgroundColor.PreferenceClick += TextViewerBackgroundColor_PreferenceClick;
 
-            /*Preference DownloadAllCache = FindPreference("DownloadAllCache");
-            if (ETC.UseLightTheme == true) DownloadAllCache.SetIcon(Resource.Drawable.DownloadAllCacheIcon_WhiteTheme);
-            else DownloadAllCache.SetIcon(Resource.Drawable.DownloadAllCacheIcon);
-            DownloadAllCache.PreferenceClick += DownloadAllCache_PreferenceClick;*/
+            var DownloadAllCache = FindPreference("DownloadAllCache");
+            DownloadAllCache.SetIcon(ETC.useLightTheme ? Resource.Drawable.download_icon_wt : Resource.Drawable.download_icon);
+            DownloadAllCache.PreferenceClick += DownloadAllCache_PreferenceClick;
 
             var cleanCache = FindPreference("CleanCache");
             cleanCache.SetIcon(ETC.useLightTheme ? Resource.Drawable.delete_icon_wt : Resource.Drawable.delete_icon);
@@ -481,86 +481,85 @@ namespace GFDA
             ad.Show();
         }
 
-        /*private void DownloadAllCache_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
+        private void DownloadAllCache_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
         {
-            Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(Activity, ETC.DialogBG);
+            var alert = new AndroidX.AppCompat.App.AlertDialog.Builder(Activity, ETC.dialogBG);
             alert.SetTitle(Resource.String.SettingActivity_DownloadAllCache_DialogTitle);
             alert.SetMessage(Resource.String.SettingActivity_DownloadAllCache_DialogCheckMessage);
             alert.SetCancelable(true);
             alert.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-            alert.SetPositiveButton(Resource.String.AlertDialog_Download, async delegate
+            alert.SetPositiveButton(Resource.String.AlertDialog_Download, delegate
             {
-                await ETC.CheckServerNetwork();
+                _ = ETC.CheckServerNetwork();
 
-                if (ETC.IsServerDown == true)
+                if (ETC.isServerDown)
                 {
                     Toast.MakeText(Activity, Resource.String.Common_ServerMaintenance, ToastLength.Short).Show();
+
                     return;
                 }
-                if (await CheckStorageCapacity() == false) return;
+
+                if (!CheckStorageCapacity())
+                {
+                    return;
+                }
+
                 string[] OSVer = Build.VERSION.Release.Split('.');
-                if (int.Parse(OSVer[0]) <= 4) await DownloadAllCacheProcess_OldVer();
-                else await DownloadAllCacheProcess();
+
+                SelectCache();
             });
 
             alert.Show();
-        }*/
+        }
 
-        /*private async Task<bool> CheckStorageCapacity()
+        private bool CheckStorageCapacity()
         {
-            ProgressDialog pd = new ProgressDialog(Activity, ETC.dialogBG);
-            pd.SetTitle(Resource.String.SettingActivity_CheckFreeStorage_DialogTitle);
-            pd.SetMessage(Resources.GetString(Resource.String.SettingActivity_CheckFreeStorage_DialogMessage));
-            pd.SetCancelable(false);
+            //var pd = new ProgressDialog(Activity, ETC.dialogBG);
+            //pd.SetTitle(Resource.String.SettingActivity_CheckFreeStorage_DialogTitle);
+            //pd.SetMessage(Resources.GetString(Resource.String.SettingActivity_CheckFreeStorage_DialogMessage));
+            //pd.SetCancelable(false);
 
-            pd.Show();
+            //pd.Show();
 
-            Java.IO.File path = Android.OS.Environment.ExternalStorageDirectory;
-            StatFs stat = new StatFs(path.Path);
+            var stat = new StatFs(ETC.appDataPath);
 
             try
             {
-
                 long blockSize = stat.BlockSizeLong;
                 long availableBlocks = stat.AvailableBlocksLong;
                 long availableSize = availableBlocks * blockSize;
 
-                int FreeSpace = Convert.ToInt32((availableSize / 1024) / 1024);
+                freeSize = Convert.ToInt32(availableSize / 1024 / 1024);
 
-                if (FreeSpace >= 600)
+                if (freeSize >= 600)
                 {
-                    pd.SetMessage(string.Format("{0} : {1}MB\n\n{2}", Resources.GetString(Resource.String.SettingActivity_CheckFreeStorage_DialogMessage2), FreeSpace, Resources.GetString(Resource.String.SettingActivity_CheckFreeStorage_DialogMessage2_1)));
-                    await Task.Delay(2000);
                     return true;
                 }
                 else
                 {
-                    pd.Dismiss();
-
-                    AlertDialog.Builder ad = new AlertDialog.Builder(Activity);
+                    var ad = new AndroidX.AppCompat.App.AlertDialog.Builder(Activity);
                     ad.SetTitle(Resource.String.SettingActivity_CheckFreeStorage_FailDialogTitle);
-                    ad.SetMessage(string.Format("{0} {1}MB",Resources.GetString(Resource.String.SettingActivity_CheckFreeStorage_FailDialogMessage), FreeSpace));
+                    ad.SetMessage($"{Resources.GetString(Resource.String.SettingActivity_CheckFreeStorage_FailDialogMessage)} {freeSize}MB");
                     ad.SetNeutralButton(Resource.String.AlertDialog_Confirm, delegate { });
                     ad.SetCancelable(true);
 
                     ad.Show();
+
                     return false;
                 }
             }
             catch (Exception ex)
             {
                 ETC.LogError(ex, Activity);
-                ETC.ShowSnackbar(SnackbarLayout, Resource.String.SettingActivity_CheckFreeStorage_CheckFail, Snackbar.LengthLong);
+                ETC.ShowSnackbar(snackbarLayout, Resource.String.SettingActivity_CheckFreeStorage_CheckFail, Snackbar.LengthLong);
             }
             finally
             {
-                pd.Dismiss();
-                pd.Dispose();
                 stat.Dispose();
             }
 
             return false;
-        }*/
+        }
 
         /*private async Task DownloadAllCacheProcess()
         {
@@ -1085,33 +1084,21 @@ namespace GFDA
                 p_dialog.Dismiss();
                 p_dialog = null;
             }
-        }
-
-        private void Wc_DownloadProgressChanged_OldVer(object sender, DownloadProgressChangedEventArgs e)
-        {
-            p_dialog.SecondaryProgress = e.ProgressPercentage;
-        }
-
-        private void Wc_DownloadFileCompleted_OldVer(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-            now += 1;
-
-            p_dialog.Progress = Convert.ToInt32((now / Convert.ToDouble(total)) * 100);
-        }
+        }*/
 
         private void Wc_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             now += 1;
 
-            totalProgressBar.Progress = Convert.ToInt32((now / Convert.ToDouble(total)) * 100);
-            totalProgress.Text = string.Format("{0}%", totalProgressBar.Progress);
+            totalProgressBar.Progress = Convert.ToInt32(now / Convert.ToDouble(total) * 100);
+            totalProgress.Text = $"{totalProgressBar.Progress}%";
         }
 
         private void Wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             nowProgressBar.Progress = e.ProgressPercentage;
-            nowProgress.Text = string.Format("{0}%", e.ProgressPercentage);
-        }*/
+            nowProgress.Text = $"{e.ProgressPercentage}%";
+        }
 
         private void CleanCache_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
         {

@@ -263,7 +263,7 @@ namespace GFDA
                 }
                 else
                 {
-                    vh.DownloadIcon.SetImageResource(ETC.useLightTheme ? Resource.Drawable.download_icon_whitetheme : Resource.Drawable.download_icon);
+                    vh.DownloadIcon.SetImageResource(ETC.useLightTheme ? Resource.Drawable.download_icon_wt : Resource.Drawable.download_icon);
                 }
             }
 

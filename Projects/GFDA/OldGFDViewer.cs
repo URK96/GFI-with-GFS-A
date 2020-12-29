@@ -30,6 +30,8 @@ namespace GFDA
 
         private string[] oldGFDImageList;
 
+        internal string lang;
+
         internal int initImageIndex = 0;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -52,6 +54,15 @@ namespace GFDA
                 SetContentView(Resource.Layout.OldGFDMainLayout);
 
                 initImageIndex = Intent.GetIntExtra("Index", 0);
+                
+                if (ETC.locale.Language == "ko")
+                {
+                    lang = "ko";
+                }
+                else
+                {
+                    lang = "en";
+                }
 
                 // Set View & Connet Event
 
@@ -152,7 +163,7 @@ namespace GFDA
 
         private void ListImageList()
         {
-            if (ETC.locale.Language == "ko")
+            if (lang == "ko")
             {
                 oldGFDImageList = new string[]
                 {
@@ -226,11 +237,15 @@ namespace GFDA
         private LinearLayout imageContainer;
         private CoordinatorLayout snackbarLayout_F;
 
+        private string lang;
+
         string[] imageName = null;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             v = inflater?.Inflate(Resource.Layout.OldGFDScreenLayout, container, false);
+
+            lang = (Activity as OldGFDViewer).lang;
 
             imageContainer = v.FindViewById<LinearLayout>(Resource.Id.OldGFDImageContainer);
             snackbarLayout_F = ((OldGFDViewer)Activity).snackbarLayout;
@@ -247,7 +262,9 @@ namespace GFDA
                 InitializeImageList();
 
                 if (CheckImage())
+                {
                     await DownloadGFDImage();
+                }
 
                 ShowImage(((OldGFDViewer)Activity).initImageIndex);
                 _ = CheckUpdate();
@@ -261,7 +278,7 @@ namespace GFDA
 
         private void InitializeImageList()
         {
-            if (ETC.locale.Language == "ko")
+            if (lang == "ko")
             {
                 imageName = new string[]
                 {
@@ -306,7 +323,7 @@ namespace GFDA
             {
                 imageContainer.RemoveAllViews();
 
-                drawable = Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "OldGFD", "Images", $"{ETC.locale.Language}_{imageName[index]}.gfdcache"));
+                drawable = Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "OldGFD", "Images", $"{lang}_{imageName[index]}.gfdcache"));
                 Android.Graphics.Bitmap bitmap = ((BitmapDrawable)drawable).Bitmap;
 
                 while (height < bitmap.Height)
@@ -353,7 +370,7 @@ namespace GFDA
         {
             foreach (string s in imageName)
             {
-                if (!File.Exists(Path.Combine(ETC.cachePath, "OldGFD", "Images", $"{ETC.locale.Language}_{s}.gfdcache")))
+                if (!File.Exists(Path.Combine(ETC.cachePath, "OldGFD", "Images", $"{lang}_{s}.gfdcache")))
                 {
                     return true;
                 }
@@ -455,8 +472,8 @@ namespace GFDA
 
                     foreach (string s in imageName)
                     {
-                        string url = Path.Combine(ETC.server, "Data", "Images", "OldGFD", "Images", ETC.locale.Language, $"{s}.png");
-                        string target = Path.Combine(ETC.cachePath, "OldGFD", "Images", $"{ETC.locale.Language}_{s}.gfdcache");
+                        string url = Path.Combine(ETC.server, "Data", "Images", "OldGFD", "Images", lang, $"{s}.png");
+                        string target = Path.Combine(ETC.cachePath, "OldGFD", "Images", $"{lang}_{s}.gfdcache");
 
                         await wc.DownloadFileTaskAsync(url, target);
                     }

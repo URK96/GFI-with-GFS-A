@@ -6,6 +6,50 @@ using System.IO;
 
 namespace GFDA
 {
+    public static class CommonData
+    {
+        public static string SetCountry(DataRow dr)
+        {
+            return (dr["Country"] as string) switch
+            {
+                "Australia" => ETC.Resources.GetString(Resource.String.Country_Australia),
+                "Austria" => ETC.Resources.GetString(Resource.String.Country_Austria),
+                "Belgium" => ETC.Resources.GetString(Resource.String.Country_Belgium),
+                "BlazeBlue" => ETC.Resources.GetString(Resource.String.Country_BlazeBlue),
+                "Brazil" => ETC.Resources.GetString(Resource.String.Country_Brazil),
+                "Bulgaria" => ETC.Resources.GetString(Resource.String.Country_Bulgaria),
+                "China" => ETC.Resources.GetString(Resource.String.Country_China),
+                "Croatia" => ETC.Resources.GetString(Resource.String.Country_Croatia),
+                "Czech" => ETC.Resources.GetString(Resource.String.Country_Czech),
+                "Czechoslovakia" => ETC.Resources.GetString(Resource.String.Country_Czechoslovakia),
+                "DJMAX RESPECT" => ETC.Resources.GetString(Resource.String.Country_DJMAXRESPECT),
+                "Finland" => ETC.Resources.GetString(Resource.String.Country_Finland),
+                "France" => ETC.Resources.GetString(Resource.String.Country_France),
+                "Germany" => ETC.Resources.GetString(Resource.String.Country_Germany),
+                "Guilty Gear" => ETC.Resources.GetString(Resource.String.Country_GuiltyGear),
+                "Honkai 2" => ETC.Resources.GetString(Resource.String.Country_Honkai2),
+                "Hungary" => ETC.Resources.GetString(Resource.String.Country_Hungary),
+                "Israel" => ETC.Resources.GetString(Resource.String.Country_Israel),
+                "Italy" => ETC.Resources.GetString(Resource.String.Country_Italy),
+                "Japan" => ETC.Resources.GetString(Resource.String.Country_Japan),
+                "Poland" => ETC.Resources.GetString(Resource.String.Country_Poland),
+                "Republic of Korea" => ETC.Resources.GetString(Resource.String.Country_RepublicOfKorea),
+                "Republic of South Africa" => ETC.Resources.GetString(Resource.String.Country_RepublicOfSouthAfrica),
+                "Russia" => ETC.Resources.GetString(Resource.String.Country_Russia),
+                "Serbia" => ETC.Resources.GetString(Resource.String.Country_Serbia),
+                "Singapore" => ETC.Resources.GetString(Resource.String.Country_Singapore),
+                "Soviet Union" => ETC.Resources.GetString(Resource.String.Country_SovietUnion),
+                "Spain" => ETC.Resources.GetString(Resource.String.Country_Spain),
+                "Sweden" => ETC.Resources.GetString(Resource.String.Country_Sweden),
+                "Switzerland" => ETC.Resources.GetString(Resource.String.Country_Switzerland),
+                "Taiwan" => ETC.Resources.GetString(Resource.String.Country_Taiwan),
+                "United Kingdom" => ETC.Resources.GetString(Resource.String.Country_UnitedKingdom),
+                "United States of America" => ETC.Resources.GetString(Resource.String.Country_UnitedStatesOfAmerica),
+                _ => "Unknown",
+            };
+        }
+    }
+
     public partial class Doll
     {
         public string Name { get; private set; }
@@ -51,7 +95,7 @@ namespace GFDA
         public Dictionary<string, string> Abilities { get; private set; }
         public string[] AbilityGrade { get; private set; }
 
-        public string GetDicNumberString { get { return $"No. {DicNumber.ToString()}"; } }
+        public string GetDicNumberString { get { return $"No. {DicNumber}"; } }
         public string GetProductTimeToString { get { return ETC.CalcTime(ProductTime); } }
 
         internal Doll(DataRow dr, bool basicInfo = false)
@@ -72,7 +116,7 @@ namespace GFDA
             CodeName = (string)dr["CodeName"];
             DicNumber = (int)dr["DicNumber"];
             RealModel = (string)dr["Model"];
-            Country = SetCountry(dr);
+            Country = CommonData.SetCountry(dr);
             Grade = (int)dr["Grade"];
             ProductTime = (int)dr["ProductTime"];
             Type = (string)dr["Type"];
@@ -413,7 +457,7 @@ namespace GFDA
         public string Distance { get; private set; }
         public Dictionary<string, int>[] VersionUpPlus { get; private set; }
         public string ChipsetType { get; private set; }
-        public int[,,] ChipsetCircuit { get; private set; }
+        public int[][,] ChipsetCircuit { get; private set; }
         public Dictionary<string, int>[] GradeRestriction { get; private set; }
         public int[] ChipsetBonusCount { get; private set; }
         public Dictionary<string, int>[] ChipsetBonusMag { get; private set; }
@@ -423,10 +467,10 @@ namespace GFDA
         public string[][] SkillMag { get; private set; }
 
         public Dictionary<string, int> Abilities { get; private set; }
-        public string[] AbilityList { get; private set; } = { "Kill", "Crush", "Accuracy", "Reload" };
-        public int CircuitCount { get; private set; } = 5;
-        public int CircuitLength { get; private set; } = 8;
-        public int CircuitHeight { get; private set; } = 8;
+        public string[] AbilityList => new string[] { "Kill", "Crush", "Accuracy", "Reload" };
+        public int CircuitCount => 5;
+        public int CircuitLength => 8;
+        public int CircuitHeight => 8;
 
         public FST(DataRow dr, bool basicInfo = false)
         {
@@ -435,7 +479,7 @@ namespace GFDA
             NickName = "";
             DicNumber = 0;
             RealModel = (string)dr["Model"];
-            Country = (string)dr["Country"];
+            Country = CommonData.SetCountry(dr);
             Type = (string)dr["Type"];
             Illustrator = "";
             VoiceActor = "";
@@ -474,7 +518,7 @@ namespace GFDA
         {
             ChipsetType = (string)dr["CircuitType"];
 
-            ChipsetCircuit = new int[CircuitCount, CircuitHeight, CircuitLength];
+            ChipsetCircuit = new int[CircuitCount][,];
 
             /*for (int i = 0; i < CircuitCount; ++i)
             {
@@ -489,7 +533,9 @@ namespace GFDA
 
             for (int i = 0; i < CircuitCount; ++i)
             {
-                string[] circuitRows = ((string)dr[$"Circuit{(i + 1).ToString()}"]).Split(';');
+                int[,] chipsets = new int[CircuitLength, CircuitHeight];
+
+                string[] circuitRows = ((string)dr[$"Circuit{i + 1}"]).Split(';');
 
                 for (int k = 0; k < circuitRows.Length; ++k)
                 {
@@ -503,7 +549,7 @@ namespace GFDA
                         {
                             if (num < 10)
                             {
-                                ChipsetCircuit[i, k, num - 1] = 1;
+                                chipsets[k, num - 1] = 1;
                             }
                             else
                             {
@@ -512,12 +558,14 @@ namespace GFDA
 
                                 for (int x = (start - 1); x < end; ++x)
                                 {
-                                    ChipsetCircuit[i, k, x] = 1;
+                                    chipsets[k, x] = 1;
                                 }
                             }
                         }
                     }
                 }
+
+                ChipsetCircuit[i] = chipsets;
             }
         }
 

@@ -37,6 +37,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/FairyDBDetailMainLayout">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:id="@+id/FairyDBDetailBackgroundImageView" />
         <!--Fairy Title Layout-->
             <RelativeLayout
                 android:layout_width="match_parent"

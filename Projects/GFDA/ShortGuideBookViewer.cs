@@ -178,26 +178,37 @@ namespace GFDA
         private PhotoView guideBookImageView;
         private CoordinatorLayout snackbarLayoutF;
 
+        private string lang;
+
         readonly string[] imageName = new string[]
-            {
-                "SA0",
-                "SA1",
-                "SA2-1",
-                "SA2-2",
-                "SA3",
-                "SA4-1",
-                "SA4-2",
-                "SA5-1",
-                "SA5-2",
-                "SA6-1",
-                "SA6-2",
-                "SA7",
-                "EP"
-            };
+        {
+            "SA0",
+            "SA1",
+            "SA2-1",
+            "SA2-2",
+            "SA3",
+            "SA4-1",
+            "SA4-2",
+            "SA5-1",
+            "SA5-2",
+            "SA6-1",
+            "SA6-2",
+            "SA7",
+            "EP"
+        };
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             v = inflater?.Inflate(Resource.Layout.ShortGuideBookScreenLayout, container, false);
+
+            if (ETC.locale.Language == "ko")
+            {
+                lang = "ko";
+            }
+            else
+            {
+                lang = "en";
+            }
 
             guideBookImageView = v.FindViewById<PhotoView>(Resource.Id.ShortGuideBookImageView);
             snackbarLayoutF = (Activity as ShortGuideBookViewer).snackbarLayout;
@@ -228,7 +239,7 @@ namespace GFDA
 
         internal void ShowImage(int index)
         {
-            string imagePath = Path.Combine(ETC.cachePath, "GuideBook", "Images", $"{ETC.locale.Language}_{imageName[index]}.gfdcache");
+            string imagePath = Path.Combine(ETC.cachePath, "GuideBook", "Images", $"{lang}_{imageName[index]}.gfdcache");
 
             try
             {
@@ -246,7 +257,7 @@ namespace GFDA
         {
             foreach (string s in imageName)
             {
-                if (!File.Exists(Path.Combine(ETC.cachePath, "GuideBook", "Images", $"{ETC.locale.Language}_{s}.gfdcache")))
+                if (!File.Exists(Path.Combine(ETC.cachePath, "GuideBook", "Images", $"{lang}_{s}.gfdcache")))
                 {
                     return true;
                 }
@@ -349,8 +360,8 @@ namespace GFDA
 
                     foreach (string s in imageName)
                     {
-                        string url = Path.Combine(ETC.server, "Data", "PDF", "ShortGuideBook", "Image", ETC.locale.Language, $"{s}.png");
-                        string target = Path.Combine(ETC.cachePath, "GuideBook", "Images", $"{ETC.locale.Language}_{s}.gfdcache");
+                        string url = Path.Combine(ETC.server, "Data", "PDF", "ShortGuideBook", "Image", lang, $"{s}.png");
+                        string target = Path.Combine(ETC.cachePath, "GuideBook", "Images", $"{lang}_{s}.gfdcache");
 
                         await wc.DownloadFileTaskAsync(url, target);
                     }

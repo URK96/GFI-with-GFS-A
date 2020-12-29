@@ -347,4 +347,40 @@
     <item>숨겨진 위험지대</item>
     <item>여름 노을빛</item>
   </string-array>
+
+  <string-array name="Story_Main_Main_Event_2020Halloween_TopTitle">
+    <item>고치 속 나비</item>
+    <item>고치 속 나비</item>
+    <item>고치 속 나비</item>
+    <item>고치 속 나비</item>
+    <item>고치 속 나비</item>
+    <item>고치 속 나비</item>
+    <item>고치 속 나비</item>
+    <item>고치 속 나비</item>
+    <item>고치 속 나비</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2020Halloween">
+    <item>찬 밤의 방황</item>
+    <item>우천담화</item>
+    <item>거울상</item>
+    <item>회상</item>
+    <item>이름 없는 이</item>
+    <item>부서진 메아리</item>
+    <item>흔적 없는 눈물</item>
+    <item>나비가 흩어질 때</item>
+    <item>고치를 뚫고</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2020Halloween_Caption">
+    <item>그리폰</item>
+    <item>TAC-50</item>
+    <item>그리폰</item>
+    <item>TAC-50</item>
+    <item>그리폰</item>
+    <item>그리폰</item>
+    <item>TAC-50</item>
+    <item>그리폰</item>
+    <item>TAC-50</item>
+  </string-array>
 </resources>

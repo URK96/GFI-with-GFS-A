@@ -205,22 +205,34 @@ namespace GFDA
 
                 try
                 {
-                    string smallImagePath = Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache");
-                    string url = Path.Combine(ETC.server, "Data", "Images", "Fairy", $"{fairy.DicNumber}_1.png");
+                    if (Preferences.Get("DBDetailBackgroundImage", false))
+                    {
+                        string fullImagePath = Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{fairy.DicNumber}_1.gfdcache");
+                        string url = Path.Combine(ETC.server, "Data", "Images", "Fairy", "Normal", $"{fairy.DicNumber}_1.png");
+
+                        if (!File.Exists(fullImagePath) || isRefresh)
+                        {
+                            using (var wc = new WebClient())
+                            {
+                                await wc.DownloadFileTaskAsync(url, fullImagePath);
+                            }
+                        }
+
+                        var drawable = Drawable.CreateFromPath(fullImagePath);
+                        drawable.SetAlpha(40);
+
+                        FindViewById<ImageView>(Resource.Id.FairyDBDetailBackgroundImageView).Background = drawable;
+                    }
+
+                    string smallImagePath = Path.Combine(ETC.cachePath, "Fairy", "Normal_Crop", $"{fairy.DicNumber}.gfdcache");
+                    string url2 = Path.Combine(ETC.server, "Data", "Images", "Fairy", "Normal_Crop", $"{fairy.DicNumber}.png");
 
                     if (!File.Exists(smallImagePath) || isRefresh)
                     {
                         using (var wc = new WebClient())
                         {
-                            await wc.DownloadFileTaskAsync(url, smallImagePath);
+                            await wc.DownloadFileTaskAsync(url2, smallImagePath);
                         }
-                    }
-
-                    if (Preferences.Get("DBDetailBackgroundImage", true))
-                    {
-                        var drawable = Drawable.CreateFromPath(smallImagePath);
-                        drawable.SetAlpha(40);
-                        FindViewById<RelativeLayout>(Resource.Id.FairyDBDetailMainLayout).Background = drawable;
                     }
 
                     FindViewById<ImageView>(Resource.Id.FairyDBDetailSmallImage).SetImageDrawable(Drawable.CreateFromPath(smallImagePath));
@@ -247,7 +259,7 @@ namespace GFDA
 
                 try
                 {
-                    string skillIconPath = Path.Combine(ETC.cachePath, "Fairy", "Skill", $"{fairy.SkillName}.gfdcache");
+                    string skillIconPath = Path.Combine(ETC.cachePath, "Skill", $"{fairy.SkillName}.gfdcache");
                     string url2 = Path.Combine(ETC.server, "Data", "Images", "FairySkill", $"{fairy.SkillName}.png");
 
                     if (!File.Exists(skillIconPath) || isRefresh)

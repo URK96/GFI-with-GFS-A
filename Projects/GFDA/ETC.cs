@@ -99,7 +99,7 @@ namespace GFDA
 
             Resources = baseContext.Resources;
 
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzU1NzQwQDMxMzgyZTMzMmUzMGFDNENCZnBobEEyMVpualFXM1RMNTF6N0s5SSt1eDlKdy9Fa0lMN245U2s9");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzczNDIxQDMxMzgyZTM0MmUzMGFhY3dGeWhQVkgzK0dISC94QzNRcTlkWU5kcWp2YjdhVGN5czR5RVJYRGM9");
 
             if (isReleaseMode)
             {
@@ -251,6 +251,7 @@ namespace GFDA
 
             string[] subPaths =
             {
+                Path.Combine(cachePath, "Skill"),
                 Path.Combine(cachePath, "Doll"),
                 Path.Combine(cachePath, "Doll", "SD"),
                 Path.Combine(cachePath, "Doll", "SD", "Animation"),

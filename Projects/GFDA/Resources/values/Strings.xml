@@ -582,9 +582,9 @@
   <string name="SettingActivity_DownloadAllCache_StatusOldGFD">Reading GFD v1...</string>
   <string name="SettingActivity_DownloadAllCache_StatusOldGFD2">Downloading GFD v1...</string>
   <string name="SettingActivity_DownloadAllCache_FailDialogTitle">Cache Download Error Occurred</string>
-  <string name="SettingActivity_DownloadAllCache_FailDialogMessage">Oops! There was an error during the cache download!</string>
+  <string name="SettingActivity_DownloadAllCache_FailDialogMessage">Error during the cache download!</string>
   <string name="SettingActivity_DownloadAllCache_CompleteDialogTitle">Downloaded Cache</string>
-  <string name="SettingActivity_DownloadAllCache_CompleteDialogMessage">Commander! Cache downloading is done!</string>
+  <string name="SettingActivity_DownloadAllCache_CompleteDialogMessage">Cache downloading is done!</string>
   <string name="SettingActivity_DeleteAllCache_DialogTitle">Delete Cache</string>
   <string name="SettingActivity_DeleteAllCache_DialogCheckMessage">Are you sure you want to delete all of your cache? Current cache size is</string>
   <string name="SettingActivity_DeleteAllCache_DialogMessage">Deleting Cache</string>
@@ -830,6 +830,18 @@
   <string name="Music_Category_PolarizedLight">Polarized Light</string>
   <string name="Music_Category_ShatteredConnexion">Shattered Connexion</string>
   <string name="Music_Category_VA">VA-11 HALL-A</string>
+
+  <!--Cache-->
+  <string name="SelectCache_Dialog_Title">Select Category</string>
+  <string name="SelectCache_FreeSpace">Free</string>
+  <string name="SelectCache_RequireSpace">Require</string>
+  <string name="SelectCache_Category_Dic">DB Dic</string>
+  <string name="SelectCache_Category_OldGFD">GFD v1</string>
+  <string name="SelectCache_Category_GuideBook">GuideBook</string>
+  <string name="SelectCache_Category_Story">Story</string>
+  <string name="SelectCache_Category_Cartoon">Cartoon</string>
+  <string name="SelectCache_Category_PV">PV</string>
+  <string name="SelectCache_Category_OST">OST</string>
   
   <!--ETC String Value-->
   <string name="AdMob_TestID">ca-app-pub-3940256099942544/6300978111</string>

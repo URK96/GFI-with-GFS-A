@@ -1155,7 +1155,7 @@ namespace GFDA
             try
             {
                 string url = Path.Combine(ETC.server, "Data", "Images", "SkillIcons", $"{skillName}.png");
-                string target = Path.Combine(ETC.cachePath, "Doll", "Skill", $"{skillName}.gfdcache");
+                string target = Path.Combine(ETC.cachePath, "Skill", $"{skillName}.gfdcache");
 
                 if (!File.Exists(target) || isRefresh)
                 {
@@ -1231,7 +1231,7 @@ namespace GFDA
             try
             {
                 string url = Path.Combine(ETC.server, "Data", "Images", "SkillIcons", $"{modSkillName}.png");
-                string target = Path.Combine(ETC.cachePath, "Doll", "Skill", $"{modSkillName}.gfdcache");
+                string target = Path.Combine(ETC.cachePath, "Skill", $"{modSkillName}.gfdcache");
 
                 if (!File.Exists(target) || isRefresh)
                 {

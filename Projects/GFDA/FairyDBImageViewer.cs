@@ -148,7 +148,7 @@ namespace GFDA
 
                 string imageName = $"{fairy.DicNumber}_{imageNum}";
                 string imagePath = Path.Combine(ETC.cachePath, "Fairy", "Normal", $"{imageName}.gfdcache");
-                string url = Path.Combine(ETC.server, "Data", "Images", "Fairy", imageName + ".png");
+                string url = Path.Combine(ETC.server, "Data", "Images", "Fairy", "Normal", $"{imageName}.png");
 
                 if (!File.Exists(imagePath) || isRefresh)
                 {
