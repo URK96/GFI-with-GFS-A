@@ -1,10 +1,9 @@
-﻿# T-Doll DB Update 2020/12/27
+﻿# T-Doll DB Update 2021/02/01
 
-- Add Division Collaboration New T-Doll (Vector Agent, Gr HK416 Agent)
-- Add New T-Doll (SUB-2000)
-- Add New Collaboration Costumes (Vector Agent, Gr HK416 Agent, Vector, HK416)
-- Add New Costumes (G36C, SL8, SAF, Super-Shorty, TEC-9, VHS, R5, S-ACR, VSK-94, 4Type, M1895, HS2000, K5, PM1910, Type88)
-- Add 10th Mind Upgrade Info (PP-19, Galil, M1897)
+- Add New T-Doll (SVCh, FX-05, AR-57)
+- Add New Costumes (Saiga-12, M950A, UMP45, OBR, EVO 3, ACR, UKM-2000, Shipka)
+
+
 
 
 # Coalition DB Update 2020/11/14

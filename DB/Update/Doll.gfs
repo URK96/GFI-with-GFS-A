@@ -1521,7 +1521,7 @@
     <ModSkillEffect>이속 감소 지속시간;적군 디버프 감소치;사속 증가 지속시간;아군 버프 증가치;이속 지속시간</ModSkillEffect>
     <ModSkillMag>6초,30%,5초,10%,60초</ModSkillMag>
     <OnlyUseEquip>WML&amp;전술총몸덮개</OnlyUseEquip>
-    <Costume>당번 대표;"축제 시작이야!";집안일 테스트;솔새와 장미</Costume>
+    <Costume>당번 대표;"축제 시작이야!";집안일 테스트;솔새와 장미;눈꽃에 안 지는 모란</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Koga Aoi</VoiceActor>
@@ -2654,7 +2654,7 @@
     <SkillExplain>폭발한 위치의 2.5 반경 내의 적에게 피해를 준다</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
     <SkillMag>3초,16초,6배</SkillMag>
-    <Costume>백야의 별 이야기;EVO 3의 아침</Costume>
+    <Costume>백야의 별 이야기;EVO 3의 아침;첫 붉은 꽃</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Yamamoto Nozomi</VoiceActor>
@@ -3007,7 +3007,7 @@
     <ModSkillEffect>피해량</ModSkillEffect>
     <ModSkillMag>50</ModSkillMag>
     <OnlyUseEquip>추가 연산 모듈</OnlyUseEquip>
-    <Costume>"이번만 봐줄게";다이아몬드의 꽃;겨울 여행;깡총 요원;소원을 좇는 마술사</Costume>
+    <Costume>"이번만 봐줄게";다이아몬드의 꽃;겨울 여행;깡총 요원;소원을 좇는 마술사;고독한 여행인</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <ModVoices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</ModVoices>
@@ -3159,6 +3159,7 @@
     <SkillExplain>지속시간 동안 자신의 회피를 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;회피 증가치</SkillEffect>
     <SkillMag>6초,8초,5초,130%</SkillMag>
+    <Costume>새 시를 지을 때</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Itou Kanae</VoiceActor>
@@ -8649,7 +8650,7 @@
     <SkillExplain>점점 강해지는 추가 공격을 3회 때린다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;화력 변화율</SkillEffect>
     <SkillMag>8초,16초,1.5배 | 2.5배 | 3.5배</SkillMag>
-    <Costume>크림슨 코드라이버;노을의 재단사</Costume>
+    <Costume>크림슨 코드라이버;노을의 재단사;꽃무리 방문객</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Kanemoto Hisako</VoiceActor>
@@ -10752,6 +10753,7 @@
     <SkillExplain>지속시간 동안 자신의 사속과 명중을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치;명중 증가치</SkillEffect>
     <SkillMag>6초,8초,6초,45%,45%</SkillMag>
+    <Costume>봄을 알리는 우편부</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Tamegai Hana</VoiceActor>
@@ -11985,7 +11987,7 @@
     <SkillExplain>야간작전에서 지속시간동안 명중을 상승시킨다. 주간을 제외한 야간에서는 동시에 재장전 시간도 감소시킨다. 또한 발사중인 탄띠에 탄을 추가한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;야간 명중 증가치;주간 명중 증가치;야간 발사수 증가치;주간 발사수 증가치;재장전시간 감소치</SkillEffect>
     <SkillMag>8초,18초,8초,80%,40%,4발,2발,30%</SkillMag>
-    <Costume>퀘이사 스트림</Costume>
+    <Costume>퀘이사 스트림;설원 배달부</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Tamegai Hana</VoiceActor>
@@ -13214,6 +13216,7 @@
     <SkillExplain>&lt;액티브&gt; 자신의 사속이 증가하며 지속시간 동안 공격한 적의 화력을 3초간 감소시킨다. 디버프는 최대 5중첩.   &lt;패시브&gt; 디버프 효과를 받고 있는 적을 공격할 시 디버프가 하나일 경우 일정 수치, 2개 이상일 경우 5%씩 피해량이 중첩되어 증가한다. 디버프는 액티브를 포함한 모든 상태이상을 포함한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 상승치;화력 감소치;기본 피해량</SkillEffect>
     <SkillMag>6초,8초,5초,50%,20%,1.1배</SkillMag>
+    <Costume>은은한 란초향</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Ise Mariya</VoiceActor>
@@ -15546,5 +15549,119 @@
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>전략국토부 요원, 코드네임 416. 오늘부터 당신의 지휘를 따르겠습니다. 물론, 당신의 지휘 능력을 정말 믿어도 될지 지켜보겠어요.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>SVCh</Name>
+    <Name_EN>SVCh</Name_EN>
+    <CodeName>SVCh</CodeName>
+    <Nickname>SVCh</Nickname>
+    <Model>SVCh</Model>
+    <Country>Russia</Country>
+    <Type>RF</Type>
+    <Grade>5</Grade>
+    <ProductTime>287</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;S;C;S;B;S</AbilityGrade>
+    <Grow>131</Grow>
+    <HP>98</HP>
+    <FireRate>126</FireRate>
+    <Evasion>82</Evasion>
+    <Accuracy>136</Accuracy>
+    <AttackSpeed>100</AttackSpeed>
+    <MoveSpeed>7</MoveSpeed>
+    <Critical>40</Critical>
+    <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
+    <ConsumeFood>30/45/60/75/90</ConsumeFood>
+    <EffectFormation>0,0,1,0,0,1,0,2,1</EffectFormation>
+    <Effect>CL;18</Effect>
+    <EffectType>HG</EffectType>
+    <DropEvent>일반제조</DropEvent>
+    <DicNumber>329</DicNumber>
+    <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
+    <Skill>당분 반응</Skill>
+    <SkillExplain>&lt;패시브&gt; 공격 대상 변경 시 자신의 화력을 증가시킨다. 최대 4 중첩.     &lt;액티브&gt; 지속시간 동안 각 편제는 공격할 때마다 적에게 회피, 장갑, 보호막을 무시한 고정피해를 준다. 적이 2편제 이상일 경우 2배가 된다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;패시브 지속시간;액티브 지속시간;화력 증가치;액티브 고정피해량</SkillEffect>
+    <SkillMag>5초,8초,5초,5초,10%,150</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>Nagu</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>드디어 만났네, 지휘관. 후방의 적은 이 SVCh가 해치울게, 아무도 내 눈에서 도망칠 수 없어.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>AR-57</Name>
+    <Name_EN>AR-57</Name_EN>
+    <CodeName>AR57</CodeName>
+    <Nickname>AR-57</Nickname>
+    <Model>AR-57</Model>
+    <Country>United States of America</Country>
+    <Type>SMG</Type>
+    <Grade>4</Grade>
+    <ProductTime>136</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;B;A;A;A;B</AbilityGrade>
+    <Grow>108</Grow>
+    <HP>104</HP>
+    <FireRate>102</FireRate>
+    <Evasion>122</Evasion>
+    <Accuracy>116</Accuracy>
+    <AttackSpeed>118</AttackSpeed>
+    <MoveSpeed>12</MoveSpeed>
+    <Critical>5</Critical>
+    <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>1,0,0,1,2,0,1,1,0</EffectFormation>
+    <Effect>FR,EV;20,15</Effect>
+    <EffectType>SMG,AR</EffectType>
+    <DropEvent>일반제조</DropEvent>
+    <DicNumber>328</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
+    <Skill>복합개조</Skill>
+    <SkillExplain>스킬 발동 시, 자신의 버프칸 위에 유닛이 3개 이상 있을 경우 그들과 자신의 화력을 증가시킨다. 3개 미만일 경우 그들과 자신의 회피를 증가시킨다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;회피 증가치</SkillEffect>
+    <SkillMag>3초,3초,2초,15%,40%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>海凪コウ</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>전술인형 AR57이 입대를... 왜 그렇게 멀리 있어? 내가 무슨 짓이라도 할 것 같아...?</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>FX-05</Name>
+    <Name_EN>FX-05</Name_EN>
+    <CodeName>FX05</CodeName>
+    <Nickname>FX-05</Nickname>
+    <Model>FX-05 Xiuhcoatl</Model>
+    <Country>Mexico</Country>
+    <Type>AR</Type>
+    <Grade>4</Grade>
+    <ProductTime>220</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;A;A;S;B;A</AbilityGrade>
+    <Grow>123</Grow>
+    <HP>100</HP>
+    <FireRate>118</FireRate>
+    <Evasion>110</Evasion>
+    <Accuracy>128</Accuracy>
+    <AttackSpeed>102</AttackSpeed>
+    <MoveSpeed>10</MoveSpeed>
+    <Critical>20</Critical>
+    <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>0,0,0,0,2,1,0,0,1</EffectFormation>
+    <Effect>FR,AS;30,10</Effect>
+    <EffectType>SMG</EffectType>
+    <DropEvent>일반제조</DropEvent>
+    <DicNumber>330</DicNumber>
+    <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
+    <Skill>뱀무리 사냥</Skill>
+    <SkillExplain>자신의 화력을 증가시킨다. 지속시간 내에 화력 증가 버프 효과를 받을 때마다 자신의 사속을 스킬 종료 때까지 증가시킨다. 최대 8중첩</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;사속 증가치</SkillEffect>
+    <SkillMag>2초,16초,15초,40%,5%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>宫崎soul</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>시우코아틀, 그리폰&amp;크루거에서의 명령을 기대하고 있습니다! 그런데... 첫 지시 내용이 뭐였죠?</ProductDialog>
   </Doll>
 </NewDataSet>
