@@ -119,4 +119,43 @@
     <item>"잃고 나서야 소중함을 깨달지 마."</item>
     <item>"형체를 지닌 건 필멸하지만 형체 없는 의지는 불멸하다."</item>
   </string-array>
+
+  <string-array name="Story_Main_Memory_C124_TopTitle">
+    <item>C124 - 1</item>
+    <item>C124 - 2</item>
+    <item>C124 - 3</item>
+    <item>C124 - 4</item>
+    <item>C124 - 5</item>
+    <item>C124 - 6</item>
+    <item>C124 - 7</item>
+    <item>C124 - 8</item>
+    <item>C124 - 9</item>
+    <item>C124 - 10</item>
+  </string-array>
+
+  <string-array name="Story_Main_Memory_C124">
+    <item>로즈마리</item>
+    <item>후추</item>
+    <item>딸기잼</item>
+    <item>소금과 설탕</item>
+    <item>핫밀크</item>
+    <item>아이스 커피</item>
+    <item>단백질 과다</item>
+    <item>카페인 중독</item>
+    <item>간치기</item>
+    <item>짠 수박</item>
+  </string-array>
+
+  <string-array name="Story_Main_Memory_C124_Caption">
+    <item>"저 두 사람은 그리폰 종합근무팀의 자랑. 가끔 욕심쟁이가 둘이 합치면 더 강해지지 않을까 생각합니다."</item>
+    <item>"일상을 깨부술 수 있는 건 오직 돌발상황뿐 그리고 여태껏 없었던 변화도 가져오죠."</item>
+    <item>"약간 불똥만 있으면 초원을 불태울 수 있습니다 바람 방향만 맞다면요."</item>
+    <item>"뭐든지 마냥 마음대로 되지는 않는 법이죠 맛있는 조미료를 무작정 섞으면 오히려 이상한 맛이 나는 것처럼요."</item>
+    <item>"스프링필드 씨는 항상 친절합니다."</item>
+    <item>"G36 씨는 항상 꼼꼼하죠."</item>
+    <item>"가끔 너무 친절할 때가 있습니다."</item>
+    <item>"가끔 너무 꼼꼼할 때가 있죠."</item>
+    <item>"수박에 소금을 뿌려 먹은 적 있나요?"</item>
+    <item>"두 배로 맛있답니다."</item>
+  </string-array>
 </resources>

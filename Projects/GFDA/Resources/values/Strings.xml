@@ -18,6 +18,7 @@
   <string name="ComingSoon">Coming Soon...</string>
   <string name="Common_ServerMaintenance">Server is Maintenance...</string>
   <string name="FeatureTemporaryDisable">This feature is temporary disable.</string>
+  <string name="Common_Refresh">Refresh</string>
   
   <!--New - Shortcut String-->
   <string name="Shortcut_GFNotification_ShortLabel">GF Notification</string>

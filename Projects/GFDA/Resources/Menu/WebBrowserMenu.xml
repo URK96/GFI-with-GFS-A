@@ -13,6 +13,11 @@
     android:title="@string/Common_Next"
     local:showAsAction="ifRoom"/>
   <item
+    android:id="@+id/WebBrowserRefresh"
+    android:icon="@drawable/sync_icon"
+    android:title="@string/Common_Refresh"
+    local:showAsAction="ifRoom"/>
+  <item
     android:id="@+id/WebBrowserClose"
     android:icon="@drawable/close_icon"
     android:title="@string/Common_Close"

@@ -41,20 +41,6 @@ namespace GFDA
 
             SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.WebBrowserMainToolbar));
 
-            mainRefreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.WebBrowserMainRefreshLayout);
-            mainRefreshLayout.Refresh += delegate { web.Reload(); };
-            mainRefreshLayout.ViewTreeObserver.ScrollChanged += (sender, e) =>
-            {
-                if (web.ScrollY == 0)
-                {
-                    mainRefreshLayout.Enabled = true;
-                }
-                else
-                {
-                    mainRefreshLayout.Enabled = false;
-                }
-            };
-
             web = FindViewById<WebView>(Resource.Id.WebBrowser);
             webAddressEditText = FindViewById<EditText>(Resource.Id.WebBrowserAddressBar);
             webAddressEditText.EditorAction += (object sender, TextView.EditorActionEventArgs e) =>
@@ -83,7 +69,8 @@ namespace GFDA
             web.Settings.LoadsImagesAutomatically = true;
             web.Settings.DomStorageEnabled = true;
             web.Settings.SetAppCacheEnabled(false);
-            
+            web.Settings.UseWideViewPort = true;
+
             InitProcess();
         }
 
@@ -109,6 +96,9 @@ namespace GFDA
                     {
                         web.GoForward();
                     }
+                    break;
+                case Resource.Id.WebBrowserRefresh:
+                    web.LoadUrl(web.Url);
                     break;
                 case Resource.Id.WebBrowserClose:
                     Finish();
@@ -203,7 +193,7 @@ namespace GFDA
             {
                 base.OnPageFinished(view, url);
 
-                mainRefreshLayout.Refreshing = false;
+                //mainRefreshLayout.Refreshing = false;
             }
         }
     }

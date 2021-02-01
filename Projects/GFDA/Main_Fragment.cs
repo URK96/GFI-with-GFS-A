@@ -256,7 +256,7 @@ namespace GFDA
                     {
                         case 0:
                             var newsIntent = new Intent(Activity, typeof(WebBrowserActivity));
-                            newsIntent.PutExtra("url", "http://www.girlsfrontline.co.kr/archives/category/news");
+                            newsIntent.PutExtra("url", "https://www.girlsfrontline.co.kr/archives/category/news");
                             StartActivity(newsIntent);
                             Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                             break;

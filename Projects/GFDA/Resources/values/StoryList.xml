@@ -60,6 +60,7 @@
     <item>콜라보 이벤트</item>
     <item>이벤트</item>
     <item>2020 할로윈 이벤트</item>
+    <item>콜라보 이벤트</item>
   </string-array>
 
   <string-array name="Story_Main_Main">
@@ -104,6 +105,7 @@
     <item>몽중극</item>
     <item>이중난수</item>
     <item>고치 속 나비</item>
+    <item>현상금 축제</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Caption">
@@ -148,6 +150,7 @@
     <item>몽중극</item>
     <item>이중난수</item>
     <item>고치 속 나비</item>
+    <item>현상금 축제</item>
   </string-array>
 
   <string-array name="Story_Main_Sub_TopTitle">
@@ -217,17 +220,20 @@
     <item>추억회상</item>
     <item>추억회상</item>
     <item>추억회상</item>
+    <item>추억회상</item>
   </string-array>
 
   <string-array name="Story_Main_Memory">
     <item>눈부시게 될 거야!</item>
     <item>주말의 카드 테이블</item>
     <item>별 쫓기 작전</item>
+    <item>너의 미소</item>
   </string-array>
 
   <string-array name="Story_Main_Memory_Caption">
     <item>C121</item>
     <item>C122</item>
     <item>C123</item>
+    <item>C124</item>
   </string-array>
 </resources>

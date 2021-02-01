@@ -54,6 +54,7 @@ namespace GFDA
                 38 => (Story_Main_Main_Event_DreamDrama_TopTitle, Story_Main_Main_Event_DreamDrama, Story_Main_Main_Event_DreamDrama_Caption),
                 39 => (Story_Main_Main_Event_DualRandomness_TopTitle, Story_Main_Main_Event_DualRandomness, Story_Main_Main_Event_DualRandomness_Caption),
                 40 => (Story_Main_Main_Event_2020Halloween_TopTitle, Story_Main_Main_Event_2020Halloween, Story_Main_Main_Event_2020Halloween_Caption),
+                41 => (Story_Main_Main_Event_BountyFeast_TopTitle, Story_Main_Main_Event_BountyFeast, Story_Main_Main_Event_BountyFeast_Caption),
                 _ => (0, 0, 0),
             };
         }
@@ -91,6 +92,7 @@ namespace GFDA
                 0 => (Story_Main_Memory_C121_TopTitle, Story_Main_Memory_C121, Story_Main_Memory_C121_Caption),
                 1 => (Story_Main_Memory_C122_TopTitle, Story_Main_Memory_C122, Story_Main_Memory_C122_Caption),
                 2 => (Story_Main_Memory_C123_TopTitle, Story_Main_Memory_C123, Story_Main_Memory_C123_Caption),
+                3 => (Story_Main_Memory_C124_TopTitle, Story_Main_Memory_C124, Story_Main_Memory_C124_Caption),
                 _ => (0, 0, 0),
             };
         }
@@ -216,6 +218,9 @@ namespace GFDA
                     case 40:
                         category = "2020Halloween";
                         break;
+                    case 41:
+                        category = "BountyFeast";
+                        break;
                     default:
                         return;
                 }
@@ -294,6 +299,9 @@ namespace GFDA
                         break;
                     case 2:
                         category = "C123";
+                        break;
+                    case 3:
+                        category = "C124";
                         break;
                     default:
                         return;

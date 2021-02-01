@@ -16,6 +16,7 @@
   <string name="Common_Remote">원격</string>
   <string name="Common_CloseIn">근접</string>
   <string name="TitleName_AreaExpCalc">지역별 경험치 계산</string>
+  <string name="Common_Refresh">새로고침</string>
   
   <string name="ComingSoon">Coming Soon...</string>
   <string name="Common_ServerMaintenance">서버 점검 중 입니다.</string>
