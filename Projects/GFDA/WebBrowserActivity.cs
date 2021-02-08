@@ -69,7 +69,7 @@ namespace GFDA
             web.Settings.LoadsImagesAutomatically = true;
             web.Settings.DomStorageEnabled = true;
             web.Settings.SetAppCacheEnabled(false);
-            web.Settings.UseWideViewPort = true;
+            web.Settings.UseWideViewPort = Intent.GetBooleanExtra("Wide", false);
 
             InitProcess();
         }

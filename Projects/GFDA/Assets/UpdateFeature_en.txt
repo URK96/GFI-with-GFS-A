@@ -1,14 +1,5 @@
-<2.7.5 Update>
-
-- Fix story issue
-
-
-
-<2.7.4 Update>
+<2.7.6 Update>
 
 - Add new story content
-- Add new cartoon content
-- Add cache restore feature
-- Fix MOD SG T-Doll ability issue
-- Fix over 3 formation buff issue
-- Fix FST circuit calc issue
+- Add new memory story content
+- Fix web URL issue

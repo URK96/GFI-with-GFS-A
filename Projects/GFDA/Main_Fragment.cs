@@ -257,6 +257,7 @@ namespace GFDA
                         case 0:
                             var newsIntent = new Intent(Activity, typeof(WebBrowserActivity));
                             newsIntent.PutExtra("url", "https://www.girlsfrontline.co.kr/archives/category/news");
+                            newsIntent.PutExtra("Wide", true);
                             StartActivity(newsIntent);
                             Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                             break;
@@ -291,7 +292,8 @@ namespace GFDA
                             break;
                         case 7:
                             var sdIntent = new Intent(Activity, typeof(WebBrowserActivity));
-                            sdIntent.PutExtra("url", "http://urk96.github.io/gfd-sd-simulator");
+                            sdIntent.PutExtra("url", "https://urk96.github.io/gfd-sd-simulator");
+                            sdIntent.PutExtra("Wide", false);
                             StartActivity(sdIntent);
                             Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                             break;

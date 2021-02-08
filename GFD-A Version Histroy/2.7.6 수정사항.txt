@@ -1,0 +1,11 @@
+<2.7.6 Update>
+
+- 신규 스토리 추가 (현상금 축제)
+- 신규 추억회상 스토리 추가
+- 일부 웹페이지가 작동하지 않는 문제 수정
+
+<2.7.6 Update>
+
+- Add new story content
+- Add new memory story content
+- Fix web URL issue
