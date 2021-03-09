@@ -1,12 +1,11 @@
 ﻿# T-Doll DB Update 2021/02/01
 
-- Add New T-Doll (SVCh, FX-05, AR-57)
-- Add New Costumes (Saiga-12, M950A, UMP45, OBR, EVO 3, ACR, UKM-2000, Shipka)
+- Add New T-Doll (VP1915, Savage 99, Kolibri, Derringer, Fedorov)
+- Add Mind Upgrade Info (Type56R, Welrodㅆ MK II, F1, Type80)
+- Add New Costumes (Type56R, Lewis, QBU-88, Type92, KSVK, Colt Defender, SVD, AUG Para)
 
 
-
-
-# Coalition DB Update 2020/11/14
+# Coalition DB Update 2021/03/10
 
 - Add new Coalition units
 - Add new Coalition boss unit

@@ -1127,4 +1127,196 @@
     <HasCensor>false</HasCensor>
     <UnitExplain>폭발 유닛을 생산하는 이동식 철혈 공장. 자폭 기능을 가진 골리앗을 끊임없이 생산한다. 전장에 오래 있을수록 큰 위협이 된다.</UnitExplain>
   </Coalition>
+  <Coalition>
+    <Name>저지</Name>
+    <CodeName>Justice</CodeName>
+    <Type>HeavyArmor;Doll;Remote</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>true</IsBoss>
+    <BornGrade>3</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
+    <Effect1>FR,AS,CR,AM</Effect1>
+    <EffectMag1>6,6,6,6;10,10,10,10;10,10,10,10;10,10,10,10</EffectMag1>
+    <EffectType1>All</EffectType1>
+    <DicNumber>35</DicNumber>
+    <Skill1>재판 선고</Skill1>
+    <SkillExplain1>체력이 가장 높은 적을 향해 발차기를 날려, 목표를 중심으로 1범위 안에 4번에 걸쳐 피해를 준다 (필중, 장갑 무시, 치명타 불가, 편제당 피해 분산). 동시에 목표를 중심으로 4 범위 안에 일정 시간 동안 장판을 생성해, 안에 있는 적의 화력과 사속을 감소시키고 받는 피해량을 증폭시킨다. 그리고 도발 효과를 가진 방어막을 펼친다. 방어막은 저지의 최대 체력에 비례하여 체력을 가지고, 모든 피해를 고정으로 1만 받는다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;발차기 피해량;장판 지속시간;화력 감소치;사속 감소치;피해량 증폭치;방어막 체력 비율;방어막 지속시간</SkillEffect1>
+    <SkillMag1>6초,12초,12배,5초,10%,30%,10%,4%,3초</SkillMag1>
+    <FASkillMag1>6초,12초,16배,5초,10%,30%,10%,5%,4초</FASkillMag1>
+    <Skill2>개별 조정</Skill2>
+    <SkillExplain2>거리 1칸 이내에 있는 아군 제대를 선택해 발동한다. 해당 제대는 전투 개시 후 보호막을 얻고, 장갑을 지닌 유닛은 장갑이 증가하며, 장갑이 없는 유닛은 회피가 증가한다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;지속시간;보호막 생성량;장갑 증가치;회피 증가치</SkillEffect2>
+    <SkillMag2>0턴,2턴,10초,70,30%,30%</SkillMag2>
+    <Skill3>법리</Skill3>
+    <SkillExplain3>저지는 일반 공격마다 두 적에게 각각 0.5배 피해를 준다. 일반 공격 8번마다 추가로 자신 주위 3 범위 안의 적에게 저지의 현재 장갑 수치의 일정 수치만큼의 편제당 피해를 주고 (필중, 장갑 무시), 자신에게 보호막을 생성한다.</SkillExplain3>
+    <SkillEffect3>선 쿨타임;쿨타임;장갑 비례 피해량;보호막 생성량;보호막 지속시간</SkillEffect3>
+    <SkillMag3>0초,0초,40배,50,5초</SkillMag3>
+    <Skill4>규범</Skill4>
+    <SkillExplain4>저지가 존재하는 동안, 최전열/중간열/최후열에 위치한 인형 유닛에게 각각 장갑 증가/명중 증가/화력 증가 효과를 준다.</SkillExplain4>
+    <SkillEffect4>선 쿨타임;쿨타임;장갑 증가치;명중 증가치;화력 증가치</SkillEffect4>
+    <SkillMag4>0초,0초,10,40,10%</SkillMag4>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+    <UnitExplain>지휘 능력에 편중되어 철혈 본부의 방어 및 보안 시스템을 담당한다. 나비 사건 이후 제작되어 오직 엘리사의 명령만 따르는 호위 무사 같은 인형이다. 엄숙하고 융통성이 없는 성격으로 군인 같은 위엄과 패기를 보여준다. 하지만 몸집이 작아 얕보이기 쉬워 이걸 가지고 놀리는 건 적이든 아군이든 상관없이 철저하게 응징한다. 엘리사에겐 절대복종하며 성격이 다른 드리머를 상대론 골머리가 아프다.</UnitExplain>
+  </Coalition>
+  <Coalition>
+    <Name>에이전트</Name>
+    <CodeName>Agent</CodeName>
+    <Type>LightArmor;Doll;Remote</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>true</IsBoss>
+    <BornGrade>3</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
+    <Effect1>FR,AC,EV</Effect1>
+    <EffectMag1>10,10,10;15,15,15;15,15,15;15,15,15</EffectMag1>
+    <EffectType1>All</EffectType1>
+    <DicNumber>45</DicNumber>
+    <Skill1>혈광영사</Skill1>
+    <SkillExplain1>아군 제대 최전열 고정 위치에 더미 분신을 3개 소환한다. 분신은 에이전트 본체의 패시브를 지니고, 본체의 10% 최대 체력과 일정 비율의 화력, 사속, 명중, 회피를 이어받고 장갑 수치 10을 부여받는다. 나머지 능력치는 본체와 동일하다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;화력 계승치;사속 계승치;명중 계승치;회피 계승치;더미 유지시간</SkillEffect1>
+    <SkillMag1>3초,24초,50%,80%,60%,20%,15초</SkillMag1>
+    <FASkillMag1>3초,24초,60%,90%,80%,20%,16초</FASkillMag1>
+    <Skill2>액운침습</Skill2>
+    <SkillExplain2>&lt;패시브&gt; 중장비 또는 혼합세력의 화력지원을 받는 상태에서 전투할 경우, 적과 접촉 후 모든 아군 인형 유닛의 치명타율을 증가시키고, 원거리 유닛의 사거리를 1 증가시킨다.     &lt;액티브&gt; 자신 제대를 일정 거리 이내의 헬리포트로 이동할 수 있지만, 2턴 동안 제대 전체의 화력, 명중, 회피, 장갑이 감소한다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;패시브 치명타율 증가치;액티브 제한거리;능력 감소치</SkillEffect2>
+    <SkillMag2>0턴,5턴,15%,무제한,60%</SkillMag2>
+    <Skill3>안하무인</Skill3>
+    <SkillExplain3>에이전트의 1회 공격은 0.25배 화력을 지닌 기관총 4자루의 1차례 사격으로 이루어진다. 5차례 공격 후 추가로 목표를 1초간 기절시키고, 받는 피해량을 증폭시킨다.</SkillExplain3>
+    <SkillEffect3>선 쿨타임;쿨타임;지속시간;피해 증폭량</SkillEffect3>
+    <SkillMag3>0초,0초,5초,10%</SkillMag3>
+    <Skill4>징계</Skill4>
+    <SkillExplain4>전투 중 아군 유닛(증원 유닛 포함)이 사망할 때, 자신의 화력을 증가시킨다. 최대 3회 중첩</SkillExplain4>
+    <SkillEffect4>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect4>
+    <SkillMag4>0초,0초,5초,10%</SkillMag4>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+    <UnitExplain>엘리사와 부하 철혈 사이의 소통 및 후방 관리를 맡고 있다. 전투와 지휘 모두 만능으로 모든 철혈 병력을 통제하는 높은 지위에 있는 인형이다. 침착하고 냉정하며 일 처리가 착실하다. 누구에게나 공손한 말투를 취하지만 존중심은 오직 자신의 주인을 향하며 다른 이들에게는 매우 악랄하게 대한다 특히 그리폰을 매우 업신여긴다.</UnitExplain>
+  </Coalition>
+  <Coalition>
+    <Name>아델린</Name>
+    <CodeName>Nyto_black</CodeName>
+    <Type>LightArmor;Doll;Remote</Type>
+    <Affiliation>Paradeus</Affiliation>
+    <IsBoss>true</IsBoss>
+    <BornGrade>3</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <EffectFormation>1,1,1,1,1,1,1,1,1</EffectFormation>
+    <Effect1>AS</Effect1>
+    <EffectMag1>12;20;20;20</EffectMag1>
+    <EffectType1>All</EffectType1>
+    <Effect2>FR,AC</Effect2>
+    <EffectMag2>6,6;10,10;10,10;10,10</EffectMag2>
+    <EffectType2>Doll</EffectType2>
+    <DicNumber>50</DicNumber>
+    <Skill1>에피타프</Skill1>
+    <SkillExplain1>&lt;패시브&gt; 아델린이 주는 피해는 목표의 각 편제가 분할해 받는다. 적 유닛에게 검정 표식과 하양 표식이 동시에 존재할 경우 표식을 기폭하여(흑백 표식은 사라짐), 장갑을 무시하고 폭발 피해를 준다.     &lt;액티브&gt; 지속시간 동안, 적 유닛의 검은 표식은 패시브로 사라지지 않으며, 적 전체의 명중과 회피를 감소시킨다. 그리고 지속시간 동안 적의 단일 편제 유닛을 우선 공격하여 1초마다 필중으로 피해를 준다. (적 장갑 계산, 치명타 가능)</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;패시브 폭발 피해량;액티브 지속시간;명중 감소치;회피 감소치;액티브 피해량</SkillEffect1>
+    <SkillMag1>6초,16초,2배,6초,30%,30%,2.5배</SkillMag1>
+    <FASkillMag1>6초,16초,2배,6초,30%,30%,3배</FASkillMag1>
+    <Skill2>강림의 비문</Skill2>
+    <SkillExplain2>범위 2칸 이내의 아군 제대에게 지원사격을 제공한다. 일정 간격마다 검정 표식이 없는 적을 우선 선택하여 필중으로 폭발 피해를 주고 검정 표식을 부여한다 (장갑 무시). 표식은 3초간 지속.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;발동 간격;폭발 피해량</SkillEffect2>
+    <SkillMag2>0초,2초,2초,1배</SkillMag2>
+    <Skill3>고요한 잠</Skill3>
+    <SkillExplain3>공격이 빗나갈 때마다 아델린은 목표에게 검정 표식을 부여하고 자신의 화력을 증가시킨다. 지속시간 3초.</SkillExplain3>
+    <SkillEffect3>선 쿨타임;쿨타임;화력 증가치</SkillEffect3>
+    <SkillMag3>0초,0초,20%</SkillMag3>
+    <Skill4>사망선고</Skill4>
+    <SkillExplain4>아델린이 존재하는 동안, 아군 모든 유닛이 검정/하양 표식을 가진 적에게 주는 피해가 증가한다.</SkillExplain4>
+    <SkillEffect4>선 쿨타임;쿨타임;피해 증가치</SkillEffect4>
+    <SkillMag4>0초,0초,10%</SkillMag4>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+    <UnitExplain>패러데우스의 "니토" 중 하나 고위력 소총형 무기로 싸운다. 폭발과 함께 춤추며 파도같은 공세로 적진을 무너뜨린다. 양산 모델로서 자신의 감정을 억누르는 것에 익숙하며 음산한 겉보기 안에 과연 인간의 감정이 있는지는 알 수가 없다.</UnitExplain>
+  </Coalition>
+  <Coalition>
+    <Name>스트라이커SWAP</Name>
+    <CodeName>Striker_SWAP</CodeName>
+    <Type>LightArmor;Doll;Remote</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>false</IsBoss>
+    <BornGrade>2</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>59</DicNumber>
+    <Skill1>초전박살</Skill1>
+    <SkillExplain1>전투 개시 후 공격마다 추가 피해를 준다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;지속시간;추가 피해량</SkillEffect1>
+    <SkillMag1>0초,0초,5초,80%</SkillMag1>
+    <Skill2>집중분쇄</Skill2>
+    <SkillExplain2>4번 공격 마다 장갑을 지닌 적에게 추가로 자신의 관통 수치에서 상대 장갑 수치를 뺀 차의 일정 수치 만큼의 편제당 피해를 준다. 최소 1의 피해를 줄 수 있다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;피해량</SkillEffect2>
+    <SkillMag2>0초,0초,2.5배</SkillMag2>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+    <UnitExplain>강화된 스트라이커 기관총이 개량된 동시에 본체도 장갑을 덧씌웠다. 화력과 제압력 모두 상승했다.</UnitExplain>
+  </Coalition>
+  <Coalition>
+    <Name>이지스SWAP</Name>
+    <CodeName>Aegis_SWAP</CodeName>
+    <Type>HeavyArmor;Doll;CloseIn</Type>
+    <Affiliation>S.F.</Affiliation>
+    <IsBoss>false</IsBoss>
+    <BornGrade>2</BornGrade>
+    <Grow>0</Grow>
+    <HP>0</HP>
+    <FireRate>0</FireRate>
+    <Evasion>0</Evasion>
+    <Accuracy>0</Accuracy>
+    <AttackSpeed>0</AttackSpeed>
+    <MoveSpeed>0</MoveSpeed>
+    <Critical>0</Critical>
+    <Bullet>0</Bullet>
+    <Armor>0</Armor>
+    <DicNumber>60</DicNumber>
+    <Skill1>신성한 방패</Skill1>
+    <SkillExplain1>자신에게 보호막을 생성한다.</SkillExplain1>
+    <SkillEffect1>선 쿨타임;쿨타임;지속시간;보호막 생성량</SkillEffect1>
+    <SkillMag1>4초,6초,5초,40</SkillMag1>
+    <Skill2>역장집결</Skill2>
+    <SkillExplain2>자신의 편제수가 많을수록 피해를 덜 받는다. 편제마다 피해량을 감소시킨다. 동시에 보호막이 존재할 경우, 보호막 수치보다 큰 피해를 받지 않는다.</SkillExplain2>
+    <SkillEffect2>선 쿨타임;쿨타임;피해 감소량</SkillEffect2>
+    <SkillMag2>0초,1초,6%</SkillMag2>
+    <HasVoice>false</HasVoice>
+    <HasCensor>false</HasCensor>
+    <UnitExplain>이지스의 철혈 강화판 방패와 본체 장갑이 더욱 두꺼워졌으며 근접전 능력도 대폭 상승했다.</UnitExplain>
+  </Coalition>
 </NewDataSet>
