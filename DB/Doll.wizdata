@@ -9412,7 +9412,7 @@
     <AttackSpeed>115;115</AttackSpeed>
     <MoveSpeed>4</MoveSpeed>
     <Critical>5</Critical>
-    <Bullet>10</Bullet>
+    <Bullet>10;10;10;10</Bullet>
     <ConsumeAmmo>40/65/90/115/140</ConsumeAmmo>
     <ConsumeFood>30/45/60/75/90</ConsumeFood>
     <EffectFormation>0,0,1,0,0,1,2,0,0</EffectFormation>

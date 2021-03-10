@@ -1,5 +1,4 @@
-<2.7.6 Update>
+<2.7.7 Update>
 
-- Add new story content
-- Add new memory story content
+- Fix image issue in Product Simulator result
 - Fix web URL issue

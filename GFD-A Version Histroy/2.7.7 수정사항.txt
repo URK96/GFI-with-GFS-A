@@ -1,0 +1,9 @@
+<2.7.7 Update>
+
+- 제조 시뮬레이터 결과에서 설정에 관계없이 이미지가 나오는 현상 수정
+- 일부 웹페이지가 작동하지 않는 문제 수정
+
+<2.7.7 Update>
+
+- Fix image issue in Product Simulator result
+- Fix web URL issue

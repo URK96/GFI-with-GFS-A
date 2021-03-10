@@ -15,6 +15,8 @@ using System.Data;
 using System.IO;
 using System.Net;
 
+using Xamarin.Essentials;
+
 namespace GFDA
 {
     [Activity(Label = "ProductResultActivity", Theme = "@style/GFS.Toolbar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -212,14 +214,22 @@ namespace GFDA
                         break;
                 }
 
-                if (!File.Exists(filePath))
+                if (Preferences.Get("DBListImageShow", false))
                 {
-                    using (var wc = new WebClient())
+                    if (!File.Exists(filePath))
                     {
-                        wc.DownloadFile(url, filePath);
+                        using (var wc = new WebClient())
+                        {
+                            wc.DownloadFile(url, filePath);
+                        }
                     }
+
+                    vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(filePath));
                 }
-                vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(filePath));
+                else
+                {
+                    vh.SmallImage.Visibility = ViewStates.Gone;
+                }
 
                 int gradeIconId = 0;
                 if ((type == "Doll") || (type == "Equip"))
