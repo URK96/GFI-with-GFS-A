@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Story_Main_Main_Event_MirrorStage_TopTitle">
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+    <item>거울단계 : Chapter 1</item>
+
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+    <item>거울단계 : Chapter 2</item>
+
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+    <item>거울단계 : Chapter 3</item>
+
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+    <item>거울단계 : Chapter 4</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_MirrorStage">
+    <item>알리바이</item>
+    <item>화살 패러독스 Ⅰ</item>
+    <item>화살 패러독스 Ⅱ</item>
+    <item>토리첼리 트럼펫 Ⅰ</item>
+    <item>토리첼리 트럼펫 Ⅱ</item>
+    <item>토리첼리 트럼펫 Ⅲ</item>
+    <item>미네르바의 부엉이</item>
+    <item>셀레네의 꿈</item>
+    <item>뱀과 엮어Ⅰ</item>
+    <item>뱀과 엮어 Ⅱ</item>
+    <item>아파테의 탄생 Ⅰ</item>
+    <item>아파테의 탄생 Ⅱ</item>
+    <item>헤메라가 이끄는 빛 Ⅰ</item>
+    <item>헤메라가 이끄는 빛 Ⅲ</item>
+    <item>환수의 어깨 Ⅰ</item>
+    <item>환수의 어깨 Ⅱ</item>
+    <item>환수의 어깨 Ⅲ</item>
+    <item>오는 자의 길</item>
+    <item>생존 가이드</item>
+    <item>잠복</item>
+    <item>AM 10:00</item>
+    <item>PM 08:03</item>
+    <item>PM 10:00</item>
+    <item>PM 04:35</item>
+
+    <item>테세우스의 배 Ⅰ</item>
+    <item>테세우스의 배 Ⅱ</item>
+    <item>테세우스의 배 Ⅲ</item>
+    <item>아리아드네의 실타래 Ⅰ</item>
+    <item>아리아드네의 실타래 Ⅲ</item>
+    <item>크레타 미궁 Ⅰ</item>
+    <item>크레타 미궁 Ⅱ</item>
+    <item>크레타 미궁 Ⅲ</item>
+    <item>디아 섬의 꿈 Ⅰ</item>
+    <item>디아 섬의 꿈 Ⅱ</item>
+    <item>디아 섬의 꿈 Ⅲ</item>
+    <item>디아 섬의 꿈 Ⅳ</item>
+    <item>공과 꽃병</item>
+    <item>거짓말쟁이 역설</item>
+    <item>헤라클레이토스의 강 Ⅰ</item>
+    <item>헤라클레이토스의 강 Ⅱ</item>
+    <item>헤라클레이토스의 강 Ⅲ</item>
+    <item>쌀알 소리 Ⅰ</item>
+    <item>쌀알 소리 Ⅱ</item>
+    <item>쌀알 소리 Ⅲ</item>
+    <item>죄수의 딜레마 Ⅰ</item>
+    <item>죄수의 딜레마 Ⅲ</item>
+    <item>은밀한 마음</item>
+    <item>비친 모습</item>
+    <item>균열</item>
+    <item>밤 축제</item>
+    <item>섬광</item>
+    <item>AM 10:00</item>
+    <item>PM 06:03</item>
+    <item>PM 11:07</item>
+
+    <item>크라틸루스의 강 Ⅰ</item>
+    <item>크라틸루스의 강 Ⅲ</item>
+    <item>아킬레우스와 거북 Ⅰ</item>
+    <item>아킬레우스와 거북 Ⅲ</item>
+    <item>제논의 동그라미</item>
+    <item>모이라이를 향한 반역 Ⅰ</item>
+    <item>모이라이를 향한 반역 Ⅲ</item>
+    <item>클로토의 실 Ⅰ</item>
+    <item>클로토의 실 Ⅱ</item>
+    <item>클로토의 실 Ⅲ</item>
+    <item>라케시스의 자 Ⅰ</item>
+    <item>라케시스의 자 Ⅱ</item>
+    <item>라케시스의 자 Ⅲ</item>
+    <item>아트로포스의 가위 Ⅰ</item>
+    <item>아트로포스의 가위 Ⅱ</item>
+    <item>아트로포스의 가위 Ⅲ</item>
+    <item>AM 10:00</item>
+    <item>PM 03:03</item>
+    <item>PM 11:01</item>
+
+    <item>슈레딩거의 고양이</item>
+    <item>판도라 상자 Ⅰ</item>
+    <item>판도라 상자 Ⅲ</item>
+    <item>통속의 뇌 Ⅰ</item>
+    <item>통속의 뇌 Ⅲ</item>
+    <item>뫼비우스 고리</item>
+    <item>닉스의 밤 Ⅰ</item>
+    <item>닉스의 밤 Ⅱ</item>
+    <item>닉스의 밤 Ⅳ</item>
+    <item>히프노스의 눈 Ⅰ</item>
+    <item>히프노스의 눈 Ⅲ</item>
+    <item>타나토스의 키스 Ⅰ</item>
+    <item>타나토스의 키스 Ⅲ</item>
+    <item>무저갱 카오스 Ⅰ</item>
+    <item>무저갱 카오스 Ⅱ</item>
+    <item>무저갱 카오스 Ⅲ</item>
+    <item>추억</item>
+    <item>AM 08:06</item>
+    <item>AM 11:05</item>
+    <item>PM 06:09</item>
+    <item>PM 11:01</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_MirrorStage_Caption">
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>서브</item>
+    <item>서브</item>
+    <item>서브</item>
+    <item>뉴스</item>
+    <item>뉴스</item>
+    <item>뉴스</item>
+    <item>뉴스</item>
+
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>서브</item>
+    <item>서브</item>
+    <item>서브</item>
+    <item>서브</item>
+    <item>서브</item>
+    <item>뉴스</item>
+    <item>뉴스</item>
+    <item>뉴스</item>
+
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>뉴스</item>
+    <item>뉴스</item>
+    <item>뉴스</item>
+
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 안젤리아</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>메인 - 지휘관</item>
+    <item>서브</item>
+    <item>뉴스</item>
+    <item>뉴스</item>
+    <item>뉴스</item>
+    <item>뉴스</item>
+  </string-array>
+</resources>

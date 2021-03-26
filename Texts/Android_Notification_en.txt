@@ -11,10 +11,10 @@
 - Add new Coalition boss unit
 
 
-# Equip DB Update 2020/08/30
+# Equip DB Update 2021/03/10
 
 - Add new equipment
-- Add 9th MOD T-Doll equipment
+- Add 10th, 11th MOD T-Doll equipment
 
 
 # Fairy DB Update 2020/08/30

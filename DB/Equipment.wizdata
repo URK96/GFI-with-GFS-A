@@ -336,7 +336,7 @@
     <Name>M61철갑탄</Name>
     <Id>17</Id>
     <Type>철갑탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>2</Grade>
     <Ability>관통</Ability>
     <InitialMagnification>+25~35</InitialMagnification>
@@ -352,7 +352,7 @@
     <Name>M993철갑탄</Name>
     <Id>18</Id>
     <Type>철갑탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>3</Grade>
     <Ability>관통</Ability>
     <InitialMagnification>+40~50</InitialMagnification>
@@ -368,7 +368,7 @@
     <Name>Mk169철갑탄</Name>
     <Id>19</Id>
     <Type>철갑탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>4</Grade>
     <Ability>관통</Ability>
     <InitialMagnification>+55~65</InitialMagnification>
@@ -384,7 +384,7 @@
     <Name>Mk211고폭철갑탄</Name>
     <Id>20</Id>
     <Type>철갑탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>5</Grade>
     <Ability>관통</Ability>
     <InitialMagnification>+70~80</InitialMagnification>
@@ -400,7 +400,7 @@
     <Name>16Lab 차구경철갑탄</Name>
     <Id>50</Id>
     <Type>철갑탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>5</Grade>
     <Ability>관통</Ability>
     <InitialMagnification>+80</InitialMagnification>
@@ -416,7 +416,7 @@
     <Name>FMJ 고속탄</Name>
     <Id>29</Id>
     <Type>고속탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>2</Grade>
     <Ability>화력</Ability>
     <InitialMagnification>+2</InitialMagnification>
@@ -430,7 +430,7 @@
     <Name>JSP 고속탄</Name>
     <Id>30</Id>
     <Type>고속탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>3</Grade>
     <Ability>화력</Ability>
     <InitialMagnification>+3~4</InitialMagnification>
@@ -444,7 +444,7 @@
     <Name>JHP 고속탄</Name>
     <Id>31</Id>
     <Type>고속탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>4</Grade>
     <Ability>화력</Ability>
     <InitialMagnification>+5~7</InitialMagnification>
@@ -458,7 +458,7 @@
     <Name>APCR 고속탄</Name>
     <Id>32</Id>
     <Type>고속탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>5</Grade>
     <Ability>화력</Ability>
     <InitialMagnification>+8~12</InitialMagnification>
@@ -472,7 +472,7 @@
     <Name>ILM HP탄 (2)</Name>
     <Id>69</Id>
     <Type>특수탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>2</Grade>
     <Ability>화력;관통</Ability>
     <InitialMagnification>+1;-1</InitialMagnification>
@@ -486,7 +486,7 @@
     <Name>ILM HP탄 (3)</Name>
     <Id>70</Id>
     <Type>특수탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>3</Grade>
     <Ability>화력;관통</Ability>
     <InitialMagnification>+2~3;-3~2</InitialMagnification>
@@ -500,7 +500,7 @@
     <Name>ILM HP탄 (4)</Name>
     <Id>71</Id>
     <Type>특수탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>4</Grade>
     <Ability>화력;관통</Ability>
     <InitialMagnification>+4~6;-6~4</InitialMagnification>
@@ -514,7 +514,7 @@
     <Name>ILM HP탄 (5)</Name>
     <Id>72</Id>
     <Type>특수탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>5</Grade>
     <Ability>화력;관통</Ability>
     <InitialMagnification>+7~10;-10~7</InitialMagnification>
@@ -528,7 +528,7 @@
     <Name>#1벅 샷</Name>
     <Id>73</Id>
     <Type>벅샷</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>2</Grade>
     <Ability>화력;치명피해</Ability>
     <InitialMagnification>+1;+3~4</InitialMagnification>
@@ -542,7 +542,7 @@
     <Name>#0벅 샷</Name>
     <Id>74</Id>
     <Type>벅샷</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>3</Grade>
     <Ability>화력;치명피해</Ability>
     <InitialMagnification>+2~3;+5~6</InitialMagnification>
@@ -556,7 +556,7 @@
     <Name>#00벅 샷</Name>
     <Id>75</Id>
     <Type>벅샷</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>4</Grade>
     <Ability>화력;치명피해</Ability>
     <InitialMagnification>+4~6;+7~9</InitialMagnification>
@@ -570,7 +570,7 @@
     <Name>#000벅 샷</Name>
     <Id>76</Id>
     <Type>벅샷</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>5</Grade>
     <Ability>화력;치명피해</Ability>
     <InitialMagnification>+7~10;+10~15</InitialMagnification>
@@ -584,7 +584,7 @@
     <Name>16Lab벅 샷</Name>
     <Id>82</Id>
     <Type>벅샷</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>5</Grade>
     <Ability>화력;치명피해</Ability>
     <InitialMagnification>+10;+15</InitialMagnification>
@@ -599,7 +599,7 @@
     <Name>BK 슬러그탄</Name>
     <Id>77</Id>
     <Type>슬러그</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>2</Grade>
     <Ability>명중</Ability>
     <InitialMagnification>+1~2</InitialMagnification>
@@ -614,7 +614,7 @@
     <Name>FST 슬러그탄</Name>
     <Id>78</Id>
     <Type>슬러그</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>3</Grade>
     <Ability>명중</Ability>
     <InitialMagnification>+3~4</InitialMagnification>
@@ -629,7 +629,7 @@
     <Name>WAD 슬러그탄</Name>
     <Id>79</Id>
     <Type>슬러그</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>4</Grade>
     <Ability>명중</Ability>
     <InitialMagnification>+5~7</InitialMagnification>
@@ -644,7 +644,7 @@
     <Name>SABOT 슬러그탄</Name>
     <Id>80</Id>
     <Type>슬러그</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>5</Grade>
     <Ability>명중</Ability>
     <InitialMagnification>+8~12</InitialMagnification>
@@ -919,7 +919,7 @@
     <Name>사격경기용 철갑탄</Name>
     <Id>59</Id>
     <Type>철갑탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>0</Grade>
     <Ability>관통;사속</Ability>
     <InitialMagnification>+75~85;+1~8</InitialMagnification>
@@ -949,7 +949,7 @@
     <Name>.300BLK고속탄</Name>
     <Id>60</Id>
     <Type>고속탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>0</Grade>
     <Ability>화력;명중</Ability>
     <InitialMagnification>+12~16;-5~1</InitialMagnification>
@@ -1189,7 +1189,7 @@
     <Name>XM261 탄약</Name>
     <Id>101</Id>
     <Type>특수탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>0</Grade>
     <Ability>화력;관통</Ability>
     <InitialMagnification>+8~11;-7~10</InitialMagnification>
@@ -1234,7 +1234,7 @@
     <Name>16Lab HP탄</Name>
     <Id>95</Id>
     <Type>특수탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>5</Grade>
     <Ability>화력;관통</Ability>
     <InitialMagnification>+10;-7</InitialMagnification>
@@ -1264,7 +1264,7 @@
     <Name>16Lab 고속탄</Name>
     <Id>110</Id>
     <Type>고속탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>5</Grade>
     <Ability>화력</Ability>
     <InitialMagnification>+12</InitialMagnification>
@@ -1654,7 +1654,7 @@
     <Name>7.92 KURZ</Name>
     <Id>136</Id>
     <Type>고속탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>0</Grade>
     <Ability>화력</Ability>
     <InitialMagnification>+10~14</InitialMagnification>
@@ -1669,7 +1669,7 @@
     <Name>SP6 아음속탄</Name>
     <Id>135</Id>
     <Type>고속탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>0</Grade>
     <Ability>화력</Ability>
     <InitialMagnification>+10~14</InitialMagnification>
@@ -1714,7 +1714,7 @@
     <Name>아델하이드</Name>
     <Id>139</Id>
     <Type>특수</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>0</Grade>
     <Ability>회피</Ability>
     <InitialMagnification>+15</InitialMagnification>
@@ -1729,7 +1729,7 @@
     <Name>브로손 추출액</Name>
     <Id>140</Id>
     <Type>특수</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>0</Grade>
     <Ability>회피</Ability>
     <InitialMagnification>+15</InitialMagnification>
@@ -1759,7 +1759,7 @@
     <Name>카모트린</Name>
     <Id>142</Id>
     <Type>특수</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>0</Grade>
     <Ability>회피</Ability>
     <InitialMagnification>+15</InitialMagnification>
@@ -1819,7 +1819,7 @@
     <Name>MIRD 5등급 탄약</Name>
     <Id>146</Id>
     <Type>특수탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>0</Grade>
     <Ability>화력;관통</Ability>
     <InitialMagnification>+12~15;-10~7</InitialMagnification>
@@ -1954,7 +1954,7 @@
     <Name>20GA 벅샷</Name>
     <Id>151</Id>
     <Type>벅샷</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>0</Grade>
     <Ability>화력;명중;치명피해</Ability>
     <InitialMagnification>+8~12;+1~2;+14~18</InitialMagnification>
@@ -2179,7 +2179,7 @@
     <Name>20mm HEI</Name>
     <Id>170</Id>
     <Type>철갑탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>0</Grade>
     <Ability>화력;관통</Ability>
     <InitialMagnification>?;+110~120</InitialMagnification>
@@ -2224,7 +2224,7 @@
     <Name>9x39mm SPP</Name>
     <Id>173</Id>
     <Type>고속탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>0</Grade>
     <Ability>화력;치명피해</Ability>
     <InitialMagnification>+8~12;+6~10%</InitialMagnification>
@@ -2239,7 +2239,7 @@
     <Name>Frag12 파쇄탄</Name>
     <Id>174</Id>
     <Type>슬러그</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>0</Grade>
     <Ability>타겟;화력;명중;사격 강화</Ability>
     <InitialMagnification>-2;+8;+12;사격 강화</InitialMagnification>
@@ -2269,7 +2269,7 @@
     <Name>7n31</Name>
     <Id>176</Id>
     <Type>특수탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>0</Grade>
     <Ability>화력;사속;관통</Ability>
     <InitialMagnification>+7~10;+1~2;?</InitialMagnification>
@@ -2299,7 +2299,7 @@
     <Name>12.7mm 1SL</Name>
     <Id>178</Id>
     <Type>철갑탄</Type>
-    <Category>탄환</Category>
+    <Category>탄약</Category>
     <Grade>0</Grade>
     <Ability>화력;관통</Ability>
     <InitialMagnification>+3~5;+110~120</InitialMagnification>
@@ -2534,5 +2534,380 @@
     <Note>마인드맵 업그레이드 추가</Note>
     <Icon>97typeS_Only</Icon>
     <ProductDialog>IOP가 97식 산탄총을 위해 설계한 고기동성 방탄실드 깔끔한 구조에 군더더기 없는 외형은 보기만해도 든든하다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>SPS 전술 레일킷</Name>
+    <Id>194</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;회피</Ability>
+    <InitialMagnification>+12~15%;+8~11</InitialMagnification>
+    <MaxMagnification>+20%;+22</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>세르듀코프</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>Serdyukov_Only</Icon>
+    <ProductDialog>세르듀코프만을 위해 설계한 전술 레일킷으로 권총도 상황에 맞는 부착물을 달 수 있게 됐습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>.357 JHP</Name>
+    <Id>195</Id>
+    <Type>특수탄</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;관통</Ability>
+    <InitialMagnification>+8~10;-10~7</InitialMagnification>
+    <MaxMagnification>+20;-7</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>아스트라 리볼버</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>AstraRevolver_Only</Icon>
+    <ProductDialog>장약량 180gr .357구경 재킷 할로 포인트. 구리 포장으로 총열에 납이 묻는 걸 방지할 수 있고 공동 현상을 확대하는 효과도 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>스펙트라 접이 개머리판</Name>
+    <Id>196</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;회피</Ability>
+    <InitialMagnification>+1~2;+7~10</InitialMagnification>
+    <MaxMagnification>+4;+20</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>Spectre M4</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>SpectreM4_Only</Icon>
+    <ProductDialog>Spectre M4를 위한 접이 개머리판 총기 사용이 더 손쉬워집니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>MK31 다목적 외골격</Name>
+    <Id>197</Id>
+    <Type>외골격</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>회피;화력</Ability>
+    <InitialMagnification>+25;-6</InitialMagnification>
+    <MaxMagnification>+47;-6</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>수오미</OnlyUse>
+    <Note>이중난수 이벤트 랭킹전 보상</Note>
+    <Icon>Suomi_Only</Icon>
+    <ProductDialog>수오미를 위해 IOP가 설계한 고성능 다리 외골격입니다. 외부에 소형 기계팔을 부착해 사용자가 움직일 수 있는 조작성과 기동성이 합쳐진 최신형 외골격입니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>NZ75 목제 그립</Name>
+    <Id>198</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;회피</Ability>
+    <InitialMagnification>+16~20%;+7~10</InitialMagnification>
+    <MaxMagnification>+30%;+20</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>NZ75</OnlyUse>
+    <Note>고치 속 나비 이벤트 재화 구매</Note>
+    <Icon>NZ75_Only</Icon>
+    <ProductDialog>NZ75를 위해 설계된 목제 그립판입니다. 파지 시의 안정감을 대폭 늘렸죠.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>Osprey45 소음기</Name>
+    <Id>199</Id>
+    <Type>소음기</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;회피</Ability>
+    <InitialMagnification>+15%;+8</InitialMagnification>
+    <MaxMagnification>+20%;+10</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>요원 Vector</OnlyUse>
+    <Note>현상금 축제 이벤트 전역 드랍</Note>
+    <Icon>AgentVector_Only</Icon>
+    <ProductDialog>SHD에서 대량 보급된 소음기 주로 Vector 45 ACP에 사용하며 뛰어난 성능과 깔끔한 외형으로 많은 인기를 받습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>.45 HP탄(소이)</Name>
+    <Id>200</Id>
+    <Type>특수탄</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>화력;관통</Ability>
+    <InitialMagnification>+10;-7</InitialMagnification>
+    <MaxMagnification>+15;-7</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>요원 Vector</OnlyUse>
+    <Note>현상금 축제 이벤트 재화 교환</Note>
+    <Icon>AgentVector_Only_2</Icon>
+    <ProductDialog>평범한 HP탄을 개조하여 확률적으로 적에게 불을 붙여 살상력을 높였습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>go bag "V"</Name>
+    <Id>201</Id>
+    <Type>외골격</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>회피;화력</Ability>
+    <InitialMagnification>+25;-6</InitialMagnification>
+    <MaxMagnification>+35;-6</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>요원 Vector</OnlyUse>
+    <Note>현상금 축제 이벤트 전역 클리어 보상</Note>
+    <Icon>AgentVector_Only_3</Icon>
+    <ProductDialog>요원 Vector만을 위해 디자인한 go bag 실용성이 높으면서도 크기가 작아 Vector의 움직임을 방해하지 않습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>Acog-(4X)</Name>
+    <Id>202</Id>
+    <Type>옵티컬</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율</Ability>
+    <InitialMagnification>+24%</InitialMagnification>
+    <MaxMagnification>+48%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>요원 416</OnlyUse>
+    <Note>현상금 축제 이벤트 전역 클리어 보상</Note>
+    <Icon>Agent416_Only</Icon>
+    <ProductDialog>SHD의 수요에 맞춰 개조한 광학조준경 소총에 부착하여 중장거리 작전 효율을 높일 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>556 고속탄(폭파)</Name>
+    <Id>203</Id>
+    <Type>고속탄</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>화력</Ability>
+    <InitialMagnification>+12</InitialMagnification>
+    <MaxMagnification>+20</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>요원 416</OnlyUse>
+    <Note>현상금 축제 이벤트 재화 교환</Note>
+    <Icon>Agent416_Only_2</Icon>
+    <ProductDialog>평범한 5.56mm 고속탄을 개조하여 적에게 명중 시 폭발을 일으켜 살상력을 높이고 동시의 적의 주의력을 끄는 효과도 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>416's go bag</Name>
+    <Id>204</Id>
+    <Type>외골격</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>회피</Ability>
+    <InitialMagnification>+12</InitialMagnification>
+    <MaxMagnification>+20</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>요원 416</OnlyUse>
+    <Note>현상금 축제 이벤트 전역 드랍</Note>
+    <Icon>Agent416_Only_3</Icon>
+    <ProductDialog>기초적인 SHD go bag을 요원 416의 개인 요구에 따라 특별 제작한 배낭입니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>갈릴 총열덮개</Name>
+    <Id>205</Id>
+    <Type>특수</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>회피;명중</Ability>
+    <InitialMagnification>-10~5;+3~5</InitialMagnification>
+    <MaxMagnification>-5;+10</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>갈릴</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>Galil_Only</Icon>
+    <ProductDialog>갈릴을 위해 특별히 설계한 모듈형 총열덮개로 신형 mlok 시스템으로 새로운 가능성을 제공합니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>12ga 프레셰트</Name>
+    <Id>206</Id>
+    <Type>특수</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중</Ability>
+    <InitialMagnification>+8~12;+4~6</InitialMagnification>
+    <MaxMagnification>+18;+12</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>M1897</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>M1897_Only</Icon>
+    <ProductDialog>과거 전쟁에서 사용한 특수 프레세트탄으로 1발마다 작은 다트가 20개 들어있습니다. 주로 밀림에 숨은 적을 상대하기 위한 탄약입니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>pt-3 개머리판</Name>
+    <Id>207</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;회피</Ability>
+    <InitialMagnification>+1~2;+7~10</InitialMagnification>
+    <MaxMagnification>+4;+20</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>PP-19</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>PP19_Only</Icon>
+    <ProductDialog>저명한 ZNT에서 설계한 개머리판으로 디자인과 공정 모두 진한 러시아의 향이 납니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>SPP</Name>
+    <Id>208</Id>
+    <Type>옵티컬</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;치명피해</Ability>
+    <InitialMagnification>+17~24%;+3~5%</InitialMagnification>
+    <MaxMagnification>+48%;+10%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>OTs-44</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>OTs44_Only</Icon>
+    <ProductDialog>원래는 NSV-12.7를 위해 설계한 3배율 가변식 조준경이었는데 약간의 조절을 거치고 OTs-44의 전용 조준경이 됐습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>삼변 총검</Name>
+    <Id>209</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;화력</Ability>
+    <InitialMagnification>+17~24%;+3~4</InitialMagnification>
+    <MaxMagnification>+48%;+6</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>63식</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>Type63_Only</Icon>
+    <ProductDialog>과거 전쟁에서 활약한 총검으로 IOP의 가공을 거치고 살상력과 관통성이 더욱 상승했습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>SCW 개머리판</Name>
+    <Id>210</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;회피</Ability>
+    <InitialMagnification>+13~16%;+6~8</InitialMagnification>
+    <MaxMagnification>+30%;+15</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>SCW</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>SCW_Only</Icon>
+    <ProductDialog>개머리판 부분을 접을 수 있어 SCW의 초근접 병기란 개념을 극한으로 발휘할 수 있는 독특한 개머리판입니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>아리사카 철갑탄</Name>
+    <Id>211</Id>
+    <Type>철갑탄</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>관통;화력;패시브 강화</Ability>
+    <InitialMagnification>+110~120;+3~5;강화</InitialMagnification>
+    <MaxMagnification>+180;+10;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>4식</OnlyUse>
+    <Note>2021년 1월 출석 보상</Note>
+    <Icon>4Shiki_Only</Icon>
+    <ProductDialog>7.7mm 구경 아리사카 탄환으로 탄두는 각자 다른 색으로 탄자를 구별합니다. 그중 검은색은 장갑 목표를 대상으로 설계된 철갑탄입니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>특제 예광탄</Name>
+    <Id>212</Id>
+    <Type>철갑탄</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>화력;관통</Ability>
+    <InitialMagnification>+3~5;+110~120</InitialMagnification>
+    <MaxMagnification>+10;+180</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>56식 반</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>Type56R_Only</Icon>
+    <ProductDialog>56식 반을 위해 설계한 예광탄 입니다. 적을 표시하는 동시에 점화 효과까지 있어 일석이조입니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>특수작전 키트</Name>
+    <Id>213</Id>
+    <Type>외골격</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>회피;장갑</Ability>
+    <InitialMagnification>+12~15;+3~5</InitialMagnification>
+    <MaxMagnification>+25;+5</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>웰로드 MkII</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>Welrod_Only</Icon>
+    <ProductDialog>웰로드를 위해 설계한 다목적 전투용구입니다. 겉보기엔 평범한 서류 가방처럼 보이지만 안에 비상시를 대비한 화기와 기동방패가 수납되어 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>생존의 프로</Name>
+    <Id>214</Id>
+    <Type>특수</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>회피;화력</Ability>
+    <InitialMagnification>+20~25;+3~5</InitialMagnification>
+    <MaxMagnification>+36;+10</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>F1</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>F1_Only</Icon>
+    <ProductDialog>F1만을 위해 만든 칼입니다. 정글 환경에서 작전 시 필수품이죠.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>특제 철갑소이탄</Name>
+    <Id>215</Id>
+    <Type>철갑탄</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>화력;관통</Ability>
+    <InitialMagnification>+3~5;+110~120</InitialMagnification>
+    <MaxMagnification>+10;+180</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>80식</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>Type80_Only</Icon>
+    <ProductDialog>장갑 목표를 대응하기 위해 설계한 철갑소이탄으로 80식이 애용하는 특수탄약입니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>20G 특제 슬러그</Name>
+    <Id>216</Id>
+    <Type>슬러그</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>타깃;치명타율;화력;스킬 강화</Ability>
+    <InitialMagnification>-2;+12~15%;+6~8;강화</InitialMagnification>
+    <MaxMagnification>-2;+30%;+15;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>콜트 디펜더</OnlyUse>
+    <Note>2021년 2월 출석 보상</Note>
+    <Icon>Defender_Only</Icon>
+    <ProductDialog>20G 구경을 위해 만든 특수 슬러그탄입니다. 디펜더의 8연사와 조합해 적을 파멸적으로 타격할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>SB 2.5-10x56</Name>
+    <Id>217</Id>
+    <Type>옵티컬</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;화력</Ability>
+    <InitialMagnification>+25%;+3</InitialMagnification>
+    <MaxMagnification>+50%;+5</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>WA2000</OnlyUse>
+    <Note>거울단계 이벤트 랭킹전 누적 240만점 이상 보상</Note>
+    <Icon>WA2000_Only</Icon>
+    <ProductDialog>SB에서 생산한 고배율 스코프 WA2000이 가장 자주 쓰며 가장 선호하는 전용 스코프입니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>고성능 미채 골격</Name>
+    <Id>218</Id>
+    <Type>외골격</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>회피;스킬 강화</Ability>
+    <InitialMagnification>+15~20;강화</InitialMagnification>
+    <MaxMagnification>+30;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>64식</OnlyUse>
+    <Note>2021년 3월 출석 보상</Note>
+    <Icon>Type64_Only</Icon>
+    <ProductDialog>64식을 위해 특별 제작한 외골격입니다. 기동력을 대폭 상승시키는 동시에 위장 장갑을 추가한 실용성에 기울인 외골격입니다.</ProductDialog>
   </Equipment>
 </NewDataSet>

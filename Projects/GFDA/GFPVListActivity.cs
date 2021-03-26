@@ -38,7 +38,10 @@ namespace GFDA
             "PV_PhotoGalleryPuzzle",
             "PV_BihaiSecret",
             "PV_DreamDrama",
-            "PV_DualRandomness"
+            "PV_DualRandomness",
+            "PV_BountyFeast",
+            "PV_MirrorStage",
+            "PV_MirrorStage_2"
         };
         internal static readonly string[] titleList =
         {
@@ -57,7 +60,10 @@ namespace GFDA
             ETC.Resources.GetString(Resource.String.Game_Event_PhotoGalleryPuzzle),
             ETC.Resources.GetString(Resource.String.Game_Event_BihaiSecret),
             ETC.Resources.GetString(Resource.String.Game_Event_DreamDrama),
-            ETC.Resources.GetString(Resource.String.Game_Event_DualRandomness)
+            ETC.Resources.GetString(Resource.String.Game_Event_DualRandomness),
+            ETC.Resources.GetString(Resource.String.Game_Event_BountyFeast),
+            ETC.Resources.GetString(Resource.String.Game_Event_MirrorStage),
+            $"{ETC.Resources.GetString(Resource.String.Game_Event_MirrorStage)} - 2"
         };
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -252,6 +258,8 @@ namespace GFDA
                     13 => Resource.Drawable.Album_BihaiSecret,
                     14 => Resource.Drawable.Album_DreamDrama,
                     15 => Resource.Drawable.Album_DualRandomness,
+                    16 => Resource.Drawable.Album_BountyFeast,
+                    17 or 18 => Resource.Drawable.Album_MirrorStage,
                     _ => default
                 };
 

@@ -82,6 +82,8 @@
   <string name="Game_Event_BihaiSecret">Bihai Secret</string>
   <string name="Game_Event_DreamDrama">Dream Drama</string>
   <string name="Game_Event_DualRandomness">Dual Randomness</string>
+  <string name="Game_Event_BountyFeast">Bounty Feast</string>
+  <string name="Game_Event_MirrorStage">Mirror Stage</string>
 
   <!--Activity String-->
   <string name="Activity_DollMainActivity">T-Doll List</string>

@@ -55,6 +55,7 @@ namespace GFDA
                 39 => (Story_Main_Main_Event_DualRandomness_TopTitle, Story_Main_Main_Event_DualRandomness, Story_Main_Main_Event_DualRandomness_Caption),
                 40 => (Story_Main_Main_Event_2020Halloween_TopTitle, Story_Main_Main_Event_2020Halloween, Story_Main_Main_Event_2020Halloween_Caption),
                 41 => (Story_Main_Main_Event_BountyFeast_TopTitle, Story_Main_Main_Event_BountyFeast, Story_Main_Main_Event_BountyFeast_Caption),
+                42 => (Story_Main_Main_Event_MirrorStage_TopTitle, Story_Main_Main_Event_MirrorStage, Story_Main_Main_Event_MirrorStage_Caption),
                 _ => (0, 0, 0),
             };
         }
@@ -220,6 +221,9 @@ namespace GFDA
                         break;
                     case 41:
                         category = "BountyFeast";
+                        break;
+                    case 42:
+                        category = "MirrorStage";
                         break;
                     default:
                         return;
