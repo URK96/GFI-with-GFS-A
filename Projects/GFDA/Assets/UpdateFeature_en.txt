@@ -1,4 +1,5 @@
-<2.7.7 Update>
+<2.7.8 Update>
 
-- Fix image issue in Product Simulator result
-- Fix web URL issue
+- Add new story content
+- Add new PVs
+- Add cartoon contents
