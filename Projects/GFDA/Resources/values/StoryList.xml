@@ -62,6 +62,7 @@
     <item>2020 할로윈 이벤트</item>
     <item>콜라보 이벤트</item>
     <item>이벤트</item>
+    <item>2021 여름 시즌 이벤트</item>
   </string-array>
 
   <string-array name="Story_Main_Main">
@@ -108,6 +109,7 @@
     <item>고치 속 나비</item>
     <item>현상금 축제</item>
     <item>거울단계</item>
+    <item>웨이브 랭글러</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Caption">
@@ -154,6 +156,7 @@
     <item>고치 속 나비</item>
     <item>현상금 축제</item>
     <item>거울단계</item>
+    <item>웨이브 랭글러</item>
   </string-array>
 
   <string-array name="Story_Main_Sub_TopTitle">

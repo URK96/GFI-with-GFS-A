@@ -383,4 +383,25 @@
     <item>그리폰</item>
     <item>TAC-50</item>
   </string-array>
+
+  <string-array name="Story_Main_Main_Event_2021Summer_TopTitle">
+    <item>웨이브 랭글러</item>
+    <item>웨이브 랭글러</item>
+    <item>웨이브 랭글러</item>
+    <item>웨이브 랭글러</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2021Summer">
+    <item>밀물</item>
+    <item>암류</item>
+    <item>몰이사냥</item>
+    <item>제로섬</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_2021Summer_Caption">
+    <item>밀물</item>
+    <item>암류</item>
+    <item>몰이사냥</item>
+    <item>제로섬</item>
+  </string-array>
 </resources>

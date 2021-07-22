@@ -1,6 +1,6 @@
 Y;
-79;
-1;
-사진관 미스테리;
-https://cafe.naver.com/girlsfrontlinekr/4231040;
-2021/3/19 16:00 ~ 2021/4/9 14:59;
+83;
+3;
+웨이브 랭글러,사신짱 콜라보,신작 방송 카운트다운;
+https://cafe.naver.com/girlsfrontlinekr/4290020,,https://www.girlsfrontline.co.kr/archives/5268.html;
+2021/7/2 15:00 ~ 2021/7/23 14:59,2021/7/30 15:00 ~ 2021/8/19 14:59,2021/7/24 00:00 ~ 2021/8/19 23:59;

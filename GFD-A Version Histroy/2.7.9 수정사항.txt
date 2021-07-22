@@ -1,0 +1,9 @@
+<2.7.9 Update>
+
+- 신규 스토리 추가 (웨이브 랭글러)
+- 만화 컨텐츠 추가 (그리폰 일상만화, 센롱의 숏컷전선)
+
+<2.7.9 Update>
+
+- Add new story content
+- Add cartoon contents
