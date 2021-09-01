@@ -1,4 +1,4 @@
-<img alt="RespectU" src="https://raw.github.com/URK96/GFI-with-GFS-A/master/logo.png" style="max-width: 100%">
+<img alt="RespectU" src="https://raw.github.com/URK96/GFI-with-GFS-A/master/logo.png" width="200px">
 
 # 소전사전 (GFD) : Unoffical Girls Frontline Dictonary
 
@@ -7,9 +7,11 @@
 소전사전 (Girls Frontline Dictionary) for Android (GFD-A [구 GFI-with-GFS-A]) <**개발 완료. 배포 & 유지 보수 중**>
 [Google 플레이 스토어 바로가기](https://play.google.com/store/apps/details?id=com.gfl.dic)
 
-소전사전 (Girls Frontline Dictionary) for Windows (GFD-W) <**현재 개발중**>
+소전사전 (Girls Frontline Dictionary) for Windows (GFD-W) <**개발 잠정 중단**>
 
-소전사전 (Girls Frontline Dictionary) for iOS (GFD-I) <**현재 개발중**>
+소전사전 (Girls Frontline Dictionary) for iOS (GFD-I) <**개발 잠정 중단**>
+
+소전사전 (Girls Frontline Dictionary) with .NET MAUI (GFD-X) <**개발 예정**>
 
 ---
 

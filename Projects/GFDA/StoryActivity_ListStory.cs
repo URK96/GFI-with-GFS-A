@@ -1,7 +1,4 @@
 ﻿using Android.Content;
-using Android.Icu.Text;
-
-using System.Runtime.Remoting.Messaging;
 
 using static GFDA.Resource.Array;
 
