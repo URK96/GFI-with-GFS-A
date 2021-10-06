@@ -57,6 +57,7 @@ namespace GFDA
                 41 => (Story_Main_Main_Event_BountyFeast_TopTitle, Story_Main_Main_Event_BountyFeast, Story_Main_Main_Event_BountyFeast_Caption),
                 42 => (Story_Main_Main_Event_MirrorStage_TopTitle, Story_Main_Main_Event_MirrorStage, Story_Main_Main_Event_MirrorStage_Caption),
                 43 => (Story_Main_Main_Event_2021Summer_TopTitle, Story_Main_Main_Event_2021Summer, Story_Main_Main_Event_2021Summer_Caption),
+                44 =>
                 _ => (0, 0, 0),
             };
         }

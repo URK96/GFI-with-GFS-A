@@ -66,7 +66,7 @@ namespace GFDA
                 SetSupportActionBar(toolbar);
                 SupportActionBar.SetTitle(Resource.String.MainActivity_Title);
 
-                bottomNavigation.NavigationItemSelected += (sender, e) => { ChangeFragment(e.Item.ItemId); };
+                bottomNavigation.ItemSelected += (sender, e) => { ChangeFragment(e.Item.ItemId); };
 
                 // Set Fragment
 

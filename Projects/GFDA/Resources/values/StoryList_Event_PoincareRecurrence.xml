@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Story_Main_Main_Event_PoincareRecurrence_TopTitle">
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+	<item>재귀정리</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_PoincareRecurrence">
+    <item>①</item>
+    <item>②</item>
+    <item>③</item>
+    <item>④</item>
+    <item>⑤</item>
+    <item>⑦</item>
+    <item>⑧</item>
+    <item>⑩</item>
+    <item>⑪</item>
+    <item>⑫</item>
+    <item>⑭</item>
+    <item>⑮</item>
+	
+    <item>Ⅰ</item>
+    <item>Ⅱ</item>
+    <item>Ⅲ-EX</item>
+    <item>Ⅳ</item>
+    <item>Ⅴ</item>
+    <item>Ⅵ</item>
+    <item>Ⅷ</item>
+    <item>Ⅸ</item>
+    <item>ⅩⅠ</item>
+    <item>ⅩⅠⅠ</item>
+    <item>ⅩⅣ</item>
+    <item>ⅩⅤ</item>
+	  
+    <item>ⅠＡ</item>
+    <item>ⅠⅠＡ</item>
+    <item>ⅠⅤＢ</item>
+    <item>ⅤＢ</item>
+    <item>ⅤⅠＢ</item>
+    <item>ⅠＢ</item>
+    <item>ⅠⅠＢ</item>
+    <item>ⅠⅠⅠＡ</item>
+    <item>ⅤＡ</item>
+    <item>ⅤⅠⅠＡ</item> 
+	
+    <item>alpha</item>
+    <item>beta</item>
+    <item>gamma</item>
+    <item>epsilon</item>
+    <item>eta</item>
+    <item>iota</item>
+    <item>lambda</item>
+    <item>mu</item>
+    <item>nu</item>
+	  
+    <item>1</item>
+    <item>11</item>
+    <item>101</item>
+    <item>110</item>
+    <item>111</item>
+	<item>1000</item>
+	<item>1010</item>
+
+	<item>pico</item>
+	<item>nano</item>
+	<item>milli</item>
+	<item>deci</item>
+	<item>deca</item>
+	<item>kilo</item>
+	<item>Giga</item>
+	<item>Tera</item>
+	
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_PoincareRecurrence_Caption">
+	<item>Cpt 1 - 무질서도 완화</item>
+	<item>Cpt 1 - 무질서도 완화</item>
+	<item>Cpt 1 - 무질서도 완화</item>
+	<item>Cpt 1 - 무질서도 완화</item>
+	<item>Cpt 1 - 무질서도 완화</item>
+	<item>Cpt 1 - 무질서도 완화</item>
+	<item>Cpt 1 - 무질서도 완화</item>
+	<item>Cpt 1 - 무질서도 완화</item>
+	<item>Cpt 1 - 무질서도 완화</item>
+	<item>Cpt 1 - 무질서도 완화</item>
+	<item>Cpt 1 - 무질서도 완화</item>
+	<item>Cpt 1 - 무질서도 완화</item>
+	<item>Cpt 2 - 밝아지는 별</item>
+	<item>Cpt 2 - 밝아지는 별</item>
+	<item>Cpt 2 - 밝아지는 별</item>
+	<item>Cpt 2 - 밝아지는 별</item>
+	<item>Cpt 2 - 밝아지는 별</item>
+	<item>Cpt 2 - 밝아지는 별</item>
+	<item>Cpt 2 - 밝아지는 별</item>
+	<item>Cpt 2 - 밝아지는 별</item>
+	<item>Cpt 2 - 밝아지는 별</item>
+	<item>Cpt 2 - 밝아지는 별</item>
+	<item>Cpt 2 - 밝아지는 별</item>
+	<item>Cpt 2 - 밝아지는 별</item>
+	<item>Cpt 3 - 엔트로피 역전</item>
+	<item>Cpt 3 - 엔트로피 역전</item>
+	<item>Cpt 3 - 엔트로피 역전</item>
+	<item>Cpt 3 - 엔트로피 역전</item>
+	<item>Cpt 3 - 엔트로피 역전</item>
+	<item>Cpt 3 - 엔트로피 역전</item>
+	<item>Cpt 3 - 엔트로피 역전</item>
+	<item>Cpt 3 - 엔트로피 역전</item>
+	<item>Cpt 3 - 엔트로피 역전</item>
+	<item>Cpt 3 - 엔트로피 역전</item>
+	<item>Cpt 4 - 항성의 추락</item>
+	<item>Cpt 4 - 항성의 추락</item>
+	<item>Cpt 4 - 항성의 추락</item>
+	<item>Cpt 4 - 항성의 추락</item>
+	<item>Cpt 4 - 항성의 추락</item>
+	<item>Cpt 4 - 항성의 추락</item>
+	<item>Cpt 4 - 항성의 추락</item>
+	<item>Cpt 4 - 항성의 추락</item>
+	<item>Cpt 4 - 항성의 추락</item>
+	<item>Cpt 5 - 암전 쇠약</item>
+	<item>Cpt 5 - 암전 쇠약</item>
+	<item>Cpt 5 - 암전 쇠약</item>
+	<item>Cpt 5 - 암전 쇠약</item>
+	<item>Cpt 5 - 암전 쇠약</item>
+	<item>Cpt 5 - 암전 쇠약</item>
+	<item>Cpt 5 - 암전 쇠약</item>
+	<item>Cpt 6 - 혼돈의 종막</item>
+	<item>Cpt 6 - 혼돈의 종막</item>
+	<item>Cpt 6 - 혼돈의 종막</item>
+	<item>Cpt 6 - 혼돈의 종막</item>
+	<item>Cpt 6 - 혼돈의 종막</item>
+	<item>Cpt 6 - 혼돈의 종막</item>
+	<item>Cpt 6 - 혼돈의 종막</item>
+	<item>Cpt 6 - 혼돈의 종막</item>
+  </string-array>
+</resources>

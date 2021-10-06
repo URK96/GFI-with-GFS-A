@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="Story_Main_Main_Event_MyDevilsFrontline_TopTitle">
+    <item>디비전 콜라보 - Chapter 0</item>
+    <item>디비전 콜라보 - Chapter 1</item>
+    <item>디비전 콜라보 - Chapter 1</item>
+    <item>디비전 콜라보 - Chapter 1</item>
+    <item>디비전 콜라보 - Chapter 1</item>
+    <item>디비전 콜라보 - Chapter 1</item>
+    <item>디비전 콜라보 - Chapter 1</item>
+    <item>디비전 콜라보 - Chapter 1</item>
+    <item>디비전 콜라보 - Chapter 1</item>
+    <item>디비전 콜라보 - Chapter 2</item>
+    <item>디비전 콜라보 - Chapter 2</item>
+    <item>디비전 콜라보 - Chapter 2</item>
+    <item>디비전 콜라보 - Chapter 2</item>
+    <item>디비전 콜라보 - Chapter 2</item>
+    <item>디비전 콜라보 - Chapter 2</item>
+    <item>디비전 콜라보 - Chapter 2</item>
+    <item>디비전 콜라보 - Chapter 2</item>
+    <item>디비전 콜라보 - Chapter 2</item>
+    <item>디비전 콜라보 - Chapter 2</item>
+    <item>디비전 콜라보 - Chapter 3</item>
+    <item>디비전 콜라보 - Chapter 3</item>
+    <item>디비전 콜라보 - Chapter 3</item>
+    <item>디비전 콜라보 - Chapter 3</item>
+    <item>디비전 콜라보 - Chapter 3</item>
+    <item>디비전 콜라보 - Chapter 3</item>
+    <item>디비전 콜라보 - Chapter 4</item>
+    <item>디비전 콜라보 - Chapter 4</item>
+    <item>디비전 콜라보 - Chapter 4</item>
+    <item>디비전 콜라보 - Chapter 4</item>
+    <item>디비전 콜라보 - Chapter 4</item>
+    <item>디비전 콜라보 - Chapter 4</item>
+    <item>디비전 콜라보 - Chapter 5</item>
+    <item>디비전 콜라보 - Chapter 5</item>
+    <item>디비전 콜라보 - Chapter 5</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_MyDevilsFrontline">
+    <item>폭풍 전야</item>
+    <item>0:05 허드슨 난민 캠프 Ⅰ</item>
+    <item>0:05 허드슨 난민 캠프 Ⅱ</item>
+    <item>0:05 허드슨 난민 캠프 Ⅲ</item>
+    <item>재료혼합</item>
+    <item>벽 뒤에 숨어!</item>
+    <item>음주측정기</item>
+    <item>적셔!</item>
+    <item>작은 목표</item>
+    <item>0:07 뉴욕 공공도서관 Ⅰ</item>
+    <item>0:07 뉴욕 공공도서관 Ⅱ</item>
+    <item>0:07 뉴욕 공공도서관 Ⅲ</item>
+    <item>0:07 뉴욕 공공도서관 Ⅳ</item>
+    <item>데코레이션</item>
+    <item>풀숲에 숨어!</item>
+    <item>정의의 천칭</item>
+    <item>장대한 목표</item>
+    <item>피클이다!</item>
+    <item>헬파이어</item>
+    <item>0:23 그랜드 센트럴 터미널 Ⅰ</item>
+    <item>0:23 그랜드 센트럴 터미널 Ⅱ</item>
+    <item>0:23 그랜드 센트럴 터미널 Ⅲ</item>
+    <item>Toasty!</item>
+    <item>버그 속에 숨어!</item>
+    <item>터스크</item>
+    <item>0:50 다크존 Ⅰ</item>
+    <item>0:50 다크존 Ⅱ</item>
+    <item>0:50 다크존 Ⅲ</item>
+    <item>크레이지 이반 돌격!</item>
+    <item>터스크&amp;헬파이어 Ⅰ</item>
+    <item>터스크&amp;헬파이어 Ⅱ</item>
+    <item>1:10 철수 지점 Ⅰ</item>
+    <item>1:10 철수 지점 Ⅱ</item>
+    <item>접속 성공</item>
+  </string-array>
+
+  <string-array name="Story_Main_Main_Event_MyDevilsFrontline_Caption">
+    <item>스토리 - RFB</item>
+    <item>전역 스토리</item>
+    <item>전역 스토리</item>
+    <item>전역 스토리</item>
+    <item>스토리 - 스프링필드</item>
+    <item>스토리 - UMP45</item>
+    <item>스토리 - M870</item>
+    <item>스토리 - AK-47</item>
+    <item>스토리 - Vector</item>
+    <item>전역 스토리</item>
+    <item>전역 스토리</item>
+    <item>전역 스토리</item>
+    <item>전역 스토리</item>
+    <item>스토리 - 스프링필드</item>
+    <item>스토리 - UMP45</item>
+    <item>스토리 - M870</item>
+    <item>스토리 - Vector</item>
+    <item>스토리 - AK-47</item>
+    <item>ECHO</item>
+    <item>전역 스토리</item>
+    <item>전역 스토리</item>
+    <item>전역 스토리</item>
+    <item>스토리 - 스프링필드</item>
+    <item>스토리 - UMP45</item>
+    <item>ECHO</item>
+    <item>전역 스토리</item>
+    <item>전역 스토리</item>
+    <item>전역 스토리</item>
+    <item>스토리 - AK-47</item>
+    <item>ECHO</item>
+    <item>ECHO</item>
+    <item>전역 스토리</item>
+    <item>전역 스토리</item>
+    <item>스토리 - RFB</item>
+  </string-array>
+</resources>
