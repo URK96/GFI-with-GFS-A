@@ -54,8 +54,9 @@ namespace GFDA
                 41 => (Story_Main_Main_Event_BountyFeast_TopTitle, Story_Main_Main_Event_BountyFeast, Story_Main_Main_Event_BountyFeast_Caption),
                 42 => (Story_Main_Main_Event_MirrorStage_TopTitle, Story_Main_Main_Event_MirrorStage, Story_Main_Main_Event_MirrorStage_Caption),
                 43 => (Story_Main_Main_Event_2021Summer_TopTitle, Story_Main_Main_Event_2021Summer, Story_Main_Main_Event_2021Summer_Caption),
-                44 =>
-                _ => (0, 0, 0),
+                44 => (Story_Main_Main_Event_MyDevilsFrontline_TopTitle, Story_Main_Main_Event_MyDevilsFrontline, Story_Main_Main_Event_MyDevilsFrontline_Caption),
+                45 => (Story_Main_Main_Event_PoincareRecurrence_TopTitle, Story_Main_Main_Event_PoincareRecurrence, Story_Main_Main_Event_PoincareRecurrence_Caption),
+                _ => (0, 0, 0)
             };
         }
 
@@ -226,6 +227,12 @@ namespace GFDA
                         break;
                     case 43:
                         category = "2021Summer";
+                        break;
+                    case 44:
+                        category = "MyDevilsFrontline";
+                        break;
+                    case 45:
+                        category = "PoincareRecurrence";
                         break;
                     default:
                         return;

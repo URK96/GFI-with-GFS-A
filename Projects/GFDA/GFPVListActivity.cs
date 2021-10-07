@@ -41,7 +41,9 @@ namespace GFDA
             "PV_DualRandomness",
             "PV_BountyFeast",
             "PV_MirrorStage",
-            "PV_MirrorStage_2"
+            "PV_MirrorStage_2",
+            "PV_MyDevilsFrontline",
+            "PV_PoincareRecurrence"
         };
         internal static readonly string[] titleList =
         {
@@ -63,7 +65,9 @@ namespace GFDA
             ETC.Resources.GetString(Resource.String.Game_Event_DualRandomness),
             ETC.Resources.GetString(Resource.String.Game_Event_BountyFeast),
             ETC.Resources.GetString(Resource.String.Game_Event_MirrorStage),
-            $"{ETC.Resources.GetString(Resource.String.Game_Event_MirrorStage)} - 2"
+            $"{ETC.Resources.GetString(Resource.String.Game_Event_MirrorStage)} - 2",
+            ETC.Resources.GetString(Resource.String.Game_Event_MyDevilsFrontline),
+            ETC.Resources.GetString(Resource.String.Game_Event_PoincareRecurrence)
         };
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -93,7 +97,7 @@ namespace GFDA
             recyclerView.SetAdapter(adapter);
         }
 
-        private void Adapter_ItemClick(object sender, int e)
+        private async void Adapter_ItemClick(object sender, int e)
         {
             string pvFileName = pvList[e];
 
@@ -112,7 +116,7 @@ namespace GFDA
                 }
                 else
                 {
-                    RunPV(Path.Combine(pvPath, $"{pvFileName}.mp4"));
+                    await RunPV(Path.Combine(pvPath, $"{pvFileName}.mp4"));
                 }
             }
             catch (Exception ex)
@@ -186,9 +190,9 @@ namespace GFDA
             }
         }
 
-        private void RunPV(string filePath)
+        private async Task RunPV(string filePath)
         {
-            _ = Launcher.OpenAsync(new OpenFileRequest
+            await Launcher.OpenAsync(new OpenFileRequest
             {
                 File = new ReadOnlyFile(filePath)
             });
@@ -260,6 +264,8 @@ namespace GFDA
                     15 => Resource.Drawable.Album_DualRandomness,
                     16 => Resource.Drawable.Album_BountyFeast,
                     17 or 18 => Resource.Drawable.Album_MirrorStage,
+                    19 => Resource.Drawable.Album_MyDevilsFrontline,
+                    20 => Resource.Drawable.Album_PoincareRecurrence,
                     _ => default
                 };
 

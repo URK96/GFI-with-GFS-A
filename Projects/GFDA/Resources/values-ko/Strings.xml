@@ -1,865 +1,859 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <!--New String-->
-  <string name="App_TitleName">소전사전</string>
+    <!--New String-->
+    <string name="App_TitleName">소전사전</string>
   
-  <string name="Common_ExpItem">작전보고서</string>
-  <string name="Common_Core">대체코어</string>
-  <string name="Common_CoalitionGrade">혼합세력 등급</string>
-  <string name="Common_SkillTraining">스킬 훈련</string>
-  <string name="Common_FSTGradeUp">FST 등급</string>
-  <string name="Common_AreaExp">경험치 계산</string>
-  <string name="Common_LightArmor">경장갑</string>
-  <string name="Common_HeavyArmor">중장갑</string>
-  <string name="Common_Machine">기계</string>
-  <string name="Common_Doll">인형</string>
-  <string name="Common_Remote">원격</string>
-  <string name="Common_CloseIn">근접</string>
-  <string name="TitleName_AreaExpCalc">지역별 경험치 계산</string>
-  <string name="Common_Refresh">새로고침</string>
+    <string name="Common_ExpItem">작전보고서</string>
+    <string name="Common_Core">대체코어</string>
+    <string name="Common_CoalitionGrade">혼합세력 등급</string>
+    <string name="Common_SkillTraining">스킬 훈련</string>
+    <string name="Common_FSTGradeUp">FST 등급</string>
+    <string name="Common_AreaExp">경험치 계산</string>
+    <string name="Common_LightArmor">경장갑</string>
+    <string name="Common_HeavyArmor">중장갑</string>
+    <string name="Common_Machine">기계</string>
+    <string name="Common_Doll">인형</string>
+    <string name="Common_Remote">원격</string>
+    <string name="Common_CloseIn">근접</string>
+    <string name="TitleName_AreaExpCalc">지역별 경험치 계산</string>
+    <string name="Common_Refresh">새로고침</string>
   
-  <string name="ComingSoon">Coming Soon...</string>
-  <string name="Common_ServerMaintenance">서버 점검 중 입니다.</string>
-  <string name="FeatureTemporaryDisable">해당 기능은 잠시 비활성화 되었습니다.</string>
+    <string name="ComingSoon">Coming Soon...</string>
+    <string name="Common_ServerMaintenance">서버 점검 중 입니다.</string>
+    <string name="FeatureTemporaryDisable">해당 기능은 잠시 비활성화 되었습니다.</string>
 
-  <!--New - Shortcut String-->
-  <string name="Shortcut_GFNotification_ShortLabel">공지사항</string>
-  <string name="Shortcut_GFNotification_LongLabel">공지사항</string>
-  <string name="Shortcut_GFNotification_DisabledLabel">공지사항</string>
-  <string name="Shortcut_GFDEvent_ShortLabel">이벤트</string>
-  <string name="Shortcut_GFDEvent_LongLabel">이벤트</string>
-  <string name="Shortcut_GFDEvent_DisabledLabel">이벤트</string>
-  <string name="Shortcut_GFDCalc_ShortLabel">계산기</string>
-  <string name="Shortcut_GFDCalc_LongLabel">계산기</string>
-  <string name="Shortcut_GFDCalc_DisabledLabel">계산기</string>
-  <string name="Shortcut_OldGFD_ShortLabel">소전사전v1</string>
-  <string name="Shortcut_OldGFD_LongLabel">소전사전v1</string>
-  <string name="Shortcut_OldGFD_DisabledLabel">소전사전v1</string>
-  <string name="Shortcut_OSTPlayer_ShortLabel">OST Player</string>
-  <string name="Shortcut_OSTPlayer_LongLabel">OST Player</string>
-  <string name="Shortcut_OSTPlayer_DisabledLabel">OST Player</string>
-  <string name="Shortcut_RFBot_ShortLabel">RFBot</string>
-  <string name="Shortcut_RFBot_LongLabel">RFBot</string>
-  <string name="Shortcut_RFBot_DisabledLabel">RFBot</string>
-  <string name="Shortcut_Cartoon_ShortLabel">만화</string>
-  <string name="Shortcut_Cartoon_LongLabel">만화</string>
-  <string name="Shortcut_Cartoon_DisabledLabel">만화</string>
+    <!--New - Shortcut String-->
+    <string name="Shortcut_GFNotification_ShortLabel">공지사항</string>
+    <string name="Shortcut_GFNotification_LongLabel">공지사항</string>
+    <string name="Shortcut_GFNotification_DisabledLabel">공지사항</string>
+    <string name="Shortcut_GFDEvent_ShortLabel">이벤트</string>
+    <string name="Shortcut_GFDEvent_LongLabel">이벤트</string>
+    <string name="Shortcut_GFDEvent_DisabledLabel">이벤트</string>
+    <string name="Shortcut_GFDCalc_ShortLabel">계산기</string>
+    <string name="Shortcut_GFDCalc_LongLabel">계산기</string>
+    <string name="Shortcut_GFDCalc_DisabledLabel">계산기</string>
+    <string name="Shortcut_OldGFD_ShortLabel">소전사전v1</string>
+    <string name="Shortcut_OldGFD_LongLabel">소전사전v1</string>
+    <string name="Shortcut_OldGFD_DisabledLabel">소전사전v1</string>
+    <string name="Shortcut_OSTPlayer_ShortLabel">OST Player</string>
+    <string name="Shortcut_OSTPlayer_LongLabel">OST Player</string>
+    <string name="Shortcut_OSTPlayer_DisabledLabel">OST Player</string>
+    <string name="Shortcut_RFBot_ShortLabel">RFBot</string>
+    <string name="Shortcut_RFBot_LongLabel">RFBot</string>
+    <string name="Shortcut_RFBot_DisabledLabel">RFBot</string>
+    <string name="Shortcut_Cartoon_ShortLabel">만화</string>
+    <string name="Shortcut_Cartoon_LongLabel">만화</string>
+    <string name="Shortcut_Cartoon_DisabledLabel">만화</string>
   
-  <!--New - Tooltip String-->
-  <string name="Tooltip_GFDInfo_KakaoPlus">카카오 플러스 친구 연결</string>
-  <string name="Tooltip_GFDInfo_Discord">디스코드 연결</string>
-  <string name="Tooltip_DB_CacheRefresh">캐시 갱신</string>
-  <string name="Tooltip_DB_LineUp">정렬</string>
-  <string name="Tooltip_DB_Filter">목록 필터</string>
-  <string name="Tooltip_DB_SideLink">외부 링크</string>
-  <string name="Tooltip_DB_ProductPercentage">제조 확률</string>
-  <string name="Tooltip_SideLink_Inven">인벤</string>
-  <string name="Tooltip_SideLink_NamuWiki">나무위키</string>
-  <string name="Tooltip_SideLink_36Base">36 베이스</string>
-  <string name="Tooltip_SideLink_GFDB">소전 DB</string>
+    <!--New - Tooltip String-->
+    <string name="Tooltip_GFDInfo_KakaoPlus">카카오 플러스 친구 연결</string>
+    <string name="Tooltip_GFDInfo_Discord">디스코드 연결</string>
+    <string name="Tooltip_DB_CacheRefresh">캐시 갱신</string>
+    <string name="Tooltip_DB_LineUp">정렬</string>
+    <string name="Tooltip_DB_Filter">목록 필터</string>
+    <string name="Tooltip_DB_SideLink">외부 링크</string>
+    <string name="Tooltip_DB_ProductPercentage">제조 확률</string>
+    <string name="Tooltip_SideLink_Inven">인벤</string>
+    <string name="Tooltip_SideLink_NamuWiki">나무위키</string>
+    <string name="Tooltip_SideLink_36Base">36 베이스</string>
+    <string name="Tooltip_SideLink_GFDB">소전 DB</string>
   
-  <!--New - Cartoon String-->
-  <string name="Cartoon_DownloadCartoonTitle">만화 다운로드</string>
-  <string name="Cartoon_DownloadCartoonMessage">만화 파일을 다운로드 중...</string>
-  <string name="Cartoon_ToolbarItem_SkipPrevious">이전 화</string>
-  <string name="Cartoon_ToolbarItem_SkipNext">다음 화</string>
+    <!--New - Cartoon String-->
+    <string name="Cartoon_DownloadCartoonTitle">만화 다운로드</string>
+    <string name="Cartoon_DownloadCartoonMessage">만화 파일을 다운로드 중...</string>
+    <string name="Cartoon_ToolbarItem_SkipPrevious">이전 화</string>
+    <string name="Cartoon_ToolbarItem_SkipNext">다음 화</string>
 
-  <!--Game Event Series-->
-  <string name="Game_Event_ContinuumTurbulence">난류연속</string>
-  <string name="Game_Event_Cube">큐브</string>
-  <string name="Game_Event_DeepDive">심층투영</string>
-  <string name="Game_Event_DJMAX">DJMAX 콜라보</string>
-  <string name="Game_Event_HuntingRabbit">길티기어 콜라보</string>
-  <string name="Game_Event_Houkai2">붕괴2 콜라보</string>
-  <string name="Game_Event_Singularity">특이점</string>
-  <string name="Game_Event_Normal">일반</string>
-  <string name="Game_Event_Arctic">저체온증</string>
-  <string name="Game_Event_HolyNightRhapsody">거룩한 밤 광상곡</string>
-  <string name="Game_Event_Isomer">이성질체</string>
-  <string name="Game_Event_PhantomSyndrome">팬텀 신드롬</string>
-  <string name="Game_Event_PolarizedLight">편극광</string>
-  <string name="Game_Event_ShatteredConnexion">연쇄분열</string>
-  <string name="Game_Event_VA">발할라 콜라보</string>
-  <string name="Game_Event_PhotoGalleryPuzzle">사진관 미스테리</string>
-  <string name="Game_Event_BihaiSecret">바다 저 멀리</string>
-  <string name="Game_Event_DreamDrama">몽중극</string>
-  <string name="Game_Event_DualRandomness">이중난수</string>
-  <string name="Game_Event_BountyFeast">현상금 축제</string>
-  <string name="Game_Event_MirrorStage">거울단계</string>
+    <!--Game Event Series-->
+    <string name="Game_Event_ContinuumTurbulence">난류연속</string>
+    <string name="Game_Event_Cube">큐브</string>
+    <string name="Game_Event_DeepDive">심층투영</string>
+    <string name="Game_Event_DJMAX">DJMAX 콜라보</string>
+    <string name="Game_Event_HuntingRabbit">길티기어 콜라보</string>
+    <string name="Game_Event_Houkai2">붕괴2 콜라보</string>
+    <string name="Game_Event_Singularity">특이점</string>
+    <string name="Game_Event_Normal">일반</string>
+    <string name="Game_Event_Arctic">저체온증</string>
+    <string name="Game_Event_HolyNightRhapsody">거룩한 밤 광상곡</string>
+    <string name="Game_Event_Isomer">이성질체</string>
+    <string name="Game_Event_PhantomSyndrome">팬텀 신드롬</string>
+    <string name="Game_Event_PolarizedLight">편극광</string>
+    <string name="Game_Event_ShatteredConnexion">연쇄분열</string>
+    <string name="Game_Event_VA">발할라 콜라보</string>
+    <string name="Game_Event_PhotoGalleryPuzzle">사진관 미스테리</string>
+    <string name="Game_Event_BihaiSecret">바다 저 멀리</string>
+    <string name="Game_Event_DreamDrama">몽중극</string>
+    <string name="Game_Event_DualRandomness">이중난수</string>
+    <string name="Game_Event_BountyFeast">현상금 축제</string>
+    <string name="Game_Event_MirrorStage">거울단계</string>
+	<string name="Game_Event_MyDevilsFrontline">사신짱 전선</string>
+	<string name="Game_Event_PoincareRecurrence">재귀정리</string>
 
-  <!--Activity String-->
-  <string name="Activity_DollMainActivity">인형 목록</string>
-  <string name="Activity_EquipMainActivity">장비 목록</string>
-  <string name="Activity_FairyMainActivity">요정 목록</string>
-  <string name="Acticity_EnemyMainActivity">적 목록</string>
-  <string name="Activity_FSTMainActivity">화력소대 목록</string>
-  <string name="Activity_CoalitionMainActivity">혼합세력 목록</string>
-  <string name="Activity_CalcMainActivity">계산기</string>
-  <string name="Activity_CartoonMainActivity">만화</string>
-  <string name="Activity_EventListActivity">이벤트 목록</string>
-  <string name="Activity_ExternLibraryCopyrightActivity">외부 라이브러리 라이선스</string>
-  <string name="Activity_SettingActivity">설정</string>
-  <string name="Activity_StoryActivity">스토리</string>
+    <!--Activity String-->
+    <string name="Activity_DollMainActivity">인형 목록</string>
+    <string name="Activity_EquipMainActivity">장비 목록</string>
+    <string name="Activity_FairyMainActivity">요정 목록</string>
+    <string name="Acticity_EnemyMainActivity">적 목록</string>
+    <string name="Activity_FSTMainActivity">화력소대 목록</string>
+    <string name="Activity_CoalitionMainActivity">혼합세력 목록</string>
+    <string name="Activity_CalcMainActivity">계산기</string>
+    <string name="Activity_CartoonMainActivity">만화</string>
+    <string name="Activity_EventListActivity">이벤트 목록</string>
+    <string name="Activity_ExternLibraryCopyrightActivity">외부 라이브러리 라이선스</string>
+    <string name="Activity_SettingActivity">설정</string>
+    <string name="Activity_StoryActivity">스토리</string>
   
-  <!--Solution String-->
-  <string name="CheckingUpdate">업데이트 확인 중...</string>
-  <string name="Splash_SkipCheckUpdate">업데이트 확인을 건너뜁니다</string>
-  <string name="LatestUpdateVersion">최신 버전입니다.</string>
-  <string name="UnableCheckUpdate">업데이트 확인 불가</string>
-  <string name="Main_NotificationTitle">공지사항</string>
-  <string name="Main_NotificationLoadFail"># 공지사항 로드 실패 #</string>
-  <string name="Main_NotificationInitializeFail">공지사항을 불러오기 실패</string>
-  <string name="Main_CheckExitTitle">소전사전 종료</string>
-  <string name="Main_CheckExit">소전사전을 종료할까요?</string>
-  <string name="DBList_DownloadCropImageCheckTitle">리스트 이미지 다운로드</string>
-  <string name="DBList_DownloadCropImageTitle">리스트 이미지 다운로드 중...</string>
-  <string name="DBList_DownloadCropImageCheckMessage">리스트 이미지를 다운로드할까요?</string>
-  <string name="DBList_DownloadCropImageComplete">리스트 이미지 다운로드 완료</string>
-  <string name="DBList_RefreshCropImageTitle">리스트 이미지 갱신</string>
-  <string name="DBList_RefreshCropImageMessage">리스트 이미지를 갱신할까요?</string>
-  <string name="DBList_Listing">목록 구성 중...</string>
-  <string name="DBList_ListingFail">목록 구성 실패</string>
-  <string name="DBList_DownloadCropImageFail">리스트 이미지 다운로드 실패</string>
-  <string name="DBList_FilterBoxTitle">필터링 설정</string>
-  <string name="DBList_FilterBoxApplyFail">필터 적용 실패</string>
-  <string name="DBList_FilterBoxResetFail">필터 초기화 실패</string>
-  <string name="DBList_SortBoxTitle">정렬 설정</string>
-  <string name="DBList_SortBoxApplyFail">정렬 적용 실패</string>
-  <string name="DBList_SortBoxResetFail">정렬 초기화 실패</string>
-  <string name="DBDetail_LoadDetailFail">세부내용 로드 실패</string>
-  <string name="RetryLoad_CauseNetwork">네트워크 문제로 재로드 중...</string>
-  <string name="Initialize_Fail">초기화 실패</string>
-  <string name="SideLinkOpen_Fail">링크 열기 실패</string>
-  <string name="Initialize_List_Fail">리스트 초기화 실패</string>
-  <string name="ImageLoad_Fail">이미지 로드 오류 발생</string>
-  <string name="Download_Fail">다운로드 오류</string>
-  <string name="UpdateDialog_Title">업데이트 존재</string>
-  <string name="UpdateDialog_Message">업데이트를 진행할 거야?</string>
-  <string name="UpdateCheck_Fail">업데이트 확인 실패</string>
-  <string name="UpdateDownloadDialog_Title">업데이트 다운로드</string>
-  <string name="UpdateDownloadDialog_Message">업데이트 다운로드 중입니다</string>
-  <string name="UpdateDownload_Complete">업데이트 다운로드 완료</string>
-  <string name="UpdateDownload_Fail">업데이트 다운로드 실패</string>
-  <string name="Activity_OnCreateError">Activity OnCreate 오류</string>
-  <string name="Activity_LoadFail">Activity 로드 오류</string>
-  <string name="DevMode">아직 개발 중인 부분입니다</string>
-  <string name="AbnormalAccess">비정상적인 접근</string>
-  <string name="NoDBFiles">DB 파일 없음. DB 복구가 필요합니다.</string>
-  <string name="MenuAccess_Fail">메뉴 진입 실패</string>
-  <string name="NotifyCheckServer_Title">서버 점검 안내</string>
-  <string name="AlertDialog_Error">Dialog 오류</string>
-  <string name="VoiceStreaming_DownloadError">Voice 다운로드 실패</string>
-  <string name="VoiceStreaming_PlayError">Voice 재생 실패</string>
-  <string name="VoiceList_InitError">보이스 리스트 초기화 실패</string>
-  <string name="RFBot_DisunderstandInput">해석 불가능한 문구입니다.</string>
-  <string name="RFBot_TestMode">현재 테스트 모드입니다.</string>
-  <string name="DB_Recovery">DB 복구 중...</string>
-  <string name="NetworkDelay">서버 응답 대기 중...</string>
-  <string name="ProductPercentTable_LoadFail">제조 정보 로드 실패</string>
-  <string name="NoDBFileFound_Message">서버 점검 문제로 초기 DB를 다운로드할 수 없습니다. 나중에 다시 시도해 주세요.</string>
-  <string name="CheckDBUpdateDialog_Title">DB 업데이트</string>
-  <string name="CheckDBUpdateDialog_Question">새로운 DB 버전이 존재합니다. 업데이트를 진행할까요?</string>
-  <string name="CheckDBUpdateDialog_Message">업데이트 확인 중입니다. 잠시만 기다려주세요.</string>
-  <string name="RepairDBDialog_Title">DB 복구중</string>
-  <string name="RepairDBDialog_Message">DB 복구 중...</string>
-  <string name="RepairDB_Complete">DB 복구 성공</string>
-  <string name="RepairDB_Fail">DB 복구 실패</string>
-  <string name="UpdateDBDialog_Message">DB 업데이트 중...</string>
-  <string name="UpdateDBDialog_RefreshVersionMessage">DB 버전 갱신 중...</string>
-  <string name="UpdateDBDialog_LoadDB">DB 다시 읽는 중...</string>
-  <string name="CheckDBUpdate_UpToDate">현재 DB 버전이 최신입니다.</string>
-  <string name="CheckDBUpdate_Complete">DB 업데이트 완료</string>
-  <string name="NewFeatureDialog_Title">새로운 기능</string>
-  <string name="FAB_ChangeSubMenuError">플로팅 보조 메뉴 작동 실패</string>
-  <string name="FAB_ChangeStatusError">플로팅 상태 변경 실패</string>
-  <string name="ImageViewer_ActivityOpenError">이미지 뷰어 실행 실패</string>
-  <string name="LineUp_Error">정렬 오류 발생</string>
-  <string name="FilterBox_InitError">필터 박스 초기화 오류</string>
-  <string name="SortBox_InitError">정렬 박스 초기화 오류</string>
-  <string name="Category_InitError">카테고리 초기화 오류</string>
-  <string name="List_InitError">리스트 초기화 오류</string>
-  <string name="UpdateEventDialog_Title">이벤트 업데이트</string>
-  <string name="UpdateEventDialog_Message">이벤트 업데이트 중...</string>
-  <string name="UpdateEventDialog_RefreshVersionMessage">이벤트 버전 갱신 중...</string>
-  <string name="InitLoad_Error">초기 로딩 실패</string>
-  <string name="ImageViewer_ChangeImageError">이미지 전환 오류</string>
-  <string name="Animation_Error">애니메이션 오류</string>
-  <string name="Permission_Error">권한 부여 실패</string>
-  <string name="PermissionDeny_Message">해당 권한을 허용하지 않으면 소전사전을 정상적으로 이용하실 수 없습니다</string>
-  <string name="RefreshImageCacheText">이미지 캐시 갱신</string>
-  <string name="Main_DBChecking">확인 중...</string>
-  <string name="Main_DBUpdateAvailable">업데이트 존재</string>
-  <string name="Main_DBUpdateNewest">최신버전</string>
-  <string name="Web_NetworkNotInternet">네트워크에 연결되어 있지 않습니다. 해당 기능은 네트워크 연결이 있어야 합니다. 네트워크 연결 확인 후 재시도 해주세요.</string>
-  <string name="Switch_ExternalBrowser">외부 브라우저로 연결됩니다.</string>
+    <!--Solution String-->
+    <string name="CheckingUpdate">업데이트 확인 중...</string>
+    <string name="Splash_SkipCheckUpdate">업데이트 확인을 건너뜁니다</string>
+    <string name="LatestUpdateVersion">최신 버전입니다.</string>
+    <string name="UnableCheckUpdate">업데이트 확인 불가</string>
+    <string name="Main_NotificationTitle">공지사항</string>
+    <string name="Main_NotificationLoadFail"># 공지사항 로드 실패 #</string>
+    <string name="Main_NotificationInitializeFail">공지사항을 불러오기 실패</string>
+    <string name="Main_CheckExitTitle">소전사전 종료</string>
+    <string name="Main_CheckExit">소전사전을 종료할까요?</string>
+    <string name="DBList_DownloadCropImageCheckTitle">리스트 이미지 다운로드</string>
+    <string name="DBList_DownloadCropImageTitle">리스트 이미지 다운로드 중...</string>
+    <string name="DBList_DownloadCropImageCheckMessage">리스트 이미지를 다운로드할까요?</string>
+    <string name="DBList_DownloadCropImageComplete">리스트 이미지 다운로드 완료</string>
+    <string name="DBList_RefreshCropImageTitle">리스트 이미지 갱신</string>
+    <string name="DBList_RefreshCropImageMessage">리스트 이미지를 갱신할까요?</string>
+    <string name="DBList_Listing">목록 구성 중...</string>
+    <string name="DBList_ListingFail">목록 구성 실패</string>
+    <string name="DBList_DownloadCropImageFail">리스트 이미지 다운로드 실패</string>
+    <string name="DBList_FilterBoxTitle">필터링 설정</string>
+    <string name="DBList_FilterBoxApplyFail">필터 적용 실패</string>
+    <string name="DBList_FilterBoxResetFail">필터 초기화 실패</string>
+    <string name="DBList_SortBoxTitle">정렬 설정</string>
+    <string name="DBList_SortBoxApplyFail">정렬 적용 실패</string>
+    <string name="DBList_SortBoxResetFail">정렬 초기화 실패</string>
+    <string name="DBDetail_LoadDetailFail">세부내용 로드 실패</string>
+    <string name="RetryLoad_CauseNetwork">네트워크 문제로 재로드 중...</string>
+    <string name="Initialize_Fail">초기화 실패</string>
+    <string name="SideLinkOpen_Fail">링크 열기 실패</string>
+    <string name="Initialize_List_Fail">리스트 초기화 실패</string>
+    <string name="ImageLoad_Fail">이미지 로드 오류 발생</string>
+    <string name="Download_Fail">다운로드 오류</string>
+    <string name="UpdateDialog_Title">업데이트 존재</string>
+    <string name="UpdateDialog_Message">업데이트를 진행할 거야?</string>
+    <string name="UpdateCheck_Fail">업데이트 확인 실패</string>
+    <string name="UpdateDownloadDialog_Title">업데이트 다운로드</string>
+    <string name="UpdateDownloadDialog_Message">업데이트 다운로드 중입니다</string>
+    <string name="UpdateDownload_Complete">업데이트 다운로드 완료</string>
+    <string name="UpdateDownload_Fail">업데이트 다운로드 실패</string>
+    <string name="Activity_OnCreateError">Activity OnCreate 오류</string>
+    <string name="Activity_LoadFail">Activity 로드 오류</string>
+    <string name="DevMode">아직 개발 중인 부분입니다</string>
+    <string name="AbnormalAccess">비정상적인 접근</string>
+    <string name="NoDBFiles">DB 파일 없음. DB 복구가 필요합니다.</string>
+    <string name="MenuAccess_Fail">메뉴 진입 실패</string>
+    <string name="NotifyCheckServer_Title">서버 점검 안내</string>
+    <string name="AlertDialog_Error">Dialog 오류</string>
+    <string name="VoiceStreaming_DownloadError">Voice 다운로드 실패</string>
+    <string name="VoiceStreaming_PlayError">Voice 재생 실패</string>
+    <string name="VoiceList_InitError">보이스 리스트 초기화 실패</string>
+    <string name="RFBot_DisunderstandInput">해석 불가능한 문구입니다.</string>
+    <string name="RFBot_TestMode">현재 테스트 모드입니다.</string>
+    <string name="DB_Recovery">DB 복구 중...</string>
+    <string name="NetworkDelay">서버 응답 대기 중...</string>
+    <string name="ProductPercentTable_LoadFail">제조 정보 로드 실패</string>
+    <string name="NoDBFileFound_Message">서버 점검 문제로 초기 DB를 다운로드할 수 없습니다. 나중에 다시 시도해 주세요.</string>
+    <string name="CheckDBUpdateDialog_Title">DB 업데이트</string>
+    <string name="CheckDBUpdateDialog_Question">새로운 DB 버전이 존재합니다. 업데이트를 진행할까요?</string>
+    <string name="CheckDBUpdateDialog_Message">업데이트 확인 중입니다. 잠시만 기다려주세요.</string>
+    <string name="RepairDBDialog_Title">DB 복구중</string>
+    <string name="RepairDBDialog_Message">DB 복구 중...</string>
+    <string name="RepairDB_Complete">DB 복구 성공</string>
+    <string name="RepairDB_Fail">DB 복구 실패</string>
+    <string name="UpdateDBDialog_Message">DB 업데이트 중...</string>
+    <string name="UpdateDBDialog_RefreshVersionMessage">DB 버전 갱신 중...</string>
+    <string name="UpdateDBDialog_LoadDB">DB 다시 읽는 중...</string>
+    <string name="CheckDBUpdate_UpToDate">현재 DB 버전이 최신입니다.</string>
+    <string name="CheckDBUpdate_Complete">DB 업데이트 완료</string>
+    <string name="NewFeatureDialog_Title">새로운 기능</string>
+    <string name="FAB_ChangeSubMenuError">플로팅 보조 메뉴 작동 실패</string>
+    <string name="FAB_ChangeStatusError">플로팅 상태 변경 실패</string>
+    <string name="ImageViewer_ActivityOpenError">이미지 뷰어 실행 실패</string>
+    <string name="LineUp_Error">정렬 오류 발생</string>
+    <string name="FilterBox_InitError">필터 박스 초기화 오류</string>
+    <string name="SortBox_InitError">정렬 박스 초기화 오류</string>
+    <string name="Category_InitError">카테고리 초기화 오류</string>
+    <string name="List_InitError">리스트 초기화 오류</string>
+    <string name="UpdateEventDialog_Title">이벤트 업데이트</string>
+    <string name="UpdateEventDialog_Message">이벤트 업데이트 중...</string>
+    <string name="UpdateEventDialog_RefreshVersionMessage">이벤트 버전 갱신 중...</string>
+    <string name="InitLoad_Error">초기 로딩 실패</string>
+    <string name="ImageViewer_ChangeImageError">이미지 전환 오류</string>
+    <string name="Animation_Error">애니메이션 오류</string>
+    <string name="Permission_Error">권한 부여 실패</string>
+    <string name="PermissionDeny_Message">해당 권한을 허용하지 않으면 소전사전을 정상적으로 이용하실 수 없습니다</string>
+    <string name="RefreshImageCacheText">이미지 캐시 갱신</string>
+    <string name="Main_DBChecking">확인 중...</string>
+    <string name="Main_DBUpdateAvailable">업데이트 존재</string>
+    <string name="Main_DBUpdateNewest">최신버전</string>
+    <string name="Web_NetworkNotInternet">네트워크에 연결되어 있지 않습니다. 해당 기능은 네트워크 연결이 있어야 합니다. 네트워크 연결 확인 후 재시도 해주세요.</string>
+    <string name="Switch_ExternalBrowser">외부 브라우저로 연결됩니다.</string>
   
-  <!--Common String-->
-  <string name="Common_AC">명중</string>
-  <string name="Common_AC2">정밀</string>
-  <string name="Common_AM">장갑</string>
-  <string name="Common_AS">사속</string>
-  <string name="Common_CR">치명타</string>
-  <string name="Common_EV">회피</string>
-  <string name="Common_FR">화력</string>
-  <string name="Common_CL">쿨타임</string>
-  <string name="Common_HP">체력</string>
-  <string name="Common_MoveSpeed">이동속도</string>
-  <string name="Common_Penetration">관통</string>
-  <string name="Common_Reload">재장전</string>
-  <string name="Common_Kill">살상</string>
-  <string name="Common_Crush">파쇄</string>
-  <string name="Common_Reload2">장전</string>
-  <string name="Common_NickName">별명</string>
-  <string name="Common_Name">이름</string>
-  <string name="Common_CodeName">코드명</string>
-  <string name="Common_Grade">등급</string>
-  <string name="Common_BornGrade">태생 등급</string>
-  <string name="Common_VersionUpGrade">버전업</string>
-  <string name="Common_Range">범위</string>
-  <string name="Common_DicNumber">도감 번호</string>
-  <string name="Common_RealGunModel">실제 모델</string>
-  <string name="Common_ProductCountry">출신 국가</string>
-  <string name="Common_Illustrator">일러스트</string>
-  <string name="Common_VoiceActor">성우</string>
-  <string name="Common_HowToGain">획득 방법</string>
-  <string name="Common_AppearancePlace">출현 지역</string>
-  <string name="Common_Effect">효과</string>
-  <string name="Common_Mag">비율</string>
-  <string name="Common_Type">종류</string>
-  <string name="Common_GunType">총기 종류</string>
-  <string name="Common_EquipCategory">장비 분류</string>
-  <string name="Common_EquipType">장비 종류</string>
-  <string name="Common_FairyType">요정 종류</string>
-  <string name="Common_EnemyType">철혈 종류</string>
-  <string name="Common_Affiliation">소속</string>
-  <string name="Common_FSTType">중화기 종류</string>
-  <string name="Common_ProductTime">제조 시간</string>
-  <string name="Common_SkillName">스킬명</string>
-  <string name="Common_SkillExplain">스킬설명</string>
-  <string name="Common_Buff">버프 효과</string>
-  <string name="Common_Skill">스킬</string>
-  <string name="Common_AdvanceProduct">중형제조</string>
-  <string name="Common_NormalProduct">일반제조</string>
-  <string name="Common_Accessories">부속</string>
-  <string name="Common_Magazine">탄환</string>
-  <string name="Common_FairyType_Combat">전투</string>
-  <string name="Common_FairyType_Strategy">책략</string>
-  <string name="Common_Default">기본</string>
-  <string name="Time_Hour">시간</string>
-  <string name="Time_Minute">분</string>
-  <string name="Time_Second">초</string>
-  <string name="Common_AllowRange">허용 범위 ±</string>
-  <string name="Common_Play">재생</string>
-  <string name="Common_Normal">일반</string>
-  <string name="Common_Boss">보스</string>
-  <string name="Common_ETC">기타</string>
-  <string name="Common_Ability">능력</string>
-  <string name="Common_Init">초기</string>
-  <string name="Common_Min">최소</string>
-  <string name="Common_Max">최대</string>
-  <string name="Common_OnlyUseEquip">전용 장비</string>
-  <string name="Common_GFDv2">소전사전 v2</string>
-  <string name="Common_Update">업데이트</string>
-  <string name="Common_ManPower">인력</string>
-  <string name="Common_Ammo">탄약</string>
-  <string name="Common_Food">식량</string>
-  <string name="Common_Parts">부품</string>
-  <string name="Common_Tier">티어</string>
-  <string name="Common_Category">분류</string>
-  <string name="Common_ProductHitCount">적중 횟수</string>
-  <string name="Common_ProductTotalCount">시도 횟수</string>
-  <string name="Common_Probability">확률</string>
-  <string name="Common_AdvanceProduct_Type1">1형</string>
-  <string name="Common_AdvanceProduct_Type2">2형</string>
-  <string name="Common_AdvanceProduct_Type3">3형</string>
-  <string name="Common_Now">현재</string>
-  <string name="Common_Total">전체</string>
-  <string name="Common_Input">입력</string>
-  <string name="Common_TDoll">인형</string>
-  <string name="Common_Equipment">장비</string>
-  <string name="Common_Fairy">요정</string>
-  <string name="Common_FST">화력소대</string>
-  <string name="Common_Previous">이전</string>
-  <string name="Common_Next">다음</string>
-  <string name="Common_PreviousList">이전 목록으로</string>
-  <string name="Common_NonProduct">제조 불가</string>
-  <string name="Common_Affiliation_SF">철혈</string>
-  <string name="Common_Affiliation_IOP">I.O.P</string>
-  <string name="Common_Affiliation_MindMapSystem">마인드 맵</string>
-  <string name="Common_Affiliation_KCCO">정규군</string>
-  <string name="Common_Affiliation_Paradeus">패러데우스</string>
-  <string name="Common_Affiliation_ELID">E.L.I.D.</string>
-  <string name="Common_GFDNotification">소전사전 공지사항</string>
-  <string name="Common_TextSize">글자 크기</string>
-  <string name="Common_TextColor">글자 색상</string>
-  <string name="Common_BackgroundColor">배경 색상</string>
-  <string name="Common_Language_KR">한국어</string>
-  <string name="Common_Language_EN">영어</string>
-  <string name="Common_Language_JP">일본어</string>
-  <string name="Common_Filter">필터</string>
-  <string name="Common_Sort">정렬</string>
-  <string name="Common_UpdateImageCache">이미지 캐시 갱신</string>
-  <string name="Common_Link">링크</string>
-  <string name="Common_Close">닫기</string>
-  <string name="Common_Downloading">다운로드 중...</string>
-  <string name="Common_Load">로드 중...</string>
+    <!--Common String-->
+    <string name="Common_AC">명중</string>
+    <string name="Common_AC2">정밀</string>
+    <string name="Common_AM">장갑</string>
+    <string name="Common_AS">사속</string>
+    <string name="Common_CR">치명타</string>
+    <string name="Common_EV">회피</string>
+    <string name="Common_FR">화력</string>
+    <string name="Common_CL">쿨타임</string>
+    <string name="Common_HP">체력</string>
+    <string name="Common_MoveSpeed">이동속도</string>
+    <string name="Common_Penetration">관통</string>
+    <string name="Common_Reload">재장전</string>
+    <string name="Common_Kill">살상</string>
+    <string name="Common_Crush">파쇄</string>
+    <string name="Common_Reload2">장전</string>
+    <string name="Common_NickName">별명</string>
+    <string name="Common_Name">이름</string>
+    <string name="Common_CodeName">코드명</string>
+    <string name="Common_Grade">등급</string>
+    <string name="Common_BornGrade">태생 등급</string>
+    <string name="Common_VersionUpGrade">버전업</string>
+    <string name="Common_Range">범위</string>
+    <string name="Common_DicNumber">도감 번호</string>
+    <string name="Common_RealGunModel">실제 모델</string>
+    <string name="Common_ProductCountry">출신 국가</string>
+    <string name="Common_Illustrator">일러스트</string>
+    <string name="Common_VoiceActor">성우</string>
+    <string name="Common_HowToGain">획득 방법</string>
+    <string name="Common_AppearancePlace">출현 지역</string>
+    <string name="Common_Effect">효과</string>
+    <string name="Common_Mag">비율</string>
+    <string name="Common_Type">종류</string>
+    <string name="Common_GunType">총기 종류</string>
+    <string name="Common_EquipCategory">장비 분류</string>
+    <string name="Common_EquipType">장비 종류</string>
+    <string name="Common_FairyType">요정 종류</string>
+    <string name="Common_EnemyType">철혈 종류</string>
+    <string name="Common_Affiliation">소속</string>
+    <string name="Common_FSTType">중화기 종류</string>
+    <string name="Common_ProductTime">제조 시간</string>
+    <string name="Common_SkillName">스킬명</string>
+    <string name="Common_SkillExplain">스킬설명</string>
+    <string name="Common_Buff">버프 효과</string>
+    <string name="Common_Skill">스킬</string>
+    <string name="Common_AdvanceProduct">중형제조</string>
+    <string name="Common_NormalProduct">일반제조</string>
+    <string name="Common_Accessories">부속</string>
+    <string name="Common_Magazine">탄환</string>
+    <string name="Common_FairyType_Combat">전투</string>
+    <string name="Common_FairyType_Strategy">책략</string>
+    <string name="Common_Default">기본</string>
+    <string name="Time_Hour">시간</string>
+    <string name="Time_Minute">분</string>
+    <string name="Time_Second">초</string>
+    <string name="Common_AllowRange">허용 범위 ±</string>
+    <string name="Common_Play">재생</string>
+    <string name="Common_Normal">일반</string>
+    <string name="Common_Boss">보스</string>
+    <string name="Common_ETC">기타</string>
+    <string name="Common_Ability">능력</string>
+    <string name="Common_Init">초기</string>
+    <string name="Common_Min">최소</string>
+    <string name="Common_Max">최대</string>
+    <string name="Common_OnlyUseEquip">전용 장비</string>
+    <string name="Common_GFDv2">소전사전 v2</string>
+    <string name="Common_Update">업데이트</string>
+    <string name="Common_ManPower">인력</string>
+    <string name="Common_Ammo">탄약</string>
+    <string name="Common_Food">식량</string>
+    <string name="Common_Parts">부품</string>
+    <string name="Common_Tier">티어</string>
+    <string name="Common_Category">분류</string>
+    <string name="Common_ProductHitCount">적중 횟수</string>
+    <string name="Common_ProductTotalCount">시도 횟수</string>
+    <string name="Common_Probability">확률</string>
+    <string name="Common_AdvanceProduct_Type1">1형</string>
+    <string name="Common_AdvanceProduct_Type2">2형</string>
+    <string name="Common_AdvanceProduct_Type3">3형</string>
+    <string name="Common_Now">현재</string>
+    <string name="Common_Total">전체</string>
+    <string name="Common_Input">입력</string>
+    <string name="Common_TDoll">인형</string>
+    <string name="Common_Equipment">장비</string>
+    <string name="Common_Fairy">요정</string>
+    <string name="Common_FST">화력소대</string>
+    <string name="Common_Previous">이전</string>
+    <string name="Common_Next">다음</string>
+    <string name="Common_PreviousList">이전 목록으로</string>
+    <string name="Common_NonProduct">제조 불가</string>
+    <string name="Common_Affiliation_SF">철혈</string>
+    <string name="Common_Affiliation_IOP">I.O.P</string>
+    <string name="Common_Affiliation_MindMapSystem">마인드 맵</string>
+    <string name="Common_Affiliation_KCCO">정규군</string>
+    <string name="Common_Affiliation_Paradeus">패러데우스</string>
+    <string name="Common_Affiliation_ELID">E.L.I.D.</string>
+    <string name="Common_GFDNotification">소전사전 공지사항</string>
+    <string name="Common_TextSize">글자 크기</string>
+    <string name="Common_TextColor">글자 색상</string>
+    <string name="Common_BackgroundColor">배경 색상</string>
+    <string name="Common_Language_KR">한국어</string>
+    <string name="Common_Language_EN">영어</string>
+    <string name="Common_Language_JP">일본어</string>
+    <string name="Common_Filter">필터</string>
+    <string name="Common_Sort">정렬</string>
+    <string name="Common_UpdateImageCache">이미지 캐시 갱신</string>
+    <string name="Common_Link">링크</string>
+    <string name="Common_Close">닫기</string>
+    <string name="Common_Downloading">다운로드 중...</string>
+    <string name="Common_Load">로드 중...</string>
 
-  <!--Sort String-->
-  <string name="Sort_SortMethod">정렬 방법</string>
-  <string name="Sort_SortOrder">정렬 순서</string>
-  <string name="Sort_SortMethod_Name">이름</string>
-  <string name="Sort_SortMethod_Number">번호</string>
-  <string name="Sort_SortMethod_ProductTime">제조시간</string>
-  <string name="Sort_SortMethod_FR">화력</string>
-  <string name="Sort_SortMethod_EV">회피</string>
-  <string name="Sort_SortMethod_AC">명중</string>
-  <string name="Sort_SortMethod_HP">체력</string>
-  <string name="Sort_SortMethod_AS">사속</string>
-  <string name="Sort_SortOrder_Ascending">오름차순</string>
-  <string name="Sort_SortOrder_Descending">내림차순</string>
+    <!--Sort String-->
+    <string name="Sort_SortMethod">정렬 방법</string>
+    <string name="Sort_SortOrder">정렬 순서</string>
+    <string name="Sort_SortMethod_Name">이름</string>
+    <string name="Sort_SortMethod_Number">번호</string>
+    <string name="Sort_SortMethod_ProductTime">제조시간</string>
+    <string name="Sort_SortMethod_FR">화력</string>
+    <string name="Sort_SortMethod_EV">회피</string>
+    <string name="Sort_SortMethod_AC">명중</string>
+    <string name="Sort_SortMethod_HP">체력</string>
+    <string name="Sort_SortMethod_AS">사속</string>
+    <string name="Sort_SortOrder_Ascending">오름차순</string>
+    <string name="Sort_SortOrder_Descending">내림차순</string>
   
-  <!--Country String-->
-  <string name="Country_Australia">호주</string>
-  <string name="Country_Austria">오스트리아</string>
-  <string name="Country_Belgium">벨기에</string>
-  <string name="Country_BlazeBlue">블레이블루</string>
-  <string name="Country_Brazil">브라질</string>
-  <string name="Country_Bulgaria">불가리아</string>
-  <string name="Country_China">중국</string>
-  <string name="Country_Croatia">크로아티아</string>
-  <string name="Country_Czech">체코</string>
-  <string name="Country_Czechoslovakia">체코슬로바키아</string>
-  <string name="Country_DJMAXRESPECT">DJMAX RESPECT</string>
-  <string name="Country_Finland">핀란드</string>
-  <string name="Country_France">프랑스</string>
-  <string name="Country_Germany">독일</string>
-  <string name="Country_GuiltyGear">길티기어</string>
-  <string name="Country_Honkai2">붕괴학원2</string>
-  <string name="Country_Hungary">헝가리</string>
-  <string name="Country_Israel">이스라엘</string>
-  <string name="Country_Italy">이탈리아</string>
-  <string name="Country_Japan">일본</string>
-  <string name="Country_Poland">폴란드</string>
-  <string name="Country_RepublicOfKorea">대한민국</string>
-  <string name="Country_RepublicOfSouthAfrica">남아프리카공화국</string>
-  <string name="Country_Russia">러시아</string>
-  <string name="Country_Serbia">세르비아</string>
-  <string name="Country_Singapore">싱가포르</string>
-  <string name="Country_SovietUnion">소비에트 연방</string>
-  <string name="Country_Spain">스페인</string>
-  <string name="Country_Sweden">스웨덴</string>
-  <string name="Country_Switzerland">스위스</string>
-  <string name="Country_Taiwan">대만</string>
-  <string name="Country_UnitedKingdom">영국</string>
-  <string name="Country_UnitedStatesOfAmerica">미국</string>
+    <!--Country String-->
+    <string name="Country_Australia">호주</string>
+    <string name="Country_Austria">오스트리아</string>
+    <string name="Country_Belgium">벨기에</string>
+    <string name="Country_BlazeBlue">블레이블루</string>
+    <string name="Country_Brazil">브라질</string>
+    <string name="Country_Bulgaria">불가리아</string>
+    <string name="Country_China">중국</string>
+    <string name="Country_Croatia">크로아티아</string>
+    <string name="Country_Czech">체코</string>
+    <string name="Country_Czechoslovakia">체코슬로바키아</string>
+    <string name="Country_DJMAXRESPECT">DJMAX RESPECT</string>
+    <string name="Country_Finland">핀란드</string>
+    <string name="Country_France">프랑스</string>
+    <string name="Country_Germany">독일</string>
+    <string name="Country_GuiltyGear">길티기어</string>
+    <string name="Country_Honkai2">붕괴학원2</string>
+    <string name="Country_Hungary">헝가리</string>
+    <string name="Country_Israel">이스라엘</string>
+    <string name="Country_Italy">이탈리아</string>
+    <string name="Country_Japan">일본</string>
+    <string name="Country_Poland">폴란드</string>
+    <string name="Country_RepublicOfKorea">대한민국</string>
+    <string name="Country_RepublicOfSouthAfrica">남아프리카공화국</string>
+    <string name="Country_Russia">러시아</string>
+    <string name="Country_Serbia">세르비아</string>
+    <string name="Country_Singapore">싱가포르</string>
+    <string name="Country_SovietUnion">소비에트 연방</string>
+    <string name="Country_Spain">스페인</string>
+    <string name="Country_Sweden">스웨덴</string>
+    <string name="Country_Switzerland">스위스</string>
+    <string name="Country_Taiwan">대만</string>
+    <string name="Country_UnitedKingdom">영국</string>
+    <string name="Country_UnitedStatesOfAmerica">미국</string>
 
-  <!--Common Dialog String-->
-  <string name="AlertDialog_Confirm">확인</string>
-  <string name="AlertDialog_Download">다운로드</string>
-  <string name="AlertDialog_Cancel">취소</string>
-  <string name="AlertDialog_Set">설정</string>
-  <string name="AlertDialog_Reset">초기화</string>
-  <string name="AlertDialog_Delete">삭제</string>
-  <string name="AlertDialog_Exit">종료</string>
+    <!--Common Dialog String-->
+    <string name="AlertDialog_Confirm">확인</string>
+    <string name="AlertDialog_Download">다운로드</string>
+    <string name="AlertDialog_Cancel">취소</string>
+    <string name="AlertDialog_Set">설정</string>
+    <string name="AlertDialog_Reset">초기화</string>
+    <string name="AlertDialog_Delete">삭제</string>
+    <string name="AlertDialog_Exit">종료</string>
   
-  <!--Common LineUp String-->
-  <string name="LineUp_Name">이름</string>
-  <string name="LineUp_Time">제조시간</string>
-  <string name="LineUp_Num">도감번호</string>
+    <!--Common LineUp String-->
+    <string name="LineUp_Name">이름</string>
+    <string name="LineUp_Time">제조시간</string>
+    <string name="LineUp_Num">도감번호</string>
   
-  <!--CalcMain-->
-  <string name="TitleName_ExpItemCalc">작전보고서 계산기</string>
-  <string name="TitleName_CoreCalc">코어 계산기</string>
-  <string name="TitleName_CoalitionGrade">혼합세력 등급 계산기</string>
-  <string name="TitleName_SkillTrainingCalc">훈련-스킬칩 계산기</string>
-  <string name="TitleName_FSTGradeUpCalc">FST 등급 계산기</string>
-  <string name="ExpItemCalc_ItemCount">장</string>
-  <string name="CoreCalc_ItemCount">개</string>
-  <string name="ChangeMode_Error">항목 변경 오류</string>
-  <string name="InternalCalc_Error">내부 계산 오류</string>
+    <!--CalcMain-->
+    <string name="TitleName_ExpItemCalc">작전보고서 계산기</string>
+    <string name="TitleName_CoreCalc">코어 계산기</string>
+    <string name="TitleName_CoalitionGrade">혼합세력 등급 계산기</string>
+    <string name="TitleName_SkillTrainingCalc">훈련-스킬칩 계산기</string>
+    <string name="TitleName_FSTGradeUpCalc">FST 등급 계산기</string>
+    <string name="ExpItemCalc_ItemCount">장</string>
+    <string name="CoreCalc_ItemCount">개</string>
+    <string name="ChangeMode_Error">항목 변경 오류</string>
+    <string name="InternalCalc_Error">내부 계산 오류</string>
  
 
-  <!--DBMain-->
-  <string name="DBMainActivity_Title">목록</string>
-  <string name="DBMainActivity_SearchHint">이름 검색</string>
+    <!--DBMain-->
+    <string name="DBMainActivity_Title">목록</string>
+    <string name="DBMainActivity_SearchHint">이름 검색</string>
   
-  <!--DollDBDetailActivity-->
-  <string name="DollDBDetail_RadarAverageString">평균</string>
-  <string name="DollDBDetail_BuffType_All">모든 총기 적용</string>
-  <string name="DollDBDetail_BuffType_ConfirmString">적용</string>
-  <string name="DollDBDetail_MODChangeFail">Mod 변경 실패</string>
+    <!--DollDBDetailActivity-->
+    <string name="DollDBDetail_RadarAverageString">평균</string>
+    <string name="DollDBDetail_BuffType_All">모든 총기 적용</string>
+    <string name="DollDBDetail_BuffType_ConfirmString">적용</string>
+    <string name="DollDBDetail_MODChangeFail">Mod 변경 실패</string>
 
   
-  <!--DollDBImageViewer-->
-  <string name="DollDBImageViewer_DefaultCostume">기본 코스튬</string>
-  <string name="DollDBImageViewer_ImageStatusNormal">정상</string>
-  <string name="DollDBImageViewer_ImageStatusDamage">중상</string>
-  <string name="DollDBImageViewer_ImageCensored">검열</string>
-  <string name="DollDBImageViewer_ImageOriginal">원본</string>
-  <string name="DollDBImageViewer_Menu_Censor">검열 전환</string>
-  <string name="DollDBImageViewer_Menu_Damage">일반/중상 전환</string>
+    <!--DollDBImageViewer-->
+    <string name="DollDBImageViewer_DefaultCostume">기본 코스튬</string>
+    <string name="DollDBImageViewer_ImageStatusNormal">정상</string>
+    <string name="DollDBImageViewer_ImageStatusDamage">중상</string>
+    <string name="DollDBImageViewer_ImageCensored">검열</string>
+    <string name="DollDBImageViewer_ImageOriginal">원본</string>
+    <string name="DollDBImageViewer_Menu_Censor">검열 전환</string>
+    <string name="DollDBImageViewer_Menu_Damage">일반/중상 전환</string>
   
-  <!--DollDBMain-->
-  <string name="DollDBMainActivity_Title">인형 목록</string>
-  <string name="DollDBMainActivity_SearchHint">인형 이름 검색</string>
+    <!--DollDBMain-->
+    <string name="DollDBMainActivity_Title">인형 목록</string>
+    <string name="DollDBMainActivity_SearchHint">인형 이름 검색</string>
   
-  <!--ProductPercentTable-->
-  <string name="ProductPercentTable_List_TotalCount">시도 횟수</string>
-  <string name="ProductPercentTable_List_Percentage">제조 확률</string>
-  <string name="ProductPercentTable_ProductType_Normal">일반</string>
-  <string name="ProductPercentTable_ProductType_Advance">중형</string>
-  <string name="ProductPercentTable_ToolbarMenu_ListMode">목록 모드</string>
-  <string name="ProductPercentTable_ToolbarMenu_ProductTypeMode">제조 방식 모드</string>
-  <string name="ProductPercentTable_LoadingText_ReceiveServerData">서버 데이터 받는 중...</string>
-  <string name="ProductPercentTable_LoadingText_DataProcess">데이터 처리 중...</string>
-  <string name="ProductPercentTable_LoadingText_DataListing">데이터 정렬 중...</string>
+    <!--ProductPercentTable-->
+    <string name="ProductPercentTable_List_TotalCount">시도 횟수</string>
+    <string name="ProductPercentTable_List_Percentage">제조 확률</string>
+    <string name="ProductPercentTable_ProductType_Normal">일반</string>
+    <string name="ProductPercentTable_ProductType_Advance">중형</string>
+    <string name="ProductPercentTable_ToolbarMenu_ListMode">목록 모드</string>
+    <string name="ProductPercentTable_ToolbarMenu_ProductTypeMode">제조 방식 모드</string>
+    <string name="ProductPercentTable_LoadingText_ReceiveServerData">서버 데이터 받는 중...</string>
+    <string name="ProductPercentTable_LoadingText_DataProcess">데이터 처리 중...</string>
+    <string name="ProductPercentTable_LoadingText_DataListing">데이터 정렬 중...</string>
 
-  <!--DollDBGuideImageViewer-->
-  <string name="DollDBGuideImageViewer_Title">인형 가이드 이미지 (Beta)</string>
-  <string name="DollDBGuideImageViewer_LoadingText_NotExistImage">서버에 이미지가 없습니다</string>
-  <string name="DollDBGuideImageViewer_LoadingText_CheckLocalImage">로컬 이미지 확인 중...</string>
-  <string name="DollDBGuideImageViewer_LoadingText_CheckServerImage">서버 이미지 확인 중...</string>
-  <string name="DollDBGuideImageViewer_LoadingText_DownloadImage">이미지 다운로드 중...</string>
-  <string name="DollDBGuideImageViewer_LoadingText_LoadImage">이미지 로드 중...</string>
-  <string name="DollDBGuideImageViewer_LoadingText_FailLoadImage">이미지 로드 실패 :(</string>
-  <string name="DollDBGuideImageViewer_LoadingText_FailDownloadImage">이미지 다운로드 실패 :(</string>
+    <!--DollDBGuideImageViewer-->
+    <string name="DollDBGuideImageViewer_Title">인형 가이드 이미지 (Beta)</string>
+    <string name="DollDBGuideImageViewer_LoadingText_NotExistImage">서버에 이미지가 없습니다</string>
+    <string name="DollDBGuideImageViewer_LoadingText_CheckLocalImage">로컬 이미지 확인 중...</string>
+    <string name="DollDBGuideImageViewer_LoadingText_CheckServerImage">서버 이미지 확인 중...</string>
+    <string name="DollDBGuideImageViewer_LoadingText_DownloadImage">이미지 다운로드 중...</string>
+    <string name="DollDBGuideImageViewer_LoadingText_LoadImage">이미지 로드 중...</string>
+    <string name="DollDBGuideImageViewer_LoadingText_FailLoadImage">이미지 로드 실패 :(</string>
+    <string name="DollDBGuideImageViewer_LoadingText_FailDownloadImage">이미지 다운로드 실패 :(</string>
   
-  <!--EnemyDBDetail-->
-  <string name="EnemyDBDetail_Boss">보스</string>
-  <string name="EnemyDBDetail_Normal">일반</string>
-  <string name="EnemyDBDetail_EnemyVersionType">적군 유형</string>
+    <!--EnemyDBDetail-->
+    <string name="EnemyDBDetail_Boss">보스</string>
+    <string name="EnemyDBDetail_Normal">일반</string>
+    <string name="EnemyDBDetail_EnemyVersionType">적군 유형</string>
   
-  <!--EnemyDBMain-->
-  <string name="EnemyDBMainActivity_Title">적 목록</string>
-  <string name="EnemyDBMainActivity_SearchHint">적 이름 검색</string>
+    <!--EnemyDBMain-->
+    <string name="EnemyDBMainActivity_Title">적 목록</string>
+    <string name="EnemyDBMainActivity_SearchHint">적 이름 검색</string>
   
-  <!--EquipDBMain-->
-  <string name="EquipDBMainActivity_Title">장비 목록</string>
-  <string name="EquipDBMainActivity_SearchHint">장비 이름 검색</string>
+    <!--EquipDBMain-->
+    <string name="EquipDBMainActivity_Title">장비 목록</string>
+    <string name="EquipDBMainActivity_SearchHint">장비 이름 검색</string>
   
-  <!--EventList-->
-  <string name="EventListActivity_Title">이벤트 목록</string>
-  <string name="EventList_NoEvent">이벤트 없음</string>
+    <!--EventList-->
+    <string name="EventListActivity_Title">이벤트 목록</string>
+    <string name="EventList_NoEvent">이벤트 없음</string>
   
-  <!--FairyDBMain-->
-  <string name="FairyDBMainActivity_Title">요정 목록</string>
-  <string name="FairyDBMainActivity_SearchHint">요정 이름 검색</string>
+    <!--FairyDBMain-->
+    <string name="FairyDBMainActivity_Title">요정 목록</string>
+    <string name="FairyDBMainActivity_SearchHint">요정 이름 검색</string>
 
-  <!--FairyDBImageViewer-->
-  <string name="FairyDBImageViewer_PreviousButton">이전 단계</string>
-  <string name="FairyDBImageViewer_NextButton">다음 단계</string>
+    <!--FairyDBImageViewer-->
+    <string name="FairyDBImageViewer_PreviousButton">이전 단계</string>
+    <string name="FairyDBImageViewer_NextButton">다음 단계</string>
   
-  <!--FSTDBDetail-->
-  <string name="FSTDBDetail_Type_ATW">대전차화기</string>
-  <string name="FSTDBDetail_Type_AGL">자동유탄발사기</string>
-  <string name="FSTDBDetail_Type_MTR">박격포</string>
-  <string name="FSTDBDetail_Chipset_Default">기본</string>
-  <string name="FSTDBDetail_SubGradeError">등급 적용 오류</string>
-  <string name="FSTDBDetail_CircuitCalcError">회로 계산 오류</string>
-  <string name="FSTDBDetail_AbilityCalcError">능력치 계산 오류</string>
+    <!--FSTDBDetail-->
+    <string name="FSTDBDetail_Type_ATW">대전차화기</string>
+    <string name="FSTDBDetail_Type_AGL">자동유탄발사기</string>
+    <string name="FSTDBDetail_Type_MTR">박격포</string>
+    <string name="FSTDBDetail_Chipset_Default">기본</string>
+    <string name="FSTDBDetail_SubGradeError">등급 적용 오류</string>
+    <string name="FSTDBDetail_CircuitCalcError">회로 계산 오류</string>
+    <string name="FSTDBDetail_AbilityCalcError">능력치 계산 오류</string>
   
-  <!--FSTMain-->
-  <string name="FSTDBMainActivity_Title">화력소대 목록</string>
-  <string name="FSTDBMainActivity_SearchHint">화력소대 이름 검색</string>
+    <!--FSTMain-->
+    <string name="FSTDBMainActivity_Title">화력소대 목록</string>
+    <string name="FSTDBMainActivity_SearchHint">화력소대 이름 검색</string>
 
-  <!--CoalitionMain-->
-  <string name="CoalitionDBMainActivity_Title">혼합세력 목록</string>
-  <string name="CoalitionDBMainActivity_SearchHint">혼합세력 이름 검색</string>
+    <!--CoalitionMain-->
+    <string name="CoalitionDBMainActivity_Title">혼합세력 목록</string>
+    <string name="CoalitionDBMainActivity_SearchHint">혼합세력 이름 검색</string>
 
-  <!--CoalitionDBDetailActivity-->
-  <string name="CoalitionDBDetail_RadarAverageString">평균</string>
-  <string name="CoalitionDBDetail_BuffType_All">모든 총기 적용</string>
-  <string name="CoalitionDBDetail_BuffType_ConfirmString">적용</string>
-  <string name="CoalitionDBDetail_AnalysisChangeFail">분석 수치 변경 실패</string>
+    <!--CoalitionDBDetailActivity-->
+    <string name="CoalitionDBDetail_RadarAverageString">평균</string>
+    <string name="CoalitionDBDetail_BuffType_All">모든 총기 적용</string>
+    <string name="CoalitionDBDetail_BuffType_ConfirmString">적용</string>
+    <string name="CoalitionDBDetail_AnalysisChangeFail">분석 수치 변경 실패</string>
 
-  <!--CoalitionDBImageViewer-->
-  <string name="CoalitionDBImageViewer_DefaultCostume">기본 코스튬</string>
-  <string name="CoalitionDBImageViewer_ImageStatusNormal">정상</string>
-  <string name="CoalitionDBImageViewer_ImageStatusDamage">중상</string>
-  <string name="CoalitionDBImageViewer_ImageStatusAwake">각성</string>
-  <string name="CoalitionDBImageViewer_ImageCensored">검열</string>
-  <string name="CoalitionDBImageViewer_ImageOriginal">원본</string>
-  <string name="CoalitionDBImageViewer_Menu_Censor">검열 전환</string>
-  <string name="CoalitionDBImageViewer_Menu_Damage">일반/중상 전환</string>
-  <string name="CoalitionDBImageViewer_Menu_Awake">일반/각성 전환</string>
+    <!--CoalitionDBImageViewer-->
+    <string name="CoalitionDBImageViewer_DefaultCostume">기본 코스튬</string>
+    <string name="CoalitionDBImageViewer_ImageStatusNormal">정상</string>
+    <string name="CoalitionDBImageViewer_ImageStatusDamage">중상</string>
+    <string name="CoalitionDBImageViewer_ImageStatusAwake">각성</string>
+    <string name="CoalitionDBImageViewer_ImageCensored">검열</string>
+    <string name="CoalitionDBImageViewer_ImageOriginal">원본</string>
+    <string name="CoalitionDBImageViewer_Menu_Censor">검열 전환</string>
+    <string name="CoalitionDBImageViewer_Menu_Damage">일반/중상 전환</string>
+    <string name="CoalitionDBImageViewer_Menu_Awake">일반/각성 전환</string>
   
-  <!--GFDInfo-->
-  <string name="GFDInfo_Title">소전사전v2 정보</string>
-  <string name="GFDInfo_Developer_Soomae">총괄 &amp; 디자인 : 수매</string>
-  <string name="GFDInfo_Developer_URK96">App &amp; 소스제작 : URK96</string>
-  <string name="GFDInfo_Developer_Bibitjyadame">검수 &amp; 공략 : 스텡</string>
-  <string name="GFDInfo_NowVersion">현재 버전</string>
-  <string name="GFDInfo_NewVersion">최신 버전</string>
-  <string name="GFDInfo_Update_Playstore">Play Store</string>
-  <string name="GFDInfo_Update_Apk">APK</string>
+    <!--GFDInfo-->
+    <string name="GFDInfo_Title">소전사전v2 정보</string>
+    <string name="GFDInfo_Developer_Soomae">총괄 &amp; 디자인 : 수매</string>
+    <string name="GFDInfo_Developer_URK96">App &amp; 소스제작 : URK96</string>
+    <string name="GFDInfo_Developer_Bibitjyadame">검수 &amp; 공략 : 스텡</string>
+    <string name="GFDInfo_NowVersion">현재 버전</string>
+    <string name="GFDInfo_NewVersion">최신 버전</string>
+    <string name="GFDInfo_Update_Playstore">Play Store</string>
+    <string name="GFDInfo_Update_Apk">APK</string>
 
-  <!--New Main-->
-  <string name="MainActivity_Title">소전사전</string>
-  <string name="Main_Category_Home">홈</string>
-  <string name="Main_Home_NotificationTitle">* 공지사항 *</string>
-  <string name="Main_Category_DB">DB</string>
-  <string name="Main_Category_GFDv1">소전사전v1</string>
-  <string name="Main_Category_GFUtil">소전기능</string>
-  <string name="Main_Category_Other">추가기능</string>
-  <string name="Main_Toolbar_GFDInfo">정보</string>
-  <string name="Main_Toolbar_Setting">설정</string>
+    <!--New Main-->
+    <string name="MainActivity_Title">소전사전</string>
+    <string name="Main_Category_Home">홈</string>
+    <string name="Main_Home_NotificationTitle">* 공지사항 *</string>
+    <string name="Main_Category_DB">DB</string>
+    <string name="Main_Category_GFDv1">소전사전v1</string>
+    <string name="Main_Category_GFUtil">소전기능</string>
+    <string name="Main_Category_Other">추가기능</string>
+    <string name="Main_Toolbar_GFDInfo">정보</string>
+    <string name="Main_Toolbar_Setting">설정</string>
 
-  <!--New Main - DB-->
-  <string name="Main_DB_DollDB">인형 DB</string>
-  <string name="Main_DB_EquipDB">장비 DB</string>
-  <string name="Main_DB_FairyDB">요정 DB</string>
-  <string name="Main_DB_EnemyDB">적 DB</string>
-  <string name="Main_DB_FSTDB">화력소대 DB</string>
-  <string name="Main_DB_CoalitionDB">혼합세력 DB</string>
+    <!--New Main - DB-->
+    <string name="Main_DB_DollDB">인형 DB</string>
+    <string name="Main_DB_EquipDB">장비 DB</string>
+    <string name="Main_DB_FairyDB">요정 DB</string>
+    <string name="Main_DB_EnemyDB">적 DB</string>
+    <string name="Main_DB_FSTDB">화력소대 DB</string>
+    <string name="Main_DB_CoalitionDB">혼합세력 DB</string>
 
-  <!--New Main - GFD v1-->
-  <!--Duplicate OldGFD String-->
+    <!--New Main - GFD v1-->
+    <!--Duplicate OldGFD String-->
 
-  <!--New Main - GFUtil-->
-  <string name="Main_GFUtil_Event">이벤트</string>
-  <string name="Main_GFUtil_OfficialNotification">소전 공지사항</string>
-  <string name="Main_GFUtil_Calc">계산기</string>
-  <string name="Main_GFUtil_AreaTip">지역 공략</string>
-  <string name="Main_GFUtil_MDSupport">군수지원</string>
-  <string name="Main_GFUtil_Story">스토리</string>
-  <string name="Main_GFUtil_GuideBookViewer">가이드북</string>
-  <string name="Main_GFUtil_ShortGuideBookViewer">초보자 가이드북</string>
-  <string name="Main_GFUtil_SDSimulator">SD 시뮬</string>
+    <!--New Main - GFUtil-->
+    <string name="Main_GFUtil_Event">이벤트</string>
+    <string name="Main_GFUtil_OfficialNotification">소전 공지사항</string>
+    <string name="Main_GFUtil_Calc">계산기</string>
+    <string name="Main_GFUtil_AreaTip">지역 공략</string>
+    <string name="Main_GFUtil_MDSupport">군수지원</string>
+    <string name="Main_GFUtil_Story">스토리</string>
+    <string name="Main_GFUtil_GuideBookViewer">가이드북</string>
+    <string name="Main_GFUtil_ShortGuideBookViewer">초보자 가이드북</string>
+    <string name="Main_GFUtil_SDSimulator">SD 시뮬</string>
 
-  <!--New Main - Other-->
-  <string name="Main_Other_ProductSimulator">제조 시뮬레이터</string>
-  <string name="Main_Other_GFOSTPlayer">OST Player</string>
-  <string name="Main_Other_Cartoon">만화</string>
-  <string name="Main_Other_GFPV">소전 PV</string>
-  <string name="Main_Other_GFAnimation">소전 애니</string>
+    <!--New Main - Other-->
+    <string name="Main_Other_ProductSimulator">제조 시뮬레이터</string>
+    <string name="Main_Other_GFOSTPlayer">OST Player</string>
+    <string name="Main_Other_Cartoon">만화</string>
+    <string name="Main_Other_GFPV">소전 PV</string>
+    <string name="Main_Other_GFAnimation">소전 애니</string>
   
-  <!--OldGFD-->
-  <string name="OldGFDViewer_ProductDollTable">인형 제조 시간표</string>
-  <string name="OldGFDViewer_ProductEquipTable">장비 제조 시간표</string>
-  <string name="OldGFDViewer_ProductFairyTable">요정 제조 시간표 &amp; 제조식</string>
-  <string name="OldGFDViewer_MDTable">군수지원 목록표</string>
-  <string name="OldGFDViewer_RecommendDollRecipe">인형 추천 제조식</string>
-  <string name="OldGFDViewer_RecommendEquipRecipe">장비 추천 제조식</string>
-  <string name="OldGFDViewer_RecommendMD">군수지원 효율표</string>
-  <string name="OldGFDViewer_RecommendLeveling">추천 레벨링 루트</string>
-  <string name="OldGFDViewer_DollPerformance">인형 성능표</string>
-  <string name="OldGFDViewer_FairyAttribute">요정 특성표</string>
-  <string name="OldGFDViewer_RecommendBreeding">초반 인형 육성 추천</string>
+    <!--OldGFD-->
+    <string name="OldGFDViewer_ProductDollTable">인형 제조 시간표</string>
+    <string name="OldGFDViewer_ProductEquipTable">장비 제조 시간표</string>
+    <string name="OldGFDViewer_ProductFairyTable">요정 제조 시간표 &amp; 제조식</string>
+    <string name="OldGFDViewer_MDTable">군수지원 목록표</string>
+    <string name="OldGFDViewer_RecommendDollRecipe">인형 추천 제조식</string>
+    <string name="OldGFDViewer_RecommendEquipRecipe">장비 추천 제조식</string>
+    <string name="OldGFDViewer_RecommendMD">군수지원 효율표</string>
+    <string name="OldGFDViewer_RecommendLeveling">추천 레벨링 루트</string>
+    <string name="OldGFDViewer_DollPerformance">인형 성능표</string>
+    <string name="OldGFDViewer_FairyAttribute">요정 특성표</string>
+    <string name="OldGFDViewer_RecommendBreeding">초반 인형 육성 추천</string>
   
-  <!--ProductSimulator-->
-  <string name="ProductSimulatorActivity_ProductStartError">제조 시작 오류</string>
-  <string name="ProductSimulatorActivity_InitRangeSetError">초기 범위 설정 오류</string>
-  <string name="ProductSimulatorActivity_CalcResourceError">자원 계산 오류</string>
-  <string name="ProductSimulatorActivity_StartResultError">결과 실행 오류</string>
-  <string name="ProductSimulatorActivity_GroupDollError">인형 분류 오류</string>
-  <string name="ProductSimulatorActivity_ProductDollError">인형 제조 오류</string>
+    <!--ProductSimulator-->
+    <string name="ProductSimulatorActivity_ProductStartError">제조 시작 오류</string>
+    <string name="ProductSimulatorActivity_InitRangeSetError">초기 범위 설정 오류</string>
+    <string name="ProductSimulatorActivity_CalcResourceError">자원 계산 오류</string>
+    <string name="ProductSimulatorActivity_StartResultError">결과 실행 오류</string>
+    <string name="ProductSimulatorActivity_GroupDollError">인형 분류 오류</string>
+    <string name="ProductSimulatorActivity_ProductDollError">인형 제조 오류</string>
   
-  <!--ProductSimulatorCategory-->
-  <string name="ProductSimulatorCategoryActivity_Title">I.O.P Production</string>
-  <string name="ProductSimulatorCategoryActivity_DollNormalProduct">인형 일반제조</string>
-  <string name="ProductSimulatorCategoryActivity_DollAdvancedProduct">인형 중형제조</string>
-  <string name="ProductSimulatorCategoryActivity_EquipNormalProduct">장비 일반제조</string>
-  <string name="ProductSimulatorCategoryActivity_EquipAdvancedProduct">장비 중형제조</string>
-  <string name="ProductSimulatorCategoryActivity_DollNormalProduct_Caption">인형 일반제조</string>
-  <string name="ProductSimulatorCategoryActivity_DollAdvancedProduct_Caption">인형 중형제조</string>
-  <string name="ProductSimulatorCategoryActivity_EquipNormalProduct_Caption">장비 일반제조</string>
-  <string name="ProductSimulatorCategoryActivity_EquipAdvancedProduct_Caption">장비 중형제조</string>
+    <!--ProductSimulatorCategory-->
+    <string name="ProductSimulatorCategoryActivity_Title">I.O.P Production</string>
+    <string name="ProductSimulatorCategoryActivity_DollNormalProduct">인형 일반제조</string>
+    <string name="ProductSimulatorCategoryActivity_DollAdvancedProduct">인형 중형제조</string>
+    <string name="ProductSimulatorCategoryActivity_EquipNormalProduct">장비 일반제조</string>
+    <string name="ProductSimulatorCategoryActivity_EquipAdvancedProduct">장비 중형제조</string>
+    <string name="ProductSimulatorCategoryActivity_DollNormalProduct_Caption">인형 일반제조</string>
+    <string name="ProductSimulatorCategoryActivity_DollAdvancedProduct_Caption">인형 중형제조</string>
+    <string name="ProductSimulatorCategoryActivity_EquipNormalProduct_Caption">장비 일반제조</string>
+    <string name="ProductSimulatorCategoryActivity_EquipAdvancedProduct_Caption">장비 중형제조</string>
 
-  <!--ProductSimulatorResult-->
-  <string name="ProductSimulatorResultActivity_Title">제조 결과</string>
+    <!--ProductSimulatorResult-->
+    <string name="ProductSimulatorResultActivity_Title">제조 결과</string>
     
-  <!--Setting-->
-  <string name="SettingActivity_Title">설정</string>
-  <string name="SettingActivity_DeleteLogFile_DialogTitle">Log 파일 삭제</string>
-  <string name="SettingActivity_DeleteLogFile_DialogCheckMessage">Log 파일을 전부 삭제하실건가요?</string>
-  <string name="SettingActivity_DeleteLogFile_DialogMessage">로그 삭제 중입니다.</string>
-  <string name="SettingActivity_DeleteLogFile_Complete">로그 삭제 성공!</string>
-  <string name="SettingActivity_DeleteLogFile_Fail">로그 삭제 실패!</string>
+    <!--Setting-->
+    <string name="SettingActivity_Title">설정</string>
+    <string name="SettingActivity_DeleteLogFile_DialogTitle">Log 파일 삭제</string>
+    <string name="SettingActivity_DeleteLogFile_DialogCheckMessage">Log 파일을 전부 삭제하실건가요?</string>
+    <string name="SettingActivity_DeleteLogFile_DialogMessage">로그 삭제 중입니다.</string>
+    <string name="SettingActivity_DeleteLogFile_Complete">로그 삭제 성공!</string>
+    <string name="SettingActivity_DeleteLogFile_Fail">로그 삭제 실패!</string>
   
-  <string name="SettingActivity_DownloadAllCache_DialogTitle">캐시 다운로드</string>
-  <string name="SettingActivity_DownloadAllCache_DialogCheckMessage">정말로 모든 캐쉬를 다운로드할 거야?\n\n스톱! 모든 캐시를 다운로드하면 약 400MB 정도 저장공간을 차지해!</string>
-  <string name="SettingActivity_DownloadAllCache_DialogMessage">캐시를 다운로드 하고 있어! 잠시만 기다려줘!</string>
-  <string name="SettingActivity_DownloadAllCache_StatusDollDB">인형 DB 읽는 중...</string>
-  <string name="SettingActivity_DownloadAllCache_StatusDollDB2">인형 캐시 다운로드 중...</string>
-  <string name="SettingActivity_DownloadAllCache_StatusFairyDB">요정 DB 읽는 중...</string>
-  <string name="SettingActivity_DownloadAllCache_StatusFairyDB2">요정 캐시 다운로드 중...</string>
-  <string name="SettingActivity_DownloadAllCache_StatusEquipDB">장비 DB 읽는 중...</string>
-  <string name="SettingActivity_DownloadAllCache_StatusEquipDB2">장비 캐시 다운로드 중...</string>
-  <string name="SettingActivity_DownloadAllCache_StatusOldGFD">소전사전v1 읽는 중...</string>
-  <string name="SettingActivity_DownloadAllCache_StatusOldGFD2">소전사전v1 다운로드 중...</string>
-  <string name="SettingActivity_DownloadAllCache_FailDialogTitle">캐시 다운로드 오류</string>
-  <string name="SettingActivity_DownloadAllCache_FailDialogMessage">캐시 다운로드에 오류가 발생했습니다.</string>
-  <string name="SettingActivity_DownloadAllCache_CompleteDialogTitle">캐시 다운로드 완료</string>
-  <string name="SettingActivity_DownloadAllCache_CompleteDialogMessage">캐시 다운로드가 완료되었습니다.</string>
-  <string name="SettingActivity_DeleteAllCache_DialogTitle">캐시 삭제</string>
-  <string name="SettingActivity_DeleteAllCache_DialogCheckMessage">정말로 모든 캐시를 삭제할 거야? 현재 캐시 용량은</string>
-  <string name="SettingActivity_DeleteAllCache_DialogMessage">캐시 삭제 중입니다.</string>
-  <string name="SettingActivity_DeleteAllCache_Complete">캐시 삭제 성공!</string>
-  <string name="SettingActivity_DeleteAllCache_Fail">캐시 삭제 실패!</string>
+    <string name="SettingActivity_DownloadAllCache_DialogTitle">캐시 다운로드</string>
+    <string name="SettingActivity_DownloadAllCache_DialogCheckMessage">정말로 모든 캐쉬를 다운로드할 거야?\n\n스톱! 모든 캐시를 다운로드하면 약 400MB 정도 저장공간을 차지해!</string>
+    <string name="SettingActivity_DownloadAllCache_DialogMessage">캐시를 다운로드 하고 있어! 잠시만 기다려줘!</string>
+    <string name="SettingActivity_DownloadAllCache_StatusDollDB">인형 DB 읽는 중...</string>
+    <string name="SettingActivity_DownloadAllCache_StatusDollDB2">인형 캐시 다운로드 중...</string>
+    <string name="SettingActivity_DownloadAllCache_StatusFairyDB">요정 DB 읽는 중...</string>
+    <string name="SettingActivity_DownloadAllCache_StatusFairyDB2">요정 캐시 다운로드 중...</string>
+    <string name="SettingActivity_DownloadAllCache_StatusEquipDB">장비 DB 읽는 중...</string>
+    <string name="SettingActivity_DownloadAllCache_StatusEquipDB2">장비 캐시 다운로드 중...</string>
+    <string name="SettingActivity_DownloadAllCache_StatusOldGFD">소전사전v1 읽는 중...</string>
+    <string name="SettingActivity_DownloadAllCache_StatusOldGFD2">소전사전v1 다운로드 중...</string>
+    <string name="SettingActivity_DownloadAllCache_FailDialogTitle">캐시 다운로드 오류</string>
+    <string name="SettingActivity_DownloadAllCache_FailDialogMessage">캐시 다운로드에 오류가 발생했습니다.</string>
+    <string name="SettingActivity_DownloadAllCache_CompleteDialogTitle">캐시 다운로드 완료</string>
+    <string name="SettingActivity_DownloadAllCache_CompleteDialogMessage">캐시 다운로드가 완료되었습니다.</string>
+    <string name="SettingActivity_DeleteAllCache_DialogTitle">캐시 삭제</string>
+    <string name="SettingActivity_DeleteAllCache_DialogCheckMessage">정말로 모든 캐시를 삭제할 거야? 현재 캐시 용량은</string>
+    <string name="SettingActivity_DeleteAllCache_DialogMessage">캐시 삭제 중입니다.</string>
+    <string name="SettingActivity_DeleteAllCache_Complete">캐시 삭제 성공!</string>
+    <string name="SettingActivity_DeleteAllCache_Fail">캐시 삭제 실패!</string>
   
 
-  <string name="SettingActivity_CheckFreeStorage_DialogTitle">저장 장치 여유공간 확인</string>
-  <string name="SettingActivity_CheckFreeStorage_DialogMessage">저장 장치 공간에 여유가 있는지 확인 중이야...! 기다려봐!</string>
-  <string name="SettingActivity_CheckFreeStorage_DialogMessage2">저장 장치 여유 공간</string>
-  <string name="SettingActivity_CheckFreeStorage_DialogMessage2_1">잠시 후 다운로드를 진행합니다</string>
-  <string name="SettingActivity_CheckFreeStorage_FailDialogTitle">다운로드 진행 불가</string>
-  <string name="SettingActivity_CheckFreeStorage_FailDialogMessage">여유 공간이 충분하지 않아 다운로드를 진행할 수 없습니다... 현재 남은 용량은</string>
-  <string name="SettingActivity_CheckFreeStorage_CheckFail">저장 장치 여유공간 확인 실패</string>
+    <string name="SettingActivity_CheckFreeStorage_DialogTitle">저장 장치 여유공간 확인</string>
+    <string name="SettingActivity_CheckFreeStorage_DialogMessage">저장 장치 공간에 여유가 있는지 확인 중이야...! 기다려봐!</string>
+    <string name="SettingActivity_CheckFreeStorage_DialogMessage2">저장 장치 여유 공간</string>
+    <string name="SettingActivity_CheckFreeStorage_DialogMessage2_1">잠시 후 다운로드를 진행합니다</string>
+    <string name="SettingActivity_CheckFreeStorage_FailDialogTitle">다운로드 진행 불가</string>
+    <string name="SettingActivity_CheckFreeStorage_FailDialogMessage">여유 공간이 충분하지 않아 다운로드를 진행할 수 없습니다... 현재 남은 용량은</string>
+    <string name="SettingActivity_CheckFreeStorage_CheckFail">저장 장치 여유공간 확인 실패</string>
   
   
-  <!--Setting Menus-->
-  <string name="Setting_Category_App">일반</string>
-  <string name="Setting_UpdateLog_Title">업데이트 내역</string>
-  <string name="Setting_UpdateLog_Summary">이 버전의 업데이트 내역을 열람합니다.</string>
-  <string name="Setting_StartAppMode_Title">앱 기동 모드</string>
-  <string name="Setting_StartAppMode_Summary">소전사전 시작 시 바로 표시될 메뉴 항목을 선택합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
-  <string name="Setting_NotificationAnimationOption_Title">상단 공지 효과 활성화</string>
-  <string name="Setting_NotificationAnimationOption_Summary">메인메뉴의 상단 공지사항이 흘러가는 효과를 활성화합니다. 활성화 시 메인메뉴에서 CPU 사용량이 약간 높아질 수 있습니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
-  <string name="Setting_LowMemoryOption_Title">저사양 옵션 활성화</string>
-  <string name="Setting_LowMemoryOption_Summary">RAM이 부족한 저사양 기기를 위해 일부 효과나 커스텀 리소스를 제한합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
-  <string name="Setting_UseLightTheme_Title">밝은 테마 사용</string>
-  <string name="Setting_UseLightTheme_Summary">기본값인 어두운 테마 대신 밝은 테마를 사용합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
-  <string name="Setting_ServerCheck_Title">서버 체크 활성화</string>
-  <string name="Setting_ServerCheck_Summary">앱 기동시 서버를 체크합니다. 비활성화 시 기동 시간이 짧아지지만 권장하지 않습니다.</string>
-  <string name="Setting_AppLanguage_Title">앱 언어 설정</string>
-  <string name="Setting_AppLanguage_Summary">앱에 표시될 언어를 설정합니다. 이 설정은 기기 언어 설정과는 별도로 설정됩니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
+    <!--Setting Menus-->
+    <string name="Setting_Category_App">일반</string>
+    <string name="Setting_UpdateLog_Title">업데이트 내역</string>
+    <string name="Setting_UpdateLog_Summary">이 버전의 업데이트 내역을 열람합니다.</string>
+    <string name="Setting_StartAppMode_Title">앱 기동 모드</string>
+    <string name="Setting_StartAppMode_Summary">소전사전 시작 시 바로 표시될 메뉴 항목을 선택합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
+    <string name="Setting_NotificationAnimationOption_Title">상단 공지 효과 활성화</string>
+    <string name="Setting_NotificationAnimationOption_Summary">메인메뉴의 상단 공지사항이 흘러가는 효과를 활성화합니다. 활성화 시 메인메뉴에서 CPU 사용량이 약간 높아질 수 있습니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
+    <string name="Setting_LowMemoryOption_Title">저사양 옵션 활성화</string>
+    <string name="Setting_LowMemoryOption_Summary">RAM이 부족한 저사양 기기를 위해 일부 효과나 커스텀 리소스를 제한합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
+    <string name="Setting_UseLightTheme_Title">밝은 테마 사용</string>
+    <string name="Setting_UseLightTheme_Summary">기본값인 어두운 테마 대신 밝은 테마를 사용합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
+    <string name="Setting_ServerCheck_Title">서버 체크 활성화</string>
+    <string name="Setting_ServerCheck_Summary">앱 기동시 서버를 체크합니다. 비활성화 시 기동 시간이 짧아지지만 권장하지 않습니다.</string>
+    <string name="Setting_AppLanguage_Title">앱 언어 설정</string>
+    <string name="Setting_AppLanguage_Summary">앱에 표시될 언어를 설정합니다. 이 설정은 기기 언어 설정과는 별도로 설정됩니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
   
-  <string name="Setting_Category_MainMenu">메인 화면</string>
-  <string name="Setting_StartMainFragment_Title">메인 시작 화면</string>
-  <string name="Setting_StartMainFragment_Summary">소전사전 시작 시 표시될 메뉴 카테고리를 선택합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
+    <string name="Setting_Category_MainMenu">메인 화면</string>
+    <string name="Setting_StartMainFragment_Title">메인 시작 화면</string>
+    <string name="Setting_StartMainFragment_Summary">소전사전 시작 시 표시될 메뉴 카테고리를 선택합니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
   
-  <string name="Setting_Category_DB">DB 설정</string>
-  <string name="Setting_DynamicDBLoad_Title">동적 DB 로드</string>
-  <string name="Setting_DynamicDBLoad_Summary">DB가 필요한 경우만에 DB를 불러옵니다. 이 기능을 활성화하면 앱 기동 시간은 짧아지지만 기능을 사용할 때 로드 시간이 증가할 수 있습니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
-  <string name="Setting_AutoDBUpdate_Title">자동 DB 업데이트</string>
-  <string name="Setting_AutoDBUpdate_Summary">소전사전 기동 시 자동으로 DB 업데이트를 확인합니다. 이 설정을 비활성화하면 수동으로 DB 업데이트를 확인해야 합니다.</string>
-  <string name="Setting_CheckDBUpdate_Title">지금 업데이트 확인</string>
-  <string name="Setting_CheckDBUpdate_Summary">DB 데이터의 업데이트를 확인합니다. 업데이트가 있는 경우 자동으로 업데이트가 진행됩니다.</string>
-  <string name="Setting_RepairDB_Title">DB 복구</string>
-  <string name="Setting_RepairDB_Summary">DB 데이터를 복구합니다. DB가 로드가 안되는 오류가 있을 경우 이 항목을 사용하여 다시 다운로드하여 복구합니다.</string>
+    <string name="Setting_Category_DB">DB 설정</string>
+    <string name="Setting_DynamicDBLoad_Title">동적 DB 로드</string>
+    <string name="Setting_DynamicDBLoad_Summary">DB가 필요한 경우만에 DB를 불러옵니다. 이 기능을 활성화하면 앱 기동 시간은 짧아지지만 기능을 사용할 때 로드 시간이 증가할 수 있습니다. 설정 후 앱을 재시작해야 적용됩니다.</string>
+    <string name="Setting_AutoDBUpdate_Title">자동 DB 업데이트</string>
+    <string name="Setting_AutoDBUpdate_Summary">소전사전 기동 시 자동으로 DB 업데이트를 확인합니다. 이 설정을 비활성화하면 수동으로 DB 업데이트를 확인해야 합니다.</string>
+    <string name="Setting_CheckDBUpdate_Title">지금 업데이트 확인</string>
+    <string name="Setting_CheckDBUpdate_Summary">DB 데이터의 업데이트를 확인합니다. 업데이트가 있는 경우 자동으로 업데이트가 진행됩니다.</string>
+    <string name="Setting_RepairDB_Title">DB 복구</string>
+    <string name="Setting_RepairDB_Summary">DB 데이터를 복구합니다. DB가 로드가 안되는 오류가 있을 경우 이 항목을 사용하여 다시 다운로드하여 복구합니다.</string>
   
-  <string name="Setting_Category_DBList">DB 리스트 설정</string>
-  <string name="Setting_DBListImageShow_Title">리스트 이미지 보기 활성화</string>
-  <string name="Setting_DBListImageShow_Summary">DB 리스트에서 각 항목에 해당하는 이미지를 표시/비표시 하도록 설정합니다. RAM이 2GB 이하인 기기에서 활성화 시 소전사전이 튕길 수 있습니다.</string>
-  <string name="Setting_PreviewDBListLayout_Title">신규 레이아웃 미리보기</string>
-  <string name="Setting_PreviewDBListLayout_Summary">다음 업데이트 때 변경될 레이아웃을 미리 적용합니다. 해당 설정은 인형, 장비, 요정 DB에만 적용됩니다.</string>
-  <string name="Setting_Category_DBDetail">DB 세부페이지 설정</string> 
-  <string name="Setting_DBDetailBackgroundImage_Title">세부페이지 배경 이미지 활성화</string>
-  <string name="Setting_DBDetailBackgroundImage_Summary">DB 세부페이지에서 배경에 표시되는 이미지의 활성화 여부를 설정합니다. RAM이 2GB 이하인 기기에서 활성화 시 소전사전이 튕길 수 있습니다.</string>
+    <string name="Setting_Category_DBList">DB 리스트 설정</string>
+    <string name="Setting_DBListImageShow_Title">리스트 이미지 보기 활성화</string>
+    <string name="Setting_DBListImageShow_Summary">DB 리스트에서 각 항목에 해당하는 이미지를 표시/비표시 하도록 설정합니다. RAM이 2GB 이하인 기기에서 활성화 시 소전사전이 튕길 수 있습니다.</string>
+    <string name="Setting_PreviewDBListLayout_Title">신규 레이아웃 미리보기</string>
+    <string name="Setting_PreviewDBListLayout_Summary">다음 업데이트 때 변경될 레이아웃을 미리 적용합니다. 해당 설정은 인형, 장비, 요정 DB에만 적용됩니다.</string>
+    <string name="Setting_Category_DBDetail">DB 세부페이지 설정</string> 
+    <string name="Setting_DBDetailBackgroundImage_Title">세부페이지 배경 이미지 활성화</string>
+    <string name="Setting_DBDetailBackgroundImage_Summary">DB 세부페이지에서 배경에 표시되는 이미지의 활성화 여부를 설정합니다. RAM이 2GB 이하인 기기에서 활성화 시 소전사전이 튕길 수 있습니다.</string>
   
-  <string name="Setting_Category_TextViewer">텍스트 뷰어</string>
-  <string name="Setting_TextSize_Title">글자 크기</string>
-  <string name="Setting_TextSize_Summary">텍스트 뷰어에서 나타나는 글자 크기를 설정합니다.</string>
-  <string name="Setting_TextColor_Title">글자 색상</string>
-  <string name="Setting_TextColor_Summary">텍스트 뷰어에서 나타나는 글자 색상을 설정합니다.</string>
-  <string name="Setting_BackgroundColor_Title">배경 색상</string>
-  <string name="Setting_BackgroundColor_Summary">텍스트 뷰어에서 나타나는 배경 색상을 설정합니다.</string>
+    <string name="Setting_Category_TextViewer">텍스트 뷰어</string>
+    <string name="Setting_TextSize_Title">글자 크기</string>
+    <string name="Setting_TextSize_Summary">텍스트 뷰어에서 나타나는 글자 크기를 설정합니다.</string>
+    <string name="Setting_TextColor_Title">글자 색상</string>
+    <string name="Setting_TextColor_Summary">텍스트 뷰어에서 나타나는 글자 색상을 설정합니다.</string>
+    <string name="Setting_BackgroundColor_Title">배경 색상</string>
+    <string name="Setting_BackgroundColor_Summary">텍스트 뷰어에서 나타나는 배경 색상을 설정합니다.</string>
   
-  <string name="Setting_Category_Cache">캐시 설정</string> 
-  <string name="Setting_DownloadAllCache_Title">캐시 일괄 다운로드</string>
-  <string name="Setting_DownloadAllCache_Summary">소전사전에서 사용하는 데이터베이스 캐쉬 파일들을 일괄적으로 미리 다운로드 합니다. 이 항목을 이용하여 캐시를 다운로드 하시면 오프라인에서도 일부분은 문제없이 사용하실 수 있습니다.</string>
-  <string name="Setting_CleanCache_Title">캐시 삭제</string>
-  <string name="Setting_CleanCache_Summary">소전사전 사용 중 누적된 캐시 파일을 삭제하여 저장 공간을 확보합니다. DB 캐시가 없으면 해당 캐시를 다시 다운받기 때문에 데이터 사용량이 증가할 수 있습니다. 캐시 삭제 후에는 앱을 재시작하는 것을 권장합니다.</string>
+    <string name="Setting_Category_Cache">캐시 설정</string> 
+    <string name="Setting_DownloadAllCache_Title">캐시 일괄 다운로드</string>
+    <string name="Setting_DownloadAllCache_Summary">소전사전에서 사용하는 데이터베이스 캐쉬 파일들을 일괄적으로 미리 다운로드 합니다. 이 항목을 이용하여 캐시를 다운로드 하시면 오프라인에서도 일부분은 문제없이 사용하실 수 있습니다.</string>
+    <string name="Setting_CleanCache_Title">캐시 삭제</string>
+    <string name="Setting_CleanCache_Summary">소전사전 사용 중 누적된 캐시 파일을 삭제하여 저장 공간을 확보합니다. DB 캐시가 없으면 해당 캐시를 다시 다운받기 때문에 데이터 사용량이 증가할 수 있습니다. 캐시 삭제 후에는 앱을 재시작하는 것을 권장합니다.</string>
   
-  <string name="Setting_Category_Log">Log 설정</string> 
-  <string name="Setting_DeleteAllLogFile_Title">Log 파일 삭제</string>
-  <string name="Setting_DeleteAllLogFile_Summary">Log 파일을 전부 삭제합니다.</string>
+    <string name="Setting_Category_Log">Log 설정</string> 
+    <string name="Setting_DeleteAllLogFile_Title">Log 파일 삭제</string>
+    <string name="Setting_DeleteAllLogFile_Summary">Log 파일을 전부 삭제합니다.</string>
   
-  <string name="Setting_Category_ETC">기타</string>
-  <string name="Setting_ExternalLibraryLicense_Title">외부 라이브러리 라이선스</string>
-  <string name="Setting_ExternalLibraryLicense_Summary">소전사전에 사용된 외부 라이브러리의 라이선스를 확인합니다.</string>
-  <string name="Setting_GFDSourceCode_Title">소전사전 소스코드</string>
-  <string name="Setting_GFDSourceCode_Summary">소전사전의 소스코드가 저장된 저장소로 이동합니다. 외부 앱으로 전환되며 Github로 이동합니다.</string>
+    <string name="Setting_Category_ETC">기타</string>
+    <string name="Setting_ExternalLibraryLicense_Title">외부 라이브러리 라이선스</string>
+    <string name="Setting_ExternalLibraryLicense_Summary">소전사전에 사용된 외부 라이브러리의 라이선스를 확인합니다.</string>
+    <string name="Setting_GFDSourceCode_Title">소전사전 소스코드</string>
+    <string name="Setting_GFDSourceCode_Summary">소전사전의 소스코드가 저장된 저장소로 이동합니다. 외부 앱으로 전환되며 Github로 이동합니다.</string>
 
   
   
-  <!--Calc_Core-->
-  <string name="Calc_Core_GradeSettingText">등급</string>
-  <string name="Calc_Core_DummySettingText">편제 수</string>
-  <string name="Calc_Core_ResultCoreCountText">* 필요한 코어 수 *</string>
-  <string name="Calc_Core_DefaultCoreCountResultText">개 코어 필요</string>
+    <!--Calc_Core-->
+    <string name="Calc_Core_GradeSettingText">등급</string>
+    <string name="Calc_Core_DummySettingText">편제 수</string>
+    <string name="Calc_Core_ResultCoreCountText">* 필요한 코어 수 *</string>
+    <string name="Calc_Core_DefaultCoreCountResultText">개 코어 필요</string>
   
-  <!--Calc_CoalitionGrade-->
-  <string name="Calc_CoalitionGrade_BornGradeSettingText">태생 등급</string>
-  <string name="Calc_CoalitionGrade_DummySettingText">등급 설정</string>
-  <string name="Calc_CoalitionGrade_ResultDiskCountText">* 필요 디스크 *</string>
-  <string name="Calc_CoalitionGrade_DefaultDiskCountResultText">디스크 필요</string>
+    <!--Calc_CoalitionGrade-->
+    <string name="Calc_CoalitionGrade_BornGradeSettingText">태생 등급</string>
+    <string name="Calc_CoalitionGrade_DummySettingText">등급 설정</string>
+    <string name="Calc_CoalitionGrade_ResultDiskCountText">* 필요 디스크 *</string>
+    <string name="Calc_CoalitionGrade_DefaultDiskCountResultText">디스크 필요</string>
   
-  <!--Calc_ExpItem-->
-  <string name="Calc_ExpItem_ModSettingText">* Mod 설정 *</string>
-  <string name="Calc_ExpItem_ModSettingCheckBox">Mod 적용</string>
-  <string name="Calc_ExpItem_VowSettingCheckBox">서약 적용</string>
-  <string name="Calc_ExpItem_LevelSettingText">* 레벨 설정 *</string>
-  <string name="Calc_ExpItem_NowTotalExpSettingText"> 현재 총 경험치 </string>
-  <string name="Calc_ExpItem_TotalResultText">* 필요한 수량 / 남는 경험치 *</string>
-  <string name="Calc_ExpItem_Caution">작전보고서 1개당 3000 Exp 적용</string>
-  <string name="Calc_ExpItem_FSTTrainerLevelSettingText">훈련장 레벨</string>
-  <string name="Calc_ExpItem_TotalResultBatteryText">* 필요한 전지 수량 *</string>
-  <string name="Calc_ExpItem_TotalResultTimeText">* 총 소요 시간 *</string>
-  <string name="Calc_ExpItem_DefaultItemResultText">개의 작전보고서 소모</string>
-  <string name="Calc_ExpItem_DefaultRemainExpResultText">Exp 버려짐</string>
-  <string name="Calc_ExpItem_DefaultBatteryResultText">개의 전지 소모</string>
-  <string name="Calc_ExpItem_DefaultTimeResultText">시간 소요됨</string>
+    <!--Calc_ExpItem-->
+    <string name="Calc_ExpItem_ModSettingText">* Mod 설정 *</string>
+    <string name="Calc_ExpItem_ModSettingCheckBox">Mod 적용</string>
+    <string name="Calc_ExpItem_VowSettingCheckBox">서약 적용</string>
+    <string name="Calc_ExpItem_LevelSettingText">* 레벨 설정 *</string>
+    <string name="Calc_ExpItem_NowTotalExpSettingText"> 현재 총 경험치 </string>
+    <string name="Calc_ExpItem_TotalResultText">* 필요한 수량 / 남는 경험치 *</string>
+    <string name="Calc_ExpItem_Caution">작전보고서 1개당 3000 Exp 적용</string>
+    <string name="Calc_ExpItem_FSTTrainerLevelSettingText">훈련장 레벨</string>
+    <string name="Calc_ExpItem_TotalResultBatteryText">* 필요한 전지 수량 *</string>
+    <string name="Calc_ExpItem_TotalResultTimeText">* 총 소요 시간 *</string>
+    <string name="Calc_ExpItem_DefaultItemResultText">개의 작전보고서 소모</string>
+    <string name="Calc_ExpItem_DefaultRemainExpResultText">Exp 버려짐</string>
+    <string name="Calc_ExpItem_DefaultBatteryResultText">개의 전지 소모</string>
+    <string name="Calc_ExpItem_DefaultTimeResultText">시간 소요됨</string>
   
-  <!--Calc_SkillTraining-->
-  <string name="Calc_SkillTraining_LevelSettingText">레벨</string>
-  <string name="Calc_SkillTraining_ResultChipCountText">* 단계별 스킬 아이템 요구량 *\n(초급 / 중급 / 고급)></string>
-  <string name="Calc_SkillTraining_ResultChipCountDefaultText">0 / 0 / 0</string>
-  <string name="Calc_SkillTraining_ResultTimeCountText">* 총 소요시간 *</string>
-  <string name="Calc_SkillTraining_ResultTimeCountDefaultText">0 시간</string>
-  <string name="Calc_SkillTraining_DefaultBasicSkillChipResultText">초급</string>
-  <string name="Calc_SkillTraining_DefaultAdvanceSkillChipResultText">중급</string>
-  <string name="Calc_SkillTraining_DefaultMasterSkillChipResultText">고급</string>
-  <string name="Calc_SkillTraining_DefaultSkillChipResultText">스킬칩 필요</string>
-  <string name="Calc_skillTraining_DefaultSkillCodeResultText">스킬코드 필요</string>
-  <string name="Calc_SkillTraining_DefaultTimeResultText">시간 필요</string>
+    <!--Calc_SkillTraining-->
+    <string name="Calc_SkillTraining_LevelSettingText">레벨</string>
+    <string name="Calc_SkillTraining_ResultChipCountText">* 단계별 스킬 아이템 요구량 *\n(초급 / 중급 / 고급)></string>
+    <string name="Calc_SkillTraining_ResultChipCountDefaultText">0 / 0 / 0</string>
+    <string name="Calc_SkillTraining_ResultTimeCountText">* 총 소요시간 *</string>
+    <string name="Calc_SkillTraining_ResultTimeCountDefaultText">0 시간</string>
+    <string name="Calc_SkillTraining_DefaultBasicSkillChipResultText">초급</string>
+    <string name="Calc_SkillTraining_DefaultAdvanceSkillChipResultText">중급</string>
+    <string name="Calc_SkillTraining_DefaultMasterSkillChipResultText">고급</string>
+    <string name="Calc_SkillTraining_DefaultSkillChipResultText">스킬칩 필요</string>
+    <string name="Calc_skillTraining_DefaultSkillCodeResultText">스킬코드 필요</string>
+    <string name="Calc_SkillTraining_DefaultTimeResultText">시간 필요</string>
   
-  <!--Calc_FSTGradeUp-->
-  <string name="Calc_FSTGradeUp_ResultFragmentText">* 필요한 조각 *</string>
-  <string name="Calc_FSTGradeUp_ResultDataPatchText">* 필요한 데이터 패치 *</string>
-  <string name="Calc_FSTGradeUp_NowGradeSelectorTitle">현재</string>
-  <string name="Calc_FSTGradeUp_TargetGradeSelectorTitle">목표</string>
-  <string name="Calc_FSTGradeUp_DefaultFragmentResultText">조각 필요</string>
-  <string name="Calc_FSTGradeUp_DefaultDataPatchText">데이터 패치 필요</string>
+    <!--Calc_FSTGradeUp-->
+    <string name="Calc_FSTGradeUp_ResultFragmentText">* 필요한 조각 *</string>
+    <string name="Calc_FSTGradeUp_ResultDataPatchText">* 필요한 데이터 패치 *</string>
+    <string name="Calc_FSTGradeUp_NowGradeSelectorTitle">현재</string>
+    <string name="Calc_FSTGradeUp_TargetGradeSelectorTitle">목표</string>
+    <string name="Calc_FSTGradeUp_DefaultFragmentResultText">조각 필요</string>
+    <string name="Calc_FSTGradeUp_DefaultDataPatchText">데이터 패치 필요</string>
   
-  <!--Calc_AreaExp-->
-  <string name="Calc_AreaExp_DollDummySettingText">편제</string>
-  <string name="Calc_AreaExp_WarCountSettingText">전투 횟수</string>
-  <string name="Calc_AreaExp_CountResult">* 총 횟수 (일반 / 리더 / MVP / 리더,MVP) *</string>
-  <string name="Calc_AreaExp_LevelSettingText">레벨</string>
-  <string name="Calc_AreaExp_NowTotalExpSettingText">현재 경험치</string>
-  <string name="Calc_AreaExp_CommanderCostumeBonusText">지휘관 복장 보너스</string>
-  <string name="Calc_AreaExp_VowSettingCheckBox">서약 적용</string>
-  <string name="Calc_AreaExp_ExpEventSettingCheckBox">경험치 이벤트(x1.5) 적용</string>
-  <string name="Calc_AreaExp_AutoAddDummySettingCheckBox">자동 편제확대</string>
-  <string name="Calc_AreaExp_LastEnemySettingCheckBox">보스, 마지막 몹 처치</string>
-  <string name="Calc_AreaExp_DefaultNormalResultText">일반</string>
-  <string name="Calc_AreaExp_DefaultLeaderResultText">리더</string>
-  <string name="Calc_AreaExp_DefaultMVPResultText">MVP</string>
-  <string name="Calc_AreaExp_DefaultLeaderMVPResultText">MVP &amp; 리더</string>
+    <!--Calc_AreaExp-->
+    <string name="Calc_AreaExp_DollDummySettingText">편제</string>
+    <string name="Calc_AreaExp_WarCountSettingText">전투 횟수</string>
+    <string name="Calc_AreaExp_CountResult">* 총 횟수 (일반 / 리더 / MVP / 리더,MVP) *</string>
+    <string name="Calc_AreaExp_LevelSettingText">레벨</string>
+    <string name="Calc_AreaExp_NowTotalExpSettingText">현재 경험치</string>
+    <string name="Calc_AreaExp_CommanderCostumeBonusText">지휘관 복장 보너스</string>
+    <string name="Calc_AreaExp_VowSettingCheckBox">서약 적용</string>
+    <string name="Calc_AreaExp_ExpEventSettingCheckBox">경험치 이벤트(x1.5) 적용</string>
+    <string name="Calc_AreaExp_AutoAddDummySettingCheckBox">자동 편제확대</string>
+    <string name="Calc_AreaExp_LastEnemySettingCheckBox">보스, 마지막 몹 처치</string>
+    <string name="Calc_AreaExp_DefaultNormalResultText">일반</string>
+    <string name="Calc_AreaExp_DefaultLeaderResultText">리더</string>
+    <string name="Calc_AreaExp_DefaultMVPResultText">MVP</string>
+    <string name="Calc_AreaExp_DefaultLeaderMVPResultText">MVP &amp; 리더</string>
   
-  <!--DollDBDetailLayout-->
-  <string name="DollDBDetailLayout_SDAnimationButtonText">SD 애니메이션 (Beta)</string>
-  <string name="DollDBDetailLayout_ModStory">인형의 추억</string>
-  <string name="DollDBDetailLayout_ModelData">총기 제원</string>
+    <!--DollDBDetailLayout-->
+    <string name="DollDBDetailLayout_SDAnimationButtonText">SD 애니메이션 (Beta)</string>
+    <string name="DollDBDetailLayout_ModStory">인형의 추억</string>
+    <string name="DollDBDetailLayout_ModelData">총기 제원</string>
   
-  <!--DollFilterLayout-->
-  <string name="DollFilterLayout_ModFilterTitle">개조 인형만 보기</string>
-  <string name="DollFilterLayout_ModFilterItem">활성화</string>
+    <!--DollFilterLayout-->
+    <string name="DollFilterLayout_ModFilterTitle">개조 인형만 보기</string>
+    <string name="DollFilterLayout_ModFilterItem">활성화</string>
   
-  <!--EquipDBDetailLayout-->
-  <string name="EquipDBDetailLayout_RecommendGunTypeText"># 장착 권장되는 총기 #</string>
-  <string name="EquipDBDetailLayout_AvailableGunTypeText"># 장착 가능한 총기 #</string>
-  <string name="EquipDBDetailLayout_OnlyUseText"># 전용 장비 #</string>
+    <!--EquipDBDetailLayout-->
+    <string name="EquipDBDetailLayout_RecommendGunTypeText"># 장착 권장되는 총기 #</string>
+    <string name="EquipDBDetailLayout_AvailableGunTypeText"># 장착 가능한 총기 #</string>
+    <string name="EquipDBDetailLayout_OnlyUseText"># 전용 장비 #</string>
   
-  <!--EventListLayout-->
-  <string name="EventListLayout_EventOngoing">진행 중</string>
-  <string name="EventListLayout_EventUpComing">진행 예정</string>
+    <!--EventListLayout-->
+    <string name="EventListLayout_EventOngoing">진행 중</string>
+    <string name="EventListLayout_EventUpComing">진행 예정</string>
   
-  <!--GFDInfoLayout-->
-  <string name="GFDInfoLayout_DeveloperInfo">개발자 정보</string>
+    <!--GFDInfoLayout-->
+    <string name="GFDInfoLayout_DeveloperInfo">개발자 정보</string>
   
-  <!--ProductSimulatorLayout-->
-  <string name="ProductSimulatorLayout_ProductButtonText">제조</string>
+    <!--ProductSimulatorLayout-->
+    <string name="ProductSimulatorLayout_ProductButtonText">제조</string>
   
-  <!--GuideBookViewer-->
-  <string name="GuideBookViewer_PDF_PartA">Part.A 초보자 가이드</string>
-  <string name="GuideBookViewer_PDF_PartB_1">Part.B 전술인형 목록/제조</string>
-  <string name="GuideBookViewer_PDF_PartB_2">Part.B 전술인형 정보 (No.1 ~ 50)</string>
-  <string name="GuideBookViewer_PDF_PartB_3">Part.B 전술인형 정보 (No.51 ~ 100)</string>
-  <string name="GuideBookViewer_PDF_PartB_4">Part.B 전술인형 정보 (No.101 ~ 150)</string>
-  <string name="GuideBookViewer_PDF_PartB_5">Part.B 전술인형 정보 (No.151 ~ 200)</string>
-  <string name="GuideBookViewer_PDF_PartB_6">Part.B 전술인형 정보 (No.201 ~)</string>
-  <string name="GuideBookViewer_PDF_PartC">Part.C 제대 편성</string>
-  <string name="GuideBookViewer_PDF_PartD">Part.D 장비/요정/중장비</string>
-  <string name="GuideBookViewer_PDF_PartE_1">Part.E 작전임무 (전역 1 ~ 3)</string>
-  <string name="GuideBookViewer_PDF_PartE_2">Part.E 작전임무 (전역 0, 4 ~ 6)</string>
-  <string name="GuideBookViewer_PDF_PartE_3">Part.E 작전임무 (전역 7 ~ 9)</string>
-  <string name="GuideBookViewer_PDF_PartG">Part.G 가구/코스튬</string>
-  <string name="GuideBookViewer_PDF_PartJ">Part.J 기타 정보</string>
+    <!--GuideBookViewer-->
+    <string name="GuideBookViewer_PDF_PartA">Part.A 초보자 가이드</string>
+    <string name="GuideBookViewer_PDF_PartB_1">Part.B 전술인형 목록/제조</string>
+    <string name="GuideBookViewer_PDF_PartB_2">Part.B 전술인형 정보 (No.1 ~ 50)</string>
+    <string name="GuideBookViewer_PDF_PartB_3">Part.B 전술인형 정보 (No.51 ~ 100)</string>
+    <string name="GuideBookViewer_PDF_PartB_4">Part.B 전술인형 정보 (No.101 ~ 150)</string>
+    <string name="GuideBookViewer_PDF_PartB_5">Part.B 전술인형 정보 (No.151 ~ 200)</string>
+    <string name="GuideBookViewer_PDF_PartB_6">Part.B 전술인형 정보 (No.201 ~)</string>
+    <string name="GuideBookViewer_PDF_PartC">Part.C 제대 편성</string>
+    <string name="GuideBookViewer_PDF_PartD">Part.D 장비/요정/중장비</string>
+    <string name="GuideBookViewer_PDF_PartE_1">Part.E 작전임무 (전역 1 ~ 3)</string>
+    <string name="GuideBookViewer_PDF_PartE_2">Part.E 작전임무 (전역 0, 4 ~ 6)</string>
+    <string name="GuideBookViewer_PDF_PartE_3">Part.E 작전임무 (전역 7 ~ 9)</string>
+    <string name="GuideBookViewer_PDF_PartG">Part.G 가구/코스튬</string>
+    <string name="GuideBookViewer_PDF_PartJ">Part.J 기타 정보</string>
 
-  <!--ShortGuideBookViewer-->
-  <string name="ShortGuideBookViewer_OP">표지</string>
-  <string name="ShortGuideBookViewer_A0">소개</string>
-  <string name="ShortGuideBookViewer_A1">추천 인형</string>
-  <string name="ShortGuideBookViewer_A2_1">제대 편성 1</string>
-  <string name="ShortGuideBookViewer_A2_2">제대 편성 2</string>
-  <string name="ShortGuideBookViewer_A3">전술인형</string>
-  <string name="ShortGuideBookViewer_A4_1">작전 임무 1</string>
-  <string name="ShortGuideBookViewer_A4_2">작전 임무 2</string>
-  <string name="ShortGuideBookViewer_A5_1">인형 육성 1</string>
-  <string name="ShortGuideBookViewer_A5_2">인형 육성 2</string>
-  <string name="ShortGuideBookViewer_A6_1">장비</string>
-  <string name="ShortGuideBookViewer_A6_2">요정 &amp; 중장비제대</string>
-  <string name="ShortGuideBookViewer_A7">군수지원</string>
-  <string name="ShortGuideBookViewer_EP">가이드북 제작자</string>
-
-  
-  <!--PDFViewer-->
-  <string name="PDFViewer_DownloadPDFTitle">PDF 다운로드</string>
-  <string name="PDFViewer_DownloadPDFMessage">PDF 다운로드 중...</string>
+    <!--ShortGuideBookViewer-->
+    <string name="ShortGuideBookViewer_OP">표지</string>
+    <string name="ShortGuideBookViewer_A0">소개</string>
+    <string name="ShortGuideBookViewer_A1">추천 인형</string>
+    <string name="ShortGuideBookViewer_A2_1">제대 편성 1</string>
+    <string name="ShortGuideBookViewer_A2_2">제대 편성 2</string>
+    <string name="ShortGuideBookViewer_A3">전술인형</string>
+    <string name="ShortGuideBookViewer_A4_1">작전 임무 1</string>
+    <string name="ShortGuideBookViewer_A4_2">작전 임무 2</string>
+    <string name="ShortGuideBookViewer_A5_1">인형 육성 1</string>
+    <string name="ShortGuideBookViewer_A5_2">인형 육성 2</string>
+    <string name="ShortGuideBookViewer_A6_1">장비</string>
+    <string name="ShortGuideBookViewer_A6_2">요정 &amp; 중장비제대</string>
+    <string name="ShortGuideBookViewer_A7">군수지원</string>
+    <string name="ShortGuideBookViewer_EP">가이드북 제작자</string>
 
   
-  <!--GFPVActivity-->
-  <string name="GFPVActivity_DownloadRequireDialog_Title">다운로드 필요</string>
-  <string name="GFPVActivity_DownloadRequireDialog_Message">PV 영상 파일이 없습니다. 파일을 다운로드 할까요?</string>
-  <string name="GFPVActivity_DownloadDialog_Title">PV 다운로드</string>
-  <string name="GFPVActivity_DownloadDialog_Message">PV 다운로드 중...</string>
-  
-  
-  <!--GFAnimation-->
-  <string name="GFAnimation_HealingSeries">치유편</string>
-  <string name="GFAnimation_MadSeries">광란편</string>
-  <string name="GFAnimation_TotalEpisode">총집편</string>
-  <string name="GFAnimation_Episode">에피소드</string>
-  <string name="GFAnimation_Interview">후기</string>
-  <string name="GFAnimation_Language_Korean">한국어 (팬더빙)</string>
-  <string name="GFAnimation_Language_Chinese">중국어</string>
-  <string name="GFAnimation_Language_Japanese">일본어</string>
-  <string name="GFAnimation_SelectLanguage">언어를 선택하세요</string>
-  
-  
-  <!--Music Category-->
-  <string name="Music_Category_ContinuumTurbulence">난류연속</string>
-  <string name="Music_Category_Cube">큐브</string>
-  <string name="Music_Category_DeepDive">심층투영</string>
-  <string name="Music_Category_DJMAX">DJMAX 콜라보</string>
-  <string name="Music_Category_GuiltyGear">길티기어 콜라보</string>
-  <string name="Music_Category_Houkai2">붕괴2 콜라보</string>
-  <string name="Music_Category_Singularity">특이점</string>
-  <string name="Music_Category_Normal">일반</string>
-  <string name="Music_Category_Arctic">저체온증</string>
-  <string name="Music_Category_HolyNightRhapsody">거룩한 밤 광상곡</string>
-  <string name="Music_Category_Isomer">이성질체</string>
-  <string name="Music_Category_PhantomSyndrome">팬텀 신드롬</string>
-  <string name="Music_Category_PolarizedLight">편극광</string>
-  <string name="Music_Category_ShatteredConnexion">연쇄분열</string>
-  <string name="Music_Category_VA">발할라 콜라보</string>
+    <!--PDFViewer-->
+    <string name="PDFViewer_DownloadPDFTitle">PDF 다운로드</string>
+    <string name="PDFViewer_DownloadPDFMessage">PDF 다운로드 중...</string>
 
-  <!--Cache-->
-  <string name="SelectCache_Dialog_Title">카테고리 선택</string>
-  <string name="SelectCache_FreeSpace">여유 공간</string>
-  <string name="SelectCache_RequireSpace">필요 공간</string>
-  <string name="SelectCache_Category_Dic">DB 사전</string>
-  <string name="SelectCache_Category_OldGFD">GFD v1</string>
-  <string name="SelectCache_Category_GuideBook">가이드북</string>
-  <string name="SelectCache_Category_Story">스토리</string>
-  <string name="SelectCache_Category_Cartoon">만화</string>
-  <string name="SelectCache_Category_PV">PV</string>
-  <string name="SelectCache_Category_OST">OST</string>
   
-  <!--ETC String Value-->
-  <string name="AdMob_TestID">ca-app-pub-3940256099942544/6300978111</string>
-  <string name="AdMob_ID">ca-app-pub-4576756770200148/6439609402</string>
-  <string name="Firewall_Category">楚慮传</string>
-  <string name="Firewall">䈀爀攀愀欀 䘀椀爀攀眀愀氀氀 漀昀 娀椀渀愀 伀匀</string>
-  <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
-    
-  <string name="NewFeature">
-    [2.4.8 수정사항]\n\n
-- 일부 타이틀바 교체\n
-- 만화 컨텐츠 추가 (츠보우의 소녀전선, Geo의 소녀전선, 분열 후 전선)\n
-- 일부 다운로드 창에서 오류가 발생하는 현상 수정\n
-- 흰색 테마 적용 시 DB 세부정보에서 오류가 발생하는 현상 수정
-  </string>
+    <!--GFPVActivity-->
+    <string name="GFPVActivity_DownloadRequireDialog_Title">다운로드 필요</string>
+    <string name="GFPVActivity_DownloadRequireDialog_Message">PV 영상 파일이 없습니다. 파일을 다운로드 할까요?</string>
+    <string name="GFPVActivity_DownloadDialog_Title">PV 다운로드</string>
+    <string name="GFPVActivity_DownloadDialog_Message">PV 다운로드 중...</string>
+  
+  
+    <!--GFAnimation-->
+    <string name="GFAnimation_HealingSeries">치유편</string>
+    <string name="GFAnimation_MadSeries">광란편</string>
+    <string name="GFAnimation_TotalEpisode">총집편</string>
+    <string name="GFAnimation_Episode">에피소드</string>
+    <string name="GFAnimation_Interview">후기</string>
+    <string name="GFAnimation_Language_Korean">한국어 (팬더빙)</string>
+    <string name="GFAnimation_Language_Chinese">중국어</string>
+    <string name="GFAnimation_Language_Japanese">일본어</string>
+    <string name="GFAnimation_SelectLanguage">언어를 선택하세요</string>
+  
+  
+    <!--Music Category-->
+    <string name="Music_Category_ContinuumTurbulence">난류연속</string>
+    <string name="Music_Category_Cube">큐브</string>
+    <string name="Music_Category_DeepDive">심층투영</string>
+    <string name="Music_Category_DJMAX">DJMAX 콜라보</string>
+    <string name="Music_Category_GuiltyGear">길티기어 콜라보</string>
+    <string name="Music_Category_Houkai2">붕괴2 콜라보</string>
+    <string name="Music_Category_Singularity">특이점</string>
+    <string name="Music_Category_Normal">일반</string>
+    <string name="Music_Category_Arctic">저체온증</string>
+    <string name="Music_Category_HolyNightRhapsody">거룩한 밤 광상곡</string>
+    <string name="Music_Category_Isomer">이성질체</string>
+    <string name="Music_Category_PhantomSyndrome">팬텀 신드롬</string>
+    <string name="Music_Category_PolarizedLight">편극광</string>
+    <string name="Music_Category_ShatteredConnexion">연쇄분열</string>
+    <string name="Music_Category_VA">발할라 콜라보</string>
+
+    <!--Cache-->
+    <string name="SelectCache_Dialog_Title">카테고리 선택</string>
+    <string name="SelectCache_FreeSpace">여유 공간</string>
+    <string name="SelectCache_RequireSpace">필요 공간</string>
+    <string name="SelectCache_Category_Dic">DB 사전</string>
+    <string name="SelectCache_Category_OldGFD">GFD v1</string>
+    <string name="SelectCache_Category_GuideBook">가이드북</string>
+    <string name="SelectCache_Category_Story">스토리</string>
+    <string name="SelectCache_Category_Cartoon">만화</string>
+    <string name="SelectCache_Category_PV">PV</string>
+    <string name="SelectCache_Category_OST">OST</string>
+  
+    <!--ETC String Value-->
+    <string name="AdMob_TestID">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="AdMob_ID">ca-app-pub-4576756770200148/6439609402</string>
+    <string name="Firewall_Category">楚慮传</string>
+    <string name="Firewall">䈀爀攀愀欀 䘀椀爀攀眀愀氀氀 漀昀 娀椀渀愀 伀匀</string>
+    <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
 </resources>

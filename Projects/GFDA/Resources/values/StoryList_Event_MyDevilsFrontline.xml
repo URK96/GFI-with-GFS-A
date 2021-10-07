@@ -1,113 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
   <string-array name="Story_Main_Main_Event_MyDevilsFrontline_TopTitle">
-    <item>디비전 콜라보 - Chapter 0</item>
-    <item>디비전 콜라보 - Chapter 1</item>
-    <item>디비전 콜라보 - Chapter 1</item>
-    <item>디비전 콜라보 - Chapter 1</item>
-    <item>디비전 콜라보 - Chapter 1</item>
-    <item>디비전 콜라보 - Chapter 1</item>
-    <item>디비전 콜라보 - Chapter 1</item>
-    <item>디비전 콜라보 - Chapter 1</item>
-    <item>디비전 콜라보 - Chapter 1</item>
-    <item>디비전 콜라보 - Chapter 2</item>
-    <item>디비전 콜라보 - Chapter 2</item>
-    <item>디비전 콜라보 - Chapter 2</item>
-    <item>디비전 콜라보 - Chapter 2</item>
-    <item>디비전 콜라보 - Chapter 2</item>
-    <item>디비전 콜라보 - Chapter 2</item>
-    <item>디비전 콜라보 - Chapter 2</item>
-    <item>디비전 콜라보 - Chapter 2</item>
-    <item>디비전 콜라보 - Chapter 2</item>
-    <item>디비전 콜라보 - Chapter 2</item>
-    <item>디비전 콜라보 - Chapter 3</item>
-    <item>디비전 콜라보 - Chapter 3</item>
-    <item>디비전 콜라보 - Chapter 3</item>
-    <item>디비전 콜라보 - Chapter 3</item>
-    <item>디비전 콜라보 - Chapter 3</item>
-    <item>디비전 콜라보 - Chapter 3</item>
-    <item>디비전 콜라보 - Chapter 4</item>
-    <item>디비전 콜라보 - Chapter 4</item>
-    <item>디비전 콜라보 - Chapter 4</item>
-    <item>디비전 콜라보 - Chapter 4</item>
-    <item>디비전 콜라보 - Chapter 4</item>
-    <item>디비전 콜라보 - Chapter 4</item>
-    <item>디비전 콜라보 - Chapter 5</item>
-    <item>디비전 콜라보 - Chapter 5</item>
-    <item>디비전 콜라보 - Chapter 5</item>
+    <item>사신짱 전선</item>
+    <item>사신짱 전선</item>
+    <item>사신짱 전선</item>
+    <item>사신짱 전선</item>
+    <item>사신짱 전선</item>
+    <item>사신짱 전선</item>
+    <item>사신짱 전선</item>
+    <item>사신짱 전선</item>
+    <item>사신짱 전선</item>
+    <item>사신짱 전선</item>
+    <item>사신짱 전선</item>
+    <item>사신짱 전선</item>
+    <item>사신짱 전선</item>
+    <item>사신짱 전선</item>
+    <item>사신짱 전선</item>
+	<item>사신짱 전선</item>
+	<item>사신짱 전선</item>
+	<item>사신짱 전선</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Event_MyDevilsFrontline">
-    <item>폭풍 전야</item>
-    <item>0:05 허드슨 난민 캠프 Ⅰ</item>
-    <item>0:05 허드슨 난민 캠프 Ⅱ</item>
-    <item>0:05 허드슨 난민 캠프 Ⅲ</item>
-    <item>재료혼합</item>
-    <item>벽 뒤에 숨어!</item>
-    <item>음주측정기</item>
-    <item>적셔!</item>
-    <item>작은 목표</item>
-    <item>0:07 뉴욕 공공도서관 Ⅰ</item>
-    <item>0:07 뉴욕 공공도서관 Ⅱ</item>
-    <item>0:07 뉴욕 공공도서관 Ⅲ</item>
-    <item>0:07 뉴욕 공공도서관 Ⅳ</item>
-    <item>데코레이션</item>
-    <item>풀숲에 숨어!</item>
-    <item>정의의 천칭</item>
-    <item>장대한 목표</item>
-    <item>피클이다!</item>
-    <item>헬파이어</item>
-    <item>0:23 그랜드 센트럴 터미널 Ⅰ</item>
-    <item>0:23 그랜드 센트럴 터미널 Ⅱ</item>
-    <item>0:23 그랜드 센트럴 터미널 Ⅲ</item>
-    <item>Toasty!</item>
-    <item>버그 속에 숨어!</item>
-    <item>터스크</item>
-    <item>0:50 다크존 Ⅰ</item>
-    <item>0:50 다크존 Ⅱ</item>
-    <item>0:50 다크존 Ⅲ</item>
-    <item>크레이지 이반 돌격!</item>
-    <item>터스크&amp;헬파이어 Ⅰ</item>
-    <item>터스크&amp;헬파이어 Ⅱ</item>
-    <item>1:10 철수 지점 Ⅰ</item>
-    <item>1:10 철수 지점 Ⅱ</item>
-    <item>접속 성공</item>
+    <item>세계선의 교차</item>
+    <item>이세계의 의뢰</item>
+    <item>의뢰인의 본성</item>
+    <item>여름에는 독서와 빙수</item>
+    <item>서리왕국</item>
+    <item>닿지 않는 그녀</item>
+    <item>안녕, 꼬리야</item>
+    <item>사라진 히로인</item>
+    <item>그녀 없는 진보초</item>
+    <item>그녀 없는 그리폰</item>
+    <item>악마의 낙원</item>
+    <item>빛과 맹세</item>
+    <item>집으로 가는 길</item>
+    <item>초라한 마왕</item>
+    <item>플라스틱 맛 메모리</item>
+	<item>인생 한 사발</item>
+	<item>백스트리트 걸</item>
+	<item>문 두드리는 자</item>
   </string-array>
 
   <string-array name="Story_Main_Main_Event_MyDevilsFrontline_Caption">
-    <item>스토리 - RFB</item>
-    <item>전역 스토리</item>
-    <item>전역 스토리</item>
-    <item>전역 스토리</item>
-    <item>스토리 - 스프링필드</item>
-    <item>스토리 - UMP45</item>
-    <item>스토리 - M870</item>
-    <item>스토리 - AK-47</item>
-    <item>스토리 - Vector</item>
-    <item>전역 스토리</item>
-    <item>전역 스토리</item>
-    <item>전역 스토리</item>
-    <item>전역 스토리</item>
-    <item>스토리 - 스프링필드</item>
-    <item>스토리 - UMP45</item>
-    <item>스토리 - M870</item>
-    <item>스토리 - Vector</item>
-    <item>스토리 - AK-47</item>
-    <item>ECHO</item>
-    <item>전역 스토리</item>
-    <item>전역 스토리</item>
-    <item>전역 스토리</item>
-    <item>스토리 - 스프링필드</item>
-    <item>스토리 - UMP45</item>
-    <item>ECHO</item>
-    <item>전역 스토리</item>
-    <item>전역 스토리</item>
-    <item>전역 스토리</item>
-    <item>스토리 - AK-47</item>
-    <item>ECHO</item>
-    <item>ECHO</item>
-    <item>전역 스토리</item>
-    <item>전역 스토리</item>
-    <item>스토리 - RFB</item>
+	<item>Cpt 0 - 인기신작 히로인은 하나로 충분해</item>
+	<item>Cpt 1 - 이세계 전생이 꼭 슬라임은 아니더라</item>
+	<item>Cpt 1 - 이세계 전생이 꼭 슬라임은 아니더라</item>
+	<item>Cpt 2 - 공짜 빙수엔 따로 가격이 붙는다</item>
+	<item>Cpt 2 - 공짜 빙수엔 따로 가격이 붙는다</item>
+	<item>Cpt 3 - 당첨 없는 뽑기와 용서 없는 그녀</item>
+    <item>Cpt 4 - 머리카락과 꼬리 모두 여자의 영혼</item>
+    <item>Cpt 5 - 공원의 텐트는 비밀투성이</item>
+    <item>Cpt 6 - 크로스오버는 왔다갔다해야 제맛</item>
+    <item>Cpt 6 - 크로스오버는 왔다갔다해야 제맛</item>
+    <item>Cpt 7 - 열번 찍어 안 넘어가는게 우정</item>
+    <item>Cpt 7 - 열번 찍어 안 넘어가는게 우정</item>
+    <item>Cpt 7 - 열번 찍어 안 넘어가는게 우정</item>
+    <item>Cpt 8 - 일상물은 항상 식사 장면으로 마무리</item>
+    <item>Cpt ? - 불량업소 주의</item>
+	<item>Cpt ? - 불량업소 주의</item>
+	<item>Cpt ? - 불량업소 주의</item>
+	<item>Cpt ? - 불량업소 주의</item>
   </string-array>
 </resources>
