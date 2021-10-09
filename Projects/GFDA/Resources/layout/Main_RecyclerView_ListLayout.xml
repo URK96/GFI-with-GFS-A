@@ -12,5 +12,6 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_gravity="center"
         android:id="@+id/MainRecyclerView_List_Title" />
 </androidx.cardview.widget.CardView>

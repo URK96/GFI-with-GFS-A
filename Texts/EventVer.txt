@@ -1,6 +1,6 @@
 Y;
-85;
+87;
 2;
-재귀정리,함께해요;
-https://cafe.naver.com/girlsfrontlinekr/4327491,https://www.girlsfrontline.co.kr/archives/5406.html;
-2021/9/10 17:00 ~ 2021/10/9 15:59,2021/9/11 00:00 ~ 2021/10/1 23:59;
+7차 국지전,팬텀 신드롬;
+https://cafe.naver.com/girlsfrontlinekr/4345191,https://www.girlsfrontline.co.kr/archives/5486.html;
+2021/10/9 17:00 ~ 2021/10/22 05:00,2021/10/15 17:00 ~ 2021/10/29 14:59;

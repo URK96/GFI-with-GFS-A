@@ -1,993 +1,1032 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
-  <string-array name="Cartoon_Category">
-    <item>츠보우의 소녀전선</item>
-    <item>그리폰 &amp; 철혈</item>
-    <item>그리폰 &amp; 철혈 2</item>
-    <item>그리폰 &amp; 철혈 2 외전</item>
-    <item>분열 후 전선</item>
-    <item>그리폰 안내서</item>
-    <item>그리폰 일상만화</item>
-    <item>천솜향의 소녀전선</item>
-    <item>불멸전선</item>
-    <item>학식전선</item>
-    <item>Geo의 코믹전선</item>
-    <item>센롱의 숏컷전선</item>
-  </string-array>
+    <string-array name="Cartoon_Category">
+        <item>츠보우의 소녀전선</item>
+        <item>그리폰 &amp; 철혈</item>
+        <item>그리폰 &amp; 철혈 2</item>
+        <item>그리폰 &amp; 철혈 2 외전</item>
+        <item>분열 후 전선</item>
+        <item>그리폰 안내서</item>
+        <item>그리폰 일상만화</item>
+        <item>천솜향의 소녀전선</item>
+        <item>불멸전선</item>
+        <item>학식전선</item>
+        <item>Geo의 코믹전선</item>
+        <item>센롱의 숏컷전선</item>
+    </string-array>
 
-  <string-array name="kazensky_GF">
-    <item>97식 혼나는 만화</item>
-    <item>지휘관과 와짱</item>
-    <item>벡터</item>
-    <item>꿈 속에서</item>
-    <item>UMP45</item>
-    <item>97식</item>
-    <item>레깅스</item>
-    <item>잠탱이</item>
-    <item>흥국이</item>
-    <item>95식의 오늘하루</item>
-    <item>춘전이 (1)</item>
-    <item>춘전이 (2)</item>
-    <item>부관자리</item>
-    <item>97식과 잠시 외출</item>
-    <item>쪼꼬 작가님</item>
-    <item>FAL</item>
-    <item>지휘관 소집</item>
-    <item>샤워실</item>
-    <item>취중담 (1)</item>
-    <item>취중담 (2)</item>
-    <item>녹화</item>
-    <item>구명</item>
-    <item>영점사격</item>
-    <item>자체 조사</item>
-    <item>복귀</item>
-    <item>기분풀이</item>
-    <item>라플비(RFB)</item>
-    <item>해피엔딩</item>
-    <item>캘리코</item>
-    <item>K2 전입</item>
-    <item>소린이 유입되는 만화</item>
-    <item>전입자 안내</item>
-    <item>쪼꼬 작가님 2</item>
-    <item>비를 피한 곳</item>
-    <item>지휘관 부재중</item>
-    <item>복귀 후 당직</item>
-    <item>쓸데없는 충고</item>
-    <item>수오미</item>
-    <item>DSR-50</item>
-    <item>원하는 것</item>
-    <item>전투사격</item>
-    <item>서약반지</item>
-    <item>패싱 아동절은 없다</item>
-    <item>시험본 캘리코</item>
-    <item>학교다니는 로게브</item>
-    <item>호칭</item>
-    <item>낚아채기</item>
-    <item>팩트</item>
-    <item>셋째의 라면</item>
-    <item>95식과 도시락</item>
-    <item>UMP45의 제안</item>
-    <item>NTW-20</item>
-    <item>멀리 돌아온 길</item>
-    <item>404 숙소에서</item>
-    <item>RFB 혼나다</item>
-    <item>K2쟝 이야기</item>
-    <item>쇼부</item>
-    <item>97식과 새친구</item>
-    <item>학교 이야기</item>
-    <item>위탁</item>
-    <item>AN-94의 고집</item>
-    <item>K2쟝 이야기 2</item>
-    <item>캘리코 단편</item>
-    <item>폭식</item>
-    <item>흥국이의 뉴스 소감x</item>
-    <item>FAL과 FS</item>
-    <item>썬더 이야기</item>
-    <item>무도회 공지</item>
-    <item>무도회 (1)</item>
-    <item>무도회 (2)</item>
-    <item>하급자는 피곤하다</item>
-    <item>카리나가 챙겨준 것</item>
-    <item>부작용</item>
-    <item>니토</item>
-    <item>썬더담당 춘전이</item>
-    <item>안구사 단편</item>
-    <item>4컷 단편</item>
-    <item>솔직한 대화</item>
-    <item>츤데레vs욕데레</item>
-    <item>Saiga-12</item>
-    <item>수오미의 고민</item>
-    <item>캘리코와 썬더</item>
-    <item>감성소녀</item>
-    <item>그곳으로 함께</item>
-    <item>K5의 전입</item>
-    <item>K5</item>
-    <item>여러 모습</item>
-    <item>K2의 하소연</item>
-    <item>성냥팔이 소녀 이야기</item>
-    <item>기름 떨어진 날</item>
-    <item>파세의 알바</item>
-    <item>바쟝</item>
-    <item>지휘관 소집 2</item>
-    <item>문구점에 따라간 K2</item>
-    <item>불시검열</item>
-    <item>두 자매여신 이야기</item>
-    <item>WA2000의 요리 단편 1</item>
-    <item>WA2000의 요리 단편 2</item>
-    <item>WA2000의 요리 단편 -완-</item>
-    <item>잔머리</item>
-    <item>루이스</item>
-    <item>누구나 똑같아</item>
-    <item>루이스 2</item>
-    <item>대리 지휘관의 하루</item>
-    <item>지휘관 찾아 몇십KM</item>
-    <item>아동절 UMP자매 1</item>
-    <item>아동절 HK416</item>
-    <item>WA2000의 사과</item>
-    <item>파견근무 끝</item>
-    <item>선배와 후배</item>
-    <item>어느 골짜기 이야기</item>
-    <item>지나간 명절 이야기</item>
-    <item>공석</item>
-    <item>K2와 네게브의 부관면접</item>
-    <item>아빠가 없어</item>
-    <item>식사 문제</item>
-    <item>나강 리볼버 할매</item>
-    <item>돌아온 지휘관</item>
-  </string-array>
+    <string-array name="kazensky_GF">
+        <item>97식 혼나는 만화</item>
+        <item>지휘관과 와짱</item>
+        <item>벡터</item>
+        <item>꿈 속에서</item>
+        <item>UMP45</item>
+        <item>97식</item>
+        <item>레깅스</item>
+        <item>잠탱이</item>
+        <item>흥국이</item>
+        <item>95식의 오늘하루</item>
+        <item>춘전이 (1)</item>
+        <item>춘전이 (2)</item>
+        <item>부관자리</item>
+        <item>97식과 잠시 외출</item>
+        <item>쪼꼬 작가님</item>
+        <item>FAL</item>
+        <item>지휘관 소집</item>
+        <item>샤워실</item>
+        <item>취중담 (1)</item>
+        <item>취중담 (2)</item>
+        <item>녹화</item>
+        <item>구명</item>
+        <item>영점사격</item>
+        <item>자체 조사</item>
+        <item>복귀</item>
+        <item>기분풀이</item>
+        <item>라플비(RFB)</item>
+        <item>해피엔딩</item>
+        <item>캘리코</item>
+        <item>K2 전입</item>
+        <item>소린이 유입되는 만화</item>
+        <item>전입자 안내</item>
+        <item>쪼꼬 작가님 2</item>
+        <item>비를 피한 곳</item>
+        <item>지휘관 부재중</item>
+        <item>복귀 후 당직</item>
+        <item>쓸데없는 충고</item>
+        <item>수오미</item>
+        <item>DSR-50</item>
+        <item>원하는 것</item>
+        <item>전투사격</item>
+        <item>서약반지</item>
+        <item>패싱 아동절은 없다</item>
+        <item>시험본 캘리코</item>
+        <item>학교다니는 로게브</item>
+        <item>호칭</item>
+        <item>낚아채기</item>
+        <item>팩트</item>
+        <item>셋째의 라면</item>
+        <item>95식과 도시락</item>
+        <item>UMP45의 제안</item>
+        <item>NTW-20</item>
+        <item>멀리 돌아온 길</item>
+        <item>404 숙소에서</item>
+        <item>RFB 혼나다</item>
+        <item>K2쟝 이야기</item>
+        <item>쇼부</item>
+        <item>97식과 새친구</item>
+        <item>학교 이야기</item>
+        <item>위탁</item>
+        <item>AN-94의 고집</item>
+        <item>K2쟝 이야기 2</item>
+        <item>캘리코 단편</item>
+        <item>폭식</item>
+        <item>흥국이의 뉴스 소감x</item>
+        <item>FAL과 FS</item>
+        <item>썬더 이야기</item>
+        <item>무도회 공지</item>
+        <item>무도회 (1)</item>
+        <item>무도회 (2)</item>
+        <item>하급자는 피곤하다</item>
+        <item>카리나가 챙겨준 것</item>
+        <item>부작용</item>
+        <item>니토</item>
+        <item>썬더담당 춘전이</item>
+        <item>안구사 단편</item>
+        <item>4컷 단편</item>
+        <item>솔직한 대화</item>
+        <item>츤데레vs욕데레</item>
+        <item>Saiga-12</item>
+        <item>수오미의 고민</item>
+        <item>캘리코와 썬더</item>
+        <item>감성소녀</item>
+        <item>그곳으로 함께</item>
+        <item>K5의 전입</item>
+        <item>K5</item>
+        <item>여러 모습</item>
+        <item>K2의 하소연</item>
+        <item>성냥팔이 소녀 이야기</item>
+        <item>기름 떨어진 날</item>
+        <item>파세의 알바</item>
+        <item>바쟝</item>
+        <item>지휘관 소집 2</item>
+        <item>문구점에 따라간 K2</item>
+        <item>불시검열</item>
+        <item>두 자매여신 이야기</item>
+        <item>WA2000의 요리 단편 1</item>
+        <item>WA2000의 요리 단편 2</item>
+        <item>WA2000의 요리 단편 -완-</item>
+        <item>잔머리</item>
+        <item>루이스</item>
+        <item>누구나 똑같아</item>
+        <item>루이스 2</item>
+        <item>대리 지휘관의 하루</item>
+        <item>지휘관 찾아 몇십KM</item>
+        <item>아동절 UMP자매 1</item>
+        <item>아동절 HK416</item>
+        <item>WA2000의 사과</item>
+        <item>파견근무 끝</item>
+        <item>선배와 후배</item>
+        <item>어느 골짜기 이야기</item>
+        <item>지나간 명절 이야기</item>
+        <item>공석</item>
+        <item>K2와 네게브의 부관면접</item>
+        <item>아빠가 없어</item>
+        <item>식사 문제</item>
+        <item>나강 리볼버 할매</item>
+        <item>돌아온 지휘관</item>
+    </string-array>
   
-  <string-array name="GF_SF">
-    <item>1화</item>
-    <item>2화</item>
-    <item>3화</item>
-    <item>4화</item>
-    <item>5화</item>
-    <item>6화</item>
-    <item>7화</item>
-    <item>8화</item>
-    <item>9화</item>
-    <item>10화</item>
-    <item>11화</item>
-    <item>12화</item>
-    <item>13화</item>
-    <item>14화</item>
-    <item>15화</item>
-    <item>16화</item>
-    <item>17화</item>
-    <item>18화</item>
-  </string-array>
+    <string-array name="GF_SF">
+        <item>1화</item>
+        <item>2화</item>
+        <item>3화</item>
+        <item>4화</item>
+        <item>5화</item>
+        <item>6화</item>
+        <item>7화</item>
+        <item>8화</item>
+        <item>9화</item>
+        <item>10화</item>
+        <item>11화</item>
+        <item>12화</item>
+        <item>13화</item>
+        <item>14화</item>
+        <item>15화</item>
+        <item>16화</item>
+        <item>17화</item>
+        <item>18화</item>
+    </string-array>
 
-  <string-array name="GF_SF2">
-    <item>1화</item>
-    <item>2화</item>
-    <item>3화</item>
-    <item>4화</item>
-    <item>5화</item>
-    <item>6화</item>
-    <item>7화</item>
-    <item>8화</item>
-    <item>9화</item>
-    <item>10화</item>
-    <item>11화</item>
-    <item>12화</item>
-    <item>13화</item>
-    <item>14화</item>
-  </string-array>
+    <string-array name="GF_SF2">
+        <item>1화</item>
+        <item>2화</item>
+        <item>3화</item>
+        <item>4화</item>
+        <item>5화</item>
+        <item>6화</item>
+        <item>7화</item>
+        <item>8화</item>
+        <item>9화</item>
+        <item>10화</item>
+        <item>11화</item>
+        <item>12화</item>
+        <item>13화</item>
+        <item>14화</item>
+    </string-array>
 
-  <string-array name="GF_SF2_After">
-    <item>솦모챠 만화 1화</item>
-    <item>솦모챠 만화 2화</item>
-    <item>솦모챠 만화 3화</item>
-    <item>솦모챠 &amp; 드리머 1화</item>
-    <item>솦모챠 &amp; 드리머 2화</item>
-    <item>AR 소대 1화</item>
-  </string-array>
+    <string-array name="GF_SF2_After">
+        <item>솦모챠 만화 1화</item>
+        <item>솦모챠 만화 2화</item>
+        <item>솦모챠 만화 3화</item>
+        <item>솦모챠 &amp; 드리머 1화</item>
+        <item>솦모챠 &amp; 드리머 2화</item>
+        <item>AR 소대 1화</item>
+    </string-array>
 
-  <string-array name="GF_INGUKOON_Frontline">
-    <item>1화</item>
-    <item>2화</item>
-    <item>3화</item>
-    <item>4화</item>
-    <item>5화</item>
-  </string-array>
+    <string-array name="GF_INGUKOON_Frontline">
+        <item>1화</item>
+        <item>2화</item>
+        <item>3화</item>
+        <item>4화</item>
+        <item>5화</item>
+    </string-array>
 
-  <string-array name="GF_Guide">
-    <item>1화</item>
-    <item>2화</item>
-    <item>3화</item>
-    <item>4화</item>
-    <item>5화</item>
-    <item>6화</item>
-    <item>7화</item>
-    <item>8화</item>
-    <item>9화</item>
-    <item>10화</item>
-    <item>11화</item>
-    <item>12화</item>
-    <item>13화</item>
-    <item>14화</item>
-    <item>15화</item>
-    <item>16화</item>
-    <item>17화</item>
-    <item>18화</item>
-  </string-array>
+    <string-array name="GF_Guide">
+        <item>1화</item>
+        <item>2화</item>
+        <item>3화</item>
+        <item>4화</item>
+        <item>5화</item>
+        <item>6화</item>
+        <item>7화</item>
+        <item>8화</item>
+        <item>9화</item>
+        <item>10화</item>
+        <item>11화</item>
+        <item>12화</item>
+        <item>13화</item>
+        <item>14화</item>
+        <item>15화</item>
+        <item>16화</item>
+        <item>17화</item>
+        <item>18화</item>
+    </string-array>
 
-  <string-array name="GF_DailyComic">
-    <item>1화</item>
-    <item>2화</item>
-    <item>3화</item>
-    <item>4화</item>
-    <item>5화</item>
-    <item>6화</item>
-    <item>7화</item>
-    <item>8화</item>
-    <item>9화</item>
-    <item>10화</item>
-    <item>11화</item>
-    <item>12화</item>
-    <item>13화</item>
-    <item>14화</item>
-    <item>15화</item>
-    <item>16화</item>
-    <item>17화</item>
-    <item>18화</item>
-    <item>19화</item>
-    <item>20화</item>
-    <item>21화</item>
-    <item>22화</item>
-    <item>23화</item>
-    <item>24화</item>
-    <item>25화</item>
-    <item>26화</item>
-    <item>27화</item>
-    <item>28화</item>
-    <item>29화</item>
-    <item>30화</item>
-    <item>31화</item>
-    <item>32화</item>
-    <item>33화</item>
-    <item>34화</item>
-    <item>35화</item>
-    <item>36화</item>
-    <item>37화</item>
-    <item>38화</item>
-    <item>39화</item>
-    <item>40화</item>
-    <item>41화</item>
-    <item>42화</item>
-    <item>43화</item>
-    <item>44화</item>
-    <item>45화</item>
-    <item>46화</item>
-    <item>47화</item>
-    <item>48화</item>
-    <item>49화</item>
-    <item>50화</item>
-    <item>51화</item>
-    <item>52화</item>
-    <item>53화</item>
-    <item>54화</item>
-    <item>55화</item>
-    <item>56화</item>
-    <item>57화</item>
-    <item>58화</item>
-    <item>59화</item>
-    <item>60화</item>
-    <item>61화</item>
-    <item>62화</item>
-    <item>63화</item>
-    <item>64화</item>
-    <item>65화</item>
-    <item>66화</item>
-    <item>67화</item>
-    <item>68화</item>
-    <item>69화</item>
-    <item>70화</item>
-    <item>71화</item>
-    <item>72화</item>
-    <item>73화</item>
-    <item>74화</item>
-    <item>75화</item>
-    <item>76화</item>
-    <item>77화</item>
-    <item>78화</item>
-    <item>79화</item>
-    <item>80화</item>
-    <item>81화</item>
-    <item>82화</item>
-    <item>83화</item>
-    <item>84화</item>
-    <item>85화</item>
-    <item>86화</item>
-    <item>87화</item>
-    <item>88화</item>
-    <item>89화</item>
-    <item>90화</item>
-    <item>91화</item>
-    <item>92화</item>
-    <item>93화</item>
-    <item>94화</item>
-    <item>95화</item>
-    <item>96화</item>
-    <item>추석 특별편 1화</item>
-    <item>추석 특별편 2화</item>
-    <item>추석 특별편 3화</item>
-    <item>97화</item>
-    <item>98화</item>
-    <item>99화</item>
-    <item>100화</item>
-    <item>101화</item>
-    <item>102화</item>
-    <item>103화</item>
-    <item>104화</item>
-    <item>105화</item>
-    <item>106화</item>
-    <item>107화</item>
-    <item>108화</item>
-    <item>109화</item>
-    <item>110화</item>
-    <item>111화</item>
-    <item>112화</item>
-    <item>113화</item>
-    <item>크리스마스 특별편</item>
-    <item>2020 새해 특별편 1화</item>
-    <item>2020 새해 특별편 2화</item>
-    <item>2020 새해 특별편 3화</item>
-    <item>2020 새해 특별편 4화</item>
-    <item>114화</item>
-    <item>115화</item>
-    <item>116화</item>
-    <item>117화</item>
-    <item>118화</item>
-    <item>119화</item>
-    <item>120화</item>
-    <item>121화</item>
-    <item>122화</item>
-    <item>123화</item>
-    <item>124화</item>
-    <item>125화</item>
-    <item>126화</item>
-    <item>127화</item>
-    <item>128화</item>
-    <item>129화</item>
-    <item>130화</item>
-    <item>131화</item>
-    <item>2020 만우절 특별편 1화</item>
-    <item>2020 만우절 특별편 2화</item>
-    <item>2020 만우절 특별편 3화</item>
-    <item>2020 만우절 특별편 4화</item>
-    <item>2020 만우절 특별편 5화</item>
-    <item>2020 만우절 특별편 6화</item>
-    <item>2020 만우절 특별편 7화</item>
-    <item>132화</item>
-    <item>133화</item>
-    <item>134화</item>
-    <item>135화</item>
-    <item>136화</item>
-    <item>137화</item>
-    <item>138화</item>
-    <item>3주년 특별편 1화</item>
-    <item>3주년 특별편 2화</item>
-    <item>3주년 특별편 3화</item>
-    <item>3주년 특별편 4화</item>
-    <item>3주년 특별편 5화</item>
-    <item>3주년 특별편 6화</item>
-    <item>3주년 특별편 7화</item>
-    <item>3주년 특별편 8화</item>
-    <item>139화</item>
-    <item>140화</item>
-    <item>141화</item>
-    <item>보스가 돌아왔다 1화</item>
-    <item>보스가 돌아왔다 2화</item>
-    <item>보스가 돌아왔다 3화</item>
-    <item>보스가 돌아왔다 4화</item>
-    <item>보스가 돌아왔다 5화</item>
-    <item>보스가 돌아왔다 6화</item>
-    <item>142화</item>
-    <item>143화</item>
-    <item>144화</item>
-    <item>145화</item>
-    <item>2020 핼러윈 특별편 1화</item>
-    <item>2020 핼러윈 특별편 2화</item>
-    <item>2020 핼러윈 특별편 3화</item>
-    <item>2020 핼러윈 특별편 4화</item>
-    <item>2020 핼러윈 특별편 5화</item>
-    <item>2020 핼러윈 특별편 6화</item>
-    <item>2020 핼러윈 특별편 7화</item>
-    <item>2020 핼러윈 특별편 8화</item>
-    <item>2020 핼러윈 특별편 9화</item>
-    <item>146화</item>
-    <item>147화</item>
-    <item>148화</item>
-    <item>150화</item>
-    <item>151화</item>
-    <item>152화</item>
-    <item>153화</item>
-    <item>154화</item>
-    <item>155화</item>
-    <item>156화</item>
-    <item>157화</item>
-    <item>158화</item>
-    <item>159화</item>
-    <item>160화</item>
-    <item>161화</item>
-    <item>162화</item>
-    <item>163화</item>
-    <item>164화</item>
-    <item>165화</item>
-    <item>166화</item>
-    <item>2021 설날 특별편 1화</item>
-    <item>2021 설날 특별편 2화</item>
-    <item>2021 설날 특별편 3화</item>
-    <item>2021 설날 특별편 4화</item>
-    <item>2021 설날 특별편 5화</item>
-    <item>2021 설날 특별편 6화</item>
-    <item>2021 설날 특별편 7화</item>
-    <item>2021 설날 특별편 8화</item>
-    <item>2021 설날 특별편 9화</item>
-    <item>2021 설날 특별편 10화</item>
-    <item>167화</item>
-    <item>168화</item>
-    <item>169화</item>
-    <item>170화</item>
-    <item>171화</item>
-    <item>172화</item>
-    <item>173화</item>
-    <item>174화</item>
-    <item>175화</item>
-    <item>176화</item>
-    <item>177화</item>
-    <item>178화</item>
-    <item>179화</item>
-    <item>180화</item>
-    <item>181화</item>
-    <item>182화</item>
-    <item>183화</item>
-    <item>184화</item>
-    <item>185화</item>
-    <item>186화</item>
-    <item>187화</item>
-    <item>188화</item>
-    <item>189화</item>
-    <item>190화</item>
-    <item>191화</item>
-    <item>192화</item>
-    <item>193화</item>
-    <item>194화</item>
-    <item>195화</item>
-    <item>196화</item>
-    <item>197화</item>
-    <item>198화</item>
-    <item>199화</item>
-    <item>200화</item>
-    <item>201화</item>
-    <item>202화</item>
-    <item>203화</item>
-    <item>204화</item>
-    <item>205화</item>
-    <item>206화</item>
-    <item>207화</item>
-  </string-array>
+    <string-array name="GF_DailyComic">
+        <item>1화</item>
+        <item>2화</item>
+        <item>3화</item>
+        <item>4화</item>
+        <item>5화</item>
+        <item>6화</item>
+        <item>7화</item>
+        <item>8화</item>
+        <item>9화</item>
+        <item>10화</item>
+        <item>11화</item>
+        <item>12화</item>
+        <item>13화</item>
+        <item>14화</item>
+        <item>15화</item>
+        <item>16화</item>
+        <item>17화</item>
+        <item>18화</item>
+        <item>19화</item>
+        <item>20화</item>
+        <item>21화</item>
+        <item>22화</item>
+        <item>23화</item>
+        <item>24화</item>
+        <item>25화</item>
+        <item>26화</item>
+        <item>27화</item>
+        <item>28화</item>
+        <item>29화</item>
+        <item>30화</item>
+        <item>31화</item>
+        <item>32화</item>
+        <item>33화</item>
+        <item>34화</item>
+        <item>35화</item>
+        <item>36화</item>
+        <item>37화</item>
+        <item>38화</item>
+        <item>39화</item>
+        <item>40화</item>
+        <item>41화</item>
+        <item>42화</item>
+        <item>43화</item>
+        <item>44화</item>
+        <item>45화</item>
+        <item>46화</item>
+        <item>47화</item>
+        <item>48화</item>
+        <item>49화</item>
+        <item>50화</item>
+        <item>51화</item>
+        <item>52화</item>
+        <item>53화</item>
+        <item>54화</item>
+        <item>55화</item>
+        <item>56화</item>
+        <item>57화</item>
+        <item>58화</item>
+        <item>59화</item>
+        <item>60화</item>
+        <item>61화</item>
+        <item>62화</item>
+        <item>63화</item>
+        <item>64화</item>
+        <item>65화</item>
+        <item>66화</item>
+        <item>67화</item>
+        <item>68화</item>
+        <item>69화</item>
+        <item>70화</item>
+        <item>71화</item>
+        <item>72화</item>
+        <item>73화</item>
+        <item>74화</item>
+        <item>75화</item>
+        <item>76화</item>
+        <item>77화</item>
+        <item>78화</item>
+        <item>79화</item>
+        <item>80화</item>
+        <item>81화</item>
+        <item>82화</item>
+        <item>83화</item>
+        <item>84화</item>
+        <item>85화</item>
+        <item>86화</item>
+        <item>87화</item>
+        <item>88화</item>
+        <item>89화</item>
+        <item>90화</item>
+        <item>91화</item>
+        <item>92화</item>
+        <item>93화</item>
+        <item>94화</item>
+        <item>95화</item>
+        <item>96화</item>
+        <item>추석 특별편 1화</item>
+        <item>추석 특별편 2화</item>
+        <item>추석 특별편 3화</item>
+        <item>97화</item>
+        <item>98화</item>
+        <item>99화</item>
+        <item>100화</item>
+        <item>101화</item>
+        <item>102화</item>
+        <item>103화</item>
+        <item>104화</item>
+        <item>105화</item>
+        <item>106화</item>
+        <item>107화</item>
+        <item>108화</item>
+        <item>109화</item>
+        <item>110화</item>
+        <item>111화</item>
+        <item>112화</item>
+        <item>113화</item>
+        <item>크리스마스 특별편</item>
+        <item>2020 새해 특별편 1화</item>
+        <item>2020 새해 특별편 2화</item>
+        <item>2020 새해 특별편 3화</item>
+        <item>2020 새해 특별편 4화</item>
+        <item>114화</item>
+        <item>115화</item>
+        <item>116화</item>
+        <item>117화</item>
+        <item>118화</item>
+        <item>119화</item>
+        <item>120화</item>
+        <item>121화</item>
+        <item>122화</item>
+        <item>123화</item>
+        <item>124화</item>
+        <item>125화</item>
+        <item>126화</item>
+        <item>127화</item>
+        <item>128화</item>
+        <item>129화</item>
+        <item>130화</item>
+        <item>131화</item>
+        <item>2020 만우절 특별편 1화</item>
+        <item>2020 만우절 특별편 2화</item>
+        <item>2020 만우절 특별편 3화</item>
+        <item>2020 만우절 특별편 4화</item>
+        <item>2020 만우절 특별편 5화</item>
+        <item>2020 만우절 특별편 6화</item>
+        <item>2020 만우절 특별편 7화</item>
+        <item>132화</item>
+        <item>133화</item>
+        <item>134화</item>
+        <item>135화</item>
+        <item>136화</item>
+        <item>137화</item>
+        <item>138화</item>
+        <item>3주년 특별편 1화</item>
+        <item>3주년 특별편 2화</item>
+        <item>3주년 특별편 3화</item>
+        <item>3주년 특별편 4화</item>
+        <item>3주년 특별편 5화</item>
+        <item>3주년 특별편 6화</item>
+        <item>3주년 특별편 7화</item>
+        <item>3주년 특별편 8화</item>
+        <item>139화</item>
+        <item>140화</item>
+        <item>141화</item>
+        <item>보스가 돌아왔다 1화</item>
+        <item>보스가 돌아왔다 2화</item>
+        <item>보스가 돌아왔다 3화</item>
+        <item>보스가 돌아왔다 4화</item>
+        <item>보스가 돌아왔다 5화</item>
+        <item>보스가 돌아왔다 6화</item>
+        <item>142화</item>
+        <item>143화</item>
+        <item>144화</item>
+        <item>145화</item>
+        <item>2020 핼러윈 특별편 1화</item>
+        <item>2020 핼러윈 특별편 2화</item>
+        <item>2020 핼러윈 특별편 3화</item>
+        <item>2020 핼러윈 특별편 4화</item>
+        <item>2020 핼러윈 특별편 5화</item>
+        <item>2020 핼러윈 특별편 6화</item>
+        <item>2020 핼러윈 특별편 7화</item>
+        <item>2020 핼러윈 특별편 8화</item>
+        <item>2020 핼러윈 특별편 9화</item>
+        <item>146화</item>
+        <item>147화</item>
+        <item>148화</item>
+        <item>150화</item>
+        <item>151화</item>
+        <item>152화</item>
+        <item>153화</item>
+        <item>154화</item>
+        <item>155화</item>
+        <item>156화</item>
+        <item>157화</item>
+        <item>158화</item>
+        <item>159화</item>
+        <item>160화</item>
+        <item>161화</item>
+        <item>162화</item>
+        <item>163화</item>
+        <item>164화</item>
+        <item>165화</item>
+        <item>166화</item>
+        <item>2021 설날 특별편 1화</item>
+        <item>2021 설날 특별편 2화</item>
+        <item>2021 설날 특별편 3화</item>
+        <item>2021 설날 특별편 4화</item>
+        <item>2021 설날 특별편 5화</item>
+        <item>2021 설날 특별편 6화</item>
+        <item>2021 설날 특별편 7화</item>
+        <item>2021 설날 특별편 8화</item>
+        <item>2021 설날 특별편 9화</item>
+        <item>2021 설날 특별편 10화</item>
+        <item>167화</item>
+        <item>168화</item>
+        <item>169화</item>
+        <item>170화</item>
+        <item>171화</item>
+        <item>172화</item>
+        <item>173화</item>
+        <item>174화</item>
+        <item>175화</item>
+        <item>176화</item>
+        <item>177화</item>
+        <item>178화</item>
+        <item>179화</item>
+        <item>180화</item>
+        <item>181화</item>
+        <item>182화</item>
+        <item>183화</item>
+        <item>184화</item>
+        <item>185화</item>
+        <item>186화</item>
+        <item>187화</item>
+        <item>188화</item>
+        <item>189화</item>
+        <item>190화</item>
+        <item>191화</item>
+        <item>192화</item>
+        <item>193화</item>
+        <item>194화</item>
+        <item>195화</item>
+        <item>196화</item>
+        <item>197화</item>
+        <item>198화</item>
+        <item>199화</item>
+        <item>200화</item>
+        <item>201화</item>
+        <item>202화</item>
+        <item>203화</item>
+        <item>204화</item>
+        <item>205화</item>
+        <item>206화</item>
+        <item>207화</item>
+        <item>208화</item>
+        <item>209화</item>
+        <item>210화</item>
+        <item>211화</item>
+        <item>212화</item>
+        <item>213화</item>
+        <item>214화</item>
+        <item>215화</item>
+        <item>216화</item>
+        <item>217화</item>
+        <item>218화</item>
+        <item>219화</item>
+        <item>220화</item>
+        <item>221화</item>
+        <item>222화</item>
+        <item>223화</item>
+        <item>224화</item>
+        <item>225화</item>
+        <item>226화</item>
+        <item>227화</item>
+        <item>228화</item>
+        <item>229화</item>
+        <item>230화</item>
+        <item>231화</item>
+        <item>232화</item>
+		<item>2021 추석 특별편 1화</item>
+		<item>2021 추석 특별편 2화</item>
+		<item>2021 추석 특별편 3화</item>
+		<item>2021 추석 특별편 4화</item>
+		<item>2021 추석 특별편 5화</item>
+		<item>2021 추석 특별편 6화</item>
+		<item>2021 추석 특별편 7화</item>
+		<item>2021 추석 특별편 8화</item>
+		<item>2021 추석 특별편 9화</item>
+		<item>2021 추석 특별편 10화</item>
+		<item>233화</item>
+		<item>234화</item>
+		<item>235화</item>
+		<item>236화</item>
+    </string-array>
 
-  <string-array name="mota6nako_GF">
-    <item>1화</item>
-    <item>2화</item>
-    <item>3화</item>
-    <item>4화</item>
-    <item>5화</item>
-    <item>6화</item>
-    <item>7화</item>
-    <item>8화</item>
-    <item>9화</item>
-    <item>10화</item>
-    <item>11화</item>
-    <item>12화</item>
-    <item>13화</item>
-    <item>14화</item>
-    <item>15화</item>
-    <item>16화</item>
-    <item>17화</item>
-    <item>18화</item>
-    <item>19화</item>
-    <item>20화</item>
-  </string-array>
+    <string-array name="mota6nako_GF">
+        <item>1화</item>
+        <item>2화</item>
+        <item>3화</item>
+        <item>4화</item>
+        <item>5화</item>
+        <item>6화</item>
+        <item>7화</item>
+        <item>8화</item>
+        <item>9화</item>
+        <item>10화</item>
+        <item>11화</item>
+        <item>12화</item>
+        <item>13화</item>
+        <item>14화</item>
+        <item>15화</item>
+        <item>16화</item>
+        <item>17화</item>
+        <item>18화</item>
+        <item>19화</item>
+        <item>20화</item>
+    </string-array>
 
-  <string-array name="mota6nako_GF_URL">
-    <item>http://naver.me/GwgM0Zz8</item>
-    <item>http://naver.me/5gKZETYH</item>
-    <item>http://naver.me/FuyPKu0F</item>
-    <item>http://naver.me/GcMSecqb</item>
-    <item>http://naver.me/xlzg6lhA</item>
-    <item>http://naver.me/xwb8zjp6</item>
-    <item>http://naver.me/5rQ5mb4z</item>
-    <item>http://naver.me/56QtNWMX</item>
-    <item>http://naver.me/IgAH8TrQ</item>
-    <item>http://naver.me/5lYKJuGY</item>
-    <item>http://naver.me/FzvaXGx1</item>
-    <item>http://naver.me/Gh5dSX4t</item>
-    <item>http://naver.me/IIvjPEZS</item>
-    <item>http://naver.me/5deLm4Io</item>
-    <item>http://naver.me/G2KNc4Fh</item>
-    <item>http://naver.me/5AJdyvyT</item>
-    <item>http://naver.me/5UhluN7l</item>
-    <item>http://naver.me/5Khx8aro</item>
-    <item>http://naver.me/5m4fau6H</item>
-    <item>http://naver.me/5Kh2lpJ0</item>
-  </string-array>
+    <string-array name="mota6nako_GF_URL">
+        <item>http://naver.me/GwgM0Zz8</item>
+        <item>http://naver.me/5gKZETYH</item>
+        <item>http://naver.me/FuyPKu0F</item>
+        <item>http://naver.me/GcMSecqb</item>
+        <item>http://naver.me/xlzg6lhA</item>
+        <item>http://naver.me/xwb8zjp6</item>
+        <item>http://naver.me/5rQ5mb4z</item>
+        <item>http://naver.me/56QtNWMX</item>
+        <item>http://naver.me/IgAH8TrQ</item>
+        <item>http://naver.me/5lYKJuGY</item>
+        <item>http://naver.me/FzvaXGx1</item>
+        <item>http://naver.me/Gh5dSX4t</item>
+        <item>http://naver.me/IIvjPEZS</item>
+        <item>http://naver.me/5deLm4Io</item>
+        <item>http://naver.me/G2KNc4Fh</item>
+        <item>http://naver.me/5AJdyvyT</item>
+        <item>http://naver.me/5UhluN7l</item>
+        <item>http://naver.me/5Khx8aro</item>
+        <item>http://naver.me/5m4fau6H</item>
+        <item>http://naver.me/5Kh2lpJ0</item>
+    </string-array>
 
-  <string-array name="ImmortalityFront_GF">
-    <item>1화</item>
-    <item>2화</item>
-    <item>3화</item>
-    <item>4화</item>
-    <item>5화</item>
-    <item>6화</item>
-    <item>7화</item>
-    <item>8화</item>
-    <item>9화</item>
-    <item>10화</item>
-  </string-array>
+    <string-array name="ImmortalityFront_GF">
+        <item>1화</item>
+        <item>2화</item>
+        <item>3화</item>
+        <item>4화</item>
+        <item>5화</item>
+        <item>6화</item>
+        <item>7화</item>
+        <item>8화</item>
+        <item>9화</item>
+        <item>10화</item>
+    </string-array>
 
-  <string-array name="ImmortalityFront_GF_URL">
-    <item>https://blog.naver.com/dndudwp99/221198965602</item>
-    <item>https://blog.naver.com/dndudwp99/221202076879</item>
-    <item>https://blog.naver.com/dndudwp99/221209264369</item>
-    <item>https://blog.naver.com/dndudwp99/221236937380</item>
-    <item>https://blog.naver.com/dndudwp99/221259132624</item>
-    <item>https://blog.naver.com/dndudwp99/221274950682</item>
-    <item>https://blog.naver.com/dndudwp99/221294079132</item>
-    <item>https://blog.naver.com/dndudwp99/221372072394</item>
-    <item>https://blog.naver.com/dndudwp99/221423848120</item>
-    <item>https://blog.naver.com/dndudwp99/221425236747</item>
-  </string-array>
+    <string-array name="ImmortalityFront_GF_URL">
+        <item>https://blog.naver.com/dndudwp99/221198965602</item>
+        <item>https://blog.naver.com/dndudwp99/221202076879</item>
+        <item>https://blog.naver.com/dndudwp99/221209264369</item>
+        <item>https://blog.naver.com/dndudwp99/221236937380</item>
+        <item>https://blog.naver.com/dndudwp99/221259132624</item>
+        <item>https://blog.naver.com/dndudwp99/221274950682</item>
+        <item>https://blog.naver.com/dndudwp99/221294079132</item>
+        <item>https://blog.naver.com/dndudwp99/221372072394</item>
+        <item>https://blog.naver.com/dndudwp99/221423848120</item>
+        <item>https://blog.naver.com/dndudwp99/221425236747</item>
+    </string-array>
 
-  <string-array name="MMM_GF">
-    <item>1화</item>
-    <item>2화</item>
-    <item>3화</item>
-    <item>4화</item>
-    <item>5화</item>
-    <item>6화</item>
-    <item>7화</item>
-    <item>8화</item>
-    <item>9화</item>
-    <item>10화</item>
-    <item>11화</item>
-    <item>12화</item>
-    <item>13화</item>
-    <item>14화</item>
-    <item>15화</item>
-    <item>16화</item>
-    <item>17화</item>
-    <item>18화</item>
-    <item>19화</item>
-    <item>20화</item>
-    <item>S1화</item>
-    <item>S2화</item>
-    <item>S3화</item>
-    <item>S4화</item>
-    <item>21화</item>
-    <item>22화</item>
-  </string-array>
+    <string-array name="MMM_GF">
+        <item>1화</item>
+        <item>2화</item>
+        <item>3화</item>
+        <item>4화</item>
+        <item>5화</item>
+        <item>6화</item>
+        <item>7화</item>
+        <item>8화</item>
+        <item>9화</item>
+        <item>10화</item>
+        <item>11화</item>
+        <item>12화</item>
+        <item>13화</item>
+        <item>14화</item>
+        <item>15화</item>
+        <item>16화</item>
+        <item>17화</item>
+        <item>18화</item>
+        <item>19화</item>
+        <item>20화</item>
+        <item>S1화</item>
+        <item>S2화</item>
+        <item>S3화</item>
+        <item>S4화</item>
+        <item>21화</item>
+        <item>22화</item>
+    </string-array>
 
-  <string-array name="Geo_GF">
-    <item>1 - 가장 가난한 제대</item>
-    <item>2 - 캡슐팔이 소녀</item>
-    <item>3 - 이것이 토카레프다!</item>
-    <item>4 - 가장 부유한 제대</item>
-    <item>5 - 지휘관의 인기</item>
-    <item>6 - 네가 거기서 왜 나와</item>
-    <item>7 - 타락한 춘전(상편)</item>
-    <item>8 - 타락한 춘전(하편)</item>
-    <item>9 - 인형은 무슨 생각을 할까?</item>
-    <item>10 - 이 게임은 설마...</item>
-    <item>11 - 사로잡힌 지휘관(상편)</item>
-    <item>12 - 사로잡힌 지휘관(하편)</item>
-    <item>13 - 절대반지와 카피인형</item>
-    <item>14 - 춘전의 아르바이트(상편)</item>
-    <item>15 - 춘전의 아르바이트(중편)</item>
-    <item>16 - 춘전의 아르바이트(하편)</item>
-    <item>17 - 소전 삼국지(삼고초려)</item>
-    <item>18 - 구세주 MG4</item>
-    <item>19 - 찬란히 빛나는 그 이름</item>
-    <item>20 - 그리폰 패션 쇼</item>
-    <item>21 - 소가 된 게으름뱅이</item>
-    <item>22 - 그리폰에 온 디스트로이어(상편)</item>
-    <item>23 - 그리폰에 온 디스트로이어(하편)</item>
-    <item>24 - 병에 걸린 지휘관</item>
-    <item>25 - 고독한 미식가(알케미스트)</item>
-    <item>26 - 우중 신의 선물</item>
-    <item>27 - 여름특집(귀신을 만난 전술인형)</item>
-    <item>28 - 개조 된 춘전(상편)</item>
-    <item>29 - 개조 된 춘전(하편)</item>
-    <item>30 - 힘내세요! 지휘관!</item>
-    <item>31 - 맛있는 녀석들의 습격</item>
-    <item>32 - 보직을 변경한 춘전</item>
-    <item>33 - MG4의 데스노트</item>
-    <item>34 - 어려운 야간임무</item>
-    <item>35 - 제4세력의 등장</item>
-    <item>36 - 헬리안의 남자친구</item>
-    <item>37 - 결혼하라고 하지 좀 마!</item>
-    <item>38 - 옷을 입을 수가 없어!</item>
-    <item>39 - 많이 먹기 대회와 방패요정</item>
-    <item>40 - 스파스의 폭주</item>
-    <item>41 - 리베롤 입양하기</item>
-    <item>42 - 새로운 부관 임명하기</item>
-    <item>43 - 부관 자리는 내 거야!</item>
-    <item>44 - 크리스마스 특집(산타의 선물)</item>
-    <item>45 - 피노키오 UMP45</item>
-    <item>46 - 4성인형 PK</item>
-    <item>47 - 새로운 지휘관</item>
-    <item>48 - 스프링필드의 스토킹</item>
-    <item>49 - 스프링필드의 마음</item>
-    <item>50 - WA2000의 필살기, 새로운 RF</item>
-    <item>51 - 발렌타인 특집(내 초콜릿을 받아주세요!)</item>
-    <item>52 - 납치된 헬리안</item>s
-    <item>53 - 헬리안 구출작전</item>
-    <item>54 - 지휘관의 친구</item>
-    <item>55 - 전술인형, 변신! 합체!</item>
-    <item>56 - 오늘도 춘전이네 카페는 평화롭습니다</item>
-    <item>57 - 전술인형을 싫어하는 마을</item>
-    <item>58 - 스프링필드의 고민</item>
-    <item>59 - 그리폰 게임학교</item>
-    <item>60 - 코어 골든벨</item>
-    <item>특별편 - Q&amp;A와 연재이야기</item>
-    <item>61 - 에이전트와 지휘관</item>
-    <item>62 - 협력과 탈출</item>
-    <item>63 - 그리폰의 에이전트</item>
-    <item>64 - M99메이커 2</item>
-    <item>65 - 안마받는 지휘관</item>
-    <item>66 - 니토의 습격</item>
-    <item>67 - 지휘관을 구하라</item>
-    <item>68 - 그로자의 약점</item>
-    <item>69 - 이상한 지휘관</item>
-    <item>70 - 스프링필드의 고백, 그리고......</item>
-    <item>71 - 소전삼국지(장판파전투)</item>
-    <item>72 - 여름특집, 더울 때는 바다로!</item>
-    <item>73 - 여름특집, 친목을 위한 피구</item>
-    <item>74 - 헬리안의 습격</item>
-    <item>75 - 슈퍼쇼티의 하루</item>
-    <item>76 - 빼앗긴 3코어</item>
-    <item>77 - 강력해진 춘전이</item>
-    <item>78 - 파견 나온 아키텍트</item>
-    <item>79 - 이상한 중제조</item>
-    <item>80 - 야한언니 에이전트</item>
-    <item>81 - 미인계</item>
-    <item>82 - G36의 미소</item>
-    <item>83 - 소녀탐정 헬리안</item>
-    <item>84 - 소녀전선 아이돌 프로젝트</item>
-    <item>85 - 아이돌 콘테스트</item>
-    <item>86 - 그리폰 최고 아이돌은 누구?</item>
-    <item>87 - 에이전트의 짝사랑</item>
-    <item>88 - 고백 성공?</item>
-    <item>89 - 무협전선</item>
-    <item>90 - 강호의 도리를 지키는 아키텍트</item>
-    <item>91 - 술이 떨어진 M16</item>
-    <item>92 - 예림이! 그 패 봐봐, 혹시 장이야?</item>
-    <item>93 - 설원 탐색 임무</item>
-    <item>94 - 그리폰의 알바 아키텍트</item>
-    <item>95 - 신데렐라</item>
-    <item>96 - 왕자님의 정체</item>
-    <item>97 - 지휘관은 누구를 좋아하나?</item>
-    <item>98 - 에이전트, 위기에 처하다!</item>
-    <item>99 - 고문을 견디는 에이전트</item>
-    <item>100 - 에이전트는 더 이상 치마를 들추지 못해</item>
-    <item>101 - 철혈 인형의 귀순</item>
-    <item>102 - 드리머의 인터넷 방송</item>
-    <item>103 - 헬리안과 지휘관의 출장</item>
-    <item>104 - 헬리안의 유혹</item>
-    <item>105 - 니토의 뒷거래</item>
-    <item>106 - 위기의 지휘관과 헬리안</item>
-    <item>107 - 그들의 결말</item>
-    <item>마지막 화 - 연재 후기</item>
-  </string-array>
+    <string-array name="Geo_GF">
+        <item>1 - 가장 가난한 제대</item>
+        <item>2 - 캡슐팔이 소녀</item>
+        <item>3 - 이것이 토카레프다!</item>
+        <item>4 - 가장 부유한 제대</item>
+        <item>5 - 지휘관의 인기</item>
+        <item>6 - 네가 거기서 왜 나와</item>
+        <item>7 - 타락한 춘전(상편)</item>
+        <item>8 - 타락한 춘전(하편)</item>
+        <item>9 - 인형은 무슨 생각을 할까?</item>
+        <item>10 - 이 게임은 설마...</item>
+        <item>11 - 사로잡힌 지휘관(상편)</item>
+        <item>12 - 사로잡힌 지휘관(하편)</item>
+        <item>13 - 절대반지와 카피인형</item>
+        <item>14 - 춘전의 아르바이트(상편)</item>
+        <item>15 - 춘전의 아르바이트(중편)</item>
+        <item>16 - 춘전의 아르바이트(하편)</item>
+        <item>17 - 소전 삼국지(삼고초려)</item>
+        <item>18 - 구세주 MG4</item>
+        <item>19 - 찬란히 빛나는 그 이름</item>
+        <item>20 - 그리폰 패션 쇼</item>
+        <item>21 - 소가 된 게으름뱅이</item>
+        <item>22 - 그리폰에 온 디스트로이어(상편)</item>
+        <item>23 - 그리폰에 온 디스트로이어(하편)</item>
+        <item>24 - 병에 걸린 지휘관</item>
+        <item>25 - 고독한 미식가(알케미스트)</item>
+        <item>26 - 우중 신의 선물</item>
+        <item>27 - 여름특집(귀신을 만난 전술인형)</item>
+        <item>28 - 개조 된 춘전(상편)</item>
+        <item>29 - 개조 된 춘전(하편)</item>
+        <item>30 - 힘내세요! 지휘관!</item>
+        <item>31 - 맛있는 녀석들의 습격</item>
+        <item>32 - 보직을 변경한 춘전</item>
+        <item>33 - MG4의 데스노트</item>
+        <item>34 - 어려운 야간임무</item>
+        <item>35 - 제4세력의 등장</item>
+        <item>36 - 헬리안의 남자친구</item>
+        <item>37 - 결혼하라고 하지 좀 마!</item>
+        <item>38 - 옷을 입을 수가 없어!</item>
+        <item>39 - 많이 먹기 대회와 방패요정</item>
+        <item>40 - 스파스의 폭주</item>
+        <item>41 - 리베롤 입양하기</item>
+        <item>42 - 새로운 부관 임명하기</item>
+        <item>43 - 부관 자리는 내 거야!</item>
+        <item>44 - 크리스마스 특집(산타의 선물)</item>
+        <item>45 - 피노키오 UMP45</item>
+        <item>46 - 4성인형 PK</item>
+        <item>47 - 새로운 지휘관</item>
+        <item>48 - 스프링필드의 스토킹</item>
+        <item>49 - 스프링필드의 마음</item>
+        <item>50 - WA2000의 필살기, 새로운 RF</item>
+        <item>51 - 발렌타인 특집(내 초콜릿을 받아주세요!)</item>
+        <item>52 - 납치된 헬리안</item>s
+        <item>53 - 헬리안 구출작전</item>
+        <item>54 - 지휘관의 친구</item>
+        <item>55 - 전술인형, 변신! 합체!</item>
+        <item>56 - 오늘도 춘전이네 카페는 평화롭습니다</item>
+        <item>57 - 전술인형을 싫어하는 마을</item>
+        <item>58 - 스프링필드의 고민</item>
+        <item>59 - 그리폰 게임학교</item>
+        <item>60 - 코어 골든벨</item>
+        <item>특별편 - Q&amp;A와 연재이야기</item>
+        <item>61 - 에이전트와 지휘관</item>
+        <item>62 - 협력과 탈출</item>
+        <item>63 - 그리폰의 에이전트</item>
+        <item>64 - M99메이커 2</item>
+        <item>65 - 안마받는 지휘관</item>
+        <item>66 - 니토의 습격</item>
+        <item>67 - 지휘관을 구하라</item>
+        <item>68 - 그로자의 약점</item>
+        <item>69 - 이상한 지휘관</item>
+        <item>70 - 스프링필드의 고백, 그리고......</item>
+        <item>71 - 소전삼국지(장판파전투)</item>
+        <item>72 - 여름특집, 더울 때는 바다로!</item>
+        <item>73 - 여름특집, 친목을 위한 피구</item>
+        <item>74 - 헬리안의 습격</item>
+        <item>75 - 슈퍼쇼티의 하루</item>
+        <item>76 - 빼앗긴 3코어</item>
+        <item>77 - 강력해진 춘전이</item>
+        <item>78 - 파견 나온 아키텍트</item>
+        <item>79 - 이상한 중제조</item>
+        <item>80 - 야한언니 에이전트</item>
+        <item>81 - 미인계</item>
+        <item>82 - G36의 미소</item>
+        <item>83 - 소녀탐정 헬리안</item>
+        <item>84 - 소녀전선 아이돌 프로젝트</item>
+        <item>85 - 아이돌 콘테스트</item>
+        <item>86 - 그리폰 최고 아이돌은 누구?</item>
+        <item>87 - 에이전트의 짝사랑</item>
+        <item>88 - 고백 성공?</item>
+        <item>89 - 무협전선</item>
+        <item>90 - 강호의 도리를 지키는 아키텍트</item>
+        <item>91 - 술이 떨어진 M16</item>
+        <item>92 - 예림이! 그 패 봐봐, 혹시 장이야?</item>
+        <item>93 - 설원 탐색 임무</item>
+        <item>94 - 그리폰의 알바 아키텍트</item>
+        <item>95 - 신데렐라</item>
+        <item>96 - 왕자님의 정체</item>
+        <item>97 - 지휘관은 누구를 좋아하나?</item>
+        <item>98 - 에이전트, 위기에 처하다!</item>
+        <item>99 - 고문을 견디는 에이전트</item>
+        <item>100 - 에이전트는 더 이상 치마를 들추지 못해</item>
+        <item>101 - 철혈 인형의 귀순</item>
+        <item>102 - 드리머의 인터넷 방송</item>
+        <item>103 - 헬리안과 지휘관의 출장</item>
+        <item>104 - 헬리안의 유혹</item>
+        <item>105 - 니토의 뒷거래</item>
+        <item>106 - 위기의 지휘관과 헬리안</item>
+        <item>107 - 그들의 결말</item>
+        <item>마지막 화 - 연재 후기</item>
+    </string-array>
 
-  <string-array name="Geo_GF_URL">
-    <item>http://naver.me/5vWEnflH</item>
-    <item>http://naver.me/5AJ6rxcq</item>
-    <item>http://naver.me/FNbRF6JV</item>
-    <item>http://naver.me/55BFUivd</item>
-    <item>http://naver.me/FxkHGbro</item>
-    <item>http://naver.me/GZzeredB</item>
-    <item>http://naver.me/Fw1C2wQG</item>
-    <item>http://naver.me/x8fvOucC</item>
-    <item>http://naver.me/FpNOIdmB</item>
-    <item>http://naver.me/Gh5ekzpm</item>
-    <item>http://naver.me/GWGubX6T</item>
-    <item>http://naver.me/FUevrNQQ</item>
-    <item>http://naver.me/FAZqtIfN</item>
-    <item>http://naver.me/5WCZfcP2</item>
-    <item>http://naver.me/5lYGWyBF</item>
-    <item>http://naver.me/Fu7Z19zm</item>
-    <item>http://naver.me/xqWzRFlH</item>
-    <item>http://naver.me/GDT6BpDP</item>
-    <item>http://naver.me/G0RtMEcl</item>
-    <item>http://naver.me/G2KkVv4L</item>
-    <item>http://naver.me/Fr1m5O0S</item>
-    <item>http://naver.me/G3IlKW0s</item>
-    <item>http://naver.me/FIj1zuqS</item>
-    <item>http://naver.me/FuyRrCUL</item>
-    <item>http://naver.me/IgqWGQTc</item>
-    <item>http://naver.me/GksbjLY9</item>
-    <item>http://naver.me/5eMEVtG3</item>
-    <item>http://naver.me/GuinWj7d</item>
-    <item>http://naver.me/GJeYhNOi</item>
-    <item>http://naver.me/FdjN0mVF</item>
-    <item>http://naver.me/IFaaBJ5n</item>
-    <item>http://naver.me/F8MRLbtE</item>
-    <item>http://naver.me/GQm43mKg</item>
-    <item>http://naver.me/xgYkslKx</item>
-    <item>http://naver.me/xXfPyeh5</item>
-    <item>http://naver.me/FvG79F6s</item>
-    <item>http://naver.me/xItgLNBg</item>
-    <item>http://naver.me/5eMZOYwc</item>
-    <item>http://naver.me/GKOIpd22</item>
-    <item>http://naver.me/FdjVfsxL</item>
-    <item>http://naver.me/xLZlbpWk</item>
-    <item>http://naver.me/GKOp8rp4</item>
-    <item>http://naver.me/Fa8ofhct</item>
-    <item>http://naver.me/50qmE9AN</item>
-    <item>http://naver.me/GPw3Osdx</item>
-    <item>http://naver.me/xTU5dzqS</item>
-    <item>http://naver.me/F10XWtB1</item>
-    <item>http://naver.me/x5hdpaXl</item>
-    <item>http://naver.me/xuftkQKK</item>
-    <item>http://naver.me/5acl0u4e</item>
-    <item>http://naver.me/xxT2Ntds</item>
-    <item>http://naver.me/xxTNu5kh</item>
-    <item>http://naver.me/xisTGYAh</item>
-    <item>http://naver.me/xRMBSyen</item>
-    <item>http://naver.me/xEBeTojt</item>
-    <item>http://naver.me/GbKVgSyK</item>
-    <item>http://naver.me/5GxuNdNA</item>
-    <item>http://naver.me/x5hXaZmh</item>
-    <item>http://naver.me/GLy5u61J</item>
-    <item>http://naver.me/FQmJ1kep</item>
-    <item>http://naver.me/5utH2Hmh</item>
-    <item>http://naver.me/GseU3UKo</item>
-    <item>http://naver.me/FPTdk733</item>
-    <item>http://naver.me/xt9uvuJr</item>
-    <item>http://naver.me/GNnwodKb</item>
-    <item>http://naver.me/xtFwIuUu</item>
-    <item>http://naver.me/xbclVrN7</item>
-    <item>http://naver.me/xHHub5c0</item>
-    <item>http://naver.me/5aFOw7wO</item>
-    <item>http://naver.me/G8ZYlJkQ</item>
-    <item>http://naver.me/58O9NVvn</item>
-    <item>http://naver.me/Fo9gJ1FY</item>
-    <item>http://naver.me/G4yyAoko</item>
-    <item>http://naver.me/5PRieK63</item>
-    <item>http://naver.me/xrxP7UrU</item>
-    <item>http://naver.me/GmH9Varu</item>
-    <item>http://naver.me/5jdjTjnt</item>
-    <item>http://naver.me/5VfmgvK9</item>
-    <item>http://naver.me/5GbGwHHU</item>
-    <item>http://naver.me/FPX8lRgC</item>
-    <item>http://naver.me/FkbhF1lR</item>
-    <item>http://naver.me/GaQVGoFM</item>
-    <item>http://naver.me/FwFfGwbV</item>
-    <item>http://naver.me/GqOM1vft</item>
-    <item>http://naver.me/FjMOKbsz</item>
-    <item>http://naver.me/G9ADajtp</item>
-    <item>http://naver.me/F8L0nw4h</item>
-    <item>http://naver.me/5uu8zmHx</item>
-    <item>http://naver.me/xcHR0ukR</item>
-    <item>http://naver.me/F0pYFbcw</item>
-    <item>http://naver.me/5yrlrXMf</item>
-    <item>http://naver.me/F2cXIw4T</item>
-    <item>http://naver.me/Fq9sQk7h</item>
-    <item>http://naver.me/Fkb09rgW</item>
-    <item>http://naver.me/x4Cpk1LP</item>
-    <item>http://naver.me/5PRahcrW</item>
-    <item>http://naver.me/FcUAf7EI</item>
-    <item>http://naver.me/xiABg3fL</item>
-    <item>http://naver.me/xZmpzRY9</item>
-    <item>http://naver.me/F9LropBT</item>
-    <item>http://naver.me/GvryfeeF</item>
-    <item>http://naver.me/xkSgVMqV</item>
-    <item>http://naver.me/GV8d3vBb</item>
-    <item>http://naver.me/xT8fZerU</item>
-    <item>http://naver.me/FAj05i8F</item>
-    <item>http://naver.me/FgzYP2EG</item>
-    <item>http://naver.me/xpDhAzU4</item>
-    <item>http://naver.me/FirnEGRx</item>
-    <item>http://naver.me/Fq9FN2wD</item>
-  </string-array>
+    <string-array name="Geo_GF_URL">
+        <item>http://naver.me/5vWEnflH</item>
+        <item>http://naver.me/5AJ6rxcq</item>
+        <item>http://naver.me/FNbRF6JV</item>
+        <item>http://naver.me/55BFUivd</item>
+        <item>http://naver.me/FxkHGbro</item>
+        <item>http://naver.me/GZzeredB</item>
+        <item>http://naver.me/Fw1C2wQG</item>
+        <item>http://naver.me/x8fvOucC</item>
+        <item>http://naver.me/FpNOIdmB</item>
+        <item>http://naver.me/Gh5ekzpm</item>
+        <item>http://naver.me/GWGubX6T</item>
+        <item>http://naver.me/FUevrNQQ</item>
+        <item>http://naver.me/FAZqtIfN</item>
+        <item>http://naver.me/5WCZfcP2</item>
+        <item>http://naver.me/5lYGWyBF</item>
+        <item>http://naver.me/Fu7Z19zm</item>
+        <item>http://naver.me/xqWzRFlH</item>
+        <item>http://naver.me/GDT6BpDP</item>
+        <item>http://naver.me/G0RtMEcl</item>
+        <item>http://naver.me/G2KkVv4L</item>
+        <item>http://naver.me/Fr1m5O0S</item>
+        <item>http://naver.me/G3IlKW0s</item>
+        <item>http://naver.me/FIj1zuqS</item>
+        <item>http://naver.me/FuyRrCUL</item>
+        <item>http://naver.me/IgqWGQTc</item>
+        <item>http://naver.me/GksbjLY9</item>
+        <item>http://naver.me/5eMEVtG3</item>
+        <item>http://naver.me/GuinWj7d</item>
+        <item>http://naver.me/GJeYhNOi</item>
+        <item>http://naver.me/FdjN0mVF</item>
+        <item>http://naver.me/IFaaBJ5n</item>
+        <item>http://naver.me/F8MRLbtE</item>
+        <item>http://naver.me/GQm43mKg</item>
+        <item>http://naver.me/xgYkslKx</item>
+        <item>http://naver.me/xXfPyeh5</item>
+        <item>http://naver.me/FvG79F6s</item>
+        <item>http://naver.me/xItgLNBg</item>
+        <item>http://naver.me/5eMZOYwc</item>
+        <item>http://naver.me/GKOIpd22</item>
+        <item>http://naver.me/FdjVfsxL</item>
+        <item>http://naver.me/xLZlbpWk</item>
+        <item>http://naver.me/GKOp8rp4</item>
+        <item>http://naver.me/Fa8ofhct</item>
+        <item>http://naver.me/50qmE9AN</item>
+        <item>http://naver.me/GPw3Osdx</item>
+        <item>http://naver.me/xTU5dzqS</item>
+        <item>http://naver.me/F10XWtB1</item>
+        <item>http://naver.me/x5hdpaXl</item>
+        <item>http://naver.me/xuftkQKK</item>
+        <item>http://naver.me/5acl0u4e</item>
+        <item>http://naver.me/xxT2Ntds</item>
+        <item>http://naver.me/xxTNu5kh</item>
+        <item>http://naver.me/xisTGYAh</item>
+        <item>http://naver.me/xRMBSyen</item>
+        <item>http://naver.me/xEBeTojt</item>
+        <item>http://naver.me/GbKVgSyK</item>
+        <item>http://naver.me/5GxuNdNA</item>
+        <item>http://naver.me/x5hXaZmh</item>
+        <item>http://naver.me/GLy5u61J</item>
+        <item>http://naver.me/FQmJ1kep</item>
+        <item>http://naver.me/5utH2Hmh</item>
+        <item>http://naver.me/GseU3UKo</item>
+        <item>http://naver.me/FPTdk733</item>
+        <item>http://naver.me/xt9uvuJr</item>
+        <item>http://naver.me/GNnwodKb</item>
+        <item>http://naver.me/xtFwIuUu</item>
+        <item>http://naver.me/xbclVrN7</item>
+        <item>http://naver.me/xHHub5c0</item>
+        <item>http://naver.me/5aFOw7wO</item>
+        <item>http://naver.me/G8ZYlJkQ</item>
+        <item>http://naver.me/58O9NVvn</item>
+        <item>http://naver.me/Fo9gJ1FY</item>
+        <item>http://naver.me/G4yyAoko</item>
+        <item>http://naver.me/5PRieK63</item>
+        <item>http://naver.me/xrxP7UrU</item>
+        <item>http://naver.me/GmH9Varu</item>
+        <item>http://naver.me/5jdjTjnt</item>
+        <item>http://naver.me/5VfmgvK9</item>
+        <item>http://naver.me/5GbGwHHU</item>
+        <item>http://naver.me/FPX8lRgC</item>
+        <item>http://naver.me/FkbhF1lR</item>
+        <item>http://naver.me/GaQVGoFM</item>
+        <item>http://naver.me/FwFfGwbV</item>
+        <item>http://naver.me/GqOM1vft</item>
+        <item>http://naver.me/FjMOKbsz</item>
+        <item>http://naver.me/G9ADajtp</item>
+        <item>http://naver.me/F8L0nw4h</item>
+        <item>http://naver.me/5uu8zmHx</item>
+        <item>http://naver.me/xcHR0ukR</item>
+        <item>http://naver.me/F0pYFbcw</item>
+        <item>http://naver.me/5yrlrXMf</item>
+        <item>http://naver.me/F2cXIw4T</item>
+        <item>http://naver.me/Fq9sQk7h</item>
+        <item>http://naver.me/Fkb09rgW</item>
+        <item>http://naver.me/x4Cpk1LP</item>
+        <item>http://naver.me/5PRahcrW</item>
+        <item>http://naver.me/FcUAf7EI</item>
+        <item>http://naver.me/xiABg3fL</item>
+        <item>http://naver.me/xZmpzRY9</item>
+        <item>http://naver.me/F9LropBT</item>
+        <item>http://naver.me/GvryfeeF</item>
+        <item>http://naver.me/xkSgVMqV</item>
+        <item>http://naver.me/GV8d3vBb</item>
+        <item>http://naver.me/xT8fZerU</item>
+        <item>http://naver.me/FAj05i8F</item>
+        <item>http://naver.me/FgzYP2EG</item>
+        <item>http://naver.me/xpDhAzU4</item>
+        <item>http://naver.me/FirnEGRx</item>
+        <item>http://naver.me/Fq9FN2wD</item>
+    </string-array>
 
-  <string-array name="senlong_GF">
-    <item>냥혐게임 소녀전선</item>
-    <item>고양이의 음악시간</item>
-    <item>요리하는 와짱</item>
-    <item>아이스크림 와짱</item>
-    <item>와짱의 와갤요리</item>
-    <item>와짱의 와갤요리 2</item>
-    <item>와짱의 와갤요리 -봉쥬르-</item>
-    <item>술취한 흥국이</item>
-    <item>IWS2000 별명지어주는 3컷</item>
-    <item>엠뀨(M99)와 토끼</item>
-    <item>와짱과 세일러복</item>
-    <item>95식과 97식 만화</item>
-    <item>95식의 여름나기</item>
-    <item>와짱의 몸무게</item>
-    <item>97식과 우로보로스</item>
-    <item>우로보로스가 파세짱 벗긴 만화</item>
-    <item>우로보로스의 파세 흉내내기</item>
-    <item>제발 파세를 주세요</item>
-    <item>와짱의 요리에 대응하는 파세짱</item>
-    <item>울보와짱과 춘전이</item>
-    <item>와짱을 쉽게 그려보자!</item>
-    <item>자유의 우로짱</item>
-    <item>춘전이의 파이팅 포즈</item>
-    <item>M14가 바라보는 춘전이</item>
-    <item>젠카이노 춘전이</item>
-    <item>흥국이가 해주는 승리의 주문</item>
-    <item>성우가 붙은 웰로드 장군</item>
-    <item>우리 개는 안물어요</item>
-    <item>지휘관이 선물해준 롱패딩</item>
-    <item>아이스크림가게 알바하는 와짱</item>
-    <item>아이스크림가게 알바하는 와짱 2</item>
-    <item>대신귀여운와파카를드리겟습니다</item>
-    <item>케이크 처음만들어본 와짱</item>
-    <item>선물받은 카구팔과 와짱</item>
-    <item>이유식 먹는 이유식 어린이</item>
-    <item>여러가지 와짱</item>
-    <item>흥국생명에서 일하는 흥국이</item>
-    <item>어린 와짱과 엠뀨</item>
-    <item>궁예전선</item>
-    <item>끝말잇기하는 흥국이</item>
-    <item>DSR-50의 새로운 별명</item>
-    <item>AR소대의 헤어스타일</item>
-    <item>뉴스에 나온 소녀전선</item>
-    <item>특이점데레 흥국이</item>
-    <item>요리의신 와짱</item>
-    <item>와짱의 요리사 도전!</item>
-    <item>갑자기 분위기 사오</item>
-    <item>스파스와 탕수육</item>
-    <item>와짱 특제 음식을 먹는 스파스</item>
-    <item>95식 97식 퀴즈</item>
-    <item>단식투쟁 스파스</item>
-    <item>WA2000 골목식당</item>
-    <item>토끼모자 엠뀨</item>
-    <item>회전초밥 스파스</item>
-    <item>흥국이식 위로</item>
-    <item>분위기 변신 우지</item>
-    <item>초강력 네게브</item>
-    <item>잠탱판매자 흥국이</item>
-    <item>댕댕이도 거르는 그 요리</item>
-    <item>해피뉴이어 스파스</item>
-    <item>흥국이 움뀨에디션</item>
-    <item>도둑맞은 흥국이 옷</item>
-    <item>귀여워해주고 싶었던 흥국이</item>
-    <item>커플이 싫은 움뀨</item>
-    <item>몸이 바뀐 움자매</item>
-    <item>뀨블리 UMP9</item>
-    <item>침투준비 UMP9</item>
-    <item>UMP45의 질투 방법</item>
-    <item>흥국이 욕 참기 챌린지</item>
-    <item>우지 해체당하다</item>
-    <item>안구사 고체온증</item>
-    <item>화내는 UMP9</item>
-    <item>어린이 움사오</item>
-    <item>평행세계 움자매</item>
-    <item>UMP9 라이더</item>
-    <item>SNS계정 만든 UMP9</item>
-    <item>삐진 UMP9</item>
-    <item>UMP9 술 내기</item>
-    <item>G11 깨우기</item>
-    <item>와이파이 소프모드</item>
-    <item>분위기 변신 와짱</item>
-    <item>꼬리 신경 TMP</item>
-    <item>움뀨의 애완동물</item>
-    <item>말랑말랑 흥국이</item>
-    <item>MDR의 인기 특강</item>
-    <item>댕댕이 트윈테일</item>
-    <item>마인드맵 고장난 와짱</item>
-    <item>우지의 변형</item>
-    <item>트윈테일 소프모드</item>
-    <item>발렌타인 소프모드</item>
-    <item>분위기 전환 우리형</item>
-    <item>흥국 TV</item>
-    <item>흥국이와 숨바꼭질</item>
-    <item>부츠챠!</item>
-    <item>사오흥국 자괴감배틀</item>
-    <item>콩지와 도끼</item>
-    <item>움뀨흥국 끝말잇기</item>
-    <item>구아구아</item>
-    <item>새학기 흥국이</item>
-    <item>새학기 흥국이 2</item>
-    <item>우지 선생님</item>
-    <item>인형뽑기</item>
-    <item>조별과제 흥국이</item>
-    <item>사오와 면접</item>
-    <item>앞머리 소프모드</item>
-    <item>카페 흥국이</item>
-    <item>와쟝과 공포영화</item>
-    <item>머리 엉킨 사오흥국</item>
-    <item>흥국이가 톡을 보냈다</item>
-    <item>약속</item>
-    <item>흥국이와 그림</item>
-    <item>움뀨의 간식</item>
-    <item>주스</item>
-    <item>안녕흥국법</item>
-    <item>싫어하는 척</item>
-    <item>휴가</item>
-    <item>흥국이 2호기</item>
-    <item>춘전 어린이</item>
-    <item>뭔가 잘못된 HK416</item>
-    <item>사오의 소개</item>
-    <item>늦게 터지는 타입</item>
-    <item>적안의 솦모</item>
-    <item>흥국이의 유년기</item>
-    <item>G11 선배</item>
-    <item>유투브를 시작한 MDR</item>
-    <item>벽쿵 움뀨</item>
-    <item>솦모 하고 싶은거 다 해!</item>
-    <item>HK416의 사진 촬영</item>
-    <item>뀨흐흑</item>
-    <item>세대차이</item>
-    <item>엘리트 사오</item>
-    <item>내꺼</item>
-    <item>네가 몰 알아!</item>
-    <item>사오 퀴즈</item>
-    <item>우로보로스와 지휘관</item>
-    <item>MDR 개조 소식!</item>
-    <item>우지했다</item>
-    <item>암흑진화 UMP9</item>
-    <item>마법소녀★흥국이</item>
-    <item>마법소녀★흥국이 2</item>
-    <item>마법소녀★흥국이 3</item>
-    <item>마법소녀★흥국이 4</item>
-    <item>마법소녀★흥국이 5</item>
-    <item>마법소녀★흥국이 6</item>
-    <item>마법소녀★흥국이 7</item>
-    <item>한 단어</item>
-    <item>PASSWAD</item>
-    <item>안구사의 독촉</item>
-    <item>질 스팅레이의 숙취송♪</item>
-    <item>라이브2D 와쟝</item>
-    <item>흥국이는 안했어!</item>
-    <item>성탄절 흥국이</item>
-    <item>효녀 M14</item>
-    <item>나강의 새해맞이</item>
-    <item>AK-15 마일로의 자기암시</item>
-    <item>AK-15 마일로의 불만</item>
-    <item>AK-15, 딸기치즈케익</item>
-    <item>마일로</item>
-    <item>마일로 2</item>
-    <item>트윈테일의 날 404</item>
-    <item>파세의 제조응원</item>
-    <item>파세 씨리즈</item>
-    <item>취한다</item>
-    <item>부들부들 안구사</item>
-    <item>돌돌 계란말이</item>
-    <item>와쟝눈나</item>
-    <item>흥국이 3호기</item>
-    <item>얀데레 스파스</item>
-    <item>해체에용</item>
-    <item>와짱 2호기,3호기</item>
-    <item>나강(11세)</item>
-    <item>벌칙 흥냥이</item>
-    <item>춘전 없는 M14 만화</item>
-    <item>솦키네이터</item>
-    <item>안구사 신 스킨 유출</item>
-    <item>불편한 흥국이</item>
-    <item>순해빠진맛 사오</item>
-    <item>비효율적인 안구사</item>
-    <item>토사구팽</item>
-    <item>와장창☆</item>
-    <item>움뀨 반응</item>
-    <item>안구사 괴롭히지 마라!</item>
-    <item>구사는 어려워</item>
-    <item>트윈테일 마일로</item>
-    <item>달인 안구사</item>
-    <item>뀨블리</item>
-    <item>도전 흥국벨</item>
-    <item>리벨리온 마피아게임</item>
-    <item>마법소녀★안구사</item>
-    <item>죄송합니다</item>
-    <item>사기인형 흥국이</item>
-    <item>부들부들 안구사2</item>
-    <item>논리적 우리형</item>
-    <item>흥야호</item>
-  </string-array>
+    <string-array name="senlong_GF">
+        <item>냥혐게임 소녀전선</item>
+        <item>고양이의 음악시간</item>
+        <item>요리하는 와짱</item>
+        <item>아이스크림 와짱</item>
+        <item>와짱의 와갤요리</item>
+        <item>와짱의 와갤요리 2</item>
+        <item>와짱의 와갤요리 -봉쥬르-</item>
+        <item>술취한 흥국이</item>
+        <item>IWS2000 별명지어주는 3컷</item>
+        <item>엠뀨(M99)와 토끼</item>
+        <item>와짱과 세일러복</item>
+        <item>95식과 97식 만화</item>
+        <item>95식의 여름나기</item>
+        <item>와짱의 몸무게</item>
+        <item>97식과 우로보로스</item>
+        <item>우로보로스가 파세짱 벗긴 만화</item>
+        <item>우로보로스의 파세 흉내내기</item>
+        <item>제발 파세를 주세요</item>
+        <item>와짱의 요리에 대응하는 파세짱</item>
+        <item>울보와짱과 춘전이</item>
+        <item>와짱을 쉽게 그려보자!</item>
+        <item>자유의 우로짱</item>
+        <item>춘전이의 파이팅 포즈</item>
+        <item>M14가 바라보는 춘전이</item>
+        <item>젠카이노 춘전이</item>
+        <item>흥국이가 해주는 승리의 주문</item>
+        <item>성우가 붙은 웰로드 장군</item>
+        <item>우리 개는 안물어요</item>
+        <item>지휘관이 선물해준 롱패딩</item>
+        <item>아이스크림가게 알바하는 와짱</item>
+        <item>아이스크림가게 알바하는 와짱 2</item>
+        <item>대신귀여운와파카를드리겟습니다</item>
+        <item>케이크 처음만들어본 와짱</item>
+        <item>선물받은 카구팔과 와짱</item>
+        <item>이유식 먹는 이유식 어린이</item>
+        <item>여러가지 와짱</item>
+        <item>흥국생명에서 일하는 흥국이</item>
+        <item>어린 와짱과 엠뀨</item>
+        <item>궁예전선</item>
+        <item>끝말잇기하는 흥국이</item>
+        <item>DSR-50의 새로운 별명</item>
+        <item>AR소대의 헤어스타일</item>
+        <item>뉴스에 나온 소녀전선</item>
+        <item>특이점데레 흥국이</item>
+        <item>요리의신 와짱</item>
+        <item>와짱의 요리사 도전!</item>
+        <item>갑자기 분위기 사오</item>
+        <item>스파스와 탕수육</item>
+        <item>와짱 특제 음식을 먹는 스파스</item>
+        <item>95식 97식 퀴즈</item>
+        <item>단식투쟁 스파스</item>
+        <item>WA2000 골목식당</item>
+        <item>토끼모자 엠뀨</item>
+        <item>회전초밥 스파스</item>
+        <item>흥국이식 위로</item>
+        <item>분위기 변신 우지</item>
+        <item>초강력 네게브</item>
+        <item>잠탱판매자 흥국이</item>
+        <item>댕댕이도 거르는 그 요리</item>
+        <item>해피뉴이어 스파스</item>
+        <item>흥국이 움뀨에디션</item>
+        <item>도둑맞은 흥국이 옷</item>
+        <item>귀여워해주고 싶었던 흥국이</item>
+        <item>커플이 싫은 움뀨</item>
+        <item>몸이 바뀐 움자매</item>
+        <item>뀨블리 UMP9</item>
+        <item>침투준비 UMP9</item>
+        <item>UMP45의 질투 방법</item>
+        <item>흥국이 욕 참기 챌린지</item>
+        <item>우지 해체당하다</item>
+        <item>안구사 고체온증</item>
+        <item>화내는 UMP9</item>
+        <item>어린이 움사오</item>
+        <item>평행세계 움자매</item>
+        <item>UMP9 라이더</item>
+        <item>SNS계정 만든 UMP9</item>
+        <item>삐진 UMP9</item>
+        <item>UMP9 술 내기</item>
+        <item>G11 깨우기</item>
+        <item>와이파이 소프모드</item>
+        <item>분위기 변신 와짱</item>
+        <item>꼬리 신경 TMP</item>
+        <item>움뀨의 애완동물</item>
+        <item>말랑말랑 흥국이</item>
+        <item>MDR의 인기 특강</item>
+        <item>댕댕이 트윈테일</item>
+        <item>마인드맵 고장난 와짱</item>
+        <item>우지의 변형</item>
+        <item>트윈테일 소프모드</item>
+        <item>발렌타인 소프모드</item>
+        <item>분위기 전환 우리형</item>
+        <item>흥국 TV</item>
+        <item>흥국이와 숨바꼭질</item>
+        <item>부츠챠!</item>
+        <item>사오흥국 자괴감배틀</item>
+        <item>콩지와 도끼</item>
+        <item>움뀨흥국 끝말잇기</item>
+        <item>구아구아</item>
+        <item>새학기 흥국이</item>
+        <item>새학기 흥국이 2</item>
+        <item>우지 선생님</item>
+        <item>인형뽑기</item>
+        <item>조별과제 흥국이</item>
+        <item>사오와 면접</item>
+        <item>앞머리 소프모드</item>
+        <item>카페 흥국이</item>
+        <item>와쟝과 공포영화</item>
+        <item>머리 엉킨 사오흥국</item>
+        <item>흥국이가 톡을 보냈다</item>
+        <item>약속</item>
+        <item>흥국이와 그림</item>
+        <item>움뀨의 간식</item>
+        <item>주스</item>
+        <item>안녕흥국법</item>
+        <item>싫어하는 척</item>
+        <item>휴가</item>
+        <item>흥국이 2호기</item>
+        <item>춘전 어린이</item>
+        <item>뭔가 잘못된 HK416</item>
+        <item>사오의 소개</item>
+        <item>늦게 터지는 타입</item>
+        <item>적안의 솦모</item>
+        <item>흥국이의 유년기</item>
+        <item>G11 선배</item>
+        <item>유투브를 시작한 MDR</item>
+        <item>벽쿵 움뀨</item>
+        <item>솦모 하고 싶은거 다 해!</item>
+        <item>HK416의 사진 촬영</item>
+        <item>뀨흐흑</item>
+        <item>세대차이</item>
+        <item>엘리트 사오</item>
+        <item>내꺼</item>
+        <item>네가 몰 알아!</item>
+        <item>사오 퀴즈</item>
+        <item>우로보로스와 지휘관</item>
+        <item>MDR 개조 소식!</item>
+        <item>우지했다</item>
+        <item>암흑진화 UMP9</item>
+        <item>마법소녀★흥국이</item>
+        <item>마법소녀★흥국이 2</item>
+        <item>마법소녀★흥국이 3</item>
+        <item>마법소녀★흥국이 4</item>
+        <item>마법소녀★흥국이 5</item>
+        <item>마법소녀★흥국이 6</item>
+        <item>마법소녀★흥국이 7</item>
+        <item>한 단어</item>
+        <item>PASSWAD</item>
+        <item>안구사의 독촉</item>
+        <item>질 스팅레이의 숙취송♪</item>
+        <item>라이브2D 와쟝</item>
+        <item>흥국이는 안했어!</item>
+        <item>성탄절 흥국이</item>
+        <item>효녀 M14</item>
+        <item>나강의 새해맞이</item>
+        <item>AK-15 마일로의 자기암시</item>
+        <item>AK-15 마일로의 불만</item>
+        <item>AK-15, 딸기치즈케익</item>
+        <item>마일로</item>
+        <item>마일로 2</item>
+        <item>트윈테일의 날 404</item>
+        <item>파세의 제조응원</item>
+        <item>파세 씨리즈</item>
+        <item>취한다</item>
+        <item>부들부들 안구사</item>
+        <item>돌돌 계란말이</item>
+        <item>와쟝눈나</item>
+        <item>흥국이 3호기</item>
+        <item>얀데레 스파스</item>
+        <item>해체에용</item>
+        <item>와짱 2호기,3호기</item>
+        <item>나강(11세)</item>
+        <item>벌칙 흥냥이</item>
+        <item>춘전 없는 M14 만화</item>
+        <item>솦키네이터</item>
+        <item>안구사 신 스킨 유출</item>
+        <item>불편한 흥국이</item>
+        <item>순해빠진맛 사오</item>
+        <item>비효율적인 안구사</item>
+        <item>토사구팽</item>
+        <item>와장창☆</item>
+        <item>움뀨 반응</item>
+        <item>안구사 괴롭히지 마라!</item>
+        <item>구사는 어려워</item>
+        <item>트윈테일 마일로</item>
+        <item>달인 안구사</item>
+        <item>뀨블리</item>
+        <item>도전 흥국벨</item>
+        <item>리벨리온 마피아게임</item>
+        <item>마법소녀★안구사</item>
+        <item>죄송합니다</item>
+        <item>사기인형 흥국이</item>
+        <item>부들부들 안구사2</item>
+        <item>논리적 우리형</item>
+        <item>흥야호</item>
+    </string-array>
 </resources>
