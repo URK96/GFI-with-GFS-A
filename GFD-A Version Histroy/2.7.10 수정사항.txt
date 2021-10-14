@@ -1,0 +1,9 @@
+<2.7.10 Update>
+
+- 일부 라이브러리 라이선스 갱신
+- 인형 진형 버프 세부정보 효과치 색상 추가
+
+<2.7.10 Update>
+
+- Renewal license key of partial library
+- Add color on T-Doll Formation Buff Mags

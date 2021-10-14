@@ -1,3 +1,10 @@
+<2.7.10 Update>
+
+- Renewal license key of partial library
+- Add color on T-Doll Formation Buff Mags
+
+
+
 <2.7.9 Update>
 
 - Add new story content

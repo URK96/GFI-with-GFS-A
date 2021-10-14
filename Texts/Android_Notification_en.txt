@@ -1,8 +1,11 @@
-﻿# T-Doll DB Update 2021/02/01
+﻿# T-Doll DB Update 2021/10/12 ~ 13
 
-- Add New T-Doll (VP1915, Savage 99, Kolibri, Derringer, Fedorov)
-- Add Mind Upgrade Info (Type56R, Welrodㅆ MK II, F1, Type80)
-- Add New Costumes (Type56R, Lewis, QBU-88, Type92, KSVK, Colt Defender, SVD, AUG Para)
+- Add new T-Dolls (No. 336 ~ 349, No. 1030 ~ 1034)
+- Add new T-Doll costumes
+
+
+
+
 
 
 # Coalition DB Update 2021/03/10

@@ -99,7 +99,7 @@ namespace GFDA
 
             Resources = baseContext.Resources;
 
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzczNDIxQDMxMzgyZTM0MmUzMGFhY3dGeWhQVkgzK0dISC94QzNRcTlkWU5kcWp2YjdhVGN5czR5RVJYRGM9");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTE2ODY2QDMxMzkyZTMzMmUzMEVBSGh6djR3NGszRnJaUERtZVZPT3dXdGgxVDJ4WC9tKzhnOTZlc1hKNWc9");
 
             if (isReleaseMode)
             {

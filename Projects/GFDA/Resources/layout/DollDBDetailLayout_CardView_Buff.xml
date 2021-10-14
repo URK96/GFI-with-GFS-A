@@ -102,55 +102,7 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_toRightOf="@id/DollDBDetailBuffImageLayout"
-            android:id="@+id/DollDBDetailBuffDetailLayout">
-        <!--Doll Buff Part - Doll Buff Detail - Buff Icon & Detail-->
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:id="@+id/DollDBDetailBuffLayout1">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/DollDBDetailBuffIcon1" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="10dp"
-                    android:gravity="center"
-                    android:id="@+id/DollDBDetailBuffName1" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:id="@+id/DollDBDetailBuffDetail1" />
-            </LinearLayout>
-            <LinearLayout
-				android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:visibility="gone"
-                android:id="@+id/DollDBDetailBuffLayout2">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/DollDBDetailBuffIcon2" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="10dp"
-                    android:gravity="center"
-                    android:id="@+id/DollDBDetailBuffName2" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_toRightOf="@id/DollDBDetailBuffIcon2"
-                    android:id="@+id/DollDBDetailBuffDetail2" />
-            </LinearLayout>
-        </LinearLayout>
+            android:id="@+id/DollDBDetailBuffDetailLayout" />
     <!--Doll Buff Part - Buff Type-->
         <TextView
             android:layout_width="match_parent"

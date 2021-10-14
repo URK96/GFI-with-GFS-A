@@ -1042,7 +1042,7 @@ namespace GFDA
 
             for (int i = 0; i < buffData.Length; ++i)
             {
-                var color = (buffData[i]) switch
+                var color = buffData[i] switch
                 {
                     0 => Android.Graphics.Color.Gray,
                     1 => Android.Graphics.Color.ParseColor("#54A716"),
@@ -1052,10 +1052,6 @@ namespace GFDA
 
                 buffInfoRootLayout.FindViewById<View>(buffIds[i]).SetBackgroundColor(color);
             }
-
-            int[] buffIconIds = { Resource.Id.DollDBDetailBuffIcon1, Resource.Id.DollDBDetailBuffIcon2 };
-            int[] buffIconNameIds = { Resource.Id.DollDBDetailBuffName1, Resource.Id.DollDBDetailBuffName2 };
-            int[] buffDetailIds = { Resource.Id.DollDBDetailBuffDetail1, Resource.Id.DollDBDetailBuffDetail2 };
 
             string[] buff = (modIndex >= 1) ? doll.ModBuffInfo : doll.BuffInfo;
             string[] buffType = buff[0].Split(',');
@@ -1121,7 +1117,14 @@ namespace GFDA
                     }
                 }
 
-                contentLayout.FindViewById<TextView>(Resource.Id.FormationBuffContentMag).Text = magSb.ToString();
+                var magTextView = contentLayout.FindViewById<TextView>(Resource.Id.FormationBuffContentMag);
+
+                magTextView.Text = magSb.ToString();
+                magTextView.SetTextColor(magSb[0] switch
+                {
+                    '-' => Android.Graphics.Color.OrangeRed,
+                    _ => Android.Graphics.Color.Green
+                });
 
                 buffContentRootLayout.AddView(contentLayout);
             }
