@@ -79,6 +79,7 @@ namespace GFDA
         public string SkillExplain { get; private set; }
         public string[] SkillEffect { get; private set; }
         public string[] SkillMag { get; private set; }
+        public string SkillNameAfterMod { get; private set; }
         public string[] SkillEffectAfterMod { get; private set; }
         public string[] SkillMagAfterMod { get; private set; }
         public string ModSkillName { get; private set; }
@@ -162,7 +163,8 @@ namespace GFDA
                 ModSkillExplain = (string)dr["ModSkillExplain"];
                 ModSkillEffect = ((string)dr["ModSkillEffect"]).Split(';');
                 ModSkillMag = ((string)dr["ModSkillMag"]).Split(',');
-                SkillEffectAfterMod = ((string)dr["SkillEffectAfterMod"]).Split(',');
+                SkillNameAfterMod = (string)dr["SkillAfterMod"];
+                SkillEffectAfterMod = ((string)dr["SkillEffectAfterMod"]).Split(';');
                 SkillMagAfterMod = ((string)dr["SkillMagAfterMod"]).Split(',');
             }
 

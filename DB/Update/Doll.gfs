@@ -745,30 +745,43 @@
     <Country>Soviet Union</Country>
     <Type>HG</Type>
     <Grade>3</Grade>
+    <ModGrade>4</ModGrade>
     <ProductTime>40</ProductTime>
-    <HasMod>false</HasMod>
+    <HasMod>true</HasMod>
     <AbilityGrade>B;C;A;A;A;S</AbilityGrade>
-    <Grow>130</Grow>
-    <HP>95</HP>
-    <FireRate>90</FireRate>
-    <Evasion>120</Evasion>
-    <Accuracy>115</Accuracy>
-    <AttackSpeed>110</AttackSpeed>
+    <Grow>130;130</Grow>
+    <HP>95;100</HP>
+    <FireRate>90;97</FireRate>
+    <Evasion>120;125</Evasion>
+    <Accuracy>115;115</Accuracy>
+    <AttackSpeed>110;110</AttackSpeed>
     <MoveSpeed>15</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>10/15/20/25/30</ConsumeAmmo>
     <ConsumeFood>10/15/20/25/30</ConsumeFood>
     <EffectFormation>1,0,0,1,2,1,1,0,0</EffectFormation>
+    <ModEffectFormation>1,0,0,1,2,1,1,0,0</ModEffectFormation>
     <Effect>FR,AS;10,6;12,7;15,9;17,10;20,12</Effect>
+    <ModEffect>FR,AS;24,12</ModEffect>
     <EffectType>ALL</EffectType>
+    <EffectTypeAfterMod>ALL</EffectTypeAfterMod>
     <DropEvent>0-4, 2-5, 2-6, 2-1E, 2-2E, 3-3, 3-6, 4-5, 4-6, 6-4, 6-3E</DropEvent>
     <DicNumber>8</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>blindfold</SkillCode>
     <Skill>시야봉쇄</Skill>
+    <SkillAfterMod>시야봉쇄+</SkillAfterMod>
     <SkillExplain>지속시간 동안 적 전체의 명중을 감소시킨다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 적 전체의 명중을 감소시킨다. 동시에 모든 아군에게 마카로프 단일 편제 체력의 일정 배율만큼 보호막을 부여한다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;명중 감소치</SkillEffect>
     <SkillMag>6초,12초,6초,36%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;명중 감소치;보호막 생성배율</SkillEffectAfterMod>
+    <SkillMagAfterMod>4초,12초,6초,36%,60%</SkillMagAfterMod>
+    <ModSkill>별의 수호자</ModSkill>
+    <ModSkillExplain>1스킬 지속 시간 동안, 버프칸 위의 명중이 가장 낮은 아군의 명중과 회피가 가장 낮은 아군의 회피를 증가시킨다. 증가치는 해당 유닛과 마카로프 사이 해당 능력치 차이의 일정 비율만큼 정해진다.</ModSkillExplain>
+    <ModSkillEffect>능력지 증가 비율</ModSkillEffect>
+    <ModSkillMag>50%</ModSkillMag>
+    <OnlyUseEquip>9x18mm FTX</OnlyUseEquip>
     <Costume>잭오랜턴;환상 같은 해바라기</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
@@ -7895,31 +7908,44 @@
     <Country>Germany</Country>
     <Type>MG</Type>
     <Grade>5</Grade>
+    <ModGrade>6</ModGrade>
     <ProductTime>400</ProductTime>
-    <HasMod>false</HasMod>
+    <HasMod>true</HasMod>
     <AbilityGrade>A;B;A;A;S;S</AbilityGrade>
-    <Grow>135</Grow>
-    <HP>110</HP>
-    <FireRate>95</FireRate>
-    <Evasion>120</Evasion>
-    <Accuracy>120</Accuracy>
-    <AttackSpeed>125</AttackSpeed>
+    <Grow>135;135</Grow>
+    <HP>110;110</HP>
+    <FireRate>95;102</FireRate>
+    <Evasion>120;120</Evasion>
+    <Accuracy>120;130</Accuracy>
+    <AttackSpeed>125;125</AttackSpeed>
     <MoveSpeed>4</MoveSpeed>
     <Critical>5</Critical>
-    <Bullet>9</Bullet>
+    <Bullet>9;9;9;10</Bullet>
     <ConsumeAmmo>40/65/90/115/140</ConsumeAmmo>
     <ConsumeFood>30/45/60/75/90</ConsumeFood>
     <EffectFormation>0,0,1,2,0,0,0,0,1</EffectFormation>
+    <ModEffectFormation>0,0,1,2,0,1,0,0,1</ModEffectFormation>
     <Effect>AC,AM;12,15</Effect>
+    <ModEffect>AC,AM;20,18</ModEffect>
     <EffectType>SG</EffectType>
+    <EffectTypeAfterMod>SG</EffectTypeAfterMod>
     <DropEvent>일반제조</DropEvent>
     <DicNumber>125</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>lock_load</SkillCode>
     <Skill>준비만전</Skill>
+    <SkillAfterMod>준비만전</SkillAfterMod>
     <SkillExplain>지속시간 동안 자신의 화력을 증가시키고 발사 중인 탄띠에 탄을 추가한다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 자신의 화력을 증가시키고 발사 중인 탄띠에 탄을 추가한다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;발사 수 증가치</SkillEffect>
     <SkillMag>8초,18초,8초,35%,4발</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;화력 증가치;발사 수 증가치</SkillEffectAfterMod>
+    <SkillMagAfterMod>8초,18초,8초,50%,6발</SkillMagAfterMod>
+    <ModSkill>팬텀 해머</ModSkill>
+    <ModSkillExplain>추가 탄약을 우선 소모하여, 목표에게 넘친 관통 수치의 일정 비율 만큼의 피해를 추가로 주고, 자신의 화력을 증가시킨다. 지속시간 18초, 최대 8회 중첩.</ModSkillExplain>
+    <ModSkillEffect>추가 피해량 비율;화력 증가치</ModSkillEffect>
+    <ModSkillMag>25%,5%</ModSkillMag>
+    <OnlyUseEquip>Mk4 SLAP</OnlyUseEquip>
     <Costume>생존멤버</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
@@ -8136,32 +8162,45 @@
     <Country>Russia</Country>
     <Type>SG</Type>
     <Grade>3</Grade>
+    <ModGrade>4</ModGrade>
     <ProductTime>450</ProductTime>
-    <HasMod>false</HasMod>
+    <HasMod>true</HasMod>
     <AbilityGrade>A;B;A;B;A;B;A</AbilityGrade>
-    <Grow>100</Grow>
-    <HP>110</HP>
-    <FireRate>105</FireRate>
-    <Evasion>120</Evasion>
-    <Accuracy>95</Accuracy>
-    <AttackSpeed>110</AttackSpeed>
+    <Grow>100;100</Grow>
+    <HP>110;110</HP>
+    <FireRate>105;112</FireRate>
+    <Evasion>120;120</Evasion>
+    <Accuracy>95;106</Accuracy>
+    <AttackSpeed>110;110</AttackSpeed>
     <MoveSpeed>6</MoveSpeed>
     <Critical>40</Critical>
-    <Bullet>4</Bullet>
-    <Armor>120</Armor>
+    <Bullet>4;4;4;4</Bullet>
+    <Armor>120;120</Armor>
     <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
     <ConsumeFood>40/65/90/115/140</ConsumeFood>
     <EffectFormation>1,0,0,0,0,0,0,0,2</EffectFormation>
+    <ModEffectFormation>1,0,0,1,0,0,0,0,2</ModEffectFormation>
     <Effect>FR,AC;12,30</Effect>
+    <ModEffect>FR,AC;12,40</ModEffect>
     <EffectType>MG</EffectType>
+    <EffectTypeAfterMod>MG</EffectTypeAfterMod>
     <DropEvent>중형제조</DropEvent>
     <DicNumber>159</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <SkillCode>formaion_break</SkillCode>
     <Skill>진형붕괴</Skill>
-    <SkillExplain>공격력의 X배의 피해를 주는 추가탄을 발사하고 거리 N칸만큼 적을 밀어낸다</SkillExplain>
+    <SkillAfterMod>진형붕괴</SkillAfterMod>
+    <SkillExplain>공격력의 X배의 피해를 주는 추가탄을 발사하고 거리 N칸만큼 적을 밀어낸다.</SkillExplain>
+    <SkillExplainAfterMod>공격력의 X배의 피해를 주는 추가탄을 발사하고 거리 N칸만큼 적을 밀어내고, 받는 피해량을 10% 증폭시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;피해량;넉백 거리</SkillEffect>
     <SkillMag>8초,16초,2배,3</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;피해량;넉백 거리;디버프 지속시간</SkillEffectAfterMod>
+    <SkillMagAfterMod>8초,16초,2배,3,8초</SkillMagAfterMod>
+    <ModSkill>펜듈럼 포트리스</ModSkill>
+    <ModSkillExplain>제대 중 아군 유닛이 장전하면 자신이 받는 피해를 감소시킨다. 최대 3회 중첩.</ModSkillExplain>
+    <ModSkillEffect>지속시간;피해 감소량</ModSkillEffect>
+    <ModSkillMag>8초,4</ModSkillMag>
+    <OnlyUseEquip>날개형 기계 방패</OnlyUseEquip>
     <Costume>별의 저편;닿지 않는 달링</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
@@ -9457,34 +9496,47 @@
     <Name_JP>XM3</Name_JP>
     <CodeName>xm3</CodeName>
     <Nickname>혐성이</Nickname>
-    <Model>XM3</Model>
+    <Model>	Model XM3 Tactical Rifle System</Model>
     <Country>United States of America</Country>
     <Type>RF</Type>
     <Grade>4</Grade>
+    <ModGrade>5</ModGrade>
     <ProductTime>0</ProductTime>
-    <HasMod>false</HasMod>
+    <HasMod>true</HasMod>
     <AbilityGrade>C;A;C;S;B;S</AbilityGrade>
-    <Grow>128</Grow>
-    <HP>93</HP>
-    <FireRate>115</FireRate>
-    <Evasion>88</Evasion>
-    <Accuracy>128</Accuracy>
-    <AttackSpeed>100</AttackSpeed>
+    <Grow>128;128</Grow>
+    <HP>93;95</HP>
+    <FireRate>115;120</FireRate>
+    <Evasion>88;88</Evasion>
+    <Accuracy>128;128</Accuracy>
+    <AttackSpeed>100;105</AttackSpeed>
     <MoveSpeed>7</MoveSpeed>
     <Critical>40</Critical>
     <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
     <ConsumeFood>30/45/60/75/90</ConsumeFood>
     <EffectFormation>0,0,1,0,2,1,0,0,0</EffectFormation>
+    <ModEffectFormation>0,0,1,0,2,1,0,0,0</ModEffectFormation>
     <Effect>CL;15</Effect>
+    <ModEffect>CL;18</ModEffect>
     <EffectType>HG</EffectType>
+    <EffectTypeAfterMod>HG</EffectTypeAfterMod>
     <DropEvent>10-6, 10-4E</DropEvent>
     <DicNumber>200</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>assault_focus_n</SkillCode>
     <Skill>고속사격N</Skill>
+    <SkillAfterMod>야습전개</SkillAfterMod>
     <SkillExplain>야간작전에서 지속시간 동안 자신의 사속을 증가시킨다.</SkillExplain>
+    <SkillExplainAfterMod>야간작전에서 지속시간 동안 자신의 사속을 증가시킨다. 또한 체력이 가장 적은 유닛을 우선 공격한다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;야간 사속 상승치;주간 사속 상승치</SkillEffect>
     <SkillMag>8초,8초,5초,100%,32%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;야간 사속 상승치;주간 사속 상승치</SkillEffectAfterMod>
+    <SkillMagAfterMod>6초,8초,5초,110%,35%</SkillMagAfterMod>
+    <ModSkill>하얀 유령</ModSkill>
+    <ModSkillExplain>1스킬 지속시간 동안, 목표에 대한 첫 공격은 반드시 명중하며, 아간전엔 이때 추가로 치명타 피해가 증가한다.</ModSkillExplain>
+    <ModSkillEffect>치명피해 증가량</ModSkillEffect>
+    <ModSkillMag>20%</ModSkillMag>
+    <OnlyUseEquip>M118LR</OnlyUseEquip>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Inamoto Chihiro</VoiceActor>

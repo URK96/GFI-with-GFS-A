@@ -1153,7 +1153,7 @@ namespace GFDA
 
         private void LoadSkill(bool isRefresh)
         {
-            string skillName = doll.SkillName;
+            string skillName = (modIndex == 0) ? doll.SkillName : doll.SkillNameAfterMod;
 
             try
             {
