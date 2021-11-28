@@ -2910,4 +2910,695 @@
     <Icon>Type64_Only</Icon>
     <ProductDialog>64식을 위해 특별 제작한 외골격입니다. 기동력을 대폭 상승시키는 동시에 위장 장갑을 추가한 실용성에 기울인 외골격입니다.</ProductDialog>
   </Equipment>
+  <Equipment>
+    <Name>시제 곡선총열</Name>
+    <Id>219</Id>
+    <Type>소음기</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;회피</Ability>
+    <InitialMagnification>+1~2;+7~10</InitialMagnification>
+    <MaxMagnification>+4;+20</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>PPSh-41</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>PPsh41_Only</Icon>
+    <ProductDialog>과거 전쟁에 만들어진 실험품이라는 것을 IOP가 도면을 발견해 재현했습니다. 신뢰성과 실용성 둘 다 문제가 있지만 엄폐를 유지하며 사격할 수 있는 컨셉은 언제나 큰 수요가 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>전용 철제 개머리판</Name>
+    <Id>220</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>명중;치명타율;치명피해</Ability>
+    <InitialMagnification>+14~16;+13~15%;+3~5%</InitialMagnification>
+    <MaxMagnification>+32;+30%;+10%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>M1919A4</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>M1919A4_Only</Icon>
+    <ProductDialog>오래된 철제 개머리판입니다. 튼튼한 표면에 가득한 긁힌 흔적이 수많은 전장을 증언합니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>레일 가속탄</Name>
+    <Id>221</Id>
+    <Type>철갑탄</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>화력;관통</Ability>
+    <InitialMagnification>+2~3;+110~120</InitialMagnification>
+    <MaxMagnification>+5;+180</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>한양조 88식</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>88type_Only2</Icon>
+    <ProductDialog>16Lab이 한양조의 가속 코일과 조합하도록 개발한 신형 특수탄자로 총알의 초기속도를 크게 높였습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>RMR 레드닷</Name>
+    <Id>222</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>3</Grade>
+    <Ability>명중;치명타율</Ability>
+    <InitialMagnification>+3~5;+5~8%</InitialMagnification>
+    <MaxMagnification>+8;+15%</MaxMagnification>
+    <ProductTime>34</ProductTime>
+    <DollType>HG,U;SMG,N;AR,N;RF,N;MG,U;SG,N</DollType>
+    <Icon>RMR_RedDot</Icon>
+    <ProductDialog>유명한 총기 부속 제작사 TJC에서 설계한 레드닷 조준경입니다. 높은 신뢰성과 실용성을 겸비했습니다. 권총과 기관총에 장착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>RMR T2 레드닷</Name>
+    <Id>223</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>4</Grade>
+    <Ability>명중;치명타율</Ability>
+    <InitialMagnification>+6~9;+9~12%</InitialMagnification>
+    <MaxMagnification>+15;+20%</MaxMagnification>
+    <ProductTime>49</ProductTime>
+    <DollType>HG,U;SMG,N;AR,N;RF,N;MG,U;SG,N</DollType>
+    <Icon>RMR_RedDot</Icon>
+    <ProductDialog>유명한 총기 부속 제작사 TJC에서 설계한 레드닷 조준경입니다. 기초 모델인 RMR의 전원 문제를 해결하고 회로 알고리즘을 개선했습니다. 권총과 기관총에 장착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>RMR T4 레드닷</Name>
+    <Id>224</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>5</Grade>
+    <Ability>명중;치명타율</Ability>
+    <InitialMagnification>+10~12;+13~15%</InitialMagnification>
+    <MaxMagnification>+20;+30%</MaxMagnification>
+    <ProductTime>59</ProductTime>
+    <DollType>HG,U;SMG,N;AR,N;RF,N;MG,U;SG,N</DollType>
+    <Icon>RMR_RedDot</Icon>
+    <ProductDialog>RMR 레드닷을 기반으로 전술인형과의 적합성을 높이기 위해 내장 마이크로 컴퓨터로 인형과 목표 정보를 공유할 수 있습니다. 권총과 기관총에 장착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>신호탄</Name>
+    <Id>225</Id>
+    <Type>특수탄</Type>
+    <Category>탄약</Category>
+    <Grade>5</Grade>
+    <Ability>사속;제대 전체 명중</Ability>
+    <InitialMagnification>-5~1;+10%</InitialMagnification>
+    <MaxMagnification>강화 불가</MaxMagnification>
+    <ProductTime>57</ProductTime>
+    <DollType>HG,U;SMG,U;AR,N;RF,N;MG,N;SG,N</DollType>
+    <Icon>Flare</Icon>
+    <ProductDialog>격발 원리가 간단하고 안정적인 신호총입니다. 12게이지 구경 신호탄과 결합하여 전장에서 인형간의 정보 전달을 더욱 효율적으로 만듭니다. 권총과 기관단총에 장착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>M33 저격탄</Name>
+    <Id>226</Id>
+    <Type>철갑탄</Type>
+    <Category>탄약</Category>
+    <Grade>4</Grade>
+    <Ability>화력;관통</Ability>
+    <InitialMagnification>+1~3;+50~60</InitialMagnification>
+    <MaxMagnification>+5;+90</MaxMagnification>
+    <ProductTime>40</ProductTime>
+    <DollType>HG,N;SMG,N;AR,N;RF,U;MG,U;SG,N</DollType>
+    <Icon>SniperShot</Icon>
+    <ProductDialog>일부 관통력을 희생해서 탄도를 더욱 안정적으로 만든 장거리 정밀 사격을 위한 총알입니다. 소총과 기관총에 장착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>M1022 저격탄</Name>
+    <Id>227</Id>
+    <Type>철갑탄</Type>
+    <Category>탄약</Category>
+    <Grade>5</Grade>
+    <Ability>화력;관통</Ability>
+    <InitialMagnification>+5~7;+70~80</InitialMagnification>
+    <MaxMagnification>+10;+120</MaxMagnification>
+    <ProductTime>50</ProductTime>
+    <DollType>HG,N;SMG,N;AR,N;RF,U;MG,U;SG,N</DollType>
+    <Icon>SniperShot</Icon>
+    <ProductDialog>새로운 장거리 저격탄으로 보통 저격탄에서 탄도 안정성을 더욱 높였습니다. 소총과 기관총에 장착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>Mk900SLAP</Name>
+    <Id>228</Id>
+    <Type>특수</Type>
+    <Category>탄약</Category>
+    <Grade>4</Grade>
+    <Ability>사속;관통</Ability>
+    <InitialMagnification>-5;+190~200</InitialMagnification>
+    <MaxMagnification>-5;+400</MaxMagnification>
+    <ProductTime>48</ProductTime>
+    <DollType>HG,N;SMG,N;AR,N;RF,N;MG,U;SG,N</DollType>
+    <Icon>MkSLAP</Icon>
+    <ProductDialog>탄자의 장갑 관통 능력을 극대화하기 위해 설계된 소형 이탈피 철갑탄입니다. 기관총에 장착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>Mk1000SLAP</Name>
+    <Id>229</Id>
+    <Type>특수</Type>
+    <Category>탄약</Category>
+    <Grade>5</Grade>
+    <Ability>사속;관통</Ability>
+    <InitialMagnification>-5;+240~250</InitialMagnification>
+    <MaxMagnification>-5;+500</MaxMagnification>
+    <ProductTime>58</ProductTime>
+    <DollType>HG,N;SMG,N;AR,N;RF,N;MG,U;SG,N</DollType>
+    <Icon>MkSLAP</Icon>
+    <ProductDialog>IOP에서 개발한 신형 이탈피 철갑탄으로 장갑 관통 능력을 대폭 강화했습니다. 기관총에 장착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>#6 버드샷</Name>
+    <Id>230</Id>
+    <Type>산탄</Type>
+    <Category>탄약</Category>
+    <Grade>4</Grade>
+    <Ability>타겟;사속;치명피해</Ability>
+    <InitialMagnification>+2;+3~4;-30~15%</InitialMagnification>
+    <MaxMagnification>+2;+6;-15%</MaxMagnification>
+    <ProductTime>45</ProductTime>
+    <DollType>HG,N;SMG,N;AR,N;RF,N;MG,N;SG,U</DollType>
+    <Icon>BirdShot</Icon>
+    <ProductDialog>고전적인 수렵용 산탄으로 소형 목표를 대상으로 대량의 작은 탄환을 채워 살상범위를 넓힌 설계입니다. 탄환은 IOP의 재개발로 살상력이 상승했습니다. 산탄총에 장착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>#7.5 버드샷</Name>
+    <Id>231</Id>
+    <Type>산탄</Type>
+    <Category>탄약</Category>
+    <Grade>5</Grade>
+    <Ability>타겟;사속;치명피해</Ability>
+    <InitialMagnification>+2;+6~8;-20~10%</InitialMagnification>
+    <MaxMagnification>+2;+12;-10%</MaxMagnification>
+    <ProductTime>55</ProductTime>
+    <DollType>HG,N;SMG,N;AR,N;RF,N;MG,N;SG,U</DollType>
+    <Icon>BirdShot</Icon>
+    <ProductDialog>#7.5 버드샷은 #6 버드샷에 비해 충전한 탄환 부피가 더 작아 탄자량을 늘려 더 넓은 살상범위를 가집니다. 산탄총에 장착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>시제품 연산칩</Name>
+    <Id>232</Id>
+    <Type>칩셋</Type>
+    <Category>인형</Category>
+    <Grade>3</Grade>
+    <Ability>화력;사속;치명피해</Ability>
+    <InitialMagnification>+1~3;+3~5;-50%</InitialMagnification>
+    <MaxMagnification>+5;+8;-50%</MaxMagnification>
+    <ProductTime>26</ProductTime>
+    <DollType>HG,N;SMG,U;AR,U;RF,N;MG,N;SG,N</DollType>
+    <Icon>CalcChip</Icon>
+    <ProductDialog>IOP에서 설계한 신형 연산칩으로 인형의 전투능력을 약간 상승시킬 수 있습니다. 돌격소총과 기관단총에 장착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>#1 연산칩</Name>
+    <Id>233</Id>
+    <Type>칩셋</Type>
+    <Category>인형</Category>
+    <Grade>4</Grade>
+    <Ability>화력;사속;치명피해</Ability>
+    <InitialMagnification>+4~6;+8~10;-50%</InitialMagnification>
+    <MaxMagnification>+10;+16;-50%</MaxMagnification>
+    <ProductTime>41</ProductTime>
+    <DollType>HG,N;SMG,U;AR,U;RF,N;MG,N;SG,N</DollType>
+    <Icon>CalcChip</Icon>
+    <ProductDialog>IOP가 개량한 연산칩으로 시험제작품보다 눈에 띄게 인형의 능력을 높여줍니다. 돌격소총과 기관단총에 장착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>#2 연산칩</Name>
+    <Id>234</Id>
+    <Type>칩셋</Type>
+    <Category>인형</Category>
+    <Grade>5</Grade>
+    <Ability>화력;사속;치명피해</Ability>
+    <InitialMagnification>+8~10;+12~16;-50%</InitialMagnification>
+    <MaxMagnification>+15;+25;-50%</MaxMagnification>
+    <ProductTime>51</ProductTime>
+    <DollType>HG,N;SMG,U;AR,U;RF,N;MG,N;SG,N</DollType>
+    <Icon>CalcChip</Icon>
+    <ProductDialog>IOP가 최신 개발한 2세대 연산칩입니다. 1세대 연산칩의 기초에서 인형과의 호환성을 상승시켰습니다. 돌격소총과 기관단총에 장착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>산탄총 섬광탄</Name>
+    <Id>235</Id>
+    <Type>산탄</Type>
+    <Category>탄약</Category>
+    <Grade>5</Grade>
+    <Ability>명중;피해감소</Ability>
+    <InitialMagnification>+8~12;-3</InitialMagnification>
+    <MaxMagnification>+20;-3</MaxMagnification>
+    <ProductTime>57</ProductTime>
+    <DollType>HG,N;SMG,N;AR,N;RF,N;MG,N;SG,U</DollType>
+    <Icon>SGFlash</Icon>
+    <ProductDialog>섬광탄을 쏠 수 있는 셸로 살상력은 별로 없지만 적의 능력을 낮춰 아군 인형이 받는 피해를 줄이면서 명중률을 높일 수 있습니다. 산탄총에 장착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>톰슨 외골격</Name>
+    <Id>236</Id>
+    <Type>외골격</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>화력;회피;스킬 강화</Ability>
+    <InitialMagnification>-8;+20~25;강화</InitialMagnification>
+    <MaxMagnification>-8;+5;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>톰슨</OnlyUse>
+    <Note>2021년 4월 출석 보상</Note>
+    <Icon>M1928A1_Only</Icon>
+    <ProductDialog>드럼 탄창을 장착한 톰슨은 M4 두 자루를 묶은 정도로 무겁습니다 이런 무게는 어떻게 봐도 "경기관총"이라고 부르지 못하죠. 특제 외골격은 전장에서 톰슨의 민첩성을 효과적으로 상승시킵니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>MkV 운동골격</Name>
+    <Id>237</Id>
+    <Type>외골격</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>회피;기동력;스킬 강화</Ability>
+    <InitialMagnification>+10~20;+3;강화</InitialMagnification>
+    <MaxMagnification>+30;+3;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>그리즐리 MkV</OnlyUse>
+    <Note>2021년 5월 출석 보상</Note>
+    <Icon>Grizzly_Only</Icon>
+    <ProductDialog>그리즐리 MkV의 요구에 따라 개발한 신형 운동골격입니다. 외형이 복고적이지만 성능이 매우 뛰어나 그리즐리가 애용합니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>9x18mm FTX</Name>
+    <Id>238</Id>
+    <Type>특수탄</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>화력;제대 전체 명중</Ability>
+    <InitialMagnification>+5~8;+10%</InitialMagnification>
+    <MaxMagnification>+16;+10%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>마카로프</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>PM_Only</Icon>
+    <ProductDialog>신형 9x18mm 마카로프 HP탄입니다. 탄두의 래드캡은 파편의 안정성을 높여 더욱 확실한 살상력을 보장합니다. 마카로프의 애용탄.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>Mk4 SLAP</Name>
+    <Id>239</Id>
+    <Type>특수</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>화력;관통;스킬 강화</Ability>
+    <InitialMagnification>-5~1;+300;강화</InitialMagnification>
+    <MaxMagnification>-1;+600;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>MG4</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>MG4_Only2</Icon>
+    <ProductDialog>IOP가 MG4를 위해 개발한 5.56mm 구경 탈피 철갑탄입니다. 정교한 제작 공정으로 인해 원가가 매우 비쌉니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>날개형 기계 방패</Name>
+    <Id>240</Id>
+    <Type>방탄판</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>이동속도;장갑</Ability>
+    <InitialMagnification>+3;+6~8</InitialMagnification>
+    <MaxMagnification>+3;+12</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>RMB-93</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>RMB93_Only</Icon>
+    <ProductDialog>외형은 날개 모습이지만 비행능력은 없는 것 같은 기계 방패입니다. RMB93의 전용 방패.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>M118LR</Name>
+    <Id>241</Id>
+    <Type>철갑탄</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중;관통</Ability>
+    <InitialMagnification>+2~4;+5;+110~120</InitialMagnification>
+    <MaxMagnification>+6;+5;+180</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>XM3</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>xm3_Only</Icon>
+    <ProductDialog>XM3가 애용하는 군용 저격탄 장거리 작전에서 놀라운 수준의 정확성과 살상력을 발휘합니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>7N14</Name>
+    <Id>242</Id>
+    <Type>철갑탄</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>관통;화력;스킬 강화</Ability>
+    <InitialMagnification>+110~120;+1~2;강화</InitialMagnification>
+    <MaxMagnification>+180;+4;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>SVD</OnlyUse>
+    <Note>2021년 6월 출석 보상</Note>
+    <Icon>SVD_Only</Icon>
+    <ProductDialog>드라그노프 저격 시스템을 위해 개발한 7.62mm 구경 철갑탄입니다. 장갑유닛에 대한 살상력을 높였습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>F2000 옵티컬 사이트</Name>
+    <Id>243</Id>
+    <Type>옵티컬</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;치명타율</Ability>
+    <InitialMagnification>+2~4;+17~24%</InitialMagnification>
+    <MaxMagnification>+8;+48%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>F2000</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>F2000_Only</Icon>
+    <ProductDialog>F2000을 위해 설계한 1.6배율 옵티컬 사이트입니다. 어두운 환경에서도 사용 가능한 눈금을 가졌고 실용성에 아직 문제가 있지만 외관 덕분에 F2000이 애용하게 됐습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>PP2000 택티컬 라이트</Name>
+    <Id>244</Id>
+    <Type>이오텍</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중;회피</Ability>
+    <InitialMagnification>+4~6;+6~10;+6~8</InitialMagnification>
+    <MaxMagnification>+8;+14;+12</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>PP-2000</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>PP2000_Only</Icon>
+    <ProductDialog>PP-2000을 위해 설계한 택티컬 라이트입니다. 윗총몸 아래에 부착할 수 있고 단순한 구조에 튼튼한 내구성을 자랑합니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>ZEVT 트리거셋</Name>
+    <Id>245</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>명중;회피;치명타율</Ability>
+    <InitialMagnification>+10~12;+6~8;+13~15%</InitialMagnification>
+    <MaxMagnification>+20;+12;30%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>글록 17</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>Glock17_Only</Icon>
+    <ProductDialog>ZEVT에서 글록 시리즈를 위해 설계한 트리거셋입니다. 수정을 거쳐 트리거의 손맛을 대폭 개선했습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>RBL형 그립</Name>
+    <Id>246</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;회피;스킬 강화</Ability>
+    <InitialMagnification>+12~15%;+8~10;강화</InitialMagnification>
+    <MaxMagnification>+20%;+25;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>제리코</OnlyUse>
+    <Note>2021년 7월 출석 보상</Note>
+    <Icon>Jericho_Only</Icon>
+    <ProductDialog>콤팩트 모델(RBL형)를 위해 준비한 폴리머 그립 총기의 무게를 줄이고 휴대에 더욱 용이하도록 개조했습니다. RBL형 윗총몸과 결합해야 합니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>유압 시스템 개머리판</Name>
+    <Id>247</Id>
+    <Type>옵티컬</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;치명피해</Ability>
+    <InitialMagnification>+20~25%;+8~10%</InitialMagnification>
+    <MaxMagnification>+50%;+15%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>TAC-50</OnlyUse>
+    <Note>웨이브 랭글러 이벤트 재화 구매</Note>
+    <Icon>TAC50_Only</Icon>
+    <ProductDialog>A1-R2 모델을 위해 설계한 유압 반동력 흡수 시스템으로 .50BMG의 반동력을 효과적으로 흡수할 수 있습니다. TAC-50의 애용품 중 하나죠.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>9A 고성능 칩셋</Name>
+    <Id>248</Id>
+    <Type>칩셋</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>화력;사속;스킬 강화</Ability>
+    <InitialMagnification>+8~10;+12~16;강화</InitialMagnification>
+    <MaxMagnification>+15;+25;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>9A-91</OnlyUse>
+    <Note>2021년 8월 출석 보상</Note>
+    <Icon>9A91_Only2</Icon>
+    <ProductDialog>9A-91을 위해 준비한 업그레이드 칩. 인형 성능을 효과적으로 상승시킵니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>SR3 특제 소음기</Name>
+    <Id>249</Id>
+    <Type>소음기</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중;회피</Ability>
+    <InitialMagnification>+6;+10;+10</InitialMagnification>
+    <MaxMagnification>+10;+20;+10</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>SR-3MP</OnlyUse>
+    <Note>악몽의 미로성 누적 점수 보상</Note>
+    <Icon>SR3MP_Only</Icon>
+    <ProductDialog>기존 SR-3MP의 소음기의 기초에서 개조 설계한 신형 소음기입니다. 근접전을 상정하여 길이를 줄이는 동시에 필수적인 소음 성능은 보존했습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>경량화 골격 MkQ</Name>
+    <Id>250</Id>
+    <Type>외골격</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>화력;회피;스킬 강화</Ability>
+    <InitialMagnification>+8~10;+20~25;강화</InitialMagnification>
+    <MaxMagnification>+15;+35;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>허니뱃저</OnlyUse>
+    <Note>2021년 9월 출석 보상</Note>
+    <Icon>PDW_Only</Icon>
+    <ProductDialog>허니뱃저만을 위해 설계한 프로젝트명 Q의 신형 특수기동외골격입니다. 유선형인 윤곽과 로즈골드 도색인 골격에서 모던함이 묻어나옵니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>딸랑 악마종</Name>
+    <Id>251</Id>
+    <Type>레드닷</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>명중;회피</Ability>
+    <InitialMagnification>+11~18;+3~4</InitialMagnification>
+    <MaxMagnification>+36;+6</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>미노스</OnlyUse>
+    <Note>사신짱 전선 이벤트 획득</Note>
+    <Icon>Minosu_Only</Icon>
+    <ProductDialog>미노스의 아버지가 준 선물 미노스가 상대를 이기지 못할 때 흔들라고 했는데 그런 상황이 전혀 없어서 아무도 저 방울소리를 들어본 적이 없다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>마도서 하권</Name>
+    <Id>252</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중;치명타율</Ability>
+    <InitialMagnification>+3~5;+1~3;+18~25%</InitialMagnification>
+    <MaxMagnification>+10;+5;+50%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>하나조노 유리네</OnlyUse>
+    <Note>사신짱 전선 이벤트 획득</Note>
+    <Icon>Yurine_Only</Icon>
+    <ProductDialog>유리네의 비장의 컬렉션 여러가지 주문이 적혀있지만 정말 중요한 주문이 없다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>기적의 국자</Name>
+    <Id>253</Id>
+    <Type>외골격</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>화력;회피</Ability>
+    <InitialMagnification>+3~5;+20~25</InitialMagnification>
+    <MaxMagnification>+10;+36</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>사신짱</OnlyUse>
+    <Note>사신짱 전선 이벤트 획득</Note>
+    <Icon>Jashinchan_Only</Icon>
+    <ProductDialog>"이 세상에 카레 한 그릇으로 해결 안 되는 일은 없어요. 해결 안 된다면 한 그릇——" 사신짱이 카레 냄비를 저으며 말하던 다음 순간 유리네의 눈앞엔 이 국자만 남았다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>달콤한 도넛</Name>
+    <Id>254</Id>
+    <Type>특수</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>이동속도;치명피해</Ability>
+    <InitialMagnification>-3;+21~27%</InitialMagnification>
+    <MaxMagnification>-3;+45%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>페코라</OnlyUse>
+    <Note>사신짱 전선 이벤트 획득</Note>
+    <Icon>Pekora_Only</Icon>
+    <ProductDialog>페코라가 꿈과 현실을 구분하기 위한 관건 아이템. 이토록 맛있는 도넛을 먹을 수 있는 곳은 분명 꿈속의 천국입니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>빵봉지 투구</Name>
+    <Id>255</Id>
+    <Type>칩셋</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>화력;사속;치명피해</Ability>
+    <InitialMagnification>+10~12;+12~16;-50%</InitialMagnification>
+    <MaxMagnification>+18;+25;-50%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>메두사</OnlyUse>
+    <Note>사신짱 전선 이벤트 획득</Note>
+    <Icon>Medusa_Only</Icon>
+    <ProductDialog>모든 투구가 단단한 건 아닙니다. 어떤 투구는 양피지 한장으로 만들어졌죠. 하지만 이걸 쓰면 불행히 돌이 되는 인간은 없어지고 이걸 벗으면 친구를 지킬 힘을 얻습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>MICO</Name>
+    <Id>256</Id>
+    <Type>탄약통</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;장탄수</Ability>
+    <InitialMagnification>+12~15%;+3~4</InitialMagnification>
+    <MaxMagnification>+25%;+6</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>M249 SAW</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>M249SAW_Only</Icon>
+    <ProductDialog>TYRT가 기관총을 위해 개발한 전용 탄통 배낭입니다. IOP의 손을 거쳐 M249 SAW의 전용 배낭이 되었습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>EKP-8-18</Name>
+    <Id>257</Id>
+    <Type>레드닷</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>명중;치명타율</Ability>
+    <InitialMagnification>+14~16;+18~20%</InitialMagnification>
+    <MaxMagnification>+32;+40%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>DP28</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>DP28_Only</Icon>
+    <ProductDialog>Kobra의 레드닷의 한 모델입니다 특수 과정을 거쳐 DP28의 전용품이 됐습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>7.92 대전차탄</Name>
+    <Id>258</Id>
+    <Type>특수탄</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>관통;화력</Ability>
+    <InitialMagnification>+110~120;+3~5</InitialMagnification>
+    <MaxMagnification>+180;+10</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>PzB39</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>PzB39_Only</Icon>
+    <ProductDialog>과거 세계 전장에서 사용한 특수구경 총알입니다. PzB39 전용으로 설계되어 IOP의 손을 거쳐 현대 장갑 목표에게도 상당한 피해를 줄 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>낡은 위장슈트</Name>
+    <Id>259</Id>
+    <Type>슈트</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>치명피해;스킬 강화</Ability>
+    <InitialMagnification>+20~25%;강화</InitialMagnification>
+    <MaxMagnification>+45%;강</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>몬드라곤 M1908</OnlyUse>
+    <Note>2021년 10월 출석 보상</Note>
+    <Icon>MondragonM1908_Only</Icon>
+    <ProductDialog>몬드라곤이 항상 몸에 지니던 낡은 위장슈트 전투로 남은 여러 흠집과 때가 과거 전장의 명예를 증명합니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>4X 서브 CPU</Name>
+    <Id>260</Id>
+    <Type>칩셋</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>이동속도;회피</Ability>
+    <InitialMagnification>+3;+16~20</InitialMagnification>
+    <MaxMagnification>+3;+40</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>G36C</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>G36C_Only</Icon>
+    <ProductDialog>IOP가 G36C를 위해서 설계한 전용 보조연산유닛입니다. G36C의 연산 능력을 대폭 상향합니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>커스텀 T1 레드닷</Name>
+    <Id>261</Id>
+    <Type>레드닷</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중</Ability>
+    <InitialMagnification>+4~6;+11~15</InitialMagnification>
+    <MaxMagnification>+10;+30</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>리베롤</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>Ribeyrolles_Only</Icon>
+    <ProductDialog>IOP가 리베롤을 위해 설계한 T1 레드닷입니다. 레일과 총몸을 용접해야 부착할 수 있는 물건으로 조준 효율을 크게 높였습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>B32 철갑탄</Name>
+    <Id>262</Id>
+    <Type>철갑탄</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>화력;관통</Ability>
+    <InitialMagnification>+3~5;+95~100</InitialMagnification>
+    <MaxMagnification>+8;+200</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>게파드 M1</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>GepardM1_Only</Icon>
+    <ProductDialog>IOP가 게파드 M1을 위해 설계를 개선한 B32 소이철갑탄입니다. 장갑 목표에게 가관한 피해를 줄 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>SP81</Name>
+    <Id>263</Id>
+    <Type>특수탄</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>명중;제대 전체 명중</Ability>
+    <InitialMagnification>+8~12;+10%</InitialMagnification>
+    <MaxMagnification>+20;+10%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>MP-443</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>MP443_Only</Icon>
+    <ProductDialog>과거 전쟁에서 사용한 신호총으로 MP443의 애용품 중 하나입니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>폴리머 그립</Name>
+    <Id>265</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중;스킬 강화</Ability>
+    <InitialMagnification>+3~5;+11~15;강화</InitialMagnification>
+    <MaxMagnification>+8;+30;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>M37</OnlyUse>
+    <Note>2021년 12월 출석 보상</Note>
+    <Icon>Ithaca37_Only</Icon>
+    <ProductDialog>M37을 위해 설계한 권총 손잡이 옆구리에 끼고 속사하기에 용이합니다 적에게 화력을 쏟아붇는 최적의 수단이죠!</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>PK 전용 삼각대</Name>
+    <Id>264</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중;치명타율;스킬 강화</Ability>
+    <InitialMagnification>+3~5;+3~5;+20~25%;강화</InitialMagnification>
+    <MaxMagnification>+10;+5;+50%;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>PK</OnlyUse>
+    <Note>2021년 11월 출석 보상</Note>
+    <Icon>PK_Only</Icon>
+    <ProductDialog>???</ProductDialog>
+  </Equipment>
 </NewDataSet>

@@ -1,6 +1,17 @@
-﻿# T-Doll DB Update 2021/10/17
+﻿# Equip DB Update 2021/11/28
 
-- Add new T-Doll Mod info (RMB-93, XM3, MG4)
+- Add new equipment
+- Add MOD T-Doll equipment
+- Add Event equipment
+- Add check-in event equipment
+- Add store equipment
+
+
+
+# T-Doll DB Update 2021/11/21
+
+- Add new T-Doll infos (FO-12, M26-MASS, Supernova, MAG-7)
+- Add new T-Doll costume (Hanyang 88 Type, SIG MCX, MG36, HK416, F1)
 
 
 
@@ -12,10 +23,7 @@
 - Add new Coalition boss unit
 
 
-# Equip DB Update 2021/03/10
 
-- Add new equipment
-- Add 10th, 11th MOD T-Doll equipment
 
 
 # Fairy DB Update 2020/08/30
