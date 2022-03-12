@@ -86,6 +86,7 @@
     <string name="Game_Event_MirrorStage">Mirror Stage</string>
 	<string name="Game_Event_MyDevilsFrontline">My Devils Frontline</string>
 	<string name="Game_Event_PoincareRecurrence">Poincare Recurrence</string>
+	<string name="Game_Event_FixedPoint">Fixed Point</string>
 
     <!--Activity String-->
     <string name="Activity_DollMainActivity">T-Doll List</string>

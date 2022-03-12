@@ -404,4 +404,43 @@
     <item>몰이사냥</item>
     <item>제로섬</item>
   </string-array>
+
+	<string-array name="Story_Main_Main_Event_2021Christmas_TopTitle">
+		<item>한푼차이</item>
+		<item>한푼차이</item>
+		<item>한푼차이</item>
+		<item>한푼차이</item>
+		<item>한푼차이</item>
+		<item>한푼차이</item>
+		<item>한푼차이</item>
+		<item>한푼차이</item>
+		<item>한푼차이</item>
+		<item>한푼차이</item>
+	</string-array>
+
+	<string-array name="Story_Main_Main_Event_2021Christmas">
+		<item>"소원은 언제 이루나"</item>
+		<item>혼자만의 항쟁 Ⅰ</item>
+		<item>혼자만의 항쟁 Ⅱ</item>
+		<item>헤비 메탈과 마일드 트리 Ⅰ</item>
+		<item>헤비 메탈과 마일드 트리 Ⅱ</item>
+		<item>묻힌 사기극 Ⅰ</item>
+		<item>묻힌 사기극 Ⅱ</item>
+		<item>꽃처럼 흩날리는 눈 Ⅰ</item>
+		<item>꽃처럼 흩날리는 눈 Ⅱ</item>
+		<item>"불꽃 피어나는 순간"</item>
+	</string-array>
+
+	<string-array name="Story_Main_Main_Event_2021Christmas_Caption">
+		<item>"소원은 언제 이루나"</item>
+		<item>혼자만의 항쟁 Ⅰ</item>
+		<item>혼자만의 항쟁 Ⅱ</item>
+		<item>헤비 메탈과 마일드 트리 Ⅰ</item>
+		<item>헤비 메탈과 마일드 트리 Ⅱ</item>
+		<item>묻힌 사기극 Ⅰ</item>
+		<item>묻힌 사기극 Ⅱ</item>
+		<item>꽃처럼 흩날리는 눈 Ⅰ</item>
+		<item>꽃처럼 흩날리는 눈 Ⅱ</item>
+		<item>"불꽃 피어나는 순간"</item>
+	</string-array>
 </resources>

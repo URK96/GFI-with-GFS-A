@@ -27,45 +27,14 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/Common_Grade"
                 android:gravity="center" />
-            <View
-                android:layout_width="5px"
-                android:layout_height="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/seperatebar_vertical" />
-            <LinearLayout
-                android:layout_height="match_parent"
+            <include layout="@layout/seperatebar_vertical"/>
+            <TextView
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/EquipDBDetailInfoGrade1" />
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/EquipDBDetailInfoGrade2" />
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/EquipDBDetailInfoGrade3" />
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/EquipDBDetailInfoGrade4" />
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/EquipDBDetailInfoGrade5" />
-            </LinearLayout>
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/EquipDBDetailInfoGrade"
+                android:gravity="center" />
         </LinearLayout>
     <!--Equip Basic Info - Category Part-->
         <LinearLayout

@@ -88,6 +88,7 @@
     <string name="Game_Event_MirrorStage">거울단계</string>
 	<string name="Game_Event_MyDevilsFrontline">사신짱 전선</string>
 	<string name="Game_Event_PoincareRecurrence">재귀정리</string>
+	<string name="Game_Event_FixedPoint">고정점</string>
 
     <!--Activity String-->
     <string name="Activity_DollMainActivity">인형 목록</string>

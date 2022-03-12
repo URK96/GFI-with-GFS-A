@@ -60,11 +60,6 @@
        android:title="@string/Setting_DBListImageShow_Title"
        android:summary="@string/Setting_DBListImageShow_Summary"
        android:defaultValue="false" />
-    <!--<androidx.preference.SwitchPreference
-       android:key="PreviewDBListLayout"
-       android:title="@string/Setting_PreviewDBListLayout_Title"
-       android:summary="@string/Setting_PreviewDBListLayout_Summary"
-       android:defaultValue="false" />-->
   </androidx.preference.PreferenceCategory>
   
   <androidx.preference.PreferenceCategory
@@ -83,16 +78,16 @@
       android:title="@string/Setting_TextSize_Title"
       android:summary="@string/Setting_TextSize_Summary"
       android:defaultValue="12"/>
-    <androidx.preference.Preference
-      android:key="TextViewerTextColor"
-      android:title="@string/Setting_TextColor_Title"
-      android:summary="@string/Setting_TextColor_Summary"
-      android:defaultValue="0"/>
-    <androidx.preference.Preference
-      android:key="TextViewerBackgroundColor"
-      android:title="@string/Setting_BackgroundColor_Title"
-      android:summary="@string/Setting_BackgroundColor_Summary"
-      android:defaultValue="0"/>
+
+	  <com.jaredrummler.android.colorpicker.ColorPreferenceCompat
+		android:key="TextViewerTextColor"
+        android:summary="@string/Setting_TextColor_Title"
+        android:title="@string/Setting_TextColor_Summary"/>
+	  
+	  <com.jaredrummler.android.colorpicker.ColorPreferenceCompat
+		android:key="TextViewerBackgroundColor"
+        android:summary="@string/Setting_BackgroundColor_Title"
+        android:title="@string/Setting_BackgroundColor_Summary"/>
   </androidx.preference.PreferenceCategory>
 
   <androidx.preference.PreferenceCategory

@@ -1,17 +1,25 @@
-﻿# Equip DB Update 2021/11/28
+﻿
+# T-Doll DB Update 2022/02/03
 
-- Add new equipment
+- Add new T-Doll costume
+- Add new MOD T-Doll infos
+
+
+
+# Fairy DB Update 2022/02/03
+
+- Add new fairy
+- Apply some fairy skill info in-game changes
+
+
+
+# Equip DB Update 2022/02/03
+
 - Add MOD T-Doll equipment
 - Add Event equipment
 - Add check-in event equipment
 - Add store equipment
 
-
-
-# T-Doll DB Update 2021/11/21
-
-- Add new T-Doll infos (FO-12, M26-MASS, Supernova, MAG-7)
-- Add new T-Doll costume (Hanyang 88 Type, SIG MCX, MG36, HK416, F1)
 
 
 
@@ -26,9 +34,6 @@
 
 
 
-# Fairy DB Update 2020/08/30
-
-- Add new fairy
 
 
 # Enemy DB Update 2019/09/15

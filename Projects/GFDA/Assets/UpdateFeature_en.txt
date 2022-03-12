@@ -1,12 +1,9 @@
-<2.7.10 Update>
+<2.8.0 Update>
 
-- Renewal license key of partial library
-- Add color on T-Doll Formation Buff Mags
-
-
-
-<2.7.9 Update>
-
-- Add new story content
-- Add cartoon contents
-- Adjust text postion in main menu
+- Add new story
+- Add new PV
+- Change color picker library
+- Change refresh method of story reader
+- Adjust layout of story reader
+- Change rarity display of equipment detail viewer
+- Fix max ability display issue on equipment detail viewer

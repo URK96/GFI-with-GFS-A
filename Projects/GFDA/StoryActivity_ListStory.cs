@@ -56,6 +56,8 @@ namespace GFDA
                 43 => (Story_Main_Main_Event_2021Summer_TopTitle, Story_Main_Main_Event_2021Summer, Story_Main_Main_Event_2021Summer_Caption),
                 44 => (Story_Main_Main_Event_MyDevilsFrontline_TopTitle, Story_Main_Main_Event_MyDevilsFrontline, Story_Main_Main_Event_MyDevilsFrontline_Caption),
                 45 => (Story_Main_Main_Event_PoincareRecurrence_TopTitle, Story_Main_Main_Event_PoincareRecurrence, Story_Main_Main_Event_PoincareRecurrence_Caption),
+                46 => (Story_Main_Main_Event_2021Christmas_TopTitle, Story_Main_Main_Event_2021Christmas, Story_Main_Main_Event_2021Christmas_Caption),
+                47 => (Story_Main_Main_Event_FixedPoint_TopTitle, Story_Main_Main_Event_FixedPoint, Story_Main_Main_Event_FixedPoint_Caption),
                 _ => (0, 0, 0)
             };
         }
@@ -233,6 +235,12 @@ namespace GFDA
                         break;
                     case 45:
                         category = "PoincareRecurrence";
+                        break;
+                    case 46:
+                        category = "2021Christmas";
+                        break;
+                    case 47:
+                        category = "FixedPoint";
                         break;
                     default:
                         return;

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string-array name="Story_Main_Main_Event_FixedPoint_TopTitle">
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+        <item>고정점</item>
+    </string-array>
+  
+    <string-array name="Story_Main_Main_Event_FixedPoint">
+        <item>독침</item>
+        <item>블랙박스</item>
+        <item>휘파람</item>
+        <item>추격 Ⅰ</item>
+        <item>니케 Ⅰ</item>
+        <item>죽음의 바다</item>
+        <item>깃발 휘날리며</item>
+        <item>수레바퀴 자국</item>
+        <item>잠복 Ⅱ</item>
+        <item>소용돌이</item>
+        <item>정원사</item>
+        <item>서두</item>
+        <item>역광 Ⅰ</item>
+        <item>교차점 Ⅰ</item>
+        <item>철완</item>
+        <item>틈새</item>
+        <item>핏빛 달 Ⅱ</item>
+        <item>수면 거울</item>
+        <item>개척</item>
+        <item>프로모션</item>
+        <item>탑 오르기</item>
+        <item>침습</item>
+        <item>옛비 Ⅰ</item>
+        <item>옛비 Ⅱ</item>
+        <item>무인도 Ⅰ</item>
+        <item>무인도 Ⅱ</item>
+        <item>배신자 Ⅰ</item>
+        <item>배신자 Ⅱ</item>
+        <item>환생</item>
+        <item>답안</item>
+        <item>종점</item>
+        <item>추론 Ⅰ</item>
+        <item>추론 Ⅱ</item>
+        <item>추론 Ⅲ</item>
+        <item>추론 Ⅳ</item>
+    </string-array>
+
+    <string-array name="Story_Main_Main_Event_FixedPoint_Caption">
+        <item>Chapter 1</item>
+        <item>Chapter 1</item>
+        <item>Chapter 1</item>
+        <item>Chapter 1</item>
+        <item>Chapter 1</item>
+        <item>Chapter 1</item>
+        <item>Chapter 2</item>
+        <item>Chapter 2</item>
+        <item>Chapter 2</item>
+        <item>Chapter 2</item>
+        <item>Chapter 2</item>
+        <item>Chapter 3</item>
+        <item>Chapter 3</item>
+        <item>Chapter 3</item>
+        <item>Chapter 3</item>
+        <item>Chapter 3</item>
+        <item>Chapter 3</item>
+        <item>Chapter 3</item>
+        <item>Chapter 4</item>
+        <item>Chapter 4</item>
+        <item>Chapter 4</item>
+        <item>Chapter 4</item>
+        <item>Chapter 4</item>
+        <item>Chapter 4</item>
+        <item>Chapter 4</item>
+        <item>Chapter 4</item>
+        <item>Chapter 4</item>
+        <item>Chapter 4</item>
+        <item>Chapter 4</item>
+        <item>Chapter 4</item>
+        <item>Chapter 4</item>
+        <item>Chapter ∞</item>
+        <item>Chapter ∞</item>
+        <item>Chapter ∞</item>
+        <item>Chapter ∞</item>
+    </string-array>
+</resources>

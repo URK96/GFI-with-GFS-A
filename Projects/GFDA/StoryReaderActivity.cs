@@ -4,6 +4,8 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 
+using AndroidX.SwipeRefreshLayout.Widget;
+
 using System;
 using System.IO;
 using System.Net;
@@ -30,13 +32,11 @@ namespace GFDA
         private string backgroundColor;
         private int textSize = 12;
 
+        private SwipeRefreshLayout mainRefreshLayout;
         private TextView titleCategory;
         private TextView titleNow;
-
-        private ProgressBar loadProgressBar;
         private TextView mainTextView;
         
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -66,6 +66,9 @@ namespace GFDA
             SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.StoryReaderMainToolbar));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
+            mainRefreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.StoryReaderRefreshLayout);
+            mainRefreshLayout.Refresh += delegate { _ = LoadProcess(true); };
+
             titleCategory = FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryCategory);
             titleNow = FindViewById<TextView>(Resource.Id.StoryReaderToolbarNowStoryTitle);
 
@@ -73,7 +76,6 @@ namespace GFDA
             textColor = Preferences.Get("TextViewerTextColorHex", "None");
             backgroundColor = Preferences.Get("TextViewerBackgroundColorHex", "None");
 
-            loadProgressBar = FindViewById<ProgressBar>(Resource.Id.StoryReaderLoadProgress);
             mainTextView = FindViewById<TextView>(Resource.Id.StoryReaderMainTextView);
 
             mainTextView.TextSize = textSize;
@@ -108,9 +110,6 @@ namespace GFDA
                 case Resource.Id.StoryReaderSkipNext:
                     SkipStory(item.ItemId);
                     break;
-                case Resource.Id.RefreshStoryTextCache:
-                    _ = LoadProcess(true);
-                    break;
             }
 
             return base.OnOptionsItemSelected(item);
@@ -143,7 +142,7 @@ namespace GFDA
 
         private async Task LoadProcess(bool isRefresh)
         {
-            MainThread.BeginInvokeOnMainThread(() => { loadProgressBar.Visibility = ViewStates.Visible; });
+            MainThread.BeginInvokeOnMainThread(() => { mainRefreshLayout.Refreshing = true; });
 
             string file = (category == "ModStory") ? Path.Combine(ETC.cachePath, "Story", category, $"{dollDicNumber}_{itemIndex}.gfdcache") :
                 Path.Combine(ETC.cachePath, "Story", category, $"{itemIndex}.gfdcache");
@@ -158,7 +157,7 @@ namespace GFDA
             titleCategory.Text = topTitleList[itemIndex - 1];
             titleNow.Text = $"{itemList[itemIndex - 1]}";
 
-            MainThread.BeginInvokeOnMainThread(() => { loadProgressBar.Visibility = ViewStates.Invisible; });
+            MainThread.BeginInvokeOnMainThread(() => { mainRefreshLayout.Refreshing = false; });
         }
 
         private async Task LoadText(string path)

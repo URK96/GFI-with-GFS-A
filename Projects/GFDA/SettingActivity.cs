@@ -8,7 +8,7 @@ using AndroidX.Preference;
 
 using Google.Android.Material.Snackbar;
 
-using Net.ArcanaStudio.ColorPicker;
+using JaredRummler.Android.ColorPicker;
 
 using System;
 using System.IO;
@@ -227,12 +227,19 @@ namespace GFDA
 
             var textViewerTextColor = FindPreference("TextViewerTextColor");
             textViewerTextColor.SetIcon(ETC.useLightTheme ? Resource.Drawable.fontcolor_icon_wt : Resource.Drawable.fontcolor_icon);
-            textViewerTextColor.PreferenceClick += TextViewerTextColor_PreferenceClick;
-
+            textViewerTextColor.PreferenceChange += (sender, e) =>
+            {
+                Preferences.Set("TextViewerTextColorHex", $"#{(int)e.NewValue:X}");
+            };
 
             var textViewerBackgroundColor = FindPreference("TextViewerBackgroundColor");
             textViewerBackgroundColor.SetIcon(ETC.useLightTheme ? Resource.Drawable.backgroundcolor_icon_wt : Resource.Drawable.backgroundcolor_icon);
-            textViewerBackgroundColor.PreferenceClick += TextViewerBackgroundColor_PreferenceClick;
+            textViewerBackgroundColor.PreferenceChange += (sender, e) => 
+            { 
+                Preferences.Set("TextViewerBackgroundColorHex", $"#{(int)e.NewValue:X}"); 
+            };
+
+
 
             var DownloadAllCache = FindPreference("DownloadAllCache");
             DownloadAllCache.SetIcon(ETC.useLightTheme ? Resource.Drawable.download_icon_wt : Resource.Drawable.download_icon);
@@ -442,40 +449,6 @@ namespace GFDA
             ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
             ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { Preferences.Set("TextViewerTextSize", 12); });
             ad.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { Preferences.Set("TextViewerTextSize", np.Value); });
-            ad.SetView(view);
-
-            ad.Show();
-        }
-
-        private void TextViewerTextColor_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
-        {
-            var view = Activity.LayoutInflater.Inflate(Resource.Layout.ColorPickerDialogLayout, null);
-
-            var cp = view.FindViewById<ColorPickerView>(Resource.Id.ColorPickerControl);
-
-            var ad = new AndroidX.AppCompat.App.AlertDialog.Builder(Activity, ETC.dialogBG);
-            ad.SetTitle(Resource.String.Common_TextColor);
-            ad.SetCancelable(true);
-            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-            ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { Preferences.Set("TextViewerTextColorHex", "None"); });
-            ad.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { Preferences.Set("TextViewerTextColorHex", $"#{cp.GetColor().ToArgb():X}"); });
-            ad.SetView(view);
-
-            ad.Show();
-        }
-
-        private void TextViewerBackgroundColor_PreferenceClick(object sender, Preference.PreferenceClickEventArgs e)
-        {
-            var view = Activity.LayoutInflater.Inflate(Resource.Layout.ColorPickerDialogLayout, null);
-
-            var cp = view.FindViewById<ColorPickerView>(Resource.Id.ColorPickerControl);
-
-            var ad = new AndroidX.AppCompat.App.AlertDialog.Builder(Activity, ETC.dialogBG);
-            ad.SetTitle(Resource.String.Common_BackgroundColor);
-            ad.SetCancelable(true);
-            ad.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
-            ad.SetNeutralButton(Resource.String.AlertDialog_Reset, delegate { Preferences.Set("TextViewerBackgroundColorHex", "None"); });
-            ad.SetPositiveButton(Resource.String.AlertDialog_Set, delegate { Preferences.Set("TextViewerBackgroundColorHex", $"#{cp.GetColor().ToArgb():X}"); });
             ad.SetView(view);
 
             ad.Show();

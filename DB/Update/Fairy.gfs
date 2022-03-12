@@ -117,11 +117,11 @@
     <Armor>0/0</Armor>
     <Critical>0/0</Critical>
     <SkillName>에너지 쉴드</SkillName>
-    <SkillExplain>다음 전투에서 제대의 모든 기관단총에게 피해를 흡수하는 방어막을 생성한다.</SkillExplain>
-    <OrderConsume>3</OrderConsume>
+    <SkillExplain>전투 개시 시, 모든 인형에게 각자 단일 편제 체력의 일정 비율만큼의 보호막을 부여한다, 지속 20초. 보호막이 존재하는 동안 화력이 증가하고 받는 피해량이 차감된다.</SkillExplain>
+    <OrderConsume>2</OrderConsume>
     <CoolDown>0</CoolDown>
-    <SkillEffect>쉴드체력</SkillEffect>
-    <SkillRate>40/50/60/70/80/90/100/110/130/150</SkillRate>
+    <SkillEffect>보호막 생성 비율;화력 증가치;피해량 감소치</SkillEffect>
+    <SkillRate>50/56/61/67/72/78/83/89/94/100;8/9/11/12/13/15/16/17/19/20;12/14/16/18/20/22/24/26/28/30</SkillRate>
     <ProductDialog>"이제 무서워하지 않아도 괜찮아요."</ProductDialog>
     <ProductDialog_EN>"There's nothing to be afraid of anymore."</ProductDialog_EN>
     <FairyExplain>포스실드를 펼치는 능력을 지니고 있습니다. 평소에는 방수, 방진, 반재밍에 사용할 수 있을 것 같습니다.</FairyExplain>
@@ -139,11 +139,11 @@
     <Armor>3.6/20</Armor>
     <Critical>0/0</Critical>
     <SkillName>임시방호</SkillName>
-    <SkillExplain>1턴 동안 제대가 받는 피해를 감소시킨다. (20초 지속)</SkillExplain>
-    <OrderConsume>5</OrderConsume>
-    <CoolDown>1</CoolDown>
-    <SkillEffect>피해감소</SkillEffect>
-    <SkillRate>10/12/14/17/19/21/23/26/28/30</SkillRate>
+    <SkillExplain>전투 개시 시, 가장 앞에 있는 인형은 받는 피해량이 감소한다. 해당 효과는 일정 시간에 걸쳐 감쇠한다. 또한 효과 지속 기간 편제수를 잃는 피해를 1번 무효화한다.</SkillExplain>
+    <OrderConsume>2</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>피해량 감소치;감쇠 지속 시간</SkillEffect>
+    <SkillRate>30/33/36/40/43/46/50/53/56/60;12/14/16/18/20/22/24/26/28/30</SkillRate>
     <ProductDialog>"너희들 정말로…거짓말 하는 거 아니지?"</ProductDialog>
     <ProductDialog_EN>"You really aren't...lying?"</ProductDialog_EN>
     <FairyExplain>방어 성능을 높여주는 능력을 지니고 있습니다. 평소에는 기밀 보호와 긴급 수리에 사용할 수 있을 것 같습니다. </FairyExplain>
@@ -183,11 +183,11 @@
     <Armor>3.2/15</Armor>
     <Critical>7.2/36</Critical>
     <SkillName>저격명령</SkillName>
-    <SkillExplain>다음 전투에서 가장 체력이 많은 적을 조준하여 피해를 입힌다.</SkillExplain>
-    <OrderConsume>2</OrderConsume>
+    <SkillExplain>일정 간격마다 체력이 가장 높은 유닛을 저격하여, 대상 최대체력에 비례해 피해를 주고, 받는 피해량을 증폭시킨다, 지속시간 5초. 체력이 50% 미만인 유닛에겐 피해량이 2배가 되며, 최대 피해량 이상 피해를 줄 수 없다.</SkillExplain>
+    <OrderConsume>1</OrderConsume>
     <CoolDown>0</CoolDown>
-    <SkillEffect>피해량</SkillEffect>
-    <SkillRate>2500/4000/5500/7000/8000/10000/12500/15000/17500/20000</SkillRate>
+    <SkillEffect>저격 간격;피해량 배율;피해량 증폭치;최대 피해량</SkillEffect>
+    <SkillRate>5/4.8/4.5/4.3/4.1/3.9/3.7/3.4/3.2/3;6/7/8/9/10/11/12/13/14/15;8/9/11/12/13/15/16/17/19/20;6500/8000/9500/11000/12500/14000/15500/17000/18500/20000</SkillRate>
     <ProductDialog>"인형을 구할 수 있는지는, 결국 스스로에게 달려있다구."</ProductDialog>
     <ProductDialog_EN>"T-Dolls can only salvage things on their end."</ProductDialog_EN>
     <FairyExplain>적을 저격하는 능력을 지니고 있습니다. 평소에는 무기 교정에 사용할 수 있을 것 같습니다.</FairyExplain>
@@ -315,11 +315,11 @@
     <Armor>5.2/22</Armor>
     <Critical>8/35</Critical>
     <SkillName>터렛설치</SkillName>
-    <SkillExplain>터렛을 설치하여 3발 장전 후 2턴간 2범위 내의 적이 이동 시 발사하여 현재 체력에 비례한 피해를 준다. (보스무효)</SkillExplain>
-    <OrderConsume>5</OrderConsume>
-    <CoolDown>3</CoolDown>
-    <SkillEffect>피해율</SkillEffect>
-    <SkillRate>10/11/12/13/14/15/16/17/18/20</SkillRate>
+    <SkillExplain>지정 범위 안에 3턴간 유지되는 로켓 포대를 설치해, 거리 2칸 안의 아군 제대의 전투를 최대 3번 지원할 수 있다 : 전투 중 일정 간격마다, 대상 주위 2 범위 안에 현재체력에 일정한 비율로 단일 피해를 준다 (필중, 장갑 무시). 최대 피해량 30000, 이 피해로 적을 처치할 수 없다.</SkillExplain>
+    <OrderConsume>2</OrderConsume>
+    <CoolDown>2</CoolDown>
+    <SkillEffect>지원 간격;피해 비율</SkillEffect>
+    <SkillRate>8/7.7/7.3/7/6.7/6.3/6/5.7/5.3/5;6/7/8/9/10/11/12/13/14/15</SkillRate>
     <ProductDialog>"히히…위에는 내가 있다고…."</ProductDialog>
     <ProductDialog_EN>"Heheh... Up here..."</ProductDialog_EN>
     <FairyExplain>로켓포를 발사하는 능력을 지니고 있습니다. 평소에는 행사 날에 불꽃놀이를 쏘아 올리는데 사용할 수 있을 것 같습니다.</FairyExplain>
@@ -501,6 +501,7 @@
   </Fairy>
   <Fairy>
     <Name>취사요정</Name>
+    <Name_EN>Cooking Fairy</Name_EN>
     <Type>전투</Type>
     <DicNumber>19</DicNumber>
     <ProductTime>0</ProductTime>
@@ -584,6 +585,7 @@
   </Fairy>
   <Fairy>
     <Name>폭죽요정</Name>
+    <Name_EN>Firework Fairy</Name_EN>
     <Type>전투</Type>
     <DicNumber>20</DicNumber>
     <ProductTime>0</ProductTime>
@@ -604,6 +606,7 @@
   </Fairy>
   <Fairy>
     <Name>도깨비요정</Name>
+    <Name_EN>Nian Fairy</Name_EN>
     <Type>전투</Type>
     <DicNumber>21</DicNumber>
     <ProductTime>0</ProductTime>
@@ -645,6 +648,7 @@
   </Fairy>
   <Fairy>
     <Name>해변요정</Name>
+    <Name_EN>Beach Fairy</Name_EN>
     <Type>전투</Type>
     <DicNumber>22</DicNumber>
     <ProductTime>0</ProductTime>
@@ -665,6 +669,7 @@
   </Fairy>
   <Fairy>
     <Name>연타요정</Name>
+    <Name_EN>Combo Fairy</Name_EN>
     <Type>책략</Type>
     <DicNumber>23</DicNumber>
     <ProductTime>315</ProductTime>
@@ -684,13 +689,14 @@
   </Fairy>
   <Fairy>
     <Name>장벽요정</Name>
+    <Name_EN>Barrier Fairy</Name_EN>
     <Type>전투</Type>
     <DicNumber>24</DicNumber>
     <ProductTime>255</ProductTime>
     <FireRate>0/0</FireRate>
-    <Accuracy>?/72</Accuracy>
-    <Evasion>?/32</Evasion>
-    <Armor>?/22</Armor>
+    <Accuracy>14.8/72</Accuracy>
+    <Evasion>6.4/32</Evasion>
+    <Armor>4.4/22</Armor>
     <Critical>0/0</Critical>
     <SkillName>추가 장갑</SkillName>
     <SkillExplain>다음 전투에서 장갑을 지닌 아군에게 장갑 수치에 비례해 보호막을 부여한다.</SkillExplain>
@@ -703,6 +709,7 @@
   </Fairy>
   <Fairy>
     <Name>쌍둥이요정</Name>
+    <Name_EN>Twin Fairy</Name_EN>
     <Type>전투</Type>
     <DicNumber>25</DicNumber>
     <ProductTime>280</ProductTime>
@@ -722,6 +729,7 @@
   </Fairy>
   <Fairy>
     <Name>시조요정</Name>
+    <Name_EN>Origin Fairy</Name_EN>
     <Type>전투</Type>
     <DicNumber>26</DicNumber>
     <ProductTime>0</ProductTime>
@@ -742,6 +750,7 @@
   </Fairy>
   <Fairy>
     <Name>경사요정</Name>
+    <Name_EN>Auspicious Fairy</Name_EN>
     <Type>책략</Type>
     <DicNumber>27</DicNumber>
     <ProductTime>0</ProductTime>
@@ -759,5 +768,89 @@
     <Note>편극광 랭킹전 보상</Note>
     <ProductDialog>"항상 행운이 함께하고, 모든 일이 술술 풀리기를! 새해 복 많이 받으세요!"</ProductDialog>
     <FairyExplain>신비한 복숭아를 투척하는 능력을 지니고 있습니다. 평소에는 간식 제공이나, 화채를 만드는것에 사용할 수 있을 것 같습니다.</FairyExplain>
+  </Fairy>
+  <Fairy>
+    <Name>모래춤 요정</Name>
+    <Name_EN>Desert Fairy</Name_EN>
+    <Type>책략</Type>
+    <DicNumber>28</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>5.2/30</FireRate>
+    <Accuracy>5.6/30</Accuracy>
+    <Evasion>11.2/60</Evasion>
+    <Armor>0/0</Armor>
+    <Critical>2.8/16</Critical>
+    <SkillName>매혹의 사막</SkillName>
+    <SkillExplain>지정 거점에 사막 환경을 조성한다. 사막에서 전투하는 피아 양측 유닛은 이동속도가 감소하며 (해변요정과 중첩 불가), 사속이 감소하고, 5초마다 명중이 감소한다, 최대 5회 중첩. 사막 환경은 일정 턴 수 동안 지속된다. 사막 요정을 소지한 제대는 사막 환경의 영향을 일정 비율 덜 받으며, 리더가 받는 피해량이 감소한다. </SkillExplain>
+    <OrderConsume>5</OrderConsume>
+    <CoolDown>3</CoolDown>
+    <SkillEffect>이속 감소치;사속 감소치;명중 감소치;지속 턴 수;디버프 상쇄 수치;피해량 감소치</SkillEffect>
+    <SkillRate>8 / 9 / 11 / 12 / 13 / 15 / 16 / 17 / 19 / 20;12 / 14 / 16 / 18 / 20 / 22 / 24 / 26 / 28 / 30;5 / 6 / 6 / 7 / 7 / 8 / 8 / 9 / 9 / 10;1 / 1 / 1 / 1 / 1 / 2 / 2 / 2 / 2 / 2;50 / 56 / 61 / 67 / 72 / 78 / 83 / 89 / 94 / 100;10 / 11 / 12 / 13 / 14 / 16 / 17 / 18 / 19 / 20</SkillRate>
+    <Note>이중난수 랭킹전 보상</Note>
+    <ProductDialog>"모래와 물, 삶과 죽음, 모든 것은 순환이야!"</ProductDialog>
+    <FairyExplain>모래폭풍을 일으키는 능력을 지니고 있습니다. 평소에는 연병장 정리에 사용할 수 있을 것 같습니다.</FairyExplain>
+  </Fairy>
+  <Fairy>
+    <Name>응원요정</Name>
+    <Name_EN>Cheer Fairy</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>29</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>5.6/36</FireRate>
+    <Accuracy>12.4/75</Accuracy>
+    <Evasion>3.2/20</Evasion>
+    <Armor>3.2/18</Armor>
+    <Critical>0/0</Critical>
+    <SkillName>뜨거운 환호</SkillName>
+    <SkillExplain>다음 전투를 아군이 점령한 거점에서 진행할 경우, 전투 개시 시 모든 적에게 피해량 증폭 효과를 부여한다, 지속시간 15초. 효과 종료 후 모든 적은 단일 편제 체력의 일정 비율만큼 보호막을 얻는다, 지속시간 5초. 아군이 점령 안 한 거점에서 전투할 경우, 모든 아군에게 단일 편제 체력의 일정 비율 만큼 보호막을 부여한다, 지속시간 12초. 효과 종료 시 (남은 보호막/단일 편제 체력)의 값만큼 (최대치 고정) 화력을 증가시킨다, 지속시간 8초.</SkillExplain>
+    <OrderConsume>1</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>아군 거점 피해량 증폭;아군 거점 보호막 생성 비율;적군 거점 보호막 생성 비율;적군 거점 화력 증가 최대치</SkillEffect>
+    <SkillRate>10 / 13 / 17 / 20 / 23 / 27 / 30 / 33 / 37 / 40;10 / 13 / 17 / 20 / 23 / 27 / 30 / 33 / 37 / 40;30 / 32 / 34 / 37 / 39 / 41 / 43 / 46 / 48 / 50;30 / 32 / 34 / 37 / 39 / 41 / 43 / 46 / 48 / 50</SkillRate>
+    <Note>거울단계 랭킹전 보상</Note>
+    <ProductDialog>"싸워라, 이겨라, 천하무적 그리폰!"</ProductDialog>
+    <FairyExplain>목청으로 상대의 기세를 누르는 능력을 지니고 있습니다. 평소에는 자신감이 부족한 인형을 격려하는 데 사용할 수 있을 것 같습니다.</FairyExplain>
+  </Fairy>
+  <Fairy>
+    <Name>마녀요정</Name>
+    <Name_EN>Witch Fairy</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>30</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>5.6/45</FireRate>
+    <Accuracy>8.0/60</Accuracy>
+    <Evasion>8.0/60</Evasion>
+    <Armor>0/0</Armor>
+    <Critical>3.2/24</Critical>
+    <SkillName>마법의 검은 약</SkillName>
+    <SkillExplain>다음 전투에서, 시작 즉시 모든 적에게 장갑과 회피를 무시한 일정 피해를 주고 침식 상태를 부여해, 3초마다 잃은 체력의 일정 비율로 침식 피해를 준다. 해당 피해는 장갑과 회피, 보호막을 무시하며 최대치는 9999. 다만 해당 피해로 적을 처치할 수 없다.</SkillExplain>
+    <OrderConsume>1</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>시전 피해량;침식 피해량 배율</SkillEffect>
+    <SkillRate>60 / 70 / 80 / 90 / 100 / 110 / 120 / 130 / 140 / 150;5 / 6 / 6 / 7 / 7 / 8 / 8 / 9 / 9 / 10</SkillRate>
+    <Note>재귀정리 랭킹전 보상</Note>
+    <ProductDialog>"요술은 가짜지만, 사람을 농락하는 능력은 진짜니까 조심해."</ProductDialog>
+    <FairyExplain>점을 치고 저주하는 능력을 지니고 있습니다. 평소에는 딴청부리는 인형에게 눈치를 주는 데 사용할 수 있을 것 같습니다.</FairyExplain>
+  </Fairy>
+  <Fairy>
+    <Name>코지</Name>
+    <Name_EN>Kouji</Name_EN>
+    <Type>전투</Type>
+    <DicNumber>1008</DicNumber>
+    <ProductTime>0</ProductTime>
+    <FireRate>3.2/26</FireRate>
+    <Accuracy>5.2/28</Accuracy>
+    <Evasion>12.0/35</Evasion>
+    <Armor>3.2/17</Armor>
+    <Critical>0/0</Critical>
+    <SkillName>눈보라 세상</SkillName>
+    <SkillExplain>전투 시작 후 양측 유닛의 사속을 감소키시고 받는 피해량을 증폭시킨다, 영구 지속. 적 유닛의 편제수가 감소할 때, 해당 유닛의 화력을 감소시킨다, 지속시간 15초, 최대 3중첩</SkillExplain>
+    <OrderConsume>1</OrderConsume>
+    <CoolDown>0</CoolDown>
+    <SkillEffect>사속 감소치;피해량 증폭치;화력 감소치</SkillEffect>
+    <SkillRate>18 / 19 / 21 / 22 / 23 / 25 / 26 / 27 / 29 / 30;18 / 19 / 21 / 22 / 23 / 25 / 26 / 27 / 29 / 30;6 / 6 / 7 / 7 / 8 / 8 / 9 / 9 / 10 / 10</SkillRate>
+    <Note>사신짱 드롭킥 콜라보 클리어 보상, 이벤트 상점 교환</Note>
+    <ProductDialog>"빨리 커서 언니처럼 어엿한 악마가 될 거야!"</ProductDialog>
+    <FairyExplain>눈보라를 일으키고 적의 사속을 떨어트리는 정도의 능력을 가지고 있습니다. 평소에는 빙수를 만들거나 냉방에 쓸 수 있어서 여름을 알뜰하게 보내기 위한 최고의 파트너입니다.</FairyExplain>
   </Fairy>
 </NewDataSet>

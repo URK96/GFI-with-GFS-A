@@ -320,7 +320,7 @@ namespace GFDA
             Abilities = ((string)dr["Ability"]).Split(';');
             InitMags = ((string)dr["InitialMagnification"]).Split(';');
             MaxMags = ((string)dr["MaxMagnification"]).Split(';');
-            CanUpgrade = (MaxMags[0] == "강화불가");
+            CanUpgrade = (MaxMags[0] != "강화 불가") && (MaxMags[0] != "강화불가");
         }
     }
 

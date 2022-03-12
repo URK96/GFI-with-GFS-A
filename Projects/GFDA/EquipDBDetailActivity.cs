@@ -225,19 +225,22 @@ namespace GFDA
 
                 // 장비 기본 정보 초기화
 
-                int[] GradeStarIds = { Resource.Id.EquipDBDetailInfoGrade1, Resource.Id.EquipDBDetailInfoGrade2, Resource.Id.EquipDBDetailInfoGrade3, Resource.Id.EquipDBDetailInfoGrade4, Resource.Id.EquipDBDetailInfoGrade5 };
+                StringBuilder gradeString = new();
 
-                if (equip.Grade == 0)
+                if (equip.Grade is 0)
                 {
-                    for (int i = 1; i < GradeStarIds.Length; ++i) FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
-                    FindViewById<ImageView>(GradeStarIds[0]).SetImageResource(Resource.Drawable.Grade_Star_EX);
+                    gradeString.Append('★');
+                    gradeString.Append(" EX");
                 }
                 else
                 {
-                    for (int i = equip.Grade; i < GradeStarIds.Length; ++i) FindViewById<ImageView>(GradeStarIds[i]).Visibility = ViewStates.Gone;
-                    for (int i = 0; i < equip.Grade; ++i) FindViewById<ImageView>(GradeStarIds[i]).SetImageResource(Resource.Drawable.Grade_Star);
+                    for (int i = 0; i < equip.Grade; ++i)
+                    {
+                        gradeString.Append('★');
+                    }
                 }
 
+                FindViewById<TextView>(Resource.Id.EquipDBDetailInfoGrade).Text = gradeString.ToString();
                 FindViewById<TextView>(Resource.Id.EquipDBDetailInfoCategory).Text = equip.Category;
                 FindViewById<TextView>(Resource.Id.EquipDBDetailInfoType).Text = equip.Type;
                 FindViewById<TextView>(Resource.Id.EquipDBDetailInfoName).Text = equip.Name;
@@ -341,8 +344,7 @@ namespace GFDA
                     ability.Gravity = GravityFlags.Center;
                     initmag.Text = equip.InitMags[i];
                     initmag.Gravity = GravityFlags.Center;
-                    if (equip.CanUpgrade == false) maxmag.Text = "X";
-                    else maxmag.Text = equip.MaxMags[i];
+                    maxmag.Text = equip.CanUpgrade ? equip.MaxMags[i] : "X";
                     maxmag.Gravity = GravityFlags.Center;
 
                     layout.AddView(ability);

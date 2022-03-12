@@ -1014,9 +1014,17 @@ namespace GFDA
             var gradeString = new StringBuilder();
             int nowGrade = (modIndex >= 1) ? doll.ModGrade : doll.Grade;
 
-            for (int i = 0; i < nowGrade; ++i)
+            if (nowGrade is 0)
             {
                 gradeString.Append('★');
+                gradeString.Append(" EX");
+            }
+            else
+            {
+                for (int i = 0; i < nowGrade; ++i)
+                {
+                    gradeString.Append('★');
+                }
             }
 
             basicInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailInfoGrade).Text = gradeString.ToString();
