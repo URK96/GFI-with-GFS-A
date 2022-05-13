@@ -22,8 +22,6 @@ using System.Threading.Tasks;
 
 using Xamarin.Essentials;
 
-using Resource = GFDA.Resource;
-
 namespace GFDA
 {
     internal static class ETC
@@ -669,6 +667,11 @@ namespace GFDA
             provider.Dispose();
 
             return rNum[0] * mag;
+        }
+
+        internal static string ApplyNewLineIndicator(string str)
+        {
+            return str.Replace("\\n", Environment.NewLine);
         }
     }
 }

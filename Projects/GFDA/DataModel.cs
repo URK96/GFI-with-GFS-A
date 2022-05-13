@@ -1,5 +1,6 @@
 ﻿using Java.Lang;
 
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
@@ -50,7 +51,7 @@ namespace GFDA
         }
     }
 
-    public partial class Doll
+    public class Doll
     {
         public string Name { get; private set; }
         public string NameKR { get; private set; }
@@ -86,6 +87,9 @@ namespace GFDA
         public string ModSkillExplain { get; private set; }
         public string[] ModSkillEffect { get; private set; }
         public string[] ModSkillMag { get; private set; }
+        public bool HasCoOpSkill { get; private set; }
+        public string CoOpSkillName { get; private set; }
+        public string CoOpSkillExplain { get; private set; }
         public string[] Voices { get; private set; }
         public string[] ModVoices { get; private set; }
         public string[,] CostumeVoices { get; private set; }
@@ -141,7 +145,7 @@ namespace GFDA
             BuffType = ((string)dr["EffectType"]).Split(',');
 
             SkillName = (string)dr["Skill"];
-            SkillExplain = (string)dr["SkillExplain"];
+            SkillExplain = ETC.ApplyNewLineIndicator((string)dr["SkillExplain"]);
             SkillEffect = ((string)dr["SkillEffect"]).Split(';');
             SkillMag = ((string)dr["SkillMag"]).Split(',');
 
@@ -160,12 +164,21 @@ namespace GFDA
 
                 ModBuffInfo = ((string)dr["ModEffect"]).Split(';');
                 ModSkillName = (string)dr["ModSkill"];
-                ModSkillExplain = (string)dr["ModSkillExplain"];
+                ModSkillExplain = ETC.ApplyNewLineIndicator((string)dr["ModSkillExplain"]);
                 ModSkillEffect = ((string)dr["ModSkillEffect"]).Split(';');
                 ModSkillMag = ((string)dr["ModSkillMag"]).Split(',');
                 SkillNameAfterMod = (string)dr["SkillAfterMod"];
                 SkillEffectAfterMod = ((string)dr["SkillEffectAfterMod"]).Split(';');
                 SkillMagAfterMod = ((string)dr["SkillMagAfterMod"]).Split(',');
+            }
+
+
+            HasCoOpSkill = (dr["HasCoOpSkill"] != DBNull.Value) ? (bool)dr["HasCoOpSkill"] : false;
+
+            if (HasCoOpSkill)
+            {
+                CoOpSkillName = (string)dr["CoOpSkill"];
+                CoOpSkillExplain = ETC.ApplyNewLineIndicator((string)dr["CoOpSkillExplain"]);
             }
 
             switch (Grade)

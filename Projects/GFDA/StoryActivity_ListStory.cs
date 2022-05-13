@@ -58,6 +58,7 @@ namespace GFDA
                 45 => (Story_Main_Main_Event_PoincareRecurrence_TopTitle, Story_Main_Main_Event_PoincareRecurrence, Story_Main_Main_Event_PoincareRecurrence_Caption),
                 46 => (Story_Main_Main_Event_2021Christmas_TopTitle, Story_Main_Main_Event_2021Christmas, Story_Main_Main_Event_2021Christmas_Caption),
                 47 => (Story_Main_Main_Event_FixedPoint_TopTitle, Story_Main_Main_Event_FixedPoint, Story_Main_Main_Event_FixedPoint_Caption),
+                48 => (Story_Main_Main_Event_2022Spring_TopTitle, Story_Main_Main_Event_2022Spring, Story_Main_Main_Event_2022Spring_Caption),
                 _ => (0, 0, 0)
             };
         }
@@ -242,6 +243,9 @@ namespace GFDA
                     case 47:
                         category = "FixedPoint";
                         break;
+                    case 48:
+                        category = "2022Spring";
+                        break;
                     default:
                         return;
                 }
@@ -337,6 +341,7 @@ namespace GFDA
             intent.PutExtra("Info", new string[] { top, category, itemIndex.ToString(), titleList.Count.ToString() });
             intent.PutExtra("List", titleList.ToArray());
             intent.PutExtra("TopList", topTitleList.ToArray());
+
             StartActivity(intent);
             OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
         }

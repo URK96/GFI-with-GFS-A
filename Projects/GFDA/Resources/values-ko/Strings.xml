@@ -387,6 +387,7 @@
     <string name="DBMainActivity_SearchHint">이름 검색</string>
   
     <!--DollDBDetailActivity-->
+	<string name="DollDBDetail_CoOpSkillTitle">협력 스킬</string>
     <string name="DollDBDetail_RadarAverageString">평균</string>
     <string name="DollDBDetail_BuffType_All">모든 총기 적용</string>
     <string name="DollDBDetail_BuffType_ConfirmString">적용</string>

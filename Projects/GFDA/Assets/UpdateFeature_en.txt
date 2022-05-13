@@ -1,9 +1,5 @@
-<2.8.0 Update>
+<2.9.0 Update>
 
+- Add 'Co-Op' skill info in T-Doll's detail
 - Add new story
-- Add new PV
-- Change color picker library
-- Change refresh method of story reader
-- Adjust layout of story reader
-- Change rarity display of equipment detail viewer
-- Fix max ability display issue on equipment detail viewer
+- Fix some T-Doll's detail load issue

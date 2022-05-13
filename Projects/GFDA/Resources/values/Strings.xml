@@ -385,6 +385,7 @@
     <string name="DBMainActivity_SearchHint">Search Name</string>
 
     <!--DollDBDetailActivity-->
+	<string name="DollDBDetail_CoOpSkillTitle">Co-Op Skill</string>
     <string name="DollDBDetail_RadarAverageString">Average</string>
     <string name="DollDBDetail_BuffType_All">Apply to all Types</string>
     <string name="DollDBDetail_BuffType_ConfirmString">Apply</string>

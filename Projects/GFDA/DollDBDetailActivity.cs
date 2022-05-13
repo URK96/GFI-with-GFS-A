@@ -87,6 +87,7 @@ namespace GFDA
         private View basicInfoRootLayout;
         private View buffInfoRootLayout;
         private View skillInfoRootLayout;
+        private View coopSkillInfoRootLayout;
         private View modSkillInfoRootLayout;
         private View abilityInfoRootLayout;
         private View abilityRadarChartRootLayout;
@@ -131,6 +132,7 @@ namespace GFDA
                 basicInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_Basic, new LinearLayout(this), true);
                 buffInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_Buff, new LinearLayout(this), true);
                 skillInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_Skill, new LinearLayout(this), true);
+                coopSkillInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_CoOpSkill, new LinearLayout(this), true);
                 modSkillInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_ModSkill, new LinearLayout(this), true);
                 abilityInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_Ability, new LinearLayout(this), true);
                 abilityRadarChartRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_AbilityChart, new LinearLayout(this), true);
@@ -921,6 +923,11 @@ namespace GFDA
                 LoadBuff();
                 LoadSkill(isRefresh);
 
+                if (doll.HasCoOpSkill)
+                {
+                    LoadCoOpSkill(isRefresh);
+                }
+
                 if (modIndex >= 2)
                 {
                     LoadModSkill(isRefresh);
@@ -1235,6 +1242,34 @@ namespace GFDA
             }
         }
 
+        private void LoadCoOpSkill(bool isRefresh)
+        {
+            string skillName = doll.CoOpSkillName;
+
+            try
+            {
+                string url = Path.Combine(ETC.server, "Data", "Images", "SkillIcons", $"{skillName}.png");
+                string target = Path.Combine(ETC.cachePath, "Skill", $"{skillName}.gfdcache");
+
+                if (!File.Exists(target) || isRefresh)
+                {
+                    using (var wc = new WebClient())
+                    {
+                        wc.DownloadFile(url, target);
+                    }
+                }
+
+                coopSkillInfoRootLayout.FindViewById<ImageView>(Resource.Id.DollDBDetailCoOpSkillIcon).SetImageDrawable(Drawable.CreateFromPath(target));
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+            }
+
+            coopSkillInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailCoOpSkillName).Text = skillName;
+            coopSkillInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailCoOpSkillExplain).Text = doll.CoOpSkillExplain;
+        }
+
         private void LoadModSkill(bool isRefresh)
         {
             string modSkillName = doll.ModSkillName;
@@ -1393,8 +1428,18 @@ namespace GFDA
         {
             foreach (var cardview in scrollCardViews)
             {
-                cardview.Visibility = (cardview.Id == Resource.Id.DollDBDetailModSkillCardLayout) && (modIndex < 2) ?
-                    ViewStates.Gone : ViewStates.Visible;
+                if (cardview.Id is Resource.Id.DollDBDetailCoOpSkillCardLayout)
+                {
+                    cardview.Visibility = doll.HasCoOpSkill ? ViewStates.Visible : ViewStates.Gone;
+                }
+                else if (cardview.Id is Resource.Id.DollDBDetailModSkillCardLayout)
+                {
+                    cardview.Visibility = (modIndex >= 2) ? ViewStates.Visible : ViewStates.Gone;
+                }
+                else
+                {
+                    cardview.Visibility = ViewStates.Visible;
+                }
             }
         }
 
@@ -1405,6 +1450,7 @@ namespace GFDA
                 scrollMainContainer.AddView(basicInfoRootLayout);
                 scrollMainContainer.AddView(buffInfoRootLayout);
                 scrollMainContainer.AddView(skillInfoRootLayout);
+                scrollMainContainer.AddView(coopSkillInfoRootLayout);
                 scrollMainContainer.AddView(modSkillInfoRootLayout);
                 scrollMainContainer.AddView(abilityInfoRootLayout);
                 scrollMainContainer.AddView(abilityRadarChartRootLayout);
@@ -1412,6 +1458,7 @@ namespace GFDA
                 scrollCardViews.Add(basicInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBasicInfoCardLayout));
                 scrollCardViews.Add(buffInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailBuffCardLayout));
                 scrollCardViews.Add(skillInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailSkillCardLayout));
+                scrollCardViews.Add(coopSkillInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailCoOpSkillCardLayout));
                 scrollCardViews.Add(modSkillInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailModSkillCardLayout));
                 scrollCardViews.Add(abilityInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout));
                 scrollCardViews.Add(abilityRadarChartRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout));
