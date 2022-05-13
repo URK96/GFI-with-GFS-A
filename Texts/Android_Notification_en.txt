@@ -1,8 +1,9 @@
-﻿
-# T-Doll DB Update 2022/02/03
+﻿# T-Doll DB Update 2022/05/11
 
-- Add new T-Doll costume
-- Add new MOD T-Doll infos
+- Add new T-Doll costume (LWMMG, M4 SOPMOD II, CZ75, FX-05, Rex Zero 1, C14)
+- Add new T-Dolls (SCR, MPL, MPK)
+
+
 
 
 

@@ -54,6 +54,11 @@
                 <xs:element name="ModSkillExplain" type="xs:string" minOccurs="0" />
                 <xs:element name="ModSkillEffect" type="xs:string" minOccurs="0" />
                 <xs:element name="ModSkillMag" type="xs:string" minOccurs="0" />
+                <xs:element name="HasCoOpSkill" type="xs:boolean" default="false" minOccurs="0" />
+                <xs:element name="CoOpSkill" type="xs:string" minOccurs="0" />
+                <xs:element name="CoOpSkillExplain" type="xs:string" minOccurs="0" />
+                <xs:element name="CoOpSkillEffect" type="xs:string" minOccurs="0" />
+                <xs:element name="CoOpSkillMag" type="xs:string" minOccurs="0" />
                 <xs:element name="OnlyUseEquip" type="xs:string" minOccurs="0" />
                 <xs:element name="Costume" type="xs:string" minOccurs="0" />
                 <xs:element name="HasVoice" type="xs:boolean" default="false" minOccurs="0" />
@@ -1732,7 +1737,7 @@
     <SkillExplain>투척용 도끼를 던져 대상에게 피해를 준다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
     <SkillMag>6초,12초,10배</SkillMag>
-    <Costume>겨울의 탐험가</Costume>
+    <Costume>겨울의 탐험가;금련화;야근 사절</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Kokido Shiho</VoiceActor>
@@ -4835,7 +4840,7 @@
     <ModSkillEffect>유탄 대미지;대미지 증가량</ModSkillEffect>
     <ModSkillMag>190%,25%</ModSkillMag>
     <OnlyUseEquip>디너게이트 RO</OnlyUseEquip>
-    <Costume>모두의 귀염둥이;연석의 약탈자;숲의 울림</Costume>
+    <Costume>모두의 귀염둥이;연석의 약탈자;숲의 울림;황천의 정비사 Jr</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <ModVoices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</ModVoices>
@@ -7208,7 +7213,7 @@
     <ModSkillEffect>확률;보호막;지속시간</ModSkillEffect>
     <ModSkillMag>20%,5,6초</ModSkillMag>
     <OnlyUseEquip>MGO 6X48</OnlyUseEquip>
-    <Costume>센토레아;12월은 나의 거짓말;누더기의 독백</Costume>
+    <Costume>센토레아;12월은 나의 거짓말;누더기의 독백;기사와 수호자</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <ModVoices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</ModVoices>
@@ -12250,7 +12255,7 @@
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINEWIN</Voices>
     <VoiceActor>Hikasa Yoko</VoiceActor>
     <Illustrator>STAR影法师</Illustrator>
-    <HasCensor>false</HasCensor>
+    <HasCensor>true</HasCensor>
     <CensorType>C4</CensorType>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>여기 지휘관님은 좋은 분인 것 같아서 다행이에요! 루이스 경기관총입니다, 잘 부탁드려요!</ProductDialog>
@@ -14764,6 +14769,7 @@
     <SkillExplain>지속시간 동안 자신의 사속을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치</SkillEffect>
     <SkillMag>6초,8초,5초,60%</SkillMag>
+    <Costume>신입사원</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>Pre</Illustrator>
     <HasCensor>false</HasCensor>
@@ -14840,10 +14846,11 @@
     <SkillExplain>리더로 배치한 인형에게 보호막을 부여하고, 기타 인형의 화력을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;보호막 생성량;화력 증가량</SkillEffect>
     <SkillMag>6초,12초,8초,32,22%</SkillMag>
-    <Costume>두근두근 트릴로지</Costume>
+    <Costume>두근두근 트릴로지;심야에 차 한잔</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>呜拉祖啦</Illustrator>
-    <HasCensor>false</HasCensor>
+    <HasCensor>true</HasCensor>
+    <CensorType>C2</CensorType>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>Rex Zero 1이 지휘관님을 위해 봉사하겠습니다. 제 도움이 필요한 일이 있나요?</ProductDialog>
   </Doll>
@@ -15911,7 +15918,7 @@
     <SkillExplain>자신의 화력을 증가시킨다. 지속시간 내에 화력 증가 버프 효과를 받을 때마다 자신의 사속을 스킬 종료 때까지 증가시킨다. 최대 8중첩</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;사속 증가치</SkillEffect>
     <SkillMag>2초,16초,15초,40%,5%</SkillMag>
-    <Costume>비를 맞으며</Costume>
+    <Costume>비를 맞으며;구름을 향해서</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>宫崎soul</Illustrator>
     <HasCensor>false</HasCensor>
@@ -17350,5 +17357,128 @@
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>LS26이 입대를 신고합니다. 지휘관님, 이건 제가 입사 정보를 보고 정리한 작업 방식 개선안입니다. 한번 확인해 주세요.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>MPL</Name>
+    <Name_EN>MPL</Name_EN>
+    <Name_JP>MPL</Name_JP>
+    <CodeName>MPL</CodeName>
+    <Nickname>MPL</Nickname>
+    <Model>Walther Maschinenpistole Lang</Model>
+    <Country>Germany</Country>
+    <Type>SMG</Type>
+    <Grade>4</Grade>
+    <ProductTime>140</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;A;B;C;B;S</AbilityGrade>
+    <Grow>125</Grow>
+    <HP>105</HP>
+    <FireRate>110</FireRate>
+    <Evasion>105</Evasion>
+    <Accuracy>90</Accuracy>
+    <AttackSpeed>95</AttackSpeed>
+    <MoveSpeed>12</MoveSpeed>
+    <Critical>5</Critical>
+    <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>1,0,0,1,2,1,1,0,0</EffectFormation>
+    <Effect>FR,EV;20,15</Effect>
+    <EffectType>SMG,AR</EffectType>
+    <DropEvent>일반제조, 중형제조</DropEvent>
+    <DicNumber>363</DicNumber>
+    <AvailableEquipmentType>인형/틴환/부품</AvailableEquipmentType>
+    <Skill>잔잔한 달빛</Skill>
+    <SkillExplain>&lt;패시브&gt; 1초마다 자신 주변 1칸 안의 모든 유닛에게 "회절광" 효과를 부여한다, 회절광 효과를 받은 유닛은 보호막이 추가된다, 최대 5중첩.     &lt;액티브&gt; 더 강력한 회절광 효과를 부여하여, 추가되는 보호막 수치가 증가한다. 회절광 효과를 지닌 유닛은 추가로 받는 피해량이 증폭된다. 자신이 "불담금" 효과를 지닌 경우, 회절광 효과를 부여하는 동시에 보호막을 지닌 적 유닛이 받는 피해량을 추가한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;패시브 보호막 생성량;액티브 지속시간;추가 보호막 수치;피해량 증폭치;불담금 효과 피해량 추가치</SkillEffect>
+    <SkillMag>6초,12초,6,6초,18,20%,40</SkillMag>
+    <HasCoOpSkill>true</HasCoOpSkill>
+    <CoOpSkill>프로미넌스</CoOpSkill>
+    <CoOpSkillExplain>MPK와 MPL이 서로 인접한 칸에 있을 경우, 더이상 아군에게 디버프를 주지 않는다. MPK와 MPL이 좌우로 인접할 경우, 스킬 발동 후, 효과 범위가 2칸으로 확장된다.</CoOpSkillExplain>
+    <HasVoice>false</HasVoice>
+    <Illustrator>X布</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>안녕하세요, 지휘관님. 오늘 입사한 MPL이라고 합니다. ...죄송해요, 말을 잘 안 하는 편이라. 그래도 지휘관님의 생각은 전부 헤아릴 것이라 믿어 주세요.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>MPK</Name>
+    <Name_EN>MPK</Name_EN>
+    <Name_JP>MPK</Name_JP>
+    <CodeName>MPK</CodeName>
+    <Nickname>MPK</Nickname>
+    <Model>Walther Maschinenpistole Kurz</Model>
+    <Country>Germany</Country>
+    <Type>SMG</Type>
+    <Grade>4</Grade>
+    <ProductTime>140</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;B;A;C;B;S</AbilityGrade>
+    <Grow>125</Grow>
+    <HP>105</HP>
+    <FireRate>105</FireRate>
+    <Evasion>110</Evasion>
+    <Accuracy>90</Accuracy>
+    <AttackSpeed>95</AttackSpeed>
+    <MoveSpeed>12</MoveSpeed>
+    <Critical>5</Critical>
+    <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>1,0,0,1,1,2,1,0,0</EffectFormation>
+    <Effect>FR,EV;20,15</Effect>
+    <EffectType>SMG,AR</EffectType>
+    <DropEvent>일반제조, 중형제조</DropEvent>
+    <DicNumber>364</DicNumber>
+    <AvailableEquipmentType>인형/틴환/부품</AvailableEquipmentType>
+    <Skill>뜨거운 태양</Skill>
+    <SkillExplain>&lt;패시브&gt; 1초마다 자신 주변 1칸 안의 모든 유닛에게 "불담금" 효과를 부여한다, 불담금 효과를 받은 유닛은 최대체력의 0.5%를 잃는다.     &lt;액티브&gt; 불담금 효과가 더 강력해져, 잃는 최대체력이 증가한다. 불담금 효과를 지닌 유닛은 추가로 화력이 증가한다. 자신이 "회절광" 효과를 지닌 경우, 불담금 효과를 부여하는 동시에 적 유닛의 이동속도와 사속을 감소시킨다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;액티브 지속시간;잃는 최대체력 증가치;화력 증가치;적 이속 감소치;적 사속 감소치</SkillEffect>
+    <SkillMag>6초,12초,6초,5%,20%,10%,10%</SkillMag>
+    <HasCoOpSkill>true</HasCoOpSkill>
+    <CoOpSkill>프로미넌스</CoOpSkill>
+    <CoOpSkillExplain>MPK와 MPL이 서로 인접한 칸에 있을 경우, 더이상 아군에게 디버프를 주지 않는다. MPK와 MPL이 좌우로 인접할 경우, 스킬 발동 후, 효과 범위가 2칸으로 확장된다.</CoOpSkillExplain>
+    <HasVoice>false</HasVoice>
+    <Illustrator>X布</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>두둥! 스카이워커 MPK가 입장합니다! 우와아...! 그리폰 기지 건물은 높고 촘촘한 게 파쿠르하기 안성맞춤이네! 지휘관, 파쿠르 동호회 들어올 생각 없어?</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>SCR</Name>
+    <Name_EN>SCR</Name_EN>
+    <Name_JP>SCR</Name_JP>
+    <CodeName>SCR</CodeName>
+    <Nickname>SCR</Nickname>
+    <Model>FightLite SCR</Model>
+    <Country>United States of America</Country>
+    <Type>AR</Type>
+    <Grade>5</Grade>
+    <ProductTime>252</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;B;A;A;A;S</AbilityGrade>
+    <Grow>135</Grow>
+    <HP>100</HP>
+    <FireRate>105</FireRate>
+    <Evasion>115</Evasion>
+    <Accuracy>120</Accuracy>
+    <AttackSpeed>112</AttackSpeed>
+    <MoveSpeed>10</MoveSpeed>
+    <Critical>20</Critical>
+    <ConsumeAmmo>20/30/40/50/60</ConsumeAmmo>
+    <ConsumeFood>20/30/40/50/60</ConsumeFood>
+    <EffectFormation>0,0,1,0,2,1,0,0,0</EffectFormation>
+    <Effect>EV;25</Effect>
+    <EffectType>SMG</EffectType>
+    <DropEvent>일반제조, 중형제조</DropEvent>
+    <DicNumber>365</DicNumber>
+    <AvailableEquipmentType>부품/탄환/인형</AvailableEquipmentType>
+    <Skill>조합 분무기</Skill>
+    <SkillExplain>기본으로 경량형 총을 사용하며 다음과 같은 조건으로 "전술형 총알"을 획득한다 : \n *1초마다 1발씩 증가 \n *화력/사속/회피/명중/이속/치명률/치명상 중 아무 한 가지 버프를 받으면 5발 증가, 스킬을 방도하기 전까지 같은 종류의 버프를 받을 경우 증가하지 않음. \n *스킬 쿨타임이 끝난 기간 1초마다 "전술형"총알"이 추가로 1발 증가하며, 추가로 증가한 수량을 기록하여 스킬을 발동 후 다시 경량형 총으로 전환했을 때 그만큼 "전술형 총알"을 즉시 획득한다. \n\n스킬 발동 시 전술형 총으로 전환하여 공격할 때마다 "전술형 총알"을 1발씩 소모한다, 소진 시 경량형 총으로 다시 전환한다. 전술형 총을 사용하는 동안, 일반공격은 반드시 명중하며 주는 피해량이 증가하고, 더이상 "전술형 총알"을 획득하지 못한다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;피해량 증가치</SkillEffect>
+    <SkillMag>4초,8초,80%</SkillMag>
+    <HasVoice>false</HasVoice>
+    <Illustrator>RIRE</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>안녕, 지휘관. 오늘 정식 입사한 SCR이야. 내 채널을 구독하고 체리 폭탄이 되어 줘! 어... 그게 뭐냐고? 내 팬덤 이름.</ProductDialog>
   </Doll>
 </NewDataSet>
