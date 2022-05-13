@@ -3,3 +3,5 @@
 - Add 'Co-Op' skill info in T-Doll's detail
 - Add new story
 - Fix some T-Doll's detail load issue
+- Update NuGet package
+- Update Syncfusion license
