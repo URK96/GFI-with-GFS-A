@@ -39,13 +39,13 @@ namespace GFDA
                 "Russia" => ETC.Resources.GetString(Resource.String.Country_Russia),
                 "Serbia" => ETC.Resources.GetString(Resource.String.Country_Serbia),
                 "Singapore" => ETC.Resources.GetString(Resource.String.Country_Singapore),
-                "Soviet Union" => ETC.Resources.GetString(Resource.String.Country_SovietUnion),
+                "Soviet Union" or "Soviet" => ETC.Resources.GetString(Resource.String.Country_SovietUnion),
                 "Spain" => ETC.Resources.GetString(Resource.String.Country_Spain),
                 "Sweden" => ETC.Resources.GetString(Resource.String.Country_Sweden),
                 "Switzerland" => ETC.Resources.GetString(Resource.String.Country_Switzerland),
                 "Taiwan" => ETC.Resources.GetString(Resource.String.Country_Taiwan),
                 "United Kingdom" => ETC.Resources.GetString(Resource.String.Country_UnitedKingdom),
-                "United States of America" => ETC.Resources.GetString(Resource.String.Country_UnitedStatesOfAmerica),
+                "United States of America" or "United States" => ETC.Resources.GetString(Resource.String.Country_UnitedStatesOfAmerica),
                 _ => "Unknown",
             };
         }
@@ -492,7 +492,7 @@ namespace GFDA
             Name = (string)dr["Name"];
             CodeName = (string)dr["CodeName"];
             NickName = "";
-            DicNumber = 0;
+            DicNumber = (int)dr["DicNumber"];
             RealModel = (string)dr["Model"];
             Country = CommonData.SetCountry(dr);
             Type = (string)dr["Type"];

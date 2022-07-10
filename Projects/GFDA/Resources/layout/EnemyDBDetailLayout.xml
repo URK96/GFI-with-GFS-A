@@ -33,20 +33,14 @@
                     android:id="@+id/EnemyDBDetailToolbarName"/>
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:cardview="http://schemas.android.com/apk/res-auto"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/EnemyDBDetailMainLayout">
+            android:layout_height="match_parent">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitCenter"
                 android:id="@+id/EnemyDBDetailBackgroundImageView" />
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
             <!--Enemy Title Layout-->
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -61,6 +55,7 @@
                         <ImageView
                             android:layout_width="70dp"
                             android:layout_height="70dp"
+                            android:layout_margin="10dp"
                             android:id="@+id/EnemyDBDetailSmallImage" />
                     </FrameLayout>
                     <LinearLayout
@@ -940,12 +935,11 @@
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
                 </androidx.core.widget.NestedScrollView>
-            </LinearLayout>
             <androidx.coordinatorlayout.widget.CoordinatorLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/EnemyDBDetailSnackbarLayout"
-                android:layout_alignTop="@id/EnemyDBDetailMainLayout" />
+                android:layout_alignTop="@id/EnemyDBDetailMainToolbar" />
         </RelativeLayout>
     </LinearLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

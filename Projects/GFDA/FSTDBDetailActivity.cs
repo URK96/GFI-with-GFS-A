@@ -93,6 +93,26 @@ namespace GFDA
             }
         }
 
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            try
+            {
+                switch (item?.ItemId)
+                {
+                    case Android.Resource.Id.Home:
+                        OnBackPressed();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                ETC.LogError(ex, this);
+                Toast.MakeText(this, "Cannot execute option menu", ToastLength.Short).Show();
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
+
         private void SetChipsetBonusList()
         {
             try
@@ -272,12 +292,12 @@ namespace GFDA
 
                 FindViewById<TextView>(Resource.Id.FSTDBDetailInfoType).Text = fst.Type;
                 FindViewById<TextView>(Resource.Id.FSTDBDetailInfoName).Text = fst.Name;
-                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoNickName).Text = fst.NickName;
-                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoIllustrator).Text = fst.Illustrator;
-                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoVoiceActor).Text = fst.VoiceActor;
+                //FindViewById<TextView>(Resource.Id.FSTDBDetailInfoNickName).Text = fst.NickName;
+                //FindViewById<TextView>(Resource.Id.FSTDBDetailInfoIllustrator).Text = fst.Illustrator;
+                //FindViewById<TextView>(Resource.Id.FSTDBDetailInfoVoiceActor).Text = fst.VoiceActor;
                 FindViewById<TextView>(Resource.Id.FSTDBDetailInfoRealModel).Text = fst.RealModel;
                 FindViewById<TextView>(Resource.Id.FSTDBDetailInfoCountry).Text = fst.Country;
-                FindViewById<TextView>(Resource.Id.FSTDBDetailInfoHowToGain).Text = "정보 없음"; //(string)FSTInfoDR["DropEvent"];
+                //FindViewById<TextView>(Resource.Id.FSTDBDetailInfoHowToGain).Text = "정보 없음"; //(string)FSTInfoDR["DropEvent"];
 
 
                 // 중화기 회로 정보 초기화

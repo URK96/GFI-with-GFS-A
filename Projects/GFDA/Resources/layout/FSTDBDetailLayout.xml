@@ -205,12 +205,12 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="3"
-                                        android:textAppearance="?android:attr/textAppearanceMedium"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
                                         android:id="@+id/FSTDBDetailInfoName"
                                         android:gravity="center" />
                                 </LinearLayout>
                             <!--FST Basic Info - NickName Part-->
-                                <LinearLayout
+                                <!--<LinearLayout
                                     android:orientation="horizontal"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content">
@@ -236,7 +236,7 @@
                                         android:textAppearance="?android:attr/textAppearanceSmall"
                                         android:id="@+id/FSTDBDetailInfoNickName"
                                         android:gravity="center" />
-                                </LinearLayout>
+                                </LinearLayout>-->
                             <!--FST Basic Info - RealModel Part-->
                                 <LinearLayout
                                     android:orientation="horizontal"
@@ -294,7 +294,7 @@
                                         android:gravity="center" />
                                 </LinearLayout>
                             <!--FST Basic Info - Illustrator Part-->
-                                <LinearLayout
+                                <!--<LinearLayout
                                     android:orientation="horizontal"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content">
@@ -320,9 +320,9 @@
                                         android:textAppearance="?android:attr/textAppearanceSmall"
                                         android:id="@+id/FSTDBDetailInfoIllustrator"
                                         android:gravity="center" />
-                                </LinearLayout>
+                                </LinearLayout>-->
                             <!--FST Basic Info - VoiceActor Part-->
-                                <LinearLayout
+                                <!--<LinearLayout
                                     android:orientation="horizontal"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content">
@@ -348,9 +348,9 @@
                                         android:textAppearance="?android:attr/textAppearanceSmall"
                                         android:id="@+id/FSTDBDetailInfoVoiceActor"
                                         android:gravity="center" />
-                                </LinearLayout>
+                                </LinearLayout>-->
                             <!--FST Basic Info - Gain Part-->
-                                <LinearLayout
+                                <!--<LinearLayout
                                     android:orientation="horizontal"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content">
@@ -376,7 +376,7 @@
                                         android:textAppearance="?android:attr/textAppearanceSmall"
                                         android:id="@+id/FSTDBDetailInfoHowToGain"
                                         android:gravity="center" />
-                                </LinearLayout>
+                                </LinearLayout>-->
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
                     <!--FST Circuit Part-->

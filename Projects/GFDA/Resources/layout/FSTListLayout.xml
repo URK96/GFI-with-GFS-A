@@ -30,7 +30,14 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical">
+        <TextView
+            android:id="@+id/FSTListDicNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="center" />
         <TextView
             android:id="@+id/FSTListName"
             android:layout_width="match_parent"
@@ -41,6 +48,7 @@
             android:id="@+id/FSTListRealModel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:textSize="15dp"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:gravity="center" />

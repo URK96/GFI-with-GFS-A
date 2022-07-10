@@ -80,7 +80,7 @@ namespace GFDA
                 case Resource.Id.RefreshCropImageCache:
                     downloadList.Clear();
 
-                    foreach (DataRow dr in ETC.enemyList.Rows)
+                    foreach (DataRow dr in ETC.fstList.Rows)
                     {
                         downloadList.Add((string)dr["CodeName"]);
                     }
@@ -432,6 +432,7 @@ namespace GFDA
         public TextView Type { get; private set; }
         public ImageView TypeIcon { get; private set; }
         public ImageView SmallImage { get; private set; }
+        public TextView DicNumber { get; private set; }
         public TextView Name { get; private set; }
         public TextView RealModel { get; private set; }
 
@@ -440,6 +441,7 @@ namespace GFDA
             Type = view.FindViewById<TextView>(Resource.Id.FSTListType);
             TypeIcon = view.FindViewById<ImageView>(Resource.Id.FSTListTypeIcon);
             SmallImage = view.FindViewById<ImageView>(Resource.Id.FSTListSmallImage);
+            DicNumber = view.FindViewById<TextView>(Resource.Id.FSTListDicNumber);
             Name = view.FindViewById<TextView>(Resource.Id.FSTListName);
             RealModel = view.FindViewById<TextView>(Resource.Id.FSTListRealModel);
 
@@ -511,6 +513,7 @@ namespace GFDA
                 }
 
                 vh.Type.Text = item.Type;
+                vh.DicNumber.Text = $"No. {item.DicNumber}";
                 vh.Name.Text = item.Name;
                 vh.RealModel.Text = item.RealModel;
             }
