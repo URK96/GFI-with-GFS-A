@@ -13,6 +13,7 @@
                 <xs:element name="Model" type="xs:string" minOccurs="0" />
                 <xs:element name="Country" type="xs:string" minOccurs="0" />
                 <xs:element name="Type" type="xs:string" minOccurs="0" />
+                <xs:element name="DicNumber" type="xs:int" minOccurs="0" />
                 <xs:element name="Kill" type="xs:string" minOccurs="0" />
                 <xs:element name="Crush" type="xs:string" minOccurs="0" />
                 <xs:element name="Accuracy" type="xs:string" minOccurs="0" />
@@ -55,9 +56,10 @@
   <FSTList>
     <Name>BGM-71</Name>
     <CodeName>TOW</CodeName>
-    <Model>BGM-71 TOW</Model>
-    <Country>미국</Country>
+    <Model>BGM-71 "Tube-launched, Optically tracked, Wire-guided"</Model>
+    <Country>United States</Country>
     <Type>ATW</Type>
+    <DicNumber>1</DicNumber>
     <Kill>52/155</Kill>
     <Crush>135/402</Crush>
     <Accuracy>118/349</Accuracy>
@@ -92,9 +94,10 @@
   <FSTList>
     <Name>AGS-30</Name>
     <CodeName>AGS30</CodeName>
-    <Model>AGS-30</Model>
-    <Country>러시아</Country>
+    <Model>AGS-30 Atlant</Model>
+    <Country>Russia</Country>
     <Type>AGL</Type>
+    <DicNumber>2</DicNumber>
     <Kill>27/78</Kill>
     <Crush>49/144</Crush>
     <Accuracy>67/198</Accuracy>
@@ -129,9 +132,10 @@
   <FSTList>
     <Name>2B14</Name>
     <CodeName>2B14</CodeName>
-    <Model>2B14 Podnos</Model>
-    <Country>소련</Country>
+    <Model>2B14 Podnos (ru. 2Б14Поднос)</Model>
+    <Country>Soviet</Country>
     <Type>MTR</Type>
+    <DicNumber>3</DicNumber>
     <Kill>51/152</Kill>
     <Crush>20/58</Crush>
     <Accuracy>46/135</Accuracy>
@@ -166,9 +170,10 @@
   <FSTList>
     <Name>M2</Name>
     <CodeName>M2</CodeName>
-    <Model>M2</Model>
-    <Country>미국</Country>
+    <Model>US M2 60 mm Mortar</Model>
+    <Country>United States</Country>
     <Type>MTR</Type>
+    <DicNumber>4</DicNumber>
     <Kill>38/113</Kill>
     <Crush>17/49</Crush>
     <Accuracy>40/119</Accuracy>
@@ -204,8 +209,9 @@
     <Name>AT4</Name>
     <CodeName>AT4</CodeName>
     <Model>AT4</Model>
-    <Country>스웨덴</Country>
+    <Country>Sweden</Country>
     <Type>ATW</Type>
+    <DicNumber>5</DicNumber>
     <Kill>38/113</Kill>
     <Crush>88/261</Crush>
     <Accuracy>96/284</Accuracy>
@@ -241,8 +247,9 @@
     <Name>QLZ-04</Name>
     <CodeName>QLZ04</CodeName>
     <Model>QLZ-04</Model>
-    <Country>중국</Country>
+    <Country>China</Country>
     <Type>AGL</Type>
+    <DicNumber>6</DicNumber>
     <Kill>26/77</Kill>
     <Crush>46/136</Crush>
     <Accuracy>63/188</Accuracy>
@@ -273,5 +280,81 @@
     <SkillExplain3>2발 간격으로 20초동안 자신의 피해량과 정밀도가 증가한다. 최대 3중첩.</SkillExplain3>
     <SkillEffect3>피해량 증가치;정밀도 증가치</SkillEffect3>
     <SkillMag3>15%,15%</SkillMag3>
+  </FSTList>
+  <FSTList>
+    <Name>Mk 153</Name>
+    <CodeName>MK153</CodeName>
+    <Model>Mk 153 Shoulder-Launched Multipurpose Assault Weapon (SMAW)</Model>
+    <Country>United States</Country>
+    <Type>ATW</Type>
+    <DicNumber>7</DicNumber>
+    <Kill>36/107</Kill>
+    <Crush>75/224</Crush>
+    <Accuracy>79/233</Accuracy>
+    <Reload>36/107</Reload>
+    <ForceSize>2</ForceSize>
+    <Distance>1~3</Distance>
+    <ConsumeAmmo>500</ConsumeAmmo>
+    <ConsumeFood>500</ConsumeFood>
+    <VersionUp>4,0,4,0;0,8,6,0;6,0,0,10;0,8,8,0;6,6,0,0;10,0,10,0;0,10,10,0;10,0,0,10;0,12,12,0;16,16,0,0</VersionUp>
+    <CircuitType>Blue</CircuitType>
+    <Circuit1>0;0;0;0;16;16;34;34</Circuit1>
+    <Circuit2>34;34;34;34;16;16;34;34</Circuit2>
+    <Circuit3>34;34;34;36;18;18;34;34</Circuit3>
+    <Circuit4>34;34;37;37;18;18;34;34</Circuit4>
+    <Circuit5>34;37;37;37;18;18;24;34</Circuit5>
+    <CeilingRestriction>98,137,95,44;117,164,114,52;137,191,133,61;166,232,162,74;195,273,190,87</CeilingRestriction>
+    <ChipsetBonusCount>4,10,16,24,30,34,38</ChipsetBonusCount>
+    <ChipsetBonusMag>24,0,6,0;0,12,0,10;24,0,6,0;0,12,12,0;36,0,0,10;0,18,12,0;32,18,0,0</ChipsetBonusMag>
+    <SkillName1>특공 포탄</SkillName1>
+    <SkillExplain1>새로운 목표를 공격할 때마다 일반공격의 일정 비율의 살상력과 파쇄력을 가진 포탄을 추가로 발사한다.</SkillExplain1>
+    <SkillEffect1>피해량 배율</SkillEffect1>
+    <SkillMag1>100%</SkillMag1>
+    <SkillName2>착탄점 확인</SkillName2>
+    <SkillExplain2>일반공격을 하기 전마다 동축 소총으로 시험 사격을 하여, 대상에게 피해를 주고, 회피를 감소시킨다, 최대 3중첩. 시험 사격이 명중하면, 이번 일반공격의 범위 피해가 필중한다.</SkillExplain2>
+    <SkillEffect2>시험 사격 피해량;회피 감소치;지속시간</SkillEffect2>
+    <SkillMag2>1배,20%,6초</SkillMag2>
+    <SkillName3>추격 제압</SkillName3>
+    <SkillExplain3>파쇄 피해를 줄 때마다 목표가 받는 피해량을 증폭시킨다. 자신의 공격으로 왜곡방벽이 파괴될 경우, 목표를 일정시간 기절시키고, 피해를 준다.</SkillExplain3>
+    <SkillEffect3>피해량 증폭치;증폭 지속시간;기절 지속시간;기절 피해량</SkillEffect3>
+    <SkillMag3>15%,8초,2초,0.8배</SkillMag3>
+  </FSTList>
+  <FSTList>
+    <Name>PP-93</Name>
+    <CodeName>PP93</CodeName>
+    <Model>60mm Mortar PP-93</Model>
+    <Country>China</Country>
+    <Type>MTR</Type>
+    <DicNumber>8</DicNumber>
+    <Kill>47/138</Kill>
+    <Crush>23/67</Crush>
+    <Accuracy>61/182</Accuracy>
+    <Reload>56/166</Reload>
+    <ForceSize>2</ForceSize>
+    <Distance>1~3</Distance>
+    <ConsumeAmmo>600</ConsumeAmmo>
+    <ConsumeFood>400</ConsumeFood>
+    <VersionUp>3,0,8,0;3,5,0,3;3,0,6,0;3,5,0,3;3,0,0,6;3,0,12,0;6,6,0,6;8,0,12,0;8,8,0,8;10,0,0,8</VersionUp>
+    <CircuitType>Orange</CircuitType>
+    <Circuit1>0;45;45;37;37;45;0;0</Circuit1>
+    <Circuit2>0;45;45;27;27;45;45;0</Circuit2>
+    <Circuit3>0;45;36;27;27;36;45;0</Circuit3>
+    <Circuit4>0;45;36;18;18;36;45;0</Circuit4>
+    <Circuit5>45;45;36;18;18;36;45;45</Circuit5>
+    <CeilingRestriction>85,28,50,46;102,33,60,55;118,38,70,64;144,47,85,77;169,55,100,91</CeilingRestriction>
+    <ChipsetBonusCount>4,10,16,20,24,28,32</ChipsetBonusCount>
+    <ChipsetBonusMag>10,0,8,0;10,8,0,10;15,0,8,0;15,15,12,0;18,15,0,10;18,0,18,0;26,30,0,0</ChipsetBonusMag>
+    <SkillName1>물개물개 펑!</SkillName1>
+    <SkillExplain1>쿨타임마다 반경 4범위 안 적에게 일정 비율의 살상을 준다, 적 편제수가 높을수록 피해량이 증가한다. 추가로 1.5 범위에 화염지대를 형성해 1초마다 0.3배 지속 피해를 준다, 지속시간 5초</SkillExplain1>
+    <SkillEffect1>쿨타임;살상 피해량;증폭 살상 피해량</SkillEffect1>
+    <SkillMag1>12초,1.8배,2.6배</SkillMag1>
+    <SkillName2>화력 추가 세트</SkillName2>
+    <SkillExplain2>아군이 점령하지 않은 거점에서 전투 개시 시, 아군 전체 화력을 증가시키고, 받는 피해량을 감소시킨다. 아군이 점령한 거점에서 전투할 경우, 1스킬에 화력 제압 효과가 추가되어 범위 안 적의 화력을 감소시킨다. </SkillExplain2>
+    <SkillEffect2>쿨타임;화력 증가치;피해량 감소치;미점령 버프 지속시간;적 화력 감소치;점령 버프 지속시간</SkillEffect2>
+    <SkillMag2>33333초,10%,20%,8초,20%,5초</SkillMag2>
+    <SkillName3>노릴까 뭉갤까</SkillName3>
+    <SkillExplain3>목표의 거리가 멀수록 피해량이 증가한다. 목표의 거리가 가까울수록 정밀도가 증가한다.</SkillExplain3>
+    <SkillEffect3>쿨타임;피해량 증가 최대치;정밀도 증가 최대치</SkillEffect3>
+    <SkillMag3>33333초,35%,35%</SkillMag3>
   </FSTList>
 </NewDataSet>
