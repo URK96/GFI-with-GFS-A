@@ -1,0 +1,15 @@
+<2.9.0 Update>
+
+- 인형 정보에 '협력 스킬' 항목 추가
+- 신규 스토리 추가 (사랑 베이커리)
+- 일부 인형 정보 열람 시 내용이 제대로 표시되지 않는 문제 수정
+- NuGet 패키지 업데이트
+- Syncfusion 라이선스 갱신
+
+<2.9.0 Update>
+
+- Add 'Co-Op' skill info in T-Doll's detail
+- Add new story
+- Fix some T-Doll's detail load issue
+- Update NuGet package
+- Update Syncfusion license

@@ -7,3 +7,13 @@
 - 화력소대 도감번호 정보 추가
 - 외부 라이브러리 업데이트
 - Syncfusion 라이선스 업데이트
+
+<2.9.1 Update>
+
+- Fix FST list icon load issue
+- Modify FST list item layout
+- Add FST DicNumber content
+- Fix FST icon cache re-download issue
+- Modify FST detail basic info layout
+- Update external libraries
+- Update Syncfusion license
