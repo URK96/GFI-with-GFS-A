@@ -14,7 +14,7 @@ namespace GFDA
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.3.3.31")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.0.0.73")]
 	public partial class Resource
 	{
 		
@@ -875,8 +875,8 @@ namespace GFDA
 			// aapt resource value: 0x7F030019
 			public const int Isomer = 2130903065;
 			
-			// aapt resource value: 0x7F030109
-			public const int kazensky_GF = 2130903305;
+			// aapt resource value: 0x7F03010C
+			public const int kazensky_GF = 2130903308;
 			
 			// aapt resource value: 0x7F03001B
 			public const int Main_DB_TitleList = 2130903067;
@@ -896,11 +896,11 @@ namespace GFDA
 			// aapt resource value: 0x7F03001A
 			public const int MMM_GF = 2130903066;
 			
-			// aapt resource value: 0x7F03010A
-			public const int mota6nako_GF = 2130903306;
+			// aapt resource value: 0x7F03010D
+			public const int mota6nako_GF = 2130903309;
 			
-			// aapt resource value: 0x7F03010B
-			public const int mota6nako_GF_URL = 2130903307;
+			// aapt resource value: 0x7F03010E
+			public const int mota6nako_GF_URL = 2130903310;
 			
 			// aapt resource value: 0x7F030020
 			public const int MusicCategory = 2130903072;
@@ -917,8 +917,8 @@ namespace GFDA
 			// aapt resource value: 0x7F030024
 			public const int PolarizedLight = 2130903076;
 			
-			// aapt resource value: 0x7F03010C
-			public const int senlong_GF = 2130903308;
+			// aapt resource value: 0x7F03010F
+			public const int senlong_GF = 2130903311;
 			
 			// aapt resource value: 0x7F030025
 			public const int ShatteredConnexion = 2130903077;
@@ -1137,472 +1137,481 @@ namespace GFDA
 			public const int Story_Main_Main_Event_2022Spring_TopTitle = 2130903148;
 			
 			// aapt resource value: 0x7F03006D
-			public const int Story_Main_Main_Event_BountyFeast = 2130903149;
+			public const int Story_Main_Main_Event_2022Summer = 2130903149;
 			
 			// aapt resource value: 0x7F03006E
-			public const int Story_Main_Main_Event_BountyFeast_Caption = 2130903150;
+			public const int Story_Main_Main_Event_2022Summer_Caption = 2130903150;
 			
 			// aapt resource value: 0x7F03006F
-			public const int Story_Main_Main_Event_BountyFeast_TopTitle = 2130903151;
+			public const int Story_Main_Main_Event_2022Summer_TopTitle = 2130903151;
 			
 			// aapt resource value: 0x7F030070
-			public const int Story_Main_Main_Event_ContinuumTurbulence = 2130903152;
+			public const int Story_Main_Main_Event_BountyFeast = 2130903152;
 			
 			// aapt resource value: 0x7F030071
-			public const int Story_Main_Main_Event_ContinuumTurbulence_Caption = 2130903153;
+			public const int Story_Main_Main_Event_BountyFeast_Caption = 2130903153;
 			
 			// aapt resource value: 0x7F030072
-			public const int Story_Main_Main_Event_ContinuumTurbulence_TopTitle = 2130903154;
+			public const int Story_Main_Main_Event_BountyFeast_TopTitle = 2130903154;
 			
 			// aapt resource value: 0x7F030073
-			public const int Story_Main_Main_Event_Cube = 2130903155;
+			public const int Story_Main_Main_Event_ContinuumTurbulence = 2130903155;
 			
 			// aapt resource value: 0x7F030074
-			public const int Story_Main_Main_Event_CubePlus = 2130903156;
+			public const int Story_Main_Main_Event_ContinuumTurbulence_Caption = 2130903156;
 			
 			// aapt resource value: 0x7F030075
-			public const int Story_Main_Main_Event_CubePlus_Caption = 2130903157;
+			public const int Story_Main_Main_Event_ContinuumTurbulence_TopTitle = 2130903157;
 			
 			// aapt resource value: 0x7F030076
-			public const int Story_Main_Main_Event_CubePlus_Toptitle = 2130903158;
+			public const int Story_Main_Main_Event_Cube = 2130903158;
 			
 			// aapt resource value: 0x7F030077
-			public const int Story_Main_Main_Event_Cube_Caption = 2130903159;
+			public const int Story_Main_Main_Event_CubePlus = 2130903159;
 			
 			// aapt resource value: 0x7F030078
-			public const int Story_Main_Main_Event_Cube_TopTitle = 2130903160;
-			
-			// aapt resource value: 0x7F03007F
-			public const int Story_Main_Main_Event_DeepDive_1 = 2130903167;
-			
-			// aapt resource value: 0x7F030080
-			public const int Story_Main_Main_Event_DeepDive_1_Caption = 2130903168;
-			
-			// aapt resource value: 0x7F030081
-			public const int Story_Main_Main_Event_DeepDive_1_TopTitle = 2130903169;
-			
-			// aapt resource value: 0x7F030082
-			public const int Story_Main_Main_Event_DeepDive_2 = 2130903170;
-			
-			// aapt resource value: 0x7F030083
-			public const int Story_Main_Main_Event_DeepDive_2_Caption = 2130903171;
-			
-			// aapt resource value: 0x7F030084
-			public const int Story_Main_Main_Event_DeepDive_2_TopTitle = 2130903172;
-			
-			// aapt resource value: 0x7F030085
-			public const int Story_Main_Main_Event_DeepDive_3 = 2130903173;
-			
-			// aapt resource value: 0x7F030086
-			public const int Story_Main_Main_Event_DeepDive_3_Caption = 2130903174;
-			
-			// aapt resource value: 0x7F030087
-			public const int Story_Main_Main_Event_DeepDive_3_TopTitle = 2130903175;
-			
-			// aapt resource value: 0x7F030088
-			public const int Story_Main_Main_Event_DeepDive_Hidden = 2130903176;
-			
-			// aapt resource value: 0x7F030089
-			public const int Story_Main_Main_Event_DeepDive_Hidden_Caption = 2130903177;
-			
-			// aapt resource value: 0x7F03008A
-			public const int Story_Main_Main_Event_DeepDive_Hidden_TopTitle = 2130903178;
+			public const int Story_Main_Main_Event_CubePlus_Caption = 2130903160;
 			
 			// aapt resource value: 0x7F030079
-			public const int Story_Main_Main_Event_DJMAX_1 = 2130903161;
+			public const int Story_Main_Main_Event_CubePlus_Toptitle = 2130903161;
 			
 			// aapt resource value: 0x7F03007A
-			public const int Story_Main_Main_Event_DJMAX_1_Caption = 2130903162;
+			public const int Story_Main_Main_Event_Cube_Caption = 2130903162;
 			
 			// aapt resource value: 0x7F03007B
-			public const int Story_Main_Main_Event_DJMAX_1_TopTitle = 2130903163;
+			public const int Story_Main_Main_Event_Cube_TopTitle = 2130903163;
 			
-			// aapt resource value: 0x7F03007C
-			public const int Story_Main_Main_Event_DJMAX_2 = 2130903164;
+			// aapt resource value: 0x7F030082
+			public const int Story_Main_Main_Event_DeepDive_1 = 2130903170;
 			
-			// aapt resource value: 0x7F03007D
-			public const int Story_Main_Main_Event_DJMAX_2_Caption = 2130903165;
+			// aapt resource value: 0x7F030083
+			public const int Story_Main_Main_Event_DeepDive_1_Caption = 2130903171;
 			
-			// aapt resource value: 0x7F03007E
-			public const int Story_Main_Main_Event_DJMAX_2_TopTitle = 2130903166;
+			// aapt resource value: 0x7F030084
+			public const int Story_Main_Main_Event_DeepDive_1_TopTitle = 2130903172;
+			
+			// aapt resource value: 0x7F030085
+			public const int Story_Main_Main_Event_DeepDive_2 = 2130903173;
+			
+			// aapt resource value: 0x7F030086
+			public const int Story_Main_Main_Event_DeepDive_2_Caption = 2130903174;
+			
+			// aapt resource value: 0x7F030087
+			public const int Story_Main_Main_Event_DeepDive_2_TopTitle = 2130903175;
+			
+			// aapt resource value: 0x7F030088
+			public const int Story_Main_Main_Event_DeepDive_3 = 2130903176;
+			
+			// aapt resource value: 0x7F030089
+			public const int Story_Main_Main_Event_DeepDive_3_Caption = 2130903177;
+			
+			// aapt resource value: 0x7F03008A
+			public const int Story_Main_Main_Event_DeepDive_3_TopTitle = 2130903178;
 			
 			// aapt resource value: 0x7F03008B
-			public const int Story_Main_Main_Event_DreamDrama = 2130903179;
+			public const int Story_Main_Main_Event_DeepDive_Hidden = 2130903179;
 			
 			// aapt resource value: 0x7F03008C
-			public const int Story_Main_Main_Event_DreamDrama_Caption = 2130903180;
+			public const int Story_Main_Main_Event_DeepDive_Hidden_Caption = 2130903180;
 			
 			// aapt resource value: 0x7F03008D
-			public const int Story_Main_Main_Event_DreamDrama_TopTitle = 2130903181;
+			public const int Story_Main_Main_Event_DeepDive_Hidden_TopTitle = 2130903181;
+			
+			// aapt resource value: 0x7F03007C
+			public const int Story_Main_Main_Event_DJMAX_1 = 2130903164;
+			
+			// aapt resource value: 0x7F03007D
+			public const int Story_Main_Main_Event_DJMAX_1_Caption = 2130903165;
+			
+			// aapt resource value: 0x7F03007E
+			public const int Story_Main_Main_Event_DJMAX_1_TopTitle = 2130903166;
+			
+			// aapt resource value: 0x7F03007F
+			public const int Story_Main_Main_Event_DJMAX_2 = 2130903167;
+			
+			// aapt resource value: 0x7F030080
+			public const int Story_Main_Main_Event_DJMAX_2_Caption = 2130903168;
+			
+			// aapt resource value: 0x7F030081
+			public const int Story_Main_Main_Event_DJMAX_2_TopTitle = 2130903169;
 			
 			// aapt resource value: 0x7F03008E
-			public const int Story_Main_Main_Event_DualRandomness = 2130903182;
+			public const int Story_Main_Main_Event_DreamDrama = 2130903182;
 			
 			// aapt resource value: 0x7F03008F
-			public const int Story_Main_Main_Event_DualRandomness_Caption = 2130903183;
+			public const int Story_Main_Main_Event_DreamDrama_Caption = 2130903183;
 			
 			// aapt resource value: 0x7F030090
-			public const int Story_Main_Main_Event_DualRandomness_TopTitle = 2130903184;
+			public const int Story_Main_Main_Event_DreamDrama_TopTitle = 2130903184;
 			
 			// aapt resource value: 0x7F030091
-			public const int Story_Main_Main_Event_FixedPoint = 2130903185;
+			public const int Story_Main_Main_Event_DualRandomness = 2130903185;
 			
 			// aapt resource value: 0x7F030092
-			public const int Story_Main_Main_Event_FixedPoint_Caption = 2130903186;
+			public const int Story_Main_Main_Event_DualRandomness_Caption = 2130903186;
 			
 			// aapt resource value: 0x7F030093
-			public const int Story_Main_Main_Event_FixedPoint_TopTitle = 2130903187;
+			public const int Story_Main_Main_Event_DualRandomness_TopTitle = 2130903187;
 			
 			// aapt resource value: 0x7F030094
-			public const int Story_Main_Main_Event_GuiltyGear = 2130903188;
+			public const int Story_Main_Main_Event_FixedPoint = 2130903188;
 			
 			// aapt resource value: 0x7F030095
-			public const int Story_Main_Main_Event_GuiltyGear_Caption = 2130903189;
+			public const int Story_Main_Main_Event_FixedPoint_Caption = 2130903189;
 			
 			// aapt resource value: 0x7F030096
-			public const int Story_Main_Main_Event_GuiltyGear_Toptitle = 2130903190;
+			public const int Story_Main_Main_Event_FixedPoint_TopTitle = 2130903190;
 			
 			// aapt resource value: 0x7F030097
-			public const int Story_Main_Main_Event_Hypothermia_1 = 2130903191;
+			public const int Story_Main_Main_Event_GuiltyGear = 2130903191;
 			
 			// aapt resource value: 0x7F030098
-			public const int Story_Main_Main_Event_Hypothermia_1_Caption = 2130903192;
+			public const int Story_Main_Main_Event_GuiltyGear_Caption = 2130903192;
 			
 			// aapt resource value: 0x7F030099
-			public const int Story_Main_Main_Event_Hypothermia_1_TopTitle = 2130903193;
+			public const int Story_Main_Main_Event_GuiltyGear_Toptitle = 2130903193;
 			
 			// aapt resource value: 0x7F03009A
-			public const int Story_Main_Main_Event_Hypothermia_2 = 2130903194;
+			public const int Story_Main_Main_Event_Hypothermia_1 = 2130903194;
 			
 			// aapt resource value: 0x7F03009B
-			public const int Story_Main_Main_Event_Hypothermia_2_Caption = 2130903195;
+			public const int Story_Main_Main_Event_Hypothermia_1_Caption = 2130903195;
 			
 			// aapt resource value: 0x7F03009C
-			public const int Story_Main_Main_Event_Hypothermia_2_TopTitle = 2130903196;
+			public const int Story_Main_Main_Event_Hypothermia_1_TopTitle = 2130903196;
 			
 			// aapt resource value: 0x7F03009D
-			public const int Story_Main_Main_Event_Hypothermia_3 = 2130903197;
+			public const int Story_Main_Main_Event_Hypothermia_2 = 2130903197;
 			
 			// aapt resource value: 0x7F03009E
-			public const int Story_Main_Main_Event_Hypothermia_3_Caption = 2130903198;
+			public const int Story_Main_Main_Event_Hypothermia_2_Caption = 2130903198;
 			
 			// aapt resource value: 0x7F03009F
-			public const int Story_Main_Main_Event_Hypothermia_3_TopTitle = 2130903199;
+			public const int Story_Main_Main_Event_Hypothermia_2_TopTitle = 2130903199;
 			
 			// aapt resource value: 0x7F0300A0
-			public const int Story_Main_Main_Event_Hypothermia_Hidden = 2130903200;
+			public const int Story_Main_Main_Event_Hypothermia_3 = 2130903200;
 			
 			// aapt resource value: 0x7F0300A1
-			public const int Story_Main_Main_Event_Hypothermia_Hidden_Caption = 2130903201;
+			public const int Story_Main_Main_Event_Hypothermia_3_Caption = 2130903201;
 			
 			// aapt resource value: 0x7F0300A2
-			public const int Story_Main_Main_Event_Hypothermia_Hidden_TopTitle = 2130903202;
+			public const int Story_Main_Main_Event_Hypothermia_3_TopTitle = 2130903202;
 			
 			// aapt resource value: 0x7F0300A3
-			public const int Story_Main_Main_Event_Isomer = 2130903203;
+			public const int Story_Main_Main_Event_Hypothermia_Hidden = 2130903203;
 			
 			// aapt resource value: 0x7F0300A4
-			public const int Story_Main_Main_Event_Isomer_Caption = 2130903204;
+			public const int Story_Main_Main_Event_Hypothermia_Hidden_Caption = 2130903204;
 			
 			// aapt resource value: 0x7F0300A5
-			public const int Story_Main_Main_Event_Isomer_TopTitle = 2130903205;
+			public const int Story_Main_Main_Event_Hypothermia_Hidden_TopTitle = 2130903205;
 			
 			// aapt resource value: 0x7F0300A6
-			public const int Story_Main_Main_Event_MirrorStage = 2130903206;
+			public const int Story_Main_Main_Event_Isomer = 2130903206;
 			
 			// aapt resource value: 0x7F0300A7
-			public const int Story_Main_Main_Event_MirrorStage_Caption = 2130903207;
+			public const int Story_Main_Main_Event_Isomer_Caption = 2130903207;
 			
 			// aapt resource value: 0x7F0300A8
-			public const int Story_Main_Main_Event_MirrorStage_TopTitle = 2130903208;
+			public const int Story_Main_Main_Event_Isomer_TopTitle = 2130903208;
 			
 			// aapt resource value: 0x7F0300A9
-			public const int Story_Main_Main_Event_MyDevilsFrontline = 2130903209;
+			public const int Story_Main_Main_Event_MirrorStage = 2130903209;
 			
 			// aapt resource value: 0x7F0300AA
-			public const int Story_Main_Main_Event_MyDevilsFrontline_Caption = 2130903210;
+			public const int Story_Main_Main_Event_MirrorStage_Caption = 2130903210;
 			
 			// aapt resource value: 0x7F0300AB
-			public const int Story_Main_Main_Event_MyDevilsFrontline_TopTitle = 2130903211;
+			public const int Story_Main_Main_Event_MirrorStage_TopTitle = 2130903211;
 			
 			// aapt resource value: 0x7F0300AC
-			public const int Story_Main_Main_Event_PoincareRecurrence = 2130903212;
+			public const int Story_Main_Main_Event_MyDevilsFrontline = 2130903212;
 			
 			// aapt resource value: 0x7F0300AD
-			public const int Story_Main_Main_Event_PoincareRecurrence_Caption = 2130903213;
+			public const int Story_Main_Main_Event_MyDevilsFrontline_Caption = 2130903213;
 			
 			// aapt resource value: 0x7F0300AE
-			public const int Story_Main_Main_Event_PoincareRecurrence_TopTitle = 2130903214;
+			public const int Story_Main_Main_Event_MyDevilsFrontline_TopTitle = 2130903214;
 			
 			// aapt resource value: 0x7F0300AF
-			public const int Story_Main_Main_Event_PolarizedLight = 2130903215;
+			public const int Story_Main_Main_Event_PoincareRecurrence = 2130903215;
 			
 			// aapt resource value: 0x7F0300B0
-			public const int Story_Main_Main_Event_PolarizedLight_Caption = 2130903216;
+			public const int Story_Main_Main_Event_PoincareRecurrence_Caption = 2130903216;
 			
 			// aapt resource value: 0x7F0300B1
-			public const int Story_Main_Main_Event_PolarizedLight_TopTitle = 2130903217;
+			public const int Story_Main_Main_Event_PoincareRecurrence_TopTitle = 2130903217;
 			
 			// aapt resource value: 0x7F0300B2
-			public const int Story_Main_Main_Event_ShatteredConnexion = 2130903218;
+			public const int Story_Main_Main_Event_PolarizedLight = 2130903218;
 			
 			// aapt resource value: 0x7F0300B3
-			public const int Story_Main_Main_Event_ShatteredConnexion_Caption = 2130903219;
+			public const int Story_Main_Main_Event_PolarizedLight_Caption = 2130903219;
 			
 			// aapt resource value: 0x7F0300B4
-			public const int Story_Main_Main_Event_ShatteredConnexion_TopTitle = 2130903220;
+			public const int Story_Main_Main_Event_PolarizedLight_TopTitle = 2130903220;
 			
 			// aapt resource value: 0x7F0300B5
-			public const int Story_Main_Main_Event_Singularity = 2130903221;
+			public const int Story_Main_Main_Event_ShatteredConnexion = 2130903221;
 			
 			// aapt resource value: 0x7F0300B6
-			public const int Story_Main_Main_Event_Singularity_Caption = 2130903222;
+			public const int Story_Main_Main_Event_ShatteredConnexion_Caption = 2130903222;
 			
 			// aapt resource value: 0x7F0300B7
-			public const int Story_Main_Main_Event_Singularity_TopTitle = 2130903223;
+			public const int Story_Main_Main_Event_ShatteredConnexion_TopTitle = 2130903223;
 			
 			// aapt resource value: 0x7F0300B8
-			public const int Story_Main_Main_Event_VA = 2130903224;
+			public const int Story_Main_Main_Event_Singularity = 2130903224;
 			
 			// aapt resource value: 0x7F0300B9
-			public const int Story_Main_Main_Event_VA_Caption = 2130903225;
+			public const int Story_Main_Main_Event_Singularity_Caption = 2130903225;
 			
 			// aapt resource value: 0x7F0300BA
-			public const int Story_Main_Main_Event_VA_TopTitle = 2130903226;
+			public const int Story_Main_Main_Event_Singularity_TopTitle = 2130903226;
 			
 			// aapt resource value: 0x7F0300BB
-			public const int Story_Main_Main_Prologue = 2130903227;
+			public const int Story_Main_Main_Event_VA = 2130903227;
 			
 			// aapt resource value: 0x7F0300BC
-			public const int Story_Main_Main_Prologue_Caption = 2130903228;
+			public const int Story_Main_Main_Event_VA_Caption = 2130903228;
 			
 			// aapt resource value: 0x7F0300BD
-			public const int Story_Main_Main_Prologue_TopTitle = 2130903229;
+			public const int Story_Main_Main_Event_VA_TopTitle = 2130903229;
 			
 			// aapt resource value: 0x7F0300BE
-			public const int Story_Main_Main_TopTitle = 2130903230;
+			public const int Story_Main_Main_Prologue = 2130903230;
 			
 			// aapt resource value: 0x7F0300BF
-			public const int Story_Main_Memory = 2130903231;
+			public const int Story_Main_Main_Prologue_Caption = 2130903231;
 			
 			// aapt resource value: 0x7F0300C0
-			public const int Story_Main_Memory_C121 = 2130903232;
+			public const int Story_Main_Main_Prologue_TopTitle = 2130903232;
 			
 			// aapt resource value: 0x7F0300C1
-			public const int Story_Main_Memory_C121_Caption = 2130903233;
+			public const int Story_Main_Main_TopTitle = 2130903233;
 			
 			// aapt resource value: 0x7F0300C2
-			public const int Story_Main_Memory_C121_TopTitle = 2130903234;
+			public const int Story_Main_Memory = 2130903234;
 			
 			// aapt resource value: 0x7F0300C3
-			public const int Story_Main_Memory_C122 = 2130903235;
+			public const int Story_Main_Memory_C121 = 2130903235;
 			
 			// aapt resource value: 0x7F0300C4
-			public const int Story_Main_Memory_C122_Caption = 2130903236;
+			public const int Story_Main_Memory_C121_Caption = 2130903236;
 			
 			// aapt resource value: 0x7F0300C5
-			public const int Story_Main_Memory_C122_TopTitle = 2130903237;
+			public const int Story_Main_Memory_C121_TopTitle = 2130903237;
 			
 			// aapt resource value: 0x7F0300C6
-			public const int Story_Main_Memory_C123 = 2130903238;
+			public const int Story_Main_Memory_C122 = 2130903238;
 			
 			// aapt resource value: 0x7F0300C7
-			public const int Story_Main_Memory_C123_Caption = 2130903239;
+			public const int Story_Main_Memory_C122_Caption = 2130903239;
 			
 			// aapt resource value: 0x7F0300C8
-			public const int Story_Main_Memory_C123_TopTitle = 2130903240;
+			public const int Story_Main_Memory_C122_TopTitle = 2130903240;
 			
 			// aapt resource value: 0x7F0300C9
-			public const int Story_Main_Memory_C124 = 2130903241;
+			public const int Story_Main_Memory_C123 = 2130903241;
 			
 			// aapt resource value: 0x7F0300CA
-			public const int Story_Main_Memory_C124_Caption = 2130903242;
+			public const int Story_Main_Memory_C123_Caption = 2130903242;
 			
 			// aapt resource value: 0x7F0300CB
-			public const int Story_Main_Memory_C124_TopTitle = 2130903243;
+			public const int Story_Main_Memory_C123_TopTitle = 2130903243;
 			
 			// aapt resource value: 0x7F0300CC
-			public const int Story_Main_Memory_Caption = 2130903244;
+			public const int Story_Main_Memory_C124 = 2130903244;
 			
 			// aapt resource value: 0x7F0300CD
-			public const int Story_Main_Memory_TopTitle = 2130903245;
+			public const int Story_Main_Memory_C124_Caption = 2130903245;
 			
 			// aapt resource value: 0x7F0300CE
-			public const int Story_Main_Sub = 2130903246;
+			public const int Story_Main_Memory_C124_TopTitle = 2130903246;
 			
 			// aapt resource value: 0x7F0300CF
-			public const int Story_Main_Sub_2016MessyHalloween = 2130903247;
+			public const int Story_Main_Memory_Caption = 2130903247;
 			
 			// aapt resource value: 0x7F0300D0
-			public const int Story_Main_Sub_2016MessyHalloween_Caption = 2130903248;
+			public const int Story_Main_Memory_TopTitle = 2130903248;
 			
 			// aapt resource value: 0x7F0300D1
-			public const int Story_Main_Sub_2016MessyHalloween_TopTitle = 2130903249;
+			public const int Story_Main_Sub = 2130903249;
 			
 			// aapt resource value: 0x7F0300D2
-			public const int Story_Main_Sub_2016TacticalChristmas = 2130903250;
+			public const int Story_Main_Sub_2016MessyHalloween = 2130903250;
 			
 			// aapt resource value: 0x7F0300D3
-			public const int Story_Main_Sub_2016TacticalChristmas_Caption = 2130903251;
+			public const int Story_Main_Sub_2016MessyHalloween_Caption = 2130903251;
 			
 			// aapt resource value: 0x7F0300D4
-			public const int Story_Main_Sub_2016TacticalChristmas_TopTitle = 2130903252;
+			public const int Story_Main_Sub_2016MessyHalloween_TopTitle = 2130903252;
 			
 			// aapt resource value: 0x7F0300D5
-			public const int Story_Main_Sub_2017Anniversary = 2130903253;
+			public const int Story_Main_Sub_2016TacticalChristmas = 2130903253;
 			
 			// aapt resource value: 0x7F0300D6
-			public const int Story_Main_Sub_2017Anniversary_Caption = 2130903254;
+			public const int Story_Main_Sub_2016TacticalChristmas_Caption = 2130903254;
 			
 			// aapt resource value: 0x7F0300D7
-			public const int Story_Main_Sub_2017Anniversary_TopTitle = 2130903255;
+			public const int Story_Main_Sub_2016TacticalChristmas_TopTitle = 2130903255;
 			
 			// aapt resource value: 0x7F0300D8
-			public const int Story_Main_Sub_2017OperaPrinces = 2130903256;
+			public const int Story_Main_Sub_2017Anniversary = 2130903256;
 			
 			// aapt resource value: 0x7F0300D9
-			public const int Story_Main_Sub_2017OperaPrinces_Caption = 2130903257;
+			public const int Story_Main_Sub_2017Anniversary_Caption = 2130903257;
 			
 			// aapt resource value: 0x7F0300DA
-			public const int Story_Main_Sub_2017OperaPrinces_TopTitle = 2130903258;
+			public const int Story_Main_Sub_2017Anniversary_TopTitle = 2130903258;
 			
 			// aapt resource value: 0x7F0300DB
-			public const int Story_Main_Sub_2018Anniversary = 2130903259;
+			public const int Story_Main_Sub_2017OperaPrinces = 2130903259;
 			
 			// aapt resource value: 0x7F0300DC
-			public const int Story_Main_Sub_2018Anniversary_Caption = 2130903260;
+			public const int Story_Main_Sub_2017OperaPrinces_Caption = 2130903260;
 			
 			// aapt resource value: 0x7F0300DD
-			public const int Story_Main_Sub_2018Anniversary_TopTitle = 2130903261;
+			public const int Story_Main_Sub_2017OperaPrinces_TopTitle = 2130903261;
 			
 			// aapt resource value: 0x7F0300DE
-			public const int Story_Main_Sub_2018AnotherChristmas = 2130903262;
+			public const int Story_Main_Sub_2018Anniversary = 2130903262;
 			
 			// aapt resource value: 0x7F0300DF
-			public const int Story_Main_Sub_2018AnotherChristmas_Caption = 2130903263;
+			public const int Story_Main_Sub_2018Anniversary_Caption = 2130903263;
 			
 			// aapt resource value: 0x7F0300E0
-			public const int Story_Main_Sub_2018AnotherChristmas_TopTitle = 2130903264;
+			public const int Story_Main_Sub_2018Anniversary_TopTitle = 2130903264;
 			
 			// aapt resource value: 0x7F0300E1
-			public const int Story_Main_Sub_2018BeachParty = 2130903265;
+			public const int Story_Main_Sub_2018AnotherChristmas = 2130903265;
 			
 			// aapt resource value: 0x7F0300E2
-			public const int Story_Main_Sub_2018BeachParty_Caption = 2130903266;
+			public const int Story_Main_Sub_2018AnotherChristmas_Caption = 2130903266;
 			
 			// aapt resource value: 0x7F0300E3
-			public const int Story_Main_Sub_2018BeachParty_TopTitle = 2130903267;
+			public const int Story_Main_Sub_2018AnotherChristmas_TopTitle = 2130903267;
 			
 			// aapt resource value: 0x7F0300E4
-			public const int Story_Main_Sub_2018LunaNewYear = 2130903268;
+			public const int Story_Main_Sub_2018BeachParty = 2130903268;
 			
 			// aapt resource value: 0x7F0300E5
-			public const int Story_Main_Sub_2018LunaNewYear_Caption = 2130903269;
+			public const int Story_Main_Sub_2018BeachParty_Caption = 2130903269;
 			
 			// aapt resource value: 0x7F0300E6
-			public const int Story_Main_Sub_2018LunaNewYear_TopTitle = 2130903270;
+			public const int Story_Main_Sub_2018BeachParty_TopTitle = 2130903270;
 			
 			// aapt resource value: 0x7F0300E7
-			public const int Story_Main_Sub_2018MaidTraining = 2130903271;
+			public const int Story_Main_Sub_2018LunaNewYear = 2130903271;
 			
 			// aapt resource value: 0x7F0300E8
-			public const int Story_Main_Sub_2018MaidTraining_Caption = 2130903272;
+			public const int Story_Main_Sub_2018LunaNewYear_Caption = 2130903272;
 			
 			// aapt resource value: 0x7F0300E9
-			public const int Story_Main_Sub_2018MaidTraining_TopTitle = 2130903273;
+			public const int Story_Main_Sub_2018LunaNewYear_TopTitle = 2130903273;
 			
 			// aapt resource value: 0x7F0300EA
-			public const int Story_Main_Sub_2018RiseoftheWitches = 2130903274;
+			public const int Story_Main_Sub_2018MaidTraining = 2130903274;
 			
 			// aapt resource value: 0x7F0300EB
-			public const int Story_Main_Sub_2018RiseoftheWitches_Caption = 2130903275;
+			public const int Story_Main_Sub_2018MaidTraining_Caption = 2130903275;
 			
 			// aapt resource value: 0x7F0300EC
-			public const int Story_Main_Sub_2018RiseoftheWitches_TopTitle = 2130903276;
+			public const int Story_Main_Sub_2018MaidTraining_TopTitle = 2130903276;
 			
 			// aapt resource value: 0x7F0300ED
-			public const int Story_Main_Sub_2018SweetWedding = 2130903277;
+			public const int Story_Main_Sub_2018RiseoftheWitches = 2130903277;
 			
 			// aapt resource value: 0x7F0300EE
-			public const int Story_Main_Sub_2018SweetWedding_Caption = 2130903278;
+			public const int Story_Main_Sub_2018RiseoftheWitches_Caption = 2130903278;
 			
 			// aapt resource value: 0x7F0300EF
-			public const int Story_Main_Sub_2018SweetWedding_TopTitle = 2130903279;
+			public const int Story_Main_Sub_2018RiseoftheWitches_TopTitle = 2130903279;
 			
 			// aapt resource value: 0x7F0300F0
-			public const int Story_Main_Sub_2019Anniversary = 2130903280;
+			public const int Story_Main_Sub_2018SweetWedding = 2130903280;
 			
 			// aapt resource value: 0x7F0300F1
-			public const int Story_Main_Sub_2019Anniversary_Caption = 2130903281;
+			public const int Story_Main_Sub_2018SweetWedding_Caption = 2130903281;
 			
 			// aapt resource value: 0x7F0300F2
-			public const int Story_Main_Sub_2019Anniversary_TopTitle = 2130903282;
+			public const int Story_Main_Sub_2018SweetWedding_TopTitle = 2130903282;
 			
 			// aapt resource value: 0x7F0300F3
-			public const int Story_Main_Sub_2019Christmas = 2130903283;
+			public const int Story_Main_Sub_2019Anniversary = 2130903283;
 			
 			// aapt resource value: 0x7F0300F4
-			public const int Story_Main_Sub_2019Christmas_Caption = 2130903284;
+			public const int Story_Main_Sub_2019Anniversary_Caption = 2130903284;
 			
 			// aapt resource value: 0x7F0300F5
-			public const int Story_Main_Sub_2019Christmas_TopTitle = 2130903285;
+			public const int Story_Main_Sub_2019Anniversary_TopTitle = 2130903285;
 			
 			// aapt resource value: 0x7F0300F6
-			public const int Story_Main_Sub_2019GunRose = 2130903286;
+			public const int Story_Main_Sub_2019Christmas = 2130903286;
 			
 			// aapt resource value: 0x7F0300F7
-			public const int Story_Main_Sub_2019GunRose_Caption = 2130903287;
+			public const int Story_Main_Sub_2019Christmas_Caption = 2130903287;
 			
 			// aapt resource value: 0x7F0300F8
-			public const int Story_Main_Sub_2019GunRose_TopTitle = 2130903288;
+			public const int Story_Main_Sub_2019Christmas_TopTitle = 2130903288;
 			
 			// aapt resource value: 0x7F0300F9
-			public const int Story_Main_Sub_2019Halloween = 2130903289;
+			public const int Story_Main_Sub_2019GunRose = 2130903289;
 			
 			// aapt resource value: 0x7F0300FA
-			public const int Story_Main_Sub_2019Halloween_Caption = 2130903290;
+			public const int Story_Main_Sub_2019GunRose_Caption = 2130903290;
 			
 			// aapt resource value: 0x7F0300FB
-			public const int Story_Main_Sub_2019Halloween_TopTitle = 2130903291;
+			public const int Story_Main_Sub_2019GunRose_TopTitle = 2130903291;
 			
 			// aapt resource value: 0x7F0300FC
-			public const int Story_Main_Sub_2019LunaNewYear = 2130903292;
+			public const int Story_Main_Sub_2019Halloween = 2130903292;
 			
 			// aapt resource value: 0x7F0300FD
-			public const int Story_Main_Sub_2019LunaNewYear_Caption = 2130903293;
+			public const int Story_Main_Sub_2019Halloween_Caption = 2130903293;
 			
 			// aapt resource value: 0x7F0300FE
-			public const int Story_Main_Sub_2019LunaNewYear_TopTitle = 2130903294;
+			public const int Story_Main_Sub_2019Halloween_TopTitle = 2130903294;
 			
 			// aapt resource value: 0x7F0300FF
-			public const int Story_Main_Sub_2019Summer = 2130903295;
+			public const int Story_Main_Sub_2019LunaNewYear = 2130903295;
 			
 			// aapt resource value: 0x7F030100
-			public const int Story_Main_Sub_2019Summer_Caption = 2130903296;
+			public const int Story_Main_Sub_2019LunaNewYear_Caption = 2130903296;
 			
 			// aapt resource value: 0x7F030101
-			public const int Story_Main_Sub_2019Summer_TopTitle = 2130903297;
+			public const int Story_Main_Sub_2019LunaNewYear_TopTitle = 2130903297;
 			
 			// aapt resource value: 0x7F030102
-			public const int Story_Main_Sub_2020NewYear = 2130903298;
+			public const int Story_Main_Sub_2019Summer = 2130903298;
 			
 			// aapt resource value: 0x7F030103
-			public const int Story_Main_Sub_2020NewYear_Caption = 2130903299;
+			public const int Story_Main_Sub_2019Summer_Caption = 2130903299;
 			
 			// aapt resource value: 0x7F030104
-			public const int Story_Main_Sub_2020NewYear_TopTitle = 2130903300;
+			public const int Story_Main_Sub_2019Summer_TopTitle = 2130903300;
 			
 			// aapt resource value: 0x7F030105
-			public const int Story_Main_Sub_Caption = 2130903301;
+			public const int Story_Main_Sub_2020NewYear = 2130903301;
 			
 			// aapt resource value: 0x7F030106
-			public const int Story_Main_Sub_TopTitle = 2130903302;
+			public const int Story_Main_Sub_2020NewYear_Caption = 2130903302;
 			
 			// aapt resource value: 0x7F030107
-			public const int Story_Main_TopTitle = 2130903303;
+			public const int Story_Main_Sub_2020NewYear_TopTitle = 2130903303;
 			
 			// aapt resource value: 0x7F030108
-			public const int VA = 2130903304;
+			public const int Story_Main_Sub_Caption = 2130903304;
+			
+			// aapt resource value: 0x7F030109
+			public const int Story_Main_Sub_TopTitle = 2130903305;
+			
+			// aapt resource value: 0x7F03010A
+			public const int Story_Main_TopTitle = 2130903306;
+			
+			// aapt resource value: 0x7F03010B
+			public const int VA = 2130903307;
 			
 			static Array()
 			{
@@ -15045,16 +15054,19 @@ namespace GFDA
 			public const int view_tree_lifecycle_owner = 2131297801;
 			
 			// aapt resource value: 0x7F09060A
-			public const int view_tree_saved_state_registry_owner = 2131297802;
+			public const int view_tree_on_back_pressed_dispatcher_owner = 2131297802;
 			
 			// aapt resource value: 0x7F09060B
-			public const int view_tree_view_model_store_owner = 2131297803;
+			public const int view_tree_saved_state_registry_owner = 2131297803;
 			
 			// aapt resource value: 0x7F09060C
-			public const int visible = 2131297804;
+			public const int view_tree_view_model_store_owner = 2131297804;
 			
 			// aapt resource value: 0x7F09060D
-			public const int visible_removing_fragment_view_tag = 2131297805;
+			public const int visible = 2131297805;
+			
+			// aapt resource value: 0x7F09060E
+			public const int visible_removing_fragment_view_tag = 2131297806;
 			
 			// aapt resource value: 0x7F0903DE
 			public const int WebBrowser = 2131297246;
@@ -15077,32 +15089,32 @@ namespace GFDA
 			// aapt resource value: 0x7F0903E4
 			public const int WebBrowserRefresh = 2131297252;
 			
-			// aapt resource value: 0x7F09060E
-			public const int west = 2131297806;
-			
-			// aapt resource value: 0x7F090610
-			public const int withinBounds = 2131297808;
-			
 			// aapt resource value: 0x7F09060F
-			public const int withText = 2131297807;
+			public const int west = 2131297807;
 			
 			// aapt resource value: 0x7F090611
-			public const int wrap = 2131297809;
+			public const int withinBounds = 2131297809;
+			
+			// aapt resource value: 0x7F090610
+			public const int withText = 2131297808;
 			
 			// aapt resource value: 0x7F090612
-			public const int wrap_content = 2131297810;
+			public const int wrap = 2131297810;
 			
 			// aapt resource value: 0x7F090613
-			public const int wrap_content_constrained = 2131297811;
+			public const int wrap_content = 2131297811;
 			
 			// aapt resource value: 0x7F090614
-			public const int x_left = 2131297812;
+			public const int wrap_content_constrained = 2131297812;
 			
 			// aapt resource value: 0x7F090615
-			public const int x_right = 2131297813;
+			public const int x_left = 2131297813;
 			
 			// aapt resource value: 0x7F090616
-			public const int zero_corner_chip = 2131297814;
+			public const int x_right = 2131297814;
+			
+			// aapt resource value: 0x7F090617
+			public const int zero_corner_chip = 2131297815;
 			
 			// aapt resource value: 0x7F0903E5
 			public const int ZinaOSBootTextLayout = 2131297253;

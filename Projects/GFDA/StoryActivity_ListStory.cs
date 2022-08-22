@@ -59,6 +59,7 @@ namespace GFDA
                 46 => (Story_Main_Main_Event_2021Christmas_TopTitle, Story_Main_Main_Event_2021Christmas, Story_Main_Main_Event_2021Christmas_Caption),
                 47 => (Story_Main_Main_Event_FixedPoint_TopTitle, Story_Main_Main_Event_FixedPoint, Story_Main_Main_Event_FixedPoint_Caption),
                 48 => (Story_Main_Main_Event_2022Spring_TopTitle, Story_Main_Main_Event_2022Spring, Story_Main_Main_Event_2022Spring_Caption),
+                49 => (Story_Main_Main_Event_2022Summer_TopTitle, Story_Main_Main_Event_2022Summer, Story_Main_Main_Event_2022Summer_Caption),
                 _ => (0, 0, 0)
             };
         }
@@ -245,6 +246,9 @@ namespace GFDA
                         break;
                     case 48:
                         category = "2022Spring";
+                        break;
+                    case 49:
+                        category = "2022Summer";
                         break;
                     default:
                         return;

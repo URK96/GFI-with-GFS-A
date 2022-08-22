@@ -531,4 +531,41 @@
 		<item>P22</item>
 		<item>T77</item>
 	</string-array>
+
+
+	<string-array name="Story_Main_Main_Event_2022Summer_TopTitle">
+		<item>라이칸의 성역</item>
+		<item>라이칸의 성역</item>
+		<item>라이칸의 성역</item>
+		<item>라이칸의 성역</item>
+		<item>라이칸의 성역</item>
+		<item>라이칸의 성역</item>
+		<item>라이칸의 성역</item>
+		<item>라이칸의 성역</item>
+		<item>라이칸의 성역</item>
+	</string-array>
+
+	<string-array name="Story_Main_Main_Event_2022Summer">
+		<item>라이칸 • 사냥의 서장</item>
+		<item>사냥꾼의 영역</item>
+		<item>노을 미궁</item>
+		<item>마녀의 텐트</item>
+		<item>지정 함정</item>
+		<item>마구니의 늪</item>
+		<item>봉화연대</item>
+		<item>선택의 상자</item>
+		<item>혼돈 중계</item>
+	</string-array>
+
+	<string-array name="Story_Main_Main_Event_2022Summer_Caption">
+		<item>카리나</item>
+		<item>NTW-20</item>
+		<item>AA-12</item>
+		<item>스프링필드</item>
+		<item>KAC-PDW</item>
+		<item>95식</item>
+		<item>C-MS</item>
+		<item>카리나</item>
+		<item>카리나</item>
+	</string-array>
 </resources>
