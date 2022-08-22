@@ -1,9 +1,4 @@
-<2.9.1 Update>
+<2.10.0 Update>
 
-- Fix FST list icon load issue
-- Modify FST list item layout
-- Add FST DicNumber content
-- Fix FST icon cache re-download issue
-- Modify FST detail basic info layout
+- Add new event story (2022 Summer)
 - Update external libraries
-- Update Syncfusion license
