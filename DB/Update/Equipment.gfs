@@ -3757,13 +3757,283 @@
     <Type>특수</Type>
     <Category>부속</Category>
     <Grade>0</Grade>
-    <Ability>?</Ability>
-    <InitialMagnification>?</InitialMagnification>
-    <MaxMagnification>?</MaxMagnification>
+    <Ability>회피;치명타율;스킬 강화</Ability>
+    <InitialMagnification>+10;+15%;강화</InitialMagnification>
+    <MaxMagnification>+25;+20%;강화</MaxMagnification>
     <ProductTime>0</ProductTime>
     <OnlyUse>P7</OnlyUse>
     <Note>2022년 2월 출석 보상</Note>
     <Icon>P7_Only</Icon>
     <ProductDialog>기존 P7의 프레임의 결함을 보완하여 설계한 신형 프레임으로 특징으로 넓어진 그립으로 복열 탄창을 결합할 수 있고 측면에 탄창멈치를 추가하였으며 방아쇠울을 크게 만들고 방열 덮개를 추가하였습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>DHG 연장 핸드가드</Name>
+    <Id>277</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>명중;회피;이동속도;스킬 강화</Ability>
+    <InitialMagnification>+6;+10;+3;강화</InitialMagnification>
+    <MaxMagnification>+10;+20;+3;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>P90</OnlyUse>
+    <Note>2022년 3월 출석 보상</Note>
+    <Icon>P90_Only</Icon>
+    <ProductDialog>DHG 작업실이 P90을 위해 Mlok 시스템을 탑재해 제작하여 P90의 커스터마이징 공간을 대폭 높였습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>P22 레이저 표적지시기</Name>
+    <Id>278</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>회피;치명타율</Ability>
+    <InitialMagnification>+10;+15%</InitialMagnification>
+    <MaxMagnification>+20;+25%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>P22</OnlyUse>
+    <Note>사랑의 조리법 이벤트 특별재화 80개 교환 보상</Note>
+    <Icon>P22_Only</Icon>
+    <ProductDialog>P22을 위해 설계한 소형 레이저 표적지시기로 IOP의 개량을 거쳐 조준 정보가 실시간으로 P22의 연산 시스템에 피드백 됩니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>M5 총검</Name>
+    <Id>279</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>사속;치명타율</Ability>
+    <InitialMagnification>+2;+24%</InitialMagnification>
+    <MaxMagnification>+4;+48%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>M1 개런드</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>M1_Only</Icon>
+    <ProductDialog>개런드를 위해서 만들어진 총검으로 보통 총검같이 총열에 고정하기 위한 고리가 없는 것이 특징으로 보기에는 총검보다 그냥 비수처럼 보입니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>Wolf 9mm HP탄</Name>
+    <Id>280</Id>
+    <Type>특수</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중;사속</Ability>
+    <InitialMagnification>+12;+3;-6</InitialMagnification>
+    <MaxMagnification>+22;+5;-6</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>T77</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>T77_Only</Icon>
+    <ProductDialog>WOLF에서 T77을 위해 교정한 9mm HP탄으로 고장 확률과 사격 시 손맛을 크게 줄였습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>57-N-323S</Name>
+    <Id>281</Id>
+    <Type>특수</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>화력;관통</Ability>
+    <InitialMagnification>+5;+120</InitialMagnification>
+    <MaxMagnification>+10;+180</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>SVT-38</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>SVT38_Only</Icon>
+    <ProductDialog>꽤나 초기형인 철심 탄자로 무게가 가벼워 휴대하기 편해 IOP의 교정을 거쳐 SVT-38의 전용 탄약이 되었습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>64식 조준경</Name>
+    <Id>282</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>치명타율;치명피해;스킬 강화</Ability>
+    <InitialMagnification>+24%;+10%;강화</InitialMagnification>
+    <MaxMagnification>+48%;+18%;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>64식 소총</OnlyUse>
+    <Note>2022년 4월 출석 보상</Note>
+    <Icon>Type64-AR_Only</Icon>
+    <ProductDialog>64식 소총을 위해 설계된 2.2배율 광학 조준경입니다. 사실은 퇴역한 M84 조준경과 다를 게 없지만 그래도 64식 소총과 오랫동안 함께한 듬직한 파트너입니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>Barrett QDL</Name>
+    <Id>283</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;치명타율;스킬 강화</Ability>
+    <InitialMagnification>+5;+24%;강화</InitialMagnification>
+    <MaxMagnification>+10;+48%;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>M82A1</OnlyUse>
+    <Note>2022년 5월 출석 보상</Note>
+    <Icon>M82A1_Only</Icon>
+    <ProductDialog>M82A1을 위해 제작한 소음기로 부피가 엄청나지만 임무 수요에 따라서 빠르게 장착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>34호 플레어건</Name>
+    <Id>284</Id>
+    <Type>특수</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>명중</Ability>
+    <InitialMagnification>+10</InitialMagnification>
+    <MaxMagnification>+20</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>PPK</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>PPK_Only_2</Icon>
+    <ProductDialog>과거 전쟁에서 활약한 플레어건으로 PPK의 애용품 중 하나입니다. 작고 가벼워서 휴대하기 편하죠.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>KWS 스톡</Name>
+    <Id>285</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중;치명타율</Ability>
+    <InitialMagnification>+5;+3;+25%</InitialMagnification>
+    <MaxMagnification>+10;+5;+50%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>MG3</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>MG3_Only_2</Icon>
+    <ProductDialog>KWS 업그레이드 계획 중 출현한 스톡에 현대화 개조를 한 산물로 상황에 따라 고도를 조절할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>M43 플레어건</Name>
+    <Id>286</Id>
+    <Type>특수</Type>
+    <Category>탄약</Category>
+    <Grade>0</Grade>
+    <Ability>명중</Ability>
+    <InitialMagnification>+15</InitialMagnification>
+    <MaxMagnification>+25</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>수오미</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>Suomi_Only_2</Icon>
+    <ProductDialog>과거 전쟁에서 활약한 플레어건으로 수오미의 애용품 중 하나입니다. IOP의 개조를 거쳐 다양한 신호탄을 발사할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>HARRIS 양각대</Name>
+    <Id>287</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;치명타율</Ability>
+    <InitialMagnification>+5;+24%</InitialMagnification>
+    <MaxMagnification>+10;+48%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>OBR</OnlyUse>
+    <Note>마인드맵 업그레이드 추가</Note>
+    <Icon>OBR_Only</Icon>
+    <ProductDialog>HARRIS의 클래식한 양각대 간단하고 믿음직한 구조로 larue의 플러그를 통해 OBR의 레일에 부착할 수 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>CS 레드닷</Name>
+    <Id>288</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중;사속;스킬 강화</Ability>
+    <InitialMagnification>+5;+20;-4;강화</InitialMagnification>
+    <MaxMagnification>+10;+35;-4;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>Ak 5</OnlyUse>
+    <Note>2022년 6월 출석 보상</Note>
+    <Icon>Ak5_Only</Icon>
+    <ProductDialog>AP 사의 대표적인 레드닷 제품 IOP의 손을 거쳐 Ak 5의 커스터마이즈 장비가 되었습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>GLX160</Name>
+    <Id>289</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;치명타율</Ability>
+    <InitialMagnification>+4;+25%</InitialMagnification>
+    <MaxMagnification>+8;+45%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>ARX-160</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>ARX160_Only</Icon>
+    <ProductDialog>ARX-160 전용으로 디자인된 유탄발사기 떼어내서 독자 운용할 수도 있고 ARX-160의 하단 레일에 부착할 수도 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>MG42 전용 양각대</Name>
+    <Id>290</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중;치명타율</Ability>
+    <InitialMagnification>+4;+5;+24%</InitialMagnification>
+    <MaxMagnification>+8;+10;+48%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>MG42</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>MG42_Only</Icon>
+    <ProductDialog>MG42의 표준 양각대를 IOP가 개조하여 구조 강도를 높인 물건으로 MG42의 필수품입니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>루거 달팽이형 탄창</Name>
+    <Id>291</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중;치명타율</Ability>
+    <InitialMagnification>+3;+15;+15%</InitialMagnification>
+    <MaxMagnification>+5;+25;+30%</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>P08</OnlyUse>
+    <Note>탐색시설 상점 구입</Note>
+    <Icon>P08_Only</Icon>
+    <ProductDialog>P08의 고전적인 부속품 중 하나로 32발들이 드럼탄창으로 지속적인 화력 투사가 가능합니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>스톡 완충 키트</Name>
+    <Id>292</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;명중;스킬 강화</Ability>
+    <InitialMagnification>+5;+15;강화</InitialMagnification>
+    <MaxMagnification>+8;+30;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>Saiga-12</OnlyUse>
+    <Note>2022년 7월 출석 보상</Note>
+    <Icon>Saiga12_Only</Icon>
+    <ProductDialog>PT사에서 Saiga-12 전용으로 개발한 특수 완충 시스템입니다. 반작용의 40%-50%를 상쇄할 수 있다고 전해집니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>다목적 나노 슈트</Name>
+    <Id>293</Id>
+    <Type>특수</Type>
+    <Category>인형</Category>
+    <Grade>0</Grade>
+    <Ability>화력;장갑</Ability>
+    <InitialMagnification>+3;+8</InitialMagnification>
+    <MaxMagnification>+5;+11</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>M6 ASW</OnlyUse>
+    <Note>라이칸의 성역 이벤트 재화 상점 교환 보상</Note>
+    <Icon>M6ASW_Only</Icon>
+    <ProductDialog>IOP가 M6 ASW를 위해 개발한 다목적 슈트입니다. 첨단 재료를 사용하여 상당한 방탄 능력을 지니고 있습니다.</ProductDialog>
+  </Equipment>
+  <Equipment>
+    <Name>ACR 고정 스톡</Name>
+    <Id>294</Id>
+    <Type>특수</Type>
+    <Category>부속</Category>
+    <Grade>0</Grade>
+    <Ability>화력;치명타율;스킬 강화</Ability>
+    <InitialMagnification>+4;+24%;강화</InitialMagnification>
+    <MaxMagnification>+8;+48%;강화</MaxMagnification>
+    <ProductTime>0</ProductTime>
+    <OnlyUse>ACR</OnlyUse>
+    <Note>2022년 8월 출석 보상</Note>
+    <Icon>ACR_Only</Icon>
+    <ProductDialog>ACR 전용 고정 스톡 접을 수 없는 대신 신뢰성이 상승했고 임무 수요에 따라 교체할 수 있습니다.</ProductDialog>
   </Equipment>
 </NewDataSet>

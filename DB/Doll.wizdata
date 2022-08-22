@@ -96,37 +96,50 @@
     <Country>Germany</Country>
     <Type>HG</Type>
     <Grade>2</Grade>
+    <ModGrade>4</ModGrade>
     <ProductTime>22</ProductTime>
-    <HasMod>false</HasMod>
+    <HasMod>true</HasMod>
     <AbilityGrade>C;C;S;A;A;S</AbilityGrade>
-    <Grow>125</Grow>
-    <HP>85</HP>
-    <FireRate>85</FireRate>
-    <Evasion>130</Evasion>
-    <Accuracy>115</Accuracy>
-    <AttackSpeed>115</AttackSpeed>
+    <Grow>125;125</Grow>
+    <HP>85;100</HP>
+    <FireRate>85;95</FireRate>
+    <Evasion>130;130</Evasion>
+    <Accuracy>115;115</Accuracy>
+    <AttackSpeed>115;115</AttackSpeed>
     <MoveSpeed>15</MoveSpeed>
     <Critical>20</Critical>
     <ConsumeAmmo>10/15/20/25/30</ConsumeAmmo>
     <ConsumeFood>10/15/20/25/30</ConsumeFood>
     <EffectFormation>1,0,0,1,2,1,1,0,0</EffectFormation>
+    <ModEffectFormation>1,1,0,1,2,1,1,1,0</ModEffectFormation>
     <Effect>AS,CR;16,8;20,10;24,12;28,14;32,16</Effect>
+    <ModEffect>AS,CR;36,20</ModEffect>
     <EffectType>ALL</EffectType>
+    <EffectTypeAfterMod>ALL</EffectTypeAfterMod>
     <DropEvent>1-1을 제외한 모든 맵</DropEvent>
     <DicNumber>10</DicNumber>
     <AvailableEquipmentType>부속/탄환/인형</AvailableEquipmentType>
     <SkillCode>hunting_signal</SkillCode>
     <Skill>사냥신호</Skill>
+    <SkillAfterMod>사냥신호</SkillAfterMod>
     <SkillExplain>지속시간 동안 아군 전원의 화력과 치명률을 증가시킨다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 아군 전원의 화력과 치명률을 증가시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;치명률 증가치</SkillEffect>
     <SkillMag>6초,12초,8초,10%,35%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;화력 증가치;치명률 증가치</SkillEffectAfterMod>
+    <SkillMagAfterMod>6초,12초,8초,15%,40%</SkillMagAfterMod>
+    <ModSkill>징계의 여운</ModSkill>
+    <ModSkillExplain>아군 제대가 적 유닛을 3개 처치 시 전체 화력을 증가시킨다. 6개 처치 시 전체 사속을 증가시킨다. 9개 처치 시 이상 효과를 일정 시간 동안 재적용한다. 15개 처치 시 화력과 사속이 영구적으로 증가한다.</ModSkillExplain>
+    <ModSkillEffect>화력 증가치;사속 증가치;화력 버프 지속시간;사속 버프 지속시간;버프 재적용 지속시간</ModSkillEffect>
+    <ModSkillMag>15%,15%,5초,5초,5초</ModSkillMag>
+    <OnlyUseEquip>34호 신호총</OnlyUseEquip>
     <Costume>터뷸런스 소닉;연심은 그늘처럼</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Ito Asuka</VoiceActor>
     <Illustrator>堀森</Illustrator>
     <HasCensor>true</HasCensor>
-    <CensorType>D</CensorType>
+    <CensorType>D;C1;C2</CensorType>
     <ProductionPercent>636</ProductionPercent>
     <RecommendProduction>30/30/30/30</RecommendProduction>
     <HasAnimation>false</HasAnimation>
@@ -243,7 +256,7 @@
     <ModSkillEffect>지속시간;화력 상승치;명중 상승치</ModSkillEffect>
     <ModSkillMag>4초,10%,10%</ModSkillMag>
     <OnlyUseEquip>나강 리볼버용 소음기</OnlyUseEquip>
-    <Costume>별들의 유대;눈꽃공주</Costume>
+    <Costume>별들의 유대;눈꽃공주;네뷸라 크림</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <ModVoices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</ModVoices>
@@ -2201,7 +2214,7 @@
     <ModSkillEffect>지속시간;명중 감소치</ModSkillEffect>
     <ModSkillMag>8초,40%</ModSkillMag>
     <OnlyUseEquip>64식용 소음기</OnlyUseEquip>
-    <Costume>떠돌이 마녀;물 선녀복;현악에 지저귀다</Costume>
+    <Costume>떠돌이 마녀;물 선녀복;현악에 지저귀다;바람을 홀짝이며</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <ModVoices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</ModVoices>
@@ -2700,12 +2713,13 @@
     <SkillExplain>폭발한 위치의 2.5 반경 내의 적에게 피해를 준다</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;피해량</SkillEffect>
     <SkillMag>3초,16초,6배</SkillMag>
-    <Costume>백야의 별 이야기;EVO 3의 아침;첫 붉은 꽃</Costume>
+    <Costume>백야의 별 이야기;EVO 3의 아침;첫 붉은 꽃;진홍색 여름</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Yamamoto Nozomi</VoiceActor>
     <Illustrator>钉田西瓜</Illustrator>
-    <HasCensor>false</HasCensor>
+    <HasCensor>true</HasCensor>
+    <CensorType>C4</CensorType>
     <HasAnimation>true</HasAnimation>
     <NormalAnimation>attack;die;move;skill;victory;victoryloop;wait</NormalAnimation>
     <ProductDialog>반가워, 지휘관. 나는 스콜피온 EVO3, 오늘부터 정식으로 입대하게 됐어. 잘 부탁해.</ProductDialog>
@@ -3425,37 +3439,50 @@
     <Country>Finland</Country>
     <Type>SMG</Type>
     <Grade>5</Grade>
+    <ModGrade>6</ModGrade>
     <ProductTime>145</ProductTime>
-    <HasMod>false</HasMod>
+    <HasMod>true</HasMod>
     <AbilityGrade>S;A;B;S;A;B</AbilityGrade>
-    <Grow>105</Grow>
-    <HP>125</HP>
-    <FireRate>110</FireRate>
-    <Evasion>95</Evasion>
-    <Accuracy>130</Accuracy>
-    <AttackSpeed>120</AttackSpeed>
+    <Grow>105;108</Grow>
+    <HP>125;125</HP>
+    <FireRate>110;118</FireRate>
+    <Evasion>95;115</Evasion>
+    <Accuracy>130;130</Accuracy>
+    <AttackSpeed>120;120</AttackSpeed>
     <MoveSpeed>12</MoveSpeed>
     <Critical>5</Critical>
     <ConsumeAmmo>25/40/55/70/85</ConsumeAmmo>
     <ConsumeFood>20/30/40/50/60</ConsumeFood>
     <EffectFormation>1,0,0,0,2,0,1,0,0</EffectFormation>
+    <ModEffectFormation>1,0,0,1,2,0,1,0,0</ModEffectFormation>
     <Effect>AS,AC;15,30</Effect>
+    <ModEffect>AS,AC;25,50</ModEffect>
     <EffectType>AR</EffectType>
+    <EffectTypeAfterMod>AR</EffectTypeAfterMod>
     <DropEvent>특별구출작전G 6-6, 6-4E</DropEvent>
     <DicNumber>115</DicNumber>
     <AvailableEquipmentType>인형/탄환/부속</AvailableEquipmentType>
     <SkillCode>evasion_maneuver</SkillCode>
     <Skill>회피기동</Skill>
-    <SkillExplain>지속시간 동안 자신의 회피를 증가시킨다.</SkillExplain>
+    <SkillAfterMod>회피기동</SkillAfterMod>
+    <SkillExplain>지속시간 동안 자신의 회피를 증가시킨다. 또한 디버프 효과를 받지 않는다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 자신의 회피를 증가시킨다. 또한 디버프 효과를 받지 않는다. 동시에 자신에게 보호막을 부여한다, 중첩 불가능. 자신이 부여한 보호막이 유지되는 한 받는 피해량이 35% 감소한다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;회피 증가치</SkillEffect>
     <SkillMag>6초,8초,5초,150%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;회피 증가치;보호막 생성량</SkillEffectAfterMod>
+    <SkillMagAfterMod>6초,8초,5초,180%,150</SkillMagAfterMod>
+    <ModSkill>설원의 유령</ModSkill>
+    <ModSkillExplain>적을 무작위로 공격하여 공격 대상에게 추위를 1스택 부여한다. 4초마다 추위를 받은 적에게 현재 체력에 비례하여 피해를 주고 (최대 100000) 회피, 사속 및 이속을 감소시키고 모든 추위를 제거한다. 추위 1스택마다 위의 효과가 0.5% 증가하며 수오미에게 보호막을 4 부여한다. 능력치 감소 효과 지속시간 15초, 최대 3중첩.</ModSkillExplain>
+    <ModSkillEffect>체력 비례 피해량;적 회피 감소치;적 사속 감소치;적 이속 감소치</ModSkillEffect>
+    <ModSkillMag>10%,10%,10%,10%</ModSkillMag>
+    <OnlyUseEquip>M43 플레어건</OnlyUseEquip>
     <Costume>코르바툰투리의 눈 요정;한여름 밤의 요정;행복한 사명</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Toyosaki Aki</VoiceActor>
     <Illustrator>Anmi</Illustrator>
     <HasCensor>true</HasCensor>
-    <CensorType>D;C1D;C2D</CensorType>
+    <CensorType>D;C1D;C2;C2D;C3;C3D</CensorType>
     <ProductionPercent>16</ProductionPercent>
     <RecommendProduction>430/430/430/230</RecommendProduction>
     <AdvanceProductionPercent>38</AdvanceProductionPercent>
@@ -5240,7 +5267,7 @@
     <SkillExplain>지속시간 동안 자신의 화력을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치</SkillEffect>
     <SkillMag>2초,16초,15초,50%</SkillMag>
-    <Costume>영롱한 옥;여름의 풍류;순백의 졸업식;리시안셔스의 계절;티끌 없는 물결</Costume>
+    <Costume>영롱한 옥;여름의 풍류;순백의 졸업식;리시안셔스의 계절;티끌 없는 물결;늦봄 연놀이</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Daimon Kami</VoiceActor>
@@ -5912,7 +5939,7 @@
     <ModSkillEffect>미사일 피해량(단일);미사일 피해량(범위);수류탄 피해량</ModSkillEffect>
     <ModSkillMag>1.5배,0.5배,0.5배</ModSkillMag>
     <OnlyUseEquip>가속 코일</OnlyUseEquip>
-    <Costume>동호의 연꽃;메이드단의 광란질주;하얀 유성은 소망을 품고</Costume>
+    <Costume>동호의 연꽃;메이드단의 광란질주;하얀 유성은 소망을 품고;비너스 강림</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <ModVoices>ACCEPT;AGREE;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</ModVoices>
@@ -6016,7 +6043,7 @@
     <ModSkillEffect>치명피해 증가치</ModSkillEffect>
     <ModSkillMag>10%</ModSkillMag>
     <OnlyUseEquip>특제 예광탄</OnlyUseEquip>
-    <Costume>재운 신선</Costume>
+    <Costume>재운 신선;팬더귀 오리기</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Kariya Rui</VoiceActor>
@@ -6930,7 +6957,7 @@
     <SkillExplain>지속시간 동안 자신의 사속을 감소시키고 화력을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;사속 감소치</SkillEffect>
     <SkillMag>6초,16초,10초,180%,35%</SkillMag>
-    <Costume>일곱 번째 봉인자;에델바이스</Costume>
+    <Costume>일곱 번째 봉인자;에델바이스;모래성 파괴자</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Seto Asami</VoiceActor>
@@ -7614,32 +7641,45 @@
     <Country>Germany</Country>
     <Type>MG</Type>
     <Grade>4</Grade>
+    <ModGrade>5</ModGrade>
     <ProductTime>390</ProductTime>
-    <HasMod>false</HasMod>
+    <HasMod>true</HasMod>
     <AbilityGrade>A;A;C;A;S;A</AbilityGrade>
-    <Grow>110</Grow>
-    <HP>120</HP>
-    <FireRate>110</FireRate>
-    <Evasion>90</Evasion>
-    <Accuracy>110</Accuracy>
-    <AttackSpeed>125</AttackSpeed>
+    <Grow>110;110</Grow>
+    <HP>120;120</HP>
+    <FireRate>110;115</FireRate>
+    <Evasion>90;95</Evasion>
+    <Accuracy>110;110</Accuracy>
+    <AttackSpeed>125;125</AttackSpeed>
     <MoveSpeed>4</MoveSpeed>
     <Critical>5</Critical>
-    <Bullet>10</Bullet>
+    <Bullet>10;10;10;10</Bullet>
     <ConsumeAmmo>40/65/90/115/140</ConsumeAmmo>
     <ConsumeFood>30/45/60/75/90</ConsumeFood>
     <EffectFormation>0,0,1,2,0,0,0,0,1</EffectFormation>
+    <ModEffectFormation>0,0,1,2,0,1,0,0,1</ModEffectFormation>
     <Effect>FR,AC;10,15</Effect>
+    <ModEffect>FR,AC;15,15</ModEffect>
     <EffectType>SG</EffectType>
+    <EffectTypeAfterMod>SG</EffectTypeAfterMod>
     <DropEvent>0-3, 6-4, 6-4E</DropEvent>
     <DicNumber>88</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>lock_load</SkillCode>
     <Skill>준비만전</Skill>
+    <SkillAfterMod>준비만전</SkillAfterMod>
     <SkillExplain>지속시간 동안 자신의 화력을 증가시키고 발사 중인 탄띠에 탄을 추가한다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 자신의 화력을 증가시키고 발사 중인 탄띠에 탄을 추가한다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;발사 수 증가치</SkillEffect>
     <SkillMag>8초,18초,8초,30%,4발</SkillMag>
-    <Costume>휴일의 거리 풍경;밤이 되었습니다;사자탈춤</Costume>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;화력 증가치;발사 수 증가치</SkillEffectAfterMod>
+    <SkillMagAfterMod>8초,18초,8초,35%,4발</SkillMagAfterMod>
+    <ModSkill>초고압 탄막</ModSkill>
+    <ModSkillExplain>공격마다 보호막을 관통하며 자신의 명중을 증가시킨다, 지속시간 10초. 30중첩에 도달할 경우, 추가로 전투 종료 시까지 자신의 치명타 피해를 증가시키고 추가로 이동속도를 11 증가시킨다.</ModSkillExplain>
+    <ModSkillEffect>명중 증가치;치명피해 증가치</ModSkillEffect>
+    <ModSkillMag>5,25%</ModSkillMag>
+    <OnlyUseEquip>KWS스톡</OnlyUseEquip>
+    <Costume>휴일의 거리 풍경;밤이 되었습니다;사자탈춤;미래 구상가</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Taneda Risa</VoiceActor>
@@ -10829,7 +10869,7 @@
     <ModSkillEffect>지속시간;화력 증가치</ModSkillEffect>
     <ModSkillMag>4초,20%</ModSkillMag>
     <OnlyUseEquip>SP81</OnlyUseEquip>
-    <Costume>미궁의 안내인</Costume>
+    <Costume>미궁의 안내인;금박지 편지</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Chiba Izumi</VoiceActor>
@@ -10929,43 +10969,57 @@
   <Doll>
     <Name>OBR</Name>
     <Name_EN>OBR</Name_EN>
-    <Name_JP />
+    <Name_JP>OBR</Name_JP>
     <CodeName>OBR</CodeName>
     <Nickname>OBR</Nickname>
     <Model>LaRue Tactical Optimized Battle Rifle</Model>
     <Country>United States of America</Country>
     <Type>RF</Type>
     <Grade>3</Grade>
+    <ModGrade>4</ModGrade>
     <ProductTime>0</ProductTime>
-    <HasMod>false</HasMod>
+    <HasMod>true</HasMod>
     <AbilityGrade>C;B;B;A;A;A</AbilityGrade>
-    <Grow>120</Grow>
-    <HP>92</HP>
-    <FireRate>108</FireRate>
-    <Evasion>95</Evasion>
-    <Accuracy>120</Accuracy>
-    <AttackSpeed>110</AttackSpeed>
+    <Grow>120;120</Grow>
+    <HP>92;95</HP>
+    <FireRate>108;112</FireRate>
+    <Evasion>95;95</Evasion>
+    <Accuracy>120;125</Accuracy>
+    <AttackSpeed>110;110</AttackSpeed>
     <MoveSpeed>7</MoveSpeed>
     <Critical>40</Critical>
     <ConsumeAmmo>15/25/35/45/55</ConsumeAmmo>
     <ConsumeFood>30/45/60/75/90</ConsumeFood>
     <EffectFormation>0,0,1,0,2,0,0,0,1</EffectFormation>
+    <ModEffectFormation>0,0,1,0,2,0,0,0,1</ModEffectFormation>
     <Effect>CL;12</Effect>
+    <ModEffect>CL;15</ModEffect>
     <EffectType>HG</EffectType>
+    <EffectTypeAfterMod>SG,HG</EffectTypeAfterMod>
     <DropEvent>2018년 8월 출석보상</DropEvent>
     <DicNumber>230</DicNumber>
     <AvailableEquipmentType>탄환/부속/인형</AvailableEquipmentType>
     <SkillCode>agility_shoot</SkillCode>
     <Skill>민첩사격</Skill>
+    <SkillAfterMod>민첩사격</SkillAfterMod>
     <SkillExplain>지속시간 동안 자신의 사속과 명중을 증가시킨다.</SkillExplain>
+    <SkillExplainAfterMod>지속시간 동안 자신의 사속과 명중을 증가시킨다.</SkillExplainAfterMod>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;사속 증가치;명중 증가치</SkillEffect>
     <SkillMag>6초,8초,6초,45%,45%</SkillMag>
+    <SkillEffectAfterMod>선 쿨타임;쿨타임;지속시간;사속 증가치;명중 증가치</SkillEffectAfterMod>
+    <SkillMagAfterMod>6초,8초,6초,50%,50%</SkillMagAfterMod>
+    <ModSkill>서리 갈고리</ModSkill>
+    <ModSkillExplain>스킬 지속 시간 화력이 가장 높은 적 유닛을 우선 공격하며, 일반공격이 대상에 명중할 때마다 서리 표식을 1스택 부여한다. 일반공격 3회마다 또는 스킬 효과 종료 시, 1스택마다 추가 피해를 준다. (필중, 장갑 및 보호막 무시)</ModSkillExplain>
+    <ModSkillEffect>추가 피해량</ModSkillEffect>
+    <ModSkillMag>0.6배</ModSkillMag>
+    <OnlyUseEquip>HARRIS 삼각대</OnlyUseEquip>
     <Costume>봄을 알리는 우편부</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Tamegai Hana</VoiceActor>
     <Illustrator>卑しい人间</Illustrator>
-    <HasCensor>false</HasCensor>
+    <HasCensor>true</HasCensor>
+    <CensorType>N</CensorType>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>지휘관님 맞으신가요? 잘못 짚은 거 아니죠? 여기서 열심히 일하면 언젠가 빚을... 아, 아무것도 아니에요.</ProductDialog>
   </Doll>
@@ -11307,7 +11361,7 @@
     <SkillExplain>지속시간 동안 버프진형 내의 아군의 치명률을 감소시키고 치명피해를 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;치명률 감소치;치명피해 증가치</SkillEffect>
     <SkillMag>6초,12초,8초,20%,50%</SkillMag>
-    <Costume>크리스마스 모닝퀸;해변 안전수칙</Costume>
+    <Costume>크리스마스 모닝퀸;해변 안전수칙;겨울잠 꿈지기</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Yamamura Hibiku</VoiceActor>
@@ -11776,7 +11830,7 @@
     <SkillExplain>자신에게 5초간 보호막을 생성한다. 파괴될 경우 지속시간동안 자신의 회피를 상승시키고 파괴되지 않으면 자신의 화력을 상승시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;보호막 수치;지속시간;회피 상승치;화력 상승치</SkillEffect>
     <SkillMag>8초,16초,42,5초,65%,85%</SkillMag>
-    <Costume>총잡이 무녀;마음에 묻어둔 보물;현의 카구라</Costume>
+    <Costume>총잡이 무녀;마음에 묻어둔 보물;현의 카구라;나비 기담</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>かれい</Illustrator>
     <HasCensor>false</HasCensor>
@@ -14204,12 +14258,13 @@
     <SkillExplain>스킬 지속시간 동안 받는 피해량이 감소한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;피해 감소량</SkillEffect>
     <SkillMag>5초,16초,5초,15</SkillMag>
-    <Costume>붉은 박쥐;훠궈 나라 대왕</Costume>
+    <Costume>붉은 박쥐;훠궈 나라 대왕;둥실둥실 흑백 음표</Costume>
     <HasVoice>true</HasVoice>
     <Voices>ACCEPT;AGREE;ALLHALLOWS;APPRECIATE;ATTACK;BLACKACTION;BREAK;BUILDOVER;CHRISTMAS;COMBINE;DEFENSE;DIALOGUE1;DIALOGUE2;DIALOGUE3;DIALOGUEWEDDING;FEED;FEELING;FIX;FORMATION;GAIN;GOATTACK;HELLO;LOADING;LOWMOOD;MEET;MOOD1;MOOD2;NEWYEAR;OPERATIONBEGIN;OPERATIONOVER;PHRASE;RETREAT;SKILL1;SKILL2;SKILL3;SOULCONTRACT;TANABATA;TIP;TITLECALL;VALENTINE;WIN</Voices>
     <VoiceActor>Ishimi Manaka</VoiceActor>
     <Illustrator>Luicent</Illustrator>
-    <HasCensor>false</HasCensor>
+    <HasCensor>true</HasCensor>
+    <CensorType>C3</CensorType>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>와아~ 드디어 훠궈를 실컷 먹을 수 있는 곳을 찾았다! 정말 최고야! ...크흠. 어... 안녕, 지휘관.</ProductDialog>
   </Doll>
@@ -14572,7 +14627,7 @@
     <SkillExplain>자신의 화력을 지속시간 동안 증가시킨다. 또한 지속시간 동안 자신과 거리가 5 이내인 적이 있으면 해당 적을 우선적으로 공격하며 화력이 증가한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;화력 증가치;추가 화력 증가치</SkillEffect>
     <SkillMag>5초,8초,5초,55%,10%</SkillMag>
-    <Costume>혼백 주방장;돼지 3형제가 부동산에</Costume>
+    <Costume>혼백 주방장;돼지 3형제가 부동산에;훈련사의 일상</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>瑶柱菌</Illustrator>
     <HasCensor>false</HasCensor>
@@ -14650,10 +14705,11 @@
     <SkillExplain>&lt;패시브&gt; 재장전을 마칠 때마다 다른 기관총 인형에게 장탄을 1발 추가시킨다. 일반 재장전이 끝날 때마다 다음 재장전 시간이 20%씩 최대 60%까지 감소한다.   &lt;액티브&gt; 즉시 재장전을 하여 특수탄약을 추가한다. 특수탄약을 소모할 때 화력과 명중이 증가한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;특수탄약 추가량;화력 증가치;명중 증가치</SkillEffect>
     <SkillMag>8초,18초,8발,50%,50%</SkillMag>
-    <Costume>그늘에 숨어;1000마리의 종이학</Costume>
+    <Costume>그늘에 숨어;1000마리의 종이학;흔들리는 흑장미</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>whoisshe</Illustrator>
-    <HasCensor>false</HasCensor>
+    <HasCensor>true</HasCensor>
+    <CensorType>C3</CensorType>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>여기가 바로 그리폰이군요? 알겠습니다, 앞으로 제 활약을 기대해 주세요. 언제 어디서든 전력을 다하겠습니다.</ProductDialog>
   </Doll>
@@ -14729,7 +14785,7 @@
     <SkillExplain>&lt;패시브&gt; 공격할 때마다 모든 장탄을 소모해 가장 가까운 적 하나에게 8회 피해를 준다. 적과 가까울수록 큰 피해를 준다. 단, 넉백 판정은 1회이며 슬러그탄과 중첩되지 않는다. 또한 재장전 시간이 감소한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;최대 피해량;재장전 시간 감소량</SkillEffect>
     <SkillMag>0초,0초,2.5배,2초</SkillMag>
-    <Costume>꿈에 취한 선녀</Costume>
+    <Costume>꿈에 취한 선녀;스타더스트 커튼</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>小最软糖</Illustrator>
     <HasCensor>false</HasCensor>
@@ -14925,7 +14981,7 @@
     <SkillExplain>스킬 발동 시 자신의 명중의 일부 수치를 화력에 더한다. 스킬 발동 후 다음 3회 공격은 2회씩 피해를 준다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;지속시간;명중-&gt;화력 변환 비율</SkillEffect>
     <SkillMag>5초,8초,5초,20%</SkillMag>
-    <Costume>성야의 형사;은하수 흐르는 밤에</Costume>
+    <Costume>성야의 형사;은하수 흐르는 밤에;햇님처럼 뛰놀기</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>四骑</Illustrator>
     <HasCensor>false</HasCensor>
@@ -15566,6 +15622,7 @@
     <SkillExplain>&lt;패시브&gt; 잔탄 소진 시 자동으로 RF 모드로 전환한다. 또한 매 전투 첫 공격은 모든 잔탄을 소모해 4단 피해를 준다.     &lt;RF 모드&gt; 가장 멀리 있는 적을 우선 공격하며, 회피가 감소하고, 사속 및 화력, 명중이 증가하고 관통을100 얻는다.     &lt;액티브&gt; 2초간 재장전 후 RF 모드의 효과를 해제하고 SG 모드로 전환한다. 전환 시 자신에게 보호막을 부여한다. 또한 SG 모드 기간 자신에게 도발 효과를 부여한다. (슬러그탄 효과는 SG 모드에서만 적용)</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;RF 모드 회피 감소량;RF 모드 사속 증가량;RF 모드 화력 증가량;RF 모드 명중 증가량;보호막 생성량;보호막 지속시간</SkillEffect>
     <SkillMag>5초,20초,10%,100%,100%,200%,75,5초</SkillMag>
+    <Costume>파도에서 살아남기</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>鸦二</Illustrator>
     <HasCensor>false</HasCensor>
@@ -16072,9 +16129,11 @@
     <SkillExplain>&lt;패시브&gt; 전투 개시 시 무작위 적 유닛을 사냥감으로 지정하여, 사냥감 처치에 참여하면 영구적으로 자신의 화력과 명중이 증가한다. 사냥감 사망 시 다시 무작위로 사냥감을 지정한다.     &lt;액티브&gt; 헌팅 타임으로 돌입하여, 즉시 체력이 가장 높은 적 유닛을 사냥감으로 재지정하고, 해당 유닛이 사망할 때까지 공격 대상으로 고정한다. 지속시간 동안 공격 시 자신의 화력을 최대 5회까지 증가시키며, 사냥감이 사망 시 또는 헌팅 타임 종료 시 해제된다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;액티브 지속시간;패시브 화력 증가치;패시브 명중 증가치;액티브 화력 증가치</SkillEffect>
     <SkillMag>6초,8초,5초,45%,6,15%</SkillMag>
+    <Costume>감자 스틱 먹을래</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>欧泡</Illustrator>
-    <HasCensor>false</HasCensor>
+    <HasCensor>true</HasCensor>
+    <CensorType>C1</CensorType>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>안녕하세요 지휘관님, 그리폰 소대의 저격수 Savage 99입니다... 옷이 하얗지도 않고 유령도 아니지만, 제가 내일의 신성이 될 것이라 믿어 주세요.</ProductDialog>
   </Doll>
@@ -16612,7 +16671,7 @@
     <SkillExplain>공격 간격이 최소 1초로 고정되며, 장갑을 지닌 유닛을 우선 공격해 피해를 준다 (장각을 지닌 유닛에겐 피해량이 추가 증가한다). 5회 공격마다 5초간 재정비한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;피해량;추가 피해량</SkillEffect>
     <SkillMag>0초,0초,2배,100%</SkillMag>
-    <Costume>여울가 소나무</Costume>
+    <Costume>여울가 소나무;노을 진 바다로</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>小沢</Illustrator>
     <HasCensor>false</HasCensor>
@@ -16651,6 +16710,7 @@
     <SkillExplain>스킬 레벨에 따라서 제대 중 이름에 [AK]가 붙은 인형의 스킬을 강화한다.   [AK74M] 제대 중 이름에 AK가 붙은 인형 하나당 화력과 사속을 5% 증가시킨다.   [AK-47] "기습공격"의 화력과 명중 증가치를 교체한다.   [AK74U (스킬 Lv4에 해금)] "거부반응"의 효과가 상시 발동한다.   [AK-12 (스킬 Lv6에 해금)] "백랑의 눈" 스킬 지속시간에 추가로 치명타 피해량이 35% 증가한다.   [AK-15 (스킬 Lv8에 해금)] 공격 시 반드시 추가타가 발생한다.   [AK-Alfa (스킬 Lv10에 해금)] 자신 정면의 적을 공격할 때 반드시 명중한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임</SkillEffect>
     <SkillMag>0초,33333초</SkillMag>
+    <Costume>회극의 스피릿</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>やこぶ</Illustrator>
     <HasCensor>false</HasCensor>
@@ -17162,6 +17222,7 @@
     <SkillExplain>&lt;패시브&gt; 실린더마다 위력이 제각각인 총알이 순서대로 장전되며, 첫 총알은 무작위로 발사된다. 첫 총알 위력이 1배 이상일 경우 자신의 명중과 치명타 피해를 증가시키며, 아닐 경우 자신의 이동속도와 회피를 감소시킨다, 지속시간 20초.     &lt;액티브&gt; 자신의 사속을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;총알 피해량;명중 증가치;치명피해 증가치;이속 감소치;회피 감소치;액티브 지속시간;사속 증가치</SkillEffect>
     <SkillMag>6초,12초,0.1 / 0.5 / 1 / 2 / 5 / 10 배,5%,5%,10%,10%,8초,40%</SkillMag>
+    <Costume>고독한 달의 관</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>柱柱</Illustrator>
     <HasCensor>false</HasCensor>
@@ -17238,6 +17299,7 @@
     <SkillExplain>[충전상한 3스택 / 초기 1스택]     &lt;액티브&gt; 에너지 1점을 소비해, 수류탄을 투척하여 2.5 범위 안의 적에게 피해를 준다.     &lt;패시브&gt; 제대 안에 기관단총 인형 하나마다, 자신의 에너지 충전 상한과 초기 충전수치가 1점씩 증가한다. 자신이 스킬을 발동할 때마다 모든 인형의 수류탄 피해량을 증가시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;수류탄 피해량;모든 인형 수류탄 피해 증가량;버프 지속시간</SkillEffect>
     <SkillMag>1초,8초,4배,20%,6초</SkillMag>
+    <Costume>더위에 녹는다</Costume>
     <HasVoice>false</HasVoice>
     <Illustrator>脆皮炸虾球</Illustrator>
     <HasCensor>false</HasCensor>
@@ -17386,7 +17448,7 @@
     <EffectType>SMG,AR</EffectType>
     <DropEvent>일반제조, 중형제조</DropEvent>
     <DicNumber>363</DicNumber>
-    <AvailableEquipmentType>인형/틴환/부품</AvailableEquipmentType>
+    <AvailableEquipmentType>인형/탄환/부품</AvailableEquipmentType>
     <Skill>잔잔한 달빛</Skill>
     <SkillExplain>&lt;패시브&gt; 1초마다 자신 주변 1칸 안의 모든 유닛에게 "회절광" 효과를 부여한다, 회절광 효과를 받은 유닛은 보호막이 추가된다, 최대 5중첩.     &lt;액티브&gt; 더 강력한 회절광 효과를 부여하여, 추가되는 보호막 수치가 증가한다. 회절광 효과를 지닌 유닛은 추가로 받는 피해량이 증폭된다. 자신이 "불담금" 효과를 지닌 경우, 회절광 효과를 부여하는 동시에 보호막을 지닌 적 유닛이 받는 피해량을 추가한다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;패시브 보호막 생성량;액티브 지속시간;추가 보호막 수치;피해량 증폭치;불담금 효과 피해량 추가치</SkillEffect>
@@ -17428,7 +17490,7 @@
     <EffectType>SMG,AR</EffectType>
     <DropEvent>일반제조, 중형제조</DropEvent>
     <DicNumber>364</DicNumber>
-    <AvailableEquipmentType>인형/틴환/부품</AvailableEquipmentType>
+    <AvailableEquipmentType>인형/탄환/부품</AvailableEquipmentType>
     <Skill>뜨거운 태양</Skill>
     <SkillExplain>&lt;패시브&gt; 1초마다 자신 주변 1칸 안의 모든 유닛에게 "불담금" 효과를 부여한다, 불담금 효과를 받은 유닛은 최대체력의 0.5%를 잃는다.     &lt;액티브&gt; 불담금 효과가 더 강력해져, 잃는 최대체력이 증가한다. 불담금 효과를 지닌 유닛은 추가로 화력이 증가한다. 자신이 "회절광" 효과를 지닌 경우, 불담금 효과를 부여하는 동시에 적 유닛의 이동속도와 사속을 감소시킨다.</SkillExplain>
     <SkillEffect>선 쿨타임;쿨타임;액티브 지속시간;잃는 최대체력 증가치;화력 증가치;적 이속 감소치;적 사속 감소치</SkillEffect>
@@ -17480,5 +17542,131 @@
     <HasCensor>false</HasCensor>
     <HasAnimation>false</HasAnimation>
     <ProductDialog>안녕, 지휘관. 오늘 정식 입사한 SCR이야. 내 채널을 구독하고 체리 폭탄이 되어 줘! 어... 그게 뭐냐고? 내 팬덤 이름.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>SPAS-15</Name>
+    <Name_EN>SPAS-15</Name_EN>
+    <Name_JP>SPAS-15</Name_JP>
+    <CodeName>SPAS15</CodeName>
+    <Nickname>SPAS-15</Nickname>
+    <Model>Franchi SPAS-15</Model>
+    <Country>Italy</Country>
+    <Type>SG</Type>
+    <Grade>5</Grade>
+    <ProductTime>520</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>B;A;A;C;S;S;S</AbilityGrade>
+    <Grow>105</Grow>
+    <HP>120</HP>
+    <FireRate>118</FireRate>
+    <Evasion>80</Evasion>
+    <Accuracy>125</Accuracy>
+    <AttackSpeed>130</AttackSpeed>
+    <MoveSpeed>6</MoveSpeed>
+    <Critical>40</Critical>
+    <Bullet>5</Bullet>
+    <Armor>125</Armor>
+    <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
+    <ConsumeFood>40/65/90/115/140</ConsumeFood>
+    <EffectFormation>1,1,1,1,0,2,1,1,1</EffectFormation>
+    <Effect>CL;30</Effect>
+    <EffectType>MG,SG</EffectType>
+    <DropEvent>중형제조</DropEvent>
+    <DicNumber>366</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부품</AvailableEquipmentType>
+    <Skill>리듬 공명</Skill>
+    <SkillExplain>전투 개시 시 존재하는 기관총 인형 하나마다 자신은 음표를 1스택, 산탄총 인형마다 2스택, SPAS-12가 존재할 경우 추가로 3스택을 얻는다. 음표 1스택마다 자신에게 피해 차감 효과를 주며, 음표 스택 수에 따라 다른 효과가 적용된다:  &lt;6스택 미만&gt; 자신의 화력을 전투 종료까지 증가시킨다.     &lt;6, 7 스택&gt; 아군 전체의 장탄 수가 추가된다.     &lt;7 스택&gt; 모든 산탄총 인형의 이동속도가 9 증가하고, 장갑이 증가하고 보호막을 얻는다. 지속시간 40초.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;피해 차감 비율;화력 증가치;장탄 수 추가량;장갑 증가치;보호막 생성량</SkillEffect>
+    <SkillMag>0초,0초,2%,50%,18발,100,200</SkillMag>
+    <HasCoOpSkill>false</HasCoOpSkill>
+    <HasVoice>false</HasVoice>
+    <Illustrator>U介</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>지휘관 맞지? 과연 예상대로네~ 날 두근거리게 하는 기운이 있어... 뻥이야! 나는 SPAS-15! 잘 부탁해~!</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>MK3A1</Name>
+    <Name_EN>MK3A1</Name_EN>
+    <Name_JP>MK3A1</Name_JP>
+    <CodeName>MK3A1</CodeName>
+    <Nickname>MK3A1</Nickname>
+    <Model>Pancor Jackhammer</Model>
+    <Country>United States of America</Country>
+    <Type>SG</Type>
+    <Grade>5</Grade>
+    <ProductTime>510</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>A;B;A;B;B;SS;S</AbilityGrade>
+    <Grow>115</Grow>
+    <HP>100</HP>
+    <FireRate>110</FireRate>
+    <Evasion>100</Evasion>
+    <Accuracy>95</Accuracy>
+    <AttackSpeed>140</AttackSpeed>
+    <MoveSpeed>6</MoveSpeed>
+    <Critical>40</Critical>
+    <Bullet>6</Bullet>
+    <Armor>125</Armor>
+    <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
+    <ConsumeFood>40/65/90/115/140</ConsumeFood>
+    <EffectFormation>1,1,0,1,1,0,1,1,2</EffectFormation>
+    <Effect>EV,CR;100,100</Effect>
+    <EffectType>MG</EffectType>
+    <DropEvent>중형제조</DropEvent>
+    <DicNumber>367</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부품</AvailableEquipmentType>
+    <Skill>B-52 진화 과녁기</Skill>
+    <SkillExplain>&lt;패시브&gt; 전투 개시 시 자신의 사속이 40보다 높을 경우 자신의 진형 버프 효과를 받는다.     &lt;액티브&gt; B-52 진화 과녁기를 소환하여 전투를 보조한다. 이 과녁기는 피해량을 100% 더 받으며 능력치 증가 효과를 받지 않으며, MK3A1이 퇴장 시 사라진다. 처음 발동한 경우 소환된 과녁기는 자신 능력치의 일정 비율을 계승한다. 이 과녁기는 공격을 할 수 없고, 최대 수명이 존재한다. 두 번 발동할 경우에 소환한 과녁기는 일반공격으로 레이저를 쏘아 적을 관통하며 편제당 일정 비율로 비해를 준다 (필중, 장갑 무시), 이 경우에도 최대 수명은 동일하다. 세 번 발동한 경우 마지막으로 수명이 무한이며 일반공격이 가능한 과녁기를 소환한다. 이 후 스킬을 다시 발동할 수 없다.  </SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;계승 능력치 비율;최대 수명;레이저 피해 비율</SkillEffect>
+    <SkillMag>4초,8초,100%,5초,200%</SkillMag>
+    <HasCoOpSkill>false</HasCoOpSkill>
+    <HasVoice>false</HasVoice>
+    <Illustrator>NAMYO</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>반가워요 지휘관님! MK3A1이에요, 오늘부터 그리폰에 입사해 페르시카 씨 밑에서... 지휘관님 밑에서요? 정말요? 들은 거랑 좀... 아뇨, 아무것도 아니에요.</ProductDialog>
+  </Doll>
+  <Doll>
+    <Name>UTS-15</Name>
+    <Name_EN>UTS-15</Name_EN>
+    <Name_JP>UTS-15</Name_JP>
+    <CodeName>UTS15</CodeName>
+    <Nickname>UTS-15</Nickname>
+    <Model>UTAS UTS-15</Model>
+    <Country>Turkey</Country>
+    <Type>SG</Type>
+    <Grade>4</Grade>
+    <ProductTime>455</ProductTime>
+    <HasMod>false</HasMod>
+    <AbilityGrade>A;B;A;S;A;B;A</AbilityGrade>
+    <Grow>125</Grow>
+    <HP>105</HP>
+    <FireRate>120</FireRate>
+    <Evasion>130</Evasion>
+    <Accuracy>120</Accuracy>
+    <AttackSpeed>100</AttackSpeed>
+    <MoveSpeed>6</MoveSpeed>
+    <Critical>40</Critical>
+    <Bullet>5</Bullet>
+    <Armor>110</Armor>
+    <ConsumeAmmo>30/45/60/75/90</ConsumeAmmo>
+    <ConsumeFood>40/65/90/115/140</ConsumeFood>
+    <EffectFormation>1,0,2,1,0,0,0,0,0</EffectFormation>
+    <Effect>FR;15</Effect>
+    <EffectType>MG</EffectType>
+    <DropEvent>중형제조</DropEvent>
+    <DicNumber>368</DicNumber>
+    <AvailableEquipmentType>인형/탄환/부품</AvailableEquipmentType>
+    <Skill>블루☆스타☆콜</Skill>
+    <SkillExplain>&lt;패시브&gt; 자신과 인접한 8칸 위에 있는 아군 유닛의 장갑이 증가한다. 버프칸 위의 아군은 1초마다 명중이 증가하며, 최대치까지 증가한다.     &lt;액티브&gt; 자신과 같은 열의 유닛이 받는 피해량이 감소한다. 명중 상승 효과를 최대로 받은 아군은 추가로 장탄수가 2발 추가된다.</SkillExplain>
+    <SkillEffect>선 쿨타임;쿨타임;장갑 증가치;초당 명중 증가치;최대 명중 증가치;피해 감소량;액티브 지속시간</SkillEffect>
+    <SkillMag>4초,12초,10,3,30,15%,8초</SkillMag>
+    <HasCoOpSkill>false</HasCoOpSkill>
+    <HasVoice>false</HasVoice>
+    <Illustrator>原子Dan</Illustrator>
+    <HasCensor>false</HasCensor>
+    <HasAnimation>false</HasAnimation>
+    <ProductDialog>야호☆ 만나서 반가워! 나는 UTS-15, 물론 임시로 쓰는 이름이야! 언젠가는 나만의 예명을 가지고 모두에게 사랑받는 아이돌이 될 거야!</ProductDialog>
   </Doll>
 </NewDataSet>
