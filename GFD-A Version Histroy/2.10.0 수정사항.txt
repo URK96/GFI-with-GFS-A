@@ -1,0 +1,9 @@
+<2.10.0 Update>
+
+- 신규 이벤트 스토리 추가 (라이칸의 성역)
+- 외부 라이브러리 업데이트
+
+<2.10.0 Update>
+
+- Add new event story (2022 Summer)
+- Update external libraries
