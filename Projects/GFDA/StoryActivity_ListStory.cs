@@ -60,6 +60,7 @@ namespace GFDA
                 47 => (Story_Main_Main_Event_FixedPoint_TopTitle, Story_Main_Main_Event_FixedPoint, Story_Main_Main_Event_FixedPoint_Caption),
                 48 => (Story_Main_Main_Event_2022Spring_TopTitle, Story_Main_Main_Event_2022Spring, Story_Main_Main_Event_2022Spring_Caption),
                 49 => (Story_Main_Main_Event_2022Summer_TopTitle, Story_Main_Main_Event_2022Summer, Story_Main_Main_Event_2022Summer_Caption),
+                50 => (Story_Main_Main_Event_LongitudinalStrain_TopTitle, Story_Main_Main_Event_LongitudinalStrain, Story_Main_Main_Event_LongitudinalStrain_Caption),
                 _ => (0, 0, 0)
             };
         }
@@ -249,6 +250,9 @@ namespace GFDA
                         break;
                     case 49:
                         category = "2022Summer";
+                        break;
+                    case 50:
+                        category = "LongitudinalStrain";
                         break;
                     default:
                         return;

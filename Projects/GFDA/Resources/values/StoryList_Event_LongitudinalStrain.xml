@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+	<string-array name="Story_Main_Main_Event_LongitudinalStrain_TopTitle">
+		<item>세로변형 - 1</item>
+		<item>세로변형 - 2</item>
+		<item>세로변형 - 3</item>
+		<item>세로변형 - 3-α1</item>
+		<item>세로변형 - 3-α3</item>
+		<item>세로변형 - 3-α4</item>
+		<item>세로변형 - 3-β1</item>
+		<item>세로변형 - 3-β3</item>
+		<item>세로변형 - 3-γ1</item>
+		<item>세로변형 - 3-γ3</item>
+		<item>세로변형 - 3-γ4</item>
+		<item>세로변형 - 4</item>
+		<item>세로변형 - 5</item>
+		<item>세로변형 - 5-α5</item>
+		<item>세로변형 - 5-α7</item>
+		<item>세로변형 - 5-β4</item>
+		<item>세로변형 - 5-β5</item>
+		<item>세로변형 - 5-β6</item>
+		<item>세로변형 - 5-β7</item>
+		<item>세로변형 - 5-γ5</item>
+		<item>세로변형 - 5-γ7</item>
+		<item>세로변형 - 5-γ8</item>
+		<item>세로변형 - 6</item>
+		<item>세로변형 - 7</item>
+		<item>세로변형 - 8</item>
+		<item>세로변형 - 9</item>
+		<item>세로변형 - 10</item>
+		<item>세로변형 - 11</item>
+		<item>세로변형 - 12</item>
+		<item>세로변형 - 14</item>
+		<item>세로변형 - 15</item>
+		<item>세로변형 - 16</item>
+		<item>세로변형 - 17</item>
+		<item>세로변형 - 18</item>
+		<item>세로변형 - 19</item>
+		<item>세로변형 - 20</item>
+		<item>세로변형 - 21</item>
+		<item>세로변형 - 23</item>
+		<item>세로변형 - 24</item>
+		<item>세로변형 - 25</item>
+		<item>세로변형 - 26</item>
+		<item>세로변형 - 27</item>
+		<item>세로변형 - 28</item>
+		<item>세로변형 - 29</item>
+		<item>세로변형 - 31</item>
+		<item>세로변형 - 32</item>
+		<item>세로변형 - 33</item>
+		<item>세로변형 - 34</item>
+		<item>세로변형 - 35</item>
+		<item>세로변형 - 35-T1</item>
+		<item>세로변형 - 35-T2</item>
+		<item>세로변형 - 35-T3</item>
+		<item>세로변형 - 35-T4</item>
+		<item>세로변형 - 35-R1</item>
+		<item>세로변형 - 35-R2</item>
+		<item>세로변형 - 35-R3</item>
+		<item>세로변형 - 35-R4</item>
+		<item>세로변형 - 35-W1</item>
+		<item>세로변형 - 35-W2</item>
+		<item>세로변형 - 35-W3</item>
+		<item>세로변형 - 35-W4</item>
+		<item>세로변형 - 35-N1</item>
+		<item>세로변형 - 35-N2</item>
+		<item>세로변형 - 35-N3</item>
+		<item>세로변형 - 35-C1</item>
+		<item>세로변형 - 35-C2</item>
+		<item>세로변형 - 35-C3</item>
+		<item>세로변형 - 35-C4</item>
+		<item>세로변형 - 35-P1</item>
+		<item>세로변형 - 35-P2</item>
+		<item>세로변형 - 35-P3</item>
+		<item>세로변형 - 36</item>
+	</string-array>
+
+	<string-array name="Story_Main_Main_Event_LongitudinalStrain">
+		<item>열차 시간표</item>
+		<item>복사 농도 경보기</item>
+		<item>바 카운터</item>
+		<item>왈츠 A단조</item>
+		<item>빗방울</item>
+		<item>소전주곡 G단조</item>
+		<item>진이 한잔 마셨네</item>
+		<item>교향곡 3번</item>
+		<item>타이스 명상곡</item>
+		<item>블라디미르 블루스</item>
+		<item>평균율 클라비어 전주곡</item>
+		<item>클래식 축음기</item>
+		<item>화장실</item>
+		<item>월광 소나타</item>
+		<item>겨울</item>
+		<item>서주와 론도 카프리치오소</item>
+		<item>죽음의 무도</item>
+		<item>교향곡 9번</item>
+		<item>카발레리아 루스티카나</item>
+		<item>카나리아</item>
+		<item>합창 환상곡</item>
+		<item>돌아오라 소렌토로</item>
+		<item>표준시 시계</item>
+		<item>특등실로 향하는 문</item>
+		<item>파가니니 주제에 의한 광시곡</item>
+		<item>유령</item>
+		<item>조화의 영감</item>
+		<item>대형 짐 선반</item>
+		<item>그노시엔느 1번</item>
+		<item>발라드 G단조</item>
+		<item>열차 창문</item>
+		<item>대협주곡 A장조</item>
+		<item>브람스 간주곡</item>
+		<item>백조</item>
+		<item>탁상의 단아한 꽃다발</item>
+		<item>판매용 카트</item>
+		<item>시계</item>
+		<item>표현</item>
+		<item>차 안의 낙서</item>
+		<item>루슬란과 류드밀라</item>
+		<item>자라투스트라는 이렇게 말했다</item>
+		<item>발퀴레의 기승</item>
+		<item>정비작업실</item>
+		<item>여름 협주곡</item>
+		<item>치고이너바이젠</item>
+		<item>1812년 서곡</item>
+		<item>G선상의 아리아</item>
+		<item>지붕으로 나가는 문</item>
+		<item>벽걸이 스크린</item>
+		<item>연습곡 2번</item>
+		<item>전주곡 5번</item>
+		<item>로맨스</item>
+		<item>악흥의 순간</item>
+		<item>치간</item>
+		<item>여름 저녁</item>
+		<item>피아노 오중주 B단조</item>
+		<item>피아노 협주곡 F단조</item>
+		<item>솔베이지의 노래</item>
+		<item>클라리넷 협주곡</item>
+		<item>만토바 여행</item>
+		<item>이별곡</item>
+		<item>환상 즉흥곡</item>
+		<item>스프링 소나타</item>
+		<item>미뉴에트</item>
+		<item>짐노페디</item>
+		<item>문 리버</item>
+		<item>별이 빛나는 밤</item>
+		<item>오 솔레 미오</item>
+		<item>작은별 변주곡</item>
+		<item>죽음과 소녀</item>
+		<item>사랑의 인사</item>
+		<item>빛의 소리</item>
+	</string-array>
+
+	<string-array name="Story_Main_Main_Event_LongitudinalStrain_Caption">
+		<item>F02 객차</item>
+		<item>F17 객차</item>
+		<item>F09 식당차</item>
+		<item>F02 객차 - 류드밀라</item>
+		<item>F02 객차 - 류드밀라</item>
+		<item>F02 객차 - 류드밀라</item>
+		<item>F09 식당차 - 매기</item>
+		<item>F09 식당차 - 매기</item>
+		<item>F17 객차 - 엘마</item>
+		<item>F17 객차 - 엘마</item>
+		<item>F17 객차 - 엘마</item>
+		<item>F09 식당차</item>
+		<item>F09 식당차</item>
+		<item>F02 객차 - 류드밀라</item>
+		<item>F02 객차 - 류드밀라</item>
+		<item>F09 식당차 - 매기</item>
+		<item>F09 식당차 - 매기</item>
+		<item>F09 식당차 - 매기</item>
+		<item>F09 식당차 - 매기</item>
+		<item>F17 객차 - 엘마</item>
+		<item>F17 객차 - 엘마</item>
+		<item>F17 객차 - 엘마</item>
+		<item>F02 객차</item>
+		<item>F02 객차</item>
+		<item>F17 객차 - 엘마</item>
+		<item>F17 객차 - 엘마</item>
+		<item>F17 객차 - 엘마</item>
+		<item>F17 객차</item>
+		<item>F09 식당차 - 매기</item>
+		<item>F09 식당차 - 매기</item>
+		<item>F02 객차</item>
+		<item>F02 객차 - 류드밀라</item>
+		<item>F02 객차 - 류드밀라</item>
+		<item>F02 객차 - 류드밀라</item>
+		<item>F02 객차</item>
+		<item>F09 식당차</item>
+		<item>F09 식당차 - 매기</item>
+		<item>F09 식당차 - 매기</item>
+		<item>F17 객차</item>
+		<item>F02 객차 - 류드밀라</item>
+		<item>F02 객차 - 류드밀라</item>
+		<item>F02 객차 - 류드밀라</item>
+		<item>F17 객차</item>
+		<item>F17 객차 - 엘마</item>
+		<item>F17 객차 - 엘마</item>
+		<item>F17 객차 - 엘마</item>
+		<item>F17 객차 - 엘마</item>
+		<item>F17 객차</item>
+		<item>F09 식당차</item>
+		<item>F09 식당차 - 벨라넬 씨</item>
+		<item>F09 식당차 - 벨라넬 씨</item>
+		<item>F09 식당차 - 벨라넬 씨</item>
+		<item>F09 식당차 - 벨라넬 씨</item>
+		<item>F02 객차 - 루고사</item>
+		<item>F02 객차 - 루고사</item>
+		<item>F02 객차 - 루고사</item>
+		<item>F02 객차 - 루고사</item>
+		<item>F02 객차 - 귀부인</item>
+		<item>F02 객차 - 귀부인</item>
+		<item>F02 객차 - 귀부인</item>
+		<item>F02 객차 - 귀부인</item>
+		<item>F09 식당차 - 니콜라스</item>
+		<item>F09 식당차 - 니콜라스</item>
+		<item>F09 식당차 - 니콜라스</item>
+		<item>F17 객차 - 캐서린</item>
+		<item>F17 객차 - 캐서린</item>
+		<item>F17 객차 - 캐서린</item>
+		<item>F17 객차 - 캐서린</item>
+		<item>F17 객차 - 폴</item>
+		<item>F17 객차 - 폴</item>
+		<item>F17 객차 - 폴</item>
+		<item>F02 객차 - 류드밀라</item>
+	</string-array>
+</resources>
