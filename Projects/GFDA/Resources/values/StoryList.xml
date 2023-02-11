@@ -70,6 +70,8 @@
 		<item>2022 봄 시즌 이벤트</item>
 	    <item>2022 여름 시즌 이벤트</item>
 		<item>이벤트</item>
+		<item>이벤트</item>
+		<item>이벤트</item>
     </string-array>
 
     <string-array name="Story_Main_Main">
@@ -124,6 +126,8 @@
 		<item>사랑 베이커리</item>
 	    <item>라이칸의 성역</item>
 		<item>세로변형</item>
+		<item>사로스 주기</item>
+		<item>문제상자 가설</item>
     </string-array>
 
     <string-array name="Story_Main_Main_Caption">
@@ -178,6 +182,8 @@
 		<item>사랑 베이커리</item>
 	    <item>라이칸의 성역</item>
 		<item>세로변형</item>
+		<item>사로스 주기</item>
+		<item>문제상자 가설</item>
     </string-array>
 
   <string-array name="Story_Main_Sub_TopTitle">

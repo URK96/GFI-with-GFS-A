@@ -1,5 +1,7 @@
-<2.11.0 Update>
+<2.12.0 Update>
 
-- 신규 이벤트 스토리 추가 (세로변형)
+- Android Target SDK 변경 (12 -> 13)
+- 신규 이벤트 스토리 추가 (사로스 주기, 문제상자 가설)
 - 외부 라이브러리 업데이트
 - Syncfusion 라이선스 업데이트
+- Xamarin.Android 프레임워크 업데이트

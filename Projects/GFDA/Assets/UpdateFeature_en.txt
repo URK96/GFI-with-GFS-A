@@ -1,5 +1,7 @@
-<2.11.0 Update>
+<2.12.0 Update>
 
-- Add new event story (2022 Summer)
+- Change Android Target SDK (12 -> 13)
+- Add new event story
 - Update external libraries
 - Update Syncfusion license
+- Update Xamarin.Android Framework

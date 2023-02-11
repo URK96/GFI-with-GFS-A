@@ -61,6 +61,9 @@ namespace GFDA
                 48 => (Story_Main_Main_Event_2022Spring_TopTitle, Story_Main_Main_Event_2022Spring, Story_Main_Main_Event_2022Spring_Caption),
                 49 => (Story_Main_Main_Event_2022Summer_TopTitle, Story_Main_Main_Event_2022Summer, Story_Main_Main_Event_2022Summer_Caption),
                 50 => (Story_Main_Main_Event_LongitudinalStrain_TopTitle, Story_Main_Main_Event_LongitudinalStrain, Story_Main_Main_Event_LongitudinalStrain_Caption),
+                51 => (Story_Main_Main_Event_EclipsesSaros_TopTitle, Story_Main_Main_Event_EclipsesSaros, Story_Main_Main_Event_EclipsesSaros_Caption),
+                52 => (Story_Main_Main_Event_ProblemBoxHypothesis_TopTitle, Story_Main_Main_Event_ProblemBoxHypothesis, Story_Main_Main_Event_ProblemBoxHypothesis_Caption),
+
                 _ => (0, 0, 0)
             };
         }
@@ -87,6 +90,7 @@ namespace GFDA
                 15 => (Story_Main_Sub_2019Halloween_TopTitle, Story_Main_Sub_2019Halloween, Story_Main_Sub_2019Halloween_Caption),
                 16 => (Story_Main_Sub_2019Christmas_TopTitle, Story_Main_Sub_2019Christmas, Story_Main_Sub_2019Christmas_Caption),
                 17 => (Story_Main_Sub_2020NewYear_TopTitle, Story_Main_Sub_2020NewYear, Story_Main_Sub_2020NewYear_Caption),
+
                 _ => (0, 0, 0),
             };
         }
@@ -99,6 +103,7 @@ namespace GFDA
                 1 => (Story_Main_Memory_C122_TopTitle, Story_Main_Memory_C122, Story_Main_Memory_C122_Caption),
                 2 => (Story_Main_Memory_C123_TopTitle, Story_Main_Memory_C123, Story_Main_Memory_C123_Caption),
                 3 => (Story_Main_Memory_C124_TopTitle, Story_Main_Memory_C124, Story_Main_Memory_C124_Caption),
+
                 _ => (0, 0, 0),
             };
         }
@@ -253,6 +258,12 @@ namespace GFDA
                         break;
                     case 50:
                         category = "LongitudinalStrain";
+                        break;
+                    case 51:
+                        category = "EclipsesSaros";
+                        break;
+                    case 52:
+                        category = "ProblemBoxHypothesis";
                         break;
                     default:
                         return;
