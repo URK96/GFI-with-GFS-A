@@ -1,0 +1,7 @@
+<2.12.1 Update>
+
+- Android 13 기기에서 앱을 새로 설치한 후 재실행하면 발생하는 권한 문제 수정
+
+<2.12.1 Update>
+
+- Fix permission issue on Android 13 devices
