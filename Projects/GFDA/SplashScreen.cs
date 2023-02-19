@@ -8,6 +8,7 @@ using Android.Widget;
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -167,8 +168,9 @@ namespace GFDA
         {
             try
             {
-                await Permissions.RequestAsync<Permissions.StorageRead>();
-                await Permissions.RequestAsync<Permissions.StorageWrite>();
+                await Permissions.RequestAsync<ReadMediaPermissions>();
+                //await Permissions.RequestAsync<Permissions.StorageRead>();
+                //await Permissions.RequestAsync<Permissions.StorageWrite>();
                 await Permissions.RequestAsync<Permissions.NetworkState>();
 
                 //string[] check = { Manifest.Permission.WriteExternalStorage, Manifest.Permission.ReadExternalStorage, Manifest.Permission.AccessNetworkState, Manifest.Permission.AccessWifiState };
@@ -245,6 +247,7 @@ namespace GFDA
             return true;
         }
 
+        [Obsolete]
         public override void OnBackPressed()
         {
             var exitDialog = new AndroidX.AppCompat.App.AlertDialog.Builder(this, Resource.Style.GFD_Dialog);
@@ -259,6 +262,35 @@ namespace GFDA
             });
             exitDialog.SetNegativeButton(Resource.String.AlertDialog_Cancel, delegate { });
             exitDialog.Show();
+        }
+
+        // Android 13 New Permission Xamarin.Essential Class
+        class ReadMediaPermissions : Permissions.BasePlatformPermission
+        {
+            public override (string androidPermission, bool isRuntime)[] RequiredPermissions
+            {
+                get
+                {
+                    List<(string, bool)> list = new();
+
+                    if (Permissions.IsDeclaredInManifest("android.permission.READ_MEDIA_AUDIO"))
+                    {
+                        list.Add(("android.permission.READ_MEDIA_AUDIO", true));
+                    }
+
+                    if (Permissions.IsDeclaredInManifest("android.permission.READ_MEDIA_IMAGES"))
+                    {
+                        list.Add(("android.permission.READ_MEDIA_IMAGES", true));
+                    }
+
+                    if (Permissions.IsDeclaredInManifest("android.permission.READ_MEDIA_VIDEO"))
+                    {
+                        list.Add(("android.permission.READ_MEDIA_VIDEO", true));
+                    }
+
+                    return list.ToArray();
+                }
+            }
         }
     }
 }
