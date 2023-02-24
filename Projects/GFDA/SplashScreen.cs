@@ -168,9 +168,16 @@ namespace GFDA
         {
             try
             {
-                await Permissions.RequestAsync<ReadMediaPermissions>();
-                //await Permissions.RequestAsync<Permissions.StorageRead>();
-                //await Permissions.RequestAsync<Permissions.StorageWrite>();
+                if (int.Parse(Build.VERSION.Release.Split('.')[0]) >= 13)
+                {
+                    await Permissions.RequestAsync<ReadMediaPermissions>();
+                }
+                else
+                {
+                    await Permissions.RequestAsync<Permissions.StorageRead>();
+                    await Permissions.RequestAsync<Permissions.StorageWrite>();
+                }
+
                 await Permissions.RequestAsync<Permissions.NetworkState>();
 
                 //string[] check = { Manifest.Permission.WriteExternalStorage, Manifest.Permission.ReadExternalStorage, Manifest.Permission.AccessNetworkState, Manifest.Permission.AccessWifiState };

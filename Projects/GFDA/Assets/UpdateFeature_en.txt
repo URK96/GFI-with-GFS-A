@@ -1,6 +1,6 @@
-<2.12.1 Update>
+<2.12.1~2 Update>
 
-- Fix permission issue on Android 13 devices
+- Fix permission issue on Android devices
 
 
 <2.12.0 Update>
