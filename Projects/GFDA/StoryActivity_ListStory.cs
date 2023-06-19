@@ -63,6 +63,8 @@ namespace GFDA
                 50 => (Story_Main_Main_Event_LongitudinalStrain_TopTitle, Story_Main_Main_Event_LongitudinalStrain, Story_Main_Main_Event_LongitudinalStrain_Caption),
                 51 => (Story_Main_Main_Event_EclipsesSaros_TopTitle, Story_Main_Main_Event_EclipsesSaros, Story_Main_Main_Event_EclipsesSaros_Caption),
                 52 => (Story_Main_Main_Event_ProblemBoxHypothesis_TopTitle, Story_Main_Main_Event_ProblemBoxHypothesis, Story_Main_Main_Event_ProblemBoxHypothesis_Caption),
+                53 => (Story_Main_Main_Event_TheGlisteningBloom_TopTitle, Story_Main_Main_Event_TheGlisteningBloom, Story_Main_Main_Event_TheGlisteningBloom_Caption),
+                54 => (Story_Main_Main_Event_SlowShock_TopTitle, Story_Main_Main_Event_SlowShock, Story_Main_Main_Event_SlowShock_Caption),
 
                 _ => (0, 0, 0)
             };
@@ -264,6 +266,12 @@ namespace GFDA
                         break;
                     case 52:
                         category = "ProblemBoxHypothesis";
+                        break;
+                    case 53:
+                        category = "TheGlisteningBloom";
+                        break;
+                    case 54:
+                        category = "SlowShock";
                         break;
                     default:
                         return;

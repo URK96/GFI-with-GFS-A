@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string-array name="Story_Main_Main_Event_TheGlisteningBloom_TopTitle">
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+        <item>좀비사가랜드 콜라보</item>
+    </string-array>
+
+    <string-array name="Story_Main_Main_Event_TheGlisteningBloom">
+        <item>그리폰에서 온 당신</item>
+        <item>1일차 낮</item>
+        <item>1일차 점심</item>
+        <item>1일차 밤</item>
+        <item>1일차 야간</item>
+        <item>2일차 낮</item>
+        <item>2일차 점심</item>
+        <item>2일차 밤</item>
+        <item>2일차 야간</item>
+        <item>3일차 낮</item>
+        <item>3일차 점심</item>
+        <item>3일차 밤</item>
+        <item>3일차 야간</item>
+        <item>4일차 낮</item>
+        <item>4일차 점심</item>
+        <item>4일차 밤</item>
+        <item>4일차 야간</item>
+        <item>5일차 낮</item>
+        <item>5일차 점심</item>
+        <item>5일차 밤</item>
+        <item>5일차 야간</item>
+        <item>6일차 낮</item>
+        <item>6일차 점심</item>
+        <item>6일차 밤</item>
+        <item>6일차 야간</item>
+        <item>7일차 낮</item>
+        <item>7일차 점심</item>
+        <item>힘내라 알바생!</item>
+        <item>에픽 드라이브!</item>
+        <item>노래와 춤은 계속되리</item>
+        <item>영감이 샘솟는다</item>
+        <item>느슨한 배경판</item>
+        <item>무채색의 밤</item>
+        <item>미소와 눈물의 밤</item>
+        <item>어깨 사이의 거리</item>
+        <item>형광색의 밤</item>
+        <item>날아오른 밤</item>
+        <item>거리 유지!</item>
+        <item>길광편우</item>
+        <item>벚꽃 심</item>
+        <item>폭주 라디오</item>
+        <item>폭주 메모리얼!</item>
+        <item>폭주 그래듀에이션</item>
+        <item>비 내리는 정원</item>
+        <item>달맞이 바다</item>
+        <item>샤이닝 러브</item>
+        <item>같은 이방인 사이</item>
+        <item>달은 누굴 처음 비추나</item>
+        <item>안개 낀 바다 서로 등지고</item>
+        <item>시간 여행자</item>
+        <item>바다의 소리</item>
+        <item>해가 저물 때까지</item>
+        <item>퍼펙트 스트레인저</item>
+        <item>에이스 에이전트</item>
+        <item>몸에 쌓여가는 것</item>
+        <item>기묘한 성묘</item>
+        <item>아낌없는 선물</item>
+        <item>"가지 마"</item>
+    </string-array>
+
+    <string-array name="Story_Main_Main_Event_TheGlisteningBloom_Caption">
+        <item>프롤로그</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>육성 스토리</item>
+        <item>엔딩 스토리</item>
+        <item>엔딩 스토리</item>
+        <item>엔딩 스토리</item>
+        <item>엔딩 스토리</item>
+        <item>엔딩 스토리</item>
+        <item>엔딩 스토리</item>
+        <item>엔딩 스토리</item>
+        <item>엔딩 스토리</item>
+        <item>엔딩 스토리</item>
+        <item>엔딩 스토리</item>
+        <item>캐릭터 스토리 - 사쿠라</item>
+        <item>캐릭터 스토리 - 사쿠라</item>
+        <item>캐릭터 스토리 - 사쿠라</item>
+        <item>캐릭터 스토리 - 사키</item>
+        <item>캐릭터 스토리 - 사키</item>
+        <item>캐릭터 스토리 - 사키</item>
+        <item>캐릭터 스토리 - 아이</item>
+        <item>캐릭터 스토리 - 아이</item>
+        <item>캐릭터 스토리 - 아이</item>
+        <item>캐릭터 스토리 - 준코</item>
+        <item>캐릭터 스토리 - 준코</item>
+        <item>캐릭터 스토리 - 준코</item>
+        <item>캐릭터 스토리 - 유우기리</item>
+        <item>캐릭터 스토리 - 유우기리</item>
+        <item>캐릭터 스토리 - 유우기리</item>
+        <item>캐릭터 스토리 - 릴리</item>
+        <item>캐릭터 스토리 - 릴리</item>
+        <item>캐릭터 스토리 - 릴리</item>
+        <item>캐릭터 스토리 - 타에</item>
+        <item>캐릭터 스토리 - 타에</item>
+        <item>캐릭터 스토리 - 타에</item>
+    </string-array>
+</resources>

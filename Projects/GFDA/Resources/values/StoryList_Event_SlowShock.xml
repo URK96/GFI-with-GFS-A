@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string-array name="Story_Main_Main_Event_SlowShock_TopTitle">
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 1</item>
+        <item>만성쇼크 : Chapter 2</item>
+        <item>만성쇼크 : Chapter 2</item>
+        <item>만성쇼크 : Chapter 2</item>
+        <item>만성쇼크 : Chapter 2</item>
+        <item>만성쇼크 : Chapter 2</item>
+        <item>만성쇼크 : Chapter 2</item>
+        <item>만성쇼크 : Chapter 2</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+        <item>만성쇼크 : Chapter 3</item>
+    </string-array>
+
+    <string-array name="Story_Main_Main_Event_SlowShock">
+        <item>검은 제비꽃</item>
+        <item>WTR 황야 북쪽</item>
+        <item>WTR 너도밤나무 숲 Ⅰ</item>
+        <item>WTR 사슴벌레</item>
+        <item>WTR 눈밭의 아침</item>
+        <item>WTR 해질녘의 늪지대</item>
+        <item>SPR 밤	: 붉은 나무</item>
+        <item>SPR 회색 나무</item>
+        <item>SPR Tableau no.1</item>
+        <item>SPR 파랑새의 날개</item>
+        <item>SUM 백조, 9그룹 1번</item>
+        <item>SUM 푸른 방 안의 햇빛</item>
+        <item>SUM 저녁 기도</item>
+        <item>SUM 바람에 흩날리다</item>
+        <item>SUM 황금방울새</item>
+        <item>SUM 백조, 9그룹 6번</item>
+        <item>AUT 파랑과 은색의 하모니</item>
+        <item>AUT 지붕위의 바이올린</item>
+        <item>AUT 죽음의 섬</item>
+        <item>AUT 항적</item>
+        <item>AUT 푸른 날개가 달린 괘종시계</item>
+        <item>AUT 죽음과 삶</item>
+        <item>AUT 돈 강의 밤</item>
+        <item>L1 생명의 나무</item>
+        <item>L2 중앙통제실 모니터</item>
+        <item>L3 수술대</item>
+        <item>L5 우회전-좌회전</item>
+        <item>L6 전달창</item>
+        <item>L7 정화장치</item>
+        <item>L8 거울 앞에 있는 소녀</item>
+        <item>F1 붉은 기사</item>
+        <item>F2 안개 바다 위의 방랑자</item>
+        <item>F4 화가의 어머니</item>
+        <item>F5 조각상에 대한 은유</item>
+        <item>F7 인간의 아들</item>
+        <item>F8 기억의 지속</item>
+        <item>F10 하양 위의 하양</item>
+        <item>F11 홍해의 기적</item>
+        <item>F13 대홍수</item>
+        <item>F14 기사, 사신과 악마</item>
+        <item>F16 죽음과 불</item>
+        <item>F17 검은 십자가</item>
+        <item>F19 교황청 1호 10그룹</item>
+        <item>F20 해질녘</item>
+        <item>SSE01 플랫폼</item>
+        <item>SSE01-1 플랫폼 밑 통로</item>
+        <item>SSE02 동탑 로비</item>
+        <item>SSE02-1 동탑 2층(동)</item>
+        <item>SSE02-2 동탑 3층(서)</item>
+        <item>SSE03 벌침 시스템</item>
+        <item>SSE03-1 동탑 32층</item>
+        <item>SSE03-2 동탑 37층</item>
+        <item>SSE03-3 동탑 40층</item>
+        <item>SSE04 유적 실험 구역</item>
+        <item>SSE04-1 통제 센터</item>
+        <item>SSE04-2 모의 영상관</item>
+        <item>SSE04-3 투사 실험 구역</item>
+        <item>SSE05 수술층</item>
+        <item>SSE06 비밀복도</item>
+    </string-array>
+
+    <string-array name="Story_Main_Main_Event_SlowShock_Caption">
+        <item>안젤리아</item>
+        <item>안나</item>
+        <item>안나</item>
+        <item>안나</item>
+        <item>안나</item>
+        <item>안나</item>
+        <item>안나 소위</item>
+        <item>안나 소위</item>
+        <item>안나 소위</item>
+        <item>안나 소위</item>
+        <item>안젤리아 지휘관</item>
+        <item>안젤리아 지휘관</item>
+        <item>안젤리아 지휘관</item>
+        <item>안젤리아 지휘관</item>
+        <item>안젤리아 지휘관</item>
+        <item>안젤리아 지휘관</item>
+        <item>안젤리아 요원</item>
+        <item>안젤리아 요원</item>
+        <item>안젤리아 요원</item>
+        <item>안젤리아 요원</item>
+        <item>안젤리아 요원</item>
+        <item>안젤리아 요원</item>
+        <item>안젤리아 요원</item>
+        <item>RO635</item>
+        <item>RO635</item>
+        <item>RO635</item>
+        <item>RO635</item>
+        <item>RO635</item>
+        <item>RO635</item>
+        <item>RO635</item>
+        <item>그리폰</item>
+        <item>그리폰</item>
+        <item>그리폰</item>
+        <item>그리폰</item>
+        <item>그리폰</item>
+        <item>그리폰</item>
+        <item>그리폰</item>
+        <item>그리폰</item>
+        <item>그리폰</item>
+        <item>그리폰</item>
+        <item>그리폰</item>
+        <item>그리폰</item>
+        <item>그리폰</item>
+        <item>그리폰</item>
+        <item>철혈</item>
+        <item>철혈</item>
+        <item>철혈</item>
+        <item>철혈</item>
+        <item>철혈</item>
+        <item>철혈</item>
+        <item>철혈</item>
+        <item>철혈</item>
+        <item>철혈</item>
+        <item>철혈</item>
+        <item>철혈</item>
+        <item>철혈</item>
+        <item>철혈</item>
+        <item>철혈</item>
+        <item>철혈</item>
+    </string-array>
+</resources>

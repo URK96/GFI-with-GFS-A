@@ -44,7 +44,10 @@ namespace GFDA
             "PV_MirrorStage_2",
             "PV_MyDevilsFrontline",
             "PV_PoincareRecurrence",
-            "PV_FixedPoint"
+            "PV_FixedPoint",
+            "PV_LongitudinalStrain",
+            "PV_TheGlisteningBloom",
+            "PV_SlowShock"
         };
         internal static readonly string[] titleList =
         {
@@ -69,7 +72,10 @@ namespace GFDA
             $"{ETC.Resources.GetString(Resource.String.Game_Event_MirrorStage)} - 2",
             ETC.Resources.GetString(Resource.String.Game_Event_MyDevilsFrontline),
             ETC.Resources.GetString(Resource.String.Game_Event_PoincareRecurrence),
-            ETC.Resources.GetString(Resource.String.Game_Event_FixedPoint)
+            ETC.Resources.GetString(Resource.String.Game_Event_FixedPoint),
+            ETC.Resources.GetString(Resource.String.Game_Event_LongitudinalStrain),
+            ETC.Resources.GetString(Resource.String.Game_Event_TheGlisteningBloom),
+            ETC.Resources.GetString(Resource.String.Game_Event_SlowShock)
         };
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -269,6 +275,10 @@ namespace GFDA
                     19 => Resource.Drawable.Album_MyDevilsFrontline,
                     20 => Resource.Drawable.Album_PoincareRecurrence,
                     21 => Resource.Drawable.Album_FixedPoint,
+                    22 => Resource.Drawable.Album_LongitudinalStrain,
+                    23 => Resource.Drawable.Album_TheGlisteningBloom,
+                    24 => Resource.Drawable.Album_SlowShock,
+
                     _ => default
                 };
 
