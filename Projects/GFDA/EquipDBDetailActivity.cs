@@ -1,4 +1,12 @@
-﻿using Android.App;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
+
+using Android.App;
 using Android.Content;
 using Android.Graphics.Drawables;
 using Android.OS;
@@ -10,13 +18,6 @@ using AndroidX.CoordinatorLayout.Widget;
 using AndroidX.SwipeRefreshLayout.Widget;
 
 using Google.Android.Material.Snackbar;
-
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Essentials;
 
@@ -32,6 +33,7 @@ namespace GFDA
         private SwipeRefreshLayout refreshMainLayout;
         private AndroidX.AppCompat.Widget.Toolbar toolbar;
         private CoordinatorLayout snackbarLayout;
+        private bool isOnlyUseEquip = false;
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
@@ -208,7 +210,7 @@ namespace GFDA
                     {
                         Drawable drawable = Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache"));
                         drawable.SetAlpha(40);
-                        FindViewById<RelativeLayout>(Resource.Id.EquipDBDetailMainLayout).Background = drawable;
+                        FindViewById<ImageView>(Resource.Id.EquipDBDetailBackgroundImageView).SetImageDrawable(drawable);
                     }
 
                     FindViewById<ImageView>(Resource.Id.EquipDBDetailImage).SetImageDrawable(Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Equip", "Normal", $"{equip.Icon}.gfdcache")));
@@ -315,6 +317,16 @@ namespace GFDA
                 }
 
 
+                // 전용 장비 착용 인형 정보 초기화
+
+                isOnlyUseEquip = IsOnlyUse;
+
+                if (IsOnlyUse)
+                {
+                    InitializeOnlyUseDollInfos();
+                }
+
+
                 // 장비 능력치 초기화
 
                 string[] Abilities = equip.Abilities;
@@ -354,11 +366,7 @@ namespace GFDA
                     abilityTableSubLayout.AddView(layout);
                 }
 
-                if (ETC.useLightTheme)
-                {
-                    SetCardTheme();
-                }
-
+                SetCardTheme();
                 ShowCardViewVisibility();
             }
             catch (WebException ex)
@@ -381,16 +389,106 @@ namespace GFDA
             }
         }
 
+        private void InitializeOnlyUseDollInfos()
+        {
+            LinearLayout container = FindViewById<LinearLayout>(Resource.Id.EquipDBDetailOnlyUseDollInfoContainer);
+
+            container.RemoveAllViews();
+
+            foreach (int dollDicNum in equip.OnlyUseDollDicNums)
+            {
+                DataRow row = ETC.FindDataRow(ETC.dollList, "DicNumber", dollDicNum);
+
+                if (row is null)
+                {
+                    continue;
+                }
+
+                Doll doll = new(row, true);
+
+                if (doll is null)
+                {
+                    continue;
+                }
+
+                View view = CreateItemView();
+
+                view.FindViewById<TextView>(Resource.Id.OnlyUseDollInfoType).Text = doll.Type;
+                view.FindViewById<ImageView>(Resource.Id.OnlyUseDollInfoGrade).SetImageResource(doll.GradeIconId);
+                view.FindViewById<ImageView>(Resource.Id.OnlyUseDollInfoSmallImage).SetImageDrawable(GetDollSmallImage(dollDicNum));
+                view.FindViewById<TextView>(Resource.Id.OnlyUseDollInfoNumber).Text = $"No. {dollDicNum}";
+                view.FindViewById<TextView>(Resource.Id.OnlyUseDollInfoName).Text = doll.Name;
+
+                view.Click += async delegate
+                {
+                    await Task.Delay(100);
+
+                    var dollInfo = new Intent(this, typeof(DollDBDetailActivity));
+
+                    dollInfo.PutExtra("DicNum", dollDicNum);
+                    StartActivity(dollInfo);
+                    OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
+                };
+
+                container.AddView(view);
+            }
+
+
+            // Local Funtions
+
+            View CreateItemView() =>
+                LayoutInflater.From(Platform.AppContext)
+                              .Inflate(Resource.Layout.EquipDBDetailLayout_OnlyUseDollInfoItemLayout, null, false);
+
+            Drawable GetDollSmallImage(int dicNum)
+            {
+                Drawable drawable = null;
+                string fileName = $"{dicNum}.gfdcache";
+                string filePath = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", fileName);
+
+                if (File.Exists(Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", fileName)))
+                {
+                    drawable = Drawable.CreateFromPath(filePath);
+                }
+                else
+                {
+                    string serverPath = Path.Combine(ETC.server, "Data", "Images", "Guns", "Normal_Crop");
+                    string targetPath = Path.Combine(ETC.cachePath, "Doll", "Normal_Crop");
+                    string url = Path.Combine(serverPath, $"{dicNum}.png");
+                    string target = Path.Combine(targetPath, $"{dicNum}.gfdcache");
+
+                    using WebClient wc = new();
+
+                    wc.DownloadFile(url, target);
+
+                    drawable = Drawable.CreateFromPath(filePath);
+                }
+
+                return drawable;
+            }
+        }
+
         private void SetCardTheme()
         {
-            int[] CardViewIds = { Resource.Id.EquipDBDetailBasicInfoCardLayout, Resource.Id.EquipDBDetailAvailableInfoCardLayout, Resource.Id.EquipDBDetailAbilityCardLayout };
+            int[] CardViewIds = 
+            { 
+                Resource.Id.EquipDBDetailBasicInfoCardLayout, 
+                Resource.Id.EquipDBDetailAvailableInfoCardLayout, 
+                Resource.Id.EquipDBDetailOnlyUseDollInfoCardLayout,
+                Resource.Id.EquipDBDetailAbilityCardLayout 
+            };
 
             foreach (int id in CardViewIds)
             {
-                var cv = FindViewById<CardView>(id);
+                var cardView = FindViewById<CardView>(id);
 
-                cv.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
-                cv.Radius = 15.0f;
+                cardView.Alpha = 0.7f;
+
+                if (ETC.useLightTheme)
+                {
+                    cardView.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
+                    cardView.Radius = 15.0f;
+                }
             }
         }
 
@@ -398,6 +496,9 @@ namespace GFDA
         {
             FindViewById<CardView>(Resource.Id.EquipDBDetailBasicInfoCardLayout).Visibility = ViewStates.Visible;
             FindViewById<CardView>(Resource.Id.EquipDBDetailAvailableInfoCardLayout).Visibility = ViewStates.Visible;
+            FindViewById<CardView>(Resource.Id.EquipDBDetailOnlyUseDollInfoCardLayout).Visibility = isOnlyUseEquip ?
+                ViewStates.Visible :
+                ViewStates.Gone;
             FindViewById<CardView>(Resource.Id.EquipDBDetailAbilityCardLayout).Visibility = ViewStates.Visible;
         }
 

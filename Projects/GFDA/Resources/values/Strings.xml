@@ -758,6 +758,7 @@
     <string name="EquipDBDetailLayout_RecommendGunTypeText"># Recommend Type #</string>
     <string name="EquipDBDetailLayout_AvailableGunTypeText"># Available Type #</string>
     <string name="EquipDBDetailLayout_OnlyUseText"># Exclusive Equipment #</string>
+    <string name="EquipDBDetailLayout_OnlyUseDollText">Fitted Doll Info</string>
   
     <!--EventListLayout-->
     <string name="EventListLayout_EventOngoing">Ongoing</string>

@@ -37,6 +37,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/EquipDBDetailMainLayout">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:id="@+id/EquipDBDetailBackgroundImageView" />
         <!--Equip Title Layout-->
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -90,6 +95,7 @@
                     android:layout_height="match_parent">
                     <include layout="@layout/equipdbdetaillayout_cardview_basic"/>
                     <include layout="@layout/equipdbdetaillayout_cardview_available"/>
+                    <include layout="@layout/equipdbdetaillayout_cardview_onlyusedollinfo"/>
                     <include layout="@layout/equipdbdetaillayout_cardview_ability"/>
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>

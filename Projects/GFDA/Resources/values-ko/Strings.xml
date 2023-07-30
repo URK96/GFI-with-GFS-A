@@ -758,6 +758,7 @@
     <string name="EquipDBDetailLayout_RecommendGunTypeText"># 장착 권장되는 총기 #</string>
     <string name="EquipDBDetailLayout_AvailableGunTypeText"># 장착 가능한 총기 #</string>
     <string name="EquipDBDetailLayout_OnlyUseText"># 전용 장비 #</string>
+    <string name="EquipDBDetailLayout_OnlyUseDollText">장착 인형 정보</string>
   
     <!--EventListLayout-->
     <string name="EventListLayout_EventOngoing">진행 중</string>

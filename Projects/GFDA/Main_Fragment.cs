@@ -120,6 +120,12 @@ namespace GFDA
                                 {
                                     ETC.LoadDBSync(ETC.equipmentList, "Equipment.gfs", false);
                                 }
+
+                                // For Only Use Doll Info
+                                if (string.IsNullOrEmpty(ETC.dollList.TableName))
+                                {
+                                    ETC.LoadDBSync(ETC.dollList, "Doll.gfs", false);
+                                }
                             });
 
                             Activity.StartActivity(typeof(EquipDBMainActivity));
