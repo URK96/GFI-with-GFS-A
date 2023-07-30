@@ -276,7 +276,7 @@ namespace GFDA
                     var drawable = Drawable.CreateFromPath(imagePath);
                     drawable.SetAlpha(40);
 
-                    FindViewById<ImageView>(Resource.Id.EnemyDBDetailBackgroundImageView).Background = drawable;
+                    FindViewById<ImageView>(Resource.Id.EnemyDBDetailBackgroundImageView).SetImageDrawable(drawable);
                 }
 
                 string cropImagePath = Path.Combine(ETC.cachePath, "Enemy", "Normal_Crop", $"{enemy.CodeName}.gfdcache");
@@ -344,11 +344,7 @@ namespace GFDA
                     FindViewById<TextView>(StatusTexts[i]).Text = value.ToString();
                 }
 
-                if (ETC.useLightTheme)
-                {
-                    SetCardTheme();
-                }
-
+                SetCardTheme();
                 ShowCardViewVisibility();
             }
             catch (WebException ex)
@@ -382,10 +378,15 @@ namespace GFDA
 
             foreach (int id in CardViewIds)
             {
-                var cv = FindViewById<CardView>(id);
+                var cardView = FindViewById<CardView>(id);
 
-                cv.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
-                cv.Radius = 15.0f;
+                cardView.Alpha = 0.7f;
+
+                if (ETC.useLightTheme)
+                {
+                    cardView.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
+                    cardView.Radius = 15.0f;
+                }
             }
         }
 

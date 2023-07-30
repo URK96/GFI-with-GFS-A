@@ -221,7 +221,7 @@ namespace GFDA
                         var drawable = Drawable.CreateFromPath(fullImagePath);
                         drawable.SetAlpha(40);
 
-                        FindViewById<ImageView>(Resource.Id.FairyDBDetailBackgroundImageView).Background = drawable;
+                        FindViewById<ImageView>(Resource.Id.FairyDBDetailBackgroundImageView).SetImageDrawable(drawable);
                     }
 
                     string smallImagePath = Path.Combine(ETC.cachePath, "Fairy", "Normal_Crop", $"{fairy.DicNumber}.gfdcache");
@@ -328,11 +328,7 @@ namespace GFDA
                     FindViewById<TextView>(StatusTexts[i]).Text = fairy.Abilities[abilities[i]];
                 }
 
-                if (ETC.useLightTheme)
-                {
-                    SetCardTheme();
-                }
-
+                SetCardTheme();
                 ShowCardViewVisibility();
             }
             catch (Exception ex)
@@ -352,10 +348,15 @@ namespace GFDA
 
             foreach (int id in CardViewIds)
             {
-                var cv = FindViewById<CardView>(id);
+                var cardView = FindViewById<CardView>(id);
 
-                cv.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
-                cv.Radius = 15.0f;
+                cardView.Alpha = 0.7f;
+
+                if (ETC.useLightTheme)
+                {
+                    cardView.Background = new ColorDrawable(Android.Graphics.Color.WhiteSmoke);
+                    cardView.Radius = 15.0f;
+                }
             }
         }
 
