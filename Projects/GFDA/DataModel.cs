@@ -276,6 +276,7 @@ namespace GFDA
         public string Type { get; private set; }
         public string Icon { get; private set; }
         public string[] OnlyUse { get; private set; }
+        public int[] OnlyUseDollDicNums { get; private set; }
         public string[] DollType { get; private set; }
         public string[] SpecialDoll { get; private set; }
         public string Note { get; private set; }
@@ -326,6 +327,11 @@ namespace GFDA
             }
 
             SetAbility(dr);
+
+            if (!ETC.IsDBNullOrBlank(dr, "OnlyUseDollDicNum"))
+            {
+                ExtractOnlyUseDollDicNumData(dr);
+            }
         }
 
         private void SetAbility(DataRow dr)
@@ -334,6 +340,22 @@ namespace GFDA
             InitMags = ((string)dr["InitialMagnification"]).Split(';');
             MaxMags = ((string)dr["MaxMagnification"]).Split(';');
             CanUpgrade = (MaxMags[0] != "강화 불가") && (MaxMags[0] != "강화불가");
+        }
+
+        private void ExtractOnlyUseDollDicNumData(DataRow dr)
+        {
+            string[] dicNumStrs = ((string)dr["OnlyUseDollDicNum"]).Split(';');
+            List<int> nums = new(dicNumStrs.Length);
+
+            foreach (string str in dicNumStrs)
+            {
+                if (int.TryParse(str, out int dicNum))
+                {
+                    nums.Add(dicNum);
+                }
+            }
+
+            OnlyUseDollDicNums = nums.ToArray();
         }
     }
 
