@@ -14,6 +14,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:id="@+id/EquipDBDetailOnlyUseDollInfoLayout">
     <!--Equip OnlyUseDoll Info - Doll Info Part-->
         <TextView
@@ -26,6 +28,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:id="@+id/EquipDBDetailOnlyUseDollInfoContainer" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
