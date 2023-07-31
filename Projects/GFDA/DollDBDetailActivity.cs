@@ -22,11 +22,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Essentials;
+
+using static Android.Icu.Text.Transliterator;
 
 namespace GFDA
 {
@@ -63,6 +66,7 @@ namespace GFDA
         private bool isChartLoad;
         private bool initLoadComplete;
         private bool isApplyModVoice;
+        private bool hasDedicatedEquip = false;
 
         private ISimpleAudioPlayer voicePlayer;
         private FileStream stream;
@@ -89,6 +93,7 @@ namespace GFDA
         private View skillInfoRootLayout;
         private View coopSkillInfoRootLayout;
         private View modSkillInfoRootLayout;
+        private View dedicatedEquipInfoRootLayout;
         private View abilityInfoRootLayout;
         private View abilityRadarChartRootLayout;
 
@@ -97,6 +102,7 @@ namespace GFDA
 
         int[] modButtonIds = { Resource.Id.DollDBDetailModSelect0, Resource.Id.DollDBDetailModSelect1, Resource.Id.DollDBDetailModSelect2, Resource.Id.DollDBDetailModSelect3 };
         private List<string> compareList;
+        private List<Equip> equipments;
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
@@ -134,6 +140,7 @@ namespace GFDA
                 skillInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_Skill, new LinearLayout(this), true);
                 coopSkillInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_CoOpSkill, new LinearLayout(this), true);
                 modSkillInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_ModSkill, new LinearLayout(this), true);
+                dedicatedEquipInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_DedicatedEquipInfo, new LinearLayout(this), true);
                 abilityInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_Ability, new LinearLayout(this), true);
                 abilityRadarChartRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_AbilityChart, new LinearLayout(this), true);
 
@@ -933,8 +940,8 @@ namespace GFDA
                     LoadModSkill(isRefresh);
                 }
 
+                LoadDedicatedEquip();
                 LoadAbility();
-
                 ShowCardViewVisibility();          
             }
             catch (WebException ex)
@@ -1331,6 +1338,102 @@ namespace GFDA
             }
         }
 
+        private void LoadDedicatedEquip()
+        {
+            if (equipments is null)
+            {
+                InitializeEquipData();
+            }
+
+            IEnumerable<Equip> dedicatedEquips = equipments.Where(x =>
+                (x.OnlyUseDollDicNums is not null) && 
+                x.OnlyUseDollDicNums.Contains(doll.DicNumber));
+
+            hasDedicatedEquip = dedicatedEquips.Any();
+
+            if (!hasDedicatedEquip)
+            {
+                return;
+            }
+
+            LinearLayout container = dedicatedEquipInfoRootLayout.FindViewById<LinearLayout>(Resource.Id.DollDBDetailDedicatedEquipInfoContainer);
+
+            container.RemoveAllViews();
+
+            foreach (Equip dedicatedEquip in dedicatedEquips)
+            {
+                if (dedicatedEquip is null)
+                {
+                    continue;
+                }
+
+                View view = CreateItemView();
+
+                view.FindViewById<TextView>(Resource.Id.DedicatedEquipCategory).Text = dedicatedEquip.Category;
+                view.FindViewById<ImageView>(Resource.Id.DedicatedEquipGrade).SetImageResource(dedicatedEquip.GradeIconId);
+                view.FindViewById<ImageView>(Resource.Id.DedicatedEquipSmallImage).SetImageDrawable(GetEquipSmallImage(dedicatedEquip.Icon));
+                view.FindViewById<TextView>(Resource.Id.DedicatedEquipType).Text = dedicatedEquip.Type;
+                view.FindViewById<TextView>(Resource.Id.DedicatedEquipName).Text = dedicatedEquip.Name;
+
+                view.Click += async delegate
+                {
+                    await Task.Delay(100);
+
+                    var equipInfo = new Intent(this, typeof(EquipDBDetailActivity));
+
+                    equipInfo.PutExtra("Id", dedicatedEquip.Id);
+                    StartActivity(equipInfo);
+                    OverridePendingTransition(Resource.Animation.Activity_SlideInRight, Resource.Animation.Activity_SlideOutLeft);
+                };
+
+                container.AddView(view);
+            }
+
+
+            // Local Functions
+
+            void InitializeEquipData()
+            {
+                equipments = new List<Equip>();
+
+                foreach (DataRow dr in ETC.equipmentList.Rows)
+                {
+                    equipments.Add(new Equip(dr));
+                }
+            }
+
+            View CreateItemView() =>
+                LayoutInflater.From(Platform.AppContext)
+                              .Inflate(Resource.Layout.DollDBDetailLayout_DedicatedEquipInfoItemLayout, null, false);
+
+            Drawable GetEquipSmallImage(string iconName)
+            {
+                Drawable drawable = null;
+                string fileName = $"{iconName}.gfdcache";
+                string filePath = Path.Combine(ETC.cachePath, "Equip", "Normal", fileName);
+
+                if (File.Exists(filePath))
+                {
+                    drawable = Drawable.CreateFromPath(filePath);
+                }
+                else
+                {
+                    string serverPath = Path.Combine(ETC.server, "Data", "Images", "Equipments");
+                    string targetPath = Path.Combine(ETC.cachePath, "Equip", "Normal");
+                    string url = Path.Combine(serverPath, $"{iconName}.png");
+                    string target = Path.Combine(targetPath, $"{iconName}.gfdcache");
+
+                    using WebClient wc = new();
+
+                    wc.DownloadFile(url, target);
+
+                    drawable = Drawable.CreateFromPath(filePath);
+                }
+
+                return drawable;
+            }
+        }
+
         private void LoadAbility()
         {
             try
@@ -1436,6 +1539,10 @@ namespace GFDA
                 {
                     cardview.Visibility = (modIndex >= 2) ? ViewStates.Visible : ViewStates.Gone;
                 }
+                else if (cardview.Id is Resource.Id.DollDBDetailDedicatedEquipInfoCardLayout)
+                {
+                    cardview.Visibility = hasDedicatedEquip ? ViewStates.Visible: ViewStates.Gone;
+                }
                 else
                 {
                     cardview.Visibility = ViewStates.Visible;
@@ -1452,6 +1559,7 @@ namespace GFDA
                 scrollMainContainer.AddView(skillInfoRootLayout);
                 scrollMainContainer.AddView(coopSkillInfoRootLayout);
                 scrollMainContainer.AddView(modSkillInfoRootLayout);
+                scrollMainContainer.AddView(dedicatedEquipInfoRootLayout);
                 scrollMainContainer.AddView(abilityInfoRootLayout);
                 scrollMainContainer.AddView(abilityRadarChartRootLayout);
 
@@ -1460,6 +1568,7 @@ namespace GFDA
                 scrollCardViews.Add(skillInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailSkillCardLayout));
                 scrollCardViews.Add(coopSkillInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailCoOpSkillCardLayout));
                 scrollCardViews.Add(modSkillInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailModSkillCardLayout));
+                scrollCardViews.Add(dedicatedEquipInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailDedicatedEquipInfoCardLayout));
                 scrollCardViews.Add(abilityInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout));
                 scrollCardViews.Add(abilityRadarChartRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout));
                 

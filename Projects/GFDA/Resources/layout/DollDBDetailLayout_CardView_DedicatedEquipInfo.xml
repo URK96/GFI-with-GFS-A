@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto">
+<androidx.cardview.widget.CardView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:visibility="gone"
+    android:id="@+id/DollDBDetailDedicatedEquipInfoCardLayout"
+    cardview:cardElevation="4dp"
+    cardview:cardCornerRadius="5dp"
+    cardview:cardBackgroundColor="@color/background_material_dark">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/DollDBDetailDedicatedEquipInfoLayout">
+    <!--Doll Dedicated Equip Info - Equip Info Part-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/DollDBDetailLayout_DedicatedEquipText"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:gravity="center" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/DollDBDetailDedicatedEquipInfoContainer" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+</merge>

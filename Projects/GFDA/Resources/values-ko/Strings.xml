@@ -749,6 +749,7 @@
     <string name="DollDBDetailLayout_SDAnimationButtonText">SD 애니메이션 (Beta)</string>
     <string name="DollDBDetailLayout_ModStory">인형의 추억</string>
     <string name="DollDBDetailLayout_ModelData">총기 제원</string>
+    <string name="DollDBDetailLayout_DedicatedEquipText">전용 장비 정보</string>
   
     <!--DollFilterLayout-->
     <string name="DollFilterLayout_ModFilterTitle">개조 인형만 보기</string>

@@ -749,6 +749,7 @@
     <string name="DollDBDetailLayout_SDAnimationButtonText">SD Animation (Beta)</string>
     <string name="DollDBDetailLayout_ModStory">T-Doll Memories</string>
     <string name="DollDBDetailLayout_ModelData">Model Data</string>
+    <string name="DollDBDetailLayout_DedicatedEquipText">Dedicated Equipment Info</string>
   
     <!--DollFilterLayout-->
     <string name="DollFilterLayout_ModFilterTitle">Only Mod Available</string>
