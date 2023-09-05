@@ -168,10 +168,10 @@
       <Version>5.0.2</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Licensing">
-      <Version>22.2.5</Version>
+      <Version>22.2.12</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfChart.Android">
-      <Version>22.2.5</Version>
+      <Version>22.2.12</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugin.SimpleAudioPlayer">
       <Version>1.6.0</Version>
