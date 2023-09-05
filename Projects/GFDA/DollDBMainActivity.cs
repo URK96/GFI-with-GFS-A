@@ -616,6 +616,7 @@ namespace GFDA
         public TextView DicNumber { get; private set; }
         public TextView Type { get; private set; }
         public ImageView Grade { get; private set; }
+        public ImageView ModIndicator { get; private set; }
         public ImageView SmallImage { get; private set; }
         public TextView Name { get; private set; }
         public TextView ProductTime { get; private set; }
@@ -625,6 +626,7 @@ namespace GFDA
             DicNumber = view.FindViewById<TextView>(Resource.Id.DollListNumber);
             Type = view.FindViewById<TextView>(Resource.Id.DollListType);
             Grade = view.FindViewById<ImageView>(Resource.Id.DollListGrade);
+            ModIndicator = view.FindViewById<ImageView>(Resource.Id.DollListModIndicator);
             SmallImage = view.FindViewById<ImageView>(Resource.Id.DollListSmallImage);
             Name = view.FindViewById<TextView>(Resource.Id.DollListName);
             ProductTime = view.FindViewById<TextView>(Resource.Id.DollListProductTime);
@@ -676,6 +678,7 @@ namespace GFDA
 
             try
             {
+                vh.ModIndicator.Visibility = item.HasMod ? ViewStates.Visible : ViewStates.Invisible;
                 vh.DicNumber.Text = $"No. {item.DicNumber}";
 
                 if (Preferences.Get("DBListImageShow", false))
