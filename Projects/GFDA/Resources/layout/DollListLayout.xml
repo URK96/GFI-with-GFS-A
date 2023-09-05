@@ -28,14 +28,10 @@
             android:layout_height="wrap_content"
             android:src="@drawable/mod_indicator"/>
     </LinearLayout>
-	<ImageView
-		android:layout_width="wrap_content"
-		android:layout_height="match_parent"
-		android:scaleType="fitCenter"
-		android:id="@+id/DollListModIcon"/>
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
         android:scaleType="fitCenter"
 		android:id="@+id/DollListSmallImage"/>
     <LinearLayout

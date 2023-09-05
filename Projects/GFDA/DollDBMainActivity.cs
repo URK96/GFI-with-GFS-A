@@ -689,6 +689,10 @@ namespace GFDA
                     {
                         vh.SmallImage.SetImageDrawable(Android.Graphics.Drawables.Drawable.CreateFromPath(Path.Combine(ETC.cachePath, "Doll", "Normal_Crop", $"{item.DicNumber}.gfdcache")));
                     }
+                    else
+                    {
+                        vh.SmallImage.SetImageDrawable(null);
+                    }
                 }
                 else
                 {
