@@ -176,7 +176,7 @@ namespace GFDA
                 "K2",
                 "K3",
                 "K5",
-                "K7",
+                //"K7",
                 "K11"
             };
             ArrayAdapter adapter = new(this, Resource.Layout.SpinnerListLayout, characterItems);
