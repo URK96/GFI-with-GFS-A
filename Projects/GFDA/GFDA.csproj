@@ -198,7 +198,7 @@
       <Version>2.0.1.19</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Preference">
-      <Version>1.2.0.7</Version>
+      <Version>1.2.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.9.0.2" />
     <PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.Utils" Version="1.0.0.19" />
