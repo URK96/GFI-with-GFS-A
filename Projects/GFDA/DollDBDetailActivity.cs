@@ -94,6 +94,7 @@ namespace GFDA
         private View coopSkillInfoRootLayout;
         private View modSkillInfoRootLayout;
         private View dedicatedEquipInfoRootLayout;
+        private View equipsetbuffInfoRootLayout;
         private View abilityInfoRootLayout;
         private View abilityRadarChartRootLayout;
 
@@ -141,6 +142,7 @@ namespace GFDA
                 coopSkillInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_CoOpSkill, new LinearLayout(this), true);
                 modSkillInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_ModSkill, new LinearLayout(this), true);
                 dedicatedEquipInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_DedicatedEquipInfo, new LinearLayout(this), true);
+                equipsetbuffInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_EquipSetBuff, new LinearLayout(this), true);
                 abilityInfoRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_Ability, new LinearLayout(this), true);
                 abilityRadarChartRootLayout = LayoutInflater.Inflate(Resource.Layout.DollDBDetailLayout_CardView_AbilityChart, new LinearLayout(this), true);
 
@@ -941,6 +943,7 @@ namespace GFDA
                 }
 
                 LoadDedicatedEquip();
+                LoadEquipSetBuffInfo();
                 LoadAbility();
                 ShowCardViewVisibility();          
             }
@@ -1434,6 +1437,51 @@ namespace GFDA
             }
         }
 
+        private void LoadEquipSetBuffInfo()
+        {
+            if (!doll.HasEquipSetBuff)
+            {
+                return;
+            }
+
+            equipsetbuffInfoRootLayout.FindViewById<ImageView>(Resource.Id.DollDBDetailEquipSetBuffSetIcon)
+                                      .SetImageDrawable(GetEquipSetImage($"group_{doll.DicNumber}"));
+            equipsetbuffInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailEquipSetBuffSetName).Text = doll.EquipSetName;
+            equipsetbuffInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailEquipSetBuffSetExplain).Text = doll.EquipSetExplain;
+            equipsetbuffInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailEquipSetBuffInfo2SetExplain).Text = doll.EquipSet2Buff;
+            equipsetbuffInfoRootLayout.FindViewById<TextView>(Resource.Id.DollDBDetailEquipSetBuffInfo3SetExplain).Text = doll.EquipSet3Buff;
+
+
+            // Local Functions
+
+            Drawable GetEquipSetImage(string iconName)
+            {
+                Drawable drawable = null;
+                string fileName = $"{iconName}.gfdcache";
+                string filePath = Path.Combine(ETC.cachePath, "Equip", "GroupIcon", fileName);
+
+                if (File.Exists(filePath))
+                {
+                    drawable = Drawable.CreateFromPath(filePath);
+                }
+                else
+                {
+                    string serverPath = Path.Combine(ETC.server, "Data", "Images", "Equipments", "GroupIcon");
+                    string targetPath = Path.Combine(ETC.cachePath, "Equip", "GroupIcon");
+                    string url = Path.Combine(serverPath, $"{iconName}.png");
+                    string target = Path.Combine(targetPath, $"{iconName}.gfdcache");
+
+                    using WebClient wc = new();
+
+                    wc.DownloadFile(url, target);
+
+                    drawable = Drawable.CreateFromPath(filePath);
+                }
+
+                return drawable;
+            }
+        }
+
         private void LoadAbility()
         {
             try
@@ -1543,6 +1591,10 @@ namespace GFDA
                 {
                     cardview.Visibility = hasDedicatedEquip ? ViewStates.Visible: ViewStates.Gone;
                 }
+                else if (cardview.Id is Resource.Id.DollDBDetailEquipSetBuffCardLayout)
+                {
+                    cardview.Visibility = doll.HasEquipSetBuff ? ViewStates.Visible : ViewStates.Gone;
+                }
                 else
                 {
                     cardview.Visibility = ViewStates.Visible;
@@ -1560,6 +1612,7 @@ namespace GFDA
                 scrollMainContainer.AddView(coopSkillInfoRootLayout);
                 scrollMainContainer.AddView(modSkillInfoRootLayout);
                 scrollMainContainer.AddView(dedicatedEquipInfoRootLayout);
+                scrollMainContainer.AddView(equipsetbuffInfoRootLayout);
                 scrollMainContainer.AddView(abilityInfoRootLayout);
                 scrollMainContainer.AddView(abilityRadarChartRootLayout);
 
@@ -1569,6 +1622,7 @@ namespace GFDA
                 scrollCardViews.Add(coopSkillInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailCoOpSkillCardLayout));
                 scrollCardViews.Add(modSkillInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailModSkillCardLayout));
                 scrollCardViews.Add(dedicatedEquipInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailDedicatedEquipInfoCardLayout));
+                scrollCardViews.Add(equipsetbuffInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailEquipSetBuffCardLayout));
                 scrollCardViews.Add(abilityInfoRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailAbilityCardLayout));
                 scrollCardViews.Add(abilityRadarChartRootLayout.FindViewById<CardView>(Resource.Id.DollDBDetailAbilityRadarChartCardLayout));
                 

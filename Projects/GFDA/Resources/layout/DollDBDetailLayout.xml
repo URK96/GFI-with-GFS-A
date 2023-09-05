@@ -224,6 +224,7 @@
                     <include layout="@layout/dolldbdetaillayout_cardview_skill"/>
                     <include layout="@layout/dolldbdetaillayout_cardview_modskill"/>
                     <include layout="@layout/dolldbdetaillayout_cardview_dedicatedequipinfo"/>
+                    <include layout="@layout/dolldbdetaillayout_cardview_equipsetbuff"/>
                     <include layout="@layout/dolldbdetaillayout_cardview_ability"/>
                     <include layout="@layout/dolldbdetaillayout_cardview_abilitychart"/>
                 </LinearLayout>

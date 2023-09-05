@@ -96,6 +96,11 @@ namespace GFDA
         public bool HasCensored { get; private set; }
         public string[] CensorType { get; private set; }
         public string[] DropEvent { get; private set; }
+        public bool HasEquipSetBuff { get; private set; }
+        public string EquipSetName { get; private set; }
+        public string EquipSetExplain { get; private set; }
+        public string EquipSet2Buff { get; private set; }
+        public string EquipSet3Buff { get; private set; }
 
         public Dictionary<string, string> Abilities { get; private set; }
         public string[] AbilityGrade { get; private set; }
@@ -181,6 +186,8 @@ namespace GFDA
                 CoOpSkillExplain = ETC.ApplyNewLineIndicator((string)dr["CoOpSkillExplain"]);
             }
 
+            SetEquipSetBuff(dr);
+
             switch (Grade)
             {
                 case 0:
@@ -262,6 +269,15 @@ namespace GFDA
             }
 
             AbilityGrade = ((string)dr["AbilityGrade"]).Split(';');
+        }
+
+        private void SetEquipSetBuff(DataRow dr)
+        {
+            HasEquipSetBuff = ETC.IsDBNullOrBlank(dr, "EquipSetName") ? false : (bool)dr["HasEquipSetBuff"];
+            EquipSetName = ETC.IsDBNullOrBlank(dr, "EquipSetName") ? string.Empty : (string)dr["EquipSetName"];
+            EquipSetExplain = ETC.IsDBNullOrBlank(dr, "EquipSetExplain") ? string.Empty : (string)dr["EquipSetExplain"];
+            EquipSet2Buff = ETC.IsDBNullOrBlank(dr, "EquipSet2Buff") ? string.Empty : (string)dr["EquipSet2Buff"];
+            EquipSet3Buff = ETC.IsDBNullOrBlank(dr, "EquipSet3Buff") ? string.Empty : (string)dr["EquipSet3Buff"];
         }
     }
 

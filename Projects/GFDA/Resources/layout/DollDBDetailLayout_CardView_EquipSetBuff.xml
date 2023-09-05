@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto">
+<androidx.cardview.widget.CardView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:visibility="gone"
+    android:id="@+id/DollDBDetailEquipSetBuffCardLayout"
+    cardview:cardElevation="4dp"
+    cardview:cardCornerRadius="5dp"
+    cardview:cardBackgroundColor="@color/background_material_dark">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:layout_marginBottom="10dp"
+        android:id="@+id/DollDBDetailEquipSetBuffBasicLayout">
+    <!--Doll Equip Set Buff Part - Basic Layout-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/DollDBDetailEquipSetBuffBasicLayout">
+        <!--Doll Equip Set Buff Part - Basic Layout - Equip Set Icon-->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/DollDBDetailEquipSetBuffSetIcon"
+                android:layout_margin="5dp" />
+        <!--Doll Equip Set Buff Part - Basic Layout - Equip Set Name-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:id="@+id/DollDBDetailEquipSetBuffSetName" />
+        </LinearLayout>
+    <!--Doll Equip Set Buff Part - Equip Set Explain-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="center"
+            android:layout_below="@id/DollDBDetailEquipSetBuffBasicLayout"
+            android:id="@+id/DollDBDetailEquipSetBuffSetExplain" />
+    <!--Doll Equip Set Buff Part - Equip Set Buff Info-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/DollDBDetailEquipSetBuffSetExplain"
+            android:id="@+id/DollDBDetailEquipSetBuffInfoLayout">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/DollDBDetailEquipSetBuffInfo2SetLayout">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="2 Set"
+                    android:textStyle="bold"
+                    android:id="@+id/DollDBDetailEquipSetBuffInfo2SetTitle" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:id="@+id/DollDBDetailEquipSetBuffInfo2SetExplain" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/DollDBDetailEquipSetBuffInfo3SetLayout">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="3 Set"
+                    android:textStyle="bold"
+                    android:id="@+id/DollDBDetailEquipSetBuffInfo3SetTitle" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:id="@+id/DollDBDetailEquipSetBuffInfo3SetExplain" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+</merge>

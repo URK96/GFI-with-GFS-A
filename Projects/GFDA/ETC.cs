@@ -260,6 +260,7 @@ namespace GFDA
                 Path.Combine(cachePath, "Doll", "GuideImage"),
                 Path.Combine(cachePath, "Equip"),
                 Path.Combine(cachePath, "Equip", "Normal"),
+                Path.Combine(cachePath, "Equip", "GroupIcon"),
                 Path.Combine(cachePath, "Equip", "ProductData"),
                 Path.Combine(cachePath, "Fairy"),
                 Path.Combine(cachePath, "Fairy", "Normal"),
