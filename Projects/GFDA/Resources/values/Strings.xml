@@ -104,6 +104,7 @@
     <string name="Activity_ExternLibraryCopyrightActivity">Extern Library Copyright</string>
     <string name="Activity_SettingActivity">Setting</string>
     <string name="Activity_StoryActivity">Story</string>
+    <string name="Activity_SDViewerActivity">SD Viewer</string>
   
     <!--Solution String-->
     <string name="CheckingUpdate">Checking Updates...</string>
@@ -529,6 +530,7 @@
     <string name="Main_GFUtil_GuideBookViewer">Guide Book</string>
     <string name="Main_GFUtil_ShortGuideBookViewer">Beginner Guide</string>
     <string name="Main_GFUtil_SDSimulator">SD Simulator</string>
+    <string name="Main_GFUtil_SDViewer">SD Viewer (Beta)</string>
 
     <!--New Main - Other-->
     <string name="Main_Other_ProductSimulator">Manufacturing Simulation</string>
@@ -854,6 +856,9 @@
     <string name="SelectCache_Category_Cartoon">Cartoon</string>
     <string name="SelectCache_Category_PV">PV</string>
     <string name="SelectCache_Category_OST">OST</string>
+
+    <!--GFSDViewerActivity-->
+    <string name="GFSDViewerActivity_Title">SD Viewer</string>
   
     <!--ETC String Value-->
     <string name="AdMob_TestID">ca-app-pub-3940256099942544/6300978111</string>
@@ -861,4 +866,5 @@
     <string name="Firewall_Category">楚慮传</string>
     <string name="Firewall">䈀爀攀愀欀 䘀椀爀攀眀愀氀氀 漀昀 娀椀渀愀 伀匀</string>
     <string name="Firewall_Message">䤮伮倠偲潤畣瑩潮</string>
+    
 </resources>

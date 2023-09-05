@@ -292,7 +292,8 @@ namespace GFDA
                 Path.Combine(cachePath, "GuideBook", "PDFs"),
                 Path.Combine(cachePath, "GuideBook", "Images"),
                 Path.Combine(cachePath, "OST"),
-                Path.Combine(cachePath, "Video", "PV")
+                Path.Combine(cachePath, "Video", "PV"),
+                Path.Combine(cachePath, "SDAnimationData")
             };
 
             foreach (string path in mainPaths)

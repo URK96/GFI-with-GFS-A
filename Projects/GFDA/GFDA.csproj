@@ -75,6 +75,12 @@
     <AndroidSupportedAbis>armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SkiaSpineSharp">
+      <HintPath>..\..\SkiaSpineSharp\SkiaSpineSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="spine-csharp">
+      <HintPath>..\..\SkiaSpineSharp\spine-csharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -121,6 +127,7 @@
     <Compile Include="GFDInfoActivity.cs" />
     <Compile Include="GFOSTPlayerActivity.cs" />
     <Compile Include="GFPVListActivity.cs" />
+    <Compile Include="GFSDViewerActivity.cs" />
     <Compile Include="HiddenSettingActivity.cs" />
     <Compile Include="LicenseViewer.cs" />
     <Compile Include="Main.cs" />
@@ -166,6 +173,9 @@
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Crashes">
       <Version>5.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="SkiaSharp.Views">
+      <Version>2.88.5</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Licensing">
       <Version>22.2.12</Version>
@@ -1670,6 +1680,14 @@
     <AndroidResource Include="Resources\layout\DollDBDetailLayout_CardView_EquipSetBuff.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\GFSDViewerLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\MOD_Indicator.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

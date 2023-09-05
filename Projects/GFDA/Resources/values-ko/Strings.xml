@@ -106,6 +106,7 @@
     <string name="Activity_ExternLibraryCopyrightActivity">외부 라이브러리 라이선스</string>
     <string name="Activity_SettingActivity">설정</string>
     <string name="Activity_StoryActivity">스토리</string>
+    <string name="Activity_SDViewerActivity">SD 뷰어</string>
   
     <!--Solution String-->
     <string name="CheckingUpdate">업데이트 확인 중...</string>
@@ -532,6 +533,7 @@
     <string name="Main_GFUtil_GuideBookViewer">가이드북</string>
     <string name="Main_GFUtil_ShortGuideBookViewer">초보자 가이드북</string>
     <string name="Main_GFUtil_SDSimulator">SD 시뮬</string>
+    <string name="Main_GFUtil_SDViewer">SD 뷰어 (베타)</string>
 
     <!--New Main - Other-->
     <string name="Main_Other_ProductSimulator">제조 시뮬레이터</string>
@@ -856,6 +858,9 @@
     <string name="SelectCache_Category_Cartoon">만화</string>
     <string name="SelectCache_Category_PV">PV</string>
     <string name="SelectCache_Category_OST">OST</string>
+
+    <!--GFSDViewerActivity-->
+    <string name="GFSDViewerActivity_Title">SD 뷰어</string>
   
     <!--ETC String Value-->
     <string name="AdMob_TestID">ca-app-pub-3940256099942544/6300978111</string>

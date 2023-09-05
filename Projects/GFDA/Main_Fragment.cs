@@ -309,6 +309,11 @@ namespace GFDA
                             StartActivity(sdIntent);
                             Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
                             break;
+                        // SD Viewer (Beta)
+                        case 8:
+                            Activity.StartActivity(typeof(GFSDViewerActivity));
+                            Activity.OverridePendingTransition(Android.Resource.Animation.FadeIn, Android.Resource.Animation.FadeOut);
+                            break;
                         default:
                             //ETC.ShowSnackbar(snackbarLayout, Resource.String.AbnormalAccess, Snackbar.LengthShort, Android.Graphics.Color.DarkRed);
                             Toast.MakeText(Activity, Resource.String.AbnormalAccess, ToastLength.Short).Show();
