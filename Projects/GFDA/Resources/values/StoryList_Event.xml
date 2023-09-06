@@ -405,274 +405,299 @@
     <item>제로섬</item>
   </string-array>
 
-	<string-array name="Story_Main_Main_Event_2021Christmas_TopTitle">
-		<item>한푼차이</item>
-		<item>한푼차이</item>
-		<item>한푼차이</item>
-		<item>한푼차이</item>
-		<item>한푼차이</item>
-		<item>한푼차이</item>
-		<item>한푼차이</item>
-		<item>한푼차이</item>
-		<item>한푼차이</item>
-		<item>한푼차이</item>
-	</string-array>
+    <string-array name="Story_Main_Main_Event_2021Christmas_TopTitle">
+        <item>한푼차이</item>
+        <item>한푼차이</item>
+        <item>한푼차이</item>
+        <item>한푼차이</item>
+        <item>한푼차이</item>
+        <item>한푼차이</item>
+        <item>한푼차이</item>
+        <item>한푼차이</item>
+        <item>한푼차이</item>
+        <item>한푼차이</item>
+    </string-array>
 
-	<string-array name="Story_Main_Main_Event_2021Christmas">
-		<item>"소원은 언제 이루나"</item>
-		<item>혼자만의 항쟁 Ⅰ</item>
-		<item>혼자만의 항쟁 Ⅱ</item>w
-		<item>헤비 메탈과 마일드 트리 Ⅰ</item>
-		<item>헤비 메탈과 마일드 트리 Ⅱ</item>
-		<item>묻힌 사기극 Ⅰ</item>
-		<item>묻힌 사기극 Ⅱ</item>
-		<item>꽃처럼 흩날리는 눈 Ⅰ</item>
-		<item>꽃처럼 흩날리는 눈 Ⅱ</item>
-		<item>"불꽃 피어나는 순간"</item>
-	</string-array>
+    <string-array name="Story_Main_Main_Event_2021Christmas">
+        <item>"소원은 언제 이루나"</item>
+        <item>혼자만의 항쟁 Ⅰ</item>
+        <item>혼자만의 항쟁 Ⅱ</item>w
+        <item>헤비 메탈과 마일드 트리 Ⅰ</item>
+        <item>헤비 메탈과 마일드 트리 Ⅱ</item>
+        <item>묻힌 사기극 Ⅰ</item>
+        <item>묻힌 사기극 Ⅱ</item>
+        <item>꽃처럼 흩날리는 눈 Ⅰ</item>
+        <item>꽃처럼 흩날리는 눈 Ⅱ</item>
+        <item>"불꽃 피어나는 순간"</item>
+    </string-array>
 
-	<string-array name="Story_Main_Main_Event_2021Christmas_Caption">
-		<item>"소원은 언제 이루나"</item>
-		<item>혼자만의 항쟁 Ⅰ</item>
-		<item>혼자만의 항쟁 Ⅱ</item>
-		<item>헤비 메탈과 마일드 트리 Ⅰ</item>
-		<item>헤비 메탈과 마일드 트리 Ⅱ</item>
-		<item>묻힌 사기극 Ⅰ</item>
-		<item>묻힌 사기극 Ⅱ</item>
-		<item>꽃처럼 흩날리는 눈 Ⅰ</item>
-		<item>꽃처럼 흩날리는 눈 Ⅱ</item>
-		<item>"불꽃 피어나는 순간"</item>
-	</string-array>
+    <string-array name="Story_Main_Main_Event_2021Christmas_Caption">
+        <item>"소원은 언제 이루나"</item>
+        <item>혼자만의 항쟁 Ⅰ</item>
+        <item>혼자만의 항쟁 Ⅱ</item>
+        <item>헤비 메탈과 마일드 트리 Ⅰ</item>
+        <item>헤비 메탈과 마일드 트리 Ⅱ</item>
+        <item>묻힌 사기극 Ⅰ</item>
+        <item>묻힌 사기극 Ⅱ</item>
+        <item>꽃처럼 흩날리는 눈 Ⅰ</item>
+        <item>꽃처럼 흩날리는 눈 Ⅱ</item>
+        <item>"불꽃 피어나는 순간"</item>
+    </string-array>
 
-	
-	<string-array name="Story_Main_Main_Event_2022Spring_TopTitle">
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-		<item>사랑의 조리법</item>
-	</string-array>
+    
+    <string-array name="Story_Main_Main_Event_2022Spring_TopTitle">
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+        <item>사랑의 조리법</item>
+    </string-array>
 
-	<string-array name="Story_Main_Main_Event_2022Spring">
-		<item>엉터리 손님</item>
-		<item>시크릿 워커</item>
-		<item>초콜릿 팩토리</item>
-		<item>화이트 페스티벌</item>
-		<item>화이트 페스티벌 (Sub)</item>
-		<item>화이트 페스티벌 (Sub)</item>
-		<item>화이트 페스티벌 (Sub)</item>
-		<item>화이트 페스티벌 (Sub)</item>
-		<item>화이트 페스티벌 (Sub)</item>
-		<item>화이트 페스티벌 (Sub)</item>
-		<item>화이트 페스티벌 (Sub)</item>
-		<item>화이트 페스티벌 (Sub)</item>
-		<item>화이트 페스티벌 (Sub)</item>
-		<item>화이트 페스티벌 (Sub)</item>
-		<item>화이트 페스티벌 (Sub)</item>
-		<item>화이트 페스티벌 (Sub)</item>
-		<item>정성 들인 샘플</item>
-		<item>고향의 노래</item>
-		<item>총알 배달부</item>
-		<item>금빛 낙엽</item>
-		<item>무거운 관심</item>
-		<item>눈치</item>
-		<item>점성술사</item>
-		<item>화이트데이 클래식</item>
-		<item>두 배의 선물</item>
-		<item>내 맘을 더 알아</item>
-	</string-array>
+    <string-array name="Story_Main_Main_Event_2022Spring">
+        <item>엉터리 손님</item>
+        <item>시크릿 워커</item>
+        <item>초콜릿 팩토리</item>
+        <item>화이트 페스티벌</item>
+        <item>화이트 페스티벌 (Sub)</item>
+        <item>화이트 페스티벌 (Sub)</item>
+        <item>화이트 페스티벌 (Sub)</item>
+        <item>화이트 페스티벌 (Sub)</item>
+        <item>화이트 페스티벌 (Sub)</item>
+        <item>화이트 페스티벌 (Sub)</item>
+        <item>화이트 페스티벌 (Sub)</item>
+        <item>화이트 페스티벌 (Sub)</item>
+        <item>화이트 페스티벌 (Sub)</item>
+        <item>화이트 페스티벌 (Sub)</item>
+        <item>화이트 페스티벌 (Sub)</item>
+        <item>화이트 페스티벌 (Sub)</item>
+        <item>정성 들인 샘플</item>
+        <item>고향의 노래</item>
+        <item>총알 배달부</item>
+        <item>금빛 낙엽</item>
+        <item>무거운 관심</item>
+        <item>눈치</item>
+        <item>점성술사</item>
+        <item>화이트데이 클래식</item>
+        <item>두 배의 선물</item>
+        <item>내 맘을 더 알아</item>
+    </string-array>
 
-	<string-array name="Story_Main_Main_Event_2022Spring_Caption">
-		<item>엉터리 손님</item>
-		<item>시크릿 워커</item>
-		<item>초콜릿 팩토리</item>
-		<item>화이트 페스티벌</item>
-		<item>화이트 페스티벌 - 실패 (공통)</item>
-		<item>화이트 페스티벌 - 루이스</item>
-		<item>화이트 페스티벌 - 팔콘</item>
-		<item>화이트 페스티벌 - 79식</item>
-		<item>화이트 페스티벌 - 97식</item>
-		<item>화이트 페스티벌 - 헌터</item>
-		<item>화이트 페스티벌 - LWMMG</item>
-		<item>화이트 페스티벌 - K5</item>
-		<item>화이트 페스티벌 - M1 개런드</item>
-		<item>화이트 페스티벌 - P22</item>
-		<item>화이트 페스티벌 - T77</item>
-		<item>화이트 페스티벌 - 페르시카</item>
-		<item>루이스</item>
-		<item>팔콘</item>
-		<item>79식</item>
-		<item>97식</item>
-		<item>헌터</item>
-		<item>LWMMG</item>
-		<item>K5</item>
-		<item>M1 개런드</item>
-		<item>P22</item>
-		<item>T77</item>
-	</string-array>
-
-
-	<string-array name="Story_Main_Main_Event_2022Summer_TopTitle">
-		<item>라이칸의 성역</item>
-		<item>라이칸의 성역</item>
-		<item>라이칸의 성역</item>
-		<item>라이칸의 성역</item>
-		<item>라이칸의 성역</item>
-		<item>라이칸의 성역</item>
-		<item>라이칸의 성역</item>
-		<item>라이칸의 성역</item>
-		<item>라이칸의 성역</item>
-	</string-array>
-
-	<string-array name="Story_Main_Main_Event_2022Summer">
-		<item>라이칸 • 사냥의 서장</item>
-		<item>사냥꾼의 영역</item>
-		<item>노을 미궁</item>
-		<item>마녀의 텐트</item>
-		<item>지정 함정</item>
-		<item>마구니의 늪</item>
-		<item>봉화연대</item>
-		<item>선택의 상자</item>
-		<item>혼돈 중계</item>
-	</string-array>
-
-	<string-array name="Story_Main_Main_Event_2022Summer_Caption">
-		<item>카리나</item>
-		<item>NTW-20</item>
-		<item>AA-12</item>
-		<item>스프링필드</item>
-		<item>KAC-PDW</item>
-		<item>95식</item>
-		<item>C-MS</item>
-		<item>카리나</item>
-		<item>카리나</item>
-	</string-array>
+    <string-array name="Story_Main_Main_Event_2022Spring_Caption">
+        <item>엉터리 손님</item>
+        <item>시크릿 워커</item>
+        <item>초콜릿 팩토리</item>
+        <item>화이트 페스티벌</item>
+        <item>화이트 페스티벌 - 실패 (공통)</item>
+        <item>화이트 페스티벌 - 루이스</item>
+        <item>화이트 페스티벌 - 팔콘</item>
+        <item>화이트 페스티벌 - 79식</item>
+        <item>화이트 페스티벌 - 97식</item>
+        <item>화이트 페스티벌 - 헌터</item>
+        <item>화이트 페스티벌 - LWMMG</item>
+        <item>화이트 페스티벌 - K5</item>
+        <item>화이트 페스티벌 - M1 개런드</item>
+        <item>화이트 페스티벌 - P22</item>
+        <item>화이트 페스티벌 - T77</item>
+        <item>화이트 페스티벌 - 페르시카</item>
+        <item>루이스</item>
+        <item>팔콘</item>
+        <item>79식</item>
+        <item>97식</item>
+        <item>헌터</item>
+        <item>LWMMG</item>
+        <item>K5</item>
+        <item>M1 개런드</item>
+        <item>P22</item>
+        <item>T77</item>
+    </string-array>
 
 
-	<string-array name="Story_Main_Main_Event_EclipsesSaros_TopTitle">
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-		<item>사로스 주기</item>
-	</string-array>
+    <string-array name="Story_Main_Main_Event_2022Summer_TopTitle">
+        <item>라이칸의 성역</item>
+        <item>라이칸의 성역</item>
+        <item>라이칸의 성역</item>
+        <item>라이칸의 성역</item>
+        <item>라이칸의 성역</item>
+        <item>라이칸의 성역</item>
+        <item>라이칸의 성역</item>
+        <item>라이칸의 성역</item>
+        <item>라이칸의 성역</item>
+    </string-array>
 
-	<string-array name="Story_Main_Main_Event_EclipsesSaros">
-		<item>장주기 섭동</item>
-		<item>단주기 섭동</item>
-		<item>항도 경사각</item>
-		<item>재변</item>
-		<item>접촉</item>
-		<item>이탈</item>
-		<item>동원</item>
-		<item>노획</item>
-		<item>거짓 본그림자</item>
-		<item>본그림자</item>
-		<item>금환</item>
-		<item>고리</item>
-		<item>위난의 바다</item>
-		<item>고요의 바다</item>
-		<item>교점월</item>
-		<item>생광</item>
-		<item>복원</item>
-		<item>외 라그랑주점</item>
-		<item>내 라그랑주점</item>
-	</string-array>
+    <string-array name="Story_Main_Main_Event_2022Summer">
+        <item>라이칸 • 사냥의 서장</item>
+        <item>사냥꾼의 영역</item>
+        <item>노을 미궁</item>
+        <item>마녀의 텐트</item>
+        <item>지정 함정</item>
+        <item>마구니의 늪</item>
+        <item>봉화연대</item>
+        <item>선택의 상자</item>
+        <item>혼돈 중계</item>
+    </string-array>
 
-	<string-array name="Story_Main_Main_Event_EclipsesSaros_Caption">
-		<item>Story</item>
-		<item>Story</item>
-		<item>Story</item>
-		<item>Story</item>
-		<item>Story</item>
-		<item>Story</item>
-		<item>Story</item>
-		<item>Story</item>
-		<item>Story</item>
-		<item>Story</item>
-		<item>Story</item>
-		<item>Story</item>
-		<item>Story</item>
-		<item>Story</item>
-		<item>Story</item>
-		<item>Field</item>
-		<item>Story</item>
-		<item>Story</item>
-		<item>Story</item>
-	</string-array>
+    <string-array name="Story_Main_Main_Event_2022Summer_Caption">
+        <item>카리나</item>
+        <item>NTW-20</item>
+        <item>AA-12</item>
+        <item>스프링필드</item>
+        <item>KAC-PDW</item>
+        <item>95식</item>
+        <item>C-MS</item>
+        <item>카리나</item>
+        <item>카리나</item>
+    </string-array>
 
 
-	<string-array name="Story_Main_Main_Event_ProblemBoxHypothesis_TopTitle">
-		<item>문제상자 가설</item>
-		<item>문제상자 가설</item>
-		<item>문제상자 가설</item>
-		<item>문제상자 가설</item>
-		<item>문제상자 가설</item>
-		<item>문제상자 가설</item>
-		<item>문제상자 가설</item>
-		<item>문제상자 가설</item>
-		<item>문제상자 가설</item>
-		<item>문제상자 가설</item>
-	</string-array>
+    <string-array name="Story_Main_Main_Event_EclipsesSaros_TopTitle">
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+        <item>사로스 주기</item>
+    </string-array>
 
-	<string-array name="Story_Main_Main_Event_ProblemBoxHypothesis">
-		<item>초보 추상</item>
-		<item>조화 모의</item>
-		<item>보간법 분석</item>
-		<item>해석 추상</item>
-		<item>강화 모의</item>
-		<item>오차 분석</item>
-		<item>초월 추상</item>
-		<item>복합 모의</item>
-		<item>인접 분석</item>
-		<item>베이즈 추론</item>
-	</string-array>
+    <string-array name="Story_Main_Main_Event_EclipsesSaros">
+        <item>장주기 섭동</item>
+        <item>단주기 섭동</item>
+        <item>항도 경사각</item>
+        <item>재변</item>
+        <item>접촉</item>
+        <item>이탈</item>
+        <item>동원</item>
+        <item>노획</item>
+        <item>거짓 본그림자</item>
+        <item>본그림자</item>
+        <item>금환</item>
+        <item>고리</item>
+        <item>위난의 바다</item>
+        <item>고요의 바다</item>
+        <item>교점월</item>
+        <item>생광</item>
+        <item>복원</item>
+        <item>외 라그랑주점</item>
+        <item>내 라그랑주점</item>
+    </string-array>
 
-	<string-array name="Story_Main_Main_Event_ProblemBoxHypothesis_Caption">
-		<item>1번 상자</item>
-		<item>2번 상자</item>
-		<item>3번 상자</item>
-		<item>1번 상자</item>
-		<item>2번 상자</item>
-		<item>3번 상자</item>
-		<item>1번 상자</item>
-		<item>2번 상자</item>
-		<item>3번 상자</item>
-		<item>에필로그</item>
-	</string-array>
+    <string-array name="Story_Main_Main_Event_EclipsesSaros_Caption">
+        <item>Story</item>
+        <item>Story</item>
+        <item>Story</item>
+        <item>Story</item>
+        <item>Story</item>
+        <item>Story</item>
+        <item>Story</item>
+        <item>Story</item>
+        <item>Story</item>
+        <item>Story</item>
+        <item>Story</item>
+        <item>Story</item>
+        <item>Story</item>
+        <item>Story</item>
+        <item>Story</item>
+        <item>Field</item>
+        <item>Story</item>
+        <item>Story</item>
+        <item>Story</item>
+    </string-array>
+
+
+    <string-array name="Story_Main_Main_Event_ProblemBoxHypothesis_TopTitle">
+        <item>문제상자 가설</item>
+        <item>문제상자 가설</item>
+        <item>문제상자 가설</item>
+        <item>문제상자 가설</item>
+        <item>문제상자 가설</item>
+        <item>문제상자 가설</item>
+        <item>문제상자 가설</item>
+        <item>문제상자 가설</item>
+        <item>문제상자 가설</item>
+        <item>문제상자 가설</item>
+    </string-array>
+
+    <string-array name="Story_Main_Main_Event_ProblemBoxHypothesis">
+        <item>초보 추상</item>
+        <item>조화 모의</item>
+        <item>보간법 분석</item>
+        <item>해석 추상</item>
+        <item>강화 모의</item>
+        <item>오차 분석</item>
+        <item>초월 추상</item>
+        <item>복합 모의</item>
+        <item>인접 분석</item>
+        <item>베이즈 추론</item>
+    </string-array>
+
+    <string-array name="Story_Main_Main_Event_ProblemBoxHypothesis_Caption">
+        <item>1번 상자</item>
+        <item>2번 상자</item>
+        <item>3번 상자</item>
+        <item>1번 상자</item>
+        <item>2번 상자</item>
+        <item>3번 상자</item>
+        <item>1번 상자</item>
+        <item>2번 상자</item>
+        <item>3번 상자</item>
+        <item>에필로그</item>
+    </string-array>
+
+
+    <string-array name="Story_Main_Main_Event_ThinkingSail_TopTitle">
+        <item>사고영역 항해</item>
+        <item>사고영역 항해</item>
+        <item>사고영역 항해</item>
+        <item>사고영역 항해</item>
+        <item>사고영역 항해</item>
+    </string-array>
+
+    <string-array name="Story_Main_Main_Event_ThinkingSail">
+        <item>먹이 금지</item>
+        <item>이중 보험</item>
+        <item>미완성 퍼즐</item>
+        <item>의식 차원</item>
+        <item>완벽 승격</item>
+    </string-array>
+
+    <string-array name="Story_Main_Main_Event_ThinkingSail_Caption">
+        <item>스토리</item>
+        <item>스토리</item>
+        <item>엔딩 1</item>
+        <item>엔딩 2</item>
+        <item>엔딩 3</item>
+    </string-array>
 </resources>

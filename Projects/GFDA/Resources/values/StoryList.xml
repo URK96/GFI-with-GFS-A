@@ -74,6 +74,7 @@
         <item>이벤트</item>
         <item>콜라보 이벤트</item>
         <item>이벤트</item>
+        <item>이벤트</item>
     </string-array>
 
     <string-array name="Story_Main_Main">
@@ -132,6 +133,7 @@
         <item>문제상자 가설</item>
         <item>새하얀 물결, 꽃같은 얼굴</item>
         <item>만성쇼크</item>
+        <item>사고영역 항해</item>
     </string-array>
 
     <string-array name="Story_Main_Main_Caption">
@@ -190,6 +192,7 @@
         <item>문제상자 가설</item>
         <item>새하얀 물결, 꽃같은 얼굴</item>
         <item>만성쇼크</item>
+        <item>사고영역 항해</item>
     </string-array>
 
   <string-array name="Story_Main_Sub_TopTitle">

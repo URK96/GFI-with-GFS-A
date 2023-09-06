@@ -65,6 +65,7 @@ namespace GFDA
                 52 => (Story_Main_Main_Event_ProblemBoxHypothesis_TopTitle, Story_Main_Main_Event_ProblemBoxHypothesis, Story_Main_Main_Event_ProblemBoxHypothesis_Caption),
                 53 => (Story_Main_Main_Event_TheGlisteningBloom_TopTitle, Story_Main_Main_Event_TheGlisteningBloom, Story_Main_Main_Event_TheGlisteningBloom_Caption),
                 54 => (Story_Main_Main_Event_SlowShock_TopTitle, Story_Main_Main_Event_SlowShock, Story_Main_Main_Event_SlowShock_Caption),
+                55 => (Story_Main_Main_Event_ThinkingSail_TopTitle, Story_Main_Main_Event_ThinkingSail, Story_Main_Main_Event_ThinkingSail_Caption),
 
                 _ => (0, 0, 0)
             };
@@ -272,6 +273,9 @@ namespace GFDA
                         break;
                     case 54:
                         category = "SlowShock";
+                        break;
+                    case 55:
+                        category = "ThinkingSail";
                         break;
                     default:
                         return;
