@@ -1,12 +1,13 @@
-<2.12.1~2 Update>
+<2.14.0 Update>
 
-- Fix permission issue on Android devices
-
-
-<2.12.0 Update>
-
-- Change Android Target SDK (12 -> 13)
-- Add new event story
-- Update external libraries
+- Add SD Viewer (Beta) feature
+- Add story content
+- Add Dedicated Equipment info in T-Doll detail info page
+- Add target T-Doll info in Dedicated Equipment detail info page
+- Add Dedicated Equipment set buff info in T-Doll detail info page
+- Add MOD indicator in T-Doll list page
+- Adjust thumbnail image layout in T-Doll list page
+- Fix image ratio issue on some detail info pages
+- Fix card opacity issue on some detail info pages
+- Update 3rd party libraries
 - Update Syncfusion license
-- Update Xamarin.Android Framework
