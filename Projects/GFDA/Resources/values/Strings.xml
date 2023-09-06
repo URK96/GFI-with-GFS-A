@@ -858,7 +858,7 @@
     <string name="SelectCache_Category_OST">OST</string>
 
     <!--GFSDViewerActivity-->
-    <string name="GFSDViewerActivity_Title">SD Viewer</string>
+    <string name="GFSDViewerActivity_Title">SD Viewer (Beta)</string>
   
     <!--ETC String Value-->
     <string name="AdMob_TestID">ca-app-pub-3940256099942544/6300978111</string>
